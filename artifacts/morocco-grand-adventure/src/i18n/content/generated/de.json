@@ -1,0 +1,912 @@
+{
+  "categories": {
+    "Imperial Cities": "Kaiserliche Städte",
+    "Sahara Desert": "Sahara-Wüste",
+    "Oases & Valleys": "Oasen & Täler",
+    "Mountains": "Berge",
+    "Beaches": "Strände",
+    "Northern Morocco": "Nordmarokko"
+  },
+  "experiences": [
+    "Sahara-Wüstentouren",
+    "Luxus-Wüstencamps",
+    "4×4-Abenteuer",
+    "Kamel-Trekking",
+    "Atlasgebirge",
+    "Blaue Stadt Chefchaouen",
+    "Kaiserliche Städte",
+    "Atlantik-Surfreisen",
+    "Surfen & Kitesurfen",
+    "Marokkanische Küche",
+    "Kulturelle & Berber-Erlebnisse",
+    "Fototouren",
+    "Flitterwochen-Pakete",
+    "Familienurlaube"
+  ],
+  "faq": [
+    {
+      "question": "Wann ist die beste Reisezeit für Marokko?",
+      "answer": "Frühling (März–Mai) und Herbst (September–November) bieten die angenehmsten Temperaturen. Für die Sahara ist die Zeit von Oktober bis April ideal — mit deutlich weniger extremer Hitze. Die Küstenregionen sind das ganze Jahr über reizvoll."
+    },
+    {
+      "question": "Benötige ich ein Visum für die Einreise nach Marokko?",
+      "answer": "Staatsangehörige der USA, Kanadas, des Vereinigten Königreichs, Australiens, der EU und der meisten westlichen Länder benötigen für Aufenthalte bis zu 90 Tagen kein Visum. Bitte stellen Sie sicher, dass Ihr Reisepass noch mindestens 6 Monate ab Einreise gültig ist."
+    },
+    {
+      "question": "Ist Marokko sicher zu bereisen?",
+      "answer": "Marokko zählt zu den sichersten Reisezielen in Afrika und der arabischen Welt. Unsere lokalen Guides sorgen dafür, dass Sie die Souks und Wüstenrouten mit vollstem Vertrauen und völliger Ruhe erleben."
+    },
+    {
+      "question": "Was sollte ich für eine Wüstentour einpacken?",
+      "answer": "Leichte Schichten (Tagsüber in der Wüste ist es heiß, nachts kühl), ein Tuch gegen Wind und Sonne, hochwertigen Sonnenschutz, Sonnenbrille, eine Taschenlampe, bequeme Schuhe zum Gehen und eine Powerbank. Schlafsäcke für die Wüstencamps stellen wir bereit."
+    },
+    {
+      "question": "Sind Ihre Touren privat oder in der Gruppe?",
+      "answer": "Wir sind auf private, maßgeschneiderte Touren spezialisiert, die vollständig auf Ihren Zeitplan und Ihre Wünsche abgestimmt sind. Außerdem bieten wir an ausgewählten Terminen kleine Luxus-Gruppenreisen an. Alles ist verhandelbar."
+    },
+    {
+      "question": "Welche Sprachen sprechen Ihre Reiseleiter?",
+      "answer": "Unsere professionellen Reiseleiter sprechen Englisch, Französisch, Spanisch, Arabisch, Berberisch, Italienisch und Portugiesisch. Geben Sie bei der Buchung bitte Ihre Wunschsprache an."
+    },
+    {
+      "question": "Wie kann ich bezahlen?",
+      "answer": "Wir akzeptieren Banküberweisung, PayPal und Bargeld (MAD/EUR/USD). Eine Anzahlung von 20% sichert Ihre Reservierung; der Restbetrag ist bei Ankunft fällig. Schreiben Sie uns per WhatsApp für ein persönliches Angebot."
+    },
+    {
+      "question": "Können Sie auf besondere Ernährungsbedürfnisse eingehen?",
+      "answer": "Absolut — vegetarische, vegane, glutenfreie, halale und allergiebezogene Menüs werden selbstverständlich berücksichtigt. Bitte informieren Sie uns bereits bei der Buchung."
+    }
+  ],
+  "destinations": {
+    "marrakech": {
+      "name": "Marrakesch",
+      "shortDesc": "Die Rote Stadt — pulsierende Medinas, der Platz Jemaa el-Fnaa, luxuriöse Riads.",
+      "description": "Marrakesch ist eine betörende Verbindung aus uralten Souks, erstklassigen Restaurants und prachtvollen Riads. Vom sinnlichen Trubel der Jemaa el-Fnaa bis zur Ruhe des Majorelle-Gartens bietet die Rote Stadt ein Erlebnis, das Sie für immer begleiten wird.",
+      "bestTime": "Mär – Mai, Sep – Nov",
+      "region": "Zentralmarokko",
+      "highlights": [
+        "Platz Jemaa el-Fnaa",
+        "Majorelle-Garten",
+        "Bahia-Palast",
+        "Souks der Medina",
+        "Hammam & Spa"
+      ]
+    },
+    "fes": {
+      "name": "Fes",
+      "shortDesc": "Das kulturelle Herz — die älteste Universität der Welt und eine mittelalterliche Medina.",
+      "description": "Fes ist Marokkos spirituelle und intellektuelle Hauptstadt. Die UNESCO-geschützte Medina Fes el-Bali gehört zu den größten lebendigen mittelalterlichen Städten der Welt. Die Gerberei Chouara, die Universität Al-Qarawiyyin und das verwinkelte Labyrinth der Gassen machen sie unverwechselbar.",
+      "bestTime": "Mär – Mai, Sep – Nov",
+      "region": "Nordmarokko",
+      "highlights": [
+        "Medina Fes el-Bali",
+        "Gerberei Chouara",
+        "Universität Al-Qarawiyyin",
+        "Medersa Bou Inania",
+        "Bab Bou Jeloud"
+      ]
+    },
+    "meknes": {
+      "name": "Meknès",
+      "shortDesc": "Die vergessene Kaiserstadt — mit prächtigen Toren und römischen Ruinen in der Nähe.",
+      "description": "Oft im Schatten ihrer berühmteren Geschwister übersehen, belohnt Meknès den neugierigen Reisenden mit dem monumentalen Bab-Mansour-Tor, der stimmungsvollen Medina und der bequemen Nähe zu den römischen Ruinen von Volubilis — einem UNESCO-Weltkulturerbe.",
+      "bestTime": "März – Mai, Sep – Nov",
+      "region": "Nordmarokko",
+      "highlights": [
+        "Bab-Mansour-Tor",
+        "Mausoleum von Moulay Ismail",
+        "Römische Ruinen von Volubilis",
+        "Heri es-Souani",
+        "Medina"
+      ]
+    },
+    "casablanca": {
+      "name": "Casablanca",
+      "shortDesc": "Marokkos kosmopolitische Hauptstadt — die Hassan-II.-Moschee und art-déco-geprägte Straßen.",
+      "description": "Marokkos größte Stadt vereint französische Art-déco-Architektur mit islamischer Erhabenheit. Die Hassan-II.-Moschee — die drittgrößte der Welt — erhebt sich majestätisch über dem Atlantischen Ozean. Die Corniche, Rick’s Café und das lebendige Nachtleben machen Casablanca zu einem faszinierenden Zwischenstopp.",
+      "bestTime": "Ganzjährig",
+      "region": "Atlantikküste",
+      "highlights": [
+        "Hassan-II.-Moschee",
+        "Corniche",
+        "Art-Déco-Architektur",
+        "Morocco Mall",
+        "La Sqala"
+      ]
+    },
+    "rabat": {
+      "name": "Rabat",
+      "shortDesc": "Die Hauptstadt Marokkos — die Kasbah der Oudayas und der Hassan-Turm.",
+      "description": "Rabat, die Hauptstadt Marokkos, verströmt eine ruhige, erhabene Eleganz. Die Kasbah der Oudayas mit Blick auf den Atlantik und der unvollendete Hassan-Turm gehören zu den Höhepunkten, die man nicht verpassen sollte. Die moderne Stadt fügt sich auf wundervolle Weise in ihre historische Medina ein.",
+      "bestTime": "Mär – Jun, Sep – Nov",
+      "region": "Atlantikküste",
+      "highlights": [
+        "Kasbah der Oudayas",
+        "Hassan-Turm",
+        "Mausoleum Mohammeds V.",
+        "Nekropole Chellah",
+        "Medina"
+      ]
+    },
+    "merzouga": {
+      "name": "Merzouga",
+      "shortDesc": "Das Tor zu Erg Chebbi — den eindrucksvollsten Dünen Marokkos.",
+      "description": "Merzouga ist das Juwel unter Marokkos Wüstenerlebnissen. Das Dorf liegt am Fuße von Erg Chebbi, einem Meer goldener Sanddünen, die bis zu 150 Meter in den Himmel ragen. Kameltrekking, Sternenbeobachtung in luxuriösen Wüstencamps und die Stille der Sahara schaffen Erinnerungen, die ein Leben lang bleiben.",
+      "bestTime": "Okt – Apr",
+      "region": "Sahara",
+      "highlights": [
+        "Erg-Chebbi-Dünen",
+        "Kameltrekking",
+        "Luxuriöse Wüstencamps",
+        "Sternenbeobachtung",
+        "Berberdörfer"
+      ]
+    },
+    "erg-chebbi": {
+      "name": "Erg Chebbi",
+      "shortDesc": "Marokkos ikonischste Sandmeerlandschaft — aufragende Dünen im Licht des Sonnenaufgangs.",
+      "description": "Erg Chebbi ist eines der beiden großen Ergs Marokkos — ausgedehnte Meere aus Sanddünen. Über 22 km Länge und 5 km Breite erstrecken sich die Dünen und wechseln mit dem Licht von Orange zu Gold bis hin zu Purpurrot. Ein Sonnenaufgang hier, hoch zu Kamel, zählt zu den großen Reiseerlebnissen der Welt.",
+      "bestTime": "Okt – Apr",
+      "region": "Sahara",
+      "highlights": [
+        "Kamel-Trekking bei Sonnenaufgang",
+        "Dune Boarding",
+        "Berber-Musikabende",
+        "4x4-Wüstenfahrt",
+        "Dinner im Luxuscamp"
+      ]
+    },
+    "ouarzazate": {
+      "name": "Ouarzazate",
+      "shortDesc": "Das Hollywood Afrikas — Filmkulissen, Kasbahs und Wüstenlandschaften.",
+      "description": "Als Tor zur Sahara bekannt, war Ouarzazate bereits Schauplatz von Blockbuster-Filmen wie Lawrence of Arabia und Game of Thrones. Besuchen Sie die Atlas Film Corporation Studios, die ikonische Kasbah Taourirt, und nutzen Sie die Stadt als Ausgangspunkt für Tagesausflüge nach Aït Ben Haddou.",
+      "bestTime": "Sep – Mai",
+      "region": "Südmarokko",
+      "highlights": [
+        "Atlas Filmstudios",
+        "Kasbah Taourirt",
+        "Aït Ben Haddou (30min)",
+        "Draâ-Tal",
+        "Fint-Oase"
+      ]
+    },
+    "ait-ben-haddou": {
+      "name": "Aït Ben Haddou",
+      "shortDesc": "UNESCO-gelistetes befestigtes Dorf — Marokkos meistfotografierte Kasbah.",
+      "description": "Diese UNESCO-Welterbestätte ist ein atemberaubendes Beispiel südmarokkanischer Lehmarchitektur. Der verwinkelte Ksar diente bereits in Dutzenden Hollywood-Filmen als Kulisse. Den Fluss auf Trittsteinen zu überqueren und zum obersten Speicher hinaufzusteigen, um den Blick über das Tal schweifen zu lassen, ist ein unvergessliches Erlebnis.",
+      "bestTime": "Sep – Mai",
+      "region": "Südmarokko",
+      "highlights": [
+        "UNESCO-Ksar",
+        "Filmkulissen-Tour",
+        "Fotografie zum Sonnenaufgang",
+        "Besuche bei Berberfamilien",
+        "Töpferworkshops"
+      ]
+    },
+    "zagora": {
+      "name": "Zagora",
+      "shortDesc": "Das Tor zu Erg Chigaga und dem uralten Draa-Tal.",
+      "description": "Zagora markiert den Beginn des wahren Sahara-Erlebnisses im Draa-Tal. Das berühmte Schild „Timbuktu 52 Tage per Kamel“ fängt seinen Geist perfekt ein. Von hier aus führen Jeep-Ausflüge in das entlegene Erg Chigaga — fernab der Touristenströme — zu einem wahrhaft wilden Wüstenerlebnis.",
+      "bestTime": "Okt. – März",
+      "region": "Südmarokko",
+      "highlights": [
+        "Erg-Chigaga-Dünen",
+        "Oasen des Draa-Tals",
+        "Berber-Camps",
+        "Kamel-Trekking",
+        "Dattelpalmenhaine"
+      ]
+    },
+    "dades-valley": {
+      "name": "Dades-Tal",
+      "shortDesc": "Spektakuläre Schluchten, uralte Kasbahs und von Rosen duftende Oasen.",
+      "description": "Als „Tal der Tausend Kasbahs“ bekannt, begeistert das Dades-Tal mit dramatischen Felsformationen, kurvenreichen Bergstraßen und üppig grünen Oasen. Die Felsformation der Affenfinger ist weltberühmt, und jedes Jahr im Mai feiert das Tal das Rosenfest.",
+      "bestTime": "Mar – Nov",
+      "region": "Südmarokko",
+      "highlights": [
+        "Dades-Schlucht",
+        "Affenfinger-Felsen",
+        "Rosenfest (Mai)",
+        "Uralte Kasbahs",
+        "Wandern im Tal"
+      ]
+    },
+    "todra-gorge": {
+      "name": "Todra-Schlucht",
+      "shortDesc": "300 m hohe Canyonwände — ein Paradies für Kletterer und Trekkingfreunde.",
+      "description": "Die Todra-Schlucht zählt zu den eindrucksvollsten Naturwundern Marokkos — steile Kalksteinwände ragen 300 Meter über einem kristallklaren Fluss empor. Kletterer aus aller Welt kommen hierher, während Wanderer der Schlucht tief hinein in den Hohen Atlas folgen können. Ein Besuch bei Sonnenaufgang, wenn das Licht die Felsen vergoldet, ist geradezu magisch.",
+      "bestTime": "März – Nov",
+      "region": "Südmarokko",
+      "highlights": [
+        "Klettern",
+        "Canyon-Wanderung",
+        "Berber-Gästehäuser",
+        "Fotografie",
+        "Sonnenaufgangsblicke"
+      ]
+    },
+    "skoura": {
+      "name": "Oase Skoura",
+      "shortDesc": "Marokkos schönste Oase — ein 1.000 Jahre alter Palmenhain.",
+      "description": "Die Oase Skoura ist ein grünes Wunder in der vor-saharischen Landschaft. Seit über tausend Jahren birgt ihr dichter Palmenhain alte Kasbahs, darunter die prachtvolle Amerhidil. Ausritte und Fahrradtouren durch die Palmeraie zählen zu den friedvollsten Erlebnissen Marokkos.",
+      "bestTime": "Sep – Mai",
+      "region": "Südmarokko",
+      "highlights": [
+        "Kasbah Amerhidil",
+        "Fahrradtouren durch die Palmeraie",
+        "Reiten",
+        "Vogelbeobachtung",
+        "Berberdörfer"
+      ]
+    },
+    "roses-valley": {
+      "name": "Tal der Rosen",
+      "shortDesc": "Marokkos duftendstes Tal — erblüht jeden April und Mai.",
+      "description": "Eingebettet zwischen dem Hohen Atlas und dem Anti-Atlas erwacht das Tal der Rosen (Vallée des Roses) jedes Frühjahr zum Leben, wenn die Damaszenerrose blüht. Das alljährliche Rosenfest in Kelaat M'Gouna ist eine heitere Feier von Farben, Musik und dem Duft von Rosenwasser.",
+      "bestTime": "Apr – Mai (Rosenfest)",
+      "region": "Südmarokko",
+      "highlights": [
+        "Rosenfest",
+        "Rosenwasser-Destillerie",
+        "Kasbah von Kelaat M'Gouna",
+        "Wanderungen im Tal",
+        "Kooperativen für Arganöl"
+      ]
+    },
+    "draa-valley": {
+      "name": "Draa-Tal",
+      "shortDesc": "Marokkos längstes Flusstal — Dattelpalmen, Kasbahs und uralte Handelsrouten.",
+      "description": "Das Draa-Tal erstreckt sich über 200km von Ouarzazate bis zu den Sahandünen nahe Zagora. Einst transportierten alte Karawanen Gold und Salz durch diesen Korridor der Oasen. Die Straße folgt einem hypnotischen Rhythmus aus Palmenhain, Kasbah, Palmenhain, unterbrochen von Dörfern, in denen die Zeit langsam vergeht.",
+      "bestTime": "Okt – Apr",
+      "region": "Südmarokko",
+      "highlights": [
+        "Kasbah von Agdez",
+        "Grüne Töpferei von Tamegroute",
+        "Spaziergänge durch Palmenhaine",
+        "Uralte Ksour",
+        "Dünen von Zagora"
+      ]
+    },
+    "chefchaouen": {
+      "name": "Chefchaouen",
+      "shortDesc": "Die Blaue Perle — die Instagram-berühmte blaue Medina im Rif-Gebirge.",
+      "description": "Eingebettet im Rif-Gebirge ist Chefchaouen Marokkos fotogenste Stadt. Jede Mauer, jede Treppe und jede Tür ist in unzähligen Blautönen gestrichen — eine ozeanische Ruhe, die sie zu einem der friedlichsten Orte des Landes macht. Die nahe gelegenen Akchour-Wasserfälle und Gottesbrücke sind spektakuläre Ausflüge für einen Tagestrip.",
+      "bestTime": "Mär – Mai, Sep – Nov",
+      "region": "Nordmarokko",
+      "highlights": [
+        "Blaue Medina",
+        "Plaza Uta el-Hammam",
+        "Ras-el-Ma-Quellen",
+        "Akchour-Wasserfälle",
+        "Wanderungen im Rif-Gebirge"
+      ]
+    },
+    "imlil": {
+      "name": "Imlil",
+      "shortDesc": "Tor zum Toubkal — Ausgangspunkt für die Besteigung des höchsten Gipfels Marokkos.",
+      "description": "Imlil ist der Ausgangspunkt für Trekkingtouren zum Jebel Toubkal (4.167 m), dem höchsten Gipfel Nordafrikas. Das eindrucksvolle Berberdorf liegt auf 1.740 m im Hohen Atlas und ist umgeben von Walnussgärten, Apfelhainen und traditionellen Dörfern. Die luxuriöse Kasbah du Toubkal bietet außergewöhnliche Gastfreundschaft in den Bergen.",
+      "bestTime": "Apr – Oct",
+      "region": "Hoher Atlas",
+      "highlights": [
+        "Toubkal-Gipfeltrek",
+        "Übernachtungen im Berberdorf",
+        "Maultier-Trekking",
+        "Setti-Fatma-Wasserfälle",
+        "Kochkurse in den Bergen"
+      ]
+    },
+    "ourika-valley": {
+      "name": "Talsel Ourika",
+      "shortDesc": "Üppiges Tal nur eine Stunde von Marrakesch entfernt — Wasserfälle und Berbermärkte.",
+      "description": "Das Ourika-Tal ist der perfekte Tagesausflug von Marrakesch aus — nur eine Stunde mit dem Auto und doch eine Welt entfernt. Terrassierte Gärten ergießen sich die Hänge des Atlas hinab, Argan-Kooperativen laden zu Kostproben ein, und der Wasserfall von Setti Fatma belohnt eine kurze Wanderung. Der Berbermarkt am Montag in Aghbalou ist besonders lebendig.",
+      "bestTime": "Ganzjährig",
+      "region": "Hoher Atlas",
+      "highlights": [
+        "Wasserfälle von Setti Fatma",
+        "Berbermarkt",
+        "Arganöl-Kooperative",
+        "Kräutergärten",
+        "Mittagessen in Restaurants im Tal"
+      ]
+    },
+    "ouzoud": {
+      "name": "Ouzoud-Wasserfälle",
+      "shortDesc": "Marokkos eindrucksvollste Wasserfälle — Berberaffen und Regenbögen.",
+      "description": "Die Ouzoud-Fälle sind mit 110 Metern die höchsten in Nordafrika und stürzen in mehreren gestuften Kaskaden in ein türkisfarbenes Becken. Familien von Berberaffen tummeln sich in den umliegenden Olivenhainen, während der feine Sprühnebel fortwährend Regenbögen entstehen lässt. In den lokalen Mühlen wird Getreide noch heute so gemahlen wie seit Jahrhunderten.",
+      "bestTime": "Mär – Mai, Sep – Nov",
+      "region": "Mittlerer Atlas",
+      "highlights": [
+        "110 m Wasserfall",
+        "Berberaffen",
+        "Bootstour unterhalb der Fälle",
+        "Hammam",
+        "Olivenölverkostung"
+      ]
+    },
+    "ifrane": {
+      "name": "Ifrane & Zedernwald",
+      "shortDesc": "Die Schweiz Marokkos — Pinienwälder und wilde Berberaffen.",
+      "description": "Als „Klein- Schweiz“ bekannt, ist Ifrane ein von den Franzosen errichteter Bergkurort mit Chalets im Chalet-Stil und klarer, frischer Bergluft. Ganz in der Nähe beherbergt der Zedernwald von Azrou Hunderte wilder Berberaffen, die Besuchern bis auf wenige Schritte nahekommen. Im Winter verwandelt Schnee die Region in ein begehrtes Skigebiet.",
+      "bestTime": "Apr – Okt (Sommer), Dez – Feb (Schnee)",
+      "region": "Mittelatlas",
+      "highlights": [
+        "Zedernwald von Azrou",
+        "Berberaffen",
+        "Nationalpark Ifrane",
+        "Skifahren in Mischliffen",
+        "See Aaoua"
+      ]
+    },
+    "essaouira": {
+      "name": "Essaouira",
+      "shortDesc": "Vom Wind umwehte Küstenperle — blaue Boote, fangfrische Meeresfrüchte und Gnawa-Musik.",
+      "description": "Essaouira ist Marokkos stimmungsvollste Hafenstadt. Ihre von der UNESCO geschützte Medina, von den atlantischen Passatwinden umspielt, gleicht einem Labyrinth aus weiß getünchten und blauen Häusern. Das berühmte Gnawa World Music Festival erfüllt die Straßen jeden Juni mit Rhythmus. Der Strand zählt zu den besten Orten der Welt zum Kitesurfen.",
+      "bestTime": "Ganzjährig",
+      "region": "Atlantikküste",
+      "highlights": [
+        "Stadtmauern & Medina",
+        "Gnawa-Musik",
+        "Kitesurfen",
+        "Meeresfrüchte am Hafen",
+        "Jüdisches Viertel Mellah"
+      ]
+    },
+    "agadir": {
+      "name": "Agadir",
+      "shortDesc": "Marokkos moderner Badeort — goldene Strände und ganzjähriger Sonnenschein.",
+      "description": "Agadir bietet den klassischen Strandurlaub, mit dem Marokko selten wirbt — 300 Sonnentage, eine prachtvolle, 8 km lange sichelförmige Bucht und hervorragende Resorts. Nach dem Erdbeben von 1960 neu aufgebaut, besitzt die Stadt ein modernes, europäisches Flair und liegt zugleich am Tor zur wilden Souss-Massa-Ebene.",
+      "bestTime": "Ganzjährig",
+      "region": "Atlantikküste",
+      "highlights": [
+        "Strand von Agadir",
+        "Souk El Had",
+        "Kasbah-Ruinen bei Sonnenuntergang",
+        "Souss-Massa-Vogelreservat",
+        "Marina"
+      ]
+    },
+    "taghazout": {
+      "name": "Taghazout",
+      "shortDesc": "Weltklasse-Surfdorf — perfekte Wellen, Yoga-Retreats und hippes Lebensgefühl.",
+      "description": "Einst ein stilles amazighisches Fischerdorf, hat sich Taghazout zur Surfhauptstadt Afrikas entwickelt. Anchor Point, Killer Point und Hash Point sind legendäre Breaks, die das ganze Jahr über Surfpilger anziehen. Das Dorf bewahrt sich eine wunderbar entspannte, bohemienhafte Atmosphäre, mit Yoga-Retreats, frischen Fisch-Tagines und leuchtenden Sonnenuntergängen.",
+      "bestTime": "Okt – Apr (Surf-Saison)",
+      "region": "Atlantikküste",
+      "highlights": [
+        "Anchor Point (Surf)",
+        "Killer Point (Surf)",
+        "Surf-Unterricht",
+        "Yoga-Retreats",
+        "Sidi Kaouki Strand"
+      ]
+    },
+    "legzira": {
+      "name": "Playa Legzira",
+      "shortDesc": "Dramatische rote Felsbögen, die sich aus dem Atlantik erheben — einer der schönsten Strände Afrikas.",
+      "description": "Die außergewöhnlichen natürlichen Felsbögen von Legzira, über Jahrhunderte von der Kraft des Atlantiks geformt, rahmen einen der eindrucksvollsten Strände Marokkos ein. Die roten Klippen leuchten bei Sonnenuntergang in Rosa- und Orangetönen. Der Strand liegt abgelegen, ist noch vergleichsweise unentdeckt und schlicht spektakulär — ein Traum für Fotografen.",
+      "bestTime": "Apr – Okt",
+      "region": "Atlantikküste",
+      "highlights": [
+        "Natürliche Felsbögen",
+        "Sonnenuntergangsfotografie",
+        "Abgeschiedenes Schwimmen",
+        "Stadt Sidi Ifni (15min)",
+        "Spaziergang entlang der Atlantikklippen"
+      ]
+    },
+    "el-jadida": {
+      "name": "El Jadida",
+      "shortDesc": "Portugiesische Zitadelle am Atlantik — UNESCO-gelistete Citerne Portugaise.",
+      "description": "Die UNESCO-gelistete portugiesische Zitadelle von El Jadida zählt zu den eindrucksvollsten Küstenbefestigungen Marokkos. Die außergewöhnliche unterirdische Zisterne, 1514 erbaut, beeindruckt mit dramatischen Gewölbedecken, die sich in einem flachen Wasserbecken spiegeln — sie war auch in Orson Welles' Othello zu sehen. Der Strand erstreckt sich über Meilen.",
+      "bestTime": "Ganzjährig",
+      "region": "Atlantikküste",
+      "highlights": [
+        "Portugiesische Zitadelle",
+        "Citerne Portugaise",
+        "El Jadida Beach",
+        "Sidi Bouzid Beach",
+        "Mazagan Heritage"
+      ]
+    },
+    "tangier": {
+      "name": "Tanger",
+      "shortDesc": "Tor zwischen Afrika und Europa — die Straße von Gibraltar, Kunst und Intrigen.",
+      "description": "Tanger war schon immer eine Stadt der Verführung und des Rätsels — dort, wo Afrika und Europa sich über einen schmalen Streifen Wasser hinweg gegenüberliegen. Schriftsteller der Beat Generation, Maler und Spione haben hier Spuren hinterlassen. Die Medina, die Kasbah und das hoch über der Straße von Gibraltar gelegene Café Hafa verleihen der Stadt eine unwiderstehliche Atmosphäre.",
+      "bestTime": "Mar – Okt",
+      "region": "Nordmarokko",
+      "highlights": [
+        "Kasbah-Museum",
+        "Cap Spartel",
+        "Herkuleshöhlen",
+        "Café Hafa",
+        "Petit Socco"
+      ]
+    },
+    "tetouan": {
+      "name": "Tétouan",
+      "shortDesc": "Das kleine Jerusalem — Spaniens weißeste Medina und andalusisches Erbe.",
+      "description": "Die UNESCO-geschützte Medina von Tétouan gilt vielleicht als die am besten erhaltene Marokkos. Ihr ausgeprägter andalusischer Einfluss — getragen von maurischen Flüchtlingen, die 1492 aus Spanien vertrieben wurden — verleiht ihr ein unverkennbar europäisches Flair. Der Königspalast, das Museum der Marokkanischen Künste und das lebhafte Handwerkerviertel sind ein absolutes Muss.",
+      "bestTime": "Mär – Okt",
+      "region": "Nordmarokko",
+      "highlights": [
+        "UNESCO-Medina",
+        "Spanisches Viertel",
+        "Gärten des Königspalasts",
+        "Museum der Marokkanischen Künste",
+        "Kunsthandwerker-Souks"
+      ]
+    },
+    "akchour": {
+      "name": "Akchour & Gottes Brücke",
+      "shortDesc": "Wilde Schluchten, türkisfarbene Becken und eine natürliche Steinbrücke nahe Chefchaouen.",
+      "description": "Akchour ist das wilde Gegenstück zu Chefchaouen — ein verborgenes Tal mit türkisgrünen Flüssen, tiefen Schluchten und dem natürlichen Kalksteinbogen, der als „Gottes Brücke“ bekannt ist. Zwei spektakuläre Wanderungen führen zu den kleinen und großen Wasserfällen durch Wälder aus Zedern und Steineichen. Oft lässt sich der Ausflug ideal mit einem Besuch in Chefchaouen verbinden.",
+      "bestTime": "Apr – Oct",
+      "region": "Northern Morocco",
+      "highlights": [
+        "Natürlicher Bogen Gottes Brücke",
+        "Akchour-Wasserfälle",
+        "Schwimmen in den Schluchtbecken",
+        "Trekking im Rif-Wald",
+        "Berber-Mittagessen"
+      ]
+    },
+    "nkob": {
+      "name": "Nkob",
+      "shortDesc": "Das Dorf der 45 Kasbahs — abgelegen, unberührt und von spektakulärer Schönheit.",
+      "description": "Nkob ist Marokkos Geheimtipp — ein abgelegenes Dorf im Jbel Saghro, bekannt als „das Dorf der 45 Kasbahs“. Nur wenige Reisende finden den Weg hierher, doch die Landschaft aus vulkanischem Gestein, Palmenoasen und uralten Festungen ist außergewöhnlich. Nahegelegene Trekkingtouren im Jbel Saghro bieten eine dramatische Alternative zur Sahara.",
+      "bestTime": "Sep – May",
+      "region": "Südmarokko",
+      "highlights": [
+        "45 Kasbahs",
+        "Trek im Jbel Saghro",
+        "Wildes Camping",
+        "Berbertraditionen",
+        "Sternenbeobachtung unter dunklem Himmel"
+      ]
+    },
+    "mirleft": {
+      "name": "Mirleft",
+      "shortDesc": "Unberührtes Surferdorf zwischen Tiznit und Sidi Ifni — wilde Atlantikküste.",
+      "description": "Mirleft liegt zwischen Tiznit und Sidi Ifni an einem zerklüfteten Abschnitt der Atlantikküste, der sich auf die schönste Weise wie das Ende der Welt anfühlt. Eine Reihe wilder Strände — Marabout, Safarkhal, Sidi Mohammed Ben Abdallah — schenkt Ruhe, Wellen und Sonnenuntergänge, die den Himmel entflammen.",
+      "bestTime": "Ganzjährig",
+      "region": "Atlantikküste",
+      "highlights": [
+        "Wilde Atlantikstrände",
+        "Sonnenuntergänge auf den Klippen",
+        "Surfen",
+        "Schnorcheln",
+        "Spaziergänge durch Arganwälder"
+      ]
+    }
+  },
+  "tours": {
+    "3-day-sahara-marrakech": {
+      "name": "3-tägige Luxus-Sahara-Tour ab Marrakesch",
+      "duration": "3 Tage / 2 Nächte",
+      "highlights": [
+        "Überquerung des Atlasgebirges",
+        "Aït Ben Haddou (UNESCO)",
+        "Dades-Tal",
+        "Luxuscamp in Merzouga",
+        "Kamelritt bei Sonnenuntergang"
+      ],
+      "category": "Wüste & Abenteuer",
+      "description": "Das klassische Marokko-Abenteuer, verdichtet auf drei unvergessliche Tage. Überqueren Sie das Atlasgebirge, erkunden Sie die meistfotografierte Kasbah der Welt, schlafen Sie unter dem Sternenhimmel der Sahara in einem luxuriösen Zeltcamp und reiten Sie bei Sonnenuntergang auf Kamelen über die goldenen Dünen von Erg Chebbi."
+    },
+    "5-day-imperial-cities": {
+      "name": "5-tägige Reise zu den Kaiserlichen Städten & in die Wüste",
+      "duration": "5 Tage / 4 Nächte",
+      "highlights": [
+        "Medina von Marrakesch",
+        "Fes el-Bali",
+        "Blaue Stadt Chefchaouen",
+        "Sahara-Wüste",
+        "Atlasgebirge"
+      ],
+      "category": "Kulturell",
+      "description": "Tauchen Sie ein in die vier kaiserlichen Städte Marokkos — Marrakesch, Meknès, Fes und die Blaue Stadt Chefchaouen — bevor Sie gen Süden aufbrechen, um eine Nacht unter dem Sternenhimmel der Sahara-Wüste zu verbringen."
+    },
+    "7-day-imperial-cities-sahara-escape": {
+      "name": "7-tägige Kaiserstädte- & Sahara-Auszeit",
+      "duration": "7 Tage / 6 Nächte",
+      "highlights": [
+        "Hoher Atlas & Tizi-n'Tichka-Pass",
+        "Aït Ben Haddou (UNESCO)",
+        "Dades-Tal & Todra-Schlucht",
+        "Kamel-Trek bei Sonnenuntergang in Erg Chebbi",
+        "Luxus-Wüstencamp unter den Sternen",
+        "Geführte Tour durch das kaiserliche Fes",
+        "Zedernwald & Berberaffen"
+      ],
+      "category": "Grand Tour",
+      "description": "Erleben Sie das Beste Marokkos in sieben unvergesslichen Tagen. Überqueren Sie das spektakuläre Hohe-Atlas-Gebirge über den Tizi-n'Tichka-Pass, erkunden Sie die UNESCO-Kasbah von Aït Ben Haddou, schlängeln Sie sich durch das Dades-Tal und die imposante Todra-Schlucht und reiten Sie dann auf Kamelen über die goldenen Dünen von Erg Chebbi zu einem Luxus-Wüstencamp unter dem Sternenzelt. Reisen Sie nordwärts durch das Ziz-Tal und die Zedernwälder in die mittelalterliche Kaiserstadt Fes, bevor Sie über einige der eindrucksvollsten Landschaften des Landes nach Marrakech zurückkehren.",
+      "routeCaption": "Eine große Rundreise, die in Marrakech beginnt und endet — südlich über den Hohen Atlas nach Aït Ben Haddou sowie zu den Dades- und Todra-Schluchten, weiter zu den goldenen Dünen von Merzouga, dann nordwärts durch die Zedernwälder ins kaiserliche Fes, bevor die landschaftlich reizvolle Rückfahrt beginnt. Tippen Sie auf einen nummerierten Halt, um ihn zu entdecken.",
+      "included": [
+        "Privates, klimatisiertes Fahrzeug",
+        "Professioneller englischsprachiger Fahrer",
+        "Kraftstoff",
+        "Luxuriöses Wüstencamp",
+        "Kamel-Trek in Erg Chebbi",
+        "Private Zimmer durchgehend",
+        "Tägliches Frühstück",
+        "Abendessen gemäß Reiseverlauf",
+        "Lokaler Guide in Fes",
+        "Sandboarding",
+        "Hotel-Abholung & -Rücktransfer",
+        "Kostenloses WLAN in den meisten Hotels"
+      ],
+      "excluded": [
+        "Internationale Flüge",
+        "Mittagessen",
+        "Getränke",
+        "Eintrittsgebühren für Denkmäler & Museen",
+        "Trinkgelder & Zuwendungen",
+        "Persönliche Ausgaben",
+        "Optionale Quads & Buggys"
+      ],
+      "itineraryDays": [
+        {
+          "title": "Marrakech → Aït Ben Haddou → Ouarzazate → Dades-Tal",
+          "desc": "Treffen Sie Ihren privaten Fahrer in Marrakech und reisen Sie über den spektakulären Hohen Atlas über den Tizi-n'Tichka-Pass. Besuchen Sie das UNESCO-Weltkulturerbe Aït Ben Haddou und fahren Sie anschließend weiter nach Ouarzazate, das für seine Filmstudios berühmt ist. Durchqueren Sie die Oase Skoura und das Tal der Rosen, bevor Sie für die Nacht im wunderschönen Dades-Tal ankommen.",
+          "stops": [
+            "Hoher Atlas",
+            "Tizi-n'Tichka-Pass",
+            "Aït Ben Haddou (UNESCO)",
+            "Ouarzazate",
+            "Oase Skoura",
+            "Tal der Rosen",
+            "Übernachtung: Dades-Tal (Abendessen & Frühstück)"
+          ]
+        },
+        {
+          "title": "Dades-Tal → Todra-Schlucht → Sahara von Merzouga",
+          "desc": "Nach dem Frühstück bestaunen Sie die majestätische Todra-Schlucht und fahren dann durch Palmenhaine und Berberdörfer Richtung Merzouga. Reiten Sie auf Kamelen über die goldenen Dünen von Erg Chebbi, während die Sonne untergeht, und genießen Sie anschließend ein traditionelles marokkanisches Abendessen und live Berbermusik, bevor Sie unter dem Sternenhimmel in einem luxuriösen Wüstencamp schlafen.",
+          "stops": [
+            "Todra-Schlucht",
+            "Palmenhaine & Berberdörfer",
+            "Erg-Chebbi-Dünen",
+            "Kamel-Trek bei Sonnenuntergang",
+            "Berbermusik",
+            "Übernachtung: Luxus-Wüstencamp (Abendessen & Frühstück)"
+          ]
+        },
+        {
+          "title": "Ein ganzer Tag in der Sahara",
+          "desc": "Erwachen Sie zu einem spektakulären Sonnenaufgang über den Dünen und verbringen Sie einen ganzen Tag mit der Erkundung der Wüste — besuchen Sie das Dorf Khamlia für mitreißende Gnawa-Musik, trinken Sie Tee mit Nomadenfamilien und entdecken Sie die Schwarze Wüste, Fossilienfelder und eine verborgene Oase. Optionale Quads, Buggys und Sandboarding füllen den Nachmittag, bevor ein weiterer zauberhafter Wüstenabend beginnt.",
+          "stops": [
+            "Sonnenaufgang über den Dünen",
+            "Dorf Khamlia & Gnawa-Musik",
+            "Tee mit Nomadenfamilien",
+            "Schwarze Wüste & Fossilien",
+            "Oase",
+            "Sandboarding",
+            "Übernachtung: Hotel in Merzouga (Abendessen & Frühstück)"
+          ]
+        },
+        {
+          "title": "Merzouga → Ziz-Tal → Midelt → Ifrane → Fes",
+          "desc": "Reisen Sie nordwärts durch das spektakuläre Ziz-Tal mit seinen endlosen Palmenoasen und halten Sie zum Mittagessen in Midelt. Besuchen Sie den Zedernwald, in dem Berberaffen leben, fahren Sie durch Ifrane — die „Schweiz Marokkos“ — und erreichen Sie die kaiserliche Stadt Fes.",
+          "stops": [
+            "Ziz-Tal",
+            "Midelt",
+            "Zedernwald & Berberaffen",
+            "Ifrane",
+            "Übernachtung: Fes (Frühstück)"
+          ]
+        },
+        {
+          "title": "Geführte Tour durch Fes",
+          "desc": "Entdecken Sie mit einem offiziellen lokalen Guide eine der ältesten lebendigen Städte der Welt. Erkunden Sie die Tore des Königspalastes, das jüdische Viertel und die labyrinthartige mittelalterliche Medina — Heimat der Universität Al Quaraouiyine, der berühmten Gerbereien, lebhafter Souks und traditioneller Töpferwerkstätten. Der Abend steht Ihnen zur freien Verfügung, um die Stadt in Ihrem eigenen Tempo zu erleben.",
+          "stops": [
+            "Königspalast",
+            "Jüdisches Viertel",
+            "Mittelalterliche Medina",
+            "Universität Al Quaraouiyine",
+            "Gerbereien",
+            "Souks & Töpferwerkstätten",
+            "Übernachtung: Fes (Frühstück)"
+          ]
+        },
+        {
+          "title": "Fes → Zedernwald → Beni Mellal → Marrakech",
+          "desc": "Verlassen Sie Fes und reisen Sie durch das Mittlere Atlasgebirge, vorbei an wunderschönen Wäldern, Seen, Wasserfällen und traditionellen Berberdörfern auf der landschaftlich reizvollen Straße zurück nach Marrakech, wo Ihnen der Abend zur freien Verfügung steht.",
+          "stops": [
+            "Mittleres Atlasgebirge",
+            "Wälder, Seen & Wasserfälle",
+            "Beni Mellal",
+            "Übernachtung: Marrakech (Frühstück)"
+          ]
+        },
+        {
+          "title": "Geführte Tour durch Marrakech & Abreise",
+          "desc": "Erkunden Sie die Rote Stadt mit einem zertifizierten lokalen Guide und besuchen Sie den exquisiten Bahia-Palast, die imposante Koutoubia-Moschee, die Saadier-Gräber, den lebhaften Platz Jemaa el-Fna und die traditionellen Souks — mit optionalem Stopp im Jardin Majorelle. Am Ende Ihrer Reise Transfer zu Ihrem Hotel oder zum Flughafen Marrakech.",
+          "stops": [
+            "Bahia-Palast",
+            "Koutoubia-Moschee",
+            "Saadier-Gräber",
+            "Jardin Majorelle (optional)",
+            "Jemaa el-Fna",
+            "Traditionelle Souks",
+            "Flughafen / Hotel-Rücktransfer"
+          ]
+        }
+      ],
+      "gallery": [
+        {
+          "caption": "Aït Ben Haddou — UNESCO-Ksar"
+        },
+        {
+          "caption": "Ouarzazate — Tor zur Wüste"
+        },
+        {
+          "caption": "Das gewundene Dades-Tal"
+        },
+        {
+          "caption": "Die imposante Todra-Schlucht"
+        },
+        {
+          "caption": "Die Dünen von Erg Chebbi bei Merzouga"
+        },
+        {
+          "caption": "Unser luxuriöses Wüstencamp in der Dämmerung"
+        },
+        {
+          "caption": "Goldene Dünen bei Sonnenaufgang"
+        },
+        {
+          "caption": "Ifrane — die Schweiz Marokkos"
+        },
+        {
+          "caption": "Fes — die mittelalterliche Kaiserstadt"
+        },
+        {
+          "caption": "Marrakech — die Rote Stadt"
+        },
+        {
+          "caption": "Süßer Minztee mit unseren Gästen"
+        },
+        {
+          "caption": "Ein Sahara-Sonnenuntergang mit unseren Reisenden"
+        }
+      ],
+      "faq": [
+        {
+          "question": "Ist dies eine private Tour?",
+          "answer": "Ja — jede Abfahrt ist vollständig privat und nur für Ihre Reisegruppe vorgesehen. Sie reisen mit Ihrem eigenen, engagierten englischsprachigen Fahrer und bestimmen gemeinsam das Tempo, ohne dass Fremde Ihrer Gruppe beitreten."
+        },
+        {
+          "question": "Wie ist die Unterkunft?",
+          "answer": "Sorgfältig ausgewählte Hotels und Riads mit durchgehend privaten Zimmern sowie eine unvergessliche Nacht in einem luxuriösen Zeltcamp auf den Dünen von Erg Chebbi — mit echten Betten und eigenen Badezimmern."
+        },
+        {
+          "question": "Wie viel Zeit verbringen wir in der Sahara?",
+          "answer": "Zwei Nächte in der Nähe der Dünen — die erste im Luxus-Wüstencamp, das per Kamel erreicht wird, gefolgt von einem ganzen Tag zur Erkundung von Merzouga (Nomadenfamilien, Gnawa-Musik, Sandboarding und mehr) mit einer zweiten Nacht in einem Wüstenhotel."
+        },
+        {
+          "question": "Wann ist die beste Reisezeit für diese Tour?",
+          "answer": "Sie findet das ganze Jahr über statt. Der Frühling (März–Mai) und der Herbst (September–November) sind ideal, mit warmen Tagen und angenehmen Wüstennächten. Der Winter ist klar und frisch; der Sommer im Landesinneren heiß, daher starten wir früh und planen die Hitze mit ein."
+        },
+        {
+          "question": "Wie bestätige ich meine Buchung?",
+          "answer": "Schreiben Sie uns auf WhatsApp, um Ihre Daten zu sichern, und wir stimmen die Details individuell auf Sie ab. Eine kleine Anzahlung sichert Ihre Tour, der Restbetrag ist vor oder zu Beginn der Reise fällig."
+        }
+      ]
+    },
+    "honeymoon-morocco": {
+      "name": "Romantische Marokko-Hochzeitsreise",
+      "duration": "10 Tage / 9 Nächte",
+      "highlights": [
+        "Nur luxuriöse Riads",
+        "Privates Wüstencamp",
+        "Heißluftballonfahrt über Marrakesch",
+        "Hammam & Spa",
+        "Kamelritt bei Sonnenuntergang"
+      ],
+      "category": "Hochzeitsreise",
+      "description": "Exklusiv für Paare entworfen, verwebt diese Hochzeitsreise Romantik in jeden einzelnen Moment. Private Suiten in Riads, ein Kerzenlicht-Dinner in der Sahara, eine Heißluftballonfahrt bei Sonnenaufgang über dem Atlas und ein Hammam-Ritual zu zweit — Marokko war noch nie so intim."
+    },
+    "8-day-marrakech-essaouira-agadir-sahara": {
+      "name": "8-tägiges Abenteuer durch Marrakesch, Essaouira, Agadir und die Sahara",
+      "duration": "8 Tage / 7 Nächte",
+      "highlights": [
+        "Kaiserliches Marrakesch & Bahia-Palast",
+        "Essaouiras atlantische Medina",
+        "Taghazout & Küste von Agadir",
+        "UNESCO Aït Ben Haddou",
+        "Todra-Schlucht & Dades-Tal",
+        "Kameltrekking zum Sonnenuntergang in Erg Chebbi",
+        "Luxus-Desert Camp unter den Sternen"
+      ],
+      "category": "Luxury Grand Tour",
+      "description": "Die ultimative große Rundreise durch den Süden Marokkos — von den Palästen und Souks von Marrakesch bis zum vom Wind umspielten Atlantikhafen Essaouira, weiter die Surfküste hinab durch Taghazout und Agadir, dann landeinwärts durch das Safranland zur UNESCO-Kasbah von Aït Ben Haddou, zu den dramatischen Schluchten von Todra und Dades und schließlich zu den majestätischen goldenen Dünen von Erg Chebbi. Acht Tage privates Reisen, handverlesene luxuriöse Riads und Hotels, eine Nacht in einem erstklassigen Wüstencamp und ein Kameltrekking unter den Sternen der Sahara.",
+      "routeCaption": "Folgen Sie der großen Rundreise — von Marrakesch hinaus an die Atlantikküste, dann über den Hohen Atlas zu den Dünen der Sahara und zurück. Tippen Sie auf jeden nummerierten Halt, um ihn zu entdecken.",
+      "included": [
+        "Luxuriöse Unterkünfte während der gesamten Reise",
+        "Tägliches Frühstück",
+        "Tägliches Abendessen",
+        "Privater, klimatisierter Transport",
+        "Professioneller englischsprachiger Fahrer",
+        "Kameltrekking in Erg Chebbi",
+        "Eine Nacht in einem luxuriösen Wüstencamp",
+        "Abholung vom Hotel & Flughafen",
+        "Rücktransfer am Ende der Tour",
+        "Kostenloses WLAN im Fahrzeug",
+        "Täglich Mineralwasser in Flaschen"
+      ],
+      "excluded": [
+        "Internationale Flüge",
+        "Mittagessen",
+        "Eintrittsgebühren für Monumente & Museen",
+        "Reiseversicherung",
+        "Optionale Aktivitäten (Paradise Valley, Quad-Biking)",
+        "Persönliche Ausgaben & Souvenirs",
+        "Trinkgelder für Fahrer & Guides"
+      ],
+      "itineraryDays": [
+        {
+          "title": "Marrakesch — Ankunft & die Rote Stadt",
+          "desc": "Ihr privater Fahrer empfängt Sie am Flughafen von Marrakesch und bringt Sie in einen traditionellen Riad im Herzen der Medina. Richten Sie sich in Ruhe ein und tauchen Sie anschließend ein in das lebendige Schauspiel des Jemaa el-Fnaa, bewundern Sie die emporragende Koutoubia-Moschee und verlieren Sie sich in den erlesenen Mosaiken des Bahia-Palasts, während die Stadt im Abendlicht erstrahlt.",
+          "stops": [
+            "Abholung am Flughafen",
+            "Traditioneller Riad",
+            "Jemaa el-Fnaa",
+            "Koutoubia-Moschee",
+            "Bahia-Palast"
+          ]
+        },
+        {
+          "title": "Marrakesch → Essaouira",
+          "desc": "Fahren Sie westwärts in Richtung Atlantik und legen Sie unterwegs einen Halt bei einer Frauenkooperative zur Arganölherstellung ein. Erreichen Sie die frische Hafenstadt Essaouira und schlendern Sie durch ihre UNESCO-gelistete Medina und den aktiven Fischereihafen, bevor der Tag mit einem goldenen Sonnenuntergang am Strand ausklingt.",
+          "stops": [
+            "Arganöl-Kooperative",
+            "Atlantikküste",
+            "Medina von Essaouira",
+            "Fischereihafen",
+            "Sonnenuntergang am Strand"
+          ]
+        },
+        {
+          "title": "Essaouira → Agadir",
+          "desc": "Folgen Sie der malerischen Küstenstraße südwärts durch das entspannte Surf-Dorf Taghazout, mit einem optionalen Abstecher zu den von Palmen gesäumten Becken des Paradise Valley, bevor Sie in Agadirs moderner Marina und an seinem langen, sonnenverwöhnten Strand ankommen.",
+          "stops": [
+            "Malerische Küstenfahrt",
+            "Taghazout",
+            "Paradise Valley (optional)",
+            "Marina von Agadir",
+            "Strand von Agadir"
+          ]
+        },
+        {
+          "title": "Agadir → Taroudant → Taliouine → Ouarzazate",
+          "desc": "Fahren Sie landeinwärts in die ummauerte Stadt Taroudant, die ‚Großmutter von Marrakesch‘, und weiter durch Taliouine — Marokkos Safranhauptstadt — sowie ihre duftenden Felder. Setzen Sie Ihre Reise nach Ouarzazate fort, dem Tor zur Wüste, und besuchen Sie die mächtige Kasbah Taourirt vor Ihrer Übernachtung.",
+          "stops": [
+            "Taroudant",
+            "Safranfelder",
+            "Kasbah Taourirt",
+            "Übernachtung in Ouarzazate"
+          ]
+        },
+        {
+          "title": "Ouarzazate → Aït Ben Haddou → Dades-Tal",
+          "desc": "Besichtigen Sie die berühmten Atlas Studios und erkunden Sie anschließend das UNESCO-gelistete Ksar Aït Ben Haddou, eine befestigte Lehmstadt, die in unzähligen Filmen zu sehen war. Weiter geht es durch das Tal der Rosen zu den kunstvoll geformten roten Felsformationen der Dades-Schluchten.",
+          "stops": [
+            "Atlas Studios",
+            "UNESCO Aït Ben Haddou",
+            "Tal der Rosen",
+            "Dades-Schluchten"
+          ]
+        },
+        {
+          "title": "Dades-Tal → Todra-Schlucht → Merzouga",
+          "desc": "Staunen Sie über die hoch aufragenden Wände des Todra-Canyons und passieren Sie traditionelle Berberdörfer auf dem Weg zum Rand der Sahara bei Erg Chebbi. Tauschen Sie das Fahrzeug gegen Kamele und reiten Sie in die Dünen zu Ihrem luxuriösen Wüstencamp, wo Sie unter dem Sternenhimmel zu Abend essen und live gespielte Berbermusik genießen.",
+          "stops": [
+            "Todra-Canyon",
+            "Berberdörfer",
+            "Dünen von Erg Chebbi",
+            "Kameltrekking",
+            "Luxuriöses Wüstencamp",
+            "Traditionelle Berbermusik"
+          ]
+        },
+        {
+          "title": "Merzouga — Ein ganzer Tag in der Sahara",
+          "desc": "Wachen Sie zu einem spektakulären Sonnenaufgang über den Dünen auf und erkunden Sie die Wüste anschließend tiefer mit dem 4x4 — bei Begegnungen mit Nomadenfamilien und berührender Gnawa-Musik. Optionale Quad-Touren und Sandboarding füllen den Nachmittag, bevor ein letzter Sonnenuntergang in der Wüste und eine Nacht in einem luxuriösen Hotel in Merzouga den Tag vollenden.",
+          "stops": [
+            "Sonnenaufgang in der Sahara",
+            "4x4-Wüstentour",
+            "Nomadenfamilien",
+            "Gnawa-Musik",
+            "Quad-Bike (optional)",
+            "Sandboarding",
+            "Sonnenuntergang",
+            "Luxushotel in Merzouga"
+          ]
+        },
+        {
+          "title": "Merzouga → Marrakesch",
+          "desc": "Die Rückreise führt Sie erneut über das Dach Marokkos — durch Alnif und die Palmenoasen des Draa-Tals, dann hinauf in das Hohe Atlasgebirge und über den eindrucksvollen Tizi-n-Tichka-Pass, bevor Sie wieder in Marrakesch ankommen.",
+          "stops": [
+            "Alnif",
+            "Draa-Tal",
+            "Hohes Atlasgebirge",
+            "Tizi-n-Tichka-Pass",
+            "Ankunft in Marrakesch"
+          ]
+        }
+      ],
+      "gallery": [
+        {
+          "caption": "Marrakesch — die Rote Stadt"
+        },
+        {
+          "caption": "Essaouira — windumtoster Atlantikhafen"
+        },
+        {
+          "caption": "Taghazout — die Surfküste"
+        },
+        {
+          "caption": "Agadir — Marina & Strand"
+        },
+        {
+          "caption": "Aït Ben Haddou — UNESCO-Ksar"
+        },
+        {
+          "caption": "Das gewundene Dades-Tal"
+        },
+        {
+          "caption": "Die hoch aufragende Todra-Schlucht"
+        },
+        {
+          "caption": "Die Dünen von Erg Chebbi bei Merzouga"
+        },
+        {
+          "caption": "Unser luxuriöses Wüstencamp in der Dämmerung"
+        },
+        {
+          "caption": "Goldene Dünen bei Sonnenaufgang"
+        },
+        {
+          "caption": "Süßer Minztee mit unseren Gästen"
+        },
+        {
+          "caption": "Ein Sahara-Sonnenuntergang mit unseren Reisenden"
+        }
+      ],
+      "faq": [
+        {
+          "question": "Ist dies eine private Tour?",
+          "answer": "Ja — jede Abreise ist vollständig privat und ausschließlich für Ihre Gruppe reserviert. Sie reisen mit Ihrem eigenen, engagierten englischsprachigen Fahrer und bestimmen das Tempo gemeinsam, ohne dass Fremde Ihrer Gruppe beitreten."
+        },
+        {
+          "question": "Welche Unterkunftsqualität ist inbegriffen?",
+          "answer": "Durchgehend handverlesene luxuriöse Riads und Hotels sowie eine unvergessliche Nacht in einem Premium-Wüstencamp in Erg Chebbi mit richtigen Betten und eigenen Badezimmern."
+        },
+        {
+          "question": "Wann ist die beste Reisezeit für diese Tour?",
+          "answer": "Sie findet ganzjährig statt. Der Frühling (März–Mai) und der Herbst (September–November) sind ideal, mit warmen Tagen und angenehmen Wüstennächten. Der Winter ist klar und frisch; im Sommer ist es im Landesinneren heiß, während die Atlantikküste angenehm bleibt."
+        },
+        {
+          "question": "Ist die Tour für Familien und ältere Reisende geeignet?",
+          "answer": "Absolut. Der Reiseverlauf ist privat und lässt sich mühelos an Kinder oder ein gemächlicheres Tempo anpassen. Das Kameltrekking ist optional und kurz, und auf Wunsch können 4x4-Transfers zum Camp organisiert werden."
+        },
+        {
+          "question": "Wie bestätige ich meine Buchung?",
+          "answer": "Schreiben Sie uns per WhatsApp, um Ihre Reisedaten zu sichern, und wir stimmen die Details individuell auf Sie ab. Eine kleine Anzahlung reserviert Ihre Tour, der Restbetrag ist vor oder zu Beginn der Reise fällig."
+        }
+      ]
+    },
+    "family-morocco-adventure": {
+      "name": "Familienabenteuer in Marokko",
+      "duration": "9 Tage / 8 Nächte",
+      "highlights": [
+        "Familienaktivitäten in Marrakesch",
+        "Maultierritt im Atlasgebirge",
+        "Kamelwanderung in der Wüste",
+        "Hammam für Kinder",
+        "Schlangenbeschwörer & Geschichtenerzähler"
+      ],
+      "category": "Familie",
+      "description": "Marokko verzaubert Kinder und Erwachsene gleichermaßen. Diese Familienreise ist mit viel Feingefühl und einem angenehmen Tempo gestaltet, mit Erlebnissen, die jedes Alter begeistern — beim Kamelreiten in der Sahara, beim Erkunden uralter Kasbahs, beim Probieren von Streetfood in der Medina und beim Erlernen traditioneller Handwerkskunst von Berber-Handwerkern."
+    }
+  }
+}

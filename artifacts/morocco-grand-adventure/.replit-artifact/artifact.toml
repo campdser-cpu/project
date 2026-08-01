@@ -1,0 +1,27 @@
+kind = "web"
+previewPath = "/"
+title = "Morocco Grand Adventure"
+version = "1.0.0"
+id = "artifacts/morocco-grand-adventure"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 19953
+
+[services.development]
+run = "pnpm --filter @workspace/morocco-grand-adventure run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/morocco-grand-adventure", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/morocco-grand-adventure/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "19953"
+BASE_PATH = "/"

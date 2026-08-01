@@ -1,0 +1,912 @@
+{
+  "categories": {
+    "Imperial Cities": "Keizerlijke steden",
+    "Sahara Desert": "Sahara-woestijn",
+    "Oases & Valleys": "Oases & valleien",
+    "Mountains": "Bergen",
+    "Beaches": "Stranden",
+    "Northern Morocco": "Noord-Marokko"
+  },
+  "experiences": [
+    "Sahara-woestijntours",
+    "Luxe woestijnkampen",
+    "4×4-avonturen",
+    "Kameeltochten",
+    "Atlasgebergte",
+    "De Blauwe Stad Chefchaouen",
+    "Keizerlijke steden",
+    "Surftrips aan de Atlantische kust",
+    "Surfen & kitesurfen",
+    "Marokkaanse keuken",
+    "Culturele & Berberervaringen",
+    "Fotografietours",
+    "Honeymoonpakketten",
+    "Familievakanties"
+  ],
+  "faq": [
+    {
+      "question": "Wat is de beste tijd om Marokko te bezoeken?",
+      "answer": "De lente (maart–mei) en de herfst (september–november) bieden de meest aangename temperaturen. Voor de Sahara is oktober tot april ideaal — minder extreme hitte. De kustgebieden zijn het hele jaar door aangenaam."
+    },
+    {
+      "question": "Heb ik een visum nodig om Marokko binnen te komen?",
+      "answer": "Burgers van de VS, Canada, het VK, Australië, de EU en de meeste westerse landen hebben geen visum nodig voor verblijven tot 90 dagen. Zorg ervoor dat uw paspoort bij aankomst nog minstens 6 maanden geldig is."
+    },
+    {
+      "question": "Is Marokko veilig om te reizen?",
+      "answer": "Marokko is een van de veiligste bestemmingen in Afrika en de Arabische wereld. Onze lokale gidsen zorgen ervoor dat u de souks en woestijnroutes in alle vertrouwen en met volledige gemoedsrust verkent."
+    },
+    {
+      "question": "Wat moet ik meenemen voor een woestijntour?",
+      "answer": "Lichte lagen (overdag is de woestijn heet, ’s nachts koud), een sjaal tegen wind en zon, goede zonnebrandcrème, een zonnebril, een zaklamp, comfortabele wandelschoenen en een powerbank. Wij voorzien slaapzakken voor de desert camps."
+    },
+    {
+      "question": "Zijn jullie tours privé of in groep?",
+      "answer": "Wij specialiseren ons in privé, op maat gemaakte tours die volledig zijn afgestemd op uw planning en voorkeuren. Daarnaast bieden wij ook kleinschalige luxe groepsreizen op geselecteerde data. Alles is bespreekbaar."
+    },
+    {
+      "question": "Welke talen spreken jullie gidsen?",
+      "answer": "Onze professionele gidsen spreken Engels, Frans, Spaans, Arabisch, Berbers, Italiaans en Portugees. Geef uw voorkeurstaal door bij het boeken."
+    },
+    {
+      "question": "Hoe kan ik betalen?",
+      "answer": "Wij accepteren bankoverschrijving, PayPal en contant geld (MAD/EUR/USD). Een aanbetaling van 20% bevestigt uw reservering; het resterende bedrag betaalt u bij aankomst. Stuur ons een WhatsApp voor een persoonlijke offerte."
+    },
+    {
+      "question": "Kunnen jullie rekening houden met dieetwensen?",
+      "answer": "Absoluut — vegetarische, veganistische, glutenvrije, halal- en allergievriendelijke menu’s worden allemaal verzorgd. Laat het ons weten bij uw boeking."
+    }
+  ],
+  "destinations": {
+    "marrakech": {
+      "name": "Marrakesh",
+      "shortDesc": "De Rode Stad — levendige medina’s, het Jemaa el-Fnaa-plein, luxe riads.",
+      "description": "Marrakesh is een betoverende mix van eeuwenoude souks, restaurants van wereldklasse en weelderige riads. Van de zintuiglijke drukte van Jemaa el-Fnaa tot de rust van de Majorelle Tuin biedt de Rode Stad een ervaring die u voor altijd bijblijft.",
+      "bestTime": "mrt – mei, sep – nov",
+      "region": "Centraal-Marokko",
+      "highlights": [
+        "Jemaa el-Fnaa-plein",
+        "Majorelle Tuin",
+        "Bahia-paleis",
+        "Souks van de medina",
+        "Hammam & spa"
+      ]
+    },
+    "fes": {
+      "name": "Fes",
+      "shortDesc": "Het culturele hart — de oudste universiteit ter wereld en een middeleeuwse medina.",
+      "description": "Fes is de spirituele en intellectuele hoofdstad van Marokko. De door UNESCO beschermde medina, Fes el-Bali, behoort tot de grootste nog levende middeleeuwse steden ter wereld. De leerlooierij Chouara, de Universiteit van Al-Qarawiyyin en de doolhofachtige steegjes maken haar volstrekt uniek.",
+      "bestTime": "Mar – mei, sep – nov",
+      "region": "Noord-Marokko",
+      "highlights": [
+        "Medina van Fes el-Bali",
+        "Leerlooierij Chouara",
+        "Universiteit van Al-Qarawiyyin",
+        "Medersa Bou Inania",
+        "Bab Bou Jeloud"
+      ]
+    },
+    "meknes": {
+      "name": "Meknès",
+      "shortDesc": "De vergeten keizerlijke stad — imposante poorten en Romeinse ruïnes in de nabijheid.",
+      "description": "Vaak overschaduwd door haar beroemdere zusters, beloont Meknès de nieuwsgierige reiziger met de monumentale poort Bab Mansour, de sfeervolle medina en gemakkelijke toegang tot de Romeinse ruïnes van Volubilis — een UNESCO-werelderfgoedsite.",
+      "bestTime": "mrt – mei, sep – nov",
+      "region": "Noord-Marokko",
+      "highlights": [
+        "Poort Bab Mansour",
+        "Mausoleum van Moulay Ismail",
+        "Romeinse ruïnes van Volubilis",
+        "Heri es-Souani",
+        "Medina"
+      ]
+    },
+    "casablanca": {
+      "name": "Casablanca",
+      "shortDesc": "De kosmopolitische hoofdstad van Marokko — de Hassan II-moskee en art-decostraten.",
+      "description": "De grootste stad van Marokko verenigt Franse art-decoarchitectuur met islamitische grandeur. De Hassan II-moskee — de derde grootste ter wereld — verheft zich majestueus boven de Atlantische Oceaan. De Corniche, Rick’s Café en het bruisende nachtleven maken Casablanca tot een onweerstaanbare tussenstop.",
+      "bestTime": "Het hele jaar door",
+      "region": "Atlantische Kust",
+      "highlights": [
+        "Hassan II-moskee",
+        "Corniche",
+        "Art-decoarchitectuur",
+        "Morocco Mall",
+        "La Sqala"
+      ]
+    },
+    "rabat": {
+      "name": "Rabat",
+      "shortDesc": "De hoofdstad van Marokko — de Kasbah van de Oudayas en de Hassan-toren.",
+      "description": "Rabat, de hoofdstad van Marokko, ademt een serene, vorstelijke elegantie. De Kasbah van de Oudayas, hoog boven de Atlantische Oceaan, en de onvoltooide Hassan-toren behoren tot de absolute hoogtepunten. De moderne stad gaat er prachtig samen met haar eeuwenoude medina.",
+      "bestTime": "Mar – Jun, Sep – Nov",
+      "region": "Atlantische kust",
+      "highlights": [
+        "Kasbah van de Oudayas",
+        "Hassan-toren",
+        "Mausoleum van Mohammed V",
+        "Necropolis van Chellah",
+        "Medina"
+      ]
+    },
+    "merzouga": {
+      "name": "Merzouga",
+      "shortDesc": "Toegangspoort tot Erg Chebbi — de meest indrukwekkende duinen van Marokko.",
+      "description": "Merzouga is het kroonjuweel van Marokko’s woestijnbeleving. Het dorp ligt aan de voet van Erg Chebbi, een zee van goudkleurige zandduinen die tot wel 150 meter hoog oprijzen. Kameeltochten, sterrenkijken vanuit luxe tentenkampen en de stilte van de Sahara creëren herinneringen voor het leven.",
+      "bestTime": "Okt – Apr",
+      "region": "Sahara-woestijn",
+      "highlights": [
+        "Duinen van Erg Chebbi",
+        "Kameeltochten",
+        "Luxe woestijnkampen",
+        "Sterrenkijken",
+        "Berberdorpen"
+      ]
+    },
+    "erg-chebbi": {
+      "name": "Erg Chebbi",
+      "shortDesc": "Marokko’s meest iconische zandzee — majestueuze duinen bij zonsopgang.",
+      "description": "Erg Chebbi is een van Marokko’s twee grote ergs — uitgestrekte zeeën van zandduinen. Over een lengte van 22 km en een breedte van 5 km veranderen de duinen van kleur, van oranje naar goud en vervolgens naar karmozijnrood, mee met het spel van het licht. Een zonsopgang hier, te paard op een kameel, behoort tot de mooiste reiservaringen ter wereld.",
+      "bestTime": "Oct – Apr",
+      "region": "Sahara",
+      "highlights": [
+        "Kameeltrektocht bij zonsopgang",
+        "Dune Boarding",
+        "Berbermuziekavonden",
+        "4x4-woestijnrit",
+        "Diner in een luxekamp"
+      ]
+    },
+    "ouarzazate": {
+      "name": "Ouarzazate",
+      "shortDesc": "Het Hollywood van Afrika — filmsets, kasbahs en woestijnlandschappen.",
+      "description": "Bekend als de poort naar de Sahara, heeft Ouarzazate onderdak geboden aan kaskrakers als Lawrence of Arabia en Game of Thrones. Bezoek de studio’s van Atlas Film Corporation, de iconische Taourirt Kasbah, en gebruik de stad als uitvalsbasis voor dagtochten naar Aït Ben Haddou.",
+      "bestTime": "Sep – May",
+      "region": "Zuid-Marokko",
+      "highlights": [
+        "Atlas Film Studios",
+        "Taourirt Kasbah",
+        "Aït Ben Haddou (30min)",
+        "Draa Valley",
+        "Fint Oasis"
+      ]
+    },
+    "ait-ben-haddou": {
+      "name": "Aït Ben Haddou",
+      "shortDesc": "Op de UNESCO-lijst opgenomen versterkt dorp — de meest gefotografeerde kasbah van Marokko.",
+      "description": "Deze UNESCO-werelderfgoedsite is een adembenemend voorbeeld van aardlemen architectuur uit Zuid-Marokko. De doolhofachtige ksar verscheen in tientallen Hollywoodfilms. De rivier oversteken via stapstenen en naar de bovenste graanschuur klimmen voor uitzicht over de vallei is een onvergetelijke ervaring.",
+      "bestTime": "Sep – May",
+      "region": "Zuid-Marokko",
+      "highlights": [
+        "UNESCO-ksar",
+        "Filmlocatie-tour",
+        "Fotografie bij zonsopgang",
+        "Bezoeken aan Berberfamilies",
+        "Aardewerkworkshops"
+      ]
+    },
+    "zagora": {
+      "name": "Zagora",
+      "shortDesc": "Toegangspoort tot Erg Chigaga en de eeuwenoude Draa-vallei.",
+      "description": "Zagora markeert het begin van de échte Saharabeleving in de Draa-vallei. Het beroemde bord ‘Timbuktu 52 Days by Camel’ vangt haar geest perfect. Van hieruit bieden jeepexcursies naar het afgelegen Erg Chigaga — ver weg van de toeristische drukte — een werkelijk ruige woestijnervaring.",
+      "bestTime": "Okt – Mrt",
+      "region": "Zuid-Marokko",
+      "highlights": [
+        "Duinen van Erg Chigaga",
+        "Oases van de Draa-vallei",
+        "Berberkampen",
+        "Kameeltochten",
+        "Dadelpalmgaarden"
+      ]
+    },
+    "dades-valley": {
+      "name": "Dadesvallei",
+      "shortDesc": "Spectaculaire kloven, eeuwenoude kasbahs en rozengeurende oases.",
+      "description": "Bekend als de Vallei van Duizend Kasbahs biedt de Dadesvallei indrukwekkende rotswanden, kronkelende bergwegen en weelderige groene oases. De rotsformatie Monkey Fingers is wereldberoemd, en elk jaar in mei vindt in de vallei het Rozenfestival plaats.",
+      "bestTime": "Mrt – Nov",
+      "region": "Zuid-Marokko",
+      "highlights": [
+        "Dadeskloof",
+        "Rotsen van Monkey Fingers",
+        "Rozenfestival (mei)",
+        "Eeuwenoude kasbahs",
+        "Trektochten door de vallei"
+      ]
+    },
+    "todra-gorge": {
+      "name": "Todrakloof",
+      "shortDesc": "Torenhoge canyonwanden van 300 m — een paradijs voor rotsklimmers en trektochten.",
+      "description": "De Todrakloof is een van de meest indrukwekkende natuurwonderen van Marokko — steile kalkstenen wanden rijzen 300 meter boven een kristalheldere rivier uit. Rotsklimmers komen van over de hele wereld, terwijl wandelaars de kloof diep het Hoge Atlasgebergte in kunnen volgen. Een bezoek bij zonsopgang, wanneer het licht de wanden in goud verandert, is magisch.",
+      "bestTime": "Mrt – Nov",
+      "region": "Zuid-Marokko",
+      "highlights": [
+        "Rotsklimmen",
+        "Wandeling door de kloof",
+        "Berberse gastenverblijven",
+        "Fotografie",
+        "Zonsopgangsuitzichten"
+      ]
+    },
+    "skoura": {
+      "name": "Skoura-oase",
+      "shortDesc": "De mooiste oase van Marokko — een 1.000 jaar oude palmenoase.",
+      "description": "De oase van Skoura is een groen wonder in het pre-Sahariaanse landschap. Meer dan duizend jaar oud, verbergt haar dichte palmenoase eeuwenoude kasbahs, waaronder de schitterende Amerhidil. Paardrijtochten en fietstochten door de palmeraie behoren tot de meest serene ervaringen van Marokko.",
+      "bestTime": "Sep – Mei",
+      "region": "Zuid-Marokko",
+      "highlights": [
+        "Amerhidil Kasbah",
+        "Fietsen door de palmeraie",
+        "Paardrijden",
+        "Vogels spotten",
+        "Berberdorpen"
+      ]
+    },
+    "roses-valley": {
+      "name": "Vallei van de Rozen",
+      "shortDesc": "De meest geurende vallei van Marokko — bloeit elke april en mei.",
+      "description": "Genesteld tussen de Hoge Atlas en de Anti-Atlas komt de Vallei van de Rozen (Vallée des Roses) elk voorjaar tot leven wanneer de damascusroos in bloei staat. Het jaarlijkse Rozenfestival in Kelaat M'Gouna is een vreugdevolle viering van kleur, muziek en de geur van rozenwater.",
+      "bestTime": "apr – mei (Rozenfestival)",
+      "region": "Zuid-Marokko",
+      "highlights": [
+        "Rozenfestival",
+        "Rozenwaterdistilleerderij",
+        "Kasbah van Kelaat M'Gouna",
+        "Wandelen door de vallei",
+        "Arganoliecoöperaties"
+      ]
+    },
+    "draa-valley": {
+      "name": "Draa-vallei",
+      "shortDesc": "De langste riviervallei van Marokko — dadelpalmen, kasbahs en eeuwenoude handelsroutes.",
+      "description": "De Draa-vallei strekt zich meer dan 200 km uit van Ouarzazate tot aan de Saharaduinen bij Zagora. Ooit trokken oude karavanen met goud en zout door deze corridor van oases. De weg volgt een betoverend ritme van palmenbos, kasbah, palmenbos, onderbroken door dorpen waar de tijd traag voortglijdt.",
+      "bestTime": "Okt – Apr",
+      "region": "Zuid-Marokko",
+      "highlights": [
+        "Kasbah van Agdez",
+        "Groen Aardewerk van Tamegroute",
+        "Wandelingen door palmenbossen",
+        "Oude ksour",
+        "Duinen van Zagora"
+      ]
+    },
+    "chefchaouen": {
+      "name": "Chefchaouen",
+      "shortDesc": "De Blauwe Parel — de blauwgekleurde medina in het Rifgebergte, geliefd op Instagram.",
+      "description": "Genesteld in het Rifgebergte is Chefchaouen de meest fotogenieke stad van Marokko. Elke muur, trap en deuropening is geschilderd in talloze tinten blauw — een oceaan van rust die dit tot een van de meest serene plekken van het land maakt. De nabijgelegen watervallen van Akchour en de Goddelijke Brug zijn spectaculaire uitstapjes voor een dag.",
+      "bestTime": "Mar – Mei, Sep – Nov",
+      "region": "Noord-Marokko",
+      "highlights": [
+        "Blauwe medina",
+        "Plaza Uta el-Hammam",
+        "Bronnen van Ras el-Ma",
+        "Watervallen van Akchour",
+        "Wandelingen in het Rifgebergte"
+      ]
+    },
+    "imlil": {
+      "name": "Imlil",
+      "shortDesc": "Poort naar Toubkal — basis voor de beklimming van de hoogste top van Marokko.",
+      "description": "Imlil is het vertrekpunt voor trekkings naar Jebel Toubkal (4.167m), de hoogste bergtop van Noord-Afrika. Het indrukwekkende Berberdorp ligt op 1.740m in de Hoge Atlas en wordt omringd door walnootgaarden, appelboomgaarden en traditionele dorpen. De luxueuze Kasbah du Toubkal biedt buitengewone gastvrijheid in de bergen.",
+      "bestTime": "Apr – Oct",
+      "region": "Hoge Atlas",
+      "highlights": [
+        "Trek naar de top van Toubkal",
+        "Verblijf in Berberdorpen",
+        "Mule trekking",
+        "Watervallen van Setti Fatma",
+        "Kooklessen in de bergen"
+      ]
+    },
+    "ourika-valley": {
+      "name": "Ourikavallei",
+      "shortDesc": "Weelderige vallei op een uur van Marrakech — watervallen en Berbermarkten.",
+      "description": "De Ourikavallei is de perfecte dagtrip vanuit Marrakech — slechts een uur rijden, en toch een wereld van verschil. Getrapte tuinen vloeien over de hellingen van de Atlas, argancoöperaties bieden proeverijen aan en de waterval van Setti Fatma beloont u na een korte wandeling. De Berbermarkt op maandag in Aghbalou is bijzonder levendig.",
+      "bestTime": "Het hele jaar door",
+      "region": "Hoge Atlas",
+      "highlights": [
+        "Watervallen van Setti Fatma",
+        "Berbermarkt",
+        "Argancoöperatie",
+        "Kruidentuinen",
+        "Lunch in restaurants in de vallei"
+      ]
+    },
+    "ouzoud": {
+      "name": "Watervallen van Ouzoud",
+      "shortDesc": "Marokko’s meest spectaculaire watervallen — Berberapen en regenbogen.",
+      "description": "De watervallen van Ouzoud zijn met 110 meter de hoogste van Noord-Afrika en storten in een reeks van terrasvormige treden neer in een turquoise bassin. Families Berberapen spelen tussen de omliggende olijfbomen, terwijl de nevel blijvende regenbogen vormt. Lokale molens malen er graan, precies zoals ze dat al eeuwen doen.",
+      "bestTime": "mrt – mei, sep – nov",
+      "region": "Midden-Atlas",
+      "highlights": [
+        "Waterval van 110 m",
+        "Berberapen",
+        "Boottocht onder de watervallen",
+        "Hammam",
+        "Olijfolieproeverij"
+      ]
+    },
+    "ifrane": {
+      "name": "Ifrane & het Cederbos",
+      "shortDesc": "De Zwitserland van Marokko — dennenbossen en wilde berberapen.",
+      "description": "Ook wel het 'Kleine Zwitserland' genoemd, Ifrane is een door de Fransen aangelegd bergresort met chaletachtige architectuur en frisse berglucht. In het nabijgelegen cederbos van Azrou leven honderden wilde berberapen die bezoekers tot op korte afstand benaderen. In de winter verandert sneeuw de regio in een geliefde skibestemming.",
+      "bestTime": "Apr – Okt (zomer), Dec – Feb (sneeuw)",
+      "region": "Midden-Atlas",
+      "highlights": [
+        "Cederbos van Azrou",
+        "Berberapen",
+        "Nationaal Park Ifrane",
+        "Skiën bij Mischliffen",
+        "Lac Aaoua"
+      ]
+    },
+    "essaouira": {
+      "name": "Essaouira",
+      "shortDesc": "Door de wind geteisterde parel aan zee — blauwe boten, verse zeevruchten en Gnawa-muziek.",
+      "description": "Essaouira is de meest sfeervolle havenstad van Marokko. De door UNESCO beschermde medina, geteisterd door de Atlantische passaatwinden, is een doolhof van witte en blauwe gebouwen. Het beroemde Gnawa World Music Festival vult de straten elke juni met ritme. Het strand is van wereldklasse voor kitesurfen.",
+      "bestTime": "Het hele jaar door",
+      "region": "Atlantische Kust",
+      "highlights": [
+        "Stadsmuren & medina",
+        "Gnawa-muziek",
+        "Kitesurfen",
+        "Zeevruchten aan de haven",
+        "Joodse wijk Mellah"
+      ]
+    },
+    "agadir": {
+      "name": "Agadir",
+      "shortDesc": "De moderne badplaats van Marokko — goudkleurige stranden en zon, het hele jaar door.",
+      "description": "Agadir biedt die klassieke strandvakantie die Marokko zelden in de schijnwerpers zet — 300 dagen zon, een schitterende halvemaanvormige baai van 8 km en uitstekende resorts. Na de aardbeving van 1960 heropgebouwd, ademt de stad een moderne Europese sfeer, terwijl ze tegelijk de toegangspoort vormt tot de ongerepte Souss-Massa-vlakte.",
+      "bestTime": "Het hele jaar door",
+      "region": "Atlantische Kust",
+      "highlights": [
+        "Strand van Agadir",
+        "Souk el Had",
+        "Kasbahruïnes bij zonsondergang",
+        "Vogelreservaat Souss-Massa",
+        "Marina"
+      ]
+    },
+    "taghazout": {
+      "name": "Taghazout",
+      "shortDesc": "Surfspot van wereldklasse — golven, yogaretraites en hippievibes.",
+      "description": "Ooit een rustig Amazigh vissersdorp, is Taghazout uitgegroeid tot hét surfmekka van Afrika. Anchor Point, Killer Point en Hash Point zijn legendarische breaks die het hele jaar door surfers van heinde en verre aantrekken. Het dorp heeft zijn heerlijk ontspannen bohemien sfeer behouden, met yogaretraites, verse tagines met vis en intens kleurende zonsondergangen.",
+      "bestTime": "Okt – Apr (surfseizoen)",
+      "region": "Atlantische kust",
+      "highlights": [
+        "Anchor Point (surf)",
+        "Killer Point (surf)",
+        "Surflessen",
+        "Yogaretraites",
+        "Sidi Kaouki Beach"
+      ]
+    },
+    "legzira": {
+      "name": "Legzira Beach",
+      "shortDesc": "Dramatische bogen van rood gesteente die uit de Atlantische Oceaan oprijzen — een van Afrika's mooiste stranden.",
+      "description": "Legzira's buitengewone natuurlijke rotsbogen, gevormd door eeuwenlange erosie door de Atlantische Oceaan, omlijsten een van de meest spectaculaire stranden van Marokko. De rode kliffen gloeien roze en oranje in de zonsondergang. Het strand is afgelegen, nog relatief onontdekt en ronduit spectaculair — een droom voor elke fotograaf.",
+      "bestTime": "Apr – Oct",
+      "region": "Atlantische kust",
+      "highlights": [
+        "Natuurlijke rotsbogen",
+        "Zonsondergangfotografie",
+        "Afgelegen zwemmen",
+        "Stad Sidi Ifni (15min)",
+        "Wandeling langs de Atlantische kliffen"
+      ]
+    },
+    "el-jadida": {
+      "name": "El Jadida",
+      "shortDesc": "Portugese citadel aan de Atlantische Oceaan — de UNESCO-genoteerde Citerne Portugaise.",
+      "description": "De UNESCO-genoteerde Portugese Citadel van El Jadida is een van de meest indrukwekkende kustverdedigingen van Marokko. De buitengewone ondergrondse cisternen, gebouwd in 1514, kenmerken zich door dramatische gewelfde plafonds die weerspiegeld worden in een ondiepe waterpartij — ze waren te zien in Orsons Welles' Othello. Het strand strekt zich kilometerslang uit.",
+      "bestTime": "Het hele jaar door",
+      "region": "Atlantische Kust",
+      "highlights": [
+        "Portugese Citadel",
+        "Citerne Portugaise",
+        "Strand van El Jadida",
+        "Sidi Bouzid-strand",
+        "Erfgoed van Mazagan"
+      ]
+    },
+    "tangier": {
+      "name": "Tanger",
+      "shortDesc": "Poort tussen Afrika en Europa — de Straat van Gibraltar, kunst en intriges.",
+      "description": "Tanger is altijd een stad van intriges geweest — waar Afrika en Europa elkaar aankijken over een smalle strook water. Schrijvers van de Beat Generation, kunstenaars en spionnen hebben hier allemaal hun sporen achtergelaten. De medina, de kasbah en Café Hafa, hoog boven de Straat gelegen, geven de stad een onweerstaanbare sfeer.",
+      "bestTime": "Mar – Oct",
+      "region": "Noord-Marokko",
+      "highlights": [
+        "Kasbah Museum",
+        "Kaap Spartel",
+        "Herculesgrotten",
+        "Café Hafa",
+        "Petit Socco"
+      ]
+    },
+    "tetouan": {
+      "name": "Tétouan",
+      "shortDesc": "Het kleine Jeruzalem — de witste medina van Spanje en een Andalusisch erfgoed.",
+      "description": "De door UNESCO erkende medina van Tétouan is wellicht de best bewaarde van Marokko. Haar uitgesproken Andalusische invloed — meegebracht door Moorse vluchtelingen die in 1492 uit Spanje werden verdreven — geeft haar een bijzonder Europees karakter. Het Koninklijk Paleis, het Museum van Marokkaanse Kunst en het levendige ambachtskwartier mag u niet missen.",
+      "bestTime": "Mar – okt",
+      "region": "Noord-Marokko",
+      "highlights": [
+        "UNESCO-medina",
+        "Spaanse wijk",
+        "Tuin van het Koninklijk Paleis",
+        "Museum van Marokkaanse Kunst",
+        "Ambachtelijke souks"
+      ]
+    },
+    "akchour": {
+      "name": "Akchour & God's Bridge",
+      "shortDesc": "Wilde kloven, turquoise poelen en een natuurlijke stenen brug bij Chefchaouen.",
+      "description": "Akchour is het ruige tegenbeeld van Chefchaouen — een verborgen vallei van turquoisegroene rivieren, diepe kloven en de natuurlijke kalkstenen boog die bekendstaat als 'God's Bridge'. Twee spectaculaire wandelingen leiden naar de kleine en grote watervallen, door bossen van ceder en steeneik. Vaak te combineren met een bezoek aan Chefchaouen.",
+      "bestTime": "Apr – Oct",
+      "region": "Noord-Marokko",
+      "highlights": [
+        "God's Bridge Natural Arch",
+        "Akchour Waterfalls",
+        "Zwemmen in kloofpoelen",
+        "Rif-boswandeling",
+        "Berberlunch"
+      ]
+    },
+    "nkob": {
+      "name": "Nkob",
+      "shortDesc": "Het dorp van 45 kasbahs — afgelegen, ongerept en spectaculair mooi.",
+      "description": "Nkob is het best bewaarde geheim van Marokko — een afgelegen dorp in de Jbel Saghro dat bekendstaat als ‘het dorp van 45 kasbahs’. Slechts weinig reizigers komen er, maar het landschap van vulkanisch gesteente, palmoases en eeuwenoude vestingen is ronduit uitzonderlijk. De nabijgelegen tochten door de Jbel Saghro bieden een indrukwekkend alternatief voor de Sahara.",
+      "bestTime": "Sep – May",
+      "region": "Zuid-Marokko",
+      "highlights": [
+        "45 Kasbahs",
+        "Trektocht door de Jbel Saghro",
+        "Wild kamperen",
+        "Berbertradities",
+        "Sterrenkijken onder een donkere hemel"
+      ]
+    },
+    "mirleft": {
+      "name": "Mirleft",
+      "shortDesc": "Ongerept surfdorp tussen Tiznit en Sidi Ifni — de wilde Atlantische kust.",
+      "description": "Mirleft ligt tussen Tiznit en Sidi Ifni, aan een ruige strook Atlantische kust die op de allermooiste manier aan het einde van de wereld lijkt te liggen. Een reeks ongerepte stranden — Marabout, Safarkhal, Sidi Mohammed Ben Abdallah — biedt stilte, surf en zonsondergangen die de hemel in vuur en vlam zetten.",
+      "bestTime": "Het hele jaar door",
+      "region": "Atlantische Kust",
+      "highlights": [
+        "Wilde Atlantische Stranden",
+        "Zonsondergangen op de Kliffen",
+        "Surfen",
+        "Snorkelen",
+        "Wandelingen door Arganbossen"
+      ]
+    }
+  },
+  "tours": {
+    "3-day-sahara-marrakech": {
+      "name": "3-daagse luxe Sahara-tour vanuit Marrakech",
+      "duration": "3 dagen / 2 nachten",
+      "highlights": [
+        "Oversteek van het Atlasgebergte",
+        "Aït Ben Haddou (UNESCO)",
+        "Dadesvallei",
+        "Luxe kamp in Merzouga",
+        "Kameeltocht bij zonsondergang"
+      ],
+      "category": "Woestijn & Avontuur",
+      "description": "Het klassieke Marokkaanse avontuur, samengebald in drie onvergetelijke dagen. Steek het Atlasgebergte over, verken de meest gefotografeerde kasbah ter wereld, slaap onder de sterren van de Sahara in een luxe tentenkamp en trek bij zonsondergang op een kameel over de gouden duinen van Erg Chebbi."
+    },
+    "5-day-imperial-cities": {
+      "name": "5-daagse Keizerlijke Steden & Woestijn",
+      "duration": "5 Dagen / 4 Nachten",
+      "highlights": [
+        "Medina van Marrakech",
+        "Fes el-Bali",
+        "Blauwe Stad Chefchaouen",
+        "Sahara",
+        "Atlasgebergte"
+      ],
+      "category": "Cultureel",
+      "description": "Dompel uzelf onder in de vier keizerlijke steden van Marokko — Marrakech, Meknès, Fes en de Blauwe Stad Chefchaouen — voordat u zuidwaarts trekt voor een nacht onder de sterren in de Sahara."
+    },
+    "7-day-imperial-cities-sahara-escape": {
+      "name": "7-daagse Keizerlijke Steden & Sahara Ontsnapping",
+      "duration": "7 dagen / 6 nachten",
+      "highlights": [
+        "Hoge Atlas & Tizi n'Tichka-pas",
+        "Aït Ben Haddou (UNESCO)",
+        "Dadesvallei & Todra-kloof",
+        "Kameeltrek bij zonsondergang in Erg Chebbi",
+        "Luxe woestijnkamp onder de sterren",
+        "Rondleiding door Fes, de keizerlijke stad",
+        "Cederbos & berberapen"
+      ],
+      "category": "Grand Tour",
+      "description": "Beleef het allerbeste van Marokko in zeven onvergetelijke dagen. Steek het spectaculaire Hoge Atlasgebergte over via de Tizi n'Tichka-pas, verken de UNESCO-kasbah van Aït Ben Haddou, volg de weg door de Dadesvallei en de indrukwekkende Todra-kloof, en trek vervolgens per kameel over de gouden duinen van Erg Chebbi naar een luxe woestijnkamp onder een hemel vol sterren. Reis noordwaarts via de Zizvallei en cederbossen naar de middeleeuwse keizerlijke stad Fes, alvorens via enkele van de meest adembenemende landschappen van het land terug te keren naar Marrakech.",
+      "routeCaption": "Een grootse rondreis die begint en eindigt in Marrakech — zuidwaarts over de Hoge Atlas naar Aït Ben Haddou en de kloven van Dades en Todra, verder naar de gouden duinen van Merzouga, daarna noordwaarts door de cederbossen naar het keizerlijke Fes, voor een schilderachtige terugkeer. Tik op een genummerde stop om deze te ontdekken.",
+      "included": [
+        "Privévoertuig met airconditioning",
+        "Professionele Engelssprekende chauffeur",
+        "Brandstof",
+        "Luxe woestijnkamp",
+        "Kameeltrek in Erg Chebbi",
+        "Privékamers gedurende de hele reis",
+        "Dagelijks ontbijt",
+        "Diners volgens het reisschema",
+        "Lokale gids in Fes",
+        "Sandboarden",
+        "Hotel pick-up & drop-off",
+        "Gratis wifi in de meeste hotels"
+      ],
+      "excluded": [
+        "Internationale vluchten",
+        "Lunches",
+        "Dranken",
+        "Toegangsprijzen voor monumenten & musea",
+        "Fooien & gratuïteiten",
+        "Persoonlijke uitgaven",
+        "Optionele quad bikes & buggies"
+      ],
+      "itineraryDays": [
+        {
+          "title": "Marrakech → Aït Ben Haddou → Ouarzazate → Dadesvallei",
+          "desc": "Ontmoet uw privéchauffeur in Marrakech en reis over het spectaculaire Hoge Atlasgebergte via de Tizi n'Tichka-pas. Bezoek de UNESCO-werelderfgoedsite Aït Ben Haddou en rijd vervolgens door naar Ouarzazate, beroemd om zijn filmstudio's. Rijd door de Skoura-oase en de Rozenvallei voordat u voor de nacht aankomt in de prachtige Dadesvallei.",
+          "stops": [
+            "Hoge Atlasgebergte",
+            "Tizi n'Tichka-pas",
+            "Aït Ben Haddou (UNESCO)",
+            "Ouarzazate",
+            "Skoura-oase",
+            "Rozenvallei",
+            "Overnachting: Dadesvallei (Diner & Ontbijt)"
+          ]
+        },
+        {
+          "title": "Dadesvallei → Todra-kloof → Sahara van Merzouga",
+          "desc": "Na het ontbijt bewondert u de indrukwekkende Todra-kloof, waarna u door palmbossen en Berberdorpen richting Merzouga rijdt. Maak een kameeltocht over de gouden duinen van Erg Chebbi terwijl de zon ondergaat, en geniet daarna van een traditioneel Marokkaans diner en live Berbermuziek voordat u onder de sterren slaapt in een luxe woestijnkamp.",
+          "stops": [
+            "Todra-kloof",
+            "Palmbossen & Berberdorpen",
+            "Duinen van Erg Chebbi",
+            "Kameeltrek bij zonsondergang",
+            "Berbermuziek",
+            "Overnachting: Luxe woestijnkamp (Diner & Ontbijt)"
+          ]
+        },
+        {
+          "title": "Een volledige dag in de Sahara",
+          "desc": "Word wakker voor een spectaculaire zonsopgang boven de duinen en breng een volle dag door met het verkennen van de woestijn — bezoek het dorp Khamlia voor bezielde Gnawa-muziek, drink thee met nomadenfamilies en ontdek de Zwarte Woestijn, fossielenvelden en een verborgen oase. Optionele quad bikes, buggies en sandboarden vullen de namiddag, vóór nog een magische woestijnavond.",
+          "stops": [
+            "Zonsopgang boven de duinen",
+            "Dorp Khamlia & Gnawa-muziek",
+            "Thee met nomadenfamilies",
+            "Zwarte Woestijn & fossielen",
+            "Oase",
+            "Sandboarden",
+            "Overnachting: Hotel in Merzouga (Diner & Ontbijt)"
+          ]
+        },
+        {
+          "title": "Merzouga → Zizvallei → Midelt → Ifrane → Fes",
+          "desc": "Reis noordwaarts door de spectaculaire Zizvallei en haar eindeloze palmoases, met een lunchstop in Midelt. Bezoek het cederbos waar berberapen vrij rondlopen, passeer Ifrane — het 'Zwitserland van Marokko' — en arriveer in de keizerlijke stad Fes.",
+          "stops": [
+            "Zizvallei",
+            "Midelt",
+            "Cederbos & berberapen",
+            "Ifrane",
+            "Overnachting: Fes (Ontbijt)"
+          ]
+        },
+        {
+          "title": "Rondleiding door Fes",
+          "desc": "Ontdek een van 's werelds oudste nog levende steden met een officiële lokale gids. Verken de poorten van het Koninklijk Paleis, de Joodse wijk en de doolhofachtige middeleeuwse medina — thuisbasis van de Universiteit Al Quaraouiyine, de beroemde leerlooierijen, levendige souks en traditionele pottenbakkerijen. Uw avond is vrij om in uw eigen tempo te genieten.",
+          "stops": [
+            "Koninklijk Paleis",
+            "Joodse wijk",
+            "Middeleeuwse medina",
+            "Universiteit Al Quaraouiyine",
+            "Leerlooierijen",
+            "Souks & pottenbakkerijen",
+            "Overnachting: Fes (Ontbijt)"
+          ]
+        },
+        {
+          "title": "Fes → Cederbos → Beni Mellal → Marrakech",
+          "desc": "Verlaat Fes en reis door het Midden-Atlasgebergte, langs prachtige bossen, meren, watervallen en traditionele Berberdorpen op de schilderachtige route terug naar Marrakech, waar de avond geheel aan u is.",
+          "stops": [
+            "Midden-Atlasgebergte",
+            "Bossen, meren & watervallen",
+            "Beni Mellal",
+            "Overnachting: Marrakech (Ontbijt)"
+          ]
+        },
+        {
+          "title": "Rondleiding door Marrakech & vertrek",
+          "desc": "Verken de Rode Stad met een gecertificeerde lokale gids en bezoek het verfijnde Bahia Paleis, de imposante Koutoubia-moskee, de Saaditombes, het bruisende Jemaa el-Fna-plein en de traditionele souks — met een optionele stop bij de Majorelle-tuin. Aan het einde van uw reis volgt de transfer naar uw hotel of Marrakech Airport.",
+          "stops": [
+            "Bahia Paleis",
+            "Koutoubia-moskee",
+            "Saaditombes",
+            "Majorelle-tuin (optioneel)",
+            "Jemaa el-Fna",
+            "Traditionele souks",
+            "Luchthaven / hotel drop-off"
+          ]
+        }
+      ],
+      "gallery": [
+        {
+          "caption": "Aït Ben Haddou — UNESCO-ksar"
+        },
+        {
+          "caption": "Ouarzazate — toegangspoort tot de woestijn"
+        },
+        {
+          "caption": "De slingerende Dadesvallei"
+        },
+        {
+          "caption": "De indrukwekkende Todra-kloof"
+        },
+        {
+          "caption": "De duinen van Erg Chebbi bij Merzouga"
+        },
+        {
+          "caption": "Ons luxe woestijnkamp in de schemering"
+        },
+        {
+          "caption": "Gouden duinen bij zonsopgang"
+        },
+        {
+          "caption": "Ifrane — het Zwitserland van Marokko"
+        },
+        {
+          "caption": "Fes — de middeleeuwse keizerlijke stad"
+        },
+        {
+          "caption": "Marrakech — de Rode Stad"
+        },
+        {
+          "caption": "Zoete muntthee met onze gasten"
+        },
+        {
+          "caption": "Een Sahara-zonsondergang met onze reizigers"
+        }
+      ],
+      "faq": [
+        {
+          "question": "Is dit een privétour?",
+          "answer": "Ja — elke vertrekdatum is volledig privé voor alleen uw gezelschap. U reist met uw eigen toegewijde Engelssprekende chauffeur en bepaalt samen het tempo, zonder vreemden die zich bij uw groep aansluiten."
+        },
+        {
+          "question": "Hoe is de accommodatie?",
+          "answer": "Zorgvuldig geselecteerde hotels en riads met overal privékamers, plus één onvergetelijke nacht in een luxe tentenkamp op de duinen van Erg Chebbi, met echte bedden en eigen badkamers."
+        },
+        {
+          "question": "Hoeveel tijd wordt er in de Sahara doorgebracht?",
+          "answer": "Twee nachten bij de duinen — de eerste in het luxe woestijnkamp dat per kameel wordt bereikt, gevolgd door een volledige dag om Merzouga te verkennen (nomadenfamilies, Gnawa-muziek, sandboarden en meer) met een tweede nacht in een woestijnhotel."
+        },
+        {
+          "question": "Wat is de beste periode om deze tour te doen?",
+          "answer": "De tour loopt het hele jaar door. Lente (maart–mei) en herfst (september–november) zijn ideaal, met warme dagen en aangename woestijnnachten. De winter is fris en helder; in de zomer is het landinwaarts heet, dus vertrekken we vroeg en plannen we rondom de warmte."
+        },
+        {
+          "question": "Hoe bevestig ik mijn boeking?",
+          "answer": "Stuur ons een bericht via WhatsApp om uw data vast te leggen en wij stemmen de details op u af. Een kleine aanbetaling verzekert uw tour, waarna het restant vóór of aan het begin van de reis betaalbaar is."
+        }
+      ]
+    },
+    "honeymoon-morocco": {
+      "name": "Romantische huwelijksreis door Marokko",
+      "duration": "10 dagen / 9 nachten",
+      "highlights": [
+        "Alleen luxe riads",
+        "Privéwoestijnkamp",
+        "Luchtballonvaart boven Marrakech",
+        "Hammam & spa",
+        "Kameeltrektocht bij zonsondergang"
+      ],
+      "category": "Huwelijksreis",
+      "description": "Speciaal ontworpen voor stellen verweeft deze huwelijksreis romantiek in elk moment. Privésuites in riads, een diner bij kaarslicht in de Sahara, een ballonvaart boven de Atlas bij zonsopgang en een hammamritueel voor twee — Marokko was nooit eerder zo intiem."
+    },
+    "8-day-marrakech-essaouira-agadir-sahara": {
+      "name": "8-daags Marrakech, Essaouira, Agadir & Sahara-woestijnavontuur",
+      "duration": "8 Dagen / 7 Nachten",
+      "highlights": [
+        "Keizerlijk Marrakech & Bahia-paleis",
+        "De Atlantische medina van Essaouira",
+        "Taghazout & de kustlijn van Agadir",
+        "UNESCO Aït Ben Haddou",
+        "Todra-kloof & Dades-vallei",
+        "Kameeltocht bij zonsondergang in Erg Chebbi",
+        "Luxe woestijnkamp onder de sterren"
+      ],
+      "category": "Luxe Grand Tour",
+      "description": "De ultieme grote rondreis door het zuiden van Marokko — van de paleizen en souks van Marrakech tot de door de wind geteisterde Atlantische haven Essaouira, vervolgens langs de surfkust via Taghazout en Agadir, dan landinwaarts door saffraangebied naar de UNESCO-kasbah van Aït Ben Haddou, de indrukwekkende kloof van Todra en de Dades-vallei, om ten slotte uit te komen bij de imposante goudkleurige duinen van Erg Chebbi. Acht dagen privé-reizen, zorgvuldig geselecteerde luxe riads en hotels, een nacht in een premium woestijnkamp en een kameeltocht onder de Sahara-sterren.",
+      "routeCaption": "Volg de grote rondreis — van Marrakech naar de Atlantische kust, vervolgens via de Hoge Atlas naar de duinen van de Sahara, en terug. Tik op een genummerde stop om deze te ontdekken.",
+      "included": [
+        "Luxe accommodatie gedurende de hele reis",
+        "Dagelijks ontbijt",
+        "Dagelijks diner",
+        "Privévervoer met airconditioning",
+        "Professionele Engelssprekende chauffeur",
+        "Kameeltocht in Erg Chebbi",
+        "Één nacht in een luxe woestijnkamp",
+        "Ophalen bij hotel & luchthaven",
+        "Afzet aan het einde van de tour",
+        "Gratis wifi in het voertuig",
+        "Dagelijks mineraalwater in flessen"
+      ],
+      "excluded": [
+        "Internationale vluchten",
+        "Lunches",
+        "Toegangskosten voor monumenten & musea",
+        "Reisverzekering",
+        "Optionele activiteiten (Paradijsvallei, quadrijden)",
+        "Persoonlijke uitgaven & souvenirs",
+        "Fooi voor chauffeur & gidsen"
+      ],
+      "itineraryDays": [
+        {
+          "title": "Marrakech — Aankomst & de Rode Stad",
+          "desc": "Uw privéchauffeur verwelkomt u op de luchthaven van Marrakech en brengt u naar een traditionele riad in het hart van de medina. Neem rustig de tijd om te settelen en stap daarna het theater van Jemaa el-Fnaa binnen, bewonder de torenhoge Koutoubia-moskee en laat u betoveren door de verfijnde mozaïeken van het Bahia-paleis terwijl de stad in de schemering oplicht.",
+          "stops": [
+            "Ophalen op de luchthaven",
+            "Traditionele riad",
+            "Jemaa el-Fnaa",
+            "Koutoubia-moskee",
+            "Bahia-paleis"
+          ]
+        },
+        {
+          "title": "Marrakech → Essaouira",
+          "desc": "Rijd westwaarts richting de Atlantische Oceaan en pauzeer onderweg bij een vrouwencoöperatie voor arganolie. Bereik de luchtige havenstad Essaouira en dwaal door de UNESCO-medina en de actieve vissershaven, om de dag af te sluiten met een gouden zonsondergang boven het strand.",
+          "stops": [
+            "Arganoliecoöperatie",
+            "Atlantische kust",
+            "Medina van Essaouira",
+            "Vissershaven",
+            "Zonsondergang op het strand"
+          ]
+        },
+        {
+          "title": "Essaouira → Agadir",
+          "desc": "Volg de schilderachtige kustweg zuidwaarts via het ontspannen surfdorp Taghazout, met een optionele omweg naar de met palmen omzoomde poelen van Paradijsvallei, voordat u aankomt bij de moderne jachthaven van Agadir en het lange, zonovergoten strand.",
+          "stops": [
+            "Schilderachtige rit langs de kust",
+            "Taghazout",
+            "Paradijsvallei (optioneel)",
+            "Jachthaven van Agadir",
+            "Strand van Agadir"
+          ]
+        },
+        {
+          "title": "Agadir → Taroudant → Taliouine → Ouarzazate",
+          "desc": "Trek landinwaarts naar de ommuurde stad Taroudant, de 'Grootmoeder van Marrakech', en reis vervolgens verder door Taliouine — de saffraanhoofdstad van Marokko — en haar geurige velden. Ga door naar Ouarzazate, de poort naar de woestijn, en bezoek de imposante Kasbah Taourirt voordat u daar overnacht.",
+          "stops": [
+            "Taroudant",
+            "Saffraanvelden",
+            "Kasbah Taourirt",
+            "Overnachting in Ouarzazate"
+          ]
+        },
+        {
+          "title": "Ouarzazate → Aït Ben Haddou → Dades-vallei",
+          "desc": "Bezoek de beroemde Atlas Studios en verken daarna de UNESCO-erkende ksar van Aït Ben Haddou, een versterkte aarden stad die in talloze films te zien is geweest. Rijd verder via de Rozenvallei naar de gebeeldhouwde rode rotsformaties van de Dades-kloof.",
+          "stops": [
+            "Atlas Studios",
+            "UNESCO Aït Ben Haddou",
+            "Rozenvallei",
+            "Dades-kloof"
+          ]
+        },
+        {
+          "title": "Dades-vallei → Todra-kloof → Merzouga",
+          "desc": "Verwonder u over de torenhoge wanden van de Todra-canyon en passeer traditionele Berberdorpen op weg naar de rand van de Sahara bij Erg Chebbi. Ruil het voertuig in voor kamelen en trek de duinen in naar uw luxe woestijnkamp voor diner en live Berbermuziek onder de sterren.",
+          "stops": [
+            "Todra-canyon",
+            "Berberdorpen",
+            "Duinen van Erg Chebbi",
+            "Kameeltocht",
+            "Luxe woestijnkamp",
+            "Traditionele Berbermuziek"
+          ]
+        },
+        {
+          "title": "Merzouga — Een volledige dag in de Sahara",
+          "desc": "Word wakker voor een spectaculaire zonsopgang boven de duinen en verken daarna dieper met een 4x4 — waar u nomadenfamilies ontmoet en geniet van soulvolle Gnawa-muziek. Optioneel quadrijden en sandboarden vullen de middag, voordat u de laatste woestijnzonsondergang beleeft en overnacht in een luxe hotel in Merzouga.",
+          "stops": [
+            "Zonsopgang in de Sahara",
+            "4x4-woestijntour",
+            "Nomadenfamilies",
+            "Gnawa-muziek",
+            "Quadbike (optioneel)",
+            "Sandboarden",
+            "Zonsondergang",
+            "Luxe hotel in Merzouga"
+          ]
+        },
+        {
+          "title": "Merzouga → Marrakech",
+          "desc": "Reis terug over het dak van Marokko — via Alnif en de palmoases van de Draa-vallei, en klim vervolgens door het Hoge Atlasgebergte via de dramatische Tizi n'Tichka-pas voordat u weer in Marrakech aankomt.",
+          "stops": [
+            "Alnif",
+            "Draa-vallei",
+            "Hoge Atlasgebergte",
+            "Tizi n'Tichka-pas",
+            "Aankomst in Marrakech"
+          ]
+        }
+      ],
+      "gallery": [
+        {
+          "caption": "Marrakech — de Rode Stad"
+        },
+        {
+          "caption": "Essaouira — door de wind geteisterde Atlantische haven"
+        },
+        {
+          "caption": "Taghazout — de surfkust"
+        },
+        {
+          "caption": "Agadir — jachthaven & strand"
+        },
+        {
+          "caption": "Aït Ben Haddou — UNESCO-ksar"
+        },
+        {
+          "caption": "De kronkelende Dades-vallei"
+        },
+        {
+          "caption": "De imposante Todra-kloof"
+        },
+        {
+          "caption": "De duinen van Erg Chebbi bij Merzouga"
+        },
+        {
+          "caption": "Ons luxe woestijnkamp in de schemering"
+        },
+        {
+          "caption": "Gouden duinen bij zonsopgang"
+        },
+        {
+          "caption": "Zoete muntthee met onze gasten"
+        },
+        {
+          "caption": "Een Sahara-zonsondergang met onze reizigers"
+        }
+      ],
+      "faq": [
+        {
+          "question": "Is dit een privétour?",
+          "answer": "Ja — elke vertrekdatum is volledig privé en alleen voor uw gezelschap. U reist met uw eigen toegewijde Engelssprekende chauffeur en bepaalt samen het tempo, zonder vreemden in uw groep."
+        },
+        {
+          "question": "Welk accommodatieniveau is inbegrepen?",
+          "answer": "Zorgvuldig geselecteerde luxe riads en hotels gedurende de hele reis, plus één onvergetelijke nacht in een premium tentenkamp in Erg Chebbi met echte bedden en privébadkamer."
+        },
+        {
+          "question": "Wanneer is de beste periode om deze tour te maken?",
+          "answer": "De tour loopt het hele jaar door. Lente (maart–mei) en herfst (september–november) zijn ideaal, met warme dagen en aangename woestijnnachten. De winter is fris en helder; in de zomer is het landinwaarts heet, maar de Atlantische kust blijft aangenaam."
+        },
+        {
+          "question": "Is de tour geschikt voor gezinnen en oudere reizigers?",
+          "answer": "Absoluut. De reis is privé en op een rustig tempo en kan eenvoudig worden aangepast voor kinderen of voor een ontspannen ritme. De kameeltocht is optioneel en kort, en indien gewenst kunnen 4x4-transfers naar het kamp worden geregeld."
+        },
+        {
+          "question": "Hoe bevestig ik mijn boeking?",
+          "answer": "Stuur ons een bericht via WhatsApp om uw data vast te leggen en wij stemmen de details op u af. Een kleine aanbetaling bevestigt uw tour, terwijl het resterende bedrag vóór of bij aanvang van de reis kan worden voldaan."
+        }
+      ]
+    },
+    "family-morocco-adventure": {
+      "name": "Familieavontuur in Marokko",
+      "duration": "9 dagen / 8 nachten",
+      "highlights": [
+        "Gezinsactiviteiten in Marrakech",
+        "Muildierentocht in het Atlasgebergte",
+        "Kameeltrektocht in de woestijn",
+        "Hammam voor kinderen",
+        "Slangenbezweerders en vertellers"
+      ],
+      "category": "Gezin",
+      "description": "Marokko betovert kinderen én volwassenen. Deze familiereis is zorgvuldig in een ontspannen ritme opgebouwd, met belevenissen die alle leeftijden aanspreken — op kamelen rijden in de Sahara, eeuwenoude kasbahs verkennen, streetfood proeven in de medina en traditionele ambachten leren van Berberse ambachtslieden."
+    }
+  }
+}

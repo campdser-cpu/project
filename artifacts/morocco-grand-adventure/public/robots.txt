@@ -1,0 +1,18 @@
+# Morocco Grand Adventure — robots.txt
+# Allow all search engines to crawl the entire site
+
+User-agent: *
+Allow: /
+
+# Disallow internal/admin/API paths
+Disallow: /api/
+Disallow: /admin/
+Disallow: /*?*city=
+Disallow: /*?*duration=
+Disallow: /*?*style=
+
+# Sitemap location
+Sitemap: https://www.moroccograndadventure.com/sitemap.xml
+
+# Crawl-delay to be gentle on the server
+Crawl-delay: 1
