@@ -1,5 +1,5 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { useEffect } from 'react';
+import { useEffect, lazy, Suspense } from 'react';
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import { Route, Switch, Router as WouterRouter, useLocation } from 'wouter';
@@ -10,18 +10,31 @@ import { PromoProvider } from './components/promo/PromoProvider';
 import { LocalizedHead } from './components/seo/LocalizedHead';
 import { RAW_BASE, parseLangPath, preferredLang, langHref } from './lib/i18n-routing';
 
+// Lazy-load pages for code splitting - only the homepage loads eagerly
 import Home from './pages/home';
-import Destinations from './pages/destinations';
-import DestinationDetail from './pages/destination-detail';
-import Tours from './pages/tours';
-import TourDetail from './pages/tour-detail';
-import About from './pages/about';
-import Gallery from './pages/gallery';
-import Contact from './pages/contact';
-import TripBuilder from './pages/trip-builder';
-import NotFound from '@/pages/not-found';
+const Destinations = lazy(() => import('./pages/destinations'));
+const DestinationDetail = lazy(() => import('./pages/destination-detail'));
+const Tours = lazy(() => import('./pages/tours'));
+const TourDetail = lazy(() => import('./pages/tour-detail'));
+const About = lazy(() => import('./pages/about'));
+const Gallery = lazy(() => import('./pages/gallery'));
+const Contact = lazy(() => import('./pages/contact'));
+const TripBuilder = lazy(() => import('./pages/trip-builder'));
+const NotFound = lazy(() => import('@/pages/not-found'));
 
 const queryClient = new QueryClient();
+
+// Loading fallback for lazy-loaded routes
+function PageLoader() {
+  return (
+    <div className="flex items-center justify-center min-h-[60vh] w-full">
+      <div className="flex flex-col items-center gap-4">
+        <div className="w-12 h-12 border-4 border-primary/20 border-t-primary rounded-full animate-spin" aria-hidden="true" />
+        <span className="text-muted-foreground text-sm font-medium tracking-wide">Loading...</span>
+      </div>
+    </div>
+  );
+}
 
 function AnimatedRouter() {
   const [location] = useLocation();
@@ -36,18 +49,20 @@ function AnimatedRouter() {
         transition={{ duration: 0.3, ease: "easeOut" as const }}
         className="contents"
       >
-        <Switch location={location}>
-          <Route path="/" component={Home} />
-          <Route path="/destinations" component={Destinations} />
-          <Route path="/destinations/:id" component={DestinationDetail} />
-          <Route path="/tours" component={Tours} />
-          <Route path="/tours/:id" component={TourDetail} />
-          <Route path="/gallery" component={Gallery} />
-          <Route path="/about" component={About} />
-          <Route path="/contact" component={Contact} />
-          <Route path="/trip-builder" component={TripBuilder} />
-          <Route component={NotFound} />
-        </Switch>
+        <Suspense fallback={<PageLoader />}>
+          <Switch location={location}>
+            <Route path="/" component={Home} />
+            <Route path="/destinations" component={Destinations} />
+            <Route path="/destinations/:id" component={DestinationDetail} />
+            <Route path="/tours" component={Tours} />
+            <Route path="/tours/:id" component={TourDetail} />
+            <Route path="/gallery" component={Gallery} />
+            <Route path="/about" component={About} />
+            <Route path="/contact" component={Contact} />
+            <Route path="/trip-builder" component={TripBuilder} />
+            <Route component={NotFound} />
+          </Switch>
+        </Suspense>
       </motion.div>
     </AnimatePresence>
   );
@@ -55,11 +70,11 @@ function AnimatedRouter() {
 
 function App() {
   // The language prefix in the URL drives everything. Subscribe to the raw
-  // browser path so switches (which push a new /xx/… URL) re-render here.
+  // browser path so switches (which push a new /xx/... URL) re-render here.
   const pathname = usePathname();
   const { lang, rest } = parseLangPath(pathname);
 
-  // No language prefix in the URL → redirect to the preferred language.
+  // No language prefix in the URL -> redirect to the preferred language.
   useEffect(() => {
     if (!lang) {
       navigate(

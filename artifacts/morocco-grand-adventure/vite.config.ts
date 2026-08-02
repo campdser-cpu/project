@@ -1,6 +1,5 @@
 import path from 'path';
 import react from '@vitejs/plugin-react';
-//import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'vite';
 
 import runtimeErrorOverlay from '@replit/vite-plugin-runtime-error-modal';
@@ -31,7 +30,6 @@ export default defineConfig({
   base: basePath,
   plugins: [
     react(),
-    
     runtimeErrorOverlay(),
     ...(process.env.NODE_ENV !== 'production' &&
     process.env.REPL_ID !== undefined
@@ -60,13 +58,34 @@ export default defineConfig({
     dedupe: ['react', 'react-dom'],
   },
   root: path.resolve(import.meta.dirname),
-   
   build: {
-  outDir: path.resolve(import.meta.dirname, 'dist'),
-  emptyOutDir: true,
-},
+    outDir: path.resolve(import.meta.dirname, 'dist'),
+    emptyOutDir: true,
+    // Code-splitting: split large vendor libraries into separate chunks
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom'],
+          'router-vendor': ['wouter'],
+          'animation-vendor': ['framer-motion'],
+          'query-vendor': ['@tanstack/react-query'],
+          'icons-vendor': ['lucide-react', 'react-icons'],
+          'map-vendor': ['leaflet'],
+          'ui-vendor': [
+            '@radix-ui/react-accordion',
+            '@radix-ui/react-dialog',
+            '@radix-ui/react-dropdown-menu',
+            '@radix-ui/react-popover',
+            '@radix-ui/react-select',
+            '@radix-ui/react-tabs',
+            '@radix-ui/react-tooltip',
+          ],
+        },
+      },
+    },
+    chunkSizeWarningLimit: 600,
+  },
   server: {
-
     strictPort: true,
     host: '0.0.0.0',
     allowedHosts: true,

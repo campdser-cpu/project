@@ -33,7 +33,7 @@ export function Navbar() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -43,10 +43,20 @@ export function Navbar() {
     window.scrollTo(0, 0);
   }, [location]);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [isMobileMenuOpen]);
+
   const navClasses = `fixed w-full z-50 transition-all duration-300 ${
     isScrolled 
       ? 'bg-background/95 backdrop-blur-md shadow-sm py-2' 
-      : 'bg-transparent py-4'
+      : 'bg-transparent py-3 sm:py-4'
   }`;
 
   const linkClasses = `text-sm font-medium tracking-wide transition-colors ${
@@ -57,18 +67,18 @@ export function Navbar() {
     <nav className={navClasses} aria-label="Main navigation">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
-          <Link href="/" aria-label="Morocco Grand Adventure — Home">
+          <Link href="/" aria-label="Morocco Grand Adventure - Home">
             <img 
-              src="/logo.png"
+              src="/logo.svg"
               alt="Morocco Grand Adventure logo" 
-              width={180}
+              width={220}
               height={64}
-              className={`h-12 md:h-16 w-auto object-contain transition-all duration-300 ${isScrolled ? '' : 'brightness-0 invert'}`} 
+              className={`h-10 sm:h-12 md:h-14 w-auto object-contain transition-all duration-300 ${isScrolled ? '' : 'brightness-0 invert'}`} 
             />
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
             <Link href="/" className={linkClasses}>{t('nav_home')}</Link>
             
             <div 
@@ -146,7 +156,7 @@ export function Navbar() {
                       >
                         <span>{l.flag}</span>
                         <span>{l.nativeLabel}</span>
-                        {lang === l.code && <span className="ml-auto text-primary">✓</span>}
+                        {lang === l.code && <span className="ml-auto text-primary">&#10003;</span>}
                       </button>
                     ))}
                   </motion.div>
@@ -158,7 +168,7 @@ export function Navbar() {
               href={contactInfo.whatsapp} 
               target="_blank" 
               rel="noreferrer"
-              className="bg-primary text-primary-foreground px-6 py-2.5 rounded-full text-sm font-bold tracking-wide hover:bg-primary/90 transition-all hover:-translate-y-0.5 hover:shadow-lg flex items-center gap-2"
+              className="bg-primary text-primary-foreground px-5 xl:px-6 py-2.5 rounded-full text-sm font-bold tracking-wide hover:bg-primary/90 transition-all hover:-translate-y-0.5 hover:shadow-lg flex items-center gap-2 whitespace-nowrap"
             >
               {t('nav_book_whatsapp')}
             </a>
@@ -166,7 +176,7 @@ export function Navbar() {
 
           {/* Mobile Menu Toggle */}
           <button 
-            className="lg:hidden p-3 min-w-[44px] min-h-[44px] flex items-center justify-center -mr-2"
+            className="lg:hidden p-3 min-w-[44px] min-h-[44px] flex items-center justify-center -mr-2 z-50"
             aria-label={isMobileMenuOpen ? t('nav_close_menu') : t('nav_open_menu')}
             aria-expanded={isMobileMenuOpen}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -189,7 +199,7 @@ export function Navbar() {
             exit={{ opacity: 0, height: 0 }}
             className="lg:hidden bg-background border-t border-border overflow-hidden"
           >
-            <div className="flex flex-col px-4 py-6 space-y-4">
+            <div className="flex flex-col px-4 py-6 space-y-4 max-h-[calc(100vh-80px)] overflow-y-auto">
               <Link href="/" className="text-lg font-medium text-foreground">{t('nav_home')}</Link>
               <Link href="/destinations" className="text-lg font-medium text-foreground">{t('nav_destinations')}</Link>
               <div className="pl-4 border-l-2 border-primary/20 space-y-3 py-2">
@@ -231,7 +241,7 @@ export function Navbar() {
                     >
                       <span className="text-base">{l.flag}</span>
                       <span className="truncate">{l.nativeLabel}</span>
-                      {lang === l.code && <span className="ms-auto text-primary">✓</span>}
+                      {lang === l.code && <span className="ms-auto text-primary">&#10003;</span>}
                     </button>
                   ))}
                 </div>
