@@ -238,7 +238,7 @@ export default function TripBuilder() {
                 } ${s < step ? 'cursor-pointer hover:scale-110 hover:bg-primary/90' : ''}`}
               >
                 {s < step ? <CheckCircle2 className="w-6 h-6" /> : s}
-                <span className={`absolute -bottom-8 text-xs font-bold uppercase tracking-wider whitespace-nowrap transition-colors ${
+                <span className={`absolute -bottom-8 text-[10px] md:text-xs font-bold uppercase tracking-wider text-center leading-tight whitespace-nowrap transition-colors ${
                   step === s ? 'text-primary' : 'text-muted-foreground'
                 }`}>
                   {s === 1 && t('tb_basics')}

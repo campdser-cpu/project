@@ -12,12 +12,12 @@ export function Footer() {
   const destinations = getLocalizedDestinations(lang);
   
   return (
-    <footer className="bg-[#102a1e] text-white pt-20 pb-10">
+    <footer className="bg-[#102a1e] text-white pt-16 sm:pt-20 pb-10">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 mb-12 sm:mb-16">
           
           <div className="space-y-6">
-            <img src="/logo.png" alt="Morocco Grand Adventure logo" width={180} height={64} className="h-16 brightness-0 invert" />
+            <img src="/logo.svg" alt="Morocco Grand Adventure logo" width={220} height={64} className="h-12 sm:h-14 md:h-16 brightness-0 invert" />
             <p className="text-white/70 text-sm leading-relaxed">
               {t('footer_tagline')}
             </p>
@@ -32,7 +32,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-serif text-xl font-medium mb-6 text-primary">{t('footer_quick_links')}</h3>
+            <h3 className="font-serif text-xl font-medium mb-4 sm:mb-6 text-primary">{t('footer_quick_links')}</h3>
             <ul className="space-y-3">
               <li><Link href="/" className="text-white/70 hover:text-primary transition-colors">{t('nav_home')}</Link></li>
               <li><Link href="/about" className="text-white/70 hover:text-primary transition-colors">{t('nav_about')}</Link></li>
@@ -45,7 +45,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-serif text-xl font-medium mb-6 text-primary">{t('footer_top_destinations')}</h3>
+            <h3 className="font-serif text-xl font-medium mb-4 sm:mb-6 text-primary">{t('footer_top_destinations')}</h3>
             <ul className="space-y-3">
               {destinations.slice(0, 5).map(dest => (
                 <li key={dest.id}>
@@ -58,7 +58,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-serif text-xl font-medium mb-6 text-primary">{t('footer_contact')}</h3>
+            <h3 className="font-serif text-xl font-medium mb-4 sm:mb-6 text-primary">{t('footer_contact')}</h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-white/70">
                 <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
@@ -66,7 +66,7 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3 text-white/70">
                 <Phone className="w-5 h-5 text-primary shrink-0" />
-                <a href={`tel:${contactInfo.phone}`} className="hover:text-primary transition-colors">{contactInfo.phone}</a>
+                <a href={`tel:${contactInfo.phone}`} className="hover:text-primary transition-colors break-all">{contactInfo.phone}</a>
               </li>
               <li className="flex items-center gap-3 text-white/70">
                 <SiWhatsapp className="w-5 h-5 text-primary shrink-0" />
@@ -74,15 +74,15 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3 text-white/70">
                 <Mail className="w-5 h-5 text-primary shrink-0" />
-                <a href={`mailto:${contactInfo.email}`} className="hover:text-primary transition-colors">{contactInfo.email}</a>
+                <a href={`mailto:${contactInfo.email}`} className="hover:text-primary transition-colors break-all">{contactInfo.email}</a>
               </li>
             </ul>
           </div>
 
         </div>
 
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between text-white/50 text-sm">
-          <p>© {new Date().getFullYear()} Morocco Grand Adventure. {t('footer_rights')}</p>
+        <div className="border-t border-white/10 pt-6 sm:pt-8 flex flex-col md:flex-row items-center justify-between text-white/50 text-sm text-center md:text-left">
+          <p>&copy; {new Date().getFullYear()} Morocco Grand Adventure. {t('footer_rights')}</p>
         </div>
       </div>
     </footer>

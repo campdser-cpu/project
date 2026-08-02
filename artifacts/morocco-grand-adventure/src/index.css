@@ -132,24 +132,29 @@
   --app-font-mono: Menlo, monospace;
   --radius: 0.5rem;
   
-  --shadow-2xs: 0px 2px 0px 0px hsl(150 38% 16% / 0.05);
-  --shadow-xs: 0px 2px 0px 0px hsl(150 38% 16% / 0.05);
+  /* Soft luxury shadows — layered, diffused, no hard cartoon offsets.
+     Same forest-green tint as before, reworked for an understated
+     premium depth. */
+  --shadow-2xs: 0 1px 2px hsl(150 38% 16% / 0.04);
+  --shadow-xs: 0 1px 2px hsl(150 38% 16% / 0.05);
   --shadow-sm:
-    0px 2px 0px 0px hsl(150 38% 16% / 0.05),
-    0px 1px 2px -1px hsl(150 38% 16% / 0.05);
+    0 1px 2px hsl(150 38% 16% / 0.05),
+    0 1px 3px hsl(150 38% 16% / 0.06);
   --shadow:
-    0px 2px 0px 0px hsl(150 38% 16% / 0.05),
-    0px 1px 2px -1px hsl(150 38% 16% / 0.1);
+    0 1px 3px hsl(150 38% 16% / 0.06),
+    0 2px 6px hsl(150 38% 16% / 0.05);
   --shadow-md:
-    0px 2px 0px 0px hsl(150 38% 16% / 0.05),
-    0px 2px 4px -1px hsl(150 38% 16% / 0.1);
+    0 2px 4px hsl(150 38% 16% / 0.06),
+    0 4px 10px hsl(150 38% 16% / 0.06);
   --shadow-lg:
-    0px 2px 0px 0px hsl(150 38% 16% / 0.05),
-    0px 4px 6px -1px hsl(150 38% 16% / 0.1);
+    0 4px 8px hsl(150 38% 16% / 0.07),
+    0 8px 20px hsl(150 38% 16% / 0.08);
   --shadow-xl:
-    0px 2px 0px 0px hsl(150 38% 16% / 0.05),
-    0px 8px 10px -1px hsl(150 38% 16% / 0.1);
-  --shadow-2xl: 0px 2px 0px 0px hsl(150 38% 16% / 0.15);
+    0 8px 16px hsl(150 38% 16% / 0.08),
+    0 16px 32px hsl(150 38% 16% / 0.1);
+  --shadow-2xl:
+    0 12px 24px hsl(150 38% 16% / 0.1),
+    0 24px 48px hsl(150 38% 16% / 0.12);
   --tracking-normal: 0em;
   --spacing: 0.25rem;
 
@@ -223,12 +228,96 @@
     @apply border-border;
   }
 
+  html {
+    /* Respect users who prefer reduced motion: no smooth-scroll jump */
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
   body {
     @apply font-sans antialiased bg-background text-foreground;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: hsl(var(--primary) / 0.22);
+    color: hsl(var(--foreground));
+  }
+
+  :focus-visible {
+    outline: 2px solid hsl(var(--primary));
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
 
 @layer utilities {
+  /* Hide scrollbars while keeping scrollability (gallery filter strips) */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Thin styled scrollbar for the trip-builder destination picker */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--primary) / 0.28) transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary) / 0.28);
+    border-radius: 9999px;
+  }
+
+  /* Pop-in used by the trip-builder selected-destination check */
+  .scale-in {
+    animation: scale-in 0.25s ease-out both;
+  }
+  @keyframes scale-in {
+    from { transform: scale(0); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+
+  /* Keep the Leaflet map inside its own stacking context so its
+     z-index layers (markers, popups, controls) never overlap the
+     fixed navbar / floating buttons. */
+  .leaflet-container {
+    isolation: isolate;
+  }
+  .leaflet-pane,
+  .leaflet-top,
+  .leaflet-bottom,
+  .leaflet-control,
+  .leaflet-marker-icon,
+  .leaflet-marker-shadow,
+  .leaflet-popup {
+    isolation: isolate;
+  }
+
   input[type='search']::-webkit-search-cancel-button {
     @apply hidden;
   }

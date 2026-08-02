@@ -53,14 +53,19 @@ export function Navbar() {
     return () => { document.body.style.overflow = ''; };
   }, [isMobileMenuOpen]);
 
+  // Pages whose content starts with a light background at the top need the
+  // navbar to stay in its solid/readable state even before scrolling.
+  const isSolidPage = location === '/contact' || location === '/trip-builder';
+  const effectiveScrolled = isScrolled || isSolidPage;
+
   const navClasses = `fixed w-full z-50 transition-all duration-300 ${
-    isScrolled 
+    effectiveScrolled 
       ? 'bg-background/95 backdrop-blur-md shadow-sm py-2' 
       : 'bg-transparent py-3 sm:py-4'
   }`;
 
   const linkClasses = `text-sm font-medium tracking-wide transition-colors ${
-    isScrolled ? 'text-foreground hover:text-primary' : 'text-white hover:text-accent'
+    effectiveScrolled ? 'text-foreground hover:text-primary' : 'text-white hover:text-accent'
   }`;
 
   return (
@@ -73,7 +78,7 @@ export function Navbar() {
               alt="Morocco Grand Adventure logo" 
               width={220}
               height={64}
-              className={`h-10 sm:h-12 md:h-14 w-auto object-contain transition-all duration-300 ${isScrolled ? '' : 'brightness-0 invert'}`} 
+              className={`h-10 sm:h-12 md:h-14 w-auto object-contain transition-all duration-300 ${effectiveScrolled ? '' : 'brightness-0 invert'}`} 
             />
           </Link>
 
@@ -133,7 +138,7 @@ export function Navbar() {
                 aria-label={`Change language. Current: ${currentLang.nativeLabel}`}
                 aria-expanded={isLangOpen}
                 aria-haspopup="listbox"
-                className={`flex items-center gap-1.5 text-sm font-medium transition-colors ${isScrolled ? 'text-foreground hover:text-primary' : 'text-white hover:text-accent'}`}
+                className={`flex items-center gap-1.5 text-sm font-medium transition-colors ${effectiveScrolled ? 'text-foreground hover:text-primary' : 'text-white hover:text-accent'}`}
               >
                 <Globe className="w-4 h-4" aria-hidden="true" />
                 <span>{currentLang.flag} {currentLang.code.toUpperCase()}</span>
@@ -184,7 +189,7 @@ export function Navbar() {
             {isMobileMenuOpen ? (
               <X className="w-6 h-6 text-foreground" />
             ) : (
-              <Menu className={`w-6 h-6 ${isScrolled ? 'text-foreground' : 'text-white'}`} />
+              <Menu className={`w-6 h-6 ${effectiveScrolled ? 'text-foreground' : 'text-white'}`} />
             )}
           </button>
         </div>

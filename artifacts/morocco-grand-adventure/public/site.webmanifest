@@ -1,14 +1,14 @@
 {
-  "name": "Morocco Grand Adventure — Luxury Desert Tours",
+  "name": "Morocco Grand Adventure - Luxury Desert Tours",
   "short_name": "Morocco Adventure",
-  "description": "Luxury private tours across Morocco — Sahara Desert, Imperial Cities, Atlas Mountains & more.",
+  "description": "Luxury private tours across Morocco - Sahara Desert, Imperial Cities, Atlas Mountains & more.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#102a1e",
   "theme_color": "#C9A84C",
   "icons": [
     {
-      "src": "/favicon.svg",
+      "src": "/logo.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any maskable"

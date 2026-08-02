@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect, lazy, Suspense } from 'react';
 import { motion, type Variants } from 'framer-motion';
 import { Link, useLocation } from 'wouter';
 import { Star, MapPin, CheckCircle2, ChevronRight, Calendar, Users, Globe, Instagram, Phone, Search, Award, ShieldCheck, Leaf } from 'lucide-react';
@@ -7,10 +7,16 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { contactInfo } from '@/data/content';
 import { getLocalizedTours, getLocalizedDestinations, categoryLabel } from '@/i18n/content';
 import { SiWhatsapp } from 'react-icons/si';
-import { MoroccoMap } from '../components/MoroccoMap';
 import { PromoBanner } from '../components/promo/PromoBanner';
 import { PromoBadge } from '../components/promo/PromoBadge';
 import { PriceTag } from '../components/promo/PriceTag';
+
+/** Lazy-load the Leaflet map so its ~150 kB chunk (+ OpenStreetMap tiles) is
+ *  only fetched once the map approaches the viewport — the homepage stays
+ *  light for the all-important first paint. */
+const MoroccoMap = lazy(() =>
+  import('../components/MoroccoMap').then((m) => ({ default: m.MoroccoMap })),
+);
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 40 },
@@ -24,6 +30,48 @@ const staggerContainer: Variants = {
     transition: { staggerChildren: 0.2 }
   }
 };
+
+/** Mounts the interactive map only when it nears the viewport, with a
+ *  themed skeleton placeholder before that. */
+function MapSection() {
+  const ref = useRef<HTMLDivElement>(null);
+  const [inView, setInView] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || inView) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setInView(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '600px 0px' },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [inView]);
+
+  const fallback = (
+    <div
+      className="h-[520px] md:h-[560px] rounded-3xl border border-border bg-muted animate-pulse"
+      aria-hidden="true"
+    />
+  );
+
+  return (
+    <div ref={ref}>
+      {inView ? (
+        <Suspense fallback={fallback}>
+          <MoroccoMap height={560} />
+        </Suspense>
+      ) : (
+        fallback
+      )}
+    </div>
+  );
+}
 
 const signaturePlaces = [
   {
@@ -95,7 +143,7 @@ export default function Home() {
             muted
             loop
             playsInline
-            preload="auto"
+            preload="metadata"
             poster="/images/hero/desert-pano.jpg"
             className="absolute inset-0 w-full h-full object-cover"
             aria-label="Cinematic video of the Morocco Sahara Desert with golden dunes at sunset"
@@ -370,7 +418,7 @@ export default function Home() {
           </div>
 
           <div className="max-w-5xl mx-auto">
-            <MoroccoMap height={560} />
+            <MapSection />
           </div>
         </div>
       </section>

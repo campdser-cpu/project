@@ -155,8 +155,8 @@ export default function Gallery() {
         </div>
       </section>
 
-      {/* Filters */}
-      <section className="sticky top-0 z-30 bg-background/90 backdrop-blur-md border-b border-border">
+      {/* Filters — sticky below the fixed navbar */}
+      <section className="sticky top-[72px] z-30 bg-background/90 backdrop-blur-md border-b border-border">
         <div className="container mx-auto px-4">
           <div className="flex gap-2 md:gap-3 overflow-x-auto py-4 no-scrollbar">
             {CATEGORIES.map((cat) => (

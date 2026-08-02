@@ -1,3 +1,44 @@
 <svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="180" height="180" rx="36" fill="#FF3C00"/>
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E4C36A"/>
+      <stop offset="45%" stop-color="#C9A84C"/>
+      <stop offset="100%" stop-color="#A8842B"/>
+    </linearGradient>
+  </defs>
+  <circle cx="90" cy="90" r="88" fill="#1E3D2F"/>
+  <circle cx="90" cy="90" r="82" fill="none" stroke="#C9A84C" stroke-width="3"/>
+  <circle cx="90" cy="90" r="77" fill="#F6F1E7"/>
+  <circle cx="90" cy="90" r="73" fill="none" stroke="#E0CDA4" stroke-width="2"/>
+  <path d="M52 132 C 47 104, 63 74, 90 64 C 117 74, 133 104, 128 132 L 52 132 Z" fill="#F0E9DA" stroke="#C9A84C" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M52 130 Q 76 114, 104 120 Q 124 124, 128 118 L 128 132 L 52 132 Z" fill="#35583F"/>
+  <circle cx="116" cy="80" r="13" fill="url(#gold)"/>
+  <circle cx="116" cy="80" r="18" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-dasharray="3.5 4" opacity="0.9"/>
+  <rect x="124" y="96" width="8" height="30" rx="2" fill="#8C4A2F"/>
+  <rect x="126.2" y="82" width="4.6" height="14" rx="1.5" fill="#8C4A2F"/>
+  <rect x="127.6" y="71" width="2.4" height="11" rx="1.2" fill="#8C4A2F"/>
+  <path d="M127.6 71 L128.8 65.6 L130 71 Z" fill="#C9A84C"/>
+  <path d="M 50 130 C 49 114, 44 100, 41 86" stroke="#2A4332" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M41 86 Q 34 76, 26 76 Q 34 81, 36 87 Z" fill="#2A4332"/>
+  <path d="M41 86 Q 36 74, 29 68 Q 34 74, 38 80 Z" fill="#2A4332"/>
+  <path d="M41 86 Q 42 72, 43 64 Q 44 72, 44 78 Z" fill="#2A4332"/>
+  <path d="M41 86 Q 47 74, 55 70 Q 50 77, 46 83 Z" fill="#2A4332"/>
+  <path d="M41 86 Q 49 77, 58 79 Q 51 84, 46 87 Z" fill="#2A4332"/>
+  <rect x="74" y="112" width="3.4" height="15" rx="1.5" fill="#2A4332"/>
+  <rect x="81" y="112" width="3.4" height="15" rx="1.5" fill="#2A4332"/>
+  <rect x="88.6" y="111.4" width="3.4" height="14" rx="1.5" fill="#2A4332"/>
+  <rect x="95" y="111.4" width="3.4" height="12.6" rx="1.5" fill="#2A4332"/>
+  <rect x="73.4" y="106" width="25.6" height="7.4" rx="3" fill="#2A4332"/>
+  <ellipse cx="86" cy="107.5" rx="14.5" ry="7.4" fill="#2A4332"/>
+  <path d="M75 106 Q 86 92, 97 106 Z" fill="#2A4332"/>
+  <path d="M95 104 L 106 85 L 110.5 87 L 99.5 108 Z" fill="#2A4332"/>
+  <ellipse cx="109.6" cy="82.5" rx="4.2" ry="3.4" fill="#2A4332"/>
+  <ellipse cx="114.5" cy="84.3" rx="4" ry="2.6" fill="#2A4332"/>
+  <path d="M107.5 79.8 L108 74.6 L110 78.4 Z" fill="#2A4332"/>
+  <path d="M72.5 105.8 Q 70 109, 70.8 112.7" stroke="#2A4332" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+  <path d="M52 130 Q 76 119, 102 123 Q 122 125.8, 128 123 L 128 132 L 52 132 Z" fill="url(#gold)"/>
+  <path d="M90 144 L 92.4 149 L 97.6 151.2 L 92.4 153.4 L 90 158.6 L 87.6 153.4 L 82.4 151.2 L 87.6 149 Z" fill="url(#gold)"/>
+  <path d="M85.4 151.2 L 90 146.6 L 94.6 151.2 L 90 155.8 Z" fill="#8B6914"/>
+  <path d="M52 132 C 47 104, 63 74, 90 64 C 117 74, 133 104, 128 132 L 52 132 Z" fill="none" stroke="#B8941F" stroke-width="3.5" stroke-linejoin="round"/>
+  <circle cx="90" cy="90" r="86" fill="none" stroke="#C9A84C" stroke-width="2.5" opacity="0.9"/>
 </svg>
