@@ -84,7 +84,7 @@ function App() {
     }
   }, [lang, rest]);
 
-  if (!lang) return null;
+  if (!lang) return <PageLoader />;
 
   return (
     <QueryClientProvider client={queryClient}>
