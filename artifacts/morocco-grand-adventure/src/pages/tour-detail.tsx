@@ -490,7 +490,7 @@ export default function TourDetail() {
             {relatedTours.map(t_ => (
               <Link key={t_.id} href={`/tours/${t_.id}`} className="group block bg-background rounded-2xl overflow-hidden border border-border shadow-sm hover:shadow-xl hover:border-primary/50 transition-all duration-500">
                 <div className="h-56 relative overflow-hidden">
-                  <img src={t_.image} alt={t_.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" onError={(e) => { (e.target as HTMLImageElement).src = '/images/dest/merzouga.jpg'; }} />
+                  <img src={t_.image} alt={t_.name} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" onError={(e) => { (e.target as HTMLImageElement).src = '/images/dest/merzouga.jpg'; }} />
                   <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors" />
                   <div className="absolute top-3 right-3">
                     <PromoBadge compact />

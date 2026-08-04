@@ -74,17 +74,20 @@ export function buildTourSchema(tour: {
   schemas.push({
     '@context': 'https://schema.org',
     '@type': 'TouristTrip',
+    '@id': `${url}#tour`,
     name: tour.name,
     description: tour.description ?? tour.name,
     image: `${SITE_URL}${tour.image}`,
     url,
     provider: {
       '@type': 'TravelAgency',
+      '@id': `${SITE_URL}/#organization`,
       name: BRAND,
       url: SITE_URL,
     },
     offers: {
       '@type': 'Offer',
+      '@id': `${url}#offer`,
       price: tour.price,
       priceCurrency: 'USD',
       availability: 'https://schema.org/InStock',
@@ -104,6 +107,7 @@ export function buildTourSchema(tour: {
       ratingValue: '4.9',
       reviewCount: '15000',
       bestRating: '5',
+      worstRating: '1',
     },
     itinerary: (tour.itineraryDays ?? []).map((d) => ({
       '@type': 'ItemList',
@@ -114,6 +118,9 @@ export function buildTourSchema(tour: {
       '@type': 'TouristDestination',
       name: h,
     })),
+    inLanguage: 'en',
+    isAccessibleForFree: false,
+    touristType: ['Luxury Travelers', 'Adventure Seekers', 'Culture Enthusiasts', 'Couples', 'Families'],
   });
 
   // FAQ schema if FAQs are available.

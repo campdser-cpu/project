@@ -524,7 +524,7 @@ export default function Home() {
       {/* Luxury Desert Experience full width */}
       <section className="relative py-24 md:py-40 lg:py-48 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src="/images/personal/luxury-camp-dusk.jpg" alt="Luxury Desert Camp" className="w-full h-full object-cover" />
+          <img src="/images/personal/luxury-camp-dusk.jpg" alt="Luxury Desert Camp" loading="lazy" decoding="async" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/40" />
         </div>
         <div className="relative z-10 container mx-auto px-4 flex justify-center md:justify-end">

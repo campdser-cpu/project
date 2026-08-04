@@ -20,11 +20,85 @@ export type RouteMeta = {
 };
 
 /** Homepage meta is used as the fallback for unknown routes. */
-const HOME_META: RouteMeta = {
+export const HOME_META: RouteMeta = {
   title: "Luxury Desert Tours & Private Morocco Experiences",
   description:
     "Morocco Grand Adventure offers luxury private tours across Morocco — Sahara Desert camel trekking, Marrakech medinas, Chefchaouen blue city, Fes, Atlas Mountains & more. Book with local experts.",
   ogImage: "/images/hero/desert-pano.jpg",
+};
+
+/** Common tour metadata by tour id (used by tour-detail pages). */
+const TOUR_META: Record<string, RouteMeta> = {
+  "3-day-sahara-marrakech": {
+    title: "3-Day Luxury Sahara Tour from Marrakech",
+    description:
+      "The classic Morocco adventure compressed into three unforgettable days. Cross the Atlas Mountains, explore Aït Ben Haddou, and sleep under Saharan stars in a luxury desert camp.",
+    ogImage: "/images/tours/3-day-sahara-marrakech.jpg",
+  },
+  "5-day-imperial-cities": {
+    title: "5-Day Imperial Cities & Desert Morocco Tour",
+    description:
+      "Explore Marrakech, Meknès, Fes, and the Blue City of Chefchaouen before a night in the Sahara. Five days of imperial history on this private Morocco tour.",
+    ogImage: "/images/tours/5-day-imperial-cities.jpg",
+  },
+  "7-day-imperial-cities-sahara-escape": {
+    title: "7-Day Imperial Cities & Sahara Escape — Grand Morocco Tour",
+    description:
+      "The very best of Morocco — cross the High Atlas, explore Aït Ben Haddou, the Dades Valley, Erg Chebbi luxury camp, and imperial Fes. A grand 7-day private tour.",
+    ogImage: "/images/tours/7-day-grand-morocco.jpg",
+  },
+  "honeymoon-morocco": {
+    title: "Romantic Morocco Honeymoon — 10 Day Luxury Private Tour",
+    description:
+      "Designed exclusively for couples — private riad suites, a candlelit dinner in the Sahara, hot air balloon flight, and hamam ritual for two. The ultimate Morocco honeymoon.",
+    ogImage: "/images/tours/honeymoon-morocco.jpg",
+  },
+  "8-day-marrakech-essaouira-agadir-sahara": {
+    title: "8-Day Marrakech, Essaouira, Agadir & Sahara Desert Adventure",
+    description:
+      "A grand loop of southern Morocco — from Marrakech's palaces to Essaouira's Atlantic medina, the surf coast, and a night under the Sahara stars. Luxury private 8-day tour.",
+    ogImage: "/images/dest/merzouga.jpg",
+  },
+  "family-morocco-adventure": {
+    title: "Family Morocco Adventure — 9 Day Private Tour",
+    description:
+      "Morocco captivates children and adults alike. Camel rides in the Sahara, ancient kasbahs, street food in the medina, and crafts with Berber artisans. A family-friendly 9-day tour.",
+    ogImage: "/images/tours/family-morocco-adventure.jpg",
+  },
+};
+
+/** Common destination metadata by destination id (used by destination-detail pages). */
+const DESTINATION_META: Record<string, RouteMeta> = {
+  marrakech: { title: "Marrakech — Morocco Tours & Travel Guide", description: "Discover Marrakech — the Red City with ancient souks, Jemaa el-Fnaa, luxury riads, and world-class restaurants. Plan your Marrakech tour with Morocco Grand Adventure.", ogImage: "/images/dest/marrakech.jpg" },
+  fes: { title: "Fes — Morocco Tours & Travel Guide", description: "Explore Fes — Morocco's cultural heart with the world's oldest university and a UNESCO-listed medieval medina. Plan your Fes tour with Morocco Grand Adventure.", ogImage: "/images/dest/fes.jpg" },
+  meknes: { title: "Meknès — Morocco Tours & Travel Guide", description: "Discover Meknès — the forgotten imperial city with grand gates, atmospheric medina, and Roman ruins at Volubilis. Plan your Meknès tour with Morocco Grand Adventure.", ogImage: "/images/dest/meknes.jpg" },
+  casablanca: { title: "Casablanca — Morocco Tours & Travel Guide", description: "Explore Casablanca — Morocco's cosmopolitan capital with the stunning Hassan II Mosque and art deco streets. Plan your Casablanca tour with Morocco Grand Adventure.", ogImage: "/images/dest/casablanca.jpg" },
+  rabat: { title: "Rabat — Morocco Tours & Travel Guide", description: "Discover Rabat — Morocco's calm, regal capital with the Kasbah of Oudayas and Hassan Tower. Plan your Rabat tour with Morocco Grand Adventure.", ogImage: "/images/dest/rabat.jpg" },
+  merzouga: { title: "Merzouga — Sahara Desert Tours & Travel Guide", description: "Explore Merzouga — gateway to the dramatic Erg Chebbi dunes with camel trekking, luxury desert camps, and unforgettable stargazing. Plan your Sahara tour with Morocco Grand Adventure.", ogImage: "/images/dest/merzouga.jpg" },
+  "erg-chebbi": { title: "Erg Chebbi — Sahara Desert Tours & Travel Guide", description: "Discover Erg Chebbi — Morocco's most iconic sand sea with soaring dunes, sunrise camel treks, and luxury desert camp experiences. Plan your Sahara adventure.", ogImage: "/images/dest/erg-chebbi.jpg" },
+  ouarzazate: { title: "Ouarzazate — Sahara Desert Tours & Travel Guide", description: "Explore Ouarzazate — the 'Hollywood of Africa' with film studios, the Taourirt Kasbah, and desert landscapes. Plan your Ouarzazate tour with Morocco Grand Adventure.", ogImage: "/images/dest/ouarzazate.jpg" },
+  "ait-ben-haddou": { title: "Aït Ben Haddou — UNESCO Morocco Tours Guide", description: "Visit Aït Ben Haddou — a UNESCO World Heritage fortified village and Morocco's most photographed kasbah. Plan your Aït Ben Haddou tour with Morocco Grand Adventure.", ogImage: "/images/dest/ait-ben-haddou.jpg" },
+  zagora: { title: "Zagora — Sahara Desert Tours & Travel Guide", description: "Discover Zagora — gateway to Erg Chigaga and the ancient Draa Valley. Experience wild desert dunes and Berber camps. Plan your Zagora tour.", ogImage: "/images/dest/zagora.jpg" },
+  "dades-valley": { title: "Dades Valley — Morocco Tours & Travel Guide", description: "Explore the Valley of a Thousand Kasbahs — dramatic gorges, winding roads, and the famous Rose Festival. Plan your Dades Valley tour with Morocco Grand Adventure.", ogImage: "/images/dest/dades-valley.jpg" },
+  "todra-gorge": { title: "Todra Gorge — Morocco Tours & Travel Guide", description: "Discover Todra Gorge — towering 300m canyon walls and a rock-climbing paradise. Plan your Todra Gorge tour with Morocco Grand Adventure.", ogImage: "/images/dest/todra-gorge.jpg" },
+  skoura: { title: "Skoura Oasis — Morocco Tours & Travel Guide", description: "Explore the 1,000-year-old Skoura Oasis — Morocco's most beautiful palm grove with ancient kasbahs. Plan your Skoura visit with Morocco Grand Adventure.", ogImage: "/images/dest/skoura.jpg" },
+  "roses-valley": { title: "Valley of Roses — Morocco Tours & Travel Guide", description: "Discover Morocco's most fragrant valley — blooming every April and May with the annual Rose Festival. Plan your Valley of Roses tour.", ogImage: "/images/dest/roses-valley.jpg" },
+  "draa-valley": { title: "Draa Valley — Morocco Tours & Travel Guide", description: "Explore the Draa Valley — Morocco's longest river valley with date palms, kasbahs, and ancient trade routes. Plan your Draa Valley tour.", ogImage: "/images/dest/draa-valley.jpg" },
+  chefchaouen: { title: "Chefchaouen — Morocco Tours & Travel Guide", description: "Discover the Blue Pearl of Morocco — the Instagram-famous blue medina nestled in the Rif Mountains. Plan your Chefchaouen tour with Morocco Grand Adventure.", ogImage: "/images/dest/chefchaouen.jpg" },
+  imlil: { title: "Imlil — Atlas Mountains Tours & Travel Guide", description: "Explore Imlil — gateway to Mount Toubkal with Berber villages, trekking routes, and mountain hospitality. Plan your Imlil tour with Morocco Grand Adventure.", ogImage: "/images/dest/imlil.jpg" },
+  "ourika-valley": { title: "Ourika Valley — Morocco Tours & Travel Guide", description: "Discover the lush Ourika Valley — waterfalls, Berber markets, and argan cooperatives just one hour from Marrakech. Plan your Ourika Valley day trip.", ogImage: "/images/dest/ourika-valley.jpg" },
+  ouzoud: { title: "Ouzoud Waterfalls — Morocco Tours & Travel Guide", description: "Visit Ouzoud Falls — North Africa's most spectacular waterfalls with Barbary macaques and rainbows. Plan your Ouzoud tour with Morocco Grand Adventure.", ogImage: "/images/dest/ouzoud.jpg" },
+  ifrane: { title: "Ifrane & Cedar Forest — Morocco Tours & Travel Guide", description: "Discover 'Little Switzerland' — pine forests, wild Barbary macaques, and chalet-style architecture in the Middle Atlas. Plan your Ifrane visit.", ogImage: "/images/dest/ifrane.jpg" },
+  essaouira: { title: "Essaouira — Morocco Tours & Travel Guide", description: "Explore the windswept coastal gem of Essaouira — blue boats, fresh seafood, and the famous Gnawa Music Festival. Plan your Essaouira tour.", ogImage: "/images/dest/essaouira.jpg" },
+  agadir: { title: "Agadir — Morocco Tours & Travel Guide", description: "Discover Agadir — Morocco's beach resort with 8km of golden sands and year-round sunshine. Plan your Agadir tour with Morocco Grand Adventure.", ogImage: "/images/dest/agadir.jpg" },
+  taghazout: { title: "Taghazout — Morocco Surf Tours & Travel Guide", description: "Explore Taghazout — Africa's surf mecca with world-class breaks, yoga retreats, and bohemian vibes. Plan your Taghazout surf trip.", ogImage: "/images/dest/taghazout.jpg" },
+  legzira: { title: "Legzira Beach — Morocco Tours & Travel Guide", description: "Discover Legzira's dramatic red rock arches rising from the Atlantic — one of Africa's most beautiful beaches. Plan your Legzira visit.", ogImage: "/images/dest/legzira.jpg" },
+  "el-jadida": { title: "El Jadida — Morocco Tours & Travel Guide", description: "Explore El Jadida's UNESCO-listed Portuguese Citadel and the extraordinary underground cistern on the Atlantic coast. Plan your El Jadida visit.", ogImage: "/images/dest/el-jadida.jpg" },
+  tangier: { title: "Tangier — Morocco Tours & Travel Guide", description: "Discover the gateway between Africa and Europe — the Strait of Gibraltar, art, and intrigue. Plan your Tangier tour with Morocco Grand Adventure.", ogImage: "/images/dest/tangier.jpg" },
+  tetouan: { title: "Tétouan — Morocco Tours & Travel Guide", description: "Explore Tétouan's UNESCO-listed white medina — Spain's Andalusian heritage in Morocco. Plan your Tétouan tour with Morocco Grand Adventure.", ogImage: "/images/dest/tetouan.jpg" },
+  akchour: { title: "Akchour & God's Bridge — Morocco Tours & Travel Guide", description: "Discover wild gorges, turquoise pools, and a natural stone bridge near Chefchaouen. Plan your Akchour hiking adventure.", ogImage: "/images/dest/akchour.jpg" },
+  nkob: { title: "Nkob — Morocco Tours & Travel Guide", description: "Explore the village of 45 kasbahs — remote, unspoiled, and spectacularly beautiful in the Jbel Saghro. Plan your Nkob adventure.", ogImage: "/images/dest/nkob.jpg" },
+  mirleft: { title: "Mirleft — Morocco Surf Tours & Travel Guide", description: "Discover the unspoilt surf village between Tiznit and Sidi Ifni — wild Atlantic beaches and cliff-top sunsets. Plan your Mirleft visit.", ogImage: "/images/dest/mirleft.jpg" },
 };
 
 /**
@@ -76,11 +150,26 @@ export const routeMetadata: Record<string, RouteMeta> = {
 
 /**
  * Resolve the RouteMeta for a given app path.
- * Falls back to the homepage meta for unknown routes (including
- * dynamic /tours/:id and /destinations/:id — those are enriched
- * separately by the detail-page StructuredData components).
+ * Handles dynamic /tours/:id and /destinations/:id routes via the
+ * TOUR_META and DESTINATION_META maps, falling back to the homepage meta.
  */
 export function getRouteMeta(rest: string): RouteMeta {
   const normalised = rest === "" || rest === "/" ? "/" : rest.replace(/\/$/, "");
-  return routeMetadata[normalised] ?? HOME_META;
+  if (routeMetadata[normalised]) return routeMetadata[normalised];
+
+  // Dynamic tour route: /tours/:id
+  const tourMatch = normalised.match(/^\/tours\/([^/]+)$/);
+  if (tourMatch) {
+    const meta = TOUR_META[tourMatch[1]];
+    if (meta) return meta;
+  }
+
+  // Dynamic destination route: /destinations/:id
+  const destMatch = normalised.match(/^\/destinations\/([^/]+)$/);
+  if (destMatch) {
+    const meta = DESTINATION_META[destMatch[1]];
+    if (meta) return meta;
+  }
+
+  return HOME_META;
 }

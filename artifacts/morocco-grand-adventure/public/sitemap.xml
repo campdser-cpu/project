@@ -1,13 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-  <!-- Homepage -->
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       Morocco Grand Adventure — Sitemap
+       All public pages with hreflang alternates for 11 languages.
+       Languages: en, fr, es, it, de, nl, pt, zh, ja, ko, ar
+       ═══════════════════════════════════════════════════════════════════════ -->
+
+  <!-- ── Homepage ─────────────────────────────────────────────────────────── -->
   <url>
-    <loc>https://www.moroccograndadventure.com/</loc>
-    <lastmod>2026-07-31</lastmod>
+    <loc>https://www.moroccograndadventure.com/en</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en" />
     <image:image>
       <image:loc>https://www.moroccograndadventure.com/images/hero/desert-pano.jpg</image:loc>
       <image:title>Morocco Grand Adventure — Luxury Desert Tours</image:title>
@@ -15,406 +34,910 @@
     </image:image>
   </url>
 
-  <!-- Primary Sections -->
+  <!-- ── Primary Sections (English) ───────────────────────────────────────── -->
   <url>
-    <loc>https://www.moroccograndadventure.com/destinations</loc>
-    <lastmod>2026-07-31</lastmod>
+    <loc>https://www.moroccograndadventure.com/en/destinations</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/destinations" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/destinations" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/destinations" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/destinations" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/destinations" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/destinations" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/destinations" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/destinations" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/destinations" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/destinations" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/destinations" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/destinations" />
   </url>
   <url>
-    <loc>https://www.moroccograndadventure.com/tours</loc>
-    <lastmod>2026-07-31</lastmod>
+    <loc>https://www.moroccograndadventure.com/en/tours</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours" />
   </url>
   <url>
-    <loc>https://www.moroccograndadventure.com/gallery</loc>
-    <lastmod>2026-07-31</lastmod>
+    <loc>https://www.moroccograndadventure.com/en/gallery</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/gallery" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/gallery" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/gallery" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/gallery" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/gallery" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/gallery" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/gallery" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/gallery" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/gallery" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/gallery" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/gallery" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/gallery" />
     <image:image>
       <image:loc>https://www.moroccograndadventure.com/images/hero/medina-pano.jpg</image:loc>
-      <image:title>Morocco Photo & Video Gallery</image:title>
+      <image:title>Morocco Photo &amp; Video Gallery</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.moroccograndadventure.com/trip-builder</loc>
-    <lastmod>2026-07-31</lastmod>
+    <loc>https://www.moroccograndadventure.com/en/trip-builder</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/trip-builder" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/trip-builder" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/trip-builder" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/trip-builder" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/trip-builder" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/trip-builder" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/trip-builder" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/trip-builder" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/trip-builder" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/trip-builder" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/trip-builder" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/trip-builder" />
   </url>
   <url>
-    <loc>https://www.moroccograndadventure.com/about</loc>
-    <lastmod>2026-07-31</lastmod>
+    <loc>https://www.moroccograndadventure.com/en/about</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/about" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/about" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/about" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/about" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/about" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/about" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/about" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/about" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/about" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/about" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/about" />
   </url>
   <url>
-    <loc>https://www.moroccograndadventure.com/contact</loc>
-    <lastmod>2026-07-31</lastmod>
+    <loc>https://www.moroccograndadventure.com/en/contact</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/contact" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/contact" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/contact" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/contact" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/contact" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/contact" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/contact" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/contact" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/contact" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/contact" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/contact" />
   </url>
 
-  <!-- Tours -->
+  <!-- ── Tours ─────────────────────────────────────────────────────────────── -->
   <url>
-    <loc>https://www.moroccograndadventure.com/tours/3-day-sahara-marrakech</loc>
-    <lastmod>2026-07-31</lastmod>
+    <loc>https://www.moroccograndadventure.com/en/tours/3-day-sahara-marrakech</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/3-day-sahara-marrakech" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/3-day-sahara-marrakech" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/3-day-sahara-marrakech" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/3-day-sahara-marrakech" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/3-day-sahara-marrakech" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/3-day-sahara-marrakech" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/3-day-sahara-marrakech" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/3-day-sahara-marrakech" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/3-day-sahara-marrakech" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/3-day-sahara-marrakech" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/3-day-sahara-marrakech" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/3-day-sahara-marrakech" />
     <image:image>
       <image:loc>https://www.moroccograndadventure.com/images/tours/3-day-sahara-marrakech.jpg</image:loc>
       <image:title>3-Day Sahara Marrakech — Morocco Tour</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.moroccograndadventure.com/tours/5-day-imperial-cities</loc>
-    <lastmod>2026-07-31</lastmod>
+    <loc>https://www.moroccograndadventure.com/en/tours/5-day-imperial-cities</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/5-day-imperial-cities" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/5-day-imperial-cities" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/5-day-imperial-cities" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/5-day-imperial-cities" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/5-day-imperial-cities" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/5-day-imperial-cities" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/5-day-imperial-cities" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/5-day-imperial-cities" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/5-day-imperial-cities" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/5-day-imperial-cities" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/5-day-imperial-cities" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/5-day-imperial-cities" />
     <image:image>
       <image:loc>https://www.moroccograndadventure.com/images/tours/5-day-imperial-cities.jpg</image:loc>
       <image:title>5-Day Imperial Cities — Morocco Tour</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.moroccograndadventure.com/tours/7-day-imperial-cities-sahara-escape</loc>
-    <lastmod>2026-07-31</lastmod>
+    <loc>https://www.moroccograndadventure.com/en/tours/7-day-imperial-cities-sahara-escape</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/7-day-imperial-cities-sahara-escape" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/7-day-imperial-cities-sahara-escape" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/7-day-imperial-cities-sahara-escape" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/7-day-imperial-cities-sahara-escape" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/7-day-imperial-cities-sahara-escape" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/7-day-imperial-cities-sahara-escape" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/7-day-imperial-cities-sahara-escape" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/7-day-imperial-cities-sahara-escape" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/7-day-imperial-cities-sahara-escape" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/7-day-imperial-cities-sahara-escape" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/7-day-imperial-cities-sahara-escape" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/7-day-imperial-cities-sahara-escape" />
     <image:image>
       <image:loc>https://www.moroccograndadventure.com/images/tours/7-day-grand-morocco.jpg</image:loc>
       <image:title>7-Day Imperial Cities &amp; Sahara Escape — Morocco Tour</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.moroccograndadventure.com/tours/family-morocco-adventure</loc>
-    <lastmod>2026-07-31</lastmod>
+    <loc>https://www.moroccograndadventure.com/en/tours/family-morocco-adventure</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/family-morocco-adventure" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/family-morocco-adventure" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/family-morocco-adventure" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/family-morocco-adventure" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/family-morocco-adventure" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/family-morocco-adventure" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/family-morocco-adventure" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/family-morocco-adventure" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/family-morocco-adventure" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/family-morocco-adventure" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/family-morocco-adventure" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/family-morocco-adventure" />
     <image:image>
       <image:loc>https://www.moroccograndadventure.com/images/tours/family-morocco-adventure.jpg</image:loc>
       <image:title>Family Morocco Adventure — Morocco Tour</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.moroccograndadventure.com/tours/honeymoon-morocco</loc>
-    <lastmod>2026-07-31</lastmod>
+    <loc>https://www.moroccograndadventure.com/en/tours/honeymoon-morocco</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/honeymoon-morocco" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/honeymoon-morocco" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/honeymoon-morocco" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/honeymoon-morocco" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/honeymoon-morocco" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/honeymoon-morocco" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/honeymoon-morocco" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/honeymoon-morocco" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/honeymoon-morocco" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/honeymoon-morocco" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/honeymoon-morocco" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/honeymoon-morocco" />
     <image:image>
       <image:loc>https://www.moroccograndadventure.com/images/tours/honeymoon-morocco.jpg</image:loc>
       <image:title>Honeymoon Morocco — Morocco Tour</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.moroccograndadventure.com/tours/8-day-marrakech-essaouira-agadir-sahara</loc>
-    <lastmod>2026-07-31</lastmod>
+    <loc>https://www.moroccograndadventure.com/en/tours/8-day-marrakech-essaouira-agadir-sahara</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/8-day-marrakech-essaouira-agadir-sahara" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/8-day-marrakech-essaouira-agadir-sahara" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/8-day-marrakech-essaouira-agadir-sahara" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/8-day-marrakech-essaouira-agadir-sahara" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/8-day-marrakech-essaouira-agadir-sahara" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/8-day-marrakech-essaouira-agadir-sahara" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/8-day-marrakech-essaouira-agadir-sahara" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/8-day-marrakech-essaouira-agadir-sahara" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/8-day-marrakech-essaouira-agadir-sahara" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/8-day-marrakech-essaouira-agadir-sahara" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/8-day-marrakech-essaouira-agadir-sahara" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/8-day-marrakech-essaouira-agadir-sahara" />
     <image:image>
       <image:loc>https://www.moroccograndadventure.com/images/dest/merzouga.jpg</image:loc>
       <image:title>8-Day Marrakech, Essaouira, Agadir &amp; Sahara Desert Adventure — Morocco Tour</image:title>
     </image:image>
   </url>
 
-  <!-- Destinations -->
+  <!-- ── Destinations ─────────────────────────────────────────────────────── -->
   <url>
-    <loc>https://www.moroccograndadventure.com/destinations/agadir</loc>
-    <lastmod>2026-07-31</lastmod>
+    <loc>https://www.moroccograndadventure.com/en/destinations/agadir</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/destinations/agadir" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/destinations/agadir" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/destinations/agadir" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/destinations/agadir" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/destinations/agadir" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/destinations/agadir" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/destinations/agadir" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/destinations/agadir" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/destinations/agadir" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/destinations/agadir" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/destinations/agadir" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/destinations/agadir" />
     <image:image>
       <image:loc>https://www.moroccograndadventure.com/images/dest/agadir.jpg</image:loc>
       <image:title>Agadir — Morocco</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.moroccograndadventure.com/destinations/ait-ben-haddou</loc>
-    <lastmod>2026-07-31</lastmod>
+    <loc>https://www.moroccograndadventure.com/en/destinations/ait-ben-haddou</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/destinations/ait-ben-haddou" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/destinations/ait-ben-haddou" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/destinations/ait-ben-haddou" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/destinations/ait-ben-haddou" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/destinations/ait-ben-haddou" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/destinations/ait-ben-haddou" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/destinations/ait-ben-haddou" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/destinations/ait-ben-haddou" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/destinations/ait-ben-haddou" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/destinations/ait-ben-haddou" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/destinations/ait-ben-haddou" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/destinations/ait-ben-haddou" />
     <image:image>
       <image:loc>https://www.moroccograndadventure.com/images/dest/ait-ben-haddou.jpg</image:loc>
       <image:title>Ait Ben Haddou — Morocco</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.moroccograndadventure.com/destinations/akchour</loc>
-    <lastmod>2026-07-31</lastmod>
+    <loc>https://www.moroccograndadventure.com/en/destinations/akchour</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/destinations/akchour" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/destinations/akchour" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/destinations/akchour" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/destinations/akchour" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/destinations/akchour" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/destinations/akchour" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/destinations/akchour" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/destinations/akchour" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/destinations/akchour" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/destinations/akchour" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/destinations/akchour" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/destinations/akchour" />
     <image:image>
       <image:loc>https://www.moroccograndadventure.com/images/dest/akchour.jpg</image:loc>
       <image:title>Akchour — Morocco</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.moroccograndadventure.com/destinations/casablanca</loc>
-    <lastmod>2026-07-31</lastmod>
+    <loc>https://www.moroccograndadventure.com/en/destinations/casablanca</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/destinations/casablanca" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/destinations/casablanca" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/destinations/casablanca" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/destinations/casablanca" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/destinations/casablanca" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/destinations/casablanca" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/destinations/casablanca" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/destinations/casablanca" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/destinations/casablanca" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/destinations/casablanca" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/destinations/casablanca" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/destinations/casablanca" />
     <image:image>
       <image:loc>https://www.moroccograndadventure.com/images/dest/casablanca.jpg</image:loc>
       <image:title>Casablanca — Morocco</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.moroccograndadventure.com/destinations/chefchaouen</loc>
-    <lastmod>2026-07-31</lastmod>
+    <loc>https://www.moroccograndadventure.com/en/destinations/chefchaouen</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/destinations/chefchaouen" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/destinations/chefchaouen" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/destinations/chefchaouen" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/destinations/chefchaouen" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/destinations/chefchaouen" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/destinations/chefchaouen" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/destinations/chefchaouen" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/destinations/chefchaouen" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/destinations/chefchaouen" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/destinations/chefchaouen" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/destinations/chefchaouen" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/destinations/chefchaouen" />
     <image:image>
       <image:loc>https://www.moroccograndadventure.com/images/dest/chefchaouen.jpg</image:loc>
       <image:title>Chefchaouen — Morocco</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.moroccograndadventure.com/destinations/dades-valley</loc>
-    <lastmod>2026-07-31</lastmod>
+    <loc>https://www.moroccograndadventure.com/en/destinations/dades-valley</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/destinations/dades-valley" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/destinations/dades-valley" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/destinations/dades-valley" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/destinations/dades-valley" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/destinations/dades-valley" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/destinations/dades-valley" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/destinations/dades-valley" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/destinations/dades-valley" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/destinations/dades-valley" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/destinations/dades-valley" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/destinations/dades-valley" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/destinations/dades-valley" />
     <image:image>
       <image:loc>https://www.moroccograndadventure.com/images/dest/dades-valley.jpg</image:loc>
       <image:title>Dades Valley — Morocco</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.moroccograndadventure.com/destinations/draa-valley</loc>
-    <lastmod>2026-07-31</lastmod>
+    <loc>https://www.moroccograndadventure.com/en/destinations/draa-valley</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/destinations/draa-valley" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/destinations/draa-valley" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/destinations/draa-valley" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/destinations/draa-valley" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/destinations/draa-valley" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/destinations/draa-valley" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/destinations/draa-valley" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/destinations/draa-valley" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/destinations/draa-valley" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/destinations/draa-valley" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/destinations/draa-valley" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/destinations/draa-valley" />
     <image:image>
       <image:loc>https://www.moroccograndadventure.com/images/dest/draa-valley.jpg</image:loc>
       <image:title>Draa Valley — Morocco</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.moroccograndadventure.com/destinations/el-jadida</loc>
-    <lastmod>2026-07-31</lastmod>
+    <loc>https://www.moroccograndadventure.com/en/destinations/el-jadida</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/destinations/el-jadida" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/destinations/el-jadida" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/destinations/el-jadida" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/destinations/el-jadida" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/destinations/el-jadida" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/destinations/el-jadida" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/destinations/el-jadida" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/destinations/el-jadida" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/destinations/el-jadida" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/destinations/el-jadida" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/destinations/el-jadida" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/destinations/el-jadida" />
     <image:image>
       <image:loc>https://www.moroccograndadventure.com/images/dest/el-jadida.jpg</image:loc>
       <image:title>El Jadida — Morocco</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.moroccograndadventure.com/destinations/erg-chebbi</loc>
-    <lastmod>2026-07-31</lastmod>
+    <loc>https://www.moroccograndadventure.com/en/destinations/erg-chebbi</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/destinations/erg-chebbi" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/destinations/erg-chebbi" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/destinations/erg-chebbi" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/destinations/erg-chebbi" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/destinations/erg-chebbi" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/destinations/erg-chebbi" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/destinations/erg-chebbi" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/destinations/erg-chebbi" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/destinations/erg-chebbi" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/destinations/erg-chebbi" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/destinations/erg-chebbi" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/destinations/erg-chebbi" />
     <image:image>
       <image:loc>https://www.moroccograndadventure.com/images/dest/erg-chebbi.jpg</image:loc>
       <image:title>Erg Chebbi — Morocco</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.moroccograndadventure.com/destinations/essaouira</loc>
-    <lastmod>2026-07-31</lastmod>
+    <loc>https://www.moroccograndadventure.com/en/destinations/essaouira</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/destinations/essaouira" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/destinations/essaouira" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/destinations/essaouira" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/destinations/essaouira" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/destinations/essaouira" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/destinations/essaouira" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/destinations/essaouira" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/destinations/essaouira" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/destinations/essaouira" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/destinations/essaouira" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/destinations/essaouira" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/destinations/essaouira" />
     <image:image>
       <image:loc>https://www.moroccograndadventure.com/images/dest/essaouira.jpg</image:loc>
       <image:title>Essaouira — Morocco</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.moroccograndadventure.com/destinations/fes</loc>
-    <lastmod>2026-07-31</lastmod>
+    <loc>https://www.moroccograndadventure.com/en/destinations/fes</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/destinations/fes" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/destinations/fes" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/destinations/fes" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/destinations/fes" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/destinations/fes" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/destinations/fes" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/destinations/fes" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/destinations/fes" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/destinations/fes" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/destinations/fes" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/destinations/fes" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/destinations/fes" />
     <image:image>
       <image:loc>https://www.moroccograndadventure.com/images/dest/fes.jpg</image:loc>
       <image:title>Fes — Morocco</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.moroccograndadventure.com/destinations/ifrane</loc>
-    <lastmod>2026-07-31</lastmod>
+    <loc>https://www.moroccograndadventure.com/en/destinations/ifrane</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/destinations/ifrane" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/destinations/ifrane" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/destinations/ifrane" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/destinations/ifrane" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/destinations/ifrane" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/destinations/ifrane" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/destinations/ifrane" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/destinations/ifrane" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/destinations/ifrane" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/destinations/ifrane" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/destinations/ifrane" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/destinations/ifrane" />
     <image:image>
       <image:loc>https://www.moroccograndadventure.com/images/dest/ifrane.jpg</image:loc>
       <image:title>Ifrane — Morocco</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.moroccograndadventure.com/destinations/imlil</loc>
-    <lastmod>2026-07-31</lastmod>
+    <loc>https://www.moroccograndadventure.com/en/destinations/imlil</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/destinations/imlil" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/destinations/imlil" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/destinations/imlil" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/destinations/imlil" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/destinations/imlil" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/destinations/imlil" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/destinations/imlil" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/destinations/imlil" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/destinations/imlil" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/destinations/imlil" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/destinations/imlil" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/destinations/imlil" />
     <image:image>
       <image:loc>https://www.moroccograndadventure.com/images/dest/imlil.jpg</image:loc>
       <image:title>Imlil — Morocco</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.moroccograndadventure.com/destinations/legzira</loc>
-    <lastmod>2026-07-31</lastmod>
+    <loc>https://www.moroccograndadventure.com/en/destinations/legzira</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/destinations/legzira" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/destinations/legzira" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/destinations/legzira" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/destinations/legzira" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/destinations/legzira" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/destinations/legzira" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/destinations/legzira" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/destinations/legzira" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/destinations/legzira" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/destinations/legzira" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/destinations/legzira" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/destinations/legzira" />
     <image:image>
       <image:loc>https://www.moroccograndadventure.com/images/dest/legzira.jpg</image:loc>
       <image:title>Legzira — Morocco</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.moroccograndadventure.com/destinations/marrakech</loc>
-    <lastmod>2026-07-31</lastmod>
+    <loc>https://www.moroccograndadventure.com/en/destinations/marrakech</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/destinations/marrakech" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/destinations/marrakech" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/destinations/marrakech" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/destinations/marrakech" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/destinations/marrakech" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/destinations/marrakech" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/destinations/marrakech" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/destinations/marrakech" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/destinations/marrakech" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/destinations/marrakech" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/destinations/marrakech" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/destinations/marrakech" />
     <image:image>
       <image:loc>https://www.moroccograndadventure.com/images/dest/marrakech.jpg</image:loc>
       <image:title>Marrakech — Morocco</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.moroccograndadventure.com/destinations/meknes</loc>
-    <lastmod>2026-07-31</lastmod>
+    <loc>https://www.moroccograndadventure.com/en/destinations/meknes</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/destinations/meknes" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/destinations/meknes" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/destinations/meknes" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/destinations/meknes" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/destinations/meknes" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/destinations/meknes" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/destinations/meknes" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/destinations/meknes" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/destinations/meknes" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/destinations/meknes" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/destinations/meknes" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/destinations/meknes" />
     <image:image>
       <image:loc>https://www.moroccograndadventure.com/images/dest/meknes.jpg</image:loc>
       <image:title>Meknes — Morocco</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.moroccograndadventure.com/destinations/merzouga</loc>
-    <lastmod>2026-07-31</lastmod>
+    <loc>https://www.moroccograndadventure.com/en/destinations/merzouga</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/destinations/merzouga" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/destinations/merzouga" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/destinations/merzouga" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/destinations/merzouga" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/destinations/merzouga" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/destinations/merzouga" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/destinations/merzouga" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/destinations/merzouga" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/destinations/merzouga" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/destinations/merzouga" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/destinations/merzouga" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/destinations/merzouga" />
     <image:image>
       <image:loc>https://www.moroccograndadventure.com/images/dest/merzouga.jpg</image:loc>
       <image:title>Merzouga — Morocco</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.moroccograndadventure.com/destinations/mirleft</loc>
-    <lastmod>2026-07-31</lastmod>
+    <loc>https://www.moroccograndadventure.com/en/destinations/mirleft</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/destinations/mirleft" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/destinations/mirleft" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/destinations/mirleft" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/destinations/mirleft" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/destinations/mirleft" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/destinations/mirleft" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/destinations/mirleft" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/destinations/mirleft" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/destinations/mirleft" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/destinations/mirleft" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/destinations/mirleft" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/destinations/mirleft" />
     <image:image>
       <image:loc>https://www.moroccograndadventure.com/images/dest/mirleft.jpg</image:loc>
       <image:title>Mirleft — Morocco</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.moroccograndadventure.com/destinations/nkob</loc>
-    <lastmod>2026-07-31</lastmod>
+    <loc>https://www.moroccograndadventure.com/en/destinations/nkob</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/destinations/nkob" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/destinations/nkob" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/destinations/nkob" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/destinations/nkob" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/destinations/nkob" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/destinations/nkob" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/destinations/nkob" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/destinations/nkob" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/destinations/nkob" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/destinations/nkob" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/destinations/nkob" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/destinations/nkob" />
     <image:image>
       <image:loc>https://www.moroccograndadventure.com/images/dest/nkob.jpg</image:loc>
       <image:title>Nkob — Morocco</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.moroccograndadventure.com/destinations/ouarzazate</loc>
-    <lastmod>2026-07-31</lastmod>
+    <loc>https://www.moroccograndadventure.com/en/destinations/ouarzazate</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/destinations/ouarzazate" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/destinations/ouarzazate" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/destinations/ouarzazate" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/destinations/ouarzazate" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/destinations/ouarzazate" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/destinations/ouarzazate" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/destinations/ouarzazate" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/destinations/ouarzazate" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/destinations/ouarzazate" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/destinations/ouarzazate" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/destinations/ouarzazate" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/destinations/ouarzazate" />
     <image:image>
       <image:loc>https://www.moroccograndadventure.com/images/dest/ouarzazate.jpg</image:loc>
       <image:title>Ouarzazate — Morocco</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.moroccograndadventure.com/destinations/ourika-valley</loc>
-    <lastmod>2026-07-31</lastmod>
+    <loc>https://www.moroccograndadventure.com/en/destinations/ourika-valley</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/destinations/ourika-valley" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/destinations/ourika-valley" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/destinations/ourika-valley" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/destinations/ourika-valley" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/destinations/ourika-valley" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/destinations/ourika-valley" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/destinations/ourika-valley" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/destinations/ourika-valley" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/destinations/ourika-valley" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/destinations/ourika-valley" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/destinations/ourika-valley" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/destinations/ourika-valley" />
     <image:image>
       <image:loc>https://www.moroccograndadventure.com/images/dest/ourika-valley.jpg</image:loc>
       <image:title>Ourika Valley — Morocco</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.moroccograndadventure.com/destinations/ouzoud</loc>
-    <lastmod>2026-07-31</lastmod>
+    <loc>https://www.moroccograndadventure.com/en/destinations/ouzoud</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/destinations/ouzoud" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/destinations/ouzoud" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/destinations/ouzoud" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/destinations/ouzoud" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/destinations/ouzoud" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/destinations/ouzoud" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/destinations/ouzoud" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/destinations/ouzoud" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/destinations/ouzoud" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/destinations/ouzoud" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/destinations/ouzoud" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/destinations/ouzoud" />
     <image:image>
       <image:loc>https://www.moroccograndadventure.com/images/dest/ouzoud.jpg</image:loc>
       <image:title>Ouzoud — Morocco</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.moroccograndadventure.com/destinations/rabat</loc>
-    <lastmod>2026-07-31</lastmod>
+    <loc>https://www.moroccograndadventure.com/en/destinations/rabat</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/destinations/rabat" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/destinations/rabat" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/destinations/rabat" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/destinations/rabat" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/destinations/rabat" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/destinations/rabat" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/destinations/rabat" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/destinations/rabat" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/destinations/rabat" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/destinations/rabat" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/destinations/rabat" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/destinations/rabat" />
     <image:image>
       <image:loc>https://www.moroccograndadventure.com/images/dest/rabat.jpg</image:loc>
       <image:title>Rabat — Morocco</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.moroccograndadventure.com/destinations/roses-valley</loc>
-    <lastmod>2026-07-31</lastmod>
+    <loc>https://www.moroccograndadventure.com/en/destinations/roses-valley</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/destinations/roses-valley" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/destinations/roses-valley" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/destinations/roses-valley" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/destinations/roses-valley" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/destinations/roses-valley" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/destinations/roses-valley" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/destinations/roses-valley" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/destinations/roses-valley" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/destinations/roses-valley" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/destinations/roses-valley" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/destinations/roses-valley" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/destinations/roses-valley" />
     <image:image>
       <image:loc>https://www.moroccograndadventure.com/images/dest/roses-valley.jpg</image:loc>
       <image:title>Roses Valley — Morocco</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.moroccograndadventure.com/destinations/skoura</loc>
-    <lastmod>2026-07-31</lastmod>
+    <loc>https://www.moroccograndadventure.com/en/destinations/skoura</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/destinations/skoura" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/destinations/skoura" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/destinations/skoura" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/destinations/skoura" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/destinations/skoura" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/destinations/skoura" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/destinations/skoura" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/destinations/skoura" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/destinations/skoura" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/destinations/skoura" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/destinations/skoura" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/destinations/skoura" />
     <image:image>
       <image:loc>https://www.moroccograndadventure.com/images/dest/skoura.jpg</image:loc>
       <image:title>Skoura — Morocco</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.moroccograndadventure.com/destinations/taghazout</loc>
-    <lastmod>2026-07-31</lastmod>
+    <loc>https://www.moroccograndadventure.com/en/destinations/taghazout</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/destinations/taghazout" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/destinations/taghazout" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/destinations/taghazout" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/destinations/taghazout" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/destinations/taghazout" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/destinations/taghazout" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/destinations/taghazout" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/destinations/taghazout" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/destinations/taghazout" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/destinations/taghazout" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/destinations/taghazout" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/destinations/taghazout" />
     <image:image>
       <image:loc>https://www.moroccograndadventure.com/images/dest/taghazout.jpg</image:loc>
       <image:title>Taghazout — Morocco</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.moroccograndadventure.com/destinations/tangier</loc>
-    <lastmod>2026-07-31</lastmod>
+    <loc>https://www.moroccograndadventure.com/en/destinations/tangier</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/destinations/tangier" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/destinations/tangier" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/destinations/tangier" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/destinations/tangier" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/destinations/tangier" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/destinations/tangier" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/destinations/tangier" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/destinations/tangier" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/destinations/tangier" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/destinations/tangier" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/destinations/tangier" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/destinations/tangier" />
     <image:image>
       <image:loc>https://www.moroccograndadventure.com/images/dest/tangier.jpg</image:loc>
       <image:title>Tangier — Morocco</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.moroccograndadventure.com/destinations/tetouan</loc>
-    <lastmod>2026-07-31</lastmod>
+    <loc>https://www.moroccograndadventure.com/en/destinations/tetouan</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/destinations/tetouan" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/destinations/tetouan" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/destinations/tetouan" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/destinations/tetouan" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/destinations/tetouan" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/destinations/tetouan" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/destinations/tetouan" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/destinations/tetouan" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/destinations/tetouan" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/destinations/tetouan" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/destinations/tetouan" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/destinations/tetouan" />
     <image:image>
       <image:loc>https://www.moroccograndadventure.com/images/dest/tetouan.jpg</image:loc>
       <image:title>Tetouan — Morocco</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.moroccograndadventure.com/destinations/todra-gorge</loc>
-    <lastmod>2026-07-31</lastmod>
+    <loc>https://www.moroccograndadventure.com/en/destinations/todra-gorge</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/destinations/todra-gorge" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/destinations/todra-gorge" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/destinations/todra-gorge" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/destinations/todra-gorge" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/destinations/todra-gorge" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/destinations/todra-gorge" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/destinations/todra-gorge" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/destinations/todra-gorge" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/destinations/todra-gorge" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/destinations/todra-gorge" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/destinations/todra-gorge" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/destinations/todra-gorge" />
     <image:image>
       <image:loc>https://www.moroccograndadventure.com/images/dest/todra-gorge.jpg</image:loc>
       <image:title>Todra Gorge — Morocco</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.moroccograndadventure.com/destinations/zagora</loc>
-    <lastmod>2026-07-31</lastmod>
+    <loc>https://www.moroccograndadventure.com/en/destinations/zagora</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/destinations/zagora" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/destinations/zagora" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/destinations/zagora" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/destinations/zagora" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/destinations/zagora" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/destinations/zagora" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/destinations/zagora" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/destinations/zagora" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/destinations/zagora" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/destinations/zagora" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/destinations/zagora" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/destinations/zagora" />
     <image:image>
       <image:loc>https://www.moroccograndadventure.com/images/dest/zagora.jpg</image:loc>
       <image:title>Zagora — Morocco</image:title>

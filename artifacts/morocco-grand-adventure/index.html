@@ -12,6 +12,20 @@
     <meta name="author" content="Morocco Grand Adventure" />
     <link rel="canonical" href="https://www.moroccograndadventure.com/" />
 
+    <!-- Hreflang alternates (static no-JS baseline; LocalizedHead updates at runtime) -->
+    <link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en" />
+    <link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr" />
+    <link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es" />
+    <link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it" />
+    <link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de" />
+    <link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl" />
+    <link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt" />
+    <link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh" />
+    <link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja" />
+    <link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko" />
+    <link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar" />
+    <link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en" />
+
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Morocco Grand Adventure" />
@@ -23,55 +37,118 @@
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Golden Sahara desert dunes at sunset with camel caravan — Morocco Grand Adventure" />
     <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="fr_FR" />
+    <meta property="og:locale:alternate" content="es_ES" />
+    <meta property="og:locale:alternate" content="it_IT" />
+    <meta property="og:locale:alternate" content="de_DE" />
+    <meta property="og:locale:alternate" content="nl_NL" />
+    <meta property="og:locale:alternate" content="pt_PT" />
+    <meta property="og:locale:alternate" content="zh_CN" />
+    <meta property="og:locale:alternate" content="ja_JP" />
+    <meta property="og:locale:alternate" content="ko_KR" />
+    <meta property="og:locale:alternate" content="ar_AR" />
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@moroccograndadventure" />
     <meta name="twitter:title" content="Morocco Grand Adventure — Luxury Desert Tours" />
     <meta name="twitter:description" content="Private Sahara desert tours, luxury camps, camel trekking & imperial city experiences with Morocco's top local experts." />
     <meta name="twitter:image" content="https://www.moroccograndadventure.com/images/hero/desert-pano.jpg" />
     <meta name="twitter:image:alt" content="Morocco Grand Adventure — Sahara Desert Tour" />
 
-    <!-- Schema.org: Organization -->
+    <!-- Schema.org: TravelAgency -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "TravelAgency",
+      "@id": "https://www.moroccograndadventure.com/#organization",
       "name": "Morocco Grand Adventure",
+      "alternateName": "Morocco Grand Adventure Tours",
       "url": "https://www.moroccograndadventure.com",
       "logo": "https://www.moroccograndadventure.com/logo.svg",
+      "image": "https://www.moroccograndadventure.com/images/hero/desert-pano.jpg",
       "description": "Morocco Grand Adventure creates authentic luxury journeys across Morocco — Sahara Desert, Imperial Cities, Atlas Mountains, and coastal escapes — led by passionate local experts born in the Sahara.",
+      "slogan": "Born in the Sahara. Dedicated to sharing Morocco's soul with the world.",
+      "foundingDate": "2000",
+      "founder": {
+        "@type": "Person",
+        "name": "Mohamed Bou Ghrara"
+      },
       "address": {
         "@type": "PostalAddress",
+        "streetAddress": "Merzouga",
         "addressLocality": "Merzouga",
+        "addressRegion": "Errachidia Province",
         "addressCountry": "MA"
       },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 31.0988,
+        "longitude": -4.0134
+      },
+      "telephone": "+212 699 846 818",
+      "email": "info@moroccograndadventure.com",
+      "priceRange": "$$$",
+      "openingHours": "Mo-Su 08:00-20:00",
+      "currenciesAccepted": "USD, EUR, MAD",
+      "paymentAccepted": "Cash, Credit Card, PayPal, Bank Transfer",
       "contactPoint": [
         {
           "@type": "ContactPoint",
           "contactType": "customer service",
-          "availableLanguage": ["English", "French", "Spanish", "Arabic", "Italian", "Portuguese"],
-          "email": "info@moroccograndadventure.com"
+          "telephone": "+212 699 846 818",
+          "email": "info@moroccograndadventure.com",
+          "availableLanguage": ["English", "French", "Spanish", "Arabic", "Italian", "Portuguese", "German", "Dutch", "Chinese", "Japanese", "Korean"],
+          "areaServed": "MA",
+          "contactOption": "TollFree"
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "sales",
+          "telephone": "+212 699 846 818",
+          "availableLanguage": ["English", "French", "Spanish", "Arabic", "Italian", "Portuguese", "German", "Dutch", "Chinese", "Japanese", "Korean"],
+          "areaServed": "MA"
         }
       ],
       "sameAs": [
-        "https://www.instagram.com/medmorocco_tours"
+        "https://www.instagram.com/medmorocco_tours",
+        "https://wa.me/212699846818"
       ],
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.9",
         "reviewCount": "15000",
-        "bestRating": "5"
-      }
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Morocco"
+      },
+      "makesOffer": [
+        { "@type": "Offer", "itemOffered": { "@type": "TouristTrip", "name": "Sahara Desert Tours" } },
+        { "@type": "Offer", "itemOffered": { "@type": "TouristTrip", "name": "Imperial Cities Tours" } },
+        { "@type": "Offer", "itemOffered": { "@type": "TouristTrip", "name": "Atlas Mountain Tours" } },
+        { "@type": "Offer", "itemOffered": { "@type": "TouristTrip", "name": "Morocco Honeymoon Packages" } },
+        { "@type": "Offer", "itemOffered": { "@type": "TouristTrip", "name": "Family Morocco Adventures" } }
+      ]
     }
     </script>
 
-    <!-- Schema.org: Website with SearchAction -->
+    <!-- Schema.org: WebSite with SearchAction -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
+      "@id": "https://www.moroccograndadventure.com/#website",
       "name": "Morocco Grand Adventure",
+      "alternateName": "Morocco Grand Adventure Tours & Travel",
       "url": "https://www.moroccograndadventure.com",
+      "description": "Official website of Morocco Grand Adventure — luxury private tours, Sahara desert experiences, imperial cities, and bespoke Morocco travel planning.",
+      "inLanguage": ["en", "fr", "es", "it", "de", "nl", "pt", "zh", "ja", "ko", "ar"],
+      "publisher": {
+        "@id": "https://www.moroccograndadventure.com/#organization"
+      },
       "potentialAction": {
         "@type": "SearchAction",
         "target": {
@@ -123,6 +200,7 @@
     <meta name="geo.placename" content="Merzouga, Morocco" />
     <meta name="geo.position" content="31.0988;-4.0134" />
     <meta name="ICBM" content="31.0988, -4.0134" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
   </head>
   <body>
     <div id="root"></div>

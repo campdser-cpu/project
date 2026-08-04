@@ -70,7 +70,7 @@ export default function About() {
               className="relative"
             >
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-border">
-                <img src="/images/personal/guide-portrait.jpg" alt="Mohamed Bou Ghrara, your local guide" className="w-full h-[520px] object-cover" />
+                <img src="/images/personal/guide-portrait.jpg" alt="Mohamed Bou Ghrara, your local guide" loading="lazy" decoding="async" className="w-full h-[520px] object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6">
                   <span className="text-primary font-bold tracking-widest uppercase text-xs block mb-1">Founder & Head Guide</span>

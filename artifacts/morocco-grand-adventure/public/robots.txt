@@ -3,13 +3,25 @@
 
 User-agent: *
 Allow: /
-
-# Disallow internal/admin/API paths
 Disallow: /api/
 Disallow: /admin/
 Disallow: /*?*city=
 Disallow: /*?*duration=
 Disallow: /*?*style=
+Disallow: /*?*q=
+
+# Allow Googlebot to crawl images and videos
+User-agent: Googlebot
+Allow: /images/
+Allow: /videos/
+
+# Allow Googlebot-Image to crawl images
+User-agent: Googlebot-Image
+Allow: /images/
+
+# Allow Googlebot-Video to crawl videos
+User-agent: Googlebot-Video
+Allow: /videos/
 
 # Sitemap location
 Sitemap: https://www.moroccograndadventure.com/sitemap.xml
