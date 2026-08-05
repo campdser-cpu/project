@@ -35,11 +35,13 @@ export function Footer() {
             <h3 className="font-serif text-xl font-medium mb-4 sm:mb-6 text-primary">{t('footer_quick_links')}</h3>
             <ul className="space-y-3">
               <li><Link href="/" className="text-white/70 hover:text-primary transition-colors">{t('nav_home')}</Link></li>
+              <li><Link href="/desert-tours" className="text-white/70 hover:text-primary transition-colors">Sahara Desert Tours</Link></li>
+              <li><Link href="/luxury-camp" className="text-white/70 hover:text-primary transition-colors">Luxury Desert Camp</Link></li>
+              <li><Link href="/camel-trekking" className="text-white/70 hover:text-primary transition-colors">Camel Trekking</Link></li>
+              <li><Link href="/merzouga-guide" className="text-white/70 hover:text-primary transition-colors">Merzouga Guide</Link></li>
               <li><Link href="/about" className="text-white/70 hover:text-primary transition-colors">{t('nav_about')}</Link></li>
-              <li><Link href="/destinations" className="text-white/70 hover:text-primary transition-colors">{t('nav_destinations')}</Link></li>
-              <li><Link href="/tours" className="text-white/70 hover:text-primary transition-colors">{t('nav_tours')}</Link></li>
-              <li><Link href="/trip-builder" className="text-white/70 hover:text-primary transition-colors">{t('nav_build_journey')}</Link></li>
-              <li><Link href="/gallery" className="text-white/70 hover:text-primary transition-colors">{t('nav_gallery')}</Link></li>
+              <li><Link href="/blog" className="text-white/70 hover:text-primary transition-colors">Travel Blog</Link></li>
+              <li><Link href="/faq" className="text-white/70 hover:text-primary transition-colors">FAQ</Link></li>
               <li><Link href="/contact" className="text-white/70 hover:text-primary transition-colors">{t('nav_contact')}</Link></li>
             </ul>
           </div>

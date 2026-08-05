@@ -5,6 +5,7 @@ import { Footer } from './Footer';
 import { WhatsAppButton } from '../ui/WhatsAppButton';
 import { ScrollToTop } from '../ui/ScrollToTop';
 import { AIAssistant } from '../ui/AIAssistant';
+import { StickyBookingCTA } from '../ui/StickyBookingCTA';
 
 interface LayoutProps {
   children: ReactNode;
@@ -29,6 +30,7 @@ export function Layout({ children }: LayoutProps) {
       <WhatsAppButton />
       <AIAssistant />
       <ScrollToTop />
+      <StickyBookingCTA />
     </div>
   );
 }

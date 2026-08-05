@@ -20,6 +20,16 @@ const About = lazy(() => import('./pages/about'));
 const Gallery = lazy(() => import('./pages/gallery'));
 const Contact = lazy(() => import('./pages/contact'));
 const TripBuilder = lazy(() => import('./pages/trip-builder'));
+const DesertTours = lazy(() => import('./pages/desert-tours'));
+const LuxuryCamp = lazy(() => import('./pages/luxury-camp'));
+const CamelTrekking = lazy(() => import('./pages/camel-trekking'));
+const FourByFourTours = lazy(() => import('./pages/4x4-tours'));
+const MarrakechTours = lazy(() => import('./pages/marrakech-tours'));
+const FesTours = lazy(() => import('./pages/fes-tours'));
+const DayTrips = lazy(() => import('./pages/day-trips'));
+const MerzougaGuide = lazy(() => import('./pages/merzouga-guide'));
+const Faq = lazy(() => import('./pages/faq'));
+const Blog = lazy(() => import('./pages/blog'));
 const NotFound = lazy(() => import('@/pages/not-found'));
 
 const queryClient = new QueryClient();
@@ -60,6 +70,16 @@ function AnimatedRouter() {
             <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />
             <Route path="/trip-builder" component={TripBuilder} />
+            <Route path="/desert-tours" component={DesertTours} />
+            <Route path="/luxury-camp" component={LuxuryCamp} />
+            <Route path="/camel-trekking" component={CamelTrekking} />
+            <Route path="/4x4-tours" component={FourByFourTours} />
+            <Route path="/marrakech-tours" component={MarrakechTours} />
+            <Route path="/fes-tours" component={FesTours} />
+            <Route path="/day-trips" component={DayTrips} />
+            <Route path="/merzouga-guide" component={MerzougaGuide} />
+            <Route path="/faq" component={Faq} />
+            <Route path="/blog" component={Blog} />
             <Route component={NotFound} />
           </Switch>
         </Suspense>

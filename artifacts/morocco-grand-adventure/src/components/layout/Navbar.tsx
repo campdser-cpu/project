@@ -11,6 +11,7 @@ export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDestinationsOpen, setIsDestinationsOpen] = useState(false);
+  const [isExperiencesOpen, setIsExperiencesOpen] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
   const langRef = useRef<HTMLDivElement>(null);
   const [location] = useLocation();
@@ -126,6 +127,52 @@ export function Navbar() {
             </div>
 
             <Link href="/tours" className={linkClasses}>{t('nav_tours')}</Link>
+
+            {/* Experiences Dropdown */}
+            <div 
+              className="relative group"
+              onMouseEnter={() => setIsExperiencesOpen(true)}
+              onMouseLeave={() => setIsExperiencesOpen(false)}
+            >
+              <Link href="/desert-tours" className={`${linkClasses} flex items-center gap-1`}>
+                Experiences <ChevronDown className="w-4 h-4" />
+              </Link>
+              <AnimatePresence>
+                {isExperiencesOpen && (
+                  <motion.div 
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute top-full -left-4 w-64 pt-4"
+                  >
+                    <div className="bg-background shadow-xl rounded-xl border border-border overflow-hidden">
+                      {[
+                        { href: "/desert-tours", label: "Sahara Desert Tours" },
+                        { href: "/luxury-camp", label: "Luxury Desert Camp" },
+                        { href: "/camel-trekking", label: "Camel Trekking" },
+                        { href: "/4x4-tours", label: "4x4 Desert Tours" },
+                        { href: "/day-trips", label: "Day Trips" },
+                      ].map((item) => (
+                        <Link 
+                          key={item.href} 
+                          href={item.href}
+                          className="block px-4 py-3 text-sm text-foreground hover:bg-muted hover:text-primary transition-colors"
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                      <div className="border-t border-border mt-1">
+                        <Link href="/blog" className="block px-4 py-3 text-sm font-medium text-primary hover:bg-muted transition-colors">
+                          Travel Blog →
+                        </Link>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
             <Link href="/gallery" className={linkClasses}>{t('nav_gallery')}</Link>
             <Link href="/trip-builder" className={linkClasses}>{t('nav_build_journey')}</Link>
             <Link href="/about" className={linkClasses}>{t('nav_about')}</Link>
@@ -213,7 +260,16 @@ export function Navbar() {
                 ))}
               </div>
               <Link href="/tours" className="text-lg font-medium text-foreground">{t('nav_tours')}</Link>
+              <div className="pl-4 border-l-2 border-primary/20 space-y-3 py-2">
+                <Link href="/desert-tours" className="block text-muted-foreground">Sahara Desert Tours</Link>
+                <Link href="/luxury-camp" className="block text-muted-foreground">Luxury Desert Camp</Link>
+                <Link href="/camel-trekking" className="block text-muted-foreground">Camel Trekking</Link>
+                <Link href="/4x4-tours" className="block text-muted-foreground">4x4 Tours</Link>
+                <Link href="/day-trips" className="block text-muted-foreground">Day Trips</Link>
+              </div>
               <Link href="/gallery" className="text-lg font-medium text-foreground">{t('nav_gallery')}</Link>
+              <Link href="/blog" className="text-lg font-medium text-foreground">Blog</Link>
+              <Link href="/faq" className="text-lg font-medium text-foreground">FAQ</Link>
               <Link href="/trip-builder" className="text-lg font-medium text-foreground">{t('nav_build_journey')}</Link>
               <Link href="/about" className="text-lg font-medium text-foreground">{t('nav_about')}</Link>
               <Link href="/contact" className="text-lg font-medium text-foreground">{t('nav_contact')}</Link>

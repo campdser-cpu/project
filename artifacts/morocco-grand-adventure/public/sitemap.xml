@@ -148,6 +148,124 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/contact" />
   </url>
 
+  <!-- ── New Experience Pages ──────────────────────────────────────────────── -->
+  <url>
+    <loc>https://www.moroccograndadventure.com/en/desert-tours</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/desert-tours" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/desert-tours" />
+    <image:image>
+      <image:loc>https://www.moroccograndadventure.com/images/dest/merzouga.jpg</image:loc>
+      <image:title>Sahara Desert Tours — Merzouga, Erg Chebbi &amp; Luxury Camps</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/en/luxury-camp</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/luxury-camp" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/luxury-camp" />
+    <image:image>
+      <image:loc>https://www.moroccograndadventure.com/images/personal/luxury-camp-dusk.jpg</image:loc>
+      <image:title>Luxury Desert Camp Morocco — Exclusive Sahara Glamping</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/en/camel-trekking</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/camel-trekking" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/camel-trekking" />
+    <image:image>
+      <image:loc>https://www.moroccograndadventure.com/images/personal/dunes-camels-poster.jpg</image:loc>
+      <image:title>Camel Trekking Merzouga — Sahara Camel Rides &amp; Sunset Treks</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/en/4x4-tours</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/4x4-tours" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/4x4-tours" />
+    <image:image>
+      <image:loc>https://www.moroccograndadventure.com/images/dest/erg-chebbi.jpg</image:loc>
+      <image:title>4x4 Desert Tours Morocco — Sahara Off-Road Adventures</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/en/marrakech-tours</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/marrakech-tours" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/marrakech-tours" />
+    <image:image>
+      <image:loc>https://www.moroccograndadventure.com/images/dest/marrakech.jpg</image:loc>
+      <image:title>Marrakech Tours — Private Day Trips &amp; Multi-Day Morocco Tours</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/en/fes-tours</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/fes-tours" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/fes-tours" />
+    <image:image>
+      <image:loc>https://www.moroccograndadventure.com/images/dest/fes.jpg</image:loc>
+      <image:title>Fes Tours — Private Guided Tours of Morocco's Cultural Capital</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/en/day-trips</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/day-trips" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/day-trips" />
+    <image:image>
+      <image:loc>https://www.moroccograndadventure.com/images/dest/ouzoud.jpg</image:loc>
+      <image:title>Morocco Day Trips — From Marrakech, Fes &amp; Merzouga</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/en/merzouga-guide</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/merzouga-guide" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/merzouga-guide" />
+    <image:image>
+      <image:loc>https://www.moroccograndadventure.com/images/dest/merzouga.jpg</image:loc>
+      <image:title>Merzouga Travel Guide — Sahara Desert, Erg Chebbi &amp; Luxury Camps</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/en/faq</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/faq" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/faq" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/en/blog</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/blog" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/blog" />
+    <image:image>
+      <image:loc>https://www.moroccograndadventure.com/images/hero/desert-pano.jpg</image:loc>
+      <image:title>Morocco Travel Blog — Guides, Tips &amp; Inspiration</image:title>
+    </image:image>
+  </url>
+
   <!-- ── Tours ─────────────────────────────────────────────────────────────── -->
   <url>
     <loc>https://www.moroccograndadventure.com/en/tours/3-day-sahara-marrakech</loc>

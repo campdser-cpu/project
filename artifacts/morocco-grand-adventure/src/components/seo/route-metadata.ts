@@ -146,6 +146,68 @@ export const routeMetadata: Record<string, RouteMeta> = {
       "Contact Morocco Grand Adventure via WhatsApp, email, or phone. Our local experts in Merzouga respond within 24 hours to help plan your dream Morocco journey.",
     ogImage: "/images/dest/merzouga.jpg",
   },
+
+  // ── New dedicated experience pages ─────────────────────────────────────
+  "/desert-tours": {
+    title: "Sahara Desert Tours — Merzouga, Erg Chebbi & Luxury Camps",
+    description:
+      "Experience the Sahara with Morocco's leading desert tour experts. Private Merzouga desert tours, Erg Chebbi camel treks, luxury desert camps & 4x4 adventures. Book direct.",
+    ogImage: "/images/dest/merzouga.jpg",
+  },
+  "/luxury-camp": {
+    title: "Luxury Desert Camp Morocco — Exclusive Sahara Glamping",
+    description:
+      "Sleep under a canopy of stars in our exclusive luxury desert camp near Merzouga. Private tents, fine dining, en-suite bathrooms & unforgettable Sahara nights.",
+    ogImage: "/images/personal/luxury-camp-dusk.jpg",
+  },
+  "/camel-trekking": {
+    title: "Camel Trekking Merzouga — Sahara Camel Rides & Sunset Treks",
+    description:
+      "Ride camels across the golden dunes of Erg Chebbi at sunset. Authentic Merzouga camel trekking experiences with expert Berber guides. Book your Sahara camel ride today.",
+    ogImage: "/images/personal/dunes-camels-poster.jpg",
+  },
+  "/4x4-tours": {
+    title: "4x4 Desert Tours Morocco — Sahara Off-Road Adventures",
+    description:
+      "Explore the Sahara in style with private 4x4 desert tours. Erg Chebbi dunes, nomad camps, fossil beds & hidden oases. Luxury off-road adventures from Merzouga.",
+    ogImage: "/images/dest/erg-chebbi.jpg",
+  },
+  "/marrakech-tours": {
+    title: "Marrakech Tours — Private Day Trips & Multi-Day Morocco Tours",
+    description:
+      "Discover Marrakech with private guided tours. Explore the medina, Jemaa el-Fnaa, Majorelle Garden & beyond. Day trips to the Sahara, Atlas Mountains & coastal Essaouira.",
+    ogImage: "/images/dest/marrakech.jpg",
+  },
+  "/fes-tours": {
+    title: "Fes Tours — Private Guided Tours of Morocco's Cultural Capital",
+    description:
+      "Explore Fes with expert local guides. Discover the medieval medina, Chouara Tannery, Al-Qarawiyyin University & the Blue City of Chefchaouen. Private Fes tours & day trips.",
+    ogImage: "/images/dest/fes.jpg",
+  },
+  "/day-trips": {
+    title: "Morocco Day Trips — From Marrakech, Fes & Merzouga",
+    description:
+      "Discover Morocco's highlights on unforgettable day trips. From Marrakech to the Sahara, Atlas Mountains & coastal gems. Private guided day tours with local experts.",
+    ogImage: "/images/dest/ouzoud.jpg",
+  },
+  "/merzouga-guide": {
+    title: "Merzouga Travel Guide — Sahara Desert, Erg Chebbi & Luxury Camps",
+    description:
+      "The ultimate Merzouga travel guide. Discover Erg Chebbi dunes, luxury desert camps, camel trekking, stargazing & everything you need to plan your Sahara adventure.",
+    ogImage: "/images/dest/merzouga.jpg",
+  },
+  "/faq": {
+    title: "Morocco Travel FAQ — Visa, Safety, Packing & Booking Questions",
+    description:
+      "Answers to your Morocco travel questions — visas, safety, best time to visit, packing tips, desert tours, payments & more. Expert advice from local Morocco specialists.",
+    ogImage: "/images/dest/merzouga.jpg",
+  },
+  "/blog": {
+    title: "Morocco Travel Blog — Guides, Tips & Inspiration",
+    description:
+      "Expert Morocco travel guides, insider tips, and inspiration from local Sahara experts. Discover the best of Morocco — from desert adventures to imperial cities.",
+    ogImage: "/images/hero/desert-pano.jpg",
+  },
 };
 
 /**

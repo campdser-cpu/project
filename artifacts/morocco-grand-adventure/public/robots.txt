@@ -23,8 +23,8 @@ Allow: /images/
 User-agent: Googlebot-Video
 Allow: /videos/
 
-# Sitemap location
-Sitemap: https://www.moroccograndadventure.com/sitemap.xml
-
 # Crawl-delay to be gentle on the server
 Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://www.moroccograndadventure.com/sitemap.xml
