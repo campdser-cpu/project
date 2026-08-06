@@ -20,7 +20,7 @@ export function Layout({ children }: LayoutProps) {
         href="#main-content"
         className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-primary focus:text-primary-foreground focus:font-bold focus:shadow-lg"
       >
-        {t('nav_home') === 'Home' ? 'Skip to content' : t('nav_home')}
+        {t('layout_skip_content')}
       </a>
       <header>
         <Navbar />

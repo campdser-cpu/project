@@ -328,9 +328,239 @@ type TranslationSet = {
   ai_resp_family: string;
   ai_resp_default: string;
   per_night: string;
+  // ── ExperiencePage ────────────────────────────────────────────────────────
+  exp_book_experience: string;
+  exp_whatsapp_us: string;
+  exp_highlights: string;
+  exp_highlights_title: string;
+  exp_faq: string;
+  exp_faq_title: string;
+  exp_ready: string;
+  exp_ready_sub: string;
+  exp_build_journey: string;
+  exp_chat_whatsapp: string;
+  exp_rating: string;
+  exp_travelers: string;
+  exp_licensed: string;
+  exp_support: string;
+  exp_local_experts: string;
+  // ── Navbar ────────────────────────────────────────────────────────────────
+  nav_experiences: string;
+  nav_sahara_desert_tours: string;
+  nav_luxury_desert_camp: string;
+  nav_camel_trekking: string;
+  nav_4x4_desert_tours: string;
+  nav_day_trips: string;
+  nav_travel_blog: string;
+  nav_blog: string;
+  nav_faq: string;
+  // ── Footer ────────────────────────────────────────────────────────────────
+  footer_sahara_desert_tours: string;
+  footer_luxury_desert_camp: string;
+  footer_camel_trekking: string;
+  footer_merzouga_guide: string;
+  footer_travel_blog: string;
+  footer_faq: string;
+  footer_address: string;
+  // ── Sticky CTA / WhatsApp / Layout / App ──────────────────────────────────
+  sticky_custom_trip: string;
+  sticky_whatsapp: string;
+  sticky_call_now: string;
+  wa_book_now: string;
+  layout_skip_content: string;
+  app_loading: string;
+  // ── FAQ page ──────────────────────────────────────────────────────────────
+  faq_hero_alt: string;
+  faq_breadcrumb: string;
+  faq_title: string;
+  faq_subtitle: string;
+  faq_cta: string;
+  faq_q1: string; faq_a1: string;
+  faq_q2: string; faq_a2: string;
+  faq_q3: string; faq_a3: string;
+  faq_q4: string; faq_a4: string;
+  faq_q5: string; faq_a5: string;
+  faq_q6: string; faq_a6: string;
+  faq_q7: string; faq_a7: string;
+  faq_q8: string; faq_a8: string;
+  faq_q9: string; faq_a9: string;
+  faq_q10: string; faq_a10: string;
+  // ── Blog page ─────────────────────────────────────────────────────────────
+  blog_hero_alt: string;
+  blog_breadcrumb: string;
+  blog_title: string;
+  blog_subtitle: string;
+  blog_read_article: string;
+  blog_post_1_title: string; blog_post_1_excerpt: string; blog_post_1_date: string; blog_post_1_read: string; blog_post_1_cat: string;
+  blog_post_2_title: string; blog_post_2_excerpt: string; blog_post_2_date: string; blog_post_2_read: string; blog_post_2_cat: string;
+  blog_post_3_title: string; blog_post_3_excerpt: string; blog_post_3_date: string; blog_post_3_read: string; blog_post_3_cat: string;
+  blog_post_4_title: string; blog_post_4_excerpt: string; blog_post_4_date: string; blog_post_4_read: string; blog_post_4_cat: string;
+  blog_post_5_title: string; blog_post_5_excerpt: string; blog_post_5_date: string; blog_post_5_read: string; blog_post_5_cat: string;
+  blog_post_6_title: string; blog_post_6_excerpt: string; blog_post_6_date: string; blog_post_6_read: string; blog_post_6_cat: string;
+  // ── Luxury Camp page ──────────────────────────────────────────────────────
+  lc_hero_alt: string; lc_breadcrumb: string; lc_title: string; lc_subtitle: string;
+  lc_f1_title: string; lc_f1_desc: string;
+  lc_f2_title: string; lc_f2_desc: string;
+  lc_f3_title: string; lc_f3_desc: string;
+  lc_f4_title: string; lc_f4_desc: string;
+  lc_f5_title: string; lc_f5_desc: string;
+  lc_f6_title: string; lc_f6_desc: string;
+  lc_faq1_q: string; lc_faq1_a: string;
+  lc_faq2_q: string; lc_faq2_a: string;
+  lc_faq3_q: string; lc_faq3_a: string;
+  lc_faq4_q: string; lc_faq4_a: string;
+  // ── Camel Trekking page ───────────────────────────────────────────────────
+  ct_hero_alt: string; ct_breadcrumb: string; ct_title: string; ct_subtitle: string; ct_cta: string;
+  ct_f1_title: string; ct_f1_desc: string;
+  ct_f2_title: string; ct_f2_desc: string;
+  ct_f3_title: string; ct_f3_desc: string;
+  ct_f4_title: string; ct_f4_desc: string;
+  ct_f5_title: string; ct_f5_desc: string;
+  ct_f6_title: string; ct_f6_desc: string;
+  ct_faq1_q: string; ct_faq1_a: string;
+  ct_faq2_q: string; ct_faq2_a: string;
+  ct_faq3_q: string; ct_faq3_a: string;
+  ct_faq4_q: string; ct_faq4_a: string;
+  ct_faq5_q: string; ct_faq5_a: string;
+  // ── 4x4 Tours page ────────────────────────────────────────────────────────
+  f4_hero_alt: string; f4_breadcrumb: string; f4_title: string; f4_subtitle: string; f4_cta: string;
+  f4_f1_title: string; f4_f1_desc: string;
+  f4_f2_title: string; f4_f2_desc: string;
+  f4_f3_title: string; f4_f3_desc: string;
+  f4_f4_title: string; f4_f4_desc: string;
+  f4_f5_title: string; f4_f5_desc: string;
+  f4_f6_title: string; f4_f6_desc: string;
+  f4_faq1_q: string; f4_faq1_a: string;
+  f4_faq2_q: string; f4_faq2_a: string;
+  f4_faq3_q: string; f4_faq3_a: string;
+  f4_faq4_q: string; f4_faq4_a: string;
+  f4_faq5_q: string; f4_faq5_a: string;
+  // ── Fes/Marrakech Tours page ──────────────────────────────────────────────
+  mt_hero_alt: string; mt_breadcrumb: string; mt_title: string; mt_subtitle: string; mt_cta: string;
+  mt_f1_title: string; mt_f1_desc: string;
+  mt_f2_title: string; mt_f2_desc: string;
+  mt_f3_title: string; mt_f3_desc: string;
+  mt_f4_title: string; mt_f4_desc: string;
+  mt_f5_title: string; mt_f5_desc: string;
+  mt_f6_title: string; mt_f6_desc: string;
+  mt_faq1_q: string; mt_faq1_a: string;
+  mt_faq2_q: string; mt_faq2_a: string;
+  mt_faq3_q: string; mt_faq3_a: string;
+  mt_faq4_q: string; mt_faq4_a: string;
+  // ── Day Trips page ────────────────────────────────────────────────────────
+  dt_hero_alt: string; dt_breadcrumb: string; dt_title: string; dt_subtitle: string; dt_cta: string;
+  dt_f1_title: string; dt_f1_desc: string;
+  dt_f2_title: string; dt_f2_desc: string;
+  dt_f3_title: string; dt_f3_desc: string;
+  dt_f4_title: string; dt_f4_desc: string;
+  dt_f5_title: string; dt_f5_desc: string;
+  dt_f6_title: string; dt_f6_desc: string;
+  dt_faq1_q: string; dt_faq1_a: string;
+  dt_faq2_q: string; dt_faq2_a: string;
+  dt_faq3_q: string; dt_faq3_a: string;
+  dt_faq4_q: string; dt_faq4_a: string;
+  // ── Merzouga Guide page ───────────────────────────────────────────────────
+  mg_hero_alt: string; mg_breadcrumb: string; mg_title: string; mg_subtitle: string; mg_cta: string;
+  mg_f1_title: string; mg_f1_desc: string;
+  mg_f2_title: string; mg_f2_desc: string;
+  mg_f3_title: string; mg_f3_desc: string;
+  mg_f4_title: string; mg_f4_desc: string;
+  mg_f5_title: string; mg_f5_desc: string;
+  mg_f6_title: string; mg_f6_desc: string;
+  mg_faq1_q: string; mg_faq1_a: string;
+  mg_faq2_q: string; mg_faq2_a: string;
+  mg_faq3_q: string; mg_faq3_a: string;
+  mg_faq4_q: string; mg_faq4_a: string;
+  // ── Desert Tours page ─────────────────────────────────────────────────────
+  dt2_hero_alt: string; dt2_title: string; dt2_subtitle: string; dt2_cta_explore: string; dt2_whatsapp: string;
+  dt2_intro_heading: string; dt2_intro_p1: string; dt2_intro_p2: string;
+  dt2_featured: string; dt2_featured_title: string; dt2_view_details: string; dt2_view_all: string;
+  dt2_why_title: string;
+  dt2_why1_title: string; dt2_why1_desc: string;
+  dt2_why2_title: string; dt2_why2_desc: string;
+  dt2_why3_title: string; dt2_why3_desc: string;
+  dt2_ready: string; dt2_ready_sub: string; dt2_build: string; dt2_chat: string;
+  // ── Home page ─────────────────────────────────────────────────────────────
+  home_signature: string; home_signature_title: string; home_signature_sub: string; home_morocco_badge: string;
+  home_place1_name: string; home_place1_desc: string;
+  home_place2_name: string; home_place2_desc: string;
+  home_place3_name: string; home_place3_desc: string;
+  home_place4_name: string; home_place4_desc: string;
+  home_place5_name: string; home_place5_desc: string;
+  home_place6_name: string; home_place6_desc: string;
+  home_exp_sahara: string; home_exp_title: string; home_exp_sub: string;
+  home_rev1_name: string; home_rev1_quote: string; home_rev1_tour: string;
+  home_rev2_name: string; home_rev2_quote: string; home_rev2_tour: string;
+  home_rev3_name: string; home_rev3_quote: string; home_rev3_tour: string;
+  home_rev4_name: string; home_rev4_quote: string; home_rev4_tour: string;
+  home_rev5_name: string; home_rev5_quote: string; home_rev5_tour: string;
+  home_rev6_name: string; home_rev6_quote: string; home_rev6_tour: string;
+  home_ig_alt1: string; home_ig_alt2: string; home_ig_alt3: string; home_ig_alt4: string;
+  // ── About page ────────────────────────────────────────────────────────────
+  about_meet_guide: string; about_guide_heading: string; about_guide_p1: string; about_guide_p2: string;
+  about_founder: string; about_guide_name: string;
+  about_stat1_value: string; about_stat1_label: string;
+  about_stat2_value: string; about_stat2_label: string;
+  about_stat3_value: string; about_stat3_label: string;
+  about_stat4_value: string; about_stat4_label: string;
+  about_languages: string; about_chat: string;
+  about_experiences: string; about_memories: string; about_memories_sub: string;
+  about_moment1: string; about_moment2: string; about_moment3: string;
+  about_moment4: string; about_moment5: string; about_moment6: string;
+  about_hero_alt: string; about_guide_alt: string;
+  // ── Gallery page ──────────────────────────────────────────────────────────
+  gallery_hero_alt: string; gallery_close: string; gallery_prev: string; gallery_next: string; gallery_all: string;
+  gallery_cat_desert: string; gallery_cat_luxury_camp: string; gallery_cat_camel_trekking: string;
+  gallery_cat_quad: string; gallery_cat_happy_travelers: string; gallery_cat_landscapes: string;
+  gallery_cat_culture: string; gallery_cat_food: string; gallery_cat_guide_journey: string; gallery_cat_authenticity: string;
+  gallery_cap1: string; gallery_cap2: string; gallery_cap3: string; gallery_cap4: string;
+  gallery_cap5: string; gallery_cap6: string; gallery_cap7: string; gallery_cap8: string;
+  gallery_cap9: string; gallery_cap10: string; gallery_cap11: string; gallery_cap12: string;
+  gallery_cap13: string; gallery_cap14: string; gallery_cap15: string; gallery_cap16: string;
+  gallery_cap17: string; gallery_cap18: string; gallery_cap19: string; gallery_cap20: string;
+  gallery_cap21: string; gallery_cap22: string; gallery_cap23: string; gallery_cap24: string;
+  gallery_cap25: string; gallery_cap26: string; gallery_cap27: string; gallery_cap28: string;
+  gallery_cap29: string; gallery_cap30: string; gallery_cap31: string; gallery_cap32: string;
+  gallery_cap33: string; gallery_cap34: string; gallery_cap35: string; gallery_cap36: string;
+  gallery_cap37: string; gallery_cap38: string; gallery_cap39: string; gallery_cap40: string;
+  gallery_cap41: string; gallery_cap42: string; gallery_cap43: string; gallery_cap44: string;
+  gallery_cap45: string; gallery_cap46: string; gallery_cap47: string; gallery_cap48: string;
+  gallery_cap49: string; gallery_cap50: string; gallery_cap51: string; gallery_cap52: string;
+  gallery_cap53: string; gallery_cap54: string; gallery_cap55: string; gallery_cap56: string;
+  gallery_cap57: string; gallery_cap58: string; gallery_cap59: string; gallery_cap60: string;
+  gallery_cap61: string; gallery_cap62: string; gallery_cap63: string; gallery_cap64: string;
+  gallery_cap65: string; gallery_cap66: string; gallery_cap67: string; gallery_cap68: string;
+  gallery_cap69: string; gallery_cap70: string; gallery_cap71: string; gallery_cap72: string;
+  gallery_cap73: string; gallery_cap74: string; gallery_cap75: string; gallery_cap76: string;
+  gallery_cap77: string; gallery_cap78: string; gallery_cap79: string; gallery_cap80: string;
+  gallery_cap81: string; gallery_cap82: string; gallery_cap83: string; gallery_cap84: string;
+  gallery_cap85: string; gallery_cap86: string; gallery_cap87: string; gallery_cap88: string;
+  gallery_cap89: string; gallery_cap90: string; gallery_cap91: string; gallery_cap92: string;
+  gallery_cap93: string; gallery_cap94: string; gallery_cap95: string; gallery_cap96: string;
+  gallery_cap97: string; gallery_cap98: string; gallery_cap99: string; gallery_cap100: string;
+  gallery_vid1_title: string; gallery_vid2_title: string; gallery_vid3_title: string; gallery_vid4_title: string;
+  // ── Tour Detail page ──────────────────────────────────────────────────────
+  td_watch_journey: string; td_cinematic: string; td_overview: string; td_your_route: string;
+  td_route_caption: string; td_faq_title: string; td_google_reviews: string; td_loved: string;
+  td_or: string; td_decrease: string; td_increase: string;
+  td_rev1_name: string; td_rev1_country: string; td_rev1_text: string;
+  td_rev2_name: string; td_rev2_country: string; td_rev2_text: string;
+  td_rev3_name: string; td_rev3_country: string; td_rev3_text: string;
+  td_rev4_name: string; td_rev4_country: string; td_rev4_text: string;
+  td_group_quote_msg: string;
+  // ── Destination Detail page ───────────────────────────────────────────────
+  dd_style: string; dd_sunny: string; dd_mon: string; dd_tue: string; dd_wed: string; dd_thu: string;
+  dd_dunes_day_night: string; dd_dunes_sub: string; dd_sunrise: string; dd_stargazing: string;
+  dd_plan_sub: string;
+  // ── Tours page ────────────────────────────────────────────────────────────
+  tours_matching: string; tours_clear: string; tours_no_match: string; tours_view_all: string;
+  tours_tour: string; tours_tours: string;
+  // ── Trip Builder ──────────────────────────────────────────────────────────
+  tb_city_casablanca: string; tb_city_marrakech: string; tb_city_tangier: string; tb_city_fes: string; tb_city_agadir: string;
+  tb_travel_to: string; tb_discover: string; tb_onward: string;
 };
 
-const translations: Record<Lang, TranslationSet> = {
+const translations: Record<Lang, Partial<TranslationSet>> = {
 
   // ═══════════════════════════════════════════════════════════════════════════
   // ENGLISH
@@ -619,6 +849,474 @@ const translations: Record<Lang, TranslationSet> = {
     ai_resp_family: "Morocco is wonderful for families! We arrange private transport, kid-friendly guides, camel rides, and interactive cooking classes. How old are your children?",
     ai_resp_default: "That sounds wonderful! Our local experts can customize a bespoke itinerary exactly to your preferences. Would you like to connect with a human specialist now?",
     per_night: "/ night",
+    // ── ExperiencePage ──
+    exp_book_experience: "Book This Experience",
+    exp_whatsapp_us: "WhatsApp Us",
+    exp_highlights: "Highlights",
+    exp_highlights_title: "What Makes This Experience Special",
+    exp_faq: "FAQ",
+    exp_faq_title: "Frequently Asked Questions",
+    exp_ready: "Ready to Experience This?",
+    exp_ready_sub: "Our local experts are ready to craft your perfect Morocco journey. Message us today for a personalised quote.",
+    exp_build_journey: "Build Your Journey",
+    exp_chat_whatsapp: "Chat on WhatsApp",
+    exp_rating: "4.9/5 Rating",
+    exp_travelers: "15,000+ Travelers",
+    exp_licensed: "Licensed & Insured",
+    exp_support: "24/7 Support",
+    exp_local_experts: "Local Experts",
+    // ── Navbar ──
+    nav_experiences: "Experiences",
+    nav_sahara_desert_tours: "Sahara Desert Tours",
+    nav_luxury_desert_camp: "Luxury Desert Camp",
+    nav_camel_trekking: "Camel Trekking",
+    nav_4x4_desert_tours: "4x4 Desert Tours",
+    nav_day_trips: "Day Trips",
+    nav_travel_blog: "Travel Blog →",
+    nav_blog: "Blog",
+    nav_faq: "FAQ",
+    // ── Footer ──
+    footer_sahara_desert_tours: "Sahara Desert Tours",
+    footer_luxury_desert_camp: "Luxury Desert Camp",
+    footer_camel_trekking: "Camel Trekking",
+    footer_merzouga_guide: "Merzouga Guide",
+    footer_travel_blog: "Travel Blog",
+    footer_faq: "FAQ",
+    footer_address: "Merzouga, Sahara Desert, Morocco",
+    // ── Sticky CTA / WhatsApp / Layout / App ──
+    sticky_custom_trip: "Custom Trip",
+    sticky_whatsapp: "WhatsApp",
+    sticky_call_now: "Call Now",
+    wa_book_now: "Book Now",
+    layout_skip_content: "Skip to content",
+    app_loading: "Loading...",
+    // ── FAQ page ──
+    faq_hero_alt: "Morocco travel FAQ - ancient medina of Marrakech",
+    faq_breadcrumb: "Travel FAQ",
+    faq_title: "Morocco Travel FAQ",
+    faq_subtitle: "Answers to your most common questions about traveling in Morocco — visas, safety, packing, payments, and booking with Morocco Grand Adventure.",
+    faq_cta: "Ask Us a Question",
+    faq_q1: "When is the best time to visit Morocco?",
+    faq_a1: "Spring (March–May) and autumn (September–November) offer the most pleasant temperatures. For the Sahara, October to April is ideal. Coastal areas are pleasant year-round.",
+    faq_q2: "Do I need a visa to enter Morocco?",
+    faq_a2: "Citizens of the US, Canada, UK, Australia, EU, and most Western countries do not need a visa for stays up to 90 days. Your passport must be valid for at least 6 months from arrival.",
+    faq_q3: "Is Morocco safe to travel?",
+    faq_a3: "Morocco is one of the safest destinations in Africa and the Arab world. Our local guides ensure you navigate the souks and desert routes with complete confidence and peace of mind.",
+    faq_q4: "Are your tours private or shared?",
+    faq_a4: "All our tours are completely private — you travel with your own dedicated driver/guide, no strangers joining your group. This gives you complete flexibility with your itinerary.",
+    faq_q5: "What should I pack for a desert tour?",
+    faq_a5: "Light layers (desert days are hot, nights are cool), a scarf for wind and sun, quality sunscreen, sunglasses, a torch, comfortable walking shoes, and a power bank.",
+    faq_q6: "What languages do your guides speak?",
+    faq_a6: "Our professional guides speak English, French, Spanish, Arabic, Berber, Italian, and Portuguese. Request your preferred language when booking.",
+    faq_q7: "How can I pay?",
+    faq_a7: "We accept bank transfer, PayPal, and cash (MAD/EUR/USD). A 20% deposit secures your reservation; the balance is due on arrival.",
+    faq_q8: "Can you accommodate dietary restrictions?",
+    faq_a8: "Absolutely — vegetarian, vegan, gluten-free, halal, and allergy-specific menus are all catered for. Please inform us at the time of booking.",
+    faq_q9: "What is your cancellation policy?",
+    faq_a9: "Free cancellation up to 30 days before your tour start date. Between 30 and 15 days, a 50% refund applies. Within 15 days, the deposit is non-refundable.",
+    faq_q10: "Do you offer airport transfers?",
+    faq_a10: "Yes — all tours include private airport pickup and drop-off. We can also arrange accommodation before and after your tour if needed.",
+    // ── Blog page ──
+    blog_hero_alt: "Morocco travel blog - golden Sahara desert dunes at sunset",
+    blog_breadcrumb: "Travel Blog",
+    blog_title: "Morocco Travel Blog",
+    blog_subtitle: "Expert guides, insider tips, and inspiration from our local Sahara team — discover the very best of Morocco.",
+    blog_read_article: "Read Article",
+    blog_post_1_title: "The Ultimate Guide to Luxury Desert Camps in Merzouga",
+    blog_post_1_excerpt: "From private tents with en-suite bathrooms to gourmet dinners under the Milky Way — discover everything you need to know about luxury glamping in the Sahara.",
+    blog_post_1_date: "August 2026",
+    blog_post_1_read: "8 min read",
+    blog_post_1_cat: "Sahara Desert",
+    blog_post_2_title: "Best Time to Visit the Sahara Desert: A Complete Month-by-Month Guide",
+    blog_post_2_excerpt: "When should you plan your Merzouga desert trip? Our local experts break down temperatures, crowds, and conditions month by month.",
+    blog_post_2_date: "July 2026",
+    blog_post_2_read: "6 min read",
+    blog_post_2_cat: "Travel Planning",
+    blog_post_3_title: "Camel Trekking in Morocco: What to Expect and How to Prepare",
+    blog_post_3_excerpt: "Everything first-time riders need to know — what to wear, how to mount, what to bring, and the traditions behind this age-old Saharan journey.",
+    blog_post_3_date: "June 2026",
+    blog_post_3_read: "7 min read",
+    blog_post_3_cat: "Camel Trekking",
+    blog_post_4_title: "Marrakech to Merzouga: The Ultimate Sahara Road Trip Itinerary",
+    blog_post_4_excerpt: "Cross the High Atlas, explore Aït Ben Haddou, wind through the Dades Valley, and arrive at the golden dunes of Erg Chebbi — the complete route guide.",
+    blog_post_4_date: "May 2026",
+    blog_post_4_read: "10 min read",
+    blog_post_4_cat: "Road Trips",
+    blog_post_5_title: "The Perfect Morocco Packing List for Desert Tours (2026)",
+    blog_post_5_excerpt: "What to pack for the Sahara — from breathable layers and sun protection to the little luxuries that make a desert night unforgettable.",
+    blog_post_5_date: "April 2026",
+    blog_post_5_read: "5 min read",
+    blog_post_5_cat: "Packing",
+    blog_post_6_title: "Fes to Chefchaouen: Exploring Morocco's Blue Pearl",
+    blog_post_6_excerpt: "The journey from Morocco's cultural heart to the Instagram-famous blue medina — what to see, where to stay, and how to make the most of it.",
+    blog_post_6_date: "March 2026",
+    blog_post_6_read: "9 min read",
+    blog_post_6_cat: "Imperial Cities",
+    // ── Luxury Camp page ──
+    lc_hero_alt: "Luxury desert camp at dusk near Merzouga with lanterns glowing",
+    lc_breadcrumb: "Luxury Desert Camp",
+    lc_title: "Luxury Desert Camp",
+    lc_subtitle: "Exclusive Sahara glamping near Merzouga — private tents, fine dining, and nights beneath the brightest stars on earth.",
+    lc_f1_title: "Private Luxury Tents",
+    lc_f1_desc: "Spacious Berber-style tents with real king beds, premium linens, and private shaded terraces overlooking the dunes.",
+    lc_f2_title: "En-Suite Bathrooms",
+    lc_f2_desc: "Modern private bathrooms with hot showers, flushing toilets, and premium Moroccan bath amenities.",
+    lc_f3_title: "Fine Desert Dining",
+    lc_f3_desc: "Multi-course Moroccan feasts prepared fresh by our camp chefs — tagines, couscous, and grilled delicacies.",
+    lc_f4_title: "Camp Connectivity",
+    lc_f4_desc: "Free WiFi in the common areas so you can share your Sahara moments with the world.",
+    lc_f5_title: "Stargazing Decks",
+    lc_f5_desc: "Dedicated stargazing areas with telescopes and Berber astronomy guides to read the night sky.",
+    lc_f6_title: "Live Berber Music",
+    lc_f6_desc: "Evenings around the campfire with traditional Gnawa rhythms and Amazigh songs under the stars.",
+    lc_faq1_q: "What is included in a night at the luxury camp?",
+    lc_faq1_a: "Your night includes a sunset camel trek to camp, a gourmet multi-course dinner, live Berber music around the fire, breakfast at sunrise, and your private luxury tent with en-suite bathroom.",
+    lc_faq2_q: "Are there real beds in the tents?",
+    lc_faq2_a: "Yes — every tent features a real king-size bed with premium linens, not sleeping bags on the floor. Private en-suite bathrooms include hot showers.",
+    lc_faq3_q: "Is the camp private?",
+    lc_faq3_a: "The camp is exclusive to Morocco Grand Adventure guests. Depending on the season, you may share the camp with a few other small private groups, but each tent is completely private.",
+    lc_faq4_q: "How do I get to the camp?",
+    lc_faq4_a: "Most guests arrive by camel trek at sunset (approximately 45 minutes). We can also arrange a 4x4 transfer directly to camp if you prefer.",
+    // ── Camel Trekking page ──
+    ct_hero_alt: "Camel caravan trekking across the golden dunes of Erg Chebbi at Merzouga",
+    ct_breadcrumb: "Camel Trekking",
+    ct_title: "Camel Trekking Merzouga",
+    ct_subtitle: "Ride the golden dunes of Erg Chebbi at sunset with expert Berber guides. Authentic, private, and unforgettable Sahara camel experiences.",
+    ct_cta: "Book a Camel Trek",
+    ct_f1_title: "Sunset Camel Treks",
+    ct_f1_desc: "Ride across the golden dunes of Erg Chebbi as the sun paints the sky — the iconic Merzouga experience.",
+    ct_f2_title: "Sunrise Treks",
+    ct_f2_desc: "Wake before dawn to witness the desert come alive. Watch the first light catch the dunes in spectacular colour.",
+    ct_f3_title: "Private Caravans",
+    ct_f3_desc: "No shared camel trains here. Your trek is private, led by experienced Berber guides who know the dunes intimately.",
+    ct_f4_title: "Bedouin Tea Stops",
+    ct_f4_desc: "Pause in the dunes for sweet mint tea prepared over an open fire — the legendary hospitality of the Sahara.",
+    ct_f5_title: "Luxury Camp Nights",
+    ct_f5_desc: "Many treks end at our luxury desert camp, where a gourmet dinner and stargazing await beneath the Milky Way.",
+    ct_f6_title: "All Experience Levels",
+    ct_f6_desc: "Whether you're a first-time rider or an experienced traveler, our gentle, well-cared-for camels suit everyone.",
+    ct_faq1_q: "How long do the camel treks last?",
+    ct_faq1_a: "We offer treks from 1-hour sunset rides to full multi-day expeditions. The most popular is the 45-minute sunset trek to our luxury desert camp, followed by breakfast at sunrise the next morning.",
+    ct_faq2_q: "Is camel trekking safe?",
+    ct_faq2_a: "Absolutely. Our camels are gentle, well-cared-for animals led by experienced Berber guides. You'll receive clear instructions before mounting, and the pace is always relaxed.",
+    ct_faq3_q: "What should I wear?",
+    ct_faq3_a: "Comfortable, loose-fitting clothing. Long trousers protect from the sun and the saddle. A scarf for the wind and sun, sunglasses, and sunscreen are also recommended.",
+    ct_faq4_q: "Can children ride?",
+    ct_faq4_a: "Yes — camel trekking is one of Morocco's most family-friendly experiences. Children ride with a guide or alongside their parents. We'll always prioritise safety and comfort.",
+    ct_faq5_q: "What happens if I get motion sick?",
+    ct_faq5_a: "The camels move at a gentle, swaying pace. If you're concerned, we recommend the shorter sunset trek, or you can ride a 4x4 to the camp instead.",
+    // ── 4x4 Tours page ──
+    f4_hero_alt: "4x4 vehicle driving across the dramatic golden dunes of Erg Chebbi in the Sahara desert",
+    f4_breadcrumb: "4x4 Desert Tours",
+    f4_title: "4x4 Desert Tours Morocco",
+    f4_subtitle: "Explore the Sahara beyond the dunes with private 4x4 adventures — hidden oases, nomad camps, fossil beds, and the wild beauty of Erg Chebbi.",
+    f4_cta: "Book a 4x4 Adventure",
+    f4_f1_title: "Erg Chebbi Dune Driving",
+    f4_f1_desc: "Power across Morocco's most spectacular sand sea with professional drivers who've navigated these dunes for decades.",
+    f4_f2_title: "Nomad Family Visits",
+    f4_f2_desc: "Meet Saharan nomad families and share tea in their tents — a rare glimpse of life that has barely changed for centuries.",
+    f4_f3_title: "Hidden Oases & Fossil Beds",
+    f4_f3_desc: "Discover the Black Desert, fossil beds, and hidden oases that lie far beyond the reach of standard tourist routes.",
+    f4_f4_title: "Merzouga Lake & Khamlia",
+    f4_f4_desc: "Visit the seasonal Dayet Srji lake and the village of Khamlia, home to soulful Gnawa musicians.",
+    f4_f5_title: "Private 4x4 Vehicles",
+    f4_f5_desc: "Comfortable, air-conditioned 4x4 vehicles with experienced local drivers who know every dune and track.",
+    f4_f6_title: "Custom Off-Road Adventures",
+    f4_f6_desc: "From half-day explorations to multi-day Sahara expeditions — your 4x4 adventure is completely customisable.",
+    f4_faq1_q: "Do I need driving experience?",
+    f4_faq1_a: "No — your professional local driver handles everything. You sit back, enjoy the scenery, and focus on the adventure.",
+    f4_faq2_q: "How long are the 4x4 tours?",
+    f4_faq2_a: "We offer half-day, full-day, and multi-day 4x4 expeditions. The classic morning tour covers the Black Desert, fossil beds, and Khamlia village.",
+    f4_faq3_q: "Is it safe?",
+    f4_faq3_a: "Yes — our drivers are born in the desert and have decades of experience navigating the dunes. Vehicles are modern, comfortable, and well-maintained.",
+    f4_faq4_q: "What should I bring?",
+    f4_faq4_a: "Sunglasses, sunscreen, a light scarf for dust, and your camera! We provide bottled water in the vehicle.",
+    f4_faq5_q: "Can we combine a 4x4 tour with a camel trek?",
+    f4_faq5_a: "Absolutely — many guests ride camels to the camp at sunset, then use a 4x4 for exploration the next morning. We'll design the perfect combination.",
+    // ── Fes/Marrakech Tours page ──
+    mt_hero_alt: "Fes el-Bali medieval medina with the Chouara Tannery and ancient architecture",
+    mt_breadcrumb: "Fes Tours",
+    mt_title: "Fes Tours",
+    mt_subtitle: "Explore Morocco's cultural capital with expert local guides — the medieval medina, tanneries, imperial history, and unforgettable day trips.",
+    mt_cta: "Explore Fes Tours",
+    mt_f1_title: "Fes el-Bali Medina Tours",
+    mt_f1_desc: "Explore the world's largest living medieval medina with an official local guide — tanneries, souks, and hidden courtyards.",
+    mt_f2_title: "Chouara Tannery",
+    mt_f2_desc: "Witness the famous leather tanneries in action — a sensory experience that has remained unchanged for centuries.",
+    mt_f3_title: "Al-Qarawiyyin University",
+    mt_f3_desc: "Visit the world's oldest continuously operating university, founded in 859 AD by Fatima al-Fihri.",
+    mt_f4_title: "Chefchaouen Day Trip",
+    mt_f4_desc: "Drive to the Blue Pearl of Morocco — the Instagram-famous blue medina nestled in the Rif Mountains.",
+    mt_f5_title: "Meknès & Volubilis",
+    mt_f5_desc: "Explore the imperial city of Meknès and the spectacular Roman ruins of Volubilis — a UNESCO World Heritage site.",
+    mt_f6_title: "Sahara Desert Tours from Fes",
+    mt_f6_desc: "Start your Sahara adventure from Fes — cross the Middle Atlas to Merzouga and the golden dunes of Erg Chebbi.",
+    mt_faq1_q: "What is Fes famous for?",
+    mt_faq1_a: "Fes is Morocco's spiritual and cultural heart — home to the world's oldest university, the famous Chouara Tannery, and one of the largest medieval medinas on earth.",
+    mt_faq2_q: "How many days do I need in Fes?",
+    mt_faq2_a: "We recommend 2 days to explore the medina and its highlights, plus a day trip to Chefchaouen or Meknès and Volubilis.",
+    mt_faq3_q: "Do I need a guide for the Fes medina?",
+    mt_faq3_a: "Yes — the medina is a labyrinth of over 9,000 streets. An official local guide ensures you see the highlights and don't get lost.",
+    mt_faq4_q: "Can I start a Sahara tour from Fes?",
+    mt_faq4_a: "Absolutely — many of our Sahara tours begin in Fes, crossing the Middle Atlas and cedar forests on the way to Merzouga.",
+    // ── Day Trips page ──
+    dt_hero_alt: "Ouzoud waterfalls cascading into a turquoise pool in Morocco",
+    dt_breadcrumb: "Morocco Day Trips",
+    dt_title: "Morocco Day Trips",
+    dt_subtitle: "Unforgettable guided day trips from Marrakech, Fes, and Merzouga — waterfalls, blue cities, imperial ruins, and hidden desert gems.",
+    dt_cta: "Plan Your Day Trip",
+    dt_f1_title: "From Marrakech: Ourika Valley",
+    dt_f1_desc: "Lush valleys, waterfalls, Berber markets, and argan cooperatives — just one hour from the Red City.",
+    dt_f2_title: "From Marrakech: Ouzoud Falls",
+    dt_f2_desc: "North Africa's highest waterfalls — Barbary macaques, rainbows, and boat trips beneath the cascades.",
+    dt_f3_title: "From Marrakech: Essaouira",
+    dt_f3_desc: "The windswept Atlantic port — fresh seafood, blue boats, and the famous ramparts of the UNESCO medina.",
+    dt_f4_title: "From Fes: Chefchaouen",
+    dt_f4_desc: "The Blue Pearl of Morocco — Instagram-famous blue medina nestled in the Rif Mountains.",
+    dt_f5_title: "From Fes: Meknès & Volubilis",
+    dt_f5_desc: "Imperial gates, Roman ruins, and the grandest of Morocco's forgotten imperial cities.",
+    dt_f6_title: "From Merzouga: Desert Explorer",
+    dt_f6_desc: "Full-day 4x4 explorations covering the Black Desert, fossil beds, Khamlia village, and hidden oases.",
+    dt_faq1_q: "Can you customise a day trip?",
+    dt_faq1_a: "Absolutely — every day trip can be tailored to your interests, pace, and starting point. We'll design the perfect itinerary for your schedule.",
+    dt_faq2_q: "What does a day trip include?",
+    dt_faq2_a: "Private air-conditioned transport, a professional English-speaking driver/guide, and hotel pickup and drop-off. Entrance fees and lunch are typically not included.",
+    dt_faq3_q: "What is the best day trip from Marrakech?",
+    dt_faq3_a: "The Ourika Valley is our most popular choice for a relaxing day trip, while the Sahara 3-day tour is perfect if you have more time.",
+    dt_faq4_q: "Are day trips suitable for families?",
+    dt_faq4_a: "Yes — all our day trips are private and can be adapted for children of all ages. We'll suggest stops that keep everyone engaged.",
+    // ── Merzouga Guide page ──
+    mg_hero_alt: "Golden dunes of Erg Chebbi at Merzouga with a camel caravan at sunset",
+    mg_breadcrumb: "Merzouga Travel Guide",
+    mg_title: "Merzouga Travel Guide",
+    mg_subtitle: "The ultimate guide to Merzouga — Erg Chebbi dunes, luxury camps, camel trekking, stargazing, and everything you need for the perfect Sahara adventure.",
+    mg_cta: "Plan Your Merzouga Trip",
+    mg_f1_title: "Erg Chebbi Dunes",
+    mg_f1_desc: "Marvel at Morocco's most iconic sand sea — 22km of golden dunes rising up to 150 metres, ever-changing with the light.",
+    mg_f2_title: "Camel Trekking at Sunset",
+    mg_f2_desc: "The essential Merzouga experience — ride a camel across the dunes as the sun sets and the desert turns to gold.",
+    mg_f3_title: "Luxury Desert Camps",
+    mg_f3_desc: "Sleep in real beds with en-suite bathrooms beneath the brightest stars on earth at our exclusive luxury camp.",
+    mg_f4_title: "Khamlia Gnawa Village",
+    mg_f4_desc: "Hear soulful Gnawa music in the 'village of the black people' — a cultural experience found nowhere else.",
+    mg_f5_title: "Nomad Family Visits",
+    mg_f5_desc: "Share mint tea with Saharan nomad families and glimpse a way of life that has endured for centuries.",
+    mg_f6_title: "Stargazing",
+    mg_f6_desc: "With zero light pollution, Erg Chebbi offers some of the best stargazing on the planet — the Milky Way in all its glory.",
+    mg_faq1_q: "How do I get to Merzouga?",
+    mg_faq1_a: "Most travelers arrive from Marrakech (about 9-10 hours by road) or Fes (about 7 hours). Your private driver-guide will handle everything, with stops at key sights along the way.",
+    mg_faq2_q: "When is the best time to visit Merzouga?",
+    mg_faq2_a: "October to April is ideal — warm days and cool, comfortable nights. Summer months (June-August) can be extremely hot during the day.",
+    mg_faq3_q: "How many nights should I stay?",
+    mg_faq3_a: "We recommend at least 2 nights — one night in the luxury camp and one in a desert hotel. This allows time for the camp experience, a 4x4 tour, and a sunrise over the dunes.",
+    mg_faq4_q: "Is Merzouga safe?",
+    mg_faq4_a: "Yes — Merzouga is a small, welcoming village where tourism is the main livelihood. Our local team ensures you experience it in complete safety and comfort.",
+    // ── Desert Tours page ──
+    dt2_hero_alt: "Golden Sahara desert dunes at Merzouga with camel caravan at sunset",
+    dt2_title: "Sahara Desert Tours",
+    dt2_subtitle: "Private Merzouga desert tours, Erg Chebbi camel treks, and luxury desert camps — crafted by locals born in the Sahara.",
+    dt2_cta_explore: "Explore Desert Tours",
+    dt2_whatsapp: "WhatsApp Us",
+    dt2_intro_heading: "Experience the Sahara Like a Local",
+    dt2_intro_p1: "There is no place on earth like the Sahara — and no one knows it better than us. Born and raised in Merzouga at the foot of Erg Chebbi, our team has been guiding travelers through the golden dunes for over 25 years. We don't just show you the desert; we welcome you into our home.",
+    dt2_intro_p2: "Our desert tours are completely private — no groups, no rushed itineraries, no tourist traps. From camel treks at sunset to nights in luxury desert camps under the Milky Way, every moment is designed to let you feel the true pulse of the Sahara.",
+    dt2_featured: "Featured Tours",
+    dt2_featured_title: "Our Sahara Desert Tours",
+    dt2_view_details: "View Details",
+    dt2_view_all: "View All Desert Tours",
+    dt2_why_title: "Why Book a Desert Tour With Us?",
+    dt2_why1_title: "Born in the Sahara",
+    dt2_why1_desc: "Our guides grew up in Merzouga. We know every dune, every star, and every hidden corner of the desert.",
+    dt2_why2_title: "Private & Exclusive",
+    dt2_why2_desc: "Every tour is private for your party alone. No groups, no strangers — just you and the desert.",
+    dt2_why3_title: "Local Berber Hospitality",
+    dt2_why3_desc: "Share mint tea with nomad families, listen to Gnawa music, and experience the legendary warmth of the Sahara.",
+    dt2_ready: "Ready to Experience the Sahara?",
+    dt2_ready_sub: "Message us on WhatsApp for a personalised quote or use our trip builder to design your perfect desert adventure.",
+    dt2_build: "Build Your Journey",
+    dt2_chat: "Chat on WhatsApp",
+    // ── Home page ──
+    home_signature: "Signature Morocco",
+    home_signature_title: "Real places, cinematic presentation",
+    home_signature_sub: "A premium visual journey through Morocco's most iconic destinations.",
+    home_morocco_badge: "Morocco",
+    home_place1_name: "Merzouga Desert",
+    home_place1_desc: "Golden dunes, camel rides, and unforgettable sunsets.",
+    home_place2_name: "Luxury Desert Camp",
+    home_place2_desc: "Private tents, fine dining, and luxury under the stars.",
+    home_place3_name: "Atlas Mountains",
+    home_place3_desc: "Scenic drives, valleys, and authentic Berber villages.",
+    home_place4_name: "Draa Valley",
+    home_place4_desc: "Palm groves, kasbahs, and dramatic desert landscapes.",
+    home_place5_name: "Marrakech",
+    home_place5_desc: "Jemaa el-Fnaa, souks, colors, and vibrant city energy.",
+    home_place6_name: "Todra Gorge",
+    home_place6_desc: "Towering cliffs and one of Morocco's most iconic canyons.",
+    home_exp_sahara: "Experience the Sahara",
+    home_exp_title: "Where the desert comes alive",
+    home_exp_sub: "Press play and step into the golden dunes of Merzouga — the silence, the light, and the magic of a night beneath a sky full of stars.",
+    home_rev1_name: "Sarah Jenkins",
+    home_rev1_quote: "The 7-day desert tour exceeded all expectations. Our guide Hassan was incredibly knowledgeable. Sleeping under the stars in Merzouga is an experience I will never forget.",
+    home_rev1_tour: "7-Day Imperial Cities & Sahara Escape",
+    home_rev2_name: "David Chen",
+    home_rev2_quote: "Flawless organization from start to finish. The luxury riads chosen for us in Fes and Marrakech were stunning. The attention to detail made this trip truly special.",
+    home_rev2_tour: "5-Day Imperial Cities & Desert",
+    home_rev3_name: "Amara & James",
+    home_rev3_quote: "We booked the honeymoon package and it was pure magic. A private dinner in the desert, a hot air balloon over Marrakech... every day brought a new beautiful surprise.",
+    home_rev3_tour: "Honeymoon Morocco Package",
+    home_rev4_name: "Robert Müller",
+    home_rev4_quote: "As a photography enthusiast, this trip was paradise. The pacing was perfect, allowing time to truly appreciate the landscapes. Highly recommend their bespoke services.",
+    home_rev4_tour: "3-Day Luxury Sahara Tour",
+    home_rev5_name: "Priya Patel",
+    home_rev5_quote: "Traveling as a solo woman, safety was my priority. I felt completely cared for the entire time. The hospitality of the Berber people is something extraordinary.",
+    home_rev5_tour: "5-Day Imperial Cities & Desert",
+    home_rev6_name: "Carlos Rivera",
+    home_rev6_quote: "From the bustling medina of Fes to the quiet of the Atlas mountains, the contrasts of Morocco were presented beautifully by our expert driver.",
+    home_rev6_tour: "7-Day Imperial Cities & Sahara Escape",
+    home_ig_alt1: "Morocco Grand Adventure guests watching a Sahara sunset",
+    home_ig_alt2: "Tour group in the Atlas Mountains, Morocco",
+    home_ig_alt3: "Luxury desert camp at dusk near Merzouga",
+    home_ig_alt4: "Morocco Grand Adventure guests with tour van",
+    // ── About page ──
+    about_meet_guide: "Meet Your Local Guide",
+    about_guide_heading: "A friend in Morocco, not just a guide",
+    about_guide_p1: "Salam, and welcome! I'm Mohamed, founder of Morocco Grand Adventure. I was born and raised among the golden dunes of Merzouga, on the very edge of the Sahara — the desert isn't a destination to me, it's home.",
+    about_guide_p2: "For over a decade I've guided travelers from every corner of the world across my country: through the labyrinthine souks of Marrakech and Fes, over the passes of the High Atlas, and out to quiet nights beneath a sky thick with stars. When you travel with me, you are never just a tourist — you are my guest, and my family becomes yours.",
+    about_founder: "Founder & Head Guide",
+    about_guide_name: "Mohamed Bou Ghrara",
+    about_stat1_value: "Merzouga",
+    about_stat1_label: "Born & Raised",
+    about_stat2_value: "10+ Years",
+    about_stat2_label: "Guiding Travelers",
+    about_stat3_value: "5 Languages",
+    about_stat3_label: "Spoken Fluently",
+    about_stat4_value: "1,000+",
+    about_stat4_label: "Happy Guests",
+    about_languages: "Languages",
+    about_chat: "Chat with Mohamed",
+    about_experiences: "Real Traveler Experiences",
+    about_memories: "Memories made together",
+    about_memories_sub: "Not stock photos — these are real moments from real journeys with our guests across Morocco.",
+    about_moment1: "Sharing sweet mint tea with a guest among the golden dunes of Merzouga.",
+    about_moment2: "An unforgettable group adventure through the Atlas foothills.",
+    about_moment3: "Golden hour in the Sahara — the moment everyone remembers.",
+    about_moment4: "New friends, open roads, and stories to last a lifetime.",
+    about_moment5: "Evenings at our private luxury desert camp.",
+    about_moment6: "Sweet mint tea and slow mornings on a sunlit terrace.",
+    about_hero_alt: "Our travelers in Morocco",
+    about_guide_alt: "Mohamed Bou Ghrara, your local guide",
+    // ── Gallery page ──
+    gallery_hero_alt: "Morocco Gallery",
+    gallery_close: "Close",
+    gallery_prev: "Previous",
+    gallery_next: "Next",
+    gallery_all: "All",
+    gallery_cat_desert: "Desert",
+    gallery_cat_luxury_camp: "Luxury Camp",
+    gallery_cat_camel_trekking: "Camel Trekking",
+    gallery_cat_quad: "Quad Adventure",
+    gallery_cat_happy_travelers: "Happy Travelers",
+    gallery_cat_landscapes: "Landscapes",
+    gallery_cat_culture: "Culture",
+    gallery_cat_food: "Food",
+    gallery_cat_guide_journey: "My Journey as a Guide",
+    gallery_cat_authenticity: "Authenticity",
+    gallery_cap1: "Golden dunes at sunrise over Erg Chebbi",
+    gallery_cap2: "Merzouga — Erg Chebbi Dunes",
+    gallery_cap3: "The golden sands of Erg Chebbi",
+    gallery_cap4: "Zagora — gateway to the desert",
+    gallery_cap5: "The palm groves of the Draa Valley",
+    gallery_cap6: "The Sahara at sunset",
+    gallery_cap7: "Stargazing beneath the Milky Way",
+    gallery_cap8: "Our luxury desert camp at dusk",
+    gallery_cap9: "A traditional riad courtyard",
+    gallery_cap10: "A luxury riad suite",
+    gallery_cap11: "Rooftop views over the medina",
+    gallery_cap12: "Sharing sweet mint tea with a guest in the dunes",
+    gallery_cap13: "Happy travelers in the Atlas",
+    gallery_cap14: "A Sahara sunset with our guests",
+    gallery_cap15: "On the road together",
+    gallery_cap16: "Sharing tea on the terrace",
+    gallery_cap17: "Your local Berber guide",
+    gallery_cap18: "Marrakech — the Red City",
+    gallery_cap19: "Fes — the ancient tanneries",
+    gallery_cap20: "Chefchaouen — the Blue Pearl",
+    gallery_cap21: "Meknes — Bab Mansour Gate",
+    gallery_cap22: "Rabat — Kasbah of the Udayas",
+    gallery_cap23: "Lanterns of the medina",
+    gallery_cap24: "The High Atlas mountains",
+    gallery_cap25: "Aït Benhaddou — the ancient ksar",
+    gallery_cap26: "The winding Dades Valley road",
+    gallery_cap27: "The towering Todra Gorge",
+    gallery_cap28: "Imlil — heart of the High Atlas",
+    gallery_cap29: "The green Ourika Valley",
+    gallery_cap30: "Essaouira — the windy harbour",
+    gallery_cap31: "The red arches of Legzira",
+    gallery_cap32: "Taghazout — the surf village",
+    gallery_cap33: "The sweeping bay of Agadir",
+    gallery_cap34: "The quiet cliffs of Mirleft",
+    gallery_cap35: "Sweet Moroccan mint tea",
+    gallery_cap36: "A slow-cooked traditional tagine",
+    gallery_cap37: "Friday couscous",
+    gallery_cap38: "Fresh Moroccan pastries",
+    gallery_cap39: "Street food in the medina",
+    gallery_vid1_title: "Lost in the Dunes",
+    gallery_vid2_title: "Experience the Sahara",
+    gallery_vid3_title: "Campfire Nights in Merzouga",
+    gallery_vid4_title: "Morocco — A Cinematic Journey",
+    // ── Tour Detail page ──
+    td_watch_journey: "Watch the Journey",
+    td_cinematic: "A Cinematic Preview",
+    td_overview: "Tour Overview",
+    td_your_route: "Your Route",
+    td_route_caption: "Follow your route stop by stop across Morocco — tap any numbered marker on the map to explore that destination.",
+    td_faq_title: "Frequently Asked Questions",
+    td_google_reviews: "Google Reviews",
+    td_loved: "Loved by travelers worldwide",
+    td_or: "or",
+    td_decrease: "Decrease travelers",
+    td_increase: "Increase travelers",
+    td_rev1_name: "Michael T.",
+    td_rev1_country: "United Kingdom",
+    td_rev1_text: "Incredible from start to finish. The camel trek at sunset and the luxury camp were once-in-a-lifetime, and our driver was superb throughout.",
+    td_rev2_name: "Jessica R.",
+    td_rev2_country: "United States",
+    td_rev2_text: "Every detail was taken care of. The riads were beautiful, the desert camp exceeded expectations, and we never once felt rushed.",
+    td_rev3_name: "Sophie & Marc",
+    td_rev3_country: "France",
+    td_rev3_text: "A perfect blend of coast, mountains and desert. Essaouira and the dunes were the highlights. Warm, professional and seamless.",
+    td_rev4_name: "Ahmed K.",
+    td_rev4_country: "United Arab Emirates",
+    td_rev4_text: "Well paced and highly professional. The private vehicle was spotless and comfortable. Worth every single penny.",
+    td_group_quote_msg: "I'm interested in a group booking for {tour}. Please send me a custom quote.",
+    // ── Destination Detail page ──
+    dd_style: "Style",
+    dd_sunny: "Sunny & Clear",
+    dd_mon: "Mon",
+    dd_tue: "Tue",
+    dd_wed: "Wed",
+    dd_thu: "Thu",
+    dd_dunes_day_night: "The Dunes, Day & Night",
+    dd_dunes_sub: "From golden light rolling across Erg Chebbi at sunrise to a sky ablaze with stars after dark — this is why travelers never forget a night in Merzouga.",
+    dd_sunrise: "Sunrise over Erg Chebbi",
+    dd_stargazing: "Stargazing beneath the Milky Way",
+    dd_plan_sub: "Let our local experts plan the perfect itinerary including {dest}.",
+    // ── Tours page ──
+    tours_matching: "matching:",
+    tours_clear: "Clear filters",
+    tours_no_match: "No tours match your current filters.",
+    tours_view_all: "View All Tours",
+    tours_tour: "tour",
+    tours_tours: "tours",
+    // ── Trip Builder ──
+    tb_city_casablanca: "Casablanca",
+    tb_city_marrakech: "Marrakech",
+    tb_city_tangier: "Tangier",
+    tb_city_fes: "Fes",
+    tb_city_agadir: "Agadir",
+    tb_travel_to: "Travel to {dest}. {desc}",
+    tb_discover: "Discover the highlights of {dest}, including {highlights}.",
+    tb_onward: "Travel to {departure} for your onward journey.",
   },
 
   // ═══════════════════════════════════════════════════════════════════════════

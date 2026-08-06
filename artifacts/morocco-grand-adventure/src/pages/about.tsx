@@ -5,32 +5,29 @@ import { contactInfo } from '@/data/content';
 import { Star, Globe, Users, MapPin, Quote, Heart, CheckCircle2 } from 'lucide-react';
 import { SiWhatsapp } from 'react-icons/si';
 
-const guideStats = [
-  { icon: MapPin, value: 'Merzouga', label: 'Born & Raised' },
-  { icon: Star, value: '10+ Years', label: 'Guiding Travelers' },
-  { icon: Globe, value: '5 Languages', label: 'Spoken Fluently' },
-  { icon: Users, value: '1,000+', label: 'Happy Guests' },
-];
-
-const guideLanguages = ['Amazigh (Berber)', 'Arabic', 'English', 'French', 'Spanish'];
-
-const travelerMoments = [
-  { src: '/images/personal/guide-guest-tea-wide.jpg', caption: 'Sharing sweet mint tea with a guest among the golden dunes of Merzouga.' },
-  { src: '/images/personal/group-atlas.jpg', caption: 'An unforgettable group adventure through the Atlas foothills.' },
-  { src: '/images/personal/guests-sunset.webp', caption: 'Golden hour in the Sahara — the moment everyone remembers.' },
-  { src: '/images/personal/guests-van.jpg', caption: 'New friends, open roads, and stories to last a lifetime.' },
-  { src: '/images/personal/luxury-camp-dusk.jpg', caption: 'Evenings at our private luxury desert camp.' },
-  { src: '/images/personal/riad-tea.jpg', caption: 'Sweet mint tea and slow mornings on a sunlit terrace.' },
-];
-
 export default function About() {
   const { t } = useLanguage();
+  const guideStats = [
+    { icon: MapPin, value: t('about_stat1_value'), label: t('about_stat1_label') },
+    { icon: Star, value: t('about_stat2_value'), label: t('about_stat2_label') },
+    { icon: Globe, value: t('about_stat3_value'), label: t('about_stat3_label') },
+    { icon: Users, value: t('about_stat4_value'), label: t('about_stat4_label') },
+  ];
+  const guideLanguages = ['Amazigh (Berber)', 'Arabic', 'English', 'French', 'Spanish'];
+  const travelerMoments = [
+    { src: '/images/personal/guide-guest-tea-wide.jpg', caption: t('about_moment1') },
+    { src: '/images/personal/group-atlas.jpg', caption: t('about_moment2') },
+    { src: '/images/personal/guests-sunset.webp', caption: t('about_moment3') },
+    { src: '/images/personal/guests-van.jpg', caption: t('about_moment4') },
+    { src: '/images/personal/luxury-camp-dusk.jpg', caption: t('about_moment5') },
+    { src: '/images/personal/riad-tea.jpg', caption: t('about_moment6') },
+  ];
   return (
     <Layout>
       {/* Hero */}
       <section className="relative h-[60vh] w-full flex items-center justify-center pt-20">
         <div className="absolute inset-0 z-0">
-          <img src="/images/personal/group-atlas.jpg" alt="Our travelers in Morocco" className="w-full h-full object-cover" />
+          <img src="/images/personal/group-atlas.jpg" alt={t('about_hero_alt')} className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/60" />
         </div>
         <div className="relative z-10 text-center px-4 max-w-3xl">
@@ -70,11 +67,11 @@ export default function About() {
               className="relative"
             >
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-border">
-                <img src="/images/personal/guide-portrait.jpg" alt="Mohamed Bou Ghrara, your local guide" loading="lazy" decoding="async" className="w-full h-[520px] object-cover" />
+                <img src="/images/personal/guide-portrait.jpg" alt={t('about_guide_alt')} loading="lazy" decoding="async" className="w-full h-[520px] object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6">
-                  <span className="text-primary font-bold tracking-widest uppercase text-xs block mb-1">Founder & Head Guide</span>
-                  <span className="text-white font-serif text-3xl drop-shadow">Mohamed Bou Ghrara</span>
+                  <span className="text-primary font-bold tracking-widest uppercase text-xs block mb-1">{t('about_founder')}</span>
+                  <span className="text-white font-serif text-3xl drop-shadow">{t('about_guide_name')}</span>
                 </div>
               </div>
               {/* Floating rating badge */}
@@ -93,19 +90,15 @@ export default function About() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.1 }}
             >
-              <span className="text-primary font-bold tracking-wider uppercase text-sm mb-3 block">Meet Your Local Guide</span>
-              <h2 className="font-serif text-4xl md:text-5xl text-foreground mb-6 leading-tight">A friend in Morocco, not just a guide</h2>
+              <span className="text-primary font-bold tracking-wider uppercase text-sm mb-3 block">{t('about_meet_guide')}</span>
+              <h2 className="font-serif text-4xl md:text-5xl text-foreground mb-6 leading-tight">{t('about_guide_heading')}</h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed mb-8">
                 <p>
                   <span className="text-2xl text-primary font-serif mr-1">"</span>
-                  Salam, and welcome! I'm Mohamed, founder of Morocco Grand Adventure. I was born and raised among the
-                  golden dunes of Merzouga, on the very edge of the Sahara — the desert isn't a destination to me, it's home.
+                  {t('about_guide_p1')}
                 </p>
                 <p>
-                  For over a decade I've guided travelers from every corner of the world across my country: through the
-                  labyrinthine souks of Marrakech and Fes, over the passes of the High Atlas, and out to quiet nights beneath
-                  a sky thick with stars. When you travel with me, you are never just a tourist — you are my guest, and my
-                  family becomes yours.
+                  {t('about_guide_p2')}
                 </p>
               </div>
 
@@ -123,7 +116,7 @@ export default function About() {
               {/* Languages */}
               <div className="mb-8">
                 <span className="text-xs font-bold text-foreground uppercase tracking-wider flex items-center gap-2 mb-3">
-                  <Globe className="w-4 h-4 text-primary" /> Languages
+                  <Globe className="w-4 h-4 text-primary" /> {t('about_languages')}
                 </span>
                 <div className="flex flex-wrap gap-2">
                   {guideLanguages.map((lang) => (
@@ -138,7 +131,7 @@ export default function About() {
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 bg-[#25D366] text-white px-8 py-4 rounded-full font-bold hover:bg-[#128C7E] transition-all hover:-translate-y-1 shadow-lg shadow-[#25D366]/30"
               >
-                <SiWhatsapp className="w-5 h-5" /> Chat with Mohamed
+                <SiWhatsapp className="w-5 h-5" /> {t('about_chat')}
               </a>
             </motion.div>
           </div>
@@ -149,10 +142,10 @@ export default function About() {
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-16">
-            <span className="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">Real Traveler Experiences</span>
-            <h2 className="font-serif text-4xl md:text-5xl text-foreground mb-4">Memories made together</h2>
+            <span className="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">{t('about_experiences')}</span>
+            <h2 className="font-serif text-4xl md:text-5xl text-foreground mb-4">{t('about_memories')}</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-              Not stock photos — these are real moments from real journeys with our guests across Morocco.
+              {t('about_memories_sub')}
             </p>
           </div>
 

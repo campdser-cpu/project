@@ -5,7 +5,7 @@ import { TooltipProvider } from '@/components/ui/tooltip';
 import { Route, Switch, Router as WouterRouter, useLocation } from 'wouter';
 import { usePathname, navigate } from 'wouter/use-browser-location';
 import { AnimatePresence, motion } from 'framer-motion';
-import { LanguageProvider } from './contexts/LanguageContext';
+import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
 import { PromoProvider } from './components/promo/PromoProvider';
 import { LocalizedHead } from './components/seo/LocalizedHead';
 import { RAW_BASE, parseLangPath, preferredLang, langHref } from './lib/i18n-routing';
@@ -36,11 +36,18 @@ const queryClient = new QueryClient();
 
 // Loading fallback for lazy-loaded routes
 function PageLoader() {
+  let loadingText = "Loading...";
+  try {
+    const { t } = useLanguage();
+    loadingText = t('app_loading');
+  } catch {
+    // LanguageProvider not available yet (initial redirect)
+  }
   return (
     <div className="flex items-center justify-center min-h-[60vh] w-full">
       <div className="flex flex-col items-center gap-4">
         <div className="w-12 h-12 border-4 border-primary/20 border-t-primary rounded-full animate-spin" aria-hidden="true" />
-        <span className="text-muted-foreground text-sm font-medium tracking-wide">Loading...</span>
+        <span className="text-muted-foreground text-sm font-medium tracking-wide">{loadingText}</span>
       </div>
     </div>
   );

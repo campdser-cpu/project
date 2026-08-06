@@ -1,13 +1,15 @@
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'wouter';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Phone, Calendar, ChevronRight } from 'lucide-react';
+import { Phone, Calendar } from 'lucide-react';
 import { contactInfo } from '@/data/content';
 import { SiWhatsapp } from 'react-icons/si';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export function StickyBookingCTA() {
   const [visible, setVisible] = useState(false);
   const [location] = useLocation();
+  const { t } = useLanguage();
 
   // Show after scrolling 600px, hide on booking/contact pages
   useEffect(() => {
@@ -38,7 +40,7 @@ export function StickyBookingCTA() {
               href="/trip-builder"
               className="flex items-center justify-center gap-2 bg-primary text-primary-foreground px-3 py-3 rounded-xl font-bold text-xs tracking-wide"
             >
-              <Calendar className="w-4 h-4 shrink-0" /> Custom Trip
+              <Calendar className="w-4 h-4 shrink-0" /> {t('sticky_custom_trip')}
             </Link>
             <a
               href={contactInfo.whatsapp}
@@ -46,13 +48,13 @@ export function StickyBookingCTA() {
               rel="noreferrer"
               className="flex items-center justify-center gap-2 bg-[#25D366] text-white px-3 py-3 rounded-xl font-bold text-xs tracking-wide"
             >
-              <SiWhatsapp className="w-4 h-4 shrink-0" /> WhatsApp
+              <SiWhatsapp className="w-4 h-4 shrink-0" /> {t('sticky_whatsapp')}
             </a>
             <a
               href={`tel:${contactInfo.phone.replace(/\s/g, '')}`}
               className="flex items-center justify-center gap-2 bg-foreground text-background px-3 py-3 rounded-xl font-bold text-xs tracking-wide"
             >
-              <Phone className="w-4 h-4 shrink-0" /> Call Now
+              <Phone className="w-4 h-4 shrink-0" /> {t('sticky_call_now')}
             </a>
           </div>
         </motion.div>

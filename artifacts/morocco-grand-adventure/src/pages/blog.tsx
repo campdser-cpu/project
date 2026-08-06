@@ -2,74 +2,28 @@ import { motion } from 'framer-motion';
 import { Link } from 'wouter';
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
 import { ExperiencePage, defaultTrustBadges } from '../components/ExperiencePage';
-
-const posts = [
-  {
-    slug: "merzouga-luxury-desert-camp-guide",
-    title: "The Ultimate Guide to Luxury Desert Camps in Merzouga",
-    excerpt: "From private tents with en-suite bathrooms to gourmet dinners under the Milky Way — discover everything you need to know about luxury glamping in the Sahara.",
-    image: "/images/personal/luxury-camp-dusk.jpg",
-    date: "August 2026",
-    readTime: "8 min read",
-    category: "Sahara Desert",
-  },
-  {
-    slug: "best-time-to-visit-morocco-sahara",
-    title: "Best Time to Visit the Sahara Desert: A Complete Month-by-Month Guide",
-    excerpt: "When should you plan your Merzouga desert trip? Our local experts break down temperatures, crowds, and conditions month by month.",
-    image: "/images/dest/merzouga.jpg",
-    date: "July 2026",
-    readTime: "6 min read",
-    category: "Travel Planning",
-  },
-  {
-    slug: "camel-trekking-etiquette-morocco",
-    title: "Camel Trekking in Morocco: What to Expect and How to Prepare",
-    excerpt: "Everything first-time riders need to know — what to wear, how to mount, what to bring, and the traditions behind this age-old Saharan journey.",
-    image: "/images/personal/dunes-camels-poster.jpg",
-    date: "June 2026",
-    readTime: "7 min read",
-    category: "Camel Trekking",
-  },
-  {
-    slug: "marrakech-to-merzouga-roadtrip",
-    title: "Marrakech to Merzouga: The Ultimate Sahara Road Trip Itinerary",
-    excerpt: "Cross the High Atlas, explore Aït Ben Haddou, wind through the Dades Valley, and arrive at the golden dunes of Erg Chebbi — the complete route guide.",
-    image: "/images/dest/ait-ben-haddou.jpg",
-    date: "May 2026",
-    readTime: "10 min read",
-    category: "Road Trips",
-  },
-  {
-    slug: "morocco-packing-list-desert",
-    title: "The Perfect Morocco Packing List for Desert Tours (2026)",
-    excerpt: "What to pack for the Sahara — from breathable layers and sun protection to the little luxuries that make a desert night unforgettable.",
-    image: "/images/hero/desert-pano.jpg",
-    date: "April 2026",
-    readTime: "5 min read",
-    category: "Packing",
-  },
-  {
-    slug: "fes-chefchaouen-blue-city-guide",
-    title: "Fes to Chefchaouen: Exploring Morocco's Blue Pearl",
-    excerpt: "The journey from Morocco's cultural heart to the Instagram-famous blue medina — what to see, where to stay, and how to make the most of it.",
-    image: "/images/dest/chefchaouen.jpg",
-    date: "March 2026",
-    readTime: "9 min read",
-    category: "Imperial Cities",
-  },
-];
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Blog() {
+  const { t } = useLanguage();
+  const posts = [
+    { slug: "merzouga-luxury-desert-camp-guide", title: t('blog_post_1_title'), excerpt: t('blog_post_1_excerpt'), image: "/images/personal/luxury-camp-dusk.jpg", date: t('blog_post_1_date'), readTime: t('blog_post_1_read'), category: t('blog_post_1_cat') },
+    { slug: "best-time-to-visit-morocco-sahara", title: t('blog_post_2_title'), excerpt: t('blog_post_2_excerpt'), image: "/images/dest/merzouga.jpg", date: t('blog_post_2_date'), readTime: t('blog_post_2_read'), category: t('blog_post_2_cat') },
+    { slug: "camel-trekking-etiquette-morocco", title: t('blog_post_3_title'), excerpt: t('blog_post_3_excerpt'), image: "/images/personal/dunes-camels-poster.jpg", date: t('blog_post_3_date'), readTime: t('blog_post_3_read'), category: t('blog_post_3_cat') },
+    { slug: "marrakech-to-merzouga-roadtrip", title: t('blog_post_4_title'), excerpt: t('blog_post_4_excerpt'), image: "/images/dest/ait-ben-haddou.jpg", date: t('blog_post_4_date'), readTime: t('blog_post_4_read'), category: t('blog_post_4_cat') },
+    { slug: "morocco-packing-list-desert", title: t('blog_post_5_title'), excerpt: t('blog_post_5_excerpt'), image: "/images/hero/desert-pano.jpg", date: t('blog_post_5_date'), readTime: t('blog_post_5_read'), category: t('blog_post_5_cat') },
+    { slug: "fes-chefchaouen-blue-city-guide", title: t('blog_post_6_title'), excerpt: t('blog_post_6_excerpt'), image: "/images/dest/chefchaouen.jpg", date: t('blog_post_6_date'), readTime: t('blog_post_6_read'), category: t('blog_post_6_cat') },
+  ];
+
   return (
     <ExperiencePage
       id="blog"
       heroImage="/images/hero/desert-pano.jpg"
-      heroAlt="Morocco travel blog - golden Sahara desert dunes at sunset"
-      breadcrumbName="Travel Blog"
-      title="Morocco Travel Blog"
-      subtitle="Expert guides, insider tips, and inspiration from our local Sahara team — discover the very best of Morocco."
-      trustBadges={defaultTrustBadges}
+      heroAlt={t('blog_hero_alt')}
+      breadcrumbName={t('blog_breadcrumb')}
+      title={t('blog_title')}
+      subtitle={t('blog_subtitle')}
+      trustBadges={defaultTrustBadges()}
     >
       {/* Blog grid */}
       <section className="py-16 md:py-24 bg-background">
@@ -102,7 +56,7 @@ export default function Blog() {
                   <h3 className="font-serif text-xl text-foreground mb-3 group-hover:text-primary transition-colors leading-snug">{post.title}</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed mb-4">{post.excerpt}</p>
                   <Link href={`/blog/${post.slug}`} className="inline-flex items-center gap-1 text-primary font-bold text-sm hover:underline">
-                    Read Article <ArrowRight className="w-4 h-4" />
+                    {t('blog_read_article')} <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
               </motion.article>

@@ -135,7 +135,7 @@ export function Navbar() {
               onMouseLeave={() => setIsExperiencesOpen(false)}
             >
               <Link href="/desert-tours" className={`${linkClasses} flex items-center gap-1`}>
-                Experiences <ChevronDown className="w-4 h-4" />
+                {t('nav_experiences')} <ChevronDown className="w-4 h-4" />
               </Link>
               <AnimatePresence>
                 {isExperiencesOpen && (
@@ -148,11 +148,11 @@ export function Navbar() {
                   >
                     <div className="bg-background shadow-xl rounded-xl border border-border overflow-hidden">
                       {[
-                        { href: "/desert-tours", label: "Sahara Desert Tours" },
-                        { href: "/luxury-camp", label: "Luxury Desert Camp" },
-                        { href: "/camel-trekking", label: "Camel Trekking" },
-                        { href: "/4x4-tours", label: "4x4 Desert Tours" },
-                        { href: "/day-trips", label: "Day Trips" },
+                        { href: "/desert-tours", label: t('nav_sahara_desert_tours') },
+                        { href: "/luxury-camp", label: t('nav_luxury_desert_camp') },
+                        { href: "/camel-trekking", label: t('nav_camel_trekking') },
+                        { href: "/4x4-tours", label: t('nav_4x4_desert_tours') },
+                        { href: "/day-trips", label: t('nav_day_trips') },
                       ].map((item) => (
                         <Link 
                           key={item.href} 
@@ -164,7 +164,7 @@ export function Navbar() {
                       ))}
                       <div className="border-t border-border mt-1">
                         <Link href="/blog" className="block px-4 py-3 text-sm font-medium text-primary hover:bg-muted transition-colors">
-                          Travel Blog →
+                          {t('nav_travel_blog')}
                         </Link>
                       </div>
                     </div>
@@ -261,15 +261,15 @@ export function Navbar() {
               </div>
               <Link href="/tours" className="text-lg font-medium text-foreground">{t('nav_tours')}</Link>
               <div className="pl-4 border-l-2 border-primary/20 space-y-3 py-2">
-                <Link href="/desert-tours" className="block text-muted-foreground">Sahara Desert Tours</Link>
-                <Link href="/luxury-camp" className="block text-muted-foreground">Luxury Desert Camp</Link>
-                <Link href="/camel-trekking" className="block text-muted-foreground">Camel Trekking</Link>
-                <Link href="/4x4-tours" className="block text-muted-foreground">4x4 Tours</Link>
-                <Link href="/day-trips" className="block text-muted-foreground">Day Trips</Link>
+                <Link href="/desert-tours" className="block text-muted-foreground">{t('nav_sahara_desert_tours')}</Link>
+                <Link href="/luxury-camp" className="block text-muted-foreground">{t('nav_luxury_desert_camp')}</Link>
+                <Link href="/camel-trekking" className="block text-muted-foreground">{t('nav_camel_trekking')}</Link>
+                <Link href="/4x4-tours" className="block text-muted-foreground">{t('nav_4x4_desert_tours')}</Link>
+                <Link href="/day-trips" className="block text-muted-foreground">{t('nav_day_trips')}</Link>
               </div>
               <Link href="/gallery" className="text-lg font-medium text-foreground">{t('nav_gallery')}</Link>
-              <Link href="/blog" className="text-lg font-medium text-foreground">Blog</Link>
-              <Link href="/faq" className="text-lg font-medium text-foreground">FAQ</Link>
+              <Link href="/blog" className="text-lg font-medium text-foreground">{t('nav_blog')}</Link>
+              <Link href="/faq" className="text-lg font-medium text-foreground">{t('nav_faq')}</Link>
               <Link href="/trip-builder" className="text-lg font-medium text-foreground">{t('nav_build_journey')}</Link>
               <Link href="/about" className="text-lg font-medium text-foreground">{t('nav_about')}</Link>
               <Link href="/contact" className="text-lg font-medium text-foreground">{t('nav_contact')}</Link>

@@ -73,44 +73,37 @@ function MapSection() {
   );
 }
 
-const signaturePlaces = [
-  {
-    name: "Merzouga Desert",
-    description: "Golden dunes, camel rides, and unforgettable sunsets.",
-    image: "/images/dest/merzouga.jpg",
-  },
-  {
-    name: "Luxury Desert Camp",
-    description: "Private tents, fine dining, and luxury under the stars.",
-    image: "/images/personal/luxury-camp-dusk.jpg",
-  },
-  {
-    name: "Atlas Mountains",
-    description: "Scenic drives, valleys, and authentic Berber villages.",
-    image: "/images/dest/dades-valley.jpg",
-  },
-  {
-    name: "Draa Valley",
-    description: "Palm groves, kasbahs, and dramatic desert landscapes.",
-    image: "/images/dest/draa-valley.jpg",
-  },
-  {
-    name: "Marrakech",
-    description: "Jemaa el-Fnaa, souks, colors, and vibrant city energy.",
-    image: "/images/dest/marrakech.jpg",
-  },
-  {
-    name: "Todra Gorge",
-    description: "Towering cliffs and one of Morocco's most iconic canyons.",
-    image: "/images/dest/todra-gorge.jpg",
-  },
-];
+function getSignaturePlaces(t: (key: string) => string) {
+  return [
+    { name: t('home_place1_name'), description: t('home_place1_desc'), image: "/images/dest/merzouga.jpg" },
+    { name: t('home_place2_name'), description: t('home_place2_desc'), image: "/images/personal/luxury-camp-dusk.jpg" },
+    { name: t('home_place3_name'), description: t('home_place3_desc'), image: "/images/dest/dades-valley.jpg" },
+    { name: t('home_place4_name'), description: t('home_place4_desc'), image: "/images/dest/draa-valley.jpg" },
+    { name: t('home_place5_name'), description: t('home_place5_desc'), image: "/images/dest/marrakech.jpg" },
+    { name: t('home_place6_name'), description: t('home_place6_desc'), image: "/images/dest/todra-gorge.jpg" },
+  ];
+}
 
 export default function Home() {
   const { t, lang } = useLanguage();
   const [, setLocation] = useLocation();
   const tours = getLocalizedTours(lang);
   const destinations = getLocalizedDestinations(lang);
+  const signaturePlaces = getSignaturePlaces(t);
+  const reviews = [
+    { img: "1", name: t('home_rev1_name'), country: "🇬🇧", quote: t('home_rev1_quote'), tour: t('home_rev1_tour') },
+    { img: "2", name: t('home_rev2_name'), country: "🇺🇸", quote: t('home_rev2_quote'), tour: t('home_rev2_tour') },
+    { img: "3", name: t('home_rev3_name'), country: "🇨🇦", quote: t('home_rev3_quote'), tour: t('home_rev3_tour') },
+    { img: "4", name: t('home_rev4_name'), country: "🇩🇪", quote: t('home_rev4_quote'), tour: t('home_rev4_tour') },
+    { img: "5", name: t('home_rev5_name'), country: "🇦🇺", quote: t('home_rev5_quote'), tour: t('home_rev5_tour') },
+    { img: "6", name: t('home_rev6_name'), country: "🇪🇸", quote: t('home_rev6_quote'), tour: t('home_rev6_tour') },
+  ];
+  const igItems = [
+    { src: "/images/personal/guests-sunset.webp", alt: t('home_ig_alt1') },
+    { src: "/images/personal/group-atlas.jpg", alt: t('home_ig_alt2') },
+    { src: "/images/personal/luxury-camp-dusk.jpg", alt: t('home_ig_alt3') },
+    { src: "/images/personal/guests-van.jpg", alt: t('home_ig_alt4') },
+  ];
 
   // Search State
   const [searchCity, setSearchCity] = useState('');
@@ -325,13 +318,13 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 md:mb-16">
             <span className="text-primary font-bold tracking-wider uppercase text-sm mb-3 block">
-              Signature Morocco
+              {t('home_signature')}
             </span>
             <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl text-foreground mb-4">
-              Real places, cinematic presentation
+              {t('home_signature_title')}
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto text-base md:text-lg">
-              A premium visual journey through Morocco's most iconic destinations.
+              {t('home_signature_sub')}
             </p>
           </div>
 
@@ -358,7 +351,7 @@ export default function Home() {
 
                 <div className="absolute bottom-0 left-0 right-0 p-5 md:p-8 text-white">
                   <div className="mb-2 md:mb-3 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs uppercase tracking-[0.2em] backdrop-blur-md">
-                    Morocco
+                    {t('home_morocco_badge')}
                   </div>
                   <h3 className="font-serif text-xl md:text-3xl mb-2 md:mb-3 drop-shadow-lg">
                     {place.name}
@@ -489,10 +482,10 @@ export default function Home() {
       <section className="relative py-20 md:py-32 lg:py-40 bg-card border-y border-border overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="text-center mb-10 md:mb-12">
-            <span className="text-primary font-bold tracking-wider uppercase text-sm mb-3 block">Experience the Sahara</span>
-            <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl text-foreground mb-4">Where the desert comes alive</h2>
+            <span className="text-primary font-bold tracking-wider uppercase text-sm mb-3 block">{t('home_exp_sahara')}</span>
+            <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl text-foreground mb-4">{t('home_exp_title')}</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto text-base md:text-lg">
-              Press play and step into the golden dunes of Merzouga — the silence, the light, and the magic of a night beneath a sky full of stars.
+              {t('home_exp_sub')}
             </p>
           </div>
           <motion.div
@@ -593,14 +586,7 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
-            {[
-              { img: "1", name: "Sarah Jenkins", country: "🇬🇧", quote: "The 7-day desert tour exceeded all expectations. Our guide Hassan was incredibly knowledgeable. Sleeping under the stars in Merzouga is an experience I will never forget.", tour: "7-Day Imperial Cities & Sahara Escape" },
-              { img: "2", name: "David Chen", country: "🇺🇸", quote: "Flawless organization from start to finish. The luxury riads chosen for us in Fes and Marrakech were stunning. The attention to detail made this trip truly special.", tour: "5-Day Imperial Cities & Desert" },
-              { img: "3", name: "Amara & James", country: "🇨🇦", quote: "We booked the honeymoon package and it was pure magic. A private dinner in the desert, a hot air balloon over Marrakech... every day brought a new beautiful surprise.", tour: "Honeymoon Morocco Package" },
-              { img: "4", name: "Robert Müller", country: "🇩🇪", quote: "As a photography enthusiast, this trip was paradise. The pacing was perfect, allowing time to truly appreciate the landscapes. Highly recommend their bespoke services.", tour: "3-Day Luxury Sahara Tour" },
-              { img: "5", name: "Priya Patel", country: "🇦🇺", quote: "Traveling as a solo woman, safety was my priority. I felt completely cared for the entire time. The hospitality of the Berber people is something extraordinary.", tour: "5-Day Imperial Cities & Desert" },
-              { img: "6", name: "Carlos Rivera", country: "🇪🇸", quote: "From the bustling medina of Fes to the quiet of the Atlas mountains, the contrasts of Morocco were presented beautifully by our expert driver.", tour: "7-Day Imperial Cities & Sahara Escape" }
-            ].map((review, i) => (
+            {reviews.map((review, i) => (
               <motion.div 
                 key={i}
                 initial={{ opacity: 0, scale: 0.95 }}
@@ -658,12 +644,7 @@ export default function Home() {
           <a href={contactInfo.instagram} target="_blank" rel="noreferrer" className="text-primary font-bold hover:underline mb-8 md:mb-12 inline-block">@medmorocco_tours</a>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
-            {[
-              { src: "/images/personal/guests-sunset.webp", alt: "Morocco Grand Adventure guests watching a Sahara sunset" },
-              { src: "/images/personal/group-atlas.jpg", alt: "Tour group in the Atlas Mountains, Morocco" },
-              { src: "/images/personal/luxury-camp-dusk.jpg", alt: "Luxury desert camp at dusk near Merzouga" },
-              { src: "/images/personal/guests-van.jpg", alt: "Morocco Grand Adventure guests with tour van" },
-            ].map((item, num) => (
+            {igItems.map((item, num) => (
               <div key={num} className="aspect-square relative group overflow-hidden rounded-xl border border-border">
                 <img src={item.src} alt={item.alt} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">

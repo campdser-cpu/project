@@ -94,14 +94,14 @@ export default function Tours() {
             <div className="flex items-center gap-2 text-sm text-foreground">
               <Filter className="w-4 h-4 text-primary" />
               <span className="font-medium">
-                {filteredTours.length} {filteredTours.length === 1 ? 'tour' : 'tours'} matching:
+                {filteredTours.length} {filteredTours.length === 1 ? t('tours_tour') : t('tours_tours')} {t('tours_matching')}
               </span>
               {cityFilter && <span className="bg-primary/10 text-primary px-3 py-1 rounded-full font-bold capitalize">{cityFilter}</span>}
               {durationFilter && <span className="bg-primary/10 text-primary px-3 py-1 rounded-full font-bold">{durationFilter} {t('days')}</span>}
               {styleFilter && <span className="bg-primary/10 text-primary px-3 py-1 rounded-full font-bold capitalize">{styleFilter}</span>}
             </div>
             <Link href="/tours" className="text-sm text-muted-foreground hover:text-primary transition-colors underline underline-offset-2">
-              Clear filters
+              {t('tours_clear')}
             </Link>
           </div>
         </section>
@@ -112,9 +112,9 @@ export default function Tours() {
           <PromoBanner variant="compact" className="mb-12" />
           {filteredTours.length === 0 ? (
             <div className="text-center py-24">
-              <p className="text-muted-foreground text-xl mb-6">No tours match your current filters.</p>
+              <p className="text-muted-foreground text-xl mb-6">{t('tours_no_match')}</p>
               <Link href="/tours" className="bg-primary text-primary-foreground px-8 py-3 rounded-full font-bold hover:bg-primary/90 transition-colors">
-                View All Tours
+                {t('tours_view_all')}
               </Link>
             </div>
           ) : (

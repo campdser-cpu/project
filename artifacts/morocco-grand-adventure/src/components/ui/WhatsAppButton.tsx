@@ -1,12 +1,14 @@
 import { motion } from 'framer-motion';
 import { SiWhatsapp } from 'react-icons/si';
 import { contactInfo } from '@/data/content';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export function WhatsAppButton() {
+  const { t } = useLanguage();
   return (
     <div className="fixed bottom-6 right-6 z-50 flex items-center group">
       <div className="hidden md:block mr-4 bg-white text-foreground px-4 py-2 rounded-xl shadow-lg border border-border opacity-0 translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 pointer-events-none font-bold text-sm">
-        Book Now
+        {t('wa_book_now')}
       </div>
       <motion.a
         href={contactInfo.whatsapp}

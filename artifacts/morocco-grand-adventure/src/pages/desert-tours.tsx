@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'wouter';
 import { CheckCircle2, Star, MapPin, Clock, Users, ChevronRight } from 'lucide-react';
-import { ExperiencePage, defaultTrustBadges } from '../components/ExperiencePage';
+import { defaultTrustBadges } from '../components/ExperiencePage';
 import { getLocalizedTours } from '@/i18n/content';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Layout } from '../components/layout/Layout';
@@ -16,6 +16,7 @@ export default function DesertTours() {
     tour.name.toLowerCase().includes('desert') ||
     tour.highlights.some(h => h.toLowerCase().includes('dune') || h.toLowerCase().includes('sahara') || h.toLowerCase().includes('desert'))
   );
+  const trustBadges = defaultTrustBadges();
 
   return (
     <Layout>
@@ -24,7 +25,7 @@ export default function DesertTours() {
         <div className="absolute inset-0 z-0">
           <motion.img
             src="/images/dest/merzouga.jpg"
-            alt="Golden Sahara desert dunes at Merzouga with camel caravan at sunset"
+            alt={t('dt2_hero_alt')}
             initial={{ scale: 1.15 }}
             animate={{ scale: 1 }}
             transition={{ duration: 1.6, ease: 'easeOut' }}
@@ -35,16 +36,16 @@ export default function DesertTours() {
         <div className="relative z-10 text-center px-4 max-w-4xl">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <span className="text-primary font-bold tracking-[0.25em] uppercase text-xs md:text-sm mb-6 block drop-shadow-md">Morocco Grand Adventure</span>
-            <h1 className="font-serif text-4xl sm:text-5xl md:text-7xl text-white mb-6 leading-[1.1] drop-shadow-2xl">Sahara Desert Tours</h1>
+            <h1 className="font-serif text-4xl sm:text-5xl md:text-7xl text-white mb-6 leading-[1.1] drop-shadow-2xl">{t('dt2_title')}</h1>
             <p className="text-white/80 text-base md:text-xl font-light max-w-2xl mx-auto leading-relaxed">
-              Private Merzouga desert tours, Erg Chebbi camel treks, and luxury desert camps — crafted by locals born in the Sahara.
+              {t('dt2_subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mt-8">
               <Link href="/tours" className="w-full sm:w-auto bg-primary text-primary-foreground px-8 py-3.5 rounded-full text-sm font-bold tracking-widest uppercase hover:bg-primary/90 transition-all hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(201,168,76,0.5)]">
-                Explore Desert Tours
+                {t('dt2_cta_explore')}
               </Link>
               <a href={contactInfo.whatsapp} target="_blank" rel="noreferrer" className="w-full sm:w-auto bg-white/10 backdrop-blur-md text-white border border-white/40 px-8 py-3.5 rounded-full text-sm font-bold tracking-widest uppercase hover:bg-white/20 transition-all hover:-translate-y-1 flex items-center justify-center gap-2">
-                <SiWhatsapp className="w-4 h-4" /> WhatsApp Us
+                <SiWhatsapp className="w-4 h-4" /> {t('dt2_whatsapp')}
               </a>
             </div>
           </motion.div>
@@ -55,7 +56,7 @@ export default function DesertTours() {
       <section className="bg-background py-8 border-b border-border">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap justify-center items-center gap-6 md:gap-12">
-            {defaultTrustBadges.map((badge, i) => (
+            {trustBadges.map((badge, i) => (
               <div key={i} className="flex items-center gap-2 text-sm font-semibold text-foreground">
                 <span className="text-primary">{badge.icon}</span><span>{badge.label}</span>
               </div>
@@ -68,12 +69,12 @@ export default function DesertTours() {
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="prose prose-lg dark:prose-invert prose-headings:font-serif mx-auto max-w-none">
-            <h2 className="text-4xl mb-6">Experience the Sahara Like a Local</h2>
+            <h2 className="text-4xl mb-6">{t('dt2_intro_heading')}</h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              There is no place on earth like the Sahara — and no one knows it better than us. Born and raised in Merzouga at the foot of Erg Chebbi, our team has been guiding travelers through the golden dunes for over 25 years. We don't just show you the desert; we welcome you into our home.
+              {t('dt2_intro_p1')}
             </p>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              Our desert tours are completely private — no groups, no rushed itineraries, no tourist traps. From camel treks at sunset to nights in luxury desert camps under the Milky Way, every moment is designed to let you feel the true pulse of the Sahara.
+              {t('dt2_intro_p2')}
             </p>
           </div>
         </div>
@@ -83,8 +84,8 @@ export default function DesertTours() {
       <section className="py-16 md:py-24 bg-card border-y border-border">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <span className="text-primary font-bold tracking-wider uppercase text-sm mb-3 block">Featured Tours</span>
-            <h2 className="font-serif text-3xl md:text-5xl text-foreground">Our Sahara Desert Tours</h2>
+            <span className="text-primary font-bold tracking-wider uppercase text-sm mb-3 block">{t('dt2_featured')}</span>
+            <h2 className="font-serif text-3xl md:text-5xl text-foreground">{t('dt2_featured_title')}</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {desertTours.map((tour, i) => (
@@ -113,7 +114,7 @@ export default function DesertTours() {
                     ))}
                   </ul>
                   <Link href={`/tours/${tour.id}`} className="inline-flex items-center gap-1 text-primary font-bold text-sm hover:underline">
-                    View Details <ChevronRight className="w-4 h-4" />
+                    {t('dt2_view_details')} <ChevronRight className="w-4 h-4" />
                   </Link>
                 </div>
               </motion.div>
@@ -121,7 +122,7 @@ export default function DesertTours() {
           </div>
           <div className="text-center mt-10">
             <Link href="/tours" className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-3.5 rounded-full font-bold tracking-wide hover:bg-primary/90 transition-all">
-              View All Desert Tours <ChevronRight className="w-4 h-4" />
+              {t('dt2_view_all')} <ChevronRight className="w-4 h-4" />
             </Link>
           </div>
         </div>
@@ -131,13 +132,13 @@ export default function DesertTours() {
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="text-center mb-12">
-            <h2 className="font-serif text-3xl md:text-5xl text-foreground">Why Book a Desert Tour With Us?</h2>
+            <h2 className="font-serif text-3xl md:text-5xl text-foreground">{t('dt2_why_title')}</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { icon: MapPin, title: "Born in the Sahara", desc: "Our guides grew up in Merzouga. We know every dune, every star, and every hidden corner of the desert." },
-              { icon: Star, title: "Private & Exclusive", desc: "Every tour is private for your party alone. No groups, no strangers — just you and the desert." },
-              { icon: Users, title: "Local Berber Hospitality", desc: "Share mint tea with nomad families, listen to Gnawa music, and experience the legendary warmth of the Sahara." },
+              { icon: MapPin, title: t('dt2_why1_title'), desc: t('dt2_why1_desc') },
+              { icon: Star, title: t('dt2_why2_title'), desc: t('dt2_why2_desc') },
+              { icon: Users, title: t('dt2_why3_title'), desc: t('dt2_why3_desc') },
             ].map((item, i) => (
               <motion.div
                 key={i}
@@ -161,14 +162,14 @@ export default function DesertTours() {
       {/* CTA */}
       <section className="py-16 md:py-24 bg-muted border-t border-border">
         <div className="container mx-auto px-4 max-w-4xl text-center">
-          <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-4">Ready to Experience the Sahara?</h2>
-          <p className="text-muted-foreground mb-8 max-w-xl mx-auto">Message us on WhatsApp for a personalised quote or use our trip builder to design your perfect desert adventure.</p>
+          <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-4">{t('dt2_ready')}</h2>
+          <p className="text-muted-foreground mb-8 max-w-xl mx-auto">{t('dt2_ready_sub')}</p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link href="/trip-builder" className="bg-primary text-primary-foreground px-8 py-4 rounded-full font-bold tracking-wide hover:bg-primary/90 transition-all hover:-translate-y-1 shadow-lg">
-              Build Your Journey
+              {t('dt2_build')}
             </Link>
             <a href={contactInfo.whatsapp} target="_blank" rel="noreferrer" className="bg-[#25D366] text-white px-8 py-4 rounded-full font-bold tracking-wide hover:bg-[#1fb959] transition-all hover:-translate-y-1 shadow-lg flex items-center gap-2">
-              <SiWhatsapp className="w-5 h-5" /> Chat on WhatsApp
+              <SiWhatsapp className="w-5 h-5" /> {t('dt2_chat')}
             </a>
           </div>
         </div>

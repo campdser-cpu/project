@@ -6,6 +6,7 @@ import { Layout } from './layout/Layout';
 import { contactInfo } from '@/data/content';
 import { SiWhatsapp } from 'react-icons/si';
 import { StructuredData, buildBreadcrumb } from './seo/StructuredData';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export type ExperiencePageProps = {
   /** Unique id for structured data */
@@ -44,12 +45,14 @@ export function ExperiencePage({
   children,
   highlights = [],
   faqs = [],
-  ctaText = "Book This Experience",
+  ctaText,
   ctaLink = "/contact",
   trustBadges = [],
 }: ExperiencePageProps) {
+  const { t } = useLanguage();
+  const resolvedCtaText = ctaText ?? t('exp_book_experience');
   const breadcrumb = buildBreadcrumb([
-    { name: 'Home', path: '/' },
+    { name: t('nav_home'), path: '/' },
     { name: breadcrumbName, path: `/${id}` },
   ]);
 
@@ -90,7 +93,7 @@ export function ExperiencePage({
                 href={ctaLink}
                 className="w-full sm:w-auto bg-primary text-primary-foreground px-8 py-3.5 rounded-full text-sm font-bold tracking-widest uppercase hover:bg-primary/90 transition-all hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(201,168,76,0.5)]"
               >
-                {ctaText}
+                {resolvedCtaText}
               </Link>
               <a
                 href={contactInfo.whatsapp}
@@ -98,7 +101,7 @@ export function ExperiencePage({
                 rel="noreferrer"
                 className="w-full sm:w-auto bg-white/10 backdrop-blur-md text-white border border-white/40 px-8 py-3.5 rounded-full text-sm font-bold tracking-widest uppercase hover:bg-white/20 hover:border-white/70 transition-all hover:-translate-y-1 flex items-center justify-center gap-2"
               >
-                <SiWhatsapp className="w-4 h-4" /> WhatsApp Us
+                <SiWhatsapp className="w-4 h-4" /> {t('exp_whatsapp_us')}
               </a>
             </div>
           </motion.div>
@@ -129,8 +132,8 @@ export function ExperiencePage({
         <section className="py-16 md:py-24 bg-card border-y border-border">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12 md:mb-16">
-              <span className="text-primary font-bold tracking-wider uppercase text-sm mb-3 block">Highlights</span>
-              <h2 className="font-serif text-3xl md:text-5xl text-foreground">What Makes This Experience Special</h2>
+              <span className="text-primary font-bold tracking-wider uppercase text-sm mb-3 block">{t('exp_highlights')}</span>
+              <h2 className="font-serif text-3xl md:text-5xl text-foreground">{t('exp_highlights_title')}</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
               {highlights.map((h, i) => (
@@ -165,8 +168,8 @@ export function ExperiencePage({
         <section className="py-16 md:py-24 bg-background">
           <div className="container mx-auto px-4 max-w-4xl">
             <div className="text-center mb-12">
-              <span className="text-primary font-bold tracking-wider uppercase text-sm mb-3 block">FAQ</span>
-              <h2 className="font-serif text-3xl md:text-5xl text-foreground">Frequently Asked Questions</h2>
+              <span className="text-primary font-bold tracking-wider uppercase text-sm mb-3 block">{t('exp_faq')}</span>
+              <h2 className="font-serif text-3xl md:text-5xl text-foreground">{t('exp_faq_title')}</h2>
             </div>
             <div className="space-y-4">
               {faqs.map((faq, i) => (
@@ -189,16 +192,16 @@ export function ExperiencePage({
       {/* CTA */}
       <section className="py-16 md:py-24 bg-muted border-t border-border">
         <div className="container mx-auto px-4 max-w-4xl text-center">
-          <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-4">Ready to Experience This?</h2>
+          <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-4">{t('exp_ready')}</h2>
           <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-            Our local experts are ready to craft your perfect Morocco journey. Message us today for a personalised quote.
+            {t('exp_ready_sub')}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/trip-builder"
               className="bg-primary text-primary-foreground px-8 py-4 rounded-full font-bold tracking-wide hover:bg-primary/90 transition-all hover:-translate-y-1 shadow-lg"
             >
-              Build Your Journey
+              {t('exp_build_journey')}
             </Link>
             <a
               href={contactInfo.whatsapp}
@@ -206,7 +209,7 @@ export function ExperiencePage({
               rel="noreferrer"
               className="bg-[#25D366] text-white px-8 py-4 rounded-full font-bold tracking-wide hover:bg-[#1fb959] transition-all hover:-translate-y-1 shadow-lg flex items-center gap-2"
             >
-              <SiWhatsapp className="w-5 h-5" /> Chat on WhatsApp
+              <SiWhatsapp className="w-5 h-5" /> {t('exp_chat_whatsapp')}
             </a>
           </div>
         </div>
@@ -216,10 +219,13 @@ export function ExperiencePage({
 }
 
 // Default trust badges used across experience pages
-export const defaultTrustBadges = [
-  { icon: <Star className="w-5 h-5" />, label: "4.9/5 Rating" },
-  { icon: <Users className="w-5 h-5" />, label: "15,000+ Travelers" },
-  { icon: <ShieldCheck className="w-5 h-5" />, label: "Licensed & Insured" },
-  { icon: <Clock className="w-5 h-5" />, label: "24/7 Support" },
-  { icon: <MapPin className="w-5 h-5" />, label: "Local Experts" },
-];
+export function defaultTrustBadges() {
+  const { t } = useLanguage();
+  return [
+    { icon: <Star className="w-5 h-5" />, label: t('exp_rating') },
+    { icon: <Users className="w-5 h-5" />, label: t('exp_travelers') },
+    { icon: <ShieldCheck className="w-5 h-5" />, label: t('exp_licensed') },
+    { icon: <Clock className="w-5 h-5" />, label: t('exp_support') },
+    { icon: <MapPin className="w-5 h-5" />, label: t('exp_local_experts') },
+  ];
+}
