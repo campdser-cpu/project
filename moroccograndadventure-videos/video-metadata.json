@@ -1,0 +1,71 @@
+{
+  "site": "moroccograndadventure.com",
+  "videos": [
+    {
+      "filename": "videos/sahara-desert-camel-trek-atlas-mountains-morocco.mp4",
+      "durationISO8601": "PT00M11S",
+      "suggestedPage": "Homepage hero / Sahara Desert Tours landing page",
+      "titleTag": "Sahara Desert Camel Trek & Atlas Mountains | Morocco Grand Adventure",
+      "metaDescription": "Watch a real camel caravan cross the Erg Chebbi dunes at sunset and see Berber crafts up close. Book your Sahara desert trek in Morocco today.",
+      "altText": "Camel caravan crossing the Sahara Desert dunes at sunset in Morocco",
+      "focusKeyword": "sahara desert tour morocco",
+      "secondaryKeywords": ["camel trekking morocco", "erg chebbi dunes", "atlas mountains tour", "berber culture morocco", "desert kasbah hotel"],
+      "onPageCaptionEN": "From Berber handwoven rugs in the Atlas Mountains to a golden camel trek across the Sahara — this is Morocco in one breath.",
+      "originalCaption": {"lang": "es", "text": "La magia de Marruecos... ¿A qué estás esperando para conocer este sitio de ensueño? Viaja con nosotros."}
+    },
+    {
+      "filename": "videos/sahara-desert-dunes-quad-biking-morocco.mp4",
+      "durationISO8601": "PT00M13S",
+      "suggestedPage": "Sahara Desert Tours / Things to Do (desert activities)",
+      "titleTag": "Sahara Dunes Quad Biking & Desert Adventures | Morocco Grand Adventure",
+      "metaDescription": "Quad bike across the Erg Chebbi dunes, meet Berber guides in traditional dress, and explore Morocco's souks and riads. Discover our desert excursions.",
+      "altText": "Quad biking and 4x4 adventures across Erg Chebbi desert dunes in Morocco",
+      "focusKeyword": "desert quad biking morocco",
+      "secondaryKeywords": ["erg chebbi 4x4 excursion", "tuareg guide morocco", "marrakech souk spices", "riad architecture morocco"],
+      "onPageCaptionEN": "Words can't fully capture it — golden dunes, desert thrills, and centuries-old Berber traditions, all in one place: Morocco.",
+      "originalCaption": {"lang": "es", "text": "Simplemente Marruecos... No se puede explicar con palabras lo mágico que es Marruecos. De los lugares más especiales del planeta tierra."}
+    },
+    {
+      "filename": "videos/ait-benhaddou-kasbah-unesco-morocco.mp4",
+      "durationISO8601": "PT00M12S",
+      "suggestedPage": "Ait Ben Haddou / Ouarzazate & Kasbahs itinerary page",
+      "titleTag": "Ait Ben Haddou Kasbah Tour — UNESCO Site | Morocco Grand Adventure",
+      "metaDescription": "Explore Ait Ben Haddou, Morocco's UNESCO World Heritage ksar, at golden hour — red-earth towers, Amazigh art, and local artisan crafts await.",
+      "altText": "Ait Ben Haddou UNESCO kasbah at sunset with local Amazigh artisans, Morocco",
+      "focusKeyword": "ait ben haddou tour",
+      "secondaryKeywords": ["unesco kasbah morocco", "ouarzazate day trip", "amazigh berber art", "morocco film location kasbah"],
+      "onPageCaptionEN": "Ait Ben Haddou at golden hour — a living UNESCO kasbah where Amazigh artisans still shape clay by hand.",
+      "originalCaption": null
+    },
+    {
+      "filename": "videos/morocco-imperial-cities-desert-oasis-tour.mp4",
+      "durationISO8601": "PT00M17S",
+      "suggestedPage": "Homepage / Morocco Tours overview page",
+      "titleTag": "Morocco Tour: Imperial Cities, Desert & Oasis | Morocco Grand Adventure",
+      "metaDescription": "A journey of contrasts — imperial cities, the Atlas Mountains, palm oases, and the Sahara. See why Morocco surprises every traveler, every time.",
+      "altText": "Morocco imperial cities, riads, souks, and Sahara oasis tour highlights",
+      "focusKeyword": "morocco tour itinerary",
+      "secondaryKeywords": ["imperial cities morocco", "riad courtyard marrakech", "medina souk tour", "palm oasis camel ride"],
+      "onPageCaptionEN": "Morocco is a journey of contrasts — imperial cities, mountains, oases, desert, and a culture that surprises you at every turn.",
+      "originalCaption": {"lang": "es", "text": "Marruecos es un viaje de contrastes: ciudades imperiales, montañas, oasis, desierto y una cultura que sorprende a cada paso."}
+    },
+    {
+      "filename": "videos/chefchaouen-blue-city-morocco.mp4",
+      "durationISO8601": "PT00M23S",
+      "suggestedPage": "Chefchaouen / Blue City Day Trip page",
+      "titleTag": "Chefchaouen Blue City Tour — Morocco's Blue Pearl | Morocco Grand Adventure",
+      "metaDescription": "Wander the blue streets of Chefchaouen, Morocco's famous \"Blue Pearl\" in the Rif Mountains. Plan your day trip to the most photogenic town in Morocco.",
+      "altText": "Blue-painted streets and stairways of Chefchaouen, Morocco's Blue Pearl",
+      "focusKeyword": "chefchaouen blue city tour",
+      "secondaryKeywords": ["blue pearl morocco", "rif mountains day trip", "chefchaouen photography spots", "chefchaouen medina"],
+      "onPageCaptionEN": "The Blue Pearl: Chefchaouen. What are you waiting for to discover this dreamlike town? Travel with us.",
+      "originalCaption": {"lang": "ar", "text": "الجوهرة الزرقاء: شفشاون"}
+    }
+  ],
+  "siteWideKeywords": [
+    "morocco desert tour", "sahara desert tour from marrakech", "camel trekking morocco",
+    "erg chebbi dunes", "ait ben haddou unesco", "chefchaouen blue city",
+    "imperial cities morocco tour", "atlas mountains excursion", "riad marrakech",
+    "morocco travel video", "berber culture tour", "4x4 desert excursion morocco"
+  ]
+}
