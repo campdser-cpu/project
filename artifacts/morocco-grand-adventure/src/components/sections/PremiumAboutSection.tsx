@@ -41,7 +41,7 @@ export default function PremiumAboutSection() {
 
   const guideOrder = ['mohamed', 'mostapha', 'moha'] as const;
   const guideImages: Record<string, string> = {
-    mohamed: '/images/guide/mohamed-boughrara-founder-desert-guide-merzouga.webp',
+    mohamed: '/images/guide/mohamed-boughrara.jpg',
     mostapha: '/images/guide/mostapha-wargaga-senior-desert-guide-sahara-sunset.webp',
     moha: '/images/guide/moha-amroui-desert-guide-camels-merzouga.jpg',
   };
@@ -143,11 +143,13 @@ export default function PremiumAboutSection() {
             const guide = team[guideKey];
             const imageSrc = guideImages[guideKey];
             const imageFirst = index % 2 === 0;
+            const isMohamed = guideKey === 'mohamed';
+            const mohamedImageCropStyle = isMohamed ? { objectPosition: '50% 10%' } : undefined;
             return (
               <div key={guide.name} className="grid lg:grid-cols-2 gap-12 items-center">
                 {imageFirst ? (
                   <div className="aspect-[4/5] rounded-2xl overflow-hidden">
-                    <img src={imageSrc} alt={guide.name} className="w-full h-full object-cover" />
+                    <img src={imageSrc} alt={guide.name} className="w-full h-full object-cover" style={mohamedImageCropStyle} />
                   </div>
                 ) : null}
                 <div>
@@ -158,7 +160,7 @@ export default function PremiumAboutSection() {
                 </div>
                 {!imageFirst ? (
                   <div className="aspect-[4/5] rounded-2xl overflow-hidden">
-                    <img src={imageSrc} alt={guide.name} className="w-full h-full object-cover" />
+                    <img src={imageSrc} alt={guide.name} className="w-full h-full object-cover" style={mohamedImageCropStyle} />
                   </div>
                 ) : null}
               </div>

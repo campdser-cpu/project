@@ -3,7 +3,7 @@ import PremiumAboutSection from '../components/sections/PremiumAboutSection';
 import { buildAboutPageSchema } from '../components/seo/StructuredData';
 
 const GUIDES = [
-  { name: 'Mohamed Boughrara', role: 'Founder & Desert Guide', image: '/images/guide/mohamed-boughrara-founder-desert-guide-merzouga.webp' },
+  { name: 'Mohamed Boughrara', role: 'Founder & Desert Guide', image: '/images/guide/mohamed-boughrara.jpg' },
   { name: 'Mostapha Wargaga', role: 'Senior Desert Guide', image: '/images/guide/mostapha-wargaga-senior-desert-guide-sahara-sunset.webp' },
   { name: 'Moha Amroui', role: 'Desert Guide', image: '/images/guide/moha-amroui-desert-guide-camels-merzouga.jpg' },
 ];
