@@ -27,6 +27,13 @@ export const HOME_META: RouteMeta = {
   ogImage: "/images/hero/desert-pano.jpg",
 };
 
+const TOUR_SEO_ALIAS_TO_ID: Record<string, string> = {
+  '3-days-marrakech-to-merzouga-desert-tour': '3-day-sahara-marrakech',
+  '3-days-fes-to-marrakech-desert-tour': '5-day-imperial-cities',
+  'merzouga-desert-tour': '3-day-sahara-marrakech',
+  'morocco-desert-tour': '7-day-imperial-cities-sahara-escape',
+};
+
 /** Common tour metadata by tour id (used by tour-detail pages). */
 const TOUR_META: Record<string, RouteMeta> = {
   "3-day-sahara-marrakech": {
@@ -135,10 +142,10 @@ export const routeMetadata: Record<string, RouteMeta> = {
     ogImage: "/images/personal/luxury-camp-dusk.jpg",
   },
   "/about": {
-    title: "About Morocco Grand Adventure — Local Sahara Experts Since 2000",
+    title: "About Us — Meet Your Local Berber Guides | Morocco Grand Adventure",
     description:
-      "Born and raised in the Sahara, our team of local guides has been crafting authentic Morocco journeys for 25+ years. Learn our story, philosophy, and commitment to sustainable tourism.",
-    ogImage: "/images/personal/guide-guest-tea.jpg",
+      "Meet the Berber family behind Morocco Grand Adventure — native Sahara guides from Merzouga offering authentic camel treks and real Morocco travel experiences.",
+    ogImage: "/images/hero/about-hero-team-chefchaouen-morocco.jpg",
   },
   "/contact": {
     title: "Contact Morocco Grand Adventure — Plan Your Morocco Journey",
@@ -222,7 +229,9 @@ export function getRouteMeta(rest: string): RouteMeta {
   // Dynamic tour route: /tours/:id
   const tourMatch = normalised.match(/^\/tours\/([^/]+)$/);
   if (tourMatch) {
-    const meta = TOUR_META[tourMatch[1]];
+    const requestedSlug = tourMatch[1];
+    const canonicalTourId = TOUR_SEO_ALIAS_TO_ID[requestedSlug] ?? requestedSlug;
+    const meta = TOUR_META[canonicalTourId];
     if (meta) return meta;
   }
 

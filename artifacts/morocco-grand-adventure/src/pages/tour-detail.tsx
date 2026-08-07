@@ -69,21 +69,12 @@ export default function TourDetail() {
 
   const faqs = tour.faq ?? getLocalizedFaq(lang).slice(0, 6);
 
-  // Representative traveler reviews. Swap for a live Google Business feed once connected.
-  const reviews = [
-    { name: 'Michael T.', country: 'United Kingdom', text: 'Incredible from start to finish. The camel trek at sunset and the luxury camp were once-in-a-lifetime, and our driver was superb throughout.', rating: 5 },
-    { name: 'Jessica R.', country: 'United States', text: 'Every detail was taken care of. The riads were beautiful, the desert camp exceeded expectations, and we never once felt rushed.', rating: 5 },
-    { name: 'Sophie & Marc', country: 'France', text: 'A perfect blend of coast, mountains and desert. Essaouira and the dunes were the highlights. Warm, professional and seamless.', rating: 5 },
-    { name: 'Ahmed K.', country: 'United Arab Emirates', text: 'Well paced and highly professional. The private vehicle was spotless and comfortable. Worth every single penny.', rating: 5 },
-  ];
-
   const relatedTours = getLocalizedTours(lang).filter(x => x.id !== tour.id).slice(0, 3);
 
   return (
     <Layout>
-      {/* Schema.org structured data: Tour, FAQ, Reviews, Breadcrumb */}
-      <StructuredData id="tour" data={buildTourSchema(tour)} />
-      <StructuredData id="tour-reviews" data={buildReviewSchema(reviews, tour.name, `https://www.moroccograndadventure.com/tours/${tour.id}`)} />
+      {/* Schema.org structured data: Tour, FAQ, Breadcrumb */}
+      <StructuredData id="tour" data={buildTourSchema(tour, params.id)} />
 
       {/* Cinematic Hero */}
       <section className="relative h-[80vh] w-full flex items-end pb-16 pt-20 overflow-hidden">
@@ -292,39 +283,6 @@ export default function TourDetail() {
                     {openFaq === i && (
                       <div className="px-5 pb-5 -mt-1 text-muted-foreground text-sm leading-relaxed">{f.answer}</div>
                     )}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Google Reviews */}
-            <div className="bg-card border border-border rounded-3xl p-8 shadow-sm">
-              <div className="flex flex-wrap items-center gap-3 mb-8 pb-6 border-b border-border">
-                <FcGoogle className="w-8 h-8 shrink-0" />
-                <div>
-                  <div className="font-bold text-foreground leading-tight">Google Reviews</div>
-                  <div className="flex items-center gap-1 text-sm">
-                    <span className="font-bold text-foreground">5.0</span>
-                    <div className="flex text-primary">{[...Array(5)].map((_, s) => <Star key={s} className="w-3.5 h-3.5 fill-current" />)}</div>
-                    <span className="text-muted-foreground ml-1">· Loved by travelers worldwide</span>
-                  </div>
-                </div>
-              </div>
-              <div className="grid sm:grid-cols-2 gap-x-8 gap-y-6">
-                {reviews.map((r, i) => (
-                  <div key={i} className="flex gap-4">
-                    <div className="w-11 h-11 rounded-full bg-primary/15 text-primary font-bold flex items-center justify-center border border-primary/20 shrink-0" aria-hidden="true">
-                      {r.name.split(' ').map(w => w[0]).join('').slice(0, 2)}
-                    </div>
-                    <div>
-                      <div className="flex items-center gap-2 mb-0.5">
-                        <span className="font-bold text-foreground text-sm">{r.name}</span>
-                        <FcGoogle className="w-3.5 h-3.5" />
-                      </div>
-                      <div className="text-xs text-muted-foreground mb-1.5">{r.country}</div>
-                      <div className="flex text-primary mb-2">{[...Array(r.rating)].map((_, s) => <Star key={s} className="w-3 h-3 fill-current" />)}</div>
-                      <p className="text-muted-foreground text-sm leading-relaxed">{r.text}</p>
-                    </div>
                   </div>
                 ))}
               </div>

@@ -1,0 +1,87 @@
+{
+  "about": {
+    "seo": {
+      "title": "About Us — Meet Your Local Berber Guides | Morocco Grand Adventure",
+      "metaDescription": "Meet the Berber family behind Morocco Grand Adventure — native Sahara guides from Merzouga offering authentic camel treks and real Morocco travel experiences.",
+      "h1": "Meet the Local Berber Guides Behind Morocco Grand Adventure"
+    },
+    "hero": {
+      "title": "A Family from the Sahara, Not a Travel Agency",
+      "subtitle": "Meet the local Berber guides who grew up in these dunes and now share them with the world."
+    },
+    "story": {
+      "title": "A Berber Family, Not a Travel Agency",
+      "body": "Morocco Grand Adventure didn't start in an office. It started in Merzouga, on the edge of the Sahara, where our founder grew up watching caravans leave for the dunes at sunset and return at sunrise. What we do today — guiding travelers into the desert — is the same thing our families have done for generations. The difference is that now we get to share it with people from every corner of the world. We're not a company that hired guides. We're guides who built a company."
+    },
+    "timeline": {
+      "title": "Our Journey",
+      "items": [
+        {
+          "year": "[Year]",
+          "text": "Mohamed starts leading his first camel treks into Erg Chebbi as a teenager, following in the footsteps of his father and uncles."
+        },
+        {
+          "year": "[Year]",
+          "text": "Mostapha and Moha join, having grown up in the same dunes, turning a one-man operation into a small team of local guides."
+        },
+        {
+          "year": "[Year]",
+          "text": "Morocco Grand Adventure is founded to formalize what the family had already been doing for years — now bookable, but still personal."
+        },
+        {
+          "year": "[Year]",
+          "text": "First international travelers begin arriving in numbers; the guides start picking up English, Spanish, French and Italian simply by talking around the campfire."
+        },
+        {
+          "year": "[Year – Present]",
+          "text": "Hundreds of desert expeditions later, still family run, still guided by people who were born in the sand they walk on."
+        }
+      ]
+    },
+    "stats": {
+      "items": [
+        { "value": "[X]+", "label": "Years of Experience" },
+        { "value": "[X]+", "label": "Happy Travelers" },
+        { "value": "5+", "label": "Languages Spoken" },
+        { "value": "[X]+", "label": "Desert Expeditions Guided" }
+      ]
+    },
+    "team": {
+      "sectionTitle": "Meet Your Guides",
+      "mohamed": {
+        "name": "Mohamed Boughrara",
+        "role": "Founder & Desert Guide",
+        "teaser": "I didn't choose the desert. I was born in it.",
+        "story": "I grew up in Merzouga, where the last houses of the village touch the first dunes of the Sahara. As a boy of about [age], I used to watch the older men in my family load up the camels before sunset and disappear toward Erg Chebbi, and I couldn't wait to be old enough to go with them. My first camel was called [name] — patient, stubborn, and somehow always knew the way back even in the dark.\n\nI started guiding small groups myself when I was still a teenager, mostly local families at first, then a few curious travelers who'd found their way to Merzouga by word of mouth. I remember my first foreign guests — [nationality] — and how strange it felt that people would fly across the world just to see the place I'd grown up in without a second thought.\n\nNobody taught me English or French in a classroom. I learned them the way my father learned to read the dunes — by doing it, night after night, around the fire, asking travelers to correct me, laughing at my mistakes, trying again the next night with the next group. Now I get by in [list languages], and every one of them I owe to a stranger who became a friend for one night under the stars.\n\nWhat tourism gave me wasn't just work. It gave me a reason to be proud of where I'm from. I used to think Merzouga was just home. Now I understand it's one of the most beautiful places on earth, and I get to be the one who shows it to people. That's why I started Morocco Grand Adventure — not to build a big company, but so that every traveler who comes here gets the Sahara the way my family has always known it: honest, unhurried, and real."
+      },
+      "mostapha": {
+        "name": "Mostapha Wargaga",
+        "role": "Senior Desert Guide",
+        "teaser": "Every sunset in the dunes still stops me, even after [X] years.",
+        "story": "I was born and raised near Merzouga, and like most kids here, the desert wasn't a destination — it was just outside the door. I remember the first time I was allowed to lead a camel on my own, without an adult walking next to me. I was so nervous I barely looked up from the sand the whole way, worried I'd lose the trail. Now I could walk that route with my eyes closed.\n\nGuiding caravans out to the desert camps became my life almost without me deciding it. You start by helping load the bags, then leading one camel, then a small line of them, and one day you realize you're the one travelers are looking to when the sun goes down and the dunes all start to look the same.\n\nThe travelers are the part I never expected to love as much as I do. Sitting around a fire with people from [countries], hearing about their lives, trying out the few words of Spanish or Italian I'd picked up the night before with the last group — that's where most of my language came from. Not a classroom. A circle of strangers and a pot of mint tea.\n\nTourism changed my life in a simple way: it let me stay. A lot of young people from villages like mine leave to find work in the cities. I got to stay in the place I love, doing the thing I'm proud of, and still meet the whole world without ever really leaving home."
+      },
+      "moha": {
+        "name": "Moha Amroui",
+        "role": "Desert Guide",
+        "teaser": "The camels taught me patience before any person did.",
+        "story": "I grew up in a family connected to the desert for as long as anyone can remember — uncles, cousins, neighbors, all guides at some point. So my first real memory of camels isn't really a \"first\" — they were just always there, part of the background of being a kid in Merzouga.\n\nWhat I do remember clearly is the first time I was trusted to lead a caravan on my own toward the camps, no one else with me but the camels. It's a strange kind of quiet out there — just footsteps in the sand and the sound of the wind moving the dunes. I think that walk is where I really fell in love with this work, not the version I'd grown up watching, but the one I was finally living myself.\n\nMeeting travelers changed the way I see my own home. People come from [countries] and ask questions about things I'd never thought to explain — why we build camps where we do, how we read the weather, what the stars mean out here. Answering them made me appreciate what I already knew. Along the way I picked up bits of [languages] — not from books, just from wanting to actually talk to the people sitting next to me at the fire.\n\nI don't have one big dream about tourism — just a simple one. I want every traveler who comes with us to leave the desert the way I feel every time I'm out there: a little quieter, a little more grateful, and glad they saw the real thing instead of a postcard version of it."
+      }
+    },
+    "trust": {
+      "title": "Why Travelers Trust Us",
+      "items": [
+        { "heading": "Local Berber Family", "text": "We're not a booking platform — we're a family from Merzouga who happens to run tours." },
+        { "heading": "Native Sahara Guides", "text": "Every guide grew up on the dunes we walk — this isn't a job they trained for, it's home." },
+        { "heading": "Authentic Experiences", "text": "No staged photo-ops. Real camps, real routes, real Berber hospitality." },
+        { "heading": "Personalized Tours", "text": "Small groups, flexible pace, tailored to who you are and what you want to see." },
+        { "heading": "Honest Advice", "text": "We'll tell you what's worth doing and what isn't — even if it means a shorter itinerary." },
+        { "heading": "Safe Adventures", "text": "Experienced guides who know the desert's moods and how to travel it responsibly." },
+        { "heading": "Sustainable Tourism", "text": "Supporting local families and respecting the land that's supported us for generations." }
+      ]
+    },
+    "cta": {
+      "title": "Come See It With Us",
+      "buttonText": "Explore Our Tours"
+    }
+  }
+}

@@ -75,7 +75,8 @@ export function getLocalizedTours(lang: Lang): Tour[] {
 }
 
 export function getLocalizedTour(id: string, lang: Lang): Tour | undefined {
-  const base = toursEN.find((t) => t.id === id);
+  const lookUp = id.trim().toLowerCase();
+  const base = toursEN.find((t) => t.id === lookUp || t.aliases?.some((a) => a.toLowerCase() === lookUp));
   return base ? localizeTour(base, lang) : undefined;
 }
 

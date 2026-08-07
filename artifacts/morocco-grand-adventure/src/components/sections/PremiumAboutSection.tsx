@@ -1,80 +1,121 @@
+﻿import { Link } from 'wouter';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { t } from '@/i18n';
+import aboutPageContent from '@/data/about-page-content.json';
+
+const placeholderPattern = /\[[^\]]+\]/g;
+
+function sanitizeText(text: string) {
+  return text
+    .replace(placeholderPattern, '')
+    .replace(/\s{2,}/g, ' ')
+    .replace(/\s+([.,;:])/g, '$1')
+    .trim();
+}
+
+function renderParagraphs(text: string) {
+  return text.split('\n\n').map((paragraph, index) => (
+    <p key={index} className="text-gray-700 text-lg leading-relaxed">
+      {sanitizeText(paragraph)}
+    </p>
+  ));
+}
 
 export default function PremiumAboutSection() {
   const { lang } = useLanguage();
+  const content = aboutPageContent.about;
+
+  const timelineItems = content.timeline.items
+    .map((item) => ({
+      year: sanitizeText(item.year),
+      text: sanitizeText(item.text),
+    }))
+    .filter((item) => item.text.length > 0);
+
+  const team = content.team as {
+    sectionTitle: string;
+    mohamed: { name: string; role: string; teaser: string; story: string };
+    mostapha: { name: string; role: string; teaser: string; story: string };
+    moha: { name: string; role: string; teaser: string; story: string };
+  };
+
+  const guideOrder = ['mohamed', 'mostapha', 'moha'] as const;
+  const guideImages: Record<string, string> = {
+    mohamed: '/images/guide/mohamed-boughrara-founder-desert-guide-merzouga.webp',
+    mostapha: '/images/guide/mostapha-wargaga-senior-desert-guide-sahara-sunset.webp',
+    moha: '/images/guide/moha-amroui-desert-guide-camels-merzouga.jpg',
+  };
+
+  const stats = [
+    { value: t(lang, 'about_stat1_value'), label: t(lang, 'about_stat1_label') },
+    { value: t(lang, 'about_stat2_value'), label: t(lang, 'about_stat2_label') },
+    { value: t(lang, 'about_stat3_value'), label: t(lang, 'about_stat3_label') },
+    { value: t(lang, 'about_stat4_value'), label: t(lang, 'about_stat4_label') },
+  ];
 
   return (
     <section className="premium-about-section">
-      {/* Hero - Full Width with Overlay */}
       <div className="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden mb-24">
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/60 z-10" />
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: 'url(/images/hero/sahara-sunset.jpg)' }} />
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: 'url(/images/hero/about-hero-team-chefchaouen-morocco.jpg)' }} />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/40 to-black/70 z-10" />
         <div className="relative z-20 text-center text-white px-4 max-w-5xl mx-auto">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            {t(lang, 'about_hero_title')}
+            {content.hero.title}
           </h1>
           <p className="text-xl md:text-2xl font-light max-w-3xl mx-auto leading-relaxed">
-            {t(lang, 'about_hero_subtitle')}
+            {content.hero.subtitle}
           </p>
+          <div className="mt-12 flex justify-center">
+            <div className="flex flex-col items-center gap-2 text-sm uppercase tracking-[0.25em] text-white/80">
+              <span>Scroll to learn more</span>
+              <div className="w-8 h-8 border-b-2 border-r-2 border-white/80 rotate-45 animate-bounce" />
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* Story Section - Editorial Layout */}
       <div className="max-w-7xl mx-auto px-4 mb-32">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           <div>
             <span className="text-amber-600 font-semibold text-sm uppercase tracking-wider mb-4 block">
-              {t(lang, 'about_story_label')}
+              {content.story.title}
             </span>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 leading-tight">
-              {t(lang, 'diff_story_heading')}
+              {content.story.title}
             </h2>
             <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
-              <p>{t(lang, 'diff_story_p1')}</p>
-              <p>{t(lang, 'diff_story_p2')}</p>
+              <p>{content.story.body}</p>
             </div>
           </div>
           <div className="lg:pt-16">
-            <div className="bg-gradient-to-br from-amber-50 to-orange-50 p-10 rounded-2xl">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                {t(lang, 'diff_roots_heading')}
-              </h3>
+            <div className="bg-gradient-to-br from-amber-50 to-orange-50 p-10 rounded-2xl shadow-xl shadow-amber-200/20">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Our Roots</h3>
               <p className="text-gray-700 mb-8 leading-relaxed text-lg">
-                {t(lang, 'diff_roots_desc')}
+                We are from Merzouga, and every part of our work is rooted in the Sahara we grew up in.
               </p>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                {t(lang, 'diff_passion_heading')}
-              </h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Our Promise</h3>
               <p className="text-gray-700 leading-relaxed text-lg">
-                {t(lang, 'diff_passion_desc')}
+                Every tour is guided by people who live here, not by a booking platform sending a guide from somewhere else.
               </p>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Timeline Section */}
       <div className="bg-gray-50 py-24 mb-24">
         <div className="max-w-5xl mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-900 mb-16">
-            {t(lang, 'diff_journey_heading')}
+            {content.timeline.title}
           </h2>
           <div className="space-y-12">
-            {[1, 2, 3, 4, 5].map((item) => (
-              <div key={item} className="flex gap-8 items-start">
-                <div className="flex-shrink-0 w-24 text-right">
-                  <span className="text-amber-600 font-bold text-lg">
-                    {t(lang, `diff_timeline_${item}_year`)}
-                  </span>
-                </div>
+            {timelineItems.map((item, index) => (
+              <div key={index} className="flex gap-8 items-start">
                 <div className="flex-shrink-0 w-16 h-16 bg-amber-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
-                  {item}
+                  {index + 1}
                 </div>
-                <div className="flex-grow pt-2">
-                  <p className="text-gray-700 text-lg leading-relaxed">
-                    {t(lang, `diff_timeline_${item}_text`)}
-                  </p>
+                <div className="flex-grow pt-1">
+                  {item.year ? <span className="text-amber-600 font-semibold text-lg block mb-2">{item.year}</span> : null}
+                  <p className="text-gray-700 text-lg leading-relaxed">{item.text}</p>
                 </div>
               </div>
             ))}
@@ -82,204 +123,75 @@ export default function PremiumAboutSection() {
         </div>
       </div>
 
-      {/* What Makes Us Different - Minimal Cards */}
+      <div className="max-w-7xl mx-auto px-4 mb-32">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {stats.map((stat, index) => (
+            <div key={index} className="rounded-3xl border border-gray-200 bg-white p-10 shadow-sm">
+              <p className="text-5xl font-bold text-gray-900 mb-4">{stat.value}</p>
+              <p className="text-lg text-gray-600">{stat.label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 mb-32">
         <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-900 mb-20">
-          {t(lang, 'diff_different_heading')}
+          {content.team.sectionTitle}
         </h2>
-        <div className="grid md:grid-cols-3 gap-12">
-          <div className="text-center">
-            <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-6">
-              <svg className="w-8 h-8 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-              </svg>
-            </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              {t(lang, 'diff_different_1_title')}
-            </h3>
-            <p className="text-gray-600 text-lg leading-relaxed">
-              {t(lang, 'diff_different_1_desc')}
-            </p>
-          </div>
-
-          <div className="text-center">
-            <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-6">
-              <svg className="w-8 h-8 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              {t(lang, 'diff_different_2_title')}
-            </h3>
-            <p className="text-gray-600 text-lg leading-relaxed">
-              {t(lang, 'diff_different_2_desc')}
-            </p>
-          </div>
-
-          <div className="text-center">
-            <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-6">
-              <svg className="w-8 h-8 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-              </svg>
-            </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              {t(lang, 'diff_different_3_title')}
-            </h3>
-            <p className="text-gray-600 text-lg leading-relaxed">
-              {t(lang, 'diff_different_3_desc')}
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* Meet Your Guides - Large Feature Cards */}
-      <div className="max-w-7xl mx-auto px-4 mb-32">
-        <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            {t(lang, 'diff_guides_heading')}
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            {t(lang, 'diff_guides_sub')}
-          </p>
-        </div>
-
         <div className="space-y-24">
-          {/* Guide 1 - Mohamed */}
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="aspect-[4/5] bg-gradient-to-br from-amber-100 to-orange-100 rounded-2xl overflow-hidden">
-              <div className="w-full h-full flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="w-48 h-48 bg-amber-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <span className="text-6xl">👤</span>
+          {guideOrder.map((guideKey, index) => {
+            const guide = team[guideKey];
+            const imageSrc = guideImages[guideKey];
+            const imageFirst = index % 2 === 0;
+            return (
+              <div key={guide.name} className="grid lg:grid-cols-2 gap-12 items-center">
+                {imageFirst ? (
+                  <div className="aspect-[4/5] rounded-2xl overflow-hidden">
+                    <img src={imageSrc} alt={guide.name} className="w-full h-full object-cover" />
                   </div>
-                  <p className="text-gray-600 font-medium">Mohamed Boughrara</p>
-                  <p className="text-gray-500 text-sm">Founder & Desert Guide</p>
+                ) : null}
+                <div>
+                  <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">{guide.name}</h3>
+                  <p className="text-amber-600 font-semibold text-lg mb-6">{guide.role}</p>
+                  <p className="text-gray-700 text-lg leading-relaxed mb-6">{sanitizeText(guide.teaser)}</p>
+                  <div className="text-gray-600 text-lg leading-relaxed space-y-4">{renderParagraphs(guide.story)}</div>
                 </div>
-              </div>
-            </div>
-            <div>
-              <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
-                {t(lang, 'diff_guide_1_name')}
-              </h3>
-              <p className="text-amber-600 font-semibold text-lg mb-6">
-                {t(lang, 'diff_guide_1_role')}
-              </p>
-              <p className="text-gray-700 text-lg leading-relaxed mb-6">
-                {t(lang, 'diff_guide_1_teaser')}
-              </p>
-              <div className="text-gray-600 text-lg leading-relaxed space-y-4">
-                <p>{t(lang, 'diff_guide_1_story_p1')}</p>
-                <p>{t(lang, 'diff_guide_1_story_p2')}</p>
-                <p>{t(lang, 'diff_guide_1_story_p3')}</p>
-                <p>{t(lang, 'diff_guide_1_story_p4')}</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Guide 2 - Mostapha */}
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="order-2 lg:order-1">
-              <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
-                {t(lang, 'diff_guide_2_name')}
-              </h3>
-              <p className="text-amber-600 font-semibold text-lg mb-6">
-                {t(lang, 'diff_guide_2_role')}
-              </p>
-              <p className="text-gray-700 text-lg leading-relaxed mb-6">
-                {t(lang, 'diff_guide_2_teaser')}
-              </p>
-              <div className="text-gray-600 text-lg leading-relaxed space-y-4">
-                <p>{t(lang, 'diff_guide_2_story_p1')}</p>
-                <p>{t(lang, 'diff_guide_2_story_p2')}</p>
-                <p>{t(lang, 'diff_guide_2_story_p3')}</p>
-                <p>{t(lang, 'diff_guide_2_story_p4')}</p>
-              </div>
-            </div>
-            <div className="aspect-[4/5] bg-gradient-to-br from-amber-100 to-orange-100 rounded-2xl overflow-hidden order-1 lg:order-2">
-              <div className="w-full h-full flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="w-48 h-48 bg-amber-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <span className="text-6xl">👤</span>
+                {!imageFirst ? (
+                  <div className="aspect-[4/5] rounded-2xl overflow-hidden">
+                    <img src={imageSrc} alt={guide.name} className="w-full h-full object-cover" />
                   </div>
-                  <p className="text-gray-600 font-medium">Mostapha Wargaga</p>
-                  <p className="text-gray-500 text-sm">Senior Desert Guide</p>
-                </div>
+                ) : null}
               </div>
-            </div>
-          </div>
-
-          {/* Guide 3 - Moha */}
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="aspect-[4/5] bg-gradient-to-br from-amber-100 to-orange-100 rounded-2xl overflow-hidden">
-              <div className="w-full h-full flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="w-48 h-48 bg-amber-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <span className="text-6xl">👤</span>
-                  </div>
-                  <p className="text-gray-600 font-medium">Moha Amroui</p>
-                  <p className="text-gray-500 text-sm">Desert Guide</p>
-                </div>
-              </div>
-            </div>
-            <div>
-              <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
-                {t(lang, 'diff_guide_3_name')}
-              </h3>
-              <p className="text-amber-600 font-semibold text-lg mb-6">
-                {t(lang, 'diff_guide_3_role')}
-              </p>
-              <p className="text-gray-700 text-lg leading-relaxed mb-6">
-                {t(lang, 'diff_guide_3_teaser')}
-              </p>
-              <div className="text-gray-600 text-lg leading-relaxed space-y-4">
-                <p>{t(lang, 'diff_guide_3_story_p1')}</p>
-                <p>{t(lang, 'diff_guide_3_story_p2')}</p>
-                <p>{t(lang, 'diff_guide_3_story_p3')}</p>
-                <p>{t(lang, 'diff_guide_3_story_p4')}</p>
-              </div>
-            </div>
-          </div>
+            );
+          })}
         </div>
       </div>
 
-      {/* Trust Section */}
       <div className="bg-gray-900 text-white py-24 mb-24">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
-            {t(lang, 'diff_trust_heading')}
-          </h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">{content.trust.title}</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[1, 2, 3, 4].map((item) => (
-              <div key={item} className="text-center">
-                <h3 className="text-xl font-bold mb-3">
-                  {t(lang, `diff_trust_${item}_heading`)}
-                </h3>
-                <p className="text-gray-300 leading-relaxed">
-                  {t(lang, `diff_trust_${item}_text`)}
-                </p>
+            {content.trust.items.map((item) => (
+              <div key={item.heading} className="text-center">
+                <h3 className="text-xl font-bold mb-3">{item.heading}</h3>
+                <p className="text-gray-300 leading-relaxed">{item.text}</p>
               </div>
             ))}
           </div>
         </div>
       </div>
 
-      {/* CTA Section - Minimal */}
-      <div className="max-w-4xl mx-auto px-4 text-center">
-        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-          {t(lang, 'diff_cta_heading')}
-        </h2>
+      <div className="max-w-4xl mx-auto px-4 text-center mb-24">
+        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">{content.cta.title}</h2>
         <p className="text-xl text-gray-600 mb-10 leading-relaxed">
-          {t(lang, 'diff_cta_sub')}
+          Choose an itinerary with the team who knows Merzouga best.
         </p>
-        <a
-          href="https://wa.me/212612345678"
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link
+          to="/tours"
           className="inline-block bg-amber-600 text-white px-10 py-5 rounded-full font-semibold text-lg hover:bg-amber-700 transition-all shadow-lg hover:shadow-xl"
         >
-          {t(lang, 'diff_cta_button')}
-        </a>
+          {content.cta.buttonText}
+        </Link>
       </div>
     </section>
   );

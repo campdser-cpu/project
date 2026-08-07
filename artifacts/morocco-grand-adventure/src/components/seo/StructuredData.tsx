@@ -1,9 +1,9 @@
 /**
  * StructuredData — injects Schema.org JSON-LD into <head> at runtime.
  *
- * Used by tour-detail and destination-detail pages to emit rich,
+ * Used by tour-detail, destination-detail, and about pages to emit rich,
  * page-specific structured data (Tour/TouristAttraction, FAQ, Reviews,
- * BreadcrumbList) that Google can parse for rich results.
+ * BreadcrumbList, AboutPage, Person) that Google can parse for rich results.
  *
  * The component cleans up its own script tags on unmount so navigating
  * between detail pages never leaves stale JSON-LD behind.
@@ -38,6 +38,55 @@ function removeJsonLd(id: string) {
 // Builders
 // ─────────────────────────────────────────────────────────────────────────────
 
+/** Build AboutPage + Organization + Person schemas for the About page. */
+export function buildAboutPageSchema(guides: { name: string; role: string; image: string }[]): JsonLd[] {
+  const aboutUrl = `${SITE_URL}/about`;
+  const schemas: JsonLd[] = [];
+
+  schemas.push({
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    '@id': `${aboutUrl}#webpage`,
+    url: aboutUrl,
+    name: 'About Us — Meet Your Local Berber Guides',
+    isPartOf: { '@id': `${SITE_URL}/#website` },
+  });
+
+  schemas.push({
+    '@context': 'https://schema.org',
+    '@type': 'TravelAgency',
+    '@id': `${SITE_URL}/#organization`,
+    name: BRAND,
+    url: SITE_URL,
+    founder: { '@id': `${aboutUrl}#${guides[0]?.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}` },
+    areaServed: 'Morocco',
+    employee: guides.map((g) => ({
+      '@id': `${aboutUrl}#${g.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`,
+    })),
+  });
+
+  for (const guide of guides) {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'Person',
+      '@id': `${aboutUrl}#${guide.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`,
+      name: guide.name,
+      jobTitle: guide.role,
+      worksFor: { '@id': `${SITE_URL}/#organization` },
+      image: `${SITE_URL}${guide.image}`,
+    });
+  }
+
+  schemas.push(
+    buildBreadcrumb([
+      { name: 'Home', path: '/' },
+      { name: 'About', path: '/about' },
+    ]),
+  );
+
+  return schemas;
+}
+
 const SITE_URL = 'https://www.moroccograndadventure.com';
 const BRAND = 'Morocco Grand Adventure';
 
@@ -56,18 +105,22 @@ export function buildBreadcrumb(crumbs: { name: string; path: string }[]): JsonL
 }
 
 /** Build a Tour (TouristTrip) schema from tour data. */
-export function buildTourSchema(tour: {
-  id: string;
-  name: string;
-  description?: string;
-  image: string;
-  price: string;
-  duration: string;
-  highlights?: string[];
-  faq?: { question: string; answer: string }[];
-  itineraryDays?: { day: number; title: string; desc: string }[];
-}): JsonLd[] {
-  const url = `${SITE_URL}/tours/${tour.id}`;
+export function buildTourSchema(
+  tour: {
+    id: string;
+    name: string;
+    description?: string;
+    image: string;
+    price: string;
+    duration: string;
+    highlights?: string[];
+    faq?: { question: string; answer: string }[];
+    itineraryDays?: { day: number; title: string; desc: string }[];
+  },
+  urlSlug?: string,
+): JsonLd[] {
+  const canonicalSlug = urlSlug ?? tour.id;
+  const url = `${SITE_URL}/tours/${canonicalSlug}`;
   const schemas: JsonLd[] = [];
 
   // Main Tour schema (modeled as a TouristTrip).
@@ -101,13 +154,6 @@ export function buildTourSchema(tour: {
           minValue: 1,
         },
       },
-    },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '15000',
-      bestRating: '5',
-      worstRating: '1',
     },
     itinerary: (tour.itineraryDays ?? []).map((d) => ({
       '@type': 'ItemList',

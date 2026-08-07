@@ -10,7 +10,7 @@ export const contactInfo = {
   instagram: "https://www.instagram.com/medmorocco_tours",
   rednote: "https://xhslink.com/m/6XvFt7PIEr9",
   email: "moroccograndadventure@gmail.com",
-  website: "https://moroccograndadventure.com",
+  website: "https://www.moroccograndadventure.com",
   paypal: "https://www.paypal.me/MohamedbouGhrara683",
   ownerName: "Mohamed Bou Ghrara",
   companyName: "Morocco Grand Adventure",
@@ -438,6 +438,7 @@ export type Tour = {
   image: string;
   category?: string;
   description?: string;
+  aliases?: string[];
   // Optional rich content — when present, the tour detail page renders the full
   // premium layout (cinematic video, live route map, day-by-day timeline, gallery, FAQ).
   videoUrl?: string;
@@ -451,6 +452,13 @@ export type Tour = {
   faq?: TourFaq[];
 };
 
+export const tourSlugAliases: Record<string, string> = {
+  '3-days-marrakech-to-merzouga-desert-tour': '3-day-sahara-marrakech',
+  '3-days-fes-to-marrakech-desert-tour': '5-day-imperial-cities',
+  'merzouga-desert-tour': '3-day-sahara-marrakech',
+  'morocco-desert-tour': '7-day-imperial-cities-sahara-escape',
+};
+
 export const tours: Tour[] = [
   {
     id: "3-day-sahara-marrakech",
@@ -461,6 +469,7 @@ export const tours: Tour[] = [
     price: "450",
     pricingTiers: { 1: 690, 2: 450, 3: 370, 4: 310, 5: 280 },
     image: "/images/tours/3-day-sahara-marrakech.jpg",
+    aliases: ['3-days-marrakech-to-merzouga-desert-tour', 'merzouga-desert-tour'],
     description: "The classic Morocco adventure compressed into three unforgettable days. Cross the Atlas Mountains, explore the most photographed kasbah on Earth, sleep under Saharan stars in a luxury tented camp, and ride camels at sunset over the golden dunes of Erg Chebbi.",
   },
   {
@@ -472,6 +481,7 @@ export const tours: Tour[] = [
     price: "780",
     pricingTiers: { 1: 1180, 2: 780, 3: 640, 4: 540, 5: 490 },
     image: "/images/tours/5-day-imperial-cities.jpg",
+    aliases: ['3-days-fes-to-marrakech-desert-tour'],
     description: "Immerse yourself in Morocco's four imperial cities — Marrakech, Meknès, Fes, and the Blue City of Chefchaouen — before heading south for a night under the stars in the Sahara Desert.",
   },
   {
@@ -491,6 +501,7 @@ export const tours: Tour[] = [
     price: "1200",
     pricingTiers: { 1: 1820, 2: 1200, 3: 990, 4: 830, 5: 740 },
     image: "/images/tours/7-day-grand-morocco.jpg",
+    aliases: ['morocco-desert-tour'],
     description:
       "Experience the very best of Morocco in seven unforgettable days. Cross the spectacular High Atlas Mountains over the Tizi n'Tichka Pass, explore the UNESCO kasbah of Aït Ben Haddou, wind through the Dades Valley and the towering Todra Gorge, then ride camels across the golden dunes of Erg Chebbi to a luxury desert camp beneath the stars. Journey north through the Ziz Valley and cedar forests to the medieval imperial city of Fes, before returning to Marrakech through some of the country's most breathtaking landscapes.",
     videoUrl: "/videos/dunes-camels.mp4",
