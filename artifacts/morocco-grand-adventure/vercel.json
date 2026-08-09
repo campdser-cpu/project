@@ -60,5 +60,6 @@
         }
       ]
     }
-  ]
+  ],
+  "cleanUrls": true
 }
