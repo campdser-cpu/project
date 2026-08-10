@@ -74,6 +74,11 @@ const VIDEOS: VideoItem[] = [
   { src: '/videos/sahara-experience.mp4', poster: '/images/personal/luxury-camp-dusk.jpg', title: 'Experience the Sahara', category: 'Desert' },
   { src: '/videos/merzouga-campfire.mp4', poster: '/images/dest/merzouga.jpg', title: 'Campfire Nights in Merzouga', category: 'Culture' },
   { src: '/videos/hero.mp4', poster: '/images/hero/desert-pano.jpg', title: 'Morocco — A Cinematic Journey', category: 'Desert' },
+  { src: '/videos/ait-benhaddou-kasbah-unesco-morocco.mp4', poster: '/images/dest/ait-ben-haddou.jpg', title: 'Aït Ben Haddou at Golden Hour', category: 'Landscapes' },
+  { src: '/videos/chefchaouen-blue-city-morocco.mp4', poster: '/images/dest/chefchaouen.jpg', title: 'The Blue Pearl', category: 'Landscapes' },
+  { src: '/videos/morocco-imperial-cities-desert-oasis-tour.mp4', poster: '/images/hero/desert-pano.jpg', title: 'Morocco — A Journey of Contrasts', category: 'Landscapes' },
+  { src: '/videos/sahara-desert-camel-trek-atlas-mountains-morocco.mp4', poster: '/images/personal/dunes-camels-poster.jpg', title: 'Camel Trek Across the Dunes', category: 'Camel Trekking' },
+  { src: '/videos/sahara-desert-dunes-quad-biking-morocco.mp4', poster: '/images/dest/erg-chebbi.jpg', title: 'Quad Biking the Dunes', category: 'Quad Adventure' },
 ];
 
 // The curated order the owner requested. A category is only shown when it
@@ -229,6 +234,7 @@ export default function Gallery() {
                     src={video.src}
                     poster={video.poster}
                     controls
+                    muted
                     playsInline
                     preload="none"
                     className={`w-full ${video.portrait ? 'aspect-[9/16]' : 'aspect-video'} object-cover`}

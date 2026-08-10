@@ -9,6 +9,7 @@ import { Clock, ChevronRight, Filter } from 'lucide-react';
 import { PromoBanner } from '../components/promo/PromoBanner';
 import { PromoBadge } from '../components/promo/PromoBadge';
 import { PriceTag } from '../components/promo/PriceTag';
+import { CinematicVideo } from '../components/ui/CinematicVideo';
 
 function parseDurationDays(duration: string): number {
   // e.g. "3 Days / 2 Nights" -> 3
@@ -103,6 +104,28 @@ export default function Tours() {
             <Link href="/tours" className="text-sm text-muted-foreground hover:text-primary transition-colors underline underline-offset-2">
               {t('tours_clear')}
             </Link>
+          </div>
+        </section>
+      )}
+
+      {/* Imperial Cities — Cinematic Video */}
+      {!hasFilters && (
+        <section className="py-16 md:py-20 bg-card border-b border-border">
+          <div className="container mx-auto px-4 max-w-5xl">
+            <div className="text-center mb-8 md:mb-10">
+              <span className="text-primary font-bold tracking-wider uppercase text-sm mb-3 block">A Journey of Contrasts</span>
+              <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-4">Morocco in Motion</h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto text-base md:text-lg">
+                Imperial cities, the Atlas Mountains, palm oases, and the Sahara — a culture that surprises you at every turn.
+              </p>
+            </div>
+            <CinematicVideo
+              src="/videos/morocco-imperial-cities-desert-oasis-tour.mp4"
+              poster="/images/hero/desert-pano.jpg"
+              alt="Morocco imperial cities, riads, souks, and Sahara oasis tour highlights"
+              title="Imperial Cities & Desert"
+              subtitle="Morocco is a journey of contrasts — imperial cities, mountains, oases, desert, and a culture that surprises you at every turn."
+            />
           </div>
         </section>
       )}

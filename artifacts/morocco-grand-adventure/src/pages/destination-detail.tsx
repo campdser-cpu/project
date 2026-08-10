@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 import { ChevronRight, Calendar, Star, Sun, CloudSun, MapPin, UtensilsCrossed, BedDouble } from 'lucide-react';
 import { Link } from 'wouter';
 import { StructuredData, buildDestinationSchema } from '../components/seo/StructuredData';
+import { CinematicVideo } from '../components/ui/CinematicVideo';
 
 export default function DestinationDetail() {
   const { t, lang } = useLanguage();
@@ -122,6 +123,44 @@ export default function DestinationDetail() {
                       <span className="text-white/90 text-sm font-semibold tracking-wider drop-shadow-lg">{t('dest_merzouga_caption')}</span>
                     </div>
                   </div>
+                </div>
+              )}
+
+              {/* Aït Ben Haddou: Cinematic Video Section */}
+              {destination.id === 'ait-ben-haddou' && (
+                <div className="mb-16">
+                  <h3 className="font-serif text-3xl text-foreground mb-3 flex items-center gap-3">
+                    🏰 Aït Ben Haddou in Motion
+                  </h3>
+                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                    Watch the UNESCO-listed ksar glow at golden hour — red-earth towers, Amazigh artisans, and centuries of history carved in clay.
+                  </p>
+                  <CinematicVideo
+                    src="/videos/ait-benhaddou-kasbah-unesco-morocco.mp4"
+                    poster="/images/dest/ait-ben-haddou.jpg"
+                    alt="Aït Ben Haddou UNESCO kasbah at sunset with local Amazigh artisans, Morocco"
+                    title="Aït Ben Haddou"
+                    subtitle="A living UNESCO kasbah where Amazigh artisans still shape clay by hand."
+                  />
+                </div>
+              )}
+
+              {/* Chefchaouen: Cinematic Video Section */}
+              {destination.id === 'chefchaouen' && (
+                <div className="mb-16">
+                  <h3 className="font-serif text-3xl text-foreground mb-3 flex items-center gap-3">
+                    💙 Chefchaouen — The Blue Pearl
+                  </h3>
+                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                    Wander the blue-painted streets and stairways of Morocco's most photogenic town, nestled in the Rif Mountains.
+                  </p>
+                  <CinematicVideo
+                    src="/videos/chefchaouen-blue-city-morocco.mp4"
+                    poster="/images/dest/chefchaouen.jpg"
+                    alt="Blue-painted streets and stairways of Chefchaouen, Morocco's Blue Pearl"
+                    title="Chefchaouen"
+                    subtitle="The Blue Pearl — what are you waiting for to discover this dreamlike town?"
+                  />
                 </div>
               )}
 

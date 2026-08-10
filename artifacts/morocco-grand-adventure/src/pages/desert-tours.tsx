@@ -7,6 +7,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Layout } from '../components/layout/Layout';
 import { SiWhatsapp } from 'react-icons/si';
 import { contactInfo } from '@/data/content';
+import { CinematicVideo } from '../components/ui/CinematicVideo';
 
 export default function DesertTours() {
   const { t, lang } = useLanguage();
@@ -77,6 +78,26 @@ export default function DesertTours() {
               {t('dt2_intro_p2')}
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* Sahara Camel Trek — Cinematic Video */}
+      <section className="py-16 md:py-20 bg-card border-b border-border">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="text-center mb-8 md:mb-10">
+            <span className="text-primary font-bold tracking-wider uppercase text-sm mb-3 block">The Sahara in One Breath</span>
+            <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-4">A Camel Trek Across the Golden Dunes</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto text-base md:text-lg">
+              From Berber handwoven rugs in the Atlas Mountains to a golden camel trek across the Sahara — this is Morocco in one breath.
+            </p>
+          </div>
+          <CinematicVideo
+            src="/videos/sahara-desert-camel-trek-atlas-mountains-morocco.mp4"
+            poster="/images/personal/dunes-camels-poster.jpg"
+            alt="Camel caravan crossing the Sahara Desert dunes at sunset in Morocco"
+            title="Camel Trek"
+            subtitle="From Berber crafts in the Atlas to a golden camel trek across the dunes."
+          />
         </div>
       </section>
 
