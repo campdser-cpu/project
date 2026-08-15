@@ -471,18 +471,70 @@ export const tours: Tour[] = [
     image: "/images/tours/3-day-sahara-marrakech.jpg",
     aliases: ['3-days-marrakech-to-merzouga-desert-tour', 'merzouga-desert-tour'],
     description: "The classic Morocco adventure compressed into three unforgettable days. Cross the Atlas Mountains, explore the most photographed kasbah on Earth, sleep under Saharan stars in a luxury tented camp, and ride camels at sunset over the golden dunes of Erg Chebbi.",
+    itineraryDays: [
+      {
+        day: 1,
+        title: "Marrakech → High Atlas → Aït Ben Haddou → Dades Valley",
+        desc: "Meet your private driver in Marrakech and cross the High Atlas Mountains over the dramatic Tizi n'Tichka Pass, the highest road pass in North Africa. Pause at the UNESCO World Heritage ksar of Aït Ben Haddou, then continue through Ouarzazate and the Skoura Oasis before reaching the dramatic panorama of the Dades Valley for your first night.",
+        stops: ["High Atlas Mountains", "Tizi n'Tichka Pass", "Aït Ben Haddou (UNESCO)", "Ouarzazate", "Skoura Oasis", "Overnight: Dades Valley (Dinner & Breakfast)"],
+      },
+      {
+        day: 2,
+        title: "Dades Valley → Todra Gorge → Merzouga (Erg Chebbi)",
+        desc: "Admire the winding switchback road and rock formations of the Dades Valley before driving to the towering Todra Gorge, a 300-metre-high canyon. Wind through palm groves and Berber villages to Merzouga on the edge of the Sahara, then ride camels across the golden dunes of Erg Chebbi at sunset to a luxury desert camp under the stars.",
+        stops: ["Dades Valley viewpoints", "Todra Gorge", "Palm groves & Berber villages", "Sunset camel trek", "Luxury desert camp", "Berber music (Dinner & Breakfast)"],
+      },
+      {
+        day: 3,
+        title: "Merzouga → High Atlas → Marrakech",
+        desc: "Wake for a spectacular sunrise over the dunes before breakfast and a camel ride back to Merzouga. After a short stop at Rissani's traditional souks, begin the long return journey across the Atlas Mountains on the scenic Tizi n'Tickna road, arriving back in Marrakech in the evening at the end of your desert adventure.",
+        stops: ["Sunrise over the dunes", "Rissani market (optional)", "Ziz Valley", "High Atlas crossing", "Arrival: Marrakech"],
+      },
+    ],
   },
   {
     id: "5-day-imperial-cities",
     name: "5-Day Imperial Cities & Desert",
     duration: "5 Days / 4 Nights",
     category: "Cultural",
-    highlights: ["Marrakech Medina", "Fes el-Bali", "Chefchaouen Blue City", "Sahara Desert", "Atlas Mountains"],
+    highlights: ["Atlas Mountains Crossing", "Aït Ben Haddou (UNESCO)", "Erg Chebbi Sahara & Luxury Camp", "Fes el-Bali Medina", "Chefchaouen Blue City", "Meknès & Volubilis"],
     price: "780",
     pricingTiers: { 1: 1180, 2: 780, 3: 640, 4: 540, 5: 490 },
     image: "/images/tours/5-day-imperial-cities.jpg",
     aliases: ['3-days-fes-to-marrakech-desert-tour'],
-    description: "Immerse yourself in Morocco's four imperial cities — Marrakech, Meknès, Fes, and the Blue City of Chefchaouen — before heading south for a night under the stars in the Sahara Desert.",
+    description: "From the ochre imperial capital of Marrakech to the blue-washed lanes of Chefchaouen, this five-day journey weaves together Morocco's greatest imperial cities and a night under the Sahara stars. Cross the High Atlas to the UNESCO ksar of Aït Ben Haddou, sleep in a luxury desert camp among the dunes of Erg Chebbi, explore the medieval labyrinth of Fes, and wander the Roman ruins of Volubilis.",
+    itineraryDays: [
+      {
+        day: 1,
+        title: "Marrakech → High Atlas → Aït Ben Haddou → Dades Valley",
+        desc: "Depart Marrakech in the morning and cross the High Atlas over the Tizi n'Tichka Pass, the highest road pass in North Africa. Stop at the UNESCO-listed fortified village of Aït Ben Haddou, then continue through Ouarzazate and the Skoura Oasis to the dramatic Dades Valley for an overnight stay in a kasbah hotel or riad.",
+        stops: ["High Atlas Mountains", "Tizi n'Tichka Pass", "Aït Ben Haddou (UNESCO)", "Ouarzazate", "Skoura Oasis", "Overnight: Dades Valley (Dinner & Breakfast)"],
+      },
+      {
+        day: 2,
+        title: "Dades Valley → Todra Gorge → Merzouga (Erg Chebbi)",
+        desc: "Admire the winding Dades Valley before driving to the towering Todra Gorge. Continue through Berber villages and palm oases to Merzouga at the edge of the Sahara, where you ride camels across the golden dunes of Erg Chebbi at sunset to a luxury desert camp — dinner, live Berber music and star-filled skies included.",
+        stops: ["Dades Valley", "Todra Gorge", "Rissani (optional)", "Erg Chebbi dunes", "Sunset camel trek", "Luxury desert camp (Dinner & Breakfast)"],
+      },
+      {
+        day: 3,
+        title: "Merzouga → Ziz Valley → Midelt → Fes",
+        desc: "Wake for sunrise over the dunes before breakfast in Merzouga. Head north through the Ziz Valley's endless palm oases, stopping in Midelt for lunch, then pass the cedar forests of the Middle Atlas and the mountain town of Ifrane before arriving at the imperial city of Fes.",
+        stops: ["Sunrise over Erg Chebbi", "Ziz Valley", "Midelt", "Cedar forest & Barbary monkeys", "Ifrane", "Overnight: Fes (Breakfast)"],
+      },
+      {
+        day: 4,
+        title: "Guided Tour of Fes",
+        desc: "Discover one of the world's oldest living cities with an official local guide. Explore the Royal Palace gates and the labyrinthine medieval medina of Fes el-Bali, home to Al Quaraouiyine University, the famous Chouara Tannery and bustling souks and artisan workshops. Your evening is free to savour Fes at your own pace.",
+        stops: ["Royal Palace gates", "Fes el-Bali medina", "Al Quaraouiyine University", "Chouara Tannery", "Souks & pottery workshops"],
+      },
+      {
+        day: 5,
+        title: "Fes → Meknès → Volubilis → Chefchaouen",
+        desc: "Travel to the imperial city of Meknès to admire the monumental Bab Mansour gate and the Mausoleum of Moulay Ismail, then wander the remarkably preserved Roman ruins of Volubilis. Continue on to the famous Blue City of Chefchaouen, where the afternoon and evening are free to explore the photogenic, blue-washed streets of the medina.",
+        stops: ["Bab Mansour Gate", "Mausoleum of Moulay Ismail", "Volubilis Roman Ruins (UNESCO)", "Chefchaouen medina", "Overnight: Chefchaouen"],
+      },
+    ],
   },
   {
     id: "7-day-imperial-cities-sahara-escape",
@@ -815,4 +867,53 @@ export const faqData = [
     question: "Can you accommodate dietary restrictions?",
     answer: "Absolutely — vegetarian, vegan, gluten-free, halal, and allergy-specific menus are all catered for. Please inform us at the time of booking."
   },
+  {
+    question: "What is included in your desert tours?",
+    answer: "All our desert tours include private air-conditioned transportation, an English-speaking driver, luxury accommodation, daily breakfast and dinner, camel trekking in Erg Chebbi, one night in a luxury desert camp, and hotel pickup/drop-off. International flights, lunches, and optional activities are typically excluded."
+  },
+  {
+    question: "What should travelers bring to the Sahara desert camp?",
+    answer: "Bring warm layers for cold desert nights, a scarf, sunscreen, sunglasses, a torch/flashlight, comfortable shoes, and a power bank. We provide sleeping bags for the desert camp. Swimwear is useful for some luxury camps with pools."
+  },
+  {
+    question: "How do I get to Merzouga and the Sahara Desert?",
+    answer: "The drive from Marrakech to Merzouga takes about 9–10 hours via the High Atlas Mountains. From Fes, it is roughly 7–8 hours. We arrange private transfers with comfortable stops. Flying into Marrakech or Fes is most common."
+  },
+  {
+    question: "Is camel trekking suitable for beginners?",
+    answer: "Yes — our camel treks are gentle and suitable for all abilities. The camels are well-trained and the treks are typically 1–2 hours at sunset. For those who prefer not to ride, 4x4 transfers to the camp can be arranged."
+  },
+  {
+    question: "What are the desert camps like?",
+    answer: "Our luxury desert camps feature real beds, en-suite bathrooms, and elegant Berber-style tents under the stars. Dinner is served around a campfire with live Berber music. It is a comfortable, authentic, and unforgettable experience."
+  },
+  {
+    question: "Can you arrange a trip during Ramadan?",
+    answer: "Yes — Morocco during Ramadan is a special cultural experience. Some restaurants may be closed during the day, but our guides navigate this gracefully. Evening feasts and vibrant night markets make it a unique time to visit."
+  },
+  {
+    question: "What is the cancellation policy?",
+    answer: "Free cancellation up to 7 days before your tour for a full refund. Cancellations within 7 days may incur a 50% charge. No-shows are non-refundable. We recommend travel insurance for complete peace of mind."
+  },
+  {
+    question: "Do I need travel insurance?",
+    answer: "Travel insurance is strongly recommended for all Morocco trips. It should cover medical emergencies, trip cancellation, and lost luggage. We can help advise on suitable policies if needed."
+  },
+  {
+    question: "Are the tours suitable for children and older travelers?",
+    answer: "Absolutely. Our private tours are fully adaptable for families and older guests. The pace is flexible, camel treks are optional, and 4x4 transfers can replace walking sections. We have experience with all ages."
+  },
+  {
+    question: "How far in advance should I book?",
+    answer: "For peak seasons (March–May and September–November), we recommend booking at least 4–6 weeks in advance. For winter desert trips or special dates, 2–3 months ahead is ideal. Last-minute bookings are sometimes possible — just ask."
+  },
+  {
+    question: "What type of vehicles do you use?",
+    answer: "We use modern, air-conditioned vehicles ranging from sedans for 2–4 guests to spacious minivans for larger groups. All vehicles are well-maintained and driven by professional, licensed drivers."
+  },
+  {
+    question: "Do you provide airport pickup and drop-off?",
+    answer: "Yes — all our tours include complimentary airport or hotel pickup and drop-off in Marrakech, Fes, and other major cities. Your driver will meet you with a named sign and assist with luggage."
+  },
 ];
+ 

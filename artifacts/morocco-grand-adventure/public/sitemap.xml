@@ -70,48 +70,7 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours" />
-  </url>
-  <url>
-    <loc>https://www.moroccograndadventure.com/en/gallery</loc>
-    <lastmod>2026-08-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/gallery" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/gallery" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/gallery" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/gallery" />
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/gallery" />
-    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/gallery" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/gallery" />
-    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/gallery" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/gallery" />
-    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/gallery" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/gallery" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/gallery" />
-    <image:image>
-      <image:loc>https://www.moroccograndadventure.com/images/hero/medina-pano.jpg</image:loc>
-      <image:title>Morocco Photo &amp; Video Gallery</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.moroccograndadventure.com/en/trip-builder</loc>
-    <lastmod>2026-08-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/trip-builder" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/trip-builder" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/trip-builder" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/trip-builder" />
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/trip-builder" />
-    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/trip-builder" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/trip-builder" />
-    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/trip-builder" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/trip-builder" />
-    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/trip-builder" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/trip-builder" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/trip-builder" />
-  </url>
-  <url>
+  </url><url>
     <loc>https://www.moroccograndadventure.com/en/about</loc>
     <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
@@ -148,118 +107,43 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/contact" />
   </url>
 
-  <!-- ── New Experience Pages ──────────────────────────────────────────────── -->
-  <url>
-    <loc>https://www.moroccograndadventure.com/en/desert-tours</loc>
-    <lastmod>2026-08-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/desert-tours" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/desert-tours" />
-    <image:image>
-      <image:loc>https://www.moroccograndadventure.com/images/dest/merzouga.jpg</image:loc>
-      <image:title>Sahara Desert Tours — Merzouga, Erg Chebbi &amp; Luxury Camps</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.moroccograndadventure.com/en/luxury-camp</loc>
-    <lastmod>2026-08-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/luxury-camp" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/luxury-camp" />
-    <image:image>
-      <image:loc>https://www.moroccograndadventure.com/images/personal/luxury-camp-dusk.jpg</image:loc>
-      <image:title>Luxury Desert Camp Morocco — Exclusive Sahara Glamping</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.moroccograndadventure.com/en/camel-trekking</loc>
-    <lastmod>2026-08-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/camel-trekking" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/camel-trekking" />
-    <image:image>
-      <image:loc>https://www.moroccograndadventure.com/images/personal/dunes-camels-poster.jpg</image:loc>
-      <image:title>Camel Trekking Merzouga — Sahara Camel Rides &amp; Sunset Treks</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.moroccograndadventure.com/en/4x4-tours</loc>
-    <lastmod>2026-08-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/4x4-tours" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/4x4-tours" />
-    <image:image>
-      <image:loc>https://www.moroccograndadventure.com/images/dest/erg-chebbi.jpg</image:loc>
-      <image:title>4x4 Desert Tours Morocco — Sahara Off-Road Adventures</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.moroccograndadventure.com/en/marrakech-tours</loc>
-    <lastmod>2026-08-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/marrakech-tours" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/marrakech-tours" />
-    <image:image>
-      <image:loc>https://www.moroccograndadventure.com/images/dest/marrakech.jpg</image:loc>
-      <image:title>Marrakech Tours — Private Day Trips &amp; Multi-Day Morocco Tours</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.moroccograndadventure.com/en/fes-tours</loc>
-    <lastmod>2026-08-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/fes-tours" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/fes-tours" />
-    <image:image>
-      <image:loc>https://www.moroccograndadventure.com/images/dest/fes.jpg</image:loc>
-      <image:title>Fes Tours — Private Guided Tours of Morocco's Cultural Capital</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.moroccograndadventure.com/en/day-trips</loc>
-    <lastmod>2026-08-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/day-trips" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/day-trips" />
-    <image:image>
-      <image:loc>https://www.moroccograndadventure.com/images/dest/ouzoud.jpg</image:loc>
-      <image:title>Morocco Day Trips — From Marrakech, Fes &amp; Merzouga</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.moroccograndadventure.com/en/merzouga-guide</loc>
-    <lastmod>2026-08-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/merzouga-guide" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/merzouga-guide" />
-    <image:image>
-      <image:loc>https://www.moroccograndadventure.com/images/dest/merzouga.jpg</image:loc>
-      <image:title>Merzouga Travel Guide — Sahara Desert, Erg Chebbi &amp; Luxury Camps</image:title>
-    </image:image>
-  </url>
-  <url>
+  <!-- ── New Experience Pages ──────────────────────────────────────────────── --><url>
     <loc>https://www.moroccograndadventure.com/en/faq</loc>
     <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/faq" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/faq" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/faq" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/faq" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/faq" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/faq" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/faq" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/faq" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/faq" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/faq" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/faq" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/faq" />
+
   </url>
   <url>
     <loc>https://www.moroccograndadventure.com/en/blog</loc>
     <lastmod>2026-08-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/blog" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/blog" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/blog" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/blog" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/blog" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/blog" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/blog" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/blog" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/blog" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/blog" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/blog" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/blog" />
+
     <image:image>
       <image:loc>https://www.moroccograndadventure.com/images/hero/desert-pano.jpg</image:loc>
       <image:title>Morocco Travel Blog — Guides, Tips &amp; Inspiration</image:title>

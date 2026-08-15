@@ -15,7 +15,7 @@ import { PriceTag } from '../components/promo/PriceTag';
 import { PromoBanner } from '../components/promo/PromoBanner';
 import { discountedPrice, waPromoLink } from '@/lib/promo';
 import { usePromoActive } from '../components/promo/PromoProvider';
-import { StructuredData, buildTourSchema, buildReviewSchema } from '../components/seo/StructuredData';
+import { StructuredData, buildTourSchema, buildReviewSchema, buildFaqSchema } from '../components/seo/StructuredData';
 
 export default function TourDetail() {
   const { t, lang } = useLanguage();
@@ -44,13 +44,9 @@ export default function TourDetail() {
   const promoOn = usePromoActive();
   const discTotalPrice = discountedPrice(totalPrice);
 
-  // Detailed itinerary when the tour provides one; otherwise a translated 3-day sample.
-  const fallbackDays = [
-    { day: 1, title: t('tour_sample_day1_title'), desc: t('tour_sample_day1_desc'), stops: [] as string[] },
-    { day: 2, title: t('tour_sample_day2_title'), desc: t('tour_sample_day2_desc'), stops: [] as string[] },
-    { day: 3, title: t('tour_sample_day3_title'), desc: t('tour_sample_day3_desc'), stops: [] as string[] },
-  ];
-  const itinerary = tour.itineraryDays ?? fallbackDays;
+  // Day-by-day itinerary — rendered only when the tour defines one matching its
+  // real duration, so a tour can never display an itinerary for a different length.
+  const itinerary = tour.itineraryDays ?? [];
 
   const galleryImages = tour.gallery ?? [
     { src: '/images/dest/merzouga.jpg', caption: 'Sahara dunes at Merzouga' },
@@ -74,7 +70,10 @@ export default function TourDetail() {
   return (
     <Layout>
       {/* Schema.org structured data: Tour, FAQ, Breadcrumb */}
-      <StructuredData id="tour" data={buildTourSchema(tour, params.id)} />
+      <StructuredData id="tour" data={buildTourSchema(tour, params.id, lang)} />
+      {tour.faq && tour.faq.length > 0 && (
+        <StructuredData id="tour-faq" data={buildFaqSchema(tour.faq)} />
+      )}
 
       {/* Cinematic Hero */}
       <section className="relative h-[80vh] w-full flex items-end pb-16 pt-20 overflow-hidden">
@@ -189,6 +188,7 @@ export default function TourDetail() {
             )}
 
             {/* Daily Itinerary Timeline */}
+            {itinerary.length > 0 && (
             <div className="mb-16">
               <h2 className="font-serif text-4xl text-foreground mb-10">{t('tour_itinerary')}</h2>
               <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-primary/30 before:to-transparent">
@@ -218,6 +218,7 @@ export default function TourDetail() {
                 ))}
               </div>
             </div>
+            )}
 
             {/* Included / Excluded */}
             <div className="grid md:grid-cols-2 gap-8 mb-16">

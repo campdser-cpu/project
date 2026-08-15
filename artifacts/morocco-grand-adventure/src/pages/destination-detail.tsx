@@ -8,6 +8,7 @@ import { ChevronRight, Calendar, Star, Sun, CloudSun, MapPin, UtensilsCrossed, B
 import { Link } from 'wouter';
 import { StructuredData, buildDestinationSchema } from '../components/seo/StructuredData';
 import { CinematicVideo } from '../components/ui/CinematicVideo';
+import { MoroccoMap } from '../components/MoroccoMap';
 
 export default function DestinationDetail() {
   const { t, lang } = useLanguage();
@@ -24,7 +25,7 @@ export default function DestinationDetail() {
   return (
     <Layout>
       {/* Schema.org structured data: TouristAttraction, Breadcrumb */}
-      <StructuredData id="destination" data={buildDestinationSchema(destination)} />
+      <StructuredData id="destination" data={buildDestinationSchema(destination, lang)} />
 
       {/* Hero */}
       <section className="relative h-[70vh] w-full flex items-center justify-center pt-20">
@@ -276,15 +277,15 @@ export default function DestinationDetail() {
                 </div>
               </div>
 
-              {/* NEW: Map Placeholder */}
-              <div className="bg-card border border-border p-2 rounded-3xl shadow-lg relative overflow-hidden group">
-                <div className="h-48 w-full bg-muted rounded-2xl relative overflow-hidden flex items-center justify-center bg-[url('https://www.transparenttextures.com/patterns/cartographer.png')]">
-                  <MapPin className="w-8 h-8 text-primary absolute z-10 group-hover:scale-125 transition-transform duration-300" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
+              {/* Interactive Map */}
+              <div className="bg-card border border-border p-2 rounded-3xl shadow-lg">
+                <h3 className="font-serif text-xl text-foreground mb-4 flex items-center gap-2">
+                  <MapPin className="w-5 h-5 text-primary" /> {t('dest_view_map')}
+                </h3>
+                <div className="rounded-2xl overflow-hidden">
+                  <MoroccoMap height={320} />
                 </div>
-                <div className="absolute bottom-6 left-0 w-full text-center pointer-events-none">
-                  <span className="bg-foreground text-background px-4 py-2 rounded-full text-xs font-bold tracking-wide shadow-xl">{t('dest_view_map')}</span>
-                </div>
+                <p className="text-xs text-muted-foreground mt-3 text-center">Tap any marker to explore this destination. Drag to pan, scroll to zoom.</p>
               </div>
 
               <div className="bg-muted p-8 rounded-3xl border border-border text-center">

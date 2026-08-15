@@ -20,6 +20,7 @@
 //   /en                     → dist/en/index.html
 //   /en/tours               → dist/en/tours/index.html
 //   /en/destinations        → dist/en/destinations/index.html
+//   /en/destinations/:id    → dist/en/destinations/<id>.html  (destination detail pages)
 //   /en/about               → dist/en/about/index.html
 //   /en/contact             → dist/en/contact/index.html
 //   /en/faq                 → dist/en/faq/index.html
@@ -30,13 +31,44 @@ import * as fs from 'node:fs';
 import * as path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { tours, destinations, faqData, contactInfo } from '../src/data/content';
-import { languages } from '../src/i18n/index';
+import { destinations, contactInfo, type Tour, type Destination } from '../src/data/content';
+import { languages, t as translate } from '../src/i18n/index';
+import type { Lang } from '../src/i18n/index';
+import {
+  getLocalizedTour,
+  getLocalizedTours,
+  getLocalizedDestination,
+  getLocalizedDestinations,
+  getLocalizedFaq,
+} from '../src/i18n/content';
 import { getRouteMeta } from '../src/components/seo/route-metadata';
+import { buildTourSchema, buildDestinationSchema } from '../src/components/seo/StructuredData';
 
 // ── Constants ────────────────────────────────────────────────────────────────
 const BRAND = 'Morocco Grand Adventure';
 const SITE_URL = 'https://www.moroccograndadventure.com';
+
+// Localized UI label map — best-effort localized title fragments for static pages.
+// Falls back to English route metadata when a language lacks a specific key.
+const STATIC_TITLE_KEYS: Record<string, string> = {
+  '/': 'hero_tagline',
+  '/tours': 'nav_tours',
+  '/destinations': 'nav_destinations',
+  '/about': 'nav_about',
+  '/contact': 'nav_contact',
+  '/faq': 'nav_faq',
+  '/blog': 'nav_blog',
+};
+
+function tr(lang: Lang, key: string): string {
+  return translate(lang, key);
+}
+
+function truncate(text: string | undefined, max = 158): string {
+  const s = (text ?? '').toString().replace(/\s+/g, ' ').trim();
+  if (s.length <= max) return s;
+  return s.slice(0, max - 1).trimEnd() + '…';
+}
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const distDir = path.resolve(scriptDir, '..', 'dist');
@@ -115,36 +147,34 @@ const OG_LOCALE: Record<string, string> = {
 };
 
 // ── Content builders (pulled from the app's own data — no invented facts) ────
-function buildHomeContent(): string {
-  const destNames = destinations.slice(0, 8).map((d) => d.name);
-  const tourNames = tours.map((t) => t.name);
+function buildHomeContent(lang: Lang): string {
+  const destNames = getLocalizedDestinations(lang).slice(0, 8).map((d) => d.name);
+  const tourNames = getLocalizedTours(lang).map((t) => t.name);
   return (
-    h1('Discover the Soul of Morocco') +
-    paragraph('Bespoke journeys crafted by Saharan locals — from golden dunes to blue medinas.') +
-    h2('Top Destinations') +
+    h1(tr(lang, 'hero_heading1') || 'Discover the Soul of Morocco') +
+    paragraph(tr(lang, 'hero_subtext')) +
+    h2(tr(lang, 'section_destinations') || 'Top Destinations') +
     ul(destNames) +
-    h2('Featured Tours') +
-    ul(tourNames) +
-    h2('Why Travel With Us') +
-    paragraph("We are locals born in the Sahara. We don't just show you Morocco, we welcome you into our home.")
+    h2(tr(lang, 'section_tours') || 'Featured Tours') +
+    ul(tourNames)
   );
 }
 
-function buildToursContent(): string {
-  const blocks = tours
+function buildToursContent(lang: Lang): string {
+  const blocks = getLocalizedTours(lang)
     .map(
       (t) =>
         h2(t.name) +
         paragraph(t.description ?? '') +
-        paragraph(`Duration: ${t.duration}`) +
+        paragraph(`${tr(lang, 'search_duration')}: ${t.duration}`) +
         ul(t.highlights),
     )
     .join('');
-  return h1('Our Tours') + paragraph('Curated itineraries for the discerning traveler') + blocks;
+  return h1(tr(lang, 'section_tours') || 'Our Tours') + blocks;
 }
 
-function buildTourDetailContent(id: string): string {
-  const tour = tours.find((t) => t.id === id);
+function buildTourDetailContent(id: string, lang: Lang): string {
+  const tour = getLocalizedTour(id, lang);
   if (!tour) return h1('Tour Not Found') + paragraph('This tour could not be found.');
   const itinerary = tour.itineraryDays ?? [];
   const included = tour.included ?? [];
@@ -153,73 +183,64 @@ function buildTourDetailContent(id: string): string {
   return (
     h1(tour.name) +
     paragraph(tour.description ?? '') +
-    paragraph(`Duration: ${tour.duration}`) +
-    h2('Highlights') +
+    paragraph(`${tr(lang, 'search_duration')}: ${tour.duration}`) +
+    h2(tr(lang, 'tour_why_love')) +
     ul(tour.highlights) +
     (itinerary.length > 0
-      ? h2('Itinerary') +
-        ul(itinerary.map((d) => `Day ${d.day}: ${d.title}`))
+      ? h2(tr(lang, 'tour_itinerary')) +
+        ul(itinerary.map((d) => `${tr(lang, 'tour_day')} ${d.day}: ${d.title}`))
       : '') +
-    (included.length > 0 ? h2("What's Included") + ul(included) : '') +
-    (excluded.length > 0 ? h2('Not Included') + ul(excluded) : '') +
-    (faqs.length > 0 ? h2('Frequently Asked Questions') + faqBlock(faqs) : '')
+    (included.length > 0 ? h2(tr(lang, 'tour_included')) + ul(included) : '') +
+    (excluded.length > 0 ? h2(tr(lang, 'tour_not_included')) + ul(excluded) : '') +
+    (faqs.length > 0 ? h2(tr(lang, 'nav_faq')) + faqBlock(faqs) : '')
   );
 }
 
-function buildDestinationsContent(): string {
-  const blocks = destinations
-    .map(
-      (d) =>
-        h2(d.name) +
-        paragraph(d.description) +
-        paragraph(`Best time to visit: ${d.bestTime}`) +
-        ul(d.highlights),
-    )
+function buildDestinationsContent(lang: Lang): string {
+  const blocks = getLocalizedDestinations(lang)
+    .map((d) => h2(d.name) + paragraph(d.description) + ul(d.highlights))
     .join('');
-  return h1('Destinations') + paragraph("Explore Morocco's top destinations.") + blocks;
+  return h1('Morocco') + paragraph(tr(lang, 'section_destinations')) + blocks;
 }
 
-function buildAboutContent(): string {
+function buildDestinationDetailContent(destId: string, lang: Lang): string {
+  const d = getLocalizedDestination(destId, lang);
+  if (!d) return h1('Not Found') + paragraph('This destination could not be found.');
   return (
-    h1('About Us — Meet Your Local Berber Guides') +
-    paragraph('Born and raised in the Sahara, our team of passionate local guides has been sharing the magic of Morocco with travelers from around the world for over 25 years.') +
-    h2('Our Philosophy') +
-    paragraph("We don't sell tours. We create memories that embed themselves in your soul, wrapped in the warmth of Moroccan hospitality.") +
-    h2('100% Local Expertise') +
-    paragraph('Our guides are born here, raised here, and deeply connected to every corner of Morocco — from the imperial cities to the remotest desert dunes.') +
-    h2('Uncompromising Quality') +
-    paragraph('Every tour is meticulously crafted, from luxury camp accommodations to private transfers and handpicked experiences.') +
-    h2('Sustainable Tourism') +
-    paragraph("We partner with local communities, support artisans, and ensure our journeys leave a positive impact on Morocco's landscapes and people.")
+    h1(d.name) +
+    paragraph(d.shortDesc) +
+    paragraph(d.description) +
+    h2(tr(lang, 'dest_about')) +
+    ul(d.highlights)
   );
 }
 
-function buildContactContent(): string {
+function buildAboutContent(lang: Lang): string {
   return (
-    h1('Contact Morocco Grand Adventure') +
-    h2("Let's Talk") +
-    paragraph('Get in touch with us to plan your dream Morocco journey. Our local experts respond within 24 hours.') +
-    h2('Contact Details') +
+    h1(tr(lang, 'nav_about')) +
+    paragraph(tr(lang, 'about_story_p1')) +
+    paragraph(tr(lang, 'about_story_p2')) +
+    h2(tr(lang, 'nav_tours')) +
+    paragraph(tr(lang, 'about_philosophy_quote'))
+  );
+}
+
+function buildContactContent(lang: Lang): string {
+  return (
+    h1(tr(lang, 'nav_contact')) +
     ul([
-      `WhatsApp: ${contactInfo.whatsappNumber}`,
-      `Email: ${contactInfo.email}`,
-      `Phone: ${contactInfo.phone}`,
-      `Address: ${contactInfo.address}`,
-      `Instagram: ${contactInfo.instagram}`,
+      `${tr(lang, 'contact_whatsapp_label')}: ${contactInfo.whatsappNumber}`,
+      `${tr(lang, 'contact_email_label')}: ${contactInfo.email}`,
+      `${tr(lang, 'contact_address')}: ${contactInfo.address}`,
     ])
   );
 }
 
-function buildFaqContent(): string {
-  return (
-    h1('Morocco Travel FAQ') +
-    paragraph('Answers to your most common questions about traveling in Morocco — visas, safety, packing, payments, and booking with Morocco Grand Adventure.') +
-    h2('Frequently Asked Questions') +
-    faqBlock(faqData)
-  );
+function buildFaqContent(lang: Lang): string {
+  return h1(tr(lang, 'nav_faq')) + faqBlock(getLocalizedFaq(lang));
 }
 
-function buildBlogContent(): string {
+function buildBlogContent(lang: Lang): string {
   const posts = [
     { title: 'The Ultimate Guide to Luxury Desert Camps in Merzouga', excerpt: "From private tents with en-suite bathrooms to gourmet dinners under the Milky Way — discover everything you need to know about luxury glamping in the Sahara.", date: 'August 2026', read: '8 min read', cat: 'Sahara Desert' },
     { title: 'Best Time to Visit the Sahara Desert: A Complete Month-by-Month Guide', excerpt: "When should you plan your Merzouga desert trip? Our local experts break down temperatures, crowds, and conditions month by month.", date: 'July 2026', read: '6 min read', cat: 'Travel Planning' },
@@ -236,7 +257,7 @@ function buildBlogContent(): string {
         paragraph(post.excerpt),
     )
     .join('');
-  return h1('Morocco Travel Blog') + paragraph('Expert guides, insider tips, and inspiration from our local Sahara team — discover the very best of Morocco.') + blocks;
+  return h1(tr(lang, 'nav_blog')) + blocks;
 }
 
 // ── Route table ──────────────────────────────────────────────────────────────
@@ -247,31 +268,79 @@ type RouteEntry = {
   outFile: string;
   /** Builder for the body HTML injected into #root. */
   content: () => string;
-  /** Per-route SEO meta (title/description/ogImage) from route-metadata.ts. */
+  /** Per-route SEO meta (title/description/ogImage), localized where possible. */
   meta: ReturnType<typeof getRouteMeta>;
+  /** Language code for this route. */
+  lang: string;
+  /** Extra JSON-LD blocks (localized Tour / TouristAttraction schemas). */
+  schemas: Record<string, unknown>[];
+  /** RTL flag for the html dir attribute. */
+  rtl: boolean;
 };
 
-function buildRoutes(): RouteEntry[] {
-  const routes: RouteEntry[] = [];
+/** Build the localized SEO meta for a route + language (title/description/ogImage). */
+function metaFor(rest: string, lang: Lang): ReturnType<typeof getRouteMeta> {
+  // Localized tour entity pages → genuinely translated title + description.
+  let m = rest.match(/^\/tours\/([^/]+)$/);
+  if (m) {
+    const t = getLocalizedTour(m[1], lang);
+    if (t) return { title: t.name, description: truncate(t.description), ogImage: t.image };
+  }
+  // Localized destination entity pages → genuinely translated title + description.
+  m = rest.match(/^\/destinations\/([^/]+)$/);
+  if (m) {
+    const d = getLocalizedDestination(m[1], lang);
+    if (d) return { title: d.name, description: truncate(d.shortDesc || d.description), ogImage: d.image };
+  }
+  // Static pages → localized title via the UI translation keys, English meta fallback.
+  const en = getRouteMeta(rest);
+  const key = STATIC_TITLE_KEYS[rest];
+  const title = key ? tr(lang, key) || en.title : en.title;
+  return { title, description: en.description, ogImage: en.ogImage };
+}
 
-  const add = (rest: string, outFile: string, content: () => string) => {
-    routes.push({ rest, outFile, content, meta: getRouteMeta(rest) });
+function buildRoutes(lang: Lang): RouteEntry[] {
+  const routes: RouteEntry[] = [];
+  const rtl = lang === 'ar';
+
+  const add = (
+    rest: string,
+    outFile: string,
+    content: () => string,
+    schemas: Record<string, unknown>[] = [],
+  ) => {
+    routes.push({ rest, outFile, content, meta: metaFor(rest, lang), lang, schemas, rtl });
   };
 
-  // Home
-  add('/', 'en/index.html', buildHomeContent);
+  // Home + primary sections
+  add('/', `${lang}/index.html`, () => buildHomeContent(lang));
+  add('/tours', `${lang}/tours/index.html`, () => buildToursContent(lang));
+  add('/destinations', `${lang}/destinations/index.html`, () => buildDestinationsContent(lang));
+  add('/about', `${lang}/about/index.html`, () => buildAboutContent(lang));
+  add('/contact', `${lang}/contact/index.html`, () => buildContactContent(lang));
+  add('/faq', `${lang}/faq/index.html`, () => buildFaqContent(lang));
+  add('/blog', `${lang}/blog/index.html`, () => buildBlogContent(lang));
 
-  // Primary sections (all in the user's requested list + tour listing)
-  add('/tours', 'en/tours/index.html', buildToursContent);
-  add('/destinations', 'en/destinations/index.html', buildDestinationsContent);
-  add('/about', 'en/about/index.html', buildAboutContent);
-  add('/contact', 'en/contact/index.html', buildContactContent);
-  add('/faq', 'en/faq/index.html', buildFaqContent);
-  add('/blog', 'en/blog/index.html', buildBlogContent);
-
-  // Major tour detail routes
+  // Major tour detail routes (with localized JSON-LD)
   for (const id of TOUR_ROUTES) {
-    add(`/tours/${id}`, `en/tours/${id}.html`, () => buildTourDetailContent(id));
+    const t = getLocalizedTour(id, lang);
+    add(
+      `/tours/${id}`,
+      `${lang}/tours/${id}.html`,
+      () => buildTourDetailContent(id, lang),
+      t ? (buildTourSchema(t, id, lang) as Record<string, unknown>[]) : [],
+    );
+  }
+
+  // Destination detail pages (with localized JSON-LD)
+  for (const dest of destinations) {
+    const d = getLocalizedDestination(dest.id, lang);
+    add(
+      `/destinations/${dest.id}`,
+      `${lang}/destinations/${dest.id}.html`,
+      () => buildDestinationDetailContent(dest.id, lang),
+      d ? (buildDestinationSchema(d, lang) as Record<string, unknown>[]) : [],
+    );
   }
 
   return routes;
@@ -369,6 +438,23 @@ function injectBody(html: string, bodyHtml: string): string {
   );
 }
 
+// Set the localized <html lang> (+RTL for Arabic) on the prerendered document.
+function injectLang(html: string, code: string, rtl: boolean): string {
+  const attrs = rtl ? ` lang="${code}" dir="rtl"` : ` lang="${code}"`;
+  return html.replace(/<html[^>]*>/, `<html${attrs}>`);
+}
+
+// Inject additional localized JSON-LD (Tour / TouristAttraction) into <head>.
+function injectStructuredData(html: string, schemas: Record<string, unknown>[]): string {
+  if (!schemas.length) return html;
+  const tags = schemas
+    .map(
+      (s) => `    <script type="application/ld+json" data-prerendered="1">\n${JSON.stringify(s).replace(/</g, '\\u003c')}\n    </script>`,
+    )
+    .join('\n');
+  return html.replace('</head>', `${tags}\n\n  </head>`);
+}
+
 // ── Main ─────────────────────────────────────────────────────────────────────
 function main() {
   if (!fs.existsSync(indexHtmlPath)) {
@@ -379,20 +465,23 @@ function main() {
   }
 
   const baseHtml = fs.readFileSync(indexHtmlPath, 'utf-8');
-  const routes = buildRoutes();
-  const lang = 'en';
 
   let written = 0;
 
-  for (const route of routes) {
-    const htmlWithHead = injectHead(baseHtml, route.meta, route.rest, lang);
-    const html = injectBody(htmlWithHead, route.content());
+  // Generate every supported language version of every route.
+  for (const lang of languages) {
+    const routes = buildRoutes(lang.code);
+    for (const route of routes) {
+      const langMarked = injectLang(baseHtml, route.lang, route.rtl);
+      const htmlWithHead = injectHead(langMarked, route.meta, route.rest, lang.code);
+      const html = injectStructuredData(injectBody(htmlWithHead, route.content()), route.schemas);
 
-    const outPath = path.join(distDir, route.outFile);
-    fs.mkdirSync(path.dirname(outPath), { recursive: true });
-    fs.writeFileSync(outPath, html, 'utf-8');
-    written++;
-    console.log(`[prerender] wrote ${route.outFile}`);
+      const outPath = path.join(distDir, route.outFile);
+      fs.mkdirSync(path.dirname(outPath), { recursive: true });
+      fs.writeFileSync(outPath, html, 'utf-8');
+      written++;
+      console.log(`[prerender] wrote ${route.outFile}`);
+    }
   }
 
   console.log(`\n[prerender] Done. Generated ${written} route HTML files in dist/.`);

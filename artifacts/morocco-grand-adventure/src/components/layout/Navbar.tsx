@@ -73,13 +73,14 @@ export function Navbar() {
     <nav className={navClasses} aria-label="Main navigation">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
-          <Link href="/" aria-label="Morocco Grand Adventure - Home">
+          <Link href="/" aria-label="Morocco Grand Adventure — Home">
             <img 
-              src="/logo.svg"
-              alt="Morocco Grand Adventure logo" 
-              width={220}
-              height={64}
-              className={`h-10 sm:h-12 md:h-14 w-auto object-contain transition-all duration-300 ${effectiveScrolled ? '' : 'brightness-0 invert'}`} 
+              src="/logo-official.png"
+              alt="Morocco Grand Adventure" 
+              width={1536}
+              height={1536}
+              decoding="async"
+              className="h-10 sm:h-12 md:h-14 w-auto object-contain transition-all duration-300" 
             />
           </Link>
 

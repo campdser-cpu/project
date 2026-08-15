@@ -143,7 +143,7 @@ export default function Home() {
           >
             <source src="/videos/hero.mp4" type="video/mp4" />
             {/* Fallback for browsers that don't support video */}
-            <img src="/images/hero/desert-pano.jpg" alt="Morocco Sahara Desert golden dunes at sunset" className="w-full h-full object-cover" />
+            <img src="/images/hero/desert-pano.jpg" alt="Morocco Sahara Desert golden dunes at sunset" loading="eager" fetchPriority="high" decoding="async" width={601} height={900} className="w-full h-full object-cover" />
           </video>
           {/* Layered cinematic overlays */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/75" />

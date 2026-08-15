@@ -31,12 +31,12 @@ export function PriceTag({ price, size = 'md', tone = 'default', className = '' 
   const plain = tone === 'onDark' ? 'text-white' : 'text-foreground';
 
   if (!active) {
-    return <span className={`font-serif font-bold ${plain} ${NUM[size]} ${className}`}>${orig}</span>;
+    return <span className={`font-serif font-bold ${plain} ${NUM[size]} ${className}`}>€{orig}</span>;
   }
   return (
     <span className={`inline-flex items-baseline gap-2 ${className}`}>
-      <span className={`font-medium line-through ${strike} ${OLD[size]}`}>${orig}</span>
-      <span className={`font-serif font-bold text-primary ${NUM[size]}`}>${disc}</span>
+      <span className={`font-medium line-through ${strike} ${OLD[size]}`}>€{orig}</span>
+      <span className={`font-serif font-bold text-primary ${NUM[size]}`}>€{disc}</span>
     </span>
   );
 }

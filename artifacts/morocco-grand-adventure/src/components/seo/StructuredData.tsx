@@ -39,8 +39,9 @@ function removeJsonLd(id: string) {
 // ─────────────────────────────────────────────────────────────────────────────
 
 /** Build AboutPage + Organization + Person schemas for the About page. */
-export function buildAboutPageSchema(guides: { name: string; role: string; image: string }[]): JsonLd[] {
-  const aboutUrl = `${SITE_URL}/about`;
+export function buildAboutPageSchema(guides: { name: string; role: string; image: string }[], lang?: string): JsonLd[] {
+  const l = normalizeLang(lang);
+  const aboutUrl = `${SITE_URL}/${l}/about`;
   const schemas: JsonLd[] = [];
 
   schemas.push({
@@ -48,6 +49,7 @@ export function buildAboutPageSchema(guides: { name: string; role: string; image
     '@type': 'AboutPage',
     '@id': `${aboutUrl}#webpage`,
     url: aboutUrl,
+    inLanguage: l,
     name: 'About Us — Meet Your Local Berber Guides',
     isPartOf: { '@id': `${SITE_URL}/#website` },
   });
@@ -58,6 +60,7 @@ export function buildAboutPageSchema(guides: { name: string; role: string; image
     '@id': `${SITE_URL}/#organization`,
     name: BRAND,
     url: SITE_URL,
+    logo: `${SITE_URL}/logo-official.png`,
     founder: { '@id': `${aboutUrl}#${guides[0]?.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}` },
     areaServed: 'Morocco',
     employee: guides.map((g) => ({
@@ -78,10 +81,13 @@ export function buildAboutPageSchema(guides: { name: string; role: string; image
   }
 
   schemas.push(
-    buildBreadcrumb([
-      { name: 'Home', path: '/' },
-      { name: 'About', path: '/about' },
-    ]),
+    buildBreadcrumb(
+      [
+        { name: 'Home', path: '/' },
+        { name: 'About', path: '/about' },
+      ],
+      lang,
+    ),
   );
 
   return schemas;
@@ -90,8 +96,18 @@ export function buildAboutPageSchema(guides: { name: string; role: string; image
 const SITE_URL = 'https://www.moroccograndadventure.com';
 const BRAND = 'Morocco Grand Adventure';
 
-/** Build a BreadcrumbList from an ordered list of {name, path} entries. */
-export function buildBreadcrumb(crumbs: { name: string; path: string }[]): JsonLd {
+/** Map the supported language codes to the BCP-47 value used in HTML lang + schema inLanguage. */
+function normalizeLang(lang?: string): string {
+  const BCP47: Record<string, string> = {
+    en: 'en', fr: 'fr', es: 'es', it: 'it', de: 'de', nl: 'nl', pt: 'pt',
+    zh: 'zh', ja: 'ja', ko: 'ko', ar: 'ar',
+  };
+  return (lang && BCP47[lang]) || lang || 'en';
+}
+
+/** Build a BreadcrumbList from an ordered list of {name, path} entries (language-aware URLs). */
+export function buildBreadcrumb(crumbs: { name: string; path: string }[], lang?: string): JsonLd {
+  const l = normalizeLang(lang);
   return {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -99,12 +115,12 @@ export function buildBreadcrumb(crumbs: { name: string; path: string }[]): JsonL
       '@type': 'ListItem',
       position: i + 1,
       name: c.name,
-      item: `${SITE_URL}${c.path}`,
+      item: `${SITE_URL}/${l}${c.path === '/' ? '' : c.path}`.replace(/\/$/, '') || `${SITE_URL}/${l}`,
     })),
   };
 }
 
-/** Build a Tour (TouristTrip) schema from tour data. */
+/** Build a Tour (TouristTrip) schema from tour data (language-aware URLs + inLanguage). */
 export function buildTourSchema(
   tour: {
     id: string;
@@ -118,9 +134,11 @@ export function buildTourSchema(
     itineraryDays?: { day: number; title: string; desc: string }[];
   },
   urlSlug?: string,
+  lang?: string,
 ): JsonLd[] {
+  const l = normalizeLang(lang);
   const canonicalSlug = urlSlug ?? tour.id;
-  const url = `${SITE_URL}/tours/${canonicalSlug}`;
+  const url = `${SITE_URL}/${l}/tours/${canonicalSlug}`;
   const schemas: JsonLd[] = [];
 
   // Main Tour schema (modeled as a TouristTrip).
@@ -142,13 +160,13 @@ export function buildTourSchema(
       '@type': 'Offer',
       '@id': `${url}#offer`,
       price: tour.price,
-      priceCurrency: 'USD',
+      priceCurrency: 'EUR',
       availability: 'https://schema.org/InStock',
       url,
       priceSpecification: {
         '@type': 'PriceSpecification',
         price: tour.price,
-        priceCurrency: 'USD',
+        priceCurrency: 'EUR',
         eligibleQuantity: {
           '@type': 'QuantitativeValue',
           minValue: 1,
@@ -164,7 +182,7 @@ export function buildTourSchema(
       '@type': 'TouristDestination',
       name: h,
     })),
-    inLanguage: 'en',
+    inLanguage: l,
     isAccessibleForFree: false,
     touristType: ['Luxury Travelers', 'Adventure Seekers', 'Culture Enthusiasts', 'Couples', 'Families'],
   });
@@ -187,11 +205,14 @@ export function buildTourSchema(
 
   // Breadcrumb
   schemas.push(
-    buildBreadcrumb([
-      { name: 'Home', path: '/' },
-      { name: 'Tours', path: '/tours' },
-      { name: tour.name, path: `/tours/${tour.id}` },
-    ]),
+    buildBreadcrumb(
+      [
+        { name: 'Home', path: '/' },
+        { name: 'Tours', path: '/tours' },
+        { name: tour.name, path: `/tours/${tour.id}` },
+      ],
+      lang,
+    ),
   );
 
   return schemas;
@@ -207,8 +228,9 @@ export function buildDestinationSchema(dest: {
   coords: { lat: number; lng: number };
   highlights: string[];
   bestTime: string;
-}): JsonLd[] {
-  const url = `${SITE_URL}/destinations/${dest.id}`;
+}, lang?: string): JsonLd[] {
+  const l = normalizeLang(lang);
+  const url = `${SITE_URL}/${l}/destinations/${dest.id}`;
   const schemas: JsonLd[] = [];
 
   schemas.push({
@@ -218,6 +240,7 @@ export function buildDestinationSchema(dest: {
     description: dest.description,
     image: `${SITE_URL}${dest.image}`,
     url,
+    inLanguage: l,
     geo: {
       '@type': 'GeoCoordinates',
       latitude: dest.coords.lat,
@@ -237,14 +260,33 @@ export function buildDestinationSchema(dest: {
   });
 
   schemas.push(
-    buildBreadcrumb([
-      { name: 'Home', path: '/' },
-      { name: 'Destinations', path: '/destinations' },
-      { name: dest.name, path: `/destinations/${dest.id}` },
-    ]),
+    buildBreadcrumb(
+      [
+        { name: 'Home', path: '/' },
+        { name: 'Destinations', path: '/destinations' },
+        { name: dest.name, path: `/destinations/${dest.id}` },
+      ],
+      lang,
+    ),
   );
 
   return schemas;
+}
+
+/** Build a FAQPage schema from an array of {question, answer}. */
+export function buildFaqSchema(faqs: { question: string; answer: string }[]): JsonLd {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: f.answer,
+      },
+    })),
+  };
 }
 
 /** Build a Review schema array from review objects. */
