@@ -43,6 +43,8 @@ import {
 } from '../src/i18n/content';
 import { getRouteMeta } from '../src/components/seo/route-metadata';
 import { buildTourSchema, buildDestinationSchema } from '../src/components/seo/StructuredData';
+import { registerAllTranslations } from '../src/i18n/locales';
+import { registerAllContentOverlays } from '../src/i18n/content/overlays';
 
 // ── Constants ────────────────────────────────────────────────────────────────
 const BRAND = 'Morocco Grand Adventure';
@@ -457,6 +459,11 @@ function injectStructuredData(html: string, schemas: Record<string, unknown>[]):
 
 // ── Main ─────────────────────────────────────────────────────────────────────
 function main() {
+  // The split locale registries are populated at build time so every language
+  // renders genuinely localized titles/text in the prerendered (crawlable) HTML.
+  registerAllTranslations();
+  registerAllContentOverlays();
+
   if (!fs.existsSync(indexHtmlPath)) {
     throw new Error(
       `[prerender] dist/index.html not found at ${indexHtmlPath}. ` +

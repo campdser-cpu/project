@@ -66,7 +66,7 @@ export function MoroccoMap({ routeIds, height = 520 }: { routeIds?: string[]; he
           <div style="font-size:10px;color:#999;margin-bottom:6px">${categoryLabel(dest.category, lang)}</div>
           <div style="font-size:11px;color:#555;margin-bottom:8px;line-height:1.4">${dest.shortDesc.slice(0, 75)}…</div>
           <a href="${base}/${lang}/destinations/${dest.id}" style="display:inline-block;background:#C9A84C;color:#fff;padding:4px 10px;border-radius:20px;font-size:10px;font-weight:bold;text-decoration:none;margin-right:4px">${t('explore')}</a>
-          <a href="${gmapsUrl}" target="_blank" rel="noopener" style="display:inline-block;background:#1a1a1a;color:#fff;padding:4px 10px;border-radius:20px;font-size:10px;font-weight:bold;text-decoration:none">Directions ↗</a>
+          <a href="${gmapsUrl}" target="_blank" rel="noopener" style="display:inline-block;background:#1a1a1a;color:#fff;padding:4px 10px;border-radius:20px;font-size:10px;font-weight:bold;text-decoration:none">${t('map_directions')}</a>
         </div>`;
 
       L.marker([dest.coords.lat, dest.coords.lng], { icon })

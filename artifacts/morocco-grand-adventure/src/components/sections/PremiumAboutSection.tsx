@@ -1,6 +1,5 @@
 ﻿import { Link } from 'wouter';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { t } from '@/i18n';
 import aboutPageContent from '@/data/about-page-content.json';
 
 const placeholderPattern = /\[[^\]]+\]/g;
@@ -22,7 +21,7 @@ function renderParagraphs(text: string) {
 }
 
 export default function PremiumAboutSection() {
-  const { lang } = useLanguage();
+  const { t } = useLanguage();
   const content = aboutPageContent.about;
 
   const timelineItems = content.timeline.items
@@ -47,10 +46,10 @@ export default function PremiumAboutSection() {
   };
 
   const stats = [
-    { value: t(lang, 'about_stat1_value'), label: t(lang, 'about_stat1_label') },
-    { value: t(lang, 'about_stat2_value'), label: t(lang, 'about_stat2_label') },
-    { value: t(lang, 'about_stat3_value'), label: t(lang, 'about_stat3_label') },
-    { value: t(lang, 'about_stat4_value'), label: t(lang, 'about_stat4_label') },
+    { value: t('about_stat1_value'), label: t('about_stat1_label') },
+    { value: t('about_stat2_value'), label: t('about_stat2_label') },
+    { value: t('about_stat3_value'), label: t('about_stat3_label') },
+    { value: t('about_stat4_value'), label: t('about_stat4_label') },
   ];
 
   return (
@@ -74,7 +73,7 @@ export default function PremiumAboutSection() {
           </p>
           <div className="mt-12 flex justify-center">
             <div className="flex flex-col items-center gap-2 text-sm uppercase tracking-[0.25em] text-white/80">
-              <span>Scroll to learn more</span>
+              <span>{t('about_scroll_hint')}</span>
               <div className="w-8 h-8 border-b-2 border-r-2 border-white/80 rotate-45 animate-bounce" />
             </div>
           </div>
@@ -96,13 +95,13 @@ export default function PremiumAboutSection() {
           </div>
           <div className="lg:pt-16">
             <div className="bg-gradient-to-br from-amber-50 to-orange-50 p-10 rounded-2xl shadow-xl shadow-amber-200/20">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Our Roots</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">{t('about_roots_heading')}</h3>
               <p className="text-gray-700 mb-8 leading-relaxed text-lg">
-                We are from Merzouga, and every part of our work is rooted in the Sahara we grew up in.
+                {t('about_roots_text')}
               </p>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Our Promise</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">{t('about_promise_heading')}</h3>
               <p className="text-gray-700 leading-relaxed text-lg">
-                Every tour is guided by people who live here, not by a booking platform sending a guide from somewhere else.
+                {t('about_promise_text')}
               </p>
             </div>
           </div>
@@ -193,7 +192,7 @@ export default function PremiumAboutSection() {
       <div className="max-w-4xl mx-auto px-4 text-center mb-24">
         <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">{content.cta.title}</h2>
         <p className="text-xl text-gray-600 mb-10 leading-relaxed">
-          Choose an itinerary with the team who knows Merzouga best.
+          {t('about_cta_sub')}
         </p>
         <Link
           to="/tours"

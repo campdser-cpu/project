@@ -1,5 +1,6 @@
 import type { Lang } from '@/i18n/index';
 import type { ContentOverlay } from './types';
+import { registerOverlay } from './index';
 
 // Per-language content translations. These files are GENERATED (do not hand-edit)
 // by `npx tsx scripts/i18n-translate.ts` from the canonical English content in
@@ -30,3 +31,14 @@ export const contentOverlays: Partial<Record<Lang, ContentOverlay>> = {
   ko: ko as ContentOverlay,
   ar: ar as ContentOverlay,
 };
+
+/**
+ * Register every content overlay into the runtime registry.
+ * Build-time tooling only (prerender/audits). The browser registers only the
+ * active locale at runtime via `loadContent()` in ./index.ts.
+ */
+export function registerAllContentOverlays(): void {
+  Object.entries(contentOverlays).forEach(([code, data]) => {
+    if (data) registerOverlay(code as Lang, data);
+  });
+}

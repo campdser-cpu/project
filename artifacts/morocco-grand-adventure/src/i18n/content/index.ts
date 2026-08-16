@@ -4,6 +4,13 @@
 // overlays, falling back to English for any missing string. `category` on
 // destinations stays canonical-English (it is a logic key for filters/colors);
 // use `categoryLabel()` for its localized display text.
+//
+// Locale code-splitting: the per-language overlay JSON for the active locale is
+// loaded on demand via `loadContent(lang)` (browser bootstrap / language switch)
+// or registered all-at-once by build tooling via `registerOverlay()` (see
+// ./overlays.ts → registerAllContentOverlays for prerender/audit). English is
+// the canonical source and therefore has no overlay. Any locale not yet loaded
+// simply falls back to English — resolving instantly with no blank state.
 // ─────────────────────────────────────────────────────────────────────────────
 import {
   tours as toursEN,
@@ -14,7 +21,47 @@ import {
   type Destination,
 } from '@/data/content';
 import type { Lang } from '@/i18n/index';
-import { contentOverlays } from './overlays';
+import type { ContentOverlay } from './types';
+
+// ── Locale overlay registry ─────────────────────────────────────────────────
+const overlayRegistry: Partial<Record<Lang, ContentOverlay>> = {};
+
+export function registerOverlay(lang: Lang, data: ContentOverlay): void {
+  overlayRegistry[lang] = data;
+}
+
+function getOverlay(lang: Lang): ContentOverlay | undefined {
+  return overlayRegistry[lang];
+}
+
+/**
+ * Lazy loaders, one split chunk per locale. English has no overlay (it is the
+ * canonical source), so only the other 10 languages are loaded on demand.
+ */
+const OVERLAY_LOADERS: Partial<Record<Lang, () => Promise<{ default: ContentOverlay }>>> = {
+  fr: () => import('./generated/fr.json'),
+  es: () => import('./generated/es.json'),
+  it: () => import('./generated/it.json'),
+  de: () => import('./generated/de.json'),
+  nl: () => import('./generated/nl.json'),
+  pt: () => import('./generated/pt.json'),
+  zh: () => import('./generated/zh.json'),
+  ja: () => import('./generated/ja.json'),
+  ko: () => import('./generated/ko.json'),
+  ar: () => import('./generated/ar.json'),
+};
+
+/**
+ * Load (and register) the content overlay for a single locale. English is the
+ * base, so it resolves immediately. Idempotent — safe to call repeatedly.
+ */
+export async function loadContent(lang: Lang): Promise<void> {
+  if (lang === 'en' || overlayRegistry[lang]) return;
+  const loader = OVERLAY_LOADERS[lang];
+  if (!loader) return;
+  const mod = await loader();
+  registerOverlay(lang, mod.default as ContentOverlay);
+}
 
 function pickText(base: string, over: string | undefined): string {
   return over != null && over !== '' ? over : base;
@@ -26,7 +73,7 @@ function pickArr(base: string[], over: (string | undefined)[] | undefined): stri
 }
 
 export function localizeDestination(d: Destination, lang: Lang): Destination {
-  const o = contentOverlays[lang]?.destinations?.[d.id];
+  const o = getOverlay(lang)?.destinations?.[d.id];
   if (!o) return d;
   return {
     ...d,
@@ -41,7 +88,7 @@ export function localizeDestination(d: Destination, lang: Lang): Destination {
 }
 
 export function localizeTour(tour: Tour, lang: Lang): Tour {
-  const o = contentOverlays[lang]?.tours?.[tour.id];
+  const o = getOverlay(lang)?.tours?.[tour.id];
   if (!o) return tour;
   return {
     ...tour,
@@ -90,7 +137,7 @@ export function getLocalizedDestination(id: string, lang: Lang): Destination | u
 }
 
 export function getLocalizedFaq(lang: Lang): { question: string; answer: string }[] {
-  const o = contentOverlays[lang]?.faq;
+  const o = getOverlay(lang)?.faq;
   return faqEN.map((f, i) => ({
     question: pickText(f.question, o?.[i]?.question),
     answer: pickText(f.answer, o?.[i]?.answer),
@@ -98,10 +145,10 @@ export function getLocalizedFaq(lang: Lang): { question: string; answer: string 
 }
 
 export function getLocalizedExperiences(lang: Lang): string[] {
-  return pickArr(experiencesEN, contentOverlays[lang]?.experiences);
+  return pickArr(experiencesEN, getOverlay(lang)?.experiences);
 }
 
 /** Localized display label for a canonical-English category key. */
 export function categoryLabel(cat: string, lang: Lang): string {
-  return contentOverlays[lang]?.categories?.[cat] ?? cat;
+  return getOverlay(lang)?.categories?.[cat] ?? cat;
 }

@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, type ReactNode } from 'react';
 import { navigate } from 'wouter/use-browser-location';
-import { type Lang, languages, t as translate } from '../i18n/index';
+import { type Lang, languages, t as translate, loadLocale } from '../i18n/index';
+import { loadContent } from '../i18n/content';
 import { parseLangPath, langHref } from '../lib/i18n-routing';
 
 export type { Lang };
@@ -36,10 +37,21 @@ export function LanguageProvider({ lang, children }: { lang: Lang; children: Rea
     try { localStorage.setItem(STORAGE_KEY, lang); } catch { /* ok */ }
   }, [lang, isRTL]);
 
-  const setLang = (newLang: Lang) => {
+  // Safety net: ensure the current locale's split chunks are registered.
+  // Idempotent and cheap once loaded; main.tsx already loads the initial locale,
+  // and setLang() awaits loading before navigating, so this is purely defensive.
+  useEffect(() => {
+    loadLocale(lang);
+    loadContent(lang);
+  }, [lang]);
+
+  const setLang = async (newLang: Lang) => {
     if (newLang === lang) return;
     const { rest } = parseLangPath(window.location.pathname);
     try { localStorage.setItem(STORAGE_KEY, newLang); } catch { /* ok */ }
+    // Load the target locale's split chunk before navigating so the new page
+    // never paints unlocalized (English) text.
+    await Promise.all([loadLocale(newLang), loadContent(newLang)]);
     navigate(langHref(newLang, rest, window.location.search, window.location.hash));
   };
 
