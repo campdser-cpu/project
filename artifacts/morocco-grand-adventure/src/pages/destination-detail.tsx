@@ -107,23 +107,13 @@ export default function DestinationDetail() {
                   <p className="text-muted-foreground mb-6 leading-relaxed">
                     {t('dest_campfire_sub')}
                   </p>
-                  <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-border bg-black">
-                    <video
-                      src="/videos/merzouga-campfire.mp4"
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                      controls
-                      aria-label="Evening campfire scene in the Sahara Desert near Merzouga, Morocco"
-                      className="w-full max-h-[520px] object-cover"
-                      poster="/images/dest/merzouga.jpg"
-                    />
-                    <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-                    <div className="absolute bottom-6 left-6">
-                      <span className="text-white/90 text-sm font-semibold tracking-wider drop-shadow-lg">{t('dest_merzouga_caption')}</span>
-                    </div>
-                  </div>
+                  <CinematicVideo
+                    src="/videos/merzouga-campfire.mp4"
+                    poster="/images/dest/merzouga.jpg"
+                    alt="Evening campfire scene in the Sahara Desert near Merzouga, Morocco"
+                    title={t('dest_merzouga_caption')}
+                    aspectClass="aspect-video"
+                  />
                 </div>
               )}
 

@@ -1,13 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8FQ5M7DD37"></script>
+    <!-- Google Analytics 4: defer non-essential third-party work until the page is usable. -->
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-8FQ5M7DD37');
+      (function () {
+        var loaded = false;
+        function loadAnalytics() {
+          if (loaded) return;
+          loaded = true;
+          window.dataLayer = window.dataLayer || [];
+          window.gtag = function(){ window.dataLayer.push(arguments); };
+          window.gtag('js', new Date());
+          window.gtag('config', 'G-8FQ5M7DD37');
+          var script = document.createElement('script');
+          script.async = true;
+          script.src = 'https://www.googletagmanager.com/gtag/js?id=G-8FQ5M7DD37';
+          document.head.appendChild(script);
+        }
+        ['pointerdown', 'keydown', 'touchstart'].forEach(function (event) {
+          window.addEventListener(event, loadAnalytics, { once: true, passive: true });
+        });
+        window.setTimeout(loadAnalytics, 5000);
+      })();
     </script>
 
     <meta charset="UTF-8" />
@@ -143,14 +157,6 @@
       "inLanguage": ["en", "fr", "es", "it", "de", "nl", "pt", "zh", "ja", "ko", "ar"],
       "publisher": {
         "@id": "https://www.moroccograndadventure.com/#organization"
-      },
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": "https://www.moroccograndadventure.com/tours?q={search_term_string}"
-        },
-        "query-input": "required name=search_term_string"
       }
     }
     </script>
@@ -188,7 +194,6 @@
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
     <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
     <link rel="preload" as="image" href="/images/hero/desert-pano.jpg" />
-    <link rel="preload" as="video" href="/videos/hero.mp4" type="video/mp4" />
 
     <!-- Theme color -->
     <meta name="theme-color" content="#C9A84C" />

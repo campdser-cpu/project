@@ -85,7 +85,13 @@ export function CinematicVideo({
           className={`w-full ${aspectClass} object-cover bg-black`}
         />
       ) : (
-        <div className={`w-full ${aspectClass} bg-muted animate-pulse`} aria-hidden="true" />
+        <img
+          src={poster}
+          alt=""
+          loading="lazy"
+          decoding="async"
+          className={`w-full ${aspectClass} object-cover bg-muted`}
+        />
       )}
 
       {/* Gradient overlay for text legibility */}

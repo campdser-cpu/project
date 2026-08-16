@@ -10,6 +10,7 @@ import { SiWhatsapp } from 'react-icons/si';
 import { PromoBanner } from '../components/promo/PromoBanner';
 import { PromoBadge } from '../components/promo/PromoBadge';
 import { PriceTag } from '../components/promo/PriceTag';
+import { CinematicVideo } from '../components/ui/CinematicVideo';
 
 /** Lazy-load the Leaflet map so its ~150 kB chunk (+ OpenStreetMap tiles) is
  *  only fetched once the map approaches the viewport — the homepage stays
@@ -109,6 +110,17 @@ export default function Home() {
   const [searchCity, setSearchCity] = useState('');
   const [searchDuration, setSearchDuration] = useState('');
   const [searchStyle, setSearchStyle] = useState('');
+  const [heroVideoReady, setHeroVideoReady] = useState(false);
+
+  // The poster is the LCP image. Start the decorative movie only after the
+  // initial render is complete, preserving the cinematic experience without
+  // competing with the first paint on constrained mobile connections.
+  useEffect(() => {
+    const start = () => window.setTimeout(() => setHeroVideoReady(true), 1800);
+    if (document.readyState === 'complete') start();
+    else window.addEventListener('load', start, { once: true });
+    return () => window.removeEventListener('load', start);
+  }, []);
   
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -131,20 +143,27 @@ export default function Home() {
           animate={{ opacity: 1 }}
           transition={{ duration: 1.8, ease: "easeIn" as const }}
         >
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            poster="/images/hero/desert-pano.jpg"
+          <img
+            src="/images/hero/desert-pano.jpg"
+            alt=""
+            aria-hidden="true"
+            fetchPriority="high"
+            decoding="async"
             className="absolute inset-0 w-full h-full object-cover"
-            aria-label="Cinematic video of the Morocco Sahara Desert with golden dunes at sunset"
-          >
-            <source src="/videos/hero.mp4" type="video/mp4" />
-            {/* Fallback for browsers that don't support video */}
-            <img src="/images/hero/desert-pano.jpg" alt="Morocco Sahara Desert golden dunes at sunset" loading="eager" fetchPriority="high" decoding="async" width={601} height={900} className="w-full h-full object-cover" />
-          </video>
+          />
+          {heroVideoReady && (
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              className="absolute inset-0 w-full h-full object-cover"
+              aria-hidden="true"
+            >
+              <source src="/videos/hero.mp4" type="video/mp4" />
+            </video>
+          )}
           {/* Layered cinematic overlays */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/75" />
           <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/20" />
@@ -488,24 +507,14 @@ export default function Home() {
               {t('home_exp_sub')}
             </p>
           </div>
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-2xl border border-border bg-black"
-          >
-            <video
-              src="/videos/sahara-experience.mp4"
-              controls
-              playsInline
-              preload="metadata"
-              poster="/images/personal/luxury-camp-dusk.jpg"
-              aria-label="Cinematic film of the Sahara desert experience near Merzouga"
-              className="w-full aspect-video object-cover"
-            />
-            <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/30 via-transparent to-transparent" />
-          </motion.div>
+          <CinematicVideo
+            src="/videos/sahara-experience.mp4"
+            poster="/images/personal/luxury-camp-dusk.jpg"
+            alt="Cinematic film of the Sahara desert experience near Merzouga"
+            autoPlay={false}
+            aspectClass="aspect-video"
+            className="max-w-5xl mx-auto"
+          />
           <div className="text-center mt-8 md:mt-10">
             <Link href="/tours" className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 md:px-8 py-3.5 md:py-4 rounded-full font-bold tracking-wide hover:bg-primary/90 transition-all hover:-translate-y-1 shadow-lg">
               {t('hero_cta_tours')} <ChevronRight className="w-5 h-5" />

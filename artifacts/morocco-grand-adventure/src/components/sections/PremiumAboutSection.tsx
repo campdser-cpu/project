@@ -56,7 +56,14 @@ export default function PremiumAboutSection() {
   return (
     <section className="premium-about-section">
       <div className="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden mb-24">
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: 'url(/images/hero/about-hero-team-chefchaouen-morocco.jpg)' }} />
+        <img
+          src="/images/hero/medina-pano.jpg"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full object-cover"
+          fetchPriority="high"
+          decoding="async"
+        />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/40 to-black/70 z-10" />
         <div className="relative z-20 text-center text-white px-4 max-w-5xl mx-auto">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
@@ -149,7 +156,7 @@ export default function PremiumAboutSection() {
               <div key={guide.name} className="grid lg:grid-cols-2 gap-12 items-center">
                 {imageFirst ? (
                   <div className="aspect-[4/5] rounded-2xl overflow-hidden">
-                    <img src={imageSrc} alt={guide.name} className="w-full h-full object-cover" style={mohamedImageCropStyle} />
+                    <img src={imageSrc} alt={guide.name} loading="lazy" decoding="async" className="w-full h-full object-cover" style={mohamedImageCropStyle} />
                   </div>
                 ) : null}
                 <div>
@@ -160,7 +167,7 @@ export default function PremiumAboutSection() {
                 </div>
                 {!imageFirst ? (
                   <div className="aspect-[4/5] rounded-2xl overflow-hidden">
-                    <img src={imageSrc} alt={guide.name} className="w-full h-full object-cover" style={mohamedImageCropStyle} />
+                    <img src={imageSrc} alt={guide.name} loading="lazy" decoding="async" className="w-full h-full object-cover" style={mohamedImageCropStyle} />
                   </div>
                 ) : null}
               </div>

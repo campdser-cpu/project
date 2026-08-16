@@ -1,4 +1,3 @@
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useEffect, lazy, Suspense } from 'react';
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
@@ -31,8 +30,6 @@ const MerzougaGuide = lazy(() => import('./pages/merzouga-guide'));
 const Faq = lazy(() => import('./pages/faq'));
 const Blog = lazy(() => import('./pages/blog'));
 const NotFound = lazy(() => import('@/pages/not-found'));
-
-const queryClient = new QueryClient();
 
 // Loading fallback for lazy-loaded routes
 function PageLoader() {
@@ -114,8 +111,7 @@ function App() {
   if (!lang) return <PageLoader />;
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <LanguageProvider lang={lang}>
+    <LanguageProvider lang={lang}>
         <LocalizedHead />
         <PromoProvider>
           <TooltipProvider>
@@ -125,8 +121,7 @@ function App() {
             <Toaster />
           </TooltipProvider>
         </PromoProvider>
-      </LanguageProvider>
-    </QueryClientProvider>
+    </LanguageProvider>
   );
 }
 
