@@ -209,11 +209,54 @@ export const routeMetadata: Record<string, RouteMeta> = {
       "Answers to your Morocco travel questions — visas, safety, best time to visit, packing tips, desert tours, payments & more. Expert advice from local Morocco specialists.",
     ogImage: "/images/dest/merzouga.jpg",
   },
-  "/blog": {
+    "/blog": {
     title: "Morocco Travel Blog — Guides, Tips & Inspiration",
     description:
       "Expert Morocco travel guides, insider tips, and inspiration from local Sahara experts. Discover the best of Morocco — from desert adventures to imperial cities.",
     ogImage: "/images/hero/desert-pano.jpg",
+  },
+};
+
+/**
+ * Per-article SEO metadata for every blog article.
+ * Keys must match the slug strings used in src/pages/blog.tsx.
+ */
+export const BLOG_META: Record<string, RouteMeta> = {
+  "merzouga-luxury-desert-camp-guide": {
+    title: "Luxury Desert Camps in Merzouga — Ultimate Guide to Sahara Glamping",
+    description:
+      "From private tents with en-suite bathrooms to gourmet dinners under the Milky Way — everything you need to know about luxury glamping in the Merzouga Sahara.",
+    ogImage: "/images/personal/luxury-camp-dusk.jpg",
+  },
+  "best-time-to-visit-morocco-sahara": {
+    title: "Best Time to Visit the Sahara Desert — Month-by-Month Guide",
+    description:
+      "When should you plan your Merzouga desert trip? Our local experts break down temperatures, crowds, and ideal conditions month by month.",
+    ogImage: "/images/dest/merzouga.jpg",
+  },
+  "camel-trekking-etiquette-morocco": {
+    title: "Camel Trekking in Morocco — What to Expect and How to Prepare",
+    description:
+      "Everything first-time riders need to know — what to wear, how to mount, what to bring, and the traditions behind this age-old Saharan journey.",
+    ogImage: "/images/personal/dunes-camels-poster.jpg",
+  },
+  "marrakech-to-merzouga-roadtrip": {
+    title: "Marrakech to Merzouga — Ultimate Sahara Road Trip Itinerary",
+    description:
+      "Cross the High Atlas, explore Aït Ben Haddou, wind through the Dades Valley, and arrive at the golden dunes of Erg Chebbi — the complete route guide.",
+    ogImage: "/images/dest/ait-ben-haddou.jpg",
+  },
+  "morocco-packing-list-desert": {
+    title: "Morocco Desert Packing List — What to Bring for Sahara Tours",
+    description:
+      "What to pack for the Sahara — breathable layers, sun protection, and the essentials that make a desert night unforgettable.",
+    ogImage: "/images/hero/desert-pano.jpg",
+  },
+  "fes-chefchaouen-blue-city-guide": {
+    title: "Fes to Chefchaouen — Exploring Morocco's Blue Pearl",
+    description:
+      "The journey from Morocco's cultural heart to the famous blue medina — what to see, where to stay, and how to make the most of it.",
+    ogImage: "/images/dest/chefchaouen.jpg",
   },
 };
 
@@ -235,10 +278,17 @@ export function getRouteMeta(rest: string): RouteMeta {
     if (meta) return meta;
   }
 
-  // Dynamic destination route: /destinations/:id
+    // Dynamic destination route: /destinations/:id
   const destMatch = normalised.match(/^\/destinations\/([^/]+)$/);
   if (destMatch) {
     const meta = DESTINATION_META[destMatch[1]];
+    if (meta) return meta;
+  }
+
+  // Dynamic blog route: /blog/:slug
+  const blogMatch = normalised.match(/^\/blog\/([^/]+)$/);
+  if (blogMatch) {
+    const meta = BLOG_META[blogMatch[1]];
     if (meta) return meta;
   }
 

@@ -40,9 +40,11 @@ import {
   getLocalizedDestination,
   getLocalizedDestinations,
   getLocalizedFaq,
+  blogPosts,
+  type BlogPost,
 } from '../src/i18n/content';
-import { getRouteMeta } from '../src/components/seo/route-metadata';
-import { buildTourSchema, buildDestinationSchema } from '../src/components/seo/StructuredData';
+import { getRouteMeta, BLOG_META } from '../src/components/seo/route-metadata';
+import { buildTourSchema, buildDestinationSchema, buildBlogPostSchema } from '../src/components/seo/StructuredData';
 import { registerAllTranslations } from '../src/i18n/locales';
 import { registerAllContentOverlays } from '../src/i18n/content/overlays';
 
@@ -262,6 +264,70 @@ function buildBlogContent(lang: Lang): string {
   return h1(tr(lang, 'nav_blog')) + blocks;
 }
 
+function buildBlogArticleContent(slug: string, lang: Lang): string {
+  const posts: Record<string, { title: string; excerpt: string; date: string; read: string; cat: string; image: string }> = {
+    'merzouga-luxury-desert-camp-guide': {
+      title: 'The Ultimate Guide to Luxury Desert Camps in Merzouga',
+      excerpt: "From private tents with en-suite bathrooms to gourmet dinners under the Milky Way — discover everything you need to know about luxury glamping in the Sahara.",
+      date: 'August 2026',
+      read: '8 min read',
+      cat: 'Sahara Desert',
+      image: '/images/personal/luxury-camp-dusk.jpg',
+    },
+    'best-time-to-visit-morocco-sahara': {
+      title: 'Best Time to Visit the Sahara Desert: A Complete Month-by-Month Guide',
+      excerpt: "When should you plan your Merzouga desert trip? Our local experts break down temperatures, crowds, and conditions month by month.",
+      date: 'July 2026',
+      read: '6 min read',
+      cat: 'Travel Planning',
+      image: '/images/dest/merzouga.jpg',
+    },
+    'camel-trekking-etiquette-morocco': {
+      title: 'Camel Trekking in Morocco: What to Expect and How to Prepare',
+      excerpt: "Everything first-time riders need to know — what to wear, how to mount, what to bring, and the traditions behind this age-old Saharan journey.",
+      date: 'June 2026',
+      read: '7 min read',
+      cat: 'Camel Trekking',
+      image: '/images/personal/dunes-camels-poster.jpg',
+    },
+    'marrakech-to-merzouga-roadtrip': {
+      title: 'Marrakech to Merzouga: The Ultimate Sahara Road Trip Itinerary',
+      excerpt: "Cross the High Atlas, explore Aït Ben Haddou, wind through the Dades Valley, and arrive at the golden dunes of Erg Chebbi — the complete route guide.",
+      date: 'May 2026',
+      read: '10 min read',
+      cat: 'Road Trips',
+      image: '/images/dest/ait-ben-haddou.jpg',
+    },
+    'morocco-packing-list-desert': {
+      title: 'The Perfect Morocco Packing List for Desert Tours (2026)',
+      excerpt: "What to pack for the Sahara — from breathable layers and sun protection to the little luxuries that make a desert night unforgettable.",
+      date: 'April 2026',
+      read: '5 min read',
+      cat: 'Packing',
+      image: '/images/hero/desert-pano.jpg',
+    },
+    'fes-chefchaouen-blue-city-guide': {
+      title: "Fes to Chefchaouen: Exploring Morocco's Blue Pearl",
+      excerpt: "The journey from Morocco's cultural heart to the Instagram-famous blue medina — what to see, where to stay, and how to make the most of it.",
+      date: 'March 2026',
+      read: '9 min read',
+      cat: 'Imperial Cities',
+      image: '/images/dest/chefchaouen.jpg',
+    },
+  };
+
+  const post = posts[slug];
+  if (!post) return h1('Blog Post Not Found') + paragraph('This blog post could not be found.');
+
+  return (
+    h1(post.title) +
+    `<p><strong>${escapeHtml(post.cat)}</strong> · ${escapeHtml(post.date)} · ${escapeHtml(post.read)}</p>\n` +
+    `<img src="${post.image}" alt="${post.title}" loading="lazy" decoding="async" className="w-full h-48 md:h-64 object-cover mb-8 rounded-md" />` +
+    paragraph(post.excerpt) +
+    `<div className="mt-12 pt-12 border-t border-border"><h2 className="font-serif text-2xl text-foreground mb-6">${tr(lang, 'related_articles')}</h2><div className="grid grid-cols-2 md:grid-cols-3 gap-4">/* related articles */</div></div>`
+  );
+}
+
 // ── Route table ──────────────────────────────────────────────────────────────
 type RouteEntry = {
   /** The "rest" app path (after /en/), used for canonical + hreflang. */
@@ -321,7 +387,24 @@ function buildRoutes(lang: Lang): RouteEntry[] {
   add('/about', `${lang}/about/index.html`, () => buildAboutContent(lang));
   add('/contact', `${lang}/contact/index.html`, () => buildContactContent(lang));
   add('/faq', `${lang}/faq/index.html`, () => buildFaqContent(lang));
-  add('/blog', `${lang}/blog/index.html`, () => buildBlogContent(lang));
+    add('/blog', `${lang}/blog/index.html`, () => buildBlogContent(lang));
+
+    // Individual blog article routes
+  for (const post of blogPosts) {
+    const meta = BLOG_META[post.slug];
+    add(
+      `/blog/${post.slug}`,
+      `${lang}/blog/${post.slug}.html`,
+      () => buildBlogArticleContent(post.slug, lang),
+      meta ? (buildBlogPostSchema({
+        slug: post.slug,
+        title: meta.title,
+        description: meta.description,
+        date: post.date,
+        image: post.image,
+      }, lang) as Record<string, unknown>[]) : [],
+    );
+  }
 
   // Major tour detail routes (with localized JSON-LD)
   for (const id of TOUR_ROUTES) {

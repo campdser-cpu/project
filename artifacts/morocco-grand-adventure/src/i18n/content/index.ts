@@ -152,3 +152,105 @@ export function getLocalizedExperiences(lang: Lang): string[] {
 export function categoryLabel(cat: string, lang: Lang): string {
   return getOverlay(lang)?.categories?.[cat] ?? cat;
 }
+
+// ── Blog articles ────────────────────────────────────────────────────────────
+export type BlogPost = {
+  slug: string;
+  title: string;
+  excerpt: string;
+  image: string;
+  date: string;
+  readTime: string;
+  category: string;
+  /** Canonical English title used for SEO title tag fallback. */
+  canonicalTitle: string;
+  /** Canonical English excerpt (fallback for untranslated overlays). */
+  canonicalExcerpt: string;
+  /** Featured image alt text (authored for accessibility). */
+  alt: string;
+};
+
+/** Canonical English blog posts — the source of truth for slugs and metadata. */
+export const blogPosts: BlogPost[] = [
+  {
+    slug: 'merzouga-luxury-desert-camp-guide',
+    title: 'The Ultimate Guide to Luxury Desert Camps in Merzouga',
+    excerpt: 'From private tents with en-suite bathrooms to gourmet dinners under the Milky Way — discover everything you need to know about luxury glamping in the Sahara.',
+    image: '/images/personal/luxury-camp-dusk.jpg',
+    date: 'August 2026',
+    readTime: '8 min read',
+    category: 'Sahara Desert',
+    canonicalTitle: 'Luxury Desert Camps in Merzouga — Ultimate Guide to Sahara Glamping',
+    canonicalExcerpt: 'From private tents with en-suite bathrooms to gourmet dinners under the Milky Way — everything you need to know about luxury glamping in the Merzouga Sahara.',
+    alt: 'Luxury desert camp with private tents at sunset near Merzouga, Morocco',
+  },
+  {
+    slug: 'best-time-to-visit-morocco-sahara',
+    title: 'Best Time to Visit the Sahara Desert: A Complete Month-by-Month Guide',
+    excerpt: 'When should you plan your Merzouga desert trip? Our local experts break down temperatures, crowds, and conditions month by month.',
+    image: '/images/dest/merzouga.jpg',
+    date: 'July 2026',
+    readTime: '6 min read',
+    category: 'Travel Planning',
+    canonicalTitle: 'Best Time to Visit the Sahara Desert — Month-by-Month Guide',
+    canonicalExcerpt: 'When should you plan your Merzouga desert trip? Our local experts break down temperatures, crowds, and ideal conditions month by month.',
+    alt: 'Erg Chebbi dunes at golden hour near Merzouga, Morocco',
+  },
+  {
+    slug: 'camel-trekking-etiquette-morocco',
+    title: 'Camel Trekking in Morocco: What to Expect and How to Prepare',
+    excerpt: 'Everything first-time riders need to know — what to wear, how to mount, what to bring, and the traditions behind this age-old Saharan journey.',
+    image: '/images/personal/dunes-camels-poster.jpg',
+    date: 'June 2026',
+    readTime: '7 min read',
+    category: 'Camel Trekking',
+    canonicalTitle: 'Camel Trekking in Morocco — What to Expect and How to Prepare',
+    canonicalExcerpt: 'Everything first-time riders need to know — what to wear, how to mount, what to bring, and the traditions behind this age-old Saharan journey.',
+    alt: 'Camels walking across golden dunes at sunset during a trekking excursion',
+  },
+  {
+    slug: 'marrakech-to-merzouga-roadtrip',
+    title: 'Marrakech to Merzouga: The Ultimate Sahara Road Trip Itinerary',
+    excerpt: 'Cross the High Atlas, explore Aït Ben Haddou, wind through the Dades Valley, and arrive at the golden dunes of Erg Chebbi — the complete route guide.',
+    image: '/images/dest/ait-ben-haddou.jpg',
+    date: 'May 2026',
+    readTime: '10 min read',
+    category: 'Road Trips',
+    canonicalTitle: 'Marrakech to Merzouga — Ultimate Sahara Road Trip Itinerary',
+    canonicalExcerpt: 'Cross the High Atlas, explore Aït Ben Haddou, wind through the Dades Valley, and arrive at the golden dunes of Erg Chebbi — the complete route guide.',
+    alt: 'Aït Ben Haddou ksar at sunset, a UNESCO World Heritage site on the Marrakech-Merzouga route',
+  },
+  {
+    slug: 'morocco-packing-list-desert',
+    title: 'The Perfect Morocco Packing List for Desert Tours (2026)',
+    excerpt: 'What to pack for the Sahara — from breathable layers and sun protection to the little luxuries that make a desert night unforgettable.',
+    image: '/images/hero/desert-pano.jpg',
+    date: 'April 2026',
+    readTime: '5 min read',
+    category: 'Packing',
+    canonicalTitle: 'Morocco Desert Packing List — What to Bring for Sahara Tours',
+    canonicalExcerpt: 'What to pack for the Sahara — breathable layers, sun protection, and the essentials that make a desert night unforgettable.',
+    alt: 'Desert panorama with distant dunes and clear sky — the ultimate Morocco packing reference',
+  },
+  {
+    slug: 'fes-chefchaouen-blue-city-guide',
+    title: "Fes to Chefchaouen: Exploring Morocco's Blue City",
+    excerpt: "The journey from Morocco's cultural heart to the famous blue medina — what to see, where to stay, and how to make the most of it.",
+    image: '/images/dest/chefchaouen.jpg',
+    date: 'March 2026',
+    readTime: '9 min read',
+    category: 'Imperial Cities',
+    canonicalTitle: 'Fes to Chefchaouen — Exploring Morocco Blue City',
+    canonicalExcerpt: 'The journey from Morocco cultural heart to the famous blue medina — what to see, where to stay, and how to make the most of it.',
+    alt: 'Blue-washed buildings and alleyways of Chefchaouen medina, Morocco',
+  },
+];
+
+/**
+ * Get a localized blog post by slug, falling back to English for any
+ * missing field. Currently titles and excerpts are authored in English and
+ * fall back to English; the content overlay system can extend these later.
+ */
+export function getLocalizedBlogPost(slug: string, lang: Lang): BlogPost | undefined {
+  return blogPosts.find((p) => p.slug === slug);
+}

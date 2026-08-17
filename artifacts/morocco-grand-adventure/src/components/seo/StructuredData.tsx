@@ -317,6 +317,63 @@ export function buildReviewSchema(
   };
 }
 
+/** Build a BlogPosting schema array from blog post data. */
+export function buildBlogPostSchema(
+  post: {
+    slug: string;
+    title: string;
+    description: string;
+    date: string;
+    image: string;
+    author?: string;
+  },
+  lang: string,
+): JsonLd[] {
+  const l = normalizeLang(lang);
+  const url = `${SITE_URL}/${l}/blog/${post.slug}`;
+  const author = post.author ?? BRAND;
+  const pubDate = post.date;
+
+  return [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      '@id': `${url}#blog-post`,
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': url,
+      },
+      headline: post.title,
+      description: post.description,
+      image: `${SITE_URL}${post.image}`,
+      datePublished: pubDate,
+      dateModified: pubDate,
+      author: {
+        '@type': 'Organization',
+        name: author,
+        url: SITE_URL,
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: BRAND,
+        logo: {
+          '@type': 'ImageObject',
+          url: `${SITE_URL}/logo-official.png`,
+        },
+      },
+      inLanguage: l,
+    },
+    buildBreadcrumb(
+      [
+        { name: BRAND, path: '/' },
+        { name: 'Blog', path: '/blog' },
+        { name: post.title, path: `/blog/${post.slug}` },
+      ],
+      lang,
+    ),
+  ];
+}
+
 // ─────────────────────────────────────────────────────────────────────────────
 // React component
 // ─────────────────────────────────────────────────────────────────────────────
