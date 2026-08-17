@@ -264,6 +264,56 @@ function buildBlogContent(lang: Lang): string {
   return h1(tr(lang, 'nav_blog')) + blocks;
 }
 
+// ── Blog article internal-link helpers (all links point to real site pages) ──
+const ARTICLE_RELATIONS: Record<string, { tours: string[]; destinations: string[] }> = {
+  'merzouga-luxury-desert-camp-guide': { tours: ['3-day-sahara-marrakech', '7-day-imperial-cities-sahara-escape'], destinations: ['merzouga', 'erg-chebbi'] },
+  'best-time-to-visit-morocco-sahara': { tours: ['3-day-sahara-marrakech', '5-day-imperial-cities'], destinations: ['merzouga', 'erg-chebbi'] },
+  'camel-trekking-etiquette-morocco': { tours: ['3-day-sahara-marrakech'], destinations: ['merzouga', 'erg-chebbi'] },
+  'marrakech-to-merzouga-roadtrip': { tours: ['3-day-sahara-marrakech', '8-day-marrakech-essaouira-agadir-sahara'], destinations: ['marrakech', 'ait-ben-haddou', 'dades-valley', 'merzouga'] },
+  'morocco-packing-list-desert': { tours: ['3-day-sahara-marrakech', '7-day-imperial-cities-sahara-escape'], destinations: ['merzouga', 'erg-chebbi'] },
+  'fes-chefchaouen-blue-city-guide': { tours: ['5-day-imperial-cities'], destinations: ['fes', 'chefchaouen'] },
+};
+
+function link(url: string, text: string): string {
+  return `<a href="${url}">${escapeHtml(text)}</a>`;
+}
+
+function buildBlogToursBlock(slug: string, lang: Lang): string {
+  const ids = ARTICLE_RELATIONS[slug]?.tours ?? [];
+  const items = ids
+    .map((id) => {
+      const t = getLocalizedTour(id, lang);
+      return t
+        ? `      <li>${link(`${SITE_URL}/${lang}/tours/${t.id}`, t.name)} — ${escapeHtml(t.duration)}</li>`
+        : '';
+    })
+    .filter(Boolean);
+  if (items.length === 0) return '';
+  return h2(tr(lang, 'related_tours')) + `<ul>\n${items.join('\n')}\n    </ul>\n`;
+}
+
+function buildBlogDestinationsBlock(slug: string, lang: Lang): string {
+  const ids = ARTICLE_RELATIONS[slug]?.destinations ?? [];
+  const items = ids
+    .map((id) => {
+      const d = getLocalizedDestination(id, lang);
+      return d
+        ? `      <li>${link(`${SITE_URL}/${lang}/destinations/${d.id}`, d.name)} — ${escapeHtml(d.shortDesc)}</li>`
+        : '';
+    })
+    .filter(Boolean);
+  if (items.length === 0) return '';
+  return h2(tr(lang, 'related_destinations')) + `<ul>\n${items.join('\n')}\n    </ul>\n`;
+}
+
+function buildBlogRelatedArticles(slug: string, lang: Lang): string {
+  const others = blogPosts.filter((p) => p.slug !== slug).slice(0, 4);
+  const items = others
+    .map((p) => `      <li>${link(`${SITE_URL}/${lang}/blog/${p.slug}`, p.title)}</li>`)
+    .join('\n');
+  return h2(tr(lang, 'related_articles')) + `<ul>\n${items}\n    </ul>\n`;
+}
+
 function buildBlogArticleContent(slug: string, lang: Lang): string {
   const posts: Record<string, { title: string; excerpt: string; date: string; read: string; cat: string; image: string }> = {
     'merzouga-luxury-desert-camp-guide': {
@@ -319,13 +369,59 @@ function buildBlogArticleContent(slug: string, lang: Lang): string {
   const post = posts[slug];
   if (!post) return h1('Blog Post Not Found') + paragraph('This blog post could not be found.');
 
+  const metaPost = blogPosts.find((p) => p.slug === slug);
+  const imgAlt = metaPost?.alt ?? post.title;
+
   return (
     h1(post.title) +
     `<p><strong>${escapeHtml(post.cat)}</strong> · ${escapeHtml(post.date)} · ${escapeHtml(post.read)}</p>\n` +
-    `<img src="${post.image}" alt="${post.title}" loading="lazy" decoding="async" className="w-full h-48 md:h-64 object-cover mb-8 rounded-md" />` +
+    `<img src="${post.image}" alt="${escapeHtml(imgAlt)}" loading="lazy" decoding="async" class="w-full h-48 md:h-64 object-cover mb-8 rounded-md" />\n` +
     paragraph(post.excerpt) +
-    `<div className="mt-12 pt-12 border-t border-border"><h2 className="font-serif text-2xl text-foreground mb-6">${tr(lang, 'related_articles')}</h2><div className="grid grid-cols-2 md:grid-cols-3 gap-4">/* related articles */</div></div>`
+    buildBlogToursBlock(slug, lang) +
+    buildBlogDestinationsBlock(slug, lang) +
+    buildBlogRelatedArticles(slug, lang)
   );
+}
+
+// ── Static experience/listing page routes ───────────────────────────────────
+// These are real, nav-linked, indexable pages that were only served by the SPA.
+// Each maps to its related tours/destinations so the prerendered HTML is a
+// genuinely useful, non-thin listing page (no invented facts — real data only).
+const EXPERIENCE_PAGE_ROUTES: Record<string, { tours: string[]; destinations: string[] }> = {
+  '/desert-tours': { tours: ['3-day-sahara-marrakech', '7-day-imperial-cities-sahara-escape'], destinations: ['merzouga', 'erg-chebbi'] },
+  '/luxury-camp': { tours: ['7-day-imperial-cities-sahara-escape', 'honeymoon-morocco'], destinations: ['merzouga', 'erg-chebbi'] },
+  '/camel-trekking': { tours: ['3-day-sahara-marrakech'], destinations: ['merzouga', 'erg-chebbi'] },
+  '/4x4-tours': { tours: ['3-day-sahara-marrakech'], destinations: ['merzouga', 'erg-chebbi', 'ouarzazate', 'dades-valley'] },
+  '/marrakech-tours': { tours: ['3-day-sahara-marrakech', '8-day-marrakech-essaouira-agadir-sahara'], destinations: ['marrakech', 'essaouira', 'ait-ben-haddou', 'ouzoud'] },
+  '/fes-tours': { tours: ['5-day-imperial-cities', '7-day-imperial-cities-sahara-escape'], destinations: ['fes', 'meknes', 'chefchaouen', 'merzouga'] },
+  '/day-trips': { tours: [], destinations: ['marrakech', 'essaouira', 'ouzoud', 'ourika-valley', 'imlil'] },
+  '/merzouga-guide': { tours: ['3-day-sahara-marrakech', '7-day-imperial-cities-sahara-escape'], destinations: ['merzouga', 'erg-chebbi', 'zagora', 'todra-gorge'] },
+  '/gallery': { tours: [], destinations: ['marrakech', 'chefchaouen', 'merzouga', 'fes'] },
+  '/trip-builder': { tours: ['3-day-sahara-marrakech', '5-day-imperial-cities', '7-day-imperial-cities-sahara-escape'], destinations: ['marrakech', 'fes', 'merzouga', 'chefchaouen'] },
+};
+
+function buildExperienceContent(rest: string, lang: Lang): string {
+  const meta = getRouteMeta(rest);
+  const cfg = EXPERIENCE_PAGE_ROUTES[rest] ?? { tours: [], destinations: [] };
+  const heading = h1(meta.title.replace(/\s*—.*$/, '').trim() || meta.title);
+  const intro = paragraph(meta.description);
+  const tBlocks = cfg.tours
+    .map((id) => getLocalizedTour(id, lang))
+    .filter((t): t is NonNullable<typeof t> => Boolean(t))
+    .map(
+      (t) =>
+        h2(link(`${SITE_URL}/${lang}/tours/${t.id}`, t.name)) +
+        paragraph(t.description ?? '') +
+        paragraph(`${tr(lang, 'search_duration')}: ${t.duration}`) +
+        ul(t.highlights),
+    )
+    .join('');
+  const dBlocks = cfg.destinations
+    .map((id) => getLocalizedDestination(id, lang))
+    .filter((d): d is NonNullable<typeof d> => Boolean(d))
+    .map((d) => h2(link(`${SITE_URL}/${lang}/destinations/${d.id}`, d.name)) + paragraph(d.shortDesc))
+    .join('');
+  return heading + intro + tBlocks + dBlocks;
 }
 
 // ── Route table ──────────────────────────────────────────────────────────────
@@ -403,6 +499,15 @@ function buildRoutes(lang: Lang): RouteEntry[] {
         date: post.date,
         image: post.image,
       }, lang) as Record<string, unknown>[]) : [],
+    );
+  }
+
+  // Static experience/listing pages (real, nav-linked routes previously SPA-only)
+  for (const rest of Object.keys(EXPERIENCE_PAGE_ROUTES)) {
+    add(
+      rest,
+      `${lang}${rest}/index.html`,
+      () => buildExperienceContent(rest, lang),
     );
   }
 

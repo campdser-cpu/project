@@ -29,6 +29,7 @@ const DayTrips = lazy(() => import('./pages/day-trips'));
 const MerzougaGuide = lazy(() => import('./pages/merzouga-guide'));
 const Faq = lazy(() => import('./pages/faq'));
 const Blog = lazy(() => import('./pages/blog'));
+const BlogPost = lazy(() => import('@/pages/blog/[slug]'));
 const NotFound = lazy(() => import('@/pages/not-found'));
 
 // Loading fallback for lazy-loaded routes
@@ -84,6 +85,7 @@ function AnimatedRouter() {
             <Route path="/merzouga-guide" component={MerzougaGuide} />
             <Route path="/faq" component={Faq} />
             <Route path="/blog" component={Blog} />
+            <Route path="/blog/:slug" component={BlogPost} />
             <Route component={NotFound} />
           </Switch>
         </Suspense>

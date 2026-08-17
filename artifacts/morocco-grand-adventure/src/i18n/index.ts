@@ -393,6 +393,13 @@ export type TranslationSet = {
   blog_title: string;
   blog_subtitle: string;
   blog_read_article: string;
+  blog_category: string;
+  read_time: string;
+  related_articles: string;
+  related_tours: string;
+  related_tours_hint: string;
+  related_destinations: string;
+  related_destinations_hint: string;
   blog_post_1_title: string; blog_post_1_excerpt: string; blog_post_1_date: string; blog_post_1_read: string; blog_post_1_cat: string;
   blog_post_2_title: string; blog_post_2_excerpt: string; blog_post_2_date: string; blog_post_2_read: string; blog_post_2_cat: string;
   blog_post_3_title: string; blog_post_3_excerpt: string; blog_post_3_date: string; blog_post_3_read: string; blog_post_3_cat: string;

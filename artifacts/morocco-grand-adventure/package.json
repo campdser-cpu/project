@@ -9,6 +9,7 @@
     "prerender": "tsx scripts/prerender.ts",
     "serve": "vite preview --config vite.config.ts --host 0.0.0.0",
     "typecheck": "tsc -p tsconfig.json --noEmit",
+    "route:audit": "tsx scripts/route-audit.ts",
     "i18n:audit": "tsx scripts/i18n-audit.ts"
   },
   "devDependencies": {
