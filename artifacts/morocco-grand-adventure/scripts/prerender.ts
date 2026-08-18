@@ -52,6 +52,17 @@ import { registerAllContentOverlays } from '../src/i18n/content/overlays';
 const BRAND = 'Morocco Grand Adventure';
 const SITE_URL = 'https://www.moroccograndadventure.com';
 
+// Real, verified business contact links for the prerendered Contact page.
+// Values mirror src/components/seo/StructuredData.tsx ORGANIZATION_SAME_AS and
+// the verified Google Business Profile location. No invented data.
+const CONTACT_MAPS_URL = 'https://maps.app.goo.gl/UK3MENd42bC16mME7';
+const CONTACT_SOCIAL_LINKS: { label: string; url: string }[] = [
+  { label: 'Instagram', url: 'https://www.instagram.com/morocco_grand_adventure/' },
+  { label: 'YouTube', url: 'https://youtube.com/@moroccograndadventure' },
+  { label: 'TikTok', url: 'https://www.tiktok.com/@morocco.grand.adv' },
+  { label: 'Facebook', url: 'https://www.facebook.com/share/1DFzDX72P3/' },
+];
+
 // Localized UI label map — best-effort localized title fragments for static pages.
 // Falls back to English route metadata when a language lacks a specific key.
 const STATIC_TITLE_KEYS: Record<string, string> = {
@@ -90,18 +101,19 @@ const TOUR_ROUTES = [
 // ── Helpers ──────────────────────────────────────────────────────────────────
 // Build HTML entities at runtime via char codes so the code formatter cannot
 // collapse them into their literal characters (which would break escaping).
-const AMP = String.fromCharCode(38);
-const LT = String.fromCharCode(60);
-const GT = String.fromCharCode(62);
-const QUOT = String.fromCharCode(34);
+// IMPORTANT: every HTML entity begins with an ampersand (char 38). Using the
+// literal '<' / '>' / '"' here would emit broken text like `<lt;` instead of
+// the correct `&lt;`. AMP (char 38) is the single entity prefix for all of them.
+const AMP = String.fromCharCode(38); // '&'
+const ENT = AMP; // entity prefix — always the ampersand '&'
 
 function escapeHtml(text: string): string {
   return text
-    .replace(/&/g, AMP + 'amp;')
-    .replace(/</g, LT + 'lt;')
-    .replace(/>/g, GT + 'gt;')
-    .replace(/"/g, QUOT + 'quot;')
-    .replace(/'/g, AMP + '#39;');
+    .replace(/&/g, ENT + 'amp;')
+    .replace(/</g, ENT + 'lt;')
+    .replace(/>/g, ENT + 'gt;')
+    .replace(/"/g, ENT + 'quot;')
+    .replace(/'/g, ENT + '#39;');
 }
 
 function h1(text: string): string {
@@ -110,6 +122,16 @@ function h1(text: string): string {
 
 function h2(text: string): string {
   return `    <h2>${escapeHtml(text)}</h2>\n`;
+}
+
+/**
+ * Render an <h2> whose inner content is a real hyperlink. Unlike h2(), this
+ * must NOT run escapeHtml() over the output of link() — doing so would turn the
+ * real `<a href="...">` into escaped text like `&lt;a href=&quot;...&quot;&gt;`.
+ * link() already escapes the visible text safely.
+ */
+function h2Link(url: string, text: string): string {
+  return `    <h2>${link(url, text)}</h2>\n`;
 }
 
 function paragraph(text: string): string {
@@ -230,13 +252,23 @@ function buildAboutContent(lang: Lang): string {
 }
 
 function buildContactContent(lang: Lang): string {
+  // Prerendered contact body with real, crawlable links (WhatsApp, email,
+  // verified Google Maps location, and official social profiles). Built with
+  // link() so anchors are real <a> elements (not escaped text), and plain text
+  // runs through escapeHtml() so user-visible copy stays safely encoded.
+  const li = (s: string): string => `      <li>${s}</li>`;
+  const contactItems = [
+    li(`${escapeHtml(tr(lang, 'contact_whatsapp_label') || 'WhatsApp')}: ${link(contactInfo.whatsapp, `${contactInfo.whatsappNumber} (WhatsApp)`)}`),
+    li(`${escapeHtml(tr(lang, 'contact_email_label') || 'Email')}: ${link(`mailto:${contactInfo.email}`, contactInfo.email)}`),
+    li(`${escapeHtml(tr(lang, 'contact_address') || 'Address')}: ${escapeHtml(contactInfo.address)}`),
+    li(`Google Maps: ${link(CONTACT_MAPS_URL, 'View Morocco Grand Adventure on Google Maps')}`),
+  ];
+  const socialItems = CONTACT_SOCIAL_LINKS.map((s) => li(link(s.url, s.label))).join('\n');
   return (
     h1(tr(lang, 'nav_contact')) +
-    ul([
-      `${tr(lang, 'contact_whatsapp_label')}: ${contactInfo.whatsappNumber}`,
-      `${tr(lang, 'contact_email_label')}: ${contactInfo.email}`,
-      `${tr(lang, 'contact_address')}: ${contactInfo.address}`,
-    ])
+    `    <ul>\n${contactItems.join('\n')}\n    </ul>\n` +
+    h2(tr(lang, 'contact_socials_label') || 'Official Social Profiles') +
+    `    <ul>\n${socialItems}\n    </ul>\n`
   );
 }
 
@@ -410,7 +442,7 @@ function buildExperienceContent(rest: string, lang: Lang): string {
     .filter((t): t is NonNullable<typeof t> => Boolean(t))
     .map(
       (t) =>
-        h2(link(`${SITE_URL}/${lang}/tours/${t.id}`, t.name)) +
+        h2Link(`${SITE_URL}/${lang}/tours/${t.id}`, t.name) +
         paragraph(t.description ?? '') +
         paragraph(`${tr(lang, 'search_duration')}: ${t.duration}`) +
         ul(t.highlights),
@@ -419,7 +451,7 @@ function buildExperienceContent(rest: string, lang: Lang): string {
   const dBlocks = cfg.destinations
     .map((id) => getLocalizedDestination(id, lang))
     .filter((d): d is NonNullable<typeof d> => Boolean(d))
-    .map((d) => h2(link(`${SITE_URL}/${lang}/destinations/${d.id}`, d.name)) + paragraph(d.shortDesc))
+    .map((d) => h2Link(`${SITE_URL}/${lang}/destinations/${d.id}`, d.name) + paragraph(d.shortDesc))
     .join('');
   return heading + intro + tBlocks + dBlocks;
 }

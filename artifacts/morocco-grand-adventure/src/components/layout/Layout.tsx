@@ -6,6 +6,7 @@ import { WhatsAppButton } from '../ui/WhatsAppButton';
 import { ScrollToTop } from '../ui/ScrollToTop';
 import { AIAssistant } from '../ui/AIAssistant';
 import { StickyBookingCTA } from '../ui/StickyBookingCTA';
+import { StructuredData, buildOrganizationSchema } from '../seo/StructuredData';
 
 interface LayoutProps {
   children: ReactNode;
@@ -15,6 +16,10 @@ export function Layout({ children }: LayoutProps) {
   const { t } = useLanguage();
   return (
     <div className="min-h-screen flex flex-col">
+      {/* Global Organization structured data — one stable entity @id across the
+          entire site so Google sees Morocco Grand Adventure as one business. */}
+      <StructuredData id="organization" data={buildOrganizationSchema()} />
+
       {/* Skip-to-content link for keyboard / screen-reader users */}
       <a
         href="#main-content"

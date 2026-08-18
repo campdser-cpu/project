@@ -13,6 +13,19 @@ import { useEffect } from 'react';
 const SCRIPT_ID_PREFIX = 'structured-data-';
 const DATA_ATTR = 'data-structured-data';
 
+const SITE_URL = 'https://www.moroccograndadventure.com';
+const BRAND = 'Morocco Grand Adventure';
+const ORGANIZATION_ID = `${SITE_URL}#organization`;
+
+/** Official social profile URLs used in sameAs across all Organization schemas. */
+export const ORGANIZATION_SAME_AS: string[] = [
+  'https://www.instagram.com/morocco_grand_adventure/',
+  'https://youtube.com/@moroccograndadventure',
+  'https://www.tiktok.com/@morocco.grand.adv',
+  'https://www.facebook.com/share/1DFzDX72P3/',
+  'https://wa.me/message/QAFZ3RKJDNH4B1',
+];
+
 type JsonLd = Record<string, unknown>;
 
 function upsertJsonLd(id: string, data: JsonLd | JsonLd[]) {
@@ -38,7 +51,9 @@ function removeJsonLd(id: string) {
 // Builders
 // ─────────────────────────────────────────────────────────────────────────────
 
-/** Build AboutPage + Organization + Person schemas for the About page. */
+/** Build AboutPage + Person + Breadcrumb schemas for the About page.
+ *  The Organization entity is emitted globally once (see Layout) and referenced
+ *  here by @id to avoid duplicate/conflicting Organization entities. */
 export function buildAboutPageSchema(guides: { name: string; role: string; image: string }[], lang?: string): JsonLd[] {
   const l = normalizeLang(lang);
   const aboutUrl = `${SITE_URL}/${l}/about`;
@@ -51,21 +66,8 @@ export function buildAboutPageSchema(guides: { name: string; role: string; image
     url: aboutUrl,
     inLanguage: l,
     name: 'About Us — Meet Your Local Berber Guides',
-    isPartOf: { '@id': `${SITE_URL}/#website` },
-  });
-
-  schemas.push({
-    '@context': 'https://schema.org',
-    '@type': 'TravelAgency',
-    '@id': `${SITE_URL}/#organization`,
-    name: BRAND,
-    url: SITE_URL,
-    logo: `${SITE_URL}/logo-official.png`,
-    founder: { '@id': `${aboutUrl}#${guides[0]?.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}` },
-    areaServed: 'Morocco',
-    employee: guides.map((g) => ({
-      '@id': `${aboutUrl}#${g.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`,
-    })),
+    isPartOf: { '@id': ORGANIZATION_ID },
+    mainEntity: { '@id': ORGANIZATION_ID },
   });
 
   for (const guide of guides) {
@@ -75,7 +77,7 @@ export function buildAboutPageSchema(guides: { name: string; role: string; image
       '@id': `${aboutUrl}#${guide.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`,
       name: guide.name,
       jobTitle: guide.role,
-      worksFor: { '@id': `${SITE_URL}/#organization` },
+      worksFor: { '@id': ORGANIZATION_ID },
       image: `${SITE_URL}${guide.image}`,
     });
   }
@@ -93,8 +95,21 @@ export function buildAboutPageSchema(guides: { name: string; role: string; image
   return schemas;
 }
 
-const SITE_URL = 'https://www.moroccograndadventure.com';
-const BRAND = 'Morocco Grand Adventure';
+/** Stable Organization schema for Morocco Grand Adventure — reuse on every page. */
+export function buildOrganizationSchema(): JsonLd {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': ORGANIZATION_ID,
+    name: BRAND,
+    url: SITE_URL,
+    logo: `${SITE_URL}/logo-official.png`,
+    description: 'Luxury desert tours and authentic cultural experiences across Morocco, guided by local Berber families from the Sahara.',
+    email: 'moroccograndadventure@gmail.com',
+    sameAs: ORGANIZATION_SAME_AS,
+    areaServed: 'Morocco',
+  };
+}
 
 /** Map the supported language codes to the BCP-47 value used in HTML lang + schema inLanguage. */
 function normalizeLang(lang?: string): string {
@@ -355,6 +370,7 @@ export function buildBlogPostSchema(
       },
       publisher: {
         '@type': 'Organization',
+        '@id': ORGANIZATION_ID,
         name: BRAND,
         logo: {
           '@type': 'ImageObject',

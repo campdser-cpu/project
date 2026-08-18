@@ -91,6 +91,7 @@ export default function Home() {
   const tours = getLocalizedTours(lang);
   const destinations = getLocalizedDestinations(lang);
   const signaturePlaces = getSignaturePlaces(t);
+
   const reviews = [
     { img: "1", name: t('home_rev1_name'), country: "🇬🇧", quote: t('home_rev1_quote'), tour: t('home_rev1_tour') },
     { img: "2", name: t('home_rev2_name'), country: "🇺🇸", quote: t('home_rev2_quote'), tour: t('home_rev2_tour') },
@@ -650,7 +651,7 @@ export default function Home() {
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4 text-center">
           <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl text-foreground mb-4">{t('section_instagram')}</h2>
-          <a href={contactInfo.instagram} target="_blank" rel="noreferrer" className="text-primary font-bold hover:underline mb-8 md:mb-12 inline-block">@medmorocco_tours</a>
+          <a href="https://www.instagram.com/morocco_grand_adventure/" target="_blank" rel="noreferrer" className="text-primary font-bold hover:underline mb-8 md:mb-12 inline-block">@morocco_grand_adventure</a>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
             {igItems.map((item, num) => (

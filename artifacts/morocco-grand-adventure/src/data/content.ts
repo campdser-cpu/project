@@ -4,11 +4,10 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const contactInfo = {
-  whatsapp: "https://wa.me/212699846818",
+  whatsapp: "https://wa.me/message/QAFZ3RKJDNH4B1",
   whatsappNumber: "+212 699 846 818",
   phone: "+212 699 846 818",
-  instagram: "https://www.instagram.com/medmorocco_tours",
-  rednote: "https://xhslink.com/m/6XvFt7PIEr9",
+  instagram: "https://www.instagram.com/morocco_grand_adventure/",
   email: "moroccograndadventure@gmail.com",
   website: "https://www.moroccograndadventure.com",
   paypal: "https://www.paypal.me/MohamedbouGhrara683",

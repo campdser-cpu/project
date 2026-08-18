@@ -3,7 +3,7 @@ import { Instagram, Mail, MapPin, Phone } from 'lucide-react';
 
 import { contactInfo } from '@/data/content';
 import { getLocalizedDestinations } from '@/i18n/content';
-import { SiWhatsapp } from 'react-icons/si';
+import { SiWhatsapp, SiYoutube, SiTiktok, SiFacebook } from 'react-icons/si';
 
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -21,14 +21,26 @@ export function Footer() {
             <p className="text-white/70 text-sm leading-relaxed">
               {t('footer_tagline')}
             </p>
-            <div className="flex items-center gap-4">
-              <a href={contactInfo.instagram} target="_blank" rel="noreferrer" aria-label="Follow Morocco Grand Adventure on Instagram" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
+            <div className="flex items-center gap-2">
+              <a href="https://www.instagram.com/morocco_grand_adventure/" target="_blank" rel="noreferrer" aria-label="Follow Morocco Grand Adventure on Instagram" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
                 <Instagram className="w-5 h-5" aria-hidden="true" />
               </a>
-              <a href={contactInfo.whatsapp} target="_blank" rel="noreferrer" aria-label="Contact Morocco Grand Adventure on WhatsApp" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
+              <a href="https://wa.me/message/QAFZ3RKJDNH4B1" target="_blank" rel="noreferrer" aria-label="Contact Morocco Grand Adventure on WhatsApp" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
                 <SiWhatsapp className="w-5 h-5" aria-hidden="true" />
               </a>
+              <a href="https://youtube.com/@moroccograndadventure" target="_blank" rel="noreferrer" aria-label="Subscribe to Morocco Grand Adventure on YouTube" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
+                <SiYoutube className="w-5 h-5" aria-hidden="true" />
+              </a>
+              <a href="https://www.tiktok.com/@morocco.grand.adv" target="_blank" rel="noreferrer" aria-label="Follow Morocco Grand Adventure on TikTok" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
+                <SiTiktok className="w-5 h-5" aria-hidden="true" />
+              </a>
+              <a href="https://www.facebook.com/share/1DFzDX72P3/" target="_blank" rel="noreferrer" aria-label="Like Morocco Grand Adventure on Facebook" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
+                <SiFacebook className="w-5 h-5" aria-hidden="true" />
+              </a>
             </div>
+            <p className="text-xs text-white/50">
+              {t('footer_tagline_alt') ?? 'Morocco travel experiences and desert adventures.'}
+            </p>
           </div>
 
           <div>
@@ -64,7 +76,12 @@ export function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-white/70">
                 <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                <span>{t('footer_address')}</span>
+                <span>{t('footer_address')}
+                  <br/>
+                  <a href="https://maps.app.goo.gl/UK3MENd42bC16mME7" target="_blank" rel="noreferrer" className="text-primary hover:underline text-xs mt-1 inline-block" aria-label="View Morocco Grand Adventure location on Google Maps">
+                    View on Google Maps
+                  </a>
+                </span>
               </li>
               <li className="flex items-center gap-3 text-white/70">
                 <Phone className="w-5 h-5 text-primary shrink-0" />
@@ -72,7 +89,7 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3 text-white/70">
                 <SiWhatsapp className="w-5 h-5 text-primary shrink-0" />
-                <a href={contactInfo.whatsapp} target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">{t('footer_whatsapp')}</a>
+                <a href="https://wa.me/message/QAFZ3RKJDNH4B1" target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">{t('footer_whatsapp')}</a>
               </li>
               <li className="flex items-center gap-3 text-white/70">
                 <Mail className="w-5 h-5 text-primary shrink-0" />

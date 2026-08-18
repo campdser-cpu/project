@@ -269,7 +269,7 @@ export default function Gallery() {
             rel="noreferrer"
             className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-full font-bold tracking-wide hover:bg-primary/90 transition-all hover:-translate-y-1 shadow-lg"
           >
-            <Instagram className="w-5 h-5" /> @medmorocco_tours
+            <Instagram className="w-5 h-5" /> @morocco_grand_adventure
           </a>
         </div>
       </section>
