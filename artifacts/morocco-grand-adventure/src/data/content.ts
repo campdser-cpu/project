@@ -470,6 +470,8 @@ export const tours: Tour[] = [
     image: "/images/tours/3-day-sahara-marrakech.jpg",
     aliases: ['3-days-marrakech-to-merzouga-desert-tour', 'merzouga-desert-tour'],
     description: "The classic Morocco adventure compressed into three unforgettable days. Cross the Atlas Mountains, explore the most photographed kasbah on Earth, sleep under Saharan stars in a luxury tented camp, and ride camels at sunset over the golden dunes of Erg Chebbi.",
+    routeIds: ["marrakech", "ait-ben-haddou", "ouarzazate", "skoura", "dades-valley", "todra-gorge", "merzouga"],
+    routeCaption: "Cross the High Atlas to the kasbah of Aït Ben Haddou, wind through Ouarzazate and the Skoura oasis, then the Dades Valley and Todra Gorge on the way to the dunes of Erg Chebbi. Tap any numbered stop to explore it.",
     itineraryDays: [
       {
         day: 1,
@@ -502,6 +504,8 @@ export const tours: Tour[] = [
     image: "/images/tours/5-day-imperial-cities.jpg",
     aliases: ['3-days-fes-to-marrakech-desert-tour'],
     description: "From the ochre imperial capital of Marrakech to the blue-washed lanes of Chefchaouen, this five-day journey weaves together Morocco's greatest imperial cities and a night under the Sahara stars. Cross the High Atlas to the UNESCO ksar of Aït Ben Haddou, sleep in a luxury desert camp among the dunes of Erg Chebbi, explore the medieval labyrinth of Fes, and wander the Roman ruins of Volubilis.",
+    routeIds: ["marrakech", "ait-ben-haddou", "ouarzazate", "skoura", "dades-valley", "todra-gorge", "merzouga", "ifrane", "fes", "meknes", "chefchaouen"],
+    routeCaption: "From Marrakech over the High Atlas to the dunes of Erg Chebbi, then north through the imperial cities of Fes and Meknès to the blue medina of Chefchaouen. Tap any numbered stop to explore it.",
     itineraryDays: [
       {
         day: 1,

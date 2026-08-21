@@ -220,16 +220,18 @@ export default function Home() {
         </div>
 
         {/* Scroll Indicator */}
-        <motion.div
+        <motion.button
+          type="button"
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 2, repeat: Infinity, repeatType: "reverse" as const }}
+          aria-label={t('hero_scroll')}
           className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-white/60 cursor-pointer"
           onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
         >
           <span className="text-xs tracking-[0.3em] uppercase font-medium">{t('hero_scroll')}</span>
-          <div className="w-px h-12 bg-gradient-to-b from-white/60 to-transparent" />
-        </motion.div>
+          <span aria-hidden="true" className="block w-px h-12 bg-gradient-to-b from-white/60 to-transparent" />
+        </motion.button>
       </section>
 
       {/* Tour Search Bar */}

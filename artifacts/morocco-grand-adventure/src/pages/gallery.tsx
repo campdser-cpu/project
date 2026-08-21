@@ -30,6 +30,12 @@ const IMAGES: GalleryItem[] = [
   { src: '/images/dest/draa-valley.jpg', categories: ['Desert', 'Landscapes'], caption: 'The palm groves of the Draa Valley' },
   { src: '/images/hero/desert-pano.jpg', categories: ['Desert', 'Landscapes'], caption: 'The Sahara at sunset' },
   { src: '/images/stock/stargazing-merzouga.jpg', categories: ['Desert', 'Luxury Camp'], caption: 'Stargazing beneath the Milky Way' },
+  // --- From the photo journal (authentic images from our Morocco journeys) ---
+  { src: '/images/pdf/img_0-optimized.jpg', categories: ['Authenticity'], caption: 'Captured on the road with Morocco Grand Adventure' },
+  { src: '/images/pdf/img_1-optimized.jpg', categories: ['Authenticity'], caption: 'A moment from one of our private journeys in Morocco' },
+  { src: '/images/pdf/img_2-optimized.jpg', categories: ['Authenticity'], caption: 'From the Morocco Grand Adventure photo journal' },
+  { src: '/images/pdf/img_3-optimized.jpg', categories: ['Authenticity'], caption: 'Photographed while travelling with our local guides' },
+  { src: '/images/pdf/img_4-optimized.jpg', categories: ['Authenticity'], caption: 'Morocco, seen through the eyes of our travellers' },
   // --- Luxury Camp & Stays ---
   { src: '/images/personal/luxury-camp-dusk.jpg', categories: ['Luxury Camp', 'Desert', 'Authenticity'], caption: 'Our luxury desert camp at dusk' },
   { src: '/images/riad/courtyard.jpg', categories: ['Luxury Camp', 'Culture'], caption: 'A traditional riad courtyard' },

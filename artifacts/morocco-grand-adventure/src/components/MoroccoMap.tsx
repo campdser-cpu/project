@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { getLocalizedDestinations, categoryLabel } from '@/i18n/content';
+import type { Destination } from '@/data/content';
 import { Link } from 'wouter';
 import { MapPin } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -19,7 +20,19 @@ const CATEGORY_COLORS: Record<string, string> = {
  * Optional route: draw a polyline connecting an ordered list of destination ids.
  * Used on tour pages to show the driving route.
  */
-export function MoroccoMap({ routeIds, height = 520 }: { routeIds?: string[]; height?: number }) {
+export function MoroccoMap({
+  routeIds,
+  height = 520,
+  routeCaption,
+  routeStops,
+}: {
+  routeIds?: string[];
+  height?: number;
+  /** Optional human-readable caption describing the route (used as the region label). */
+  routeCaption?: string;
+  /** Optional ordered destination list matching routeIds, for an accessible text alternative. */
+  routeStops?: Destination[];
+}) {
   const mapRef = useRef<HTMLDivElement>(null);
   const mapInstanceRef = useRef<L.Map | null>(null);
   const { lang, t } = useLanguage();
@@ -99,8 +112,30 @@ export function MoroccoMap({ routeIds, height = 520 }: { routeIds?: string[]; he
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lang]);
 
+  const regionLabel = routeIds
+    ? routeCaption || 'Interactive route map of this Morocco tour'
+    : 'Interactive map of Morocco destinations';
+
   return (
-    <div className="relative rounded-3xl overflow-hidden border border-border shadow-2xl">
+    <div
+      role="region"
+      aria-label={regionLabel}
+      className="relative rounded-3xl overflow-hidden border border-border shadow-2xl"
+    >
+      {/* Accessible text alternative to the visual map — lists the ordered stops
+          so the route is fully understandable without the rendered tiles. */}
+      {routeIds && routeStops && routeStops.length > 0 && (
+        <div className="sr-only">
+          <p>{regionLabel}</p>
+          <ol>
+            {routeStops.map((d, idx) => (
+              <li key={d.id}>
+                {idx + 1}. {d.name} — {d.shortDesc}
+              </li>
+            ))}
+          </ol>
+        </div>
+      )}
       {/* Legend — only on full map */}
       {!routeIds && (
         <div className="absolute top-4 right-4 z-[500] bg-background/95 backdrop-blur rounded-xl p-3 shadow-lg border border-border text-xs space-y-1.5 hidden sm:block">

@@ -94,7 +94,7 @@ export function Navbar() {
               onMouseLeave={() => setIsDestinationsOpen(false)}
             >
               <Link href="/destinations" className={`${linkClasses} flex items-center gap-1`}>
-                {t('nav_destinations')} <ChevronDown className="w-4 h-4" />
+                {t('nav_destinations')} <ChevronDown className="w-4 h-4" aria-hidden="true" />
               </Link>
               
               <AnimatePresence>
@@ -136,7 +136,7 @@ export function Navbar() {
               onMouseLeave={() => setIsExperiencesOpen(false)}
             >
               <Link href="/desert-tours" className={`${linkClasses} flex items-center gap-1`}>
-                {t('nav_experiences')} <ChevronDown className="w-4 h-4" />
+                {t('nav_experiences')} <ChevronDown className="w-4 h-4" aria-hidden="true" />
               </Link>
               <AnimatePresence>
                 {isExperiencesOpen && (
@@ -235,9 +235,9 @@ export function Navbar() {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? (
-              <X className="w-6 h-6 text-foreground" />
+              <X className="w-6 h-6 text-foreground" aria-hidden="true" />
             ) : (
-              <Menu className={`w-6 h-6 ${effectiveScrolled ? 'text-foreground' : 'text-white'}`} />
+              <Menu className={`w-6 h-6 ${effectiveScrolled ? 'text-foreground' : 'text-white'}`} aria-hidden="true" />
             )}
           </button>
         </div>

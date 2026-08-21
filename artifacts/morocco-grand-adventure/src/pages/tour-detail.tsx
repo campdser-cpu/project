@@ -2,7 +2,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { useRoute, Link } from 'wouter';
 import { Layout } from '../components/layout/Layout';
 import { contactInfo } from '@/data/content';
-import { getLocalizedTour, getLocalizedTours, getLocalizedFaq } from '@/i18n/content';
+import { getLocalizedTour, getLocalizedTours, getLocalizedFaq, getLocalizedDestinations } from '@/i18n/content';
 import { MoroccoMap } from '../components/MoroccoMap';
 import NotFound from './not-found';
 import { motion } from 'framer-motion';
@@ -66,6 +66,12 @@ export default function TourDetail() {
   const faqs = tour.faq ?? getLocalizedFaq(lang).slice(0, 6);
 
   const relatedTours = getLocalizedTours(lang).filter(x => x.id !== tour.id).slice(0, 3);
+
+  // Destinations that appear along this tour's route, resolved to their
+  // localized name for the "stops on this route" quick links below.
+  const routeStops = getLocalizedDestinations(lang)
+    .filter(d => tour.routeIds?.includes(d.id))
+    .sort((a, b) => (tour.routeIds ? tour.routeIds.indexOf(a.id) - tour.routeIds.indexOf(b.id) : 0));
 
   return (
     <Layout>
@@ -180,10 +186,30 @@ export default function TourDetail() {
             {tour.routeIds && tour.routeIds.length > 1 && (
               <div className="mb-16">
                 <h2 className="font-serif text-4xl text-foreground mb-3 flex items-center gap-3">
-                  <Route className="w-8 h-8 text-primary" /> Your Route
+                  <Route className="w-8 h-8 text-primary" aria-hidden="true" /> {t('td_your_route')}
                 </h2>
-                <p className="text-muted-foreground mb-6">{tour.routeCaption ?? "Follow your route stop by stop across Morocco — tap any numbered marker on the map to explore that destination."}</p>
-                <MoroccoMap routeIds={tour.routeIds} height={460} />
+                <p className="text-muted-foreground mb-6">{tour.routeCaption ?? t('td_route_caption')}</p>
+                <MoroccoMap routeIds={tour.routeIds} routeCaption={tour.routeCaption} height={460} routeStops={routeStops} />
+              </div>
+            )}
+
+            {/* A quick, scannable and linkable list of the places on this route */}
+            {routeStops.length > 0 && (
+              <div className="mb-16" aria-label={t('td_your_route')}>
+                <h3 className="font-serif text-2xl text-foreground mb-4">{t('td_your_route')}</h3>
+                <ul className="flex flex-wrap gap-2">
+                  {routeStops.map((d) => (
+                    <li key={d.id}>
+                      <Link
+                        href={`/destinations/${d.id}`}
+                        className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-3.5 py-2 text-sm font-semibold text-foreground hover:border-primary/60 hover:text-primary transition-colors"
+                      >
+                        <MapPin className="w-4 h-4 text-primary shrink-0" aria-hidden="true" />
+                        {d.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
               </div>
             )}
 
@@ -403,7 +429,7 @@ export default function TourDetail() {
                     rel="noreferrer"
                     className="w-full bg-[#003087] text-white py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-[#001f5e] transition-all hover:-translate-y-1 shadow-lg"
                   >
-                    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 0 0-.607-.541c-.013.076-.026.175-.041.254-.93 4.778-4.005 7.201-9.138 7.201h-2.19a.563.563 0 0 0-.556.479l-1.187 7.527h-.506l-.24 1.516a.56.56 0 0 0 .554.647h3.882c.46 0 .85-.334.922-.788.06-.26.76-4.852.816-5.09a.932.932 0 0 1 .923-.788h.58c3.76 0 6.705-1.528 7.565-5.946.36-1.847.174-3.388-.777-4.471z"/></svg>
+                    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 0 0-.607-.541c-.013.076-.026.175-.041.254-.93 4.778-4.005 7.201-9.138 7.201h-2.19a.563.563 0 0 0-.556.479l-1.187 7.527h-.506l-.24 1.516a.56.56 0 0 0 .554.647h3.882c.46 0 .85-.334.922-.788.06-.26.76-4.852.816-5.09a.932.932 0 0 1 .923-.788h.58c3.76 0 6.705-1.528 7.565-5.946.36-1.847.174-3.388-.777-4.471z"/></svg>
                     {t('book_paypal')}
                   </a>
                 ) : (
