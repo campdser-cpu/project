@@ -492,6 +492,9 @@ export const tours: Tour[] = [
         stops: ["Sunrise over the dunes", "Rissani market (optional)", "Ziz Valley", "High Atlas crossing", "Arrival: Marrakech"],
       },
     ],
+    gallery: [
+      { src: "/images/pdf/img_1-optimized.jpg", caption: "Luxury desert tours and authentic cultural experiences" },
+    ],
   },
   {
     id: "5-day-imperial-cities",
@@ -537,6 +540,9 @@ export const tours: Tour[] = [
         desc: "Travel to the imperial city of Meknès to admire the monumental Bab Mansour gate and the Mausoleum of Moulay Ismail, then wander the remarkably preserved Roman ruins of Volubilis. Continue on to the famous Blue City of Chefchaouen, where the afternoon and evening are free to explore the photogenic, blue-washed streets of the medina.",
         stops: ["Bab Mansour Gate", "Mausoleum of Moulay Ismail", "Volubilis Roman Ruins (UNESCO)", "Chefchaouen medina", "Overnight: Chefchaouen"],
       },
+    ],
+    gallery: [
+      { src: "/images/pdf/img_2-optimized.jpg", caption: "Golden Sahara dunes and a luxury desert camp on the route to Merzouga" },
     ],
   },
   {
