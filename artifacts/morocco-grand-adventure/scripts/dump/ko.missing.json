@@ -296,6 +296,34 @@
     "en": "Read Article"
   },
   {
+    "key": "blog_category",
+    "en": "Category"
+  },
+  {
+    "key": "read_time",
+    "en": "min read"
+  },
+  {
+    "key": "related_articles",
+    "en": "Related Articles"
+  },
+  {
+    "key": "related_tours",
+    "en": "Related Tours"
+  },
+  {
+    "key": "related_tours_hint",
+    "en": "Explore a journey that puts this guide into practice."
+  },
+  {
+    "key": "related_destinations",
+    "en": "Destinations in this Guide"
+  },
+  {
+    "key": "related_destinations_hint",
+    "en": "Plan your trip around the places featured in this article."
+  },
+  {
     "key": "blog_post_1_title",
     "en": "The Ultimate Guide to Luxury Desert Camps in Merzouga"
   },
@@ -826,6 +854,106 @@
   {
     "key": "mt_faq4_a",
     "en": "Absolutely — many of our Sahara tours begin in Fes, crossing the Middle Atlas and cedar forests on the way to Merzouga."
+  },
+  {
+    "key": "mk_hero_alt",
+    "en": "The vibrant Jemaa el-Fnaa square and medina rooftops of Marrakech at dusk"
+  },
+  {
+    "key": "mk_breadcrumb",
+    "en": "Marrakech Tours"
+  },
+  {
+    "key": "mk_title",
+    "en": "Marrakech Tours"
+  },
+  {
+    "key": "mk_subtitle",
+    "en": "Discover the Red City with expert local guides — Jemaa el-Fnaa, the Majorelle Garden, the labyrinthine souks, and unforgettable day trips to the Atlas Mountains and the Sahara."
+  },
+  {
+    "key": "mk_cta",
+    "en": "Book a Marrakech Tour"
+  },
+  {
+    "key": "mk_f1_title",
+    "en": "Jemaa el-Fnaa Square"
+  },
+  {
+    "key": "mk_f1_desc",
+    "en": "Storytellers, musicians and food stalls fill this UNESCO-listed square each evening — the beating heart of the Red City."
+  },
+  {
+    "key": "mk_f2_title",
+    "en": "Majorelle Garden & Museums"
+  },
+  {
+    "key": "mk_f2_desc",
+    "en": "Cobalt-blue lanes, exotic plants and the Berber museum once owned by Yves Saint Laurent — book early, it sells out."
+  },
+  {
+    "key": "mk_f3_title",
+    "en": "Bahia Palace & Saadian Tombs"
+  },
+  {
+    "key": "mk_f3_desc",
+    "en": "Zellige tilework, carved cedar ceilings and serene courtyards from Morocco's 19th-century architectural golden age."
+  },
+  {
+    "key": "mk_f4_title",
+    "en": "Medina Souks"
+  },
+  {
+    "key": "mk_f4_desc",
+    "en": "Wander the artisan quarters for leather, lanterns and carpets — haggling is expected, and your guide helps you bargain fairly."
+  },
+  {
+    "key": "mk_f5_title",
+    "en": "Traditional Hammam & Spa"
+  },
+  {
+    "key": "mk_f5_desc",
+    "en": "A black-soap scrub and steam ritual in a historic hammam — the perfect recovery after a long desert drive or a day of shopping."
+  },
+  {
+    "key": "mk_f6_title",
+    "en": "Atlas & Desert Day Trips"
+  },
+  {
+    "key": "mk_f6_desc",
+    "en": "Ourika Valley, Ouzoud Falls and the Agafay stone desert are all within 90 minutes of the city — ideal between tour days."
+  },
+  {
+    "key": "mk_faq1_q",
+    "en": "How many days do I need in Marrakech?"
+  },
+  {
+    "key": "mk_faq1_a",
+    "en": "Two to three days covers the medina highlights, a garden or two, and one day trip. Add an extra night if you want time for a hammam and unhurried souk browsing."
+  },
+  {
+    "key": "mk_faq2_q",
+    "en": "Is Marrakech safe for tourists?"
+  },
+  {
+    "key": "mk_faq2_a",
+    "en": "Yes — the tourist areas are well policed and violent crime is rare. Expect friendly but persistent vendors; a local guide makes navigation and bargaining far more relaxed."
+  },
+  {
+    "key": "mk_faq3_q",
+    "en": "What are the best day trips from Marrakech?"
+  },
+  {
+    "key": "mk_faq3_a",
+    "en": "The Ourika Valley (1h), Ouzoud Falls (2.5h) and Essaouira (2.5–3h) are classics. For dunes without a long drive, the Agafay desert is only 45 minutes away — though note it is a stone desert, not the Sahara."
+  },
+  {
+    "key": "mk_faq4_q",
+    "en": "Can I start a Sahara tour from Marrakech?"
+  },
+  {
+    "key": "mk_faq4_a",
+    "en": "Absolutely — most of our guests do. Our most popular route is the 3-day Sahara tour via Ait Ben Haddou and the Dades Valley, finishing with a camel trek into Erg Chebbi at Merzouga."
   },
   {
     "key": "dt_hero_alt",

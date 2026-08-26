@@ -456,6 +456,18 @@ export type TranslationSet = {
   mt_faq2_q: string; mt_faq2_a: string;
   mt_faq3_q: string; mt_faq3_a: string;
   mt_faq4_q: string; mt_faq4_a: string;
+  // ── Marrakech Tours page ────────────────────────────────────────────────────
+  mk_hero_alt: string; mk_breadcrumb: string; mk_title: string; mk_subtitle: string; mk_cta: string;
+  mk_f1_title: string; mk_f1_desc: string;
+  mk_f2_title: string; mk_f2_desc: string;
+  mk_f3_title: string; mk_f3_desc: string;
+  mk_f4_title: string; mk_f4_desc: string;
+  mk_f5_title: string; mk_f5_desc: string;
+  mk_f6_title: string; mk_f6_desc: string;
+  mk_faq1_q: string; mk_faq1_a: string;
+  mk_faq2_q: string; mk_faq2_a: string;
+  mk_faq3_q: string; mk_faq3_a: string;
+  mk_faq4_q: string; mk_faq4_a: string;
   // ── Day Trips page ────────────────────────────────────────────────────────
   dt_hero_alt: string; dt_breadcrumb: string; dt_title: string; dt_subtitle: string; dt_cta: string;
   dt_f1_title: string; dt_f1_desc: string;
@@ -624,10 +636,7 @@ type TranslationDict = Partial<TranslationSet>;
 
 const registry: Partial<Record<Lang, TranslationDict>> = {};
 
-/** Register a locale's dictionary (used by the lazy loader and build tooling). */
-export function registerTranslations(lang: Lang, data: TranslationDict): void {
-  registry[lang] = data;
-}
+
 
 export function isLocaleLoaded(lang: Lang): boolean {
   return lang === 'en' || Boolean(registry[lang]);
@@ -679,4 +688,19 @@ export function t(lang: Lang, key: string): string {
     registry.en?.[key as keyof TranslationDict] ??
     key
   );
+}
+
+/**
+ * Merge a locale's gap-completion keys (see ./gaps) into its registry entry.
+ * English is the canonical source and has no gaps.
+ */
+function applyGaps(lang: Lang, data: TranslationDict): TranslationDict {
+  const gaps = i18nGaps[lang];
+  if (!gaps) return data;
+  return { ...gaps, ...data };
+}
+
+/** Register a locale's dictionary (used by the lazy loader and build tooling). */
+export function registerTranslations(lang: Lang, data: TranslationDict): void {
+  registry[lang] = applyGaps(lang, data);
 }

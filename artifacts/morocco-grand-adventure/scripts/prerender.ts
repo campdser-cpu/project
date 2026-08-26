@@ -75,6 +75,32 @@ const STATIC_TITLE_KEYS: Record<string, string> = {
   '/blog': 'nav_blog',
 };
 
+// Experience/listing pages: dedicated UI keys for their crawlable H1 + intro
+// (fully authored translations live in the i18n dictionaries/gaps).
+const EXPERIENCE_TITLE_KEYS: Record<string, string> = {
+  '/desert-tours': 'dt2_title',
+  '/luxury-camp': 'lc_title',
+  '/camel-trekking': 'ct_title',
+  '/4x4-tours': 'f4_title',
+  '/marrakech-tours': 'mk_title',
+  '/fes-tours': 'mt_title',
+  '/day-trips': 'dt_title',
+  '/merzouga-guide': 'mg_title',
+  '/gallery': 'gallery_hero_alt',
+  '/trip-builder': 'nav_build_journey',
+};
+
+const EXPERIENCE_SUBTITLE_KEYS: Record<string, string> = {
+  '/desert-tours': 'dt2_subtitle',
+  '/luxury-camp': 'lc_subtitle',
+  '/camel-trekking': 'ct_subtitle',
+  '/4x4-tours': 'f4_subtitle',
+  '/marrakech-tours': 'mk_subtitle',
+  '/fes-tours': 'mt_subtitle',
+  '/day-trips': 'dt_subtitle',
+  '/merzouga-guide': 'mg_subtitle',
+};
+
 function tr(lang: Lang, key: string): string {
   return translate(lang, key);
 }
@@ -466,10 +492,16 @@ const EXPERIENCE_PAGE_ROUTES: Record<string, { tours: string[]; destinations: st
 };
 
 function buildExperienceContent(rest: string, lang: Lang): string {
-  const meta = getRouteMeta(rest);
+  const enMeta = getRouteMeta(rest);
   const cfg = EXPERIENCE_PAGE_ROUTES[rest] ?? { tours: [], destinations: [] };
-  const heading = h1(meta.title.replace(/\s*—.*$/, '').trim() || meta.title);
-  const intro = paragraph(meta.description);
+  // Prefer the fully translated UI title/intro for the crawlable H1 + intro;
+  // fall back to the canonical English route meta when a key is absent.
+  const titleKey = EXPERIENCE_TITLE_KEYS[rest];
+  const subtitleKey = EXPERIENCE_SUBTITLE_KEYS[rest];
+  const localizedTitle = titleKey ? tr(lang, titleKey) : '';
+  const localizedIntro = subtitleKey ? tr(lang, subtitleKey) : '';
+  const heading = h1(localizedTitle || enMeta.title.replace(/\s*—.*$/, '').trim() || enMeta.title);
+  const intro = paragraph(localizedIntro || enMeta.description);
   const tBlocks = cfg.tours
     .map((id) => getLocalizedTour(id, lang))
     .filter((t): t is NonNullable<typeof t> => Boolean(t))
@@ -526,7 +558,7 @@ function metaFor(rest: string, lang: Lang): ReturnType<typeof getRouteMeta> {
   // all other locales keep the existing localized-nav-title + English-description.
   const en = getRouteMeta(rest);
   const ar = lang === 'ar' ? getLocalizedRouteMeta(rest, lang) : undefined;
-  const key = STATIC_TITLE_KEYS[rest];
+  const key = STATIC_TITLE_KEYS[rest] ?? EXPERIENCE_TITLE_KEYS[rest];
   const title = ar ? ar.title : (key ? tr(lang, key) || en.title : en.title);
   const description = ar ? ar.description : en.description;
   return { title, description, ogImage: ar?.ogImage ?? en.ogImage };

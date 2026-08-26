@@ -9,6 +9,7 @@
 // ─────────────────────────────────────────────────────────────────────────────
 import type { Lang, TranslationSet } from '../index';
 import { registerTranslations } from '../index';
+import { i18nGaps } from '../gaps';
 import en from './en';
 import fr from './fr';
 import es from './es';
@@ -26,8 +27,19 @@ const locales = { en, fr, es, it, de, nl, pt, zh, ja, ko, ar } as Record<
   Record<string, string>
 >;
 
-/** Complete merged dictionaries for every supported locale. */
-export const allTranslations = locales;
+/**
+ * Complete merged dictionaries for every supported locale.
+ * Gap-completion keys (see ../gaps) are merged in so the audit and dump
+ * tooling reflect exactly what `t()` resolves at runtime.
+ */
+export const allTranslations = (Object.keys(locales) as Lang[]).reduce(
+  (acc, code) => {
+    const gaps = i18nGaps[code];
+    acc[code] = gaps ? { ...gaps, ...locales[code] } : { ...locales[code] };
+    return acc;
+  },
+  {} as Record<Lang, Record<string, string>>,
+);
 
 /**
  * Register every locale into the shared runtime registry (prerender/audits).
