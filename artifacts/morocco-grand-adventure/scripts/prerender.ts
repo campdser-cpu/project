@@ -31,7 +31,7 @@ import * as fs from 'node:fs';
 import * as path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { destinations, contactInfo, type Tour, type Destination } from '../src/data/content';
+import { destinations, contactInfo, reviews, type Review, type Tour, type Destination } from '../src/data/content';
 import { languages, t as translate } from '../src/i18n/index';
 import type { Lang } from '../src/i18n/index';
 import {
@@ -43,8 +43,8 @@ import {
   blogPosts,
   type BlogPost,
 } from '../src/i18n/content';
-import { getRouteMeta, BLOG_META } from '../src/components/seo/route-metadata';
-import { buildTourSchema, buildDestinationSchema, buildBlogPostSchema } from '../src/components/seo/StructuredData';
+import { getRouteMeta, getLocalizedRouteMeta, BLOG_META } from '../src/components/seo/route-metadata';
+import { buildTourSchema, buildDestinationSchema, buildBlogPostSchema, buildReviewSchema } from '../src/components/seo/StructuredData';
 import { registerAllTranslations } from '../src/i18n/locales';
 import { registerAllContentOverlays } from '../src/i18n/content/overlays';
 
@@ -176,14 +176,47 @@ const OG_LOCALE: Record<string, string> = {
 function buildHomeContent(lang: Lang): string {
   const destNames = getLocalizedDestinations(lang).slice(0, 8).map((d) => d.name);
   const tourNames = getLocalizedTours(lang).map((t) => t.name);
+  const reviewBlocks = reviews
+    .map((r) => {
+      const name = tr(lang, r.nameKey);
+      const quote = tr(lang, r.quoteKey);
+      const tourName = tr(lang, r.tourKey);
+      return (
+        `<div class="prerendered-review">
+          <h3 class="prerendered-review-author">${escapeHtml(name)}</h3>
+          <p class="prerendered-review-text">${escapeHtml(quote)}</p>
+          <p class="prerendered-review-tour">${escapeHtml(tourName)}</p>
+        </div>`
+      );
+    })
+    .join('\n');
   return (
     h1(tr(lang, 'hero_heading1') || 'Discover the Soul of Morocco') +
     paragraph(tr(lang, 'hero_subtext')) +
     h2(tr(lang, 'section_destinations') || 'Top Destinations') +
     ul(destNames) +
     h2(tr(lang, 'section_tours') || 'Featured Tours') +
-    ul(tourNames)
-  );
+    ul(tourNames) +
+    h2(tr(lang, 'section_reviews') || 'Traveler Stories') +
+    `<div class="prerendered-reviews-container">\n${reviewBlocks}\n    </div>\n`
+    );
+}
+
+/** Build JSON-LD Review schema array for the home / reviews showcase page. */
+function buildHomeSchemas(lang: Lang): Record<string, unknown>[] {
+  const reviewData = reviews.map((r) => ({
+    name: tr(lang, r.nameKey),
+    text: tr(lang, r.quoteKey),
+    rating: r.rating,
+  }));
+  const homeUrl = `${SITE_URL}/${lang}`;
+  return [
+    buildReviewSchema(
+      reviewData,
+      'Morocco Grand Adventure — Traveler Reviews',
+      homeUrl,
+    ),
+  ];
 }
 
 function buildToursContent(lang: Lang): string {
@@ -489,10 +522,14 @@ function metaFor(rest: string, lang: Lang): ReturnType<typeof getRouteMeta> {
     if (d) return { title: d.name, description: truncate(d.shortDesc || d.description), ogImage: d.image };
   }
   // Static pages → localized title via the UI translation keys, English meta fallback.
+  // Arabic gets a dedicated keyword-rich Arabic title/description (AR_ROUTE_META);
+  // all other locales keep the existing localized-nav-title + English-description.
   const en = getRouteMeta(rest);
+  const ar = lang === 'ar' ? getLocalizedRouteMeta(rest, lang) : undefined;
   const key = STATIC_TITLE_KEYS[rest];
-  const title = key ? tr(lang, key) || en.title : en.title;
-  return { title, description: en.description, ogImage: en.ogImage };
+  const title = ar ? ar.title : (key ? tr(lang, key) || en.title : en.title);
+  const description = ar ? ar.description : en.description;
+  return { title, description, ogImage: ar?.ogImage ?? en.ogImage };
 }
 
 function buildRoutes(lang: Lang): RouteEntry[] {
@@ -508,8 +545,8 @@ function buildRoutes(lang: Lang): RouteEntry[] {
     routes.push({ rest, outFile, content, meta: metaFor(rest, lang), lang, schemas, rtl });
   };
 
-  // Home + primary sections
-  add('/', `${lang}/index.html`, () => buildHomeContent(lang));
+    // Home + primary sections
+  add('/', `${lang}/index.html`, () => buildHomeContent(lang), buildHomeSchemas(lang));
   add('/tours', `${lang}/tours/index.html`, () => buildToursContent(lang));
   add('/destinations', `${lang}/destinations/index.html`, () => buildDestinationsContent(lang));
   add('/about', `${lang}/about/index.html`, () => buildAboutContent(lang));

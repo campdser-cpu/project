@@ -145,7 +145,7 @@ export const routeMetadata: Record<string, RouteMeta> = {
     title: "About Us — Meet Your Local Berber Guides | Morocco Grand Adventure",
     description:
       "Meet the Berber family behind Morocco Grand Adventure — native Sahara guides from Merzouga offering authentic camel treks and real Morocco travel experiences.",
-    ogImage: "/images/hero/about-hero-team-chefchaouen-morocco.jpg",
+    ogImage: "/images/hero/medina-pano.jpg",
   },
   "/contact": {
     title: "Contact Morocco Grand Adventure — Plan Your Morocco Journey",
@@ -293,4 +293,146 @@ export function getRouteMeta(rest: string): RouteMeta {
   }
 
   return HOME_META;
+}
+
+// ── Arabic (RTL) SEO metadata ──────────────────────────────────────────────
+// Keyword-rich Arabic titles/descriptions for the /ar/ locale, so its pages
+// carry genuinely Arabic, Morocco-travel-optimized meta in prerendered HTML
+// and runtime SEO head. Falls back to English where not provided.
+// ───────────────────────────────────────────────────────────────────────────
+
+const arKey = (rest: string): string =>
+  rest === "" || rest === "/" ? "/" : rest.replace(/\/+$/, "");
+
+export const AR_ROUTE_META: Record<string, RouteMeta> = {
+  "/": {
+    title: "رحلات المغرب — جولات الصحراء ومراكش",
+    description:
+      "رحلات خاصة في المغرب: جولات صحراوية في مرزوكة على ظهور الجمال، مراكش، فاس، والمدن الإمبراطورية. احجز مع خبراء محليين لتجربة أصيلة.",
+  },
+  "/tours": {
+    title: "جولات المغرب — رحلات الصحراء والمدن الإمبراطورية",
+    description:
+      "تصفح جميع جولات المغرب: رحلات الصحراء من مراكش، مرزوكة، المدن الإمبراطورية وجبال الأطلس. جولات خاصة للعائلات وشهر العسل بأسعار عادلة.",
+  },
+  "/destinations": {
+    title: "وجهات السياحة في المغرب — مدن وصحارى",
+    description:
+      "دليل وجهات السياحة في المغرب: مراكش، مرزوكة، فاس، الصحراء، وساحل الأطلسي. اكتشف أفضل المدن والمناظر الطبيعية لرحلتك القادمة.",
+  },
+  "/about": {
+    title: "من نحن — وكالة رحلات المغرب",
+    description:
+      "تعرّف على فريق Morocco Grand Adventure: خبراء محليون في السياحة الصحراوية والجولات الإمبراطورية في المغرب، بخدمة شخصية.",
+  },
+  "/contact": {
+    title: "اتصل بنا — حجز رحلات المغرب",
+    description:
+      "تواصل معنا لحجز رحلتك في المغرب عبر واتساب والبريد الإلكتروني. ردّ سريع ومخطط مخصص لمغامرة في الصحراء ومراكش.",
+  },
+  "/faq": {
+    title: "أسئلة شائعة عن السياحة في المغرب",
+    description:
+      "إجابات عن أسئلتك حول السياحة في المغرب: التأشيرة، الأمان، أفضل وقت للزيارة، ماذا تحزم، حجز الجولات، ووسائل الدفع.",
+  },
+  "/blog": {
+    title: "مدونة السفر المغربية — نصائح وأدلة",
+    description:
+      "أدلّة سفر ونصائح محلية من خبراء الصحراء المغربية: مرزوكة، الصحراء الكبرى، مراكش، والمدن الإمبراطورية لرحلتك القادمة.",
+  },
+  "/gallery": {
+    title: "معرض صور المغرب — الصحراء ومرزوكة",
+    description:
+      "معرض صور من رحلات المغرب الحقيقية: الكثبان الرملية، الجمال، مراكش، المدن الإمبراطورية، وساحل الأطلس.",
+  },
+  "/luxury-camp": {
+    title: "مخيم فاخر في مرزوكة — إقامة في قلب الصحراء",
+    description:
+      "مخيم فاخر على الكثبان الذهبية في مرزوكة: خيام مريحة، عشاء صحراوي، وركوب الجمال عند الفجر. تجربة سياحية مميزة في المغرب.",
+  },
+  "/desert-tours": {
+    title: "جولات الصحراء في المغرب — رحلات مرزوكة",
+    description:
+      "جولات صحراوية من مراكش إلى مرزوكة وإيرج شبي: الكثبان الرملية، المخيمات الفاخرة، ورصد النجوم مع مرشدين محليين محترفين.",
+  },
+  "/camel-trekking": {
+    title: "ركوب الجمال في الصحراء المغربية",
+    description:
+      "تجربة ركوب الجمال عبر الكثبان الذهبية في مرزوكة وقت الغروب والإشراق. جولات صحراوية مرشدة من خبراء محليين.",
+  },
+  "/4x4-tours": {
+    title: "جولات الدفع الرباعي في الصحراء المغربية",
+    description:
+      "مغامرة بمركبات الدفع الرباعي عبر الكثبان والقصبات الجبلية في الصحراء المغربية. جولة سياحية مميزة في قلب الصحراء.",
+  },
+  "/marrakech-tours": {
+    title: "جولات مراكش — رحلات يومية وجواهر",
+    description:
+      "اكتشف مراكش: الأسواق، القصور، القصبات، جبال الأطلس، وشلالات أوزود. جولات خاصة بأيدي خبراء محليين في المدينة الحمراء.",
+  },
+  "/fes-tours": {
+    title: "جولات فاس — المدينة الإمبراطورية",
+    description:
+      "استكشف فاس القديمة، مكناس، وشفشاون في جولات المغرب التاريخية. تجربة أصيلة في أعرق المدن الإمبراطورية في المغرب.",
+  },
+  "/day-trips": {
+    title: "رحلات يومية في المغرب — مراكش وفاس",
+    description:
+      "رحلات يومية قصيرة: من مراكش إلى شلالات أوزود والأطلس، أو من فاس إلى الصحراء. جولات خاصة بمرشدين خبراء.",
+  },
+  "/merzouga-guide": {
+    title: "دليل مرزوكة — إيرج شبي ومخيمات فاخرة",
+    description:
+      "المرجع الكامل للسفر إلى مرزوكة: كثبان إيرج شبي، المخيمات الفاخرة، ركوب الجمال، ورصد النجوم لتخطيط رحلتك الصحراوية.",
+  },
+  "/trip-builder": {
+    title: "مخطط رحلة المغرب — جولة مخصصة",
+    description:
+      "صمّم جولتك الخاصة في المغرب: مراكش، فاس، مرزوكة، وجبال الأطلس. تخطيط مخصص بالكامل مع فريقنا المحلي الخبير.",
+  },
+  "/tours/3-day-sahara-marrakech": {
+    title: "رحلة 3 أيام إلى الصحراء من مراكش",
+    description:
+      "أجمل رحلة من مراكش إلى الصحراء: عبور جبال الأطلس، آيت بن حدّو، والمبيت في مخيم فاخر تحت نجوم مرزوكة.",
+  },
+  "/tours/5-day-imperial-cities": {
+    title: "رحلة 5 أيام عبر المدن الإمبراطورية والصحراء",
+    description:
+      "استكشف مراكش، مكناس، فاس، وشفشاون قبل ليلة في الصحراء. مزيج من التاريخ الإمبراطوري وسحر الصحراء في 5 أيام.",
+  },
+  "/tours/7-day-imperial-cities-sahara-escape": {
+    title: "رحلة 7 أيام عبر المدن الإمبراطورية والصحراء المغربية",
+    description:
+      "أفضل ما يقدمه المغرب: جبال الأطلس، وادي دادس، إيرج شبي، المخيم الفاخر، والمدن الإمبراطورية في جولة خاصة لأسبوع.",
+  },
+  "/tours/honeymoon-morocco": {
+    title: "شهر العسل في المغرب — رحلة فاخرة 10 أيام",
+    description:
+      "شهر عسل راقٍ: غرف فاخرة، عشاء على ضوء الشموع في الصحراء، ورحلة منطاد الهواء، وحمّام تقليدي. تجربة مميزة للأزواج.",
+  },
+  "/tours/8-day-marrakech-essaouira-agadir-sahara": {
+    title: "رحلة 8 أيام: مراكش والصويرة وأكادير والصحراء",
+    description:
+      "جولة كبرى عبر جنوب المغرب: قصور مراكش، ساحل الصويرة، ثم ليلة في الصحراء. رحلة فاخرة شاملة لأجمل وجهات المغرب.",
+  },
+  "/tours/family-morocco-adventure": {
+    title: "مغامرة العائلة في المغرب — جولة 9 أيام",
+    description:
+      "المغرب يأسر الأطفال والكبار: ركوب الجمال في الصحراء، والقصبات، والمدن الإمبراطورية. جولة عائلية ممتعة وآمنة.",
+  },
+};
+
+/**
+ * Resolve route meta for a specific language.
+ * The Arabic (/ar) locale has dedicated, keyword-rich metadata
+ * (AR_ROUTE_META). All other locales resolve the canonical English metadata
+ * (translated UI copy lives in the i18n dictionaries, but page SEO titles and
+ * meta descriptions intentionally stay English so they remain consistent with
+ * the source-of-truth SEO content and are not machine-translated).
+ */
+export function getLocalizedRouteMeta(rest: string, lang?: string): RouteMeta {
+  const en = getRouteMeta(rest);
+  if (!lang || lang === "en" || lang !== "ar") return en;
+  const key = arKey(rest);
+  return AR_ROUTE_META[key] ?? en;
 }

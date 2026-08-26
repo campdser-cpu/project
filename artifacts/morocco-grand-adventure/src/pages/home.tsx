@@ -4,13 +4,14 @@ import { Link, useLocation } from 'wouter';
 import { Star, MapPin, CheckCircle2, ChevronRight, Calendar, Users, Globe, Instagram, Phone, Search, Award, ShieldCheck, Leaf } from 'lucide-react';
 import { Layout } from '../components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { contactInfo } from '@/data/content';
+import { contactInfo, reviews as reviewData } from '@/data/content';
 import { getLocalizedTours, getLocalizedDestinations, categoryLabel } from '@/i18n/content';
 import { SiWhatsapp } from 'react-icons/si';
 import { PromoBanner } from '../components/promo/PromoBanner';
 import { PromoBadge } from '../components/promo/PromoBadge';
 import { PriceTag } from '../components/promo/PriceTag';
 import { CinematicVideo } from '../components/ui/CinematicVideo';
+import { ReviewCard } from '../components/ui/ReviewCard';
 
 /** Lazy-load the Leaflet map so its ~150 kB chunk (+ OpenStreetMap tiles) is
  *  only fetched once the map approaches the viewport — the homepage stays
@@ -92,19 +93,11 @@ export default function Home() {
   const destinations = getLocalizedDestinations(lang);
   const signaturePlaces = getSignaturePlaces(t);
 
-  const reviews = [
-    { img: "1", name: t('home_rev1_name'), country: "🇬🇧", quote: t('home_rev1_quote'), tour: t('home_rev1_tour') },
-    { img: "2", name: t('home_rev2_name'), country: "🇺🇸", quote: t('home_rev2_quote'), tour: t('home_rev2_tour') },
-    { img: "3", name: t('home_rev3_name'), country: "🇨🇦", quote: t('home_rev3_quote'), tour: t('home_rev3_tour') },
-    { img: "4", name: t('home_rev4_name'), country: "🇩🇪", quote: t('home_rev4_quote'), tour: t('home_rev4_tour') },
-    { img: "5", name: t('home_rev5_name'), country: "🇦🇺", quote: t('home_rev5_quote'), tour: t('home_rev5_tour') },
-    { img: "6", name: t('home_rev6_name'), country: "🇪🇸", quote: t('home_rev6_quote'), tour: t('home_rev6_tour') },
-  ];
   const igItems = [
-    { src: "/images/personal/guests-sunset.webp", alt: t('home_ig_alt1') },
-    { src: "/images/personal/group-atlas.jpg", alt: t('home_ig_alt2') },
-    { src: "/images/personal/luxury-camp-dusk.jpg", alt: t('home_ig_alt3') },
-    { src: "/images/personal/guests-van.jpg", alt: t('home_ig_alt4') },
+  { src: "/images/personal/guests-sunset.webp", alt: t('home_ig_alt1') },
+  { src: "/images/personal/group-atlas.jpg", alt: t('home_ig_alt2') },
+  { src: "/images/personal/luxury-camp-dusk.jpg", alt: t('home_ig_alt3') },
+  { src: "/images/personal/guests-van.jpg", alt: t('home_ig_alt4') },
   ];
 
   // Search State
@@ -598,36 +591,16 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
-            {reviews.map((review, i) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-background/60 backdrop-blur-sm border border-border p-6 md:p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 relative"
-              >
-                <div className="absolute top-6 right-6 md:top-8 md:right-8 text-primary/20">
-                  <Star className="w-10 h-10 md:w-12 md:h-12 fill-current" />
-                </div>
-                <div className="flex items-center gap-3 md:gap-4 mb-5 md:mb-6 relative z-10">
-                  <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-primary/15 text-primary font-serif text-lg md:text-xl font-bold flex items-center justify-center border-2 border-primary/20 shrink-0" aria-hidden="true">
-                    {review.name.split(' ').filter(w => /[A-Za-z]/.test(w[0])).map(w => w[0]).join('').slice(0, 2)}
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-foreground text-base md:text-lg">{review.name} <span className="text-sm md:text-base">{review.country}</span></h4>
-                    <div className="flex text-primary gap-0.5 mt-1">
-                      {[1,2,3,4,5].map(s => <Star key={s} className="w-4 h-4 fill-current" />)}
-                    </div>
-                  </div>
-                </div>
-                <p className="text-muted-foreground italic mb-5 md:mb-6 relative z-10 text-sm leading-relaxed">
-                  "{review.quote}"
-                </p>
-                <div className="text-xs font-bold text-primary tracking-wide uppercase border-t border-border pt-4 relative z-10">
-                  {review.tour}
-                </div>
-              </motion.div>
+            {reviewData.map((review, i) => (
+              <ReviewCard
+                key={review.id}
+                index={i}
+                name={t(review.nameKey)}
+                country={review.country}
+                quote={t(review.quoteKey)}
+                tour={t(review.tourKey)}
+                rating={review.rating}
+              />
             ))}
           </div>
         </div>

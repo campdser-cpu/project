@@ -13,7 +13,7 @@ import { useEffect } from 'react';
 import { usePathname } from 'wouter/use-browser-location';
 import { useLanguage, languages } from '@/contexts/LanguageContext';
 import { parseLangPath, RAW_BASE } from '@/lib/i18n-routing';
-import { getRouteMeta } from './route-metadata';
+import { getLocalizedRouteMeta } from './route-metadata';
 
 const BRAND = 'Morocco Grand Adventure';
 
@@ -48,10 +48,8 @@ export function LocalizedHead() {
     // ── Per-page metadata ────────────────────────────────────────────────
     // Resolve unique title + description for this route.  For the homepage
     // we keep the localized tagline/subtext; for all other routes we use the
-    // English route-metadata copy (translated content overlays can be added
-    // later).  This ensures every page has a unique <title> and meta
-    // description for Google indexing.
-    const routeMeta = getRouteMeta(rest);
+    // route-metadata copy which is localized for Arabic and English elsewhere.
+    const routeMeta = getLocalizedRouteMeta(rest, lang);
     const isHome = rest === '/' || rest === '';
     const tagline = isHome
       ? t('hero_tagline').replace(/\s+/g, ' ').trim()

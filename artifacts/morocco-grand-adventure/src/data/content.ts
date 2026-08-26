@@ -1,4 +1,4 @@
-// ─────────────────────────────────────────────────────────────────────────────
+﻿// ─────────────────────────────────────────────────────────────────────────────
 // Morocco Grand Adventure — Central Data
 // Owner: Mohamed Bou Ghrara
 // ─────────────────────────────────────────────────────────────────────────────
@@ -458,6 +458,33 @@ export const tourSlugAliases: Record<string, string> = {
   'morocco-desert-tour': '7-day-imperial-cities-sahara-escape',
 };
 
+// ─────────────────────────────────────────────────────────────────────────────
+// Reviews (localised via locale keys so every language shows real review text)
+// ─────────────────────────────────────────────────────────────────────────────
+export type Review = {
+  /** Stable id used as a React key. */
+  id: string;
+  /** Translation key for the reviewer's display name. */
+  nameKey: string;
+  /** Country flag emoji shown beside the name. */
+  country: string;
+  /** Translation key for the review body text. */
+  quoteKey: string;
+  /** Translation key for the tour the reviewer booked. */
+  tourKey: string;
+  /** Star rating 1–5 (all showcase reviews are 5-star). */
+  rating: number;
+};
+
+export const reviews: Review[] = [
+  { id: 'rev1', nameKey: 'home_rev1_name', country: '🇬🇧', quoteKey: 'home_rev1_quote', tourKey: 'home_rev1_tour', rating: 5 },
+  { id: 'rev2', nameKey: 'home_rev2_name', country: '🇺🇸', quoteKey: 'home_rev2_quote', tourKey: 'home_rev2_tour', rating: 5 },
+  { id: 'rev3', nameKey: 'home_rev3_name', country: '🇨🇦', quoteKey: 'home_rev3_quote', tourKey: 'home_rev3_tour', rating: 5 },
+  { id: 'rev4', nameKey: 'home_rev4_name', country: '🇩🇪', quoteKey: 'home_rev4_quote', tourKey: 'home_rev4_tour', rating: 5 },
+  { id: 'rev5', nameKey: 'home_rev5_name', country: '🇦🇺', quoteKey: 'home_rev5_quote', tourKey: 'home_rev5_tour', rating: 5 },
+  { id: 'rev6', nameKey: 'home_rev6_name', country: '🇪🇸', quoteKey: 'home_rev6_quote', tourKey: 'home_rev6_tour', rating: 5 },
+];
+
 export const tours: Tour[] = [
   {
     id: "3-day-sahara-marrakech",
@@ -467,7 +494,7 @@ export const tours: Tour[] = [
     highlights: ["Atlas Mountains Crossing", "Aït Ben Haddou (UNESCO)", "Dades Valley", "Merzouga Luxury Camp", "Camel Trekking at Sunset"],
     price: "450",
     pricingTiers: { 1: 690, 2: 450, 3: 370, 4: 310, 5: 280 },
-    image: "/images/tours/3-day-sahara-marrakech.jpg",
+    image: "/images/pdf/img_1-optimized.jpg",
     aliases: ['3-days-marrakech-to-merzouga-desert-tour', 'merzouga-desert-tour'],
     description: "The classic Morocco adventure compressed into three unforgettable days. Cross the Atlas Mountains, explore the most photographed kasbah on Earth, sleep under Saharan stars in a luxury tented camp, and ride camels at sunset over the golden dunes of Erg Chebbi.",
     routeIds: ["marrakech", "ait-ben-haddou", "ouarzazate", "skoura", "dades-valley", "todra-gorge", "merzouga"],
@@ -504,7 +531,7 @@ export const tours: Tour[] = [
     highlights: ["Atlas Mountains Crossing", "Aït Ben Haddou (UNESCO)", "Erg Chebbi Sahara & Luxury Camp", "Fes el-Bali Medina", "Chefchaouen Blue City", "Meknès & Volubilis"],
     price: "780",
     pricingTiers: { 1: 1180, 2: 780, 3: 640, 4: 540, 5: 490 },
-    image: "/images/tours/5-day-imperial-cities.jpg",
+    image: "/images/pdf/img_2-optimized.jpg",
     aliases: ['3-days-fes-to-marrakech-desert-tour'],
     description: "From the ochre imperial capital of Marrakech to the blue-washed lanes of Chefchaouen, this five-day journey weaves together Morocco's greatest imperial cities and a night under the Sahara stars. Cross the High Atlas to the UNESCO ksar of Aït Ben Haddou, sleep in a luxury desert camp among the dunes of Erg Chebbi, explore the medieval labyrinth of Fes, and wander the Roman ruins of Volubilis.",
     routeIds: ["marrakech", "ait-ben-haddou", "ouarzazate", "skoura", "dades-valley", "todra-gorge", "merzouga", "ifrane", "fes", "meknes", "chefchaouen"],

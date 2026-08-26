@@ -40,7 +40,7 @@ export default function PremiumAboutSection() {
 
   const guideOrder = ['mohamed', 'mostapha', 'moha'] as const;
   const guideImages: Record<string, string> = {
-    mohamed: '/images/guide/mohamed-boughrara.jpg',
+    mohamed: '/images/guide/mohamed-boughrara-founder-desert-guide-merzouga.webp',
     mostapha: '/images/guide/mostapha-wargaga-senior-desert-guide-sahara-sunset.webp',
     moha: '/images/guide/moha-amroui-desert-guide-camels-merzouga.jpg',
   };

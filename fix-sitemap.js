@@ -9,7 +9,7 @@ const path = require('path');
 // ─────────────────────────────────────────────────────────────────────────────
 const SITE_URL = 'https://www.moroccograndadventure.com';
 const LANGS = ['en', 'fr', 'es', 'it', 'de', 'nl', 'pt', 'zh', 'ja', 'ko', 'ar'];
-const LAST_MOD = '2026-08-17';
+const LAST_MOD = '2026-08-23';
 
 /** Walk a directory recursively, returning relative `.html` file paths. */
 function collectHtml(dir, base, out) {
