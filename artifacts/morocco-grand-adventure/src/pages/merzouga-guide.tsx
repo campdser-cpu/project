@@ -1,4 +1,5 @@
 import { ExperiencePage, defaultTrustBadges } from '../components/ExperiencePage';
+import { RelatedExperiences } from '../components/ui/RelatedExperiences';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function MerzougaGuide() {
@@ -28,8 +29,13 @@ export default function MerzougaGuide() {
         { question: t('mg_faq1_q'), answer: t('mg_faq1_a') },
         { question: t('mg_faq2_q'), answer: t('mg_faq2_a') },
         { question: t('mg_faq3_q'), answer: t('mg_faq3_a') },
-        { question: t('mg_faq4_q'), answer: t('mg_faq4_a') },
+                { question: t('mg_faq4_q'), answer: t('mg_faq4_a') },
+        { question: t('mg_faq5_q'), answer: t('mg_faq5_a') },
+        { question: t('mg_faq6_q'), answer: t('mg_faq6_a') },
+        { question: t('mg_faq7_q'), answer: t('mg_faq7_a') },
       ]}
-    />
+    >
+      <RelatedExperiences />
+    </ExperiencePage>
   );
 }

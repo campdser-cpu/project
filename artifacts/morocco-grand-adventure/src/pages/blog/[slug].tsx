@@ -149,8 +149,32 @@ export default function BlogPost() {
                 className="w-full h-48 md:h-64 object-cover mb-8 rounded-md"
               />
 
-              <div className="prose max-w-none">
+                            <div className="prose max-w-none">
                 <p className="text-lg leading-relaxed text-muted-foreground">{post.excerpt}</p>
+                {post.body?.map((section, si) => (
+                  <section key={si} className={si === 0 ? "mt-8" : "mt-10"}>
+                    {section.heading && (
+                      <h2 className="font-serif text-2xl md:text-3xl text-foreground mb-4 not-prose">
+                        {section.heading}
+                      </h2>
+                    )}
+                    {section.paragraphs?.map((para, pi) => (
+                      <p key={pi} className="text-base md:text-lg leading-relaxed text-muted-foreground mb-4">
+                        {para}
+                      </p>
+                    ))}
+                    {section.bullets && section.bullets.length > 0 && (
+                      <ul className="space-y-3 mb-6">
+                        {section.bullets.map((bullet, bi) => (
+                          <li key={bi} className="flex gap-3">
+                            <span className="w-2 h-2 rounded-full bg-primary mt-2 shrink-0" aria-hidden="true" />
+                            <span className="text-muted-foreground leading-relaxed">{bullet}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </section>
+                ))}
               </div>
                 {relatedTours.length > 0 && (
                 <div className="mt-12 pt-12 border-t border-border">

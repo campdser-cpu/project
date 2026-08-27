@@ -1,4 +1,5 @@
 import { ExperiencePage, defaultTrustBadges } from '../components/ExperiencePage';
+import { RelatedExperiences } from '../components/ui/RelatedExperiences';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function CamelTrekking() {
@@ -29,8 +30,13 @@ export default function CamelTrekking() {
         { question: t('ct_faq2_q'), answer: t('ct_faq2_a') },
         { question: t('ct_faq3_q'), answer: t('ct_faq3_a') },
         { question: t('ct_faq4_q'), answer: t('ct_faq4_a') },
-        { question: t('ct_faq5_q'), answer: t('ct_faq5_a') },
+                { question: t('ct_faq5_q'), answer: t('ct_faq5_a') },
+        { question: t('ct_faq6_q'), answer: t('ct_faq6_a') },
+        { question: t('ct_faq7_q'), answer: t('ct_faq7_a') },
+        { question: t('ct_faq8_q'), answer: t('ct_faq8_a') },
       ]}
-    />
+    >
+      <RelatedExperiences />
+    </ExperiencePage>
   );
 }

@@ -15,7 +15,7 @@ import { PriceTag } from '../components/promo/PriceTag';
 import { PromoBanner } from '../components/promo/PromoBanner';
 import { discountedPrice, waPromoLink } from '@/lib/promo';
 import { usePromoActive } from '../components/promo/PromoProvider';
-import { StructuredData, buildTourSchema, buildReviewSchema, buildFaqSchema } from '../components/seo/StructuredData';
+import { StructuredData, buildTourSchema, buildFaqSchema } from '../components/seo/StructuredData';
 
 export default function TourDetail() {
   const { t, lang } = useLanguage();

@@ -1,4 +1,5 @@
 import { ExperiencePage, defaultTrustBadges } from '../components/ExperiencePage';
+import { RelatedExperiences } from '../components/ui/RelatedExperiences';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function LuxuryCamp() {
@@ -26,8 +27,13 @@ export default function LuxuryCamp() {
         { question: t('lc_faq1_q'), answer: t('lc_faq1_a') },
         { question: t('lc_faq2_q'), answer: t('lc_faq2_a') },
         { question: t('lc_faq3_q'), answer: t('lc_faq3_a') },
-        { question: t('lc_faq4_q'), answer: t('lc_faq4_a') },
+                { question: t('lc_faq4_q'), answer: t('lc_faq4_a') },
+        { question: t('lc_faq5_q'), answer: t('lc_faq5_a') },
+        { question: t('lc_faq6_q'), answer: t('lc_faq6_a') },
+        { question: t('lc_faq7_q'), answer: t('lc_faq7_a') },
       ]}
-    />
+    >
+      <RelatedExperiences />
+    </ExperiencePage>
   );
 }

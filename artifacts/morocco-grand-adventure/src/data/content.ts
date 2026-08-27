@@ -16,6 +16,22 @@ export const contactInfo = {
   address: "Merzouga, Errachidia Province, Morocco",
 };
 
+/**
+ * Curated neighbouring destinations per id. Used by the destination detail
+ * page instead of a blind "first three alphabetical" list, so each place links
+ * to geographically or thematically genuine neighbours only. Any id not listed
+ * falls back to the previous default behaviour.
+ */
+export const destinationNearby: Record<string, string[]> = {
+  marrakech: ["ait-ben-haddou", "imlil", "ouarzazate"],
+  fes: ["meknes", "ifrane", "chefchaouen"],
+  merzouga: ["erg-chebbi", "ouarzazate"],
+  "erg-chebbi": ["merzouga"],
+  "ait-ben-haddou": ["ouarzazate", "marrakech"],
+  "dades-valley": ["todra-gorge", "ait-ben-haddou", "skoura"],
+  "todra-gorge": ["dades-valley", "ait-ben-haddou"],
+};
+
 export type Destination = {
   id: string;
   name: string;
@@ -457,33 +473,6 @@ export const tourSlugAliases: Record<string, string> = {
   'merzouga-desert-tour': '3-day-sahara-marrakech',
   'morocco-desert-tour': '7-day-imperial-cities-sahara-escape',
 };
-
-// ─────────────────────────────────────────────────────────────────────────────
-// Reviews (localised via locale keys so every language shows real review text)
-// ─────────────────────────────────────────────────────────────────────────────
-export type Review = {
-  /** Stable id used as a React key. */
-  id: string;
-  /** Translation key for the reviewer's display name. */
-  nameKey: string;
-  /** Country flag emoji shown beside the name. */
-  country: string;
-  /** Translation key for the review body text. */
-  quoteKey: string;
-  /** Translation key for the tour the reviewer booked. */
-  tourKey: string;
-  /** Star rating 1–5 (all showcase reviews are 5-star). */
-  rating: number;
-};
-
-export const reviews: Review[] = [
-  { id: 'rev1', nameKey: 'home_rev1_name', country: '🇬🇧', quoteKey: 'home_rev1_quote', tourKey: 'home_rev1_tour', rating: 5 },
-  { id: 'rev2', nameKey: 'home_rev2_name', country: '🇺🇸', quoteKey: 'home_rev2_quote', tourKey: 'home_rev2_tour', rating: 5 },
-  { id: 'rev3', nameKey: 'home_rev3_name', country: '🇨🇦', quoteKey: 'home_rev3_quote', tourKey: 'home_rev3_tour', rating: 5 },
-  { id: 'rev4', nameKey: 'home_rev4_name', country: '🇩🇪', quoteKey: 'home_rev4_quote', tourKey: 'home_rev4_tour', rating: 5 },
-  { id: 'rev5', nameKey: 'home_rev5_name', country: '🇦🇺', quoteKey: 'home_rev5_quote', tourKey: 'home_rev5_tour', rating: 5 },
-  { id: 'rev6', nameKey: 'home_rev6_name', country: '🇪🇸', quoteKey: 'home_rev6_quote', tourKey: 'home_rev6_tour', rating: 5 },
-];
 
 export const tours: Tour[] = [
   {

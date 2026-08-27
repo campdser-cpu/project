@@ -1,4 +1,5 @@
 import { ExperiencePage, defaultTrustBadges } from '../components/ExperiencePage';
+import { RelatedExperiences } from '../components/ui/RelatedExperiences';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { CinematicVideo } from '../components/ui/CinematicVideo';
 
@@ -52,6 +53,7 @@ export default function FourByFourTours() {
           />
         </div>
       </section>
+      <RelatedExperiences />
     </ExperiencePage>
   );
 }

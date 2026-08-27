@@ -1,6 +1,7 @@
 import { useRoute } from 'wouter';
 import { Layout } from '../components/layout/Layout';
 import { getLocalizedDestination, getLocalizedDestinations, getLocalizedTours, categoryLabel } from '@/i18n/content';
+import { destinationNearby } from '@/data/content';
 import NotFound from './not-found';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { motion } from 'framer-motion';
@@ -20,7 +21,10 @@ export default function DestinationDetail() {
   
   if (!destination) return <NotFound />;
 
-  const nearbyDestinations = getLocalizedDestinations(lang).filter(d => d.id !== destination.id).slice(0, 3);
+    const nearbyIds = destinationNearby[destination.id];
+  const nearbyDestinations = nearbyIds
+    ? nearbyIds.map((id) => getLocalizedDestination(id, lang)).filter((d): d is NonNullable<typeof d> => Boolean(d))
+    : getLocalizedDestinations(lang).filter(d => d.id !== destination.id).slice(0, 3);
 
   return (
     <Layout>
@@ -67,6 +71,29 @@ export default function DestinationDetail() {
                 {t('dest_about_text')}
               </p>
               
+              {/* Desert experience links — Merzouga / Erg Chebbi pages */}
+              {["merzouga", "erg-chebbi"].includes(destination.id) && (
+                <div className="mb-16">
+                  <h3 className="font-serif text-3xl text-foreground mb-6">{t('nav_experiences')}</h3>
+                  <div className="flex flex-wrap gap-3">
+                    {[
+                      { href: "/camel-trekking", label: t('nav_camel_trekking') },
+                      { href: "/luxury-camp", label: t('nav_luxury_desert_camp') },
+                      { href: "/4x4-tours", label: t('nav_4x4_desert_tours') },
+                      { href: "/desert-tours", label: t('nav_sahara_desert_tours') },
+                    ].map((l) => (
+                      <Link
+                        key={l.href}
+                        href={l.href}
+                        className="bg-card border border-border hover:border-primary/60 hover:text-primary transition-colors px-5 py-2.5 rounded-full text-sm font-semibold"
+                      >
+                        {l.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+
               {/* NEW: Local Food Section */}
               <div className="mb-16">
                 <h3 className="font-serif text-3xl text-foreground mb-6 flex items-center gap-3">

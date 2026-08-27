@@ -31,7 +31,7 @@ import * as fs from 'node:fs';
 import * as path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { destinations, contactInfo, reviews, type Review, type Tour, type Destination } from '../src/data/content';
+import { destinations, contactInfo, destinationNearby, type Tour, type Destination } from '../src/data/content';
 import { languages, t as translate } from '../src/i18n/index';
 import type { Lang } from '../src/i18n/index';
 import {
@@ -44,7 +44,7 @@ import {
   type BlogPost,
 } from '../src/i18n/content';
 import { getRouteMeta, getLocalizedRouteMeta, BLOG_META } from '../src/components/seo/route-metadata';
-import { buildTourSchema, buildDestinationSchema, buildBlogPostSchema, buildReviewSchema } from '../src/components/seo/StructuredData';
+import { buildTourSchema, buildDestinationSchema, buildBlogPostSchema } from '../src/components/seo/StructuredData';
 import { registerAllTranslations } from '../src/i18n/locales';
 import { registerAllContentOverlays } from '../src/i18n/content/overlays';
 
@@ -202,20 +202,6 @@ const OG_LOCALE: Record<string, string> = {
 function buildHomeContent(lang: Lang): string {
   const destNames = getLocalizedDestinations(lang).slice(0, 8).map((d) => d.name);
   const tourNames = getLocalizedTours(lang).map((t) => t.name);
-  const reviewBlocks = reviews
-    .map((r) => {
-      const name = tr(lang, r.nameKey);
-      const quote = tr(lang, r.quoteKey);
-      const tourName = tr(lang, r.tourKey);
-      return (
-        `<div class="prerendered-review">
-          <h3 class="prerendered-review-author">${escapeHtml(name)}</h3>
-          <p class="prerendered-review-text">${escapeHtml(quote)}</p>
-          <p class="prerendered-review-tour">${escapeHtml(tourName)}</p>
-        </div>`
-      );
-    })
-    .join('\n');
   return (
     h1(tr(lang, 'hero_heading1') || 'Discover the Soul of Morocco') +
     paragraph(tr(lang, 'hero_subtext')) +
@@ -223,26 +209,15 @@ function buildHomeContent(lang: Lang): string {
     ul(destNames) +
     h2(tr(lang, 'section_tours') || 'Featured Tours') +
     ul(tourNames) +
-    h2(tr(lang, 'section_reviews') || 'Traveler Stories') +
-    `<div class="prerendered-reviews-container">\n${reviewBlocks}\n    </div>\n`
-    );
+    h2(tr(lang, 'home_trust_title') || 'A family-run Morocco tour specialist') +
+    paragraph(tr(lang, 'home_trust_sub')) +
+    paragraph(tr(lang, 'home_trust_note'))
+  );
 }
 
-/** Build JSON-LD Review schema array for the home / reviews showcase page. */
+/** Homepage emits no Review / AggregateRating schema — verified customer feedback lives on the Google Business Profile (see Master Package §29). */
 function buildHomeSchemas(lang: Lang): Record<string, unknown>[] {
-  const reviewData = reviews.map((r) => ({
-    name: tr(lang, r.nameKey),
-    text: tr(lang, r.quoteKey),
-    rating: r.rating,
-  }));
-  const homeUrl = `${SITE_URL}/${lang}`;
-  return [
-    buildReviewSchema(
-      reviewData,
-      'Morocco Grand Adventure — Traveler Reviews',
-      homeUrl,
-    ),
-  ];
+  return [];
 }
 
 function buildToursContent(lang: Lang): string {
@@ -291,12 +266,25 @@ function buildDestinationsContent(lang: Lang): string {
 function buildDestinationDetailContent(destId: string, lang: Lang): string {
   const d = getLocalizedDestination(destId, lang);
   if (!d) return h1('Not Found') + paragraph('This destination could not be found.');
+    const nearIds = destinationNearby[destId] ?? [];
+  const nearItems = nearIds
+    .map((id) => getLocalizedDestination(id, lang))
+    .filter((nd): nd is NonNullable<typeof nd> => Boolean(nd))
+    .map(
+      (nd) =>
+        `      <li>${link(`${SITE_URL}/${lang}/destinations/${nd.id}`, escapeHtml(nd.name))}</li>`,
+    )
+    .join('\n');
+  const nearBlock = nearItems
+    ? `\n      <h2>${escapeHtml(tr(lang, 'dest_nearby') || 'Related places')}</h2>\n      <ul>\n${nearItems}\n      </ul>`
+    : '';
   return (
     h1(d.name) +
     paragraph(d.shortDesc) +
     paragraph(d.description) +
     h2(tr(lang, 'dest_about')) +
-    ul(d.highlights)
+    ul(d.highlights) +
+    nearBlock
   );
 }
 
@@ -405,6 +393,21 @@ function buildBlogRelatedArticles(slug: string, lang: Lang): string {
   return h2(tr(lang, 'related_articles')) + `<ul>\n${items}\n    </ul>\n`;
 }
 
+/** Mirror the authored article body sections (canonical English, like title/excerpt). */
+function buildBlogBodyBlock(slug: string): string {
+  const post = blogPosts.find((p) => p.slug === slug);
+  if (!post?.body?.length) return '';
+  return post.body
+    .map((section) => {
+      let out = '';
+      if (section.heading) out += h2(section.heading);
+      if (section.paragraphs?.length) out += section.paragraphs.map((para) => paragraph(para)).join('');
+      if (section.bullets?.length) out += ul(section.bullets);
+      return out;
+    })
+    .join('');
+}
+
 function buildBlogArticleContent(slug: string, lang: Lang): string {
   const posts: Record<string, { title: string; excerpt: string; date: string; read: string; cat: string; image: string }> = {
     'merzouga-luxury-desert-camp-guide': {
@@ -467,7 +470,8 @@ function buildBlogArticleContent(slug: string, lang: Lang): string {
     h1(post.title) +
     `<p><strong>${escapeHtml(post.cat)}</strong> · ${escapeHtml(post.date)} · ${escapeHtml(post.read)}</p>\n` +
     `<img src="${post.image}" alt="${escapeHtml(imgAlt)}" loading="lazy" decoding="async" class="w-full h-48 md:h-64 object-cover mb-8 rounded-md" />\n` +
-    paragraph(post.excerpt) +
+        paragraph(post.excerpt) +
+    buildBlogBodyBlock(slug) +
     buildBlogToursBlock(slug, lang) +
     buildBlogDestinationsBlock(slug, lang) +
     buildBlogRelatedArticles(slug, lang)
@@ -518,10 +522,40 @@ function buildExperienceContent(rest: string, lang: Lang): string {
     .filter((d): d is NonNullable<typeof d> => Boolean(d))
     .map((d) => h2Link(`${SITE_URL}/${lang}/destinations/${d.id}`, d.name) + paragraph(d.shortDesc))
     .join('');
-  return heading + intro + tBlocks + dBlocks;
+    const faqBlocks = buildExperienceFaqBlocks(rest, lang);
+  return heading + intro + faqBlocks + tBlocks + dBlocks;
 }
 
 // ── Route table ──────────────────────────────────────────────────────────────
+/**
+ * Mirror the traveler FAQs that are visibly rendered on each experience page
+ * (`ExperiencePage` faqs prop) into the crawlable body. Prefix/count must
+ * match the props used by the corresponding page component in src/pages/*.
+ */
+const EXPERIENCE_FAQ_PAIRS: Record<string, { prefix: string; count: number }> = {
+  '/camel-trekking': { prefix: 'ct_faq', count: 8 },
+  '/luxury-camp': { prefix: 'lc_faq', count: 7 },
+  '/merzouga-guide': { prefix: 'mg_faq', count: 7 },
+  '/day-trips': { prefix: 'dt_faq', count: 6 },
+  '/4x4-tours': { prefix: 'f4_faq', count: 5 },
+};
+
+function buildExperienceFaqBlocks(rest: string, lang: Lang): string {
+  const spec = EXPERIENCE_FAQ_PAIRS[rest];
+  if (!spec) return '';
+  let out = '';
+  for (let i = 1; i <= spec.count; i += 1) {
+    const qKey = `${spec.prefix}${i}_q`;
+    const aKey = `${spec.prefix}${i}_a`;
+    const question = tr(lang, qKey);
+    const answer = tr(lang, aKey);
+    // Skip any pair whose translation is missing entirely (key-echo guard).
+    if (!question || !answer || question === qKey || answer === aKey) continue;
+    out += `<h3 class="prerendered-faq-question">${escapeHtml(question)}</h3><p class="prerendered-faq-answer">${escapeHtml(answer)}</p>`;
+  }
+  return out;
+}
+
 type RouteEntry = {
   /** The "rest" app path (after /en/), used for canonical + hreflang. */
   rest: string;

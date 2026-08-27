@@ -164,13 +164,13 @@ export const routeMetadata: Record<string, RouteMeta> = {
   "/luxury-camp": {
     title: "Luxury Desert Camp Morocco — Exclusive Sahara Glamping",
     description:
-      "Sleep under a canopy of stars in our exclusive luxury desert camp near Merzouga. Private tents, fine dining, en-suite bathrooms & unforgettable Sahara nights.",
+      "Luxury desert camp at Erg Chebbi near Merzouga. Private tents with real beds and en-suite bathrooms, fine dining under the stars, campfire and stargazing away from city lights.",
     ogImage: "/images/personal/luxury-camp-dusk.jpg",
   },
   "/camel-trekking": {
     title: "Camel Trekking Merzouga — Sahara Camel Rides & Sunset Treks",
     description:
-      "Ride camels across the golden dunes of Erg Chebbi at sunset. Authentic Merzouga camel trekking experiences with expert Berber guides. Book your Sahara camel ride today.",
+      "Private Merzouga camel treks across Erg Chebbi dunes at sunset and sunrise with Berber guides. Ends at a luxury desert camp. Includes what to wear, trek duration, and what to expect.",
     ogImage: "/images/personal/dunes-camels-poster.jpg",
   },
   "/4x4-tours": {
@@ -200,7 +200,7 @@ export const routeMetadata: Record<string, RouteMeta> = {
   "/merzouga-guide": {
     title: "Merzouga Travel Guide — Sahara Desert, Erg Chebbi & Luxury Camps",
     description:
-      "The ultimate Merzouga travel guide. Discover Erg Chebbi dunes, luxury desert camps, camel trekking, stargazing & everything you need to plan your Sahara adventure.",
+      "Merzouga travel guide — Erg Chebbi dunes, camel treks, luxury camps, 4x4 tours and stargazing. Includes how to get there, best time to visit, and what to expect.",
     ogImage: "/images/dest/merzouga.jpg",
   },
   "/faq": {

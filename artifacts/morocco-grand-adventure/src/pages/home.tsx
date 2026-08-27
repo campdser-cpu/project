@@ -4,14 +4,13 @@ import { Link, useLocation } from 'wouter';
 import { Star, MapPin, CheckCircle2, ChevronRight, Calendar, Users, Globe, Instagram, Phone, Search, Award, ShieldCheck, Leaf } from 'lucide-react';
 import { Layout } from '../components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { contactInfo, reviews as reviewData } from '@/data/content';
+import { contactInfo } from '@/data/content';
 import { getLocalizedTours, getLocalizedDestinations, categoryLabel } from '@/i18n/content';
 import { SiWhatsapp } from 'react-icons/si';
 import { PromoBanner } from '../components/promo/PromoBanner';
 import { PromoBadge } from '../components/promo/PromoBadge';
 import { PriceTag } from '../components/promo/PriceTag';
 import { CinematicVideo } from '../components/ui/CinematicVideo';
-import { ReviewCard } from '../components/ui/ReviewCard';
 
 /** Lazy-load the Leaflet map so its ~150 kB chunk (+ OpenStreetMap tiles) is
  *  only fetched once the map approaches the viewport — the homepage stays
@@ -582,27 +581,61 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Customer Reviews */}
+      {/* Why travelers trust us — verified entity trust element (no fabricated testimonials) */}
       <section className="py-16 md:py-24 bg-card border-y border-border">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 md:mb-16">
-            <span className="text-primary font-bold tracking-wider uppercase text-sm mb-3 block">{t('section_reviews_sub')}</span>
-            <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl text-foreground mb-4">{t('section_reviews')}</h2>
+            <span className="text-primary font-bold tracking-wider uppercase text-sm mb-3 block">{t('home_trust_eyebrow')}</span>
+            <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl text-foreground mb-4">{t('home_trust_title')}</h2>
+            <p className="text-muted-foreground text-lg max-w-3xl mx-auto leading-relaxed">{t('home_trust_sub')}</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
-            {reviewData.map((review, i) => (
-              <ReviewCard
-                key={review.id}
-                index={i}
-                name={t(review.nameKey)}
-                country={review.country}
-                quote={t(review.quoteKey)}
-                tour={t(review.tourKey)}
-                rating={review.rating}
-              />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {([
+              { icon: Users, title: t('home_trust_t1_title'), text: t('home_trust_t1_text') },
+              { icon: Globe, title: t('home_trust_t2_title'), text: t('home_trust_t2_text') },
+              { icon: Star, title: t('home_trust_t3_title'), text: t('home_trust_t3_text') },
+              { icon: Phone, title: t('home_trust_t4_title'), text: t('home_trust_t4_text') },
+            ]).map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="bg-background/60 backdrop-blur-sm border border-border p-6 md:p-8 rounded-3xl shadow-sm"
+              >
+                <div className="bg-primary/10 w-14 h-14 rounded-full flex items-center justify-center mb-4">
+                  <item.icon className="w-7 h-7 text-primary" aria-hidden="true" />
+                </div>
+                <h3 className="font-serif text-xl text-foreground mb-2 leading-snug">{item.title}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">{item.text}</p>
+              </motion.div>
             ))}
           </div>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-12">
+            <a
+              href="https://g.page/r/Cc1Nj5NOnet-EBM/review"
+              target="_blank"
+              rel="noreferrer"
+              className="bg-primary text-primary-foreground px-8 py-3.5 rounded-full font-bold tracking-wide hover:bg-primary/90 transition-all"
+            >
+              {t('home_trust_cta_reviews')}
+            </a>
+            <a
+              href={contactInfo.whatsapp}
+              target="_blank"
+              rel="noreferrer"
+              className="bg-[#25D366] text-white px-8 py-3.5 rounded-full font-bold tracking-wide hover:bg-[#1fb959] transition-all"
+            >
+              {t('home_trust_cta_whatsapp')}
+            </a>
+          </div>
+
+          <p className="text-xs text-muted-foreground text-center mt-8 max-w-2xl mx-auto leading-relaxed">
+            {t('home_trust_note')}
+          </p>
         </div>
       </section>
 

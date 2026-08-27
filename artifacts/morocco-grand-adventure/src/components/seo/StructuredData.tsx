@@ -304,34 +304,6 @@ export function buildFaqSchema(faqs: { question: string; answer: string }[]): Js
   };
 }
 
-/** Build a Review schema array from review objects. */
-export function buildReviewSchema(
-  reviews: { name: string; text: string; rating: number }[],
-  itemName: string,
-  itemUrl: string,
-): JsonLd {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'ItemList',
-    itemListElement: reviews.map((r, i) => ({
-      '@type': 'Review',
-      position: i + 1,
-      author: { '@type': 'Person', name: r.name },
-      reviewBody: r.text,
-      reviewRating: {
-        '@type': 'Rating',
-        ratingValue: r.rating,
-        bestRating: 5,
-      },
-      itemReviewed: {
-        '@type': 'TouristTrip',
-        name: itemName,
-        url: itemUrl,
-      },
-    })),
-  };
-}
-
 /** Build a BlogPosting schema array from blog post data. */
 export function buildBlogPostSchema(
   post: {
