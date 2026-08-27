@@ -483,7 +483,7 @@ export const tours: Tour[] = [
     highlights: ["Atlas Mountains Crossing", "Aït Ben Haddou (UNESCO)", "Dades Valley", "Merzouga Luxury Camp", "Camel Trekking at Sunset"],
     price: "450",
     pricingTiers: { 1: 690, 2: 450, 3: 370, 4: 310, 5: 280 },
-    image: "/images/pdf/img_1-optimized.jpg",
+    image: "/images/journeys/chefchaouen-blue-city-alley-morocco.jpg",
     aliases: ['3-days-marrakech-to-merzouga-desert-tour', 'merzouga-desert-tour'],
     description: "The classic Morocco adventure compressed into three unforgettable days. Cross the Atlas Mountains, explore the most photographed kasbah on Earth, sleep under Saharan stars in a luxury tented camp, and ride camels at sunset over the golden dunes of Erg Chebbi.",
     routeIds: ["marrakech", "ait-ben-haddou", "ouarzazate", "skoura", "dades-valley", "todra-gorge", "merzouga"],
@@ -509,7 +509,7 @@ export const tours: Tour[] = [
       },
     ],
     gallery: [
-      { src: "/images/pdf/img_1-optimized.jpg", caption: "Luxury desert tours and authentic cultural experiences" },
+      { src: "/images/journeys/chefchaouen-blue-city-alley-morocco.jpg", caption: "Walking the blue-painted alleys of Chefchaouen with our local guide" },
     ],
   },
   {
@@ -520,7 +520,7 @@ export const tours: Tour[] = [
     highlights: ["Atlas Mountains Crossing", "Aït Ben Haddou (UNESCO)", "Erg Chebbi Sahara & Luxury Camp", "Fes el-Bali Medina", "Chefchaouen Blue City", "Meknès & Volubilis"],
     price: "780",
     pricingTiers: { 1: 1180, 2: 780, 3: 640, 4: 540, 5: 490 },
-    image: "/images/pdf/img_2-optimized.jpg",
+    image: "/images/journeys/moroccan-carved-wooden-door-medina-morocco.jpg",
     aliases: ['3-days-fes-to-marrakech-desert-tour'],
     description: "From the ochre imperial capital of Marrakech to the blue-washed lanes of Chefchaouen, this five-day journey weaves together Morocco's greatest imperial cities and a night under the Sahara stars. Cross the High Atlas to the UNESCO ksar of Aït Ben Haddou, sleep in a luxury desert camp among the dunes of Erg Chebbi, explore the medieval labyrinth of Fes, and wander the Roman ruins of Volubilis.",
     routeIds: ["marrakech", "ait-ben-haddou", "ouarzazate", "skoura", "dades-valley", "todra-gorge", "merzouga", "ifrane", "fes", "meknes", "chefchaouen"],
@@ -558,7 +558,7 @@ export const tours: Tour[] = [
       },
     ],
     gallery: [
-      { src: "/images/pdf/img_2-optimized.jpg", caption: "Golden Sahara dunes and a luxury desert camp on the route to Merzouga" },
+      { src: "/images/journeys/moroccan-carved-wooden-door-medina-morocco.jpg", caption: "Carved cedar doorway in a Moroccan medina — the craftsmanship of the imperial cities" },
     ],
   },
   {

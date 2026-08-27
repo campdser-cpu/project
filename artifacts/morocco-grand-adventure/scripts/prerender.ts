@@ -744,13 +744,25 @@ function injectHead(html: string, meta: RouteEntry['meta'], rest: string, lang: 
     );
   }
 
-  // Remove the static hreflang baseline block (the comment-marked set) and
-  // replace it with the full route-specific set. The static set lives between
-  // "<!-- Hreflang alternates" and the favicon comment.
+  // Per-route LCP preload: preload the page's own hero (WebP) when it has an
+  // og:image; otherwise fall back to the default desert hero. This avoids
+  // preloading irrelevant images and keeps Core Web Vitals LCP fast.
+  const preloadSrc = meta.ogImage
+    ? meta.ogImage.replace(/\.(jpe?g|png)$/i, '.webp')
+    : '/images/hero/desert-pano.webp';
   html = html.replace(
-    /<!-- Hreflang alternates[\s\S]*?<!-- Favicon -->/,
-    `<!-- Hreflang alternates (prerendered route-specific set) -->\n${hreflangLinks}\n\n    <!-- Favicon -->`,
+    /<link rel="preload" as="image" href="[^"]*" fetchpriority="high" \/>/,
+    `<link rel="preload" as="image" href="${preloadSrc}" fetchpriority="high" />`,
   );
+
+  // Replace the static hreflang baseline with the full route-specific set.
+  // Only the static alternate <link> tags are removed (the Open Graph and
+  // schema.org blocks above must be preserved for social/SEO discoverability).
+  html = html.replace(
+    /\s*<!-- Hreflang alternates[\s\S]*?-->\s*/,
+    `<!-- Hreflang alternates (prerendered route-specific set) -->\n${hreflangLinks}\n`,
+  );
+  html = html.replace(/\s*<link rel="alternate" hreflang="[^"]*"[^>]*\/>\s*/g, '\n');
 
   return html;
 }

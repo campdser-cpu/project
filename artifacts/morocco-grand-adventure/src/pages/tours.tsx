@@ -67,8 +67,12 @@ export default function Tours() {
       <section className="relative h-[50vh] w-full flex items-center justify-center pt-20">
         <div className="absolute inset-0 z-0">
           <img 
-            src="/images/hero/desert-pano.jpg" 
-            alt="Our Tours" 
+            src="/images/hero/desert-pano.jpg"
+            srcSet="/images/hero/desert-pano.webp 900w"
+            sizes="100vw"
+            width={601}
+            height={900}
+            alt="Sahara Desert dunes and a lone camel at sunset — Morocco luxury desert tours"
             className="w-full h-full object-cover"
             onError={(e) => { (e.target as HTMLImageElement).src = '/images/dest/merzouga.jpg'; }}
           />

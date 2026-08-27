@@ -14,8 +14,12 @@ export default function Destinations() {
       <section className="relative h-[60vh] w-full flex items-center justify-center pt-20">
         <div className="absolute inset-0 z-0">
           <img 
-            src="/images/hero/atlas-pano.jpg" 
-            alt="Morocco Destinations" 
+            src="/images/hero/atlas-pano.jpg"
+            srcSet="/images/hero/atlas-pano.webp 600w"
+            sizes="100vw"
+            width={600}
+            height={400}
+            alt="High Atlas Mountains scenery across Morocco — a journey through landscapes, kasbahs and the Sahara"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/50" />

@@ -59,10 +59,62 @@ function priorityFor(urlPath, lang) {
   return '0.6';
 }
 
+// Primary (indexable) image for a route, used to emit Google image sitemap
+// entries so destination/tour/content images are discoverable in Google Images.
+const ROUTE_IMAGES = {
+  home: { src: '/images/hero/desert-pano.jpg', title: 'Sahara Desert dunes at sunset near Merzouga, Morocco' },
+  '/destinations': { src: '/images/hero/atlas-pano.jpg', title: 'High Atlas Mountains, Morocco' },
+  '/tours': { src: '/images/hero/desert-pano.jpg', title: 'Luxury Morocco desert tours' },
+  '/gallery': { src: '/images/hero/desert-pano.jpg', title: 'Morocco photo gallery' },
+  '/about': { src: '/images/hero/medina-pano.jpg', title: 'Morocco Grand Adventure — about our guides' },
+  '/blog': { src: '/images/personal/luxury-camp-dusk.jpg', title: 'Morocco Grand Adventure travel blog' },
+  '/luxury-camp': { src: '/images/personal/luxury-camp-dusk.jpg', title: 'Luxury Sahara desert camp near Merzouga' },
+  '/desert-tours': { src: '/images/dest/erg-chebbi.jpg', title: 'Sahara desert tours — Erg Chebbi, Merzouga' },
+  '/camel-trekking': { src: '/images/dest/merzouga.jpg', title: 'Camel trekking in the Sahara Desert, Morocco' },
+  '/merzouga-guide': { src: '/images/dest/merzouga.jpg', title: 'Merzouga travel guide — Erg Chebbi dunes' },
+};
+
+// Tour id → primary cover image (matches data/content.ts).
+const TOUR_IMAGES = {
+  '3-day-sahara-marrakech': '/images/tours/3-day-sahara-marrakech.jpg',
+  '5-day-imperial-cities': '/images/tours/5-day-imperial-cities.jpg',
+  '7-day-imperial-cities-sahara-escape': '/images/tours/7-day-grand-morocco.jpg',
+  'honeymoon-morocco': '/images/tours/honeymoon-morocco.jpg',
+  '8-day-marrakech-essaouira-agadir-sahara': '/images/dest/merzouga.jpg',
+  'family-morocco-adventure': '/images/tours/family-morocco-adventure.jpg',
+};
+
+// Blog slug → cover image (matches scripts/prerender.ts blogPosts).
+// Blog article pages fall back to the /blog listing image below.
+
+/** Look up a page's indexable image for the Google image sitemap extension. */
+function imagesForRest(rest) {
+  const entry =
+    ROUTE_IMAGES[rest] ||
+    (rest === '/' && ROUTE_IMAGES.home) ||
+    (rest.startsWith('/destinations/') && {
+      src: `/images/dest/${rest.split('/')[2]}.jpg`,
+      title: `${rest.split('/')[2].replace(/-/g, ' ')} in Morocco`,
+    }) ||
+    (rest.startsWith('/tours/') && {
+      src: TOUR_IMAGES[rest.split('/')[2]] || '/images/hero/desert-pano.jpg',
+      title: 'Morocco Grand Adventure luxury desert tour',
+    });
+  if (!entry) return null;
+  const abs = `${SITE_URL}${entry.src}`;
+  return [
+    '    <image:image>',
+    `      <image:loc>${abs}</image:loc>`,
+    `      <image:title>${entry.title}</image:title>`,
+    '    </image:image>',
+  ].join('\n');
+}
+
 function buildUrlBlock(urlPath) {
   const lang = urlPath.split('/')[1];
   const rest = restOf(urlPath, lang);
   const loc = `${SITE_URL}${urlPath}`;
+  const imageXml = imagesForRest(rest);
   return [
     '  <url>',
     `    <loc>${loc}</loc>`,
@@ -70,6 +122,7 @@ function buildUrlBlock(urlPath) {
     '    <changefreq>weekly</changefreq>',
     `    <priority>${priorityFor(urlPath, lang)}</priority>`,
     buildHreflangs(urlPath, lang),
+    imageXml ? `${imageXml}\n` : '',
     '  </url>',
   ].join('\n');
 }

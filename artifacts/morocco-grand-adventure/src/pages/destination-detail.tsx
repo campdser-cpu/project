@@ -10,6 +10,8 @@ import { Link } from 'wouter';
 import { StructuredData, buildDestinationSchema } from '../components/seo/StructuredData';
 import { CinematicVideo } from '../components/ui/CinematicVideo';
 import { MoroccoMap } from '../components/MoroccoMap';
+import { srcsetFor, webpSrc, intrinsicFor } from '@/lib/images';
+import { IMAGE_MANIFEST } from '@/data/image-manifest';
 
 export default function DestinationDetail() {
   const { t, lang } = useLanguage();
@@ -35,8 +37,14 @@ export default function DestinationDetail() {
       <section className="relative h-[70vh] w-full flex items-center justify-center pt-20">
         <div className="absolute inset-0 z-0">
           <img 
-            src={destination.image} 
-            alt={destination.name} 
+            src={webpSrc(destination.image)}
+            srcSet={srcsetFor(destination.image, IMAGE_MANIFEST[destination.image]?.variants ?? [])}
+            sizes="100vw"
+            width={intrinsicFor(destination.image).width}
+            height={intrinsicFor(destination.image).height}
+            alt={`${destination.name} — ${destination.shortDesc ?? `things to see and do in ${destination.name}, Morocco`}`}
+            loading="eager"
+            decoding="async"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/50 mix-blend-multiply" />

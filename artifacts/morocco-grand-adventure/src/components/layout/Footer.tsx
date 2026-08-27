@@ -17,7 +17,7 @@ export function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 mb-12 sm:mb-16">
           
           <div className="space-y-6">
-            <img src="/logo-official.png" alt="Morocco Grand Adventure" width={1536} height={1536} loading="lazy" decoding="async" className="h-12 sm:h-14 md:h-16 w-auto object-contain" />
+            <img src="/logo-official.png" srcSet="/logo-official-384.webp 384w, /logo-official-768.webp 768w" sizes="120px" alt="Morocco Grand Adventure footer logo — luxury desert tours in Morocco" width={1536} height={1536} loading="lazy" decoding="async" className="h-12 sm:h-14 md:h-16 w-auto object-contain" />
             <p className="text-white/70 text-sm leading-relaxed">
               {t('footer_tagline')}
             </p>

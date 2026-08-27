@@ -1,8 +1,9 @@
-import { useState, useMemo, useEffect } from 'react';
+﻿import { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Layout } from '../components/layout/Layout';
 import { contactInfo } from '@/data/content';
 import { X, ChevronLeft, ChevronRight, Play, Instagram } from 'lucide-react';
+import { intrinsicFor } from '@/lib/images';
 
 type GalleryItem = {
   src: string;
@@ -19,23 +20,23 @@ type VideoItem = {
 };
 
 // Every image is tagged with one or more categories. New photos added here are
-// grouped automatically — a category filter only appears when at least one image
+// grouped automatically â€” a category filter only appears when at least one image
 // (or video) belongs to it, so the gallery scales without any layout changes.
 const IMAGES: GalleryItem[] = [
   // --- Desert & Sahara ---
   { src: '/images/personal/sahara-dunes-golden.jpg', categories: ['Desert', 'Landscapes', 'Authenticity'], caption: 'Golden dunes at sunrise over Erg Chebbi' },
-  { src: '/images/dest/merzouga.jpg', categories: ['Desert'], caption: 'Merzouga — Erg Chebbi Dunes' },
+  { src: '/images/dest/merzouga.jpg', categories: ['Desert'], caption: 'Merzouga â€” Erg Chebbi Dunes' },
   { src: '/images/dest/erg-chebbi.jpg', categories: ['Desert'], caption: 'The golden sands of Erg Chebbi' },
-  { src: '/images/dest/zagora.jpg', categories: ['Desert'], caption: 'Zagora — gateway to the desert' },
+  { src: '/images/dest/zagora.jpg', categories: ['Desert'], caption: 'Zagora â€” gateway to the desert' },
   { src: '/images/dest/draa-valley.jpg', categories: ['Desert', 'Landscapes'], caption: 'The palm groves of the Draa Valley' },
   { src: '/images/hero/desert-pano.jpg', categories: ['Desert', 'Landscapes'], caption: 'The Sahara at sunset' },
   { src: '/images/stock/stargazing-merzouga.jpg', categories: ['Desert', 'Luxury Camp'], caption: 'Stargazing beneath the Milky Way' },
   // --- From the photo journal (authentic images from our Morocco journeys) ---
-  { src: '/images/pdf/img_0-optimized.jpg', categories: ['Authenticity'], caption: 'Captured on the road with Morocco Grand Adventure' },
-  { src: '/images/pdf/img_1-optimized.jpg', categories: ['Authenticity'], caption: 'A moment from one of our private journeys in Morocco' },
-  { src: '/images/pdf/img_2-optimized.jpg', categories: ['Authenticity'], caption: 'From the Morocco Grand Adventure photo journal' },
-  { src: '/images/pdf/img_3-optimized.jpg', categories: ['Authenticity'], caption: 'Photographed while travelling with our local guides' },
-  { src: '/images/pdf/img_4-optimized.jpg', categories: ['Authenticity'], caption: 'Morocco, seen through the eyes of our travellers' },
+  { src: '/images/journeys/sahara-night-sky-stars-palm-trees-morocco.jpg', categories: ['Desert', 'Authenticity'], caption: 'Starlit night sky over date palms in the Moroccan Sahara near Merzouga' },
+  { src: '/images/journeys/chefchaouen-blue-city-alley-morocco.jpg', categories: ['Culture', 'Authenticity'], caption: 'Woman in a red dress walking through a blue-painted alley of Chefchaouen, Morocco' },
+  { src: '/images/journeys/moroccan-carved-wooden-door-medina-morocco.jpg', categories: ['Culture', 'Authenticity'], caption: 'Intricately carved cedar door with zellige tilework in a Moroccan medina at golden hour' },
+  { src: '/images/journeys/ouzoud-waterfalls-atlas-mountains-morocco.jpg', categories: ['Landscapes', 'Authenticity'], caption: 'Travellers resting on the rocks beside the Ouzoud waterfalls in the Atlas Mountains, Morocco' },
+  { src: '/images/journeys/fes-chouara-leather-tannery-morocco.jpg', categories: ['Culture', 'Authenticity'], caption: 'Craftsman dyeing leather in the Chouara tannery of Fes, Morocco' },
   // --- Luxury Camp & Stays ---
   { src: '/images/personal/luxury-camp-dusk.jpg', categories: ['Luxury Camp', 'Desert', 'Authenticity'], caption: 'Our luxury desert camp at dusk' },
   { src: '/images/riad/courtyard.jpg', categories: ['Luxury Camp', 'Culture'], caption: 'A traditional riad courtyard' },
@@ -50,21 +51,21 @@ const IMAGES: GalleryItem[] = [
   // --- My Journey as a Guide ---
   { src: '/images/personal/guide-portrait.jpg', categories: ['My Journey as a Guide', 'Happy Travelers', 'Authenticity'], caption: 'Your local Berber guide' },
   // --- Landscapes (cities, mountains, coast) ---
-  { src: '/images/dest/marrakech.jpg', categories: ['Landscapes'], caption: 'Marrakech — the Red City' },
-  { src: '/images/dest/fes.jpg', categories: ['Landscapes', 'Culture'], caption: 'Fes — the ancient tanneries' },
-  { src: '/images/dest/chefchaouen.jpg', categories: ['Landscapes'], caption: 'Chefchaouen — the Blue Pearl' },
-  { src: '/images/dest/meknes.jpg', categories: ['Landscapes'], caption: 'Meknes — Bab Mansour Gate' },
-  { src: '/images/dest/rabat.jpg', categories: ['Landscapes'], caption: 'Rabat — Kasbah of the Udayas' },
+  { src: '/images/dest/marrakech.jpg', categories: ['Landscapes'], caption: 'Marrakech â€” the Red City' },
+  { src: '/images/dest/fes.jpg', categories: ['Landscapes', 'Culture'], caption: 'Fes â€” the ancient tanneries' },
+  { src: '/images/dest/chefchaouen.jpg', categories: ['Landscapes'], caption: 'Chefchaouen â€” the Blue Pearl' },
+  { src: '/images/dest/meknes.jpg', categories: ['Landscapes'], caption: 'Meknes â€” Bab Mansour Gate' },
+  { src: '/images/dest/rabat.jpg', categories: ['Landscapes'], caption: 'Rabat â€” Kasbah of the Udayas' },
   { src: '/images/hero/medina-pano.jpg', categories: ['Landscapes', 'Culture'], caption: 'Lanterns of the medina' },
   { src: '/images/hero/atlas-pano.jpg', categories: ['Landscapes'], caption: 'The High Atlas mountains' },
-  { src: '/images/dest/ait-ben-haddou.jpg', categories: ['Landscapes', 'Culture'], caption: 'Aït Benhaddou — the ancient ksar' },
+  { src: '/images/dest/ait-ben-haddou.jpg', categories: ['Landscapes', 'Culture'], caption: 'AÃ¯t Benhaddou â€” the ancient ksar' },
   { src: '/images/dest/dades-valley.jpg', categories: ['Landscapes'], caption: 'The winding Dades Valley road' },
   { src: '/images/dest/todra-gorge.jpg', categories: ['Landscapes'], caption: 'The towering Todra Gorge' },
-  { src: '/images/dest/imlil.jpg', categories: ['Landscapes'], caption: 'Imlil — heart of the High Atlas' },
+  { src: '/images/dest/imlil.jpg', categories: ['Landscapes'], caption: 'Imlil â€” heart of the High Atlas' },
   { src: '/images/dest/ourika-valley.jpg', categories: ['Landscapes'], caption: 'The green Ourika Valley' },
-  { src: '/images/dest/essaouira.jpg', categories: ['Landscapes'], caption: 'Essaouira — the windy harbour' },
+  { src: '/images/dest/essaouira.jpg', categories: ['Landscapes'], caption: 'Essaouira â€” the windy harbour' },
   { src: '/images/dest/legzira.jpg', categories: ['Landscapes'], caption: 'The red arches of Legzira' },
-  { src: '/images/dest/taghazout.jpg', categories: ['Landscapes'], caption: 'Taghazout — the surf village' },
+  { src: '/images/dest/taghazout.jpg', categories: ['Landscapes'], caption: 'Taghazout â€” the surf village' },
   { src: '/images/dest/agadir.jpg', categories: ['Landscapes'], caption: 'The sweeping bay of Agadir' },
   { src: '/images/dest/mirleft.jpg', categories: ['Landscapes'], caption: 'The quiet cliffs of Mirleft' },
   // --- Culture & Food ---
@@ -79,10 +80,10 @@ const VIDEOS: VideoItem[] = [
   { src: '/videos/dunes-camels.mp4', poster: '/images/personal/dunes-camels-poster.jpg', title: 'Lost in the Dunes', category: 'Camel Trekking', portrait: true },
   { src: '/videos/sahara-experience.mp4', poster: '/images/personal/luxury-camp-dusk.jpg', title: 'Experience the Sahara', category: 'Desert' },
   { src: '/videos/merzouga-campfire.mp4', poster: '/images/dest/merzouga.jpg', title: 'Campfire Nights in Merzouga', category: 'Culture' },
-  { src: '/videos/hero.mp4', poster: '/images/hero/desert-pano.jpg', title: 'Morocco — A Cinematic Journey', category: 'Desert' },
-  { src: '/videos/ait-benhaddou-kasbah-unesco-morocco.mp4', poster: '/images/dest/ait-ben-haddou.jpg', title: 'Aït Ben Haddou at Golden Hour', category: 'Landscapes' },
+  { src: '/videos/hero.mp4', poster: '/images/hero/desert-pano.jpg', title: 'Morocco â€” A Cinematic Journey', category: 'Desert' },
+  { src: '/videos/ait-benhaddou-kasbah-unesco-morocco.mp4', poster: '/images/dest/ait-ben-haddou.jpg', title: 'AÃ¯t Ben Haddou at Golden Hour', category: 'Landscapes' },
   { src: '/videos/chefchaouen-blue-city-morocco.mp4', poster: '/images/dest/chefchaouen.jpg', title: 'The Blue Pearl', category: 'Landscapes' },
-  { src: '/videos/morocco-imperial-cities-desert-oasis-tour.mp4', poster: '/images/hero/desert-pano.jpg', title: 'Morocco — A Journey of Contrasts', category: 'Landscapes' },
+  { src: '/videos/morocco-imperial-cities-desert-oasis-tour.mp4', poster: '/images/hero/desert-pano.jpg', title: 'Morocco â€” A Journey of Contrasts', category: 'Landscapes' },
   { src: '/videos/sahara-desert-camel-trek-atlas-mountains-morocco.mp4', poster: '/images/personal/dunes-camels-poster.jpg', title: 'Camel Trek Across the Dunes', category: 'Camel Trekking' },
   { src: '/videos/sahara-desert-dunes-quad-biking-morocco.mp4', poster: '/images/dest/erg-chebbi.jpg', title: 'Quad Biking the Dunes', category: 'Quad Adventure' },
 ];
@@ -152,7 +153,7 @@ export default function Gallery() {
       {/* Hero */}
       <section className="relative h-[55vh] w-full flex items-center justify-center pt-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src="/images/hero/desert-pano.jpg" alt="Morocco Gallery" className="w-full h-full object-cover" />
+          <img src="/images/hero/desert-pano.jpg" srcSet="/images/hero/desert-pano.webp 900w" sizes="100vw" width={601} height={900} alt="Sahara Desert dunes at sunset near Merzouga — a cinematic Morocco gallery" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/50" />
         </div>
         <div className="relative z-10 text-center px-4 max-w-3xl">
@@ -160,13 +161,13 @@ export default function Gallery() {
             <span className="text-primary font-bold tracking-[0.25em] uppercase text-xs md:text-sm mb-5 block">Moments in Morocco</span>
             <h1 className="font-serif text-5xl md:text-7xl text-white mb-6 drop-shadow-xl">The Gallery</h1>
             <p className="text-white/85 text-lg md:text-xl font-light leading-relaxed">
-              Real photographs and films from our journeys — the desert, the camps, the people, and the moments that make Morocco unforgettable.
+              Real photographs and films from our journeys â€” the desert, the camps, the people, and the moments that make Morocco unforgettable.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Filters — sticky below the fixed navbar */}
+      {/* Filters â€” sticky below the fixed navbar */}
       <section className="sticky top-[72px] z-30 bg-background/90 backdrop-blur-md border-b border-border">
         <div className="container mx-auto px-4">
           <div className="flex gap-2 md:gap-3 overflow-x-auto py-4 no-scrollbar">
@@ -210,6 +211,8 @@ export default function Gallery() {
                       alt={item.caption}
                       loading="lazy"
                       decoding="async"
+                      width={intrinsicFor(item.src).width}
+                      height={intrinsicFor(item.src).height}
                       className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -267,7 +270,7 @@ export default function Gallery() {
           <Instagram className="w-10 h-10 text-primary mx-auto mb-5" />
           <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-4">Follow the Adventure</h2>
           <p className="text-muted-foreground mb-8">
-            See the latest photos and stories from the road on Instagram — new memories added after every journey.
+            See the latest photos and stories from the road on Instagram â€” new memories added after every journey.
           </p>
           <a
             href={contactInfo.instagram}

@@ -138,6 +138,10 @@ export default function Home() {
         >
           <img
             src="/images/hero/desert-pano.jpg"
+            srcSet="/images/hero/desert-pano-480w.webp 480w, /images/hero/desert-pano.webp 900w"
+            sizes="100vw"
+            width={601}
+            height={900}
             alt=""
             aria-hidden="true"
             fetchPriority="high"

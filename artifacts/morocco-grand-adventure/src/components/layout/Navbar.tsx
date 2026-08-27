@@ -69,18 +69,27 @@ export function Navbar() {
     effectiveScrolled ? 'text-foreground hover:text-primary' : 'text-white hover:text-accent'
   }`;
 
+  const brandLogoClass = `h-auto object-contain transition-all duration-300 ${
+    effectiveScrolled
+      ? 'w-[104px] sm:w-[116px] xl:w-[124px] drop-shadow-xs'
+      : 'w-[132px] sm:w-[144px] xl:w-[168px] drop-shadow-md'
+  }`;
+
   return (
     <nav className={navClasses} aria-label="Main navigation">
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-10">
         <div className="flex items-center justify-between">
-          <Link href="/" aria-label="Morocco Grand Adventure — Home">
-            <img 
+          <Link href="/" aria-label="Morocco Grand Adventure — home" className="shrink-0">
+            <img
               src="/logo-official.png"
-              alt="Morocco Grand Adventure" 
+              srcSet="/logo-official-384.webp 384w, /logo-official-768.webp 768w"
+              sizes="(min-width: 1024px) 168px, (min-width: 640px) 144px, 132px"
+              alt="Morocco Grand Adventure — luxury desert tours, camel trekking and private Morocco travel experiences"
               width={1536}
               height={1536}
+              fetchPriority="high"
               decoding="async"
-              className="h-10 sm:h-12 md:h-14 w-auto object-contain transition-all duration-300" 
+              className={brandLogoClass}
             />
           </Link>
 

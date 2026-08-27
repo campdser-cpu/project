@@ -57,6 +57,10 @@ export default function PremiumAboutSection() {
       <div className="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden mb-24">
         <img
           src="/images/hero/medina-pano.jpg"
+          srcSet="/images/hero/medina-pano.webp 794w"
+          sizes="100vw"
+          width={794}
+          height={712}
           alt=""
           aria-hidden="true"
           className="absolute inset-0 h-full w-full object-cover"
