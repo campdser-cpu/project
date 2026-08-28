@@ -28,6 +28,24 @@ export default function DestinationDetail() {
     ? nearbyIds.map((id) => getLocalizedDestination(id, lang)).filter((d): d is NonNullable<typeof d> => Boolean(d))
     : getLocalizedDestinations(lang).filter(d => d.id !== destination.id).slice(0, 3);
 
+  // Genuinely relevant tours for this destination — prefer tours whose real route
+  // passes through this destination (their routeIds), then fall back to tours that
+  // feature this destination's category, then the default list. Always exactly 3.
+  // This replaces the old "first 3 tours on every page" behaviour which made the
+  // "Relevant Tours" section identical (and misleading) on every destination page.
+  const allLocalTours = getLocalizedTours(lang);
+  const toursVisitingHere = allLocalTours.filter((t) => t.routeIds?.includes(destination.id));
+  const toursByCategory = allLocalTours.filter(
+    (t) => !t.routeIds?.includes(destination.id) && t.category && destination.category && t.category === destination.category,
+  );
+  const relatedTours = (() => {
+    const primary = [...toursVisitingHere, ...toursByCategory];
+    if (primary.length >= 3) return primary.slice(0, 3);
+    const primaryIds = new Set(primary.map((t) => t.id));
+    const rest = allLocalTours.filter((t) => !primaryIds.has(t.id));
+    return [...primary, ...rest].slice(0, 3);
+  })();
+
   return (
     <Layout>
       {/* Schema.org structured data: TouristAttraction, Breadcrumb */}
@@ -340,7 +358,7 @@ export default function DestinationDetail() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {getLocalizedTours(lang).slice(0, 3).map(tour => (
+            {relatedTours.map(tour => (
               <Link key={tour.id} href={`/tours/${tour.id}`} className="group block bg-background rounded-2xl overflow-hidden border border-border shadow-sm hover:shadow-xl hover:border-primary/50 transition-all duration-500">
                 <div className="h-56 relative overflow-hidden">
                   <img src={tour.image} alt={tour.name} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />

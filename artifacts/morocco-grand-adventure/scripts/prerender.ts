@@ -217,7 +217,49 @@ function buildHomeContent(lang: Lang): string {
 
 /** Homepage emits no Review / AggregateRating schema — verified customer feedback lives on the Google Business Profile (see Master Package §29). */
 function buildHomeSchemas(lang: Lang): Record<string, unknown>[] {
-  return [];
+  // VideoObject structured data for the site's flagship tourism videos.
+  // Injected only into the prerendered (crawlable) homepage so Google can surface
+  // them in video rich results. Hosted-duration is intentionally omitted rather
+  // than guessed; contentUrl/thumbnailUrl are real, verified site assets.
+  const videoBase = SITE_URL;
+  const makeVideo = (v: {
+    name: string;
+    description: string;
+    file: string;
+    thumb: string;
+  }): Record<string, unknown> => ({
+    '@context': 'https://schema.org',
+    '@type': 'VideoObject',
+    name: v.name,
+    description: v.description,
+    thumbnailUrl: `${videoBase}${v.thumb}`,
+    uploadDate: '2026-08-15',
+    inLanguage: lang,
+    contentUrl: `${videoBase}${v.file}`,
+    publisher: {
+      '@type': 'Organization',
+      '@id': `${SITE_URL}#organization`,
+      name: BRAND,
+      url: SITE_URL,
+    },
+  });
+
+  return [
+    makeVideo({
+      name: 'Morocco — A Cinematic Sahara Journey',
+      description:
+        'Golden Erg Chebbi dunes, camel trekking and Moroccan landscapes — a cinematic preview of a private Morocco desert adventure with Morocco Grand Adventure.',
+      file: '/videos/hero.mp4',
+      thumb: '/images/hero/desert-pano.jpg',
+    }),
+    makeVideo({
+      name: 'Experience the Sahara',
+      description:
+        "A luxury Sahara experience near Merzouga — luxury desert camp, camel trekking across Erg Chebbi and stargazing beneath the Milky Way.",
+      file: '/videos/sahara-experience.mp4',
+      thumb: '/images/personal/luxury-camp-dusk.jpg',
+    }),
+  ];
 }
 
 function buildToursContent(lang: Lang): string {
