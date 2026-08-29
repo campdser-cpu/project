@@ -830,4 +830,13 @@ export default {
     diff_cta_heading: "Come See It With Us",
     diff_cta_sub: "Explore our tours and experience the Sahara with the people who call it home.",
     diff_cta_button: "Explore Our Tours",
+    gallery_title: "The Gallery",
+    gallery_eyebrow: "Moments in Morocco",
+    gallery_in_motion: "In Motion",
+    gallery_films_heading: "Films from the Field",
+    gallery_follow: "Follow the Adventure",
+    dest_map_hint: "Tap any marker to explore this destination. Drag to pan, scroll to zoom.",
+    dest_weather_clear: "Sunny & Clear",
+    dest_photo_sunrise: "Sunrise over Erg Chebbi",
+    dest_photo_stargazing: "Stargazing beneath the Milky Way",
   } as Record<string, string>;

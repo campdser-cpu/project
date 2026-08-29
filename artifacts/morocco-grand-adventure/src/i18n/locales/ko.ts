@@ -284,4 +284,13 @@ export default {
     ai_resp_family: "Morocco is wonderful for families! We arrange private transport, kid-friendly guides, camel rides, and interactive cooking classes. How old are your children?",
     ai_resp_default: "That sounds wonderful! Our local experts can customize a bespoke itinerary exactly to your preferences. Would you like to connect with a human specialist now?",
     per_night: "/ 박",
+    gallery_title: "갤러리",
+    gallery_eyebrow: "모로코의 순간들",
+    gallery_in_motion: "움직이는 영상",
+    gallery_films_heading: "현장 필름",
+    gallery_follow: "모험을 따라가기",
+    dest_map_hint: "마커를 탭하여 이 목적지를 탐색하세요. 드래그로 이동하고 핀치로 확대할 수 있습니다.",
+    dest_weather_clear: "맑음",
+    dest_photo_sunrise: "에르그 셰비의 일출",
+    dest_photo_stargazing: "은하수 아래 별보기",
   } as Record<string, string>;

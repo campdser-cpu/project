@@ -2,6 +2,7 @@ import { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Layout } from '../components/layout/Layout';
 import { contactInfo } from '@/data/content';
+import { useLanguage } from '@/contexts/LanguageContext';
 import { X, ChevronLeft, ChevronRight, Play, Instagram } from 'lucide-react';
 
 type GalleryItem = {
@@ -108,6 +109,7 @@ VIDEOS.forEach((v) => usedCategories.add(v.category));
 const CATEGORIES = ['All', ...CATEGORY_ORDER.filter((c) => usedCategories.has(c))];
 
 export default function Gallery() {
+  const { t } = useLanguage();
   const [activeCategory, setActiveCategory] = useState<string>('All');
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
@@ -157,8 +159,8 @@ export default function Gallery() {
         </div>
         <div className="relative z-10 text-center px-4 max-w-3xl">
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-            <span className="text-primary font-bold tracking-[0.25em] uppercase text-xs md:text-sm mb-5 block">Moments in Morocco</span>
-            <h1 className="font-serif text-5xl md:text-7xl text-white mb-6 drop-shadow-xl">The Gallery</h1>
+            <span className="text-primary font-bold tracking-[0.25em] uppercase text-xs md:text-sm mb-5 block">{t('gallery_eyebrow')}</span>
+            <h1 className="font-serif text-5xl md:text-7xl text-white mb-6 drop-shadow-xl">{t('gallery_title')}</h1>
             <p className="text-white/85 text-lg md:text-xl font-light leading-relaxed">
               Real photographs and films from our journeys — the desert, the camps, the people, and the moments that make Morocco unforgettable.
             </p>
@@ -230,8 +232,8 @@ export default function Gallery() {
         <section className="py-20 bg-card border-y border-border">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <span className="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">In Motion</span>
-              <h2 className="font-serif text-4xl md:text-5xl text-foreground">Films from the Field</h2>
+              <span className="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">{t('gallery_in_motion')}</span>
+              <h2 className="font-serif text-4xl md:text-5xl text-foreground">{t('gallery_films_heading')}</h2>
             </div>
             <div className="columns-1 md:columns-2 lg:columns-3 gap-6 [column-fill:_balance] max-w-5xl mx-auto">
               {filteredVideos.map((video) => (
@@ -265,7 +267,7 @@ export default function Gallery() {
       <section className="py-20 bg-background text-center">
         <div className="container mx-auto px-4 max-w-2xl">
           <Instagram className="w-10 h-10 text-primary mx-auto mb-5" />
-          <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-4">Follow the Adventure</h2>
+          <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-4">{t('gallery_follow')}</h2>
           <p className="text-muted-foreground mb-8">
             See the latest photos and stories from the road on Instagram — new memories added after every journey.
           </p>

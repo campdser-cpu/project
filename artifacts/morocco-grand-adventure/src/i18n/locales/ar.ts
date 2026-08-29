@@ -284,4 +284,13 @@ export default {
     ai_resp_family: "المغرب رائع للعائلات! نرتب وسائل نقل خاصة ومرشدين للاطفال وركوب الجمال. كم اعمار اطفالكم؟",
     ai_resp_default: "يبدو ذلك رائعا! يمكن لخبرائنا المحليين تخصيص برنامج حسب تفضيلاتكم. هل تودون التواصل مع متخصص الان؟",
     per_night: "/ ليلة",
+    gallery_title: "معرض الصور",
+    gallery_eyebrow: "لحظات من المغرب",
+    gallery_in_motion: "لقطات بحركة",
+    gallery_films_heading: "أفلام من الرحلات",
+    gallery_follow: "تابع المغامرة",
+    dest_map_hint: "اضغط على أي علامة لاستكشاف هذه الوجهة. اسحب للتحريك وقرِّب للتكبير.",
+    dest_weather_clear: "مشمس وصافٍ",
+    dest_photo_sunrise: "شروق الشمس على عرق الشبي",
+    dest_photo_stargazing: "تأمل النجوم تحت درب التبانة",
   } as Record<string, string>;

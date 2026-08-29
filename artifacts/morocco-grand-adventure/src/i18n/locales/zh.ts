@@ -284,4 +284,13 @@ export default {
     ai_resp_family: "Morocco is wonderful for families! We arrange private transport, kid-friendly guides, camel rides, and interactive cooking classes. How old are your children?",
     ai_resp_default: "That sounds wonderful! Our local experts can customize a bespoke itinerary exactly to your preferences. Would you like to connect with a human specialist now?",
     per_night: "/ 晚",
+    gallery_title: "图库",
+    gallery_eyebrow: "摩洛哥的精彩瞬间",
+    gallery_in_motion: "动感影像",
+    gallery_films_heading: "旅途实景影片",
+    gallery_follow: "关注我们的旅程",
+    dest_map_hint: "点击地图标记探索该目的地。拖动可平移，双指缩放可放大。",
+    dest_weather_clear: "晴朗",
+    dest_photo_sunrise: "尔格切比沙丘的日出",
+    dest_photo_stargazing: "银河下的星空",
   } as Record<string, string>;

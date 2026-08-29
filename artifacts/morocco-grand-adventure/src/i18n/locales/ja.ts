@@ -284,4 +284,13 @@ export default {
     ai_resp_family: "Morocco is wonderful for families! We arrange private transport, kid-friendly guides, camel rides, and interactive cooking classes. How old are your children?",
     ai_resp_default: "That sounds wonderful! Our local experts can customize a bespoke itinerary exactly to your preferences. Would you like to connect with a human specialist now?",
     per_night: "/ 泊",
+    gallery_title: "ギャラリー",
+    gallery_eyebrow: "モロッコの瞬間",
+    gallery_in_motion: "動きのあるシーン",
+    gallery_films_heading: "旅の現場フィルム",
+    gallery_follow: "冒険をフォロー",
+    dest_map_hint: "マーカーをタップしてこの目的地を探索できます。ドラッグで移動、ピンチでズームします。",
+    dest_weather_clear: "晴れ",
+    dest_photo_sunrise: "エルグ・シェビーの日の出",
+    dest_photo_stargazing: "天の川の下で星空観察",
   } as Record<string, string>;

@@ -284,4 +284,13 @@ export default {
     ai_resp_family: "Morocco is wonderful for families! We arrange private transport, kid-friendly guides, camel rides, and interactive cooking classes. How old are your children?",
     ai_resp_default: "That sounds wonderful! Our local experts can customize a bespoke itinerary exactly to your preferences. Would you like to connect with a human specialist now?",
     per_night: "/ nacht",
+    gallery_title: "De Galerij",
+    gallery_eyebrow: "Momenten in Marokko",
+    gallery_in_motion: "In beweging",
+    gallery_films_heading: "Films van het veld",
+    gallery_follow: "Volg het avontuur",
+    dest_map_hint: "Tik op een marker om deze bestemming te verkennen. Sleep om te pannen, knijp om te zoomen.",
+    dest_weather_clear: "Zonnig en helder",
+    dest_photo_sunrise: "Zonsopgang boven de Erg Chebbi",
+    dest_photo_stargazing: "Sterrenhemel onder de Melkweg",
   } as Record<string, string>;

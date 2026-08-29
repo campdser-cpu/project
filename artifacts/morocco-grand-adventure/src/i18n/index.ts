@@ -141,6 +141,10 @@ export type TranslationSet = {
   dest_travel_info: string;
   dest_climate: string;
   dest_view_map: string;
+  dest_map_hint: string;
+  dest_weather_clear: string;
+  dest_photo_sunrise: string;
+  dest_photo_stargazing: string;
   dest_plan_visit: string;
   dest_start_planning: string;
   dest_nearby: string;
@@ -519,6 +523,8 @@ export type TranslationSet = {
   about_hero_alt: string; about_guide_alt: string;
   // ── Gallery page ──────────────────────────────────────────────────────────
   gallery_hero_alt: string; gallery_close: string; gallery_prev: string; gallery_next: string; gallery_all: string;
+  gallery_title: string; gallery_eyebrow: string; gallery_in_motion: string;
+  gallery_films_heading: string; gallery_follow: string;
   gallery_cat_desert: string; gallery_cat_luxury_camp: string; gallery_cat_camel_trekking: string;
   gallery_cat_quad: string; gallery_cat_happy_travelers: string; gallery_cat_landscapes: string;
   gallery_cat_culture: string; gallery_cat_food: string; gallery_cat_guide_journey: string; gallery_cat_authenticity: string;

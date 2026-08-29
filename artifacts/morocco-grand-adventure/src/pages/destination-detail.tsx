@@ -174,7 +174,7 @@ export default function DestinationDetail() {
                         className="w-full h-72 md:h-96 object-cover transition-transform duration-700 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                      <span className="absolute bottom-5 left-5 text-white font-serif text-lg drop-shadow">Sunrise over Erg Chebbi</span>
+                      <span className="absolute bottom-5 left-5 text-white font-serif text-lg drop-shadow">{t('dest_photo_sunrise')}</span>
                     </div>
                     <div className="relative rounded-3xl overflow-hidden shadow-xl border border-border group">
                       <img
@@ -185,7 +185,7 @@ export default function DestinationDetail() {
                         className="w-full h-72 md:h-96 object-cover transition-transform duration-700 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                      <span className="absolute bottom-5 left-5 text-white font-serif text-lg drop-shadow">Stargazing beneath the Milky Way</span>
+                      <span className="absolute bottom-5 left-5 text-white font-serif text-lg drop-shadow">{t('dest_photo_stargazing')}</span>
                     </div>
                   </div>
                 </div>
@@ -234,7 +234,7 @@ export default function DestinationDetail() {
                   <li className="flex items-center gap-4 text-muted-foreground">
                     <div className="bg-primary/10 p-3 rounded-full text-primary shrink-0"><Star className="w-5 h-5" /></div>
                     <div>
-                      <span className="text-xs font-bold uppercase tracking-wider block mb-1">Style</span>
+                      <span className="text-xs font-bold uppercase tracking-wider block mb-1">{t('search_style')}</span>
                       <span className="text-foreground font-medium">{categoryLabel(destination.category, lang)}</span>
                     </div>
                   </li>
@@ -249,7 +249,7 @@ export default function DestinationDetail() {
                 <div className="flex items-end gap-4 mb-8">
                   <span className="font-sans text-6xl font-bold tracking-tighter text-foreground">24°</span>
                   <span className="text-xl text-muted-foreground font-medium mb-1">C</span>
-                  <span className="text-sm text-muted-foreground ml-auto mb-2 text-right">Sunny & Clear</span>
+                  <span className="text-sm text-muted-foreground ml-auto mb-2 text-right">{t('dest_weather_clear')}</span>
                 </div>
                 <div className="grid grid-cols-4 gap-2 text-center border-t border-border/50 pt-4">
                   {[
@@ -275,7 +275,7 @@ export default function DestinationDetail() {
                 <div className="rounded-2xl overflow-hidden">
                   <MoroccoMap height={320} />
                 </div>
-                <p className="text-xs text-muted-foreground mt-3 text-center">Tap any marker to explore this destination. Drag to pan, scroll to zoom.</p>
+                <p className="text-xs text-muted-foreground mt-3 text-center">{t('dest_map_hint')}</p>
               </div>
 
               <div className="bg-muted p-8 rounded-3xl border border-border text-center">

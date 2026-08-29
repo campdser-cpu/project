@@ -464,4 +464,13 @@ export default {
   about_promise_text: "Chaque circuit est guidé par des personnes qui vivent ici, et non par une plateforme de réservation qui envoie un guide venu d'ailleurs.",
   about_cta_sub: "Choisissez un itinéraire avec l'équipe qui connaît le mieux Merzouga.",
   map_directions: "Itinéraire ↗",
+  gallery_title: "La Galerie",
+  gallery_eyebrow: "Instants du Maroc",
+  gallery_in_motion: "En mouvement",
+  gallery_films_heading: "Films du terrain",
+  gallery_follow: "Suivez l'aventure",
+  dest_map_hint: "Touchez un marqueur pour explorer cette destination. Faites glisser pour vous déplacer, pincez pour zoomer.",
+  dest_weather_clear: "Ensoleillé et dégagé",
+  dest_photo_sunrise: "Lever de soleil sur l'erg Chebbi",
+  dest_photo_stargazing: "Nuit étoilée sous la Voie lactée",
 } as Record<string, string>;

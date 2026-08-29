@@ -284,4 +284,13 @@ export default {
     ai_resp_family: "Marruecos es maravilloso para las familias! Organizamos transporte privado, guias para ninos, paseos en camello y clases de cocina. Que edad tienen tus hijos?",
     ai_resp_default: "Suena maravilloso! Nuestros expertos locales pueden personalizar un itinerario a medida. Te gustaria hablar con un especialista?",
     per_night: "/ noche",
+    gallery_title: "La Galería",
+    gallery_eyebrow: "Momentos en Marruecos",
+    gallery_in_motion: "En movimiento",
+    gallery_films_heading: "Películas del camino",
+    gallery_follow: "Sigue la aventura",
+    dest_map_hint: "Toca cualquier marcador para explorar este destino. Arrastra para desplazarte y haz zoom para acercarte.",
+    dest_weather_clear: "Soleado y despejado",
+    dest_photo_sunrise: "Amanecer sobre el erg Chebbi",
+    dest_photo_stargazing: "Noche estrellada bajo la Vía Láctea",
   } as Record<string, string>;
