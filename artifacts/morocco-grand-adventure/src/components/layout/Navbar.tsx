@@ -69,16 +69,22 @@ export function Navbar() {
     effectiveScrolled ? 'text-foreground hover:text-primary' : 'text-white hover:text-accent'
   }`;
 
+  // True-alpha transparent SVG logo. Over media heroes the navbar is transparent
+  // and the logo must be the LIGHT artwork; once scrolled onto the light surface
+  // it switches to the DARK artwork. No opaque canvas is ever painted on top of
+  // the hero video — the video shows through every transparent pixel.
+  const logoVariant = effectiveScrolled ? '/logo-square.svg' : '/logo-square-light.svg';
+
   return (
     <nav className={navClasses} aria-label="Main navigation">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
           <Link href="/" aria-label="Morocco Grand Adventure — Home">
             <img 
-              src="/logo-official.png"
+              src={logoVariant}
               alt="Morocco Grand Adventure" 
-              width={1536}
-              height={1536}
+              width={400}
+              height={400}
               decoding="async"
               className="h-10 sm:h-12 md:h-14 w-auto object-contain transition-all duration-300" 
             />
