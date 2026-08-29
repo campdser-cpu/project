@@ -3,6 +3,7 @@ import { Link, useLocation } from 'wouter';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronDown, Globe } from 'lucide-react';
 
+import { Logo } from './Logo';
 import { contactInfo } from '@/data/content';
 import { getLocalizedDestinations } from '@/i18n/content';
 import { useLanguage, languages } from '@/contexts/LanguageContext';
@@ -69,25 +70,12 @@ export function Navbar() {
     effectiveScrolled ? 'text-foreground hover:text-primary' : 'text-white hover:text-accent'
   }`;
 
-  // True-alpha transparent SVG logo. Over media heroes the navbar is transparent
-  // and the logo must be the LIGHT artwork; once scrolled onto the light surface
-  // it switches to the DARK artwork. No opaque canvas is ever painted on top of
-  // the hero video — the video shows through every transparent pixel.
-  const logoVariant = effectiveScrolled ? '/logo-square.svg' : '/logo-square-light.svg';
-
   return (
     <nav className={navClasses} aria-label="Main navigation">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
           <Link href="/" aria-label="Morocco Grand Adventure — Home">
-            <img 
-              src={logoVariant}
-              alt="Morocco Grand Adventure" 
-              width={400}
-              height={400}
-              decoding="async"
-              className="h-10 sm:h-12 md:h-14 w-auto object-contain transition-all duration-300" 
-            />
+            <Logo variant={effectiveScrolled ? 'dark' : 'light'} />
           </Link>
 
           {/* Desktop Nav */}
