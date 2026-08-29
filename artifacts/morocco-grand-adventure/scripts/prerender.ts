@@ -23,7 +23,7 @@
 //   /en/destinations/:id    → dist/en/destinations/<id>.html  (destination detail pages)
 //   /en/about               → dist/en/about/index.html
 //   /en/contact             → dist/en/contact/index.html
-//   /en/faq                 → dist/en/faq/index.html
+//   /en/faq                → dist/en/faq/index.html
 //   /en/blog                → dist/en/blog/index.html
 //   /en/tours/:id           → dist/en/tours/<id>.html  (6 major tour routes)
 // ─────────────────────────────────────────────────────────────────────────────
@@ -99,13 +99,8 @@ const TOUR_ROUTES = [
 ];
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
-// Build HTML entities at runtime via char codes so the code formatter cannot
-// collapse them into their literal characters (which would break escaping).
-// IMPORTANT: every HTML entity begins with an ampersand (char 38). Using the
-// literal '<' / '>' / '"' here would emit broken text like `<lt;` instead of
-// the correct `&lt;`. AMP (char 38) is the single entity prefix for all of them.
 const AMP = String.fromCharCode(38); // '&'
-const ENT = AMP; // entity prefix — always the ampersand '&'
+const ENT = AMP;
 
 function escapeHtml(text: string): string {
   return text
@@ -119,54 +114,33 @@ function escapeHtml(text: string): string {
 function h1(text: string): string {
   return `    <h1>${escapeHtml(text)}</h1>\n`;
 }
-
 function h2(text: string): string {
   return `    <h2>${escapeHtml(text)}</h2>\n`;
 }
-
-/**
- * Render an <h2> whose inner content is a real hyperlink. Unlike h2(), this
- * must NOT run escapeHtml() over the output of link() — doing so would turn the
- * real `<a href="...">` into escaped text like `&lt;a href=&quot;...&quot;&gt;`.
- * link() already escapes the visible text safely.
- */
 function h2Link(url: string, text: string): string {
   return `    <h2>${link(url, text)}</h2>\n`;
 }
-
 function paragraph(text: string): string {
   return `    <p>${escapeHtml(text)}</p>\n`;
 }
-
 function ul(items: string[]): string {
   if (items.length === 0) return '';
   const lis = items.map((item) => `      <li>${escapeHtml(item)}</li>`).join('\n');
   return `    <ul>\n${lis}\n    </ul>\n`;
 }
-
 function faqBlock(faqs: { question: string; answer: string }[]): string {
   if (faqs.length === 0) return '';
   const items = faqs
-    .map(
-      (f) =>
-        `      <li>\n        <h3>${escapeHtml(f.question)}</h3>\n        <p>${escapeHtml(f.answer)}</p>\n      </li>`,
-    )
+    .map((f) => `      <li>\n        <h3>${escapeHtml(f.question)}</h3>\n        <p>${escapeHtml(f.answer)}</p>\n      </li>`)
     .join('\n');
   return `    <ul class="prerendered-faq">\n${items}\n    </ul>\n`;
 }
-
 function hrefsFor(rest: string): string {
   const clean = rest === '/' ? '' : rest;
-  const links = languages
-    .map(
-      (l) =>
-        `    <link rel="alternate" hreflang="${l.code}" href="${SITE_URL}/${l.code}${clean}" />`,
-    )
-    .join('\n');
+  const links = languages.map((l) => `    <link rel="alternate" hreflang="${l.code}" href="${SITE_URL}/${l.code}${clean}" />`).join('\n');
   const xDefault = `    <link rel="alternate" hreflang="x-default" href="${SITE_URL}/en${clean}" />`;
   return `${links}\n${xDefault}`;
 }
-
 const OG_LOCALE: Record<string, string> = {
   en: 'en_US', fr: 'fr_FR', es: 'es_ES', it: 'it_IT', de: 'de_DE',
   nl: 'nl_NL', pt: 'pt_PT', zh: 'zh_CN', ja: 'ja_JP', ko: 'ko_KR', ar: 'ar_AR',
@@ -176,60 +150,98 @@ const OG_LOCALE: Record<string, string> = {
 function buildHomeContent(lang: Lang): string {
   const destNames = getLocalizedDestinations(lang).slice(0, 8).map((d) => d.name);
   const tourNames = getLocalizedTours(lang).map((t) => t.name);
-  const reviewBlocks = reviews
-    .map((r) => {
-      const name = tr(lang, r.nameKey);
-      const quote = tr(lang, r.quoteKey);
-      const tourName = tr(lang, r.tourKey);
-      return (
-        `<div class="prerendered-review">
-          <h3 class="prerendered-review-author">${escapeHtml(name)}</h3>
-          <p class="prerendered-review-text">${escapeHtml(quote)}</p>
-          <p class="prerendered-review-tour">${escapeHtml(tourName)}</p>
-        </div>`
-      );
-    })
-    .join('\n');
-  return (
-    h1(tr(lang, 'hero_heading1') || 'Discover the Soul of Morocco') +
-    paragraph(tr(lang, 'hero_subtext')) +
-    h2(tr(lang, 'section_destinations') || 'Top Destinations') +
-    ul(destNames) +
-    h2(tr(lang, 'section_tours') || 'Featured Tours') +
-    ul(tourNames) +
-    h2(tr(lang, 'section_reviews') || 'Traveler Stories') +
-    `<div class="prerendered-reviews-container">\n${reviewBlocks}\n    </div>\n`
-    );
+  const reviewBlocks = reviews.map((r) => {
+    const name = tr(lang, r.nameKey);
+    const quote = tr(lang, r.quoteKey);
+    const tourName = tr(lang, r.tourKey);
+    return (`<div class="prerendered-review">\n          <h3 class="prerendered-review-author">${escapeHtml(name)}</h3>\n          <p class="prerendered-review-text">${escapeHtml(quote)}</p>\n          <p class="prerendered-review-tour">${escapeHtml(tourName)}</p>\n        </div>`);
+  }).join('\n');
+  return h1(tr(lang, 'hero_heading1') || 'Discover the Soul of Morocco') + paragraph(tr(lang, 'hero_subtext')) + h2(tr(lang, 'section_destinations') || 'Top Destinations') + ul(destNames) + h2(tr(lang, 'section_tours') || 'Featured Tours') + ul(tourNames) + h2(tr(lang, 'section_reviews') || 'Traveler Stories') + `<div class="prerendered-reviews-container">\n${reviewBlocks}\n    </div>\n`;
 }
-
-/** Build JSON-LD Review schema array for the home / reviews showcase page. */
 function buildHomeSchemas(lang: Lang): Record<string, unknown>[] {
-  const reviewData = reviews.map((r) => ({
-    name: tr(lang, r.nameKey),
-    text: tr(lang, r.quoteKey),
-    rating: r.rating,
-  }));
-  const homeUrl = `${SITE_URL}/${lang}`;
-  return [
-    buildReviewSchema(
-      reviewData,
-      'Morocco Grand Adventure — Traveler Reviews',
-      homeUrl,
-    ),
-  ];
+  const reviewData = reviews.map((r) => ({ name: tr(lang, r.nameKey), text: tr(lang, r.quoteKey), rating: r.rating }));
+  return [buildReviewSchema(reviewData, 'Morocco Grand Adventure — Traveler Reviews', `${SITE_URL}/${lang}`)];
+}
+function buildToursContent(lang: Lang): string {
+  const blocks = getLocalizedTours(lang).map((t) => h2(t.name) + paragraph(t.description ?? '') + paragraph(`${tr(lang, 'search_duration')}: ${t.duration}`) + ul(t.highlights)).join('');
+  return h1(tr(lang, 'section_tours') || 'Our Tours') + blocks;
 }
 
-function buildToursContent(lang: Lang): string {
-  const blocks = getLocalizedTours(lang)
-    .map(
-      (t) =>
-        h2(t.name) +
-        paragraph(t.description ?? '') +
-        paragraph(`${tr(lang, 'search_duration')}: ${t.duration}`) +
-        ul(t.highlights),
-    )
-    .join('');
-  return h1(tr(lang, 'section_tours') || 'Our Tours') + blocks;
+const RELATED_DESTINATION_IDS: Record<string, string[]> = {
+  marrakech: ['ourika-valley', 'ait-ben-haddou', 'dades-valley'],
+  fes: ['chefchaouen', 'ifrane', 'marrakech'],
+  'ait-ben-haddou': ['marrakech', 'dades-valley', 'merzouga'],
+  'dades-valley': ['ait-ben-haddou', 'todra-gorge', 'merzouga'],
+  merzouga: ['erg-chebbi', 'dades-valley', 'todra-gorge'],
+  'erg-chebbi': ['merzouga', 'dades-valley', 'ait-ben-haddou'],
+};
+
+/**
+ * Static equivalent of the React TopicalLinks component. The prerenderer does
+ * not execute Layout/React, so these anchors must be generated here to keep
+ * crawlers and users on the same contextual internal-link graph.
+ */
+function buildTopicalLinksContent(options: { destinationId?: string; tourId?: string }, lang: Lang): string {
+  const destinationsForLang = getLocalizedDestinations(lang);
+  const toursForLang = getLocalizedTours(lang);
+
+  if (options.destinationId) {
+    const relatedDestinations = (RELATED_DESTINATION_IDS[options.destinationId] ?? [])
+      .map((id) => destinationsForLang.find((destination) => destination.id === id))
+      .filter(Boolean);
+    const relatedTours = toursForLang
+      .filter((tour) => tour.id !== options.tourId && tour.routeIds?.includes(options.destinationId!))
+      .slice(0, 3);
+
+    if (relatedDestinations.length === 0 && relatedTours.length === 0) return '';
+
+    const destinationLinks = relatedDestinations.length > 0
+      ? `<div>\n        ${h2(tr(lang, 'dest_nearby')).trim()}\n        <div class="topical-link-list">${relatedDestinations.map((destination) => ` ${link(`/${lang}/destinations/${destination!.id}`, destination!.name)}`).join('')}</div>\n      </div>`
+      : '';
+    const currentName = destinationsForLang.find((destination) => destination.id === options.destinationId)?.name ?? '';
+    const tourLinks = relatedTours.length > 0
+      ? `<div>\n        ${h2(`${tr(lang, 'dest_tours')} ${currentName}`).trim()}\n        <div class="topical-link-list">${relatedTours.map((tour) => ` ${link(`/${lang}/tours/${tour.id}`, tour.name)}`).join('')}</div>\n      </div>`
+      : '';
+
+    return `<section class="border-t border-border bg-muted/40 py-12" aria-label="${escapeHtml(tr(lang, 'dest_nearby'))}">\n  <div class="container mx-auto px-4 max-w-6xl">\n    <div class="grid gap-8 md:grid-cols-2">\n      ${destinationLinks}\n      ${tourLinks}\n    </div>\n  </div>\n</section>\n`;
+  }
+
+  if (options.tourId) {
+    const tour = toursForLang.find((item) => item.id === options.tourId);
+    if (!tour) return '';
+
+    const routeDestinations = (tour.routeIds ?? [])
+      .map((id) => destinationsForLang.find((destination) => destination.id === id))
+      .filter(Boolean);
+    const priorityIds = ['marrakech', 'ourika-valley', 'ait-ben-haddou', 'dades-valley', 'merzouga', 'erg-chebbi', 'fes'];
+    const priorityStops = priorityIds
+      .map((id) => routeDestinations.find((destination) => destination?.id === id))
+      .filter(Boolean);
+    const routeStops = [...priorityStops, ...routeDestinations]
+      .filter((destination, index, items) => destination && items.findIndex((item) => item?.id === destination.id) === index)
+      .slice(0, 7);
+    const routeIdSet = new Set(tour.routeIds ?? []);
+    const relatedTours = toursForLang
+      .filter((item) => item.id !== tour.id)
+      .map((item) => ({ tour: item, overlap: (item.routeIds ?? []).filter((id) => routeIdSet.has(id)).length }))
+      .filter((item) => item.overlap > 0)
+      .sort((a, b) => b.overlap - a.overlap)
+      .slice(0, 2)
+      .map((item) => item.tour);
+
+    if (routeStops.length === 0 && relatedTours.length === 0) return '';
+
+    const routeLinks = routeStops.length > 0
+      ? `<div>\n        ${h2(tr(lang, 'td_your_route')).trim()}\n        <div class="topical-link-list">${routeStops.map((destination) => ` ${link(`/${lang}/destinations/${destination!.id}`, destination!.name)}`).join('')}</div>\n      </div>`
+      : '';
+    const relatedTourLinks = relatedTours.length > 0
+      ? `<div>\n        ${h2(tr(lang, 'tour_related')).trim()}\n        <div class="topical-link-list">${relatedTours.map((relatedTour) => ` ${link(`/${lang}/tours/${relatedTour.id}`, relatedTour.name)}`).join('')}</div>\n      </div>`
+      : '';
+
+    return `<section class="border-t border-border bg-muted/40 py-12" aria-label="${escapeHtml(tr(lang, 'td_your_route'))}">\n  <div class="container mx-auto px-4 max-w-6xl">\n    <div class="grid gap-8 md:grid-cols-2">\n      ${routeLinks}\n      ${relatedTourLinks}\n    </div>\n  </div>\n</section>\n`;
+  }
+
+  return '';
 }
 
 function buildTourDetailContent(id: string, lang: Lang): string {
@@ -239,56 +251,21 @@ function buildTourDetailContent(id: string, lang: Lang): string {
   const included = tour.included ?? [];
   const excluded = tour.excluded ?? [];
   const faqs = tour.faq ?? [];
-  return (
-    h1(tour.name) +
-    paragraph(tour.description ?? '') +
-    paragraph(`${tr(lang, 'search_duration')}: ${tour.duration}`) +
-    h2(tr(lang, 'tour_why_love')) +
-    ul(tour.highlights) +
-    (itinerary.length > 0
-      ? h2(tr(lang, 'tour_itinerary')) +
-        ul(itinerary.map((d) => `${tr(lang, 'tour_day')} ${d.day}: ${d.title}`))
-      : '') +
-    (included.length > 0 ? h2(tr(lang, 'tour_included')) + ul(included) : '') +
-    (excluded.length > 0 ? h2(tr(lang, 'tour_not_included')) + ul(excluded) : '') +
-    (faqs.length > 0 ? h2(tr(lang, 'nav_faq')) + faqBlock(faqs) : '')
-  );
+  return h1(tour.name) + paragraph(tour.description ?? '') + paragraph(`${tr(lang, 'search_duration')}: ${tour.duration}`) + h2(tr(lang, 'tour_why_love')) + ul(tour.highlights) + (itinerary.length > 0 ? h2(tr(lang, 'tour_itinerary')) + ul(itinerary.map((d) => `${tr(lang, 'tour_day')} ${d.day}: ${d.title}`)) : '') + (included.length > 0 ? h2(tr(lang, 'tour_included')) + ul(included) : '') + (excluded.length > 0 ? h2(tr(lang, 'tour_not_included')) + ul(excluded) : '') + (faqs.length > 0 ? h2(tr(lang, 'nav_faq')) + faqBlock(faqs) : '') + buildTopicalLinksContent({ tourId: tour.id }, lang);
 }
-
 function buildDestinationsContent(lang: Lang): string {
-  const blocks = getLocalizedDestinations(lang)
-    .map((d) => h2(d.name) + paragraph(d.description) + ul(d.highlights))
-    .join('');
+  const blocks = getLocalizedDestinations(lang).map((d) => h2(d.name) + paragraph(d.description) + ul(d.highlights)).join('');
   return h1('Morocco') + paragraph(tr(lang, 'section_destinations')) + blocks;
 }
-
 function buildDestinationDetailContent(destId: string, lang: Lang): string {
   const d = getLocalizedDestination(destId, lang);
   if (!d) return h1('Not Found') + paragraph('This destination could not be found.');
-  return (
-    h1(d.name) +
-    paragraph(d.shortDesc) +
-    paragraph(d.description) +
-    h2(tr(lang, 'dest_about')) +
-    ul(d.highlights)
-  );
+  return h1(d.name) + paragraph(d.shortDesc) + paragraph(d.description) + h2(tr(lang, 'dest_about')) + ul(d.highlights) + buildTopicalLinksContent({ destinationId: d.id }, lang);
 }
-
 function buildAboutContent(lang: Lang): string {
-  return (
-    h1(tr(lang, 'nav_about')) +
-    paragraph(tr(lang, 'about_story_p1')) +
-    paragraph(tr(lang, 'about_story_p2')) +
-    h2(tr(lang, 'nav_tours')) +
-    paragraph(tr(lang, 'about_philosophy_quote'))
-  );
+  return h1(tr(lang, 'nav_about')) + paragraph(tr(lang, 'about_story_p1')) + paragraph(tr(lang, 'about_story_p2')) + h2(tr(lang, 'nav_tours')) + paragraph(tr(lang, 'about_philosophy_quote'));
 }
-
 function buildContactContent(lang: Lang): string {
-  // Prerendered contact body with real, crawlable links (WhatsApp, email,
-  // verified Google Maps location, and official social profiles). Built with
-  // link() so anchors are real <a> elements (not escaped text), and plain text
-  // runs through escapeHtml() so user-visible copy stays safely encoded.
   const li = (s: string): string => `      <li>${s}</li>`;
   const contactItems = [
     li(`${escapeHtml(tr(lang, 'contact_whatsapp_label') || 'WhatsApp')}: ${link(contactInfo.whatsapp, `${contactInfo.whatsappNumber} (WhatsApp)`)}`),
@@ -297,17 +274,9 @@ function buildContactContent(lang: Lang): string {
     li(`Google Maps: ${link(CONTACT_MAPS_URL, 'View Morocco Grand Adventure on Google Maps')}`),
   ];
   const socialItems = CONTACT_SOCIAL_LINKS.map((s) => li(link(s.url, s.label))).join('\n');
-  return (
-    h1(tr(lang, 'nav_contact')) +
-    `    <ul>\n${contactItems.join('\n')}\n    </ul>\n` +
-    h2(tr(lang, 'contact_socials_label') || 'Official Social Profiles') +
-    `    <ul>\n${socialItems}\n    </ul>\n`
-  );
+  return h1(tr(lang, 'nav_contact')) + `    <ul>\n${contactItems.join('\n')}\n    </ul>\n` + h2(tr(lang, 'contact_socials_label') || 'Official Social Profiles') + `    <ul>\n${socialItems}\n    </ul>\n`;
 }
-
-function buildFaqContent(lang: Lang): string {
-  return h1(tr(lang, 'nav_faq')) + faqBlock(getLocalizedFaq(lang));
-}
+function buildFaqContent(lang: Lang): string { return h1(tr(lang, 'nav_faq')) + faqBlock(getLocalizedFaq(lang)); }
 
 function buildBlogContent(lang: Lang): string {
   const posts = [
@@ -318,18 +287,10 @@ function buildBlogContent(lang: Lang): string {
     { title: 'The Perfect Morocco Packing List for Desert Tours (2026)', excerpt: "What to pack for the Sahara — from breathable layers and sun protection to the little luxuries that make a desert night unforgettable.", date: 'April 2026', read: '5 min read', cat: 'Packing' },
     { title: "Fes to Chefchaouen: Exploring Morocco's Blue Pearl", excerpt: "The journey from Morocco's cultural heart to the Instagram-famous blue medina — what to see, where to stay, and how to make the most of it.", date: 'March 2026', read: '9 min read', cat: 'Imperial Cities' },
   ];
-  const blocks = posts
-    .map(
-      (post) =>
-        h2(post.title) +
-        `<p><strong>${escapeHtml(post.cat)}</strong> · ${escapeHtml(post.date)} · ${escapeHtml(post.read)}</p>\n` +
-        paragraph(post.excerpt),
-    )
-    .join('');
+  const blocks = posts.map((post) => h2(post.title) + `<p><strong>${escapeHtml(post.cat)}</strong> · ${escapeHtml(post.date)} · ${escapeHtml(post.read)}</p>\n` + paragraph(post.excerpt)).join('');
   return h1(tr(lang, 'nav_blog')) + blocks;
 }
 
-// ── Blog article internal-link helpers (all links point to real site pages) ──
 const ARTICLE_RELATIONS: Record<string, { tours: string[]; destinations: string[] }> = {
   'merzouga-luxury-desert-camp-guide': { tours: ['3-day-sahara-marrakech', '7-day-imperial-cities-sahara-escape'], destinations: ['merzouga', 'erg-chebbi'] },
   'best-time-to-visit-morocco-sahara': { tours: ['3-day-sahara-marrakech', '5-day-imperial-cities'], destinations: ['merzouga', 'erg-chebbi'] },
@@ -339,119 +300,40 @@ const ARTICLE_RELATIONS: Record<string, { tours: string[]; destinations: string[
   'fes-chefchaouen-blue-city-guide': { tours: ['5-day-imperial-cities'], destinations: ['fes', 'chefchaouen'] },
 };
 
-function link(url: string, text: string): string {
-  return `<a href="${url}">${escapeHtml(text)}</a>`;
-}
-
+function link(url: string, text: string): string { return `<a href="${url}">${escapeHtml(text)}</a>`; }
 function buildBlogToursBlock(slug: string, lang: Lang): string {
   const ids = ARTICLE_RELATIONS[slug]?.tours ?? [];
-  const items = ids
-    .map((id) => {
-      const t = getLocalizedTour(id, lang);
-      return t
-        ? `      <li>${link(`${SITE_URL}/${lang}/tours/${t.id}`, t.name)} — ${escapeHtml(t.duration)}</li>`
-        : '';
-    })
-    .filter(Boolean);
+  const items = ids.map((id) => { const t = getLocalizedTour(id, lang); return t ? `      <li>${link(`${SITE_URL}/${lang}/tours/${t.id}`, t.name)} — ${escapeHtml(t.duration)}</li>` : ''; }).filter(Boolean);
   if (items.length === 0) return '';
   return h2(tr(lang, 'related_tours')) + `<ul>\n${items.join('\n')}\n    </ul>\n`;
 }
-
 function buildBlogDestinationsBlock(slug: string, lang: Lang): string {
   const ids = ARTICLE_RELATIONS[slug]?.destinations ?? [];
-  const items = ids
-    .map((id) => {
-      const d = getLocalizedDestination(id, lang);
-      return d
-        ? `      <li>${link(`${SITE_URL}/${lang}/destinations/${d.id}`, d.name)} — ${escapeHtml(d.shortDesc)}</li>`
-        : '';
-    })
-    .filter(Boolean);
+  const items = ids.map((id) => { const d = getLocalizedDestination(id, lang); return d ? `      <li>${link(`${SITE_URL}/${lang}/destinations/${d.id}`, d.name)} — ${escapeHtml(d.shortDesc)}</li>` : ''; }).filter(Boolean);
   if (items.length === 0) return '';
   return h2(tr(lang, 'related_destinations')) + `<ul>\n${items.join('\n')}\n    </ul>\n`;
 }
-
 function buildBlogRelatedArticles(slug: string, lang: Lang): string {
   const others = blogPosts.filter((p) => p.slug !== slug).slice(0, 4);
-  const items = others
-    .map((p) => `      <li>${link(`${SITE_URL}/${lang}/blog/${p.slug}`, p.title)}</li>`)
-    .join('\n');
+  const items = others.map((p) => `      <li>${link(`${SITE_URL}/${lang}/blog/${p.slug}`, p.title)}</li>`).join('\n');
   return h2(tr(lang, 'related_articles')) + `<ul>\n${items}\n    </ul>\n`;
 }
-
 function buildBlogArticleContent(slug: string, lang: Lang): string {
   const posts: Record<string, { title: string; excerpt: string; date: string; read: string; cat: string; image: string }> = {
-    'merzouga-luxury-desert-camp-guide': {
-      title: 'The Ultimate Guide to Luxury Desert Camps in Merzouga',
-      excerpt: "From private tents with en-suite bathrooms to gourmet dinners under the Milky Way — discover everything you need to know about luxury glamping in the Sahara.",
-      date: 'August 2026',
-      read: '8 min read',
-      cat: 'Sahara Desert',
-      image: '/images/personal/luxury-camp-dusk.jpg',
-    },
-    'best-time-to-visit-morocco-sahara': {
-      title: 'Best Time to Visit the Sahara Desert: A Complete Month-by-Month Guide',
-      excerpt: "When should you plan your Merzouga desert trip? Our local experts break down temperatures, crowds, and conditions month by month.",
-      date: 'July 2026',
-      read: '6 min read',
-      cat: 'Travel Planning',
-      image: '/images/dest/merzouga.jpg',
-    },
-    'camel-trekking-etiquette-morocco': {
-      title: 'Camel Trekking in Morocco: What to Expect and How to Prepare',
-      excerpt: "Everything first-time riders need to know — what to wear, how to mount, what to bring, and the traditions behind this age-old Saharan journey.",
-      date: 'June 2026',
-      read: '7 min read',
-      cat: 'Camel Trekking',
-      image: '/images/personal/dunes-camels-poster.jpg',
-    },
-    'marrakech-to-merzouga-roadtrip': {
-      title: 'Marrakech to Merzouga: The Ultimate Sahara Road Trip Itinerary',
-      excerpt: "Cross the High Atlas, explore Aït Ben Haddou, wind through the Dades Valley, and arrive at the golden dunes of Erg Chebbi — the complete route guide.",
-      date: 'May 2026',
-      read: '10 min read',
-      cat: 'Road Trips',
-      image: '/images/dest/ait-ben-haddou.jpg',
-    },
-    'morocco-packing-list-desert': {
-      title: 'The Perfect Morocco Packing List for Desert Tours (2026)',
-      excerpt: "What to pack for the Sahara — from breathable layers and sun protection to the little luxuries that make a desert night unforgettable.",
-      date: 'April 2026',
-      read: '5 min read',
-      cat: 'Packing',
-      image: '/images/hero/desert-pano.jpg',
-    },
-    'fes-chefchaouen-blue-city-guide': {
-      title: "Fes to Chefchaouen: Exploring Morocco's Blue Pearl",
-      excerpt: "The journey from Morocco's cultural heart to the Instagram-famous blue medina — what to see, where to stay, and how to make the most of it.",
-      date: 'March 2026',
-      read: '9 min read',
-      cat: 'Imperial Cities',
-      image: '/images/dest/chefchaouen.jpg',
-    },
+    'merzouga-luxury-desert-camp-guide': { title: 'The Ultimate Guide to Luxury Desert Camps in Merzouga', excerpt: "From private tents with en-suite bathrooms to gourmet dinners under the Milky Way — discover everything you need to know about luxury glamping in the Sahara.", date: 'August 2026', read: '8 min read', cat: 'Sahara Desert', image: '/images/personal/luxury-camp-dusk.jpg' },
+    'best-time-to-visit-morocco-sahara': { title: 'Best Time to Visit the Sahara Desert: A Complete Month-by-Month Guide', excerpt: "When should you plan your Merzouga desert trip? Our local experts break down temperatures, crowds, and conditions month by month.", date: 'July 2026', read: '6 min read', cat: 'Travel Planning', image: '/images/dest/merzouga.jpg' },
+    'camel-trekking-etiquette-morocco': { title: 'Camel Trekking in Morocco: What to Expect and How to Prepare', excerpt: "Everything first-time riders need to know — what to wear, how to mount, what to bring, and the traditions behind this age-old Saharan journey.", date: 'June 2026', read: '7 min read', cat: 'Camel Trekking', image: '/images/personal/dunes-camels-poster.jpg' },
+    'marrakech-to-merzouga-roadtrip': { title: 'Marrakech to Merzouga: The Ultimate Sahara Road Trip Itinerary', excerpt: "Cross the High Atlas, explore Aït Ben Haddou, wind through the Dades Valley, and arrive at the golden dunes of Erg Chebbi — the complete route guide.", date: 'May 2026', read: '10 min read', cat: 'Road Trips', image: '/images/dest/ait-ben-haddou.jpg' },
+    'morocco-packing-list-desert': { title: 'The Perfect Morocco Packing List for Desert Tours (2026)', excerpt: "What to pack for the Sahara — from breathable layers and sun protection to the little luxuries that make a desert night unforgettable.", date: 'April 2026', read: '5 min read', cat: 'Packing', image: '/images/hero/desert-pano.jpg' },
+    'fes-chefchaouen-blue-city-guide': { title: "Fes to Chefchaouen: Exploring Morocco's Blue Pearl", excerpt: "The journey from Morocco's cultural heart to the Instagram-famous blue medina — what to see, where to stay, and how to make the most of it.", date: 'March 2026', read: '9 min read', cat: 'Imperial Cities', image: '/images/dest/chefchaouen.jpg' },
   };
-
   const post = posts[slug];
   if (!post) return h1('Blog Post Not Found') + paragraph('This blog post could not be found.');
-
   const metaPost = blogPosts.find((p) => p.slug === slug);
   const imgAlt = metaPost?.alt ?? post.title;
-
-  return (
-    h1(post.title) +
-    `<p><strong>${escapeHtml(post.cat)}</strong> · ${escapeHtml(post.date)} · ${escapeHtml(post.read)}</p>\n` +
-    `<img src="${post.image}" alt="${escapeHtml(imgAlt)}" loading="lazy" decoding="async" class="w-full h-48 md:h-64 object-cover mb-8 rounded-md" />\n` +
-    paragraph(post.excerpt) +
-    buildBlogToursBlock(slug, lang) +
-    buildBlogDestinationsBlock(slug, lang) +
-    buildBlogRelatedArticles(slug, lang)
-  );
+  return h1(post.title) + `<p><strong>${escapeHtml(post.cat)}</strong> · ${escapeHtml(post.date)} · ${escapeHtml(post.read)}</p>\n` + `<img src="${post.image}" alt="${escapeHtml(imgAlt)}" loading="lazy" decoding="async" class="w-full h-48 md:h-64 object-cover mb-8 rounded-md" />\n` + paragraph(post.excerpt) + buildBlogToursBlock(slug, lang) + buildBlogDestinationsBlock(slug, lang) + buildBlogRelatedArticles(slug, lang);
 }
 
-// ── Static experience/listing page routes ───────────────────────────────────
-// These are real, nav-linked, indexable pages that were only served by the SPA.
-// Each maps to its related tours/destinations so the prerendered HTML is a
-// genuinely useful, non-thin listing page (no invented facts — real data only).
 const EXPERIENCE_PAGE_ROUTES: Record<string, { tours: string[]; destinations: string[] }> = {
   '/desert-tours': { tours: ['3-day-sahara-marrakech', '7-day-imperial-cities-sahara-escape'], destinations: ['merzouga', 'erg-chebbi'] },
   '/luxury-camp': { tours: ['7-day-imperial-cities-sahara-escape', 'honeymoon-morocco'], destinations: ['merzouga', 'erg-chebbi'] },
@@ -464,282 +346,77 @@ const EXPERIENCE_PAGE_ROUTES: Record<string, { tours: string[]; destinations: st
   '/gallery': { tours: [], destinations: ['marrakech', 'chefchaouen', 'merzouga', 'fes'] },
   '/trip-builder': { tours: ['3-day-sahara-marrakech', '5-day-imperial-cities', '7-day-imperial-cities-sahara-escape'], destinations: ['marrakech', 'fes', 'merzouga', 'chefchaouen'] },
 };
-
 function buildExperienceContent(rest: string, lang: Lang): string {
   const meta = getRouteMeta(rest);
   const cfg = EXPERIENCE_PAGE_ROUTES[rest] ?? { tours: [], destinations: [] };
   const heading = h1(meta.title.replace(/\s*—.*$/, '').trim() || meta.title);
   const intro = paragraph(meta.description);
-  const tBlocks = cfg.tours
-    .map((id) => getLocalizedTour(id, lang))
-    .filter((t): t is NonNullable<typeof t> => Boolean(t))
-    .map(
-      (t) =>
-        h2Link(`${SITE_URL}/${lang}/tours/${t.id}`, t.name) +
-        paragraph(t.description ?? '') +
-        paragraph(`${tr(lang, 'search_duration')}: ${t.duration}`) +
-        ul(t.highlights),
-    )
-    .join('');
-  const dBlocks = cfg.destinations
-    .map((id) => getLocalizedDestination(id, lang))
-    .filter((d): d is NonNullable<typeof d> => Boolean(d))
-    .map((d) => h2Link(`${SITE_URL}/${lang}/destinations/${d.id}`, d.name) + paragraph(d.shortDesc))
-    .join('');
+  const tBlocks = cfg.tours.map((id) => getLocalizedTour(id, lang)).filter((t): t is NonNullable<typeof t> => Boolean(t)).map((t) => h2Link(`${SITE_URL}/${lang}/tours/${t.id}`, t.name) + paragraph(t.description ?? '') + paragraph(`${tr(lang, 'search_duration')}: ${t.duration}`) + ul(t.highlights)).join('');
+  const dBlocks = cfg.destinations.map((id) => getLocalizedDestination(id, lang)).filter((d): d is NonNullable<typeof d> => Boolean(d)).map((d) => h2Link(`${SITE_URL}/${lang}/destinations/${d.id}`, d.name) + paragraph(d.shortDesc)).join('');
   return heading + intro + tBlocks + dBlocks;
 }
 
-// ── Route table ──────────────────────────────────────────────────────────────
-type RouteEntry = {
-  /** The "rest" app path (after /en/), used for canonical + hreflang. */
-  rest: string;
-  /** Output file path relative to dist/. */
-  outFile: string;
-  /** Builder for the body HTML injected into #root. */
-  content: () => string;
-  /** Per-route SEO meta (title/description/ogImage), localized where possible. */
-  meta: ReturnType<typeof getRouteMeta>;
-  /** Language code for this route. */
-  lang: string;
-  /** Extra JSON-LD blocks (localized Tour / TouristAttraction schemas). */
-  schemas: Record<string, unknown>[];
-  /** RTL flag for the html dir attribute. */
-  rtl: boolean;
-};
-
-/** Build the localized SEO meta for a route + language (title/description/ogImage). */
+type RouteEntry = { rest: string; outFile: string; content: () => string; meta: ReturnType<typeof getRouteMeta>; lang: string; schemas: Record<string, unknown>[]; rtl: boolean };
 function metaFor(rest: string, lang: Lang): ReturnType<typeof getRouteMeta> {
-  // Localized tour entity pages → genuinely translated title + description.
   let m = rest.match(/^\/tours\/([^/]+)$/);
-  if (m) {
-    const t = getLocalizedTour(m[1], lang);
-    if (t) return { title: t.name, description: truncate(t.description), ogImage: t.image };
-  }
-  // Localized destination entity pages → genuinely translated title + description.
+  if (m) { const t = getLocalizedTour(m[1], lang); if (t) return { title: t.name, description: truncate(t.description), ogImage: t.image }; }
   m = rest.match(/^\/destinations\/([^/]+)$/);
-  if (m) {
-    const d = getLocalizedDestination(m[1], lang);
-    if (d) return { title: d.name, description: truncate(d.shortDesc || d.description), ogImage: d.image };
-  }
-  // Static pages → localized title via the UI translation keys, English meta fallback.
-  // Arabic gets a dedicated keyword-rich Arabic title/description (AR_ROUTE_META);
-  // all other locales keep the existing localized-nav-title + English-description.
-  const en = getRouteMeta(rest);
-  const ar = lang === 'ar' ? getLocalizedRouteMeta(rest, lang) : undefined;
-  const key = STATIC_TITLE_KEYS[rest];
-  const title = ar ? ar.title : (key ? tr(lang, key) || en.title : en.title);
-  const description = ar ? ar.description : en.description;
+  if (m) { const d = getLocalizedDestination(m[1], lang); if (d) return { title: d.name, description: truncate(d.shortDesc || d.description), ogImage: d.image }; }
+  const en = getRouteMeta(rest); const ar = lang === 'ar' ? getLocalizedRouteMeta(rest, lang) : undefined; const key = STATIC_TITLE_KEYS[rest];
+  const title = ar ? ar.title : (key ? tr(lang, key) || en.title : en.title); const description = ar ? ar.description : en.description;
   return { title, description, ogImage: ar?.ogImage ?? en.ogImage };
 }
-
 function buildRoutes(lang: Lang): RouteEntry[] {
-  const routes: RouteEntry[] = [];
-  const rtl = lang === 'ar';
-
-  const add = (
-    rest: string,
-    outFile: string,
-    content: () => string,
-    schemas: Record<string, unknown>[] = [],
-  ) => {
-    routes.push({ rest, outFile, content, meta: metaFor(rest, lang), lang, schemas, rtl });
-  };
-
-    // Home + primary sections
+  const routes: RouteEntry[] = []; const rtl = lang === 'ar';
+  const add = (rest: string, outFile: string, content: () => string, schemas: Record<string, unknown>[] = []) => { routes.push({ rest, outFile, content, meta: metaFor(rest, lang), lang, schemas, rtl }); };
   add('/', `${lang}/index.html`, () => buildHomeContent(lang), buildHomeSchemas(lang));
   add('/tours', `${lang}/tours/index.html`, () => buildToursContent(lang));
   add('/destinations', `${lang}/destinations/index.html`, () => buildDestinationsContent(lang));
   add('/about', `${lang}/about/index.html`, () => buildAboutContent(lang));
   add('/contact', `${lang}/contact/index.html`, () => buildContactContent(lang));
   add('/faq', `${lang}/faq/index.html`, () => buildFaqContent(lang));
-    add('/blog', `${lang}/blog/index.html`, () => buildBlogContent(lang));
-
-    // Individual blog article routes
+  add('/blog', `${lang}/blog/index.html`, () => buildBlogContent(lang));
   for (const post of blogPosts) {
     const meta = BLOG_META[post.slug];
-    add(
-      `/blog/${post.slug}`,
-      `${lang}/blog/${post.slug}.html`,
-      () => buildBlogArticleContent(post.slug, lang),
-      meta ? (buildBlogPostSchema({
-        slug: post.slug,
-        title: meta.title,
-        description: meta.description,
-        date: post.date,
-        image: post.image,
-      }, lang) as Record<string, unknown>[]) : [],
-    );
+    add(`/blog/${post.slug}`, `${lang}/blog/${post.slug}.html`, () => buildBlogArticleContent(post.slug, lang), meta ? (buildBlogPostSchema({ slug: post.slug, title: meta.title, description: meta.description, date: post.date, image: post.image }, lang) as Record<string, unknown>[]) : []);
   }
-
-  // Static experience/listing pages (real, nav-linked routes previously SPA-only)
-  for (const rest of Object.keys(EXPERIENCE_PAGE_ROUTES)) {
-    add(
-      rest,
-      `${lang}${rest}/index.html`,
-      () => buildExperienceContent(rest, lang),
-    );
-  }
-
-  // Major tour detail routes (with localized JSON-LD)
-  for (const id of TOUR_ROUTES) {
-    const t = getLocalizedTour(id, lang);
-    add(
-      `/tours/${id}`,
-      `${lang}/tours/${id}.html`,
-      () => buildTourDetailContent(id, lang),
-      t ? (buildTourSchema(t, id, lang) as Record<string, unknown>[]) : [],
-    );
-  }
-
-  // Destination detail pages (with localized JSON-LD)
-  for (const dest of destinations) {
-    const d = getLocalizedDestination(dest.id, lang);
-    add(
-      `/destinations/${dest.id}`,
-      `${lang}/destinations/${dest.id}.html`,
-      () => buildDestinationDetailContent(dest.id, lang),
-      d ? (buildDestinationSchema(d, lang) as Record<string, unknown>[]) : [],
-    );
-  }
-
+  for (const rest of Object.keys(EXPERIENCE_PAGE_ROUTES)) add(rest, `${lang}${rest}/index.html`, () => buildExperienceContent(rest, lang));
+  for (const id of TOUR_ROUTES) { const t = getLocalizedTour(id, lang); add(`/tours/${id}`, `${lang}/tours/${id}.html`, () => buildTourDetailContent(id, lang), t ? (buildTourSchema(t, id, lang) as Record<string, unknown>[]) : []); }
+  for (const dest of destinations) { const d = getLocalizedDestination(dest.id, lang); add(`/destinations/${dest.id}`, `${lang}/destinations/${dest.id}.html`, () => buildDestinationDetailContent(dest.id, lang), d ? (buildDestinationSchema(d, lang) as Record<string, unknown>[]) : []); }
   return routes;
 }
-
-// ── Head rewriting ───────────────────────────────────────────────────────────
 function injectHead(html: string, meta: RouteEntry['meta'], rest: string, lang: string): string {
-  const clean = rest === '/' ? '' : rest;
-  const currentUrl = `${SITE_URL}/${lang}${clean}`;
-  const fullTitle = `${meta.title} — ${BRAND}`;
-  const ogUrl = currentUrl;
-
-  const hreflangLinks = hrefsFor(rest);
-
-  // Replace the static <title> (between <title> and </title>)
+  const clean = rest === '/' ? '' : rest; const currentUrl = `${SITE_URL}/${lang}${clean}`; const fullTitle = `${meta.title} — ${BRAND}`; const ogUrl = currentUrl; const hreflangLinks = hrefsFor(rest);
   html = html.replace(/<title>[\s\S]*?<\/title>/, `<title>${fullTitle}</title>`);
-
-  // Replace the static meta description
-  html = html.replace(
-    /<meta name="description" content="[^"]*"/,
-    `<meta name="description" content="${meta.description}"`,
-  );
-
-  // Replace the static canonical
-  html = html.replace(
-    /<link rel="canonical" href="[^"]*"/,
-    `<link rel="canonical" href="${ogUrl}"`,
-  );
-
-  // Replace og:url
-  html = html.replace(
-    /<meta property="og:url" content="[^"]*"/,
-    `<meta property="og:url" content="${ogUrl}"`,
-  );
-
-  // Replace og:title
-  html = html.replace(
-    /<meta property="og:title" content="[^"]*"/,
-    `<meta property="og:title" content="${fullTitle}"`,
-  );
-
-  // Replace og:description
-  html = html.replace(
-    /<meta property="og:description" content="[^"]*"/,
-    `<meta property="og:description" content="${meta.description}"`,
-  );
-
-  // Replace og:locale with the language's locale
-  const ogLocale = OG_LOCALE[lang] ?? 'en_US';
-  html = html.replace(
-    /<meta property="og:locale" content="[^"]*"/,
-    `<meta property="og:locale" content="${ogLocale}"`,
-  );
-
-  // Replace twitter:title
-  html = html.replace(
-    /<meta name="twitter:title" content="[^"]*"/,
-    `<meta name="twitter:title" content="${fullTitle}"`,
-  );
-
-  // Replace twitter:description
-  html = html.replace(
-    /<meta name="twitter:description" content="[^"]*"/,
-    `<meta name="twitter:description" content="${meta.description}"`,
-  );
-
-  // Replace og:image if route metadata provides one
+  html = html.replace(/<meta name="description" content="[^"]*"/, `<meta name="description" content="${meta.description}"`);
+  html = html.replace(/<link rel="canonical" href="[^"]*"/, `<link rel="canonical" href="${ogUrl}"`);
+  html = html.replace(/<meta property="og:url" content="[^"]*"/, `<meta property="og:url" content="${ogUrl}"`);
+  html = html.replace(/<meta property="og:locale" content="[^"]*"/, `<meta property="og:locale" content="${OG_LOCALE[lang] ?? 'en_US'}"`);
+  html = html.replace(/<meta name="twitter:title" content="[^"]*"/, `<meta name="twitter:title" content="${fullTitle}"`);
+  html = html.replace(/<meta name="twitter:description" content="[^"]*"/, `<meta name="twitter:description" content="${meta.description}"`);
   if (meta.ogImage) {
-    html = html.replace(
-      /<meta property="og:image" content="[^"]*"/,
-      `<meta property="og:image" content="${SITE_URL}${meta.ogImage}"`,
-    );
-    html = html.replace(
-      /<meta name="twitter:image" content="[^"]*"/,
-      `<meta name="twitter:image" content="${SITE_URL}${meta.ogImage}"`,
-    );
+    html = html.replace(/<meta property="og:image" content="[^"]*"/, `<meta property="og:image" content="${SITE_URL}${meta.ogImage}"`);
+    html = html.replace(/<meta name="twitter:image" content="[^"]*"/, `<meta name="twitter:image" content="${SITE_URL}${meta.ogImage}"`);
   }
-
-  // Remove the static hreflang baseline block (the comment-marked set) and
-  // replace it with the full route-specific set. The static set lives between
-  // "<!-- Hreflang alternates" and the favicon comment.
-  html = html.replace(
-    /<!-- Hreflang alternates[\s\S]*?<!-- Favicon -->/,
-    `<!-- Hreflang alternates (prerendered route-specific set) -->\n${hreflangLinks}\n\n    <!-- Favicon -->`,
-  );
-
+  html = html.replace(/<!-- Hreflang alternates[\s\S]*?<!-- Favicon -->/, `<!-- Hreflang alternates (prerendered route-specific set) -->\n${hreflangLinks}\n\n    <!-- Favicon -->`);
   return html;
 }
+function injectBody(html: string, bodyHtml: string): string { return html.replace('<div id="root"></div>', `<div id="root">\n${bodyHtml}\n  </div>`); }
+function injectLang(html: string, code: string, rtl: boolean): string { const attrs = rtl ? ` lang="${code}" dir="rtl"` : ` lang="${code}"`; return html.replace(/<html[^>]*>/, `<html${attrs}>`); }
+function injectStructuredData(html: string, schemas: Record<string, unknown>[]): string { if (!schemas.length) return html; const tags = schemas.map((s) => `    <script type="application/ld+json" data-prerendered="1">\n${JSON.stringify(s).replace(/</g, '\\u003c')}\n    </script>`).join('\n'); return html.replace('</head>', `${tags}\n\n  </head>`); }
 
-// ── Body injection ───────────────────────────────────────────────────────────
-function injectBody(html: string, bodyHtml: string): string {
-  return html.replace(
-    '<div id="root"></div>',
-    `<div id="root">\n${bodyHtml}\n  </div>`,
-  );
-}
-
-// Set the localized <html lang> (+RTL for Arabic) on the prerendered document.
-function injectLang(html: string, code: string, rtl: boolean): string {
-  const attrs = rtl ? ` lang="${code}" dir="rtl"` : ` lang="${code}"`;
-  return html.replace(/<html[^>]*>/, `<html${attrs}>`);
-}
-
-// Inject additional localized JSON-LD (Tour / TouristAttraction) into <head>.
-function injectStructuredData(html: string, schemas: Record<string, unknown>[]): string {
-  if (!schemas.length) return html;
-  const tags = schemas
-    .map(
-      (s) => `    <script type="application/ld+json" data-prerendered="1">\n${JSON.stringify(s).replace(/</g, '\\u003c')}\n    </script>`,
-    )
-    .join('\n');
-  return html.replace('</head>', `${tags}\n\n  </head>`);
-}
-
-// ── Main ─────────────────────────────────────────────────────────────────────
 function main() {
-  // The split locale registries are populated at build time so every language
-  // renders genuinely localized titles/text in the prerendered (crawlable) HTML.
   registerAllTranslations();
   registerAllContentOverlays();
-
-  if (!fs.existsSync(indexHtmlPath)) {
-    throw new Error(
-      `[prerender] dist/index.html not found at ${indexHtmlPath}. ` +
-        'Run `pnpm run build` (Vite build) before prerendering.',
-    );
-  }
-
+  if (!fs.existsSync(indexHtmlPath)) throw new Error(`[prerender] dist/index.html not found at ${indexHtmlPath}. Run \`pnpm run build\` (Vite build) before prerendering.`);
   const baseHtml = fs.readFileSync(indexHtmlPath, 'utf-8');
-
   let written = 0;
-
-  // Generate every supported language version of every route.
   for (const lang of languages) {
     const routes = buildRoutes(lang.code);
     for (const route of routes) {
       const langMarked = injectLang(baseHtml, route.lang, route.rtl);
       const htmlWithHead = injectHead(langMarked, route.meta, route.rest, lang.code);
       const html = injectStructuredData(injectBody(htmlWithHead, route.content()), route.schemas);
-
       const outPath = path.join(distDir, route.outFile);
       fs.mkdirSync(path.dirname(outPath), { recursive: true });
       fs.writeFileSync(outPath, html, 'utf-8');
@@ -747,8 +424,6 @@ function main() {
       console.log(`[prerender] wrote ${route.outFile}`);
     }
   }
-
   console.log(`\n[prerender] Done. Generated ${written} route HTML files in dist/.`);
 }
-
 main();
