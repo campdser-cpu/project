@@ -69,10 +69,16 @@ export function TopicalLinks({ destinationId, tourId }: TopicalLinksProps) {
     const tour = tours.find(item => item.id === tourId);
     if (!tour) return null;
 
-    const routeStops = (tour.routeIds ?? [])
+    const routeDestinations = (tour.routeIds ?? [])
       .map(id => destinations.find(destination => destination.id === id))
-      .filter(Boolean)
-      .slice(0, 6);
+      .filter(Boolean);
+    const priorityIds = ['marrakech', 'ourika-valley', 'ait-ben-haddou', 'dades-valley', 'merzouga', 'erg-chebbi', 'fes'];
+    const priorityStops = priorityIds
+      .map(id => routeDestinations.find(destination => destination?.id === id))
+      .filter(Boolean);
+    const routeStops = [...priorityStops, ...routeDestinations]
+      .filter((destination, index, items) => destination && items.findIndex(item => item?.id === destination.id) === index)
+      .slice(0, 7);
     const routeIdSet = new Set(tour.routeIds ?? []);
     const relatedTours = tours
       .filter(item => item.id !== tour.id)
