@@ -368,9 +368,16 @@ function buildExperienceContent(rest: string, lang: Lang): string {
 
 type RouteEntry = { rest: string; outFile: string; content: () => string; meta: ReturnType<typeof getRouteMeta>; lang: string; schemas: Record<string, unknown>[]; rtl: boolean };
 function metaFor(rest: string, lang: Lang): ReturnType<typeof getRouteMeta> {
-  // French homepage: shared SERP proposition (parity with LocalizedHead).
-  if (lang === 'fr' && (rest === '/' || rest === '')) {
-    return { title: FR_HOME_META.title, description: FR_HOME_META.description, ogImage: FR_HOME_META.ogImage };
+  // Homepage: mirror LocalizedHead exactly. At runtime the homepage title and
+  // description come from the localized hero tagline/subtext (French uses a
+  // dedicated SERP proposition). Prerender must emit the same value so crawlers
+  // and browsers agree — previously every non-FR/AR homepage showed the English
+  // description while the localized one was only applied in the browser.
+  if (rest === '/' || rest === '') {
+    if (lang === 'fr') {
+      return { title: FR_HOME_META.title, description: FR_HOME_META.description, ogImage: FR_HOME_META.ogImage };
+    }
+    return { title: tr(lang, 'hero_tagline'), description: tr(lang, 'hero_subtext'), ogImage: HOME_META.ogImage };
   }
   const en = getRouteMeta(rest);
   const ar = lang === 'ar' ? getLocalizedRouteMeta(rest, lang) : undefined;
