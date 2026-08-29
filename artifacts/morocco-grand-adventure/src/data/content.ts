@@ -853,6 +853,103 @@ export const tours: Tour[] = [
     pricingTiers: { 1: 1450, 2: 950, 3: 780, 4: 660, 5: 590 },
     image: "/images/tours/family-morocco-adventure.jpg",
     description: "Morocco captivates children and adults alike. This family itinerary is carefully paced with experiences that delight all ages — riding camels in the Sahara, exploring ancient kasbahs, tasting street food in the medina, and learning traditional crafts from Berber artisans.",
+    routeIds: ["marrakech", "ait-ben-haddou", "dades-valley", "todra-gorge", "merzouga", "fes"],
+    routeCaption: "From the squares of Marrakech across the High Atlas to the dune field of Erg Chebbi at Merzouga, then north through the mountain towns to the imperial city of Fes. The route is paced for families, with easy stops and time to explore. Tap any numbered stop to explore it.",
+    itineraryDays: [
+      {
+        day: 1,
+        title: "Arrive in Marrakech — First Taste of the Red City",
+        desc: "Meet your private driver and settle into your family hotel or riad in Marrakech. This evening, take an easy first wander through the medina and try a few street-food bites — mint tea, fresh juices and Moroccan pastries — before an early night after the journey.",
+        stops: ["Marrakech arrival & transfer", "Medina wander", "Street food tasting", "Overnight: Marrakech"],
+      },
+      {
+        day: 2,
+        title: "Marrakech Family Day — Squares, Crafts & Storytellers",
+        desc: "A relaxed family day in the Red City. Watch the snake charmers, musicians and storytellers of Jemaa el-Fna, wander the colourful souks, and try traditional crafts with local artisans — the kind of hands-on experiences children remember long after the holiday.",
+        stops: ["Jemaa el-Fna", "Snake charmers & storytellers", "Souks & crafts", "Kid-friendly hammam (optional)", "Overnight: Marrakech"],
+      },
+      {
+        day: 3,
+        title: "High Atlas Crossing & Mountain Mule Ride",
+        desc: "Leave the city and climb into the High Atlas over the dramatic Tizi n'Tichka mountain pass. Today your family swaps the road for a gentle mule ride through the mountains, meeting the sights and sounds of Morocco's high country at an easy, family-friendly pace.",
+        stops: ["High Atlas Mountains", "Tizi n'Tichka Pass", "Atlas mule ride", "Berber villages", "Overnight: Dades Valley"],
+      },
+      {
+        day: 4,
+        title: "Aït Ben Haddou & the Dades Valley",
+        desc: "Stop at the famous UNESCO fortified village of Aït Ben Haddou, a centuries-old kasbah you may recognise from the cinema. Wander its clay lanes together, then follow the winding road through the Dades Valley, with its cliff-hugging turns and dramatic red rock landscape.",
+        stops: ["Aït Ben Haddou (UNESCO)", "Kasbah exploration", "Dades Valley viewpoints", "Overnight: Dades Valley"],
+      },
+      {
+        day: 5,
+        title: "Todra Gorge & the Road to the Sahara",
+        desc: "Pass through the towering Todra Gorge, one of Morocco's most dramatic canyons, then continue through palm groves and Berber villages towards the edge of the Sahara. Kids love watching the landscape open out as the golden dunes of Erg Chebbi appear on the horizon.",
+        stops: ["Todra Gorge", "Palm groves & Berber villages", "Erg Chebbi dunes on the horizon", "Overnight: Merzouga"],
+      },
+      {
+        day: 6,
+        title: "Camel Trek at Sunset over Erg Chebbi",
+        desc: "The highlight for many families — a gentle camel trek across the golden dunes of Erg Chebbi at sunset, when the sand glows amber and the desert goes quiet. Sleep near the dunes and wake to a sunrise over the Sahara your children will talk about for years.",
+        stops: ["Erg Chebbi dunes", "Sunset camel trek", "Desert camp night", "Star-filled evening", "Overnight: Merzouga"],
+      },
+      {
+        day: 7,
+        title: "Family Day in Merzouga",
+        desc: "A relaxed day to slow down: early sunrise over the sand, sandboarding and time on the dunes, visits with local families, and learning traditional crafts from Berber artisans. A gentle day that balances active fun with real connection to desert life.",
+        stops: ["Sunrise over the dunes", "Sandboarding & free time", "Berber crafts & hospitality", "Overnight: Merzouga"],
+      },
+      {
+        day: 8,
+        title: "North to Fes Through the Mid-Atlas",
+        desc: "Bid farewell to the desert and drive north through the mountain towns towards the imperial city of Fes. Break the journey with easy stops and a taste of the Middle Atlas highlands before arriving in Fes for the final night of the adventure.",
+        stops: ["Journey north", "Mid-Atlas towns", "Arrival in Fes", "Overnight: Fes"],
+      },
+      {
+        day: 9,
+        title: "Morning in Fes & Departure",
+        desc: "A short guided glimpse of Fes, Morocco's imperial cultural heart, catching the medina's atmosphere at its liveliest. After lunch your private driver transfers you to the airport or hotel for the journey home at the end of your family Morocco adventure.",
+        stops: ["Fes medina & sights", "Fes highlights", "Airport / hotel transfer", "End of tour"],
+      },
+    ],
+    included: [
+      "Private air-conditioned vehicle",
+      "Professional English-speaking driver",
+      "Fuel",
+      "Private accommodation throughout",
+      "Desert camp night with camel trek",
+      "Daily breakfasts",
+      "Hotel & riad pick-up / drop-off",
+      "Free WiFi in most hotels",
+    ],
+    excluded: [
+      "International flights",
+      "Lunches & drinks",
+      "Monument & museum entrance fees",
+      "Tips & gratuities",
+      "Personal expenses",
+    ],
+    faq: [
+      {
+        question: "Is this tour suitable for children?",
+        answer: "Yes — this itinerary is designed for families. It uses a private vehicle so you set the pace, keeps travel days manageable, and balances active highlights like the camel trek and Atlas mule ride with relaxed days exploring squares, souks and crafts that appeal to all ages.",
+      },
+      {
+        question: "Is this a private tour?",
+        answer: "Yes — every departure is fully private for your family alone. You travel with your own dedicated English-speaking driver and guide where needed, with no strangers joining your group, so you can stop when the children need a break.",
+      },
+      {
+        question: "What is the accommodation like?",
+        answer: "Handpicked family-friendly hotels and riads with private rooms throughout, plus an unforgettable night near the dunes of Erg Chebbi with real beds. Meals and board are arranged around your family's needs.",
+      },
+      {
+        question: "What is the best time to travel with a family?",
+        answer: "The tour runs year-round. Spring (March–May) and autumn (September–November) are ideal, with warm days and comfortable nights. Summer is hot inland, so we start early and plan around the heat; winter is crisp, clear and quieter.",
+      },
+      {
+        question: "How do I confirm my booking?",
+        answer: "Message us on WhatsApp to lock in your dates and we'll tailor the details to your family. A small deposit secures your tour, with the balance payable before or at the start of the trip.",
+      },
+    ],
   },
 ];
 
