@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, useEffect } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Navbar } from './Navbar';
 import { Footer } from './Footer';
@@ -7,13 +7,84 @@ import { ScrollToTop } from '../ui/ScrollToTop';
 import { AIAssistant } from '../ui/AIAssistant';
 import { StickyBookingCTA } from '../ui/StickyBookingCTA';
 import { StructuredData, buildOrganizationSchema } from '../seo/StructuredData';
+import { trackEvent } from '@/lib/analytics';
 
 interface LayoutProps {
   children: ReactNode;
 }
 
+function getTourContext(pathname: string): { tourId?: string } {
+  const match = pathname.match(/^\/[^/]+\/tours\/([^/?#]+)/);
+  return match ? { tourId: decodeURIComponent(match[1]) } : {};
+}
+
 export function Layout({ children }: LayoutProps) {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
+
+  useEffect(() => {
+    const pathname = window.location.pathname;
+    const { tourId } = getTourContext(pathname);
+
+    if (tourId) {
+      trackEvent('view_tour', {
+        tour_id: tourId,
+        tour: tourId,
+        language: lang,
+      });
+    }
+
+    const onClick = (event: MouseEvent) => {
+      const target = event.target as HTMLElement | null;
+      const link = target?.closest<HTMLAnchorElement>('a[href]');
+      if (!link) return;
+
+      const href = link.href;
+      const label = (link.textContent ?? '').replace(/\s+/g, ' ').trim().slice(0, 100);
+
+      if (href.includes('wa.me/')) {
+        trackEvent('whatsapp_click', {
+          link_url: href,
+          link_text: label,
+          tour_id: tourId,
+          language: lang,
+        });
+      } else if (href.startsWith('tel:')) {
+        trackEvent('phone_click', { link_text: label, language: lang });
+      } else if (href.startsWith('mailto:')) {
+        trackEvent('email_click', { link_text: label, language: lang });
+      } else if (link.pathname.includes('/tours/')) {
+        const destinationTourId = link.pathname.split('/tours/')[1]?.split('/')[0];
+        trackEvent('select_tour', {
+          tour_id: destinationTourId,
+          tour: destinationTourId,
+          link_text: label,
+          language: lang,
+        });
+      } else if (link.pathname.includes('/contact') || link.pathname.includes('/trip-builder')) {
+        trackEvent('start_booking', {
+          destination: link.pathname.includes('/trip-builder') ? 'trip_builder' : 'contact',
+          language: lang,
+        });
+      }
+    };
+
+    const onSubmit = (event: SubmitEvent) => {
+      const form = event.target as HTMLFormElement | null;
+      if (!form) return;
+      trackEvent('submit_inquiry', {
+        form_id: form.id || 'contact-form',
+        language: lang,
+      });
+    };
+
+    document.addEventListener('click', onClick);
+    document.addEventListener('submit', onSubmit);
+    return () => {
+      document.removeEventListener('click', onClick);
+      document.removeEventListener('submit', onSubmit);
+    };
+  }, [lang]);
+
   return (
     <div className="min-h-screen flex flex-col">
       {/* Global Organization structured data — one stable entity @id across the
