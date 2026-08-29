@@ -25,6 +25,8 @@ export function Layout({ children }: LayoutProps) {
   const [location] = useLocation();
   const destinationMatch = location.match(/^\/destinations\/([^/?#]+)$/);
   const tourMatch = location.match(/^\/tours\/([^/?#]+)$/);
+  const isDestinationsHub = location === '/destinations' || location === '/destinations/';
+  const isTripBuilder = location === '/trip-builder' || location === '/trip-builder/';
 
   useEffect(() => {
     const pathname = window.location.pathname;
@@ -92,11 +94,7 @@ export function Layout({ children }: LayoutProps) {
 
   return (
     <div className="min-h-screen flex flex-col">
-      {/* Global Organization structured data — one stable entity @id across the
-          entire site so Google sees Morocco Grand Adventure as one business. */}
       <StructuredData id="organization" data={buildOrganizationSchema()} />
-
-      {/* Skip-to-content link for keyboard / screen-reader users */}
       <a
         href="#main-content"
         className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-primary focus:text-primary-foreground focus:font-bold focus:shadow-lg"
@@ -109,6 +107,8 @@ export function Layout({ children }: LayoutProps) {
       <main id="main-content" className="flex-grow flex flex-col relative" tabIndex={-1}>{children}</main>
       {destinationMatch && <TopicalLinks destinationId={destinationMatch[1]} />}
       {tourMatch && <TopicalLinks tourId={tourMatch[1]} />}
+      {isDestinationsHub && <TopicalLinks context="destinations-hub" />}
+      {isTripBuilder && <TopicalLinks context="trip-builder" />}
       <Footer />
       <WhatsAppButton />
       <AIAssistant />
