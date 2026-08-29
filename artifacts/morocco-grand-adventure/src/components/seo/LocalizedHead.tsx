@@ -17,7 +17,13 @@ import { getLocalizedRouteMeta } from './route-metadata';
 
 const BRAND = 'Morocco Grand Adventure';
 
-// Open Graph locale codes (Facebook-style) per language.
+// The French homepage has enough Search Console evidence to justify a
+// language-specific SERP message rather than inheriting the English fallback.
+const FR_HOME_META = {
+  title: 'Circuits au Maroc — Voyages privés, Sahara & Marrakech',
+  description: 'Découvrez le Maroc avec des circuits privés au départ de Marrakech et des expériences dans le Sahara, à Merzouga et dans les villes impériales.',
+} as const;
+
 const OG_LOCALE: Record<string, string> = {
   en: 'en_US', fr: 'fr_FR', es: 'es_ES', it: 'it_IT', de: 'de_DE',
   nl: 'nl_NL', pt: 'pt_PT', zh: 'zh_CN', ja: 'ja_JP', ko: 'ko_KR', ar: 'ar_AR',
@@ -45,21 +51,19 @@ export function LocalizedHead() {
     const urlFor = (code: string) => `${origin}${RAW_BASE}/${code}${clean}`;
     const currentUrl = urlFor(lang);
 
-    // ── Per-page metadata ────────────────────────────────────────────────
-    // Resolve unique title + description for this route.  For the homepage
-    // we keep the localized tagline/subtext; for all other routes we use the
-    // route-metadata copy which is localized for Arabic and English elsewhere.
     const routeMeta = getLocalizedRouteMeta(rest, lang);
     const isHome = rest === '/' || rest === '';
-    const tagline = isHome
-      ? t('hero_tagline').replace(/\s+/g, ' ').trim()
-      : routeMeta.title;
-    const description = isHome ? t('hero_subtext') : routeMeta.description;
+    const useFrenchHomeMeta = isHome && lang === 'fr';
+    const tagline = useFrenchHomeMeta
+      ? FR_HOME_META.title
+      : isHome
+        ? t('hero_tagline').replace(/\s+/g, ' ').trim()
+        : routeMeta.title;
+    const description = useFrenchHomeMeta ? FR_HOME_META.description : isHome ? t('hero_subtext') : routeMeta.description;
     const fullTitle = `${tagline} — ${BRAND}`;
     document.title = fullTitle;
     upsertMeta('name', 'description', description);
 
-    // Canonical → current localized URL (updates the static tag in place).
     let canonical = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]');
     if (!canonical) {
       canonical = document.createElement('link');
@@ -68,7 +72,6 @@ export function LocalizedHead() {
     }
     canonical.setAttribute('href', currentUrl);
 
-    // ── Open Graph / Twitter social cards ────────────────────────────────
     upsertMeta('property', 'og:locale', OG_LOCALE[lang] ?? 'en_US');
     upsertMeta('property', 'og:url', currentUrl);
     upsertMeta('property', 'og:title', fullTitle);
@@ -84,11 +87,8 @@ export function LocalizedHead() {
     upsertMeta('name', 'twitter:card', 'summary_large_image');
     upsertMeta('name', 'twitter:title', fullTitle);
     upsertMeta('name', 'twitter:description', description);
-    if (routeMeta.ogImage) {
-      upsertMeta('name', 'twitter:image', `${origin}${routeMeta.ogImage}`);
-    }
+    if (routeMeta.ogImage) upsertMeta('name', 'twitter:image', `${origin}${routeMeta.ogImage}`);
 
-    // hreflang alternates: rebuild the managed set for the current route.
     document.head.querySelectorAll('link[data-i18n-alt]').forEach((n) => n.remove());
     const frag = document.createDocumentFragment();
     const addAlt = (hreflang: string, href: string) => {
@@ -101,6 +101,7 @@ export function LocalizedHead() {
     };
     for (const l of languages) addAlt(l.code, urlFor(l.code));
     addAlt('x-default', urlFor('en'));
+  
     document.head.appendChild(frag);
     // `t` is a pure function of `lang`, so [lang, rest] fully captures the deps.
     // eslint-disable-next-line react-hooks/exhaustive-deps
