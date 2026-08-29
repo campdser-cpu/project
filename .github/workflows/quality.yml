@@ -1,0 +1,43 @@
+name: Site quality
+
+on:
+  push:
+    branches: [main, seo-growth-foundation]
+  pull_request:
+    branches: [main]
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.34.5
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Typecheck workspace
+        run: pnpm run typecheck
+
+      - name: Typecheck site
+        run: pnpm --filter @workspace/morocco-grand-adventure run typecheck
+
+      - name: Build and prerender site
+        run: pnpm --filter @workspace/morocco-grand-adventure run build
+
+      - name: Audit routes and internal links
+        run: pnpm --filter @workspace/morocco-grand-adventure run route:audit
+
+      - name: Audit translations
+        run: pnpm --filter @workspace/morocco-grand-adventure run i18n:audit
