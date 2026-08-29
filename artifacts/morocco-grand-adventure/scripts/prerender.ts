@@ -43,7 +43,7 @@ import {
   blogPosts,
   type BlogPost,
 } from '../src/i18n/content';
-import { getRouteMeta, getLocalizedRouteMeta, BLOG_META } from '../src/components/seo/route-metadata';
+import { getRouteMeta, getLocalizedRouteMeta, BLOG_META, HOME_META, FR_HOME_META } from '../src/components/seo/route-metadata';
 import { buildTourSchema, buildDestinationSchema, buildBlogPostSchema, buildReviewSchema } from '../src/components/seo/StructuredData';
 import { registerAllTranslations } from '../src/i18n/locales';
 import { registerAllContentOverlays } from '../src/i18n/content/overlays';
@@ -174,6 +174,7 @@ const RELATED_DESTINATION_IDS: Record<string, string[]> = {
   'dades-valley': ['ait-ben-haddou', 'todra-gorge', 'merzouga'],
   merzouga: ['erg-chebbi', 'dades-valley', 'todra-gorge'],
   'erg-chebbi': ['merzouga', 'dades-valley', 'ait-ben-haddou'],
+  'todra-gorge': ['dades-valley', 'merzouga', 'ait-ben-haddou'],
 };
 
 /**
@@ -254,8 +255,17 @@ function buildTourDetailContent(id: string, lang: Lang): string {
   return h1(tour.name) + paragraph(tour.description ?? '') + paragraph(`${tr(lang, 'search_duration')}: ${tour.duration}`) + h2(tr(lang, 'tour_why_love')) + ul(tour.highlights) + (itinerary.length > 0 ? h2(tr(lang, 'tour_itinerary')) + ul(itinerary.map((d) => `${tr(lang, 'tour_day')} ${d.day}: ${d.title}`)) : '') + (included.length > 0 ? h2(tr(lang, 'tour_included')) + ul(included) : '') + (excluded.length > 0 ? h2(tr(lang, 'tour_not_included')) + ul(excluded) : '') + (faqs.length > 0 ? h2(tr(lang, 'nav_faq')) + faqBlock(faqs) : '') + buildTopicalLinksContent({ tourId: tour.id }, lang);
 }
 function buildDestinationsContent(lang: Lang): string {
-  const blocks = getLocalizedDestinations(lang).map((d) => h2(d.name) + paragraph(d.description) + ul(d.highlights)).join('');
-  return h1('Morocco') + paragraph(tr(lang, 'section_destinations')) + blocks;
+  // Mirror the live /destinations page structure: localized H1 + intro, each
+  // destination linked to its detail page, and the priority tour cross-links.
+  const blocks = getLocalizedDestinations(lang).map((d) => h2Link(`${SITE_URL}/${lang}/destinations/${d.id}`, d.name) + paragraph(d.shortDesc) + ul(d.highlights)).join('');
+  const priorityTours = ['3-day-sahara-marrakech', '5-day-imperial-cities', '7-day-imperial-cities-sahara-escape']
+    .map((id) => getLocalizedTour(id, lang))
+    .filter((t): t is NonNullable<typeof t> => Boolean(t))
+    .map((t) => `      <li>${link(`${SITE_URL}/${lang}/tours/${t.id}`, `${escapeHtml(t.name)} (${escapeHtml(t.duration)})`)}</li>`)
+    .join('\n');
+  return h1(tr(lang, 'dest_discover')) + paragraph(tr(lang, 'dest_find'))
+    + blocks
+    + h2(tr(lang, 'section_tours')) + `    <ul>\n${priorityTours}\n    </ul>\n`;
 }
 function buildDestinationDetailContent(destId: string, lang: Lang): string {
   const d = getLocalizedDestination(destId, lang);
@@ -344,7 +354,7 @@ const EXPERIENCE_PAGE_ROUTES: Record<string, { tours: string[]; destinations: st
   '/day-trips': { tours: [], destinations: ['marrakech', 'essaouira', 'ouzoud', 'ourika-valley', 'imlil'] },
   '/merzouga-guide': { tours: ['3-day-sahara-marrakech', '7-day-imperial-cities-sahara-escape'], destinations: ['merzouga', 'erg-chebbi', 'zagora', 'todra-gorge'] },
   '/gallery': { tours: [], destinations: ['marrakech', 'chefchaouen', 'merzouga', 'fes'] },
-  '/trip-builder': { tours: ['3-day-sahara-marrakech', '5-day-imperial-cities', '7-day-imperial-cities-sahara-escape'], destinations: ['marrakech', 'fes', 'merzouga', 'chefchaouen'] },
+  '/trip-builder': { tours: ['3-day-sahara-marrakech', '5-day-imperial-cities', '7-day-imperial-cities-sahara-escape', 'family-morocco-adventure', 'honeymoon-morocco'], destinations: ['marrakech', 'fes', 'merzouga', 'erg-chebbi', 'ait-ben-haddou'] },
 };
 function buildExperienceContent(rest: string, lang: Lang): string {
   const meta = getRouteMeta(rest);
@@ -358,13 +368,25 @@ function buildExperienceContent(rest: string, lang: Lang): string {
 
 type RouteEntry = { rest: string; outFile: string; content: () => string; meta: ReturnType<typeof getRouteMeta>; lang: string; schemas: Record<string, unknown>[]; rtl: boolean };
 function metaFor(rest: string, lang: Lang): ReturnType<typeof getRouteMeta> {
+  // French homepage: shared SERP proposition (parity with LocalizedHead).
+  if (lang === 'fr' && (rest === '/' || rest === '')) {
+    return { title: FR_HOME_META.title, description: FR_HOME_META.description, ogImage: FR_HOME_META.ogImage };
+  }
+  const en = getRouteMeta(rest);
+  const ar = lang === 'ar' ? getLocalizedRouteMeta(rest, lang) : undefined;
+  const key = STATIC_TITLE_KEYS[rest];
+  // Routes with dedicated SEO metadata (all static pages + tours/destinations
+  // present in TOUR_META/DESTINATION_META). Keeping prerender parity with the
+  // runtime head is essential — Google indexes the prerendered HTML.
+  if (en !== HOME_META) {
+    return { title: ar?.title ?? (key ? tr(lang, key) || en.title : en.title), description: ar?.description ?? en.description, ogImage: ar?.ogImage ?? en.ogImage };
+  }
+  // Fallback for routes without dedicated metadata: use the localized entity data.
   let m = rest.match(/^\/tours\/([^/]+)$/);
   if (m) { const t = getLocalizedTour(m[1], lang); if (t) return { title: t.name, description: truncate(t.description), ogImage: t.image }; }
   m = rest.match(/^\/destinations\/([^/]+)$/);
   if (m) { const d = getLocalizedDestination(m[1], lang); if (d) return { title: d.name, description: truncate(d.shortDesc || d.description), ogImage: d.image }; }
-  const en = getRouteMeta(rest); const ar = lang === 'ar' ? getLocalizedRouteMeta(rest, lang) : undefined; const key = STATIC_TITLE_KEYS[rest];
-  const title = ar ? ar.title : (key ? tr(lang, key) || en.title : en.title); const description = ar ? ar.description : en.description;
-  return { title, description, ogImage: ar?.ogImage ?? en.ogImage };
+  return { title: ar?.title ?? (key ? tr(lang, key) || en.title : en.title), description: ar?.description ?? en.description, ogImage: ar?.ogImage ?? en.ogImage };
 }
 function buildRoutes(lang: Lang): RouteEntry[] {
   const routes: RouteEntry[] = []; const rtl = lang === 'ar';

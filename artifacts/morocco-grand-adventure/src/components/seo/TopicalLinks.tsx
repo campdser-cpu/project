@@ -9,6 +9,7 @@ const RELATED_DESTINATION_IDS: Record<string, string[]> = {
   'dades-valley': ['ait-ben-haddou', 'todra-gorge', 'merzouga'],
   merzouga: ['erg-chebbi', 'dades-valley', 'todra-gorge'],
   'erg-chebbi': ['merzouga', 'dades-valley', 'ait-ben-haddou'],
+  'todra-gorge': ['dades-valley', 'merzouga', 'ait-ben-haddou'],
 };
 
 const HUB_DESTINATION_IDS = [
