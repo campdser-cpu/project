@@ -41,8 +41,8 @@ function defaultMessageForRoute(path: string): string {
   if (/^\/merzouga-guide/.test(path)) return base('I’m interested in a Merzouga desert trip.');
   if (/^\/destinations\/.+/.test(path)) return base('I’m interested in this destination.');
   if (/^\/destinations/.test(path)) return base('I’m interested in visiting Morocco.');
-  if (/^\/trip-builder/.test(path)) base('I’d like help building a custom Morocco trip.');
-  if (/^\/about/.test(path)) base('I’d like to learn more and plan a trip.');
+  if (/^\/trip-builder/.test(path)) return base('I’d like help building a custom Morocco trip.');
+  if (/^\/about/.test(path)) return base('I’d like to learn more and plan a trip.');
   return base('I’m interested in your Morocco tours.');
 }
 
