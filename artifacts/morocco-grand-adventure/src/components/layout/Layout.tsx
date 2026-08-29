@@ -8,6 +8,8 @@ import { AIAssistant } from '../ui/AIAssistant';
 import { StickyBookingCTA } from '../ui/StickyBookingCTA';
 import { StructuredData, buildOrganizationSchema } from '../seo/StructuredData';
 import { trackEvent } from '@/lib/analytics';
+import { TopicalLinks } from '../seo/TopicalLinks';
+import { useLocation } from 'wouter';
 
 interface LayoutProps {
   children: ReactNode;
@@ -20,6 +22,9 @@ function getTourContext(pathname: string): { tourId?: string } {
 
 export function Layout({ children }: LayoutProps) {
   const { t, lang } = useLanguage();
+  const [location] = useLocation();
+  const destinationMatch = location.match(/^\/destinations\/([^/?#]+)$/);
+  const tourMatch = location.match(/^\/tours\/([^/?#]+)$/);
 
   useEffect(() => {
     const pathname = window.location.pathname;
@@ -102,6 +107,8 @@ export function Layout({ children }: LayoutProps) {
         <Navbar />
       </header>
       <main id="main-content" className="flex-grow flex flex-col relative" tabIndex={-1}>{children}</main>
+      {destinationMatch && <TopicalLinks destinationId={destinationMatch[1]} />}
+      {tourMatch && <TopicalLinks tourId={tourMatch[1]} />}
       <Footer />
       <WhatsAppButton />
       <AIAssistant />
