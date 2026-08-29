@@ -27,6 +27,18 @@ export const HOME_META: RouteMeta = {
   ogImage: "/images/hero/desert-pano.jpg",
 };
 
+/**
+ * French homepage SERP meta. Shared by LocalizedHead (runtime) and the
+ * prerenderer so crawlers and browsers always see the same French proposition.
+ * Written for French-speaking travelers — not mechanically translated.
+ */
+export const FR_HOME_META: RouteMeta = {
+  title: "Voyage sur mesure au Maroc — Circuits privés & Sahara",
+  description:
+    "Créez votre circuit privé au Maroc avec une agence locale : désert de Merzouga, nuit en camp de luxe, Marrakech, Fès et l'Atlas. Devis personnalisé sous 24 h.",
+  ogImage: "/images/hero/desert-pano.jpg",
+};
+
 const TOUR_SEO_ALIAS_TO_ID: Record<string, string> = {
   '3-days-marrakech-to-merzouga-desert-tour': '3-day-sahara-marrakech',
   '3-days-fes-to-marrakech-desert-tour': '5-day-imperial-cities',
@@ -136,9 +148,9 @@ export const routeMetadata: Record<string, RouteMeta> = {
     ogImage: "/images/hero/medina-pano.jpg",
   },
   "/trip-builder": {
-    title: "Custom Morocco Trip Builder — Design Your Bespoke Itinerary",
+    title: "Create a Custom Morocco Itinerary — Private Trip Planner",
     description:
-      "Build your perfect Morocco trip step by step. Choose destinations, interests, budget and travel dates — our local experts craft a personalised itinerary just for you.",
+      "Design your own private Morocco itinerary — dates, budget, Sahara camps in Merzouga, Fes and Marrakech. Local experts reply with a quote within 24 hours.",
     ogImage: "/images/personal/luxury-camp-dusk.jpg",
   },
   "/about": {

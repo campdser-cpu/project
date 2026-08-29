@@ -13,16 +13,9 @@ import { useEffect } from 'react';
 import { usePathname } from 'wouter/use-browser-location';
 import { useLanguage, languages } from '@/contexts/LanguageContext';
 import { parseLangPath, RAW_BASE } from '@/lib/i18n-routing';
-import { getLocalizedRouteMeta } from './route-metadata';
+import { getLocalizedRouteMeta, FR_HOME_META } from './route-metadata';
 
 const BRAND = 'Morocco Grand Adventure';
-
-// The French homepage has enough Search Console evidence to justify a
-// language-specific SERP message rather than inheriting the English fallback.
-const FR_HOME_META = {
-  title: 'Circuits au Maroc — Voyages privés, Sahara & Marrakech',
-  description: 'Découvrez le Maroc avec des circuits privés au départ de Marrakech et des expériences dans le Sahara, à Merzouga et dans les villes impériales.',
-} as const;
 
 const OG_LOCALE: Record<string, string> = {
   en: 'en_US', fr: 'fr_FR', es: 'es_ES', it: 'it_IT', de: 'de_DE',
