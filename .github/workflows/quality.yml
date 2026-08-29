@@ -5,10 +5,19 @@ on:
     branches: [main, seo-growth-foundation]
   pull_request:
     branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
   quality:
-    runs-on: ubuntu-latest
+    name: quality
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    defaults:
+      run:
+        shell: bash
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -17,12 +26,19 @@ jobs:
         uses: pnpm/action-setup@v4
         with:
           version: 10.34.5
+          run_install: false
 
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: pnpm
+
+      - name: Verify toolchain
+        run: |
+          node --version
+          pnpm --version
+          pnpm config get store-dir
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
@@ -35,6 +51,17 @@ jobs:
 
       - name: Build and prerender site
         run: pnpm --filter @workspace/morocco-grand-adventure run build
+
+      - name: Verify required prerendered pages and TopicalLinks output
+        run: |
+          test -f artifacts/morocco-grand-adventure/dist/en/destinations/merzouga.html
+          test -f artifacts/morocco-grand-adventure/dist/en/destinations/marrakech.html
+          test -f artifacts/morocco-grand-adventure/dist/en/tours/3-day-sahara-marrakech.html
+          test -f artifacts/morocco-grand-adventure/dist/fr/destinations/merzouga.html
+          grep -q '/en/destinations/erg-chebbi' artifacts/morocco-grand-adventure/dist/en/destinations/merzouga.html
+          grep -q '/en/tours/3-day-sahara-marrakech' artifacts/morocco-grand-adventure/dist/en/destinations/merzouga.html
+          grep -q '/en/destinations/marrakech' artifacts/morocco-grand-adventure/dist/en/tours/3-day-sahara-marrakech.html
+          grep -q '/fr/destinations/erg-chebbi' artifacts/morocco-grand-adventure/dist/fr/destinations/merzouga.html
 
       - name: Audit routes and internal links
         run: pnpm --filter @workspace/morocco-grand-adventure run route:audit
