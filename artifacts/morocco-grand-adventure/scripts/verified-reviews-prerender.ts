@@ -7,7 +7,7 @@ const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const distDir = path.resolve(scriptDir, '..', 'dist');
 
 function escapeHtml(text: string): string {
-  return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\"/g, '&quot;').replace(/'/g, '&#39;');
+  return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 }
 
 function link(url: string, text: string): string {
@@ -53,11 +53,11 @@ function replaceBalancedDiv(html: string, className: string, replacement: string
 }
 
 function removeReviewJsonLd(html: string): string {
-  return html.replace(/<script type="application\\/ld\\+json">([\\s\\S]*?)<\\/script>/g, (full, json) => {
+  const scriptPattern = /<script type="application\/ld\+json">([\s\S]*?)<\/script>/g;
+  return html.replace(scriptPattern, (full, json) => {
     try {
       const data = JSON.parse(json);
-      const containsReview = JSON.stringify(data).includes('\"@type\":\"Review\"');
-      return containsReview ? '' : full;
+      return JSON.stringify(data).includes('"@type":"Review"') ? '' : full;
     } catch {
       return full;
     }
