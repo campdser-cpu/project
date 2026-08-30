@@ -52,33 +52,11 @@ function replaceBalancedDiv(html: string, className: string, replacement: string
   return html;
 }
 
-function removeTopLevelLegacyReviewDivs(html: string): string {
-  let cursor = 0;
-  while (true) {
-    const marker = '<div class="prerendered-review">';
-    const start = html.indexOf(marker, cursor);
-    if (start < 0) return html;
-
-    let depth = 0;
-    let i = start;
-    while (i < html.length) {
-      const nextOpen = html.indexOf('<div', i + 4);
-      const nextClose = html.indexOf('</div>', i + 4);
-      if (nextClose < 0) return html;
-      if (nextOpen >= 0 && nextOpen < nextClose) {
-        depth++;
-        i = nextOpen;
-      } else {
-        depth--;
-        i = nextClose + 6;
-        if (depth === 0) {
-          html = html.slice(0, start) + html.slice(i);
-          cursor = start;
-          break;
-        }
-      }
-    }
-  }
+function removeLegacyReviewDivs(html: string): string {
+  // The legacy prerenderer emits simple, non-nested review divs after the
+  // review container. Remove them deterministically so no placeholder
+  // customer names or copy can survive into crawlable HTML.
+  return html.replace(/<div class="prerendered-review">[\s\S]*?<\/div>\s*/g, '');
 }
 
 function removeReviewJsonLd(html: string): string {
@@ -110,7 +88,7 @@ for (const file of walk(distDir)) {
   if (html.includes('prerendered-reviews-container')) {
     html = replaceBalancedDiv(html, 'prerendered-reviews-container', replacement);
   }
-  html = removeTopLevelLegacyReviewDivs(html);
+  html = removeLegacyReviewDivs(html);
   html = removeReviewJsonLd(html);
   fs.writeFileSync(file, html, 'utf8');
 }
