@@ -67,10 +67,12 @@ export default function Tours() {
       <section className="relative h-[50vh] w-full flex items-center justify-center pt-20">
         <div className="absolute inset-0 z-0">
           <img 
-            src="/images/hero/desert-pano.jpg" 
+            src="/images/hero/desert-pano.webp"
+  width={601}
+  height={900} 
             alt="Our Tours" 
             className="w-full h-full object-cover"
-            onError={(e) => { (e.target as HTMLImageElement).src = '/images/dest/merzouga.jpg'; }}
+            onError={(e) => { (e.target as HTMLImageElement).src = '/images/dest/merzouga.webp'; }}
           />
           <div className="absolute inset-0 bg-black/60" />
         </div>
@@ -121,7 +123,7 @@ export default function Tours() {
             </div>
             <CinematicVideo
               src="/videos/morocco-imperial-cities-desert-oasis-tour.mp4"
-              poster="/images/hero/desert-pano.jpg"
+              poster="/images/hero/desert-pano.webp"
               alt="Morocco imperial cities, riads, souks, and Sahara oasis tour highlights"
               title="Imperial Cities & Desert"
               subtitle="Morocco is a journey of contrasts — imperial cities, mountains, oases, desert, and a culture that surprises you at every turn."
@@ -158,7 +160,7 @@ export default function Tours() {
                       src={tour.image} 
                       alt={tour.name} 
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      onError={(e) => { (e.target as HTMLImageElement).src = '/images/dest/merzouga.jpg'; }}
+                      onError={(e) => { (e.target as HTMLImageElement).src = '/images/dest/merzouga.webp'; }}
                     />
                     <div className="absolute top-4 left-4 bg-background/90 backdrop-blur text-foreground text-xs font-bold px-3 py-1.5 rounded-full flex items-center gap-1.5">
                       <Clock className="w-3.5 h-3.5" /> {tour.duration}

@@ -25,7 +25,7 @@ export default function Destinations() {
       <section className="relative h-[60vh] w-full flex items-center justify-center pt-20">
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/hero/atlas-pano.jpg"
+            src="/images/hero/atlas-pano.webp"
             alt="Morocco Destinations"
             width={1600}
             height={900}

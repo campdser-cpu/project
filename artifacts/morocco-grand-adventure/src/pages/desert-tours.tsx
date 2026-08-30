@@ -25,7 +25,7 @@ export default function DesertTours() {
       <section className="relative h-[70vh] w-full flex items-center justify-center pt-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <motion.img
-            src="/images/dest/merzouga.jpg"
+            src="/images/dest/merzouga.webp"
             alt={t('dt2_hero_alt')}
             initial={{ scale: 1.15 }}
             animate={{ scale: 1 }}
@@ -93,7 +93,9 @@ export default function DesertTours() {
           <div className="grid gap-6 md:grid-cols-3">
             <figure className="rounded-3xl overflow-hidden shadow-lg border border-border bg-card">
               <img
-                src="/images/curated/sahara-desert-dunes-couple-sunset-merzouga.jpg"
+                src="/images/curated/sahara-desert-dunes-couple-sunset-merzouga.webp"
+  width={900}
+  height={1200}
                 alt="Couple sitting on top of a golden dune admiring the endless Sahara desert at sunset near Merzouga"
                 loading="lazy"
                 decoding="async"
@@ -103,7 +105,9 @@ export default function DesertTours() {
             </figure>
             <figure className="rounded-3xl overflow-hidden shadow-lg border border-border bg-card">
               <img
-                src="/images/curated/camel-caravan-sunset-silhouette-sahara-desert.jpg"
+                src="/images/curated/camel-caravan-sunset-silhouette-sahara-desert.webp"
+  width={900}
+  height={1200}
                 alt="Silhouette of a Berber guide leading two camels along a dune ridge at sunset in the Sahara"
                 loading="lazy"
                 decoding="async"
@@ -113,7 +117,9 @@ export default function DesertTours() {
             </figure>
             <figure className="rounded-3xl overflow-hidden shadow-lg border border-border bg-card">
               <img
-                src="/images/curated/sahara-desert-sunset-silhouette-dune-morocco.jpg"
+                src="/images/curated/sahara-desert-sunset-silhouette-dune-morocco.webp"
+  width={900}
+  height={1200}
                 alt="Silhouette of a woman with arms outstretched on a dune crest against a giant setting sun in the Sahara"
                 loading="lazy"
                 decoding="async"
@@ -137,7 +143,7 @@ export default function DesertTours() {
           </div>
           <CinematicVideo
             src="/videos/sahara-desert-camel-trek-atlas-mountains-morocco.mp4"
-            poster="/images/personal/dunes-camels-poster.jpg"
+            poster="/images/personal/dunes-camels-poster.webp"
             alt="Camel caravan crossing the Sahara Desert dunes at sunset in Morocco"
             title="Camel Trek"
             subtitle="From Berber crafts in the Atlas to a golden camel trek across the dunes."

@@ -7,18 +7,18 @@ import { useLanguage } from '@/contexts/LanguageContext';
 export default function Blog() {
   const { t } = useLanguage();
   const posts = [
-    { slug: "merzouga-luxury-desert-camp-guide", title: t('blog_post_1_title'), excerpt: t('blog_post_1_excerpt'), image: "/images/personal/luxury-camp-dusk.jpg", date: t('blog_post_1_date'), readTime: t('blog_post_1_read'), category: t('blog_post_1_cat') },
-    { slug: "best-time-to-visit-morocco-sahara", title: t('blog_post_2_title'), excerpt: t('blog_post_2_excerpt'), image: "/images/dest/merzouga.jpg", date: t('blog_post_2_date'), readTime: t('blog_post_2_read'), category: t('blog_post_2_cat') },
-    { slug: "camel-trekking-etiquette-morocco", title: t('blog_post_3_title'), excerpt: t('blog_post_3_excerpt'), image: "/images/personal/dunes-camels-poster.jpg", date: t('blog_post_3_date'), readTime: t('blog_post_3_read'), category: t('blog_post_3_cat') },
-    { slug: "marrakech-to-merzouga-roadtrip", title: t('blog_post_4_title'), excerpt: t('blog_post_4_excerpt'), image: "/images/dest/ait-ben-haddou.jpg", date: t('blog_post_4_date'), readTime: t('blog_post_4_read'), category: t('blog_post_4_cat') },
-    { slug: "morocco-packing-list-desert", title: t('blog_post_5_title'), excerpt: t('blog_post_5_excerpt'), image: "/images/hero/desert-pano.jpg", date: t('blog_post_5_date'), readTime: t('blog_post_5_read'), category: t('blog_post_5_cat') },
-    { slug: "fes-chefchaouen-blue-city-guide", title: t('blog_post_6_title'), excerpt: t('blog_post_6_excerpt'), image: "/images/dest/chefchaouen.jpg", date: t('blog_post_6_date'), readTime: t('blog_post_6_read'), category: t('blog_post_6_cat') },
+    { slug: "merzouga-luxury-desert-camp-guide", title: t('blog_post_1_title'), excerpt: t('blog_post_1_excerpt'), image: "/images/personal/luxury-camp-dusk.webp", date: t('blog_post_1_date'), readTime: t('blog_post_1_read'), category: t('blog_post_1_cat') },
+    { slug: "best-time-to-visit-morocco-sahara", title: t('blog_post_2_title'), excerpt: t('blog_post_2_excerpt'), image: "/images/dest/merzouga.webp", date: t('blog_post_2_date'), readTime: t('blog_post_2_read'), category: t('blog_post_2_cat') },
+    { slug: "camel-trekking-etiquette-morocco", title: t('blog_post_3_title'), excerpt: t('blog_post_3_excerpt'), image: "/images/personal/dunes-camels-poster.webp", date: t('blog_post_3_date'), readTime: t('blog_post_3_read'), category: t('blog_post_3_cat') },
+    { slug: "marrakech-to-merzouga-roadtrip", title: t('blog_post_4_title'), excerpt: t('blog_post_4_excerpt'), image: "/images/dest/ait-ben-haddou.webp", date: t('blog_post_4_date'), readTime: t('blog_post_4_read'), category: t('blog_post_4_cat') },
+    { slug: "morocco-packing-list-desert", title: t('blog_post_5_title'), excerpt: t('blog_post_5_excerpt'), image: "/images/hero/desert-pano.webp", date: t('blog_post_5_date'), readTime: t('blog_post_5_read'), category: t('blog_post_5_cat') },
+    { slug: "fes-chefchaouen-blue-city-guide", title: t('blog_post_6_title'), excerpt: t('blog_post_6_excerpt'), image: "/images/dest/chefchaouen.webp", date: t('blog_post_6_date'), readTime: t('blog_post_6_read'), category: t('blog_post_6_cat') },
   ];
 
   return (
     <ExperiencePage
       id="blog"
-      heroImage="/images/hero/desert-pano.jpg"
+      heroImage="/images/hero/desert-pano.webp"
       heroAlt={t('blog_hero_alt')}
       breadcrumbName={t('blog_breadcrumb')}
       title={t('blog_title')}

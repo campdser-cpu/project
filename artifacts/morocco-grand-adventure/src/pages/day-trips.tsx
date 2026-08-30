@@ -4,7 +4,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 export default function DayTrips() {
   const { t } = useLanguage();
   const features = [
-    { title: t('dt_f1_title'), description: t('dt_f1_desc'), image: "/images/dest/ourika-valley.jpg" },
+    { title: t('dt_f1_title'), description: t('dt_f1_desc'), image: "/images/dest/ourika-valley.webp" },
     { title: t('dt_f2_title'), description: t('dt_f2_desc') },
     { title: t('dt_f3_title'), description: t('dt_f3_desc') },
     { title: t('dt_f4_title'), description: t('dt_f4_desc') },
@@ -15,7 +15,7 @@ export default function DayTrips() {
   return (
     <ExperiencePage
       id="day-trips"
-      heroImage="/images/dest/ouzoud.jpg"
+      heroImage="/images/dest/ouzoud.webp"
       heroAlt={t('dt_hero_alt')}
       breadcrumbName={t('dt_breadcrumb')}
       title={t('dt_title')}

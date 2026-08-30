@@ -4,7 +4,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 export default function FesTours() {
   const { t } = useLanguage();
   const features = [
-    { title: t('mt_f1_title'), description: t('mt_f1_desc'), image: "/images/dest/fes.jpg" },
+    { title: t('mt_f1_title'), description: t('mt_f1_desc'), image: "/images/dest/fes.webp" },
     { title: t('mt_f2_title'), description: t('mt_f2_desc') },
     { title: t('mt_f3_title'), description: t('mt_f3_desc') },
     { title: t('mt_f4_title'), description: t('mt_f4_desc') },
@@ -15,7 +15,7 @@ export default function FesTours() {
   return (
     <ExperiencePage
       id="fes-tours"
-      heroImage="/images/dest/fes.jpg"
+      heroImage="/images/dest/fes.webp"
       heroAlt={t('mt_hero_alt')}
       breadcrumbName={t('mt_breadcrumb')}
       title={t('mt_title')}

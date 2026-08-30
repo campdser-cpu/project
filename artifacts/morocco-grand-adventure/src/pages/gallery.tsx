@@ -24,70 +24,70 @@ type VideoItem = {
 // (or video) belongs to it, so the gallery scales without any layout changes.
 const IMAGES: GalleryItem[] = [
   // --- Desert & Sahara ---
-  { src: '/images/personal/sahara-dunes-golden.jpg', categories: ['Desert', 'Landscapes', 'Authenticity'], caption: 'Golden dunes at sunrise over Erg Chebbi' },
-  { src: '/images/dest/merzouga.jpg', categories: ['Desert'], caption: 'Merzouga — Erg Chebbi Dunes' },
-  { src: '/images/dest/erg-chebbi.jpg', categories: ['Desert'], caption: 'The golden sands of Erg Chebbi' },
-  { src: '/images/dest/zagora.jpg', categories: ['Desert'], caption: 'Zagora — gateway to the desert' },
-  { src: '/images/dest/draa-valley.jpg', categories: ['Desert', 'Landscapes'], caption: 'The palm groves of the Draa Valley' },
-  { src: '/images/hero/desert-pano.jpg', categories: ['Desert', 'Landscapes'], caption: 'The Sahara at sunset' },
-  { src: '/images/stock/stargazing-merzouga.jpg', categories: ['Desert', 'Luxury Camp'], caption: 'Stargazing beneath the Milky Way' },
-  { src: '/images/curated/sahara-desert-camp-starry-night-lantern-merzouga.jpg', categories: ['Desert', 'Luxury Camp'], caption: 'A traveler holds a lantern beneath the star-filled sky of the Sahara desert' },
-  { src: '/images/curated/berber-guide-camels-sahara-desert-morocco.jpg', categories: ['My Journey as a Guide', 'Authenticity'], caption: 'A Berber desert guide rests among his camels in the heart of the Sahara' },
+  { src: '/images/personal/sahara-dunes-golden.webp', categories: ['Desert', 'Landscapes', 'Authenticity'], caption: 'Golden dunes at sunrise over Erg Chebbi' },
+  { src: '/images/dest/merzouga.webp', categories: ['Desert'], caption: 'Merzouga — Erg Chebbi Dunes' },
+  { src: '/images/dest/erg-chebbi.webp', categories: ['Desert'], caption: 'The golden sands of Erg Chebbi' },
+  { src: '/images/dest/zagora.webp', categories: ['Desert'], caption: 'Zagora — gateway to the desert' },
+  { src: '/images/dest/draa-valley.webp', categories: ['Desert', 'Landscapes'], caption: 'The palm groves of the Draa Valley' },
+  { src: '/images/hero/desert-pano.webp', categories: ['Desert', 'Landscapes'], caption: 'The Sahara at sunset' },
+  { src: '/images/stock/stargazing-merzouga.webp', categories: ['Desert', 'Luxury Camp'], caption: 'Stargazing beneath the Milky Way' },
+  { src: '/images/curated/sahara-desert-camp-starry-night-lantern-merzouga.webp', categories: ['Desert', 'Luxury Camp'], caption: 'A traveler holds a lantern beneath the star-filled sky of the Sahara desert' },
+  { src: '/images/curated/berber-guide-camels-sahara-desert-morocco.webp', categories: ['My Journey as a Guide', 'Authenticity'], caption: 'A Berber desert guide rests among his camels in the heart of the Sahara' },
   // --- From the photo journal (authentic images from our Morocco journeys) ---
-  { src: '/images/pdf/img_0-optimized.jpg', categories: ['Authenticity'], caption: 'Captured on the road with Morocco Grand Adventure' },
-  { src: '/images/pdf/img_1-optimized.jpg', categories: ['Authenticity'], caption: 'A moment from one of our private journeys in Morocco' },
-  { src: '/images/pdf/img_2-optimized.jpg', categories: ['Authenticity'], caption: 'From the Morocco Grand Adventure photo journal' },
-  { src: '/images/pdf/img_3-optimized.jpg', categories: ['Authenticity'], caption: 'Photographed while travelling with our local guides' },
-  { src: '/images/pdf/img_4-optimized.jpg', categories: ['Authenticity'], caption: 'Morocco, seen through the eyes of our travellers' },
+  { src: '/images/pdf/img_0-optimized.webp', categories: ['Authenticity'], caption: 'Captured on the road with Morocco Grand Adventure' },
+  { src: '/images/pdf/img_1-optimized.webp', categories: ['Authenticity'], caption: 'A moment from one of our private journeys in Morocco' },
+  { src: '/images/pdf/img_2-optimized.webp', categories: ['Authenticity'], caption: 'From the Morocco Grand Adventure photo journal' },
+  { src: '/images/pdf/img_3-optimized.webp', categories: ['Authenticity'], caption: 'Photographed while travelling with our local guides' },
+  { src: '/images/pdf/img_4-optimized.webp', categories: ['Authenticity'], caption: 'Morocco, seen through the eyes of our travellers' },
   // --- Luxury Camp & Stays ---
-  { src: '/images/personal/luxury-camp-dusk.jpg', categories: ['Luxury Camp', 'Desert', 'Authenticity'], caption: 'Our luxury desert camp at dusk' },
-  { src: '/images/riad/courtyard.jpg', categories: ['Luxury Camp', 'Culture'], caption: 'A traditional riad courtyard' },
-  { src: '/images/riad/bedroom.jpg', categories: ['Luxury Camp'], caption: 'A luxury riad suite' },
-  { src: '/images/riad/rooftop.jpg', categories: ['Luxury Camp'], caption: 'Rooftop views over the medina' },
+  { src: '/images/personal/luxury-camp-dusk.webp', categories: ['Luxury Camp', 'Desert', 'Authenticity'], caption: 'Our luxury desert camp at dusk' },
+  { src: '/images/riad/courtyard.webp', categories: ['Luxury Camp', 'Culture'], caption: 'A traditional riad courtyard' },
+  { src: '/images/riad/bedroom.webp', categories: ['Luxury Camp'], caption: 'A luxury riad suite' },
+  { src: '/images/riad/rooftop.webp', categories: ['Luxury Camp'], caption: 'Rooftop views over the medina' },
   // --- Happy Travelers ---
-  { src: '/images/personal/guide-guest-tea.jpg', categories: ['Happy Travelers', 'Culture', 'My Journey as a Guide', 'Authenticity'], caption: 'Sharing sweet mint tea with a guest in the dunes' },
-  { src: '/images/personal/group-atlas.jpg', categories: ['Happy Travelers', 'Authenticity'], caption: 'Happy travelers in the Atlas' },
+  { src: '/images/personal/guide-guest-tea.webp', categories: ['Happy Travelers', 'Culture', 'My Journey as a Guide', 'Authenticity'], caption: 'Sharing sweet mint tea with a guest in the dunes' },
+  { src: '/images/personal/group-atlas.webp', categories: ['Happy Travelers', 'Authenticity'], caption: 'Happy travelers in the Atlas' },
   { src: '/images/personal/guests-sunset.webp', categories: ['Happy Travelers', 'Desert', 'Authenticity'], caption: 'A Sahara sunset with our guests' },
-  { src: '/images/personal/guests-van.jpg', categories: ['Happy Travelers', 'Authenticity'], caption: 'On the road together' },
-  { src: '/images/personal/riad-tea.jpg', categories: ['Happy Travelers', 'Culture', 'Authenticity'], caption: 'Sharing tea on the terrace' },
+  { src: '/images/personal/guests-van.webp', categories: ['Happy Travelers', 'Authenticity'], caption: 'On the road together' },
+  { src: '/images/personal/riad-tea.webp', categories: ['Happy Travelers', 'Culture', 'Authenticity'], caption: 'Sharing tea on the terrace' },
   // --- My Journey as a Guide ---
-  { src: '/images/personal/guide-portrait.jpg', categories: ['My Journey as a Guide', 'Happy Travelers', 'Authenticity'], caption: 'Your local Berber guide' },
+  { src: '/images/personal/guide-portrait.webp', categories: ['My Journey as a Guide', 'Happy Travelers', 'Authenticity'], caption: 'Your local Berber guide' },
   // --- Landscapes (cities, mountains, coast) ---
-  { src: '/images/dest/marrakech.jpg', categories: ['Landscapes'], caption: 'Marrakech — the Red City' },
-  { src: '/images/dest/fes.jpg', categories: ['Landscapes', 'Culture'], caption: 'Fes — the ancient tanneries' },
-  { src: '/images/dest/chefchaouen.jpg', categories: ['Landscapes'], caption: 'Chefchaouen — the Blue Pearl' },
-  { src: '/images/dest/meknes.jpg', categories: ['Landscapes'], caption: 'Meknes — Bab Mansour Gate' },
-  { src: '/images/dest/rabat.jpg', categories: ['Landscapes'], caption: 'Rabat — Kasbah of the Udayas' },
-  { src: '/images/hero/medina-pano.jpg', categories: ['Landscapes', 'Culture'], caption: 'Lanterns of the medina' },
-  { src: '/images/hero/atlas-pano.jpg', categories: ['Landscapes'], caption: 'The High Atlas mountains' },
-  { src: '/images/dest/ait-ben-haddou.jpg', categories: ['Landscapes', 'Culture'], caption: 'Aït Benhaddou — the ancient ksar' },
-  { src: '/images/dest/dades-valley.jpg', categories: ['Landscapes'], caption: 'The winding Dades Valley road' },
-  { src: '/images/dest/todra-gorge.jpg', categories: ['Landscapes'], caption: 'The towering Todra Gorge' },
-  { src: '/images/dest/imlil.jpg', categories: ['Landscapes'], caption: 'Imlil — heart of the High Atlas' },
-  { src: '/images/dest/ourika-valley.jpg', categories: ['Landscapes'], caption: 'The green Ourika Valley' },
-  { src: '/images/dest/essaouira.jpg', categories: ['Landscapes'], caption: 'Essaouira — the windy harbour' },
-  { src: '/images/dest/legzira.jpg', categories: ['Landscapes'], caption: 'The red arches of Legzira' },
-  { src: '/images/dest/taghazout.jpg', categories: ['Landscapes'], caption: 'Taghazout — the surf village' },
-  { src: '/images/dest/agadir.jpg', categories: ['Landscapes'], caption: 'The sweeping bay of Agadir' },
-  { src: '/images/dest/mirleft.jpg', categories: ['Landscapes'], caption: 'The quiet cliffs of Mirleft' },
+  { src: '/images/dest/marrakech.webp', categories: ['Landscapes'], caption: 'Marrakech — the Red City' },
+  { src: '/images/dest/fes.webp', categories: ['Landscapes', 'Culture'], caption: 'Fes — the ancient tanneries' },
+  { src: '/images/dest/chefchaouen.webp', categories: ['Landscapes'], caption: 'Chefchaouen — the Blue Pearl' },
+  { src: '/images/dest/meknes.webp', categories: ['Landscapes'], caption: 'Meknes — Bab Mansour Gate' },
+  { src: '/images/dest/rabat.webp', categories: ['Landscapes'], caption: 'Rabat — Kasbah of the Udayas' },
+  { src: '/images/hero/medina-pano.webp', categories: ['Landscapes', 'Culture'], caption: 'Lanterns of the medina' },
+  { src: '/images/hero/atlas-pano.webp', categories: ['Landscapes'], caption: 'The High Atlas mountains' },
+  { src: '/images/dest/ait-ben-haddou.webp', categories: ['Landscapes', 'Culture'], caption: 'Aït Benhaddou — the ancient ksar' },
+  { src: '/images/dest/dades-valley.webp', categories: ['Landscapes'], caption: 'The winding Dades Valley road' },
+  { src: '/images/dest/todra-gorge.webp', categories: ['Landscapes'], caption: 'The towering Todra Gorge' },
+  { src: '/images/dest/imlil.webp', categories: ['Landscapes'], caption: 'Imlil — heart of the High Atlas' },
+  { src: '/images/dest/ourika-valley.webp', categories: ['Landscapes'], caption: 'The green Ourika Valley' },
+  { src: '/images/dest/essaouira.webp', categories: ['Landscapes'], caption: 'Essaouira — the windy harbour' },
+  { src: '/images/dest/legzira.webp', categories: ['Landscapes'], caption: 'The red arches of Legzira' },
+  { src: '/images/dest/taghazout.webp', categories: ['Landscapes'], caption: 'Taghazout — the surf village' },
+  { src: '/images/dest/agadir.webp', categories: ['Landscapes'], caption: 'The sweeping bay of Agadir' },
+  { src: '/images/dest/mirleft.webp', categories: ['Landscapes'], caption: 'The quiet cliffs of Mirleft' },
   // --- Culture & Food ---
-  { src: '/images/food/tea.jpg', categories: ['Culture', 'Food'], caption: 'Sweet Moroccan mint tea' },
-  { src: '/images/food/tagine.jpg', categories: ['Food'], caption: 'A slow-cooked traditional tagine' },
-  { src: '/images/food/couscous.jpg', categories: ['Food'], caption: 'Friday couscous' },
-  { src: '/images/food/pastries.jpg', categories: ['Food'], caption: 'Fresh Moroccan pastries' },
-  { src: '/images/food/streetfood.jpg', categories: ['Food'], caption: 'Street food in the medina' },
+  { src: '/images/food/tea.webp', categories: ['Culture', 'Food'], caption: 'Sweet Moroccan mint tea' },
+  { src: '/images/food/tagine.webp', categories: ['Food'], caption: 'A slow-cooked traditional tagine' },
+  { src: '/images/food/couscous.webp', categories: ['Food'], caption: 'Friday couscous' },
+  { src: '/images/food/pastries.webp', categories: ['Food'], caption: 'Fresh Moroccan pastries' },
+  { src: '/images/food/streetfood.webp', categories: ['Food'], caption: 'Street food in the medina' },
 ];
 
 const VIDEOS: VideoItem[] = [
-  { src: '/videos/dunes-camels.mp4', poster: '/images/personal/dunes-camels-poster.jpg', title: 'Lost in the Dunes', category: 'Camel Trekking', portrait: true },
-  { src: '/videos/sahara-experience.mp4', poster: '/images/personal/luxury-camp-dusk.jpg', title: 'Experience the Sahara', category: 'Desert' },
-  { src: '/videos/merzouga-campfire.mp4', poster: '/images/dest/merzouga.jpg', title: 'Campfire Nights in Merzouga', category: 'Culture' },
-  { src: '/videos/hero.mp4', poster: '/images/hero/desert-pano.jpg', title: 'Morocco — A Cinematic Journey', category: 'Desert' },
-  { src: '/videos/ait-benhaddou-kasbah-unesco-morocco.mp4', poster: '/images/dest/ait-ben-haddou.jpg', title: 'Aït Ben Haddou at Golden Hour', category: 'Landscapes' },
-  { src: '/videos/chefchaouen-blue-city-morocco.mp4', poster: '/images/dest/chefchaouen.jpg', title: 'The Blue Pearl', category: 'Landscapes' },
-  { src: '/videos/morocco-imperial-cities-desert-oasis-tour.mp4', poster: '/images/hero/desert-pano.jpg', title: 'Morocco — A Journey of Contrasts', category: 'Landscapes' },
-  { src: '/videos/sahara-desert-camel-trek-atlas-mountains-morocco.mp4', poster: '/images/personal/dunes-camels-poster.jpg', title: 'Camel Trek Across the Dunes', category: 'Camel Trekking' },
-  { src: '/videos/sahara-desert-dunes-quad-biking-morocco.mp4', poster: '/images/dest/erg-chebbi.jpg', title: 'Quad Biking the Dunes', category: 'Quad Adventure' },
+  { src: '/videos/dunes-camels.mp4', poster: '/images/personal/dunes-camels-poster.webp', title: 'Lost in the Dunes', category: 'Camel Trekking', portrait: true },
+  { src: '/videos/sahara-experience.mp4', poster: '/images/personal/luxury-camp-dusk.webp', title: 'Experience the Sahara', category: 'Desert' },
+  { src: '/videos/merzouga-campfire.mp4', poster: '/images/dest/merzouga.webp', title: 'Campfire Nights in Merzouga', category: 'Culture' },
+  { src: '/videos/hero.mp4', poster: '/images/hero/desert-pano.webp', title: 'Morocco — A Cinematic Journey', category: 'Desert' },
+  { src: '/videos/ait-benhaddou-kasbah-unesco-morocco.mp4', poster: '/images/dest/ait-ben-haddou.webp', title: 'Aït Ben Haddou at Golden Hour', category: 'Landscapes' },
+  { src: '/videos/chefchaouen-blue-city-morocco.mp4', poster: '/images/dest/chefchaouen.webp', title: 'The Blue Pearl', category: 'Landscapes' },
+  { src: '/videos/morocco-imperial-cities-desert-oasis-tour.mp4', poster: '/images/hero/desert-pano.webp', title: 'Morocco — A Journey of Contrasts', category: 'Landscapes' },
+  { src: '/videos/sahara-desert-camel-trek-atlas-mountains-morocco.mp4', poster: '/images/personal/dunes-camels-poster.webp', title: 'Camel Trek Across the Dunes', category: 'Camel Trekking' },
+  { src: '/videos/sahara-desert-dunes-quad-biking-morocco.mp4', poster: '/images/dest/erg-chebbi.webp', title: 'Quad Biking the Dunes', category: 'Quad Adventure' },
 ];
 
 // The curated order the owner requested. A category is only shown when it
@@ -156,7 +156,9 @@ export default function Gallery() {
       {/* Hero */}
       <section className="relative h-[55vh] w-full flex items-center justify-center pt-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src="/images/hero/desert-pano.jpg" alt="Morocco Gallery" className="w-full h-full object-cover" />
+          <img src="/images/hero/desert-pano.webp"
+  width={601}
+  height={900} alt="Morocco Gallery" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/50" />
         </div>
         <div className="relative z-10 text-center px-4 max-w-3xl">

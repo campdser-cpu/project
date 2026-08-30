@@ -49,9 +49,9 @@ export default function TourDetail() {
   const itinerary = tour.itineraryDays ?? [];
 
   const galleryImages = tour.gallery ?? [
-    { src: '/images/dest/merzouga.jpg', caption: 'Sahara dunes at Merzouga' },
-    { src: '/images/dest/erg-chebbi.jpg', caption: 'Golden sands of Erg Chebbi' },
-    { src: '/images/dest/ait-ben-haddou.jpg', caption: 'Aït Benhaddou ksar' },
+    { src: '/images/dest/merzouga.webp', caption: 'Sahara dunes at Merzouga' },
+    { src: '/images/dest/erg-chebbi.webp', caption: 'Golden sands of Erg Chebbi' },
+    { src: '/images/dest/ait-ben-haddou.webp', caption: 'Aït Benhaddou ksar' },
   ];
 
   const included = tour.included ?? [
@@ -91,7 +91,7 @@ export default function TourDetail() {
             animate={{ scale: 1 }}
             transition={{ duration: 1.6, ease: 'easeOut' }}
             className="w-full h-full object-cover"
-            onError={(e) => { (e.target as HTMLImageElement).src = '/images/dest/merzouga.jpg'; }}
+            onError={(e) => { (e.target as HTMLImageElement).src = '/images/dest/merzouga.webp'; }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-black/30" />
         </div>
@@ -475,7 +475,7 @@ export default function TourDetail() {
             {relatedTours.map(t_ => (
               <Link key={t_.id} href={`/tours/${t_.id}`} className="group block bg-background rounded-2xl overflow-hidden border border-border shadow-sm hover:shadow-xl hover:border-primary/50 transition-all duration-500">
                 <div className="h-56 relative overflow-hidden">
-                  <img src={t_.image} alt={t_.name} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" onError={(e) => { (e.target as HTMLImageElement).src = '/images/dest/merzouga.jpg'; }} />
+                  <img src={t_.image} alt={t_.name} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" onError={(e) => { (e.target as HTMLImageElement).src = '/images/dest/merzouga.webp'; }} />
                   <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors" />
                   <div className="absolute top-3 right-3">
                     <PromoBadge compact />

@@ -4,7 +4,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 export default function LuxuryCamp() {
   const { t } = useLanguage();
   const features = [
-    { title: t('lc_f1_title'), description: t('lc_f1_desc'), image: "/images/personal/luxury-camp-dusk.jpg" },
+    { title: t('lc_f1_title'), description: t('lc_f1_desc'), image: "/images/personal/luxury-camp-dusk.webp" },
     { title: t('lc_f2_title'), description: t('lc_f2_desc') },
     { title: t('lc_f3_title'), description: t('lc_f3_desc') },
     { title: t('lc_f4_title'), description: t('lc_f4_desc') },
@@ -15,7 +15,7 @@ export default function LuxuryCamp() {
   return (
     <ExperiencePage
       id="luxury-camp"
-      heroImage="/images/personal/luxury-camp-dusk.jpg"
+      heroImage="/images/personal/luxury-camp-dusk.webp"
       heroAlt={t('lc_hero_alt')}
       breadcrumbName={t('lc_breadcrumb')}
       title={t('lc_title')}

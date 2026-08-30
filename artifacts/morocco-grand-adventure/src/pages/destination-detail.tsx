@@ -98,7 +98,7 @@ export default function DestinationDetail() {
                 </h3>
                 <div className="bg-card border border-border rounded-3xl overflow-hidden shadow-sm flex flex-col md:flex-row">
                   <div className="md:w-1/2 h-64 md:h-auto">
-                    <img src={`/images/food/${['tagine','couscous','streetfood','pastries','tea'][destination.id.length % 5]}.jpg`} alt={`Traditional food in ${destination.name}`} loading="lazy" decoding="async" className="w-full h-full object-cover" onError={(e) => { (e.target as HTMLImageElement).src = '/images/food/tagine.jpg'; }} />
+                    <img src={`/images/food/${['tagine','couscous','streetfood','pastries','tea'][destination.id.length % 5]}.jpg`} alt={`Traditional food in ${destination.name}`} loading="lazy" decoding="async" className="w-full h-full object-cover" onError={(e) => { (e.target as HTMLImageElement).src = '/images/food/tagine.webp'; }} />
                   </div>
                   <div className="md:w-1/2 p-8 flex flex-col justify-center">
                     <h4 className="font-bold text-xl mb-4">{t('dest_culinary')}</h4>
@@ -133,7 +133,7 @@ export default function DestinationDetail() {
                   </p>
                   <CinematicVideo
                     src="/videos/merzouga-campfire.mp4"
-                    poster="/images/dest/merzouga.jpg"
+                    poster="/images/dest/merzouga.webp"
                     alt="Evening campfire scene in the Sahara Desert near Merzouga, Morocco"
                     title={t('dest_merzouga_caption')}
                     aspectClass="aspect-video"
@@ -152,7 +152,7 @@ export default function DestinationDetail() {
                   </p>
                   <CinematicVideo
                     src="/videos/ait-benhaddou-kasbah-unesco-morocco.mp4"
-                    poster="/images/dest/ait-ben-haddou.jpg"
+                    poster="/images/dest/ait-ben-haddou.webp"
                     alt="Aït Ben Haddou UNESCO kasbah at sunset with local Amazigh artisans, Morocco"
                     title="Aït Ben Haddou"
                     subtitle="A living UNESCO kasbah where Amazigh artisans still shape clay by hand."
@@ -171,7 +171,7 @@ export default function DestinationDetail() {
                   </p>
                   <CinematicVideo
                     src="/videos/chefchaouen-blue-city-morocco.mp4"
-                    poster="/images/dest/chefchaouen.jpg"
+                    poster="/images/dest/chefchaouen.webp"
                     alt="Blue-painted streets and stairways of Chefchaouen, Morocco's Blue Pearl"
                     title="Chefchaouen"
                     subtitle="The Blue Pearl — what are you waiting for to discover this dreamlike town?"
@@ -191,7 +191,9 @@ export default function DestinationDetail() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="relative rounded-3xl overflow-hidden shadow-xl border border-border group">
                       <img
-                        src="/images/personal/sahara-dunes-golden.jpg"
+                        src="/images/personal/sahara-dunes-golden.webp"
+  width={960}
+  height={1200}
                         alt="Golden sand dunes of Erg Chebbi at sunrise near Merzouga"
                         loading="lazy"
                         decoding="async"
@@ -202,7 +204,9 @@ export default function DestinationDetail() {
                     </div>
                     <div className="relative rounded-3xl overflow-hidden shadow-xl border border-border group">
                       <img
-                        src="/images/stock/stargazing-merzouga.jpg"
+                        src="/images/stock/stargazing-merzouga.webp"
+  width={801}
+  height={1200}
                         alt="The Milky Way over the Sahara Desert at night near Merzouga"
                         loading="lazy"
                         decoding="async"
@@ -224,7 +228,7 @@ export default function DestinationDetail() {
                   {[1, 2].map((num) => (
                     <div key={num} className="bg-card border border-border rounded-2xl overflow-hidden shadow-sm group hover:shadow-xl transition-all duration-300 hover:border-primary/40">
                       <div className="h-48 overflow-hidden relative">
-                        <img src={`/images/riad/${num === 1 ? 'courtyard' : 'bedroom'}.jpg`} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt={t('dest_riad_alt')} loading="lazy" decoding="async" onError={(e) => { (e.target as HTMLImageElement).src = '/images/riad/rooftop.jpg'; }} />
+                        <img src={`/images/riad/${num === 1 ? 'courtyard' : 'bedroom'}.jpg`} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt={t('dest_riad_alt')} loading="lazy" decoding="async" onError={(e) => { (e.target as HTMLImageElement).src = '/images/riad/rooftop.webp'; }} />
                         <div className="absolute top-3 right-3 bg-background/90 backdrop-blur px-2 py-1 rounded text-xs font-bold text-foreground flex items-center gap-1">
                           <Star className="w-3 h-3 text-primary fill-current" /> 5.0
                         </div>

@@ -42,7 +42,7 @@ export default function PremiumAboutSection() {
   const guideImages: Record<string, string> = {
     mohamed: '/images/guide/mohamed-boughrara-founder-desert-guide-merzouga.webp',
     mostapha: '/images/guide/mostapha-wargaga-senior-desert-guide-sahara-sunset.webp',
-    moha: '/images/guide/moha-amroui-desert-guide-camels-merzouga.jpg',
+    moha: '/images/guide/moha-amroui-desert-guide-camels-merzouga.webp',
   };
 
   const stats = [
@@ -56,7 +56,9 @@ export default function PremiumAboutSection() {
     <section className="premium-about-section">
       <div className="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden mb-24">
         <img
-          src="/images/hero/medina-pano.jpg"
+          src="/images/hero/medina-pano.webp"
+  width={794}
+  height={712}
           alt=""
           aria-hidden="true"
           className="absolute inset-0 h-full w-full object-cover"

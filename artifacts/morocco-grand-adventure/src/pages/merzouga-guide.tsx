@@ -4,7 +4,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 export default function MerzougaGuide() {
   const { t } = useLanguage();
   const features = [
-    { title: t('mg_f1_title'), description: t('mg_f1_desc'), image: "/images/dest/erg-chebbi.jpg" },
+    { title: t('mg_f1_title'), description: t('mg_f1_desc'), image: "/images/dest/erg-chebbi.webp" },
     { title: t('mg_f2_title'), description: t('mg_f2_desc') },
     { title: t('mg_f3_title'), description: t('mg_f3_desc') },
     { title: t('mg_f4_title'), description: t('mg_f4_desc') },
@@ -15,7 +15,7 @@ export default function MerzougaGuide() {
   return (
     <ExperiencePage
       id="merzouga-guide"
-      heroImage="/images/dest/merzouga.jpg"
+      heroImage="/images/dest/merzouga.webp"
       heroAlt={t('mg_hero_alt')}
       breadcrumbName={t('mg_breadcrumb')}
       title={t('mg_title')}

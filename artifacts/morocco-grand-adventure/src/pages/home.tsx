@@ -77,12 +77,12 @@ function MapSection() {
 
 function getSignaturePlaces(t: (key: string) => string) {
   return [
-    { name: t('home_place1_name'), description: t('home_place1_desc'), image: "/images/dest/merzouga.jpg" },
-    { name: t('home_place2_name'), description: t('home_place2_desc'), image: "/images/personal/luxury-camp-dusk.jpg" },
-    { name: t('home_place3_name'), description: t('home_place3_desc'), image: "/images/dest/dades-valley.jpg" },
-    { name: t('home_place4_name'), description: t('home_place4_desc'), image: "/images/dest/draa-valley.jpg" },
-    { name: t('home_place5_name'), description: t('home_place5_desc'), image: "/images/dest/marrakech.jpg" },
-    { name: t('home_place6_name'), description: t('home_place6_desc'), image: "/images/dest/todra-gorge.jpg" },
+    { name: t('home_place1_name'), description: t('home_place1_desc'), image: "/images/dest/merzouga.webp" },
+    { name: t('home_place2_name'), description: t('home_place2_desc'), image: "/images/personal/luxury-camp-dusk.webp" },
+    { name: t('home_place3_name'), description: t('home_place3_desc'), image: "/images/dest/dades-valley.webp" },
+    { name: t('home_place4_name'), description: t('home_place4_desc'), image: "/images/dest/draa-valley.webp" },
+    { name: t('home_place5_name'), description: t('home_place5_desc'), image: "/images/dest/marrakech.webp" },
+    { name: t('home_place6_name'), description: t('home_place6_desc'), image: "/images/dest/todra-gorge.webp" },
   ];
 }
 
@@ -95,9 +95,9 @@ export default function Home() {
 
   const igItems = [
   { src: "/images/personal/guests-sunset.webp", alt: t('home_ig_alt1') },
-  { src: "/images/personal/group-atlas.jpg", alt: t('home_ig_alt2') },
-  { src: "/images/personal/luxury-camp-dusk.jpg", alt: t('home_ig_alt3') },
-  { src: "/images/personal/guests-van.jpg", alt: t('home_ig_alt4') },
+  { src: "/images/personal/group-atlas.webp", alt: t('home_ig_alt2') },
+  { src: "/images/personal/luxury-camp-dusk.webp", alt: t('home_ig_alt3') },
+  { src: "/images/personal/guests-van.webp", alt: t('home_ig_alt4') },
   ];
 
   // Search State
@@ -138,7 +138,9 @@ export default function Home() {
           transition={{ duration: 1.8, ease: "easeIn" as const }}
         >
           <img
-            src="/images/hero/desert-pano.jpg"
+            src="/images/hero/desert-pano.webp"
+  width={601}
+  height={900}
             alt=""
             aria-hidden="true"
             fetchPriority="high"
@@ -505,7 +507,7 @@ export default function Home() {
           </div>
           <CinematicVideo
             src="/videos/sahara-experience.mp4"
-            poster="/images/personal/luxury-camp-dusk.jpg"
+            poster="/images/personal/luxury-camp-dusk.webp"
             alt="Cinematic film of the Sahara desert experience near Merzouga"
             autoPlay={false}
             aspectClass="aspect-video"
@@ -522,7 +524,9 @@ export default function Home() {
       {/* Luxury Desert Experience full width */}
       <section className="relative py-24 md:py-40 lg:py-48 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src="/images/personal/luxury-camp-dusk.jpg" alt="Luxury Desert Camp" loading="lazy" decoding="async" className="w-full h-full object-cover" />
+          <img src="/images/personal/luxury-camp-dusk.webp"
+  width={1200}
+  height={1200} alt="Luxury Desert Camp" loading="lazy" decoding="async" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/40" />
         </div>
         <div className="relative z-10 container mx-auto px-4 flex justify-center md:justify-end">

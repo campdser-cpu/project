@@ -6,7 +6,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 const GUIDES = [
   { name: 'Mohamed Boughrara', role: 'Founder & Desert Guide', image: '/images/guide/mohamed-boughrara-founder-desert-guide-merzouga.webp' },
   { name: 'Mostapha Wargaga', role: 'Senior Desert Guide', image: '/images/guide/mostapha-wargaga-senior-desert-guide-sahara-sunset.webp' },
-  { name: 'Moha Amroui', role: 'Desert Guide', image: '/images/guide/moha-amroui-desert-guide-camels-merzouga.jpg' },
+  { name: 'Moha Amroui', role: 'Desert Guide', image: '/images/guide/moha-amroui-desert-guide-camels-merzouga.webp' },
 ];
 
 export default function About() {

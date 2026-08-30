@@ -5,7 +5,7 @@ import { CinematicVideo } from '../components/ui/CinematicVideo';
 export default function FourByFourTours() {
   const { t } = useLanguage();
   const features = [
-    { title: t('f4_f1_title'), description: t('f4_f1_desc'), image: "/images/dest/erg-chebbi.jpg" },
+    { title: t('f4_f1_title'), description: t('f4_f1_desc'), image: "/images/dest/erg-chebbi.webp" },
     { title: t('f4_f2_title'), description: t('f4_f2_desc') },
     { title: t('f4_f3_title'), description: t('f4_f3_desc') },
     { title: t('f4_f4_title'), description: t('f4_f4_desc') },
@@ -16,7 +16,7 @@ export default function FourByFourTours() {
   return (
     <ExperiencePage
       id="4x4-tours"
-      heroImage="/images/dest/erg-chebbi.jpg"
+      heroImage="/images/dest/erg-chebbi.webp"
       heroAlt={t('f4_hero_alt')}
       breadcrumbName={t('f4_breadcrumb')}
       title={t('f4_title')}
@@ -45,7 +45,7 @@ export default function FourByFourTours() {
           </div>
           <CinematicVideo
             src="/videos/sahara-desert-dunes-quad-biking-morocco.mp4"
-            poster="/images/dest/erg-chebbi.jpg"
+            poster="/images/dest/erg-chebbi.webp"
             alt="Quad biking and 4x4 adventures across Erg Chebbi desert dunes in Morocco"
             title="Quad Adventure"
             subtitle="Golden dunes, desert thrills, and centuries-old Berber traditions — all in one place."

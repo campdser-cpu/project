@@ -10,7 +10,7 @@ export default function Faq() {
   return (
     <ExperiencePage
       id="faq"
-      heroImage="/images/dest/marrakech.jpg"
+      heroImage="/images/dest/marrakech.webp"
       heroAlt={t('faq_hero_alt')}
       breadcrumbName={t('faq_breadcrumb')}
       title={t('faq_title')}
