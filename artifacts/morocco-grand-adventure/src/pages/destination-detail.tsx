@@ -98,7 +98,7 @@ export default function DestinationDetail() {
                 </h3>
                 <div className="bg-card border border-border rounded-3xl overflow-hidden shadow-sm flex flex-col md:flex-row">
                   <div className="md:w-1/2 h-64 md:h-auto">
-                    <img src={`/images/food/${['tagine','couscous','streetfood','pastries','tea'][destination.id.length % 5]}.jpg`} alt={`Traditional food in ${destination.name}`} loading="lazy" decoding="async" className="w-full h-full object-cover" onError={(e) => { (e.target as HTMLImageElement).src = '/images/food/tagine.webp'; }} />
+                    <img src={`/images/food/${['tagine','couscous','streetfood','pastries','tea'][destination.id.length % 5]}.webp`} alt={`Traditional food in ${destination.name}`} loading="lazy" decoding="async" className="w-full h-full object-cover" onError={(e) => { (e.target as HTMLImageElement).src = '/images/food/tagine.webp'; }} />
                   </div>
                   <div className="md:w-1/2 p-8 flex flex-col justify-center">
                     <h4 className="font-bold text-xl mb-4">{t('dest_culinary')}</h4>
@@ -228,7 +228,7 @@ export default function DestinationDetail() {
                   {[1, 2].map((num) => (
                     <div key={num} className="bg-card border border-border rounded-2xl overflow-hidden shadow-sm group hover:shadow-xl transition-all duration-300 hover:border-primary/40">
                       <div className="h-48 overflow-hidden relative">
-                        <img src={`/images/riad/${num === 1 ? 'courtyard' : 'bedroom'}.jpg`} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt={t('dest_riad_alt')} loading="lazy" decoding="async" onError={(e) => { (e.target as HTMLImageElement).src = '/images/riad/rooftop.webp'; }} />
+                        <img src={`/images/riad/${num === 1 ? 'courtyard' : 'bedroom'}.webp`} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt={t('dest_riad_alt')} loading="lazy" decoding="async" onError={(e) => { (e.target as HTMLImageElement).src = '/images/riad/rooftop.webp'; }} />
                         <div className="absolute top-3 right-3 bg-background/90 backdrop-blur px-2 py-1 rounded text-xs font-bold text-foreground flex items-center gap-1">
                           <Star className="w-3 h-3 text-primary fill-current" /> 5.0
                         </div>
