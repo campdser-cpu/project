@@ -1,6 +1,7 @@
 /**
  * ReviewCard — renders one verified Google customer review.
- * The visible review source is the screenshot-backed data in verifiedReviews.ts.
+ * Traveler photos are published only when the supplied material supports a
+ * confident customer-to-photo association; otherwise the card remains text-only.
  */
 import { ExternalLink, Star } from 'lucide-react';
 import { verifiedGoogleReviews } from '@/data/verifiedReviews';
@@ -38,20 +39,22 @@ export function ReviewCard({ index = 0 }: ReviewCardProps) {
         <p className="text-xs text-muted-foreground mb-4 relative z-10">{review.translationNote}</p>
       )}
 
-      <div className="grid grid-cols-2 gap-2 mb-5 relative z-10">
-        {review.images.slice(0, 2).map((image) => (
-          <img
-            key={image.src}
-            src={image.src}
-            alt={image.alt}
-            width={image.width}
-            height={image.height}
-            loading="lazy"
-            decoding="async"
-            className="w-full aspect-[3/5] object-cover rounded-xl border border-border"
-          />
-        ))}
-      </div>
+      {review.images.length > 0 && (
+        <div className={`${review.images.length > 1 ? 'grid grid-cols-2' : 'grid grid-cols-1'} gap-2 mb-5 relative z-10`}>
+          {review.images.slice(0, 2).map((image) => (
+            <img
+              key={image.src}
+              src={image.src}
+              alt={image.alt}
+              width={image.width}
+              height={image.height}
+              loading="lazy"
+              decoding="async"
+              className="w-full h-auto max-h-80 object-cover rounded-xl border border-border"
+            />
+          ))}
+        </div>
+      )}
 
       <div className="mt-auto pt-4 border-t border-border relative z-10">
         {review.relativeDate && (

@@ -15,14 +15,22 @@ function link(url: string, text: string): string {
 }
 
 function buildReviewBlocks(): string {
-  return verifiedGoogleReviews.map((review) => `
+  return verifiedGoogleReviews.map((review) => {
+    const image = review.images[0];
+    const imageHtml = image
+      ? `<img src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt)}" width="${image.width}" height="${image.height}" loading="lazy" decoding="async" class="prerendered-review-image" />`
+      : '';
+
+    return `
       <article class="prerendered-review">
         <h3 class="prerendered-review-author">${escapeHtml(review.name)}</h3>
         <p class="prerendered-review-source">Google Review</p>
         <p class="prerendered-review-rating">${'★'.repeat(review.rating)}</p>
         <p class="prerendered-review-text">${escapeHtml(review.text)}</p>
+        ${imageHtml}
         <p class="prerendered-review-source-link">${link(review.sourceUrl, 'See original review on Google')}</p>
-      </article>`).join('\n');
+      </article>`;
+  }).join('\n');
 }
 
 function replaceBalancedDiv(html: string, className: string, replacement: string): string {
@@ -93,4 +101,4 @@ for (const file of walk(distDir)) {
   fs.writeFileSync(file, html, 'utf8');
 }
 
-console.log(`[verified-reviews-prerender] Applied ${verifiedGoogleReviews.length} verified Google reviews, removed legacy review blocks, and removed Review JSON-LD from prerendered HTML.`);
+console.log(`[verified-reviews-prerender] Applied ${verifiedGoogleReviews.length} verified Google reviews with crawlable traveler images where confidently matched, removed legacy review blocks, and removed Review JSON-LD from prerendered HTML.`);
