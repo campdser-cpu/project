@@ -10,14 +10,17 @@ Disallow: /*?*duration=
 Disallow: /*?*style=
 Disallow: /*?*q=
 
-# Allow Googlebot to crawl images and videos
+# Allow Googlebot to crawl pages, traveler-review images, and videos
 User-agent: Googlebot
+Allow: /
 Allow: /images/
+Allow: /review-assets/images/
 Allow: /videos/
 
-# Allow Googlebot-Image to crawl images
+# Allow Googlebot-Image to crawl site images, including traveler-review images
 User-agent: Googlebot-Image
 Allow: /images/
+Allow: /review-assets/images/
 
 # Allow Googlebot-Video to crawl videos
 User-agent: Googlebot-Video
