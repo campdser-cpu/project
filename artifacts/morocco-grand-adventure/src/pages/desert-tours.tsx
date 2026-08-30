@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+﻿import { motion } from 'framer-motion';
 import { Link } from 'wouter';
 import { CheckCircle2, Star, MapPin, Clock, Users, ChevronRight } from 'lucide-react';
 import { defaultTrustBadges } from '../components/ExperiencePage';
@@ -81,14 +81,58 @@ export default function DesertTours() {
         </div>
       </section>
 
-      {/* Sahara Camel Trek — Cinematic Video */}
+      {/* Desert moments â€” curated imagery from the Image-SEO pack */}
+      <section className="py-16 md:py-20 bg-background border-t border-border" aria-label="Desert moments in the Sahara">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="text-center mb-10">
+            <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-3">{t('dt2_moments_title')}</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              {t('dt2_moments_sub')}
+            </p>
+          </div>
+          <div className="grid gap-6 md:grid-cols-3">
+            <figure className="rounded-3xl overflow-hidden shadow-lg border border-border bg-card">
+              <img
+                src="/images/curated/sahara-desert-dunes-couple-sunset-merzouga.jpg"
+                alt="Couple sitting on top of a golden dune admiring the endless Sahara desert at sunset near Merzouga"
+                loading="lazy"
+                decoding="async"
+                className="w-full h-72 md:h-80 object-cover"
+              />
+              <figcaption className="px-5 py-4 text-sm text-muted-foreground">{t('dt2_moments_cap1')}</figcaption>
+            </figure>
+            <figure className="rounded-3xl overflow-hidden shadow-lg border border-border bg-card">
+              <img
+                src="/images/curated/camel-caravan-sunset-silhouette-sahara-desert.jpg"
+                alt="Silhouette of a Berber guide leading two camels along a dune ridge at sunset in the Sahara"
+                loading="lazy"
+                decoding="async"
+                className="w-full h-72 md:h-80 object-cover"
+              />
+              <figcaption className="px-5 py-4 text-sm text-muted-foreground">{t('dt2_moments_cap2')}</figcaption>
+            </figure>
+            <figure className="rounded-3xl overflow-hidden shadow-lg border border-border bg-card">
+              <img
+                src="/images/curated/sahara-desert-sunset-silhouette-dune-morocco.jpg"
+                alt="Silhouette of a woman with arms outstretched on a dune crest against a giant setting sun in the Sahara"
+                loading="lazy"
+                decoding="async"
+                className="w-full h-72 md:h-80 object-cover"
+              />
+              <figcaption className="px-5 py-4 text-sm text-muted-foreground">{t('dt2_moments_cap3')}</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      {/* Sahara Camel Trek â€” Cinematic Video */}
       <section className="py-16 md:py-20 bg-card border-b border-border">
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="text-center mb-8 md:mb-10">
             <span className="text-primary font-bold tracking-wider uppercase text-sm mb-3 block">The Sahara in One Breath</span>
             <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-4">A Camel Trek Across the Golden Dunes</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto text-base md:text-lg">
-              From Berber handwoven rugs in the Atlas Mountains to a golden camel trek across the Sahara — this is Morocco in one breath.
+              From Berber handwoven rugs in the Atlas Mountains to a golden camel trek across the Sahara â€” this is Morocco in one breath.
             </p>
           </div>
           <CinematicVideo

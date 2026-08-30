@@ -31,6 +31,8 @@ const IMAGES: GalleryItem[] = [
   { src: '/images/dest/draa-valley.jpg', categories: ['Desert', 'Landscapes'], caption: 'The palm groves of the Draa Valley' },
   { src: '/images/hero/desert-pano.jpg', categories: ['Desert', 'Landscapes'], caption: 'The Sahara at sunset' },
   { src: '/images/stock/stargazing-merzouga.jpg', categories: ['Desert', 'Luxury Camp'], caption: 'Stargazing beneath the Milky Way' },
+  { src: '/images/curated/sahara-desert-camp-starry-night-lantern-merzouga.jpg', categories: ['Desert', 'Luxury Camp'], caption: 'A traveler holds a lantern beneath the star-filled sky of the Sahara desert' },
+  { src: '/images/curated/berber-guide-camels-sahara-desert-morocco.jpg', categories: ['My Journey as a Guide', 'Authenticity'], caption: 'A Berber desert guide rests among his camels in the heart of the Sahara' },
   // --- From the photo journal (authentic images from our Morocco journeys) ---
   { src: '/images/pdf/img_0-optimized.jpg', categories: ['Authenticity'], caption: 'Captured on the road with Morocco Grand Adventure' },
   { src: '/images/pdf/img_1-optimized.jpg', categories: ['Authenticity'], caption: 'A moment from one of our private journeys in Morocco' },

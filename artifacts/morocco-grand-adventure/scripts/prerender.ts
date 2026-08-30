@@ -135,6 +135,11 @@ function faqBlock(faqs: { question: string; answer: string }[]): string {
     .join('\n');
   return `    <ul class="prerendered-faq">\n${items}\n    </ul>\n`;
 }
+// Curated-image figure used by destination galleries and experience pages.
+// Alt text is natural/descriptive (never keyword-stuffed) per the Image-SEO pack.
+function figureImg(src: string, alt: string, caption: string): string {
+  return `    <figure>\n      <img src="${src}" alt="${escapeHtml(alt)}" loading="lazy" decoding="async" class="w-full h-72 md:h-96 object-cover" />\n      <figcaption>${escapeHtml(caption)}</figcaption>\n    </figure>\n`;
+}
 function hrefsFor(rest: string): string {
   const clean = rest === '/' ? '' : rest;
   const links = languages.map((l) => `    <link rel="alternate" hreflang="${l.code}" href="${SITE_URL}/${l.code}${clean}" />`).join('\n');
@@ -270,7 +275,8 @@ function buildDestinationsContent(lang: Lang): string {
 function buildDestinationDetailContent(destId: string, lang: Lang): string {
   const d = getLocalizedDestination(destId, lang);
   if (!d) return h1('Not Found') + paragraph('This destination could not be found.');
-  return h1(d.name) + paragraph(d.shortDesc) + paragraph(d.description) + h2(tr(lang, 'dest_about')) + ul(d.highlights) + buildTopicalLinksContent({ destinationId: d.id }, lang);
+  const gallery = (d.gallery ?? []).map((p) => figureImg(p.src, p.alt, p.caption)).join('\n');
+  return h1(d.name) + paragraph(d.shortDesc) + paragraph(d.description) + h2(tr(lang, 'dest_about')) + ul(d.highlights) + (gallery ? h2(`${d.name} ${tr(lang, 'dest_pictures_title')}`) + gallery : '') + buildTopicalLinksContent({ destinationId: d.id }, lang);
 }
 function buildAboutContent(lang: Lang): string {
   return h1(tr(lang, 'nav_about')) + paragraph(tr(lang, 'about_story_p1')) + paragraph(tr(lang, 'about_story_p2')) + h2(tr(lang, 'nav_tours')) + paragraph(tr(lang, 'about_philosophy_quote'));
@@ -363,7 +369,13 @@ function buildExperienceContent(rest: string, lang: Lang): string {
   const intro = paragraph(meta.description);
   const tBlocks = cfg.tours.map((id) => getLocalizedTour(id, lang)).filter((t): t is NonNullable<typeof t> => Boolean(t)).map((t) => h2Link(`${SITE_URL}/${lang}/tours/${t.id}`, t.name) + paragraph(t.description ?? '') + paragraph(`${tr(lang, 'search_duration')}: ${t.duration}`) + ul(t.highlights)).join('');
   const dBlocks = cfg.destinations.map((id) => getLocalizedDestination(id, lang)).filter((d): d is NonNullable<typeof d> => Boolean(d)).map((d) => h2Link(`${SITE_URL}/${lang}/destinations/${d.id}`, d.name) + paragraph(d.shortDesc)).join('');
-  return heading + intro + tBlocks + dBlocks;
+  // Curated Sahara imagery for the desert-tours hub (Image-SEO pack).
+  const desertMoments = rest === '/desert-tours' ? `\n    <h2>${escapeHtml(tr(lang, 'dt2_moments_title'))}</h2>\n    <p>${escapeHtml(tr(lang, 'dt2_moments_sub'))}</p>\n    <div class="grid gap-6 md:grid-cols-3">\n${[
+    ['/images/curated/sahara-desert-dunes-couple-sunset-merzouga.jpg', 'Couple sitting on top of a golden dune admiring the endless Sahara desert at sunset near Merzouga', tr(lang, 'dt2_moments_cap1')],
+    ['/images/curated/camel-caravan-sunset-silhouette-sahara-desert.jpg', 'Silhouette of a Berber guide leading two camels along a dune ridge at sunset in the Sahara', tr(lang, 'dt2_moments_cap2')],
+    ['/images/curated/sahara-desert-sunset-silhouette-dune-morocco.jpg', 'Silhouette of a woman with arms outstretched on a dune crest against a giant setting sun in the Sahara', tr(lang, 'dt2_moments_cap3')],
+  ].map(([s, a, c]) => `      ${figureImg(s, a, c)}`).join('\n')}\n    </div>\n` : '';
+  return heading + intro + desertMoments + tBlocks + dBlocks;
 }
 
 type RouteEntry = { rest: string; outFile: string; content: () => string; meta: ReturnType<typeof getRouteMeta>; lang: string; schemas: Record<string, unknown>[]; rtl: boolean };

@@ -28,7 +28,15 @@ export type Destination = {
   region: string;
   /** approximate GPS for interactive map */
   coords: { lat: number; lng: number };
+  /**
+   * Optional curated photo gallery (Image-SEO pack). Alt text is natural and
+   * descriptive — never keyword-stuffed. Captions render under each image.
+   */
+  gallery?: DestinationGalleryImage[];
 };
+
+export type DestinationGalleryImage = { src: string; alt: string; caption: string };
+
 
 export const destinations: Destination[] = [
   // ── Imperial Cities ────────────────────────────────────────────────────────
@@ -43,6 +51,23 @@ export const destinations: Destination[] = [
     highlights: ["Jemaa el-Fnaa Square", "Majorelle Garden", "Bahia Palace", "Medina Souks", "Hammam & Spa"],
     region: "Central Morocco",
     coords: { lat: 31.6295, lng: -7.9811 },
+    gallery: [
+      {
+        src: "/images/curated/marrakech-souk-brass-lanterns-market.jpg",
+        alt: "Rows of glowing handcrafted brass and silver lanterns for sale in a traditional Marrakech souk",
+        caption: "Handcrafted lanterns glow warmly in one of Marrakech's famous souks.",
+      },
+      {
+        src: "/images/curated/marrakech-medina-street-life-locals-morocco.jpg",
+        alt: "Local life in the Marrakech medina — residents, cats, and a market vendor in narrow alleys",
+        caption: "Authentic scenes of daily life in the winding alleys of the Marrakech medina.",
+      },
+      {
+        src: "/images/curated/marrakech-medina-motorbike-archway-local-life.jpg",
+        alt: "Local man riding a motorbike through a stone archway in the old Marrakech medina",
+        caption: "A local rider passes beneath a historic stone archway in the Marrakech medina.",
+      },
+    ],
   },
   {
     id: "fes",
@@ -55,6 +80,13 @@ export const destinations: Destination[] = [
     highlights: ["Fes el-Bali Medina", "Chouara Tannery", "Al-Qarawiyyin University", "Medersa Bou Inania", "Bab Bou Jeloud"],
     region: "Northern Morocco",
     coords: { lat: 34.0181, lng: -5.0078 },
+    gallery: [
+      {
+        src: "/images/curated/fes-tannery-chouara-leather-dyeing-morocco.jpg",
+        alt: "Craftsman dyeing leather hides in the centuries-old Chouara Tannery, Fes, Morocco",
+        caption: "A tanner works among the ancient stone dye pits of the Chouara Tannery in Fes.",
+      },
+    ],
   },
   {
     id: "meknes",
@@ -79,6 +111,18 @@ export const destinations: Destination[] = [
     highlights: ["Hassan II Mosque", "Corniche", "Art Deco Architecture", "Morocco Mall", "La Sqala"],
     region: "Atlantic Coast",
     coords: { lat: 33.5731, lng: -7.5898 },
+    gallery: [
+      {
+        src: "/images/curated/hassan-ii-mosque-arched-corridor-casablanca.jpg",
+        alt: "Row of ornate horseshoe arches inside the Hassan II Mosque corridor in Casablanca, Morocco",
+        caption: "A striking perspective of the horseshoe-arch corridor at the Hassan II Mosque.",
+      },
+      {
+        src: "/images/curated/hassan-ii-mosque-ornate-bronze-door-casablanca.jpg",
+        alt: "Woman standing before the giant ornate bronze door and mosaic wall of the Hassan II Mosque, Casablanca",
+        caption: "A visitor stands dwarfed by the giant ornate bronze door of the Hassan II Mosque.",
+      },
+    ],
   },
   {
     id: "rabat",
@@ -141,6 +185,13 @@ export const destinations: Destination[] = [
     highlights: ["UNESCO Ksar", "Film Location Tour", "Sunrise Photography", "Berber Family Visits", "Pottery Workshops"],
     region: "Southern Morocco",
     coords: { lat: 31.0472, lng: -7.1291 },
+    gallery: [
+      {
+        src: "/images/curated/ait-benhaddou-kasbah-sunset-unesco-morocco.jpg",
+        alt: "Woman in a flowing yellow dress standing before the sunset-lit Ait Benhaddou kasbah reflected in the river",
+        caption: "The UNESCO-listed kasbah of Ait Benhaddou glows under the golden light of sunset.",
+      },
+    ],
   },
   {
     id: "zagora",

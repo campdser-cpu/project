@@ -473,4 +473,10 @@ export default {
   dest_weather_clear: "Ensoleillé et dégagé",
   dest_photo_sunrise: "Lever de soleil sur l'erg Chebbi",
   dest_photo_stargazing: "Nuit étoilée sous la Voie lactée",
+  dt2_moments_title: "Moments dans le désert du Sahara près de Merzouga",
+  dt2_moments_sub: "Dunes dorées, nuits étoilées et la silhouette intemporelle d'une caravane de chameaux — des scènes que vous vivrez lors de nos circuits sahariens au départ de Marrakech.",
+  dt2_moments_cap1: "Des dunes dorées s'étendent à l'horizon dans le désert de l'Erg Chebbi près de Merzouga.",
+  dt2_moments_cap2: "Un guide berbère mène sa caravane de chameaux sur la crête d'une dune au coucher du soleil.",
+  dt2_moments_cap3: "La silhouette d'une voyageuse se détache devant l'immense soleil doré sur les dunes du Sahara.",
+  dest_pictures_title: "en images",
 } as Record<string, string>;

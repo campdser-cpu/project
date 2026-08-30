@@ -32,7 +32,7 @@ export default function DestinationDetail() {
         <div className="absolute inset-0 z-0">
           <img 
             src={destination.image} 
-            alt={destination.name} 
+            alt={`${destination.name}, Morocco — ${destination.shortDesc}`}
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/50 mix-blend-multiply" />
@@ -67,6 +67,30 @@ export default function DestinationDetail() {
                 {t('dest_about_text')}
               </p>
               
+              {/* Curated photo gallery (Image-SEO pack) — only rendered when
+                  the destination has curated imagery in the canonical data. */}
+              {destination.gallery && destination.gallery.length > 0 && (
+                <div className="mb-16">
+                  <h3 className="font-serif text-3xl text-foreground mb-3">
+                    {destination.name} {t('dest_pictures_title')}
+                  </h3>
+                  <div className={`grid gap-6 ${destination.gallery.length > 1 ? 'md:grid-cols-2' : ''}`}>
+                    {destination.gallery.map(photo => (
+                      <figure key={photo.src} className="rounded-3xl overflow-hidden shadow-lg border border-border bg-card">
+                        <img
+                          src={photo.src}
+                          alt={photo.alt}
+                          loading="lazy"
+                          decoding="async"
+                          className="w-full h-72 md:h-96 object-cover"
+                        />
+                        <figcaption className="px-5 py-4 text-sm text-muted-foreground">{photo.caption}</figcaption>
+                      </figure>
+                    ))}
+                  </div>
+                </div>
+              )}
+
               {/* NEW: Local Food Section */}
               <div className="mb-16">
                 <h3 className="font-serif text-3xl text-foreground mb-6 flex items-center gap-3">

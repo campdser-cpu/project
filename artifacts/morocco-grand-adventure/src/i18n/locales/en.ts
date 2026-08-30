@@ -562,6 +562,12 @@ export default {
     mg_faq4_a: "Yes — Merzouga is a small, welcoming village where tourism is the main livelihood. Our local team ensures you experience it in complete safety and comfort.",
     // ── Desert Tours page ──
     dt2_hero_alt: "Golden Sahara desert dunes at Merzouga with camel caravan at sunset",
+  dt2_moments_title: "Sahara Desert Moments Near Merzouga",
+  dt2_moments_sub: "Golden dunes, starlit nights, and the timeless silhouette of a camel caravan — scenes you will live on our Sahara desert tours from Marrakech.",
+  dest_pictures_title: "in Pictures",
+  dt2_moments_cap1: "Endless golden dunes stretch to the horizon in the Erg Chebbi desert near Merzouga.",
+  dt2_moments_cap2: "A Berber guide leads his camel caravan along the dune crest as the sun sets.",
+  dt2_moments_cap3: "A traveler's silhouette stands out against the giant golden sun over the Sahara dunes.",
     dt2_title: "Sahara Desert Tours",
     dt2_subtitle: "Private Merzouga desert tours, Erg Chebbi camel treks, and luxury desert camps — crafted by locals born in the Sahara.",
     dt2_cta_explore: "Explore Desert Tours",

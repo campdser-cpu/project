@@ -182,4 +182,10 @@ export default {
   about_cta_sub: "Choisissez un itinéraire avec l'équipe qui connaît le mieux Merzouga.",
   map_directions: "Itinéraire ↗",
   // __APPEND__
+  dt2_moments_title: "Moments dans le désert du Sahara près de Merzouga",
+  dt2_moments_sub: "Dunes dorées, nuits étoilées et la silhouette intemporelle d'une caravane de chameaux — des scènes que vous vivrez lors de nos circuits sahariens au départ de Marrakech.",
+  dest_pictures_title: "en images",
+  dt2_moments_cap1: "Des dunes dorées s'étendent à l'horizon dans le désert de l'Erg Chebbi près de Merzouga.",
+  dt2_moments_cap2: "Un guide berbère mène sa caravane de chameaux sur la crête d'une dune au coucher du soleil.",
+  dt2_moments_cap3: "La silhouette d'une voyageuse se détache devant l'immense soleil doré sur les dunes du Sahara.",
 } as Record<string, string>;
