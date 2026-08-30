@@ -1,94 +1,72 @@
 /**
- * ReviewCard — displays a single customer review with star rating,
- * reviewer avatar (initials), name, country flag, quote, and tour.
- *
- * Extracted from the inline markup in the home page so it can be reused
- * across the site (e.g. about page, tour detail "why travelers choose us").
- *
- * The star rating defaults to 5 (all five-review showcase), but a numeric
- * `rating` prop can be passed for partial ratings.
+ * ReviewCard — renders one verified Google customer review.
+ * The visible review source is the screenshot-backed data in verifiedReviews.ts.
  */
-import { Star } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { ExternalLink, Star } from 'lucide-react';
+import { verifiedGoogleReviews } from '@/data/verifiedReviews';
 
 export type ReviewCardProps = {
-  /** Reviewer display name (used to compute avatar initials). */
-  name: string;
-  /** Country flag emoji rendered next to the name. */
+  /** Kept for compatibility with the existing homepage API. */
+  name?: string;
   country?: string;
-  /** The review body text. */
-  quote: string;
-  /** Name of the tour the reviewer booked. */
-  tour: string;
-  /** Star rating 1–5 (default 5). */
+  quote?: string;
+  tour?: string;
   rating?: number;
-  /** Optional index for animation stagger. */
   index?: number;
 };
 
-function getInitials(name: string): string {
-  return name
-    .split(' ')
-    .filter((w) => /[A-Za-z]/.test(w[0]))
-    .map((w) => w[0])
-    .join('')
-    .slice(0, 2)
-    .toUpperCase();
-}
+export function ReviewCard({ index = 0 }: ReviewCardProps) {
+  const review = verifiedGoogleReviews[index % verifiedGoogleReviews.length];
 
-export function ReviewCard({
-  name,
-  country = '',
-  quote,
-  tour,
-  rating = 5,
-  index = 0,
-}: ReviewCardProps) {
   return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.95 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true }}
-      transition={{ delay: index * 0.1 }}
-      className="bg-background/60 backdrop-blur-sm border border-border p-6 md:p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 relative"
-    >
-      {/* Decorative star accent in the corner */}
-      <div className="absolute top-6 right-6 md:top-8 md:right-8 text-primary/20" aria-hidden="true">
-        <Star className="w-10 h-10 md:w-12 md:h-12 fill-current" />
-      </div>
-
-      {/* Reviewer header: avatar + name + stars */}
-      <div className="flex items-center gap-3 md:gap-4 mb-5 md:mb-6 relative z-10">
-        <div
-          className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-primary/15 text-primary font-serif text-lg md:text-xl font-bold flex items-center justify-center border-2 border-primary/20 shrink-0"
-          aria-hidden="true"
-        >
-          {getInitials(name)}
-        </div>
+    <article className="bg-background/60 backdrop-blur-sm border border-border p-6 md:p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 relative flex flex-col">
+      <div className="flex items-start justify-between gap-4 mb-5 relative z-10">
         <div>
-          <h4 className="font-bold text-foreground text-base md:text-lg">
-            {name} <span className="text-sm md:text-base text-muted-foreground">{country}</span>
-          </h4>
-          <div className="flex text-primary gap-0.5 mt-1">
+          <h3 className="font-bold text-foreground text-base md:text-lg">{review.name}</h3>
+          <div className="flex items-center gap-0.5 mt-2" aria-label={`${review.rating} out of 5 stars`}>
             {Array.from({ length: 5 }, (_, s) => (
-              <Star
-                key={s}
-                className={`w-4 h-4 ${s < rating ? 'fill-current' : 'opacity-30'}`}
-              />
+              <Star key={s} className={`w-4 h-4 ${s < review.rating ? 'fill-current text-primary' : 'text-muted-foreground'}`} aria-hidden="true" />
             ))}
           </div>
         </div>
+        <span className="text-xs font-semibold text-muted-foreground whitespace-nowrap">Google Review</span>
       </div>
 
-      {/* Review quote */}
-      <p className="text-muted-foreground italic mb-5 md:mb-6 relative z-10 text-sm leading-relaxed">
-        "{quote}"
-      </p>
+      <p className="text-muted-foreground mb-4 relative z-10 text-sm leading-relaxed">“{review.text}”</p>
 
-      {/* Tour badge */}
-      <div className="text-xs font-bold text-primary tracking-wide uppercase border-t border-border pt-4 relative z-10">
-        {tour}
+      {review.translationNote && (
+        <p className="text-xs text-muted-foreground mb-4 relative z-10">{review.translationNote}</p>
+      )}
+
+      <div className="grid grid-cols-2 gap-2 mb-5 relative z-10">
+        {review.images.slice(0, 2).map((image) => (
+          <img
+            key={image.src}
+            src={image.src}
+            alt={image.alt}
+            width={image.width}
+            height={image.height}
+            loading="lazy"
+            decoding="async"
+            className="w-full aspect-[3/5] object-cover rounded-xl border border-border"
+          />
+        ))}
       </div>
-    </motion.div>
+
+      <div className="mt-auto pt-4 border-t border-border relative z-10">
+        {review.relativeDate && (
+          <p className="text-xs text-muted-foreground mb-3">Shown in supplied screenshot as: {review.relativeDate}</p>
+        )}
+        <a
+          href={review.sourceUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 text-sm font-bold text-primary hover:underline"
+          aria-label={`View ${review.name} review on Google`}
+        >
+          See original review on Google <ExternalLink className="w-4 h-4" aria-hidden="true" />
+        </a>
+      </div>
+    </article>
   );
 }
