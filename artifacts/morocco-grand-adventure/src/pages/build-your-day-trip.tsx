@@ -1,0 +1,128 @@
+import { FormEvent, useMemo, useState } from 'react';
+import { CalendarDays, CheckCircle2, MapPin, MessageCircle, Users } from 'lucide-react';
+import { Layout } from '../components/layout/Layout';
+import { contactInfo } from '@/data/content';
+import { useLanguage } from '@/contexts/LanguageContext';
+
+const CITIES = ['Marrakech', 'Fes', 'Casablanca', 'Agadir', 'Tangier', 'Merzouga'];
+const INTERESTS = ['Culture & history', 'Nature & mountains', 'Food', 'Photography', 'Markets & medinas', 'Beach & coast', 'Adventure'];
+
+type Copy = {
+  badge: string; title: string; subtitle: string; promise: string; departure: string; destination: string;
+  destinationHint: string; date: string; travelers: string; pickup: string; pickupOptions: string[];
+  interests: string; notes: string; notesPlaceholder: string; submit: string; whatsapp: string;
+  response: string; sameDay: string; required: string;
+};
+
+const COPY: Record<string, Copy> = {
+  en: { badge: 'PERSONALIZED DAY TRIP', title: 'Build Your Day Trip', subtitle: 'One-day experience · Same-day return', promise: 'Tell us what you want to experience and we will confirm the route, timing and price with you.', departure: 'Departure city', destination: 'Destination or route', destinationHint: 'Tell us where you would like to go. If you are unsure, write “Help me choose”.', date: 'Preferred date', travelers: 'Travelers', pickup: 'Pickup preference', pickupOptions: ['Private pickup', 'Meet at a central point', 'I will arrange my own transport'], interests: 'Interests', notes: 'Additional notes', notesPlaceholder: 'Anything we should know about your group, pace, accessibility needs or preferences?', submit: 'Request a Personalized Quote', whatsapp: 'Continue on WhatsApp', response: 'We do not show artificial availability or calculate a price automatically. Your request is reviewed personally.', sameDay: 'One-day experience · Same-day return', required: 'Required' },
+  fr: { badge: 'EXCURSION PERSONNALISÉE', title: 'Créer votre excursion à la journée', subtitle: 'Expérience d’une journée · Retour le jour même', promise: 'Indiquez ce que vous souhaitez découvrir et nous confirmerons avec vous l’itinéraire, les horaires et le prix.', departure: 'Ville de départ', destination: 'Destination ou itinéraire', destinationHint: 'Indiquez où vous souhaitez aller. En cas de doute, écrivez « Aidez-moi à choisir ».', date: 'Date souhaitée', travelers: 'Voyageurs', pickup: 'Prise en charge', pickupOptions: ['Prise en charge privée', 'Rendez-vous à un point central', 'Je viens par mes propres moyens'], interests: 'Centres d’intérêt', notes: 'Notes supplémentaires', notesPlaceholder: 'Une information sur votre groupe, votre rythme ou vos préférences ?', submit: 'Demander un devis personnalisé', whatsapp: 'Continuer sur WhatsApp', response: 'Nous n’affichons pas de disponibilité artificielle et ne calculons pas automatiquement un prix. Votre demande est étudiée personnellement.', sameDay: 'Expérience d’une journée · Retour le jour même', required: 'Obligatoire' },
+  es: { badge: 'EXCURSIÓN PERSONALIZADA', title: 'Crea tu excursión de un día', subtitle: 'Experiencia de un día · Regreso el mismo día', promise: 'Cuéntanos qué quieres descubrir y confirmaremos contigo la ruta, los horarios y el precio.', departure: 'Ciudad de salida', destination: 'Destino o ruta', destinationHint: 'Indica adónde quieres ir. Si no estás seguro, escribe «Ayúdame a elegir».', date: 'Fecha preferida', travelers: 'Viajeros', pickup: 'Recogida', pickupOptions: ['Recogida privada', 'Punto de encuentro céntrico', 'Organizaré mi propio transporte'], interests: 'Intereses', notes: 'Notas adicionales', notesPlaceholder: '¿Algo que debamos saber sobre tu grupo, ritmo o preferencias?', submit: 'Solicitar un presupuesto personalizado', whatsapp: 'Continuar por WhatsApp', response: 'No mostramos disponibilidad artificial ni calculamos un precio automáticamente. Revisamos personalmente tu solicitud.', sameDay: 'Experiencia de un día · Regreso el mismo día', required: 'Obligatorio' },
+  it: { badge: 'ESCURSIONE PERSONALIZZATA', title: 'Crea la tua escursione di un giorno', subtitle: 'Esperienza di un giorno · Rientro in giornata', promise: 'Raccontaci cosa vuoi scoprire e confermeremo con te itinerario, orari e prezzo.', departure: 'Città di partenza', destination: 'Destinazione o itinerario', destinationHint: 'Indica dove vuoi andare. Se non sai cosa scegliere, scrivi «Aiutami a scegliere».', date: 'Data preferita', travelers: 'Viaggiatori', pickup: 'Prelievo', pickupOptions: ['Prelievo privato', 'Incontro in un punto centrale', 'Organizzo autonomamente il trasporto'], interests: 'Interessi', notes: 'Note aggiuntive', notesPlaceholder: 'Qualcosa che dovremmo sapere sul gruppo, ritmo o preferenze?', submit: 'Richiedi un preventivo personalizzato', whatsapp: 'Continua su WhatsApp', response: 'Non mostriamo disponibilità artificiale né calcoliamo automaticamente un prezzo. La richiesta viene valutata personalmente.', sameDay: 'Esperienza di un giorno · Rientro in giornata', required: 'Obbligatorio' },
+  de: { badge: 'PERSÖNLICHER TAGESAUSFLUG', title: 'Tagesausflug zusammenstellen', subtitle: 'Tageserlebnis · Rückkehr am selben Tag', promise: 'Teilen Sie uns Ihre Wünsche mit. Wir bestätigen Route, Zeiten und Preis persönlich mit Ihnen.', departure: 'Abfahrtsort', destination: 'Ziel oder Route', destinationHint: 'Nennen Sie Ihr Wunschziel. Wenn Sie unsicher sind, schreiben Sie „Hilf mir bei der Auswahl“.', date: 'Wunschtermin', travelers: 'Reisende', pickup: 'Abholung', pickupOptions: ['Private Abholung', 'Treffpunkt im Zentrum', 'Eigene Anreise'], interests: 'Interessen', notes: 'Weitere Hinweise', notesPlaceholder: 'Gibt es etwas zu Ihrer Gruppe, Ihrem Tempo oder Ihren Wünschen?', submit: 'Persönliches Angebot anfragen', whatsapp: 'Auf WhatsApp fortfahren', response: 'Keine künstliche Verfügbarkeit und keine automatische Preisberechnung. Ihre Anfrage wird persönlich geprüft.', sameDay: 'Tageserlebnis · Rückkehr am selben Tag', required: 'Pflichtfeld' },
+  nl: { badge: 'PERSOONLIJKE DAGTRIP', title: 'Bouw je dagtrip', subtitle: 'Eendaagse ervaring · Dezelfde dag terug', promise: 'Vertel ons wat je wilt beleven. We bevestigen samen de route, timing en prijs.', departure: 'Vertrekstad', destination: 'Bestemming of route', destinationHint: 'Vertel ons waar je heen wilt. Twijfel je? Schrijf “Help me kiezen”.', date: 'Gewenste datum', travelers: 'Reizigers', pickup: 'Ophalen', pickupOptions: ['Privé ophalen', 'Afspreken op een centraal punt', 'Ik regel mijn eigen vervoer'], interests: 'Interesses', notes: 'Extra opmerkingen', notesPlaceholder: 'Iets over je groep, tempo of voorkeuren?', submit: 'Persoonlijke offerte aanvragen', whatsapp: 'Doorgaan via WhatsApp', response: 'Geen kunstmatige beschikbaarheid en geen automatische prijsberekening. We bekijken je aanvraag persoonlijk.', sameDay: 'Eendaagse ervaring · Dezelfde dag terug', required: 'Verplicht' },
+  pt: { badge: 'EXCURSÃO PERSONALIZADA', title: 'Crie a sua excursão de um dia', subtitle: 'Experiência de um dia · Regresso no mesmo dia', promise: 'Diga-nos o que gostaria de conhecer e confirmaremos consigo o percurso, horários e preço.', departure: 'Cidade de partida', destination: 'Destino ou percurso', destinationHint: 'Diga-nos para onde gostaria de ir. Se não souber, escreva «Ajude-me a escolher».', date: 'Data preferida', travelers: 'Viajantes', pickup: 'Recolha', pickupOptions: ['Recolha privada', 'Encontro num ponto central', 'Organizo o meu próprio transporte'], interests: 'Interesses', notes: 'Notas adicionais', notesPlaceholder: 'Algo que devamos saber sobre o grupo, ritmo ou preferências?', submit: 'Pedir orçamento personalizado', whatsapp: 'Continuar no WhatsApp', response: 'Não mostramos disponibilidade artificial nem calculamos preços automaticamente. O pedido é analisado pessoalmente.', sameDay: 'Experiência de um dia · Regresso no mesmo dia', required: 'Obrigatório' },
+  zh: { badge: '定制一日游', title: '定制您的摩洛哥一日游', subtitle: '一日体验 · 当天往返', promise: '告诉我们您想体验什么，我们会与您确认路线、时间和价格。', departure: '出发城市', destination: '目的地或路线', destinationHint: '告诉我们您想去哪里。如果不确定，请写“帮我选择”。', date: '期望日期', travelers: '人数', pickup: '接送方式', pickupOptions: ['私人接送', '市中心集合', '自行安排交通'], interests: '兴趣', notes: '其他需求', notesPlaceholder: '请告诉我们团队、节奏或偏好等信息。', submit: '申请个性化报价', whatsapp: '通过 WhatsApp 继续', response: '我们不提供虚假的实时库存，也不会自动计算价格。每个请求都会由我们人工确认。', sameDay: '一日体验 · 当天往返', required: '必填' },
+  ja: { badge: 'カスタム日帰り旅行', title: '日帰り旅行を作る', subtitle: '1日体験 · 当日帰着', promise: 'ご希望を教えてください。ルート、時間、料金を個別に確認します。', departure: '出発都市', destination: '目的地またはルート', destinationHint: '行きたい場所を入力してください。迷っている場合は「おすすめを教えて」と入力してください。', date: '希望日', travelers: '旅行者', pickup: '送迎', pickupOptions: ['専用送迎', '中心部で集合', '自分で移動を手配'], interests: '興味', notes: '追加メモ', notesPlaceholder: '人数、ペース、希望などお知らせください。', submit: '個別見積もりを依頼', whatsapp: 'WhatsAppで続ける', response: '架空の空き状況や自動価格計算は表示しません。ご依頼を個別に確認します。', sameDay: '1日体験 · 当日帰着', required: '必須' },
+  ko: { badge: '맞춤 당일 여행', title: '나만의 당일 여행 만들기', subtitle: '하루 체험 · 당일 귀환', promise: '원하는 경험을 알려주시면 일정, 시간과 가격을 직접 확인해 드립니다.', departure: '출발 도시', destination: '목적지 또는 경로', destinationHint: '가고 싶은 곳을 알려주세요. 모르겠다면 “추천해주세요”라고 입력하세요.', date: '희망 날짜', travelers: '여행자', pickup: '픽업', pickupOptions: ['전용 픽업', '중앙 미팅 장소', '직접 교통편 준비'], interests: '관심사', notes: '추가 메모', notesPlaceholder: '그룹, 이동 속도 또는 선호 사항을 알려주세요.', submit: '맞춤 견적 요청', whatsapp: 'WhatsApp으로 계속', response: '가상의 실시간 가능 여부나 자동 가격 계산을 제공하지 않습니다. 요청을 직접 확인합니다.', sameDay: '하루 체험 · 당일 귀환', required: '필수' },
+  ar: { badge: 'رحلة يومية مخصصة', title: 'صمّم رحلتك اليومية', subtitle: 'تجربة ليوم واحد · العودة في اليوم نفسه', promise: 'أخبرنا بما تريد اكتشافه وسنؤكد معك المسار والتوقيت والسعر.', departure: 'مدينة الانطلاق', destination: 'الوجهة أو المسار', destinationHint: 'أخبرنا إلى أين تريد الذهاب. إذا لم تكن متأكدًا، اكتب «ساعدني في الاختيار».', date: 'التاريخ المفضل', travelers: 'عدد المسافرين', pickup: 'طريقة الاستقبال', pickupOptions: ['استقبال خاص', 'الالتقاء في نقطة مركزية', 'سأرتب وسيلة النقل بنفسي'], interests: 'الاهتمامات', notes: 'ملاحظات إضافية', notesPlaceholder: 'هل هناك شيء نحتاج إلى معرفته عن مجموعتك أو وتيرة الرحلة أو تفضيلاتك؟', submit: 'اطلب عرض سعر مخصص', whatsapp: 'المتابعة عبر واتساب', response: 'لا نعرض توافرًا وهميًا ولا نحسب سعرًا تلقائيًا. تتم مراجعة طلبك شخصيًا.', sameDay: 'تجربة ليوم واحد · العودة في اليوم نفسه', required: 'مطلوب' },
+};
+
+export default function BuildYourDayTrip() {
+  const { lang } = useLanguage();
+  const c = COPY[lang] ?? COPY.en;
+  const [departureCity, setDepartureCity] = useState('Marrakech');
+  const [destination, setDestination] = useState('');
+  const [date, setDate] = useState('');
+  const [travelers, setTravelers] = useState(2);
+  const [pickup, setPickup] = useState(c.pickupOptions[0]);
+  const [interests, setInterests] = useState<string[]>([]);
+  const [notes, setNotes] = useState('');
+
+  const whatsappHref = useMemo(() => {
+    const text = [
+      'New Day Trip Request',
+      `Trip type: day_trip`,
+      `Duration: 1 day`,
+      `Departure: ${departureCity}`,
+      `Destination / route: ${destination || 'To be discussed'}`,
+      `Date: ${date || 'Flexible'}`,
+      `Travelers: ${travelers}`,
+      `Pickup: ${pickup}`,
+      `Interests: ${interests.join(', ') || 'Not specified'}`,
+      `Notes: ${notes || 'None'}`,
+    ].join('\n');
+    return `${contactInfo.whatsapp}?text=${encodeURIComponent(text)}`;
+  }, [departureCity, destination, date, travelers, pickup, interests, notes]);
+
+  const toggleInterest = (interest: string) => setInterests((current) => current.includes(interest) ? current.filter((item) => item !== interest) : [...current, interest]);
+
+  const submit = (event: FormEvent) => {
+    event.preventDefault();
+    window.open(whatsappHref, '_blank', 'noopener,noreferrer');
+  };
+
+  return (
+    <Layout>
+      <main dir={lang === 'ar' ? 'rtl' : 'ltr'} className="min-h-screen bg-background pt-32 pb-24">
+        <div className="container mx-auto max-w-4xl px-4">
+          <header className="text-center mb-12">
+            <span className="text-primary text-sm font-bold tracking-[0.2em] uppercase">{c.badge}</span>
+            <h1 className="mt-4 font-serif text-4xl md:text-6xl text-foreground">{c.title}</h1>
+            <p className="mt-5 text-xl text-primary font-medium">{c.sameDay}</p>
+            <p className="mt-4 max-w-2xl mx-auto text-muted-foreground text-lg">{c.promise}</p>
+          </header>
+
+          <form onSubmit={submit} className="bg-card border border-border rounded-[2rem] shadow-xl p-6 md:p-10 space-y-8">
+            <div className="grid md:grid-cols-2 gap-6">
+              <Field label={c.departure} required icon={<MapPin className="w-5 h-5" />}>
+                <select value={departureCity} onChange={(e) => setDepartureCity(e.target.value)} className={inputClass} required>
+                  {CITIES.map((city) => <option key={city}>{city}</option>)}
+                </select>
+              </Field>
+              <Field label={c.destination} required icon={<MapPin className="w-5 h-5" />}>
+                <input value={destination} onChange={(e) => setDestination(e.target.value)} className={inputClass} placeholder="Ourika, Ouzoud, Essaouira… or Help me choose" required />
+                <p className="mt-2 text-xs text-muted-foreground">{c.destinationHint}</p>
+              </Field>
+              <Field label={c.date} icon={<CalendarDays className="w-5 h-5" />}>
+                <input type="date" value={date} onChange={(e) => setDate(e.target.value)} min={new Date().toISOString().slice(0, 10)} className={inputClass} />
+              </Field>
+              <Field label={c.travelers} icon={<Users className="w-5 h-5" />}>
+                <input type="number" min={1} max={50} value={travelers} onChange={(e) => setTravelers(Math.max(1, Math.min(50, Number(e.target.value) || 1)))} className={inputClass} />
+              </Field>
+            </div>
+
+            <Field label={c.pickup}>
+              <div className="grid gap-3 sm:grid-cols-3">
+                {c.pickupOptions.map((option) => <label key={option} className={`border rounded-xl p-4 cursor-pointer transition ${pickup === option ? 'border-primary bg-primary/5' : 'border-border hover:border-primary/40'}`}><input type="radio" name="pickup" checked={pickup === option} onChange={() => setPickup(option)} className="sr-only" /><span className="text-sm font-medium">{option}</span></label>)}
+              </div>
+            </Field>
+
+            <Field label={c.interests}>
+              <div className="flex flex-wrap gap-2">
+                {INTERESTS.map((interest) => <button type="button" key={interest} onClick={() => toggleInterest(interest)} className={`rounded-full border px-4 py-2 text-sm transition ${interests.includes(interest) ? 'border-primary bg-primary text-primary-foreground' : 'border-border hover:border-primary/50'}`}>{interests.includes(interest) && <CheckCircle2 className="inline w-4 h-4 mr-1" />}{interest}</button>)}
+              </div>
+            </Field>
+
+            <Field label={c.notes}>
+              <textarea value={notes} onChange={(e) => setNotes(e.target.value)} rows={5} className={`${inputClass} resize-y`} placeholder={c.notesPlaceholder} />
+            </Field>
+
+            <div className="rounded-2xl bg-muted/50 border border-border p-5 text-sm text-muted-foreground">{c.response}</div>
+
+            <div className="grid sm:grid-cols-2 gap-3">
+              <button type="submit" className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-4 font-bold text-primary-foreground shadow-lg hover:opacity-90 transition"><MessageCircle className="w-5 h-5" />{c.submit}</button>
+              <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-xl border border-primary px-6 py-4 font-bold text-primary hover:bg-primary/5 transition"><MessageCircle className="w-5 h-5" />{c.whatsapp}</a>
+            </div>
+          </form>
+        </div>
+      </main>
+    </Layout>
+  );
+}
+
+const inputClass = 'w-full rounded-xl border border-border bg-background px-4 py-3.5 text-foreground outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/10';
+
+function Field({ label, required, icon, children }: { label: string; required?: boolean; icon?: React.ReactNode; children: React.ReactNode }) {
+  return <div className="space-y-2"><label className="flex items-center gap-2 text-sm font-bold text-foreground">{icon}{label}{required && <span className="text-primary" aria-label="required">*</span>}</label>{children}</div>;
+}
