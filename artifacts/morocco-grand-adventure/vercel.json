@@ -22,6 +22,26 @@
       "permanent": true
     },
     {
+      "source": "/:lang(en|fr|es|it|de|nl|pt|zh|ja|ko|ar)/marrakech-tours",
+      "destination": "/:lang/tours/from-marrakech",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(en|fr|es|it|de|nl|pt|zh|ja|ko|ar)/fes-tours",
+      "destination": "/:lang/tours/from-fes",
+      "permanent": true
+    },
+    {
+      "source": "/marrakech-tours",
+      "destination": "/en/tours/from-marrakech",
+      "permanent": true
+    },
+    {
+      "source": "/fes-tours",
+      "destination": "/en/tours/from-fes",
+      "permanent": true
+    },
+    {
       "source": "/",
       "has": [
         {
