@@ -6,24 +6,25 @@ import { contactInfo } from '@/data/content';
 import { SiWhatsapp } from 'react-icons/si';
 import { useLanguage } from '@/contexts/LanguageContext';
 
+const BOOK_LABELS: Record<string, string> = {
+  en: 'Book Now — Pay Later', fr: 'Réserver — Payer plus tard', es: 'Reserva — Paga después', it: 'Prenota — Paga dopo', de: 'Jetzt buchen — später zahlen', nl: 'Boek nu — betaal later', pt: 'Reserve — pague depois', zh: '立即预订 — 稍后付款', ja: '今すぐ予約 — 後払い', ko: '지금 예약 — 나중에 결제', ar: 'احجز الآن — ادفع لاحقًا',
+};
+
 export function StickyBookingCTA() {
   const [visible, setVisible] = useState(false);
   const [location] = useLocation();
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
 
-  // Show after scrolling 600px, hide on booking/contact pages
   useEffect(() => {
-    const onScroll = () => {
-      setVisible(window.scrollY > 600);
-    };
+    const onScroll = () => setVisible(window.scrollY > 600);
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // Hide on pages where booking is the primary focus
-  if (location === '/contact' || location === '/trip-builder' || location === '/tours' || location.startsWith('/tours/')) {
-    return null;
-  }
+  // Keep the dedicated booking/contact flows clean, but make the CTA available on tours and content pages.
+  if (location === '/contact' || location === '/trip-builder' || location === '/build-your-day-trip') return null;
+
+  const bookLabel = BOOK_LABELS[lang] ?? BOOK_LABELS.en;
 
   return (
     <AnimatePresence>
@@ -37,10 +38,10 @@ export function StickyBookingCTA() {
         >
           <div className="grid grid-cols-3 gap-2 p-3">
             <Link
-              href="/trip-builder"
+              href="/contact?mode=booking"
               className="flex items-center justify-center gap-2 bg-primary text-primary-foreground px-3 py-3 rounded-xl font-bold text-xs tracking-wide"
             >
-              <Calendar className="w-4 h-4 shrink-0" /> {t('sticky_custom_trip')}
+              <Calendar className="w-4 h-4 shrink-0" /> {bookLabel}
             </Link>
             <a
               href={contactInfo.whatsapp}
