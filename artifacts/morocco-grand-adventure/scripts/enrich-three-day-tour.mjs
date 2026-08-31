@@ -32,4 +32,5 @@ await import('./enrich-three-day-cities.mjs');
 await import('./enrich-three-day-price-tag.mjs');
 await import('./enrich-three-day-hierarchy.mjs');
 await import('./enrich-three-day-prerender.mjs');
-console.log('[3-day-enrichment] Marrakech, Fes, Agadir, quote-only pricing, hierarchy and prerender enrichment prepared for build.');
+await import('./enrich-three-day-schema.mjs');
+console.log('[3-day-enrichment] Marrakech, Fes, Agadir, quote-only pricing, hierarchy, prerender and schema enrichment prepared for build.');
