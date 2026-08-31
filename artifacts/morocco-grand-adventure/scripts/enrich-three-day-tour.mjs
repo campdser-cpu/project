@@ -104,7 +104,7 @@ if (!content.includes(marker)) {
 }
 
 let detail = fs.readFileSync(detailPath, 'utf8');
-if (!detail.includes("MGA_THREE_DAY_BOOKING_V2")) {
+if (!detail.includes("const isThreeDaySahara = tour.id === '3-day-sahara-marrakech';")) {
   detail = replaceOnce(
     detail,
     /  const itinerary = tour\.itineraryDays \?\? \[\];/,
@@ -129,7 +129,7 @@ if (!detail.includes("MGA_THREE_DAY_BOOKING_V2")) {
   detail = replaceOnce(
     detail,
     /                    \{t\('book_paypal'\)\}\n                  <\/a>\n                \) : \(\n                  <a[\s\S]*?\n                    \{t\('book_group_quote'\)\}\n                  <\/a>\n                \)\}/,
-    `                    {t('book_paypal')}\n                  </a>\n                ) : (\n                  <a\n                    href={isThreeDaySahara ? `${contactInfo.whatsapp}?text=${encodeURIComponent(`I'd like to book ${tour.name}. Please confirm the itinerary and payment terms before I pay.`)}` : `${contactInfo.whatsapp}?text=${encodeURIComponent(`I'm interested in a group booking for ${tour.name}. Please send me a custom quote.`)}`}\n                    target="_blank"\n                    rel="noreferrer"\n                    className="w-full bg-foreground text-background py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-primary transition-colors text-lg"\n                  >\n                    {isThreeDaySahara ? 'Request booking confirmation' : t('book_group_quote')}\n                  </a>\n                )}`,
+    `                    {t('book_paypal')}\n                  </a>\n                ) : (\n                  <a\n                    href={contactInfo.whatsapp}\n                    target="_blank"\n                    rel="noreferrer"\n                    className="w-full bg-foreground text-background py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-primary transition-colors text-lg"\n                  >\n                    {isThreeDaySahara ? 'Request booking confirmation' : t('book_group_quote')}\n                  </a>\n                )}`,
     'PayPal/group booking branch body',
   );
 
