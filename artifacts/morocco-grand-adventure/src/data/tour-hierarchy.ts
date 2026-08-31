@@ -8,11 +8,6 @@
 // — nothing here invents a price, hotel, pickup time, or itinerary. The
 // departure-city assignment is derived from each tour's real name, description
 // and day-one itinerary (all start in the city listed).
-//
-// City hubs that currently have no canned tours (Casablanca, Fes, Agadir) still
-// carry genuinely useful, codebase-grounded destination content and direct
-// travellers to the private trip-builder / contact flow rather than fabricating
-// itineraries that are not supported by the shipped data.
 // ─────────────────────────────────────────────────────────────────────────────
 
 export type DepartureCity = 'marrakech' | 'casablanca' | 'fes' | 'agadir';
@@ -30,6 +25,8 @@ export const DEPARTURE_CITIES: DepartureCity[] = [
  */
 export const TOUR_DEPARTURE_CITY: Record<string, DepartureCity> = {
   '3-day-sahara-marrakech': 'marrakech',
+  '3-day-sahara-fes': 'fes',
+  '3-day-sahara-agadir': 'agadir',
   '5-day-imperial-cities': 'marrakech',
   '7-day-imperial-cities-sahara-escape': 'marrakech',
   'honeymoon-morocco': 'marrakech',
@@ -115,9 +112,9 @@ export const CITY_HUBS: CityHub[] = [
     intro:
       'Fes is Morocco’s cultural and spiritual heart, and an ideal base for the northern imperial cities, the cedar forests of the Middle Atlas and the Sahara road to Merzouga.',
     body:
-      'Home to the world’s oldest university and one of the largest living medieval medinas on Earth, Fes rewards at least a couple of days. From here you can visit Meknès, the Roman ruins of Volubilis and the blue city of Chefchaouen — or head south through the Ziz Valley to the dunes of Erg Chebbi. We’ll build a private Fes itinerary around you, pairing guided medina walks with comfortable, well-paced driving days.',
+      'Home to the world’s oldest university and one of the largest living medieval medinas on Earth, Fes rewards at least a couple of days. From here you can visit Meknès, the Roman ruins of Volubilis and the blue city of Chefchaouen — or head south through the Ziz Valley to the dunes of Erg Chebbi. We’ll build a private Fes itinerary around you, pairing guided medina walks with comfortable, well-paced driving days. A three-day Fes-to-Sahara route is available as a quote-only private itinerary; its final accommodation, inclusions and onward finish are confirmed before payment rather than assumed.',
     destinationIds: ['fes', 'meknes', 'chefchaouen', 'ifrane', 'merzouga', 'erg-chebbi'],
-    hasDurationDrive: false,
+    hasDurationDrive: true,
   },
   {
     id: 'agadir',
@@ -129,9 +126,9 @@ export const CITY_HUBS: CityHub[] = [
     intro:
       'Agadir is Morocco’s year-round beach resort on the Atlantic — a great place to unwind at the end of a journey or to start a route north via Essaouira and Marrakech or east toward the Sahara.',
     body:
-      'With one of the sunniest climates in Morocco, Agadir pairs a long, sandy bay with easy access to the laid-back surf town of Taghazout and the walled souks of Taroudant. Heading inland, the road climbs through the Saffron Valley to Ouarzazate, the Dades and Todra gorges and the Erg Chebbi dunes. We can start a private itinerary in Agadir and shape the rest around how many days you have and where you want to finish.',
+      'With one of the sunniest climates in Morocco, Agadir pairs a long, sandy bay with easy access to the laid-back surf town of Taghazout and the walled souks of Taroudant. Heading inland, the road climbs through southern Morocco toward Ouarzazate, the Dades and Todra gorges and the Erg Chebbi dunes. A three-day Agadir-to-Sahara route is available as a quote-only private itinerary; the exact road stops, accommodation, inclusions and final destination are confirmed around your dates.',
     destinationIds: ['agadir', 'taghazout', 'essaouira', 'marrakech', 'ait-ben-haddou', 'merzouga'],
-    hasDurationDrive: false,
+    hasDurationDrive: true,
   },
 ];
 
