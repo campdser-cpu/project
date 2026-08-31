@@ -33,7 +33,7 @@ for(const lang of LANGS){
   html=html.replace(/(<meta property="og:description" content=")[^"]*("\s*\/?>)/,`$1${esc(c.description)}$2`);
   html=html.replace(/(<meta name="twitter:title" content=")[^"]*("\s*\/?>)/,`$1${esc(c.title)} — Morocco Grand Adventure$2`);
   html=html.replace(/(<meta name="twitter:description" content=")[^"]*("\s*\/?>)/,`$1${esc(c.description)}$2`);
-  html=html.replace(/(<link rel="alternate" hreflang="[^"]+" href=")[^"]*("\s*\/?>)/g,(_m,_a,_b)=>`${_a}${SITE_URL}/${lang}/build-your-day-trip${_b}`);
+  html=html.replace(/(<link rel="alternate" hreflang="([^"]+)" href=")[^"]*("\s*\/?>)/g,(_m,_a,alternateLang,_b)=>`${_a}${SITE_URL}/${alternateLang === 'x-default' ? 'en' : alternateLang}/build-your-day-trip${_b}`);
   html=html.replace(/<div id="root">[\s\S]*?<\/div>/,`<div id="root"><main><h1>${esc(c.h1)}</h1><p>${esc(c.sub)}</p><p>${esc(c.description)}</p><h2>${lang==='ar'?'اطلب عرض سعر مخصص':'Request a Personalized Quote'}</h2><p>${lang==='ar'?'أرسل تاريخك ومدينة الانطلاق والوجهة وعدد المسافرين واهتماماتك.':'Choose your departure city, destination, date, travelers and preferences. We will review your request personally.'}</p></main></div>`);
   fs.mkdirSync(path.dirname(out),{recursive:true}); fs.writeFileSync(out,html,'utf8');
   console.log(`[day-trip-prerender] wrote ${lang}/build-your-day-trip/index.html`);
