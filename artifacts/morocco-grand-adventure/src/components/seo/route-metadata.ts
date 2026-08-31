@@ -326,13 +326,15 @@ export function getRouteMeta(rest: string): RouteMeta {
   if (routeMetadata[normalised]) return routeMetadata[normalised];
 
   // Dynamic tours departure-city duration route: /tours/from-:city/:days
-  const fromDurationMatch = normalised.match(/^\/tours\/from-([^/]+)\/(\d+-?days?)$/);
+  const fromDurationMatch = normalised.match(/^\/tours\/from-([^/]+)\/(\d+)-?days?$/);
   if (fromDurationMatch) {
     const city = fromDurationMatch[1];
     const days = fromDurationMatch[2];
+    const cityLabel = city[0].toUpperCase() + city.slice(1);
+    const daysLabel = `${days}-Day`;
     return {
-      title: `${days.charAt(0).toUpperCase() + days.slice(1)} Tours From ${city[0].toUpperCase() + city.slice(1)} - Private Morocco Itineraries`,
-      description: `Private ${days.toLowerCase()} tours from ${city[0].toUpperCase() + city.slice(1)} - flexible Morocco itineraries with local experts. Plan your departure with Morocco Grand Adventure.`,
+      title: `${daysLabel} Tours From ${cityLabel} - Private Morocco Itineraries`,
+      description: `Private ${days}-day tours from ${cityLabel} - Marrakech, the Sahara, imperial cities and more. Pick your pace and plan a tailored departure with Morocco Grand Adventure.`,
       ogImage: "/images/dest/merzouga.jpg",
     };
   }

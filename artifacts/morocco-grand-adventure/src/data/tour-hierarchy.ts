@@ -138,3 +138,33 @@ export const CITY_HUBS: CityHub[] = [
 export function getCityHub(slug: string): CityHub | undefined {
   return CITY_HUBS.find((h) => h.slug === slug);
 }
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Duration hubs available per departure city — the single source of truth for
+// the /tours/from-<city>/<N>-days routes (prerenderer + runtime + sitemap all
+// derive from this, so a duration page can never "go missing" from the site).
+//
+// A duration in a city's list means the route HAS an intentional destination:
+//   • if the city has a canned tour of that length it lists the real tour;
+//   • otherwise the page honestly states no fixed itinerary is published and
+//     funnels the traveller to the private trip-builder/quote flow — it never
+//     invents a tour the business does not ship (see DURATION_HUB_* copy).
+// ─────────────────────────────────────────────────────────────────────────────
+export const CITY_HUB_DURATIONS: Record<DepartureCity, number[]> = {
+  marrakech: [3, 4, 5, 6, 7, 8, 9, 10],
+  casablanca: [3, 4, 5, 6, 7, 8],
+  fes: [3, 4, 5, 6, 7, 8],
+  agadir: [3, 4, 5, 6, 7, 8],
+};
+
+/** Canonical URL path for a city+duration hub, e.g. /tours/from-marrakech/3-days. */
+export function durationHubPath(city: DepartureCity, days: number): string {
+  const hub = getCityHub(city);
+  const slug = hub?.slug ?? city;
+  return `/tours/from-${slug}/${days}-days`;
+}
+
+/** All canonical duration-hub paths for a departure city. */
+export function durationHubPaths(city: DepartureCity): string[] {
+  return (CITY_HUB_DURATIONS[city] ?? []).map((days) => durationHubPath(city, days));
+}

@@ -1,5 +1,5 @@
 import { Link } from 'wouter';
-import { MapPin, Sparkles, Route } from 'lucide-react';
+import { MapPin, Sparkles, Route, Clock } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Layout } from '../layout/Layout';
 import { contactInfo } from '@/data/content';
@@ -10,8 +10,11 @@ import { TourBreadcrumbs } from './TourBreadcrumbs';
 import {
   type CityHub,
   TOUR_DEPARTURE_CITY,
+  type DepartureCity,
   tourDurationDays,
   durationLabel,
+  CITY_HUB_DURATIONS,
+  durationHubPath,
 } from '@/data/tour-hierarchy';
 import { SiWhatsapp } from 'react-icons/si';
 import { fmtTemplate } from './intl';
@@ -145,7 +148,32 @@ export function TourCityHub({ hub }: { hub: CityHub }) {
           )}
         </div>
       </section>
-{/* Available tours grouped by duration */}
+{/* Available durations — every /tours/from-<city>/<N>-days route shown here
+          is a real, intentional page (real canned tour or custom planning flow). */}
+      <section className="py-14 bg-card">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-3">
+            {t('hub_short_on_time')}
+          </h2>
+          <p className="text-muted-foreground mb-8 max-w-2xl">
+            {fmtTemplate(t('hub_short_on_time_sub'), { city: cityName })}
+          </p>
+          <div className="flex flex-wrap gap-3">
+            {(CITY_HUB_DURATIONS[hub.id] ?? []).map((days) => (
+              <Link
+                key={days}
+                href={durationHubPath(hub.id as DepartureCity, days)}
+                className="inline-flex items-center gap-2 bg-background border border-border rounded-full px-5 py-2.5 font-semibold text-foreground hover:border-primary hover:text-primary transition-colors"
+              >
+                <Clock className="w-4 h-4" aria-hidden="true" />
+                {fmtTemplate(t('hub_group_days_badge'), { days })}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Available tours grouped by duration */}
       {groups.length > 0 && (
         <section className="py-16 bg-muted/40 border-y border-border">
           <div className="container mx-auto px-4 max-w-6xl">

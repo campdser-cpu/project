@@ -32,7 +32,7 @@ import * as path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { destinations, contactInfo, reviews, type Review, type Tour, type Destination } from '../src/data/content';
-import { CITY_HUBS, TOUR_DEPARTURE_CITY, tourIdsForCity, tourDurationDays } from '../src/data/tour-hierarchy';
+import { CITY_HUBS, TOUR_DEPARTURE_CITY, CITY_HUB_DURATIONS, tourIdsForCity, tourDurationDays } from '../src/data/tour-hierarchy';
 import { languages, t as translate } from '../src/i18n/index';
 import type { Lang } from '../src/i18n/index';
 import {
@@ -131,6 +131,10 @@ function h2Link(url: string, text: string): string {
 function paragraph(text: string): string {
   return `    <p>${escapeHtml(text)}</p>\n`;
 }
+/** Paragraph whose contents are already-safe inline HTML (e.g. <a> links). */
+function rawParagraph(html: string): string {
+  return `    <p>${html}</p>\n`;
+}
 function ul(items: string[]): string {
   if (items.length === 0) return '';
   const lis = items.map((item) => `      <li>${escapeHtml(item)}</li>`).join('\n');
@@ -182,9 +186,9 @@ function buildToursContent(lang: Lang): string {
   // Departure-city hubs — mirrors the "Tours by departure city" section on the
   // live /tours page so crawlers and users see the same Tours tree.
   const cityLinks = CITY_HUBS
-    .map((hub) => `      <li>${link(`${SITE_URL}/${lang}/tours/from-${hub.slug}`, escapeHtml(tr(lang, `hub_${hub.id}_title`)))}</li>`)
+    .map((hub) => `      <li>${link(`${SITE_URL}/${lang}/tours/from-${hub.slug}`, tr(lang, `hub_${hub.id}_title`))}</li>`)
     .join('\n');
-  const threeDayLink = `      <li>${link(`${SITE_URL}/${lang}/tours/from-marrakech/3-days`, escapeHtml(fmt(tr(lang, 'hub_dur_crumb'), { days: 3, city: tr(lang, 'hub_marrakech_name') })))}</li>`;
+  const threeDayLink = `      <li>${link(`${SITE_URL}/${lang}/tours/from-marrakech/3-days`, fmt(tr(lang, 'hub_dur_crumb'), { days: 3, city: tr(lang, 'hub_marrakech_name') }))}</li>`;
   return h1(tr(lang, 'section_tours') || 'Our Tours')
     + h2(tr(lang, 'hub_by_departure_city'))
     + `    <ul>\n${cityLinks}\n${threeDayLink}\n    </ul>\n`
@@ -206,13 +210,13 @@ function buildCityHubContent(slug: string, lang: Lang): string {
     tourBlocks += h2(t.name)
       + paragraph(t.description ?? '')
       + paragraph(`${tr(lang, 'search_duration')}: ${t.duration} · ${tr(lang, 'from')} €${t.price}`)
-      + '<ul>' + t.highlights.map((x) => `      <li>${link(`${SITE_URL}/${lang}/tours/${t.id}`, escapeHtml(x))}</li>`).join('\n') + '    </ul>'
-      + paragraph(link(`${SITE_URL}/${lang}/tours/${t.id}`, tr(lang, 'tours_view') + ' ' + escapeHtml(t.name)));
+      + '<ul>' + t.highlights.map((x) => `      <li>${link(`${SITE_URL}/${lang}/tours/${t.id}`, x)}</li>`).join('\n') + '    </ul>'
+      + rawParagraph(link(`${SITE_URL}/${lang}/tours/${t.id}`, tr(lang, 'tours_view') + ' ' + escapeHtml(t.name)));
   }
 
   const destinationsForLang = getLocalizedDestinations(lang)
     .filter((d) => hub.destinationIds.includes(d.id))
-    .map((d) => `<li>${link(`${SITE_URL}/${lang}/destinations/${d.id}`, escapeHtml(d.name))} - ${escapeHtml(d.shortDesc)}</li>`)
+    .map((d) => `<li>${link(`${SITE_URL}/${lang}/destinations/${d.id}`, d.name)} - ${escapeHtml(d.shortDesc)}</li>`)
     .join('\n');
 
   const toursSection = tourBlocks ? h2(fmt(tr(lang, 'hub_private_title'), { city: tr(lang, `hub_${hub.id}_name`) })) + tourBlocks : '';
@@ -222,11 +226,11 @@ function buildCityHubContent(slug: string, lang: Lang): string {
     + paragraph(tr(lang, `hub_${hub.id}_intro`))
     + paragraph(tr(lang, `hub_${hub.id}_body`))
     + (hub.hasDurationDrive
-        ? h2(fmt(tr(lang, 'hub_dur_crumb'), { days: 3, city: tr(lang, `hub_${hub.id}_name`) })) + paragraph(link(`${SITE_URL}/${lang}/tours/from-${hub.slug}/3-days`, escapeHtml(fmt(tr(lang, 'hub_browse_3day'), { city: tr(lang, `hub_${hub.id}_name`) }))))
+        ? h2(fmt(tr(lang, 'hub_dur_crumb'), { days: 3, city: tr(lang, `hub_${hub.id}_name`) })) + rawParagraph(link(`${SITE_URL}/${lang}/tours/from-${hub.slug}/3-days`, fmt(tr(lang, 'hub_browse_3day'), { city: tr(lang, `hub_${hub.id}_name`) })))
         : '')
     + toursSection
     + destinationsSection
-    + h2(tr(lang, 'nav_build_journey')) + paragraph(link(`${SITE_URL}/${lang}/trip-builder`, tr(lang, 'nav_build_journey')));
+    + h2(tr(lang, 'nav_build_journey')) + rawParagraph(link(`${SITE_URL}/${lang}/trip-builder`, tr(lang, 'nav_build_journey')));
 }
 
 /** Prerendered markup for a departure-city duration hub (mirrors <TourDurationHub>). */
@@ -249,21 +253,34 @@ function buildDurationHubContent(slug: string, days: number, lang: Lang): string
     tourBlocks += h2(t.name)
       + paragraph(t.description ?? '')
       + paragraph(`${tr(lang, 'from')} €${t.price} · ${t.duration}`)
-      + paragraph(link(`${SITE_URL}/${lang}/tours/${t.id}`, tr(lang, 'tours_view') + ' ' + escapeHtml(t.name)));
+      + rawParagraph(link(`${SITE_URL}/${lang}/tours/${t.id}`, tr(lang, 'tours_view') + ' ' + escapeHtml(t.name)));
   }
 
   const siblingLinks = siblingIds.length
-    ? '<ul>' + siblingIds.map((t) => `      <li>${link(`${SITE_URL}/${lang}/tours/${t.id}`, escapeHtml(`${t.name} (${t.duration})`))}</li>`).join('\n') + '    </ul>\n'
+    ? '<ul>' + siblingIds.map((t) => `      <li>${link(`${SITE_URL}/${lang}/tours/${t.id}`, `${t.name} (${t.duration})`)}</li>`).join('\n') + '    </ul>\n'
     : '';
 
   const crumb = `${tr(lang, 'nav_home')} › ${tr(lang, 'nav_tours')} › ${tr(lang, `hub_${hub.id}_title`)} › ${fmt(tr(lang, 'hub_dur_crumb'), { days, city: tr(lang, `hub_${hub.id}_name`) })}`;
 
-  return h1(fmt(tr(lang, 'hub_dur_h1'), { days, city: tr(lang, `hub_${hub.id}_name`) }))
+  const cityName = tr(lang, `hub_${hub.id}_name`);
+  const intro = days === 3
+    ? fmt(tr(lang, 'hub_dur_intro_3'), { days, city: cityName })
+    : fmt(tr(lang, 'hub_dur_intro_default'), { days, city: cityName });
+  const highlights = matching[0]?.highlights ?? [];
+  const highlightsBlock = highlights.length ? h2(tr(lang, 'hub_dur_highlights')) + ul(highlights) : '';
+  const ctaBlock = h2(fmt(tr(lang, 'hub_dur_cta_title'), { days, city: cityName }))
+    + paragraph(tr(lang, 'hub_dur_cta_sub'))
+    + rawParagraph(link(`${SITE_URL}/${lang}/trip-builder`, tr(lang, 'nav_build_journey')));
+
+  return h1(fmt(tr(lang, 'hub_dur_h1'), { days, city: cityName }))
     + `<p><strong>${escapeHtml(crumb)}</strong></p>\n`
+    + (matching.length ? paragraph(intro) : '')
     + (matching.length
-        ? paragraph(fmt(tr(lang, 'hub_dur_dept_title'), { days, city: tr(lang, `hub_${hub.id}_name`) })) + tourBlocks
-        : paragraph(fmt(tr(lang, 'hub_dur_none_body'), { days, city: tr(lang, `hub_${hub.id}_name`) })) + paragraph(link(`${SITE_URL}/${lang}/trip-builder`, tr(lang, 'nav_build_journey'))))
-    + (siblingLinks ? h2(fmt(tr(lang, 'hub_dur_other'), { city: tr(lang, `hub_${hub.id}_name`) })) + siblingLinks : '');
+        ? paragraph(fmt(tr(lang, 'hub_dur_dept_title'), { days, city: cityName })) + tourBlocks
+        : paragraph(fmt(tr(lang, 'hub_dur_none_body'), { days, city: cityName })) + rawParagraph(link(`${SITE_URL}/${lang}/trip-builder`, tr(lang, 'nav_build_journey'))))
+    + highlightsBlock
+    + (matching.length ? ctaBlock : '')
+    + (siblingLinks ? h2(fmt(tr(lang, 'hub_dur_other'), { city: cityName })) + siblingLinks : '');
 }
 
 const RELATED_DESTINATION_IDS: Record<string, string[]> = {
@@ -356,9 +373,9 @@ function buildTourDetailContent(id: string, lang: Lang): string {
   const departCity = TOUR_DEPARTURE_CITY[tour.id];
   const departHub = departCity ? CITY_HUBS.find((h) => h.id === departCity) : undefined;
   const breadcrumb = departHub
-    ? `<p class="prerendered-breadcrumb">${link(`${SITE_URL}/${lang}/`, escapeHtml(tr(lang, 'nav_home')))} › ${link(`${SITE_URL}/${lang}/tours`, escapeHtml(tr(lang, 'nav_tours')))} › ${link(`${SITE_URL}/${lang}/tours/from-${departHub.slug}`, escapeHtml(tr(lang, `hub_${departHub.id}_title`)))} › ${escapeHtml(tour.name)}</p>\n`
+    ? `<p class="prerendered-breadcrumb">${link(`${SITE_URL}/${lang}/`, tr(lang, 'nav_home'))} › ${link(`${SITE_URL}/${lang}/tours`, tr(lang, 'nav_tours'))} › ${link(`${SITE_URL}/${lang}/tours/from-${departHub.slug}`, tr(lang, `hub_${departHub.id}_title`))} › ${escapeHtml(tour.name)}</p>\n`
     : '';
-  return breadcrumb + h1(tour.name) + paragraph(tour.description ?? '') + paragraph(`${tr(lang, 'search_duration')}: ${tour.duration}`) + h2(tr(lang, 'tour_why_love')) + ul(tour.highlights) + (itinerary.length > 0 ? h2(tr(lang, 'tour_itinerary')) + ul(itinerary.map((d) => `${tr(lang, 'tour_day')} ${d.day}: ${d.title}`)) : '') + (included.length > 0 ? h2(tr(lang, 'tour_included')) + ul(included) : '') + (excluded.length > 0 ? h2(tr(lang, 'tour_not_included')) + ul(excluded) : '') + (faqs.length > 0 ? h2(tr(lang, 'nav_faq')) + faqBlock(faqs) : '') + (departHub ? h2(fmt(tr(lang, 'hub_related_title'), { city: tr(lang, `hub_${departHub.id}_name`) })) + paragraph(link(`${SITE_URL}/${lang}/tours/from-${departHub.slug}`, escapeHtml(fmt(tr(lang, 'hub_related_browse'), { city: tr(lang, `hub_${departHub.id}_name`) })))) : '') + buildTopicalLinksContent({ tourId: tour.id }, lang);
+  return breadcrumb + h1(tour.name) + paragraph(tour.description ?? '') + paragraph(`${tr(lang, 'search_duration')}: ${tour.duration}`) + h2(tr(lang, 'tour_why_love')) + ul(tour.highlights) + (itinerary.length > 0 ? h2(tr(lang, 'tour_itinerary')) + ul(itinerary.map((d) => `${tr(lang, 'tour_day')} ${d.day}: ${d.title}`)) : '') + (included.length > 0 ? h2(tr(lang, 'tour_included')) + ul(included) : '') + (excluded.length > 0 ? h2(tr(lang, 'tour_not_included')) + ul(excluded) : '') + (faqs.length > 0 ? h2(tr(lang, 'nav_faq')) + faqBlock(faqs) : '') + (departHub ? h2(fmt(tr(lang, 'hub_related_title'), { city: tr(lang, `hub_${departHub.id}_name`) })) + paragraph(link(`${SITE_URL}/${lang}/tours/from-${departHub.slug}`, fmt(tr(lang, 'hub_related_browse'), { city: tr(lang, `hub_${departHub.id}_name`) }))) : '') + buildTopicalLinksContent({ tourId: tour.id }, lang);
 }
 function buildDestinationsContent(lang: Lang): string {
   // Mirror the live /destinations page structure: localized H1 + intro, each
@@ -367,7 +384,7 @@ function buildDestinationsContent(lang: Lang): string {
   const priorityTours = ['3-day-sahara-marrakech', '5-day-imperial-cities', '7-day-imperial-cities-sahara-escape']
     .map((id) => getLocalizedTour(id, lang))
     .filter((t): t is NonNullable<typeof t> => Boolean(t))
-    .map((t) => `      <li>${link(`${SITE_URL}/${lang}/tours/${t.id}`, `${escapeHtml(t.name)} (${escapeHtml(t.duration)})`)}</li>`)
+    .map((t) => `      <li>${link(`${SITE_URL}/${lang}/tours/${t.id}`, `${t.name} (${t.duration})`)}</li>`)
     .join('\n');
   return h1(tr(lang, 'dest_discover')) + paragraph(tr(lang, 'dest_find'))
     + blocks
@@ -525,11 +542,15 @@ function buildRoutes(lang: Lang): RouteEntry[] {
     add(`/blog/${post.slug}`, `${lang}/blog/${post.slug}.html`, () => buildBlogArticleContent(post.slug, lang), meta ? (buildBlogPostSchema({ slug: post.slug, title: meta.title, description: meta.description, date: post.date, image: post.image }, lang) as Record<string, unknown>[]) : []);
   }
   for (const rest of Object.keys(EXPERIENCE_PAGE_ROUTES)) add(rest, `${lang}${rest}/index.html`, () => buildExperienceContent(rest, lang));
-  // Tours departure-city hubs + the meaningful duration hubs (mirrors App.tsx routes).
+  // Tours departure-city hubs + every meaningful duration hub (single source of
+  // truth in CITY_HUB_DURATIONS). Routes whose city has no canned tour of that
+  // length still render an intentional page that funnels to the custom trip flow.
   for (const hub of CITY_HUBS) {
     add(`/tours/from-${hub.slug}`, `${lang}/tours/from-${hub.slug}/index.html`, () => buildCityHubContent(hub.slug, lang));
+    for (const days of CITY_HUB_DURATIONS[hub.id] ?? []) {
+      add(`/tours/from-${hub.slug}/${days}-days`, `${lang}/tours/from-${hub.slug}/${days}-days/index.html`, () => buildDurationHubContent(hub.slug, days, lang));
+    }
   }
-  add('/tours/from-marrakech/3-days', `${lang}/tours/from-marrakech/3-days/index.html`, () => buildDurationHubContent('marrakech', 3, lang));
   for (const id of TOUR_ROUTES) { const t = getLocalizedTour(id, lang); add(`/tours/${id}`, `${lang}/tours/${id}.html`, () => buildTourDetailContent(id, lang), t ? (buildTourSchema(t, id, lang) as Record<string, unknown>[]) : []); }
   for (const dest of destinations) { const d = getLocalizedDestination(dest.id, lang); add(`/destinations/${dest.id}`, `${lang}/destinations/${dest.id}.html`, () => buildDestinationDetailContent(dest.id, lang), d ? (buildDestinationSchema(d, lang) as Record<string, unknown>[]) : []); }
   return routes;
