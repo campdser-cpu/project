@@ -570,8 +570,41 @@ export const tours: Tour[] = [
         stops: ["Sunrise over the dunes", "Rissani market (optional)", "Ziz Valley", "High Atlas crossing", "Arrival: Marrakech"],
       },
     ],
+    included: [
+      "Private air-conditioned vehicle",
+      "Professional English-speaking driver",
+      "Fuel",
+      "Luxury desert camp",
+      "Camel trek in Erg Chebbi",
+      "1 night riad/kasbah hotel in the Dades Valley",
+      "1 night luxury desert camp",
+      "Dinners & breakfasts as per itinerary",
+      "Hotel pick-up & drop-off",
+    ],
+    excluded: [
+      "International flights",
+      "Lunches",
+      "Drinks",
+      "Monument & museum entrance fees",
+      "Tips & gratuities",
+      "Personal expenses",
+    ],
     gallery: [
       { src: "/images/pdf/img_1-optimized.webp", caption: "Luxury desert tours and authentic cultural experiences" },
+    ],
+    faq: [
+      {
+        question: "Is this a private tour?",
+        answer: "Yes — every departure is fully private for your party alone. You travel with your own dedicated English-speaking driver and set the pace together, with no strangers joining your group.",
+      },
+      {
+        question: "What is the accommodation like?",
+        answer: "One night in a handpicked kasbah hotel or riad in the Dades Valley with dinner and breakfast, plus one night in a luxury tented camp on the dunes of Erg Chebbi reached by camel, with dinner and live Berber music.",
+      },
+      {
+        question: "How do I confirm my booking?",
+        answer: "Message us on WhatsApp or through the contact form to lock in your dates and we'll tailor the details to you. A small deposit secures your tour, with the balance payable before or at the start of the trip.",
+      },
     ],
   },
   {
@@ -619,8 +652,47 @@ export const tours: Tour[] = [
         stops: ["Bab Mansour Gate", "Mausoleum of Moulay Ismail", "Volubilis Roman Ruins (UNESCO)", "Chefchaouen medina", "Overnight: Chefchaouen"],
       },
     ],
+    included: [
+      "Private air-conditioned vehicle",
+      "Professional English-speaking driver",
+      "Fuel",
+      "Luxury desert camp",
+      "Camel trek in Erg Chebbi",
+      "Official local guide in Fes",
+      "Riad/kasbah hotel nights as per itinerary (Dades Valley, Fes, Chefchaouen)",
+      "1 night luxury desert camp",
+      "Breakfasts daily",
+      "Dinners as per itinerary",
+      "Hotel pick-up & drop-off",
+    ],
+    excluded: [
+      "International flights",
+      "Lunches",
+      "Drinks",
+      "Monument & museum entrance fees",
+      "Tips & gratuities",
+      "Personal expenses",
+    ],
     gallery: [
       { src: "/images/pdf/img_2-optimized.webp", caption: "Golden Sahara dunes and a luxury desert camp on the route to Merzouga" },
+    ],
+    faq: [
+      {
+        question: "Is this a private tour?",
+        answer: "Yes — every departure is fully private for your party alone. You travel with your own dedicated English-speaking driver and set the pace together, with no strangers joining your group.",
+      },
+      {
+        question: "What is the accommodation like?",
+        answer: "Handpicked riads, kasbah hotels and city hotels with private rooms throughout — in the Dades Valley, Fes and Chefchaouen — plus one night in a luxury tented camp on the dunes of Erg Chebbi reached by camel, with dinner and live Berber music.",
+      },
+      {
+        question: "Where does this tour end?",
+        answer: "The tour ends in Chefchaouen, the Blue City, on day 5 after exploring Meknès and Volubilis. We can arrange transport onward — for example to Fes or back to Marrakech — when you book.",
+      },
+      {
+        question: "How do I confirm my booking?",
+        answer: "Message us on WhatsApp or through the contact form to lock in your dates and we'll tailor the details to you. A small deposit secures your tour, with the balance payable before or at the start of the trip.",
+      },
     ],
   },
   {
