@@ -15,6 +15,8 @@ const Destinations = lazy(() => import('./pages/destinations'));
 const DestinationDetail = lazy(() => import('./pages/destination-detail'));
 const Tours = lazy(() => import('./pages/tours'));
 const TourDetail = lazy(() => import('./pages/tour-detail'));
+const ToursFromCity = lazy(() => import('./pages/tours/from-city'));
+const ToursFromCityDuration = lazy(() => import('./pages/tours/from-city-duration'));
 const About = lazy(() => import('./pages/about'));
 const Gallery = lazy(() => import('./pages/gallery'));
 const Contact = lazy(() => import('./pages/contact'));
@@ -70,6 +72,8 @@ function AnimatedRouter() {
             <Route path="/destinations" component={Destinations} />
             <Route path="/destinations/:id" component={DestinationDetail} />
             <Route path="/tours" component={Tours} />
+            <Route path="/tours/from-:city/:days" component={ToursFromCityDuration} />
+            <Route path="/tours/from-:city" component={ToursFromCity} />
             <Route path="/tours/:id" component={TourDetail} />
             <Route path="/gallery" component={Gallery} />
             <Route path="/about" component={About} />

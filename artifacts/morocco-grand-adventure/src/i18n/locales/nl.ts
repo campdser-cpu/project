@@ -293,4 +293,89 @@ export default {
     dest_weather_clear: "Zonnig en helder",
     dest_photo_sunrise: "Zonsopgang boven de Erg Chebbi",
     dest_photo_stargazing: "Sterrenhemel onder de Melkweg",
+// ── Tours departure-city & duration hubs ─────────────────────────────────
+  hub_dur_daytrips: "Dagtochten & korte uitjes",
+  hub_dur_3: "3-daagse tours",
+  hub_dur_4: "4-daagse tours",
+  hub_dur_5_6: "5–6-daagse tours",
+  hub_dur_7_8: "7–8-daagse tours",
+  hub_dur_9: "Tours van 9+ dagen",
+
+  hub_marrakech_name: "Marrakech",
+  hub_marrakech_title: "Tours vanuit Marrakech",
+  hub_marrakech_intro:
+    "Marrakech is het natuurlijke startpunt voor de meeste privéreizen door Marokko — de Rode Stad heeft een internationale luchthaven, een schat aan paleizen en souks, en ligt slechts enkele uren van de Hoge Atlas en de Sahara.",
+  hub_marrakech_body:
+    "Vanuit Marrakech vertrekken betekent de Hoge Atlas oversteken via de Tizi n'Tichka-pas, stoppen bij de UNESCO-kasbah van Aït Ben Haddou, slingeren door het Dadès-dal en de Todra-kloof en vervolgens bij zonsondergang per kameel over de gouden duinen van de Erg Chebbi trekken. Onze privétoeren vanuit Marrakech variëren van een compacte 3-daagse Sahararonde tot grote reizen langs meerdere steden met Fès, Chefchaouen en de Atlantische kust — altijd met uw eigen Engelstalige chauffeur, handgekozen riads en hotels en een nacht in een luxe woestijnkamp.",
+  hub_marrakech_hero_alt: "De okerkleurige muren en souks van Marrakech, Marokko",
+
+  hub_casablanca_name: "Casablanca",
+  hub_casablanca_title: "Tours vanuit Casablanca",
+  hub_casablanca_intro:
+    "Casablanca is de economische hoofdstad van Marokko en een drukke internationale aankomstplaats — een snel, direct vertrekpunt dat u verbindt met Marrakech, Rabat, Fès en de Sahara, zonder omkeren.",
+  hub_casablanca_body:
+    "De meeste bezoekers vliegen naar Casablanca en reizen vanuit hier zuid- of noordwaarts. De stad zelf beloont een kort verblijf met de adembenemende Hassan II-moskee aan de Atlantische Oceaan en elegante art-decostraten. Vanuit Casablanca bouwen we een privéroute langs de koningssteden, over de Hoge Atlas naar Aït Ben Haddou en het Dadès-dal en naar de duinen van de Erg Chebbi — of noordwaarts naar de blauwe muren van Chefchaouen. Omdat elke reis privé is, plannen we de route en het tempo gewoon rond uw aankomsttijd en data.",
+  hub_casablanca_hero_alt: "De Hassan II-moskee aan de Atlantische kust van Casablanca, Marokko",
+
+  hub_fes_name: "Fès",
+  hub_fes_title: "Tours vanuit Fès",
+  hub_fes_intro:
+    "Fès is het culturele en spirituele hart van Marokko en een ideale basis voor de noordelijke koningssteden, de cederwouden van de Midden-Atlas en de Sahararoute naar Merzouga.",
+  hub_fes_body:
+    "Met de oudste universiteit ter wereld en een van de grootste nog levende middeleeuwse medina's ter wereld, beloont Fès minstens een paar dagen. Vanaf hier bezoekt u Meknès, de Romeinse ruïnes van Volubilis en de blauwe stad Chefchaouen — of u rijdt zuidwaarts door de Ziz-vallei naar de duinen van de Erg Chebbi. Wij bouwen een privéroute rondom u, met begeleide medinawandelingen en comfortabele, goed verdeelde rijdagen.",
+  hub_fes_hero_alt: "De middeleeuwse medina van Fès, Marokko",
+
+  hub_agadir_name: "Agadir",
+  hub_agadir_title: "Tours vanuit Agadir",
+  hub_agadir_intro:
+    "Agadir is Marokko's het hele jaar door open badplaats aan de Atlantische Oceaan — een heerlijke plek om te ontspannen aan het einde van een reis of het startpunt voor een route noordwaarts via Essaouira en Marrakech, of oostwaarts richting de Sahara.",
+  hub_agadir_body:
+    "Met een van de zonnigste klimaten van Marokko combineert Agadir een lange zandbaai met makkelijke toegang tot het relaxte surfstadje Taghazout en de ommuurde souks van Taroudant. Landinwaarts klimt de weg door de Saffraanvallei naar Ouarzazate, de Dadès- en Todra-kloven en de duinen van de Erg Chebbi. We kunnen een privéroute in Agadir starten en de rest vormgeven naar het aantal dagen dat u heeft en waar u wilt eindigen.",
+  hub_agadir_hero_alt: "Het strand en de boulevard van Agadir, aan de Atlantische kust van Marokko",
+
+  hub_short_on_time: "Korte tijd?",
+  hub_short_on_time_sub: "Bekijk onze routes vanuit {city} per duur, inclusief het klassieke 3-daagse programma.",
+  hub_browse_3day: "Bekijk 3-daagse tours vanuit {city}",
+  hub_private_title: "Privétours vanuit {city}",
+  hub_private_sub:
+    "Elk vertrek hieronder is volledig privé, begint in {city} en kan worden aangepast aan uw data en tempo.",
+  hub_group_days_badge: "{days} dagen",
+  hub_explore_region: "Verken de omgeving van {city}",
+  hub_explore_region_sub: "Vertrek vanuit {city} naar deze hoogtepunten — tik op een bestemming voor meer informatie.",
+  hub_custom_title: "Niet precies gevonden wat u zoekt vanuit {city}?",
+  hub_custom_sub:
+    "Elke route kan worden aangepast aan het aantal dagen dat u heeft en waar u naartoe wilt. Vertel ons uw data en wij stellen een privéroute vanuit {city} samen.",
+hub_dur_hero_alt: "{days}-daagse tours vanuit {city}",
+  hub_dur_badge: "{days} dagen · {city}",
+  hub_dur_h1: "{days}-daagse tours vanuit {city}",
+  hub_dur_intro_3:
+    "De ideale lengte voor een eerste kennismaking met de Sahara — over de Hoge Atlas naar de duinen en terug, met veel inbegrepen. Bekijk hieronder precies welke privé {days}-daagse tours wij vanuit {city} aanbieden.",
+  hub_dur_intro_default:
+    "Privéreizen van {days} dagen vanaf {city}, opgebouwd rond de route, het tempo en de stops die bij u passen.",
+  hub_dur_body_3_day:
+    "Een {days}-daagse tour vanuit {city} is de populairste manier om de Sahara bij een korte reis te ervaren. U vertrekt vroeg in de ochtend, steekt de Tizi n'Tichka-pas over de Hoge Atlas en bereikt de duinen van {erg} aan de tweede avond — na de UNESCO-kasbah van {ait}, met het Dadès-dal en de Todra-kloof onderweg. Op de laatste dag bent u terug in {city}, net op tijd voor een laatste avond in de medina.",
+  hub_dur_body_default:
+    "Een reis van {days} dagen vanuit {city} geeft u meer ruimte om steden, valleien en de Sahara te combineren zonder haast. Vertel ons hoeveel dagen u heeft en wij vormen de exacte route — de tours hieronder zijn de vaste vertrekken die wij vandaag aanbieden.",
+  hub_dur_dept_title: "{days}-daagse vertrekken vanuit {city}",
+  hub_dur_dept_sub:
+    "Elke optie is volledig privé, met uw eigen Engelstalige chauffeur en zorgvuldig gekozen accommodatie.",
+  hub_dur_none_title: "Wij bieden momenteel geen vaste {days}-daagse vertrek vanuit {city} aan",
+  hub_dur_none_body:
+    "Maar we bouwen constant privéreizen van {days} dagen vanuit {city}. Vertel ons uw data en interesses en wij ontwerpen de route, stoppen en tempo rondom u.",
+  hub_dur_other: "Andere duurtijden vanuit {city}",
+  hub_dur_highlights: "Hoogtepunten onderweg",
+  hub_dur_faq_heading: "Een reis van {days} dagen vanuit {city} plannen",
+  hub_dur_faq_more: "Meer antwoorden in onze",
+  hub_dur_faq_link: "Marokko reis-FAQ",
+  hub_dur_faq_questions: "Vragen over uw data?",
+  hub_dur_wa: "Stuur ons een WhatsApp",
+  hub_dur_cta_title: "Klaar om uw {days}-daagse reis vanuit {city} te plannen?",
+  hub_dur_cta_sub: "Ons lokale team reageert binnen 24 uur met een volledig op maat gemaakt reisplan en offerte.",
+  hub_dur_crumb: "{days}-daagse tours vanuit {city}",
+
+  hub_by_departure_city: "Tours per vertrekstad",
+  hub_related_title: "Meer tours vanuit {city}",
+  hub_related_browse: "Bekijk alle privétours vanuit {city}",
+  hub_dest_erg_chebbi: "Erg Chebbi",
+  hub_dest_ait_ben_haddou: "Aït Ben Haddou",
   } as Record<string, string>;

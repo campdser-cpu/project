@@ -293,4 +293,89 @@ export default {
     dest_weather_clear: "Soleado y despejado",
     dest_photo_sunrise: "Amanecer sobre el erg Chebbi",
     dest_photo_stargazing: "Noche estrellada bajo la Vía Láctea",
+// ── Tours departure-city & duration hubs ─────────────────────────────────
+  hub_dur_daytrips: "Excursiones de un día y escapadas cortas",
+  hub_dur_3: "Circuitos de 3 días",
+  hub_dur_4: "Circuitos de 4 días",
+  hub_dur_5_6: "Circuitos de 5 a 6 días",
+  hub_dur_7_8: "Circuitos de 7 a 8 días",
+  hub_dur_9: "Circuitos de 9 días o más",
+
+  hub_marrakech_name: "Marrakech",
+  hub_marrakech_title: "Circuitos desde Marrakech",
+  hub_marrakech_intro:
+    "Marrakech es el punto de partida natural de la mayoría de los itinerarios privados por Marruecos: la Ciudad Roja cuenta con aeropuerto internacional, un tesoro de palacios y zocos, y queda a solo unas horas del Alto Atlas y del Sáhara.",
+  hub_marrakech_body:
+    "Salir de Marrakech implica cruzar el Alto Atlas por el puerto de Tizi n'Tichka, detenerse en la kasbah de Aït Ben Haddou, Patrimonio de la UNESCO, serpentear por el valle del Dadés y la garganta del Todra, y luego montar en camello por las dunas doradas de Erg Chebbi al atardecer. Nuestros circuitos privados desde Marrakech van desde una ruta sahariana compacta de 3 días hasta grandes viajes por varias ciudades que pasan por Fez, Chefchaouen y la costa atlántica, con su propio conductor anglófono, riads y hoteles seleccionados y una noche en un campamento de lujo en el desierto.",
+  hub_marrakech_hero_alt: "Las murallas ocre y los zocos de Marrakech, Marruecos",
+
+  hub_casablanca_name: "Casablanca",
+  hub_casablanca_title: "Circuitos desde Casablanca",
+  hub_casablanca_intro:
+    "Casablanca es la capital económica de Marruecos y un gran punto de llegada internacional: una puerta rápida y directa que te conecta con Marrakech, Rabat, Fez y el Sáhara sin retroceder.",
+  hub_casablanca_body:
+    "La mayoría de los visitantes llegan en avión a Casablanca y continúan hacia el sur o el norte. La ciudad merece una estancia breve con la impresionante mezquita Hassan II junto al Atlántico y sus elegantes calles art déco. Desde Casablanca podemos construir una ruta privada por las ciudades imperiales, cruzar el Alto Atlas hasta Aït Ben Haddou y el valle del Dadés, y llegar a las dunas de Erg Chebbi, o subir hacia las murallas azules de Chefchaouen. Como cada viaje es privado, simplemente planificamos la ruta y el ritmo en torno a tu hora de llegada y tus fechas.",
+  hub_casablanca_hero_alt: "La mezquita Hassan II en la costa atlántica de Casablanca, Marruecos",
+
+  hub_fes_name: "Fez",
+  hub_fes_title: "Circuitos desde Fez",
+  hub_fes_intro:
+    "Fez es el corazón cultural y espiritual de Marruecos y una base ideal para las ciudades imperiales del norte, los bosques de cedros del Atlas Medio y la ruta del Sáhara hacia Merzouga.",
+  hub_fes_body:
+    "Con la universidad más antigua del mundo y una de las mayores medinas medievales vivas de la Tierra, Fez merece al menos un par de días. Desde aquí puedes visitar Meknès, las ruinas romanas de Volubilis y la ciudad azul de Chefchaouen, o bajar al sur por el valle del Ziz hasta las dunas de Erg Chebbi. Construimos un itinerario privado a tu medida, combinando paseos guiados por la medina con días de carretera cómodos y bien ritmados.",
+  hub_fes_hero_alt: "La medina medieval de Fez, Marruecos",
+
+  hub_agadir_name: "Agadir",
+  hub_agadir_title: "Circuitos desde Agadir",
+  hub_agadir_intro:
+    "Agadir es el resort de playa de Marruecos abierto todo el año en el Atlántico, un lugar ideal para relajarse al final de un viaje o para iniciar una ruta hacia el norte vía Esauira y Marrakech, o hacia el este rumbo al Sáhara.",
+  hub_agadir_body:
+    "Con uno de los climas más soleados de Marruecos, Agadir combina una larga bahía de arena con fácil acceso al pueblo surfero y tranquilo de Taghazout y a los zocos amurallados de Tarudant. Hacia el interior, la carretera asciende por el valle del Azafrán hasta Uarzazat, las gargantas del Dadés y del Todra y las dunas de Erg Chebbi. Podemos empezar un itinerario privado en Agadir y adaptar el resto según cuántos días tengas y dónde quieras terminar.",
+  hub_agadir_hero_alt: "La playa y el paseo marítimo de Agadir, en la costa atlántica de Marruecos",
+
+  hub_short_on_time: "¿Poco tiempo?",
+  hub_short_on_time_sub: "Consulta nuestros circuitos desde {city} agrupados por duración, incluido el clásico itinerario de 3 días.",
+  hub_browse_3day: "Ver circuitos de 3 días desde {city}",
+  hub_private_title: "Circuitos privados desde {city}",
+  hub_private_sub:
+    "Cada salida a continuación es totalmente privada, comienza en {city} y puede adaptarse a tus fechas y ritmo.",
+  hub_group_days_badge: "{days} días",
+  hub_explore_region: "Explora la región alrededor de {city}",
+  hub_explore_region_sub: "Parte de {city} para llegar a estos puntos destacados: toca cualquier destino para saber más.",
+  hub_custom_title: "¿No ves exactamente lo que quieres desde {city}?",
+  hub_custom_sub:
+    "Cada ruta puede reajustarse en función de los días que tengas y de dónde quieras ir. Cuéntanos tus fechas y crearemos un itinerario privado desde {city}.",
+hub_dur_hero_alt: "Circuitos de {days} días desde {city}",
+  hub_dur_badge: "{days} días · {city}",
+  hub_dur_h1: "Circuitos de {days} días desde {city}",
+  hub_dur_intro_3:
+    "La duración ideal para un primer contacto con el Sáhara: cruzar el Alto Atlas hasta las dunas y volver, con mucho por descubrir. Mira abajo exactamente los circuitos privados de {days} días que ofrecemos desde {city}.",
+  hub_dur_intro_default:
+    "Itinerarios privados de {days} días desde {city}, diseñados en torno a la ruta, el ritmo y las paradas que te convengan.",
+  hub_dur_body_3_day:
+    "Un circuito de {days} días desde {city} es la forma más popular de conocer el Sáhara en un viaje corto. Sales temprano por la mañana, cruzas el puerto de Tizi n'Tichka sobre el Alto Atlas y llegas a las dunas de {erg} al segundo atardecer, tras la kasbah declarada Patrimonio de {ait}, con el valle del Dadés y la garganta del Todra de camino. Regresas a {city} el último día justo a tiempo para una última noche en la medina.",
+  hub_dur_body_default:
+    "Un viaje de {days} días desde {city} te da más margen para combinar ciudades, valles y el Sáhara sin sentirte apurado. Dinos cuántos días tienes y diseñaremos la ruta exacta: los circuitos a continuación son las salidas fijas que ofrecemos hoy.",
+  hub_dur_dept_title: "Salidas de {days} días desde {city}",
+  hub_dur_dept_sub:
+    "Cada opción es totalmente privada, con tu propio conductor anglófono y alojamiento seleccionado.",
+  hub_dur_none_title: "Actualmente no ofrecemos una salida fija de {days} días desde {city}",
+  hub_dur_none_body:
+    "Pero creamos itinerarios privados de {days} días desde {city} todo el tiempo. Cuéntanos tus fechas e intereses y diseñaremos la ruta, las paradas y el ritmo a tu medida.",
+  hub_dur_other: "Otras duraciones desde {city}",
+  hub_dur_highlights: "Destacados a lo largo de la ruta",
+  hub_dur_faq_heading: "Planificar un viaje de {days} días desde {city}",
+  hub_dur_faq_more: "Más respuestas en nuestra",
+  hub_dur_faq_link: "preguntas frecuentes sobre Marruecos",
+  hub_dur_faq_questions: "¿Preguntas sobre tus fechas?",
+  hub_dur_wa: "Escríbenos por WhatsApp",
+  hub_dur_cta_title: "¿Listo para planear tu viaje de {days} días desde {city}?",
+  hub_dur_cta_sub: "Nuestro equipo local te responderá en 24 horas con un itinerario y presupuesto totalmente personalizados.",
+  hub_dur_crumb: "Circuitos de {days} días desde {city}",
+
+  hub_by_departure_city: "Circuitos por ciudad de salida",
+  hub_related_title: "Más circuitos desde {city}",
+  hub_related_browse: "Ver todos los circuitos privados desde {city}",
+  hub_dest_erg_chebbi: "Erg Chebbi",
+  hub_dest_ait_ben_haddou: "Aït Ben Haddou",
   } as Record<string, string>;

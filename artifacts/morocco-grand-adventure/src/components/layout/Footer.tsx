@@ -2,6 +2,7 @@ import { Logo } from './Logo';
 import { Link } from 'wouter';
 import { Instagram, Mail, MapPin, Phone } from 'lucide-react';
 import { contactInfo } from '@/data/content';
+import { CITY_HUBS } from '@/data/tour-hierarchy';
 import { getLocalizedDestinations, getLocalizedTours } from '@/i18n/content';
 import { SiWhatsapp, SiYoutube, SiTiktok, SiFacebook } from 'react-icons/si';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -60,6 +61,17 @@ export function Footer() {
             <h3 className="font-serif text-xl font-medium mb-4 sm:mb-6 text-primary">Private Morocco tours</h3>
             <ul className="space-y-3 mb-8">
               {authorityTours.map(tour => tour && <li key={tour.id}><Link href={`/tours/${tour.id}`} className="text-white/70 hover:text-primary transition-colors text-sm">{tour.name}</Link></li>)}
+            </ul>
+            <h3 className="font-serif text-xl font-medium mb-4 text-primary">Tours by departure city</h3>
+            <ul className="space-y-2">
+              {CITY_HUBS.map(hub => (
+                <li key={hub.id}>
+                  <Link href={`/tours/from-${hub.slug}`} className="text-white/70 hover:text-primary transition-colors text-sm">{hub.title}</Link>
+                </li>
+              ))}
+              <li>
+                <Link href="/tours/from-marrakech/3-days" className="text-white/70 hover:text-primary transition-colors text-sm">3-Day Tours from Marrakech</Link>
+              </li>
             </ul>
             <h3 className="font-serif text-xl font-medium mb-4 sm:mb-6 text-primary">{t('footer_contact')}</h3>
             <ul className="space-y-4">

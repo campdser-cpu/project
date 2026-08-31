@@ -32,6 +32,7 @@ import * as path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { destinations, contactInfo, reviews, type Review, type Tour, type Destination } from '../src/data/content';
+import { CITY_HUBS, TOUR_DEPARTURE_CITY, tourIdsForCity, tourDurationDays } from '../src/data/tour-hierarchy';
 import { languages, t as translate } from '../src/i18n/index';
 import type { Lang } from '../src/i18n/index';
 import {
@@ -51,6 +52,13 @@ import { registerAllContentOverlays } from '../src/i18n/content/overlays';
 // ── Constants ────────────────────────────────────────────────────────────────
 const BRAND = 'Morocco Grand Adventure';
 const SITE_URL = 'https://www.moroccograndadventure.com';
+
+/** Replace `{var}` placeholders in a translated template (mirrors tours/intl.tsx). */
+function fmt(template: string, vars: Record<string, string | number>): string {
+  return template.replace(/\{(\w+)\}/g, (m, k) =>
+    Object.prototype.hasOwnProperty.call(vars, k) ? String(vars[k]) : m,
+  );
+}
 
 // Real, verified business contact links for the prerendered Contact page.
 // Values mirror src/components/seo/StructuredData.tsx ORGANIZATION_SAME_AS and
@@ -169,7 +177,93 @@ function buildHomeSchemas(lang: Lang): Record<string, unknown>[] {
 }
 function buildToursContent(lang: Lang): string {
   const blocks = getLocalizedTours(lang).map((t) => h2(t.name) + paragraph(t.description ?? '') + paragraph(`${tr(lang, 'search_duration')}: ${t.duration}`) + ul(t.highlights)).join('');
-  return h1(tr(lang, 'section_tours') || 'Our Tours') + blocks;
+  // Departure-city hubs — mirrors the "Tours by departure city" section on the
+  // live /tours page so crawlers and users see the same Tours tree.
+  // Departure-city hubs — mirrors the "Tours by departure city" section on the
+  // live /tours page so crawlers and users see the same Tours tree.
+  const cityLinks = CITY_HUBS
+    .map((hub) => `      <li>${link(`${SITE_URL}/${lang}/tours/from-${hub.slug}`, escapeHtml(tr(lang, `hub_${hub.id}_title`)))}</li>`)
+    .join('\n');
+  const threeDayLink = `      <li>${link(`${SITE_URL}/${lang}/tours/from-marrakech/3-days`, escapeHtml(fmt(tr(lang, 'hub_dur_crumb'), { days: 3, city: tr(lang, 'hub_marrakech_name') })))}</li>`;
+  return h1(tr(lang, 'section_tours') || 'Our Tours')
+    + h2(tr(lang, 'hub_by_departure_city'))
+    + `    <ul>\n${cityLinks}\n${threeDayLink}\n    </ul>\n`
+    + blocks;
+}
+
+/** Prerendered markup for a departure-city hub (mirrors <TourCityHub>). */
+function buildCityHubContent(slug: string, lang: Lang): string {
+  const hub = CITY_HUBS.find((h) => h.slug === slug);
+  if (!hub) return h1('Not Found') + paragraph('This departure hub could not be found.');
+  const all = getLocalizedTours(lang);
+  const cityTours = tourIdsForCity(hub.id)
+    .map((id) => all.find((t) => t.id === id))
+    .filter((t): t is NonNullable<typeof t> => Boolean(t))
+    .sort((a, b) => tourDurationDays(a.duration) - tourDurationDays(b.duration));
+
+  let tourBlocks = '';
+  for (const t of cityTours) {
+    tourBlocks += h2(t.name)
+      + paragraph(t.description ?? '')
+      + paragraph(`${tr(lang, 'search_duration')}: ${t.duration} · ${tr(lang, 'from')} €${t.price}`)
+      + '<ul>' + t.highlights.map((x) => `      <li>${link(`${SITE_URL}/${lang}/tours/${t.id}`, escapeHtml(x))}</li>`).join('\n') + '    </ul>'
+      + paragraph(link(`${SITE_URL}/${lang}/tours/${t.id}`, tr(lang, 'tours_view') + ' ' + escapeHtml(t.name)));
+  }
+
+  const destinationsForLang = getLocalizedDestinations(lang)
+    .filter((d) => hub.destinationIds.includes(d.id))
+    .map((d) => `<li>${link(`${SITE_URL}/${lang}/destinations/${d.id}`, escapeHtml(d.name))} - ${escapeHtml(d.shortDesc)}</li>`)
+    .join('\n');
+
+  const toursSection = tourBlocks ? h2(fmt(tr(lang, 'hub_private_title'), { city: tr(lang, `hub_${hub.id}_name`) })) + tourBlocks : '';
+  const destinationsSection = destinationsForLang ? h2(fmt(tr(lang, 'hub_explore_region'), { city: tr(lang, `hub_${hub.id}_name`) })) + `    <ul>\n${destinationsForLang}\n    </ul>\n` : '';
+
+  return h1(tr(lang, `hub_${hub.id}_title`))
+    + paragraph(tr(lang, `hub_${hub.id}_intro`))
+    + paragraph(tr(lang, `hub_${hub.id}_body`))
+    + (hub.hasDurationDrive
+        ? h2(fmt(tr(lang, 'hub_dur_crumb'), { days: 3, city: tr(lang, `hub_${hub.id}_name`) })) + paragraph(link(`${SITE_URL}/${lang}/tours/from-${hub.slug}/3-days`, escapeHtml(fmt(tr(lang, 'hub_browse_3day'), { city: tr(lang, `hub_${hub.id}_name`) }))))
+        : '')
+    + toursSection
+    + destinationsSection
+    + h2(tr(lang, 'nav_build_journey')) + paragraph(link(`${SITE_URL}/${lang}/trip-builder`, tr(lang, 'nav_build_journey')));
+}
+
+/** Prerendered markup for a departure-city duration hub (mirrors <TourDurationHub>). */
+function buildDurationHubContent(slug: string, days: number, lang: Lang): string {
+  const hub = CITY_HUBS.find((h) => h.slug === slug);
+  if (!hub) return h1('Not Found') + paragraph('This page could not be found.');
+  const all = getLocalizedTours(lang);
+  const matching = tourIdsForCity(hub.id)
+    .map((id) => all.find((t) => t.id === id))
+    .filter((t): t is NonNullable<typeof t> => Boolean(t))
+    .filter((t) => tourDurationDays(t.duration) === days);
+
+  const siblingIds = tourIdsForCity(hub.id)
+    .map((id) => all.find((t) => t.id === id))
+    .filter((t): t is NonNullable<typeof t> => Boolean(t))
+    .filter((t) => tourDurationDays(t.duration) !== days);
+
+  let tourBlocks = '';
+  for (const t of matching) {
+    tourBlocks += h2(t.name)
+      + paragraph(t.description ?? '')
+      + paragraph(`${tr(lang, 'from')} €${t.price} · ${t.duration}`)
+      + paragraph(link(`${SITE_URL}/${lang}/tours/${t.id}`, tr(lang, 'tours_view') + ' ' + escapeHtml(t.name)));
+  }
+
+  const siblingLinks = siblingIds.length
+    ? '<ul>' + siblingIds.map((t) => `      <li>${link(`${SITE_URL}/${lang}/tours/${t.id}`, escapeHtml(`${t.name} (${t.duration})`))}</li>`).join('\n') + '    </ul>\n'
+    : '';
+
+  const crumb = `${tr(lang, 'nav_home')} › ${tr(lang, 'nav_tours')} › ${tr(lang, `hub_${hub.id}_title`)} › ${fmt(tr(lang, 'hub_dur_crumb'), { days, city: tr(lang, `hub_${hub.id}_name`) })}`;
+
+  return h1(fmt(tr(lang, 'hub_dur_h1'), { days, city: tr(lang, `hub_${hub.id}_name`) }))
+    + `<p><strong>${escapeHtml(crumb)}</strong></p>\n`
+    + (matching.length
+        ? paragraph(fmt(tr(lang, 'hub_dur_dept_title'), { days, city: tr(lang, `hub_${hub.id}_name`) })) + tourBlocks
+        : paragraph(fmt(tr(lang, 'hub_dur_none_body'), { days, city: tr(lang, `hub_${hub.id}_name`) })) + paragraph(link(`${SITE_URL}/${lang}/trip-builder`, tr(lang, 'nav_build_journey'))))
+    + (siblingLinks ? h2(fmt(tr(lang, 'hub_dur_other'), { city: tr(lang, `hub_${hub.id}_name`) })) + siblingLinks : '');
 }
 
 const RELATED_DESTINATION_IDS: Record<string, string[]> = {
@@ -257,7 +351,14 @@ function buildTourDetailContent(id: string, lang: Lang): string {
   const included = tour.included ?? [];
   const excluded = tour.excluded ?? [];
   const faqs = tour.faq ?? [];
-  return h1(tour.name) + paragraph(tour.description ?? '') + paragraph(`${tr(lang, 'search_duration')}: ${tour.duration}`) + h2(tr(lang, 'tour_why_love')) + ul(tour.highlights) + (itinerary.length > 0 ? h2(tr(lang, 'tour_itinerary')) + ul(itinerary.map((d) => `${tr(lang, 'tour_day')} ${d.day}: ${d.title}`)) : '') + (included.length > 0 ? h2(tr(lang, 'tour_included')) + ul(included) : '') + (excluded.length > 0 ? h2(tr(lang, 'tour_not_included')) + ul(excluded) : '') + (faqs.length > 0 ? h2(tr(lang, 'nav_faq')) + faqBlock(faqs) : '') + buildTopicalLinksContent({ tourId: tour.id }, lang);
+  // Departure-city breadcrumb link, mirroring the visible breadcrumb bar so
+  // crawlers see the same Tours → City → Tour hierarchy users navigate.
+  const departCity = TOUR_DEPARTURE_CITY[tour.id];
+  const departHub = departCity ? CITY_HUBS.find((h) => h.id === departCity) : undefined;
+  const breadcrumb = departHub
+    ? `<p class="prerendered-breadcrumb">${link(`${SITE_URL}/${lang}/`, escapeHtml(tr(lang, 'nav_home')))} › ${link(`${SITE_URL}/${lang}/tours`, escapeHtml(tr(lang, 'nav_tours')))} › ${link(`${SITE_URL}/${lang}/tours/from-${departHub.slug}`, escapeHtml(tr(lang, `hub_${departHub.id}_title`)))} › ${escapeHtml(tour.name)}</p>\n`
+    : '';
+  return breadcrumb + h1(tour.name) + paragraph(tour.description ?? '') + paragraph(`${tr(lang, 'search_duration')}: ${tour.duration}`) + h2(tr(lang, 'tour_why_love')) + ul(tour.highlights) + (itinerary.length > 0 ? h2(tr(lang, 'tour_itinerary')) + ul(itinerary.map((d) => `${tr(lang, 'tour_day')} ${d.day}: ${d.title}`)) : '') + (included.length > 0 ? h2(tr(lang, 'tour_included')) + ul(included) : '') + (excluded.length > 0 ? h2(tr(lang, 'tour_not_included')) + ul(excluded) : '') + (faqs.length > 0 ? h2(tr(lang, 'nav_faq')) + faqBlock(faqs) : '') + (departHub ? h2(fmt(tr(lang, 'hub_related_title'), { city: tr(lang, `hub_${departHub.id}_name`) })) + paragraph(link(`${SITE_URL}/${lang}/tours/from-${departHub.slug}`, escapeHtml(fmt(tr(lang, 'hub_related_browse'), { city: tr(lang, `hub_${departHub.id}_name`) })))) : '') + buildTopicalLinksContent({ tourId: tour.id }, lang);
 }
 function buildDestinationsContent(lang: Lang): string {
   // Mirror the live /destinations page structure: localized H1 + intro, each
@@ -422,6 +523,11 @@ function buildRoutes(lang: Lang): RouteEntry[] {
     add(`/blog/${post.slug}`, `${lang}/blog/${post.slug}.html`, () => buildBlogArticleContent(post.slug, lang), meta ? (buildBlogPostSchema({ slug: post.slug, title: meta.title, description: meta.description, date: post.date, image: post.image }, lang) as Record<string, unknown>[]) : []);
   }
   for (const rest of Object.keys(EXPERIENCE_PAGE_ROUTES)) add(rest, `${lang}${rest}/index.html`, () => buildExperienceContent(rest, lang));
+  // Tours departure-city hubs + the meaningful duration hubs (mirrors App.tsx routes).
+  for (const hub of CITY_HUBS) {
+    add(`/tours/from-${hub.slug}`, `${lang}/tours/from-${hub.slug}/index.html`, () => buildCityHubContent(hub.slug, lang));
+  }
+  add('/tours/from-marrakech/3-days', `${lang}/tours/from-marrakech/3-days/index.html`, () => buildDurationHubContent('marrakech', 3, lang));
   for (const id of TOUR_ROUTES) { const t = getLocalizedTour(id, lang); add(`/tours/${id}`, `${lang}/tours/${id}.html`, () => buildTourDetailContent(id, lang), t ? (buildTourSchema(t, id, lang) as Record<string, unknown>[]) : []); }
   for (const dest of destinations) { const d = getLocalizedDestination(dest.id, lang); add(`/destinations/${dest.id}`, `${lang}/destinations/${dest.id}.html`, () => buildDestinationDetailContent(dest.id, lang), d ? (buildDestinationSchema(d, lang) as Record<string, unknown>[]) : []); }
   return routes;
@@ -433,8 +539,13 @@ function injectHead(html: string, meta: RouteEntry['meta'], rest: string, lang: 
   html = html.replace(/<link rel="canonical" href="[^"]*"/, `<link rel="canonical" href="${ogUrl}"`);
   html = html.replace(/<meta property="og:url" content="[^"]*"/, `<meta property="og:url" content="${ogUrl}"`);
   html = html.replace(/<meta property="og:locale" content="[^"]*"/, `<meta property="og:locale" content="${OG_LOCALE[lang] ?? 'en_US'}"`);
-  html = html.replace(/<meta name="twitter:title" content="[^"]*"/, `<meta name="twitter:title" content="${fullTitle}"`);
-  html = html.replace(/<meta name="twitter:description" content="[^"]*"/, `<meta name="twitter:description" content="${meta.description}"`);
+  // OG title/description must match the page title/description exactly as the
+  // runtime LocalizedHead sets them — otherwise social crawlers (and the
+  // prerender/runtime parity contract) see the base English homepage copy.
+  html = html.replace(/<meta property="og:title" content="[^"]*"/, `<meta property="og:title" content="${fullTitle.replace(/"/g, '&quot;')}"`);
+  html = html.replace(/<meta property="og:description" content="[^"]*"/, `<meta property="og:description" content="${meta.description.replace(/"/g, '&quot;')}"`);
+  html = html.replace(/<meta name="twitter:title" content="[^"]*"/, `<meta name="twitter:title" content="${fullTitle.replace(/"/g, '&quot;')}"`);
+  html = html.replace(/<meta name="twitter:description" content="[^"]*"/, `<meta name="twitter:description" content="${meta.description.replace(/"/g, '&quot;')}"`);
   if (meta.ogImage) {
     html = html.replace(/<meta property="og:image" content="[^"]*"/, `<meta property="og:image" content="${SITE_URL}${meta.ogImage}"`);
     html = html.replace(/<meta name="twitter:image" content="[^"]*"/, `<meta name="twitter:image" content="${SITE_URL}${meta.ogImage}"`);

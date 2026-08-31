@@ -479,4 +479,89 @@ export default {
   dt2_moments_cap2: "Un guide berbère mène sa caravane de chameaux sur la crête d'une dune au coucher du soleil.",
   dt2_moments_cap3: "La silhouette d'une voyageuse se détache devant l'immense soleil doré sur les dunes du Sahara.",
   dest_pictures_title: "en images",
+// ── Tours departure-city & duration hubs ─────────────────────────────────
+  hub_dur_daytrips: "Excursions d'une journée et courts séjours",
+  hub_dur_3: "Circuits de 3 jours",
+  hub_dur_4: "Circuits de 4 jours",
+  hub_dur_5_6: "Circuits de 5 à 6 jours",
+  hub_dur_7_8: "Circuits de 7 à 8 jours",
+  hub_dur_9: "Circuits de 9 jours et plus",
+
+  hub_marrakech_name: "Marrakech",
+  hub_marrakech_title: "Circuits au départ de Marrakech",
+  hub_marrakech_intro:
+    "Marrakech est le point de départ naturel de la plupart des itinéraires privés au Maroc — la Ville Rouge dispose d'un aéroport international, regorge de palais et de souks, et se trouve à quelques heures seulement du Haut Atlas et du Sahara.",
+  hub_marrakech_body:
+    "Partir de Marrakech, c'est franchir le Haut Atlas par le col de Tizi n'Tichka, s'arrêter à la kasbah classée par l'UNESCO d'Aït Ben Haddou, serpenter dans la vallée du Dadès et les gorges du Todra, puis chevaucher un chameau sur les dunes dorées de l'Erg Chebbi au coucher du soleil. Nos circuits privés au départ de Marrakech vont d'une boucle saharienne compacte de 3 jours à de grands voyages multi-villes qui passent par Fès, Chefchaouen et la côte atlantique — avec votre propre chauffeur anglophone, des riads et hôtels soigneusement sélectionnés et une nuit dans un camp de luxe dans le désert.",
+  hub_marrakech_hero_alt: "Les murailles ocre et les souks de Marrakech, au Maroc",
+
+  hub_casablanca_name: "Casablanca",
+  hub_casablanca_title: "Circuits au départ de Casablanca",
+  hub_casablanca_intro:
+    "Casablanca est la capitale économique du Maroc et un grand point d'arrivée international — un accès rapide et direct qui vous relie à Marrakech, Rabat, Fès et au Sahara sans faire demi-tour.",
+  hub_casablanca_body:
+    "La plupart des visiteurs arrivent à Casablanca en avion puis poursuivent vers le sud ou le nord. La ville elle-même mérite un court séjour avec la superbe mosquée Hassan II sur l'Atlantique et ses élégantes rues art-déco. Depuis Casablanca, nous pouvons construire un itinéraire privé à travers les villes impériales, franchir le Haut Atlas jusqu'à Aït Ben Haddou et la vallée du Dadès, puis rejoindre les dunes de l'Erg Chebbi — ou remonter vers les murailles bleues de Chefchaouen. Comme chaque voyage est privé, nous planifions simplement l'itinéraire et le rythme autour de votre heure d'arrivée et de vos dates.",
+  hub_casablanca_hero_alt: "La mosquée Hassan II sur la côte atlantique de Casablanca, au Maroc",
+
+  hub_fes_name: "Fès",
+  hub_fes_title: "Circuits au départ de Fès",
+  hub_fes_intro:
+    "Fès est le cœur culturel et spirituel du Maroc, ainsi qu'une base idéale pour les villes impériales du nord, les forêts de cèdres du Moyen Atlas et la route du Sahara vers Merzouga.",
+  hub_fes_body:
+    "Forte de la plus ancienne université du monde et de l'une des plus grandes médinas médiévales encore vivantes de la planète, Fès mérite au moins deux jours. D'ici, vous pouvez visiter Meknès, les ruines romaines de Volubilis et la ville bleue de Chefchaouen — ou descendre vers le sud par la vallée du Ziz jusqu'aux dunes de l'Erg Chebbi. Nous construisons un itinéraire privé autour de vous, en alliant visites guidées de la médina et journées de route confortables et bien rythmées.",
+  hub_fes_hero_alt: "La médina médiévale de Fès, au Maroc",
+
+  hub_agadir_name: "Agadir",
+  hub_agadir_title: "Circuits au départ d'Agadir",
+  hub_agadir_intro:
+    "Agadir est la station balnéaire du Maroc ouverte toute l'année sur l'Atlantique — un lieu idéal pour se détendre en fin de voyage ou pour entamer une route vers le nord via Essaouira et Marrakech, ou vers l'est en direction du Sahara.",
+  hub_agadir_body:
+    "Avec l'un des climats les plus ensoleillés du Maroc, Agadir associe une grande baie sablonneuse à un accès facile à la station de surf décontractée de Taghazout et aux souks fortifiés de Taroudant. En s'éloignant de la côte, la route grimpe à travers la vallée du Safran vers Ouarzazate, les gorges du Dadès et du Todra, puis les dunes de l'Erg Chebbi. Nous pouvons débuter un itinéraire privé à Agadir et façonner la suite selon le nombre de jours dont vous disposez et l'endroit où vous souhaitez terminer.",
+  hub_agadir_hero_alt: "La plage et la promenade d'Agadir, sur la côte atlantique du Maroc",
+
+  hub_short_on_time: "Vous manquez de temps ?",
+  hub_short_on_time_sub: "Découvrez nos circuits au départ de {city} groupés par durée, y compris le classique itinéraire de 3 jours.",
+  hub_browse_3day: "Voir les circuits de 3 jours au départ de {city}",
+  hub_private_title: "Circuits privés au départ de {city}",
+  hub_private_sub:
+    "Chaque départ ci-dessous est entièrement privé, commence à {city} et peut être adapté à vos dates et à votre rythme.",
+  hub_group_days_badge: "{days} jours",
+  hub_explore_region: "Explorez la région autour de {city}",
+  hub_explore_region_sub: "Partez de {city} pour rejoindre ces points d'intérêt — touchez une destination pour en savoir plus.",
+  hub_custom_title: "Vous ne trouvez pas exactement ce que vous voulez depuis {city} ?",
+  hub_custom_sub:
+    "Chaque itinéraire peut être remodelé en fonction du nombre de jours dont vous disposez et de l'endroit où vous voulez aller. Dites-nous vos dates et nous composerons un itinéraire privé au départ de {city}.",
+hub_dur_hero_alt: "Circuits de {days} jours au départ de {city}",
+  hub_dur_badge: "{days} jours · {city}",
+  hub_dur_h1: "Circuits de {days} jours au départ de {city}",
+  hub_dur_intro_3:
+    "La durée idéale pour un premier aperçu du Sahara — franchir le Haut Atlas jusqu'aux dunes et revenir, avec beaucoup à découvrir. Découvrez ci-dessous exactement les circuits privés de {days} jours que nous proposons au départ de {city}.",
+  hub_dur_intro_default:
+    "Itinéraires privés de {days} jours au départ de {city}, conçus autour de l'itinéraire, du rythme et des étapes qui vous conviennent.",
+  hub_dur_body_3_day:
+    "Un circuit de {days} jours au départ de {city} est la façon la plus populaire de découvrir le Sahara lors d'un court séjour. Vous partez tôt le matin, franchissez le col du Tizi n'Tichka dans le Haut Atlas et atteignez les dunes de {erg} au second soir — après la kasbah classée de {ait}, puis la vallée du Dadès et les gorges du Todra en chemin. Vous revenez à {city} le dernier jour, juste à temps pour une dernière soirée dans la médina.",
+  hub_dur_body_default:
+    "Un voyage de {days} jours au départ de {city} vous laisse plus de temps pour combiner villes, vallées et Sahara sans vous sentir pressé. Dites-nous le nombre de jours dont vous disposez et nous façonnerons l'itinéraire exact — les circuits ci-dessous sont les départs fixes que nous proposons aujourd'hui.",
+  hub_dur_dept_title: "Départs de {days} jours au départ de {city}",
+  hub_dur_dept_sub:
+    "Chaque option est entièrement privée, avec votre propre chauffeur anglophone et un hébergement soigneusement sélectionné.",
+  hub_dur_none_title: "Nous ne proposons actuellement pas de départ fixe de {days} jours au départ de {city}",
+  hub_dur_none_body:
+    "Mais nous créons en permanence des itinéraires privés de {days} jours au départ de {city}. Dites-nous vos dates et vos centres d'intérêt et nous élaborerons l'itinéraire, les étapes et le rythme autour de vous.",
+  hub_dur_other: "Autres durées au départ de {city}",
+  hub_dur_highlights: "Les points forts du parcours",
+  hub_dur_faq_heading: "Organiser un voyage de {days} jours au départ de {city}",
+  hub_dur_faq_more: "Plus de réponses dans notre",
+  hub_dur_faq_link: "FAQ voyage au Maroc",
+  hub_dur_faq_questions: "Des questions sur vos dates ?",
+  hub_dur_wa: "Écrivez-nous sur WhatsApp",
+  hub_dur_cta_title: "Prêt à planifier votre voyage de {days} jours au départ de {city} ?",
+  hub_dur_cta_sub: "Notre équipe locale vous répondra sous 24 heures avec un itinéraire et un devis entièrement personnalisés.",
+  hub_dur_crumb: "Circuits de {days} jours au départ de {city}",
+
+  hub_by_departure_city: "Circuits par ville de départ",
+  hub_related_title: "Plus de circuits au départ de {city}",
+  hub_related_browse: "Voir tous les circuits privés au départ de {city}",
+  hub_dest_erg_chebbi: "Erg Chebbi",
+  hub_dest_ait_ben_haddou: "Aït Ben Haddou",
 } as Record<string, string>;

@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Layout } from '../components/layout/Layout';
 import { tours } from '@/data/content';
+import { CITY_HUBS } from '@/data/tour-hierarchy';
 import { getLocalizedTour } from '@/i18n/content';
 import { Link, useSearch } from 'wouter';
 import { motion } from 'framer-motion';
@@ -88,6 +89,51 @@ export default function Tours() {
               {t('tours_sub')}
             </p>
           </motion.div>
+        </div>
+      </section>
+{/* Where do you start? — departure-city hubs */}
+      <section className="py-16 md:py-20 bg-background border-b border-border">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="text-center mb-10">
+            <span className="text-primary font-bold tracking-wider uppercase text-sm mb-3 block">Where do you start?</span>
+            <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-4">Tours by departure city</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Browse private Morocco itineraries by where you land. Every route is fully private and built around your dates.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {CITY_HUBS.map((hub) => (
+              <Link
+                key={hub.id}
+                href={`/tours/from-${hub.slug}`}
+                className="group relative rounded-2xl overflow-hidden border border-border h-64 hover:shadow-xl transition-all duration-500"
+              >
+                <img
+                  src={hub.heroImage}
+                  alt={hub.heroAlt}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  onError={(e) => { (e.target as HTMLImageElement).src = '/images/dest/merzouga.webp'; }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
+                <div className="absolute bottom-0 p-5 w-full">
+                  <h3 className="font-serif text-2xl text-white mb-1 drop-shadow">{hub.name}</h3>
+                  <span className="inline-flex items-center gap-1 text-primary text-sm font-bold group-hover:gap-2 transition-all">
+                    {t('tours_view')} <ChevronRight className="w-4 h-4" />
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <div className="mt-8 text-center">
+            <Link
+              href="/tours/from-marrakech/3-days"
+              className="inline-flex items-center gap-2 bg-foreground text-background px-6 py-3 rounded-full font-bold hover:bg-primary hover:text-primary-foreground transition-colors"
+            >
+              <Clock className="w-4 h-4" aria-hidden="true" /> 3-day Sahara tours from Marrakech
+            </Link>
+          </div>
         </div>
       </section>
 

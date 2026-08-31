@@ -5,6 +5,7 @@ import { Menu, X, ChevronDown, Globe } from 'lucide-react';
 
 import { Logo } from './Logo';
 import { contactInfo } from '@/data/content';
+import { CITY_HUBS } from '@/data/tour-hierarchy';
 import { getLocalizedDestinations } from '@/i18n/content';
 import { useLanguage, languages } from '@/contexts/LanguageContext';
 
@@ -13,6 +14,7 @@ export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDestinationsOpen, setIsDestinationsOpen] = useState(false);
   const [isExperiencesOpen, setIsExperiencesOpen] = useState(false);
+  const [isToursOpen, setIsToursOpen] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
   const langRef = useRef<HTMLDivElement>(null);
   const [location] = useLocation();
@@ -121,7 +123,53 @@ export function Navbar() {
               </AnimatePresence>
             </div>
 
-            <Link href="/tours" className={linkClasses}>{t('nav_tours')}</Link>
+            {/* Tours Dropdown — departure cities + duration shortcut */}
+            <div
+              className="relative group"
+              onMouseEnter={() => setIsToursOpen(true)}
+              onMouseLeave={() => setIsToursOpen(false)}
+            >
+              <Link href="/tours" className={`${linkClasses} flex items-center gap-1`}>
+                {t('nav_tours')} <ChevronDown className={`w-4 h-4 transition-transform ${isToursOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
+              </Link>
+              <AnimatePresence>
+                {isToursOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute top-full -left-4 w-72 pt-4"
+                  >
+                    <div className="bg-background shadow-xl rounded-xl border border-border overflow-hidden">
+                      <Link href="/tours" className="block px-4 py-3 text-sm font-bold text-foreground hover:bg-muted hover:text-primary transition-colors">
+                        {t('tours_heading')}
+                      </Link>
+                      {CITY_HUBS.map((hub) => (
+                        <Link
+                          key={hub.id}
+                          href={`/tours/from-${hub.slug}`}
+                          className="flex items-center justify-between px-4 py-3 text-sm text-foreground hover:bg-muted hover:text-primary transition-colors"
+                        >
+                          {hub.title}
+                          {hub.hasDurationDrive && (
+                            <span className="text-xs text-muted-foreground">3 days · 5+ days</span>
+                          )}
+                        </Link>
+                      ))}
+                      <div className="border-t border-border mt-1">
+                        <Link href="/tours/from-marrakech/3-days" className="block px-4 py-3 text-sm font-medium text-primary hover:bg-muted transition-colors">
+                          3-Day Tours from Marrakech
+                        </Link>
+                        <Link href="/desert-tours" className="block px-4 py-3 text-sm font-medium text-primary hover:bg-muted transition-colors">
+                          {t('nav_sahara_desert_tours')}
+                        </Link>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
 
             {/* Experiences Dropdown */}
             <div 
@@ -255,6 +303,12 @@ export function Navbar() {
                 ))}
               </div>
               <Link href="/tours" className="text-lg font-medium text-foreground">{t('nav_tours')}</Link>
+              <div className="pl-4 border-l-2 border-primary/20 space-y-3 py-2">
+                {CITY_HUBS.map(hub => (
+                  <Link key={hub.id} href={`/tours/from-${hub.slug}`} className="block text-muted-foreground">{hub.title}</Link>
+                ))}
+                <Link href="/tours/from-marrakech/3-days" className="block text-muted-foreground">3-Day Tours from Marrakech</Link>
+              </div>
               <div className="pl-4 border-l-2 border-primary/20 space-y-3 py-2">
                 <Link href="/desert-tours" className="block text-muted-foreground">{t('nav_sahara_desert_tours')}</Link>
                 <Link href="/luxury-camp" className="block text-muted-foreground">{t('nav_luxury_desert_camp')}</Link>

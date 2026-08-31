@@ -16,6 +16,14 @@ import { PromoBanner } from '../components/promo/PromoBanner';
 import { discountedPrice, waPromoLink } from '@/lib/promo';
 import { usePromoActive } from '../components/promo/PromoProvider';
 import { StructuredData, buildTourSchema, buildReviewSchema, buildFaqSchema } from '../components/seo/StructuredData';
+import { TOUR_DEPARTURE_CITY, getCityHub } from '@/data/tour-hierarchy';
+import { TourBreadcrumbs } from '../components/tours/TourBreadcrumbs';
+
+/** Extract the leading number of days from a duration string like "3 Days / 2 Nights". */
+function parseDurationDays(duration: string): number {
+  const match = duration.match(/^(\d+)/);
+  return match ? parseInt(match[1], 10) : 0;
+}
 
 export default function TourDetail() {
   const { t, lang } = useLanguage();
@@ -29,6 +37,10 @@ export default function TourDetail() {
   const tour = getLocalizedTour(params.id, lang);
 
   if (!tour) return <NotFound />;
+
+  // Parent hub (departure city) used for breadcrumb + "other tours from" onward links.
+  const departCity = TOUR_DEPARTURE_CITY[tour.id];
+  const departHub = departCity ? getCityHub(departCity) : undefined;
 
   // Dynamic pricing: use per-traveler tiers if available, else fall back to flat price
   const tiers = tour.pricingTiers;
@@ -65,7 +77,23 @@ export default function TourDetail() {
 
   const faqs = tour.faq ?? getLocalizedFaq(lang).slice(0, 6);
 
-  const relatedTours = getLocalizedTours(lang).filter(x => x.id !== tour.id).slice(0, 3);
+  const allTours = getLocalizedTours(lang);
+  // Relevant "recommendation" logic for related tours — never random.
+  // 1) Same departure city  2) Route overlap  3) Same duration  4) Similar category/intent.
+  const routeIdSet = new Set(tour.routeIds ?? []);
+  const relatedTours = allTours
+    .filter(x => x.id !== tour.id)
+    .map(candidate => {
+      const sameCity = TOUR_DEPARTURE_CITY[candidate.id] === TOUR_DEPARTURE_CITY[tour.id];
+      const overlap = (candidate.routeIds ?? []).filter(id => routeIdSet.has(id)).length;
+      const sameDuration = parseDurationDays(candidate.duration) === parseDurationDays(tour.duration);
+      const score = (sameCity ? 100 : 0) + overlap * 20 + (sameDuration ? 30 : 0);
+      return { tour: candidate, score };
+    })
+    .filter(item => item.score > 0)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 3)
+    .map(item => item.tour);
 
   // Destinations that appear along this tour's route, resolved to their
   // localized name for the "stops on this route" quick links below.
@@ -124,6 +152,17 @@ export default function TourDetail() {
           </motion.div>
         </div>
       </section>
+
+      {/* Back-up-the-tree breadcrumbs: Home → Tours → City → Tour */}
+      <div className="bg-black/50 backdrop-blur border-b border-white/10">
+        <TourBreadcrumbs
+          items={[
+            { label: t('nav_tours'), href: '/tours' },
+            ...(departHub ? [{ label: departHub.title, href: `/tours/from-${departHub.slug}` }] : []),
+            { label: tour.name },
+          ]}
+        />
+      </div>
 
       {/* Limited-time promotion */}
       {promoOn && (

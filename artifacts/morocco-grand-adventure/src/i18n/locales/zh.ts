@@ -293,4 +293,89 @@ export default {
     dest_weather_clear: "晴朗",
     dest_photo_sunrise: "尔格切比沙丘的日出",
     dest_photo_stargazing: "银河下的星空",
+// ── Tours departure-city & duration hubs ─────────────────────────────────
+  hub_dur_daytrips: "一日游与短途行程",
+  hub_dur_3: "3 日游",
+  hub_dur_4: "4 日游",
+  hub_dur_5_6: "5–6 日游",
+  hub_dur_7_8: "7–8 日游",
+  hub_dur_9: "9 日及以上行程",
+
+  hub_marrakech_name: "马拉喀什",
+  hub_marrakech_title: "马拉喀什出发的行程",
+  hub_marrakech_intro:
+    "马拉喀什是摩洛哥多数私人行程的天然起点——红城拥有国际机场，汇聚宫殿与集市精华，距高阿特拉斯山脉与撒哈拉沙漠仅数小时车程。",
+  hub_marrakech_body:
+    "从马拉喀什出发，您将经由 Tizi n'Tichka 山口翻越高阿特拉斯山脉，在联合国教科文组织名录中的艾特本哈杜古堡停留，蜿蜒穿过达德斯山谷与托德拉峡谷，再于日落时分骑骆驼踏上尔格切比的金山沙丘。我们的马拉喀什私人行程从紧凑的 3 日撒哈拉环线，到涵盖非斯、舍夫沙万与大西洋海岸的多城市深度之旅，全程配备您的私人英语司机、精心挑选的庭院旅馆与酒店，并入住一晚豪华沙漠营地。",
+  hub_marrakech_hero_alt: "摩洛哥马拉喀什的赭黄色城墙与市集",
+
+  hub_casablanca_name: "卡萨布兰卡",
+  hub_casablanca_title: "卡萨布兰卡出发的行程",
+  hub_casablanca_intro:
+    "卡萨布兰卡是摩洛哥的经济首都，也是繁忙的国际入境门户——快速直达，连接马拉喀什、拉巴特、非斯与撒哈拉，无需绕路。",
+  hub_casablanca_body:
+    "大多数游客乘机抵达卡萨布兰卡后，从这里继续南下或北上。城市本身值得短暂停留：濒临大西洋、气势恢宏的哈桑二世清真寺，以及优雅的装饰艺术风格街道。从卡萨布兰卡出发，我们可以为您规划一条贯穿帝国古城的私人路线，翻越高阿特拉斯抵达艾特本哈杜与达德斯山谷，再前往尔格切比沙丘——或北上蔚蓝色的舍夫沙万。由于每次旅程均为私人定制，我们会完全按照您的抵达时间与出行日期安排路线与节奏。",
+  hub_casablanca_hero_alt: "卡萨布兰卡大西洋海岸的哈桑二世清真寺，摩洛哥",
+
+  hub_fes_name: "非斯",
+  hub_fes_title: "非斯出发的行程",
+  hub_fes_intro:
+    "非斯是摩洛哥的文化与精神中心，也是探索北部帝国城市、中阿特拉斯雪松林以及通往梅尔祖卡撒哈拉之路的理想基地。",
+  hub_fes_body:
+    "这里拥有世界上最古老的大学和地球上现存最大的中世纪古城之一，非斯值得停留至少两天。从这里，您可以游览梅克内斯、沃吕比利斯罗马遗址和蓝色之城舍夫沙万，或向南穿越济兹河谷直抵尔格切比沙丘。我们将围绕您的需求定制非斯私人行程，将专业古城导览与舒适从容的行车日相结合。",
+  hub_fes_hero_alt: "摩洛哥非斯的中世纪老城",
+
+  hub_agadir_name: "阿加迪尔",
+  hub_agadir_title: "阿加迪尔出发的行程",
+  hub_agadir_intro:
+    "阿加迪尔是摩洛哥大西洋沿岸全年开放的滨海度假胜地——既是旅程尾声放松身心的好地方，也是北上经索维拉和马拉喀什，或东行前往撒哈拉的理想起点。",
+  hub_agadir_body:
+    "凭借摩洛哥最阳光的气候之一，阿加迪尔将绵长的沙滩海湾与轻松抵达悠闲冲浪小镇塔哈祖特、以及塔鲁丹特围墙集市的优势集于一身。往内陆方向，公路穿越藏红花山谷上溯至瓦尔扎扎特、达德斯与托德拉峡谷，再抵达尔格切比沙丘。我们可以在阿加迪尔开启私人行程，并按照您的天数与终点灵活安排后续路线。",
+  hub_agadir_hero_alt: "摩洛哥大西洋海岸阿加迪尔的海滩与滨海大道",
+
+  hub_short_on_time: "时间有限？",
+  hub_short_on_time_sub: "查看从 {city} 出发、按时长分类的路线，包括经典的 3 日行程。",
+  hub_browse_3day: "浏览从 {city} 出发的 3 日游",
+  hub_private_title: "从 {city} 出发的私人行程",
+  hub_private_sub:
+    "以下每个团均为全程私享，从 {city} 出发，并可根据您的日期与节奏灵活调整。",
+  hub_group_days_badge: "{days} 天",
+  hub_explore_region: "探索 {city} 周边地区",
+  hub_explore_region_sub: "从 {city} 出发前往这些亮点——点击任意目的地即可了解详情。",
+  hub_custom_title: "没有找到从 {city} 出发的理想行程？",
+  hub_custom_sub:
+    "每条路线都可以根据您的天数和想去的地方重新定制。告诉我们您的日期，我们将为您打造从 {city} 出发的专属行程。",
+hub_dur_hero_alt: "从 {city} 出发的 {days} 日行程",
+  hub_dur_badge: "{days} 天 · {city}",
+  hub_dur_h1: "从 {city} 出发的 {days} 日游",
+  hub_dur_intro_3:
+    "初识撒哈拉的理想时长——翻越高阿特拉斯直抵沙丘再返回，内容充实。下方正是我们从 {city} 出发提供的 {days} 日私人行程。",
+  hub_dur_intro_default:
+    "从 {city} 出发的 {days} 日私人行程，围绕最适合您的路线、节奏与停靠点而设计。",
+  hub_dur_body_3_day:
+    "从 {city} 出发的 {days} 日行程是短途体验撒哈拉最受欢迎的方式。清晨出发，翻越 Tizi n'Tichka 山口跨越高阿特拉斯山脉，于第二晚抵达 {erg} 沙丘——沿途经过列入世界遗产的 {ait} 古堡、达德斯山谷与托德拉峡谷。最后一天返回 {city}，恰好赶上在老城度过最后一个夜晚。",
+  hub_dur_body_default:
+    "从 {city} 出发的 {days} 日行程，让您更从容地串联城市、山谷与撒哈拉，而不显仓促。告诉我们您有多少天，我们将据此规划确切路线——下方行程即是我们目前提供的固定团期。",
+  hub_dur_dept_title: "从 {city} 出发的 {days} 日团",
+  hub_dur_dept_sub:
+    "每个选项均为全程私享，配备专属英语司机与精心挑选的住宿。",
+  hub_dur_none_title: "我们目前暂未提供从 {city} 出发的 {days} 日固定团",
+  hub_dur_none_body:
+    "但我们经常为您量身打造从 {city} 出发的 {days} 日私人行程。告诉我们您的日期与兴趣，我们将围绕您规划路线、停靠点与节奏。",
+  hub_dur_other: "从 {city} 出发的其他时长",
+  hub_dur_highlights: "沿途亮点",
+  hub_dur_faq_heading: "规划从 {city} 出发的 {days} 日旅程",
+  hub_dur_faq_more: "更多解答请见",
+  hub_dur_faq_link: "摩洛哥旅行常见问题",
+  hub_dur_faq_questions: "对出行日期有疑问？",
+  hub_dur_wa: "通过 WhatsApp 联系我们",
+  hub_dur_cta_title: "准备好规划从 {city} 出发的 {days} 日旅程了吗？",
+  hub_dur_cta_sub: "我们的本地团队将在 24 小时内回复，为您提供完全定制的行程与报价。",
+  hub_dur_crumb: "从 {city} 出发的 {days} 日游",
+
+  hub_by_departure_city: "按出发城市浏览行程",
+  hub_related_title: "更多从 {city} 出发的行程",
+  hub_related_browse: "浏览从 {city} 出发的全部私人行程",
+  hub_dest_erg_chebbi: "尔格切比",
+  hub_dest_ait_ben_haddou: "艾特本哈杜",
   } as Record<string, string>;

@@ -605,6 +605,33 @@ export type TranslationSet = {
   about_scroll_hint: string; about_roots_heading: string; about_roots_text: string;
   about_promise_heading: string; about_promise_text: string; about_cta_sub: string;
   map_directions: string;
+  // ── Tours departure-city & duration hubs ────────────────────────────────
+  hub_dur_daytrips: string; hub_dur_3: string; hub_dur_4: string; hub_dur_5_6: string;
+  hub_dur_7_8: string; hub_dur_9: string;
+  hub_marrakech_name: string; hub_marrakech_title: string; hub_marrakech_intro: string;
+  hub_marrakech_body: string; hub_marrakech_hero_alt: string;
+  hub_casablanca_name: string; hub_casablanca_title: string; hub_casablanca_intro: string;
+  hub_casablanca_body: string; hub_casablanca_hero_alt: string;
+  hub_fes_name: string; hub_fes_title: string; hub_fes_intro: string;
+  hub_fes_body: string; hub_fes_hero_alt: string;
+  hub_agadir_name: string; hub_agadir_title: string; hub_agadir_intro: string;
+  hub_agadir_body: string; hub_agadir_hero_alt: string;
+  hub_short_on_time: string; hub_short_on_time_sub: string; hub_browse_3day: string;
+  hub_private_title: string; hub_private_sub: string; hub_group_days_badge: string;
+  hub_explore_region: string; hub_explore_region_sub: string;
+  hub_custom_title: string; hub_custom_sub: string;
+  hub_dur_hero_alt: string; hub_dur_badge: string; hub_dur_h1: string;
+  hub_dur_intro_3: string; hub_dur_intro_default: string;
+  hub_dur_body_3_day: string; hub_dur_body_default: string;
+  hub_dur_dept_title: string; hub_dur_dept_sub: string;
+  hub_dur_none_title: string; hub_dur_none_body: string; hub_dur_other: string;
+  hub_dur_highlights: string;
+  hub_dur_faq_heading: string; hub_dur_faq_more: string; hub_dur_faq_link: string;
+  hub_dur_faq_questions: string; hub_dur_wa: string;
+  hub_dur_cta_title: string; hub_dur_cta_sub: string; hub_dur_crumb: string;
+  hub_by_departure_city: string;
+  hub_related_title: string; hub_related_browse: string;
+  hub_dest_erg_chebbi: string; hub_dest_ait_ben_haddou: string;
 };
 // ─────────────────────────────────────────────────────────────────────────────
 // Locale registry + lazy loader (locale-based code splitting)
