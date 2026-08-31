@@ -21,6 +21,7 @@ const About = lazy(() => import('./pages/about'));
 const Gallery = lazy(() => import('./pages/gallery'));
 const Contact = lazy(() => import('./pages/contact'));
 const TripBuilder = lazy(() => import('./pages/trip-builder'));
+const BuildYourDayTrip = lazy(() => import('./pages/build-your-day-trip'));
 const DesertTours = lazy(() => import('./pages/desert-tours'));
 const LuxuryCamp = lazy(() => import('./pages/luxury-camp'));
 const CamelTrekking = lazy(() => import('./pages/camel-trekking'));
@@ -34,15 +35,12 @@ const Blog = lazy(() => import('./pages/blog'));
 const BlogPost = lazy(() => import('@/pages/blog/[slug]'));
 const NotFound = lazy(() => import('@/pages/not-found'));
 
-// Loading fallback for lazy-loaded routes
 function PageLoader() {
   let loadingText = "Loading...";
   try {
     const { t } = useLanguage();
     loadingText = t('app_loading');
-  } catch {
-    // LanguageProvider not available yet (initial redirect)
-  }
+  } catch {}
   return (
     <div className="flex items-center justify-center min-h-[60vh] w-full">
       <div className="flex flex-col items-center gap-4">
@@ -55,17 +53,9 @@ function PageLoader() {
 
 function AnimatedRouter() {
   const [location] = useLocation();
-
   return (
     <AnimatePresence mode="wait">
-      <motion.div
-        key={location}
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -10 }}
-        transition={{ duration: 0.3, ease: "easeOut" as const }}
-        className="contents"
-      >
+      <motion.div key={location} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.3, ease: "easeOut" as const }} className="contents">
         <Suspense fallback={<PageLoader />}>
           <Switch location={location}>
             <Route path="/" component={Home} />
@@ -79,6 +69,7 @@ function AnimatedRouter() {
             <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />
             <Route path="/trip-builder" component={TripBuilder} />
+            <Route path="/build-your-day-trip" component={BuildYourDayTrip} />
             <Route path="/desert-tours" component={DesertTours} />
             <Route path="/luxury-camp" component={LuxuryCamp} />
             <Route path="/camel-trekking" component={CamelTrekking} />
@@ -99,34 +90,23 @@ function AnimatedRouter() {
 }
 
 function App() {
-  // The language prefix in the URL drives everything. Subscribe to the raw
-  // browser path so switches (which push a new /xx/... URL) re-render here.
   const pathname = usePathname();
   const { lang, rest } = parseLangPath(pathname);
-
-  // No language prefix in the URL -> redirect to the preferred language.
   useEffect(() => {
-    if (!lang) {
-      navigate(
-        langHref(preferredLang(), rest, window.location.search, window.location.hash),
-        { replace: true },
-      );
-    }
+    if (!lang) navigate(langHref(preferredLang(), rest, window.location.search, window.location.hash), { replace: true });
   }, [lang, rest]);
-
   if (!lang) return <PageLoader />;
-
   return (
     <LanguageProvider lang={lang}>
-        <LocalizedHead />
-        <PromoProvider>
-          <TooltipProvider>
-            <WouterRouter base={`${RAW_BASE}/${lang}`}>
-              <AnimatedRouter />
-            </WouterRouter>
-            <Toaster />
-          </TooltipProvider>
-        </PromoProvider>
+      <LocalizedHead />
+      <PromoProvider>
+        <TooltipProvider>
+          <WouterRouter base={`${RAW_BASE}/${lang}`}>
+            <AnimatedRouter />
+          </WouterRouter>
+          <Toaster />
+        </TooltipProvider>
+      </PromoProvider>
     </LanguageProvider>
   );
 }
