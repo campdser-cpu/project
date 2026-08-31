@@ -27,6 +27,7 @@ if (!detail.includes(marker)) {
   fs.writeFileSync(detailPath, detail, 'utf8');
 }
 
+await import('./fix-three-day-city-enrichment.mjs');
 await import('./enrich-three-day-cities.mjs');
 await import('./enrich-three-day-hierarchy.mjs');
 await import('./enrich-three-day-prerender.mjs');
