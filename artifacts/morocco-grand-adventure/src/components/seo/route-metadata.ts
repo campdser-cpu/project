@@ -99,8 +99,12 @@ export const BLOG_META: Record<string,RouteMeta> = {
 export function getRouteMeta(rest:string):RouteMeta {
   const normalized = rest === '' || rest === '/' ? '/' : rest.replace(/\/$/,'');
   if (routeMetadata[normalized]) return routeMetadata[normalized];
-  const duration = normalized.match(/^\/tours\/from-([^/]+)\/(\d+-?days?)$/);
-  if (duration) return { title:`${duration[2]} Tours From ${duration[1]} — Private Morocco Itineraries`, description:`Private ${duration[2]} Morocco tours from ${duration[1]} with flexible itineraries and local expertise.`, ogImage:'/images/dest/merzouga.jpg' };
+  const duration = normalized.match(/^\/tours\/from-([^/]+)\/(\d+)-?days?$/);
+  if (duration) {
+    const cityLabel = duration[1][0].toUpperCase() + duration[1].slice(1);
+    const daysLabel = `${duration[2]}-Day`;
+    return { title:`${daysLabel} Tours From ${cityLabel} — Private Morocco Itineraries`, description:`Private ${duration[2]}-day Morocco tours from ${cityLabel} — the Sahara, imperial cities and the Atlas. Pick your pace and plan a tailored departure with local experts.`, ogImage:'/images/dest/merzouga.jpg' };
+  }
   const tour = normalized.match(/^\/tours\/([^/]+)$/);
   if (tour) { const meta=TOUR_META[TOUR_ALIASES[tour[1]] ?? tour[1]]; if(meta) return meta; }
   const dest = normalized.match(/^\/destinations\/([^/]+)$/); if(dest && DESTINATION_META[dest[1]]) return DESTINATION_META[dest[1]];

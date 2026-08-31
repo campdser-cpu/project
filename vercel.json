@@ -1,1 +1,32 @@
-{"installCommand":"corepack enable && corepack prepare pnpm@10.34.5 --activate && pnpm install --frozen-lockfile","buildCommand":"pnpm --filter @workspace/morocco-grand-adventure build","outputDirectory":"artifacts/morocco-grand-adventure/dist","redirects":[{"source":"/(.*)","has":[{"type":"header","key":"accept-language","value":"^ar([-_;,]|$)"}],"destination":"/ar","permanent":false},{"source":"/(.*)","has":[{"type":"header","key":"accept-language","value":"^de([-_;,]|$)"}],"destination":"/de","permanent":false},{"source":"/(.*)","has":[{"type":"header","key":"accept-language","value":"^es([-_;,]|$)"}],"destination":"/es","permanent":false},{"source":"/(.*)","has":[{"type":"header","key":"accept-language","value":"^fr([-_;,]|$)"}],"destination":"/fr","permanent":false},{"source":"/(.*)","has":[{"type":"header","key":"accept-language","value":"^it([-_;,]|$)"}],"destination":"/it","permanent":false},{"source":"/(.*)","has":[{"type":"header","key":"accept-language","value":"^ja([-_;,]|$)"}],"destination":"/ja","permanent":false},{"source":"/(.*)","has":[{"type":"header","key":"accept-language","value":"^ko([-_;,]|$)"}],"destination":"/ko","permanent":false},{"source":"/(.*)","has":[{"type":"header","key":"accept-language","value":"^nl([-_;,]|$)"}],"destination":"/nl","permanent":false},{"source":"/(.*)","has":[{"type":"header","key":"accept-language","value":"^pt([-_;,]|$)"}],"destination":"/pt","permanent":false},{"source":"/(.*)","has":[{"type":"header","key":"accept-language","value":"^zh([-_;,]|$)"}],"destination":"/zh","permanent":false}],"headers":[{"source":"/assets/(.*)","headers":[{"key":"Cache-Control","value":"public, max-age=31536000, immutable"},{"key":"X-Content-Type-Options","value":"nosniff"}]},{"source":"/(images|videos)/(.*)","headers":[{"key":"Cache-Control","value":"public, max-age=2592000, stale-while-revalidate=86400"},{"key":"X-Content-Type-Options","value":"nosniff"}]},{"source":"/(.*)","headers":[{"key":"X-Content-Type-Options","value":"nosniff"}]}],"cleanUrls":true}
+﻿{
+  "installCommand": "corepack enable && corepack prepare pnpm@10.34.5 --activate && pnpm install --frozen-lockfile",
+  "buildCommand": "pnpm --filter @workspace/morocco-grand-adventure build",
+  "outputDirectory": "artifacts/morocco-grand-adventure/dist",
+  "cleanUrls": true,
+  "redirects": [
+    { "source": "/:lang(en|fr|es|it|de|nl|pt|zh|ja|ko|ar)/tours/from-:city(marrakech|casablanca|fes|agadir)/:days(\\d+)", "destination": "/:lang/tours/from-:city/:days-days", "permanent": true },
+    { "source": "/:lang(en|fr|es|it|de|nl|pt|zh|ja|ko|ar)/tours/3-days-marrakech-to-merzouga-desert-tour", "destination": "/:lang/tours/3-day-sahara-marrakech", "permanent": true },
+    { "source": "/:lang(en|fr|es|it|de|nl|pt|zh|ja|ko|ar)/tours/3-days-fes-to-marrakech-desert-tour", "destination": "/:lang/tours/5-day-imperial-cities", "permanent": true },
+    { "source": "/:lang(en|fr|es|it|de|nl|pt|zh|ja|ko|ar)/tours/merzouga-desert-tour", "destination": "/:lang/tours/3-day-sahara-marrakech", "permanent": true },
+    { "source": "/:lang(en|fr|es|it|de|nl|pt|zh|ja|ko|ar)/tours/morocco-desert-tour", "destination": "/:lang/tours/7-day-imperial-cities-sahara-escape", "permanent": true },
+    { "source": "/(.*)", "has": [{ "type": "header", "key": "accept-language", "value": "^ar([-_;,]|$)" }], "destination": "/ar", "permanent": false },
+    { "source": "/(.*)", "has": [{ "type": "header", "key": "accept-language", "value": "^de([-_;,]|$)" }], "destination": "/de", "permanent": false },
+    { "source": "/(.*)", "has": [{ "type": "header", "key": "accept-language", "value": "^es([-_;,]|$)" }], "destination": "/es", "permanent": false },
+    { "source": "/(.*)", "has": [{ "type": "header", "key": "accept-language", "value": "^fr([-_;,]|$)" }], "destination": "/fr", "permanent": false },
+    { "source": "/(.*)", "has": [{ "type": "header", "key": "accept-language", "value": "^it([-_;,]|$)" }], "destination": "/it", "permanent": false },
+    { "source": "/(.*)", "has": [{ "type": "header", "key": "accept-language", "value": "^ja([-_;,]|$)" }], "destination": "/ja", "permanent": false },
+    { "source": "/(.*)", "has": [{ "type": "header", "key": "accept-language", "value": "^ko([-_;,]|$)" }], "destination": "/ko", "permanent": false },
+    { "source": "/(.*)", "has": [{ "type": "header", "key": "accept-language", "value": "^nl([-_;,]|$)" }], "destination": "/nl", "permanent": false },
+    { "source": "/(.*)", "has": [{ "type": "header", "key": "accept-language", "value": "^pt([-_;,]|$)" }], "destination": "/pt", "permanent": false },
+    { "source": "/(.*)", "has": [{ "type": "header", "key": "accept-language", "value": "^zh([-_;,]|$)" }], "destination": "/zh", "permanent": false },
+    { "source": "/", "destination": "/en", "permanent": false }
+  ],
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ],
+  "headers": [
+    { "source": "/assets/(.*)", "headers": [ { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }, { "key": "X-Content-Type-Options", "value": "nosniff" } ] },
+    { "source": "/(images|videos)/(.*)", "headers": [ { "key": "Cache-Control", "value": "public, max-age=2592000, stale-while-revalidate=86400" }, { "key": "X-Content-Type-Options", "value": "nosniff" } ] },
+    { "source": "/(.*)", "headers": [ { "key": "X-Content-Type-Options", "value": "nosniff" } ] }
+  ]
+}
