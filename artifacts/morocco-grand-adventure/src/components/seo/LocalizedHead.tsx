@@ -16,6 +16,7 @@ import { parseLangPath, RAW_BASE } from '@/lib/i18n-routing';
 import { getLocalizedRouteMeta, FR_HOME_META } from './route-metadata';
 
 const BRAND = 'Morocco Grand Adventure';
+const SITE_ORIGIN = 'https://www.moroccograndadventure.com';
 
 const OG_LOCALE: Record<string, string> = {
   en: 'en_US', fr: 'fr_FR', es: 'es_ES', it: 'it_IT', de: 'de_DE',
@@ -39,11 +40,15 @@ export function LocalizedHead() {
   const { rest } = parseLangPath(pathname);
 
   useEffect(() => {
-    const origin = window.location.origin;
+    // Use the site's single canonical origin rather than window.location.origin.
+    // This prevents host-dependent canonical/hreflang/OG URLs if the site is
+    // reached through the alternate non-www host.
+    const origin = SITE_ORIGIN;
     const clean = rest === '/' ? '' : rest;
     const urlFor = (code: string) => `${origin}${RAW_BASE}/${code}${clean}`;
     const currentUrl = urlFor(lang);
 
+    // ── Per-page metadata ────────────────────────────────────────────────
     const routeMeta = getLocalizedRouteMeta(rest, lang);
     const isHome = rest === '/' || rest === '';
     const useFrenchHomeMeta = isHome && lang === 'fr';
