@@ -1,6 +1,7 @@
 ﻿import { Link } from 'wouter';
 import { useLanguage } from '@/contexts/LanguageContext';
 import aboutPageContent from '@/data/about-page-content.json';
+import { verifiedGoogleReviews } from '@/data/verifiedReviews';
 
 const placeholderPattern = /\[[^\]]+\]/g;
 
@@ -18,6 +19,31 @@ function renderParagraphs(text: string) {
       {sanitizeText(paragraph)}
     </p>
   ));
+}
+
+function MohamedReviewQuote() {
+  const reviews = verifiedGoogleReviews.filter((review) =>
+    ['google-nina-branderhorst', 'google-natalia-cuadrado', 'google-kresimir-mikic'].includes(review.id),
+  );
+
+  return (
+    <aside className="mt-10 rounded-2xl border border-amber-200/80 bg-amber-50/70 p-6 md:p-8" aria-label="Verified Google reviews about Mohamed">
+      <div className="mb-5 flex items-center justify-between gap-4">
+        <h4 className="text-xl font-bold text-gray-900">Travelers about Mohamed</h4>
+        <span className="shrink-0 text-xs font-semibold uppercase tracking-wider text-amber-700">Google Reviews</span>
+      </div>
+      <div className="space-y-6">
+        {reviews.map((review) => (
+          <figure key={review.id} className="border-l-2 border-amber-500 pl-4">
+            <blockquote className="text-gray-700 leading-relaxed">“{review.text}”</blockquote>
+            <figcaption className="mt-2 text-sm font-semibold text-gray-900">
+              {review.name} · {review.rating}/5
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    </aside>
+  );
 }
 
 export default function PremiumAboutSection() {
@@ -57,8 +83,8 @@ export default function PremiumAboutSection() {
       <div className="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden mb-24">
         <img
           src="/images/hero/medina-pano.webp"
-  width={794}
-  height={712}
+          width={794}
+          height={712}
           alt=""
           aria-hidden="true"
           className="absolute inset-0 h-full w-full object-cover"
@@ -67,12 +93,8 @@ export default function PremiumAboutSection() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/40 to-black/70 z-10" />
         <div className="relative z-20 text-center text-white px-4 max-w-5xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            {content.hero.title}
-          </h1>
-          <p className="text-xl md:text-2xl font-light max-w-3xl mx-auto leading-relaxed">
-            {content.hero.subtitle}
-          </p>
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">{content.hero.title}</h1>
+          <p className="text-xl md:text-2xl font-light max-w-3xl mx-auto leading-relaxed">{content.hero.subtitle}</p>
           <div className="mt-12 flex justify-center">
             <div className="flex flex-col items-center gap-2 text-sm uppercase tracking-[0.25em] text-white/80">
               <span>{t('about_scroll_hint')}</span>
@@ -85,26 +107,16 @@ export default function PremiumAboutSection() {
       <div className="max-w-7xl mx-auto px-4 mb-32">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           <div>
-            <span className="text-amber-600 font-semibold text-sm uppercase tracking-wider mb-4 block">
-              {content.story.title}
-            </span>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 leading-tight">
-              {content.story.title}
-            </h2>
-            <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
-              <p>{content.story.body}</p>
-            </div>
+            <span className="text-amber-600 font-semibold text-sm uppercase tracking-wider mb-4 block">{content.story.title}</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 leading-tight">{content.story.title}</h2>
+            <div className="space-y-6 text-lg text-gray-700 leading-relaxed"><p>{content.story.body}</p></div>
           </div>
           <div className="lg:pt-16">
             <div className="bg-gradient-to-br from-amber-50 to-orange-50 p-10 rounded-2xl shadow-xl shadow-amber-200/20">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">{t('about_roots_heading')}</h3>
-              <p className="text-gray-700 mb-8 leading-relaxed text-lg">
-                {t('about_roots_text')}
-              </p>
+              <p className="text-gray-700 mb-8 leading-relaxed text-lg">{t('about_roots_text')}</p>
               <h3 className="text-2xl font-bold text-gray-900 mb-6">{t('about_promise_heading')}</h3>
-              <p className="text-gray-700 leading-relaxed text-lg">
-                {t('about_promise_text')}
-              </p>
+              <p className="text-gray-700 leading-relaxed text-lg">{t('about_promise_text')}</p>
             </div>
           </div>
         </div>
@@ -112,15 +124,11 @@ export default function PremiumAboutSection() {
 
       <div className="bg-gray-50 py-24 mb-24">
         <div className="max-w-5xl mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-900 mb-16">
-            {content.timeline.title}
-          </h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-900 mb-16">{content.timeline.title}</h2>
           <div className="space-y-12">
             {timelineItems.map((item, index) => (
               <div key={index} className="flex gap-8 items-start">
-                <div className="flex-shrink-0 w-16 h-16 bg-amber-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
-                  {index + 1}
-                </div>
+                <div className="flex-shrink-0 w-16 h-16 bg-amber-600 rounded-full flex items-center justify-center text-white font-bold text-xl">{index + 1}</div>
                 <div className="flex-grow pt-1">
                   {item.year ? <span className="text-amber-600 font-semibold text-lg block mb-2">{item.year}</span> : null}
                   <p className="text-gray-700 text-lg leading-relaxed">{item.text}</p>
@@ -143,9 +151,7 @@ export default function PremiumAboutSection() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 mb-32">
-        <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-900 mb-20">
-          {content.team.sectionTitle}
-        </h2>
+        <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-900 mb-20">{content.team.sectionTitle}</h2>
         <div className="space-y-24">
           {guideOrder.map((guideKey, index) => {
             const guide = team[guideKey];
@@ -153,6 +159,15 @@ export default function PremiumAboutSection() {
             const imageFirst = index % 2 === 0;
             const isMohamed = guideKey === 'mohamed';
             const mohamedImageCropStyle = isMohamed ? { objectPosition: '50% 10%' } : undefined;
+            const guideText = (
+              <div>
+                <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">{guide.name}</h3>
+                <p className="text-amber-600 font-semibold text-lg mb-6">{guide.role}</p>
+                <p className="text-gray-700 text-lg leading-relaxed mb-6">{sanitizeText(guide.teaser)}</p>
+                <div className="text-gray-600 text-lg leading-relaxed space-y-4">{renderParagraphs(guide.story)}</div>
+                {isMohamed ? <MohamedReviewQuote /> : null}
+              </div>
+            );
             return (
               <div key={guide.name} className="grid lg:grid-cols-2 gap-12 items-center">
                 {imageFirst ? (
@@ -160,12 +175,7 @@ export default function PremiumAboutSection() {
                     <img src={imageSrc} alt={guide.name} loading="lazy" decoding="async" className="w-full h-full object-cover" style={mohamedImageCropStyle} />
                   </div>
                 ) : null}
-                <div>
-                  <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">{guide.name}</h3>
-                  <p className="text-amber-600 font-semibold text-lg mb-6">{guide.role}</p>
-                  <p className="text-gray-700 text-lg leading-relaxed mb-6">{sanitizeText(guide.teaser)}</p>
-                  <div className="text-gray-600 text-lg leading-relaxed space-y-4">{renderParagraphs(guide.story)}</div>
-                </div>
+                {guideText}
                 {!imageFirst ? (
                   <div className="aspect-[4/5] rounded-2xl overflow-hidden">
                     <img src={imageSrc} alt={guide.name} loading="lazy" decoding="async" className="w-full h-full object-cover" style={mohamedImageCropStyle} />
@@ -193,15 +203,8 @@ export default function PremiumAboutSection() {
 
       <div className="max-w-4xl mx-auto px-4 text-center mb-24">
         <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">{content.cta.title}</h2>
-        <p className="text-xl text-gray-600 mb-10 leading-relaxed">
-          {t('about_cta_sub')}
-        </p>
-        <Link
-          to="/tours"
-          className="inline-block bg-amber-600 text-white px-10 py-5 rounded-full font-semibold text-lg hover:bg-amber-700 transition-all shadow-lg hover:shadow-xl"
-        >
-          {content.cta.buttonText}
-        </Link>
+        <p className="text-xl text-gray-600 mb-10 leading-relaxed">{t('about_cta_sub')}</p>
+        <Link to="/tours" className="inline-block bg-amber-600 text-white px-10 py-5 rounded-full font-semibold text-lg hover:bg-amber-700 transition-all shadow-lg hover:shadow-xl">{content.cta.buttonText}</Link>
       </div>
     </section>
   );
