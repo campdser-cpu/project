@@ -25,6 +25,10 @@ const OLD: Record<Size, string> = {
 /** Shows the discounted price with the original struck through (while promo active). */
 export function PriceTag({ price, size = 'md', tone = 'default', className = '' }: Props) {
   const active = usePromoActive();
+  if (typeof price === 'string' && !/\d/.test(price)) {
+    return <span className="font-semibold text-foreground">Request a quote</span>;
+  }
+  // MGA_QUOTE_ONLY_THREE_DAY_PRICE_V2
   const orig = typeof price === 'string' ? parseInt(price.replace(/[^\d.]/g, ''), 10) : price;
   const disc = discountedPrice(orig);
   const strike = tone === 'onDark' ? 'text-white/60' : 'text-muted-foreground';

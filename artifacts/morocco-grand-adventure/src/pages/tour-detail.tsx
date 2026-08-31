@@ -44,7 +44,7 @@ export default function TourDetail() {
 
   // Dynamic pricing: use per-traveler tiers if available, else fall back to flat price
   const tiers = tour.pricingTiers;
-  const pricePerPerson: number = travelers >= 6
+  const pricePerPerson: number = tour.quoteOnly === true ? 0 : travelers >= 6
     ? 0
     : tiers
       ? (tiers as Record<number, number>)[Math.min(travelers, 5)] ?? parseInt(tour.price)
@@ -58,6 +58,8 @@ export default function TourDetail() {
 
   // Day-by-day itinerary — rendered only when the tour defines one matching its
   // real duration, so a tour can never display an itinerary for a different length.
+  const isThreeDaySahara = tour.id === '3-day-sahara-marrakech';
+  const isQuoteOnly = tour.quoteOnly === true;
   const itinerary = tour.itineraryDays ?? [];
 
   const galleryImages = tour.gallery ?? [
@@ -104,7 +106,8 @@ export default function TourDetail() {
   return (
     <Layout>
       {/* Schema.org structured data: Tour, FAQ, Breadcrumb */}
-      <StructuredData id="tour" data={buildTourSchema(tour, params.id, lang)} />
+      {!isQuoteOnly && <StructuredData id="tour" data={buildTourSchema(tour, params.id, lang)} />}
+      {/* MGA_QUOTE_ONLY_THREE_DAY_UI_V1 */}
       {tour.faq && tour.faq.length > 0 && (
         <StructuredData id="tour-faq" data={buildFaqSchema(tour.faq)} />
       )}
@@ -144,9 +147,15 @@ export default function TourDetail() {
               <span className="flex items-center gap-2"><Clock className="w-5 h-5 text-primary" /> {tour.duration}</span>
               <span className="flex items-center gap-2"><Users className="w-5 h-5 text-primary" /> {t('tour_private')}</span>
               <span className="flex items-baseline gap-2 md:pl-6 md:border-l border-white/20">
-                <span className="text-sm font-sans font-normal text-white/80">{t('from')}</span>
-                <PriceTag price={tour.price} size="md" tone="onDark" />
-                <span className="text-sm font-sans font-normal text-white/70">{t('book_per_person')}</span>
+                {isQuoteOnly ? (
+                  <span className="text-sm font-semibold text-white">Request a private quote</span>
+                ) : (
+                  <>
+                    <span className="text-sm font-sans font-normal text-white/80">{t('from')}</span>
+                    <PriceTag price={tour.price} size="md" tone="onDark" />
+                    <span className="text-sm font-sans font-normal text-white/70">{t('book_per_person')}</span>
+                  </>
+                )}
               </span>
             </div>
           </motion.div>
@@ -360,7 +369,14 @@ export default function TourDetail() {
           <div className="lg:w-1/3">
             <div className="sticky top-28 bg-card border border-border rounded-3xl p-8 shadow-2xl">
 
-              <h3 className="font-serif text-2xl text-foreground mb-4">{t('book_now')}</h3>
+              <h3 className="font-serif text-2xl text-foreground mb-4">{isThreeDaySahara ? 'Book Now · Pay Later' : t('book_now')}</h3>
+              {isThreeDaySahara && (
+                <div className="mb-5 rounded-2xl border border-primary/25 bg-primary/5 p-4">
+                  <p className="font-semibold text-foreground text-sm">Confirm the trip before you pay.</p>
+                  <p className="mt-1 text-xs leading-relaxed text-muted-foreground">Send us your dates and group size first. We confirm the itinerary and payment terms with you before you make a payment.</p>
+                </div>
+              )}
+              {/* MGA_THREE_DAY_ENRICHED_V1 */}
 
               {promoOn && (
                 <div className="mb-5 rounded-2xl border border-primary/25 bg-primary/5 p-4">
@@ -460,8 +476,12 @@ export default function TourDetail() {
                   <SiWhatsapp className="w-6 h-6" /> {promoOn ? t('promo_cta') : t('book_whatsapp')}
                 </a>
 
-                {/* PayPal deposit */}
-                {!isGroupQuote ? (
+                {/* Quote-only routes never send an invented price to a payment provider. */}
+                {isQuoteOnly ? (
+                  <a href={contactInfo.whatsapp + '?text=' + encodeURIComponent('I am interested in ' + tour.name + '. Please confirm the itinerary, inclusions and payment terms before I pay.')} target="_blank" rel="noreferrer" className="w-full bg-foreground text-background py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-primary transition-all hover:-translate-y-1 shadow-lg text-lg">
+                    Request My Trip & Payment Terms
+                  </a>
+                ) : !isGroupQuote ? (
                   <a
                     href={`${contactInfo.paypal}/${promoOn ? discTotalPrice : totalPrice}`}
                     target="_blank"
