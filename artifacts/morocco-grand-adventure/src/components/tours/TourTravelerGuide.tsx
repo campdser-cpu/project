@@ -8,22 +8,11 @@ type Props = {
   routeStops: Destination[];
 };
 
-/**
- * A compact editorial layer shared by every commercial tour page. It is
- * intentionally data-driven: itinerary, route and destination facts come from
- * the canonical tour data so this component cannot invent hotels, prices or
- * inclusions.
- */
+/** Reusable editorial layer using only canonical/localized tour and destination facts. */
 export function TourTravelerGuide({ tour, routeStops }: Props) {
   const { t } = useLanguage();
-  const days = Number.parseInt(tour.duration, 10) || 0;
-  const isThreeDay = days === 3;
-  const isDesert = tour.routeIds?.some((id) => ['merzouga', 'erg-chebbi', 'zagora', 'draa-valley'].includes(id));
   const route = routeStops.slice(0, 7);
-
-  const planningText = isThreeDay
-    ? `Three days is a compact overland format. The itinerary is designed to reach the main route highlights without hiding the amount of road travel involved. If you prefer slower mornings, longer walks or an extra night in the desert, a longer itinerary is the better fit.`
-    : `This ${tour.duration.toLowerCase()} itinerary is built around the route shown below. Travel days can include substantial driving between regions, so the day-by-day plan is the best guide to the pace of the experience.`;
+  const bestTimes = [...new Set(routeStops.map((d) => d.bestTime).filter(Boolean))].slice(0, 3);
 
   return (
     <section className="py-16 md:py-20 bg-background border-y border-border" aria-labelledby="traveler-guide-heading">
@@ -33,7 +22,7 @@ export function TourTravelerGuide({ tour, routeStops }: Props) {
           <h2 id="traveler-guide-heading" className="font-serif text-3xl md:text-4xl text-foreground mb-4">
             {t('dest_travel_info')}
           </h2>
-          <p className="text-muted-foreground text-lg leading-relaxed">{planningText}</p>
+          <p className="text-muted-foreground text-lg leading-relaxed">{tour.description}</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-12">
@@ -41,25 +30,21 @@ export function TourTravelerGuide({ tour, routeStops }: Props) {
             <Clock3 className="w-6 h-6 text-primary mb-4" aria-hidden="true" />
             <h3 className="font-semibold text-foreground mb-2">{t('tour_itinerary')}</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              {tour.itineraryDays?.length
-                ? `${tour.itineraryDays.length} planned travel days with named stops and practical route context.`
-                : 'The route is confirmed with you before booking; no unverified day-by-day details are presented.'}
+              {tour.itineraryDays?.length ? `${tour.itineraryDays.length} ${t('tour_day')}` : t('dest_travel_info')}
             </p>
           </div>
           <div className="rounded-2xl border border-border bg-card p-6">
             <MapPin className="w-6 h-6 text-primary mb-4" aria-hidden="true" />
             <h3 className="font-semibold text-foreground mb-2">{t('dest_view_map')}</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              {route.length > 0 ? route.map((d) => d.name).join(' → ') : tour.routeCaption ?? 'Route details are confirmed before travel.'}
+              {route.length > 0 ? route.map((d) => d.name).join(' → ') : tour.routeCaption ?? t('dest_travel_info')}
             </p>
           </div>
           <div className="rounded-2xl border border-border bg-card p-6">
             <SunMedium className="w-6 h-6 text-primary mb-4" aria-hidden="true" />
             <h3 className="font-semibold text-foreground mb-2">{t('dest_climate')}</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              {isDesert
-                ? 'For Sahara routes, pack sun protection and layers: desert days can be hot while nights can feel much cooler.'
-                : 'Morocco spans coast, mountains and inland regions, so conditions can change noticeably along a multi-region route.'}
+              {bestTimes.length > 0 ? `${t('dest_best_time')}: ${bestTimes.join(' · ')}` : t('dest_travel_info')}
             </p>
           </div>
         </div>
@@ -67,10 +52,7 @@ export function TourTravelerGuide({ tour, routeStops }: Props) {
         {route.length > 0 && (
           <div>
             <div className="flex items-end justify-between gap-4 mb-6">
-              <div>
-                <h3 className="font-serif text-2xl md:text-3xl text-foreground">{t('tour_related')}</h3>
-                <p className="text-sm text-muted-foreground mt-1">Explore the places connected to this itinerary.</p>
-              </div>
+              <h3 className="font-serif text-2xl md:text-3xl text-foreground">{t('tour_related')}</h3>
               <BookOpen className="hidden sm:block w-7 h-7 text-primary" aria-hidden="true" />
             </div>
             <div className="flex flex-wrap gap-3">
