@@ -34,8 +34,11 @@ export const TOUR_DEPARTURE_CITY: Record<string, DepartureCity> = {
   '7-day-imperial-cities-sahara-escape': 'marrakech',
   'honeymoon-morocco': 'marrakech',
   '8-day-marrakech-essaouira-agadir-sahara': 'marrakech',
-  'family-morocco-adventure': 'marrakech',
+  'family-morocco-adventure': 'marrakech',  '3-day-sahara-fes': 'fes',
+  '3-day-sahara-agadir': 'agadir',
 };
+
+// MGA_THREE_DAY_HIERARCHY_V1
 
 /** Extract the leading number of days from a duration string like "3 Days / 2 Nights". */
 export function tourDurationDays(duration: string): number {
@@ -88,7 +91,7 @@ export const CITY_HUBS: CityHub[] = [
       'Marrakech is the natural starting point for most private Morocco itineraries — the Red City has an international airport, a treasure of palace and souk experiences, and sits just a few hours from the High Atlas and the Sahara.',
     body:
       'From Marrakech you can cross the Tizi n’Tichka Pass over the High Atlas on the way to the UNESCO kasbah of Aït Ben Haddou, wind through the Dades Valley and Todra Gorge, then ride a camel across the golden dunes of Erg Chebbi at sunset. Our private tours from Marrakech range from a compact 3-day Sahara loop to grand multi-city journeys that take in Fes, Chefchaouen and the Atlantic coast — all with your own English-speaking driver, handpicked riads and hotels, and a night in a luxury desert camp.',
-    destinationIds: ['marrakech', 'ait-ben-haddou', 'dades-valley', 'todra-gorge', 'merzouga', 'erg-chebbi'],
+    destinationIds: ['marrakech', 'ait-ben-haddou', 'dades-valley', 'todra-gorge', 'merzouga', 'erg-chebbi', 'ouirgane'],
     hasDurationDrive: true,
   },
   {

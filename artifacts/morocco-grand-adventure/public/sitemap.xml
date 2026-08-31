@@ -565,6 +565,21 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/destinations/ouarzazate" />
   </url>
   <url>
+    <loc>https://www.moroccograndadventure.com/ar/destinations/ouirgane</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/destinations/ouirgane" />
+  </url>
+  <url>
     <loc>https://www.moroccograndadventure.com/ar/destinations/ourika-valley</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/destinations/ourika-valley" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/destinations/ourika-valley" />
@@ -818,6 +833,36 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/ar/tours/3-day-sahara-agadir</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/3-day-sahara-agadir" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/ar/tours/3-day-sahara-fes</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/3-day-sahara-fes" />
   </url>
   <url>
     <loc>https://www.moroccograndadventure.com/ar/tours/3-day-sahara-marrakech</loc>
@@ -1930,6 +1975,21 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/destinations/ouarzazate" />
   </url>
   <url>
+    <loc>https://www.moroccograndadventure.com/de/destinations/ouirgane</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/destinations/ouirgane" />
+  </url>
+  <url>
     <loc>https://www.moroccograndadventure.com/de/destinations/ourika-valley</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/destinations/ourika-valley" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/destinations/ourika-valley" />
@@ -2183,6 +2243,36 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/de/tours/3-day-sahara-agadir</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/3-day-sahara-agadir" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/de/tours/3-day-sahara-fes</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/3-day-sahara-fes" />
   </url>
   <url>
     <loc>https://www.moroccograndadventure.com/de/tours/3-day-sahara-marrakech</loc>
@@ -3295,6 +3385,21 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/destinations/ouarzazate" />
   </url>
   <url>
+    <loc>https://www.moroccograndadventure.com/en/destinations/ouirgane</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/destinations/ouirgane" />
+  </url>
+  <url>
     <loc>https://www.moroccograndadventure.com/en/destinations/ourika-valley</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/destinations/ourika-valley" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/destinations/ourika-valley" />
@@ -3548,6 +3653,36 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/en/tours/3-day-sahara-agadir</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/3-day-sahara-agadir" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/en/tours/3-day-sahara-fes</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/3-day-sahara-fes" />
   </url>
   <url>
     <loc>https://www.moroccograndadventure.com/en/tours/3-day-sahara-marrakech</loc>
@@ -4660,6 +4795,21 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/destinations/ouarzazate" />
   </url>
   <url>
+    <loc>https://www.moroccograndadventure.com/es/destinations/ouirgane</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/destinations/ouirgane" />
+  </url>
+  <url>
     <loc>https://www.moroccograndadventure.com/es/destinations/ourika-valley</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/destinations/ourika-valley" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/destinations/ourika-valley" />
@@ -4913,6 +5063,36 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/es/tours/3-day-sahara-agadir</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/3-day-sahara-agadir" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/es/tours/3-day-sahara-fes</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/3-day-sahara-fes" />
   </url>
   <url>
     <loc>https://www.moroccograndadventure.com/es/tours/3-day-sahara-marrakech</loc>
@@ -6025,6 +6205,21 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/destinations/ouarzazate" />
   </url>
   <url>
+    <loc>https://www.moroccograndadventure.com/fr/destinations/ouirgane</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/destinations/ouirgane" />
+  </url>
+  <url>
     <loc>https://www.moroccograndadventure.com/fr/destinations/ourika-valley</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/destinations/ourika-valley" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/destinations/ourika-valley" />
@@ -6278,6 +6473,36 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/fr/tours/3-day-sahara-agadir</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/3-day-sahara-agadir" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/fr/tours/3-day-sahara-fes</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/3-day-sahara-fes" />
   </url>
   <url>
     <loc>https://www.moroccograndadventure.com/fr/tours/3-day-sahara-marrakech</loc>
@@ -7390,6 +7615,21 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/destinations/ouarzazate" />
   </url>
   <url>
+    <loc>https://www.moroccograndadventure.com/it/destinations/ouirgane</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/destinations/ouirgane" />
+  </url>
+  <url>
     <loc>https://www.moroccograndadventure.com/it/destinations/ourika-valley</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/destinations/ourika-valley" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/destinations/ourika-valley" />
@@ -7643,6 +7883,36 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/it/tours/3-day-sahara-agadir</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/3-day-sahara-agadir" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/it/tours/3-day-sahara-fes</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/3-day-sahara-fes" />
   </url>
   <url>
     <loc>https://www.moroccograndadventure.com/it/tours/3-day-sahara-marrakech</loc>
@@ -8755,6 +9025,21 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/destinations/ouarzazate" />
   </url>
   <url>
+    <loc>https://www.moroccograndadventure.com/ja/destinations/ouirgane</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/destinations/ouirgane" />
+  </url>
+  <url>
     <loc>https://www.moroccograndadventure.com/ja/destinations/ourika-valley</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/destinations/ourika-valley" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/destinations/ourika-valley" />
@@ -9008,6 +9293,36 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/ja/tours/3-day-sahara-agadir</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/3-day-sahara-agadir" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/ja/tours/3-day-sahara-fes</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/3-day-sahara-fes" />
   </url>
   <url>
     <loc>https://www.moroccograndadventure.com/ja/tours/3-day-sahara-marrakech</loc>
@@ -10120,6 +10435,21 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/destinations/ouarzazate" />
   </url>
   <url>
+    <loc>https://www.moroccograndadventure.com/ko/destinations/ouirgane</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/destinations/ouirgane" />
+  </url>
+  <url>
     <loc>https://www.moroccograndadventure.com/ko/destinations/ourika-valley</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/destinations/ourika-valley" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/destinations/ourika-valley" />
@@ -10373,6 +10703,36 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/ko/tours/3-day-sahara-agadir</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/3-day-sahara-agadir" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/ko/tours/3-day-sahara-fes</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/3-day-sahara-fes" />
   </url>
   <url>
     <loc>https://www.moroccograndadventure.com/ko/tours/3-day-sahara-marrakech</loc>
@@ -11485,6 +11845,21 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/destinations/ouarzazate" />
   </url>
   <url>
+    <loc>https://www.moroccograndadventure.com/nl/destinations/ouirgane</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/destinations/ouirgane" />
+  </url>
+  <url>
     <loc>https://www.moroccograndadventure.com/nl/destinations/ourika-valley</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/destinations/ourika-valley" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/destinations/ourika-valley" />
@@ -11738,6 +12113,36 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/nl/tours/3-day-sahara-agadir</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/3-day-sahara-agadir" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/nl/tours/3-day-sahara-fes</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/3-day-sahara-fes" />
   </url>
   <url>
     <loc>https://www.moroccograndadventure.com/nl/tours/3-day-sahara-marrakech</loc>
@@ -12850,6 +13255,21 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/destinations/ouarzazate" />
   </url>
   <url>
+    <loc>https://www.moroccograndadventure.com/pt/destinations/ouirgane</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/destinations/ouirgane" />
+  </url>
+  <url>
     <loc>https://www.moroccograndadventure.com/pt/destinations/ourika-valley</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/destinations/ourika-valley" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/destinations/ourika-valley" />
@@ -13103,6 +13523,36 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/pt/tours/3-day-sahara-agadir</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/3-day-sahara-agadir" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/pt/tours/3-day-sahara-fes</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/3-day-sahara-fes" />
   </url>
   <url>
     <loc>https://www.moroccograndadventure.com/pt/tours/3-day-sahara-marrakech</loc>
@@ -14215,6 +14665,21 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/destinations/ouarzazate" />
   </url>
   <url>
+    <loc>https://www.moroccograndadventure.com/zh/destinations/ouirgane</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/destinations/ouirgane" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/destinations/ouirgane" />
+  </url>
+  <url>
     <loc>https://www.moroccograndadventure.com/zh/destinations/ourika-valley</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/destinations/ourika-valley" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/destinations/ourika-valley" />
@@ -14468,6 +14933,36 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/zh/tours/3-day-sahara-agadir</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/3-day-sahara-agadir" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/3-day-sahara-agadir" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/zh/tours/3-day-sahara-fes</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/3-day-sahara-fes" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/3-day-sahara-fes" />
   </url>
   <url>
     <loc>https://www.moroccograndadventure.com/zh/tours/3-day-sahara-marrakech</loc>

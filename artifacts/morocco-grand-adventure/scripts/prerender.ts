@@ -99,12 +99,16 @@ const indexHtmlPath = path.join(distDir, 'index.html');
 
 const TOUR_ROUTES = [
   '3-day-sahara-marrakech',
+  '3-day-sahara-fes',
+  '3-day-sahara-agadir',
   '5-day-imperial-cities',
   '7-day-imperial-cities-sahara-escape',
   'honeymoon-morocco',
   '8-day-marrakech-essaouira-agadir-sahara',
   'family-morocco-adventure',
 ];
+
+// MGA_THREE_DAY_PRERENDER_V1
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 const AMP = String.fromCharCode(38); // '&'
@@ -551,7 +555,7 @@ function buildRoutes(lang: Lang): RouteEntry[] {
       add(`/tours/from-${hub.slug}/${days}-days`, `${lang}/tours/from-${hub.slug}/${days}-days/index.html`, () => buildDurationHubContent(hub.slug, days, lang));
     }
   }
-  for (const id of TOUR_ROUTES) { const t = getLocalizedTour(id, lang); add(`/tours/${id}`, `${lang}/tours/${id}.html`, () => buildTourDetailContent(id, lang), t ? (buildTourSchema(t, id, lang) as Record<string, unknown>[]) : []); }
+  for (const id of TOUR_ROUTES) { const t = getLocalizedTour(id, lang); add(`/tours/${id}`, `${lang}/tours/${id}.html`, () => buildTourDetailContent(id, lang), (t && !t.quoteOnly) ? (buildTourSchema(t, id, lang) as Record<string, unknown>[]) : [] /* MGA_THREE_DAY_SCHEMA_V1 */); }
   for (const dest of destinations) { const d = getLocalizedDestination(dest.id, lang); add(`/destinations/${dest.id}`, `${lang}/destinations/${dest.id}.html`, () => buildDestinationDetailContent(dest.id, lang), d ? (buildDestinationSchema(d, lang) as Record<string, unknown>[]) : []); }
   return routes;
 }

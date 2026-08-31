@@ -11,7 +11,7 @@ export const contactInfo = {
   email: "moroccograndadventure@gmail.com",
   website: "https://www.moroccograndadventure.com",
   paypal: "https://www.paypal.me/MohamedbouGhrara683",
-  ownerName: "Mohamed Bou Ghrara",
+  ownerName: "Mohamed BouGhrara",
   companyName: "Morocco Grand Adventure",
   address: "Merzouga, Errachidia Province, Morocco",
 };
@@ -304,6 +304,18 @@ export const destinations: Destination[] = [
     coords: { lat: 31.3714, lng: -7.7333 },
   },
   {
+    id: "ouirgane",
+    name: "Ouirgane",
+    category: "Mountains",
+    shortDesc: "Quiet High Atlas valley village south of Marrakech — olive groves, reservoir and Berber trails.",
+    image: "/images/hero/atlas-pano.webp",
+    bestTime: "Mar – Jun, Sep – Nov",
+    description: "Ouirgane is a small Berber village in the High Atlas foothills of Al Haouz Province, roughly 60 km (about a 1.5-hour drive) south of Marrakech on the road toward the Toubkal National Park and the Tizi n'Test pass. Set at around 1,000 m of elevation, it sits in a green valley of olive groves, walnut trees and terraced fields, with a small reservoir at its heart. Because it lies off the main tourist circuit, Ouirgane stays noticeably quieter than nearby Ourika or Imlil, which makes it a good choice for travellers who want mountain scenery without the crowds. It works well as a relaxed day trip from Marrakech — the road climbs gradually through the Asni valley and the air is noticeably cooler than the city — and a handful of small guesthouses and rural lodges also make an overnight stay possible for those who want to slow down. Days here are about the landscape rather than a checklist of sights: walking between Berber villages, following valley and hillside trails, and looking up at the peaks of the Toubkal massif, whose national park begins just to the south. Spring and autumn bring the most comfortable walking temperatures, wild flowers in April–May and clear golden light in October–November; summer days are warm but the elevation keeps evenings pleasant, while winter nights can be cold with occasional snow on the higher slopes. Sturdy walking shoes, sun protection and layers are worth packing at any time of year. The terrain and gentle pace make Ouirgane suitable for families with children and for older travellers alike, and it is an easy, natural fit for a private day trip arranged around your own timing rather than a fixed group schedule.",
+    highlights: ["Toubkal National Park Gateway", "Ouirgane Valley Reservoir", "Olive Groves & Terraced Fields", "Berber Village Trails", "Quieter Alternative to Ourika & Imlil"],
+    region: "High Atlas",
+    coords: { lat: 31.0530, lng: -8.0860 },
+  },
+  {
     id: "ouzoud",
     name: "Ouzoud Waterfalls",
     category: "Mountains",
@@ -484,6 +496,7 @@ export type Tour = {
   duration: string;
   highlights: string[];
   price: string;           // base price (2 persons) for display
+  quoteOnly?: boolean;      // inquiry-only route; no public price is implied
   pricingTiers: PricingTier;
   image: string;
   category?: string;
@@ -542,70 +555,75 @@ export const tours: Tour[] = [
     name: "3-Day Luxury Sahara Tour from Marrakech",
     duration: "3 Days / 2 Nights",
     category: "Desert & Adventure",
-    highlights: ["Atlas Mountains Crossing", "Aït Ben Haddou (UNESCO)", "Dades Valley", "Merzouga Luxury Camp", "Camel Trekking at Sunset"],
+    highlights: [
+      "Cross the High Atlas from Marrakech",
+      "Aït Ben Haddou — UNESCO World Heritage site",
+      "Dades Valley and Todra Gorge",
+      "Sunset camel trek in Erg Chebbi",
+      "Night in a Sahara desert camp",
+    ],
     price: "450",
     pricingTiers: { 1: 690, 2: 450, 3: 370, 4: 310, 5: 280 },
-    image: "/images/pdf/img_1-optimized.webp",
+    image: "/images/tours/3-day-sahara-marrakech.jpg",
     aliases: ['3-days-marrakech-to-merzouga-desert-tour', 'merzouga-desert-tour'],
-    description: "The classic Morocco adventure compressed into three unforgettable days. Cross the Atlas Mountains, explore the most photographed kasbah on Earth, sleep under Saharan stars in a luxury tented camp, and ride camels at sunset over the golden dunes of Erg Chebbi.",
-    routeIds: ["marrakech", "ait-ben-haddou", "ouarzazate", "skoura", "dades-valley", "todra-gorge", "merzouga"],
-    routeCaption: "Cross the High Atlas to the kasbah of Aït Ben Haddou, wind through Ouarzazate and the Skoura oasis, then the Dades Valley and Todra Gorge on the way to the dunes of Erg Chebbi. Tap any numbered stop to explore it.",
+    description: "A three-day private journey from Marrakech to the dunes of Merzouga, built for travelers who want a real Sahara experience without pretending the road is short. Cross the High Atlas, visit Aït Ben Haddou, travel through the Dades Valley and Todra Gorge, reach Merzouga and Erg Chebbi for a sunset camel trek and desert-camp night, then return to Marrakech through the changing landscapes of southern Morocco. Three days is the shortest practical format for this overland route; if you prefer slower travel or more time in the desert, ask us about a longer itinerary.",
+    routeIds: ["marrakech", "ait-ben-haddou", "ouarzazate", "dades-valley", "todra-gorge", "merzouga", "erg-chebbi"],
+    routeCaption: "Marrakech → High Atlas → Aït Ben Haddou → Dades Valley → Todra Gorge → Merzouga & Erg Chebbi → Marrakech. The road is part of the experience, not just a transfer.",
     itineraryDays: [
-      {
-        day: 1,
-        title: "Marrakech → High Atlas → Aït Ben Haddou → Dades Valley",
-        desc: "Meet your private driver in Marrakech and cross the High Atlas Mountains over the dramatic Tizi n'Tichka Pass, the highest road pass in North Africa. Pause at the UNESCO World Heritage ksar of Aït Ben Haddou, then continue through Ouarzazate and the Skoura Oasis before reaching the dramatic panorama of the Dades Valley for your first night.",
-        stops: ["High Atlas Mountains", "Tizi n'Tichka Pass", "Aït Ben Haddou (UNESCO)", "Ouarzazate", "Skoura Oasis", "Overnight: Dades Valley (Dinner & Breakfast)"],
-      },
-      {
-        day: 2,
-        title: "Dades Valley → Todra Gorge → Merzouga (Erg Chebbi)",
-        desc: "Admire the winding switchback road and rock formations of the Dades Valley before driving to the towering Todra Gorge, a 300-metre-high canyon. Wind through palm groves and Berber villages to Merzouga on the edge of the Sahara, then ride camels across the golden dunes of Erg Chebbi at sunset to a luxury desert camp under the stars.",
-        stops: ["Dades Valley viewpoints", "Todra Gorge", "Palm groves & Berber villages", "Sunset camel trek", "Luxury desert camp", "Berber music (Dinner & Breakfast)"],
-      },
-      {
-        day: 3,
-        title: "Merzouga → High Atlas → Marrakech",
-        desc: "Wake for a spectacular sunrise over the dunes before breakfast and a camel ride back to Merzouga. After a short stop at Rissani's traditional souks, begin the long return journey across the Atlas Mountains on the scenic Tizi n'Tickna road, arriving back in Marrakech in the evening at the end of your desert adventure.",
-        stops: ["Sunrise over the dunes", "Rissani market (optional)", "Ziz Valley", "High Atlas crossing", "Arrival: Marrakech"],
-      },
-    ],
-    included: [
-      "Private air-conditioned vehicle",
-      "Professional English-speaking driver",
-      "Fuel",
-      "Luxury desert camp",
-      "Camel trek in Erg Chebbi",
-      "1 night riad/kasbah hotel in the Dades Valley",
-      "1 night luxury desert camp",
-      "Dinners & breakfasts as per itinerary",
-      "Hotel pick-up & drop-off",
-    ],
-    excluded: [
-      "International flights",
-      "Lunches",
-      "Drinks",
-      "Monument & museum entrance fees",
-      "Tips & gratuities",
-      "Personal expenses",
-    ],
-    gallery: [
-      { src: "/images/pdf/img_1-optimized.webp", caption: "Luxury desert tours and authentic cultural experiences" },
+      { day: 1, title: "Marrakech → High Atlas → Aït Ben Haddou → Dades Valley", desc: "Leave Marrakech in the morning and cross the High Atlas toward southern Morocco. Stop at Aït Ben Haddou, the historic earthen ksar and UNESCO World Heritage property, then continue through Ouarzazate and the changing landscapes of the Dades Valley for the first night.", stops: ["Marrakech", "High Atlas Mountains", "Aït Ben Haddou (UNESCO)", "Ouarzazate", "Dades Valley"] },
+      { day: 2, title: "Dades Valley → Todra Gorge → Rissani → Merzouga", desc: "Continue east through the pre-Sahara, with time for Todra Gorge before heading toward Rissani and Merzouga. In the late afternoon, enter the Erg Chebbi dunes for the camel trek around sunset, then enjoy the desert camp experience and dinner under the open sky.", stops: ["Dades Valley", "Todra Gorge", "Rissani area", "Merzouga", "Erg Chebbi", "Sunset camel trek", "Desert camp"] },
+      { day: 3, title: "Merzouga → Eastern Morocco → Middle Atlas → Marrakech", desc: "Wake for sunrise over the dunes, then begin the return journey to Marrakech. This is the longest road day, so the itinerary keeps the focus on a realistic return rather than promising a long list of rushed attractions. Travelers who want more time in Merzouga can extend the trip to four days or more.", stops: ["Merzouga sunrise", "Rissani / Tafilalet area", "Ziz Valley area", "Middle Atlas", "Marrakech"] },
     ],
     faq: [
-      {
-        question: "Is this a private tour?",
-        answer: "Yes — every departure is fully private for your party alone. You travel with your own dedicated English-speaking driver and set the pace together, with no strangers joining your group.",
-      },
-      {
-        question: "What is the accommodation like?",
-        answer: "One night in a handpicked kasbah hotel or riad in the Dades Valley with dinner and breakfast, plus one night in a luxury tented camp on the dunes of Erg Chebbi reached by camel, with dinner and live Berber music.",
-      },
-      {
-        question: "How do I confirm my booking?",
-        answer: "Message us on WhatsApp or through the contact form to lock in your dates and we'll tailor the details to you. A small deposit secures your tour, with the balance payable before or at the start of the trip.",
-      },
+      { question: "Is three days really enough for Marrakech to Merzouga?", answer: "Three days is the shortest practical format for this overland route. It works when you want the key southern stops and one Sahara camp night, but you should expect long travel days. If you want a slower pace or more time in the dunes, four days or more is the better choice." },
+      { question: "How much driving should I expect?", answer: "This is a long road journey rather than a short transfer. The route crosses the High Atlas and southern valleys before reaching Merzouga, then returns to Marrakech. We prefer to explain that honestly so you can choose the right number of days for your travel style." },
+      { question: "What is the Sahara part of the trip like?", answer: "You reach Merzouga and the Erg Chebbi dune area on the second day, then head into the dunes for the sunset camel experience and a night at the desert camp. The exact camp setup and activity details are confirmed with you before booking rather than assumed." },
+      { question: "When is the best time for this Sahara tour?", answer: "Morocco's National Tourist Office highlights spring and autumn as especially suitable seasons for the southern Sahara. The tour can be planned year-round, but summer heat and winter nights are important considerations when choosing dates." },
+      { question: "Can I book now and pay later?", answer: "Yes. The first step is to contact us with your preferred dates and group size so we can confirm the itinerary and payment terms. Do not send payment until the agreed booking details are clear. Any deposit or balance arrangement is confirmed with you before payment." },
+      { question: "Are flights included?", answer: "International flights are not part of this tour price. There is no single month that guarantees the cheapest airfare for every traveler because prices depend on your departure country, airline and dates. Once your tour dates are chosen, we can help you think through the most practical arrival and departure plan." },
     ],
+    // MGA_THREE_DAY_ENRICHED_V1
+  },
+  {
+    id: "3-day-sahara-fes", name: "3-Day Private Sahara Route from Fes", duration: "3 Days / 2 Nights", category: "Private · Quote Only", quoteOnly: true,
+    highlights: ["Fes and the Middle Atlas", "Ifrane and cedar-forest country", "Errachidia / Ziz Valley landscapes", "Merzouga and Erg Chebbi", "Sunset desert experience"],
+    price: "Request a quote", pricingTiers: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 }, image: "/images/dest/merzouga.webp",
+    description: "A quote-only private route for travelers starting in Fes who want to reach Merzouga and Erg Chebbi in three days. The Moroccan National Tourist Office confirms Fes as a gateway toward the Sahara and documents the Fes–Errachidia–Midelt–Merzouga connection. The current business source data does not publish a fixed Fes three-day price, accommodation list or guaranteed return schedule, so those details are confirmed before booking rather than invented.",
+    routeIds: ["fes", "ifrane", "merzouga", "erg-chebbi"], routeCaption: "Fes → Middle Atlas / Ifrane → Errachidia–Midelt region → Merzouga & Erg Chebbi. Exact stops, nights and onward/return plan are confirmed around your dates.",
+    itineraryDays: [
+      { day: 1, title: "Fes → Middle Atlas → Errachidia region", desc: "Travel south from Fes through the Middle Atlas toward the Errachidia–Midelt–Merzouga region. The road is a major part of the experience, so the day is planned around realistic driving and selected stops.", stops: ["Fes", "Ifrane", "Middle Atlas", "Midelt / Errachidia region"] },
+      { day: 2, title: "Errachidia region → Merzouga → Erg Chebbi", desc: "Continue toward Merzouga and the Erg Chebbi dunes. If included in the confirmed itinerary, the desert portion can include a sunset camel experience and a night near the dunes. Accommodation and meals are confirmed before payment.", stops: ["Ziz Valley area", "Merzouga", "Erg Chebbi", "Sunset desert experience"] },
+      { day: 3, title: "Merzouga → onward journey", desc: "Begin with the desert morning, then continue to the destination agreed in your quote. A return to Fes or a one-way finish can be discussed; no fixed ending is claimed until confirmed.", stops: ["Merzouga sunrise", "Erg Chebbi", "Confirmed onward destination"] }
+    ],
+    included: ["Private itinerary planning", "Route confirmed around your dates", "Private transport when included in the confirmed quote", "Desert experience when included in the confirmed itinerary"],
+    excluded: ["International flights", "Anything not explicitly included in the confirmed quote", "Personal expenses and gratuities unless agreed"],
+    faq: [
+      { question: "Is this a fixed-price Fes tour?", answer: "No. It is intentionally quote-only because the current project does not contain a verified public Fes three-day price or fixed accommodation package. The route and payment terms are confirmed before payment." },
+      { question: "Is Fes connected to the Merzouga route?", answer: "Yes. The Moroccan National Tourist Office presents Fes as one of the cities leading toward the Sahara and lists the Fes to Errachidia–Midelt–Merzouga connection." },
+      { question: "Can the trip end somewhere other than Fes?", answer: "An onward finish can be discussed in the private quote. We do not publish a fixed ending point until it is confirmed." },
+      { question: "Can I book now and pay later?", answer: "Request the itinerary first. We confirm the route, inclusions and applicable payment terms before any payment is made." }
+    ],
+    // MGA_THREE_DAY_CITY_ROUTES_V1
+  },
+  {
+    id: "3-day-sahara-agadir", name: "3-Day Private Sahara Route from Agadir", duration: "3 Days / 2 Nights", category: "Private · Quote Only", quoteOnly: true,
+    highlights: ["Agadir Atlantic coast", "Southern Morocco landscapes", "Ouarzazate / pre-Sahara", "Merzouga and Erg Chebbi", "Private onward planning"],
+    price: "Request a quote", pricingTiers: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 }, image: "/images/dest/agadir.webp",
+    description: "A quote-only private three-day Sahara planning route starting in Agadir. The Moroccan National Tourist Office confirms Agadir as a gateway toward the Sahara and documents the southern Morocco connection toward the desert. The current business source data does not publish a fixed Agadir three-day price, accommodation package or guaranteed return schedule, so those commercial details are confirmed before booking.",
+    routeIds: ["agadir", "ouarzazate", "merzouga", "erg-chebbi"], routeCaption: "Agadir → southern Morocco / Ouarzazate area → Merzouga & Erg Chebbi. Exact road stops, nights and final destination are confirmed in the private quote.",
+    itineraryDays: [
+      { day: 1, title: "Agadir → Southern Morocco → Ouarzazate area", desc: "Head inland from Agadir through southern Morocco. The day is designed around the practical road journey rather than a fabricated checklist of fixed stops.", stops: ["Agadir", "Southern Morocco", "Ouarzazate area"] },
+      { day: 2, title: "Ouarzazate area → Merzouga → Erg Chebbi", desc: "Continue east toward Merzouga and Erg Chebbi. If included in the confirmed itinerary, the desert portion can include a sunset camel experience and a camp night. Accommodation and meals are agreed before payment.", stops: ["Ouarzazate area", "Merzouga", "Erg Chebbi", "Sunset desert experience"] },
+      { day: 3, title: "Merzouga → onward journey", desc: "Enjoy the desert morning and continue to the destination agreed in your quote. Because three days from Agadir is a compact overland format, the final routing should be chosen around your dates and onward plans.", stops: ["Merzouga sunrise", "Erg Chebbi", "Confirmed onward destination"] }
+    ],
+    included: ["Private itinerary planning", "Route confirmed around your dates", "Private transport when included in the confirmed quote", "Desert experience when included in the confirmed itinerary"],
+    excluded: ["International flights", "Anything not explicitly included in the confirmed quote", "Personal expenses and gratuities unless agreed"],
+    faq: [
+      { question: "Is this a fixed-price Agadir Sahara tour?", answer: "No. It is quote-only because the current project does not contain a verified public three-day Agadir price or fixed accommodation package. We confirm the actual itinerary and payment terms before payment." },
+      { question: "Does Agadir lead toward the Sahara?", answer: "Yes. The Moroccan National Tourist Office identifies Agadir as one of the gateways toward the Sahara. The exact three-day routing depends on travel dates and where you need to finish." },
+      { question: "Can the itinerary be one-way?", answer: "The onward destination can be discussed in the private quote. We avoid publishing a fixed return schedule until it is confirmed." },
+      { question: "Can I book now and pay later?", answer: "Request the itinerary first. We confirm the route, inclusions and applicable payment terms before any payment is made." }
+    ]
   },
   {
     id: "5-day-imperial-cities",

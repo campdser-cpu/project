@@ -15,6 +15,8 @@ export const FR_HOME_META: RouteMeta = {
 
 const TOUR_META: Record<string, RouteMeta> = {
   '3-day-sahara-marrakech': { title: '3-Day Luxury Sahara Tour from Marrakech', description: "Cross the Atlas Mountains, explore Aït Ben Haddou and sleep under Saharan stars in a luxury desert camp.", ogImage: '/images/tours/3-day-sahara-marrakech.jpg' },
+  '3-day-sahara-fes': { title: '3-Day Private Sahara Route from Fes | Morocco', description: 'A quote-only three-day private route from Fes toward Merzouga and Erg Chebbi, with transparent travel expectations and no invented price.', ogImage: '/images/dest/merzouga.jpg' },
+  '3-day-sahara-agadir': { title: '3-Day Private Sahara Route from Agadir | Morocco', description: 'A quote-only three-day private route from Agadir toward Merzouga and Erg Chebbi, with transparent itinerary planning and confirmed payment terms.', ogImage: '/images/dest/agadir.jpg' },
   '5-day-imperial-cities': { title: '5-Day Imperial Cities & Desert Morocco Tour', description: 'Explore Marrakech, Meknès, Fes and Chefchaouen before a night in the Sahara on a private Morocco tour.', ogImage: '/images/tours/5-day-imperial-cities.jpg' },
   '7-day-imperial-cities-sahara-escape': { title: '7-Day Imperial Cities & Sahara Escape — Grand Morocco Tour', description: 'A private Morocco journey through the High Atlas, Aït Ben Haddou, Dades Valley, Erg Chebbi and imperial Fes.', ogImage: '/images/tours/7-day-grand-morocco.jpg' },
   'honeymoon-morocco': { title: 'Romantic Morocco Honeymoon — 10 Day Luxury Private Tour', description: 'A romantic private Morocco journey combining cities, desert experiences and time designed for couples.', ogImage: '/images/tours/honeymoon-morocco.jpg' },
@@ -59,6 +61,7 @@ const DESTINATION_META: Record<string, RouteMeta> = {
   akchour:{title:'Akchour & God’s Bridge — Morocco Tours & Travel Guide',description:'Discover Akchour’s waterfalls, pools and mountain landscapes near Chefchaouen.',ogImage:'/images/dest/akchour.jpg'},
   nkob:{title:'Nkob — Morocco Tours & Travel Guide',description:'Explore Nkob and the kasbah landscapes of the Jbel Saghro.',ogImage:'/images/dest/nkob.jpg'},
   mirleft:{title:'Mirleft — Morocco Surf Tours & Travel Guide',description:'Discover Mirleft and Morocco’s wild Atlantic coastline.',ogImage:'/images/dest/mirleft.jpg'},
+  ouirgane:{title:'Ouirgane — High Atlas Village & Travel Guide',description:'Discover Ouirgane, a quiet High Atlas valley village south of Marrakech with olive groves, trails and Toubkal National Park scenery.',ogImage:'/images/hero/atlas-pano.jpg'},
 };
 
 export const routeMetadata: Record<string, RouteMeta> = {
