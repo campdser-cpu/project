@@ -460,6 +460,42 @@ export type TranslationSet = {
   mt_faq2_q: string; mt_faq2_a: string;
   mt_faq3_q: string; mt_faq3_a: string;
   mt_faq4_q: string; mt_faq4_a: string;
+  // ── Marrakech Tours page ───────────────────────────────────────────────────
+  mk_hero_alt: string; mk_breadcrumb: string; mk_title: string; mk_subtitle: string; mk_cta: string;
+  mk_f1_title: string; mk_f1_desc: string;
+  mk_f2_title: string; mk_f2_desc: string;
+  mk_f3_title: string; mk_f3_desc: string;
+  mk_f4_title: string; mk_f4_desc: string;
+  mk_f5_title: string; mk_f5_desc: string;
+  mk_f6_title: string; mk_f6_desc: string;
+  mk_faq1_q: string; mk_faq1_a: string;
+  mk_faq2_q: string; mk_faq2_a: string;
+  mk_faq3_q: string; mk_faq3_a: string;
+  mk_faq4_q: string; mk_faq4_a: string;
+  // ── Agadir Tours page ──────────────────────────────────────────────────────
+  ag_hero_alt: string; ag_breadcrumb: string; ag_title: string; ag_subtitle: string; ag_cta: string;
+  ag_f1_title: string; ag_f1_desc: string;
+  ag_f2_title: string; ag_f2_desc: string;
+  ag_f3_title: string; ag_f3_desc: string;
+  ag_f4_title: string; ag_f4_desc: string;
+  ag_f5_title: string; ag_f5_desc: string;
+  ag_f6_title: string; ag_f6_desc: string;
+  ag_faq1_q: string; ag_faq1_a: string;
+  ag_faq2_q: string; ag_faq2_a: string;
+  ag_faq3_q: string; ag_faq3_a: string;
+  ag_faq4_q: string; ag_faq4_a: string;
+  // ── Casablanca Tours page ──────────────────────────────────────────────────
+  ca_hero_alt: string; ca_breadcrumb: string; ca_title: string; ca_subtitle: string; ca_cta: string;
+  ca_f1_title: string; ca_f1_desc: string;
+  ca_f2_title: string; ca_f2_desc: string;
+  ca_f3_title: string; ca_f3_desc: string;
+  ca_f4_title: string; ca_f4_desc: string;
+  ca_f5_title: string; ca_f5_desc: string;
+  ca_f6_title: string; ca_f6_desc: string;
+  ca_faq1_q: string; ca_faq1_a: string;
+  ca_faq2_q: string; ca_faq2_a: string;
+  ca_faq3_q: string; ca_faq3_a: string;
+  ca_faq4_q: string; ca_faq4_a: string;
   // ── Day Trips page ────────────────────────────────────────────────────────
   dt_hero_alt: string; dt_breadcrumb: string; dt_title: string; dt_subtitle: string; dt_cta: string;
   dt_f1_title: string; dt_f1_desc: string;

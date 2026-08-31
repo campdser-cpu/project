@@ -4,37 +4,37 @@ import { Link } from 'wouter';
 import { MapPin } from 'lucide-react';
 import { getLocalizedDestinations } from '@/i18n/content';
 
-export default function MarrakechTours() {
+export default function AgadirTours() {
   const { t, lang } = useLanguage();
   const features = [
-    { title: t('mk_f1_title'), description: t('mk_f1_desc'), image: "/images/dest/marrakech.webp" },
-    { title: t('mk_f2_title'), description: t('mk_f2_desc'), image: "/images/dest/marrakech.webp" },
-    { title: t('mk_f3_title'), description: t('mk_f3_desc'), image: "/images/dest/imlil.webp" },
-    { title: t('mk_f4_title'), description: t('mk_f4_desc'), image: "/images/dest/essaouira.webp" },
-    { title: t('mk_f5_title'), description: t('mk_f5_desc'), image: "/images/dest/merzouga.webp" },
-    { title: t('mk_f6_title'), description: t('mk_f6_desc'), image: "/images/dest/ait-ben-haddou.webp" },
+    { title: t('ag_f1_title'), description: t('ag_f1_desc'), image: "/images/dest/agadir.webp" },
+    { title: t('ag_f2_title'), description: t('ag_f2_desc'), image: "/images/dest/taghazout.webp" },
+    { title: t('ag_f3_title'), description: t('ag_f3_desc'), image: "/images/dest/essaouira.webp" },
+    { title: t('ag_f4_title'), description: t('ag_f4_desc'), image: "/images/dest/agadir.webp" },
+    { title: t('ag_f5_title'), description: t('ag_f5_desc'), image: "/images/dest/merzouga.webp" },
+    { title: t('ag_f6_title'), description: t('ag_f6_desc'), image: "/images/dest/marrakech.webp" },
   ];
 
-  const relatedStops = ['marrakech', 'ait-ben-haddou', 'dades-valley', 'todra-gorge', 'merzouga', 'erg-chebbi'];
+  const relatedStops = ['agadir', 'taghazout', 'essaouira', 'marrakech', 'ait-ben-haddou', 'merzouga'];
   const region = getLocalizedDestinations(lang).filter((d) => relatedStops.includes(d.id));
 
   return (
     <ExperiencePage
-      id="marrakech-tours"
-      heroImage="/images/dest/marrakech.webp"
-      heroAlt={t('mk_hero_alt')}
-      breadcrumbName={t('mk_breadcrumb')}
-      title={t('mk_title')}
-      subtitle={t('mk_subtitle')}
-      ctaText={t('mk_cta')}
+      id="agadir-tours"
+      heroImage="/images/dest/agadir.webp"
+      heroAlt={t('ag_hero_alt')}
+      breadcrumbName={t('ag_breadcrumb')}
+      title={t('ag_title')}
+      subtitle={t('ag_subtitle')}
+      ctaText={t('ag_cta')}
       ctaLink="/trip-builder"
       trustBadges={defaultTrustBadges()}
       highlights={features}
       faqs={[
-        { question: t('mk_faq1_q'), answer: t('mk_faq1_a') },
-        { question: t('mk_faq2_q'), answer: t('mk_faq2_a') },
-        { question: t('mk_faq3_q'), answer: t('mk_faq3_a') },
-        { question: t('mk_faq4_q'), answer: t('mk_faq4_a') },
+        { question: t('ag_faq1_q'), answer: t('ag_faq1_a') },
+        { question: t('ag_faq2_q'), answer: t('ag_faq2_a') },
+        { question: t('ag_faq3_q'), answer: t('ag_faq3_a') },
+        { question: t('ag_faq4_q'), answer: t('ag_faq4_a') },
       ]}
     >
       {/* Explore the region — contextual internal links to real destinations */}
@@ -42,10 +42,10 @@ export default function MarrakechTours() {
         <section className="py-16 bg-background">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-2">
-              {t('hub_explore_region').replace('{city}', t('hub_marrakech_name'))}
+              {t('hub_explore_region').replace('{city}', t('hub_agadir_name'))}
             </h2>
             <p className="text-muted-foreground mb-8 max-w-2xl">
-              {t('hub_explore_region_sub').replace('{city}', t('hub_marrakech_name'))}
+              {t('hub_explore_region_sub').replace('{city}', t('hub_agadir_name'))}
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {region.map((dest) => (

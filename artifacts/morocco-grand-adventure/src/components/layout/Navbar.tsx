@@ -161,6 +161,18 @@ export function Navbar() {
                         <Link href="/tours/from-marrakech/3-days" className="block px-4 py-3 text-sm font-medium text-primary hover:bg-muted transition-colors">
                           3-Day Tours from Marrakech
                         </Link>
+                        <Link href="/marrakech-tours" className="block px-4 py-3 text-sm text-foreground hover:bg-muted hover:text-primary transition-colors">
+                          {t('mk_breadcrumb')}
+                        </Link>
+                        <Link href="/agadir-tours" className="block px-4 py-3 text-sm text-foreground hover:bg-muted hover:text-primary transition-colors">
+                          {t('ag_breadcrumb')}
+                        </Link>
+                        <Link href="/casablanca-tours" className="block px-4 py-3 text-sm text-foreground hover:bg-muted hover:text-primary transition-colors">
+                          {t('ca_breadcrumb')}
+                        </Link>
+                        <Link href="/fes-tours" className="block px-4 py-3 text-sm text-foreground hover:bg-muted hover:text-primary transition-colors">
+                          {t('mt_breadcrumb')}
+                        </Link>
                         <Link href="/desert-tours" className="block px-4 py-3 text-sm font-medium text-primary hover:bg-muted transition-colors">
                           {t('nav_sahara_desert_tours')}
                         </Link>
@@ -308,6 +320,12 @@ export function Navbar() {
                   <Link key={hub.id} href={`/tours/from-${hub.slug}`} className="block text-muted-foreground">{hub.title}</Link>
                 ))}
                 <Link href="/tours/from-marrakech/3-days" className="block text-muted-foreground">3-Day Tours from Marrakech</Link>
+              </div>
+              <div className="pl-4 border-l-2 border-primary/20 space-y-3 py-2">
+                <Link href="/marrakech-tours" className="block text-muted-foreground">{t('mk_breadcrumb')}</Link>
+                <Link href="/agadir-tours" className="block text-muted-foreground">{t('ag_breadcrumb')}</Link>
+                <Link href="/casablanca-tours" className="block text-muted-foreground">{t('ca_breadcrumb')}</Link>
+                <Link href="/fes-tours" className="block text-muted-foreground">{t('mt_breadcrumb')}</Link>
               </div>
               <div className="pl-4 border-l-2 border-primary/20 space-y-3 py-2">
                 <Link href="/desert-tours" className="block text-muted-foreground">{t('nav_sahara_desert_tours')}</Link>

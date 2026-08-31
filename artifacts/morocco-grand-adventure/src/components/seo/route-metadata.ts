@@ -235,6 +235,18 @@ export const routeMetadata: Record<string, RouteMeta> = {
       "Explore Fes with expert local guides. Discover the medieval medina, Chouara Tannery, Al-Qarawiyyin University & the Blue City of Chefchaouen. Private Fes tours & day trips.",
     ogImage: "/images/dest/fes.jpg",
   },
+  "/agadir-tours": {
+    title: "Agadir Tours — Beach, Coast & Sahara Private Tours",
+    description:
+      "Private tours from Agadir — Atlantic beaches, Taghazout surf, Taroudant, Paradise Valley, Essaouira and routed journeys toward the Sahara and Erg Chebbi dunes.",
+    ogImage: "/images/dest/agadir.jpg",
+  },
+  "/casablanca-tours": {
+    title: "Casablanca Tours — Hassan II Mosque, Marrakech & Sahara Routes",
+    description:
+      "Private tours from Casablanca — the Hassan II Mosque, art-deco streets, day trips to Rabat and Marrakech, and Sahara routes to Merzouga and Erg Chebbi.",
+    ogImage: "/images/dest/casablanca.jpg",
+  },
   "/day-trips": {
     title: "Morocco Day Trips — From Marrakech, Fes & Merzouga",
     description:

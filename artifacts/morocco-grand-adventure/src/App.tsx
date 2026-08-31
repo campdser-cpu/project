@@ -27,6 +27,8 @@ const CamelTrekking = lazy(() => import('./pages/camel-trekking'));
 const FourByFourTours = lazy(() => import('./pages/4x4-tours'));
 const MarrakechTours = lazy(() => import('./pages/marrakech-tours'));
 const FesTours = lazy(() => import('./pages/fes-tours'));
+const AgadirTours = lazy(() => import('./pages/agadir-tours'));
+const CasablancaTours = lazy(() => import('./pages/casablanca-tours'));
 const DayTrips = lazy(() => import('./pages/day-trips'));
 const MerzougaGuide = lazy(() => import('./pages/merzouga-guide'));
 const Faq = lazy(() => import('./pages/faq'));
@@ -85,6 +87,8 @@ function AnimatedRouter() {
             <Route path="/4x4-tours" component={FourByFourTours} />
             <Route path="/marrakech-tours" component={MarrakechTours} />
             <Route path="/fes-tours" component={FesTours} />
+            <Route path="/agadir-tours" component={AgadirTours} />
+            <Route path="/casablanca-tours" component={CasablancaTours} />
             <Route path="/day-trips" component={DayTrips} />
             <Route path="/merzouga-guide" component={MerzougaGuide} />
             <Route path="/faq" component={Faq} />
