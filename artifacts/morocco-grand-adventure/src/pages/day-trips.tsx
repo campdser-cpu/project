@@ -32,6 +32,34 @@ export default function DayTrips() {
         { question: t('dt_faq4_q'), answer: t('dt_faq4_a') },
       ]}
     >
+      <section className="mx-auto mt-10 max-w-4xl rounded-3xl border border-border/70 bg-card/60 p-6 md:p-10" aria-labelledby="day-trip-planning">
+        <div className="max-w-3xl">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">Plan the day, not just the destination</p>
+          <h2 id="day-trip-planning" className="mt-3 font-serif text-3xl md:text-4xl text-foreground">
+            What should a good Morocco day trip feel like?
+          </h2>
+          <p className="mt-4 text-base leading-7 text-muted-foreground md:text-lg">
+            If this is your first time in Morocco, it is normal not to know which excursion makes sense from your city. A useful day trip is more than a place on a map: the route, time on the road, pace and return plan all matter.
+          </p>
+          <div className="mt-7 grid gap-4 md:grid-cols-3">
+            <div className="rounded-2xl border border-border/60 p-5">
+              <h3 className="font-semibold text-foreground">Start with your day</h3>
+              <p className="mt-2 text-sm leading-6 text-muted-foreground">Tell us where you are staying, when you want to go and how many people are travelling.</p>
+            </div>
+            <div className="rounded-2xl border border-border/60 p-5">
+              <h3 className="font-semibold text-foreground">Choose the experience</h3>
+              <p className="mt-2 text-sm leading-6 text-muted-foreground">Prefer mountains, culture, food, photography, nature or a slower day? We use that to shape the request.</p>
+            </div>
+            <div className="rounded-2xl border border-border/60 p-5">
+              <h3 className="font-semibold text-foreground">Confirm before you go</h3>
+              <p className="mt-2 text-sm leading-6 text-muted-foreground">We confirm the practical route, timing and price with you rather than displaying made-up availability or automatic estimates.</p>
+            </div>
+          </div>
+          <p className="mt-7 text-sm leading-6 text-muted-foreground">
+            A day trip is designed to return you to your departure area the same day. If what you really want is the Sahara, several cities or a slower route with overnight stays, use our multi-day <strong className="text-foreground">Design Your Tour</strong> journey instead.
+          </p>
+        </div>
+      </section>
       <TravelerDecisionGuide />
     </ExperiencePage>
   );
