@@ -1,4 +1,5 @@
 import { ExperiencePage, defaultTrustBadges } from '../components/ExperiencePage';
+import { TravelerDecisionGuide } from '../components/TravelerDecisionGuide';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { getLocalizedFaq } from '@/i18n/content';
 import { StructuredData, buildFaqSchema } from '../components/seo/StructuredData';
@@ -20,7 +21,7 @@ export default function Faq() {
       trustBadges={defaultTrustBadges()}
       faqs={allFaqs}
     >
-      {/* FAQPage structured data */}
+      <TravelerDecisionGuide />
       <StructuredData
         id="faq"
         data={buildFaqSchema(allFaqs)}
