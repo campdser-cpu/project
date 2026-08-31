@@ -25,7 +25,7 @@
     { "source": "/(.*)", "has": [{ "type": "header", "key": "accept-language", "value": "^ja([-_;,]|$)" }], "destination": "/ja", "permanent": false },
     { "source": "/(.*)", "has": [{ "type": "header", "key": "accept-language", "value": "^ko([-_;,]|$)" }], "destination": "/ko", "permanent": false },
     { "source": "/(.*)", "has": [{ "type": "header", "key": "accept-language", "value": "^nl([-_;,]|$)" }], "destination": "/nl", "permanent": false },
-    { "source": "/(.*)", "has": [{ "type": "header", "key": "accept-language", "value": "^pt([-_;,;]|$)" }], "destination": "/pt", "permanent": false },
+    { "source": "/(.*)", "has": [{ "type": "header", "key": "accept-language", "value": "^pt([-_;,]|$)" }], "destination": "/pt", "permanent": false },
     { "source": "/(.*)", "has": [{ "type": "header", "key": "accept-language", "value": "^zh([-_;,]|$)" }], "destination": "/zh", "permanent": false },
     { "source": "/", "destination": "/en", "permanent": false }
   ],
