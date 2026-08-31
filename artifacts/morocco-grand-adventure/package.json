@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --config vite.config.ts --host 0.0.0.0",
-    "build": "node scripts/enrich-three-day-tour.mjs && vite build --config vite.config.ts && tsx scripts/prerender.ts",
+    "build": "node scripts/enrich-three-day-tour.mjs && vite build --config vite.config.ts && tsx scripts/prerender.ts && node scripts/fix-prerender-links.mjs",
     "prerender": "tsx scripts/prerender.ts",
     "serve": "vite preview --config vite.config.ts --host 0.0.0.0",
     "typecheck": "tsc -p tsconfig.json --noEmit"
