@@ -52,7 +52,7 @@ export function ReviewCard({ index = 0 }: ReviewCardProps) {
               loading="lazy"
               decoding="async"
               className="mx-auto block max-h-[32rem] w-full object-contain transition-transform duration-700 group-hover/photo:scale-[1.015]"
-              style={{ aspectRatio: `${featuredImage.width} / ${featuredImage.height}` }}
+              style={{ aspectRatio: `${featuredImage.width} / ${featuredImage.height}`, maxWidth: featuredImage.width }}
             />
             <span className="pointer-events-none absolute inset-x-3 bottom-3 rounded-full bg-black/45 px-3 py-2 text-center text-xs font-semibold text-white opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover/photo:opacity-100 md:inset-x-auto md:right-4 md:w-auto">
               View photo
