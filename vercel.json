@@ -1,6 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "installCommand": "corepack enable && corepack prepare pnpm@10.34.5 --activate && pnpm install --frozen-lockfile",
+  "installCommand": "corepack enable && corepack prepare pnpm@10.34.5 --activate && pnpm install --no-frozen-lockfile",
   "buildCommand": "pnpm --filter @workspace/morocco-grand-adventure build && node artifacts/morocco-grand-adventure/scripts/enrich-about-reviews.mjs",
   "outputDirectory": "artifacts/morocco-grand-adventure/dist",
   "cleanUrls": true,
