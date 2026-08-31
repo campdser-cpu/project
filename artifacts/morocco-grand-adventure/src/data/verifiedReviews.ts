@@ -9,14 +9,14 @@ export type VerifiedGoogleReview = {
   source: 'Google';
   sourceUrl: string;
   translationNote?: string;
+  /** Kept for component compatibility; customer photos are intentionally not displayed. */
   images: ReviewImage[];
 };
 
 /**
  * Authentic customer reviews transcribed from the supplied Google review
  * screenshots. Review wording is intentionally not translated, rewritten, or
- * SEO-optimized. Traveler images are published only where the supplied
- * material provides a confident customer-to-photo association.
+ * SEO-optimized. Customer review photos are not published on the reviews page.
  */
 export const verifiedGoogleReviews: VerifiedGoogleReview[] = [
   {
@@ -27,14 +27,7 @@ export const verifiedGoogleReviews: VerifiedGoogleReview[] = [
     source: 'Google',
     sourceUrl: 'https://maps.app.goo.gl/UK3MENd42bC16mME7',
     text: "Mohamed was recommended as a guide by a friend and feel lucky for the wonderful experience I’ve had exploring Merzouga and the Sahara. Not only does he speak many languages, he is knowledgeable and happy to share about the culture, customs and the history of the Amazight and gives you the local experience. He goes out of his way to provide a tailor made trip that is just to your wishes. I would definitely encourage everyone to visit the desert at least once in their life because this has been an amazing and unforgettable journey for me!",
-    images: [
-      {
-        src: '/review-assets/images/nina-branderhorst-camel-trek.webp',
-        alt: 'Traveler photo of Nina Branderhorst riding a camel in the Sahara dunes',
-        width: 320,
-        height: 428,
-      },
-    ],
+    images: [],
   },
   {
     id: 'google-alessandra-raspini',
@@ -65,14 +58,7 @@ export const verifiedGoogleReviews: VerifiedGoogleReview[] = [
     sourceUrl: 'https://maps.app.goo.gl/UK3MENd42bC16mME7',
     translationNote: 'The screenshot displays Google’s English translation of the original Italian review.',
     text: 'We returned to Morocco after a long time and relied on Morocco Grand Adventure for this new experience and I must say that we were truly surprised and amazed by the accuracy, professionalism and kindness with which they followed and accompanied us on this truly fantastic tour!!',
-    images: [
-      {
-        src: '/review-assets/images/cora-ciampolini-desert-camp.webp',
-        alt: 'Traveler photo of a desert camp tent from Cora Ciampolini’s Google review',
-        width: 300,
-        height: 189,
-      },
-    ],
+    images: [],
   },
   {
     id: 'google-m-dr',
@@ -92,13 +78,6 @@ export const verifiedGoogleReviews: VerifiedGoogleReview[] = [
     source: 'Google',
     sourceUrl: 'https://maps.app.goo.gl/UK3MENd42bC16mME7',
     text: 'Mohamed was a excellent tour guide!',
-    images: [
-      {
-        src: '/review-assets/images/kresimir-mikic-traditional-robe.webp',
-        alt: 'Traveler photo of Krešimir Mikić wearing a traditional Moroccan robe in the desert',
-        width: 320,
-        height: 516,
-      },
-    ],
+    images: [],
   },
 ];
