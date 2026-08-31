@@ -2,6 +2,41 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "redirects": [
     {
+      "source": "/:lang(en|fr|es|it|de|nl|pt|zh|ja|ko|ar)/marrakech-tours",
+      "destination": "/:lang/tours/from-marrakech",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(en|fr|es|it|de|nl|pt|zh|ja|ko|ar)/fes-tours",
+      "destination": "/:lang/tours/from-fes",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(en|fr|es|it|de|nl|pt|zh|ja|ko|ar)/agadir-tours",
+      "destination": "/:lang/tours/from-agadir",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(en|fr|es|it|de|nl|pt|zh|ja|ko|ar)/casablanca-tours",
+      "destination": "/:lang/tours/from-casablanca",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(en|fr|es|it|de|nl|pt|zh|ja|ko|ar)/three-day-tours-from-marrakech",
+      "destination": "/:lang/tours/from-marrakech/3-days",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(en|fr|es|it|de|nl|pt|zh|ja|ko|ar)/three-day-tours-from-fes",
+      "destination": "/:lang/tours/from-fes/3-days",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(en|fr|es|it|de|nl|pt|zh|ja|ko|ar)/three-day-tours-from-agadir",
+      "destination": "/:lang/tours/from-agadir/3-days",
+      "permanent": true
+    },
+    {
       "source": "/:lang(en|fr|es|it|de|nl|pt|zh|ja|ko|ar)/tours/3-days-marrakech-to-merzouga-desert-tour",
       "destination": "/:lang/tours/3-day-sahara-marrakech",
       "permanent": true
@@ -23,121 +58,61 @@
     },
     {
       "source": "/",
-      "has": [
-        {
-          "type": "header",
-          "key": "accept-language",
-          "value": "^ar([-_;,]|$)"
-        }
-      ],
+      "has": [{"type":"header","key":"accept-language","value":"^ar([-_;,]|$)"}],
       "destination": "/ar",
       "permanent": false
     },
     {
       "source": "/",
-      "has": [
-        {
-          "type": "header",
-          "key": "accept-language",
-          "value": "^de([-_;,]|$)"
-        }
-      ],
+      "has": [{"type":"header","key":"accept-language","value":"^de([-_;,]|$)"}],
       "destination": "/de",
       "permanent": false
     },
     {
       "source": "/",
-      "has": [
-        {
-          "type": "header",
-          "key": "accept-language",
-          "value": "^es([-_;,]|$)"
-        }
-      ],
+      "has": [{"type":"header","key":"accept-language","value":"^es([-_;,]|$)"}],
       "destination": "/es",
       "permanent": false
     },
     {
       "source": "/",
-      "has": [
-        {
-          "type": "header",
-          "key": "accept-language",
-          "value": "^fr([-_;,]|$)"
-        }
-      ],
+      "has": [{"type":"header","key":"accept-language","value":"^fr([-_;,]|$)"}],
       "destination": "/fr",
       "permanent": false
     },
     {
       "source": "/",
-      "has": [
-        {
-          "type": "header",
-          "key": "accept-language",
-          "value": "^it([-_;,]|$)"
-        }
-      ],
+      "has": [{"type":"header","key":"accept-language","value":"^it([-_;,]|$)"}],
       "destination": "/it",
       "permanent": false
     },
     {
       "source": "/",
-      "has": [
-        {
-          "type": "header",
-          "key": "accept-language",
-          "value": "^ja([-_;,]|$)"
-        }
-      ],
+      "has": [{"type":"header","key":"accept-language","value":"^ja([-_;,]|$)"}],
       "destination": "/ja",
       "permanent": false
     },
     {
       "source": "/",
-      "has": [
-        {
-          "type": "header",
-          "key": "accept-language",
-          "value": "^ko([-_;,]|$)"
-        }
-      ],
+      "has": [{"type":"header","key":"accept-language","value":"^ko([-_;,]|$)"}],
       "destination": "/ko",
       "permanent": false
     },
     {
       "source": "/",
-      "has": [
-        {
-          "type": "header",
-          "key": "accept-language",
-          "value": "^nl([-_;,]|$)"
-        }
-      ],
+      "has": [{"type":"header","key":"accept-language","value":"^nl([-_;,]|$)"}],
       "destination": "/nl",
       "permanent": false
     },
     {
       "source": "/",
-      "has": [
-        {
-          "type": "header",
-          "key": "accept-language",
-          "value": "^pt([-_;,]|$)"
-        }
-      ],
+      "has": [{"type":"header","key":"accept-language","value":"^pt([-_;,]|$)"}],
       "destination": "/pt",
       "permanent": false
     },
     {
       "source": "/",
-      "has": [
-        {
-          "type": "header",
-          "key": "accept-language",
-          "value": "^zh([-_;,]|$)"
-        }
-      ],
+      "has": [{"type":"header","key":"accept-language","value":"^zh([-_;,]|$)"}],
       "destination": "/zh",
       "permanent": false
     },
@@ -147,47 +122,25 @@
       "permanent": false
     }
   ],
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
-  ],
+  "rewrites": [{"source":"/(.*)","destination":"/index.html"}],
   "headers": [
     {
       "source": "/assets/(.*)",
       "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        },
-        {
-          "key": "X-Content-Type-Options",
-          "value": "nosniff"
-        }
+        {"key":"Cache-Control","value":"public, max-age=31536000, immutable"},
+        {"key":"X-Content-Type-Options","value":"nosniff"}
       ]
     },
     {
       "source": "/(images|videos)/(.*)",
       "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=2592000, stale-while-revalidate=86400"
-        },
-        {
-          "key": "X-Content-Type-Options",
-          "value": "nosniff"
-        }
+        {"key":"Cache-Control","value":"public, max-age=2592000, stale-while-revalidate=86400"},
+        {"key":"X-Content-Type-Options","value":"nosniff"}
       ]
     },
     {
       "source": "/(.*)",
-      "headers": [
-        {
-          "key": "X-Content-Type-Options",
-          "value": "nosniff"
-        }
-      ]
+      "headers": [{"key":"X-Content-Type-Options","value":"nosniff"}]
     }
   ],
   "cleanUrls": true
