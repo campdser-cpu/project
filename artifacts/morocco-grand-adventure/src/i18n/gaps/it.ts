@@ -1,3 +1,22 @@
-// it gap completions (pending).
-export default {} as Record<string, string>;
-
+// Italian gap completions for newly added route/hub and review UI keys.
+export default {
+  hub_by_departure_city: 'Tour per città di partenza',
+  hub_marrakech_name: 'Marrakech', hub_fes_name: 'Fès', hub_agadir_name: 'Agadir', hub_casablanca_name: 'Casablanca',
+  hub_marrakech_title: 'Tour da Marrakech', hub_fes_title: 'Tour da Fès', hub_agadir_title: 'Tour da Agadir', hub_casablanca_title: 'Tour da Casablanca',
+  hub_marrakech_hero_alt: 'Marrakech, città rossa del Marocco', hub_fes_hero_alt: 'Medina di Fès, Marocco', hub_agadir_hero_alt: 'Costa atlantica di Agadir, Marocco', hub_casablanca_hero_alt: 'Moschea Hassan II a Casablanca, Marocco',
+  hub_marrakech_intro: 'Marrakech è uno dei principali punti di partenza per esplorare il Marocco, dall’Alto Atlante alle kasbah del sud e al Sahara.',
+  hub_fes_intro: 'Fès è il cuore culturale del Marocco e un punto di partenza naturale verso il Medio Atlante e la strada per Merzouga.',
+  hub_agadir_intro: 'Agadir è una base sulla costa atlantica per itinerari verso Essaouira, Marrakech, il sud del Marocco e il Sahara.',
+  hub_casablanca_intro: 'Casablanca è un importante punto di arrivo internazionale e una base pratica per collegare le città imperiali e il sud del Marocco.',
+  hub_marrakech_body: 'Scopri gli itinerari realmente disponibili da Marrakech e collega la città alle destinazioni del sud e alle dune di Erg Chebbi.',
+  hub_fes_body: 'Esplora itinerari privati da Fès verso il Medio Atlante, Merzouga e altre destinazioni del Marocco.',
+  hub_agadir_body: 'Parti da Agadir per creare un viaggio privato verso il sud, il Sahara o altre destinazioni marocchine.',
+  hub_casablanca_body: 'Parti da Casablanca per un itinerario privato attraverso le città imperiali, il sud o il Sahara.',
+  hub_short_on_time: 'Scegli la durata del viaggio', hub_short_on_time_sub: 'Confronta i formati disponibili e scegli quello più adatto al tuo programma.', hub_browse_3day: 'Scopri i tour di 3 giorni da {city}', hub_group_days_badge: '{days} giorni',
+  hub_private_title: 'Tour privati da {city}', hub_private_sub: 'Itinerari e prodotti effettivamente presenti nei dati del viaggio.', hub_explore_region: 'Esplora la regione di {city}', hub_explore_region_sub: 'Destinazioni collegate a {city} per aiutarti a costruire il tuo itinerario.', hub_custom_title: 'Vuoi un itinerario da {city} su misura?', hub_custom_sub: 'Raccontaci date, interessi e città di arrivo e confermeremo un itinerario privato.',
+  hub_dur_crumb: '{days} giorni da {city}', hub_dur_badge: '{days} giorni da {city}', hub_dur_h1: 'Tour di {days} giorni da {city}', hub_dur_hero_alt: 'Paesaggio del Marocco per un tour di {days} giorni da {city}',
+  hub_dur_intro_3: 'Un formato di tre giorni da {city}, con informazioni trasparenti su itinerario e percorso.', hub_dur_intro_default: 'Esplora le opzioni di {days} giorni da {city} e richiedi conferma dell’itinerario prima della prenotazione.', hub_dur_body_3_day: 'I tour di tre giorni sono pensati per chi vuole sfruttare al massimo il tempo disponibile. Quando il percorso lo permette, puoi collegare {ait} e {erg}.', hub_dest_erg_chebbi: 'Erg Chebbi', hub_dest_ait_ben_haddou: 'Aït Ben Haddou',
+  hub_dur_dept_title: 'Tour di {days} giorni con partenza da {city}', hub_dur_dept_sub: 'Qui trovi solo i tour della durata richiesta presenti nei dati del progetto.', hub_dur_none_title: 'Nessun tour fisso di {days} giorni da {city}', hub_dur_none_body: 'Non è pubblicato un prodotto fisso verificato per questa combinazione. Puoi richiedere un itinerario privato e ricevere conferma prima di pagare.', hub_dur_other: 'Altre opzioni da {city}', hub_dur_highlights: 'Destinazioni collegate', hub_dur_faq_heading: 'Domande sui tour di {days} giorni da {city}', hub_dur_faq_more: 'Hai altre domande?', hub_dur_faq_link: 'Leggi tutte le FAQ', hub_dur_faq_questions: 'Oppure scrivici su WhatsApp', hub_dur_wa: 'WhatsApp', hub_dur_cta_title: 'Pronto a pianificare {days} giorni da {city}?', hub_dur_cta_sub: 'Confermeremo percorso, inclusioni e condizioni prima della prenotazione.',
+  hub_dur_3: 'Tour di 3 giorni', hub_dur_4: 'Tour di 4 giorni', hub_dur_5_6: 'Tour di 5–6 giorni', hub_dur_7_8: 'Tour di 7–8 giorni', hub_dur_9: 'Tour di 9+ giorni', hub_dur_daytrips: 'Escursioni e brevi soggiorni',
+  reviews_about_mohamed: 'Cosa dicono i viaggiatori di Mohamed', reviews_google: 'Recensioni Google', review_read_google: 'Leggi su Google', review_source: 'Fonte', about_book_cta: 'Prenota ora',
+} as Record<string, string>;
