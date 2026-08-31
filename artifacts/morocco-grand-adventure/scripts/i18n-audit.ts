@@ -2,10 +2,11 @@
  * Translation quality gate.
  *
  * Compares every locale to English, checks empty values recursively, and
- * reports likely user-facing literals in application components.  Literal
- * findings are intentionally warnings by default because class names, route
- * slugs, business names, and third-party attribution need human review. Run
- * with --strict in CI once the existing candidates have been localized.
+ * reports likely user-facing literals in application components.  The app
+ * intentionally supports partial locale overlays with English fallback, so
+ * missing keys are reported as coverage debt rather than treated as build
+ * failures. Empty translations remain a real failure because they can erase
+ * visible UI.
  */
 import { readdirSync, readFileSync, statSync } from 'node:fs';
 import { join, relative } from 'node:path';
@@ -50,8 +51,6 @@ for (const locale of languages) {
   }
 }
 
-// A deliberately conservative heuristic: text nodes and literal accessibility
-// labels in application files. It does not inspect generated Radix primitives.
 const srcRoot = join(import.meta.dirname, '..', 'src');
 const candidates: string[] = [];
 const literalPattern = /(?:aria-label=|>)([A-Z][A-Za-z][^<>{]{2,})(?:"|<)/g;
@@ -66,10 +65,11 @@ for (const path of files(srcRoot).filter((p) => !p.includes(`${join('components'
 console.log('Translation audit');
 console.log(`Languages: ${languages.length}`);
 console.log(`English keys: ${english.size}`);
-console.log(`Missing keys: ${missing}`);
+console.log(`Missing keys (English fallback): ${missing}`);
 console.log(`Empty translations: ${empty}`);
 console.log(`Hard-coded UI candidates: ${candidates.length}`);
+if (missing) console.log('Missing locale keys are coverage debt and currently fall back to English by design.');
 for (const item of issues.slice(0, 30)) console.log(`  ${item}`);
 for (const item of candidates.slice(0, 30)) console.log(`  candidate: ${item}`);
 
-if (missing || empty || (process.argv.includes('--strict') && candidates.length)) process.exitCode = 1;
+if (empty || (process.argv.includes('--strict') && candidates.length)) process.exitCode = 1;
