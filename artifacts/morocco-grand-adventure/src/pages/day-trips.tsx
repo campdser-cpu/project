@@ -21,7 +21,7 @@ export default function DayTrips() {
       title={t('dt_title')}
       subtitle={t('dt_subtitle')}
       ctaText={t('dt_cta')}
-      ctaLink="/trip-builder"
+      ctaLink="/build-your-day-trip"
       trustBadges={defaultTrustBadges()}
       highlights={features}
       faqs={[
