@@ -1,6 +1,4 @@
-// Aggregates per-language gap completions (keys added to English after the
-// initial translation pass). Imported by ../index.ts to build the merged
-// translations used by `t()` and the prerender/audit tooling.
+// Aggregates per-language gap completions used by t() and prerender/audit tooling.
 import fr from './fr';
 import es from './es';
 import it from './it';
