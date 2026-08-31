@@ -16,6 +16,7 @@ import { parseLangPath, RAW_BASE } from '@/lib/i18n-routing';
 import { getLocalizedRouteMeta } from './route-metadata';
 
 const BRAND = 'Morocco Grand Adventure';
+const SITE_ORIGIN = 'https://www.moroccograndadventure.com';
 
 // Open Graph locale codes (Facebook-style) per language.
 const OG_LOCALE: Record<string, string> = {
@@ -40,15 +41,15 @@ export function LocalizedHead() {
   const { rest } = parseLangPath(pathname);
 
   useEffect(() => {
-    const origin = window.location.origin;
+    // Use the site's single canonical origin rather than window.location.origin.
+    // This prevents host-dependent canonical/hreflang/OG URLs if the site is
+    // reached through the alternate non-www host.
+    const origin = SITE_ORIGIN;
     const clean = rest === '/' ? '' : rest;
     const urlFor = (code: string) => `${origin}${RAW_BASE}/${code}${clean}`;
     const currentUrl = urlFor(lang);
 
     // ── Per-page metadata ────────────────────────────────────────────────
-    // Resolve unique title + description for this route.  For the homepage
-    // we keep the localized tagline/subtext; for all other routes we use the
-    // route-metadata copy which is localized for Arabic and English elsewhere.
     const routeMeta = getLocalizedRouteMeta(rest, lang);
     const isHome = rest === '/' || rest === '';
     const tagline = isHome
