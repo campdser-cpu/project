@@ -17,7 +17,7 @@ const content = {
       },
       {
         q: 'What is the difference between Merzouga and Erg Chebbi?',
-        a: <>Merzouga is the settlement and tourism base; Erg Chebbi is the dune field around it. In practical terms, travelers usually stay or arrive around Merzouga and then enter the dunes for desert activities. Start with the <Link href="/merzouga-guide" className="text-primary font-semibold hover:underline">Merzouga Guide</Link>, then explore <Link href="/destinations/erg-chebbi" className="text-primary font-semibold hover:underline">Erg Chebbi</Link> and our <Link href="/camel-trekking" className="text-primary font-semibold hover:underline">camel trekking</Link> experience.</>,
+        a: <>Merzouga is the settlement and tourism base; Erg Chebbi is the dune field around it. In practical terms, travelers usually stay or arrive around Merzouga and then enter the dunes for desert activities. Start with the <Link href="/merzouga-guide" className="text-primary font-semibold hover:underline">Merzouga Guide</Link> and then explore our <Link href="/camel-trekking" className="text-primary font-semibold hover:underline">camel trekking</Link> experience.</>,
       },
       {
         q: 'Should I choose a ready-made tour or build my own?',
@@ -25,7 +25,7 @@ const content = {
       },
       {
         q: 'Is the Sahara comfortable for families?',
-        a: <>It can be, but the right route matters more than a generic “family friendly” label. Parents should look at driving days, walking, activity intensity, meal arrangements and where the overnight stay happens. Our <Link href="/tours/family-morocco-adventure" className="text-primary font-semibold hover:underline">Family Morocco Adventure</Link> is the right place to start, and you can ask us to clarify any part of the route before booking.</>,
+        a: <>It can be, but the right route matters more than a generic “family friendly” label. Parents should look at driving days, walking, activity intensity, meal arrangements and where the overnight stay happens. Start with our <Link href="/tours" className="text-primary font-semibold hover:underline">Morocco tours</Link> and ask us to clarify the route before booking.</>,
       },
       {
         q: 'What should I expect from a night in the desert?',
@@ -33,7 +33,7 @@ const content = {
       },
       {
         q: 'When is a good time to visit the Sahara?',
-        a: <>There is no single perfect month for every traveler, but spring and autumn are generally favorable seasons for the southern Sahara. The right choice also depends on whether you prefer warmer days, cooler nights or a particular travel schedule. Our <Link href="/blog/best-time-to-visit-sahara" className="text-primary font-semibold hover:underline">Sahara planning guide</Link> should help you compare the seasons rather than rely on a single “best month”.</>,
+        a: <>There is no single perfect month for every traveler, but spring and autumn are generally favorable seasons for the southern Sahara. The right choice also depends on whether you prefer warmer days, cooler nights or a particular travel schedule. We recommend comparing the season with your own comfort and itinerary rather than relying on a single “best month”.</>,
       },
       {
         q: 'Do I need cash in Morocco if I have a bank card?',
@@ -55,11 +55,11 @@ const content = {
     items: [
       { q: 'كم يومًا أحتاج فعلًا لزيارة المغرب؟', a: <>يعتمد ذلك على ما تريد رؤيته. الرحلة القصيرة يمكن أن تكون رائعة إذا ركزت على منطقة واحدة، بينما الرحلة الأطول تمنحك وقتًا للمدن والجبال والصحراء دون تحويل كل يوم إلى رحلة انتقال. إذا كانت لديك تواريخ محددة، استخدم <Link href="/trip-builder" className="text-primary font-semibold hover:underline">مصمم الرحلة</Link> وأخبرنا بما يهمك.</> },
       { q: 'هل الانتقال من مراكش إلى مرزوكة سريع؟', a: <>لا. إنها رحلة طويلة نسبيًا، ومن الأفضل ألا نتعامل معها كتنقل سريع فقط. يمكن أن تصبح الطريق جزءًا من التجربة عبر الأطلس وآيت بن حدو ومنطقة دادس وتودرا. يمكنك قراءة <Link href="/blog/marrakech-to-merzouga-roadtrip" className="text-primary font-semibold hover:underline">دليل مراكش إلى مرزوكة</Link> لمعرفة الصورة العملية.</> },
-      { q: 'ما الفرق بين مرزوكة وعرق الشبي؟', a: <>مرزوكة هي البلدة والقاعدة السياحية، أما عرق الشبي فهو مجال الكثبان المرتبط بالمنطقة. عمليًا يصل المسافر إلى مرزوكة ثم يدخل منطقة الكثبان للأنشطة الصحراوية. ابدأ بـ<Link href="/merzouga-guide" className="text-primary font-semibold hover:underline">دليل مرزوكة</Link> ثم استكشف <Link href="/destinations/erg-chebbi" className="text-primary font-semibold hover:underline">عرق الشبي</Link>.</> },
+      { q: 'ما الفرق بين مرزوكة وعرق الشبي؟', a: <>مرزوكة هي البلدة والقاعدة السياحية، أما عرق الشبي فهو مجال الكثبان المرتبط بالمنطقة. عمليًا يصل المسافر إلى مرزوكة ثم يدخل منطقة الكثبان للأنشطة الصحراوية. ابدأ بـ<Link href="/merzouga-guide" className="text-primary font-semibold hover:underline">دليل مرزوكة</Link> ثم استكشف تجربة <Link href="/camel-trekking" className="text-primary font-semibold hover:underline">رحلة الجمال</Link>.</> },
       { q: 'هل أختار رحلة جاهزة أم أصمم رحلتي بنفسي؟', a: <>اختر الرحلة الجاهزة إذا كان مسارها ومدتها مناسبتين لك. أما إذا كانت لديك تواريخ أو اهتمامات أو نقطة انطلاق مختلفة، فاستخدم <Link href="/trip-builder" className="text-primary font-semibold hover:underline">مصمم الرحلات المتعددة الأيام</Link>. ولرحلة يوم واحد استخدم <Link href="/build-your-day-trip" className="text-primary font-semibold hover:underline">مصمم الرحلة اليومية</Link>.</> },
-      { q: 'هل الصحراء مناسبة للعائلات؟', a: <>يمكن أن تكون مناسبة، لكن المسار والوتيرة مهمان. يجب على العائلة معرفة أيام القيادة، مقدار المشي، الأنشطة، الطعام ومكان المبيت. ابدأ بـ<Link href="/tours/family-morocco-adventure" className="text-primary font-semibold hover:underline">مغامرة المغرب للعائلات</Link> واسألنا عن أي تفصيل قبل الحجز.</> },
+      { q: 'هل الصحراء مناسبة للعائلات؟', a: <>يمكن أن تكون مناسبة، لكن المسار والوتيرة مهمان. يجب على العائلة معرفة أيام القيادة، مقدار المشي، الأنشطة، الطعام ومكان المبيت. ابدأ باستكشاف <Link href="/tours" className="text-primary font-semibold hover:underline">رحلات المغرب</Link> واسألنا عن أي تفصيل قبل الحجز.</> },
       { q: 'ماذا أتوقع من ليلة في المخيم الصحراوي؟', a: <>ليلة الصحراء ليست مجرد فندق داخل الرمال. ستعيش بيئة مختلفة، ومساحة مفتوحة، وتغيرًا في الحرارة بعد الغروب وأمسية أكثر هدوءًا. راجع صفحة <Link href="/luxury-camp" className="text-primary font-semibold hover:underline">المخيم الصحراوي الفاخر</Link> واسألنا عن أي مرفق مهم بالنسبة لك.</> },
-      { q: 'متى يكون الوقت مناسبًا لزيارة الصحراء؟', a: <>لا يوجد شهر مثالي للجميع، لكن الربيع والخريف يعدان عمومًا من الفترات المناسبة للصحراء الجنوبية. الاختيار يعتمد أيضًا على تفضيلك للحرارة والبرودة وبرنامجك. اقرأ <Link href="/blog/best-time-to-visit-sahara" className="text-primary font-semibold hover:underline">دليل التخطيط للصحراء</Link> للمقارنة.</> },
+      { q: 'متى يكون الوقت مناسبًا لزيارة الصحراء؟', a: <>لا يوجد شهر مثالي للجميع، لكن الربيع والخريف يعدان عمومًا من الفترات المناسبة للصحراء الجنوبية. الاختيار يعتمد أيضًا على تفضيلك للحرارة والبرودة وبرنامجك، لذلك الأفضل مقارنة الموسم ببرنامجك وراحتك.</> },
       { q: 'هل أحتاج إلى النقود إذا كانت لدي بطاقة بنكية؟', a: <>اصطحب البطاقة، لكن لا تعتمد عليها في كل شيء. أجهزة الصراف منتشرة وتُقبل Visa وMastercard في العديد من الفنادق وبعض المطاعم والمتاجر ومحطات الوقود، بينما تحتاج بعض المواقف إلى الدرهم المغربي. من الأفضل الاحتفاظ بمبلغ نقدي احتياطي.</> },
     ],
     links: 'خطوات مفيدة',
