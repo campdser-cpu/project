@@ -1,4 +1,5 @@
 import { ExperiencePage, defaultTrustBadges } from '../components/ExperiencePage';
+import { TravelerDecisionGuide } from '../components/TravelerDecisionGuide';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function DayTrips() {
@@ -30,6 +31,8 @@ export default function DayTrips() {
         { question: t('dt_faq3_q'), answer: t('dt_faq3_a') },
         { question: t('dt_faq4_q'), answer: t('dt_faq4_a') },
       ]}
-    />
+    >
+      <TravelerDecisionGuide />
+    </ExperiencePage>
   );
 }
