@@ -38,4 +38,8 @@ if (!meta.includes("'3-day-sahara-fes'")) {
   meta = replace(meta, /  '5-day-imperial-cities': \{/, `  '3-day-sahara-fes': { title: '3-Day Private Sahara Route from Fes | Morocco', description: 'A quote-only three-day private route from Fes toward Merzouga and Erg Chebbi, with transparent travel expectations and no invented price.', ogImage: '/images/dest/fes.jpg' },\n  '3-day-sahara-agadir': { title: '3-Day Private Sahara Route from Agadir | Morocco', description: 'A quote-only three-day private route from Agadir toward Merzouga and Erg Chebbi, with transparent itinerary planning and confirmed payment terms.', ogImage: '/images/dest/agadir.jpg' },\n  '5-day-imperial-cities': {`, 'tour metadata');
   fs.writeFileSync(metaPath, meta, 'utf8');
 }
-console.log('[3-day-city-enrichment] Fes and Agadir quote-only routes prepared with verified geography, contextual imagery and explicit commercial-data limits.');
+
+if (!meta.includes("'/tours/from-fes/3-days'")) {
+  meta = replace(meta, /  '\/tours\/from-marrakech\/3-days':\{/, `  '/tours/from-fes/3-days':{title:'3-Day Tours From Fes — Sahara & Merzouga Route',description:'Explore a three-day private Fes-to-Merzouga route through the Middle Atlas and Errachidia region with transparent quote-only planning.',ogImage:'/images/dest/fes.jpg'},\n  '/tours/from-agadir/3-days':{title:'3-Day Tours From Agadir — Sahara & Merzouga Route',description:'Explore a three-day private Agadir-to-Merzouga route with transparent quote-only planning and confirmed travel details.',ogImage:'/images/dest/agadir.jpg'},\n  '/tours/from-marrakech/3-days':{`, 'Marrakech duration metadata');
+  fs.writeFileSync(metaPath, meta, 'utf8');
+}
