@@ -9,7 +9,6 @@ const path = require('path');
 // ─────────────────────────────────────────────────────────────────────────────
 const SITE_URL = 'https://www.moroccograndadventure.com';
 const LANGS = ['en', 'fr', 'es', 'it', 'de', 'nl', 'pt', 'zh', 'ja', 'ko', 'ar'];
-const LAST_MOD = '2026-08-23';
 
 /** Walk a directory recursively, returning relative `.html` file paths. */
 function collectHtml(dir, base, out) {
@@ -51,24 +50,12 @@ function buildHreflangs(urlPath, lang) {
   return `${links}\n${xDefault}`;
 }
 
-function priorityFor(urlPath, lang) {
-  const rest = restOf(urlPath, lang);
-  if (rest === '/') return '1.0';
-  if (rest.startsWith('/tours/') || rest.startsWith('/destinations/')) return '0.8';
-  if (rest.startsWith('/blog/')) return '0.7';
-  return '0.6';
-}
-
 function buildUrlBlock(urlPath) {
   const lang = urlPath.split('/')[1];
-  const rest = restOf(urlPath, lang);
   const loc = `${SITE_URL}${urlPath}`;
   return [
     '  <url>',
     `    <loc>${loc}</loc>`,
-    `    <lastmod>${LAST_MOD}</lastmod>`,
-    '    <changefreq>weekly</changefreq>',
-    `    <priority>${priorityFor(urlPath, lang)}</priority>`,
     buildHreflangs(urlPath, lang),
     '  </url>',
   ].join('\n');
@@ -127,4 +114,3 @@ for (const outPath of [path.resolve('public/sitemap.xml'), path.join(distDir, 's
   console.log(`Sitemap: ${outPath}`);
 }
 console.log(`Sitemap: generated ${locCount} URLs (${LANGS.length} languages) from prerendered output.`);
-
