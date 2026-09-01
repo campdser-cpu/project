@@ -25,7 +25,10 @@ function urlFor(file) {
 }
 function pageFile(urlPath) {
   const clean = urlPath.replace(/^\//, '').replace(/\/$/, '');
-  return clean ? path.join(dist, clean + '.html') : path.join(dist, 'index.html');
+  if (!clean) return path.join(dist, 'index.html');
+  const file = path.join(dist, clean + '.html');
+  const index = path.join(dist, clean, 'index.html');
+  return fs.existsSync(file) ? file : index;
 }
 function isInternal(href) {
   if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:') || href.startsWith('data:')) return false;
@@ -76,9 +79,7 @@ for (const file of files) {
     const urlPath = href.startsWith(site) ? new URL(href).pathname : href;
     if (!langs.includes(urlPath.split('/')[1])) continue;
     internalLinks++;
-    if (!fs.existsSync(pageFile(urlPath))) {
-      errors.push(`${url}: broken internal link -> ${urlPath}`);
-    }
+    if (!fs.existsSync(pageFile(urlPath))) errors.push(`${url}: broken internal link -> ${urlPath}`);
   }
 }
 
