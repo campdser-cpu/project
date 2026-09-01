@@ -75,5 +75,7 @@
     "wouter": "^3.3.5",
     "zod": "^3.25.76"
   },
-  "dependencies": { "leaflet": "^1.9.4" }
+  "dependencies": {
+    "leaflet": "^1.9.4"
+  }
 }
