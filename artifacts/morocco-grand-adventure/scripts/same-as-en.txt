@@ -1,0 +1,76 @@
+ai_online	Online
+home_welcome_heading	Experience Morocco through unforgettable journeys designed by passionate local experts.
+home_welcome_text	From the golden dunes of Merzouga to the blue streets of Chefchaouen, our bespoke itineraries invite you to feel the true pulse of the Maghreb. Unhurried, authentic, and steeped in luxurious hospitality.
+why_local_experts	Local experts born and raised in the Sahara
+why_private_tours	Private and customizable bespoke tours
+why_multilingual	Professional multilingual guides
+why_luxury_riads	Hand-picked luxury riads & camps
+why_pricing	Transparent pricing, no hidden fees
+why_support	24/7 dedicated customer support
+search_style_desert	Desert & Sahara
+search_style_imperial	Imperial Cities
+search_style_mountains	Mountains
+search_style_coastal	Coastal & Beaches
+tour_inc_vehicle	Private comfortable AC vehicle
+tour_inc_guide	Professional driver/guide
+tour_inc_riads	Accommodation in riads
+tour_inc_desert_camp	Night in luxury desert camp
+tour_inc_camel	Camel trekking in Sahara
+tour_inc_meals	Breakfasts and dinners
+tour_exc_flights	Flight tickets
+tour_exc_lunches	Lunches and drinks
+tour_exc_entrance	Entrance fees to monuments
+tour_exc_tips	Tips for guide and driver
+tour_exc_insurance	Travel insurance
+tour_sample_day1_title	Marrakech to Dades Valley via Kasbah Ait Ben Haddou
+tour_sample_day1_desc	Depart Marrakech and cross the high Atlas Mountains. Visit the UNESCO World Heritage site of Ait Ben Haddou. Continue to Ouarzazate and finish the day in the stunning Dades Valley.
+tour_sample_day2_title	Dades Valley to Merzouga Sahara & Camel Trek
+tour_sample_day3_title	Sunrise in Sahara & Return to Marrakech
+tour_sample_day3_desc	Wake up early to witness a breathtaking sunrise over the dunes. After breakfast at the camp, begin the journey back to Marrakech passing through the Draa Valley.
+contact_whatsapp_label	WhatsApp Us
+contact_email_label	Email
+contact_address	Merzouga, Sahara Desert, Morocco
+contact_ph_firstname	John
+contact_ph_email	john@example.com
+contact_ph_phone	+1 234 567 8900
+contact_ph_message	Tell us about your dream Morocco journey...
+dest_about_text	Whether you are wandering through ancient medinas, sipping mint tea on a rooftop, or bargaining for spices in the souk, this destination offers an unforgettable sensory experience. Our local guides ensure you discover the hidden gems that most travelers miss.
+dest_food_tagine	Traditional Tagine
+dest_food_tagine_desc	Slow-cooked savory stews made with sliced meat, poultry, or fish together with vegetables or fruit.
+dest_food_mint_tea	Moroccan Mint Tea
+dest_food_mint_tea_desc	The symbol of Moroccan hospitality, made with green tea, fresh mint leaves, and sugar.
+dest_riad_alt	Luxury Riad accommodation
+tb_interest_sahara	Sahara Desert
+tb_interest_camel	Camel Trekking
+tb_interest_imperial	Imperial Cities
+tb_interest_atlas	Atlas Mountains
+tb_interest_surf	Surfing & Beaches
+tb_interest_photo	Photography
+tb_interest_food	Food & Culinary
+tb_interest_romance	Honeymoon & Romance
+tb_interest_family	Family Friendly
+tb_interest_culture	Culture & Festivals
+tb_interest_yoga	Yoga & Wellness
+tb_interest_nature	Nature & Hiking
+tb_interest_music	Gnawa Music & Arts
+tb_budget_budget_desc	<$300/day per person
+tb_budget_comfort_desc	$300-600/day per person
+tb_budget_luxury_desc	$600-1000/day per person
+tb_budget_ultra_desc	>$1000/day per person
+tb_itinerary_arrival	Arrival & Travel to
+tb_itinerary_journey	Journey to
+tb_itinerary_exploring	Exploring
+tb_itinerary_departure	Departure from
+tb_error_min_dest	Not enough destinations selected
+tb_error_min_dest_sub	Please go back to Step 3 and select at least 2 destinations to generate your itinerary.
+about_philosophy_quote	We don't sell tours. We create memories that embed themselves in your soul, wrapped in the warmth of Moroccan hospitality.
+tours_experience	Experience
+tours_and_more	and more.
+ai_resp_7day	A 7-day tour is perfect! We recommend starting in Marrakech, crossing the Atlas Mountains to the Sahara, and ending in Fes. Would you prefer luxury camps or historic riads?
+ai_resp_sahara_time	The best time to visit the Sahara is between October and April. The days are pleasantly warm and the nights are cool. Summer months can be extremely hot.
+ai_resp_family	Morocco is wonderful for families! We arrange private transport, kid-friendly guides, camel rides, and interactive cooking classes. How old are your children?
+ai_resp_default	That sounds wonderful! Our local experts can customize a bespoke itinerary exactly to your preferences. Would you like to connect with a human specialist now?
+hub_casablanca_name	Casablanca
+hub_agadir_name	Agadir
+hub_dest_erg_chebbi	Erg Chebbi
+hub_dest_ait_ben_haddou	Aït Ben Haddou
