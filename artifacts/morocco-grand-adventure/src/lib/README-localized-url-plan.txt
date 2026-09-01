@@ -1,0 +1,1 @@
+Localized URL plan: language prefix plus translated static route slugs. Dynamic destination/tour/blog identifiers remain canonical because they are content identifiers; static page labels are localized. Browser links are rewritten through i18n-routing so existing components using /tours, /about, etc. remain valid while users see the localized URL.
