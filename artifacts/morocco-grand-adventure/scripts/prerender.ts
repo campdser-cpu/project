@@ -516,20 +516,24 @@ function metaFor(rest: string, lang: Lang): ReturnType<typeof getRouteMeta> {
     return { title: tr(lang, 'hero_tagline'), description: tr(lang, 'hero_subtext'), ogImage: HOME_META.ogImage };
   }
   const en = getRouteMeta(rest);
-  const ar = lang === 'ar' ? getLocalizedRouteMeta(rest, lang) : undefined;
+  // Localized metadata for every non-English language (not just Arabic). This is
+  // the same resolver the runtime LocalizedHead uses, so the prerendered <title>/
+  // description stay in parity with the browser and never leak English for
+  // translated tours, destinations, city hubs, or duration hubs.
+  const loc = lang !== 'en' ? getLocalizedRouteMeta(rest, lang) : undefined;
   const key = STATIC_TITLE_KEYS[rest];
   // Routes with dedicated SEO metadata (all static pages + tours/destinations
   // present in TOUR_META/DESTINATION_META). Keeping prerender parity with the
   // runtime head is essential — Google indexes the prerendered HTML.
   if (en !== HOME_META) {
-    return { title: ar?.title ?? (key ? tr(lang, key) || en.title : en.title), description: ar?.description ?? en.description, ogImage: ar?.ogImage ?? en.ogImage };
+    return { title: loc?.title ?? (key ? tr(lang, key) || en.title : en.title), description: loc?.description ?? en.description, ogImage: loc?.ogImage ?? en.ogImage };
   }
   // Fallback for routes without dedicated metadata: use the localized entity data.
   let m = rest.match(/^\/tours\/([^/]+)$/);
   if (m) { const t = getLocalizedTour(m[1], lang); if (t) return { title: t.name, description: truncate(t.description), ogImage: t.image }; }
   m = rest.match(/^\/destinations\/([^/]+)$/);
   if (m) { const d = getLocalizedDestination(m[1], lang); if (d) return { title: d.name, description: truncate(d.shortDesc || d.description), ogImage: d.image }; }
-  return { title: ar?.title ?? (key ? tr(lang, key) || en.title : en.title), description: ar?.description ?? en.description, ogImage: ar?.ogImage ?? en.ogImage };
+  return { title: loc?.title ?? (key ? tr(lang, key) || en.title : en.title), description: loc?.description ?? en.description, ogImage: loc?.ogImage ?? en.ogImage };
 }
 function buildRoutes(lang: Lang): RouteEntry[] {
   const routes: RouteEntry[] = []; const rtl = lang === 'ar';

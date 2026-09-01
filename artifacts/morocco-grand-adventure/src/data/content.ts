@@ -1,6 +1,6 @@
 ﻿// ─────────────────────────────────────────────────────────────────────────────
 // Morocco Grand Adventure — Central Data
-// Owner: Mohamed Bou Ghrara
+// Owner: Mohamed BouGhrara
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const contactInfo = {
@@ -11,7 +11,7 @@ export const contactInfo = {
   email: "moroccograndadventure@gmail.com",
   website: "https://www.moroccograndadventure.com",
   paypal: "https://www.paypal.me/MohamedbouGhrara683",
-  ownerName: "Mohamed BouGhrara",
+  ownerName: "Mohamed Bou Ghrara",
   companyName: "Morocco Grand Adventure",
   address: "Merzouga, Errachidia Province, Morocco",
 };

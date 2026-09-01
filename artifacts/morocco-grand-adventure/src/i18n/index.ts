@@ -224,6 +224,11 @@ export type TranslationSet = {
   footer_contact: string;
   footer_rights: string;
   footer_whatsapp: string;
+  footer_tagline_alt: string;
+  footer_route_highlights: string;
+  footer_private_tours: string;
+  footer_tours_by_city: string;
+  footer_view_maps: string;
   // ── AI Assistant ──────────────────────────────────────────────────────────
   ai_title: string;
   ai_subtitle: string;
@@ -693,9 +698,16 @@ type TranslationDict = Partial<TranslationSet>;
 
 const registry: Partial<Record<Lang, TranslationDict>> = {};
 
-/** Register a locale's dictionary (used by the lazy loader and build tooling). */
+/**
+ * Register a locale's dictionary (used by the lazy loader and build tooling).
+ * The per-language gap completions (src/i18n/gaps/<lang>.ts) are merged in as a
+ * base layer: keys present in the main locale file win, keys that only exist in
+ * the gaps file fill in. Without this merge the gap translations are dead code
+ * and every gap-only key silently falls back to English.
+ */
 export function registerTranslations(lang: Lang, data: TranslationDict): void {
-  registry[lang] = data;
+  const gaps = i18nGaps[lang];
+  registry[lang] = gaps ? { ...gaps, ...data } as TranslationDict : data;
 }
 
 export function isLocaleLoaded(lang: Lang): boolean {

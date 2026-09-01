@@ -1,12 +1,26 @@
 // Route contract used in CI/build verification. It intentionally checks only
-// routes that the canonical tour hierarchy declares, plus legacy aliases.
-const fs = await import('node:fs');
-const path = await import('node:path');
-const root = path.resolve(new URL('..', import.meta.url).pathname, '..');
-const hierarchy = fs.readFileSync(path.join(root, 'src/data/tour-hierarchy.ts'), 'utf8');
-const required = ['from-marrakech','from-fes','from-agadir','from-casablanca','from-marrakech/3-days'];
-for (const slug of required) {
-  if (!hierarchy.includes(`slug: '${slug.replace('from-','').replace('/3-days','')}'`) && slug !== 'from-marrakech/3-days') throw new Error(`Missing canonical city hub: ${slug}`);
+// routes which the canonical tour hierarchy declares.
+import { promises as fsp } from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const hierarchy = await fsp.readFile(path.join(root, 'src', 'data', 'tour-hierarchy.ts'), 'utf8');
+
+// Canonical city-hub slugs must be present in the hierarchy source.
+const requiredSlugs = ['marrakech', 'fes', 'agadir', 'casablanca'];
+for (const slug of requiredSlugs) {
+  if (!hierarchy.includes(`slug: '${slug}'`)) {
+    throw new Error(`Missing canonical city hub slug: ${slug}`);
+  }
 }
-if (!hierarchy.includes("'marrakech': [3, 4, 5, 6, 7, 8, 9, 10]")) throw new Error('Marrakech duration contract changed unexpectedly');
+
+// Marrakech must expose the full 3-10 day duration ladder。
+const marrMatch = hierarchy.match(/marrakech:\s*\[([^\]]*)\]/);
+if (!marrMatch) throw new Error('Marrakech duration contract changed unexpectedly');
+const marrDurations = (marrMatch[1] ?? '').split(',').map(function (s) { return s.trim(); }).filter(Boolean).map(Number);
+for (const d of [3,4,5,6,7,8,9,10]) {
+  if (!marrDurations.includes(d)) throw new Error('Marrakech duration contract missing duration: ' + d);
+}
+
 console.log('GSC route contract: PASS');

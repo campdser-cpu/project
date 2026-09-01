@@ -1,4 +1,6 @@
 /** Per-route SEO metadata. Keep this file as the single source of truth for runtime/prerendered route metadata. */
+import { t as translate, type Lang } from '@/i18n/index';
+import { getLocalizedTour, getLocalizedDestination } from '@/i18n/content';
 export type RouteMeta = { title: string; description: string; ogImage?: string };
 
 const BRAND = 'Morocco Grand Adventure';
@@ -133,4 +135,143 @@ const AR_ROUTE_META: Record<string,RouteMeta> = {
   '/faq':{title:'أسئلة شائعة عن السفر إلى المغرب',description:'إجابات عن أسئلة السفر والجولات الصحراوية والحجز في المغرب.'},
   '/blog':{title:'مدونة السفر في المغرب — أدلة ونصائح',description:'أدلة ونصائح عملية للسفر في المغرب من خبراء محليين.'},
 };
-export function getLocalizedRouteMeta(rest:string,lang?:string):RouteMeta { return lang === 'ar' ? (AR_ROUTE_META[rest === '' || rest === '/' ? '/' : rest.replace(/\/$/,'')] ?? getRouteMeta(rest)) : getRouteMeta(rest); }
+// ── Helpers ────────────────────────────────────────────────────────────────
+function truncate(text: string | undefined, max = 158): string {
+  const s = (text ?? '').toString().replace(/\s+/g, ' ').trim();
+  if (s.length <= max) return s;
+  return s.slice(0, max - 1).trimEnd() + '…';
+}
+
+/** Replace `{var}` placeholders in a translated template. */
+function fmt(template: string, vars: Record<string, string | number>): string {
+  return template.replace(/\{(\w+)\}/g, (m, k) =>
+    Object.prototype.hasOwnProperty.call(vars, k) ? String(vars[k]) : m,
+  );
+}
+
+// Localized descriptions derived from already-translated page content.
+// A static page whose translation exists in the active locale gets a genuine
+// localized meta description instead of leaking the English one. When the key
+// is untranslated, t() returns the raw key — detected and treated as no override.
+function fromTranslated(lang: Lang | undefined, key: string, max = 158): string | undefined {
+  if (!lang || lang === 'en') return undefined;
+  const raw = translate(lang, key);
+  if (!raw || raw === key) return undefined;
+  const s = raw.replace(/\s+/g, ' ').trim();
+  if (s.length <= max) return s;
+  return s.slice(0, max - 1).trimEnd() + '…';
+}
+
+// ── Static page translation keys ──────────────────────────────────────────
+// Title keys: navigation-style titles used in the <title> tag (kept short).
+const STATIC_TITLE_KEYS: Record<string, string> = {
+  '/tours': 'nav_tours',
+  '/destinations': 'nav_destinations',
+  '/about': 'nav_about',
+  '/contact': 'nav_contact',
+  '/faq': 'nav_faq',
+  '/blog': 'nav_blog',
+  '/gallery': 'nav_gallery',
+  '/trip-builder': 'nav_build_journey',
+  '/build-your-day-trip': 'nav_build_journey',
+  '/day-trips': 'dt_title',
+  '/desert-tours': 'nav_tours',
+  '/luxury-camp': 'section_luxury_camp',
+  '/camel-trekking': 'nav_tours',
+  '/4x4-tours': 'nav_tours',
+  '/merzouga-guide': 'mg_title',
+  '/marrakech-tours': 'nav_tours',
+  '/fes-tours': 'nav_tours',
+  '/agadir-tours': 'nav_tours',
+  '/casablanca-tours': 'nav_tours',
+};
+
+// Description keys: natural description-grade sentences for meta description.
+const STATIC_DESC_KEYS: Record<string, string> = {
+  '/tours': 'section_tours_sub',
+  '/destinations': 'section_destinations_sub',
+  '/about': 'about_story_p1',
+  '/contact': 'footer_tagline_alt',
+  '/faq': 'nav_faq',
+  '/blog': 'nav_blog',
+  '/gallery': 'nav_gallery',
+  '/trip-builder': 'section_planner_sub',
+  '/build-your-day-trip': 'section_planner_sub',
+  '/day-trips': 'dt_subtitle',
+  '/desert-tours': 'section_tours_sub',
+  '/luxury-camp': 'section_luxury_camp_sub',
+  '/camel-trekking': 'section_tours_sub',
+  '/4x4-tours': 'section_tours_sub',
+  '/merzouga-guide': 'mg_subtitle',
+  '/marrakech-tours': 'section_tours_sub',
+  '/fes-tours': 'section_tours_sub',
+  '/agadir-tours': 'section_tours_sub',
+  '/casablanca-tours': 'section_tours_sub',
+};
+
+// ── Core localized metadata resolver ──────────────────────────────────────
+// Single source of truth for both runtime (LocalizedHead) and build-time
+// (prerender metaFor). Handles every route type across all 11 languages:
+//   1. Tour detail pages  → localized entity data (name/desc/image overlay)
+//   2. Destination detail → localized entity data
+//   3. City hub pages     → hub_${city}_title / hub_${city}_sub translation keys
+//   4. Duration hub pages → hub_dur_h1 (formatted) / hub_dur_intro_* keys
+//   5. Arabic static      → AR_ROUTE_META dedicated table
+//   6. Other static pages → STATIC_TITLE_KEYS + STATIC_DESC_KEYS
+export function getLocalizedRouteMeta(rest: string, lang?: Lang): RouteMeta {
+  const clean = rest === '' || rest === '/' ? '/' : rest.replace(/\/$/, '');
+  const l: Lang = lang ?? 'en';
+
+  // 1. Tour detail pages — localized entity data (the core metaFor fix).
+  const tourMatch = clean.match(/^\/tours\/([^/]+)$/);
+  if (tourMatch) {
+    const t = getLocalizedTour(tourMatch[1], l);
+    if (t) return { title: t.name, description: truncate(t.description), ogImage: t.image };
+  }
+
+  // 2. Destination detail pages — localized entity data.
+  const destMatch = clean.match(/^\/destinations\/([^/]+)$/);
+  if (destMatch) {
+    const d = getLocalizedDestination(destMatch[1], l);
+    if (d) return { title: d.name, description: truncate(d.shortDesc || d.description), ogImage: d.image };
+  }
+
+  // 3. City hub pages — localized translation keys.
+  const cityMatch = clean.match(/^\/tours\/from-([^/]+)$/);
+  if (cityMatch) {
+    const city = cityMatch[1];
+    const base = getRouteMeta(clean);
+    const title = l !== 'en' ? translate(l, `hub_${city}_title`) || base.title : base.title;
+    const sub = fromTranslated(l, `hub_${city}_sub`);
+    return { title, description: sub || base.description, ogImage: base.ogImage };
+  }
+
+  // 4. Duration hub pages — localized translation keys (formatted).
+  const durMatch = clean.match(/^\/tours\/from-([^/]+)\/(\d+)-days$/);
+  if (durMatch) {
+    const city = durMatch[1];
+    const days = durMatch[2];
+    const base = getRouteMeta(clean);
+    const titleTemplate = translate(l, 'hub_dur_h1');
+    const cityName = translate(l, `hub_${city}_name`) || city;
+    const title = l !== 'en' && titleTemplate && titleTemplate !== 'hub_dur_h1'
+      ? fmt(titleTemplate, { days, city: cityName })
+      : base.title;
+    const introKey = days === '3' ? 'hub_dur_intro_3' : 'hub_dur_intro_default';
+    const intro = fromTranslated(l, introKey);
+    return { title, description: intro || base.description, ogImage: base.ogImage };
+  }
+
+  // 5. Arabic — dedicated route metadata table.
+  if (l === 'ar') {
+    return AR_ROUTE_META[clean] ?? getRouteMeta(clean);
+  }
+
+  // 6. Other static pages — translation keys for title + description.
+  const base = getRouteMeta(clean);
+  const titleKey = STATIC_TITLE_KEYS[clean];
+  const descKey = STATIC_DESC_KEYS[clean];
+  const title = titleKey && l !== 'en' ? translate(l, titleKey) || base.title : base.title;
+  const description = descKey ? fromTranslated(l, descKey) || base.description : base.description;
+  return { title, description, ogImage: base.ogImage };
+}

@@ -12,6 +12,7 @@ import { readdirSync, readFileSync, statSync } from 'node:fs';
 import { join, relative } from 'node:path';
 import { languages } from '../src/i18n/index';
 import { allTranslations } from '../src/i18n/locales';
+import { i18nGaps } from '../src/i18n/gaps';
 
 type Json = string | Json[] | { [key: string]: Json };
 
@@ -36,7 +37,11 @@ let empty = 0;
 const issues: string[] = [];
 
 for (const locale of languages) {
-  const entries = flatten(allTranslations[locale.code] as Json);
+  // Measure the effective dictionary exactly as the runtime merges it:
+  // gap completions as the base layer, the main locale file on top.
+  const gaps = i18nGaps[locale.code] ?? {};
+  const effective = { ...gaps, ...(allTranslations[locale.code] as Record<string, string>) };
+  const entries = flatten(effective);
   for (const key of english.keys()) {
     if (!entries.has(key)) {
       missing++;

@@ -109,8 +109,11 @@ overrides:
   "lightningcss>lightningcss-linux-arm64-gnu": "-"
   "lightningcss>lightningcss-linux-arm64-musl": "-"
   "lightningcss>lightningcss-linux-x64-musl": "-"
-  "lightningcss>lightningcss-win32-arm64-msvc": "-"
-  "lightningcss>lightningcss-win32-x64-msvc": "-"
+    # win32-x64-msvc and win32-arm64-msvc NOT stripped: the local dev machine is
+  # Windows and the native lightningcss binding (used by @tailwindcss/vite) is
+  # required to run builds locally. On Linux/Vercel pnpm will not install these
+  # optionalDependencies anyway (they target a different OS), so removing the
+  # override does not affect production Linux builds.
   "@tailwindcss/oxide>@tailwindcss/oxide-android-arm64": "-"
   "@tailwindcss/oxide>@tailwindcss/oxide-darwin-arm64": "-"
   "@tailwindcss/oxide>@tailwindcss/oxide-darwin-x64": "-"
