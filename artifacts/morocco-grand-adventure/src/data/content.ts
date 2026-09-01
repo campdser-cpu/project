@@ -11,7 +11,7 @@ export const contactInfo = {
   email: "moroccograndadventure@gmail.com",
   website: "https://www.moroccograndadventure.com",
   paypal: "https://www.paypal.me/MohamedbouGhrara683",
-  ownerName: "Mohamed Bou Ghrara",
+  ownerName: "Mohamed BouGhrara",
   companyName: "Morocco Grand Adventure",
   address: "Merzouga, Errachidia Province, Morocco",
 };

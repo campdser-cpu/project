@@ -1,26 +1,14 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "installCommand": "corepack enable && corepack prepare pnpm@10.34.5 --activate && pnpm install --no-frozen-lockfile",
-  "buildCommand": "pnpm --filter @workspace/morocco-grand-adventure build && node artifacts/morocco-grand-adventure/scripts/enrich-about-reviews.mjs",
+  "installCommand": "corepack enable && corepack prepare pnpm@10.34.5 --activate && pnpm install --frozen-lockfile",
+  "buildCommand": "pnpm --filter @workspace/morocco-grand-adventure build",
   "outputDirectory": "artifacts/morocco-grand-adventure/dist",
   "cleanUrls": true,
   "redirects": [
-    { "source": "/:lang/tours/from-:city/:days", "destination": "/:lang/tours/from-:city/:days-days", "permanent": true },
-    { "source": "/:lang/tours-from-marrakech", "destination": "/:lang/tours/from-marrakech", "permanent": true },
-    { "source": "/:lang/tours-from-fes", "destination": "/:lang/tours/from-fes", "permanent": true },
-    { "source": "/:lang/tours-from-agadir", "destination": "/:lang/tours/from-agadir", "permanent": true },
-    { "source": "/:lang/tours-from-casablanca", "destination": "/:lang/tours/from-casablanca", "permanent": true },
-    { "source": "/:lang/three-day-tours-from-marrakech", "destination": "/:lang/tours/from-marrakech/3-days", "permanent": true },
-    { "source": "/:lang/three-day-tours-from-fes", "destination": "/:lang/tours/from-fes/3-days", "permanent": true },
-    { "source": "/:lang/three-day-tours-from-agadir", "destination": "/:lang/tours/from-agadir/3-days", "permanent": true },
-    { "source": "/:lang/three-day-tours-from-casablanca", "destination": "/:lang/tours/from-casablanca/3-days", "permanent": true },
-    { "source": "/:lang/tours/3-days-marrakech-to-merzouga-desert-tour", "destination": "/:lang/tours/3-day-sahara-marrakech", "permanent": true },
-    { "source": "/:lang/tours/3-days-fes-to-marrakech-desert-tour", "destination": "/:lang/tours/5-day-imperial-cities", "permanent": true },
-    { "source": "/:lang/tours/merzouga-desert-tour", "destination": "/:lang/tours/3-day-sahara-marrakech", "permanent": true },
-    { "source": "/:lang/tours/morocco-desert-tour", "destination": "/:lang/tours/7-day-imperial-cities-sahara-escape", "permanent": true },
-    { "source": "/:lang/tours/3-day-luxury-sahara-tour", "destination": "/:lang/tours/3-day-sahara-marrakech", "permanent": true },
-    { "source": "/:lang/tours/7-day-imperial-cities-sahara", "destination": "/:lang/tours/7-day-imperial-cities-sahara-escape", "permanent": true },
-    { "source": "/:lang/reviews", "destination": "/:lang/", "permanent": true },
+    { "source": "/:lang(en|fr|es|it|de|nl|pt|zh|ja|ko|ar)/tours/3-days-marrakech-to-merzouga-desert-tour", "destination": "/:lang/tours/3-day-sahara-marrakech", "permanent": true },
+    { "source": "/:lang(en|fr|es|it|de|nl|pt|zh|ja|ko|ar)/tours/3-days-fes-to-marrakech-desert-tour", "destination": "/:lang/tours/5-day-imperial-cities", "permanent": true },
+    { "source": "/:lang(en|fr|es|it|de|nl|pt|zh|ja|ko|ar)/tours/merzouga-desert-tour", "destination": "/:lang/tours/3-day-sahara-marrakech", "permanent": true },
+    { "source": "/:lang(en|fr|es|it|de|nl|pt|zh|ja|ko|ar)/tours/morocco-desert-tour", "destination": "/:lang/tours/7-day-imperial-cities-sahara-escape", "permanent": true },
     { "source": "/(.*)", "has": [{ "type": "header", "key": "accept-language", "value": "^ar([-_;,]|$)" }], "destination": "/ar", "permanent": false },
     { "source": "/(.*)", "has": [{ "type": "header", "key": "accept-language", "value": "^de([-_;,]|$)" }], "destination": "/de", "permanent": false },
     { "source": "/(.*)", "has": [{ "type": "header", "key": "accept-language", "value": "^es([-_;,]|$)" }], "destination": "/es", "permanent": false },
@@ -32,6 +20,9 @@
     { "source": "/(.*)", "has": [{ "type": "header", "key": "accept-language", "value": "^pt([-_;,]|$)" }], "destination": "/pt", "permanent": false },
     { "source": "/(.*)", "has": [{ "type": "header", "key": "accept-language", "value": "^zh([-_;,]|$)" }], "destination": "/zh", "permanent": false },
     { "source": "/", "destination": "/en", "permanent": false }
+  ],
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
   ],
   "headers": [
     { "source": "/assets/(.*)", "headers": [ { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }, { "key": "X-Content-Type-Options", "value": "nosniff" } ] },
