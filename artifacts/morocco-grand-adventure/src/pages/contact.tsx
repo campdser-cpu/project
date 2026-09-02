@@ -4,6 +4,7 @@ import { Mail, MapPin } from 'lucide-react';
 import { SiWhatsapp, SiInstagram, SiYoutube, SiTiktok, SiFacebook } from 'react-icons/si';
 import { useState } from 'react';
 import { contactInfo } from '@/data/content';
+import { PricingTransparency } from '../components/ui/PricingTransparency';
 
 // The API endpoint for inquiry submissions — server-side, keeps the email
 // address off the client.  In production set VITE_API_URL (or deploy the API
@@ -75,6 +76,7 @@ export default function Contact() {
         setServerError(err.error || 'Something went wrong. Please try WhatsApp instead.');
         setIsError(true);
       } else {
+        setWaFallback(waMsg);
         setIsSent(true);
       }
     } catch (err) {
@@ -168,6 +170,16 @@ export default function Contact() {
                         </a>
                       </div>
                     </div>
+
+                    {/* AI-friendly business summary */}
+                    <div className="bg-foreground/95 text-background rounded-3xl p-6 mt-8">
+                      <h4 className="font-bold text-primary mb-2">{t('business_summary_heading')}</h4>
+                      <p className="text-sm leading-relaxed">{t('business_summary_text')}</p>
+                      <p className="text-xs mt-3 text-background/70">{t('business_summary_contact')}</p>
+                    </div>
+                    <div className="mt-8">
+                      <PricingTransparency compact />
+                    </div>
                   </div>
               </div>
             </div>
@@ -176,11 +188,21 @@ export default function Contact() {
             {/* Contact Form */}
             <div>
               <form className="bg-card border border-border p-10 rounded-3xl" onSubmit={handleSubmit}>
-                <h3 className="font-serif text-3xl text-foreground mb-8">{t('contact_send')}</h3>
+                <h3 className="font-serif text-3xl text-foreground mb-3">{t('contact_send')}</h3>
+                <p className="text-sm text-muted-foreground mb-6">{t('book_now_pay_later')} — {t('price_starting_note')}</p>
                 
                 {isSent && (
-                  <div className="bg-green-500/10 border border-green-500/20 text-green-700 p-4 rounded-xl mb-6">
-                    {t('contact_sent')}
+                  <div className="bg-green-500/10 border border-green-500/20 text-green-700 p-4 rounded-xl mb-6 space-y-2">
+                    <p className="font-bold">{t('contact_sent')}</p>
+                    <p className="text-sm">{t('contact_sent_next')}</p>
+                    <a
+                      href={`https://wa.me/message/QAFZ3RKJDNH4B1?text=${encodeURIComponent(waFallback)}`}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-2 bg-[#25D366] text-white px-4 py-2 rounded-lg font-bold hover:opacity-90 transition-opacity text-sm"
+                    >
+                      <SiWhatsapp className="w-4 h-4" /> {t('contact_sent_whatsapp')}
+                    </a>
                   </div>
                 )}
                 {isError && (

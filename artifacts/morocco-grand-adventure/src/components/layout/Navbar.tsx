@@ -118,7 +118,10 @@ export function Navbar() {
               </motion.div>}</AnimatePresence>
             </div>
 
+            <div className="flex flex-col items-center gap-1">
             <a href={contactInfo.whatsapp} target="_blank" rel="noreferrer" className="bg-primary text-primary-foreground px-5 xl:px-6 py-2.5 rounded-full text-sm font-bold tracking-wide hover:bg-primary/90 transition-all whitespace-nowrap">{t('nav_book_whatsapp')}</a>
+            <span className="text-[10px] font-bold uppercase tracking-widest text-primary">{t('book_now_pay_later')}</span>
+          </div>
           </div>
 
           <button className="lg:hidden p-3 min-w-[44px] min-h-[44px] flex items-center justify-center -mr-2" aria-label={mobileOpen ? t('nav_close_menu') : t('nav_open_menu')} aria-expanded={mobileOpen} onClick={() => setMobileOpen(v => !v)}>
@@ -149,6 +152,7 @@ export function Navbar() {
         <Link href="/about" className="text-lg font-medium text-foreground">{t('nav_about')}</Link>
         <Link href="/contact" className="text-lg font-medium text-foreground">{t('nav_contact')}</Link>
         <a href={contactInfo.whatsapp} target="_blank" rel="noreferrer" className="bg-primary text-primary-foreground px-6 py-3 rounded-full text-center font-bold mt-4">{t('nav_book_whatsapp')}</a>
+        <p className="text-center text-xs font-semibold text-primary -mt-1">{t('book_now_pay_later')} — {t('pay_later')}</p>
         <div className="pt-5 mt-2 border-t border-border"><div className="flex items-center gap-2 mb-3 text-sm font-semibold text-muted-foreground"><Globe className="w-4 h-4" /><span>{currentLang.flag} {currentLang.nativeLabel}</span></div><div className="grid grid-cols-2 sm:grid-cols-3 gap-2">{languages.map(l => <button key={l.code} onClick={() => { setLang(l.code); setMobileOpen(false); }} className={`flex items-center gap-2 px-3 py-2.5 rounded-lg border text-sm ${lang === l.code ? 'border-primary bg-primary/5 text-primary font-bold' : 'border-border text-foreground hover:bg-muted'}`}><span>{l.flag}</span><span className="truncate">{l.nativeLabel}</span>{lang === l.code && <span className="ml-auto">✓</span>}</button>)}</div></div>
       </div></motion.div>}</AnimatePresence>
     </nav>

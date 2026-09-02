@@ -2,6 +2,7 @@ import { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence, Variants } from 'framer-motion';
 import { Layout } from '../components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { PricingTransparency } from '../components/ui/PricingTransparency';
 import { contactInfo, destinations } from '@/data/content';
 import { categoryLabel } from '@/i18n/content';
 import {
@@ -192,9 +193,23 @@ export default function TripBuilder() {
   const whatsappLink = useMemo(() => {
     const interestLabels = selectedInterests.map(id => INTERESTS_DATA.find(i=>i.id===id)?.id ?? id).filter(Boolean);
     const destNames = selectedDestinations.map(id => destinations.find(d=>d.id===id)?.name).filter(Boolean);
-    
-    const text = `*New Bespoke Journey Request*%0A%0A*Basics:*%0A- Route: ${arrival} to ${departure}%0A- Duration: ${days} days%0A- Travelers: ${travelers}%0A- Budget: ${budget}%0A%0A*Interests:*%0A${interestLabels.join(', ')}%0A%0A*Destinations:*%0A${destNames.join(', ')}`;
-    return `${contactInfo.whatsapp}?text=${text}`;
+
+    const text = [
+      '*New Bespoke Journey Request*',
+      '',
+      '*Basics:*',
+      `- Route: ${arrival} to ${departure}`,
+      `- Duration: ${days} days`,
+      `- Travelers: ${travelers}`,
+      `- Budget: ${budget}`,
+      '',
+      '*Interests:*',
+      interestLabels.join(', ') || 'Not specified',
+      '',
+      '*Destinations:*',
+      destNames.join(', ') || 'To be discussed',
+    ].join('\n');
+    return `${contactInfo.whatsapp}?text=${encodeURIComponent(text)}`;
   }, [arrival, departure, days, travelers, budget, selectedInterests, selectedDestinations]);
 
   return (
@@ -489,6 +504,11 @@ export default function TripBuilder() {
                   </motion.div>
                 )}
               </AnimatePresence>
+            </div>
+
+            <div className="mt-6">
+              <p className="mb-3 text-sm font-semibold text-muted-foreground tracking-wide">✦ {t('book_now_pay_later')} — {t('price_starting_note')}</p>
+              <PricingTransparency compact />
             </div>
             
             {/* Footer Navigation */}

@@ -12,6 +12,7 @@ import { PromoBadge } from '../components/promo/PromoBadge';
 import { PriceTag } from '../components/promo/PriceTag';
 import { CinematicVideo } from '../components/ui/CinematicVideo';
 import { ReviewCard } from '../components/ui/ReviewCard';
+import { PricingTransparency } from '../components/ui/PricingTransparency';
 
 /** Lazy-load the Leaflet map so its ~150 kB chunk (+ OpenStreetMap tiles) is
  *  only fetched once the map approaches the viewport — the homepage stays
@@ -236,6 +237,7 @@ export default function Home() {
                 {t('hero_cta_plan')}
               </Link>
             </motion.div>
+            <p className="mt-6 text-white/75 text-xs sm:text-sm tracking-[0.2em] uppercase font-bold">✦ {t('book_now_pay_later')}</p>
           </div>
         </div>
 
@@ -613,6 +615,13 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Pricing Transparency */}
+      <section className="py-16 md:py-24 bg-background">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <PricingTransparency />
+        </div>
+      </section>
+
       {/* Customer Reviews */}
       <section className="py-16 md:py-24 bg-card border-y border-border">
         <div className="container mx-auto px-4">
@@ -648,6 +657,7 @@ export default function Home() {
               <Link href="/trip-builder" className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 md:px-10 py-3.5 md:py-4 rounded-full font-bold tracking-wide hover:bg-primary/90 transition-all hover:shadow-[0_8px_30px_rgba(201,168,76,0.4)] hover:-translate-y-1">
                 {t('section_planner_cta')} <ChevronRight className="w-5 h-5" />
               </Link>
+              <p className="mt-6 text-sm font-semibold text-muted-foreground tracking-wide">✦ {t('book_now_pay_later')}</p>
             </div>
           </div>
         </div>

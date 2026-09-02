@@ -180,6 +180,33 @@ export type TranslationSet = {
   contact_message: string;
   contact_send_btn: string;
   contact_sent: string;
+  // ── Contact success / next-steps (booking transparency) ─────────────────────
+  contact_sent_next: string;
+  contact_sent_whatsapp: string;
+  // ── Pricing transparency ────────────────────────────────────────────────────
+  book_now_pay_later: string;
+  pay_later: string;
+  nav_pay_later_note: string;
+  price_heading: string;
+  price_intro: string;
+  price_assurance: string;
+  price_starting_note: string;
+  pricing_factor_dates_title: string;
+  pricing_factor_dates_desc: string;
+  pricing_factor_travelers_title: string;
+  pricing_factor_travelers_desc: string;
+  pricing_factor_experience_title: string;
+  pricing_factor_experience_desc: string;
+  pricing_factor_stays_title: string;
+  pricing_factor_stays_desc: string;
+  pricing_factor_transport_title: string;
+  pricing_factor_transport_desc: string;
+  pricing_factor_activities_title: string;
+  pricing_factor_activities_desc: string;
+  // ── AI-friendly business summary ────────────────────────────────────────────
+  business_summary_heading: string;
+  business_summary_text: string;
+  business_summary_contact: string;
   // ── Trip Builder ──────────────────────────────────────────────────────────
   tb_badge: string;
   tb_heading: string;

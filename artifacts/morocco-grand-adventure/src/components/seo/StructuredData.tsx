@@ -106,8 +106,33 @@ export function buildOrganizationSchema(): JsonLd {
     logo: `${SITE_URL}/logo-official.png`,
     description: 'Luxury desert tours and authentic cultural experiences across Morocco, guided by local Berber families from the Sahara.',
     email: 'moroccograndadventure@gmail.com',
+    telephone: '+212 699 846 818',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Merzouga',
+      addressLocality: 'Merzouga',
+      addressRegion: 'Errachidia Province',
+      addressCountry: 'MA',
+    },
+    contactPoint: [
+      {
+        '@type': 'ContactPoint',
+        contactType: 'customer service',
+        telephone: '+212 699 846 818',
+        email: 'moroccograndadventure@gmail.com',
+        availableLanguage: ['en', 'fr', 'es', 'it', 'de', 'nl', 'pt', 'zh', 'ja', 'ko', 'ar'],
+        areaServed: 'MA',
+      },
+      {
+        '@type': 'ContactPoint',
+        contactType: 'reservations',
+        telephone: '+212 699 846 818',
+        areaServed: 'MA',
+      },
+    ],
     sameAs: ORGANIZATION_SAME_AS,
     areaServed: 'Morocco',
+    serviceArea: { '@type': 'Country', name: 'Morocco' },
   };
 }
 

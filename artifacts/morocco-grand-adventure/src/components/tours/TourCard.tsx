@@ -65,6 +65,7 @@ export function TourCard({ tour, compact = false }: TourCardProps) {
             {t('tours_view')} <ChevronRight className="w-4 h-4" aria-hidden="true" />
           </span>
         </div>
+        <div className="mt-3 text-[11px] font-semibold text-primary/80">✦ {t('book_now_pay_later')}</div>
       </div>
     </Link>
   );

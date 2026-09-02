@@ -13,6 +13,7 @@ import { useState } from 'react';
 import { PromoBadge } from '../components/promo/PromoBadge';
 import { PriceTag } from '../components/promo/PriceTag';
 import { PromoBanner } from '../components/promo/PromoBanner';
+import { PricingTransparency } from '../components/ui/PricingTransparency';
 import { discountedPrice, waPromoLink } from '@/lib/promo';
 import { usePromoActive } from '../components/promo/PromoProvider';
 import { StructuredData, buildTourSchema, buildReviewSchema, buildFaqSchema } from '../components/seo/StructuredData';
@@ -369,13 +370,11 @@ export default function TourDetail() {
           <div className="lg:w-1/3">
             <div className="sticky top-28 bg-card border border-border rounded-3xl p-8 shadow-2xl">
 
-              <h3 className="font-serif text-2xl text-foreground mb-4">{isThreeDaySahara ? 'Book Now · Pay Later' : t('book_now')}</h3>
-              {isThreeDaySahara && (
-                <div className="mb-5 rounded-2xl border border-primary/25 bg-primary/5 p-4">
-                  <p className="font-semibold text-foreground text-sm">Confirm the trip before you pay.</p>
-                  <p className="mt-1 text-xs leading-relaxed text-muted-foreground">Send us your dates and group size first. We confirm the itinerary and payment terms with you before you make a payment.</p>
-                </div>
-              )}
+              <h3 className="font-serif text-2xl text-foreground mb-4">{t('book_now_pay_later')}</h3>
+              <div className="mb-5 rounded-2xl border border-primary/25 bg-primary/5 p-4">
+                <p className="font-semibold text-foreground text-sm">{t('book_now')} — {t('pay_later')}</p>
+                <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{t('nav_pay_later_note')} {t('price_starting_note')}</p>
+              </div>
               {/* MGA_THREE_DAY_ENRICHED_V1 */}
 
               {promoOn && (
@@ -518,6 +517,10 @@ export default function TourDetail() {
                 <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-primary shrink-0" /> {t('book_no_fees')}</li>
                 <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-primary shrink-0" /> {t('book_secure_payment')}</li>
               </ul>
+
+              <div className="mt-6">
+                <PricingTransparency compact />
+              </div>
             </div>
           </div>
 
