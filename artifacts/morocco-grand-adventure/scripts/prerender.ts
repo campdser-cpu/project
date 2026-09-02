@@ -177,7 +177,22 @@ function buildHomeContent(lang: Lang): string {
     const tourName = tr(lang, r.tourKey);
     return (`<div class="prerendered-review">\n          <h3 class="prerendered-review-author">${escapeHtml(name)}</h3>\n          <p class="prerendered-review-text">${escapeHtml(quote)}</p>\n          <p class="prerendered-review-tour">${escapeHtml(tourName)}</p>\n        </div>`);
   }).join('\n');
-  return h1(tr(lang, 'hero_heading1') || 'Discover the Soul of Morocco') + paragraph(tr(lang, 'hero_subtext')) + h2(tr(lang, 'section_destinations') || 'Top Destinations') + ul(destNames) + h2(tr(lang, 'section_tours') || 'Featured Tours') + ul(tourNames) + h2(tr(lang, 'section_reviews') || 'Traveler Stories') + `<div class="prerendered-reviews-container">\n${reviewBlocks}\n    </div>\n`;
+  // Static hero mirrors the real SPA hero (same image, same H1, same subtext —
+  // all from the app's own i18n data) so the LCP image + heading paint from the
+  // initial HTML without waiting for JavaScript. React replaces this block on
+  // hydration with the identical interactive hero.
+  const heroHeading1 = tr(lang, 'hero_heading1') || 'Discover the Soul of Morocco';
+  const heroHeading2 = tr(lang, 'hero_heading2') || '';
+  const hero = `<div class="prerendered-hero" style="position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;">
+      <img src="/images/hero/desert-pano.webp" alt="" width="601" height="900" fetchpriority="high" decoding="async" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;" />
+      <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0) 50%, rgba(0,0,0,0.75));"></div>
+      <div style="position:relative;padding:0 1rem;">
+        <h1 style="color:#ffffff;font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:2.25rem;line-height:1.05;margin:0 0 1rem;">${escapeHtml(heroHeading1)}${heroHeading2 ? `<br />${escapeHtml(heroHeading2)}` : ''}</h1>
+        <p style="color:rgba(255,255,255,0.8);max-width:36rem;margin:0 auto;">${escapeHtml(tr(lang, 'hero_subtext'))}</p>
+      </div>
+    </div>\n`;
+  return hero
+    + h2(tr(lang, 'section_destinations') || 'Top Destinations') + ul(destNames) + h2(tr(lang, 'section_tours') || 'Featured Tours') + ul(tourNames) + h2(tr(lang, 'section_reviews') || 'Traveler Stories') + `<div class="prerendered-reviews-container">\n${reviewBlocks}\n    </div>\n`;
 }
 function buildHomeSchemas(lang: Lang): Record<string, unknown>[] {
   const reviewData = reviews.map((r) => ({ name: tr(lang, r.nameKey), text: tr(lang, r.quoteKey), rating: r.rating }));

@@ -77,12 +77,14 @@ function MapSection() {
 
 function getSignaturePlaces(t: (key: string) => string) {
   return [
-    { name: t('home_place1_name'), description: t('home_place1_desc'), image: "/images/dest/merzouga.webp" },
-    { name: t('home_place2_name'), description: t('home_place2_desc'), image: "/images/personal/luxury-camp-dusk.webp" },
-    { name: t('home_place3_name'), description: t('home_place3_desc'), image: "/images/dest/dades-valley.webp" },
-    { name: t('home_place4_name'), description: t('home_place4_desc'), image: "/images/dest/draa-valley.webp" },
-    { name: t('home_place5_name'), description: t('home_place5_desc'), image: "/images/dest/marrakech.webp" },
-    { name: t('home_place6_name'), description: t('home_place6_desc'), image: "/images/dest/todra-gorge.webp" },
+    // srcset serves right-sized WebP variants (generated at build time from the
+    // same source images) so mobile never downloads a 1200px file for a ~640px slot.
+    { name: t('home_place1_name'), description: t('home_place1_desc'), image: "/images/dest/merzouga.webp", srcset: undefined as string | undefined },
+    { name: t('home_place2_name'), description: t('home_place2_desc'), image: "/images/personal/luxury-camp-dusk.webp", srcset: "/images/personal/luxury-camp-dusk-640w.webp 640w, /images/personal/luxury-camp-dusk-960w.webp 960w, /images/personal/luxury-camp-dusk.webp 1200w" },
+    { name: t('home_place3_name'), description: t('home_place3_desc'), image: "/images/dest/dades-valley.webp", srcset: "/images/dest/dades-valley-640w.webp 640w, /images/dest/dades-valley.webp 1024w" },
+    { name: t('home_place4_name'), description: t('home_place4_desc'), image: "/images/dest/draa-valley.webp", srcset: "/images/dest/draa-valley-640w.webp 640w, /images/dest/draa-valley.webp 1024w" },
+    { name: t('home_place5_name'), description: t('home_place5_desc'), image: "/images/dest/marrakech.webp", srcset: undefined as string | undefined },
+    { name: t('home_place6_name'), description: t('home_place6_desc'), image: "/images/dest/todra-gorge.webp", srcset: "/images/dest/todra-gorge-640w.webp 640w, /images/dest/todra-gorge-960w.webp 960w, /images/dest/todra-gorge.webp 1024w" },
   ];
 }
 
@@ -106,14 +108,33 @@ export default function Home() {
   const [searchStyle, setSearchStyle] = useState('');
   const [heroVideoReady, setHeroVideoReady] = useState(false);
 
-  // The poster is the LCP image. Start the decorative movie only after the
-  // initial render is complete, preserving the cinematic experience without
-  // competing with the first paint on constrained mobile connections.
+  // The poster is the LCP image. The decorative movie is NOT started on a
+  // timer: on mobile networks a multi-MB video competing with the hero image
+  // during the first seconds is the single biggest LCP/FCP regression
+  // (measured: ~2.9 MB hero.mp4). It starts on first user engagement instead,
+  // and never on data-saver / very slow connections, preserving the cinematic
+  // experience where it can actually be seen.
   useEffect(() => {
-    const start = () => window.setTimeout(() => setHeroVideoReady(true), 1800);
-    if (document.readyState === 'complete') start();
-    else window.addEventListener('load', start, { once: true });
-    return () => window.removeEventListener('load', start);
+    const conn = (navigator as { connection?: { saveData?: boolean; effectiveType?: string } }).connection;
+    if (conn?.saveData || /^(slow-2g|2g)$/.test(conn?.effectiveType ?? '')) return;
+    let started = false;
+    const start = () => {
+      if (started) return;
+      started = true;
+      setHeroVideoReady(true);
+      cleanup();
+    };
+    const cleanup = () => {
+      window.removeEventListener('pointerdown', start);
+      window.removeEventListener('touchstart', start);
+      window.removeEventListener('wheel', start);
+      window.removeEventListener('keydown', start);
+    };
+    window.addEventListener('pointerdown', start, { once: false, passive: true });
+    window.addEventListener('touchstart', start, { once: false, passive: true });
+    window.addEventListener('wheel', start, { once: false, passive: true });
+    window.addEventListener('keydown', start, { once: false, passive: true });
+    return cleanup;
   }, []);
   
   const handleSearch = (e: React.FormEvent) => {
@@ -130,13 +151,11 @@ export default function Home() {
     <Layout>
       {/* Hero Section — Cinematic Video */}
       <section className="relative h-[100dvh] w-full flex items-center justify-center overflow-hidden">
-        {/* Video Background */}
-        <motion.div
-          className="absolute inset-0 z-0"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.8, ease: "easeIn" as const }}
-        >
+        {/* Video Background — the poster image paints immediately (it is the
+            LCP element and is preloaded with high priority); only the video
+            cross-fades in later so the cinematic feel is preserved without
+            delaying the first paint. */}
+        <div className="absolute inset-0 z-0">
           <img
             src="/images/hero/desert-pano.webp"
   width={601}
@@ -148,7 +167,7 @@ export default function Home() {
             className="absolute inset-0 w-full h-full object-cover"
           />
           {heroVideoReady && (
-            <video
+            <motion.video
               autoPlay
               muted
               loop
@@ -156,26 +175,27 @@ export default function Home() {
               preload="metadata"
               className="absolute inset-0 w-full h-full object-cover"
               aria-hidden="true"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1.8, ease: "easeIn" as const }}
             >
               <source src="/videos/hero.mp4" type="video/mp4" />
-            </video>
+            </motion.video>
           )}
           {/* Layered cinematic overlays */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/75" />
           <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/20" />
-        </motion.div>
+        </div>
 
-        {/* Hero Content */}
+        {/* Hero Content — the H1 renders instantly with no entrance animation
+            (it is the LCP element); the tagline, subtext and CTAs keep their
+            staggered cinematic entrance. */}
         <div className="absolute inset-0 z-10 flex flex-col items-center justify-center px-4 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, delay: 0.6, ease: "easeOut" as const }}
-          >
+          <div>
             <motion.span
               initial={{ opacity: 0, letterSpacing: '0.1em' }}
               animate={{ opacity: 1, letterSpacing: '0.25em' }}
-              transition={{ duration: 1.4, delay: 0.4 }}
+              transition={{ duration: 1.2, delay: 0.2 }}
               className="text-primary font-bold tracking-[0.25em] uppercase text-xs md:text-sm mb-8 block drop-shadow-md"
             >
               {t('hero_tagline')}
@@ -186,7 +206,7 @@ export default function Home() {
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 1.0 }}
+              transition={{ duration: 1, delay: 0.5 }}
               className="text-white/80 text-base md:text-lg lg:text-xl max-w-xl mx-auto mb-8 md:mb-12 font-light tracking-wide px-4"
             >
               {t('hero_subtext')}
@@ -195,7 +215,7 @@ export default function Home() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.2 }}
+              transition={{ duration: 0.8, delay: 0.7 }}
               className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 px-4"
             >
               <Link
@@ -211,7 +231,7 @@ export default function Home() {
                 {t('hero_cta_plan')}
               </Link>
             </motion.div>
-          </motion.div>
+          </div>
         </div>
 
         {/* Scroll Indicator */}
@@ -357,6 +377,8 @@ export default function Home() {
               >
                 <img
                   src={place.image}
+                  srcSet={place.srcset}
+                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, calc(100vw - 2rem)"
                   alt={`${place.name} — ${place.description}`}
                   loading="lazy"
                   decoding="async"
