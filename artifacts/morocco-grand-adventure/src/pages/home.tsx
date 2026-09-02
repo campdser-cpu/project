@@ -192,9 +192,14 @@ export default function Home() {
             staggered cinematic entrance. */}
         <div className="absolute inset-0 z-10 flex flex-col items-center justify-center px-4 text-center">
           <div>
+            {/* NOTE: only opacity is animated here. Animating `letterSpacing`
+                animates a layout-triggering property and forces a reflow on
+                every frame of the entrance (framer-motion was measured as the
+                top forced-reflow source on the homepage). The tracking is kept
+                static via the class below. */}
             <motion.span
-              initial={{ opacity: 0, letterSpacing: '0.1em' }}
-              animate={{ opacity: 1, letterSpacing: '0.25em' }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               transition={{ duration: 1.2, delay: 0.2 }}
               className="text-primary font-bold tracking-[0.25em] uppercase text-xs md:text-sm mb-8 block drop-shadow-md"
             >
