@@ -20,13 +20,13 @@
 //   INQUIRY_FROM_EMAIL  (optional) verified sender, e.g. noreply@… (default
 //                       "inquiries@moroccograndadventure.com" — MUST be a
 //                       verified sender in the Resend account).
-//   INQUIRY_TO_EMAIL    (optional) delivery target (default the business inbox
-//                       moroccograndadventure@gmail.com).
+//   INQUIRY_TO_EMAIL    (optional) delivery target (default
+//                       "inquiries@moroccograndadventure.com").
 //
 // No new dependencies: uses Node 18+ global `fetch` and the Resend REST API.
 // ─────────────────────────────────────────────────────────────────────────────
 
-const INQUIRY_TO_EMAIL = 'moroccograndadventure@gmail.com';
+const INQUIRY_TO_EMAIL = 'inquiries@moroccograndadventure.com';
 const INQUIRY_FROM_EMAIL = 'inquiries@moroccograndadventure.com';
 const RESEND_API_URL = 'https://api.resend.com/emails';
 
