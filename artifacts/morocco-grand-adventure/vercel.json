@@ -2,15 +2,17 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
   "redirects": [
-    {
-      "source": "/:lang/book",
-      "destination": "/:lang/trip-builder",
-      "permanent": false
-    },
-    {
-      "source": "/book",
-      "destination": "/en/trip-builder",
-      "permanent": false
-    }
+    { "source": "/book", "destination": "/en/trip-builder", "permanent": false },
+    { "source": "/en/book", "destination": "/en/trip-builder", "permanent": false },
+    { "source": "/fr/book", "destination": "/fr/trip-builder", "permanent": false },
+    { "source": "/es/book", "destination": "/es/trip-builder", "permanent": false },
+    { "source": "/it/book", "destination": "/it/trip-builder", "permanent": false },
+    { "source": "/de/book", "destination": "/de/trip-builder", "permanent": false },
+    { "source": "/nl/book", "destination": "/nl/trip-builder", "permanent": false },
+    { "source": "/pt/book", "destination": "/pt/trip-builder", "permanent": false },
+    { "source": "/zh/book", "destination": "/zh/trip-builder", "permanent": false },
+    { "source": "/ja/book", "destination": "/ja/trip-builder", "permanent": false },
+    { "source": "/ko/book", "destination": "/ko/trip-builder", "permanent": false },
+    { "source": "/ar/book", "destination": "/ar/trip-builder", "permanent": false }
   ]
 }
