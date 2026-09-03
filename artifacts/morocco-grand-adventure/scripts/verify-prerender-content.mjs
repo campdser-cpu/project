@@ -18,7 +18,10 @@ const required = [
   'contact',
 ];
 const checks = ['<title>','<meta name="description"','<link rel="canonical"','hreflang=','<h1>','Book','WhatsApp'];
-const directoryRoutes = new Set(required.filter((route) => !route.startsWith('tours/') || route.includes('/from-')) .filter((route) => !route.startsWith('tours/3-day-')));
+
+// Prerender writes directory-style routes as <route>/index.html and individual
+// tour detail slugs as <route>.html.
+const directoryRoutes = new Set(required.filter((route) => !route.startsWith('tours/') || route.includes('/from-')));
 
 function fileFor(lang, route) {
   return directoryRoutes.has(route)
