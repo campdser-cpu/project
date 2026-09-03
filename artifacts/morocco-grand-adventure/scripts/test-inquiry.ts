@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import handler, { validateInquiry } from '../../../api/inquiry';
+import { handleInquiry, validateInquiry } from '../../../api/inquiry';
 
 const valid = {
   firstName: 'Test Traveler',
@@ -17,37 +17,31 @@ const valid = {
 const good = validateInquiry(valid);
 assert.equal(good.ok, true);
 if (good.ok) assert.equal(good.data.email, valid.email);
+assert.equal(validateInquiry({ ...valid, email: 'not-an-email' }).ok, false);
+assert.equal(validateInquiry({ ...valid, phone: 'abc' }).ok, false);
+assert.equal(validateInquiry({ ...valid, message: 'x'.repeat(2001) }).ok, false);
 
-const badEmail = validateInquiry({ ...valid, email: 'not-an-email' });
-assert.equal(badEmail.ok, false);
-
-const badPhone = validateInquiry({ ...valid, phone: 'abc' });
-assert.equal(badPhone.ok, false);
-
-const tooLong = validateInquiry({ ...valid, message: 'x'.repeat(2001) });
-assert.equal(tooLong.ok, false);
-
-const options = await handler.fetch(new Request('https://example.test/api/inquiry', { method: 'OPTIONS' }));
+const options = await handleInquiry(new Request('https://example.test/api/inquiry', { method: 'OPTIONS' }));
 assert.equal(options.status, 204);
 
-const get = await handler.fetch(new Request('https://example.test/api/inquiry', { method: 'GET' }));
+const get = await handleInquiry(new Request('https://example.test/api/inquiry', { method: 'GET' }));
 assert.equal(get.status, 405);
 
-const malformed = await handler.fetch(new Request('https://example.test/api/inquiry', {
+const malformed = await handleInquiry(new Request('https://example.test/api/inquiry', {
   method: 'POST',
   headers: { 'content-type': 'application/json' },
   body: '{bad',
 }));
 assert.equal(malformed.status, 400);
 
-const invalid = await handler.fetch(new Request('https://example.test/api/inquiry', {
+const invalid = await handleInquiry(new Request('https://example.test/api/inquiry', {
   method: 'POST',
   headers: { 'content-type': 'application/json' },
   body: JSON.stringify({ ...valid, email: 'bad' }),
 }));
 assert.equal(invalid.status, 400);
 
-const honeypot = await handler.fetch(new Request('https://example.test/api/inquiry', {
+const honeypot = await handleInquiry(new Request('https://example.test/api/inquiry', {
   method: 'POST',
   headers: { 'content-type': 'application/json' },
   body: JSON.stringify({ ...valid, website: 'spam-bot' }),
