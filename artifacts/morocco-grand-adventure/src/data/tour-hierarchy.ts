@@ -34,8 +34,11 @@ export const TOUR_DEPARTURE_CITY: Record<string, DepartureCity> = {
   '7-day-imperial-cities-sahara-escape': 'marrakech',
   'honeymoon-morocco': 'marrakech',
   '8-day-marrakech-essaouira-agadir-sahara': 'marrakech',
-  'family-morocco-adventure': 'marrakech',  '3-day-sahara-fes': 'fes',
-  '3-day-sahara-agadir': 'agadir',
+  '2-day-zagora-desert-marrakech': 'marrakech',
+  '4-day-marrakech-merzouga-sahara': 'marrakech',
+  '5-day-great-south-morocco': 'marrakech',
+  '3-day-fes-merzouga-sahara': 'fes',
+  '4-day-fes-marrakech-via-merzouga': 'fes',
   'marrakech-4-day': 'marrakech',
   'casablanca-3-day': 'casablanca',
   'casablanca-4-day': 'casablanca',
@@ -46,8 +49,11 @@ export const TOUR_DEPARTURE_CITY: Record<string, DepartureCity> = {
   'fes-8-day': 'fes',
   'agadir-4-day': 'agadir',
   'agadir-5-day': 'agadir',
-  'agadir-8-day': 'agadir',
+  'agadir-8-day': 'agadir',  '3-day-sahara-fes': 'fes',
+  '3-day-sahara-agadir': 'agadir',
 };
+
+// MGA_THREE_DAY_HIERARCHY_V1
 
 /** Extract the leading number of days from a duration string like "3 Days / 2 Nights". */
 export function tourDurationDays(duration: string): number {
@@ -162,6 +168,8 @@ export function getCityHub(slug: string): CityHub | undefined {
 //     funnels the traveller to the private trip-builder/quote flow — it never
 //     invents a tour the business does not ship (see DURATION_HUB_* copy).
 // ─────────────────────────────────────────────────────────────────────────────
+// MGA_MISSING_TOURS_V1
+
 export const CITY_HUB_DURATIONS: Record<DepartureCity, number[]> = {
   marrakech: [3, 4, 5, 6, 7, 8, 9, 10],
   casablanca: [3, 4, 5, 6, 7, 8],

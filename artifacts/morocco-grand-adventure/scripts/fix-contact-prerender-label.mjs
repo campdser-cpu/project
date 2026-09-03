@@ -1,7 +1,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const dist = path.resolve(new URL('../dist', import.meta.url).pathname);
+const dist = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'dist');
 const labels = {
   en: 'Official Social Profiles',
   fr: 'Profils sociaux officiels',

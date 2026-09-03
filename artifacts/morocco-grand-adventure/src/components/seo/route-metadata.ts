@@ -15,11 +15,18 @@ export const FR_HOME_META: RouteMeta = {
 
 const TOUR_META: Record<string, RouteMeta> = {
   '3-day-sahara-marrakech': { title: '3-Day Luxury Sahara Tour from Marrakech', description: "Cross the Atlas Mountains, explore Aït Ben Haddou and sleep under Saharan stars in a luxury desert camp.", ogImage: '/images/tours/3-day-sahara-marrakech.jpg' },
+  '3-day-sahara-fes': { title: '3-Day Private Sahara Route from Fes | Morocco', description: 'A quote-only three-day private route from Fes toward Merzouga and Erg Chebbi, with transparent travel expectations and no invented price.', ogImage: '/images/dest/merzouga.jpg' },
+  '3-day-sahara-agadir': { title: '3-Day Private Sahara Route from Agadir | Morocco', description: 'A quote-only three-day private route from Agadir toward Merzouga and Erg Chebbi, with transparent itinerary planning and confirmed payment terms.', ogImage: '/images/dest/agadir.jpg' },
   '5-day-imperial-cities': { title: '5-Day Imperial Cities & Desert Morocco Tour', description: 'Explore Marrakech, Meknès, Fes and Chefchaouen before a night in the Sahara on a private Morocco tour.', ogImage: '/images/tours/5-day-imperial-cities.jpg' },
   '7-day-imperial-cities-sahara-escape': { title: '7-Day Imperial Cities & Sahara Escape — Grand Morocco Tour', description: 'A private Morocco journey through the High Atlas, Aït Ben Haddou, Dades Valley, Erg Chebbi and imperial Fes.', ogImage: '/images/tours/7-day-grand-morocco.jpg' },
   'honeymoon-morocco': { title: 'Romantic Morocco Honeymoon — 10 Day Luxury Private Tour', description: 'A romantic private Morocco journey combining cities, desert experiences and time designed for couples.', ogImage: '/images/tours/honeymoon-morocco.jpg' },
   '8-day-marrakech-essaouira-agadir-sahara': { title: '8-Day Marrakech, Essaouira, Agadir & Sahara Desert Adventure', description: 'A private southern Morocco route from Marrakech through Essaouira and Agadir to the Sahara.', ogImage: '/images/dest/merzouga.jpg' },
   'family-morocco-adventure': { title: 'Family Morocco Adventure — 9 Day Private Tour', description: 'A private family Morocco journey combining cultural discoveries, desert experiences and memorable activities.', ogImage: '/images/tours/family-morocco-adventure.jpg' },
+  '2-day-zagora-desert-marrakech': { title: '2-Day Zagora Desert Tour from Marrakech | Morocco', description: 'A private two-day route from Marrakech through Aït Ben Haddou, Ouarzazate and the Draa Valley to Zagora.', ogImage: '/images/dest/zagora.webp' },
+  '4-day-marrakech-merzouga-sahara': { title: '4-Day Marrakech to Merzouga Sahara Tour | Morocco', description: 'Take four days from Marrakech to Merzouga via Aït Ben Haddou, Dades and Todra, with more time around Erg Chebbi.', ogImage: '/images/dest/merzouga.webp' },
+  '5-day-great-south-morocco': { title: '5-Day Great South Morocco Tour | Private Desert Journey', description: 'Explore Aït Ben Haddou, Dades, Todra, Merzouga and the Draa Valley on a private five-day southern Morocco route.', ogImage: '/images/dest/draa-valley.webp' },
+  '3-day-fes-merzouga-sahara': { title: '3-Day Fes to Merzouga Sahara Desert Tour | Morocco', description: 'Travel privately from Fes through the Middle Atlas and Ziz Valley to Merzouga and Erg Chebbi.', ogImage: '/images/dest/merzouga.webp' },
+  '4-day-fes-marrakech-via-merzouga': { title: '4-Day Fes to Marrakech via Merzouga | Morocco Tour', description: 'A private one-way journey from Fes to Marrakech via Merzouga, Todra Gorge, Dades Valley and Aït Ben Haddou.', ogImage: '/images/dest/ait-ben-haddou.webp' },
   'fes-4-day': { title: '4-Day Fes to Merzouga Sahara Route', description: 'A private round trip from Fes to the Sahara across the Middle Atlas, the Ziz Valley and the dunes of Erg Chebbi.', ogImage: '/images/dest/merzouga.jpg' },
   'fes-5-day': { title: '5-Day Fes to Marrakech via Merzouga, Dades & the Atlas', description: 'A one-way private route from Fes to Marrakech through the Sahara, the gorges and the High Atlas.', ogImage: '/images/dest/dades-valley.jpg' },
   'fes-8-day': { title: '8-Day Fes Imperial Cities & Sahara Grand Tour', description: 'A private eight-day journey from Fes through Meknès, Volubilis and the Sahara to a guided day in Marrakech.', ogImage: '/images/dest/fes.jpg' },
@@ -37,6 +44,16 @@ const TOUR_ALIASES: Record<string,string> = {
   '3-days-fes-to-marrakech-desert-tour':'5-day-imperial-cities',
   'merzouga-desert-tour':'3-day-sahara-marrakech',
   'morocco-desert-tour':'7-day-imperial-cities-sahara-escape',
+  '2-days-marrakech-zagora-desert-tour':'2-day-zagora-desert-marrakech',
+  '2-day-zagora-desert-tour':'2-day-zagora-desert-marrakech',
+  '4-days-marrakech-to-merzouga-desert-tour':'4-day-marrakech-merzouga-sahara',
+  '4-day-marrakech-merzouga-desert-tour':'4-day-marrakech-merzouga-sahara',
+  '5-days-great-south-morocco-tour':'5-day-great-south-morocco',
+  '5-day-great-south-morocco-tour':'5-day-great-south-morocco',
+  '3-days-fes-to-merzouga-sahara-tour':'3-day-fes-merzouga-sahara',
+  '3-day-fes-merzouga-desert-tour':'3-day-fes-merzouga-sahara',
+  '4-days-fes-to-marrakech-via-merzouga':'4-day-fes-marrakech-via-merzouga',
+  '4-day-fes-marrakech-merzouga-tour':'4-day-fes-marrakech-via-merzouga',
 };
 
 const DESTINATION_META: Record<string, RouteMeta> = {
@@ -106,6 +123,8 @@ export const BLOG_META: Record<string,RouteMeta> = {
   'morocco-packing-list-desert':{title:'Morocco Desert Packing List — What to Bring',description:'Practical essentials to pack for a Morocco Sahara trip.',ogImage:'/images/hero/desert-pano.jpg'},
   'fes-chefchaouen-blue-city-guide':{title:'Fes to Chefchaouen — Morocco Blue City Guide',description:'Plan a journey from Fes to Chefchaouen and explore Morocco’s blue medina.',ogImage:'/images/dest/chefchaouen.jpg'},
 };
+
+// MGA_MISSING_TOURS_V1
 
 export function getRouteMeta(rest:string):RouteMeta {
   const normalized = rest === '' || rest === '/' ? '/' : rest.replace(/\/$/,'');

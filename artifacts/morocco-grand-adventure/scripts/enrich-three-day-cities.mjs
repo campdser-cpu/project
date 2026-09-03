@@ -27,12 +27,6 @@ if (!detail.includes('MGA_QUOTE_ONLY_THREE_DAY_UI_V1')) {
   fs.writeFileSync(detailPath, detail, 'utf8');
 }
 
-let price = fs.readFileSync(pricePath, 'utf8');
-if (!price.includes('MGA_QUOTE_ONLY_THREE_DAY_PRICE_V1')) {
-  price = replace(price, /  const active = usePromoActive\(\);/, `  const active = usePromoActive();\n  const numericPrice = typeof price === 'number' ? Number.isFinite(price) : /\\d/.test(price);\n  if (!numericPrice) return <span className={\`font-semibold text-foreground \\${NUM[size]} \\${className}\`}>Request a quote</span>;\n  // MGA_QUOTE_ONLY_THREE_DAY_PRICE_V1`, 'PriceTag guard');
-  fs.writeFileSync(pricePath, price, 'utf8');
-}
-
 let meta = fs.readFileSync(metaPath, 'utf8');
 if (!meta.includes("'3-day-sahara-fes'")) {
   meta = replace(meta, /  '5-day-imperial-cities': \{/, `  '3-day-sahara-fes': { title: '3-Day Private Sahara Route from Fes | Morocco', description: 'A quote-only three-day private route from Fes toward Merzouga and Erg Chebbi, with transparent travel expectations and no invented price.', ogImage: '/images/dest/merzouga.jpg' },\n  '3-day-sahara-agadir': { title: '3-Day Private Sahara Route from Agadir | Morocco', description: 'A quote-only three-day private route from Agadir toward Merzouga and Erg Chebbi, with transparent itinerary planning and confirmed payment terms.', ogImage: '/images/dest/agadir.jpg' },\n  '5-day-imperial-cities': {`, 'tour metadata');

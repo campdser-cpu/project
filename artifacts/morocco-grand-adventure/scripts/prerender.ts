@@ -104,6 +104,8 @@ const TOUR_ROUTES = [
   'honeymoon-morocco',
   '8-day-marrakech-essaouira-agadir-sahara',
   'family-morocco-adventure',
+  '3-day-sahara-fes',
+  '3-day-sahara-agadir',
   'marrakech-4-day',
   'casablanca-3-day',
   'casablanca-4-day',
@@ -115,7 +117,14 @@ const TOUR_ROUTES = [
   'agadir-4-day',
   'agadir-5-day',
   'agadir-8-day',
+  '2-day-zagora-desert-marrakech',
+  '4-day-marrakech-merzouga-sahara',
+  '5-day-great-south-morocco',
+  '3-day-fes-merzouga-sahara',
+  '4-day-fes-marrakech-via-merzouga',
 ];
+
+// MGA_THREE_DAY_PRERENDER_V1
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 const AMP = String.fromCharCode(38); // '&'

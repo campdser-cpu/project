@@ -2,9 +2,10 @@
 // routes that the canonical tour hierarchy declares, plus legacy aliases.
 const fs = await import('node:fs');
 const path = await import('node:path');
+const { fileURLToPath } = await import('node:url');
 
 // scripts/ is directly inside the morocco-grand-adventure workspace.
-const root = path.resolve(new URL('..', import.meta.url).pathname);
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const hierarchy = fs.readFileSync(path.join(root, 'src/data/tour-hierarchy.ts'), 'utf8');
 const required = ['from-marrakech','from-fes','from-agadir','from-casablanca','from-marrakech/3-days'];
 for (const slug of required) {
