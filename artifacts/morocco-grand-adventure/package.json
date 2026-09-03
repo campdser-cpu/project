@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --config vite.config.ts --host 0.0.0.0",
-    "build": "npm run typecheck && npm run test:deterministic && node scripts/enrich-missing-tours.mjs && node scripts/restore-tour-prerender.mjs && node scripts/enrich-three-day-tour.mjs && node scripts/finalize-tour-prerender.mjs && vite build --config vite.config.ts && tsx scripts/prerender.ts && node scripts/generate-sitemap.mjs && node scripts/fix-prerender-links.mjs && node scripts/gsc-route-contract.mjs && node scripts/verify-prerender-content.mjs && node scripts/seo-content-audit.mjs",
+    "build": "npm run typecheck && npm run test:deterministic && node scripts/enrich-missing-tours.mjs && node scripts/restore-tour-prerender.mjs && node scripts/enrich-three-day-tour.mjs && node scripts/finalize-tour-prerender.mjs && vite build --config vite.config.ts && tsx scripts/prerender.ts && node scripts/fix-contact-prerender-label.mjs && node scripts/generate-sitemap.mjs && node scripts/fix-prerender-links.mjs && node scripts/gsc-route-contract.mjs && node scripts/verify-prerender-content.mjs && node scripts/seo-content-audit.mjs",
     "prerender": "tsx scripts/prerender.ts",
     "serve": "vite preview --config vite.config.ts --host 0.0.0.0",
     "typecheck": "tsc -p tsconfig.json --noEmit",
