@@ -45,7 +45,7 @@ import {
   type BlogPost,
 } from '../src/i18n/content';
 import { getRouteMeta, getLocalizedRouteMeta, BLOG_META, HOME_META, FR_HOME_META } from '../src/components/seo/route-metadata';
-import { buildTourSchema, buildDestinationSchema, buildBlogPostSchema, buildReviewSchema } from '../src/components/seo/StructuredData';
+import { buildTourSchema, buildDestinationSchema, buildBlogPostSchema, buildReviewSchema, buildFaqSchema, buildBreadcrumb } from '../src/components/seo/StructuredData';
 import { registerAllTranslations } from '../src/i18n/locales';
 import { registerAllContentOverlays } from '../src/i18n/content/overlays';
 
@@ -104,6 +104,17 @@ const TOUR_ROUTES = [
   'honeymoon-morocco',
   '8-day-marrakech-essaouira-agadir-sahara',
   'family-morocco-adventure',
+  'marrakech-4-day',
+  'casablanca-3-day',
+  'casablanca-4-day',
+  'casablanca-5-day',
+  'casablanca-8-day',
+  'fes-4-day',
+  'fes-5-day',
+  'fes-8-day',
+  'agadir-4-day',
+  'agadir-5-day',
+  'agadir-8-day',
 ];
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
@@ -209,7 +220,7 @@ function buildCityHubContent(slug: string, lang: Lang): string {
   for (const t of cityTours) {
     tourBlocks += h2(t.name)
       + paragraph(t.description ?? '')
-      + paragraph(`${tr(lang, 'search_duration')}: ${t.duration} · ${tr(lang, 'from')} €${t.price}`)
+      + paragraph(`${tr(lang, 'search_duration')}: ${t.duration} · ${tr(lang, 'from')} ${t.quoteOnly ? t.price : '€' + t.price}`)
       + '<ul>' + t.highlights.map((x) => `      <li>${link(`${SITE_URL}/${lang}/tours/${t.id}`, x)}</li>`).join('\n') + '    </ul>'
       + rawParagraph(link(`${SITE_URL}/${lang}/tours/${t.id}`, tr(lang, 'tours_view') + ' ' + escapeHtml(t.name)));
   }
@@ -252,7 +263,7 @@ function buildDurationHubContent(slug: string, days: number, lang: Lang): string
   for (const t of matching) {
     tourBlocks += h2(t.name)
       + paragraph(t.description ?? '')
-      + paragraph(`${tr(lang, 'from')} €${t.price} · ${t.duration}`)
+      + paragraph(`${tr(lang, 'from')} ${t.quoteOnly ? t.price : '€' + t.price} · ${t.duration}`)
       + rawParagraph(link(`${SITE_URL}/${lang}/tours/${t.id}`, tr(lang, 'tours_view') + ' ' + escapeHtml(t.name)));
   }
 
@@ -551,7 +562,13 @@ function buildRoutes(lang: Lang): RouteEntry[] {
       add(`/tours/from-${hub.slug}/${days}-days`, `${lang}/tours/from-${hub.slug}/${days}-days/index.html`, () => buildDurationHubContent(hub.slug, days, lang));
     }
   }
-  for (const id of TOUR_ROUTES) { const t = getLocalizedTour(id, lang); add(`/tours/${id}`, `${lang}/tours/${id}.html`, () => buildTourDetailContent(id, lang), t ? (buildTourSchema(t, id, lang) as Record<string, unknown>[]) : []); }
+  for (const id of TOUR_ROUTES) { const t = getLocalizedTour(id, lang); add(`/tours/${id}`, `${lang}/tours/${id}.html`, () => buildTourDetailContent(id, lang), t ? (t.quoteOnly
+      ? ([
+          buildBreadcrumb([{ name: 'Home', path: '/' }, { name: 'Tours', path: '/tours' }, { name: t.name, path: '/tours/' + id }], lang),
+          ...(t.faq && t.faq.length ? [buildFaqSchema(t.faq)] : []),
+        ] as Record<string, unknown>[])
+      : (buildTourSchema(t, id, lang) as Record<string, unknown>[]))
+    : [] /* MGA_THREE_DAY_SCHEMA_V1 */); }
   for (const dest of destinations) { const d = getLocalizedDestination(dest.id, lang); add(`/destinations/${dest.id}`, `${lang}/destinations/${dest.id}.html`, () => buildDestinationDetailContent(dest.id, lang), d ? (buildDestinationSchema(d, lang) as Record<string, unknown>[]) : []); }
   return routes;
 }

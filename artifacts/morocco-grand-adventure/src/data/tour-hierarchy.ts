@@ -34,7 +34,19 @@ export const TOUR_DEPARTURE_CITY: Record<string, DepartureCity> = {
   '7-day-imperial-cities-sahara-escape': 'marrakech',
   'honeymoon-morocco': 'marrakech',
   '8-day-marrakech-essaouira-agadir-sahara': 'marrakech',
-  'family-morocco-adventure': 'marrakech',
+  'family-morocco-adventure': 'marrakech',  '3-day-sahara-fes': 'fes',
+  '3-day-sahara-agadir': 'agadir',
+  'marrakech-4-day': 'marrakech',
+  'casablanca-3-day': 'casablanca',
+  'casablanca-4-day': 'casablanca',
+  'casablanca-5-day': 'casablanca',
+  'casablanca-8-day': 'casablanca',
+  'fes-4-day': 'fes',
+  'fes-5-day': 'fes',
+  'fes-8-day': 'fes',
+  'agadir-4-day': 'agadir',
+  'agadir-5-day': 'agadir',
+  'agadir-8-day': 'agadir',
 };
 
 /** Extract the leading number of days from a duration string like "3 Days / 2 Nights". */
