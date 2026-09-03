@@ -76,6 +76,7 @@
     "zod": "^3.25.76"
   },
   "dependencies": {
-    "leaflet": "^1.9.4"
+    "leaflet": "^1.9.4",
+    "react-dom": "19.1.0"
   }
 }
