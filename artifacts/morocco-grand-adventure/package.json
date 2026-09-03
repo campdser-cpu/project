@@ -10,6 +10,8 @@
     "serve": "vite preview --config vite.config.ts --host 0.0.0.0",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test:deterministic": "tsx scripts/test-inquiry.ts",
+    "route:audit": "tsx scripts/route-audit.ts",
+    "i18n:audit": "tsx scripts/i18n-audit.ts",
     "audit:production": "node scripts/audit-production-routes.mjs"
   },
   "devDependencies": {
