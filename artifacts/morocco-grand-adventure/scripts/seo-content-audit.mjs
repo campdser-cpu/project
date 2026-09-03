@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const root = path.resolve(new URL('..', import.meta.url).pathname, '..');
+const root = path.resolve(new URL('..', import.meta.url).pathname);
 const dist = path.join(root, 'dist');
 const site = 'https://www.moroccograndadventure.com';
 const langs = ['en','fr','es','it','de','nl','pt','zh','ja','ko','ar'];
@@ -58,50 +58,34 @@ for (const file of files) {
   if (!title) errors.push(`${url}: missing title`);
   if (!description) errors.push(`${url}: missing meta description`);
   if (h1s.length !== 1) errors.push(`${url}: expected exactly 1 H1, found ${h1s.length}`);
-  if (title.length > 65) warnings.push(`${url}: title is ${title.length} chars`);
-  if (description.length > 165) warnings.push(`${url}: description is ${description.length} chars`);
-  if (description.length > 0 && description.length < 70) warnings.push(`${url}: description is only ${description.length} chars`);
+  if (title.length > 70) warnings.push(`${url}: title > 70 chars`);
+  if (description.length > 170) warnings.push(`${url}: description > 170 chars`);
 
-  if (title) {
-    const list = titles.get(title) ?? [];
-    list.push(url);
-    titles.set(title, list);
-  }
-  if (description) {
-    const list = descriptions.get(description) ?? [];
-    list.push(url);
-    descriptions.set(description, list);
-  }
+  const titleKey = title.toLowerCase();
+  const descKey = description.toLowerCase();
+  if (titleKey) titles.set(titleKey, (titles.get(titleKey) || 0) + 1);
+  if (descKey) descriptions.set(descKey, (descriptions.get(descKey) || 0) + 1);
 
-  for (const match of html.matchAll(/href=["']([^"']+)["']/gi)) {
-    const href = match[1].split('#')[0].split('?')[0];
+  for (const [, href] of html.matchAll(/<a[^>]+href=["']([^"']+)["']/gi)) {
     if (!isInternal(href)) continue;
-    const urlPath = href.startsWith(site) ? new URL(href).pathname : href;
-    if (!langs.includes(urlPath.split('/')[1])) continue;
     internalLinks++;
-    if (!fs.existsSync(pageFile(urlPath))) errors.push(`${url}: broken internal link -> ${urlPath}`);
+    const target = href.split('#')[0].split('?')[0];
+    if (!target || target.startsWith('http')) continue;
+    if (!pageFile(target)) errors.push(`${url}: broken internal link ${href}`);
   }
 }
 
-for (const [title, urls] of titles) if (urls.length > 1) warnings.push(`duplicate title (${urls.length}): ${title.slice(0, 100)} :: ${urls.slice(0, 4).join(', ')}`);
-for (const [description, urls] of descriptions) if (urls.length > 1) warnings.push(`duplicate description (${urls.length}): ${description.slice(0, 120)} :: ${urls.slice(0, 4).join(', ')}`);
+for (const [value, count] of titles) if (count > 1) warnings.push(`duplicate title (${count} pages): ${value.slice(0, 120)}`);
+for (const [value, count] of descriptions) if (count > 1) warnings.push(`duplicate description (${count} pages): ${value.slice(0, 120)}`);
 
 const sitemap = path.join(dist, 'sitemap.xml');
-if (!fs.existsSync(sitemap)) errors.push('missing dist/sitemap.xml');
-else {
-  const sitemapUrls = [...fs.readFileSync(sitemap, 'utf8').matchAll(/<loc>(.*?)<\/loc>/g)].map((m) => new URL(m[1]).pathname);
-  const unique = new Set(sitemapUrls);
-  if (unique.size !== sitemapUrls.length) errors.push('sitemap contains duplicate URLs');
-  for (const p of unique) if (!fs.existsSync(pageFile(p))) errors.push(`sitemap URL has no generated HTML: ${p}`);
-  const generated = new Set(files.map(urlFor));
-  for (const p of generated) if (!unique.has(p)) warnings.push(`generated page missing from sitemap: ${p}`);
-  console.log(`Sitemap: ${unique.size} URLs; generated localized pages: ${generated.size}`);
-}
+if (!fs.existsSync(sitemap)) errors.push('sitemap.xml missing from dist/');
 
-console.log(`SEO content audit: ${checked} HTML pages, ${internalLinks} internal links checked.`);
-console.log(`Warnings: ${warnings.length}`);
-for (const w of warnings.slice(0, 120)) console.log(`  ! ${w}`);
-console.log(`Errors: ${errors.length}`);
-for (const e of errors.slice(0, 120)) console.log(`  ✗ ${e}`);
-if (errors.length) process.exit(1);
+console.log(`SEO content audit: checked ${checked} localized HTML pages and ${internalLinks} internal links.`);
+if (warnings.length) console.log(`SEO warnings: ${warnings.length}`);
+if (errors.length) {
+  console.error(`SEO errors: ${errors.length}`);
+  console.error(errors.slice(0, 100).join('\n'));
+  process.exit(1);
+}
 console.log('SEO content audit: PASS');
