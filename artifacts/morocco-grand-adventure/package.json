@@ -5,10 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite --config vite.config.ts --host 0.0.0.0",
-    "build": "node scripts/enrich-missing-tours.mjs && node scripts/restore-tour-prerender.mjs && node scripts/enrich-three-day-tour.mjs && node scripts/finalize-tour-prerender.mjs && vite build --config vite.config.ts && tsx scripts/prerender.ts && node scripts/generate-sitemap.mjs && node scripts/fix-prerender-links.mjs && node scripts/gsc-route-contract.mjs && node scripts/verify-prerender-content.mjs && node scripts/seo-content-audit.mjs",
+    "build": "npm run typecheck && node scripts/enrich-missing-tours.mjs && node scripts/restore-tour-prerender.mjs && node scripts/enrich-three-day-tour.mjs && node scripts/finalize-tour-prerender.mjs && vite build --config vite.config.ts && tsx scripts/prerender.ts && node scripts/generate-sitemap.mjs && node scripts/fix-prerender-links.mjs && node scripts/gsc-route-contract.mjs && node scripts/verify-prerender-content.mjs && node scripts/seo-content-audit.mjs",
     "prerender": "tsx scripts/prerender.ts",
     "serve": "vite preview --config vite.config.ts --host 0.0.0.0",
-    "typecheck": "tsc -p tsconfig.json --noEmit"
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "audit:production": "node scripts/audit-production-routes.mjs"
   },
   "devDependencies": {
     "@hookform/resolvers": "^3.10.0",
@@ -27,7 +28,7 @@
     "@radix-ui/react-navigation-menu": "^1.2.6",
     "@radix-ui/react-popover": "^1.1.7",
     "@radix-ui/react-progress": "^1.1.7",
-    "@radix-ui/react-radio-group": "^1.1.5",
+    "@radix-ui/react-radio-group": "^1.3.0",
     "@radix-ui/react-select": "^2.1.7",
     "@radix-ui/react-separator": "^1.1.7",
     "@radix-ui/react-slider": "^1.3.0",
