@@ -1,4 +1,16 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "cleanUrls": true
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/:lang/book",
+      "destination": "/:lang/trip-builder",
+      "permanent": false
+    },
+    {
+      "source": "/book",
+      "destination": "/en/trip-builder",
+      "permanent": false
+    }
+  ]
 }
