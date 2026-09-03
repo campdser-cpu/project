@@ -41,7 +41,9 @@ if (!fs.existsSync(dist)) {
   process.exit(1);
 }
 
-const files = walk(dist).filter((f) => langs.some((l) => f.includes(path.join(l, ''))));
+// Audit only localized site pages. Root-level verification artifacts and the
+// Vite shell are intentionally outside this SEO page contract.
+const files = walk(dist).filter((f) => langs.includes(path.relative(dist, f).split(path.sep)[0]));
 const titles = new Map();
 const descriptions = new Map();
 let checked = 0;
