@@ -205,7 +205,7 @@ export default function Home() {
               muted
               loop
               playsInline
-              preload="metadata"
+              preload="none"
               className="absolute inset-0 w-full h-full object-cover"
               aria-hidden="true"
             >

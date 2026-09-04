@@ -336,7 +336,7 @@ export default function DestinationDetail() {
             {getLocalizedTours(lang).slice(0, 3).map(tour => (
               <Link key={tour.id} href={`/tours/${tour.id}`} className="group block bg-background rounded-2xl overflow-hidden border border-border shadow-sm hover:shadow-xl hover:border-primary/50 transition-all duration-500">
                 <div className="h-56 relative overflow-hidden">
-                  <img src={tour.image} alt={tour.name} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <img src={tour.image} srcSet={`${tour.image.replace(/\.webp$/, '-480w.webp')} 480w, ${tour.image.replace(/\.webp$/, '-768w.webp')} 768w, ${tour.image} 1200w`} sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" alt={tour.name} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                   <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors" />
                 </div>
                 <div className="p-6 relative">
@@ -361,7 +361,7 @@ export default function DestinationDetail() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {nearbyDestinations.map(dest => (
               <Link key={dest.id} href={`/destinations/${dest.id}`} className="group relative h-64 rounded-2xl overflow-hidden border border-transparent hover:border-primary/50 transition-all shadow-sm hover:shadow-xl">
-                <img src={dest.image} alt={dest.name} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <img src={dest.image} srcSet={`${dest.image.replace(/\.webp$/, '-480w.webp')} 480w, ${dest.image.replace(/\.webp$/, '-768w.webp')} 768w, ${dest.image} 1200w`} sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" alt={dest.name} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
                 <div className="absolute bottom-6 left-6 text-white">
                   <h3 className="font-serif text-2xl mb-1">{dest.name}</h3>

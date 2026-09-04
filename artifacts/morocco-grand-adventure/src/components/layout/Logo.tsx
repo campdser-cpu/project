@@ -27,9 +27,12 @@ export function Logo({ variant = 'dark', className = '' }: LogoProps) {
     <img
       src={src}
       alt="Morocco Grand Adventure"
+      width={975}
+      height={290}
       className={`w-auto ${sizeClasses}`}
       draggable={false}
       decoding="async"
+      fetchPriority="low"
     />
   );
 }

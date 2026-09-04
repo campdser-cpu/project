@@ -399,3 +399,20 @@
 @media (prefers-reduced-motion: reduce) {
   .animate-promo-shine { animation: none; }
 }
+
+/* Prerendered LCP poster (homepage). The hero background is emitted into the
+   first <html> so the browser starts the fetch in parallel with CSS/JS rather
+   than waiting for React hydration. Positioned absolutely to paint as the hero
+   backdrop without pushing content or causing layout shift; React clears and
+   re-renders the identical poster on bootstrap (then cache-warm). */
+.prerendered-lcp-poster {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  object-fit: cover;
+  object-position: center;
+  background-color: #10271b;
+}

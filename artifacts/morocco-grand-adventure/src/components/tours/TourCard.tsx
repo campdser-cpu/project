@@ -25,6 +25,8 @@ export function TourCard({ tour, compact = false }: TourCardProps) {
       <div className={`${compact ? 'h-48' : 'h-60'} relative overflow-hidden`}>
         <img
           src={tour.image}
+          srcSet={`${tour.image.replace(/\.webp$/, '-480w.webp')} 480w, ${tour.image.replace(/\.webp$/, '-768w.webp')} 768w, ${tour.image} 1200w`}
+          sizes={compact ? '300px' : '(max-width: 768px) 100vw, 400px'}
           alt={tour.name}
           loading="lazy"
           decoding="async"

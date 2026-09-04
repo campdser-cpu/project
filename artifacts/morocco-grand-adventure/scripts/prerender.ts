@@ -208,7 +208,15 @@ function buildHomeContent(lang: Lang): string {
   const heroH1Parts = [tr(lang, 'hero_heading1'), tr(lang, 'hero_heading2')].filter(Boolean).map(escapeHtml);
   const heroH1 = heroH1Parts.length ? heroH1Parts.join('<br/>') : 'Discover the Soul of Morocco';
   const heroH1Block = heroH1Parts.length ? `    <h1>${heroH1}</h1>\n` : h1('Discover the Soul of Morocco');
-  return heroH1Block + paragraph(tr(lang, 'hero_subtext')) + h2(tr(lang, 'section_destinations') || 'Top Destinations') + ul(destNames) + h2(tr(lang, 'section_tours') || 'Featured Tours') + ul(tourNames) + hubBlock + h2(tr(lang, 'section_reviews') || 'Traveler Stories') + `<div class="prerendered-reviews-container">\n${reviewBlocks}\n    </div>\n`;
+  // LCP poster: place the hero background image in the FIRST rendered HTML so the
+  // browser begins the fetch immediately, in parallel with CSS/JS, instead of
+  // waiting for React hydration to mount it. Positioned absolutely via
+  // .prerendered-lcp-poster so it paints as the hero backdrop (never a layout
+  // shift / content jump for crawlers or users). React clears it on hydrate and
+  // re-renders the identical poster — by then it is cache-warm, so the LCP
+  // candidate paints almost instantly.
+  const lcpPoster = `<img class="prerendered-lcp-poster" src="/images/hero/desert-pano.webp" alt="" aria-hidden="true" width="601" height="900" fetchpriority="high" />\n`;
+  return lcpPoster + heroH1Block + paragraph(tr(lang, 'hero_subtext')) + h2(tr(lang, 'section_destinations') || 'Top Destinations') + ul(destNames) + h2(tr(lang, 'section_tours') || 'Featured Tours') + ul(tourNames) + hubBlock + h2(tr(lang, 'section_reviews') || 'Traveler Stories') + `<div class="prerendered-reviews-container">\n${reviewBlocks}\n    </div>\n`;
 }
 function buildHomeSchemas(lang: Lang): Record<string, unknown>[] {
   const reviewData = reviews.map((r) => ({ name: tr(lang, r.nameKey), text: tr(lang, r.quoteKey), rating: r.rating }));
