@@ -31,7 +31,7 @@ export function Footer() {
               <a href="https://www.tiktok.com/@morocco.grand.adv" target="_blank" rel="noreferrer" aria-label="Follow Morocco Grand Adventure on TikTok" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"><SiTiktok className="w-5 h-5" aria-hidden="true" /></a>
               <a href="https://www.facebook.com/share/1DFzDX72P3/" target="_blank" rel="noreferrer" aria-label="Like Morocco Grand Adventure on Facebook" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"><SiFacebook className="w-5 h-5" aria-hidden="true" /></a>
             </div>
-            <p className="text-xs text-white/50">{t('footer_tagline_alt') ?? 'Morocco travel experiences and desert adventures.'}</p>
+            <p className="text-xs text-white/70">{t('footer_tagline_alt') ?? 'Morocco travel experiences and desert adventures.'}</p>
           </div>
           <div>
             <h3 className="font-serif text-xl font-medium mb-4 sm:mb-6 text-primary">{t('footer_quick_links')}</h3>
@@ -75,14 +75,14 @@ export function Footer() {
             </ul>
             <h3 className="font-serif text-xl font-medium mb-4 sm:mb-6 text-primary">{t('footer_contact')}</h3>
             <ul className="space-y-4">
-              <li className="flex items-start gap-3 text-white/70"><MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" /><span>{t('footer_address')}<br/><a href="https://maps.app.goo.gl/UK3MENd42bC16mME7" target="_blank" rel="noreferrer" className="text-primary hover:underline text-xs mt-1 inline-block">View on Google Maps</a></span></li>
-              <li className="flex items-center gap-3 text-white/70"><Phone className="w-5 h-5 text-primary shrink-0" /><a href={`tel:${contactInfo.phone}`} className="hover:text-primary transition-colors break-all">{contactInfo.phone}</a></li>
-              <li className="flex items-center gap-3 text-white/70"><SiWhatsapp className="w-5 h-5 text-primary shrink-0" /><a href="https://wa.me/message/QAFZ3RKJDNH4B1" target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">{t('footer_whatsapp')}</a></li>
-              <li className="flex items-center gap-3 text-white/70"><Mail className="w-5 h-5 text-primary shrink-0" /><a href={`mailto:${contactInfo.email}`} className="hover:text-primary transition-colors break-all">{contactInfo.email}</a></li>
+              <li className="flex items-start gap-3 text-white/70"><MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" aria-hidden="true" /><span>{t('footer_address')}<br/><a href="https://maps.app.goo.gl/UK3MENd42bC16mME7" target="_blank" rel="noreferrer" className="text-primary hover:underline text-xs mt-1 inline-block">View on Google Maps</a></span></li>
+              <li className="flex items-center gap-3 text-white/70"><Phone className="w-5 h-5 text-primary shrink-0" aria-hidden="true" /><a href={`tel:${contactInfo.phone}`} className="hover:text-primary transition-colors break-all">{contactInfo.phone}</a></li>
+              <li className="flex items-center gap-3 text-white/70"><SiWhatsapp className="w-5 h-5 text-primary shrink-0" aria-hidden="true" /><a href="https://wa.me/message/QAFZ3RKJDNH4B1" target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">{t('footer_whatsapp')}</a></li>
+              <li className="flex items-center gap-3 text-white/70"><Mail className="w-5 h-5 text-primary shrink-0" aria-hidden="true" /><a href={`mailto:${contactInfo.email}`} className="hover:text-primary transition-colors break-all">{contactInfo.email}</a></li>
             </ul>
           </div>
         </div>
-        <div className="border-t border-white/10 pt-6 sm:pt-8 flex flex-col md:flex-row items-center justify-between text-white/50 text-sm text-center md:text-left"><p>&copy; {new Date().getFullYear()} Morocco Grand Adventure. {t('footer_rights')}</p></div>
+        <div className="border-t border-white/10 pt-6 sm:pt-8 flex flex-col md:flex-row items-center justify-between text-white/70 text-sm text-center md:text-left"><p>&copy; {new Date().getFullYear()} Morocco Grand Adventure. {t('footer_rights')}</p></div>
       </div>
     </footer>
   );

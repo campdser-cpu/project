@@ -115,15 +115,62 @@ export default function Home() {
   const [searchStyle, setSearchStyle] = useState('');
   const [heroVideoReady, setHeroVideoReady] = useState(false);
 
-  // The poster is the LCP image. Start the decorative movie only after the
-  // initial render is complete, preserving the cinematic experience without
-  // competing with the first paint on constrained mobile connections.
+    // The poster is the LCP background image and is preloaded in the document
+  // <head>. The decorative hero movie is deferred until the page is idle and
+  // interactive — it must NEVER participate in the critical rendering path.
+  // On mobile / data-constrained devices we keep the lightweight poster and only
+  // start the video on the first genuine user interaction (preserving the full
+  // cinematic experience for engaged visitors without ever taxing the first
+  // meaningful paint).
   useEffect(() => {
-    const start = () => window.setTimeout(() => setHeroVideoReady(true), 1800);
-    if (document.readyState === 'complete') start();
-    else window.addEventListener('load', start, { once: true });
-    return () => window.removeEventListener('load', start);
+    const startVideo = () => setHeroVideoReady(true);
+    // On small screens we keep the lightweight poster and only start the movie
+    // on genuine user interaction — this prevents the 3.6 MB hero video from
+    // ever competing with first paint on mobile. On desktop we start it during
+    // idle time to preserve the cinematic experience.
+    const prefersInteractionOnly =
+      (typeof window.matchMedia === 'function' &&
+        window.matchMedia('(max-width: 767px)').matches) ||
+      (typeof window.matchMedia === 'function' &&
+        window.matchMedia('(pointer: coarse)').matches);
+    const onIdle = () => {
+      if (prefersInteractionOnly) return;
+      // Respect data-saver users: never force the 3.6 MB movie on them.
+      const conn = (navigator as Navigator & {
+        connection?: { saveData?: boolean };
+      }).connection;
+      if (conn?.saveData) return;
+      if (typeof window.requestIdleCallback === 'function') {
+        window.requestIdleCallback(() => window.setTimeout(startVideo, 1800));
+      } else {
+        window.setTimeout(startVideo, 3500);
+      }
+      cleanup();
+    };
+    const onInteraction = () => {
+      startVideo();
+      cleanup();
+    };
+    const cleanup = () => {
+      window.removeEventListener('load', onIdle);
+      window.removeEventListener('pointerdown', onInteraction, { passive: true } as any);
+      window.removeEventListener('keydown', onInteraction, { passive: true } as any);
+    };
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+      onIdle();
+    } else {
+      window.addEventListener('load', onIdle, { once: true });
+    }
+    // If the load event already fired before the listener attached, ensure idle
+    // start still happens and that interaction still triggers the video.
+    window.addEventListener('pointerdown', onInteraction, { passive: true } as any);
+    window.addEventListener('keydown', onInteraction, { passive: true } as any);
+    return cleanup;
   }, []);
+
+  // Mobile: prefer the lightweight poster. The video only loads above the fold
+  // on desktop; below a small breakpoint we never mount it unless the user
+  // explicitly interacts (pointer/key), which the effect above already honors.
   
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -139,13 +186,9 @@ export default function Home() {
     <Layout>
       {/* Hero Section — Cinematic Video */}
       <section className="relative h-[100dvh] w-full flex items-center justify-center overflow-hidden">
-        {/* Video Background */}
-        <motion.div
-          className="absolute inset-0 z-0"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.8, ease: "easeIn" as const }}
-        >
+                {/* Background: poster + optional video. Renders immediately on first paint;
+            the video only mounts once the page is idle (see heroVideoReady). */}
+        <div className="absolute inset-0 z-0 bg-black">
           <img
             src="/images/hero/desert-pano.webp"
   width={601}
@@ -171,42 +214,41 @@ export default function Home() {
           )}
           {/* Layered cinematic overlays */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/75" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/20" />
-        </motion.div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/20" />
+        </div>
 
-        {/* Hero Content */}
+
+                {/* Hero Content — the LCP heading renders immediately (no opacity
+            /translate gate) so Largest Contentful Paint is not delayed by
+            framer-motion hydration. Decorative tagline & CTA animations remain
+            for the cinematic feel. */}
         <div className="absolute inset-0 z-10 flex flex-col items-center justify-center px-4 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, delay: 0.6, ease: "easeOut" as const }}
+          <motion.span
+            initial={{ opacity: 0, letterSpacing: '0.1em' }}
+            animate={{ opacity: 1, letterSpacing: '0.25em' }}
+            transition={{ duration: 1.4, delay: 0.4 }}
+            className="text-primary font-bold tracking-[0.25em] uppercase text-xs md:text-sm mb-8 block drop-shadow-md"
           >
-            <motion.span
-              initial={{ opacity: 0, letterSpacing: '0.1em' }}
-              animate={{ opacity: 1, letterSpacing: '0.25em' }}
-              transition={{ duration: 1.4, delay: 0.4 }}
-              className="text-primary font-bold tracking-[0.25em] uppercase text-xs md:text-sm mb-8 block drop-shadow-md"
-            >
-              {t('hero_tagline')}
-            </motion.span>
-            <h1 className="font-serif text-4xl sm:text-5xl md:text-7xl lg:text-[6rem] xl:text-[7rem] text-white mb-5 md:mb-6 leading-[1.05] drop-shadow-2xl">
-              {t('hero_heading1')}<br />{t('hero_heading2')}
-            </h1>
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 1.0 }}
-              className="text-white/80 text-base md:text-lg lg:text-xl max-w-xl mx-auto mb-8 md:mb-12 font-light tracking-wide px-4"
-            >
-              {t('hero_subtext')}
-            </motion.p>
+            {t('hero_tagline')}
+          </motion.span>
+          <h1 className="font-serif text-4xl sm:text-5xl md:text-7xl lg:text-[6rem] xl:text-[7rem] text-white mb-5 md:mb-6 leading-[1.05] drop-shadow-2xl">
+            {t('hero_heading1')}<br />{t('hero_heading2')}
+                    </h1>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1.0 }}
+            className="text-white/80 text-base md:text-lg lg:text-xl max-w-xl mx-auto mb-8 md:mb-12 font-light tracking-wide px-4"
+          >
+            {t('hero_subtext')}
+          </motion.p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.2 }}
-              className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 px-4"
-            >
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.2 }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 px-4"
+          >
               <Link
                 href="/tours"
                 className="w-full sm:w-auto bg-primary text-primary-foreground px-6 sm:px-10 py-3.5 sm:py-4 rounded-full text-sm sm:text-base font-bold tracking-widest uppercase hover:bg-primary/90 transition-all hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(201,168,76,0.5)]"
@@ -219,11 +261,10 @@ export default function Home() {
               >
                 {t('hero_cta_plan')}
               </Link>
-            </motion.div>
-          </motion.div>
-        </div>
+                        </motion.div>
+          </div>
 
-        {/* Scroll Indicator */}
+          {/* Scroll Indicator */}
         <motion.button
           type="button"
           initial={{ opacity: 0, y: -10 }}
@@ -250,7 +291,7 @@ export default function Home() {
             <div className="flex-1 border-r border-border pr-4">
               <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider block mb-1">{t('search_starting_point')}</label>
               <div className="flex items-center gap-2">
-                <MapPin className="w-5 h-5 text-primary" />
+                                <MapPin className="w-5 h-5 text-primary" aria-hidden="true" />
                 <select 
                   value={searchCity} 
                   onChange={(e) => setSearchCity(e.target.value)}
@@ -366,9 +407,13 @@ export default function Home() {
               >
                 <img
                   src={place.image}
+                  srcSet={`${place.image.replace(/\.webp$/, '-480w.webp')} 480w, ${place.image.replace(/\.webp$/, '-768w.webp')} 768w, ${place.image}`}
+                  sizes="(max-width: 768px) 92vw, (max-width: 1024px) 46vw, 30vw"
                   alt={`${place.name} — ${place.description}`}
                   loading="lazy"
                   decoding="async"
+                  width={768}
+                  height={1024}
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
 
@@ -412,7 +457,7 @@ export default function Home() {
             {destinations.slice(0, 6).map((dest) => (
               <motion.div key={dest.id} variants={fadeInUp} className="group relative h-72 md:h-[420px] rounded-3xl overflow-hidden cursor-pointer shadow-sm hover:shadow-xl hover:shadow-primary/20 transition-all duration-500 border border-transparent hover:border-primary/50">
                 <Link href={`/destinations/${dest.id}`} className="absolute inset-0 z-10" aria-label={`Explore ${dest.name}`} />
-                <img src={dest.image} alt={`${dest.name} — ${dest.shortDesc}`} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <img src={dest.image} alt={`${dest.name} — ${dest.shortDesc}`} loading="lazy" decoding="async" width={800} height={600} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
                 <div className="absolute bottom-0 left-0 p-5 md:p-6 z-20 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                   <span className="text-primary text-xs font-bold tracking-wider uppercase mb-2 block drop-shadow-md">{categoryLabel(dest.category, lang)}</span>
@@ -521,7 +566,17 @@ export default function Home() {
                 className="group block bg-card rounded-2xl overflow-hidden border border-border shadow-sm hover:shadow-xl hover:border-primary/50 transition-all duration-500"
               >
                 <div className="h-44 relative overflow-hidden">
-                  <img src={card.image} alt={card.alt} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <img
+                  src={card.image}
+                  srcSet={`${card.image.replace(/\.webp$/, '-480w.webp')} 480w, ${card.image.replace(/\.webp$/, '-768w.webp')} 768w, ${card.image}`}
+                  sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 23vw"
+                  alt={card.alt}
+                  loading="lazy"
+                  decoding="async"
+                  width={933}
+                  height={1400}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                 </div>
                 <div className="p-4 flex items-center justify-between">
@@ -568,10 +623,12 @@ export default function Home() {
 
       {/* Luxury Desert Experience full width */}
       <section className="relative py-24 md:py-40 lg:py-48 overflow-hidden">
-        <div className="absolute inset-0 z-0">
+                <div className="absolute inset-0 z-0">
           <img src="/images/personal/luxury-camp-dusk.webp"
-  width={1200}
-  height={1200} alt="Luxury Desert Camp" loading="lazy" decoding="async" className="w-full h-full object-cover" />
+            srcSet="/images/personal/luxury-camp-dusk-480w.webp 480w, /images/personal/luxury-camp-dusk-768w.webp 768w, /images/personal/luxury-camp-dusk.webp 1200w"
+            sizes="100vw"
+            width={1200}
+            height={1200} alt="Luxury Desert Camp" loading="lazy" decoding="async" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/40" />
         </div>
         <div className="relative z-10 container mx-auto px-4 flex justify-center md:justify-end">
@@ -623,7 +680,7 @@ export default function Home() {
                   <feature.i className="w-5 h-5 md:w-6 md:h-6" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-foreground text-base md:text-lg mb-2">{feature.t}</h4>
+                                                  <h3 className="font-bold text-foreground text-base md:text-lg mb-2">{feature.t}</h3>
                 </div>
               </motion.div>
             ))}
@@ -680,7 +737,17 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
             {igItems.map((item, num) => (
               <div key={num} className="aspect-square relative group overflow-hidden rounded-xl border border-border">
-                <img src={item.src} alt={item.alt} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <img
+                    src={item.src}
+                    srcSet={`${item.src.replace(/\.webp$/, '-480w.webp')} 480w, ${item.src.replace(/\.webp$/, '-768w.webp')} 768w, ${item.src}`}
+                    sizes="(max-width: 768px) 46vw, 23vw"
+                    alt={item.alt}
+                    loading="lazy"
+                    decoding="async"
+                    width={768}
+                    height={768}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                   <Instagram className="w-8 h-8 text-white" aria-hidden="true" />
                 </div>
