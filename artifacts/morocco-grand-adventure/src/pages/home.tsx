@@ -100,6 +100,15 @@ export default function Home() {
   { src: "/images/personal/guests-van.webp", alt: t('home_ig_alt4') },
   ];
 
+  // Tours by departure city — bridges the homepage to the city tour hubs so a
+  // visitor can start from "where does this tour begin?" and reach the Sahara.
+  const hubCards = [
+    { href: "/tours/from-marrakech", label: t('hub_marrakech_name'), image: "/images/curated/ait-ben-haddou-kasbah-sunrise-ouarzazate.webp", alt: "Ait Ben Haddou kasbah at sunrise near Marrakech, Morocco" },
+    { href: "/tours/from-fes", label: t('hub_fes_name'), image: "/images/curated/chouara-tannery-overhead-fes-el-bali.webp", alt: "Circular dye pits of the Chouara Tannery in Fes, Morocco" },
+    { href: "/tours/from-casablanca", label: t('hub_casablanca_name'), image: "/images/curated/hassan-ii-mosque-interior-colonnades-casablanca.webp", alt: "Colonnaded interior of the Hassan II Mosque in Casablanca, Morocco" },
+    { href: "/tours/from-agadir", label: t('hub_agadir_name'), image: "/images/dest/agadir.webp", alt: "The beach and promenade of Agadir on Morocco's Atlantic coast" },
+  ];
+
   // Search State
   const [searchCity, setSearchCity] = useState('');
   const [searchDuration, setSearchDuration] = useState('');
@@ -490,6 +499,42 @@ export default function Home() {
           <div className="text-center mt-12 md:mt-16">
             <Link href="/tours" className="inline-flex items-center gap-2 border-b-2 border-primary text-foreground font-bold pb-1 hover:text-primary transition-colors">
               {t('explore_tours')} <ChevronRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Tours by Departure City — where does your journey begin? */}
+      <section className="py-16 md:py-24 bg-muted/40 border-y border-border">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="text-center mb-12 md:mb-16">
+            <span className="text-primary font-bold tracking-wider uppercase text-sm mb-3 block">{t('section_tours_sub')}</span>
+            <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl text-foreground">{t('section_city_hubs')}</h2>
+            <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-base md:text-lg">{t('section_city_hubs_sub')}</p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {hubCards.map((card) => (
+              <Link
+                key={card.href}
+                href={card.href}
+                className="group block bg-card rounded-2xl overflow-hidden border border-border shadow-sm hover:shadow-xl hover:border-primary/50 transition-all duration-500"
+              >
+                <div className="h-44 relative overflow-hidden">
+                  <img src={card.image} alt={card.alt} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                </div>
+                <div className="p-4 flex items-center justify-between">
+                  <span className="font-serif text-xl text-foreground">{card.label}</span>
+                  <ChevronRight className="w-5 h-5 text-primary group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          <div className="text-center mt-12 md:mt-14">
+            <Link href="/tours/from-marrakech" className="inline-flex items-center gap-2 border-b-2 border-primary text-foreground font-bold pb-1 hover:text-primary transition-colors">
+              {t('section_sahara_link')} <ChevronRight className="w-4 h-4" />
             </Link>
           </div>
         </div>

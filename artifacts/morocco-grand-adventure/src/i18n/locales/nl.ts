@@ -52,6 +52,12 @@ export default {
     section_destinations_sub: "Waar naartoe",
     section_tours: "Uitgelichte reizen",
     section_tours_sub: "Samengestelde reisroutes",
+
+    section_city_hubs: "Rondreizen per vertrekstad",
+
+    section_city_hubs_sub: "Waar begint uw reis door Marokko? Kies een vertrekstad en ontdek de woestijn-, Imperial-Cities- en kustroutes die wij voor u samenstellen.",
+
+    section_sahara_link: "Verken Sahara-reizen",
     section_map: "Interactieve kaart",
     section_map_sub: "Verken de diverse landschappen van Marokko — van Atlantische kusten tot Saharaanse duinen.",
     section_reviews: "Verhalen van reizigers",

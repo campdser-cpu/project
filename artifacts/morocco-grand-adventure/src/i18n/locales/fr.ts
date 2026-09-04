@@ -52,6 +52,12 @@ export default {
     section_destinations_sub: "Où aller",
     section_tours: "Circuits en vedette",
     section_tours_sub: "Itinéraires sur mesure",
+
+    section_city_hubs: "Circuits par ville de départ",
+
+    section_city_hubs_sub: "Où commence votre aventure au Maroc ? Choisissez une ville de départ et explorez les circuits du désert, des villes impériales et du littoral que nous personnalisons pour vous.",
+
+    section_sahara_link: "Découvrir les circuits du désert du Sahara",
     section_map: "Carte interactive",
     section_map_sub: "Explorez les paysages variés du Maroc — des côtes atlantiques aux dunes du Sahara.",
     section_reviews: "Témoignages de voyageurs",

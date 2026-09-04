@@ -67,7 +67,42 @@ export const destinations: Destination[] = [
         alt: "Local man riding a motorbike through a stone archway in the old Marrakech medina",
         caption: "A local rider passes beneath a historic stone archway in the Marrakech medina.",
       },
-    ],
+      {
+        src: "/images/curated/leather-tanning-vats-fes-medina.webp",
+        alt: "Stone vats filled with natural dyes at the Chouara Tannery in the Fes medina, Morocco",
+        caption: "Rows of stone dyeing vats hold natural pigments at the Chouara Tannery.",
+      },
+      {
+        src: "/images/curated/tannery-workers-dyeing-pits-fes.webp",
+        alt: "Workers treating leather hides among the dyeing pits of a traditional Fes tannery, Morocco",
+        caption: "Tanners work the dyeing pits by hand, much as they have for centuries.",
+      },
+      {
+        src: "/images/curated/chouara-tannery-overhead-fes-el-bali.webp",
+        alt: "Aerial view of the circular dye pits of the Chouara Tannery in Fes el-Bali, Morocco",
+        caption: "The honeycomb of dye pits seen from the tannery viewing terrace.",
+      },
+      {
+        src: "/images/curated/hassan-ii-mosque-minaret-casablanca.webp",
+        alt: "The tall minaret of the Hassan II Mosque rising above Casablanca, Morocco",
+        caption: "The minaret of the Hassan II Mosque rises above the city.",
+      },
+      {
+        src: "/images/curated/hassan-ii-mosque-interior-colonnades-casablanca.webp",
+        alt: "Colonnaded interior of the Hassan II Mosque with carved arches, Casablanca, Morocco",
+        caption: "Carved arches line the interior of the Hassan II Mosque.",
+      },
+      {
+        src: "/images/curated/ait-ben-haddou-kasbah-sunrise-ouarzazate.webp",
+        alt: "Ait Ben Haddou kasbah bathed in sunrise light, Ouarzazate Province, Morocco",
+        caption: "First light warms the earthen walls of Ait Ben Haddou.",
+      },
+      {
+        src: "/images/curated/ait-ben-haddou-bridge-town-unesco-morocco.webp",
+        alt: "Footbridge crossing the river to the fortified town of Ait Ben Haddou, a UNESCO World Heritage site in Morocco",
+        caption: "A footbridge leads across the river to the UNESCO-listed ksar.",
+      },
+                ],
   },
   {
     id: "fes",
@@ -134,7 +169,14 @@ export const destinations: Destination[] = [
     description: "Rabat, Morocco's capital, exudes a calm, regal elegance. The Kasbah of Oudayas, overlooking the Atlantic, and the unfinished Hassan Tower are must-sees. The modern city coexists beautifully with its ancient medina.",
     highlights: ["Kasbah des Oudayas", "Hassan Tower", "Mohammed V Mausoleum", "Chellah Necropolis", "Medina"],
     region: "Atlantic Coast",
-    coords: { lat: 34.0209, lng: -6.8416 },
+    coords: { lat: 34.0209, lng: -6.8416 },    gallery: [
+      {
+        src: "/images/curated/hassan-tower-mohammed-v-mausoleum-rabat.webp",
+        alt: "Hassan Tower beside the Mohammed V Mausoleum in Rabat, Morocco",
+        caption: "Hassan Tower and the Mohammed V Mausoleum face each other across the esplanade.",
+      },
+    ],
+
   },
 
   // ── Sahara Desert ──────────────────────────────────────────────────────────
@@ -148,7 +190,14 @@ export const destinations: Destination[] = [
     description: "Merzouga is the crown jewel of Morocco's desert experience. The village sits at the foot of Erg Chebbi, a sea of golden sand dunes reaching up to 150 metres high. Camel trekking, stargazing from luxury tented camps, and the silence of the Sahara create memories that last a lifetime.",
     highlights: ["Erg Chebbi Dunes", "Camel Trekking", "Luxury Desert Camps", "Stargazing", "Berber Villages"],
     region: "Sahara Desert",
-    coords: { lat: 31.0988, lng: -4.0134 },
+    coords: { lat: 31.0988, lng: -4.0134 },    gallery: [
+      {
+        src: "/images/curated/berber-guide-camel-sahara-desert-merzouga.webp",
+        alt: "Berber guide leading a camel across the dunes of Erg Chebbi near Merzouga, Morocco",
+        caption: "A local Berber guide leads a camel over the Erg Chebbi dunes.",
+      },
+    ],
+
   },
   {
     id: "erg-chebbi",
@@ -227,7 +276,19 @@ export const destinations: Destination[] = [
     description: "The Todra Gorge is one of Morocco's most dramatic natural wonders — sheer limestone walls soar 300 metres above a crystal-clear river. Rock climbers come from around the world, while walkers can follow the gorge deep into the High Atlas. Visiting at sunrise, when the light turns the walls gold, is magical.",
     highlights: ["Rock Climbing", "Canyon Walk", "Berber Guesthouses", "Photography", "Sunrise Views"],
     region: "Southern Morocco",
-    coords: { lat: 31.5863, lng: -5.5822 },
+    coords: { lat: 31.5863, lng: -5.5822 },    gallery: [
+      {
+        src: "/images/curated/todra-gorge-river-canyon-high-atlas.webp",
+        alt: "The Todra Gorge river canyon between towering rock walls, High Atlas, Morocco",
+        caption: "The river winds beneath the 300-metre walls of the Todra Gorge.",
+      },
+      {
+        src: "/images/curated/cascading-waterfall-todra-gorge.webp",
+        alt: "Small waterfall cascading inside the Todra Gorge, Morocco",
+        caption: "A spring-fed cascade tumbles inside the Todra Gorge.",
+      },
+    ],
+
   },
   {
     id: "skoura",
@@ -277,7 +338,34 @@ export const destinations: Destination[] = [
     description: "Nestled in the Rif Mountains, Chefchaouen is Morocco's most photogenic city. Every wall, staircase, and doorway is painted in countless shades of blue — an ocean-like calm that makes it one of the most peaceful places in the country. The nearby Akchour waterfalls and God's Bridge are spectacular day trips.",
     highlights: ["Blue Medina", "Plaza Uta el-Hammam", "Ras el-Ma Springs", "Akchour Waterfalls", "Rif Mountain Hikes"],
     region: "Northern Morocco",
-    coords: { lat: 35.1688, lng: -5.2636 },
+    coords: { lat: 35.1688, lng: -5.2636 },    gallery: [
+      {
+        src: "/images/curated/blue-streets-berber-carpets-chefchaouen-medina.webp",
+        alt: "Blue-washed street lined with Berber carpets for sale in the Chefchaouen medina, Morocco",
+        caption: "Handwoven Berber carpets add colour to a blue-washed medina lane.",
+      },
+      {
+        src: "/images/curated/blue-stairway-craft-shops-chefchaouen.webp",
+        alt: "Vibrant blue stairway with small craft shops in Chefchaouen, Morocco",
+        caption: "A blue stairway lined with craft shops in the Blue Pearl.",
+      },
+      {
+        src: "/images/curated/handmade-baskets-blue-city-chefchaouen.webp",
+        alt: "Handmade baskets and souvenirs displayed in a shop in Chefchaouen, Morocco",
+        caption: "Locally made baskets and souvenirs for sale in the Blue City.",
+      },
+      {
+        src: "/images/curated/panoramic-view-chefchaouen-rif-mountains.webp",
+        alt: "Panoramic view over the blue medina of Chefchaouen and the Rif Mountains, Morocco",
+        caption: "The blue medina spreads below the Rif Mountains.",
+      },
+      {
+        src: "/images/curated/couple-blue-steps-chefchaouen-medina.webp",
+        alt: "Couple walking down blue-painted steps in the Chefchaouen medina, Morocco",
+        caption: "Descending the famous blue steps of the Chefchaouen medina.",
+      },
+    ],
+
   },
   {
     id: "imlil",
@@ -562,7 +650,7 @@ export const tours: Tour[] = [
     ],
     price: "450",
     pricingTiers: { 1: 690, 2: 450, 3: 370, 4: 310, 5: 280 },
-    image: "/images/tours/3-day-sahara-marrakech.jpg",
+    image: "/images/curated/berber-guide-camel-sahara-desert-merzouga.webp",
     aliases: ['3-days-marrakech-to-merzouga-desert-tour', 'merzouga-desert-tour'],
     description: "A three-day private journey from Marrakech to the dunes of Merzouga, built for travelers who want a real Sahara experience without pretending the road is short. Cross the High Atlas, visit Aït Ben Haddou, travel through the Dades Valley and Todra Gorge, reach Merzouga and Erg Chebbi for a sunset camel trek and desert-camp night, then return to Marrakech through the changing landscapes of southern Morocco. Three days is the shortest practical format for this overland route; if you prefer slower travel or more time in the desert, ask us about a longer itinerary.",
     routeIds: ["marrakech", "ait-ben-haddou", "ouarzazate", "dades-valley", "todra-gorge", "merzouga", "erg-chebbi"],
@@ -631,7 +719,7 @@ export const tours: Tour[] = [
     highlights: ["Atlas Mountains Crossing", "Aït Ben Haddou (UNESCO)", "Erg Chebbi Sahara & Luxury Camp", "Fes el-Bali Medina", "Chefchaouen Blue City", "Meknès & Volubilis"],
     price: "780",
     pricingTiers: { 1: 1180, 2: 780, 3: 640, 4: 540, 5: 490 },
-    image: "/images/pdf/img_2-optimized.webp",
+    image: "/images/curated/ait-ben-haddou-kasbah-sunrise-ouarzazate.webp",
     aliases: ['3-days-fes-to-marrakech-desert-tour'],
     description: "From the ochre imperial capital of Marrakech to the blue-washed lanes of Chefchaouen, this five-day journey weaves together Morocco's greatest imperial cities and a night under the Sahara stars. Cross the High Atlas to the UNESCO ksar of Aït Ben Haddou, sleep in a luxury desert camp among the dunes of Erg Chebbi, explore the medieval labyrinth of Fes, and wander the Roman ruins of Volubilis.",
     routeIds: ["marrakech", "ait-ben-haddou", "ouarzazate", "skoura", "dades-valley", "todra-gorge", "merzouga", "ifrane", "fes", "meknes", "chefchaouen"],
@@ -727,7 +815,7 @@ export const tours: Tour[] = [
     ],
     price: "1200",
     pricingTiers: { 1: 1820, 2: 1200, 3: 990, 4: 830, 5: 740 },
-    image: "/images/tours/7-day-grand-morocco.webp",
+    image: "/images/curated/ait-ben-haddou-bridge-town-unesco-morocco.webp",
     aliases: ['morocco-desert-tour'],
     description:
       "Experience the very best of Morocco in seven unforgettable days. Cross the spectacular High Atlas Mountains over the Tizi n'Tichka Pass, explore the UNESCO kasbah of Aït Ben Haddou, wind through the Dades Valley and the towering Todra Gorge, then ride camels across the golden dunes of Erg Chebbi to a luxury desert camp beneath the stars. Journey north through the Ziz Valley and cedar forests to the medieval imperial city of Fes, before returning to Marrakech through some of the country's most breathtaking landscapes.",
@@ -847,7 +935,7 @@ export const tours: Tour[] = [
     highlights: ["Luxury Riads Only", "Private Desert Camp", "Hot Air Balloon over Marrakech", "Hammam & Spa", "Sunset Camel Trek"],
     price: "2500",
     pricingTiers: { 1: 2500, 2: 2500, 3: 2500, 4: 2500, 5: 2500 },
-    image: "/images/tours/honeymoon-morocco.webp",
+    image: "/images/curated/couple-blue-steps-chefchaouen-medina.webp",
     description: "Designed exclusively for couples, this honeymoon itinerary weaves romance into every moment. Private riad suites, a candlelit dinner in the Sahara, a hot air balloon flight over the Atlas at dawn, and a hamam ritual for two — Morocco has never been so intimate.",
     routeIds: ["marrakech", "ait-ben-haddou", "ouarzazate", "dades-valley", "todra-gorge", "merzouga", "erg-chebbi", "fes"],
     routeCaption: "A romantic grand loop — from the riads and gardens of Marrakech, across the High Atlas to the kasbah of Aït Ben Haddou and the Dades and Todra gorges, then the golden dunes of Erg Chebbi at Merzouga, north to the imperial city of Fes, and back to Marrakech. Tap any numbered stop to explore it.",
@@ -988,7 +1076,7 @@ export const tours: Tour[] = [
     ],
     price: "1390",
     pricingTiers: { 1: 1990, 2: 1390, 3: 1150, 4: 980, 5: 870 },
-    image: "/images/dest/merzouga.webp",
+    image: "/images/curated/todra-gorge-river-canyon-high-atlas.webp",
     description:
       "The ultimate grand loop of southern Morocco — from the palaces and souks of Marrakech to the windswept Atlantic port of Essaouira, down the surf coast through Taghazout and Agadir, then inland across saffron country to the UNESCO kasbah of Aït Ben Haddou, the dramatic Todra and Dades gorges, and finally the towering golden dunes of Erg Chebbi. Eight days of private travel, handpicked luxury riads and hotels, a night in a premium desert camp, and a camel trek beneath the Sahara stars.",
     videoUrl: "/videos/sahara-experience.mp4",
@@ -1112,7 +1200,7 @@ export const tours: Tour[] = [
     highlights: ["Marrakech Family Activities", "Atlas Mountain Mule Ride", "Desert Camel Trek", "Hammam for Kids", "Snake Charmers & Storytellers"],
     price: "950",
     pricingTiers: { 1: 1450, 2: 950, 3: 780, 4: 660, 5: 590 },
-    image: "/images/tours/family-morocco-adventure.webp",
+    image: "/images/curated/cascading-waterfall-todra-gorge.webp",
     description: "Morocco captivates children and adults alike. This family itinerary is carefully paced with experiences that delight all ages — riding camels in the Sahara, exploring ancient kasbahs, tasting street food in the medina, and learning traditional crafts from Berber artisans.",
     routeIds: ["marrakech", "ait-ben-haddou", "dades-valley", "todra-gorge", "merzouga", "fes"],
     routeCaption: "From the squares of Marrakech across the High Atlas to the dune field of Erg Chebbi at Merzouga, then north through the mountain towns to the imperial city of Fes. The route is paced for families, with easy stops and time to explore. Tap any numbered stop to explore it.",
@@ -1228,7 +1316,7 @@ export const tours: Tour[] = [
   ],
   price: "Request a quote",
   pricingTiers: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 },
-  image: "/images/dest/ait-ben-haddou.webp",
+  image: "/images/curated/tin-mal-mosque-pointed-arches-high-atlas.webp",
   routeIds: ["marrakech", "ait-ben-haddou", "ouarzazate", "dades-valley", "todra-gorge", "merzouga", "erg-chebbi"],
   routeCaption: "Marrakech → High Atlas → Aït Ben Haddou → Dades & Todra → Merzouga & Erg Chebbi → return to Marrakech.",
   description: "A private four-day loop from Marrakech to the Sahara and back. You climb the High Atlas, explore Aït Ben Haddou and the Ouarzazate kasbahs, thread the Dades and Todra gorges and spend a night by camel in Erg Chebbi before returning across the mountains. Because no verified public price or fixed hotel list is published for this length, the tour is offered on a quote-only basis with details confirmed around your dates.",
@@ -1268,7 +1356,7 @@ export const tours: Tour[] = [
   ],
   price: "Request a quote",
   pricingTiers: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 },
-  image: "/images/dest/casablanca.webp",
+  image: "/images/curated/hassan-tower-mohammed-v-mausoleum-rabat.webp",
   routeIds: ["casablanca", "rabat", "meknes", "chefchaouen", "fes"],
   routeCaption: "Casablanca → Rabat → Chefchaouen → Meknès & Volubilis → Fes. A northern imperial sweep ending in Fes.",
   description: "A private quote-only route linking Casablanca, Morocco's economic capital, with Fes via the administrative capital of Rabat, the blue town of Chefchaouen, imperial Meknès and the Roman ruins of Volubilis. Because no verified public price or fixed hotel list is published, the tour is confirmed around your dates before booking.",
@@ -1307,7 +1395,7 @@ export const tours: Tour[] = [
   ],
   price: "Request a quote",
   pricingTiers: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 },
-  image: "/images/dest/chefchaouen.webp",
+  image: "/images/curated/blue-streets-berber-carpets-chefchaouen-medina.webp",
   routeIds: ["casablanca", "rabat", "chefchaouen", "meknes", "fes"],
   routeCaption: "Casablanca → Rabat → Asilah → Chefchaouen → Meknès & Volubilis → Fes.",
   description: "A relaxed private route from Casablanca to Fes along Morocco's Atlantic and northern highlights, with a gentler pace than a shorter circuit. It follows the coast past Rabat to the walled medina of Asilah, turns inland to the Blue City of Chefchaouen, and continues through imperial Meknès and the Roman site of Volubilis to finish in Fes. The itinerary is confirmed around your dates on a quote-only basis.",
@@ -1390,7 +1478,7 @@ export const tours: Tour[] = [
   ],
   price: "Request a quote",
   pricingTiers: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 },
-  image: "/images/dest/fes.webp",
+  image: "/images/curated/hassan-ii-mosque-exterior-arches-golden-hour-casablanca.webp",
   routeIds: ["casablanca", "rabat", "chefchaouen", "fes", "ifrane", "merzouga", "erg-chebbi", "todra-gorge", "dades-valley", "ait-ben-haddou", "marrakech"],
   routeCaption: "Casablanca → Rabat → Chefchaouen → Fes → Middle Atlas → Merzouga → Dades & Todra → Marrakech → Casablanca. A complete loop of northern and southern Morocco.",
   description: "A private eight-day loop beginning and ending in Casablanca that takes in the imperial cities, the Blue City, the Sahara and the Red City. Highlights include Rabat, Chefchaouen, a guided day in Fes, a night in the dunes at Erg Chebbi, the Todra and Dades gorges, the Aït Ben Haddou ksar and the bustle of Marrakech. This grand itinerary is offered on a quote-only basis, with every night and inclusion confirmed around your dates.",
@@ -1435,7 +1523,7 @@ export const tours: Tour[] = [
   ],
   price: "Request a quote",
   pricingTiers: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 },
-  image: "/images/dest/merzouga.webp",
+  image: "/images/curated/tannery-workers-dyeing-pits-fes.webp",
   routeIds: ["fes", "ifrane", "merzouga", "erg-chebbi"],
   routeCaption: "Fes → Ifrane → Middle Atlas → Ziz Valley → Merzouga & Erg Chebbi → return to Fes.",
   description: "A private round trip from Fes to the Sahara and back over four days. The road south crosses the cedar forests and mountain town of Ifrane, descends the palm-filled Ziz Valley, and reaches Merzouga and the great dunes of Erg Chebbi for a sunset camel trek and a night in the desert before returning to Fes. No verified public price or fixed hotel list exists for this route, so it is offered quote-only with details confirmed around your dates.",
@@ -1517,7 +1605,7 @@ export const tours: Tour[] = [
   ],
   price: "Request a quote",
   pricingTiers: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 },
-  image: "/images/dest/fes.webp",
+  image: "/images/curated/chouara-tannery-overhead-fes-el-bali.webp",
   routeIds: ["fes", "meknes", "ifrane", "merzouga", "erg-chebbi", "todra-gorge", "dades-valley", "ait-ben-haddou", "marrakech"],
   routeCaption: "Fes → Meknès & Volubilis → Middle Atlas → Merzouga → Todra & Dades → Aït Ben Haddou → Marrakech. A grand eight-day sweep across imperial and desert Morocco.",
   description: "A private eight-day journey that begins in the imperial city of Fes, takes in Meknès, Volubilis and the cedar forests of the Middle Atlas, spends a night in the dunes at Erg Chebbi, threads the Todra and Dades gorges, and crosses the High Atlas to finish in Marrakech. Offered as a quote-only itinerary, with every night and inclusion confirmed around your dates.",
@@ -1686,7 +1774,7 @@ export const tours: Tour[] = [
     price: "Request a quote",
     pricingTiers: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 },
     quoteOnly: true,
-    image: "/images/dest/zagora.webp",
+    image: "/images/curated/ancient-water-channels-olive-groves-morocco.webp",
     aliases: ["2-days-marrakech-zagora-desert-tour", "2-day-zagora-desert-tour"],
     description: "A compact private desert journey from Marrakech to Zagora for travellers who want a southern desert experience without committing to the longer Merzouga route. Cross the High Atlas, visit Aït Ben Haddou and Ouarzazate, continue through the Draa Valley to Zagora, and return to Marrakech the following day.",
     routeIds: ["marrakech", "ait-ben-haddou", "ouarzazate", "draa-valley", "zagora"],

@@ -52,6 +52,12 @@ export default {
     section_destinations_sub: "去哪里",
     section_tours: "精选旅游线路",
     section_tours_sub: "精心策划的行程",
+
+    section_city_hubs: "按出发城市浏览行程",
+
+    section_city_hubs_sub: "您的摩洛哥之旅从哪里开始？选择出发城市，探索我们为您量身定制的沙漠之旅、帝国城市和海岸线路。",
+
+    section_sahara_link: "探索撒哈拉沙漠之旅",
     section_map: "互动地图",
     section_map_sub: "探索摩洛哥多样化的地貌 — 从大西洋海岸到撒哈拉沙丘。",
     section_reviews: "旅客故事",

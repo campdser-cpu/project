@@ -52,6 +52,12 @@ export default {
     section_destinations_sub: "どこへ行く",
     section_tours: "注目のツアー",
     section_tours_sub: "厳選されたルート",
+
+    section_city_hubs: "出発地からツアーを探す",
+
+    section_city_hubs_sub: "モロッコの旅はどこから始まりますか?出発地を選んで、サハラの砂漠、帝国都市、海岸のツアーを探索してください。",
+
+    section_sahara_link: "サハラ砂漠ツアーを探す",
     section_map: "インタラクティブマップ",
     section_map_sub: "大西洋岸からサハラ砂丘まで、モロッコの多様な景観を探索しましょう。",
     section_reviews: "旅行者の声",

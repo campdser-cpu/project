@@ -187,13 +187,19 @@ const OG_LOCALE: Record<string, string> = {
 function buildHomeContent(lang: Lang): string {
   const destNames = getLocalizedDestinations(lang).slice(0, 8).map((d) => d.name);
   const tourNames = getLocalizedTours(lang).map((t) => t.name);
+  // Departure-city tour hubs — mirrors the runtime homepage "Tours by Departure City"
+  // section so crawlers see the same City → Tours hierarchy users navigate.
+  const hubLinks = CITY_HUBS.map((hub) =>
+    `      <li>${link(`${SITE_URL}/${lang}/tours/from-${hub.slug}`, tr(lang, `hub_${hub.id}_title`))}</li>`,
+  ).join('\n');
+  const hubBlock = h2(tr(lang, 'section_city_hubs') || 'Tours by Departure City') + paragraph(tr(lang, 'section_city_hubs_sub') || 'Choose a starting city and explore the Sahara routes, imperial cities and coastal escapes we tailor for it.') + `    <ul class="prerendered-city-hubs">\n${hubLinks}\n    </ul>\n`;
   const reviewBlocks = reviews.map((r) => {
     const name = tr(lang, r.nameKey);
     const quote = tr(lang, r.quoteKey);
     const tourName = tr(lang, r.tourKey);
     return (`<div class="prerendered-review">\n          <h3 class="prerendered-review-author">${escapeHtml(name)}</h3>\n          <p class="prerendered-review-text">${escapeHtml(quote)}</p>\n          <p class="prerendered-review-tour">${escapeHtml(tourName)}</p>\n        </div>`);
   }).join('\n');
-  return h1(tr(lang, 'hero_heading1') || 'Discover the Soul of Morocco') + paragraph(tr(lang, 'hero_subtext')) + h2(tr(lang, 'section_destinations') || 'Top Destinations') + ul(destNames) + h2(tr(lang, 'section_tours') || 'Featured Tours') + ul(tourNames) + h2(tr(lang, 'section_reviews') || 'Traveler Stories') + `<div class="prerendered-reviews-container">\n${reviewBlocks}\n    </div>\n`;
+  return h1(tr(lang, 'hero_heading1') || 'Discover the Soul of Morocco') + paragraph(tr(lang, 'hero_subtext')) + h2(tr(lang, 'section_destinations') || 'Top Destinations') + ul(destNames) + h2(tr(lang, 'section_tours') || 'Featured Tours') + ul(tourNames) + hubBlock + h2(tr(lang, 'section_reviews') || 'Traveler Stories') + `<div class="prerendered-reviews-container">\n${reviewBlocks}\n    </div>\n`;
 }
 function buildHomeSchemas(lang: Lang): Record<string, unknown>[] {
   const reviewData = reviews.map((r) => ({ name: tr(lang, r.nameKey), text: tr(lang, r.quoteKey), rating: r.rating }));

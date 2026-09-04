@@ -52,6 +52,12 @@ export default {
     section_destinations_sub: "Dove andare",
     section_tours: "Tour in evidenza",
     section_tours_sub: "Itinerari curati",
+
+    section_city_hubs: "Tour per città di partenza",
+
+    section_city_hubs_sub: "Dove inizia il tuo viaggio in Marocco? Scegli una città di partenza ed esplora gli itinerari del deserto, delle città imperiali e della costa che personalizziamo per te.",
+
+    section_sahara_link: "Esplora i tour del deserto del Sahara",
     section_map: "Mappa interattiva",
     section_map_sub: "Esplora i paesaggi diversi del Marocco — dalle coste atlantiche alle dune del Sahara.",
     section_reviews: "Storie di viaggiatori",

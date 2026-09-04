@@ -52,6 +52,12 @@ export default {
     section_destinations_sub: "어디로 갈까요",
     section_tours: "추천 투어",
     section_tours_sub: "엄선된 여행 일정",
+
+    section_city_hubs: "출발지별 투어",
+
+    section_city_hubs_sub: "모로코 여행은 어디서 시작하나요? 출발 도시를 선택하고 사하라 사막, 왕실 도시, 해안 루트를 둘러보세요.",
+
+    section_sahara_link: "사하라 사막 투어 살펴보기",
     section_map: "인터랙티브 지도",
     section_map_sub: "대서양 해안부터 사하라 모래언덕까지 모로코의 다양한 풍경을 탐색해 보세요.",
     section_reviews: "여행자 이야기",

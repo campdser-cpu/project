@@ -73,7 +73,7 @@ export function TourCityHub({ hub }: { hub: CityHub }) {
         <div className="absolute inset-0 z-0">
           <img
             src={hub.heroImage}
-            alt={t(`hub_${hub.id}_hero_alt`)}
+            alt={hub.heroAlt || t(`hub_${hub.id}_hero_alt`)}
             width={1600}
             height={900}
             className="w-full h-full object-cover"

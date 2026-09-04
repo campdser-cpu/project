@@ -52,6 +52,12 @@ export default {
     section_destinations_sub: "Wohin reisen",
     section_tours: "Ausgewählte Touren",
     section_tours_sub: "Kuratierte Reiserouten",
+
+    section_city_hubs: "Rundreisen nach Abfahrtsort",
+
+    section_city_hubs_sub: "Wo beginnt Ihre Marokko-Reise? Wählen Sie eine Startstadt und entdecken Sie unsere maßgeschneiderten Wüsten-, Kaiserstädte- und Küstenrouten.",
+
+    section_sahara_link: "Sahara-Wüstenreisen entdecken",
     section_map: "Interaktive Karte",
     section_map_sub: "Entdecke die vielfältigen Landschaften Marokkos — von Atlantikküsten bis zu Sahara-Dünen.",
     section_reviews: "Reisende erzählen",

@@ -113,8 +113,8 @@ export const CITY_HUBS: CityHub[] = [
     id: 'casablanca',
     slug: 'casablanca',
     name: 'Casablanca',
-    heroImage: '/images/dest/casablanca.webp',
-    heroAlt: 'The Hassan II Mosque on the Atlantic coast of Casablanca, Morocco',
+    heroImage: '/images/curated/hassan-ii-mosque-minaret-casablanca.webp',
+    heroAlt: 'The minaret of the Hassan II Mosque rising above Casablanca, Morocco',
     title: 'Tours from Casablanca',
     intro:
       'Casablanca is Morocco’s economic capital and a busy international arrival point — a fast, direct gateway that connects you to Marrakech, Rabat, Fes and the Sahara without doubling back.',
@@ -127,8 +127,8 @@ export const CITY_HUBS: CityHub[] = [
     id: 'fes',
     slug: 'fes',
     name: 'Fes',
-    heroImage: '/images/dest/fes.webp',
-    heroAlt: 'The medieval medina of Fes, Morocco',
+    heroImage: '/images/curated/leather-tanning-vats-fes-medina.webp',
+    heroAlt: 'Traditional leather tanning vats in the Fes medina, Morocco',
     title: 'Tours from Fes',
     intro:
       'Fes is Morocco’s cultural and spiritual heart, and an ideal base for the northern imperial cities, the cedar forests of the Middle Atlas and the Sahara road to Merzouga.',

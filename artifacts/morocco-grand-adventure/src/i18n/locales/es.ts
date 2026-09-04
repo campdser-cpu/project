@@ -52,6 +52,12 @@ export default {
     section_destinations_sub: "Dónde ir",
     section_tours: "Tours destacados",
     section_tours_sub: "Itinerarios seleccionados",
+
+    section_city_hubs: "Tours por ciudad de salida",
+
+    section_city_hubs_sub: "¿Dónde comienza tu viaje por Marruecos? Elige una ciudad de salida y explora las rutas del desierto, las ciudades imperiales y la costa que personalizamos para ti.",
+
+    section_sahara_link: "Explorar tours del desierto del Sáhara",
     section_map: "Mapa interactivo",
     section_map_sub: "Explora los diversos paisajes de Marruecos — desde las costas atlánticas hasta las dunas del Sáhara.",
     section_reviews: "Historias de viajeros",
