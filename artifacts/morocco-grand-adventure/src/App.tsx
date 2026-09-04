@@ -46,7 +46,14 @@ function AnimatedRouter() {
   const [location] = useLocation();
   const { lang } = useLanguage();
   const routedLocation = canonicalizeRoute(location, lang);
-  return <AnimatePresence mode="wait"><motion.div key={location} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.3, ease: 'easeOut' as const }} className="contents"><Suspense fallback={<PageLoader />}><Switch location={routedLocation}>
+  // Page-level transition: the pre-rendered HTML is already visible, so we must
+  // NOT gate the initial paint behind an opacity:0 -> 1 fade. `initial={false}`
+  // on this first mount renders straight into the `animate` state (no hidden
+  // flash, no forced layout read for the LCP). On route changes the outgoing
+  // page still fades out for a clean transition, and the incoming page mounts
+  // immediately — avoiding a wasted full-page reflow and keeping the cinematic
+  // per-section reveal animations intact.
+  return <AnimatePresence mode="wait" initial={false}><motion.div key={location} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.3, ease: 'easeOut' as const }} className="contents"><Suspense fallback={<PageLoader />}><Switch location={routedLocation}>
     <Route path="/" component={Home} />
     <Route path="/destinations" component={Destinations} /><Route path="/destinations/:id" component={DestinationDetail} />
     <Route path="/tours" component={Tours} /><Route path="/tours/from-:city/:days" component={ToursFromCityDuration} /><Route path="/tours/from-:city" component={ToursFromCity} /><Route path="/tours/:id" component={TourDetail} />

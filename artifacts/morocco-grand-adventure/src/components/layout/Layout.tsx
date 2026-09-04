@@ -1,4 +1,4 @@
-import { ReactNode, useEffect } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Navbar } from './Navbar';
 import { Footer } from './Footer';
@@ -23,6 +23,21 @@ function getTourContext(pathname: string): { tourId?: string } {
 export function Layout({ children }: LayoutProps) {
   const { t, lang } = useLanguage();
   const [location] = useLocation();
+  // Floating conversion widgets (AI chat, WhatsApp, sticky CTA) are interactive
+  // and mount framer-motion spring animations. Defer them until the browser is
+  // idle so their mount work never competes with the LCP / first meaningful
+  // paint. They still appear promptly for real users (idle usually fires in ~1s).
+  const [idle, setIdle] = useState(false);
+  useEffect(() => {
+    let cancelled = false;
+    const show = () => !cancelled && setIdle(true);
+    if (typeof window.requestIdleCallback === 'function') {
+      window.requestIdleCallback(show, { timeout: 2500 });
+    } else {
+      window.setTimeout(show, 1800);
+    }
+    return () => { cancelled = true; };
+  }, []);
   const destinationMatch = location.match(/^\/destinations\/([^/?#]+)$/);
   const tourMatch = location.match(/^\/tours\/([^/?#]+)$/);
   const isDestinationsHub = location === '/destinations' || location === '/destinations/';
@@ -110,10 +125,10 @@ export function Layout({ children }: LayoutProps) {
       {isDestinationsHub && <TopicalLinks context="destinations-hub" />}
       {isTripBuilder && <TopicalLinks context="trip-builder" />}
       <Footer />
-      <WhatsAppButton />
-      <AIAssistant />
+      {idle && <WhatsAppButton />}
+      {idle && <AIAssistant />}
       <ScrollToTop />
-      <StickyBookingCTA />
+      {idle && <StickyBookingCTA />}
     </div>
   );
 }

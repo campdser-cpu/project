@@ -350,7 +350,7 @@ export default function Home() {
       </section>
 
       {/* Trust Indicators — Subtle Strip */}
-      <section className="bg-background py-8 md:py-10 border-b border-border z-10 relative">
+      <section className="bg-background py-8 md:py-10 border-b border-border z-10 relative [content-visibility:auto] [contain-intrinsic-size:auto_120px]">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-3 md:flex md:flex-wrap justify-center items-center gap-6 md:gap-16 opacity-60">
             <div className="flex flex-col items-center gap-1.5 group">
@@ -381,7 +381,7 @@ export default function Home() {
       <PromoBanner />
 
       {/* Signature Morocco — Cinematic Destinations */}
-      <section className="py-20 md:py-32 lg:py-40 bg-card">
+      <section className="py-20 md:py-32 lg:py-40 bg-card [content-visibility:auto] [contain-intrinsic-size:auto_1200px]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 md:mb-16">
             <span className="text-primary font-bold tracking-wider uppercase text-sm mb-3 block">
@@ -438,7 +438,7 @@ export default function Home() {
       </section>
 
       {/* Top Destinations */}
-      <section className="py-16 md:py-24 bg-background">
+      <section className="py-16 md:py-24 bg-background [content-visibility:auto] [contain-intrinsic-size:auto_900px]">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-end mb-12 md:mb-16">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
@@ -473,7 +473,7 @@ export default function Home() {
       </section>
 
       {/* Interactive Morocco Map — real Leaflet + OpenStreetMap */}
-      <section className="py-16 md:py-24 bg-card border-y border-border">
+      <section className="py-16 md:py-24 bg-card border-y border-border [content-visibility:auto] [contain-intrinsic-size:auto_800px]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 md:mb-16">
             <span className="text-primary font-bold tracking-wider uppercase text-sm mb-3 block">{t('section_destinations_sub')}</span>
@@ -488,7 +488,7 @@ export default function Home() {
       </section>
 
       {/* Featured Tours */}
-      <section className="py-16 md:py-24 bg-background">
+      <section className="py-16 md:py-24 bg-background [content-visibility:auto] [contain-intrinsic-size:auto_1600px]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 md:mb-16">
             <span className="text-primary font-bold tracking-wider uppercase text-sm mb-3 block">{t('section_tours_sub')}</span>
@@ -550,7 +550,7 @@ export default function Home() {
       </section>
 
       {/* Tours by Departure City — where does your journey begin? */}
-      <section className="py-16 md:py-24 bg-muted/40 border-y border-border">
+      <section className="py-16 md:py-24 bg-muted/40 border-y border-border [content-visibility:auto] [contain-intrinsic-size:auto_900px]">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-12 md:mb-16">
             <span className="text-primary font-bold tracking-wider uppercase text-sm mb-3 block">{t('section_tours_sub')}</span>
@@ -596,7 +596,7 @@ export default function Home() {
       </section>
 
       {/* Experience the Sahara — Cinematic Video */}
-      <section className="relative py-20 md:py-32 lg:py-40 bg-card border-y border-border overflow-hidden">
+      <section className="relative py-20 md:py-32 lg:py-40 bg-card border-y border-border overflow-hidden [content-visibility:auto] [contain-intrinsic-size:auto_800px]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-10 md:mb-12">
             <span className="text-primary font-bold tracking-wider uppercase text-sm mb-3 block">{t('home_exp_sahara')}</span>
@@ -622,7 +622,7 @@ export default function Home() {
       </section>
 
       {/* Luxury Desert Experience full width */}
-      <section className="relative py-24 md:py-40 lg:py-48 overflow-hidden">
+      <section className="relative py-24 md:py-40 lg:py-48 overflow-hidden [content-visibility:auto] [contain-intrinsic-size:auto_700px]">
                 <div className="absolute inset-0 z-0">
           <img src="/images/personal/luxury-camp-dusk.webp"
             srcSet="/images/personal/luxury-camp-dusk-480w.webp 480w, /images/personal/luxury-camp-dusk-768w.webp 768w, /images/personal/luxury-camp-dusk.webp 1200w"
@@ -652,7 +652,7 @@ export default function Home() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-20 md:py-32 lg:py-40 bg-background">
+      <section className="py-20 md:py-32 lg:py-40 bg-background [content-visibility:auto] [contain-intrinsic-size:auto_700px]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 md:mb-20">
             <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl text-foreground mb-4">{t('section_why_us')}</h2>
@@ -689,7 +689,7 @@ export default function Home() {
       </section>
 
       {/* Customer Reviews */}
-      <section className="py-16 md:py-24 bg-card border-y border-border">
+      <section className="py-16 md:py-24 bg-card border-y border-border [content-visibility:auto] [contain-intrinsic-size:auto_900px]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 md:mb-16">
             <span className="text-primary font-bold tracking-wider uppercase text-sm mb-3 block">{t('section_reviews_sub')}</span>
@@ -713,7 +713,7 @@ export default function Home() {
       </section>
 
       {/* Plan Your Journey — Elegant CTA */}
-      <section id="planner" className="py-20 md:py-32 lg:py-40 bg-muted border-b border-border">
+      <section id="planner" className="py-20 md:py-32 lg:py-40 bg-muted border-b border-border [content-visibility:auto] [contain-intrinsic-size:auto_400px]">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="bg-background rounded-3xl p-6 md:p-16 shadow-xl border border-border relative overflow-hidden text-center">
             <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -mr-32 -mt-32 pointer-events-none" />
@@ -729,7 +729,7 @@ export default function Home() {
       </section>
 
       {/* IG Gallery */}
-      <section className="py-16 md:py-24 bg-background">
+      <section className="py-16 md:py-24 bg-background [content-visibility:auto] [contain-intrinsic-size:auto_800px]">
         <div className="container mx-auto px-4 text-center">
           <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl text-foreground mb-4">{t('section_instagram')}</h2>
           <a href="https://www.instagram.com/morocco_grand_adventure/" target="_blank" rel="noreferrer" className="text-primary font-bold hover:underline mb-8 md:mb-12 inline-block">@morocco_grand_adventure</a>

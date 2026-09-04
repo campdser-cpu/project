@@ -20,7 +20,19 @@
         ['pointerdown', 'keydown', 'touchstart'].forEach(function (event) {
           window.addEventListener(event, loadAnalytics, { once: true, passive: true });
         });
-        window.setTimeout(loadAnalytics, 5000);
+        // Load after the browser is idle so the GA tag (and any third-party
+        // tags triggered by its config, e.g. Bloomreach/Exponea) can never
+        // compete with the LCP or block the main thread during the initial
+        // render. Interaction still fires it instantly.
+        function loadAfterIdle() {
+          if (typeof window.requestIdleCallback === 'function') {
+            window.requestIdleCallback(loadAnalytics, { timeout: 9000 });
+          } else {
+            window.setTimeout(loadAnalytics, 9000);
+          }
+        }
+        if (document.readyState === 'complete') loadAfterIdle();
+        else window.addEventListener('load', loadAfterIdle, { once: true });
       })();
     </script>
 
