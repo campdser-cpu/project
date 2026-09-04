@@ -30,6 +30,7 @@ export const DEPARTURE_CITIES: DepartureCity[] = [
  */
 export const TOUR_DEPARTURE_CITY: Record<string, DepartureCity> = {
   '3-day-sahara-marrakech': 'marrakech',
+  'family-morocco-adventure': 'marrakech',
   '5-day-imperial-cities': 'marrakech',
   '7-day-imperial-cities-sahara-escape': 'marrakech',
   'honeymoon-morocco': 'marrakech',
