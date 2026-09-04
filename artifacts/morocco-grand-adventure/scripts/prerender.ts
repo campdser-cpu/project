@@ -199,7 +199,16 @@ function buildHomeContent(lang: Lang): string {
     const tourName = tr(lang, r.tourKey);
     return (`<div class="prerendered-review">\n          <h3 class="prerendered-review-author">${escapeHtml(name)}</h3>\n          <p class="prerendered-review-text">${escapeHtml(quote)}</p>\n          <p class="prerendered-review-tour">${escapeHtml(tourName)}</p>\n        </div>`);
   }).join('\n');
-  return h1(tr(lang, 'hero_heading1') || 'Discover the Soul of Morocco') + paragraph(tr(lang, 'hero_subtext')) + h2(tr(lang, 'section_destinations') || 'Top Destinations') + ul(destNames) + h2(tr(lang, 'section_tours') || 'Featured Tours') + ul(tourNames) + hubBlock + h2(tr(lang, 'section_reviews') || 'Traveler Stories') + `<div class="prerendered-reviews-container">\n${reviewBlocks}\n    </div>\n`;
+  // LCP parity: the runtime hero heading is `{hero_heading1}<br/>{hero_heading2}`
+  // (src/pages/home.tsx). The prerendered <h1> must contain the identical text
+  // AND line break — otherwise Chrome paints the smaller truncated heading
+  // first, React grows it on mount, and the larger paint re-records the LCP
+  // entry at hydration time. Text is escaped per-part; the <br/> is injected
+  // raw. Safe fallback keeps a complete heading if either key is ever missing.
+  const heroH1Parts = [tr(lang, 'hero_heading1'), tr(lang, 'hero_heading2')].filter(Boolean).map(escapeHtml);
+  const heroH1 = heroH1Parts.length ? heroH1Parts.join('<br/>') : 'Discover the Soul of Morocco';
+  const heroH1Block = heroH1Parts.length ? `    <h1>${heroH1}</h1>\n` : h1('Discover the Soul of Morocco');
+  return heroH1Block + paragraph(tr(lang, 'hero_subtext')) + h2(tr(lang, 'section_destinations') || 'Top Destinations') + ul(destNames) + h2(tr(lang, 'section_tours') || 'Featured Tours') + ul(tourNames) + hubBlock + h2(tr(lang, 'section_reviews') || 'Traveler Stories') + `<div class="prerendered-reviews-container">\n${reviewBlocks}\n    </div>\n`;
 }
 function buildHomeSchemas(lang: Lang): Record<string, unknown>[] {
   const reviewData = reviews.map((r) => ({ name: tr(lang, r.nameKey), text: tr(lang, r.quoteKey), rating: r.rating }));
