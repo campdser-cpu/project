@@ -416,3 +416,37 @@
   object-position: center;
   background-color: #10271b;
 }
+
+/* ── Playfair Display (self-hosted serif display font) ─────────────────────────
+   @font-face was moved here from an inline <style> in index.html. Removing the
+   inline style avoids a Vite/@tailwindcss inline-CSS proxy race that could
+   intermittently fail the production HTML build. Rendering is identical:
+   the one WOFF2 is loaded for weights 400/500/600/700. */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/playfair-display-latin.woff2') format('woff2');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 500;
+  src: url('/fonts/playfair-display-latin.woff2') format('woff2');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 600;
+  src: url('/fonts/playfair-display-latin.woff2') format('woff2');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/fonts/playfair-display-latin.woff2') format('woff2');
+  font-display: swap;
+}

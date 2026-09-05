@@ -44,7 +44,7 @@ import {
   blogPosts,
   type BlogPost,
 } from '../src/i18n/content';
-import { getRouteMeta, getLocalizedRouteMeta, BLOG_META, HOME_META, FR_HOME_META } from '../src/components/seo/route-metadata';
+import { getRouteMeta, getLocalizedRouteMeta, BLOG_META, HOME_META, FR_HOME_META, type RouteMeta } from '../src/components/seo/route-metadata';
 import { buildTourSchema, buildDestinationSchema, buildBlogPostSchema, buildReviewSchema, buildFaqSchema, buildBreadcrumb } from '../src/components/seo/StructuredData';
 import { registerAllTranslations } from '../src/i18n/locales';
 import { registerAllContentOverlays } from '../src/i18n/content/overlays';
@@ -616,21 +616,31 @@ function metaFor(rest: string, lang: Lang): ReturnType<typeof getRouteMeta> {
     }
     return { title: tr(lang, 'hero_tagline'), description: tr(lang, 'hero_subtext'), ogImage: HOME_META.ogImage };
   }
-  const en = getRouteMeta(rest);
-  const ar = lang === 'ar' ? getLocalizedRouteMeta(rest, lang) : undefined;
+        const en = getRouteMeta(rest);
+  // Localized metadata for ALL languages (shared single source of truth with the
+  // runtime LocalizedHead). Previously only `ar` was consulted here, so every
+  // non-Arabic locale inherited English SEO title/description even when a
+  // translated tour/destination overlay existed.
+  const loc = getLocalizedRouteMeta(rest, lang);
   const key = STATIC_TITLE_KEYS[rest];
-  // Routes with dedicated SEO metadata (all static pages + tours/destinations
-  // present in TOUR_META/DESTINATION_META). Keeping prerender parity with the
-  // runtime head is essential — Google indexes the prerendered HTML.
-  if (en !== HOME_META) {
-    return { title: ar?.title ?? (key ? tr(lang, key) || en.title : en.title), description: ar?.description ?? en.description, ogImage: ar?.ogImage ?? en.ogImage };
+  // Only override canonical English meta when the localized meta genuinely
+  // differs (an authored translation exists for this locale/route). Static hub
+  // pages whose title comes from a localized UI key (STATIC_TITLE_KEYS) keep
+  // that title; their English description is preserved only when no translation
+  // was authored — no copy is ever invented.
+  const hasLocalization =
+    loc.title !== en.title ||
+    loc.description !== en.description ||
+    (loc.ogImage ?? '') !== (en.ogImage ?? '');
+  if (hasLocalization) {
+    return { title: loc.title, description: loc.description, ogImage: loc.ogImage ?? en.ogImage };
   }
-  // Fallback for routes without dedicated metadata: use the localized entity data.
-  let m = rest.match(/^\/tours\/([^/]+)$/);
-  if (m) { const t = getLocalizedTour(m[1], lang); if (t) return { title: t.name, description: truncate(t.description), ogImage: t.image }; }
-  m = rest.match(/^\/destinations\/([^/]+)$/);
-  if (m) { const d = getLocalizedDestination(m[1], lang); if (d) return { title: d.name, description: truncate(d.shortDesc || d.description), ogImage: d.image }; }
-  return { title: ar?.title ?? (key ? tr(lang, key) || en.title : en.title), description: ar?.description ?? en.description, ogImage: ar?.ogImage ?? en.ogImage };
+  // No authored localization for this route/language: keep the canonical route
+  // metadata (English source) unchanged. This preserves the original English
+  // behavior — the localized entity-data fallback below is handled by
+  // getLocalizedRouteMeta, so we must not re-derive it here (it would override
+  // TOUR_META/DESTINATION_META for English).
+  return { title: key ? tr(lang, key) || en.title : en.title, description: en.description, ogImage: en.ogImage };
 }
 function buildRoutes(lang: Lang): RouteEntry[] {
   const routes: RouteEntry[] = []; const rtl = lang === 'ar';

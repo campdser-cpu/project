@@ -160,4 +160,84 @@ const AR_ROUTE_META: Record<string,RouteMeta> = {
   '/faq':{title:'أسئلة شائعة عن السفر إلى المغرب',description:'إجابات عن أسئلة السفر والجولات الصحراوية والحجز في المغرب.'},
   '/blog':{title:'مدونة السفر في المغرب — أدلة ونصائح',description:'أدلة ونصائح عملية للسفر في المغرب من خبراء محليين.'},
 };
-export function getLocalizedRouteMeta(rest:string,lang?:string):RouteMeta { return lang === 'ar' ? (AR_ROUTE_META[rest === '' || rest === '/' ? '/' : rest.replace(/\/$/,'')] ?? getRouteMeta(rest)) : getRouteMeta(rest); }
+// ── Localized route metadata ──────────────────────────────────────────────────
+// Single source of truth for per-page SEO title/description used by BOTH the
+// runtime <LocalizedHead> and the static prerender (`scripts/prerender.ts`).
+//
+// Order of precedence:
+//   1. Authoring-supplied per-language static overrides (currently Arabic only:
+//      AR_ROUTE_META). These exist for languages whose authors translated the
+//      static page copy.
+//   2. Tour / destination DETAIL pages: when a content-translation overlay was
+//      authored for the active language, surface the localized entity name +
+//      description + image as the SEO title/description. This is how localized
+//      tour metadata reaches the <title>/<meta description>/OG tags.
+//   3. Otherwise fall back to the canonical English route metadata. No
+//      translation is ever *invented* — a language without an authored overlay
+//      keeps the English copy rather than receiving a machine-generated page.
+import { getLocalizedTour, getLocalizedDestination, contentOverlayExists } from '@/i18n/content';
+import { t as translate } from '@/i18n/index';
+import type { Lang } from '@/i18n/index';
+
+const DESCRIPTION_MAX = 158;
+function truncate(text: string | undefined, max = DESCRIPTION_MAX): string {
+  const s = (text ?? '').toString().replace(/\s+/g, ' ').trim();
+  if (!s) return '';
+  if (s.length <= max) return s;
+  return s.slice(0, max - 1).trimEnd() + '…';
+}
+
+export function getLocalizedRouteMeta(rest: string, lang: Lang = 'en'): RouteMeta {
+  const normalized = rest === '' || rest === '/' ? '/' : rest.replace(/\/$/, '');
+
+  // 1. Per-language static overrides (Arabic).
+  if (lang === 'ar') {
+    const ar = AR_ROUTE_META[normalized];
+    if (ar) return ar;
+  }
+
+  // 2. Tour detail page — localized entity meta when an overlay exists.
+  const tourMatch = normalized.match(/^\/tours\/([^/]+)$/);
+  if (tourMatch) {
+    const t = getLocalizedTour(tourMatch[1], lang);
+    if (t && contentOverlayExists(lang, 'tours', t.id)) {
+      return { title: t.name, description: truncate(t.description), ogImage: t.image };
+    }
+  }
+
+  // 3. Destination detail page — localized entity meta when an overlay exists.
+  const destMatch = normalized.match(/^\/destinations\/([^/]+)$/);
+  if (destMatch) {
+    const d = getLocalizedDestination(destMatch[1], lang);
+    if (d && contentOverlayExists(lang, 'destinations', d.id)) {
+      return { title: d.name, description: truncate(d.shortDesc || d.description), ogImage: d.image };
+    }
+  }
+
+  // 3.5 Tour hub pages — metadata built from the authored per-locale dictionary
+  //     (hub_<city>_title / hub_<city>_intro / tours_heading / tours_sub).
+  //     These keys are hand-authored in every locale file; if a locale lacks a
+  //     key, t() falls back to English (never a literal key, never invented copy).
+  if (normalized === '/tours') {
+    const heading = translate(lang, 'tours_heading');
+    if (heading && heading !== 'tours_heading') {
+      const sub = translate(lang, 'tours_sub');
+      const description = sub && sub !== 'tours_sub' ? truncate(`${heading} — ${sub}`) : truncate(heading);
+      return { title: heading, description };
+    }
+  }
+  const toursHub = normalized.match(/^\/tours\/from-([a-z]+)$/);
+  if (toursHub) {
+    const city = toursHub[1];
+    const title = translate(lang, `hub_${city}_title`);
+    if (title && title !== `hub_${city}_title`) {
+      const intro = translate(lang, `hub_${city}_intro`);
+      const fallback = getRouteMeta(rest).description;
+      return { title, description: truncate(intro) || fallback };
+    }
+  }
+
+  // 4. No authored translation for this route/language: English canonical meta.
+  return getRouteMeta(rest);
+}
+

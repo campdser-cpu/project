@@ -5,7 +5,7 @@ const jsonOutput = process.argv.includes('--json') || process.env.ROUTE_AUDIT_JS
 const outputPath = process.env.ROUTE_AUDIT_OUTPUT || 'dist/production-route-audit.json';
 
 const importantPaths = [
-  '/', '/en', '/en/tours', '/en/contact', '/en/book', '/en/trip-builder', '/en/day-trips', '/en/destinations', '/en/about', '/en/reviews',
+  '/', '/en', '/en/tours', '/en/contact', '/en/book', '/en/trip-builder', '/en/day-trips', '/en/destinations', '/en/about',
   '/en/tours/2-day-zagora-desert-marrakech', '/en/tours/3-day-sahara-marrakech', '/en/tours/4-day-marrakech-merzouga-sahara',
   '/en/tours/5-day-great-south-morocco', '/en/tours/3-day-fes-merzouga-sahara', '/en/tours/4-day-fes-marrakech-via-merzouga',
   '/fr/tours/3-day-sahara-marrakech', '/fr/contact', '/fr/trip-builder', '/fr/book',

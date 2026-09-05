@@ -153,6 +153,33 @@ export function categoryLabel(cat: string, lang: Lang): string {
   return getOverlay(lang)?.categories?.[cat] ?? cat;
 }
 
+/**
+ * Whether a content-translation overlay was authored for a given locale +
+ * entity. Used by route-metadata to decide whether a tour/destination detail
+ * page can show a genuinely localized SEO title/description (when an overlay
+ * exists) or must keep the canonical English metadata (no translation authored).
+ * English is the canonical source and has no overlay by design.
+ */
+export function contentOverlayExists(
+  lang: Lang,
+  entityType: 'tours' | 'destinations' | 'faq' | 'experiences',
+  id: string,
+): boolean {
+  const o = getOverlay(lang);
+  if (!o) return false;
+  if (entityType === 'tours' || entityType === 'destinations') {
+    const bucket = o[entityType];
+    return !!bucket && !!bucket[id];
+  }
+  if (entityType === 'experiences') {
+    return Array.isArray(o.experiences) && o.experiences.length > 0;
+  }
+  // faq (array-style overlay)
+  return Array.isArray(o.faq) && o.faq.length > 0;
+}
+
+
+
 // ── Blog articles ────────────────────────────────────────────────────────────
 export type BlogPost = {
   slug: string;

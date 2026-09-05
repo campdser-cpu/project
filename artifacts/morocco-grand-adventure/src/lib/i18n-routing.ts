@@ -78,11 +78,15 @@ export function canonicalizeRoute(rest: string, lang: Lang): string {
 }
 
 export function langHref(lang: Lang, rest: string, search = '', hash = ''): string {
+  // Preserve the canonical slug path exactly and only change the language
+  // prefix. The site is prerendered at canonical slugs for every locale (e.g.
+  // /fr/tours/...). Previously the first segment was translated
+  // (tours -> circuits), producing URLs such as /fr/circuits/... that have no
+  // prerendered file and returned HTTP 404 on direct requests/refreshes.
+  // Always emit a URL that actually resolves to the prerendered page.
   const clean = rest === '/' ? '' : rest;
-  const parts = clean.replace(/^\//, '').split('/');
-  if (parts[0] && ROUTES[parts[0]]?.[lang]) parts[0] = ROUTES[parts[0]][lang]!;
-  const localized = parts.filter(Boolean).join('/');
-  return `${RAW_BASE}/${lang}${localized ? '/' + localized : ''}${search}${hash}`;
+  const safe = clean && clean.startsWith('/') ? clean : clean ? '/' + clean : '';
+  return `${RAW_BASE}/${lang}${safe}${search}${hash}`;
 }
 
 export function localizeInternalHref(href: string, lang: Lang): string {
