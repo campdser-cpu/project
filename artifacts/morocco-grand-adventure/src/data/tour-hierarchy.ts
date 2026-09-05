@@ -172,7 +172,7 @@ export function getCityHub(slug: string): CityHub | undefined {
 // MGA_MISSING_TOURS_V1
 
 export const CITY_HUB_DURATIONS: Record<DepartureCity, number[]> = {
-  marrakech: [3, 4, 5, 6, 7, 8, 9, 10],
+  marrakech: [2, 3, 4, 5, 6, 7, 8, 9, 10],
   casablanca: [3, 4, 5, 6, 7, 8],
   fes: [3, 4, 5, 6, 7, 8],
   agadir: [3, 4, 5, 6, 7, 8],
