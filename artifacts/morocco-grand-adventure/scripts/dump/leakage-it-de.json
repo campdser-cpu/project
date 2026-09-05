@@ -1,0 +1,310 @@
+{
+  "it": [
+    {
+      "key": "nav_home",
+      "en": "Home"
+    },
+    {
+      "key": "tb_budget_comfort",
+      "en": "Comfort"
+    },
+    {
+      "key": "ai_online",
+      "en": "Online"
+    },
+    {
+      "key": "contact_ph_firstname",
+      "en": "John"
+    },
+    {
+      "key": "contact_ph_lastname",
+      "en": "Doe"
+    },
+    {
+      "key": "contact_ph_email",
+      "en": "john@example.com"
+    },
+    {
+      "key": "contact_ph_phone",
+      "en": "+1 234 567 8900"
+    },
+    {
+      "key": "hub_marrakech_name",
+      "en": "Marrakech"
+    },
+    {
+      "key": "hub_casablanca_name",
+      "en": "Casablanca"
+    },
+    {
+      "key": "hub_agadir_name",
+      "en": "Agadir"
+    },
+    {
+      "key": "hub_dest_erg_chebbi",
+      "en": "Erg Chebbi"
+    },
+    {
+      "key": "hub_dest_ait_ben_haddou",
+      "en": "Aït Ben Haddou"
+    },
+    {
+      "key": "exp_faq",
+      "en": "FAQ"
+    },
+    {
+      "key": "nav_blog",
+      "en": "Blog"
+    },
+    {
+      "key": "nav_faq",
+      "en": "FAQ"
+    },
+    {
+      "key": "footer_faq",
+      "en": "FAQ"
+    },
+    {
+      "key": "sticky_whatsapp",
+      "en": "WhatsApp"
+    },
+    {
+      "key": "home_place5_name",
+      "en": "Marrakech"
+    },
+    {
+      "key": "home_rev1_name",
+      "en": "Sarah Jenkins"
+    },
+    {
+      "key": "home_rev2_name",
+      "en": "David Chen"
+    },
+    {
+      "key": "home_rev3_name",
+      "en": "Amara & James"
+    },
+    {
+      "key": "home_rev4_name",
+      "en": "Robert Müller"
+    },
+    {
+      "key": "home_rev5_name",
+      "en": "Priya Patel"
+    },
+    {
+      "key": "home_rev6_name",
+      "en": "Carlos Rivera"
+    },
+    {
+      "key": "about_guide_name",
+      "en": "Mohamed Bou Ghrara"
+    },
+    {
+      "key": "about_stat1_value",
+      "en": "Merzouga"
+    },
+    {
+      "key": "td_rev1_name",
+      "en": "Michael T."
+    },
+    {
+      "key": "td_rev2_name",
+      "en": "Jessica R."
+    },
+    {
+      "key": "td_rev3_name",
+      "en": "Sophie & Marc"
+    },
+    {
+      "key": "td_rev4_name",
+      "en": "Ahmed K."
+    },
+    {
+      "key": "tours_tour",
+      "en": "tour"
+    },
+    {
+      "key": "tb_city_casablanca",
+      "en": "Casablanca"
+    },
+    {
+      "key": "tb_city_marrakech",
+      "en": "Marrakech"
+    },
+    {
+      "key": "tb_city_fes",
+      "en": "Fes"
+    },
+    {
+      "key": "tb_city_agadir",
+      "en": "Agadir"
+    },
+    {
+      "key": "diff_guide_1_name",
+      "en": "Mohamed Boughrara"
+    },
+    {
+      "key": "diff_guide_2_name",
+      "en": "Mostapha Wargaga"
+    },
+    {
+      "key": "diff_guide_3_name",
+      "en": "Moha Amroui"
+    }
+  ],
+  "de": [
+    {
+      "key": "ai_online",
+      "en": "Online"
+    },
+    {
+      "key": "contact_ph_firstname",
+      "en": "John"
+    },
+    {
+      "key": "contact_ph_lastname",
+      "en": "Doe"
+    },
+    {
+      "key": "contact_ph_email",
+      "en": "john@example.com"
+    },
+    {
+      "key": "contact_ph_phone",
+      "en": "+1 234 567 8900"
+    },
+    {
+      "key": "tb_interest_yoga",
+      "en": "Yoga & Wellness"
+    },
+    {
+      "key": "hub_casablanca_name",
+      "en": "Casablanca"
+    },
+    {
+      "key": "hub_agadir_name",
+      "en": "Agadir"
+    },
+    {
+      "key": "hub_dest_erg_chebbi",
+      "en": "Erg Chebbi"
+    },
+    {
+      "key": "hub_dest_ait_ben_haddou",
+      "en": "Aït Ben Haddou"
+    },
+    {
+      "key": "exp_faq",
+      "en": "FAQ"
+    },
+    {
+      "key": "nav_blog",
+      "en": "Blog"
+    },
+    {
+      "key": "nav_faq",
+      "en": "FAQ"
+    },
+    {
+      "key": "footer_faq",
+      "en": "FAQ"
+    },
+    {
+      "key": "sticky_whatsapp",
+      "en": "WhatsApp"
+    },
+    {
+      "key": "blog_post_1_date",
+      "en": "August 2026"
+    },
+    {
+      "key": "blog_post_5_date",
+      "en": "April 2026"
+    },
+    {
+      "key": "mt_f5_title",
+      "en": "Meknès & Volubilis"
+    },
+    {
+      "key": "ag_f3_title",
+      "en": "Taroudant & Souss-Massa"
+    },
+    {
+      "key": "ag_f4_title",
+      "en": "Paradise Valley & Essaouira"
+    },
+    {
+      "key": "home_rev1_name",
+      "en": "Sarah Jenkins"
+    },
+    {
+      "key": "home_rev2_name",
+      "en": "David Chen"
+    },
+    {
+      "key": "home_rev3_name",
+      "en": "Amara & James"
+    },
+    {
+      "key": "home_rev4_name",
+      "en": "Robert Müller"
+    },
+    {
+      "key": "home_rev5_name",
+      "en": "Priya Patel"
+    },
+    {
+      "key": "home_rev6_name",
+      "en": "Carlos Rivera"
+    },
+    {
+      "key": "about_guide_name",
+      "en": "Mohamed Bou Ghrara"
+    },
+    {
+      "key": "about_stat1_value",
+      "en": "Merzouga"
+    },
+    {
+      "key": "td_rev1_name",
+      "en": "Michael T."
+    },
+    {
+      "key": "td_rev2_name",
+      "en": "Jessica R."
+    },
+    {
+      "key": "td_rev3_name",
+      "en": "Sophie & Marc"
+    },
+    {
+      "key": "td_rev4_name",
+      "en": "Ahmed K."
+    },
+    {
+      "key": "tb_city_casablanca",
+      "en": "Casablanca"
+    },
+    {
+      "key": "tb_city_fes",
+      "en": "Fes"
+    },
+    {
+      "key": "tb_city_agadir",
+      "en": "Agadir"
+    },
+    {
+      "key": "diff_guide_1_name",
+      "en": "Mohamed Boughrara"
+    },
+    {
+      "key": "diff_guide_2_name",
+      "en": "Mostapha Wargaga"
+    },
+    {
+      "key": "diff_guide_3_name",
+      "en": "Moha Amroui"
+    }
+  ]
+}

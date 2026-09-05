@@ -2,7 +2,6 @@
 // Morocco Grand Adventure — Central Data
 // Owner: Mohamed Bou Ghrara
 // ─────────────────────────────────────────────────────────────────────────────
-
 export const contactInfo = {
   whatsapp: "https://wa.me/message/QAFZ3RKJDNH4B1",
   whatsappNumber: "+212 699 846 818",
@@ -15,7 +14,6 @@ export const contactInfo = {
   companyName: "Morocco Grand Adventure",
   address: "Merzouga, Errachidia Province, Morocco",
 };
-
 export type Destination = {
   id: string;
   name: string;
@@ -34,10 +32,7 @@ export type Destination = {
    */
   gallery?: DestinationGalleryImage[];
 };
-
 export type DestinationGalleryImage = { src: string; alt: string; caption: string };
-
-
 export const destinations: Destination[] = [
   // ── Imperial Cities ────────────────────────────────────────────────────────
   {
@@ -67,41 +62,6 @@ export const destinations: Destination[] = [
         alt: "Local man riding a motorbike through a stone archway in the old Marrakech medina",
         caption: "A local rider passes beneath a historic stone archway in the Marrakech medina.",
       },
-      {
-        src: "/images/curated/leather-tanning-vats-fes-medina.webp",
-        alt: "Stone vats filled with natural dyes at the Chouara Tannery in the Fes medina, Morocco",
-        caption: "Rows of stone dyeing vats hold natural pigments at the Chouara Tannery.",
-      },
-      {
-        src: "/images/curated/tannery-workers-dyeing-pits-fes.webp",
-        alt: "Workers treating leather hides among the dyeing pits of a traditional Fes tannery, Morocco",
-        caption: "Tanners work the dyeing pits by hand, much as they have for centuries.",
-      },
-      {
-        src: "/images/curated/chouara-tannery-overhead-fes-el-bali.webp",
-        alt: "Aerial view of the circular dye pits of the Chouara Tannery in Fes el-Bali, Morocco",
-        caption: "The honeycomb of dye pits seen from the tannery viewing terrace.",
-      },
-      {
-        src: "/images/curated/hassan-ii-mosque-minaret-casablanca.webp",
-        alt: "The tall minaret of the Hassan II Mosque rising above Casablanca, Morocco",
-        caption: "The minaret of the Hassan II Mosque rises above the city.",
-      },
-      {
-        src: "/images/curated/hassan-ii-mosque-interior-colonnades-casablanca.webp",
-        alt: "Colonnaded interior of the Hassan II Mosque with carved arches, Casablanca, Morocco",
-        caption: "Carved arches line the interior of the Hassan II Mosque.",
-      },
-      {
-        src: "/images/curated/ait-ben-haddou-kasbah-sunrise-ouarzazate.webp",
-        alt: "Ait Ben Haddou kasbah bathed in sunrise light, Ouarzazate Province, Morocco",
-        caption: "First light warms the earthen walls of Ait Ben Haddou.",
-      },
-      {
-        src: "/images/curated/ait-ben-haddou-bridge-town-unesco-morocco.webp",
-        alt: "Footbridge crossing the river to the fortified town of Ait Ben Haddou, a UNESCO World Heritage site in Morocco",
-        caption: "A footbridge leads across the river to the UNESCO-listed ksar.",
-      },
                 ],
   },
   {
@@ -121,6 +81,22 @@ export const destinations: Destination[] = [
         alt: "Craftsman dyeing leather hides in the centuries-old Chouara Tannery, Fes, Morocco",
         caption: "A tanner works among the ancient stone dye pits of the Chouara Tannery in Fes.",
       },
+      {
+        src: "/images/curated/leather-tanning-vats-fes-medina.webp",
+        alt: "Stone vats filled with natural dyes at the Chouara Tannery in the Fes medina, Morocco",
+        caption: "Rows of stone dyeing vats hold natural pigments at the Chouara Tannery.",
+      },
+      {
+        src: "/images/curated/tannery-workers-dyeing-pits-fes.webp",
+        alt: "Workers treating leather hides among the dyeing pits of a traditional Fes tannery, Morocco",
+        caption: "Tanners work the dyeing pits by hand, much as they have for centuries.",
+      },
+      {
+        src: "/images/curated/chouara-tannery-overhead-fes-el-bali.webp",
+        alt: "Aerial view of the circular dye pits of the Chouara Tannery in Fes el-Bali, Morocco",
+        caption: "The honeycomb of dye pits seen from the tannery viewing terrace.",
+      },
+
     ],
   },
   {
@@ -157,6 +133,17 @@ export const destinations: Destination[] = [
         alt: "Woman standing before the giant ornate bronze door and mosaic wall of the Hassan II Mosque, Casablanca",
         caption: "A visitor stands dwarfed by the giant ornate bronze door of the Hassan II Mosque.",
       },
+      {
+        src: "/images/curated/hassan-ii-mosque-minaret-casablanca.webp",
+        alt: "The tall minaret of the Hassan II Mosque rising above Casablanca, Morocco",
+        caption: "The minaret of the Hassan II Mosque rises above the city.",
+      },
+      {
+        src: "/images/curated/hassan-ii-mosque-interior-colonnades-casablanca.webp",
+        alt: "Colonnaded interior of the Hassan II Mosque with carved arches, Casablanca, Morocco",
+        caption: "Carved arches line the interior of the Hassan II Mosque.",
+      },
+
     ],
   },
   {
@@ -169,16 +156,15 @@ export const destinations: Destination[] = [
     description: "Rabat, Morocco's capital, exudes a calm, regal elegance. The Kasbah of Oudayas, overlooking the Atlantic, and the unfinished Hassan Tower are must-sees. The modern city coexists beautifully with its ancient medina.",
     highlights: ["Kasbah des Oudayas", "Hassan Tower", "Mohammed V Mausoleum", "Chellah Necropolis", "Medina"],
     region: "Atlantic Coast",
-    coords: { lat: 34.0209, lng: -6.8416 },    gallery: [
+    coords: { lat: 34.0209, lng: -6.8416 },
+    gallery: [
       {
         src: "/images/curated/hassan-tower-mohammed-v-mausoleum-rabat.webp",
         alt: "Hassan Tower beside the Mohammed V Mausoleum in Rabat, Morocco",
         caption: "Hassan Tower and the Mohammed V Mausoleum face each other across the esplanade.",
       },
     ],
-
   },
-
   // ── Sahara Desert ──────────────────────────────────────────────────────────
   {
     id: "merzouga",
@@ -190,14 +176,14 @@ export const destinations: Destination[] = [
     description: "Merzouga is the crown jewel of Morocco's desert experience. The village sits at the foot of Erg Chebbi, a sea of golden sand dunes reaching up to 150 metres high. Camel trekking, stargazing from luxury tented camps, and the silence of the Sahara create memories that last a lifetime.",
     highlights: ["Erg Chebbi Dunes", "Camel Trekking", "Luxury Desert Camps", "Stargazing", "Berber Villages"],
     region: "Sahara Desert",
-    coords: { lat: 31.0988, lng: -4.0134 },    gallery: [
+    coords: { lat: 31.0988, lng: -4.0134 },
+    gallery: [
       {
         src: "/images/curated/berber-guide-camel-sahara-desert-merzouga.webp",
         alt: "Berber guide leading a camel across the dunes of Erg Chebbi near Merzouga, Morocco",
         caption: "A local Berber guide leads a camel over the Erg Chebbi dunes.",
       },
     ],
-
   },
   {
     id: "erg-chebbi",
@@ -240,6 +226,17 @@ export const destinations: Destination[] = [
         alt: "Woman in a flowing yellow dress standing before the sunset-lit Ait Benhaddou kasbah reflected in the river",
         caption: "The UNESCO-listed kasbah of Ait Benhaddou glows under the golden light of sunset.",
       },
+      {
+        src: "/images/curated/ait-ben-haddou-kasbah-sunrise-ouarzazate.webp",
+        alt: "Ait Ben Haddou kasbah bathed in sunrise light, Ouarzazate Province, Morocco",
+        caption: "First light warms the earthen walls of Ait Ben Haddou.",
+      },
+      {
+        src: "/images/curated/ait-ben-haddou-bridge-town-unesco-morocco.webp",
+        alt: "Footbridge crossing the river to the fortified town of Ait Ben Haddou, a UNESCO World Heritage site in Morocco",
+        caption: "A footbridge leads across the river to the UNESCO-listed ksar.",
+      },
+
     ],
   },
   {
@@ -276,7 +273,8 @@ export const destinations: Destination[] = [
     description: "The Todra Gorge is one of Morocco's most dramatic natural wonders — sheer limestone walls soar 300 metres above a crystal-clear river. Rock climbers come from around the world, while walkers can follow the gorge deep into the High Atlas. Visiting at sunrise, when the light turns the walls gold, is magical.",
     highlights: ["Rock Climbing", "Canyon Walk", "Berber Guesthouses", "Photography", "Sunrise Views"],
     region: "Southern Morocco",
-    coords: { lat: 31.5863, lng: -5.5822 },    gallery: [
+    coords: { lat: 31.5863, lng: -5.5822 },
+    gallery: [
       {
         src: "/images/curated/todra-gorge-river-canyon-high-atlas.webp",
         alt: "The Todra Gorge river canyon between towering rock walls, High Atlas, Morocco",
@@ -288,7 +286,6 @@ export const destinations: Destination[] = [
         caption: "A spring-fed cascade tumbles inside the Todra Gorge.",
       },
     ],
-
   },
   {
     id: "skoura",
@@ -326,7 +323,6 @@ export const destinations: Destination[] = [
     region: "Southern Morocco",
     coords: { lat: 30.6904, lng: -6.3588 },
   },
-
   // ── Mountains ──────────────────────────────────────────────────────────────
   {
     id: "chefchaouen",
@@ -338,7 +334,8 @@ export const destinations: Destination[] = [
     description: "Nestled in the Rif Mountains, Chefchaouen is Morocco's most photogenic city. Every wall, staircase, and doorway is painted in countless shades of blue — an ocean-like calm that makes it one of the most peaceful places in the country. The nearby Akchour waterfalls and God's Bridge are spectacular day trips.",
     highlights: ["Blue Medina", "Plaza Uta el-Hammam", "Ras el-Ma Springs", "Akchour Waterfalls", "Rif Mountain Hikes"],
     region: "Northern Morocco",
-    coords: { lat: 35.1688, lng: -5.2636 },    gallery: [
+    coords: { lat: 35.1688, lng: -5.2636 },
+    gallery: [
       {
         src: "/images/curated/blue-streets-berber-carpets-chefchaouen-medina.webp",
         alt: "Blue-washed street lined with Berber carpets for sale in the Chefchaouen medina, Morocco",
@@ -365,7 +362,6 @@ export const destinations: Destination[] = [
         caption: "Descending the famous blue steps of the Chefchaouen medina.",
       },
     ],
-
   },
   {
     id: "imlil",
@@ -415,7 +411,6 @@ export const destinations: Destination[] = [
     region: "Middle Atlas",
     coords: { lat: 33.5333, lng: -5.1167 },
   },
-
   // ── Atlantic Coast ─────────────────────────────────────────────────────────
   {
     id: "essaouira",
@@ -477,7 +472,6 @@ export const destinations: Destination[] = [
     region: "Atlantic Coast",
     coords: { lat: 33.2316, lng: -8.5007 },
   },
-
   // ── Northern Morocco ──────────────────────────────────────────────────────
   {
     id: "tangier",
@@ -515,7 +509,6 @@ export const destinations: Destination[] = [
     region: "Northern Morocco",
     coords: { lat: 35.2333, lng: -5.2167 },
   },
-
   // ── Extra Southern Gems ────────────────────────────────────────────────────
   {
     id: "nkob",
@@ -542,11 +535,9 @@ export const destinations: Destination[] = [
     coords: { lat: 29.5834, lng: -10.0474 },
   },
 ];
-
 // ─────────────────────────────────────────────────────────────────────────────
 // Tours
 // ─────────────────────────────────────────────────────────────────────────────
-
 export type PricingTier = {
   1: number;
   2: number;
@@ -554,18 +545,14 @@ export type PricingTier = {
   4: number;
   5: number;
 };
-
 export type ItineraryDay = {
   day: number;
   title: string;
   desc: string;
   stops: string[];
 };
-
 export type TourFaq = { question: string; answer: string };
-
 export type TourGalleryImage = { src: string; caption: string };
-
 export type Tour = {
   id: string;
   name: string;
@@ -590,7 +577,6 @@ export type Tour = {
   gallery?: TourGalleryImage[];
   faq?: TourFaq[];
 };
-
 export const tourSlugAliases: Record<string, string> = {
   '3-days-marrakech-to-merzouga-desert-tour': '3-day-sahara-marrakech',
   '3-days-fes-to-marrakech-desert-tour': '5-day-imperial-cities',
@@ -607,7 +593,6 @@ export const tourSlugAliases: Record<string, string> = {
   '4-days-fes-to-marrakech-via-merzouga': '4-day-fes-marrakech-via-merzouga',
   '4-day-fes-marrakech-merzouga-tour': '4-day-fes-marrakech-via-merzouga',
 };
-
 // ─────────────────────────────────────────────────────────────────────────────
 // Reviews (localised via locale keys so every language shows real review text)
 // ─────────────────────────────────────────────────────────────────────────────
@@ -625,7 +610,6 @@ export type Review = {
   /** Star rating 1–5 (all showcase reviews are 5-star). */
   rating: number;
 };
-
 export const reviews: Review[] = [
   { id: 'rev1', nameKey: 'home_rev1_name', country: '🇬🇧', quoteKey: 'home_rev1_quote', tourKey: 'home_rev1_tour', rating: 5 },
   { id: 'rev2', nameKey: 'home_rev2_name', country: '🇺🇸', quoteKey: 'home_rev2_quote', tourKey: 'home_rev2_tour', rating: 5 },
@@ -634,7 +618,6 @@ export const reviews: Review[] = [
   { id: 'rev5', nameKey: 'home_rev5_name', country: '🇦🇺', quoteKey: 'home_rev5_quote', tourKey: 'home_rev5_tour', rating: 5 },
   { id: 'rev6', nameKey: 'home_rev6_name', country: '🇪🇸', quoteKey: 'home_rev6_quote', tourKey: 'home_rev6_tour', rating: 5 },
 ];
-
 export const tours: Tour[] = [
   {
     id: "3-day-sahara-marrakech",
@@ -1300,7 +1283,6 @@ export const tours: Tour[] = [
       },
     ],
   },
-
 {
   id: "marrakech-4-day",
   name: "4-Day Marrakech to Merzouga Sahara Explorer",
@@ -1764,7 +1746,6 @@ export const tours: Tour[] = [
     { question: "Is the desert night included?", answer: "Yes, a sunset camel trek and a night in a desert camp at Erg Chebbi are part of the proposed route and will be confirmed in writing before booking." },
   ],
 },
-
   {
     id: "2-day-zagora-desert-marrakech",
     name: "2-Day Zagora Desert Tour from Marrakech",
@@ -1947,9 +1928,7 @@ export const tours: Tour[] = [
     ],
   },
   // MGA_MISSING_TOURS_V1
-
 ];
-
 // ─────────────────────────────────────────────────────────────────────────────
 // Experiences (used on homepage grid)
 // ─────────────────────────────────────────────────────────────────────────────
@@ -1960,7 +1939,6 @@ export const experiences = [
   "Moroccan Cuisine", "Cultural & Berber Experiences",
   "Photography Tours", "Honeymoon Packages", "Family Holidays"
 ];
-
 // ─────────────────────────────────────────────────────────────────────────────
 // FAQ
 // ─────────────────────────────────────────────────────────────────────────────

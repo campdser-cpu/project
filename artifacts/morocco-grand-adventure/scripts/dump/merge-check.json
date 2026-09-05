@@ -1,0 +1,26 @@
+{
+  "de": {
+    "tr_keys": 606,
+    "subset_of_en": true,
+    "extra": 0,
+    "extra_sample": []
+  },
+  "es": {
+    "tr_keys": 606,
+    "subset_of_en": true,
+    "extra": 0,
+    "extra_sample": []
+  },
+  "fr": {
+    "tr_keys": 426,
+    "subset_of_en": true,
+    "extra": 0,
+    "extra_sample": []
+  },
+  "it": {
+    "tr_keys": 606,
+    "subset_of_en": true,
+    "extra": 0,
+    "extra_sample": []
+  }
+}

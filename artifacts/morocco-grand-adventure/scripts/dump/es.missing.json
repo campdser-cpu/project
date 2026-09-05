@@ -296,6 +296,34 @@
     "en": "Read Article"
   },
   {
+    "key": "blog_category",
+    "en": "Category"
+  },
+  {
+    "key": "read_time",
+    "en": "min read"
+  },
+  {
+    "key": "related_articles",
+    "en": "Related Articles"
+  },
+  {
+    "key": "related_tours",
+    "en": "Related Tours"
+  },
+  {
+    "key": "related_tours_hint",
+    "en": "Explore a journey that puts this guide into practice."
+  },
+  {
+    "key": "related_destinations",
+    "en": "Destinations in this Guide"
+  },
+  {
+    "key": "related_destinations_hint",
+    "en": "Plan your trip around the places featured in this article."
+  },
+  {
     "key": "blog_post_1_title",
     "en": "The Ultimate Guide to Luxury Desert Camps in Merzouga"
   },
@@ -828,6 +856,306 @@
     "en": "Absolutely — many of our Sahara tours begin in Fes, crossing the Middle Atlas and cedar forests on the way to Merzouga."
   },
   {
+    "key": "mk_hero_alt",
+    "en": "The ochre walls and souks of Marrakech, Morocco"
+  },
+  {
+    "key": "mk_breadcrumb",
+    "en": "Marrakech Tours"
+  },
+  {
+    "key": "mk_title",
+    "en": "Marrakech Tours"
+  },
+  {
+    "key": "mk_subtitle",
+    "en": "Private guided tours from the Red City — the medina and souks, day trips to the Atlas and the Atlantic coast, and the classic 3-day Sahara desert tour to Merzouga."
+  },
+  {
+    "key": "mk_cta",
+    "en": "Explore Marrakech Tours"
+  },
+  {
+    "key": "mk_f1_title",
+    "en": "Medina & Souks Tours"
+  },
+  {
+    "key": "mk_f1_desc",
+    "en": "Wander the labyrinthine medina of the Red City with a local guide — Jemaa el-Fnaa, artisan souks, Bahia Palace and hidden riads."
+  },
+  {
+    "key": "mk_f2_title",
+    "en": "Majorelle Garden & YSL"
+  },
+  {
+    "key": "mk_f2_desc",
+    "en": "Stroll the cobalt-blue Majorelle Garden and the Berber Museum, a serene escape right in the heart of the city."
+  },
+  {
+    "key": "mk_f3_title",
+    "en": "High Atlas Day Trips"
+  },
+  {
+    "key": "mk_f3_desc",
+    "en": "Escape to the Ourika Valley, the Takerkoust reservoir or the Imlil trekking base beneath Mount Toubkal."
+  },
+  {
+    "key": "mk_f4_title",
+    "en": "Essaouira Day Trip"
+  },
+  {
+    "key": "mk_f4_desc",
+    "en": "Follow the coast to the wind-swept, walled medina of Essaouira for fresh seafood, beaches and Atlantic breezes."
+  },
+  {
+    "key": "mk_f5_title",
+    "en": "3-Day Sahara Tour from Marrakech"
+  },
+  {
+    "key": "mk_f5_desc",
+    "en": "Cross the High Atlas, Aït Ben Haddou and the Dades Valley, then sleep under the stars in the golden dunes of Erg Chebbi."
+  },
+  {
+    "key": "mk_f6_title",
+    "en": "Imperial Cities & Multi-Day"
+  },
+  {
+    "key": "mk_f6_desc",
+    "en": "Extend into Fes, Chefchaouen and the Atlantic coast on private, multi-day Morocco itineraries built around you."
+  },
+  {
+    "key": "mk_faq1_q",
+    "en": "What is Marrakech best known for?"
+  },
+  {
+    "key": "mk_faq1_a",
+    "en": "The Red City is famed for Jemaa el-Fnaa square, its labyrinthine medina, ornate palaces and gardens, and as the gateway to the High Atlas Mountains and the Sahara."
+  },
+  {
+    "key": "mk_faq2_q",
+    "en": "Is a 3-day Sahara tour from Marrakech worth it?"
+  },
+  {
+    "key": "mk_faq2_a",
+    "en": "Yes — it is our most popular route. In three days you cross the High Atlas, visit Aït Ben Haddou and the Dades Valley, and enjoy a night under the stars in the Erg Chebbi dunes at Merzouga."
+  },
+  {
+    "key": "mk_faq3_q",
+    "en": "Can I combine Marrakech with other cities?"
+  },
+  {
+    "key": "mk_faq3_a",
+    "en": "Absolutely. Our private multi-day tours link Marrakech with Fes, Chefchaouen, Essaouira and the Sahara, at a pace and route that suit your dates."
+  },
+  {
+    "key": "mk_faq4_q",
+    "en": "Do I need a guide in Marrakech?"
+  },
+  {
+    "key": "mk_faq4_a",
+    "en": "A local guide brings the medina to life and helps you explore safely and efficiently — and every private tour includes an English-speaking driver-guide."
+  },
+  {
+    "key": "ag_hero_alt",
+    "en": "The beach and promenade of Agadir, on Morocco's Atlantic coast"
+  },
+  {
+    "key": "ag_breadcrumb",
+    "en": "Agadir Tours"
+  },
+  {
+    "key": "ag_title",
+    "en": "Agadir Tours"
+  },
+  {
+    "key": "ag_subtitle",
+    "en": "Beach breaks, Atlantic coast escapes and routed journeys toward the Sahara — private tours that begin on Morocco's sunniest coast."
+  },
+  {
+    "key": "ag_cta",
+    "en": "Explore Agadir Tours"
+  },
+  {
+    "key": "ag_f1_title",
+    "en": "Agadir Beach & Promenade"
+  },
+  {
+    "key": "ag_f1_desc",
+    "en": "Relax on miles of golden sand and stroll the palm-lined seafront promenade, with the Kasbah of Agadir on the hill above."
+  },
+  {
+    "key": "ag_f2_title",
+    "en": "Taghazout & the Surf Coast"
+  },
+  {
+    "key": "ag_f2_desc",
+    "en": "Head up the coast to the laid-back surf town of Taghazout — beaches, cafés and some of the Atlantic's best sunsets."
+  },
+  {
+    "key": "ag_f3_title",
+    "en": "Taroudant & Souss-Massa"
+  },
+  {
+    "key": "ag_f3_desc",
+    "en": "Discover the walled souks of Taroudant, the 'Little Marrakech', or the bird-rich lagoons of Souss-Massa National Park."
+  },
+  {
+    "key": "ag_f4_title",
+    "en": "Paradise Valley & Essaouira"
+  },
+  {
+    "key": "ag_f4_desc",
+    "en": "Swim in the rock pools of Paradise Valley or follow the coast north to the historic, wind-blown medina of Essaouira."
+  },
+  {
+    "key": "ag_f5_title",
+    "en": "Sahara & Desert Routes"
+  },
+  {
+    "key": "ag_f5_desc",
+    "en": "Route east through the Saffron Valley, Ouarzazate and the Dades and Todra gorges to the golden dunes of Erg Chebbi."
+  },
+  {
+    "key": "ag_f6_title",
+    "en": "Custom Multi-Day Itineraries"
+  },
+  {
+    "key": "ag_f6_desc",
+    "en": "Join the coast, mountains and desert into one private itinerary shaped around your dates, pace and interests."
+  },
+  {
+    "key": "ag_faq1_q",
+    "en": "How do I get from Agadir to the Sahara?"
+  },
+  {
+    "key": "ag_faq1_a",
+    "en": "A private route heads east through the Souss Valley to Ouarzazate, then through the Dades and Todra gorges to the Erg Chebbi dunes at Merzouga."
+  },
+  {
+    "key": "ag_faq2_q",
+    "en": "How many days should I spend in Agadir?"
+  },
+  {
+    "key": "ag_faq2_a",
+    "en": "Two to three days suits the beach, Taghazout and a day trip to Taroudant or Paradise Valley. With more time we extend north to Essaouira and Marrakech, or east toward the Sahara."
+  },
+  {
+    "key": "ag_faq3_q",
+    "en": "Can you start a Morocco tour in Agadir?"
+  },
+  {
+    "key": "ag_faq3_a",
+    "en": "Yes — we build private itineraries that begin on the coast and cross Morocco, ending wherever suits your onward travel plans."
+  },
+  {
+    "key": "ag_faq4_q",
+    "en": "Is Agadir good for families?"
+  },
+  {
+    "key": "ag_faq4_a",
+    "en": "Very — the long, shallow beach, gentle year-round climate and easy day trips make it one of Morocco's most relaxed family bases."
+  },
+  {
+    "key": "ca_hero_alt",
+    "en": "The Hassan II Mosque on the Atlantic coast of Casablanca, Morocco"
+  },
+  {
+    "key": "ca_breadcrumb",
+    "en": "Casablanca Tours"
+  },
+  {
+    "key": "ca_title",
+    "en": "Casablanca Tours"
+  },
+  {
+    "key": "ca_subtitle",
+    "en": "The Hassan II Mosque, art-deco streets and routed connections to Marrakech, the imperial cities and the Sahara — private tours from Morocco's gateway."
+  },
+  {
+    "key": "ca_cta",
+    "en": "Explore Casablanca Tours"
+  },
+  {
+    "key": "ca_f1_title",
+    "en": "Hassan II Mosque"
+  },
+  {
+    "key": "ca_f1_desc",
+    "en": "Visit one of the world's largest mosques, built partly over the Atlantic, with its soaring minaret and intricate craftsmanship."
+  },
+  {
+    "key": "ca_f2_title",
+    "en": "Art-Deco & the Corniche"
+  },
+  {
+    "key": "ca_f2_desc",
+    "en": "Stroll the elegant art-deco quarters and the oceanfront Corniche, plus the nostalgic Rick's Café."
+  },
+  {
+    "key": "ca_f3_title",
+    "en": "Day Trip to Rabat"
+  },
+  {
+    "key": "ca_f3_desc",
+    "en": "Head up the coast to Morocco's capital — the Hassan Tower, the Kasbah of the Udayas and the Royal Mausoleum."
+  },
+  {
+    "key": "ca_f4_title",
+    "en": "Marrakech Excursion"
+  },
+  {
+    "key": "ca_f4_desc",
+    "en": "Reach the Red City in around three hours for its medina, Jemaa el-Fnaa and the Majorelle Garden."
+  },
+  {
+    "key": "ca_f5_title",
+    "en": "Imperial Cities & Chefchaouen"
+  },
+  {
+    "key": "ca_f5_desc",
+    "en": "Explore Fes, Meknès, the Roman ruins of Volubilis and the blue city of Chefchaouen on a routed northern circuit."
+  },
+  {
+    "key": "ca_f6_title",
+    "en": "Sahara Tours from Casablanca"
+  },
+  {
+    "key": "ca_f6_desc",
+    "en": "Connect south to the High Atlas, Aït Ben Haddou and the Erg Chebbi dunes on a private desert route built around your dates."
+  },
+  {
+    "key": "ca_faq1_q",
+    "en": "Is Casablanca worth a stop?"
+  },
+  {
+    "key": "ca_faq1_a",
+    "en": "Yes — the Hassan II Mosque alone is worth a visit, and the city is a convenient starting or ending point for a wider Morocco route."
+  },
+  {
+    "key": "ca_faq2_q",
+    "en": "How far is Casablanca from Marrakech?"
+  },
+  {
+    "key": "ca_faq2_a",
+    "en": "About 240 kilometres — roughly three hours by road, easily done as a private transfer or a day excursion."
+  },
+  {
+    "key": "ca_faq3_q",
+    "en": "Can I start a Sahara tour in Casablanca?"
+  },
+  {
+    "key": "ca_faq3_a",
+    "en": "We can begin a private desert route in Casablanca, heading south to Marrakech and on to the Erg Chebbi dunes — many travellers also start the classic route from Marrakech."
+  },
+  {
+    "key": "ca_faq4_q",
+    "en": "How many days do I need in Morocco from Casablanca?"
+  },
+  {
+    "key": "ca_faq4_a",
+    "en": "With five to eight days you can combine Casablanca with Marrakech, the imperial cities and the Sahara at a comfortable pace."
+  },
+  {
     "key": "dt_hero_alt",
     "en": "Ouzoud waterfalls cascading into a turquoise pool in Morocco"
   },
@@ -1030,6 +1358,30 @@
   {
     "key": "dt2_hero_alt",
     "en": "Golden Sahara desert dunes at Merzouga with camel caravan at sunset"
+  },
+  {
+    "key": "dt2_moments_title",
+    "en": "Sahara Desert Moments Near Merzouga"
+  },
+  {
+    "key": "dt2_moments_sub",
+    "en": "Golden dunes, starlit nights, and the timeless silhouette of a camel caravan — scenes you will live on our Sahara desert tours from Marrakech."
+  },
+  {
+    "key": "dest_pictures_title",
+    "en": "in Pictures"
+  },
+  {
+    "key": "dt2_moments_cap1",
+    "en": "Endless golden dunes stretch to the horizon in the Erg Chebbi desert near Merzouga."
+  },
+  {
+    "key": "dt2_moments_cap2",
+    "en": "A Berber guide leads his camel caravan along the dune crest as the sun sets."
+  },
+  {
+    "key": "dt2_moments_cap3",
+    "en": "A traveler's silhouette stands out against the giant golden sun over the Sahara dunes."
   },
   {
     "key": "dt2_title",

@@ -739,12 +739,17 @@ const LOADERS: Record<Lang, () => Promise<{ default: TranslationDict }>> = {
 };
 
 /**
- * Translate a key for a locale. Falls back to English, then to the key itself
- * if a translation is genuinely absent — the same behaviour as before splitting.
+ * Translate a key for a locale. Resolution order: active locale dictionary →
+ * active-locale gap completions (src/i18n/gaps, e.g. the About-storytelling
+ * strings that are authored only in the gap layer) → English → the key itself.
+ * Falling back to the gap layer before English is what keeps pages such as
+ * About fully localized for every supported language, including the locales
+ * whose gap completions live only in `i18nGaps`.
  */
 export function t(lang: Lang, key: string): string {
   return (
     registry[lang]?.[key as keyof TranslationDict] ??
+    i18nGaps[lang]?.[key] ??
     registry.en?.[key as keyof TranslationDict] ??
     key
   );

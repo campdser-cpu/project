@@ -481,13 +481,27 @@ function buildContactContent(lang: Lang): string {
 }
 function buildFaqContent(lang: Lang): string { return h1(tr(lang, 'nav_faq')) + faqBlock(getLocalizedFaq(lang)); }
 
+const BLOG_SLUG_INDEX: Record<string, number> = {
+  'merzouga-luxury-desert-camp-guide': 1,
+  'best-time-to-visit-morocco-sahara': 2,
+  'camel-trekking-etiquette-morocco': 3,
+  'marrakech-to-merzouga-roadtrip': 4,
+  'morocco-packing-list-desert': 5,
+  'fes-chefchaouen-blue-city-guide': 6,
+};
 function buildBlogContent(lang: Lang): string {
-  // Source of truth: blogPosts (same registry the routes are built from), so the
-  // blog listing is a real crawlable link list matching the live pages.
-  const blocks = blogPosts.map((post) =>
-    `<h2>${link(`${SITE_URL}/${lang}/blog/${post.slug}`, post.title)}</h2>`
-    + `<p><strong>${escapeHtml(post.category ?? '')}</strong> · ${escapeHtml(post.date ?? '')}</p>\n` + paragraph(post.excerpt)
-  ).join('');
+  // Localized titles/excerpts/categories come from the same blog_post_N_* keys the
+  // runtime blog page renders (tr() returns the authored overlay when present and
+  // falls back to the English authored copy otherwise).
+  const blocks = blogPosts.map((post) => {
+    const n = BLOG_SLUG_INDEX[post.slug];
+    const title = n ? tr(lang, `blog_post_${n}_title`) || post.title : post.title;
+    const cat = n ? tr(lang, `blog_post_${n}_cat`) || (post.category ?? '') : (post.category ?? '');
+    const date = n ? tr(lang, `blog_post_${n}_date`) || (post.date ?? '') : (post.date ?? '');
+    const excerpt = n ? tr(lang, `blog_post_${n}_excerpt`) || post.excerpt : post.excerpt;
+    return `<h2>${link(`${SITE_URL}/${lang}/blog/${post.slug}`, title)}</h2>`
+      + `<p><strong>${escapeHtml(cat)}</strong> · ${escapeHtml(date)}</p>\n` + paragraph(excerpt);
+  }).join('');
   return h1(tr(lang, 'nav_blog')) + blocks;
 }
 
@@ -502,6 +516,33 @@ const ARTICLE_RELATIONS: Record<string, { tours: string[]; destinations: string[
 
 function link(url: string, text: string): string { return `<a href="${url}">${escapeHtml(text)}</a>`; }
 
+// Localized labels for the "Experiences" nav/footer items. These routes' English
+// route-metadata titles were leaking into the prerendered nav/footer for every
+// locale; map each route to its existing localized translation key instead.
+const EXPERIENCE_LABEL_KEYS: Record<string, string> = {
+  '/desert-tours': 'nav_sahara_desert_tours',
+  '/luxury-camp': 'nav_luxury_desert_camp',
+  '/camel-trekking': 'nav_camel_trekking',
+  '/4x4-tours': 'nav_4x4_desert_tours',
+  '/day-trips': 'nav_day_trips',
+  '/marrakech-tours': 'hub_marrakech_title',
+  '/fes-tours': 'hub_fes_title',
+  '/agadir-tours': 'hub_agadir_title',
+  '/casablanca-tours': 'hub_casablanca_title',
+  '/merzouga-guide': 'footer_merzouga_guide',
+  '/gallery': 'nav_gallery',
+  '/trip-builder': 'nav_build_journey',
+};
+function experienceLabel(rest: string, lang: Lang): string {
+  const key = EXPERIENCE_LABEL_KEYS[rest];
+  if (key) {
+    const localized = tr(lang, key);
+    if (localized) return localized;
+  }
+  const title = getRouteMeta(rest).title.replace(/\s*—.*$/, '').trim();
+  return title || rest;
+}
+
 // ── Crawlable site tree: static nav + footer injected into EVERY prerendered
 // page so the Home → Tours → City → Duration → Tour tree (and the rest of the
 // site graph) is traversable by crawlers without executing JavaScript. Mirrors
@@ -514,10 +555,7 @@ function buildNavTreeContent(lang: Lang): string {
     return `      <li>${link(`${SITE_URL}/${lang}/tours/from-${hub.slug}`, tr(lang, `hub_${hub.id}_title`))}\n      <ul>\n${durationLinks}\n      </ul>\n      </li>`;
   }).join('\n');
   const experienceItems = Object.keys(EXPERIENCE_PAGE_ROUTES)
-    .map((rest) => {
-      const title = getRouteMeta(rest).title.replace(/\s*—.*$/, '').trim() || rest;
-      return `      <li>${link(`${SITE_URL}/${lang}${rest}`, title)}</li>`;
-    })
+    .map((rest) => `      <li>${link(`${SITE_URL}/${lang}${rest}`, experienceLabel(rest, lang))}</li>`)
     .join('\n');
   return `<nav aria-label="Site tree" class="prerendered-site-tree">\n  <ul>\n    <li>${link(`${SITE_URL}/${lang}/`, tr(lang, 'nav_home'))}</li>\n    <li>${link(`${SITE_URL}/${lang}/tours`, tr(lang, 'nav_tours'))}\n    <ul>\n${cityItems}\n    </ul>\n    </li>\n    <li>${link(`${SITE_URL}/${lang}/destinations`, tr(lang, 'nav_destinations') || 'Destinations')}</li>\n    <li>${tr(lang, 'nav_experiences') || 'Experiences'}\n    <ul>\n${experienceItems}\n    </ul>\n    </li>\n    <li>${link(`${SITE_URL}/${lang}/about`, tr(lang, 'nav_about'))}</li>\n    <li>${link(`${SITE_URL}/${lang}/blog`, tr(lang, 'nav_blog'))}</li>\n    <li>${link(`${SITE_URL}/${lang}/faq`, tr(lang, 'nav_faq'))}</li>\n    <li>${link(`${SITE_URL}/${lang}/contact`, tr(lang, 'nav_contact'))}</li>\n  </ul>\n</nav>\n`;
 }
@@ -533,12 +571,14 @@ function buildFooterContent(lang: Lang): string {
     .map((d) => `      <li>${link(`${SITE_URL}/${lang}/destinations/${d.id}`, d.name)}</li>`)
     .join('\n');
   const experienceItems = Object.keys(EXPERIENCE_PAGE_ROUTES)
-    .map((rest) => {
-      const title = getRouteMeta(rest).title.replace(/\s*—.*$/, '').trim() || rest;
-      return `      <li>${link(`${SITE_URL}/${lang}${rest}`, title)}</li>`;
-    })
+    .map((rest) => `      <li>${link(`${SITE_URL}/${lang}${rest}`, experienceLabel(rest, lang))}</li>`)
     .join('\n');
   return `<footer class="prerendered-site-footer">\n  <div>\n  <h2>${escapeHtml(tr(lang, 'nav_tours'))}</h2>\n  <ul>\n${cityItems}\n  </ul>\n  </div>\n  <div>\n  <h2>${escapeHtml(tr(lang, 'nav_destinations') || 'Destinations')}</h2>\n  <ul>\n${destinationItems}\n  </ul>\n  </div>\n  <div>\n  <h2>${escapeHtml(tr(lang, 'nav_experiences') || 'Experiences')}</h2>\n  <ul>\n${experienceItems}\n  </ul>\n  </div>\n</footer>\n`;
+}
+function blogPostField(slug: string, field: 'title'|'excerpt'|'cat'|'date'|'read', lang: Lang, fallback: string): string {
+  const n = BLOG_SLUG_INDEX[slug];
+  if (!n) return fallback;
+  return tr(lang, `blog_post_${n}_${field}`) || fallback;
 }
 function buildBlogToursBlock(slug: string, lang: Lang): string {
   const ids = ARTICLE_RELATIONS[slug]?.tours ?? [];
@@ -554,7 +594,7 @@ function buildBlogDestinationsBlock(slug: string, lang: Lang): string {
 }
 function buildBlogRelatedArticles(slug: string, lang: Lang): string {
   const others = blogPosts.filter((p) => p.slug !== slug).slice(0, 4);
-  const items = others.map((p) => `      <li>${link(`${SITE_URL}/${lang}/blog/${p.slug}`, p.title)}</li>`).join('\n');
+  const items = others.map((p) => `      <li>${link(`${SITE_URL}/${lang}/blog/${p.slug}`, blogPostField(p.slug, 'title', lang, p.title))}</li>`).join('\n');
   return h2(tr(lang, 'related_articles')) + `<ul>\n${items}\n    </ul>\n`;
 }
 function buildBlogArticleContent(slug: string, lang: Lang): string {
@@ -570,7 +610,12 @@ function buildBlogArticleContent(slug: string, lang: Lang): string {
   if (!post) return h1('Blog Post Not Found') + paragraph('This blog post could not be found.');
   const metaPost = blogPosts.find((p) => p.slug === slug);
   const imgAlt = metaPost?.alt ?? post.title;
-  return h1(post.title) + `<p><strong>${escapeHtml(post.cat)}</strong> · ${escapeHtml(post.date)} · ${escapeHtml(post.read)}</p>\n` + `<img src="${post.image}" alt="${escapeHtml(imgAlt)}" loading="lazy" decoding="async" class="w-full h-48 md:h-64 object-cover mb-8 rounded-md" />\n` + paragraph(post.excerpt) + buildBlogToursBlock(slug, lang) + buildBlogDestinationsBlock(slug, lang) + buildBlogRelatedArticles(slug, lang);
+  const title = blogPostField(slug, 'title', lang, post.title);
+  const cat = blogPostField(slug, 'cat', lang, post.cat);
+  const date = blogPostField(slug, 'date', lang, post.date);
+  const read = blogPostField(slug, 'read', lang, post.read);
+  const excerpt = blogPostField(slug, 'excerpt', lang, post.excerpt);
+  return h1(title) + `<p><strong>${escapeHtml(cat)}</strong> · ${escapeHtml(date)} · ${escapeHtml(read)}</p>\n` + `<img src="${post.image}" alt="${escapeHtml(imgAlt)}" loading="lazy" decoding="async" class="w-full h-48 md:h-64 object-cover mb-8 rounded-md" />\n` + paragraph(excerpt) + buildBlogToursBlock(slug, lang) + buildBlogDestinationsBlock(slug, lang) + buildBlogRelatedArticles(slug, lang);
 }
 
 const EXPERIENCE_PAGE_ROUTES: Record<string, { tours: string[]; destinations: string[] }> = {
