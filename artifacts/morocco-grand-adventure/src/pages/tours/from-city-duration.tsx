@@ -1,14 +1,16 @@
 import { useRoute } from 'wouter';
-import { getCityHub } from '@/data/tour-hierarchy';
+import { TOUR_DURATION_ROUTE, getCityHub } from '@/data/tour-hierarchy';
 import { TourDurationHub } from '@/components/tours/TourDurationHub';
 import NotFound from '../not-found';
 
 export default function FromCityDuration() {
-  const [match, params] = useRoute('/tours/from-:city/:days');
+  // RegExp matcher: captures 0 = city slug, 1 = days (see tour-hierarchy.ts —
+  // string patterns like "/tours/from-:city/:days" never matched client-side).
+  const [match, params] = useRoute(TOUR_DURATION_ROUTE);
 
   if (!match) return <NotFound />;
-  const slug = params?.city;
-  const days = params?.days ? parseInt(params.days, 10) : NaN;
+  const slug = params?.[0];
+  const days = params?.[1] ? parseInt(params[1], 10) : NaN;
   const hub = slug ? getCityHub(slug) : undefined;
 
   if (!hub || !Number.isFinite(days) || days <= 0) return <NotFound />;

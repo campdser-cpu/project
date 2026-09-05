@@ -8,6 +8,7 @@ import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
 import { PromoProvider } from './components/promo/PromoProvider';
 import { LocalizedHead } from './components/seo/LocalizedHead';
 import { RAW_BASE, parseLangPath, preferredLang, langHref, canonicalizeRoute } from './lib/i18n-routing';
+import { TOUR_CITY_ROUTE, TOUR_DURATION_ROUTE } from './data/tour-hierarchy';
 
 import Home from './pages/home';
 const Destinations = lazy(() => import('./pages/destinations'));
@@ -56,7 +57,7 @@ function AnimatedRouter() {
   return <AnimatePresence mode="wait" initial={false}><motion.div key={location} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.3, ease: 'easeOut' as const }} className="contents"><Suspense fallback={<PageLoader />}><Switch location={routedLocation}>
     <Route path="/" component={Home} />
     <Route path="/destinations" component={Destinations} /><Route path="/destinations/:id" component={DestinationDetail} />
-    <Route path="/tours" component={Tours} /><Route path="/tours/from-:city/:days" component={ToursFromCityDuration} /><Route path="/tours/from-:city" component={ToursFromCity} /><Route path="/tours/:id" component={TourDetail} />
+    <Route path="/tours" component={Tours} /><Route path={TOUR_DURATION_ROUTE} component={ToursFromCityDuration} /><Route path={TOUR_CITY_ROUTE} component={ToursFromCity} /><Route path="/tours/:id" component={TourDetail} />
     <Route path="/gallery" component={Gallery} /><Route path="/about" component={About} /><Route path="/contact" component={Contact} />
     <Route path="/trip-builder" component={TripBuilder} /><Route path="/build-your-day-trip" component={BuildYourDayTrip} />
     <Route path="/desert-tours" component={DesertTours} /><Route path="/luxury-camp" component={LuxuryCamp} /><Route path="/camel-trekking" component={CamelTrekking} /><Route path="/4x4-tours" component={FourByFourTours} />

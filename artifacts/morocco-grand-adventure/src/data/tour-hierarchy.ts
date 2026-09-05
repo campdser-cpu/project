@@ -189,3 +189,17 @@ export function durationHubPath(city: DepartureCity, days: number): string {
 export function durationHubPaths(city: DepartureCity): string[] {
   return (CITY_HUB_DURATIONS[city] ?? []).map((days) => durationHubPath(city, days));
 }
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Client-side route matchers for the category hubs.
+//
+// wouter's default pattern parser (regexparam) only supports :param at the
+// START of a segment, so string patterns like "/tours/from-:city" compile to a
+// LITERAL "from-:city" regex and never match. Clicks then fell through to
+// "/tours/:id" (tour detail → Page Not Found) or matched nothing, even though
+// the prerendered URLs themselves were valid. These RegExp matchers keep the
+// exact canonical URL structure while making client-side routing match it.
+// Capture groups: [city, days?]
+// ─────────────────────────────────────────────────────────────────────────────
+export const TOUR_CITY_ROUTE = /^\/tours\/from-([a-z0-9-]+)\/?$/i;
+export const TOUR_DURATION_ROUTE = /^\/tours\/from-([a-z0-9-]+)\/(\d+)-days\/?$/i;
