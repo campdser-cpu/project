@@ -52,30 +52,30 @@ export function Footer() {
             <ul className="space-y-3">
               {destinations.slice(0, 5).map(dest => <li key={dest.id}><Link href={`/destinations/${dest.id}`} className="text-white/70 hover:text-primary transition-colors">{dest.name}</Link></li>)}
             </ul>
-            <h3 className="font-serif text-xl font-medium mt-8 mb-4 text-primary">Morocco route highlights</h3>
+            <h3 className="font-serif text-xl font-medium mt-8 mb-4 text-primary">{t('footer_route_highlights')}</h3>
             <ul className="space-y-2">
               {authorityDestinations.map(dest => dest && <li key={dest.id}><Link href={`/destinations/${dest.id}`} className="text-white/70 hover:text-primary transition-colors text-sm">{dest.name}</Link></li>)}
             </ul>
           </div>
           <div>
-            <h3 className="font-serif text-xl font-medium mb-4 sm:mb-6 text-primary">Private Morocco tours</h3>
+            <h3 className="font-serif text-xl font-medium mb-4 sm:mb-6 text-primary">{t('footer_private_morocco_tours')}</h3>
             <ul className="space-y-3 mb-8">
               {authorityTours.map(tour => tour && <li key={tour.id}><Link href={`/tours/${tour.id}`} className="text-white/70 hover:text-primary transition-colors text-sm">{tour.name}</Link></li>)}
             </ul>
-            <h3 className="font-serif text-xl font-medium mb-4 text-primary">Tours by departure city</h3>
+            <h3 className="font-serif text-xl font-medium mb-4 text-primary">{t('hub_by_departure_city')}</h3>
             <ul className="space-y-2">
               {CITY_HUBS.map(hub => (
                 <li key={hub.id}>
-                  <Link href={`/tours/from-${hub.slug}`} className="text-white/70 hover:text-primary transition-colors text-sm">{hub.title}</Link>
+                  <Link href={`/tours/from-${hub.slug}`} className="text-white/70 hover:text-primary transition-colors text-sm">{t(`hub_${hub.id}_title`)}</Link>
                 </li>
               ))}
               <li>
-                <Link href="/tours/from-marrakech/3-days" className="text-white/70 hover:text-primary transition-colors text-sm">3-Day Tours from Marrakech</Link>
+                <Link href="/tours/from-marrakech/3-days" className="text-white/70 hover:text-primary transition-colors text-sm">{t('hub_dur_h1').replace('{days}', '3').replace('{city}', t('hub_marrakech_name'))}</Link>
               </li>
             </ul>
             <h3 className="font-serif text-xl font-medium mb-4 sm:mb-6 text-primary">{t('footer_contact')}</h3>
             <ul className="space-y-4">
-              <li className="flex items-start gap-3 text-white/70"><MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" aria-hidden="true" /><span>{t('footer_address')}<br/><a href="https://maps.app.goo.gl/UK3MENd42bC16mME7" target="_blank" rel="noreferrer" className="text-primary hover:underline text-xs mt-1 inline-block">View on Google Maps</a></span></li>
+              <li className="flex items-start gap-3 text-white/70"><MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" aria-hidden="true" /><span>{t('footer_address')}<br/><a href="https://maps.app.goo.gl/UK3MENd42bC16mME7" target="_blank" rel="noreferrer" className="text-primary hover:underline text-xs mt-1 inline-block">{t('footer_view_google_maps')}</a></span></li>
               <li className="flex items-center gap-3 text-white/70"><Phone className="w-5 h-5 text-primary shrink-0" aria-hidden="true" /><a href={`tel:${contactInfo.phone}`} className="hover:text-primary transition-colors break-all">{contactInfo.phone}</a></li>
               <li className="flex items-center gap-3 text-white/70"><SiWhatsapp className="w-5 h-5 text-primary shrink-0" aria-hidden="true" /><a href="https://wa.me/message/QAFZ3RKJDNH4B1" target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">{t('footer_whatsapp')}</a></li>
               <li className="flex items-center gap-3 text-white/70"><Mail className="w-5 h-5 text-primary shrink-0" aria-hidden="true" /><a href={`mailto:${contactInfo.email}`} className="hover:text-primary transition-colors break-all">{contactInfo.email}</a></li>
