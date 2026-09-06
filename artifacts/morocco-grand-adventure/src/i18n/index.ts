@@ -557,6 +557,37 @@ export type TranslationSet = {
   about_moment1: string; about_moment2: string; about_moment3: string;
   about_moment4: string; about_moment5: string; about_moment6: string;
   about_hero_alt: string; about_guide_alt: string;
+  // ── About page 2026 redesign ──
+  abt_hero_kicker: string; abt_hero_h1: string; abt_hero_sub: string; abt_hero_cta_tours: string; abt_hero_cta_private: string;
+  abt_story_kicker: string; abt_story_h2: string; abt_story_p1: string; abt_story_p2: string; abt_story_p3: string;
+  abt_grown_h2: string; abt_grown_sub: string;
+  abt_grown_1_t: string; abt_grown_1_d: string; abt_grown_2_t: string; abt_grown_2_d: string;
+  abt_grown_3_t: string; abt_grown_3_d: string; abt_grown_4_t: string; abt_grown_4_d: string;
+  abt_grown_5_t: string; abt_grown_5_d: string; abt_grown_6_t: string; abt_grown_6_d: string;
+  abt_travel_h2: string; abt_travel_p: string;
+  abt_travel_1_t: string; abt_travel_1_d: string; abt_travel_2_t: string; abt_travel_2_d: string;
+  abt_travel_3_t: string; abt_travel_3_d: string; abt_travel_4_t: string; abt_travel_4_d: string;
+  abt_travel_5_t: string; abt_travel_5_d: string;
+  abt_people_h2: string; abt_people_p: string;
+  abt_people_guides_t: string; abt_people_guides_d: string; abt_people_drivers_t: string; abt_people_drivers_d: string;
+  abt_people_hosts_t: string; abt_people_hosts_d: string; abt_people_partners_t: string; abt_people_partners_d: string;
+  abt_geo_h2: string; abt_geo_p: string; abt_geo_p2: string; abt_geo_title: string;
+  abt_exp_h2: string; abt_exp_p: string;
+  abt_exp_1_t: string; abt_exp_1_d: string; abt_exp_2_t: string; abt_exp_2_d: string;
+  abt_exp_3_t: string; abt_exp_3_d: string; abt_exp_4_t: string; abt_exp_4_d: string;
+  abt_exp_5_t: string; abt_exp_5_d: string; abt_exp_6_t: string; abt_exp_6_d: string;
+  abt_resp_h2: string; abt_resp_p: string;
+  abt_resp_1_t: string; abt_resp_1_d: string; abt_resp_2_t: string; abt_resp_2_d: string;
+  abt_resp_3_t: string; abt_resp_3_d: string; abt_resp_4_t: string; abt_resp_4_d: string;
+  abt_why_h2: string;
+  abt_why_1_t: string; abt_why_1_d: string; abt_why_2_t: string; abt_why_2_d: string;
+  abt_why_3_t: string; abt_why_3_d: string; abt_why_4_t: string; abt_why_4_d: string;
+  abt_why_5_t: string; abt_why_5_d: string; abt_why_6_t: string; abt_why_6_d: string;
+  abt_trust_h2: string; abt_trust_p: string;
+  abt_trust_reviews_t: string; abt_trust_reviews_d: string; abt_trust_local_t: string; abt_trust_local_d: string;
+  abt_trust_contact_t: string; abt_trust_contact_d: string;
+  abt_promise_h2: string; abt_promise_p: string; abt_promise_line: string; abt_promise_cta: string; abt_promise_cta2: string;
+  home_about_kicker: string; home_about_h2: string; home_about_p: string; home_about_sub: string; home_about_cta: string; home_about_photo_alt: string; home_about_caption_role: string;
   // ── Gallery page ──────────────────────────────────────────────────────────
   gallery_hero_alt: string; gallery_close: string; gallery_prev: string; gallery_next: string; gallery_all: string;
   gallery_title: string; gallery_eyebrow: string; gallery_in_motion: string;

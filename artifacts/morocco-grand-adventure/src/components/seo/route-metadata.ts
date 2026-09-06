@@ -101,7 +101,7 @@ export const routeMetadata: Record<string, RouteMeta> = {
   '/gallery':{title:'Morocco Photo & Video Gallery — Sahara & Morocco',description:'Photos and videos from Morocco’s Sahara, medinas, mountains and desert camps.',ogImage:'/images/hero/medina-pano.jpg'},
   '/trip-builder':{title:'Custom Morocco Itinerary Builder',description:'Choose your dates, route and travel style to build a custom Morocco itinerary — then request a personalised quote from our local team.',ogImage:'/images/personal/luxury-camp-dusk.jpg'},
   '/build-your-day-trip':{title:'Build Your Day Trip in Morocco — One-Day Experiences',description:'Plan a personalized one-day Morocco experience with same-day return. Choose your departure, destination, date and preferences.',ogImage:'/images/dest/ouzoud.jpg'},
-  '/about':{title:'About Us — Morocco Grand Adventure',description:'Meet the local team behind Morocco Grand Adventure and discover our approach to Morocco travel.',ogImage:'/images/hero/medina-pano.jpg'},
+  '/about':{title:'About Us | Morocco, Beyond the Journey',description:'Meet Morocco Grand Adventure — desert guides from Merzouga sharing the whole of Morocco through private, locally-designed journeys.',ogImage:'/images/about/about-dune-1600.webp'},
   '/contact':{title:'Contact Morocco Grand Adventure — Plan Your Morocco Journey',description:'Contact Morocco Grand Adventure by WhatsApp, email or phone to plan your Morocco journey.',ogImage:'/images/dest/merzouga.jpg'},
   '/desert-tours':{title:'Sahara Desert Tours — Merzouga, Erg Chebbi & Camps',description:'Explore the Sahara with Merzouga desert tours, camel trekking and desert camp experiences.',ogImage:'/images/dest/merzouga.jpg'},
   '/luxury-camp':{title:'Luxury Desert Camp Morocco — Sahara Glamping',description:'Discover luxury desert camp experiences near Merzouga.',ogImage:'/images/personal/luxury-camp-dusk.jpg'},
@@ -156,7 +156,7 @@ const AR_ROUTE_META: Record<string,RouteMeta> = {
   '/marrakech-tours':{title:'جولات مراكش — رحلات خاصة في المغرب',description:'اكتشف مراكش والرحلات الخاصة إلى الأطلس والجنوب المغربي.'},
   '/fes-tours':{title:'جولات فاس — رحلات خاصة في المغرب',description:'استكشف فاس وشفشاون وشمال المغرب مع مرشدين محليين.'},
   '/contact':{title:'اتصل بنا — حجز رحلات المغرب',description:'تواصل معنا عبر واتساب أو البريد لتخطيط رحلتك الخاصة في المغرب.'},
-  '/about':{title:'من نحن — Morocco Grand Adventure',description:'تعرّف على فريق Morocco Grand Adventure وخبرتنا المحلية في رحلات المغرب.'},
+  '/about':{title:'من نحن | المغرب، ما وراء الرحلة',description:'تعرّف على فريق Morocco Grand Adventure — مرشدون صحراويون من مرزوكة يصممون رحلات خاصة عبر المغرب.'},
   '/faq':{title:'أسئلة شائعة عن السفر إلى المغرب',description:'إجابات عن أسئلة السفر والجولات الصحراوية والحجز في المغرب.'},
   '/blog':{title:'مدونة السفر في المغرب — أدلة ونصائح',description:'أدلة ونصائح عملية للسفر في المغرب من خبراء محليين.'},
 };

@@ -78,7 +78,8 @@ const STATIC_TITLE_KEYS: Record<string, string> = {
   '/': 'hero_tagline',
   '/tours': 'nav_tours',
   '/destinations': 'nav_destinations',
-  '/about': 'nav_about',
+  // '/about' intentionally omitted: /about uses full route metadata
+  // ("Morocco, Beyond the Journey") instead of the short nav label.
   '/contact': 'nav_contact',
   '/faq': 'nav_faq',
   '/blog': 'nav_blog',
@@ -480,7 +481,40 @@ function buildDestinationDetailContent(destId: string, lang: Lang): string {
   return h1(d.name) + paragraph(d.shortDesc) + paragraph(d.description) + h2(tr(lang, 'dest_about')) + ul(d.highlights) + (gallery ? h2(`${d.name} ${tr(lang, 'dest_pictures_title')}`) + gallery : '') + buildTopicalLinksContent({ destinationId: d.id }, lang);
 }
 function buildAboutContent(lang: Lang): string {
-  return h1(tr(lang, 'nav_about')) + paragraph(tr(lang, 'about_story_p1')) + paragraph(tr(lang, 'about_story_p2')) + h2(tr(lang, 'nav_tours')) + paragraph(tr(lang, 'about_philosophy_quote'));
+  // Mirrors the live /about layout (PremiumAboutSection): every string comes
+  // from the same abt_* translations the SPA renders, so the crawlable H1 and
+  // body match the client content exactly — no separate or invented copy.
+  const grewTitles = [1, 2, 3, 4, 5, 6].map((n) => tr(lang, `abt_grown_${n}_t` as any)).filter(Boolean);
+  const whyTitles = [1, 2, 3, 4, 5, 6].map((n) => tr(lang, `abt_why_${n}_t` as any)).filter(Boolean);
+  const GEO_SLUGS = ['merzouga', 'erg-chebbi', 'dades-valley', 'todra-gorge', 'ait-ben-haddou', 'ouarzazate', 'marrakech', 'fes', 'essaouira', 'agadir', 'chefchaouen'];
+  const geoLinks = GEO_SLUGS
+    .map((slug) => {
+      const d = getLocalizedDestination(slug as any, lang);
+      return d ? `      <li>${link(`${SITE_URL}/${lang}/destinations/${slug}`, d.name)}</li>` : '';
+    })
+    .filter(Boolean)
+    .join('\n');
+  const ctaLine = link(`${SITE_URL}/${lang}/tours`, tr(lang, 'abt_hero_cta_tours') || 'Explore Our Journeys')
+    + ' · '
+    + link(`${SITE_URL}/${lang}/trip-builder`, tr(lang, 'abt_hero_cta_private') || 'Build Your Private Trip');
+  return h1(tr(lang, 'abt_hero_h1') || tr(lang, 'nav_about'))
+    + paragraph(tr(lang, 'abt_hero_sub'))
+    + h2(tr(lang, 'abt_story_h2'))
+    + paragraph(tr(lang, 'abt_story_p1'))
+    + paragraph(tr(lang, 'abt_story_p2'))
+    + paragraph(tr(lang, 'abt_story_p3'))
+    + h2(tr(lang, 'abt_grown_h2'))
+    + ul(grewTitles)
+    + h2(tr(lang, 'abt_geo_h2'))
+    + paragraph(tr(lang, 'abt_geo_p'))
+    + (geoLinks ? `    <ul>\n${geoLinks}\n    </ul>\n` : '')
+    + h2(tr(lang, 'abt_why_h2'))
+    + ul(whyTitles)
+    + h2(tr(lang, 'nav_tours'))
+    + rawParagraph(ctaLine)
+    + h2(tr(lang, 'abt_promise_h2'))
+    + paragraph(tr(lang, 'abt_promise_p'))
+    + paragraph(tr(lang, 'abt_promise_line'));
 }
 function buildContactContent(lang: Lang): string {
   const li = (s: string): string => `      <li>${s}</li>`;
@@ -781,7 +815,10 @@ function buildRoutes(lang: Lang): RouteEntry[] {
   return routes;
 }
 function injectHead(html: string, meta: RouteEntry['meta'], rest: string, lang: string): string {
-  const clean = rest === '/' ? '' : rest; const currentUrl = `${SITE_URL}/${lang}${clean}`; const fullTitle = `${meta.title} — ${BRAND}`; const ogUrl = currentUrl; const hreflangLinks = hrefsFor(rest);
+  const clean = rest === '/' ? '' : rest; const currentUrl = `${SITE_URL}/${lang}${clean}`;
+  // Avoid appending the brand when the meta title already ends with it.
+  const fullTitle = meta.title.endsWith(BRAND) ? meta.title : `${meta.title} — ${BRAND}`;
+  const ogUrl = currentUrl; const hreflangLinks = hrefsFor(rest);
   html = html.replace(/<title>[\s\S]*?<\/title>/, `<title>${fullTitle}</title>`);
   html = html.replace(/<meta name="description" content="[^"]*"/, `<meta name="description" content="${meta.description}"`);
   html = html.replace(/<link rel="canonical" href="[^"]*"/, `<link rel="canonical" href="${ogUrl}"`);

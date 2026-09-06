@@ -651,6 +651,40 @@ export default function Home() {
         </div>
       </section>
 
+      {/* About teaser — the people behind the journeys */}
+      <section className="py-20 md:py-32 bg-background [content-visibility:auto] [contain-intrinsic-size:auto_600px]">
+        <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <figure className="rounded-3xl overflow-hidden border border-border max-w-xl w-full mx-auto lg:mx-0">
+            <img
+              src="/images/about/about-dune-960.webp"
+              srcSet="/images/about/about-dune-640.webp 640w, /images/about/about-dune-960.webp 960w, /images/about/about-dune-1600.webp 1600w"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              width={1600}
+              height={1067}
+              alt={t('home_about_photo_alt')}
+              loading="lazy"
+              decoding="async"
+              className="w-full h-auto object-cover"
+            />
+            <figcaption className="flex items-center gap-2.5 px-5 py-4 bg-card border-t border-border">
+              <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" aria-hidden="true" />
+              <span className="font-serif text-foreground">Mohamed Boughrara</span>
+              <span aria-hidden="true" className="text-primary">·</span>
+              <span className="text-muted-foreground text-sm">{t('home_about_caption_role')}</span>
+            </figcaption>
+          </figure>
+          <div className="text-center lg:text-left">
+            <span className="text-primary font-bold tracking-wider uppercase text-sm mb-3 block">{t('home_about_kicker')}</span>
+            <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6 leading-tight">{t('home_about_h2')}</h2>
+            <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-4">{t('home_about_p')}</p>
+            <p className="font-serif text-lg text-foreground mb-8">{t('home_about_sub')}</p>
+            <Link href="/about" className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 md:px-8 py-3.5 md:py-4 rounded-full font-bold tracking-wide hover:bg-primary/90 transition-all hover:-translate-y-1">
+              {t('home_about_cta')} <ChevronRight className="w-5 h-5" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Why Choose Us */}
       <section className="py-20 md:py-32 lg:py-40 bg-background [content-visibility:auto] [contain-intrinsic-size:auto_700px]">
         <div className="container mx-auto px-4">
