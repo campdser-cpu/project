@@ -34,6 +34,7 @@ import { fileURLToPath } from 'node:url';
 import { destinations, contactInfo, reviews, type Review, type Tour, type Destination } from '../src/data/content';
 import { BLOG_ARTICLE_SECTIONS, BLOG_ARTICLE_CTA } from '../src/data/blog-article-sections';
 import { CITY_HUBS, TOUR_DEPARTURE_CITY, CITY_HUB_DURATIONS, tourIdsForCity, tourDurationDays } from '../src/data/tour-hierarchy';
+import { MERZOUGA_GUIDES, COMPARISONS, type HubPage } from '../src/data/seoHub';
 import { languages, t as translate } from '../src/i18n/index';
 import type { Lang } from '../src/i18n/index';
 import {
@@ -713,6 +714,48 @@ function buildExperienceContent(rest: string, lang: Lang): string {
   return heading + intro + desertMoments + tBlocks + dBlocks;
 }
 
+// ── Data-driven hub / comparison pages (Merzouga guide + comparisons) ───────────
+// Single source of truth: src/data/seoHub.ts is consumed by BOTH the runtime SPA
+// and this prerenderer, so the static HTML matches what users see exactly.
+function hubPathFor(page: HubPage): string {
+  return page.kind === 'merzouga'
+    ? `/merzouga-guide/${page.slug}`
+    : `/comparisons/${page.slug}`;
+}
+
+function buildHubPageContent(page: HubPage, lang: Lang): string {
+  let out = h1(page.title) + paragraph(page.intro);
+  for (const sec of page.sections) {
+    out += h2(sec.heading);
+    for (const p of sec.paragraphs) out += paragraph(p);
+    if (sec.bullets && sec.bullets.length) out += ul(sec.bullets);
+  }
+  if (page.comparisonRows && page.comparisonRows.length) {
+    out += h2('At a glance');
+    let table = `    <table class="comparison-table">\n      <thead><tr><th>Feature</th><th>Option A</th><th>Option B</th></tr></thead>\n      <tbody>\n`;
+    for (const [label, a, b] of page.comparisonRows) {
+      table += `        <tr><td>${escapeHtml(label)}</td><td>${escapeHtml(a)}</td><td>${escapeHtml(b)}</td></tr>\n`;
+    }
+    table += '      </tbody>\n    </table>\n';
+    out += `    <div class="table-wrap">\n${table}    </div>\n`;
+  }
+  const relatedTours = page.tours.map((id) => getLocalizedTour(id, lang)).filter((t): t is NonNullable<typeof t> => Boolean(t)).map((t) => h2Link(`${SITE_URL}/${lang}/tours/${t.id}`, t.name) + paragraph(t.description ?? '')).join('');
+  if (relatedTours) out += h2('Related tours') + relatedTours;
+  const relatedDests = page.destinations.map((id) => getLocalizedDestination(id, lang)).filter((d): d is NonNullable<typeof d> => Boolean(d)).map((d) => h2Link(`${SITE_URL}/${lang}/destinations/${d.id}`, d.name) + paragraph(d.shortDesc)).join('');
+  if (relatedDests) out += h2('Related destinations') + relatedDests;
+    const allHubs = [...MERZOUGA_GUIDES, ...COMPARISONS];
+  const relatedGuideItems = page.relatedGuides.map((s) => {
+    const p = allHubs.find((q) => q.slug === s);
+    return p ? link(`${SITE_URL}/${lang}${hubPathFor(p)}`, p.title) : '';
+  });
+  if (relatedGuideItems.length) out += h2('Keep planning') + ul(relatedGuideItems);
+  const faqs = faqBlock(page.faqs);
+  if (faqs) out += h2('Frequently asked questions') + faqs;
+  out += h2('Ready for the real Sahara?');
+  out += rawParagraph(`Talk to a local Merzouga guide and shape the desert night that suits your group, pace and budget. <a href="${SITE_URL}/${lang}/trip-builder">Build your Morocco journey</a> · <a href="${contactInfo.whatsapp}">WhatsApp a local expert</a>.`);
+  return out;
+}
+
 type RouteEntry = { rest: string; outFile: string; content: () => string; meta: ReturnType<typeof getRouteMeta>; lang: string; schemas: Record<string, unknown>[]; rtl: boolean };
 function metaFor(rest: string, lang: Lang): ReturnType<typeof getRouteMeta> {
   // Homepage: mirror LocalizedHead exactly. At runtime the homepage title and
@@ -766,8 +809,30 @@ function buildRoutes(lang: Lang): RouteEntry[] {
     const meta = BLOG_META[post.slug];
     add(`/blog/${post.slug}`, `${lang}/blog/${post.slug}.html`, () => buildBlogArticleContent(post.slug, lang), meta ? (buildBlogPostSchema({ slug: post.slug, title: meta.title, description: meta.description, date: post.date, image: post.image }, lang) as Record<string, unknown>[]) : []);
   }
-  for (const rest of Object.keys(EXPERIENCE_PAGE_ROUTES)) add(rest, `${lang}${rest}/index.html`, () => buildExperienceContent(rest, lang));
-  // Tours departure-city hubs + every meaningful duration hub (single source of
+    for (const rest of Object.keys(EXPERIENCE_PAGE_ROUTES)) add(rest, `${lang}${rest}/index.html`, () => buildExperienceContent(rest, lang));
+  // Merzouga authority sub-pages + comparison pages (data-driven, English-authored).
+  for (const page of MERZOUGA_GUIDES) {
+    const rest = `/merzouga-guide/${page.slug}`;
+    add(rest, `${lang}${rest}/index.html`, () => buildHubPageContent(page, lang), [
+      buildBreadcrumb([
+        { name: tr(lang, 'nav_home'), path: '/' },
+        { name: 'Merzouga Travel Guide', path: '/merzouga-guide' },
+        { name: page.title, path: rest },
+      ], lang) as unknown as Record<string, unknown>,
+      buildFaqSchema(page.faqs) as unknown as Record<string, unknown>,
+    ]);
+  }
+  for (const page of COMPARISONS) {
+    const rest = `/comparisons/${page.slug}`;
+    add(rest, `${lang}${rest}/index.html`, () => buildHubPageContent(page, lang), [
+      buildBreadcrumb([
+        { name: tr(lang, 'nav_home'), path: '/' },
+        { name: 'Tour comparisons', path: '/' },
+        { name: page.title, path: rest },
+      ], lang) as unknown as Record<string, unknown>,
+      page.faqs.length ? (buildFaqSchema(page.faqs) as unknown as Record<string, unknown>) : null,
+    ].filter(Boolean) as Record<string, unknown>[]);
+  }
   // truth in CITY_HUB_DURATIONS). Routes whose city has no canned tour of that
   // length still render an intentional page that funnels to the custom trip flow.
   for (const hub of CITY_HUBS) {

@@ -1,0 +1,1 @@
+export { ComparisonPage as default } from '@/components/seo/SeoHubPage';
