@@ -27,6 +27,24 @@ const HUB_TOUR_IDS = [
   '7-day-imperial-cities-sahara-escape',
 ];
 
+// Sahara destinations additionally link to the desert-experience pages so the
+// dune pages connect to camel trekking, camps and Sahara tours contextually.
+// Mirrors DESTINATION_EXPERIENCE_LINKS in scripts/prerender.ts.
+const DESTINATION_EXPERIENCE_LINKS: Record<string, { to: string; labelKey: string; fallback: string }[]> = {
+  'erg-chebbi': [
+    { to: '/desert-tours', labelKey: 'nav_sahara_desert_tours', fallback: 'Sahara Desert Tours' },
+    { to: '/camel-trekking', labelKey: 'nav_camel_trekking', fallback: 'Camel Trekking' },
+    { to: '/luxury-camp', labelKey: 'nav_luxury_desert_camp', fallback: 'Luxury Desert Camp' },
+    { to: '/merzouga-guide', labelKey: 'footer_merzouga_guide', fallback: 'Merzouga Guide' },
+  ],
+  merzouga: [
+    { to: '/desert-tours', labelKey: 'nav_sahara_desert_tours', fallback: 'Sahara Desert Tours' },
+    { to: '/camel-trekking', labelKey: 'nav_camel_trekking', fallback: 'Camel Trekking' },
+    { to: '/luxury-camp', labelKey: 'nav_luxury_desert_camp', fallback: 'Luxury Desert Camp' },
+    { to: '/merzouga-guide', labelKey: 'footer_merzouga_guide', fallback: 'Merzouga Guide' },
+  ],
+};
+
 type TopicalLinksProps = {
   destinationId?: string;
   tourId?: string;
@@ -127,8 +145,11 @@ export function TopicalLinks({ destinationId, tourId, context }: TopicalLinksPro
     const relatedTours = tours
       .filter(tour => tour.routeIds?.includes(destinationId))
       .slice(0, 3);
+    const experienceLinks = (DESTINATION_EXPERIENCE_LINKS[destinationId] ?? []).map(
+      ({ to, labelKey, fallback }) => ({ id: to, name: t(labelKey) || fallback }),
+    );
 
-    if (relatedDestinations.length === 0 && relatedTours.length === 0) return null;
+    if (relatedDestinations.length === 0 && relatedTours.length === 0 && experienceLinks.length === 0) return null;
 
     return (
       <SectionShell label={t('dest_nearby')}>
@@ -143,6 +164,12 @@ export function TopicalLinks({ destinationId, tourId, context }: TopicalLinksPro
             <div>
               <h2 className="font-serif text-2xl text-foreground mb-4">{t('dest_tours')} {destinations.find(d => d.id === destinationId)?.name}</h2>
               <LinkList items={relatedTours as { id: string; name: string }[]} href={id => `/tours/${id}`} />
+            </div>
+          )}
+          {experienceLinks.length > 0 && (
+            <div>
+              <h2 className="font-serif text-2xl text-foreground mb-4">{t('nav_experiences')}</h2>
+              <LinkList items={experienceLinks} href={id => id} />
             </div>
           )}
         </div>

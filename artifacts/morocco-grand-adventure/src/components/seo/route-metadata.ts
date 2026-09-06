@@ -3,8 +3,8 @@ export type RouteMeta = { title: string; description: string; ogImage?: string }
 
 const BRAND = 'Morocco Grand Adventure';
 export const HOME_META: RouteMeta = {
-  title: 'Luxury Desert Tours & Private Morocco Experiences',
-  description: 'Morocco Grand Adventure offers luxury private tours across Morocco — Sahara Desert camel trekking, Marrakech medinas, Chefchaouen, Fes, Atlas Mountains & more. Book with local experts.',
+  title: 'Morocco Tours & Private Sahara Desert Trips',
+  description: 'Tailored private Morocco tours by local Sahara guides — desert trips from Marrakech and Fes, Merzouga luxury camps, imperial cities and the Atlas.',
   ogImage: '/images/hero/desert-pano.jpg',
 };
 export const FR_HOME_META: RouteMeta = {
@@ -20,8 +20,8 @@ const TOUR_META: Record<string, RouteMeta> = {
   '5-day-imperial-cities': { title: '5-Day Imperial Cities & Desert Morocco Tour', description: 'Explore Marrakech, Meknès, Fes and Chefchaouen before a night in the Sahara on a private Morocco tour.', ogImage: '/images/curated/ait-ben-haddou-kasbah-sunrise-ouarzazate.webp' },
   '7-day-imperial-cities-sahara-escape': { title: '7-Day Imperial Cities & Sahara Escape — Grand Morocco Tour', description: 'A private Morocco journey through the High Atlas, Aït Ben Haddou, Dades Valley, Erg Chebbi and imperial Fes.', ogImage: '/images/curated/ait-ben-haddou-bridge-town-unesco-morocco.webp' },
   'honeymoon-morocco': { title: 'Romantic Morocco Honeymoon — 10 Day Luxury Private Tour', description: 'A romantic private Morocco journey combining cities, desert experiences and time designed for couples.', ogImage: '/images/curated/couple-blue-steps-chefchaouen-medina.webp' },
-  '8-day-marrakech-essaouira-agadir-sahara': { title: '8-Day Marrakech, Essaouira, Agadir & Sahara Desert Adventure', description: 'A private southern Morocco route from Marrakech through Essaouira and Agadir to the Sahara.', ogImage: '/images/curated/todra-gorge-river-canyon-high-atlas.webp' },
-  'family-morocco-adventure': { title: 'Family Morocco Adventure — 9 Day Private Tour', description: 'A private family Morocco journey combining cultural discoveries, desert experiences and memorable activities.', ogImage: '/images/curated/cascading-waterfall-todra-gorge.webp' },
+  '8-day-marrakech-essaouira-agadir-sahara': { title: '8-Day Marrakech, Essaouira, Agadir & Sahara Desert Adventure', description: 'Eight private days from Marrakech to Essaouira and Agadir, across the Atlas to Aït Ben Haddou and Erg Chebbi — camel trek and a night in a desert camp.', ogImage: '/images/curated/todra-gorge-river-canyon-high-atlas.webp' },
+  'family-morocco-adventure': { title: 'Family Morocco Adventure — 9 Day Private Tour', description: 'A 9-day private family tour of Morocco — Marrakech, an Atlas mule ride, a Sahara camel trek and kasbahs, paced for kids and parents alike.', ogImage: '/images/curated/cascading-waterfall-todra-gorge.webp' },
   '2-day-zagora-desert-marrakech': { title: '2-Day Zagora Desert Tour from Marrakech | Morocco', description: 'A private two-day route from Marrakech through Aït Ben Haddou, Ouarzazate and the Draa Valley to Zagora.', ogImage: '/images/curated/ancient-water-channels-olive-groves-morocco.webp' },
   '4-day-marrakech-merzouga-sahara': { title: '4-Day Marrakech to Merzouga Sahara Tour | Morocco', description: 'Take four days from Marrakech to Merzouga via Aït Ben Haddou, Dades and Todra, with more time around Erg Chebbi.', ogImage: '/images/dest/merzouga.webp' },
   '5-day-great-south-morocco': { title: '5-Day Great South Morocco Tour | Private Desert Journey', description: 'Explore Aït Ben Haddou, Dades, Todra, Merzouga and the Draa Valley on a private five-day southern Morocco route.', ogImage: '/images/dest/draa-valley.webp' },
@@ -99,7 +99,7 @@ export const routeMetadata: Record<string, RouteMeta> = {
   '/tours/from-agadir':{title:'Tours From Agadir — Coast & Sahara Private Tours',description:'Private Morocco journeys starting in Agadir and exploring the Atlantic coast and south.',ogImage:'/images/dest/agadir.jpg'},
   '/tours/from-marrakech/3-days':{title:'3-Day Tours From Marrakech — Sahara Desert & Merzouga',description:'Explore the High Atlas, Aït Ben Haddou, Dades Valley and Merzouga on a three-day route.',ogImage:'/images/dest/merzouga.jpg'},
   '/gallery':{title:'Morocco Photo & Video Gallery — Sahara & Morocco',description:'Photos and videos from Morocco’s Sahara, medinas, mountains and desert camps.',ogImage:'/images/hero/medina-pano.jpg'},
-  '/trip-builder':{title:'Create a Custom Morocco Itinerary — Private Trip Planner',description:'Design a bespoke multi-day Morocco itinerary with destinations, duration and interests.',ogImage:'/images/personal/luxury-camp-dusk.jpg'},
+  '/trip-builder':{title:'Custom Morocco Itinerary Builder',description:'Choose your dates, route and travel style to build a custom Morocco itinerary — then request a personalised quote from our local team.',ogImage:'/images/personal/luxury-camp-dusk.jpg'},
   '/build-your-day-trip':{title:'Build Your Day Trip in Morocco — One-Day Experiences',description:'Plan a personalized one-day Morocco experience with same-day return. Choose your departure, destination, date and preferences.',ogImage:'/images/dest/ouzoud.jpg'},
   '/about':{title:'About Us — Morocco Grand Adventure',description:'Meet the local team behind Morocco Grand Adventure and discover our approach to Morocco travel.',ogImage:'/images/hero/medina-pano.jpg'},
   '/contact':{title:'Contact Morocco Grand Adventure — Plan Your Morocco Journey',description:'Contact Morocco Grand Adventure by WhatsApp, email or phone to plan your Morocco journey.',ogImage:'/images/dest/merzouga.jpg'},
@@ -116,7 +116,7 @@ export const routeMetadata: Record<string, RouteMeta> = {
 };
 
 export const BLOG_META: Record<string,RouteMeta> = {
-  'merzouga-luxury-desert-camp-guide':{title:'Luxury Desert Camps in Merzouga — Ultimate Guide',description:'A practical guide to luxury desert camps and Sahara stays in Merzouga.',ogImage:'/images/personal/luxury-camp-dusk.jpg'},
+  'merzouga-luxury-desert-camp-guide':{title:'Merzouga Luxury Desert Camp Guide — Sahara Glamping',description:'Plan your Merzouga luxury desert camp stay: tent types, what a night includes, camel treks, best season and how to book your Sahara night.',ogImage:'/images/personal/luxury-camp-dusk.jpg'},
   'best-time-to-visit-morocco-sahara':{title:'Best Time to Visit the Sahara Desert — Guide',description:'Planning guide for choosing a time to visit the Moroccan Sahara.',ogImage:'/images/dest/merzouga.jpg'},
   'camel-trekking-etiquette-morocco':{title:'Camel Trekking in Morocco — What to Expect',description:'What first-time travelers should know before a camel trek in Morocco.',ogImage:'/images/personal/dunes-camels-poster.jpg'},
   'marrakech-to-merzouga-roadtrip':{title:'Marrakech to Merzouga — Sahara Road Trip Guide',description:'A practical guide to the Marrakech to Merzouga route, stops and travel planning.',ogImage:'/images/dest/ait-ben-haddou.jpg'},
@@ -206,11 +206,15 @@ export function getLocalizedRouteMeta(rest: string, lang: Lang = 'en'): RouteMet
   }
 
   // 3. Destination detail page — localized entity meta when an overlay exists.
+  //    Title is enriched with the authored localized region for search context
+  //    (e.g. "Erg Chebbi | Désert du Sahara"), never invented — region comes
+  //    from the same authored overlay as the name.
   const destMatch = normalized.match(/^\/destinations\/([^/]+)$/);
   if (destMatch) {
     const d = getLocalizedDestination(destMatch[1], lang);
     if (d && contentOverlayExists(lang, 'destinations', d.id)) {
-      return { title: d.name, description: truncate(d.shortDesc || d.description), ogImage: d.image };
+      const regionSuffix = d.region && !d.name.includes(d.region) ? ` | ${d.region}` : '';
+      return { title: `${d.name}${regionSuffix}`, description: truncate(d.shortDesc || d.description), ogImage: d.image };
     }
   }
 

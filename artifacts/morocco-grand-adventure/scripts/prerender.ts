@@ -32,6 +32,7 @@ import * as path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { destinations, contactInfo, reviews, type Review, type Tour, type Destination } from '../src/data/content';
+import { BLOG_ARTICLE_SECTIONS, BLOG_ARTICLE_CTA } from '../src/data/blog-article-sections';
 import { CITY_HUBS, TOUR_DEPARTURE_CITY, CITY_HUB_DURATIONS, tourIdsForCity, tourDurationDays } from '../src/data/tour-hierarchy';
 import { languages, t as translate } from '../src/i18n/index';
 import type { Lang } from '../src/i18n/index';
@@ -355,6 +356,13 @@ const RELATED_DESTINATION_IDS: Record<string, string[]> = {
   'todra-gorge': ['dades-valley', 'merzouga', 'ait-ben-haddou'],
 };
 
+// Sahara destinations additionally link to the desert-experience pages so the
+// dune pages connect to camel trekking, camps and Sahara tours contextually.
+const DESTINATION_EXPERIENCE_LINKS: Record<string, string[]> = {
+  'erg-chebbi': ['/desert-tours', '/camel-trekking', '/luxury-camp', '/merzouga-guide'],
+  merzouga: ['/desert-tours', '/camel-trekking', '/luxury-camp', '/merzouga-guide'],
+};
+
 /**
  * Static equivalent of the React TopicalLinks component. The prerenderer does
  * not execute Layout/React, so these anchors must be generated here to keep
@@ -381,8 +389,14 @@ function buildTopicalLinksContent(options: { destinationId?: string; tourId?: st
     const tourLinks = relatedTours.length > 0
       ? `<div>\n        ${h2(`${tr(lang, 'dest_tours')} ${currentName}`).trim()}\n        <div class="topical-link-list">${relatedTours.map((tour) => ` ${link(`/${lang}/tours/${tour.id}`, tour.name)}`).join('')}</div>\n      </div>`
       : '';
+    const experienceLinks = (DESTINATION_EXPERIENCE_LINKS[options.destinationId] ?? [])
+      .map((rest) => ` ${link(`/${lang}${rest}`, experienceLabel(rest, lang))}`)
+      .join('');
+    const experienceBlock = experienceLinks
+      ? `<div>\n        ${h2(tr(lang, 'nav_experiences') || 'Experiences').trim()}\n        <div class="topical-link-list">${experienceLinks}</div>\n      </div>`
+      : '';
 
-    return `<section class="border-t border-border bg-muted/40 py-12" aria-label="${escapeHtml(tr(lang, 'dest_nearby'))}">\n  <div class="container mx-auto px-4 max-w-6xl">\n    <div class="grid gap-8 md:grid-cols-2">\n      ${destinationLinks}\n      ${tourLinks}\n    </div>\n  </div>\n</section>\n`;
+    return `<section class="border-t border-border bg-muted/40 py-12" aria-label="${escapeHtml(tr(lang, 'dest_nearby'))}">\n  <div class="container mx-auto px-4 max-w-6xl">\n    <div class="grid gap-8 md:grid-cols-2">\n      ${destinationLinks}\n      ${tourLinks}\n      ${experienceBlock}\n    </div>\n  </div>\n</section>\n`;
   }
 
   if (options.tourId) {
@@ -615,7 +629,24 @@ function buildBlogArticleContent(slug: string, lang: Lang): string {
   const date = blogPostField(slug, 'date', lang, post.date);
   const read = blogPostField(slug, 'read', lang, post.read);
   const excerpt = blogPostField(slug, 'excerpt', lang, post.excerpt);
-  return h1(title) + `<p><strong>${escapeHtml(cat)}</strong> · ${escapeHtml(date)} · ${escapeHtml(read)}</p>\n` + `<img src="${post.image}" alt="${escapeHtml(imgAlt)}" loading="lazy" decoding="async" class="w-full h-48 md:h-64 object-cover mb-8 rounded-md" />\n` + paragraph(excerpt) + buildBlogToursBlock(slug, lang) + buildBlogDestinationsBlock(slug, lang) + buildBlogRelatedArticles(slug, lang);
+  return h1(title) + `<p><strong>${escapeHtml(cat)}</strong> · ${escapeHtml(date)} · ${escapeHtml(read)}</p>\n` + `<img src="${post.image}" alt="${escapeHtml(imgAlt)}" loading="lazy" decoding="async" class="w-full h-48 md:h-64 object-cover mb-8 rounded-md" />\n` + paragraph(excerpt) + buildBlogArticleBody(slug, lang) + buildBlogToursBlock(slug, lang) + buildBlogDestinationsBlock(slug, lang) + buildBlogRelatedArticles(slug, lang);
+}
+
+/**
+ * Authored long-form body for priority guides (shared with the runtime blog
+ * page via src/data/blog-article-sections.ts). Articles without authored
+ * sections keep their existing excerpt-only layout. The closing CTA paragraph
+ * links to the matching experience pages and tour — all real site routes.
+ */
+function buildBlogArticleBody(slug: string, lang: Lang): string {
+  const sections = BLOG_ARTICLE_SECTIONS[slug];
+  if (!sections) return '';
+  const body = sections.map((s) => h2(s.heading) + s.paragraphs.map((p) => paragraph(p)).join('')).join('');
+  const cta = BLOG_ARTICLE_CTA[slug];
+  const ctaBlock = cta
+    ? paragraph(cta.text) + `<div class="topical-link-list">${cta.links.map((l) => ` ${link(`${SITE_URL}/${lang}${l.to}`, l.label)}`).join('')}</div>\n`
+    : '';
+  return body + ctaBlock;
 }
 
 const EXPERIENCE_PAGE_ROUTES: Record<string, { tours: string[]; destinations: string[] }> = {

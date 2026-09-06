@@ -16,6 +16,7 @@ import {
   getLocalizedDestinations,
   blogPosts,
 } from '@/i18n/content';
+import { BLOG_ARTICLE_SECTIONS, BLOG_ARTICLE_CTA } from '@/data/blog-article-sections';
 import { StructuredData, buildBlogPostSchema } from '@/components/seo/StructuredData';
 import { BLOG_META } from '@/components/seo/route-metadata';
 import NotFound from '../not-found';
@@ -68,6 +69,8 @@ export default function BlogPost() {
   if (!post) return <NotFound />;
 
   const relations = ARTICLE_RELATIONS[post.slug] ?? { tours: [], destinations: [] };
+  const sections = BLOG_ARTICLE_SECTIONS[post.slug] ?? [];
+  const cta = BLOG_ARTICLE_CTA[post.slug];
   const relatedTours = relations.tours
     .map((id) => getLocalizedTours(lang).find((t) => t.id === id))
     .filter((t): t is NonNullable<typeof t> => Boolean(t));
@@ -151,6 +154,30 @@ export default function BlogPost() {
 
               <div className="prose max-w-none">
                 <p className="text-lg leading-relaxed text-muted-foreground">{post.excerpt}</p>
+                {sections.map((section) => (
+                  <div key={section.heading}>
+                    <h2 className="font-serif text-2xl text-foreground mt-10 mb-4">{section.heading}</h2>
+                    {section.paragraphs.map((p, i) => (
+                      <p key={i} className="leading-relaxed text-muted-foreground mb-4">{p}</p>
+                    ))}
+                  </div>
+                ))}
+                {cta && (
+                  <>
+                    <p className="leading-relaxed text-muted-foreground mt-10 mb-4 font-medium">{cta.text}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {cta.links.map((l) => (
+                        <Link
+                          key={l.to}
+                          href={l.to}
+                          className="rounded-full border border-border bg-background px-3 py-2 text-sm font-semibold text-foreground hover:border-primary hover:text-primary transition-colors"
+                        >
+                          {l.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </>
+                )}
               </div>
                 {relatedTours.length > 0 && (
                 <div className="mt-12 pt-12 border-t border-border">
