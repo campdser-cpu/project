@@ -1,0 +1,1 @@
+export { TravelInfoTopic as default } from '@/components/seo/SeoHubPage';

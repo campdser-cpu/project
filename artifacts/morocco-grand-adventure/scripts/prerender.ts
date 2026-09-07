@@ -34,7 +34,9 @@ import { fileURLToPath } from 'node:url';
 import { destinations, contactInfo, reviews, type Review, type Tour, type Destination } from '../src/data/content';
 import { BLOG_ARTICLE_SECTIONS, BLOG_ARTICLE_CTA } from '../src/data/blog-article-sections';
 import { CITY_HUBS, TOUR_DEPARTURE_CITY, CITY_HUB_DURATIONS, tourIdsForCity, tourDurationDays } from '../src/data/tour-hierarchy';
-import { MERZOUGA_GUIDES, COMPARISONS, type HubPage } from '../src/data/seoHub';
+import { MERZOUGA_GUIDES, COMPARISONS, TRAVEL_INFO, type HubPage } from '../src/data/seoHub';
+import { catalogImage, imagesForDestination, DEST_FOOD_IMAGE, type CatalogImage } from '../src/data/imageCatalog';
+import { SOURCES } from '../src/data/sources';
 import { languages, t as translate } from '../src/i18n/index';
 import type { Lang } from '../src/i18n/index';
 import {
@@ -46,7 +48,7 @@ import {
   blogPosts,
   type BlogPost,
 } from '../src/i18n/content';
-import { getRouteMeta, getLocalizedRouteMeta, BLOG_META, HOME_META, FR_HOME_META, type RouteMeta } from '../src/components/seo/route-metadata';
+import { getRouteMeta, getLocalizedRouteMeta, BLOG_META, HOME_META, FR_HOME_META, ogImageAlt, type RouteMeta } from '../src/components/seo/route-metadata';
 import { buildTourSchema, buildDestinationSchema, buildBlogPostSchema, buildReviewSchema, buildFaqSchema, buildBreadcrumb } from '../src/components/seo/StructuredData';
 import { registerAllTranslations } from '../src/i18n/locales';
 import { registerAllContentOverlays } from '../src/i18n/content/overlays';
@@ -174,6 +176,17 @@ function faqBlock(faqs: { question: string; answer: string }[]): string {
 // Alt text is natural/descriptive (never keyword-stuffed) per the Image-SEO pack.
 function figureImg(src: string, alt: string, caption: string): string {
   return `    <figure>\n      <img src="${src}" alt="${escapeHtml(alt)}" loading="lazy" decoding="async" class="w-full h-72 md:h-96 object-cover" />\n      <figcaption>${escapeHtml(caption)}</figcaption>\n    </figure>\n`;
+}
+/**
+ * Responsive catalog figure — mirrors the runtime CatalogPhoto / Local Food <img>
+ * exactly (same srcset, sizes, intrinsic dimensions, lazy loading) so the
+ * prerendered destination content carries the same image + alt + caption and
+ * causes no layout shift on hydration.
+ */
+function catalogFigure(img: CatalogImage, sizes: string): string {
+  const src = img.src;
+  const srcset = `${src.replace('.webp', '-480w.webp')} 480w, ${src.replace('.webp', '-768w.webp')} 768w, ${src} ${img.width}w`;
+  return `    <figure>\n      <img src="${src}" srcset="${srcset}" sizes="${sizes}" alt="${escapeHtml(img.alt)}" width="${img.width}" height="${img.height}" loading="lazy" decoding="async" />\n      <figcaption>${escapeHtml(img.caption)}</figcaption>\n    </figure>\n`;
 }
 function hrefsFor(rest: string): string {
   const clean = rest === '/' ? '' : rest;
@@ -479,7 +492,22 @@ function buildDestinationDetailContent(destId: string, lang: Lang): string {
   const d = getLocalizedDestination(destId, lang);
   if (!d) return h1('Not Found') + paragraph('This destination could not be found.');
   const gallery = (d.gallery ?? []).map((p) => figureImg(p.src, p.alt, p.caption)).join('\n');
-  return h1(d.name) + paragraph(d.shortDesc) + paragraph(d.description) + h2(tr(lang, 'dest_about')) + ul(d.highlights) + (gallery ? h2(`${d.name} ${tr(lang, 'dest_pictures_title')}`) + gallery : '') + buildTopicalLinksContent({ destinationId: d.id }, lang);
+  // Mirror the runtime destination page: every catalog photo reinforced for this
+  // destination under a "through our lens" heading, followed by the culinary food
+  // photograph. No cap so every mapped catalog image is discoverable.
+  const catalog = imagesForDestination(destId);
+  const catalogBlock = catalog.length
+    ? h2(`${d.name} through our lens`) + catalog.map((img) => catalogFigure(img, '(max-width: 640px) 100vw, 50vw')).join('\n')
+    : '';
+  const food = catalogImage(DEST_FOOD_IMAGE[d.id] ?? '');
+  const foodBlock = food
+    ? h2(`${tr(lang, 'dest_local_food')} ${d.name}`) + catalogFigure(food, '(max-width: 768px) 100vw, 50vw')
+    : '';
+  return h1(d.name) + paragraph(d.shortDesc) + paragraph(d.description) + h2(tr(lang, 'dest_about')) + ul(d.highlights)
+    + (gallery ? h2(`${d.name} ${tr(lang, 'dest_pictures_title')}`) + gallery : '')
+    + catalogBlock
+    + foodBlock
+    + buildTopicalLinksContent({ destinationId: d.id }, lang);
 }
 function buildAboutContent(lang: Lang): string {
   // Mirrors the live /about layout (PremiumAboutSection): every string comes
@@ -718,17 +746,27 @@ function buildExperienceContent(rest: string, lang: Lang): string {
 // Single source of truth: src/data/seoHub.ts is consumed by BOTH the runtime SPA
 // and this prerenderer, so the static HTML matches what users see exactly.
 function hubPathFor(page: HubPage): string {
-  return page.kind === 'merzouga'
-    ? `/merzouga-guide/${page.slug}`
-    : `/comparisons/${page.slug}`;
+  if (page.kind === 'merzouga') return `/merzouga-guide/${page.slug}`;
+  if (page.kind === 'comparison') return `/comparisons/${page.slug}`;
+  return `/travel-info/${page.slug}`;
 }
 
 function buildHubPageContent(page: HubPage, lang: Lang): string {
   let out = h1(page.title) + paragraph(page.intro);
-  for (const sec of page.sections) {
+  const figureAfter = new Map<number, string>();
+  (page.inlineImages ?? []).forEach((ii) => figureAfter.set(ii.after, ii.imageId));
+  for (let i = 0; i < page.sections.length; i++) {
+    const sec = page.sections[i];
     out += h2(sec.heading);
     for (const p of sec.paragraphs) out += paragraph(p);
     if (sec.bullets && sec.bullets.length) out += ul(sec.bullets);
+    const imgId = figureAfter.get(i);
+    if (imgId) {
+      const img = catalogImage(imgId);
+      if (img) {
+        out += `    <figure>\n      <img src="${img.src}" srcset="${img.src.replace('.webp', '-480w.webp')} 480w, ${img.src.replace('.webp', '-768w.webp')} 768w, ${img.src} ${img.width}w" sizes="(max-width: 768px) 100vw, 768px" alt="${escapeHtml(img.alt)}" width="${img.width}" height="${img.height}" loading="lazy" decoding="async">\n      <figcaption>${escapeHtml(img.caption)}</figcaption>\n    </figure>\n`;
+      }
+    }
   }
   if (page.comparisonRows && page.comparisonRows.length) {
     out += h2('At a glance');
@@ -743,7 +781,7 @@ function buildHubPageContent(page: HubPage, lang: Lang): string {
   if (relatedTours) out += h2('Related tours') + relatedTours;
   const relatedDests = page.destinations.map((id) => getLocalizedDestination(id, lang)).filter((d): d is NonNullable<typeof d> => Boolean(d)).map((d) => h2Link(`${SITE_URL}/${lang}/destinations/${d.id}`, d.name) + paragraph(d.shortDesc)).join('');
   if (relatedDests) out += h2('Related destinations') + relatedDests;
-    const allHubs = [...MERZOUGA_GUIDES, ...COMPARISONS];
+    const allHubs = [...MERZOUGA_GUIDES, ...COMPARISONS, ...TRAVEL_INFO];
   const relatedGuideItems = page.relatedGuides.map((s) => {
     const p = allHubs.find((q) => q.slug === s);
     return p ? link(`${SITE_URL}/${lang}${hubPathFor(p)}`, p.title) : '';
@@ -751,6 +789,11 @@ function buildHubPageContent(page: HubPage, lang: Lang): string {
   if (relatedGuideItems.length) out += h2('Keep planning') + ul(relatedGuideItems);
   const faqs = faqBlock(page.faqs);
   if (faqs) out += h2('Frequently asked questions') + faqs;
+  const pageSources = (page.sources ?? []).map((sid) => SOURCES[sid]).filter(Boolean);
+  if (pageSources.length) {
+    out += h2('Sources & further information');
+    out += ul(pageSources.map((s) => `<a href="${s.url}" rel="noopener noreferrer">${escapeHtml(s.title)}</a> — ${escapeHtml(s.publisher)}`));
+  }
   out += h2('Ready for the real Sahara?');
   out += rawParagraph(`Talk to a local Merzouga guide and shape the desert night that suits your group, pace and budget. <a href="${SITE_URL}/${lang}/trip-builder">Build your Morocco journey</a> · <a href="${contactInfo.whatsapp}">WhatsApp a local expert</a>.`);
   return out;
@@ -833,6 +876,35 @@ function buildRoutes(lang: Lang): RouteEntry[] {
       page.faqs.length ? (buildFaqSchema(page.faqs) as unknown as Record<string, unknown>) : null,
     ].filter(Boolean) as Record<string, unknown>[]);
   }
+  for (const page of TRAVEL_INFO) {
+    const rest = `/travel-info/${page.slug}`;
+    add(rest, `${lang}${rest}/index.html`, () => buildHubPageContent(page, lang), [
+      buildBreadcrumb([
+        { name: tr(lang, 'nav_home'), path: '/' },
+        { name: 'Travel information', path: '/travel-info' },
+        { name: page.title, path: rest },
+      ], lang) as unknown as Record<string, unknown>,
+      page.faqs.length ? (buildFaqSchema(page.faqs) as unknown as Record<string, unknown>) : null,
+    ].filter(Boolean) as Record<string, unknown>[]);
+  }
+  add('/travel-info', `${lang}/travel-info/index.html`, () => {
+    const items = TRAVEL_INFO.map((p) => {
+      const img = catalogImage(
+        p.slug === 'getting-around-morocco' ? 'draa-valley-oasis-palm-grove'
+        : p.slug === 'what-to-pack-morocco' ? 'moroccan-riad-breakfast'
+        : 'sahara-dune-trekking-merzouga');
+      const imgHtml = img ? `      <img src="${img.src}" alt="${escapeHtml(img.alt)}" width="${img.width}" height="${img.height}" loading="lazy" decoding="async">\n` : '';
+      return `    <li>\n${imgHtml}      <h2><a href="${SITE_URL}/${lang}/travel-info/${p.slug}">${escapeHtml(p.title)}</a></h2>\n      <p>${escapeHtml(p.description)}</p>\n    </li>`;
+    }).join('\n');
+    return h1('Morocco Travel Information')
+      + rawParagraph('Practical guides from a local team — when to go, what to pack and how to get around, written from real experience on the road.')
+      + `    <ul class="travel-info-list">\n${items}\n    </ul>\n`;
+  }, [
+    buildBreadcrumb([
+      { name: tr(lang, 'nav_home'), path: '/' },
+      { name: 'Travel information', path: '/travel-info' },
+    ], lang) as unknown as Record<string, unknown>,
+  ]);
   // truth in CITY_HUB_DURATIONS). Routes whose city has no canned tour of that
   // length still render an intentional page that funnels to the custom trip flow.
   for (const hub of CITY_HUBS) {
@@ -898,6 +970,7 @@ function injectHead(html: string, meta: RouteEntry['meta'], rest: string, lang: 
   html = html.replace(/<meta name="twitter:description" content="[^"]*"/, `<meta name="twitter:description" content="${meta.description.replace(/"/g, '&quot;')}"`);
   if (meta.ogImage) {
     html = html.replace(/<meta property="og:image" content="[^"]*"/, `<meta property="og:image" content="${SITE_URL}${meta.ogImage}"`);
+    html = html.replace(/<meta property="og:image:alt" content="[^"]*"/, `<meta property="og:image:alt" content="${escapeHtml(ogImageAlt(meta.ogImage))}"`);
     html = html.replace(/<meta name="twitter:image" content="[^"]*"/, `<meta name="twitter:image" content="${SITE_URL}${meta.ogImage}"`);
   }
   html = html.replace(/<!-- Hreflang alternates[\s\S]*?<!-- Open Graph -->/, `<!-- Hreflang alternates (prerendered route-specific set) -->\n${hreflangLinks}\n\n    <!-- Open Graph -->`);

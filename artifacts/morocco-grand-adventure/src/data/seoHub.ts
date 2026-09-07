@@ -14,7 +14,7 @@
 
 export type HubFaq = { question: string; answer: string };
 export type HubSection = { heading: string; paragraphs: string[]; bullets?: string[] };
-export type HubKind = 'merzouga' | 'comparison';
+export type HubKind = 'merzouga' | 'comparison' | 'travel-info';
 
 export type HubPage = {
   kind: HubKind;
@@ -36,6 +36,13 @@ export type HubPage = {
   relatedGuides: string[];
   /** Comparison tables: [label, colA, colB, note?] */
   comparisonRows?: [string, string, string, string?][];
+  /**
+   * Authoritative sources backing facts on this page (ids from data/sources.ts).
+   * Rendered once at the end as descriptive normal links — never a bibliography.
+   */
+  sources?: string[];
+  /** Inline catalog photographs: placed after the Nth section (0-based). */
+  inlineImages?: { imageId: string; after: number }[];
 };
 
 export const MERZOUGA_GUIDES: HubPage[] = [
@@ -108,6 +115,7 @@ export const MERZOUGA_GUIDES: HubPage[] = [
     tours: ['3-day-sahara-marrakech', '7-day-imperial-cities-sahara-escape', '4-day-marrakech-merzouga-sahara'],
     destinations: ['merzouga', 'erg-chebbi'],
     relatedGuides: ['desert-camps', 'luxury-desert-camps', 'best-time-to-visit'],
+    inlineImages: [{ imageId: 'berber-camel-guide-sahara-merzouga', after: 0 }, { imageId: 'sahara-dune-trekking-merzouga', after: 2 }],
   },
   {
     kind: 'merzouga',
@@ -162,6 +170,7 @@ export const MERZOUGA_GUIDES: HubPage[] = [
     tours: ['3-day-sahara-marrakech', 'honeymoon-morocco', '7-day-imperial-cities-sahara-escape'],
     destinations: ['merzouga', 'erg-chebbi'],
     relatedGuides: ['luxury-desert-camps', 'camel-trekking', 'best-time-to-visit'],
+    inlineImages: [{ imageId: 'sahara-bivouac-stars-merzouga', after: 0 }],
   },
   {
     kind: 'merzouga',
@@ -210,6 +219,7 @@ export const MERZOUGA_GUIDES: HubPage[] = [
     tours: ['honeymoon-morocco', '3-day-sahara-marrakech', '7-day-imperial-cities-sahara-escape'],
     destinations: ['merzouga', 'erg-chebbi'],
     relatedGuides: ['desert-camps', 'camel-trekking', 'best-time-to-visit'],
+    inlineImages: [{ imageId: 'luxury-desert-camp-sunset-merzouga', after: 0 }],
   },
   {
     kind: 'merzouga',
@@ -374,6 +384,8 @@ export const MERZOUGA_GUIDES: HubPage[] = [
     tours: ['3-day-sahara-marrakech', '2-day-zagora-desert-marrakech', '4-day-marrakech-merzouga-sahara'],
     destinations: ['merzouga', 'erg-chebbi'],
     relatedGuides: ['camel-trekking', 'desert-camps', 'best-time-to-visit'],
+    inlineImages: [{ imageId: 'fennec-fox-sahara-wildlife', after: 1 }],
+    sources: ['onmt-merzouga-region'],
   },
   {
     kind: 'merzouga',
@@ -717,8 +729,172 @@ export const COMPARISONS: HubPage[] = [
 // ── Lookups ───────────────────────────────────────────────────────────────────
 export const MERZOUGA_GUIDE_SLUGS = MERZOUGA_GUIDES.map((p) => p.slug);
 export const COMPARISON_SLUGS = COMPARISONS.map((p) => p.slug);
-export const ALL_HUB_PAGES: HubPage[] = [...MERZOUGA_GUIDES, ...COMPARISONS];
+// ─────────────────────────────────────────────────────────────────────────────
+// Travel Information — practical, traveler-first pages.
+//
+// Original content grounded in ONMT / UNESCO / official-operator facts (see
+// data/sources.ts). Facts that change often (prices, schedules, visa rules) are
+// deliberately NOT hard-coded; pages point to the official source instead.
+// ─────────────────────────────────────────────────────────────────────────────
+export const TRAVEL_INFO: HubPage[] = [
+  {
+    kind: 'travel-info',
+    slug: 'best-time-to-visit-morocco',
+    title: 'Best Time to Visit Morocco — Season by Season',
+    pageTitle: 'Best Time to Visit Morocco — Season-by-Season Guide',
+    description: 'When to visit Morocco: spring and autumn for most regions, how summer and winter differ between the coast, mountains and Sahara, and how to choose dates for a desert trip.',
+    ogImage: '/images/catalog/sahara-dune-trekking-merzouga.webp',
+    heroImage: '/images/catalog/sahara-dune-trekking-merzouga.webp',
+    heroAlt: 'Trekkers on a Sahara dune crest near Merzouga in soft morning light',
+    intro: 'Morocco is a year-round destination, but the right month depends on where you are going. The coast, the mountains and the Sahara behave like different climates — here is how to match your dates to your trip.',
+    sections: [
+      {
+        heading: 'The short answer: spring and autumn',
+        paragraphs: [
+          'For a first trip that mixes cities, the Atlas Mountains and the Sahara, late March to May and late September to early November are the most comfortable windows across the whole country. Days are warm rather than hot, nights are mild, and the light — which matters more in the desert than most people expect — is soft and long.',
+          'These months also suit the longest drives. The Tizi n\'Tichka pass to Ouarzazate and the route out to Merzouga are at their most pleasant when the high Atlas is cool and the desert has not yet peaked.',
+        ],
+      },
+      {
+        heading: 'Summer: the coast, not the Sahara',
+        paragraphs: [
+          'From June to August the interior and the desert edge get very hot — in the Marrakech–Ouarzazate–Merzouga corridor, daytime temperatures commonly climb well above 40°C. Long desert journeys and camel treks shift to early morning and evening, and midday is genuinely restful time, not wasted time.',
+          'The Atlantic coast is the summer reward: Essaouira and Agadir sit under a steady ocean breeze and stay noticeably cooler than Marrakech the same day. A summer itinerary that runs Marrakech → Atlas → coast works with the climate rather than against it.',
+        ],
+        bullets: [
+          'Best for the desert: October–April (desert nights are cold in winter)',
+          'Best for cities: spring and autumn',
+          'Best for the coast: June–September',
+          'Ramadan: dates shift each year — days stay tourist-friendly, rhythm changes',
+        ],
+      },
+      {
+        heading: 'Winter: clear desert days, cold nights',
+        paragraphs: [
+          'December to February is low season almost everywhere except the desert, and that is exactly its appeal. Sahara days are crisp and clear with superb visibility, but nights drop close to freezing in the dunes — camps provide blankets and heating, and a warm layer for the evening is essential rather than optional.',
+          'The High Atlas passes can see snow and temporary closures after storms, so winter itineraries keep a little flexibility on mountain days. The imperial cities (Fes, Meknes, Rabat) are quiet and atmospheric in winter.',
+        ],
+      },
+      {
+        heading: 'What we tell travelers planning a Sahara trip',
+        paragraphs: [
+          'The honest local answer: the best desert month is the one where you accept the trade-offs. October and April give the best overall balance for Erg Chebbi. Winter gives you the starriest skies and quiet dunes if you pack warm. Summer works if your days are shaped around sunrise, siesta and sunset.',
+          'Tell us your dates and we will tell you honestly what the conditions are likely to be — and what we would change about the itinerary.',
+        ],
+      },
+    ],
+    faqs: [
+      { question: 'When is the best month for a Sahara desert tour?', answer: 'October and April are the sweet spot around Erg Chebbi: warm days, manageable nights. Winter works well too if you bring warm layers for evenings; summer trips are shaped around early mornings and evenings.' },
+      { question: 'Is Morocco too hot in summer?', answer: 'The interior and desert edge regularly exceed 40°C, but the Atlantic coast (Essaouira, Agadir) stays mild under ocean winds. Summer itineraries work best when they favor the coast and pace desert time around sunrise and sunset.' },
+      { question: 'Can you visit the desert in winter?', answer: 'Yes — winter is a popular time for Erg Chebbi. Days are clear and pleasant; nights are cold (often near freezing), and camps are prepared with blankets and heating. Bring a warm layer for evenings.' },
+      { question: 'How does Ramadan affect travel?', answer: 'Tourist sites, hotels and tours operate, but the daily rhythm shifts: some smaller restaurants close by day and evenings are livelier. Check the dates for your year — they move about 11 days earlier annually.' },
+    ],
+    tours: ['3-day-sahara-marrakech', '7-day-imperial-cities-sahara-escape'],
+    destinations: ['merzouga', 'essaouira', 'marrakech'],
+    relatedGuides: ['what-to-pack-morocco', 'getting-around-morocco'],
+    sources: ['onmt', 'lonely-planet-morocco'],
+    inlineImages: [{ imageId: 'fennec-fox-sahara-wildlife', after: 1 }],
+  },
+  {
+    kind: 'travel-info',
+    slug: 'what-to-pack-morocco',
+    title: 'What to Pack for Morocco — A Practical List',
+    pageTitle: 'What to Pack for Morocco — Practical Packing List',
+    description: 'A realistic Morocco packing list: layers for cold desert nights, sun protection, footwear for medinas and dunes, and what to leave at home.',
+    ogImage: '/images/catalog/moroccan-riad-breakfast.webp',
+    heroImage: '/images/catalog/moroccan-riad-breakfast.webp',
+    heroAlt: 'Moroccan riad breakfast with msemen, jams and mint tea on a courtyard table',
+    intro: 'Packing for Morocco is about layers and one good pair of shoes. Medinas, mountain passes and desert nights make different demands — this list covers all three without overpacking.',
+    sections: [
+      {
+        heading: 'The rule: layers over bulk',
+        paragraphs: [
+          'Moroccan days are warm and evenings can be genuinely cool — the swing is biggest in the south and the desert, where a 20°C day-to-night difference is normal outside summer. Pack clothes you can add and remove: light long-sleeved shirts, a warm mid-layer, and one proper jacket between October and April.',
+          'Long, loose clothing is more than cultural politeness — it is the most comfortable thing you can wear in the sun and the medina alike. Linen and cotton beat shorts and strappy tops for practical reasons as much as respectful ones.',
+        ],
+        bullets: [
+          'Light long sleeves and long trousers (sun + medinas + evenings)',
+          'A warm mid-layer and jacket for October–April nights',
+          'Comfortable closed walking shoes — cobbles and dunes both',
+          'Sandals for camp and riad downtime',
+          'Scarf or shawl — sun, wind and dunes in one item',
+        ],
+      },
+      {
+        heading: 'Desert nights: what actually matters',
+        paragraphs: [
+          'For a night in an Erg Chebbi camp, the two things travelers under-pack are warm layers and a torch or headlamp. Camps supply thick blankets and, in most cases, heating — but the walk between tent and dining tent after dark is yours.',
+          'Sun protection is the other essential: high-SPF sunscreen, sunglasses and a hat, because the Sahara sun is stronger than the temperature suggests, especially on a dune crest with a light wind.',
+        ],
+      },
+      {
+        heading: 'What to leave at home',
+        paragraphs: [
+          'You do not need a hair dryer (most riads have one), a drone (permits are strict — do not bring one without checking regulations first), or more than one week of clothing: laundry is cheap and fast nearly everywhere. Valuables are safer left behind than carried into the dunes on a camel trek — most trips send main luggage ahead by vehicle.',
+          'Power banks are genuinely useful on travel days. Moroccan sockets are the European two-pin type (Type C/E), 220V — a simple adapter is enough for most devices.',
+        ],
+      },
+    ],
+    faqs: [
+      { question: 'What shoes for Morocco?', answer: 'One pair of comfortable closed walking shoes for medinas, gorges and dunes, plus sandals for downtime. Break the walking shoes in before you travel — cobbles are unforgiving.' },
+      { question: 'Do I need warm clothes for the desert in summer?', answer: 'Light layers, yes; heavy winter gear, no. Summer desert nights are warm. Between October and April a proper warm layer for evenings is essential.' },
+      { question: 'Can women wear what they like in Morocco?', answer: 'Tourist areas are relaxed, and there is no dress-code enforcement for visitors. That said, most women travelers are more comfortable in loose clothing that covers shoulders and knees — it is also the most practical choice for sun and medinas.' },
+      { question: 'What plug adapter do I need?', answer: 'Morocco uses European-style two-pin sockets (Type C/E), 220V. A basic European adapter covers almost everything.' },
+    ],
+    tours: ['3-day-sahara-marrakech', '4-day-marrakech-merzouga-sahara'],
+    destinations: ['merzouga', 'marrakech'],
+    relatedGuides: ['best-time-to-visit-morocco', 'desert-camps'],
+    sources: ['onmt', 'lonely-planet-morocco'],
+    inlineImages: [{ imageId: 'sahara-dune-trekking-merzouga', after: 1 }],
+  },
+  {
+    kind: 'travel-info',
+    slug: 'getting-around-morocco',
+    title: 'Getting Around Morocco — Transport, Realistically',
+    pageTitle: 'Getting Around Morocco — Transport Options Explained',
+    description: 'How to travel around Morocco: when a private driver beats the train and bus, what driving times really look like between Marrakech, Fes and the Sahara, and how to check current schedules.',
+    ogImage: '/images/catalog/ancient-berber-kasbah-ruins-southern-morocco.webp',
+    heroImage: '/images/catalog/ancient-berber-kasbah-ruins-southern-morocco.webp',
+    heroAlt: 'Old kasbah towers beside the road through southern Morocco',
+    intro: 'Morocco is bigger than the map suggests, and the highways are only part of the story. Here is an honest picture of the options — and why so many travelers end up choosing a private route.',
+    sections: [
+      {
+        heading: 'Distances: the numbers that surprise people',
+        paragraphs: [
+          'Marrakech to Merzouga is about 560 km, but the realistic drive time is 8–9 hours — the route crosses the High Atlas over the Tizi n\'Tichka pass before the road opens up past Ouarzazate. Fes to Merzouga is similar in time via the Middle Atlas and the Ziz Valley. This is why nearly every Sahara itinerary breaks the journey with stops in Aït Ben Haddou, the Dades or Todra gorges, or Midelt.',
+          'The train network (ONCF) is good along the Atlantic axis — Casablanca, Rabat, Meknes, Fes, Marrakech — and does not reach the south-eastern desert regions at all.',
+        ],
+      },
+      {
+        heading: 'Trains, buses and shared taxis',
+        paragraphs: [
+          'ONCF trains are comfortable on the northern axis and affordable; long-distance buses (CTM, Supratours) reach most southern towns including Ouarzazate and Errachidia, and are the budget traveler\'s workhorse. Grand taxis — shared cars running fixed routes — are an experience every Morocco traveler should try once on a short hop.',
+          'Schedules change with the season and by year, so we deliberately do not publish timetables here: check ONCF and the bus operators\' official sites for current times.',
+        ],
+      },
+      {
+        heading: 'When a private driver is worth it',
+        paragraphs: [
+          'A private route earns its price whenever your plan involves the mountain roads and the desert: you stop where the view is good rather than where the bus stops, villages and kasbahs fit between the main legs, and the drive itself becomes part of the trip instead of the price of it.',
+          'It also changes what you can carry and when you move — sunrise at the dunes does not wait for a bus schedule.',
+        ],
+      },
+    ],
+    faqs: [
+      { question: 'How long is the drive from Marrakech to Merzouga?', answer: 'Realistically 8–9 hours in one push over the Atlas. Most itineraries split it across two days with stops at Aït Ben Haddou, the Dades Valley or Todra Gorge — which is also the better trip.' },
+      { question: 'Does the train go to the Sahara?', answer: 'No. ONCF trains cover the Atlantic axis (Casablanca, Rabat, Meknes, Fes, Marrakech). For the desert regions you continue by road — bus, grand taxi or private driver.' },
+      { question: 'Is it safe to drive in Morocco yourself?', answer: 'Main highways are good, but mountain passes, occasional fog, and local driving habits make long self-drive days tiring. Many travelers mix: self-drive the north, private driver for the Atlas–Sahara loop.' },
+      { question: 'Where do I check current train and bus times?', answer: "On the operators' official sites — ONCF for trains, CTM and Supratours for buses. Times shift seasonally, which is why we link rather than hard-code them." },
+    ],
+    tours: ['3-day-sahara-marrakech', '3-day-fes-merzouga-sahara', '5-day-great-south-morocco'],
+    destinations: ['merzouga', 'ouarzazate', 'marrakech'],
+    relatedGuides: ['best-time-to-visit-morocco', 'how-to-get-there'],
+    sources: ['onmt', 'lonely-planet-morocco'],
+    inlineImages: [{ imageId: 'draa-valley-oasis-palm-grove', after: 0 }],
+  },
+];
+export const ALL_HUB_PAGES: HubPage[] = [...MERZOUGA_GUIDES, ...COMPARISONS, ...TRAVEL_INFO];
 export function hubPageBySlug(slug: string, kind: HubKind): HubPage | undefined {
-  const list = kind === 'merzouga' ? MERZOUGA_GUIDES : COMPARISONS;
+  const list = kind === 'merzouga' ? MERZOUGA_GUIDES : kind === 'comparison' ? COMPARISONS : TRAVEL_INFO;
     return list.find((p) => p.slug === slug);
 }

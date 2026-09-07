@@ -9,6 +9,25 @@ import { Link } from 'wouter';
 import { StructuredData, buildDestinationSchema } from '../components/seo/StructuredData';
 import { CinematicVideo } from '../components/ui/CinematicVideo';
 import { MoroccoMap } from '../components/MoroccoMap';
+import { catalogImage, imagesForDestination, DEST_FOOD_IMAGE, type CatalogImage } from '@/data/imageCatalog';
+import { DESTINATION_SOURCES, SOURCES } from '@/data/sources';
+
+// Semantic catalog photo — responsive, lazy, with intrinsic dimensions (no CLS).
+function CatalogPhoto({ img, sizes, className }: { img: CatalogImage; sizes: string; className?: string }) {
+  return (
+    <img
+      src={img.src}
+      srcSet={`${img.src.replace('.webp', '-480w.webp')} 480w, ${img.src.replace('.webp', '-768w.webp')} 768w, ${img.src} ${img.width}w`}
+      sizes={sizes}
+      alt={img.alt}
+      width={img.width}
+      height={img.height}
+      loading="lazy"
+      decoding="async"
+      className={className}
+    />
+  );
+}
 
 export default function DestinationDetail() {
   const { t, lang } = useLanguage();
@@ -92,13 +111,65 @@ export default function DestinationDetail() {
               )}
 
               {/* NEW: Local Food Section */}
+              {/* Photos from the road — catalog images reinforcing this destination */}
+              {imagesForDestination(destination.id).length > 0 && (
+                <div className="mb-16">
+                  <h3 className="font-serif text-3xl text-foreground mb-6 flex items-center gap-3">
+                    <MapPin className="w-8 h-8 text-primary" /> {destination.name} through our lens
+                  </h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    {imagesForDestination(destination.id).map((img) => (
+                      <figure key={img.file} className="bg-card border border-border rounded-2xl overflow-hidden">
+                        <CatalogPhoto img={img} sizes="(max-width: 640px) 100vw, 50vw" className="w-full h-56 object-cover" />
+                        <figcaption className="text-sm text-muted-foreground p-4">{img.caption}</figcaption>
+                      </figure>
+                    ))}
+                  </div>
+                  {(() => {
+                    const ids = DESTINATION_SOURCES[destination.id];
+                    if (!ids) return null;
+                    return (
+                      <p className="text-sm text-muted-foreground mt-4">
+                        {ids.map((sid) => {
+                          const s = SOURCES[sid];
+                          if (!s) return null;
+                          return (
+                            <span key={sid}>
+                              <a href={s.url} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">{s.title}</a>
+                              {' '}— {s.publisher}.{' '}
+                            </span>
+                          );
+                        })}
+                      </p>
+                    );
+                  })()}
+                </div>
+              )}
               <div className="mb-16">
                 <h3 className="font-serif text-3xl text-foreground mb-6 flex items-center gap-3">
                   <UtensilsCrossed className="w-8 h-8 text-primary" /> {t('dest_local_food')} {destination.name}
                 </h3>
                 <div className="bg-card border border-border rounded-3xl overflow-hidden shadow-sm flex flex-col md:flex-row">
                   <div className="md:w-1/2 h-64 md:h-auto">
-                    <img src={`/images/food/${['tagine','couscous','streetfood','pastries','tea'][destination.id.length % 5]}.webp`} alt={`Traditional food in ${destination.name}`} loading="lazy" decoding="async" className="w-full h-full object-cover" onError={(e) => { (e.target as HTMLImageElement).src = '/images/food/tagine.webp'; }} />
+                    {(() => {
+                      const ci = catalogImage(DEST_FOOD_IMAGE[destination.id] ?? '');
+                      if (ci) {
+                        return (
+                          <img
+                            src={ci.src}
+                            srcSet={`${ci.src.replace('.webp', '-480w.webp')} 480w, ${ci.src.replace('.webp', '-768w.webp')} 768w, ${ci.src} ${ci.width}w`}
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                            alt={ci.alt}
+                            width={ci.width}
+                            height={ci.height}
+                            loading="lazy"
+                            decoding="async"
+                            className="w-full h-full object-cover"
+                          />
+                        );
+                      }
+                      return <img src={`/images/food/${['tagine','couscous','streetfood','pastries','tea'][destination.id.length % 5]}.webp`} alt={`Traditional food in ${destination.name}`} loading="lazy" decoding="async" className="w-full h-full object-cover" onError={(e) => { (e.target as HTMLImageElement).src = '/images/food/tagine.webp'; }} />;
+                    })()}
                   </div>
                   <div className="md:w-1/2 p-8 flex flex-col justify-center">
                     <h4 className="font-bold text-xl mb-4">{t('dest_culinary')}</h4>

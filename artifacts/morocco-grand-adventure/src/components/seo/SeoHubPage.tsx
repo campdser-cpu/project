@@ -11,14 +11,16 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { contactInfo } from '@/data/content';
 import { getLocalizedTour, getLocalizedTours, getLocalizedDestination, getLocalizedDestinations } from '@/i18n/content';
 import { StructuredData, buildBreadcrumb, buildFaqSchema } from '@/components/seo/StructuredData';
-import { MERZOUGA_GUIDES, COMPARISONS, ALL_HUB_PAGES, type HubPage } from '@/data/seoHub';
+import { MERZOUGA_GUIDES, COMPARISONS, TRAVEL_INFO, ALL_HUB_PAGES, type HubPage } from '@/data/seoHub';
+import { catalogImage } from '@/data/imageCatalog';
+import { SOURCES } from '@/data/sources';
 import NotFound from '@/pages/not-found';
 import { ChevronRight } from 'lucide-react';
 
 function pagePath(page: HubPage): string {
-  return page.kind === 'merzouga'
-    ? `/merzouga-guide/${page.slug}`
-    : `/comparisons/${page.slug}`;
+  if (page.kind === 'merzouga') return `/merzouga-guide/${page.slug}`;
+  if (page.kind === 'comparison') return `/comparisons/${page.slug}`;
+  return `/travel-info/${page.slug}`;
 }
 
 // ── Public thin route components ─────────────────────────────────────────────
@@ -36,6 +38,13 @@ export function ComparisonPage() {
   return <SeoHubPage page={page} />;
 }
 
+export function TravelInfoTopic() {
+  const { slug } = useParams();
+  const page = TRAVEL_INFO.find((p) => p.slug === slug);
+  if (!page) return <NotFound />;
+  return <SeoHubPage page={page} />;
+}
+
 // ── Shared renderer ──────────────────────────────────────────────────────────
 export function SeoHubPage({ page }: { page: HubPage }) {
     const { lang, t } = useLanguage();
@@ -47,9 +56,35 @@ export function SeoHubPage({ page }: { page: HubPage }) {
     { name: t('nav_home'), path: '/' },
     page.kind === 'merzouga'
       ? { name: 'Merzouga Travel Guide', path: '/merzouga-guide' }
-      : { name: 'Tour comparisons', path: '/' },
+      : page.kind === 'comparison'
+        ? { name: 'Tour comparisons', path: '/' }
+        : { name: 'Travel information', path: '/travel-info' },
     { name: page.title, path: '' },
   ];
+
+  // Inline catalog photographs keyed by section index
+  const figureAfter = new Map<number, string>();
+  (page.inlineImages ?? []).forEach((ii) => figureAfter.set(ii.after, ii.imageId));
+  const renderCatalogFigure = (imageId: string) => {
+    const img = catalogImage(imageId);
+    if (!img) return null;
+    return (
+      <figure key={imageId} className="my-10">
+        <img
+          src={img.src}
+          srcSet={`${img.src.replace('.webp', '-480w.webp')} 480w, ${img.src.replace('.webp', '-768w.webp')} 768w, ${img.src} ${img.width}w`}
+          sizes="(max-width: 768px) 100vw, 768px"
+          alt={img.alt}
+          width={img.width}
+          height={img.height}
+          loading="lazy"
+          decoding="async"
+          className="rounded-2xl w-full h-auto border border-border"
+        />
+        <figcaption className="text-sm text-muted-foreground mt-3 text-center">{img.caption}</figcaption>
+      </figure>
+    );
+  };
 
   return (
     <Layout>
@@ -91,8 +126,8 @@ export function SeoHubPage({ page }: { page: HubPage }) {
         <section className="py-16 md:py-24 bg-background">
           <div className="container mx-auto px-4 max-w-3xl">
             {page.sections.map((sec, i) => (
+              <div key={sec.heading + i}>
               <motion.div
-                key={sec.heading + i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -115,6 +150,8 @@ export function SeoHubPage({ page }: { page: HubPage }) {
                   </ul>
                 )}
               </motion.div>
+              {figureAfter.has(i) && renderCatalogFigure(figureAfter.get(i)!)}
+              </div>
             ))}
           </div>
         </section>
@@ -279,6 +316,29 @@ export function SeoHubPage({ page }: { page: HubPage }) {
                   </details>
                 ))}
               </div>
+            </div>
+          </section>
+        )}
+
+        {/* Authoritative sources — descriptive links, plain HTML, no widgets */}
+        {page.sources && page.sources.length > 0 && (
+          <section className="py-12 bg-background border-t border-border">
+            <div className="container mx-auto px-4 max-w-3xl">
+              <h2 className="font-serif text-xl text-foreground mb-3">Sources & further information</h2>
+              <ul className="space-y-2">
+                {page.sources.map((sid) => {
+                  const s = SOURCES[sid];
+                  if (!s) return null;
+                  return (
+                    <li key={sid} className="text-sm text-muted-foreground">
+                      <a href={s.url} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                        {s.title}
+                      </a>{' '}
+                      — {s.publisher}
+                    </li>
+                  );
+                })}
+              </ul>
             </div>
           </section>
         )}

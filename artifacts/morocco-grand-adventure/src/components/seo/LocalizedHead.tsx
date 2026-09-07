@@ -13,7 +13,7 @@ import { useEffect } from 'react';
 import { usePathname } from 'wouter/use-browser-location';
 import { useLanguage, languages } from '@/contexts/LanguageContext';
 import { parseLangPath, RAW_BASE } from '@/lib/i18n-routing';
-import { getLocalizedRouteMeta, FR_HOME_META } from './route-metadata';
+import { getLocalizedRouteMeta, FR_HOME_META, ogImageAlt } from './route-metadata';
 
 const BRAND = 'Morocco Grand Adventure';
 const SITE_ORIGIN = 'https://www.moroccograndadventure.com';
@@ -81,6 +81,7 @@ export function LocalizedHead() {
       upsertMeta('property', 'og:image', ogImage);
       upsertMeta('property', 'og:image:width', '1200');
       upsertMeta('property', 'og:image:height', '630');
+      upsertMeta('property', 'og:image:alt', ogImageAlt(routeMeta.ogImage));
     }
     upsertMeta('name', 'twitter:card', 'summary_large_image');
     upsertMeta('name', 'twitter:title', fullTitle);

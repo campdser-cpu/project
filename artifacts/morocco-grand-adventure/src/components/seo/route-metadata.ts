@@ -1,6 +1,10 @@
 /** Per-route SEO metadata. Keep this file as the single source of truth for runtime/prerendered route metadata. */
 export type RouteMeta = { title: string; description: string; ogImage?: string };
 
+// Import the catalog's canonical alt text so OG image alt descriptions stay in
+// sync with the actual subject of every shared image (catalog photos included).
+import { catalogImage } from '@/data/imageCatalog';
+
 const BRAND = 'Morocco Grand Adventure';
 export const HOME_META: RouteMeta = {
   title: 'Morocco Tours & Private Sahara Desert Trips',
@@ -111,6 +115,10 @@ export const routeMetadata: Record<string, RouteMeta> = {
   '/fes-tours':{title:'Fes Tours — Private Guided Morocco Tours',description:'Explore Fes, Chefchaouen and northern Morocco with local guides.',ogImage:'/images/dest/fes.jpg'},
   '/day-trips':{title:'Morocco Day Trips — Personalized One-Day Experiences',description:'Explore Morocco on a one-day experience with same-day return. Request a personalized route and quote.',ogImage:'/images/dest/ouzoud.jpg'},
   '/merzouga-guide':{title:'Merzouga Travel Guide — Sahara Desert & Erg Chebbi',description:'A practical guide to Merzouga, Erg Chebbi, camel trekking and desert camp experiences.',ogImage:'/images/dest/merzouga.jpg'},
+  '/travel-info':{title:'Morocco Travel Information — Practical Guides from Locals',description:'Practical Morocco travel information from a local team — when to go, what to pack and how to get around.',ogImage:'/images/catalog/draa-valley-oasis-palm-grove.webp'},
+  '/travel-info/best-time-to-visit-morocco':{title:'Best Time to Visit Morocco — Season-by-Season Guide',description:'When to visit Morocco: spring and autumn for most regions, how summer and winter differ between the coast, mountains and Sahara.',ogImage:'/images/catalog/sahara-dune-trekking-merzouga.webp'},
+  '/travel-info/what-to-pack-morocco':{title:'What to Pack for Morocco — Practical Packing List',description:'A realistic Morocco packing list: layers for cold desert nights, sun protection, footwear for medinas and dunes.',ogImage:'/images/catalog/moroccan-riad-breakfast.webp'},
+  '/travel-info/getting-around-morocco':{title:'Getting Around Morocco — Transport Options Explained',description:'Trains, buses and private drivers in Morocco — realistic driving times between Marrakech, Fes and the Sahara.',ogImage:'/images/catalog/ancient-berber-kasbah-ruins-southern-morocco.webp'},
   '/faq':{title:'Morocco Travel FAQ — Questions About Tours & Travel',description:'Answers to common Morocco travel, desert tour, packing and booking questions.',ogImage:'/images/dest/merzouga.jpg'},
     '/blog':{title:'Morocco Travel Blog — Guides, Tips & Inspiration',description:'Morocco travel guides and practical advice from local Sahara specialists.',ogImage:'/images/hero/desert-pano.jpg'},
   '/merzouga-guide/camel-trekking':{title:'Camel Trekking in Merzouga — Sahara Rides at Erg Chebbi',description:"What to expect on a camel trek near Merzouga — timing, what to wear, mounting tips and what happens at camp.",ogImage:'/images/curated/camel-caravan-sunset-silhouette-sahara-desert.webp'},
@@ -153,6 +161,32 @@ export function getRouteMeta(rest:string):RouteMeta {
   const dest = normalized.match(/^\/destinations\/([^/]+)$/); if(dest && DESTINATION_META[dest[1]]) return DESTINATION_META[dest[1]];
   const blog = normalized.match(/^\/blog\/([^/]+)$/); if(blog && BLOG_META[blog[1]]) return BLOG_META[blog[1]];
   return HOME_META;
+}
+
+/** Humanize an image filename into a short, descriptive phrase (e.g. "hassan-tower-mohammed-v-mausoleum-rabat.webp" → "Hassan Tower Mohammed V Mausoleum Rabat"). */
+function humanizeAlt(url: string): string {
+  const name = (url.split('/').pop() || '').replace(/\.(webp|jpg|jpeg|png|avif|gif)$/i, '');
+  const tokens = name
+    .split(/[-_]+/)
+    .filter((tk) => !/^\d+w$/i.test(tk) && !/^\d+$/.test(tk) && !['photo', 'img', 'image', 'pic'].includes(tk.toLowerCase()))
+    .map((tk) => (tk.length ? tk.charAt(0).toUpperCase() + tk.slice(1) : ''));
+  return tokens.join(' ') || 'Morocco — a journey through the country';
+}
+
+/**
+ * Resolve a natural, subject-accurate alt description for an Open Graph image.
+ * Catalog photographs use the catalog's own canonical alt text; every other
+ * shared image falls back to a humanized filename. This prevents the site from
+ * attaching a single generic "Sahara camel caravan" description to every OG image.
+ */
+export function ogImageAlt(ogImage?: string): string {
+  if (!ogImage) return 'Morocco Grand Adventure — private journeys through Morocco';
+  if (ogImage.includes('/images/catalog/')) {
+    const id = (ogImage.split('/').pop() || '').replace(/\.webp$/i, '');
+    const img = catalogImage(id);
+    if (img) return img.alt;
+  }
+  return humanizeAlt(ogImage);
 }
 
 const AR_ROUTE_META: Record<string,RouteMeta> = {

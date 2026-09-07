@@ -33,6 +33,8 @@ const CasablancaTours = lazy(() => import('./pages/casablanca-tours'));
 const DayTrips = lazy(() => import('./pages/day-trips'));
 const MerzougaGuide = lazy(() => import('./pages/merzouga-guide'));
 const MerzougaGuideTopic = lazy(() => import('./pages/merzouga-guide-topic'));
+const TravelInfo = lazy(() => import('./pages/travel-info'));
+const TravelInfoTopic = lazy(() => import('./pages/travel-info-topic'));
 const ComparisonPage = lazy(() => import('./pages/comparison-topic'));
 const Faq = lazy(() => import('./pages/faq'));
 const Blog = lazy(() => import('./pages/blog'));
@@ -64,7 +66,7 @@ function AnimatedRouter() {
     <Route path="/trip-builder" component={TripBuilder} /><Route path="/build-your-day-trip" component={BuildYourDayTrip} />
     <Route path="/desert-tours" component={DesertTours} /><Route path="/luxury-camp" component={LuxuryCamp} /><Route path="/camel-trekking" component={CamelTrekking} /><Route path="/4x4-tours" component={FourByFourTours} />
     <Route path="/marrakech-tours" component={MarrakechTours} /><Route path="/fes-tours" component={FesTours} /><Route path="/agadir-tours" component={AgadirTours} /><Route path="/casablanca-tours" component={CasablancaTours} />
-    <Route path="/day-trips" component={DayTrips} /><Route path="/merzouga-guide" component={MerzougaGuide} /><Route path="/merzouga-guide/:slug" component={MerzougaGuideTopic} /><Route path="/comparisons/:slug" component={ComparisonPage} /><Route path="/faq" component={Faq} /><Route path="/blog" component={Blog} /><Route path="/blog/:slug" component={BlogPost} />
+    <Route path="/day-trips" component={DayTrips} /><Route path="/merzouga-guide" component={MerzougaGuide} /><Route path="/merzouga-guide/:slug" component={MerzougaGuideTopic} /><Route path="/comparisons/:slug" component={ComparisonPage} /><Route path="/travel-info" component={TravelInfo} /><Route path="/travel-info/:slug" component={TravelInfoTopic} /><Route path="/faq" component={Faq} /><Route path="/blog" component={Blog} /><Route path="/blog/:slug" component={BlogPost} />
     <Route component={NotFound} />
   </Switch></Suspense></motion.div></AnimatePresence>;
 }
