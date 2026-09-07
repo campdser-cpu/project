@@ -417,6 +417,92 @@
   background-color: #10271b;
 }
 
+/* ── Prerendered static snapshot styling ──────────────────────────────────────
+   The prerender injects a crawlable, no-JS snapshot of each page inside #root
+   (site-tree nav + simplified content + site footer). React replaces this
+   whole subtree on bootstrap, but until then — and permanently if JavaScript
+   ever fails to load — it must render as intentional, styled UI instead of
+   loose plain text. Without these rules the site tree and footer render as
+   browser-default lists, which users reported as stray text below the footer. */
+
+/* Crawlable site tree: kept in the DOM for crawlers and assistive tech, but
+   visually hidden — it duplicates the real navigation. */
+.prerendered-static .prerendered-site-tree {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* Static content: match the design system's typography so the pre-hydration
+   snapshot (and the no-JS experience) reads as intentional page content. */
+.prerendered-static h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.5rem;
+  line-height: 1.15;
+  color: #1c2a24;
+  margin: 1.5rem 0 1rem;
+}
+.prerendered-static h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.75rem;
+  color: #1c2a24;
+  margin: 2rem 0 0.75rem;
+}
+.prerendered-static p {
+  color: #4b5563;
+  line-height: 1.7;
+  margin: 0 0 1rem;
+}
+.prerendered-static img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+/* Site footer: styled as the real footer (dark green / gold) so the page never
+   ends with orphaned link text. */
+.prerendered-static .prerendered-site-footer {
+  background-color: #102a1e;
+  color: #ffffff;
+  padding: 3rem 1.25rem;
+  margin-top: 3rem;
+}
+.prerendered-static .prerendered-site-footer > div {
+  max-width: 72rem;
+  margin: 0 auto;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.prerendered-static .prerendered-site-footer h2 {
+  color: #c9a84c;
+  font-size: 1.125rem;
+  margin: 0 0 1rem;
+}
+.prerendered-static .prerendered-site-footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.prerendered-static .prerendered-site-footer a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 0.875rem;
+}
+.prerendered-static .prerendered-site-footer a:hover {
+  color: #c9a84c;
+}
+
 /* ── Playfair Display (self-hosted serif display font) ─────────────────────────
    @font-face was moved here from an inline <style> in index.html. Removing the
    inline style avoids a Vite/@tailwindcss inline-CSS proxy race that could

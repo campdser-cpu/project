@@ -28,7 +28,7 @@ const check = (ok, msg) => { if (!ok) { fail++; console.log('FAIL:', msg); } };
 function imgIds(html) {
   return [...html.matchAll(/\/images\/catalog\/([a-z0-9-]+?)(?:-480w|-768w)?\.webp/g)].map(m => m[1]);
 }
-function walk(dir, out = []) { for (const e of fs.readdirSync(dir, { withFileTypes: true })) { const f = path.join(dir, e.name); e.isDirectory() ? walk(f, out) : e.name.endsWith('.html') && out.push(f); } return out; }
+function walk(dir, ext = '.html', out = []) { for (const e of fs.readdirSync(dir, { withFileTypes: true })) { const f = path.join(dir, e.name); e.isDirectory() ? walk(f, ext, out) : e.name.endsWith(ext) && out.push(f); } return out; }
 
 // 1. Destination lens grids (en) — exact sequence + food image exactly once
 for (const [dest, expected] of Object.entries(EXPECT)) {
@@ -141,7 +141,97 @@ for (const { tour, forbidden, why } of NEVER_ON_PAGE) {
   }
 }
 
-console.log(fail === 0 ? `\nALL SEMANTIC CHECKS PASS (${files.length} HTML files scanned)` : `\n${fail} CHECK(S) FAILED`);
+// 8. DEPARTURE-HUB SEMANTIC ALLOW-LISTS — the static snapshot of each
+// "Tours from <city>" surface may only display imagery whose subject belongs
+// to that city. This is a subject-based rule, not a filename heuristic: e.g. a
+// Dades Gorge photograph is landscape/gorge imagery and is rejected for
+// Casablanca (an Atlantic imperial city) even if a Casablanca tour happens to
+// pass through Dades. Same protection for Marrakech/Fes/Agadir hubs, and for
+// destination pages whose subject must not be borrowed from another city.
+const HUB_IMAGE_ALLOW = {
+  // Casablanca: Hassan II Mosque, Atlantic/coastal, imperial-context only
+  'tours/from-casablanca': ['dest/casablanca', 'curated/hassan-ii-mosque', 'catalog/hassan-ii-mosque', 'curated/hassan-tower', 'hero/desert-pano'],
+  'tours/from-marrakech': ['dest/marrakech', 'catalog/jemaa-el-fna', 'catalog/menara-gardens', 'catalog/tbourida', 'curated/marrakech-', 'hero/desert-pano'],
+  'tours/from-fes': ['dest/fes', 'curated/chouara-tannery', 'curated/leather-tanning', 'curated/tannery-workers', 'curated/fes-tannery', 'hero/desert-pano'],
+  'tours/from-agadir': ['dest/agadir', 'catalog/medina-agadir', 'hero/desert-pano'],
+  // Subject bans across destination pages: a city page must never borrow
+  // another city's landmark imagery.
+  'destinations/casablanca-bans': ['dest/dades-valley', 'dest/todra-gorge', 'dest/ifrane', 'dest/chefchaouen', 'dest/marrakech.webp', 'dest/merzouga'],
+  'destinations/marrakech-bans': ['dest/dades-valley', 'dest/todra-gorge', 'dest/ifrane', 'dest/chefchaouen', 'dest/casablanca', 'dest/merzouga'],
+  'destinations/chefchaouen-bans': ['dest/casablanca', 'dest/marrakech.webp', 'dest/dades-valley', 'curated/hassan-ii-mosque', 'catalog/hassan-ii-mosque'],
+  'destinations/todra-gorge-bans': ['dest/marrakech.webp', 'dest/casablanca', 'dest/chefchaouen', 'catalog/jemaa-el-fna', 'catalog/menara-gardens'],
+  'destinations/merzouga-bans': ['dest/casablanca', 'dest/chefchaouen', 'catalog/jemaa-el-fna', 'catalog/menara-gardens'],
+  'destinations/ait-ben-haddou-bans': ['dest/casablanca', 'dest/chefchaouen', 'catalog/jemaa-el-fna', 'catalog/menara-gardens'],
+  'destinations/ifrane-bans': ['dest/marrakech.webp', 'dest/casablanca', 'catalog/jemaa-el-fna', 'catalog/menara-gardens'],
+};
+for (const [key, patterns] of Object.entries(HUB_IMAGE_ALLOW)) {
+  const isBan = key.endsWith('-bans');
+  const pagePath = isBan ? key.replace('-bans', '') : key;
+  const f = fs.existsSync(path.join(D, 'en', pagePath + '.html')) ? path.join(D, 'en', pagePath + '.html') : path.join(D, 'en', pagePath, 'index.html');
+  if (!fs.existsSync(f)) { check(false, 'semantic-allow page missing: ' + pagePath); continue; }
+  const html = fs.readFileSync(f, 'utf8');
+  const matches = html.matchAll(/\/images\/([a-z0-9\/._-]+?\.(?:webp|jpg))/g);
+  const imgs = [...new Set([...matches].map(m => m[1].replace(/-480w|-768w/g, '')))];
+  for (const img of imgs) {
+    if (isBan) {
+      const bad = patterns.find(p => img.includes(p));
+      check(!bad, `${pagePath}: wrong-subject image "${img}" (matches banned subject "${bad}")`);
+    } else {
+      const ok = patterns.some(p => img.includes(p));
+      check(ok, `${pagePath}: image "${img}" does not belong to this city's subject set [${patterns.join(', ')}]`);
+    }
+  }
+}
+
+// 8b. DURATION-HUB OG:IMAGE — each `/tours/from-<city>/<N>-days` departure page
+// must carry an og:image that reflects its *own* departure city. Guards the
+// historical bug where every duration page fell back to a generic
+// `dest/merzouga.jpg` regardless of city (wrong for Casablanca / Fes / etc.).
+const DURATION_CITY_IMAGE = {
+  casablanca: 'dest/casablanca',
+  fes: 'dest/fes',
+  marrakech: 'dest/marrakech',
+  agadir: 'dest/agadir',
+};
+for (const [city, wantImg] of Object.entries(DURATION_CITY_IMAGE)) {
+  const hubDir = path.join(D, 'en', 'tours', 'from-' + city);
+  if (!fs.existsSync(hubDir)) { check(false, 'duration-hub missing: from-' + city); continue; }
+  let scanned = 0;
+  for (const dayF of fs.readdirSync(hubDir)) {
+    if (!/^\d+-days$/.test(dayF)) continue;
+    const f = path.join(hubDir, dayF, 'index.html');
+    if (!fs.existsSync(f)) { check(false, `duration page missing: from-${city}/${dayF}/index.html`); continue; }
+    const html = fs.readFileSync(f, 'utf8');
+    const og = html.match(/<meta[^>]+property="og:image"[^>]+content="([^"]+)"/);
+    const ogUrl = og ? og[1] : '';
+    check(ogUrl.includes(wantImg), `from-${city}/${dayF}: og:image ("${ogUrl}") does not match departure city (expected ${wantImg})`);
+    check(!ogUrl.includes('dest/merzouga'), `from-${city}/${dayF}: og:image still uses generic Merzouga stand-in ("${ogUrl}")`);
+    scanned++;
+  }
+  check(scanned > 0, `from-${city}: no <N>-days duration pages found to audit`);
+}
+
+// 9. POST-FOOTER STRUCTURE — no orphaned text/elements after the intentional
+// footer. The only permitted content between the last </footer> and </body>
+// is the <noscript> accessibility fallback (hidden when JS runs).
+const CSS_FILES = walk(path.join(D, 'assets'), '.css');
+const allCss = CSS_FILES.map(f => fs.readFileSync(f, 'utf8')).join('\n');
+check(allCss.includes('.prerendered-site-tree'), 'CSS missing .prerendered-site-tree rules (prerender scaffold would render as loose text)');
+check(allCss.includes('.prerendered-site-footer'), 'CSS missing .prerendered-site-footer rules (prerender scaffold would render as loose text)');
+const AFTER_FOOTER_RE = /<\/footer>\s*([\s\S]*?)<\/body>/i;
+for (const f of files) {
+  const html = fs.readFileSync(f, 'utf8');
+  if (!html.includes('prerendered-static')) continue; // root shell / 404 / utility pages have no prerendered footer
+  const footers = (html.match(/<\/footer>/gi) || []).length;
+  check(footers === 1, path.relative(D, f) + `: expected exactly 1 footer, found ${footers}`);
+  const lastFooter = html.lastIndexOf('</footer>');
+  const bodyClose = html.lastIndexOf('</body>');
+  if (lastFooter < 0 || bodyClose < 0) { check(false, path.relative(D, f) + ': no </footer> before </body>'); continue; }
+  // Only the noscript fallback and the closing wrapper </div>s may follow.
+  let tail = html.slice(lastFooter + 9, bodyClose).replace(/<noscript>[\s\S]*?<\/noscript>/gi, '');
+  tail = tail.replace(/<\/div>/gi, '').trim();
+  check(tail.length === 0, path.relative(D, f) + ': unexpected content after footer: ' + tail.slice(0, 120));
+}
 
 console.log(fail === 0 ? `\nALL SEMANTIC CHECKS PASS (${files.length} HTML files scanned)` : `\n${fail} CHECK(S) FAILED`);
 process.exit(fail === 0 ? 0 : 1);

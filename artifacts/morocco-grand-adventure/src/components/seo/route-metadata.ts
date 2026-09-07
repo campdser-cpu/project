@@ -101,7 +101,7 @@ export const routeMetadata: Record<string, RouteMeta> = {
   '/tours/from-casablanca':{title:'Tours From Casablanca â€” Private Morocco Itineraries',description:'Plan a private Morocco itinerary starting in Casablanca.',ogImage:'/images/dest/casablanca.jpg'},
   '/tours/from-fes':{title:'Tours From Fes â€” Private Morocco & Sahara Tours',description:'Private tours from Fes including imperial cities, Chefchaouen and Sahara routes.',ogImage:'/images/dest/fes.jpg'},
   '/tours/from-agadir':{title:'Tours From Agadir â€” Coast & Sahara Private Tours',description:'Private Morocco journeys starting in Agadir and exploring the Atlantic coast and south.',ogImage:'/images/dest/agadir.jpg'},
-  '/tours/from-marrakech/3-days':{title:'3-Day Tours From Marrakech â€” Sahara Desert & Merzouga',description:'Explore the High Atlas, AÃ¯t Ben Haddou, Dades Valley and Merzouga on a three-day route.',ogImage:'/images/dest/merzouga.jpg'},
+  '/tours/from-marrakech/3-days':{title:'3-Day Tours From Marrakech â€” Sahara Desert & Merzouga',description:'Explore the High Atlas, AÃ¯t Ben Haddou, Dades Valley and Merzouga on a three-day route.',ogImage:'/images/dest/marrakech.jpg'},
   '/gallery':{title:'Morocco Photo & Video Gallery â€” Sahara & Morocco',description:'Photos and videos from Moroccoâ€™s Sahara, medinas, mountains and desert camps.',ogImage:'/images/hero/medina-pano.jpg'},
   '/trip-builder':{title:'Custom Morocco Itinerary Builder',description:'Choose your dates, route and travel style to build a custom Morocco itinerary â€” then request a personalised quote from our local team.',ogImage:'/images/personal/luxury-camp-dusk.jpg'},
   '/build-your-day-trip':{title:'Build Your Day Trip in Morocco â€” One-Day Experiences',description:'Plan a personalized one-day Morocco experience with same-day return. Choose your departure, destination, date and preferences.',ogImage:'/images/dest/ouzoud.jpg'},
@@ -154,7 +154,12 @@ export function getRouteMeta(rest:string):RouteMeta {
   if (duration) {
     const cityLabel = duration[1][0].toUpperCase() + duration[1].slice(1);
     const daysLabel = `${duration[2]}-Day`;
-    return { title:`${daysLabel} Tours From ${cityLabel} â€” Private Morocco Itineraries`, description:`Private ${duration[2]}-day Morocco tours from ${cityLabel} â€” the Sahara, imperial cities and the Atlas. Pick your pace and plan a tailored departure with local experts.`, ogImage:'/images/dest/merzouga.jpg' };
+    // OG image must reflect the *departure city*, not a blanket Merzouga default.
+    // Reuse each city's canonical destination image so a Casablanca departure
+    // page never shows a Sahara stand-in (falls back to Merzouga only for an
+    // unrecognised city).
+    const cityImage = DESTINATION_META[duration[1]]?.ogImage ?? '/images/dest/merzouga.jpg';
+    return { title:`${daysLabel} Tours From ${cityLabel} â€” Private Morocco Itineraries`, description:`Private ${duration[2]}-day Morocco tours from ${cityLabel} â€” the Sahara, imperial cities and the Atlas. Pick your pace and plan a tailored departure with local experts.`, ogImage: cityImage };
   }
   const tour = normalized.match(/^\/tours\/([^/]+)$/);
   if (tour) { const meta=TOUR_META[TOUR_ALIASES[tour[1]] ?? tour[1]]; if(meta) return meta; }
