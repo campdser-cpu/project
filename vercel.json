@@ -5,93 +5,2341 @@
   "outputDirectory": "artifacts/morocco-grand-adventure/dist",
   "cleanUrls": true,
   "redirects": [
-    { "source": "/:lang/tours-from-marrakech", "destination": "/:lang/tours/from-marrakech", "permanent": true },
-    { "source": "/:lang/tours-from-fes", "destination": "/:lang/tours/from-fes", "permanent": true },
-    { "source": "/:lang/tours-from-casablanca", "destination": "/:lang/tours/from-casablanca", "permanent": true },
-    { "source": "/:lang/tours-from-agadir", "destination": "/:lang/tours/from-agadir", "permanent": true },
-    { "source": "/:lang/two-day-tours-from-marrakech", "destination": "/:lang/tours/from-marrakech/2-days", "permanent": true },
-    { "source": "/:lang/three-day-tours-from-marrakech", "destination": "/:lang/tours/from-marrakech/3-days", "permanent": true },
-    { "source": "/:lang/four-day-tours-from-marrakech", "destination": "/:lang/tours/from-marrakech/4-days", "permanent": true },
-    { "source": "/:lang/five-day-tours-from-marrakech", "destination": "/:lang/tours/from-marrakech/5-days", "permanent": true },
-    { "source": "/book", "destination": "/en/trip-builder", "permanent": false },
-    { "source": "/en/book", "destination": "/en/trip-builder", "permanent": false },
-    { "source": "/fr/book", "destination": "/fr/trip-builder", "permanent": false },
-    { "source": "/es/book", "destination": "/es/trip-builder", "permanent": false },
-    { "source": "/it/book", "destination": "/it/trip-builder", "permanent": false },
-    { "source": "/de/book", "destination": "/de/trip-builder", "permanent": false },
-    { "source": "/nl/book", "destination": "/nl/trip-builder", "permanent": false },
-    { "source": "/pt/book", "destination": "/pt/trip-builder", "permanent": false },
-    { "source": "/zh/book", "destination": "/zh/trip-builder", "permanent": false },
-    { "source": "/ja/book", "destination": "/ja/trip-builder", "permanent": false },
-    { "source": "/ko/book", "destination": "/ko/trip-builder", "permanent": false },
-    { "source": "/ar/book", "destination": "/ar/trip-builder", "permanent": false },
-    { "source": "/:lang/tours/from-marrakech/2", "destination": "/:lang/tours/from-marrakech/2-days", "permanent": true },
-    { "source": "/:lang/tours/from-marrakech/3", "destination": "/:lang/tours/from-marrakech/3-days", "permanent": true },
-    { "source": "/:lang/tours/from-marrakech/4", "destination": "/:lang/tours/from-marrakech/4-days", "permanent": true },
-    { "source": "/:lang/tours/from-marrakech/5", "destination": "/:lang/tours/from-marrakech/5-days", "permanent": true },
-    { "source": "/:lang/tours/from-marrakech/6", "destination": "/:lang/tours/from-marrakech/6-days", "permanent": true },
-    { "source": "/:lang/tours/from-marrakech/7", "destination": "/:lang/tours/from-marrakech/7-days", "permanent": true },
-    { "source": "/:lang/tours/from-marrakech/8", "destination": "/:lang/tours/from-marrakech/8-days", "permanent": true },
-    { "source": "/:lang/tours/from-marrakech/9", "destination": "/:lang/tours/from-marrakech/9-days", "permanent": true },
-    { "source": "/:lang/tours/from-marrakech/10", "destination": "/:lang/tours/from-marrakech/10-days", "permanent": true },
-    { "source": "/:lang/tours/from-casablanca/3", "destination": "/:lang/tours/from-casablanca/3-days", "permanent": true },
-    { "source": "/:lang/tours/from-casablanca/4", "destination": "/:lang/tours/from-casablanca/4-days", "permanent": true },
-    { "source": "/:lang/tours/from-casablanca/5", "destination": "/:lang/tours/from-casablanca/5-days", "permanent": true },
-    { "source": "/:lang/tours/from-casablanca/6", "destination": "/:lang/tours/from-casablanca/6-days", "permanent": true },
-    { "source": "/:lang/tours/from-casablanca/7", "destination": "/:lang/tours/from-casablanca/7-days", "permanent": true },
-    { "source": "/:lang/tours/from-casablanca/8", "destination": "/:lang/tours/from-casablanca/8-days", "permanent": true },
-    { "source": "/:lang/tours/from-fes/3", "destination": "/:lang/tours/from-fes/3-days", "permanent": true },
-    { "source": "/:lang/tours/from-fes/4", "destination": "/:lang/tours/from-fes/4-days", "permanent": true },
-    { "source": "/:lang/tours/from-fes/5", "destination": "/:lang/tours/from-fes/5-days", "permanent": true },
-    { "source": "/:lang/tours/from-fes/6", "destination": "/:lang/tours/from-fes/6-days", "permanent": true },
-    { "source": "/:lang/tours/from-fes/7", "destination": "/:lang/tours/from-fes/7-days", "permanent": true },
-    { "source": "/:lang/tours/from-fes/8", "destination": "/:lang/tours/from-fes/8-days", "permanent": true },
-    { "source": "/:lang/tours/from-agadir/3", "destination": "/:lang/tours/from-agadir/3-days", "permanent": true },
-    { "source": "/:lang/tours/from-agadir/4", "destination": "/:lang/tours/from-agadir/4-days", "permanent": true },
-    { "source": "/:lang/tours/from-agadir/5", "destination": "/:lang/tours/from-agadir/5-days", "permanent": true },
-    { "source": "/:lang/tours/from-agadir/6", "destination": "/:lang/tours/from-agadir/6-days", "permanent": true },
-    { "source": "/:lang/tours/from-agadir/7", "destination": "/:lang/tours/from-agadir/7-days", "permanent": true },
-    { "source": "/:lang/tours/from-agadir/8", "destination": "/:lang/tours/from-agadir/8-days", "permanent": true },
-    { "source": "/:lang/tours-from-marrakech", "destination": "/:lang/tours/from-marrakech", "permanent": true },
-    { "source": "/:lang/tours-from-fes", "destination": "/:lang/tours/from-fes", "permanent": true },
-    { "source": "/:lang/tours-from-agadir", "destination": "/:lang/tours/from-agadir", "permanent": true },
-    { "source": "/:lang/tours-from-casablanca", "destination": "/:lang/tours/from-casablanca", "permanent": true },
-    { "source": "/:lang/three-day-tours-from-marrakech", "destination": "/:lang/tours/from-marrakech/3-days", "permanent": true },
-    { "source": "/:lang/three-day-tours-from-fes", "destination": "/:lang/tours/from-fes/3-days", "permanent": true },
-    { "source": "/:lang/three-day-tours-from-agadir", "destination": "/:lang/tours/from-agadir/3-days", "permanent": true },
-    { "source": "/:lang/three-day-tours-from-casablanca", "destination": "/:lang/tours/from-casablanca/3-days", "permanent": true },
-    { "source": "/:lang/tours/3-days-marrakech-to-merzouga-desert-tour", "destination": "/:lang/tours/3-day-sahara-marrakech", "permanent": true },
-    { "source": "/:lang/tours/3-days-fes-to-marrakech-desert-tour", "destination": "/:lang/tours/4-day-fes-marrakech-via-merzouga", "permanent": true },
-    { "source": "/:lang/tours/merzouga-desert-tour", "destination": "/:lang/tours/3-day-sahara-marrakech", "permanent": true },
-    { "source": "/:lang/tours/morocco-desert-tour", "destination": "/:lang/tours/7-day-imperial-cities-sahara-escape", "permanent": true },
-    { "source": "/:lang/tours/marrakech-3-day", "destination": "/:lang/tours/3-day-sahara-marrakech", "permanent": true },
-    { "source": "/:lang/tours/marrakech-5-day", "destination": "/:lang/tours/5-day-imperial-cities", "permanent": true },
-    { "source": "/:lang/tours/marrakech-8-day", "destination": "/:lang/tours/8-day-marrakech-essaouira-agadir-sahara", "permanent": true },
-    { "source": "/:lang/tours/fes-3-day", "destination": "/:lang/tours/3-day-sahara-fes", "permanent": true },
-    { "source": "/:lang/tours/agadir-3-day", "destination": "/:lang/tours/3-day-sahara-agadir", "permanent": true },
-    { "source": "/(.*)", "has": [{ "type": "header", "key": "accept-language", "value": "^ar([-_;,]|$)" }], "destination": "/ar", "permanent": false },
-    { "source": "/(.*)", "has": [{ "type": "header", "key": "accept-language", "value": "^de([-_;,]|$)" }], "destination": "/de", "permanent": false },
-    { "source": "/(.*)", "has": [{ "type": "header", "key": "accept-language", "value": "^es([-_;,]|$)" }], "destination": "/es", "permanent": false },
-    { "source": "/(.*)", "has": [{ "type": "header", "key": "accept-language", "value": "^fr([-_;,]|$)" }], "destination": "/fr", "permanent": false },
-    { "source": "/(.*)", "has": [{ "type": "header", "key": "accept-language", "value": "^it([-_;,]|$)" }], "destination": "/it", "permanent": false },
-    { "source": "/(.*)", "has": [{ "type": "header", "key": "accept-language", "value": "^ja([-_;,]|$)" }], "destination": "/ja", "permanent": false },
-    { "source": "/(.*)", "has": [{ "type": "header", "key": "accept-language", "value": "^ko([-_;,]|$)" }], "destination": "/ko", "permanent": false },
-    { "source": "/(.*)", "has": [{ "type": "header", "key": "accept-language", "value": "^nl([-_;,]|$)" }], "destination": "/nl", "permanent": false },
-    { "source": "/(.*)", "has": [{ "type": "header", "key": "accept-language", "value": "^pt([-_;,]|$)" }], "destination": "/pt", "permanent": false },
-    { "source": "/(.*)", "has": [{ "type": "header", "key": "accept-language", "value": "^zh([-_;,]|$)" }], "destination": "/zh", "permanent": false },
-    { "source": "/", "destination": "/en", "permanent": false }
+    {
+      "source": "/:lang/tours-from-marrakech",
+      "destination": "/:lang/tours/from-marrakech",
+      "permanent": true
+    },
+    {
+      "source": "/:lang/tours-from-fes",
+      "destination": "/:lang/tours/from-fes",
+      "permanent": true
+    },
+    {
+      "source": "/:lang/tours-from-casablanca",
+      "destination": "/:lang/tours/from-casablanca",
+      "permanent": true
+    },
+    {
+      "source": "/:lang/tours-from-agadir",
+      "destination": "/:lang/tours/from-agadir",
+      "permanent": true
+    },
+    {
+      "source": "/:lang/two-day-tours-from-marrakech",
+      "destination": "/:lang/tours/from-marrakech/2-days",
+      "permanent": true
+    },
+    {
+      "source": "/:lang/three-day-tours-from-marrakech",
+      "destination": "/:lang/tours/from-marrakech/3-days",
+      "permanent": true
+    },
+    {
+      "source": "/:lang/four-day-tours-from-marrakech",
+      "destination": "/:lang/tours/from-marrakech/4-days",
+      "permanent": true
+    },
+    {
+      "source": "/:lang/five-day-tours-from-marrakech",
+      "destination": "/:lang/tours/from-marrakech/5-days",
+      "permanent": true
+    },
+    {
+      "source": "/book",
+      "destination": "/en/trip-builder",
+      "permanent": false
+    },
+    {
+      "source": "/en/book",
+      "destination": "/en/trip-builder",
+      "permanent": false
+    },
+    {
+      "source": "/fr/book",
+      "destination": "/fr/trip-builder",
+      "permanent": false
+    },
+    {
+      "source": "/es/book",
+      "destination": "/es/trip-builder",
+      "permanent": false
+    },
+    {
+      "source": "/it/book",
+      "destination": "/it/trip-builder",
+      "permanent": false
+    },
+    {
+      "source": "/de/book",
+      "destination": "/de/trip-builder",
+      "permanent": false
+    },
+    {
+      "source": "/nl/book",
+      "destination": "/nl/trip-builder",
+      "permanent": false
+    },
+    {
+      "source": "/pt/book",
+      "destination": "/pt/trip-builder",
+      "permanent": false
+    },
+    {
+      "source": "/zh/book",
+      "destination": "/zh/trip-builder",
+      "permanent": false
+    },
+    {
+      "source": "/ja/book",
+      "destination": "/ja/trip-builder",
+      "permanent": false
+    },
+    {
+      "source": "/ko/book",
+      "destination": "/ko/trip-builder",
+      "permanent": false
+    },
+    {
+      "source": "/ar/book",
+      "destination": "/ar/trip-builder",
+      "permanent": false
+    },
+    {
+      "source": "/:lang/tours/from-marrakech/2",
+      "destination": "/:lang/tours/from-marrakech/2-days",
+      "permanent": true
+    },
+    {
+      "source": "/:lang/tours/from-marrakech/3",
+      "destination": "/:lang/tours/from-marrakech/3-days",
+      "permanent": true
+    },
+    {
+      "source": "/:lang/tours/from-marrakech/4",
+      "destination": "/:lang/tours/from-marrakech/4-days",
+      "permanent": true
+    },
+    {
+      "source": "/:lang/tours/from-marrakech/5",
+      "destination": "/:lang/tours/from-marrakech/5-days",
+      "permanent": true
+    },
+    {
+      "source": "/:lang/tours/from-marrakech/6",
+      "destination": "/:lang/tours/from-marrakech/6-days",
+      "permanent": true
+    },
+    {
+      "source": "/:lang/tours/from-marrakech/7",
+      "destination": "/:lang/tours/from-marrakech/7-days",
+      "permanent": true
+    },
+    {
+      "source": "/:lang/tours/from-marrakech/8",
+      "destination": "/:lang/tours/from-marrakech/8-days",
+      "permanent": true
+    },
+    {
+      "source": "/:lang/tours/from-marrakech/9",
+      "destination": "/:lang/tours/from-marrakech/9-days",
+      "permanent": true
+    },
+    {
+      "source": "/:lang/tours/from-marrakech/10",
+      "destination": "/:lang/tours/from-marrakech/10-days",
+      "permanent": true
+    },
+    {
+      "source": "/:lang/tours/from-casablanca/3",
+      "destination": "/:lang/tours/from-casablanca/3-days",
+      "permanent": true
+    },
+    {
+      "source": "/:lang/tours/from-casablanca/4",
+      "destination": "/:lang/tours/from-casablanca/4-days",
+      "permanent": true
+    },
+    {
+      "source": "/:lang/tours/from-casablanca/5",
+      "destination": "/:lang/tours/from-casablanca/5-days",
+      "permanent": true
+    },
+    {
+      "source": "/:lang/tours/from-casablanca/6",
+      "destination": "/:lang/tours/from-casablanca/6-days",
+      "permanent": true
+    },
+    {
+      "source": "/:lang/tours/from-casablanca/7",
+      "destination": "/:lang/tours/from-casablanca/7-days",
+      "permanent": true
+    },
+    {
+      "source": "/:lang/tours/from-casablanca/8",
+      "destination": "/:lang/tours/from-casablanca/8-days",
+      "permanent": true
+    },
+    {
+      "source": "/:lang/tours/from-fes/3",
+      "destination": "/:lang/tours/from-fes/3-days",
+      "permanent": true
+    },
+    {
+      "source": "/:lang/tours/from-fes/4",
+      "destination": "/:lang/tours/from-fes/4-days",
+      "permanent": true
+    },
+    {
+      "source": "/:lang/tours/from-fes/5",
+      "destination": "/:lang/tours/from-fes/5-days",
+      "permanent": true
+    },
+    {
+      "source": "/:lang/tours/from-fes/6",
+      "destination": "/:lang/tours/from-fes/6-days",
+      "permanent": true
+    },
+    {
+      "source": "/:lang/tours/from-fes/7",
+      "destination": "/:lang/tours/from-fes/7-days",
+      "permanent": true
+    },
+    {
+      "source": "/:lang/tours/from-fes/8",
+      "destination": "/:lang/tours/from-fes/8-days",
+      "permanent": true
+    },
+    {
+      "source": "/:lang/tours/from-agadir/3",
+      "destination": "/:lang/tours/from-agadir/3-days",
+      "permanent": true
+    },
+    {
+      "source": "/:lang/tours/from-agadir/4",
+      "destination": "/:lang/tours/from-agadir/4-days",
+      "permanent": true
+    },
+    {
+      "source": "/:lang/tours/from-agadir/5",
+      "destination": "/:lang/tours/from-agadir/5-days",
+      "permanent": true
+    },
+    {
+      "source": "/:lang/tours/from-agadir/6",
+      "destination": "/:lang/tours/from-agadir/6-days",
+      "permanent": true
+    },
+    {
+      "source": "/:lang/tours/from-agadir/7",
+      "destination": "/:lang/tours/from-agadir/7-days",
+      "permanent": true
+    },
+    {
+      "source": "/:lang/tours/from-agadir/8",
+      "destination": "/:lang/tours/from-agadir/8-days",
+      "permanent": true
+    },
+    {
+      "source": "/:lang/tours-from-marrakech",
+      "destination": "/:lang/tours/from-marrakech",
+      "permanent": true
+    },
+    {
+      "source": "/:lang/tours-from-fes",
+      "destination": "/:lang/tours/from-fes",
+      "permanent": true
+    },
+    {
+      "source": "/:lang/tours-from-agadir",
+      "destination": "/:lang/tours/from-agadir",
+      "permanent": true
+    },
+    {
+      "source": "/:lang/tours-from-casablanca",
+      "destination": "/:lang/tours/from-casablanca",
+      "permanent": true
+    },
+    {
+      "source": "/:lang/three-day-tours-from-marrakech",
+      "destination": "/:lang/tours/from-marrakech/3-days",
+      "permanent": true
+    },
+    {
+      "source": "/:lang/three-day-tours-from-fes",
+      "destination": "/:lang/tours/from-fes/3-days",
+      "permanent": true
+    },
+    {
+      "source": "/:lang/three-day-tours-from-agadir",
+      "destination": "/:lang/tours/from-agadir/3-days",
+      "permanent": true
+    },
+    {
+      "source": "/:lang/three-day-tours-from-casablanca",
+      "destination": "/:lang/tours/from-casablanca/3-days",
+      "permanent": true
+    },
+    {
+      "source": "/:lang/tours/3-days-marrakech-to-merzouga-desert-tour",
+      "destination": "/:lang/tours/3-day-sahara-marrakech",
+      "permanent": true
+    },
+    {
+      "source": "/:lang/tours/3-days-fes-to-marrakech-desert-tour",
+      "destination": "/:lang/tours/4-day-fes-marrakech-via-merzouga",
+      "permanent": true
+    },
+    {
+      "source": "/:lang/tours/merzouga-desert-tour",
+      "destination": "/:lang/tours/3-day-sahara-marrakech",
+      "permanent": true
+    },
+    {
+      "source": "/:lang/tours/morocco-desert-tour",
+      "destination": "/:lang/tours/7-day-imperial-cities-sahara-escape",
+      "permanent": true
+    },
+    {
+      "source": "/:lang/tours/marrakech-3-day",
+      "destination": "/:lang/tours/3-day-sahara-marrakech",
+      "permanent": true
+    },
+    {
+      "source": "/:lang/tours/marrakech-5-day",
+      "destination": "/:lang/tours/5-day-imperial-cities",
+      "permanent": true
+    },
+    {
+      "source": "/:lang/tours/marrakech-8-day",
+      "destination": "/:lang/tours/8-day-marrakech-essaouira-agadir-sahara",
+      "permanent": true
+    },
+    {
+      "source": "/:lang/tours/fes-3-day",
+      "destination": "/:lang/tours/3-day-sahara-fes",
+      "permanent": true
+    },
+    {
+      "source": "/:lang/tours/agadir-3-day",
+      "destination": "/:lang/tours/3-day-sahara-agadir",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ar([-_;,]|$)"
+        }
+      ],
+      "destination": "/ar",
+      "permanent": false
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^de([-_;,]|$)"
+        }
+      ],
+      "destination": "/de",
+      "permanent": false
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^es([-_;,]|$)"
+        }
+      ],
+      "destination": "/es",
+      "permanent": false
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^fr([-_;,]|$)"
+        }
+      ],
+      "destination": "/fr",
+      "permanent": false
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^it([-_;,]|$)"
+        }
+      ],
+      "destination": "/it",
+      "permanent": false
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ja([-_;,]|$)"
+        }
+      ],
+      "destination": "/ja",
+      "permanent": false
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^ko([-_;,]|$)"
+        }
+      ],
+      "destination": "/ko",
+      "permanent": false
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^nl([-_;,]|$)"
+        }
+      ],
+      "destination": "/nl",
+      "permanent": false
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^pt([-_;,]|$)"
+        }
+      ],
+      "destination": "/pt",
+      "permanent": false
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^zh([-_;,]|$)"
+        }
+      ],
+      "destination": "/zh",
+      "permanent": false
+    },
+    {
+      "source": "/",
+      "destination": "/en",
+      "permanent": false
+    },
+    {
+      "source": "/es/destinos",
+      "destination": "/es/destinations",
+      "permanent": true
+    },
+    {
+      "source": "/es/destinos/:rest*",
+      "destination": "/es/destinations/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/it/destinazioni",
+      "destination": "/it/destinations",
+      "permanent": true
+    },
+    {
+      "source": "/it/destinazioni/:rest*",
+      "destination": "/it/destinations/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/de/reiseziele",
+      "destination": "/de/destinations",
+      "permanent": true
+    },
+    {
+      "source": "/de/reiseziele/:rest*",
+      "destination": "/de/destinations/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/nl/bestemmingen",
+      "destination": "/nl/destinations",
+      "permanent": true
+    },
+    {
+      "source": "/nl/bestemmingen/:rest*",
+      "destination": "/nl/destinations/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/pt/destinos",
+      "destination": "/pt/destinations",
+      "permanent": true
+    },
+    {
+      "source": "/pt/destinos/:rest*",
+      "destination": "/pt/destinations/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/zh/目的地",
+      "destination": "/zh/destinations",
+      "permanent": true
+    },
+    {
+      "source": "/zh/目的地/:rest*",
+      "destination": "/zh/destinations/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ja/目的地",
+      "destination": "/ja/destinations",
+      "permanent": true
+    },
+    {
+      "source": "/ja/目的地/:rest*",
+      "destination": "/ja/destinations/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ko/목적지",
+      "destination": "/ko/destinations",
+      "permanent": true
+    },
+    {
+      "source": "/ko/목적지/:rest*",
+      "destination": "/ko/destinations/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ar/الوجهات",
+      "destination": "/ar/destinations",
+      "permanent": true
+    },
+    {
+      "source": "/ar/الوجهات/:rest*",
+      "destination": "/ar/destinations/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/fr/circuits",
+      "destination": "/fr/tours",
+      "permanent": true
+    },
+    {
+      "source": "/fr/circuits/:rest*",
+      "destination": "/fr/tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/es/circuitos",
+      "destination": "/es/tours",
+      "permanent": true
+    },
+    {
+      "source": "/es/circuitos/:rest*",
+      "destination": "/es/tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/it/tour",
+      "destination": "/it/tours",
+      "permanent": true
+    },
+    {
+      "source": "/it/tour/:rest*",
+      "destination": "/it/tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/de/rundreisen",
+      "destination": "/de/tours",
+      "permanent": true
+    },
+    {
+      "source": "/de/rundreisen/:rest*",
+      "destination": "/de/tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/nl/rondreizen",
+      "destination": "/nl/tours",
+      "permanent": true
+    },
+    {
+      "source": "/nl/rondreizen/:rest*",
+      "destination": "/nl/tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/zh/旅游线路",
+      "destination": "/zh/tours",
+      "permanent": true
+    },
+    {
+      "source": "/zh/旅游线路/:rest*",
+      "destination": "/zh/tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ja/ツアー",
+      "destination": "/ja/tours",
+      "permanent": true
+    },
+    {
+      "source": "/ja/ツアー/:rest*",
+      "destination": "/ja/tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ko/투어",
+      "destination": "/ko/tours",
+      "permanent": true
+    },
+    {
+      "source": "/ko/투어/:rest*",
+      "destination": "/ko/tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ar/الجولات",
+      "destination": "/ar/tours",
+      "permanent": true
+    },
+    {
+      "source": "/ar/الجولات/:rest*",
+      "destination": "/ar/tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/fr/galerie",
+      "destination": "/fr/gallery",
+      "permanent": true
+    },
+    {
+      "source": "/fr/galerie/:rest*",
+      "destination": "/fr/gallery/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/es/galeria",
+      "destination": "/es/gallery",
+      "permanent": true
+    },
+    {
+      "source": "/es/galeria/:rest*",
+      "destination": "/es/gallery/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/it/galleria",
+      "destination": "/it/gallery",
+      "permanent": true
+    },
+    {
+      "source": "/it/galleria/:rest*",
+      "destination": "/it/gallery/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/de/galerie",
+      "destination": "/de/gallery",
+      "permanent": true
+    },
+    {
+      "source": "/de/galerie/:rest*",
+      "destination": "/de/gallery/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/nl/galerij",
+      "destination": "/nl/gallery",
+      "permanent": true
+    },
+    {
+      "source": "/nl/galerij/:rest*",
+      "destination": "/nl/gallery/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/pt/galeria",
+      "destination": "/pt/gallery",
+      "permanent": true
+    },
+    {
+      "source": "/pt/galeria/:rest*",
+      "destination": "/pt/gallery/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/zh/图库",
+      "destination": "/zh/gallery",
+      "permanent": true
+    },
+    {
+      "source": "/zh/图库/:rest*",
+      "destination": "/zh/gallery/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ja/ギャラリー",
+      "destination": "/ja/gallery",
+      "permanent": true
+    },
+    {
+      "source": "/ja/ギャラリー/:rest*",
+      "destination": "/ja/gallery/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ko/갤러리",
+      "destination": "/ko/gallery",
+      "permanent": true
+    },
+    {
+      "source": "/ko/갤러리/:rest*",
+      "destination": "/ko/gallery/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ar/المعرض",
+      "destination": "/ar/gallery",
+      "permanent": true
+    },
+    {
+      "source": "/ar/المعرض/:rest*",
+      "destination": "/ar/gallery/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/fr/a-propos",
+      "destination": "/fr/about",
+      "permanent": true
+    },
+    {
+      "source": "/fr/a-propos/:rest*",
+      "destination": "/fr/about/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/es/sobre-nosotros",
+      "destination": "/es/about",
+      "permanent": true
+    },
+    {
+      "source": "/es/sobre-nosotros/:rest*",
+      "destination": "/es/about/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/it/chi-siamo",
+      "destination": "/it/about",
+      "permanent": true
+    },
+    {
+      "source": "/it/chi-siamo/:rest*",
+      "destination": "/it/about/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/de/ueber-uns",
+      "destination": "/de/about",
+      "permanent": true
+    },
+    {
+      "source": "/de/ueber-uns/:rest*",
+      "destination": "/de/about/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/nl/over-ons",
+      "destination": "/nl/about",
+      "permanent": true
+    },
+    {
+      "source": "/nl/over-ons/:rest*",
+      "destination": "/nl/about/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/pt/sobre-nos",
+      "destination": "/pt/about",
+      "permanent": true
+    },
+    {
+      "source": "/pt/sobre-nos/:rest*",
+      "destination": "/pt/about/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/zh/关于我们",
+      "destination": "/zh/about",
+      "permanent": true
+    },
+    {
+      "source": "/zh/关于我们/:rest*",
+      "destination": "/zh/about/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ja/私たちについて",
+      "destination": "/ja/about",
+      "permanent": true
+    },
+    {
+      "source": "/ja/私たちについて/:rest*",
+      "destination": "/ja/about/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ko/회사소개",
+      "destination": "/ko/about",
+      "permanent": true
+    },
+    {
+      "source": "/ko/회사소개/:rest*",
+      "destination": "/ko/about/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ar/من-نحن",
+      "destination": "/ar/about",
+      "permanent": true
+    },
+    {
+      "source": "/ar/من-نحن/:rest*",
+      "destination": "/ar/about/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/es/contacto",
+      "destination": "/es/contact",
+      "permanent": true
+    },
+    {
+      "source": "/es/contacto/:rest*",
+      "destination": "/es/contact/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/it/contatti",
+      "destination": "/it/contact",
+      "permanent": true
+    },
+    {
+      "source": "/it/contatti/:rest*",
+      "destination": "/it/contact/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/de/kontakt",
+      "destination": "/de/contact",
+      "permanent": true
+    },
+    {
+      "source": "/de/kontakt/:rest*",
+      "destination": "/de/contact/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/pt/contacto",
+      "destination": "/pt/contact",
+      "permanent": true
+    },
+    {
+      "source": "/pt/contacto/:rest*",
+      "destination": "/pt/contact/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/zh/联系",
+      "destination": "/zh/contact",
+      "permanent": true
+    },
+    {
+      "source": "/zh/联系/:rest*",
+      "destination": "/zh/contact/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ja/お問い合わせ",
+      "destination": "/ja/contact",
+      "permanent": true
+    },
+    {
+      "source": "/ja/お問い合わせ/:rest*",
+      "destination": "/ja/contact/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ko/연락처",
+      "destination": "/ko/contact",
+      "permanent": true
+    },
+    {
+      "source": "/ko/연락처/:rest*",
+      "destination": "/ko/contact/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ar/اتصل-بنا",
+      "destination": "/ar/contact",
+      "permanent": true
+    },
+    {
+      "source": "/ar/اتصل-بنا/:rest*",
+      "destination": "/ar/contact/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/fr/planifier-voyage",
+      "destination": "/fr/trip-builder",
+      "permanent": true
+    },
+    {
+      "source": "/fr/planifier-voyage/:rest*",
+      "destination": "/fr/trip-builder/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/es/planificar-viaje",
+      "destination": "/es/trip-builder",
+      "permanent": true
+    },
+    {
+      "source": "/es/planificar-viaje/:rest*",
+      "destination": "/es/trip-builder/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/it/pianifica-viaggio",
+      "destination": "/it/trip-builder",
+      "permanent": true
+    },
+    {
+      "source": "/it/pianifica-viaggio/:rest*",
+      "destination": "/it/trip-builder/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/de/reise-planen",
+      "destination": "/de/trip-builder",
+      "permanent": true
+    },
+    {
+      "source": "/de/reise-planen/:rest*",
+      "destination": "/de/trip-builder/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/nl/reis-plannen",
+      "destination": "/nl/trip-builder",
+      "permanent": true
+    },
+    {
+      "source": "/nl/reis-plannen/:rest*",
+      "destination": "/nl/trip-builder/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/pt/planejar-viagem",
+      "destination": "/pt/trip-builder",
+      "permanent": true
+    },
+    {
+      "source": "/pt/planejar-viagem/:rest*",
+      "destination": "/pt/trip-builder/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/zh/定制旅行",
+      "destination": "/zh/trip-builder",
+      "permanent": true
+    },
+    {
+      "source": "/zh/定制旅行/:rest*",
+      "destination": "/zh/trip-builder/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ja/旅行を計画",
+      "destination": "/ja/trip-builder",
+      "permanent": true
+    },
+    {
+      "source": "/ja/旅行を計画/:rest*",
+      "destination": "/ja/trip-builder/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ko/여행계획",
+      "destination": "/ko/trip-builder",
+      "permanent": true
+    },
+    {
+      "source": "/ko/여행계획/:rest*",
+      "destination": "/ko/trip-builder/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ar/خطط-رحلتك",
+      "destination": "/ar/trip-builder",
+      "permanent": true
+    },
+    {
+      "source": "/ar/خطط-رحلتك/:rest*",
+      "destination": "/ar/trip-builder/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/fr/creer-excursion",
+      "destination": "/fr/build-your-day-trip",
+      "permanent": true
+    },
+    {
+      "source": "/fr/creer-excursion/:rest*",
+      "destination": "/fr/build-your-day-trip/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/es/crear-excursion",
+      "destination": "/es/build-your-day-trip",
+      "permanent": true
+    },
+    {
+      "source": "/es/crear-excursion/:rest*",
+      "destination": "/es/build-your-day-trip/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/it/crea-escursione",
+      "destination": "/it/build-your-day-trip",
+      "permanent": true
+    },
+    {
+      "source": "/it/crea-escursione/:rest*",
+      "destination": "/it/build-your-day-trip/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/de/tagesausflug-planen",
+      "destination": "/de/build-your-day-trip",
+      "permanent": true
+    },
+    {
+      "source": "/de/tagesausflug-planen/:rest*",
+      "destination": "/de/build-your-day-trip/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/nl/dagtocht-maken",
+      "destination": "/nl/build-your-day-trip",
+      "permanent": true
+    },
+    {
+      "source": "/nl/dagtocht-maken/:rest*",
+      "destination": "/nl/build-your-day-trip/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/pt/criar-excursao",
+      "destination": "/pt/build-your-day-trip",
+      "permanent": true
+    },
+    {
+      "source": "/pt/criar-excursao/:rest*",
+      "destination": "/pt/build-your-day-trip/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/zh/定制一日游",
+      "destination": "/zh/build-your-day-trip",
+      "permanent": true
+    },
+    {
+      "source": "/zh/定制一日游/:rest*",
+      "destination": "/zh/build-your-day-trip/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ja/日帰り旅行を作る",
+      "destination": "/ja/build-your-day-trip",
+      "permanent": true
+    },
+    {
+      "source": "/ja/日帰り旅行を作る/:rest*",
+      "destination": "/ja/build-your-day-trip/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ko/당일여행만들기",
+      "destination": "/ko/build-your-day-trip",
+      "permanent": true
+    },
+    {
+      "source": "/ko/당일여행만들기/:rest*",
+      "destination": "/ko/build-your-day-trip/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ar/أنشئ-رحلة-يوم",
+      "destination": "/ar/build-your-day-trip",
+      "permanent": true
+    },
+    {
+      "source": "/ar/أنشئ-رحلة-يوم/:rest*",
+      "destination": "/ar/build-your-day-trip/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/fr/circuits-sahara",
+      "destination": "/fr/desert-tours",
+      "permanent": true
+    },
+    {
+      "source": "/fr/circuits-sahara/:rest*",
+      "destination": "/fr/desert-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/es/tours-sahara",
+      "destination": "/es/desert-tours",
+      "permanent": true
+    },
+    {
+      "source": "/es/tours-sahara/:rest*",
+      "destination": "/es/desert-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/it/tour-sahara",
+      "destination": "/it/desert-tours",
+      "permanent": true
+    },
+    {
+      "source": "/it/tour-sahara/:rest*",
+      "destination": "/it/desert-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/de/sahara-touren",
+      "destination": "/de/desert-tours",
+      "permanent": true
+    },
+    {
+      "source": "/de/sahara-touren/:rest*",
+      "destination": "/de/desert-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/nl/sahara-rondreizen",
+      "destination": "/nl/desert-tours",
+      "permanent": true
+    },
+    {
+      "source": "/nl/sahara-rondreizen/:rest*",
+      "destination": "/nl/desert-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/pt/tours-sahara",
+      "destination": "/pt/desert-tours",
+      "permanent": true
+    },
+    {
+      "source": "/pt/tours-sahara/:rest*",
+      "destination": "/pt/desert-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/zh/撒哈拉之旅",
+      "destination": "/zh/desert-tours",
+      "permanent": true
+    },
+    {
+      "source": "/zh/撒哈拉之旅/:rest*",
+      "destination": "/zh/desert-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ja/サハラツアー",
+      "destination": "/ja/desert-tours",
+      "permanent": true
+    },
+    {
+      "source": "/ja/サハラツアー/:rest*",
+      "destination": "/ja/desert-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ko/사하라투어",
+      "destination": "/ko/desert-tours",
+      "permanent": true
+    },
+    {
+      "source": "/ko/사하라투어/:rest*",
+      "destination": "/ko/desert-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ar/جولات-الصحراء",
+      "destination": "/ar/desert-tours",
+      "permanent": true
+    },
+    {
+      "source": "/ar/جولات-الصحراء/:rest*",
+      "destination": "/ar/desert-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/fr/camp-desert-luxe",
+      "destination": "/fr/luxury-camp",
+      "permanent": true
+    },
+    {
+      "source": "/fr/camp-desert-luxe/:rest*",
+      "destination": "/fr/luxury-camp/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/es/campamento-desierto-lujo",
+      "destination": "/es/luxury-camp",
+      "permanent": true
+    },
+    {
+      "source": "/es/campamento-desierto-lujo/:rest*",
+      "destination": "/es/luxury-camp/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/it/campo-deserto-lusso",
+      "destination": "/it/luxury-camp",
+      "permanent": true
+    },
+    {
+      "source": "/it/campo-deserto-lusso/:rest*",
+      "destination": "/it/luxury-camp/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/de/luxus-wuestencamp",
+      "destination": "/de/luxury-camp",
+      "permanent": true
+    },
+    {
+      "source": "/de/luxus-wuestencamp/:rest*",
+      "destination": "/de/luxury-camp/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/nl/luxe-woestijnkamp",
+      "destination": "/nl/luxury-camp",
+      "permanent": true
+    },
+    {
+      "source": "/nl/luxe-woestijnkamp/:rest*",
+      "destination": "/nl/luxury-camp/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/pt/acampamento-deserto-luxo",
+      "destination": "/pt/luxury-camp",
+      "permanent": true
+    },
+    {
+      "source": "/pt/acampamento-deserto-luxo/:rest*",
+      "destination": "/pt/luxury-camp/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/zh/豪华沙漠营地",
+      "destination": "/zh/luxury-camp",
+      "permanent": true
+    },
+    {
+      "source": "/zh/豪华沙漠营地/:rest*",
+      "destination": "/zh/luxury-camp/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ja/砂漠ラグジュアリーキャンプ",
+      "destination": "/ja/luxury-camp",
+      "permanent": true
+    },
+    {
+      "source": "/ja/砂漠ラグジュアリーキャンプ/:rest*",
+      "destination": "/ja/luxury-camp/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ko/럭셔리사막캠프",
+      "destination": "/ko/luxury-camp",
+      "permanent": true
+    },
+    {
+      "source": "/ko/럭셔리사막캠프/:rest*",
+      "destination": "/ko/luxury-camp/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ar/مخيم-صحراوي-فاخر",
+      "destination": "/ar/luxury-camp",
+      "permanent": true
+    },
+    {
+      "source": "/ar/مخيم-صحراوي-فاخر/:rest*",
+      "destination": "/ar/luxury-camp/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/fr/randonnee-chameau",
+      "destination": "/fr/camel-trekking",
+      "permanent": true
+    },
+    {
+      "source": "/fr/randonnee-chameau/:rest*",
+      "destination": "/fr/camel-trekking/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/es/trekking-camellos",
+      "destination": "/es/camel-trekking",
+      "permanent": true
+    },
+    {
+      "source": "/es/trekking-camellos/:rest*",
+      "destination": "/es/camel-trekking/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/it/trekking-cammello",
+      "destination": "/it/camel-trekking",
+      "permanent": true
+    },
+    {
+      "source": "/it/trekking-cammello/:rest*",
+      "destination": "/it/camel-trekking/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/de/kamel-trekking",
+      "destination": "/de/camel-trekking",
+      "permanent": true
+    },
+    {
+      "source": "/de/kamel-trekking/:rest*",
+      "destination": "/de/camel-trekking/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/nl/kamelen-trekking",
+      "destination": "/nl/camel-trekking",
+      "permanent": true
+    },
+    {
+      "source": "/nl/kamelen-trekking/:rest*",
+      "destination": "/nl/camel-trekking/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/pt/trekking-camelo",
+      "destination": "/pt/camel-trekking",
+      "permanent": true
+    },
+    {
+      "source": "/pt/trekking-camelo/:rest*",
+      "destination": "/pt/camel-trekking/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/zh/骑骆驼",
+      "destination": "/zh/camel-trekking",
+      "permanent": true
+    },
+    {
+      "source": "/zh/骑骆驼/:rest*",
+      "destination": "/zh/camel-trekking/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ja/ラクダトレッキング",
+      "destination": "/ja/camel-trekking",
+      "permanent": true
+    },
+    {
+      "source": "/ja/ラクダトレッキング/:rest*",
+      "destination": "/ja/camel-trekking/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ko/낙타트레킹",
+      "destination": "/ko/camel-trekking",
+      "permanent": true
+    },
+    {
+      "source": "/ko/낙타트레킹/:rest*",
+      "destination": "/ko/camel-trekking/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ar/رحلة-الجمال",
+      "destination": "/ar/camel-trekking",
+      "permanent": true
+    },
+    {
+      "source": "/ar/رحلة-الجمال/:rest*",
+      "destination": "/ar/camel-trekking/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/fr/excursions-4x4",
+      "destination": "/fr/4x4-tours",
+      "permanent": true
+    },
+    {
+      "source": "/fr/excursions-4x4/:rest*",
+      "destination": "/fr/4x4-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/es/tours-4x4",
+      "destination": "/es/4x4-tours",
+      "permanent": true
+    },
+    {
+      "source": "/es/tours-4x4/:rest*",
+      "destination": "/es/4x4-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/it/tour-4x4",
+      "destination": "/it/4x4-tours",
+      "permanent": true
+    },
+    {
+      "source": "/it/tour-4x4/:rest*",
+      "destination": "/it/4x4-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/de/4x4-touren",
+      "destination": "/de/4x4-tours",
+      "permanent": true
+    },
+    {
+      "source": "/de/4x4-touren/:rest*",
+      "destination": "/de/4x4-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/nl/4x4-rondritten",
+      "destination": "/nl/4x4-tours",
+      "permanent": true
+    },
+    {
+      "source": "/nl/4x4-rondritten/:rest*",
+      "destination": "/nl/4x4-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/pt/tours-4x4",
+      "destination": "/pt/4x4-tours",
+      "permanent": true
+    },
+    {
+      "source": "/pt/tours-4x4/:rest*",
+      "destination": "/pt/4x4-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/zh/四驱沙漠之旅",
+      "destination": "/zh/4x4-tours",
+      "permanent": true
+    },
+    {
+      "source": "/zh/四驱沙漠之旅/:rest*",
+      "destination": "/zh/4x4-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ja/4x4ツアー",
+      "destination": "/ja/4x4-tours",
+      "permanent": true
+    },
+    {
+      "source": "/ja/4x4ツアー/:rest*",
+      "destination": "/ja/4x4-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ko/4x4투어",
+      "destination": "/ko/4x4-tours",
+      "permanent": true
+    },
+    {
+      "source": "/ko/4x4투어/:rest*",
+      "destination": "/ko/4x4-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ar/جولات-4x4",
+      "destination": "/ar/4x4-tours",
+      "permanent": true
+    },
+    {
+      "source": "/ar/جولات-4x4/:rest*",
+      "destination": "/ar/4x4-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/fr/circuits-marrakech",
+      "destination": "/fr/marrakech-tours",
+      "permanent": true
+    },
+    {
+      "source": "/fr/circuits-marrakech/:rest*",
+      "destination": "/fr/marrakech-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/es/tours-marrakech",
+      "destination": "/es/marrakech-tours",
+      "permanent": true
+    },
+    {
+      "source": "/es/tours-marrakech/:rest*",
+      "destination": "/es/marrakech-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/it/tour-marrakech",
+      "destination": "/it/marrakech-tours",
+      "permanent": true
+    },
+    {
+      "source": "/it/tour-marrakech/:rest*",
+      "destination": "/it/marrakech-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/de/marrakesch-rundreisen",
+      "destination": "/de/marrakech-tours",
+      "permanent": true
+    },
+    {
+      "source": "/de/marrakesch-rundreisen/:rest*",
+      "destination": "/de/marrakech-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/nl/marrakech-rondreizen",
+      "destination": "/nl/marrakech-tours",
+      "permanent": true
+    },
+    {
+      "source": "/nl/marrakech-rondreizen/:rest*",
+      "destination": "/nl/marrakech-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/pt/tours-marrakech",
+      "destination": "/pt/marrakech-tours",
+      "permanent": true
+    },
+    {
+      "source": "/pt/tours-marrakech/:rest*",
+      "destination": "/pt/marrakech-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/zh/马拉喀什旅游",
+      "destination": "/zh/marrakech-tours",
+      "permanent": true
+    },
+    {
+      "source": "/zh/马拉喀什旅游/:rest*",
+      "destination": "/zh/marrakech-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ja/マラケシュツアー",
+      "destination": "/ja/marrakech-tours",
+      "permanent": true
+    },
+    {
+      "source": "/ja/マラケシュツアー/:rest*",
+      "destination": "/ja/marrakech-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ko/마라케시투어",
+      "destination": "/ko/marrakech-tours",
+      "permanent": true
+    },
+    {
+      "source": "/ko/마라케시투어/:rest*",
+      "destination": "/ko/marrakech-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ar/جولات-مراكش",
+      "destination": "/ar/marrakech-tours",
+      "permanent": true
+    },
+    {
+      "source": "/ar/جولات-مراكش/:rest*",
+      "destination": "/ar/marrakech-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/fr/circuits-fes",
+      "destination": "/fr/fes-tours",
+      "permanent": true
+    },
+    {
+      "source": "/fr/circuits-fes/:rest*",
+      "destination": "/fr/fes-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/es/tours-fez",
+      "destination": "/es/fes-tours",
+      "permanent": true
+    },
+    {
+      "source": "/es/tours-fez/:rest*",
+      "destination": "/es/fes-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/it/tour-fes",
+      "destination": "/it/fes-tours",
+      "permanent": true
+    },
+    {
+      "source": "/it/tour-fes/:rest*",
+      "destination": "/it/fes-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/de/fes-rundreisen",
+      "destination": "/de/fes-tours",
+      "permanent": true
+    },
+    {
+      "source": "/de/fes-rundreisen/:rest*",
+      "destination": "/de/fes-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/nl/fes-rondreizen",
+      "destination": "/nl/fes-tours",
+      "permanent": true
+    },
+    {
+      "source": "/nl/fes-rondreizen/:rest*",
+      "destination": "/nl/fes-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/pt/tours-fes",
+      "destination": "/pt/fes-tours",
+      "permanent": true
+    },
+    {
+      "source": "/pt/tours-fes/:rest*",
+      "destination": "/pt/fes-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/zh/非斯旅游",
+      "destination": "/zh/fes-tours",
+      "permanent": true
+    },
+    {
+      "source": "/zh/非斯旅游/:rest*",
+      "destination": "/zh/fes-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ja/フェズツアー",
+      "destination": "/ja/fes-tours",
+      "permanent": true
+    },
+    {
+      "source": "/ja/フェズツアー/:rest*",
+      "destination": "/ja/fes-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ko/페즈투어",
+      "destination": "/ko/fes-tours",
+      "permanent": true
+    },
+    {
+      "source": "/ko/페즈투어/:rest*",
+      "destination": "/ko/fes-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ar/جولات-فاس",
+      "destination": "/ar/fes-tours",
+      "permanent": true
+    },
+    {
+      "source": "/ar/جولات-فاس/:rest*",
+      "destination": "/ar/fes-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/fr/circuits-agadir",
+      "destination": "/fr/agadir-tours",
+      "permanent": true
+    },
+    {
+      "source": "/fr/circuits-agadir/:rest*",
+      "destination": "/fr/agadir-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/es/tours-agadir",
+      "destination": "/es/agadir-tours",
+      "permanent": true
+    },
+    {
+      "source": "/es/tours-agadir/:rest*",
+      "destination": "/es/agadir-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/it/tour-agadir",
+      "destination": "/it/agadir-tours",
+      "permanent": true
+    },
+    {
+      "source": "/it/tour-agadir/:rest*",
+      "destination": "/it/agadir-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/de/agadir-rundreisen",
+      "destination": "/de/agadir-tours",
+      "permanent": true
+    },
+    {
+      "source": "/de/agadir-rundreisen/:rest*",
+      "destination": "/de/agadir-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/nl/agadir-rondreizen",
+      "destination": "/nl/agadir-tours",
+      "permanent": true
+    },
+    {
+      "source": "/nl/agadir-rondreizen/:rest*",
+      "destination": "/nl/agadir-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/pt/tours-agadir",
+      "destination": "/pt/agadir-tours",
+      "permanent": true
+    },
+    {
+      "source": "/pt/tours-agadir/:rest*",
+      "destination": "/pt/agadir-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/zh/阿加迪尔旅游",
+      "destination": "/zh/agadir-tours",
+      "permanent": true
+    },
+    {
+      "source": "/zh/阿加迪尔旅游/:rest*",
+      "destination": "/zh/agadir-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ja/アガディールツアー",
+      "destination": "/ja/agadir-tours",
+      "permanent": true
+    },
+    {
+      "source": "/ja/アガディールツアー/:rest*",
+      "destination": "/ja/agadir-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ko/아가디르투어",
+      "destination": "/ko/agadir-tours",
+      "permanent": true
+    },
+    {
+      "source": "/ko/아가디르투어/:rest*",
+      "destination": "/ko/agadir-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ar/جولات-أكادير",
+      "destination": "/ar/agadir-tours",
+      "permanent": true
+    },
+    {
+      "source": "/ar/جولات-أكادير/:rest*",
+      "destination": "/ar/agadir-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/fr/circuits-casablanca",
+      "destination": "/fr/casablanca-tours",
+      "permanent": true
+    },
+    {
+      "source": "/fr/circuits-casablanca/:rest*",
+      "destination": "/fr/casablanca-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/es/tours-casablanca",
+      "destination": "/es/casablanca-tours",
+      "permanent": true
+    },
+    {
+      "source": "/es/tours-casablanca/:rest*",
+      "destination": "/es/casablanca-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/it/tour-casablanca",
+      "destination": "/it/casablanca-tours",
+      "permanent": true
+    },
+    {
+      "source": "/it/tour-casablanca/:rest*",
+      "destination": "/it/casablanca-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/de/casablanca-rundreisen",
+      "destination": "/de/casablanca-tours",
+      "permanent": true
+    },
+    {
+      "source": "/de/casablanca-rundreisen/:rest*",
+      "destination": "/de/casablanca-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/nl/casablanca-rondreizen",
+      "destination": "/nl/casablanca-tours",
+      "permanent": true
+    },
+    {
+      "source": "/nl/casablanca-rondreizen/:rest*",
+      "destination": "/nl/casablanca-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/pt/tours-casablanca",
+      "destination": "/pt/casablanca-tours",
+      "permanent": true
+    },
+    {
+      "source": "/pt/tours-casablanca/:rest*",
+      "destination": "/pt/casablanca-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/zh/卡萨布兰卡旅游",
+      "destination": "/zh/casablanca-tours",
+      "permanent": true
+    },
+    {
+      "source": "/zh/卡萨布兰卡旅游/:rest*",
+      "destination": "/zh/casablanca-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ja/カサブランカツアー",
+      "destination": "/ja/casablanca-tours",
+      "permanent": true
+    },
+    {
+      "source": "/ja/カサブランカツアー/:rest*",
+      "destination": "/ja/casablanca-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ko/카사블랑카투어",
+      "destination": "/ko/casablanca-tours",
+      "permanent": true
+    },
+    {
+      "source": "/ko/카사블랑카투어/:rest*",
+      "destination": "/ko/casablanca-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ar/جولات-الدار-البيضاء",
+      "destination": "/ar/casablanca-tours",
+      "permanent": true
+    },
+    {
+      "source": "/ar/جولات-الدار-البيضاء/:rest*",
+      "destination": "/ar/casablanca-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/fr/excursions",
+      "destination": "/fr/day-trips",
+      "permanent": true
+    },
+    {
+      "source": "/fr/excursions/:rest*",
+      "destination": "/fr/day-trips/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/es/excursiones",
+      "destination": "/es/day-trips",
+      "permanent": true
+    },
+    {
+      "source": "/es/excursiones/:rest*",
+      "destination": "/es/day-trips/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/it/escursioni",
+      "destination": "/it/day-trips",
+      "permanent": true
+    },
+    {
+      "source": "/it/escursioni/:rest*",
+      "destination": "/it/day-trips/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/de/tagesausfluege",
+      "destination": "/de/day-trips",
+      "permanent": true
+    },
+    {
+      "source": "/de/tagesausfluege/:rest*",
+      "destination": "/de/day-trips/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/nl/dagtochten",
+      "destination": "/nl/day-trips",
+      "permanent": true
+    },
+    {
+      "source": "/nl/dagtochten/:rest*",
+      "destination": "/nl/day-trips/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/pt/passeios",
+      "destination": "/pt/day-trips",
+      "permanent": true
+    },
+    {
+      "source": "/pt/passeios/:rest*",
+      "destination": "/pt/day-trips/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/zh/一日游",
+      "destination": "/zh/day-trips",
+      "permanent": true
+    },
+    {
+      "source": "/zh/一日游/:rest*",
+      "destination": "/zh/day-trips/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ja/日帰り旅行",
+      "destination": "/ja/day-trips",
+      "permanent": true
+    },
+    {
+      "source": "/ja/日帰り旅行/:rest*",
+      "destination": "/ja/day-trips/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ko/당일여행",
+      "destination": "/ko/day-trips",
+      "permanent": true
+    },
+    {
+      "source": "/ko/당일여행/:rest*",
+      "destination": "/ko/day-trips/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ar/رحلات-يوم",
+      "destination": "/ar/day-trips",
+      "permanent": true
+    },
+    {
+      "source": "/ar/رحلات-يوم/:rest*",
+      "destination": "/ar/day-trips/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/fr/guide-merzouga",
+      "destination": "/fr/merzouga-guide",
+      "permanent": true
+    },
+    {
+      "source": "/fr/guide-merzouga/:rest*",
+      "destination": "/fr/merzouga-guide/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/es/guia-merzouga",
+      "destination": "/es/merzouga-guide",
+      "permanent": true
+    },
+    {
+      "source": "/es/guia-merzouga/:rest*",
+      "destination": "/es/merzouga-guide/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/it/guida-merzouga",
+      "destination": "/it/merzouga-guide",
+      "permanent": true
+    },
+    {
+      "source": "/it/guida-merzouga/:rest*",
+      "destination": "/it/merzouga-guide/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/de/merzouga-reisefuehrer",
+      "destination": "/de/merzouga-guide",
+      "permanent": true
+    },
+    {
+      "source": "/de/merzouga-reisefuehrer/:rest*",
+      "destination": "/de/merzouga-guide/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/nl/merzouga-gids",
+      "destination": "/nl/merzouga-guide",
+      "permanent": true
+    },
+    {
+      "source": "/nl/merzouga-gids/:rest*",
+      "destination": "/nl/merzouga-guide/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/pt/guia-merzouga",
+      "destination": "/pt/merzouga-guide",
+      "permanent": true
+    },
+    {
+      "source": "/pt/guia-merzouga/:rest*",
+      "destination": "/pt/merzouga-guide/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/zh/梅尔祖卡指南",
+      "destination": "/zh/merzouga-guide",
+      "permanent": true
+    },
+    {
+      "source": "/zh/梅尔祖卡指南/:rest*",
+      "destination": "/zh/merzouga-guide/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ja/メルズーガガイド",
+      "destination": "/ja/merzouga-guide",
+      "permanent": true
+    },
+    {
+      "source": "/ja/メルズーガガイド/:rest*",
+      "destination": "/ja/merzouga-guide/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ko/메르주가가이드",
+      "destination": "/ko/merzouga-guide",
+      "permanent": true
+    },
+    {
+      "source": "/ko/메르주가가이드/:rest*",
+      "destination": "/ko/merzouga-guide/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ar/دليل-مرزوكة",
+      "destination": "/ar/merzouga-guide",
+      "permanent": true
+    },
+    {
+      "source": "/ar/دليل-مرزوكة/:rest*",
+      "destination": "/ar/merzouga-guide/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/es/preguntas-frecuentes",
+      "destination": "/es/faq",
+      "permanent": true
+    },
+    {
+      "source": "/es/preguntas-frecuentes/:rest*",
+      "destination": "/es/faq/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/nl/veelgestelde-vragen",
+      "destination": "/nl/faq",
+      "permanent": true
+    },
+    {
+      "source": "/nl/veelgestelde-vragen/:rest*",
+      "destination": "/nl/faq/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/pt/perguntas-frequentes",
+      "destination": "/pt/faq",
+      "permanent": true
+    },
+    {
+      "source": "/pt/perguntas-frequentes/:rest*",
+      "destination": "/pt/faq/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/zh/常见问题",
+      "destination": "/zh/faq",
+      "permanent": true
+    },
+    {
+      "source": "/zh/常见问题/:rest*",
+      "destination": "/zh/faq/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ja/よくある質問",
+      "destination": "/ja/faq",
+      "permanent": true
+    },
+    {
+      "source": "/ja/よくある質問/:rest*",
+      "destination": "/ja/faq/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ko/자주묻는질문",
+      "destination": "/ko/faq",
+      "permanent": true
+    },
+    {
+      "source": "/ko/자주묻는질문/:rest*",
+      "destination": "/ko/faq/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ar/الاسئلة-الشائعة",
+      "destination": "/ar/faq",
+      "permanent": true
+    },
+    {
+      "source": "/ar/الاسئلة-الشائعة/:rest*",
+      "destination": "/ar/faq/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/fr/blog-voyage",
+      "destination": "/fr/blog",
+      "permanent": true
+    },
+    {
+      "source": "/fr/blog-voyage/:rest*",
+      "destination": "/fr/blog/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog-viajes",
+      "destination": "/es/blog",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog-viajes/:rest*",
+      "destination": "/es/blog/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/it/blog-viaggi",
+      "destination": "/it/blog",
+      "permanent": true
+    },
+    {
+      "source": "/it/blog-viaggi/:rest*",
+      "destination": "/it/blog/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/de/reiseblog",
+      "destination": "/de/blog",
+      "permanent": true
+    },
+    {
+      "source": "/de/reiseblog/:rest*",
+      "destination": "/de/blog/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/nl/reisblog",
+      "destination": "/nl/blog",
+      "permanent": true
+    },
+    {
+      "source": "/nl/reisblog/:rest*",
+      "destination": "/nl/blog/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/pt/blog-de-viagem",
+      "destination": "/pt/blog",
+      "permanent": true
+    },
+    {
+      "source": "/pt/blog-de-viagem/:rest*",
+      "destination": "/pt/blog/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/zh/旅行博客",
+      "destination": "/zh/blog",
+      "permanent": true
+    },
+    {
+      "source": "/zh/旅行博客/:rest*",
+      "destination": "/zh/blog/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ja/旅行ブログ",
+      "destination": "/ja/blog",
+      "permanent": true
+    },
+    {
+      "source": "/ja/旅行ブログ/:rest*",
+      "destination": "/ja/blog/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ko/여행블로그",
+      "destination": "/ko/blog",
+      "permanent": true
+    },
+    {
+      "source": "/ko/여행블로그/:rest*",
+      "destination": "/ko/blog/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ar/مدونة-السفر",
+      "destination": "/ar/blog",
+      "permanent": true
+    },
+    {
+      "source": "/ar/مدونة-السفر/:rest*",
+      "destination": "/ar/blog/:rest*",
+      "permanent": true
+    }
   ],
   "headers": [
-    { "source": "/assets/(.*)", "headers": [ { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }, { "key": "X-Content-Type-Options", "value": "nosniff" } ] },
-    { "source": "/(images|videos)/(.*)", "headers": [ { "key": "Cache-Control", "value": "public, max-age=2592000, stale-while-revalidate=86400" }, { "key": "X-Content-Type-Options", "value": "nosniff" } ] },
-    { "source": "/(.*)", "headers": [
-      { "key": "X-Content-Type-Options", "value": "nosniff" },
-      { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" },
-      { "key": "X-Frame-Options", "value": "DENY" },
-      { "key": "Cross-Origin-Opener-Policy", "value": "same-origin" },
-      { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-      { "key": "Permissions-Policy", "value": "camera=(), geolocation=(), microphone=(), payment=(), usb=(), interest-cohort=()" },
-      { "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://*.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https://*.tile.openstreetmap.org https://*.openstreetmap.org https://*.google-analytics.com https://*.gstatic.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://stats.g.doubleclick.net https://*.doubleclick.net https://*.tile.openstreetmap.org https://*.openstreetmap.org; media-src 'self' blob: data:; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'" }
-    ] }
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        }
+      ]
+    },
+    {
+      "source": "/(images|videos)/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=2592000, stale-while-revalidate=86400"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000; includeSubDomains; preload"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "Cross-Origin-Opener-Policy",
+          "value": "same-origin"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), geolocation=(), microphone=(), payment=(), usb=(), interest-cohort=()"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://*.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https://*.tile.openstreetmap.org https://*.openstreetmap.org https://*.google-analytics.com https://*.gstatic.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://stats.g.doubleclick.net https://*.doubleclick.net https://*.tile.openstreetmap.org https://*.openstreetmap.org; media-src 'self' blob: data:; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'"
+        }
+      ]
+    }
   ]
 }

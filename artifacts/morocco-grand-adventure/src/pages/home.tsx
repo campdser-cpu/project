@@ -506,7 +506,7 @@ export default function Home() {
                 className="group flex flex-col md:flex-row bg-card rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 border border-border hover:border-primary/50"
               >
                 <div className="md:w-2/5 h-56 md:h-auto relative overflow-hidden">
-                  <img src={tour.image} alt={`${tour.name} — ${tour.duration} private Morocco tour`} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <img src={tour.image} alt={`${tour.name} — ${tour.duration} private Morocco tour`} width={1200} height={800} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                   <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors" />
                   <div className="absolute top-3 left-3 md:top-4 md:left-4 bg-background/90 backdrop-blur text-foreground text-xs font-bold px-3 py-1.5 rounded-full shadow-sm border border-border">
                     {tour.duration}

@@ -124,7 +124,7 @@ export function ExperiencePage({
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
               {highlights.map((h, i) => (
                 <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="bg-background rounded-3xl p-6 md:p-8 border border-border hover:shadow-xl hover:border-primary/30 transition-all duration-300">
-                  {h.image && <img src={h.image} alt={h.title} loading="lazy" decoding="async" className="w-full h-40 object-cover rounded-2xl mb-4" />}
+                  {h.image && <img src={h.image} alt={h.title} width={800} height={400} loading="lazy" decoding="async" className="w-full h-40 object-cover rounded-2xl mb-4" />}
                   <h3 className="font-serif text-xl text-foreground mb-2">{h.title}</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">{h.description}</p>
                 </motion.div>

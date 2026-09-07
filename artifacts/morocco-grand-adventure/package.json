@@ -12,7 +12,8 @@
     "test:deterministic": "tsx scripts/test-inquiry.ts",
     "route:audit": "tsx scripts/route-audit.ts",
     "i18n:audit": "tsx scripts/i18n-audit.ts",
-    "audit:production": "node scripts/audit-production-routes.mjs"
+    "audit:production": "node scripts/audit-production-routes.mjs",
+    "audit:regression": "node scripts/regression-audit.cjs"
   },
   "devDependencies": {
     "@hookform/resolvers": "^3.10.0",

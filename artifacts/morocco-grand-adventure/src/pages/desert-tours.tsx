@@ -169,7 +169,7 @@ export default function DesertTours() {
                 className="group bg-background rounded-3xl overflow-hidden border border-border hover:shadow-xl hover:border-primary/30 transition-all duration-300"
               >
                 <div className="h-56 overflow-hidden">
-                  <img src={tour.image} alt={tour.name} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <img src={tour.image} alt={tour.name} width={1200} height={675} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 </div>
                 <div className="p-6">
                   <div className="flex items-center gap-2 text-xs font-bold text-primary mb-3">
