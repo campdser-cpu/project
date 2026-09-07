@@ -3,6 +3,7 @@ import { motion, AnimatePresence, Variants } from 'framer-motion';
 import { Layout } from '../components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { contactInfo, destinations } from '@/data/content';
+import { trackEvent } from '@/lib/analytics';
 import { categoryLabel } from '@/i18n/content';
 import {
   MapPin,
@@ -516,6 +517,17 @@ export default function TripBuilder() {
                   href={whatsappLink}
                   target="_blank"
                   rel="noreferrer"
+                  onClick={() => trackEvent('submit_inquiry', {
+                    form_id: 'trip-builder',
+                    source_page: 'trip-builder',
+                    journey_route: `${arrival} to ${departure}`,
+                    duration_days: days,
+                    travelers,
+                    budget,
+                    destinations: selectedDestinations.join(', '),
+                    interests: selectedInterests.join(', '),
+                    language: lang,
+                  })}
                   className={`flex items-center gap-3 bg-primary text-primary-foreground px-8 py-4 rounded-full font-bold text-lg transition-all shadow-lg hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(201,168,76,0.4)] group ${selectedDestinations.length < 2 ? 'opacity-50 cursor-not-allowed pointer-events-none' : ''}`}
                 >
                   {t('tb_request')} <Send className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />

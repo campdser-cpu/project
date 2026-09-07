@@ -88,6 +88,60 @@ for (const c of CAT) check(enHtml.includes(`/images/catalog/${c}.webp`), 'catalo
   const html = fs.readFileSync(path.join(D, 'en/travel-info/what-to-pack-morocco/index.html'), 'utf8');
   check(html.includes('content="Trekkers climbing the crest of a tall Sahara dune near Merzouga"'), 'og:image:alt = catalog alt for what-to-pack');
 }
+// 7. TOUR IMAGE SEMANTIC CONTRACT — every en tour page's og:image must match
+// its route identity. This is the regression guard that catches a Chefchaouen
+// photo on a Casablanca page, a generic dunes photo reused everywhere, etc.
+const TOUR_IMAGE_CONTRACT = {
+  // Casablanca departures → Casablanca/Atlantic/imperial or desert-route imagery
+  'casablanca-3-day': ['hassan-tower-mohammed-v-mausoleum-rabat'],
+  'casablanca-4-day': ['hassan-ii-mosque-ornate-bronze-door-casablanca'],
+  'casablanca-5-day': ['camel-caravan-sunset-silhouette-sahara-desert'],
+  'casablanca-8-day': ['hassan-ii-mosque-exterior-arches-golden-hour-casablanca'],
+  // Fes departures → Fes/Middle-Atlas/desert imagery
+  'fes-4-day': ['tannery-workers-dyeing-pits-fes'],
+  'fes-5-day': ['dades-valley'],
+  'fes-8-day': ['chouara-tannery-overhead-fes-el-bali'],
+  '3-day-fes-merzouga-sahara': ['sahara-bivouac-stars-merzouga'],
+  '3-day-sahara-fes': ['erg-chebbi'],
+  '4-day-fes-marrakech-via-merzouga': ['ait-ben-haddou'],
+  // Marrakech departures → route imagery
+  '3-day-sahara-marrakech': ['berber-guide-camel-sahara-desert-merzouga'],
+  '4-day-marrakech-merzouga-sahara': ['sahara-desert-sunset-silhouette-dune-morocco'],
+  '5-day-imperial-cities': ['ait-ben-haddou-kasbah-sunrise-ouarzazate'],
+  '7-day-imperial-cities-sahara-escape': ['ait-ben-haddou-bridge-town-unesco-morocco'],
+  // Agadir departures
+  'agadir-4-day': ['agadir'],
+  'agadir-5-day': ['berber-camel-guide-sahara-merzouga'],
+  'agadir-8-day': ['agadir'],
+};
+// Hard bans: an image must never represent a destination it does not depict.
+const NEVER_ON_PAGE = [
+  { tour: 'casablanca-4-day', forbidden: ['chefchaouen'], why: 'Chefchaouen imagery must not represent Casablanca' },
+  { tour: 'casablanca-3-day', forbidden: ['chefchaouen'], why: 'Chefchaouen imagery must not represent Casablanca' },
+  { tour: '5-day-imperial-cities', forbidden: ['hassan-ii-mosque'], why: 'Casablanca mosque must not represent Fes imperial context' },
+];
+for (const [tour, allowed] of Object.entries(TOUR_IMAGE_CONTRACT)) {
+  const f = path.join(D, 'en/tours', tour + '.html');
+  if (!fs.existsSync(f)) { check(false, 'tour page missing: ' + tour); continue; }
+  const html = fs.readFileSync(f, 'utf8');
+  const og = html.match(/<meta[^>]+property="og:image"[^>]+content="([^"]+)"/);
+  const ogUrl = og ? og[1] : '';
+  const heroImgs = imgIds(html);
+  const okOg = allowed.some(a => ogUrl.includes(a));
+  const okHero = allowed.some(a => heroImgs.includes(a.replace('/images/dest/', '').replace('.webp', '')) || html.includes('/images/' + a));
+  check(okOg || okHero, `${tour}: og:image (${ogUrl}) does not match route identity [${allowed.join(', ')}]`);
+}
+for (const { tour, forbidden, why } of NEVER_ON_PAGE) {
+  const f = path.join(D, 'en/tours', tour + '.html');
+  if (!fs.existsSync(f)) continue;
+  const html = fs.readFileSync(f, 'utf8');
+  for (const bad of forbidden) {
+    check(!html.includes('/images/dest/' + bad + '.webp') && !imgIds(html).includes(bad),
+      `${tour}: ${why} — found "${bad}" imagery`);
+  }
+}
+
+console.log(fail === 0 ? `\nALL SEMANTIC CHECKS PASS (${files.length} HTML files scanned)` : `\n${fail} CHECK(S) FAILED`);
 
 console.log(fail === 0 ? `\nALL SEMANTIC CHECKS PASS (${files.length} HTML files scanned)` : `\n${fail} CHECK(S) FAILED`);
 process.exit(fail === 0 ? 0 : 1);
