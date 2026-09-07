@@ -26,6 +26,14 @@ function restFor(pathname, lang) {
   // alternates must be "${site}/en" (not "${site}/en/").
   return !rest || rest === '/' ? '' : rest;
 }
+// Static legacy-unicode redirect pages (see scripts/legacy-unicode-redirects.mjs)
+// live in dist/ but must never enter the sitemap - keeps the URL count at 1,397.
+const LEGACY_REDIRECT_PATHS = new Set([
+  '/ko/투어/fes-5-day',
+  '/zh/撒哈拉之旅',
+  '/zh/梅尔祖卡指南',
+  '/ko/메르주가가이드',
+]);
 function block(pathname) {
   const lang = pathname.split('/')[1];
   const rest = restFor(pathname, lang);
@@ -34,7 +42,7 @@ function block(pathname) {
 }
 
 if (!fs.existsSync(dist)) throw new Error('dist directory missing');
-const paths = [...new Set(walk(dist).map(urlFor).filter((p) => langs.includes(p.split('/')[1])))].sort();
+const paths = [...new Set(walk(dist).map(urlFor).filter((p) => langs.includes(p.split('/')[1]) && !LEGACY_REDIRECT_PATHS.has(p)))].sort();
 const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n  <!-- Generated only from prerendered, localized HTML pages. -->\n${paths.map(block).join('\n')}\n</urlset>\n`;
 for (const target of [path.join(root, 'public', 'sitemap.xml'), path.join(dist, 'sitemap.xml')]) {
   fs.writeFileSync(target, xml, 'utf8');

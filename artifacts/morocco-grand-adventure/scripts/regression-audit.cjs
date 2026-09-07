@@ -91,15 +91,29 @@ const redir = JSON.parse(fs.readFileSync(VERCEL_PATH, 'utf8'));
 // DOUBLE-ENCODED source. Regression: each of these must have a double-encoded
 // covering rule whose destination prerenders.
 const NON_ASCII_404S = GSC_404S.filter(function (u) { return /[^\x00-\x7F]/.test(u); });
+// These 4 legacy URLs use non-ASCII (Korean/Chinese) segments. vercel.json redirect
+// sources CANNOT match them in production (Vercel URL-decodes sources at ingest and
+// never matches non-ASCII - verified live for literal, single- and double-encoded
+// forms). The working mechanism is STATIC redirect pages emitted into dist/ by
+// scripts/legacy-unicode-redirects.mjs: 0s meta refresh + canonical + JS replace.
+// Regression: each legacy URL must have a static redirect page whose target prerenders.
+const LEGACY_REDIRECT_DESTS = {
+  '/ko/투어/fes-5-day': '/ko/tours/fes-5-day',
+  '/zh/撒哈拉之旅': '/zh/desert-tours',
+  '/zh/梅尔祖卡指南': '/zh/merzouga-guide',
+  '/ko/메르주가가이드': '/ko/merzouga-guide',
+};
 for (const u of NON_ASCII_404S) {
-  const segs = u.split('/');
-  const dbl = segs.map(function (s) { return /[^A-Za-z0-9._~-]/.test(s) && s !== '' ? encodeURIComponent(encodeURIComponent(s)) : s; }).join('/');
-  const rule = (redir.redirects || []).find(function (r) { return matchesSource(dbl, r.source); });
-  chk(!!rule, 'nonascii-double-encoded-redirect ' + u);
-  if (rule) {
-    const norm = rule.destination.replace(/\/$/, '');
-    const rel = norm.replace(/^\//, '').replace(':rest*', '');
-    chk(htmlExists(rel), 'nonascii-redirect-dest ' + rule.destination);
+  const rel = u.replace(/^\//, '');
+  const f = path.join(dist, rel + '.html');
+  const exists = fs.existsSync(f);
+  chk(exists, 'nonascii-static-redirect-page ' + u);
+  if (exists) {
+    const t = fs.readFileSync(f, 'utf8');
+    const dest = LEGACY_REDIRECT_DESTS[u];
+    chk(t.indexOf('url=' + dest) !== -1, 'nonascii-redirect-target ' + u + ' -> ' + dest);
+    chk(t.indexOf('rel="canonical"') !== -1, 'nonascii-redirect-canonical ' + u);
+    chk(htmlExists(dest.replace(/^\//, '')), 'nonascii-redirect-dest-prerenders ' + dest);
   }
 }
 for (const u of GSC_404S) {
