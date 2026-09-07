@@ -84,6 +84,24 @@ const VERCEL_PATH_LOCAL = path.join(root, 'vercel.json');
 const VERCEL_PATH_REPO = path.join(root, '..', '..', 'vercel.json');
 const VERCEL_PATH = fs.existsSync(VERCEL_PATH_LOCAL) ? VERCEL_PATH_LOCAL : VERCEL_PATH_REPO;
 const redir = JSON.parse(fs.readFileSync(VERCEL_PATH, 'utf8'));
+// These 4 legacy URLs use non-ASCII segments. Vercel's router matches redirect
+// sources against the raw (percent-encoded) request path while decoding config
+// sources once at parse time - literal Unicode sources NEVER match in production
+// (verified live: 404 despite matching literal rules). The working form is a
+// DOUBLE-ENCODED source. Regression: each of these must have a double-encoded
+// covering rule whose destination prerenders.
+const NON_ASCII_404S = GSC_404S.filter(function (u) { return /[^\x00-\x7F]/.test(u); });
+for (const u of NON_ASCII_404S) {
+  const segs = u.split('/');
+  const dbl = segs.map(function (s) { return /[^A-Za-z0-9._~-]/.test(s) && s !== '' ? encodeURIComponent(encodeURIComponent(s)) : s; }).join('/');
+  const rule = (redir.redirects || []).find(function (r) { return matchesSource(dbl, r.source); });
+  chk(!!rule, 'nonascii-double-encoded-redirect ' + u);
+  if (rule) {
+    const norm = rule.destination.replace(/\/$/, '');
+    const rel = norm.replace(/^\//, '').replace(':rest*', '');
+    chk(htmlExists(rel), 'nonascii-redirect-dest ' + rule.destination);
+  }
+}
 for (const u of GSC_404S) {
   let covered = false;
   let dest = null;
@@ -147,6 +165,20 @@ if (fs.existsSync(sitemapPath)) {
     }
   }
   console.log('sitemap-urls=' + locs.length + ' dead=' + bad);
+  // Sitemap contract: exactly 1,397 localized URLs, no duplicates, and homepage
+  // hreflang alternates without trailing slash (matches on-page canonical "/en").
+  chk(locs.length === 1397, 'sitemap-count-1397 got ' + locs.length);
+  chk(new Set(locs).size === locs.length, 'sitemap-no-duplicates');
+  const homeBlock = xml.split('<url>').find(function (b) { return b.indexOf('<loc>' + 'https://www.moroccograndadventure.com/en<') !== -1; });
+  chk(!!homeBlock, 'sitemap-homepage-block');
+  if (homeBlock) {
+    chk(homeBlock.indexOf('/en/"') === -1 && homeBlock.indexOf('/en"') !== -1, 'sitemap-homepage-hreflang-no-trailing-slash');
+    const altCount = (homeBlock.match(/xhtml:link/g) || []).length;
+    chk(altCount === 12, 'sitemap-homepage-12-alternates got ' + altCount);
+  }
+  // spot-check: every homepage block (all locales) uses no trailing slash
+  const slashy = (xml.match(/hreflang="(?!x-default)"[^>]*href="https:\/\/www\.moroccograndadventure\.com\/[a-z]{2}\/"/g) || []).length;
+  chk(slashy === 0, 'sitemap-no-trailing-slash-homepages got ' + slashy);
 } else {
   chk(false, 'sitemap-missing');
 }

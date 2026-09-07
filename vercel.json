@@ -2101,6 +2101,46 @@
       "permanent": true
     },
     {
+      "source": "/ko/%25ED%2588%25AC%25EC%2596%25B4",
+      "destination": "/ko/tours",
+      "permanent": true
+    },
+    {
+      "source": "/ko/%25ED%2588%25AC%25EC%2596%25B4/:rest*",
+      "destination": "/ko/tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/zh/%25E6%2592%2592%25E5%2593%2588%25E6%258B%2589%25E4%25B9%258B%25E6%2597%2585",
+      "destination": "/zh/desert-tours",
+      "permanent": true
+    },
+    {
+      "source": "/zh/%25E6%2592%2592%25E5%2593%2588%25E6%258B%2589%25E4%25B9%258B%25E6%2597%2585/:rest*",
+      "destination": "/zh/desert-tours/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/zh/%25E6%25A2%2585%25E5%25B0%2594%25E7%25A5%2596%25E5%258D%25A1%25E6%258C%2587%25E5%258D%2597",
+      "destination": "/zh/merzouga-guide",
+      "permanent": true
+    },
+    {
+      "source": "/zh/%25E6%25A2%2585%25E5%25B0%2594%25E7%25A5%2596%25E5%258D%25A1%25E6%258C%2587%25E5%258D%2597/:rest*",
+      "destination": "/zh/merzouga-guide/:rest*",
+      "permanent": true
+    },
+    {
+      "source": "/ko/%25EB%25A9%2594%25EB%25A5%25B4%25EC%25A3%25BC%25EA%25B0%2580%25EA%25B0%2580%25EC%259D%25B4%25EB%2593%259C",
+      "destination": "/ko/merzouga-guide",
+      "permanent": true
+    },
+    {
+      "source": "/ko/%25EB%25A9%2594%25EB%25A5%25B4%25EC%25A3%25BC%25EA%25B0%2580%25EA%25B0%2580%25EC%259D%25B4%25EB%2593%259C/:rest*",
+      "destination": "/ko/merzouga-guide/:rest*",
+      "permanent": true
+    },
+    {
       "source": "/ar/دليل-مرزوكة",
       "destination": "/ar/merzouga-guide",
       "permanent": true

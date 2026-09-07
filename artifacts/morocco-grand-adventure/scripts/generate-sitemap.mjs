@@ -22,7 +22,9 @@ function urlFor(file) {
 }
 function restFor(pathname, lang) {
   const rest = pathname.slice(`/${lang}`.length);
-  return rest || '/';
+  // No trailing slash: on-page canonicals use "/en", so homepage hreflang
+  // alternates must be "${site}/en" (not "${site}/en/").
+  return !rest || rest === '/' ? '' : rest;
 }
 function block(pathname) {
   const lang = pathname.split('/')[1];
