@@ -3,7 +3,7 @@
 // Owner: Mohamed Bou Ghrara
 // ─────────────────────────────────────────────────────────────────────────────
 export const contactInfo = {
-  whatsapp: "https://wa.me/message/QAFZ3RKJDNH4B1",
+  whatsapp: "https://wa.me/212699846818",
   whatsappNumber: "+212 699 846 818",
   phone: "+212 699 846 818",
   instagram: "https://www.instagram.com/morocco_grand_adventure/",

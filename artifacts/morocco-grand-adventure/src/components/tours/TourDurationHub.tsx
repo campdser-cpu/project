@@ -4,6 +4,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Layout } from '../layout/Layout';
 import { getLocalizedTours, getLocalizedDestinations, getLocalizedFaq } from '@/i18n/content';
 import { StructuredData, buildBreadcrumb, buildFaqSchema } from '../seo/StructuredData';
+import { contactInfo } from '@/data/content';
 import { TourCard } from './TourCard';
 import { TourBreadcrumbs } from './TourBreadcrumbs';
 import { CityHub, TOUR_DEPARTURE_CITY, tourDurationDays } from '@/data/tour-hierarchy';
@@ -227,7 +228,7 @@ export function TourDurationHub({ hub, durationDays }: TourDurationHubProps) {
               </Link>
               . {t('hub_dur_faq_questions')}{' '}
               <a
-                href="https://wa.me/message/QAFZ3RKJDNH4B1"
+                href={contactInfo.whatsapp}
                 target="_blank"
                 rel="noreferrer"
                 className="text-primary underline-offset-4 hover:underline"

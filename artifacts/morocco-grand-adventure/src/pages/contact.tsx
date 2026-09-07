@@ -105,7 +105,7 @@ export default function Contact() {
                 <h3 className="font-serif text-3xl text-foreground mb-8">{t('contact_sub')}</h3>
                 
                 <div className="space-y-8">
-                  <a href="https://wa.me/message/QAFZ3RKJDNH4B1" target="_blank" rel="noreferrer" className="flex items-center gap-6 group">
+                  <a href={contactInfo.whatsapp} target="_blank" rel="noreferrer" className="flex items-center gap-6 group">
                     <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all">
                       <SiWhatsapp className="w-8 h-8" />
                     </div>
@@ -188,7 +188,7 @@ export default function Contact() {
                     <p>{serverError}</p>
                     {waFallback && (
                       <a
-                        href={`https://wa.me/message/QAFZ3RKJDNH4B1?text=${encodeURIComponent(waFallback)}`}
+                        href={`${contactInfo.whatsapp}?text=${encodeURIComponent(waFallback)}`}
                         target="_blank"
                         rel="noreferrer"
                         className="inline-flex items-center gap-2 bg-[#25D366] text-white px-4 py-2 rounded-lg font-bold hover:opacity-90 transition-opacity"

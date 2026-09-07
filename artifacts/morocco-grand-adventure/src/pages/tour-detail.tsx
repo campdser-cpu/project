@@ -468,7 +468,7 @@ export default function TourDetail() {
                 <a
                   href={promoOn
                     ? waPromoLink(`${t('promo_wa_message')}\n\n${tour.name} · ${travelers}p${date ? ` · ${date}` : ''}`)
-                    : contactInfo.whatsapp}
+                    : waPromoLink(`New Tour Booking Request\n\nTour: ${tour.name}\nTravelers: ${travelers}${date ? `\nTravel dates: ${date}` : ''}`)}
                   target="_blank"
                   rel="noreferrer"
                   className="w-full bg-[#25D366] text-white py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-[#128C7E] transition-all hover:-translate-y-1 shadow-lg shadow-[#25D366]/30 text-lg"

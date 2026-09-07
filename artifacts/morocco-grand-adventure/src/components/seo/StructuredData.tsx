@@ -9,6 +9,7 @@
  * between detail pages never leaves stale JSON-LD behind.
  */
 import { useEffect } from 'react';
+import { contactInfo } from '@/data/content';
 
 const SCRIPT_ID_PREFIX = 'structured-data-';
 const DATA_ATTR = 'data-structured-data';
@@ -23,7 +24,7 @@ export const ORGANIZATION_SAME_AS: string[] = [
   'https://youtube.com/@moroccograndadventure',
   'https://www.tiktok.com/@morocco.grand.adv',
   'https://www.facebook.com/share/1DFzDX72P3/',
-  'https://wa.me/message/QAFZ3RKJDNH4B1',
+  contactInfo.whatsapp,
 ];
 
 type JsonLd = Record<string, unknown>;
