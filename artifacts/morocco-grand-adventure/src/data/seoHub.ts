@@ -384,7 +384,6 @@ export const MERZOUGA_GUIDES: HubPage[] = [
     tours: ['3-day-sahara-marrakech', '2-day-zagora-desert-marrakech', '4-day-marrakech-merzouga-sahara'],
     destinations: ['merzouga', 'erg-chebbi'],
     relatedGuides: ['camel-trekking', 'desert-camps', 'best-time-to-visit'],
-    inlineImages: [{ imageId: 'fennec-fox-sahara-wildlife', after: 1 }],
     sources: ['onmt-merzouga-region'],
   },
   {
@@ -793,7 +792,6 @@ export const TRAVEL_INFO: HubPage[] = [
     destinations: ['merzouga', 'essaouira', 'marrakech'],
     relatedGuides: ['what-to-pack-morocco', 'getting-around-morocco'],
     sources: ['onmt', 'lonely-planet-morocco'],
-    inlineImages: [{ imageId: 'fennec-fox-sahara-wildlife', after: 1 }],
   },
   {
     kind: 'travel-info',
@@ -801,9 +799,9 @@ export const TRAVEL_INFO: HubPage[] = [
     title: 'What to Pack for Morocco — A Practical List',
     pageTitle: 'What to Pack for Morocco — Practical Packing List',
     description: 'A realistic Morocco packing list: layers for cold desert nights, sun protection, footwear for medinas and dunes, and what to leave at home.',
-    ogImage: '/images/catalog/moroccan-riad-breakfast.webp',
-    heroImage: '/images/catalog/moroccan-riad-breakfast.webp',
-    heroAlt: 'Moroccan riad breakfast with msemen, jams and mint tea on a courtyard table',
+    ogImage: '/images/catalog/sahara-dune-trekking-merzouga.webp',
+    heroImage: '/images/catalog/sahara-dune-trekking-merzouga.webp',
+    heroAlt: 'Trekkers climbing the crest of a tall Sahara dune near Merzouga',
     intro: 'Packing for Morocco is about layers and one good pair of shoes. Medinas, mountain passes and desert nights make different demands — this list covers all three without overpacking.',
     sections: [
       {
@@ -845,7 +843,6 @@ export const TRAVEL_INFO: HubPage[] = [
     destinations: ['merzouga', 'marrakech'],
     relatedGuides: ['best-time-to-visit-morocco', 'desert-camps'],
     sources: ['onmt', 'lonely-planet-morocco'],
-    inlineImages: [{ imageId: 'sahara-dune-trekking-merzouga', after: 1 }],
   },
   {
     kind: 'travel-info',
@@ -890,7 +887,6 @@ export const TRAVEL_INFO: HubPage[] = [
     destinations: ['merzouga', 'ouarzazate', 'marrakech'],
     relatedGuides: ['best-time-to-visit-morocco', 'how-to-get-there'],
     sources: ['onmt', 'lonely-planet-morocco'],
-    inlineImages: [{ imageId: 'draa-valley-oasis-palm-grove', after: 0 }],
   },
 ];
 export const ALL_HUB_PAGES: HubPage[] = [...MERZOUGA_GUIDES, ...COMPARISONS, ...TRAVEL_INFO];
