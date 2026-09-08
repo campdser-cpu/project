@@ -196,6 +196,71 @@ if (fs.existsSync(sitemapPath)) {
 } else {
   chk(false, 'sitemap-missing');
 }
+// --- SEO metadata regression audit (Phase 1) ---
+// Scans every prerendered localized page for metadata regressions.
+const SITE_ORIGIN = 'https://www.moroccograndadventure.com';
+const LANG_CODES = ['en','fr','es','it','de','nl','pt','zh','ja','ko','ar'];
+const MOJI_PATTERNS = ['Ã©','Ã¨','Ã¯','Ã´','Ã¢','Ã»','Ã§','Ã','Â','â€','â€™','â€œ','â€\x9d','Ø±','Ø§','Ù…'];
+function mojiHit(s) { return MOJI_PATTERNS.some(function (p) { return s.indexOf(p) !== -1; }); }
+function decodeEnt(s) {
+  return s.replace(/&amp;/g, '&').replace(/&#x27;|&#39;/g, "'").replace(/&quot;/g, '"')
+    .replace(/&mdash;/g, '—').replace(/&hellip;/g, '…').replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+}
+const metaPages = [];
+function walkHtml(dir) {
+  for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+    const f = path.join(dir, e.name);
+    if (e.isDirectory()) walkHtml(f);
+    else if (e.name === 'index.html') metaPages.push(f);
+  }
+}
+walkHtml(dist);
+const titleByLocale = {};
+let mojiPages = 0, suffixDup = 0, canonicalBad = 0, hreflangBad = 0;
+for (const f of metaPages) {
+  const rel = path.relative(dist, f).split(path.sep).join('/');
+  const urlPath = '/' + rel.slice(0, -'/index.html'.length);
+  const segs = urlPath.split('/').filter(Boolean);
+  const locale = segs[0];
+  if (!locale || LANG_CODES.indexOf(locale) === -1) continue; // skip legacy-redirect stubs etc.
+  const rest = '/' + segs.slice(1).join('/');
+  const html = fs.readFileSync(f, 'utf8');
+  const title = decodeEnt((html.match(/<title>([^<]*)<\/title>/) || ['', ''])[1]);
+  const desc = decodeEnt((html.match(/<meta name="description" content="([^"]*)"/) || ['', ''])[1]);
+  if (mojiHit(title) || mojiHit(desc)) { mojiPages++; chk(false, 'mojibake-in-head ' + urlPath); }
+  // brand suffix must never appear more than once (and never mid-title)
+  if ((title.match(/Morocco Grand Adventure/g) || []).length > 1) { suffixDup++; chk(false, 'brand-suffix-duplicated ' + urlPath); }
+  // canonical safety: must equal SITE_ORIGIN/<lang><rest> exactly
+  const canonical = (html.match(/<link rel="canonical" href="([^"]*)"/) || ['', ''])[1];
+  const expectedCanonical = SITE_ORIGIN + urlPath;
+  if (canonical !== expectedCanonical) { canonicalBad++; chk(false, 'canonical-changed ' + urlPath + ' got ' + canonical); }
+  // hreflang safety: 12 alternates (11 locales + x-default), none with a locale trailing slash
+  const alts = html.match(/<link[^>]*rel="alternate"[^>]*hreflang="[^"]*"[^>]*>/g) || [];
+  const slashyAlt = alts.filter(function (a) { return /https:\/\/www\.moroccograndadventure\.com\/[a-z]{2}\/"/.test(a); }).length;
+  if (alts.length !== 12 || slashyAlt !== 0) { hreflangBad++; chk(false, 'hreflang-changed ' + urlPath + ' n=' + alts.length + ' slashy=' + slashyAlt); }
+  (titleByLocale[locale] = titleByLocale[locale] || []).push({ url: urlPath, title: title });
+}
+// duplicate titles within a locale
+let dupTitles = 0;
+for (const loc of Object.keys(titleByLocale)) {
+  const seen = {};
+  for (const p of titleByLocale[loc]) {
+    if (seen[p.title]) { dupTitles++; chk(false, 'duplicate-title ' + loc + ' :: ' + p.title + ' :: ' + seen[p.title] + ' + ' + p.url); }
+    else seen[p.title] = p.url;
+  }
+}
+// homepage-fallback guard: /agadir-tours and /casablanca-tours must not use HOME_META
+for (const loc of LANG_CODES) {
+  const list = titleByLocale[loc] || [];
+  const home = list.find(function (p) { return p.url === '/' + loc; });
+  if (!home) continue;
+  for (const cityRoute of ['/agadir-tours', '/casablanca-tours']) {
+    const page = list.find(function (p) { return p.url === '/' + loc + cityRoute; });
+    chk(!!page, 'city-page-exists ' + loc + cityRoute);
+    if (page) chk(page.title !== home.title, 'city-page-not-home-meta ' + loc + cityRoute);
+  }
+}
+console.log('seo-meta: pages=' + metaPages.length + ' mojibake=' + mojiPages + ' suffix-dup=' + suffixDup + ' dup-titles=' + dupTitles + ' canonical-bad=' + canonicalBad + ' hreflang-bad=' + hreflangBad);
 console.log('total-pass=' + okGet + ' total-fail=' + failCount);
 if (failCount > 0) {
   process.exitCode = 1;

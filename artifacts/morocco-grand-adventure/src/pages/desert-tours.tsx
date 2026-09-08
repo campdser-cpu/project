@@ -81,7 +81,7 @@ export default function DesertTours() {
         </div>
       </section>
 
-      {/* Desert moments â€” curated imagery from the Image-SEO pack */}
+      {/* Desert moments — curated imagery from the Image-SEO pack */}
       <section className="py-16 md:py-20 bg-background border-t border-border" aria-label="Desert moments in the Sahara">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-10">
@@ -131,14 +131,14 @@ export default function DesertTours() {
         </div>
       </section>
 
-      {/* Sahara Camel Trek â€” Cinematic Video */}
+      {/* Sahara Camel Trek — Cinematic Video */}
       <section className="py-16 md:py-20 bg-card border-b border-border">
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="text-center mb-8 md:mb-10">
             <span className="text-primary font-bold tracking-wider uppercase text-sm mb-3 block">The Sahara in One Breath</span>
             <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-4">A Camel Trek Across the Golden Dunes</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto text-base md:text-lg">
-              From Berber handwoven rugs in the Atlas Mountains to a golden camel trek across the Sahara â€” this is Morocco in one breath.
+              From Berber handwoven rugs in the Atlas Mountains to a golden camel trek across the Sahara — this is Morocco in one breath.
             </p>
           </div>
           <CinematicVideo

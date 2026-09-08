@@ -48,7 +48,7 @@ import {
   blogPosts,
   type BlogPost,
 } from '../src/i18n/content';
-import { getRouteMeta, getLocalizedRouteMeta, BLOG_META, HOME_META, FR_HOME_META, ogImageAlt, type RouteMeta } from '../src/components/seo/route-metadata';
+import { getRouteMeta, getLocalizedRouteMeta, BLOG_META, HOME_META, FR_HOME_META, ogImageAlt, withBrandSuffix, type RouteMeta } from '../src/components/seo/route-metadata';
 import { buildTourSchema, buildDestinationSchema, buildBlogPostSchema, buildReviewSchema, buildFaqSchema, buildBreadcrumb } from '../src/components/seo/StructuredData';
 import { registerAllTranslations } from '../src/i18n/locales';
 import { registerAllContentOverlays } from '../src/i18n/content/overlays';
@@ -953,8 +953,8 @@ function buildRoutes(lang: Lang): RouteEntry[] {
 }
 function injectHead(html: string, meta: RouteEntry['meta'], rest: string, lang: string): string {
   const clean = rest === '/' ? '' : rest; const currentUrl = `${SITE_URL}/${lang}${clean}`;
-  // Avoid appending the brand when the meta title already ends with it.
-  const fullTitle = meta.title.endsWith(BRAND) ? meta.title : `${meta.title} — ${BRAND}`;
+  // Avoid redundant brand suffixes; append only when there is room.
+  const fullTitle = withBrandSuffix(meta.title);
   const ogUrl = currentUrl; const hreflangLinks = hrefsFor(rest);
   html = html.replace(/<title>[\s\S]*?<\/title>/, `<title>${fullTitle}</title>`);
   html = html.replace(/<meta name="description" content="[^"]*"/, `<meta name="description" content="${meta.description}"`);

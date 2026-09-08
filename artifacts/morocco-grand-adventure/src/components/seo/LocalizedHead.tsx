@@ -13,7 +13,7 @@ import { useEffect } from 'react';
 import { usePathname } from 'wouter/use-browser-location';
 import { useLanguage, languages } from '@/contexts/LanguageContext';
 import { parseLangPath, RAW_BASE } from '@/lib/i18n-routing';
-import { getLocalizedRouteMeta, FR_HOME_META, ogImageAlt } from './route-metadata';
+import { getLocalizedRouteMeta, FR_HOME_META, withBrandSuffix, ogImageAlt } from './route-metadata';
 
 const BRAND = 'Morocco Grand Adventure';
 const SITE_ORIGIN = 'https://www.moroccograndadventure.com';
@@ -58,7 +58,7 @@ export function LocalizedHead() {
         ? t('hero_tagline').replace(/\s+/g, ' ').trim()
         : routeMeta.title;
     const description = useFrenchHomeMeta ? FR_HOME_META.description : isHome ? t('hero_subtext') : routeMeta.description;
-    const fullTitle = `${tagline} — ${BRAND}`;
+    const fullTitle = withBrandSuffix(tagline);
     document.title = fullTitle;
     upsertMeta('name', 'description', description);
 
