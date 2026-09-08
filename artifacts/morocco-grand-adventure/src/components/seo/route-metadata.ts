@@ -32,7 +32,7 @@ export const HOME_META: RouteMeta = {
 };
 export const FR_HOME_META: RouteMeta = {
   title: 'Voyage sur mesure au Maroc — Circuits privés & Sahara',
-  description: "Créez votre circuit privé au Maroc avec une agence locale : désert de Merzouga, camp de luxe, Marrakech, Fès et l'Atlas. Devis personnalisé.",
+  description: "Créez votre circuit privé au Maroc avec une agence locale : Merzouga, dunes d'Erg Chebbi, camp de luxe, Marrakech, Fès et l'Atlas. Devis personnalisé.",
   ogImage: '/images/hero/desert-pano.jpg',
 };
 
@@ -44,7 +44,7 @@ const TOUR_META: Record<string, RouteMeta> = {
   '7-day-imperial-cities-sahara-escape': { title: '7-Day Imperial Cities & Sahara Escape — Grand Morocco Tour', description: 'A private Morocco journey through the High Atlas, Aït Ben Haddou, Dades Valley, Erg Chebbi and imperial Fes.', ogImage: '/images/curated/ait-ben-haddou-bridge-town-unesco-morocco.webp' },
   'honeymoon-morocco': { title: 'Romantic Morocco Honeymoon — 10 Day Luxury Private Tour', description: 'A romantic private Morocco journey combining cities, desert experiences and time designed for couples.', ogImage: '/images/curated/couple-blue-steps-chefchaouen-medina.webp' },
   '8-day-marrakech-essaouira-agadir-sahara': { title: '8-Day Marrakech, Essaouira, Agadir & Sahara Desert Adventure', description: 'Eight private days from Marrakech to Essaouira and Agadir, across the Atlas to Aït Ben Haddou and Erg Chebbi — camel trek and a night in a desert camp.', ogImage: '/images/curated/todra-gorge-river-canyon-high-atlas.webp' },
-  'family-morocco-adventure': { title: 'Family Morocco Adventure — 9 Day Private Tour', description: 'A 9-day private family tour of Morocco — Marrakech, an Atlas mule ride, a Sahara camel trek and kasbahs, paced for kids and parents alike.', ogImage: '/images/curated/cascading-waterfall-todra-gorge.webp' },
+  'family-morocco-adventure': { title: 'Family Morocco Adventure — 9-Day Private & Kid-Friendly Tour', description: 'A 9-day private family tour of Morocco — Marrakech, an Atlas mule ride, a Sahara camel trek and kasbahs, with a relaxed pace designed for kids and parents.', ogImage: '/images/curated/cascading-waterfall-todra-gorge.webp' },
   '2-day-zagora-desert-marrakech': { title: '2-Day Zagora Desert Tour from Marrakech | Morocco', description: 'A private two-day route from Marrakech through Aït Ben Haddou, Ouarzazate and the Draa Valley to Zagora.', ogImage: '/images/curated/ancient-water-channels-olive-groves-morocco.webp' },
   '4-day-marrakech-merzouga-sahara': { title: '4-Day Marrakech to Merzouga Sahara Tour | Morocco', description: 'Take four days from Marrakech to Merzouga via Aït Ben Haddou, Dades and Todra, with more time around Erg Chebbi.', ogImage: '/images/curated/sahara-desert-sunset-silhouette-dune-morocco.webp' },
   '5-day-great-south-morocco': { title: '5-Day Great South Morocco Tour | Private Desert Journey', description: 'Explore Aït Ben Haddou, Dades, Todra, Merzouga and the Draa Valley on a private five-day southern Morocco route.', ogImage: '/images/dest/draa-valley.webp' },
@@ -126,7 +126,7 @@ export const routeMetadata: Record<string, RouteMeta> = {
   '/tours/from-agadir':{title:'Tours From Agadir — Coast & Sahara Private Tours',description:'Private Morocco journeys starting in Agadir and exploring the Atlantic coast and south.',ogImage:'/images/dest/agadir.jpg'},
   '/tours/from-marrakech/3-days':{title:'3-Day Tours From Marrakech — Sahara Desert & Merzouga',description:'Explore the High Atlas, Aït Ben Haddou, Dades Valley and Merzouga on a three-day route.',ogImage:'/images/dest/marrakech.jpg'},
   '/gallery':{title:'Morocco Photo & Video Gallery — Sahara & Morocco',description:'Photos and videos from Morocco’s Sahara, medinas, mountains and desert camps.',ogImage:'/images/hero/medina-pano.jpg'},
-  '/trip-builder':{title:'Custom Morocco Itinerary Builder',description:'Choose your dates, route and travel style to build a custom Morocco itinerary — then request a personalised quote from our local team.',ogImage:'/images/personal/luxury-camp-dusk.jpg'},
+  '/trip-builder':{title:'Build Your Morocco Itinerary — Custom Trip Planner',description:'Plan a bespoke Morocco itinerary in minutes: pick your dates, departure city, trip length and interests, then request a personalised quote from our local team.',ogImage:'/images/personal/luxury-camp-dusk.jpg'},
   '/build-your-day-trip':{title:'Build Your Day Trip in Morocco — One-Day Experiences',description:'Plan a personalized one-day Morocco experience with same-day return. Choose your departure, destination, date and preferences.',ogImage:'/images/dest/ouzoud.jpg'},
   '/about':{title:'About Us | Morocco, Beyond the Journey',description:'Meet Morocco Grand Adventure — desert guides from Merzouga sharing the whole of Morocco through private, locally-designed journeys.',ogImage:'/images/about/about-dune-1600.webp'},
   '/contact':{title:'Contact Morocco Grand Adventure — Plan Your Morocco Journey',description:'Contact Morocco Grand Adventure by WhatsApp, email or phone to plan your Morocco journey.',ogImage:'/images/dest/merzouga.jpg'},
@@ -235,6 +235,13 @@ const AR_ROUTE_META: Record<string,RouteMeta> = {
   '/faq':{title:'أسئلة شائعة عن السفر إلى المغرب',description:'إجابات عن أسئلة السفر والجولات الصحراوية والحجز في المغرب.'},
   '/blog':{title:'مدونة السفر في المغرب — أدلة ونصائح',description:'أدلة ونصائح عملية للسفر في المغرب من خبراء محليين.'},
 };
+
+// Per-language static route metadata for Italian, mirroring the AR_ROUTE_META
+// pattern above. Italian pages without an authored route-meta entry fall back
+// to the canonical English route metadata (see getLocalizedRouteMeta).
+const IT_ROUTE_META: Record<string,RouteMeta> = {
+  '/day-trips':{title:'Gite di un Giorno in Marocco — Escursioni Private',description:"Escursioni giornaliere private in Marocco da Marrakech, Fes e Merzouga: cascate di Ouzoud, Chefchaouen, Essaouira, Meknès e il deserto. Itinerario su misura con ritorno in giornata."},
+};
 // ── Localized route metadata ──────────────────────────────────────────────────
 // Single source of truth for per-page SEO title/description used by BOTH the
 // runtime <LocalizedHead> and the static prerender (`scripts/prerender.ts`).
@@ -269,6 +276,11 @@ export function getLocalizedRouteMeta(rest: string, lang: Lang = 'en'): RouteMet
   if (lang === 'ar') {
     const ar = AR_ROUTE_META[normalized];
     if (ar) return ar;
+  }
+  // 1b. Per-language static overrides (Italian — mirrors AR_ROUTE_META).
+  if (lang === 'it') {
+    const it = IT_ROUTE_META[normalized];
+    if (it) return it;
   }
 
   // 2. Tour detail page — localized entity meta when an overlay exists.
