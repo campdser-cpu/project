@@ -334,7 +334,7 @@ function buildDurationHubContent(slug: string, days: number, lang: Lang): string
 
   const durCrumbLabel = fmt(tr(lang, 'hub_dur_crumb'), { days, city: tr(lang, `hub_${hub.id}_name`) });
   const breadcrumbLinks = [
-    { label: tr(lang, 'nav_home'), url: `${SITE_URL}/${lang}/` },
+    { label: tr(lang, 'nav_home'), url: `${SITE_URL}/${lang}` },
     { label: tr(lang, 'nav_tours'), url: `${SITE_URL}/${lang}/tours` },
     { label: tr(lang, `hub_${hub.id}_title`), url: `${SITE_URL}/${lang}/tours/from-${hub.slug}` },
     { label: durCrumbLabel },
@@ -471,7 +471,7 @@ function buildTourDetailContent(id: string, lang: Lang): string {
     ? ` › ${link(`${SITE_URL}/${lang}/tours/from-${departHub.slug}/${tourDays}-days`, fmt(tr(lang, 'hub_dur_crumb'), { days: tourDays, city: tr(lang, `hub_${departHub.id}_name`) }))}`
     : '';
   const breadcrumb = departHub
-    ? `<p class="prerendered-breadcrumb">${link(`${SITE_URL}/${lang}/`, tr(lang, 'nav_home'))} › ${link(`${SITE_URL}/${lang}/tours`, tr(lang, 'nav_tours'))} › ${link(`${SITE_URL}/${lang}/tours/from-${departHub.slug}`, tr(lang, `hub_${departHub.id}_title`))}${durationHubCrumb} › ${escapeHtml(tour.name)}</p>\n`
+    ? `<p class="prerendered-breadcrumb">${link(`${SITE_URL}/${lang}`, tr(lang, 'nav_home'))} › ${link(`${SITE_URL}/${lang}/tours`, tr(lang, 'nav_tours'))} › ${link(`${SITE_URL}/${lang}/tours/from-${departHub.slug}`, tr(lang, `hub_${departHub.id}_title`))}${durationHubCrumb} › ${escapeHtml(tour.name)}</p>\n`
     : '';
   return breadcrumb + h1(tour.name) + paragraph(tour.description ?? '') + paragraph(`${tr(lang, 'search_duration')}: ${tour.duration}`) + h2(tr(lang, 'tour_why_love')) + ul(tour.highlights) + (itinerary.length > 0 ? h2(tr(lang, 'tour_itinerary')) + ul(itinerary.map((d) => `${tr(lang, 'tour_day')} ${d.day}: ${d.title}`)) : '') + (included.length > 0 ? h2(tr(lang, 'tour_included')) + ul(included) : '') + (excluded.length > 0 ? h2(tr(lang, 'tour_not_included')) + ul(excluded) : '') + (faqs.length > 0 ? h2(tr(lang, 'nav_faq')) + faqBlock(faqs) : '') + (departHub ? h2(fmt(tr(lang, 'hub_related_title'), { city: tr(lang, `hub_${departHub.id}_name`) })) + paragraph(link(`${SITE_URL}/${lang}/tours/from-${departHub.slug}`, fmt(tr(lang, 'hub_related_browse'), { city: tr(lang, `hub_${departHub.id}_name`) }))) : '') + buildTopicalLinksContent({ tourId: tour.id }, lang);
 }
@@ -634,10 +634,10 @@ function buildNavTreeContent(lang: Lang): string {
   const experienceItems = Object.keys(EXPERIENCE_PAGE_ROUTES)
     .map((rest) => `      <li>${link(`${SITE_URL}/${lang}${rest}`, experienceLabel(rest, lang))}</li>`)
     .join('\n');
-  return `<nav aria-label="Site tree" class="prerendered-site-tree">\n  <ul>\n    <li>${link(`${SITE_URL}/${lang}/`, tr(lang, 'nav_home'))}</li>\n    <li>${link(`${SITE_URL}/${lang}/tours`, tr(lang, 'nav_tours'))}\n    <ul>\n${cityItems}\n    </ul>\n    </li>\n    <li>${link(`${SITE_URL}/${lang}/destinations`, tr(lang, 'nav_destinations') || 'Destinations')}</li>\n    <li>${tr(lang, 'nav_experiences') || 'Experiences'}\n    <ul>\n${experienceItems}\n    </ul>\n    </li>\n    <li>${link(`${SITE_URL}/${lang}/about`, tr(lang, 'nav_about'))}</li>\n    <li>${link(`${SITE_URL}/${lang}/blog`, tr(lang, 'nav_blog'))}</li>\n    <li>${link(`${SITE_URL}/${lang}/faq`, tr(lang, 'nav_faq'))}</li>\n    <li>${link(`${SITE_URL}/${lang}/contact`, tr(lang, 'nav_contact'))}</li>\n  </ul>\n</nav>\n`;
+  return `<nav aria-label="Site tree" class="prerendered-site-tree">\n  <ul>\n    <li>${link(`${SITE_URL}/${lang}`, tr(lang, 'nav_home'))}</li>\n    <li>${link(`${SITE_URL}/${lang}/tours`, tr(lang, 'nav_tours'))}\n    <ul>\n${cityItems}\n    </ul>\n    </li>\n    <li>${link(`${SITE_URL}/${lang}/destinations`, tr(lang, 'nav_destinations') || 'Destinations')}</li>\n    <li>${tr(lang, 'nav_experiences') || 'Experiences'}\n    <ul>\n${experienceItems}\n    </ul>\n    </li>\n    <li>${link(`${SITE_URL}/${lang}/about`, tr(lang, 'nav_about'))}</li>\n    <li>${link(`${SITE_URL}/${lang}/blog`, tr(lang, 'nav_blog'))}</li>\n    <li>${link(`${SITE_URL}/${lang}/faq`, tr(lang, 'nav_faq'))}</li>\n    <li>${link(`${SITE_URL}/${lang}/contact`, tr(lang, 'nav_contact'))}</li>\n  </ul>\n</nav>\n`;
 }
 
-function buildFooterContent(lang: Lang): string {
+function buildFooterContent(lang: Lang, rest: string): string {
   const cityItems = CITY_HUBS.map((hub) => {
     const durationLinks = (CITY_HUB_DURATIONS[hub.id] ?? [])
       .map((days) => `        <li>${link(`${SITE_URL}/${lang}/tours/from-${hub.slug}/${days}-days`, fmt(tr(lang, 'hub_dur_crumb'), { days, city: tr(lang, `hub_${hub.id}_name`) }))}</li>`)
@@ -650,7 +650,18 @@ function buildFooterContent(lang: Lang): string {
   const experienceItems = Object.keys(EXPERIENCE_PAGE_ROUTES)
     .map((rest) => `      <li>${link(`${SITE_URL}/${lang}${rest}`, experienceLabel(rest, lang))}</li>`)
     .join('\n');
-  return `<footer class="prerendered-site-footer">\n  <div>\n  <h2>${escapeHtml(tr(lang, 'nav_tours'))}</h2>\n  <ul>\n${cityItems}\n  </ul>\n  </div>\n  <div>\n  <h2>${escapeHtml(tr(lang, 'nav_destinations') || 'Destinations')}</h2>\n  <ul>\n${destinationItems}\n  </ul>\n  </div>\n  <div>\n  <h2>${escapeHtml(tr(lang, 'nav_experiences') || 'Experiences')}</h2>\n  <ul>\n${experienceItems}\n  </ul>\n  </div>\n</footer>\n`;
+  return `<footer class="prerendered-site-footer">\n  <div>\n  <h2>${escapeHtml(tr(lang, 'nav_tours'))}</h2>\n  <ul>\n${cityItems}\n  </ul>\n  </div>\n  <div>\n  <h2>${escapeHtml(tr(lang, 'nav_destinations') || 'Destinations')}</h2>\n  <ul>\n${destinationItems}\n  </ul>\n  </div>\n  <div>\n  <h2>${escapeHtml(tr(lang, 'nav_experiences') || 'Experiences')}</h2>\n  <ul>\n${experienceItems}\n  </ul>\n  </div>\n${buildLanguageNav(rest)}</footer>\n`;
+}
+
+// Crawlable language-version links for the current page. The hrefs are exactly
+// the same URLs emitted as hreflang alternates, so crawlers get internal links
+// that agree with the canonical/hreflang graph instead of JS-only switching.
+function buildLanguageNav(rest: string): string {
+  const clean = rest === '/' ? '' : rest;
+  const items = languages
+    .map((l) => `    <li>${link(`${SITE_URL}/${l.code}${clean}`, l.nativeLabel)}</li>`)
+    .join('\n');
+  return `<nav aria-label="Language versions" class="prerendered-lang-nav">\n  <h2>Language versions</h2>\n  <ul>\n${items}\n  </ul>\n</nav>\n`;
 }
 function blogPostField(slug: string, field: 'title'|'excerpt'|'cat'|'date'|'read', lang: Lang, fallback: string): string {
   const n = BLOG_SLUG_INDEX[slug];
@@ -991,7 +1002,7 @@ function main() {
     for (const route of routes) {
       const langMarked = injectLang(baseHtml, route.lang, route.rtl);
       const htmlWithHead = injectHead(langMarked, route.meta, route.rest, lang.code);
-      const html = injectStructuredData(injectBody(htmlWithHead, buildNavTreeContent(lang.code) + route.content() + buildFooterContent(lang.code)), route.schemas);
+      const html = injectStructuredData(injectBody(htmlWithHead, buildNavTreeContent(lang.code) + route.content() + buildFooterContent(lang.code, route.rest)), route.schemas);
       const outPath = path.join(distDir, route.outFile);
       fs.mkdirSync(path.dirname(outPath), { recursive: true });
       fs.writeFileSync(outPath, html, 'utf-8');

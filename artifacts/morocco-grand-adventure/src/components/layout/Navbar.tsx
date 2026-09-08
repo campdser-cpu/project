@@ -7,6 +7,7 @@ import { contactInfo } from '@/data/content';
 import { CITY_HUBS, CITY_HUB_DURATIONS } from '@/data/tour-hierarchy';
 import { getLocalizedDestinations } from '@/i18n/content';
 import { useLanguage, languages } from '@/contexts/LanguageContext';
+import { parseLangPath, langHref } from '@/lib/i18n-routing';
 import { fmtTemplate } from '../tours/intl';
 
 export function Navbar() {
@@ -19,6 +20,7 @@ export function Navbar() {
   const langRef = useRef<HTMLDivElement>(null);
   const [location] = useLocation();
   const { lang, setLang, t } = useLanguage();
+  const { rest } = parseLangPath(location);
   const currentLang = languages.find((l) => l.code === lang) ?? languages[0];
   const destinations = getLocalizedDestinations(lang);
 
@@ -114,7 +116,7 @@ export function Navbar() {
                 <Globe className="w-4 h-4" aria-hidden="true" /> {currentLang.flag} {currentLang.code.toUpperCase()} <ChevronDown className="w-3.5 h-3.5" aria-hidden="true" />
               </button>
               <AnimatePresence>{langOpen && <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 8 }} className="absolute right-0 top-full mt-3 w-44 bg-background border border-border rounded-xl shadow-xl overflow-hidden z-50">
-                {languages.map(l => <button key={l.code} onClick={() => { setLang(l.code); setLangOpen(false); }} className={`w-full flex items-center gap-2.5 px-4 py-2.5 text-sm hover:bg-muted ${lang === l.code ? 'text-primary font-bold' : 'text-foreground'}`}><span>{l.flag}</span><span>{l.nativeLabel}</span>{lang === l.code && <span className="ml-auto">✓</span>}</button>)}
+                {languages.map(l => <a key={l.code} href={langHref(l.code, rest)} hrefLang={l.code} onClick={(e) => { e.preventDefault(); setLang(l.code); setLangOpen(false); }} className={`w-full flex items-center gap-2.5 px-4 py-2.5 text-sm hover:bg-muted ${lang === l.code ? 'text-primary font-bold' : 'text-foreground'}`}><span>{l.flag}</span><span>{l.nativeLabel}</span>{lang === l.code && <span className="ml-auto">✓</span>}</a>)}
               </motion.div>}</AnimatePresence>
             </div>
 
@@ -149,7 +151,7 @@ export function Navbar() {
         <Link href="/about" className="text-lg font-medium text-foreground">{t('nav_about')}</Link>
         <Link href="/contact" className="text-lg font-medium text-foreground">{t('nav_contact')}</Link>
         <a href={contactInfo.whatsapp} target="_blank" rel="noreferrer" className="bg-primary text-primary-foreground px-6 py-3 rounded-full text-center font-bold mt-4">{t('nav_book_whatsapp')}</a>
-        <div className="pt-5 mt-2 border-t border-border"><div className="flex items-center gap-2 mb-3 text-sm font-semibold text-muted-foreground"><Globe className="w-4 h-4" /><span>{currentLang.flag} {currentLang.nativeLabel}</span></div><div className="grid grid-cols-2 sm:grid-cols-3 gap-2">{languages.map(l => <button key={l.code} onClick={() => { setLang(l.code); setMobileOpen(false); }} className={`flex items-center gap-2 px-3 py-2.5 rounded-lg border text-sm ${lang === l.code ? 'border-primary bg-primary/5 text-primary font-bold' : 'border-border text-foreground hover:bg-muted'}`}><span>{l.flag}</span><span className="truncate">{l.nativeLabel}</span>{lang === l.code && <span className="ml-auto">✓</span>}</button>)}</div></div>
+        <div className="pt-5 mt-2 border-t border-border"><div className="flex items-center gap-2 mb-3 text-sm font-semibold text-muted-foreground"><Globe className="w-4 h-4" /><span>{currentLang.flag} {currentLang.nativeLabel}</span></div><div className="grid grid-cols-2 sm:grid-cols-3 gap-2">{languages.map(l => <a key={l.code} href={langHref(l.code, rest)} hrefLang={l.code} onClick={(e) => { e.preventDefault(); setLang(l.code); setMobileOpen(false); }} className={`flex items-center gap-2 px-3 py-2.5 rounded-lg border text-sm ${lang === l.code ? 'border-primary bg-primary/5 text-primary font-bold' : 'border-border text-foreground hover:bg-muted'}`}><span>{l.flag}</span><span className="truncate">{l.nativeLabel}</span>{lang === l.code && <span className="ml-auto">✓</span>}</a>)}</div></div>
       </div></motion.div>}</AnimatePresence>
     </nav>
   );
