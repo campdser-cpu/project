@@ -13,7 +13,9 @@
     "route:audit": "tsx scripts/route-audit.ts",
     "i18n:audit": "tsx scripts/i18n-audit.ts",
     "audit:production": "node scripts/audit-production-routes.mjs",
-    "audit:regression": "node scripts/regression-audit.cjs"
+    "audit:regression": "node scripts/regression-audit.cjs",
+    "photo-library:verify": "tsx scripts/verify-photo-library.mjs",
+    "report:completeness": "tsx scripts/audit/localization-complete.ts"
   },
   "devDependencies": {
     "@hookform/resolvers": "^3.10.0",

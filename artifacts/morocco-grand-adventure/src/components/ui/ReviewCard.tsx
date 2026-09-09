@@ -5,6 +5,7 @@
 import { ExternalLink, Star } from 'lucide-react';
 import { SiGoogle } from 'react-icons/si';
 import { verifiedGoogleReviews } from '@/data/verifiedReviews';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export type ReviewCardProps = {
   /** Kept for compatibility with the existing homepage API. */
@@ -18,6 +19,7 @@ export type ReviewCardProps = {
 
 export function ReviewCard({ index = 0 }: ReviewCardProps) {
   const review = verifiedGoogleReviews[index % verifiedGoogleReviews.length];
+  const { t } = useLanguage();
 
   return (
     <article className="group flex h-full flex-col overflow-hidden rounded-[2rem] border border-border/80 bg-background shadow-[0_12px_40px_-24px_rgba(0,0,0,0.45)] transition-all duration-500 hover:-translate-y-1 hover:border-primary/30 hover:shadow-[0_24px_60px_-28px_rgba(0,0,0,0.55)]">
@@ -39,7 +41,7 @@ export function ReviewCard({ index = 0 }: ReviewCardProps) {
 
           <div className="flex shrink-0 items-center gap-2 rounded-full border border-border/80 bg-card px-3 py-1.5 text-xs font-semibold text-muted-foreground">
             <SiGoogle className="h-3.5 w-3.5" aria-hidden="true" />
-            <span>Google Review</span>
+            <span>{t('reviews_google')}</span>
           </div>
         </div>
 
@@ -57,7 +59,7 @@ export function ReviewCard({ index = 0 }: ReviewCardProps) {
 
         <div className="mt-auto flex flex-col gap-4 border-t border-border/70 pt-5 sm:flex-row sm:items-center sm:justify-between">
           <div className="text-xs text-muted-foreground">
-            <span className="font-semibold text-foreground/80">Source:</span> Google
+            <span className="font-semibold text-foreground/80">{t('review_source')}:</span> Google
             {review.relativeDate ? <span> · {review.relativeDate}</span> : null}
           </div>
 
@@ -66,9 +68,9 @@ export function ReviewCard({ index = 0 }: ReviewCardProps) {
             target="_blank"
             rel="noopener noreferrer nofollow"
             className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-primary/40 px-4 py-2.5 text-sm font-bold text-foreground transition-all hover:border-primary hover:bg-primary hover:text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-            aria-label={`Read ${review.name}'s review on Google`}
+            aria-label={t('review_read_google')}
           >
-            Read on Google <ExternalLink className="h-4 w-4" aria-hidden="true" />
+            {t('review_read_google')} <ExternalLink className="h-4 w-4" aria-hidden="true" />
           </a>
         </div>
       </div>

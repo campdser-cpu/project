@@ -28,6 +28,14 @@ export type TourOverlay = {
   faq?: { question?: string; answer?: string }[];
 };
 
+export type BlogPostOverlay = {
+  title?: string;
+  excerpt?: string;
+  alt?: string;
+  canonicalTitle?: string;
+  canonicalExcerpt?: string;
+};
+
 export type ContentOverlay = {
   /** Display labels for the (canonical-English) destination category keys. */
   categories?: Record<string, string>;
@@ -37,4 +45,6 @@ export type ContentOverlay = {
   tours?: Record<string, TourOverlay>;
   /** Global FAQ (indexed against the English `faqData` array). */
   faq?: { question?: string; answer?: string }[];
+  /** Blog posts keyed by slug. */
+  blog?: Record<string, BlogPostOverlay>;
 };

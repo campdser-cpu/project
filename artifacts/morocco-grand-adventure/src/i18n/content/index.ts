@@ -275,9 +275,19 @@ export const blogPosts: BlogPost[] = [
 
 /**
  * Get a localized blog post by slug, falling back to English for any
- * missing field. Currently titles and excerpts are authored in English and
- * fall back to English; the content overlay system can extend these later.
+ * missing field. Uses the registered content overlay when one exists.
  */
 export function getLocalizedBlogPost(slug: string, lang: Lang): BlogPost | undefined {
-  return blogPosts.find((p) => p.slug === slug);
+  const base = blogPosts.find((p) => p.slug === slug);
+  if (!base) return undefined;
+  const overlay = getOverlay(lang)?.blog?.[slug];
+  if (!overlay) return base;
+  return {
+    ...base,
+    title: pickText(base.title, overlay.title),
+    excerpt: pickText(base.excerpt, overlay.excerpt),
+    alt: pickText(base.alt, overlay.alt),
+    canonicalTitle: pickText(base.canonicalTitle, overlay.canonicalTitle),
+    canonicalExcerpt: pickText(base.canonicalExcerpt, overlay.canonicalExcerpt),
+  };
 }

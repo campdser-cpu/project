@@ -126,6 +126,9 @@ export type TranslationSet = {
   tour_not_included: string;
   tour_gallery: string;
   tour_reviews: string;
+  reviews_google: string;
+  review_source: string;
+  review_read_google: string;
   tour_related: string;
   tour_private: string;
   tour_why_love: string;
