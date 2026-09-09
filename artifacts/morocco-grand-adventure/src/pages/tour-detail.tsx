@@ -3,7 +3,13 @@ import { useRoute, Link } from 'wouter';
 import { Layout } from '../components/layout/Layout';
 import { contactInfo } from '@/data/content';
 import { getLocalizedTour, getLocalizedTours, getLocalizedFaq, getLocalizedDestinations } from '@/i18n/content';
-import { MoroccoMap } from '../components/MoroccoMap';
+import { lazy, Suspense } from 'react';
+import { LazyMount } from '../components/perf/LazyMount';
+
+/** Map is below the fold — mount (and download its ~150 kB vendor chunk) only when scrolled near. */
+const MoroccoMap = lazy(() =>
+  import('../components/MoroccoMap').then((m) => ({ default: m.MoroccoMap })),
+);
 import NotFound from './not-found';
 import { motion } from 'framer-motion';
 import { Clock, Users, CheckCircle2, Check, X, Star, CalendarDays, ChevronRight, MapPin, Plus, Minus, Route } from 'lucide-react';
@@ -239,7 +245,11 @@ export default function TourDetail() {
                   <Route className="w-8 h-8 text-primary" aria-hidden="true" /> {t('td_your_route')}
                 </h2>
                 <p className="text-muted-foreground mb-6">{tour.routeCaption ?? t('td_route_caption')}</p>
-                <MoroccoMap routeIds={tour.routeIds} routeCaption={tour.routeCaption} height={460} routeStops={routeStops} />
+                <LazyMount minHeight={460}>
+                      <Suspense fallback={<div style={{ height: 460 }} className="bg-muted" />}>
+                        <MoroccoMap routeIds={tour.routeIds} routeCaption={tour.routeCaption} height={460} routeStops={routeStops} />
+                      </Suspense>
+                    </LazyMount>
               </div>
             )}
 

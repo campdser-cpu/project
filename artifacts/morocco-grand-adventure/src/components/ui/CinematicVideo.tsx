@@ -44,6 +44,15 @@ export function CinematicVideo({
   const [inView, setInView] = useState(false);
   const [playing, setPlaying] = useState(false);
 
+  // Data- and motion-respect: don't autoplay for users who prefer reduced motion
+  // or have Data Saver enabled — the poster + controls stay fully functional.
+  const [gentleMode] = useState(() => {
+    if (typeof window === 'undefined') return false;
+    if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) return true;
+    const conn = (navigator as { connection?: { saveData?: boolean } }).connection;
+    return conn?.saveData === true;
+  });
+
   useEffect(() => {
     const el = containerRef.current;
     if (!el || inView) return;
@@ -75,10 +84,10 @@ export function CinematicVideo({
           src={src}
           poster={poster}
           muted
-          autoPlay={autoPlay}
-          loop={autoPlay}
+          autoPlay={autoPlay && !gentleMode}
+          loop={autoPlay && !gentleMode}
           playsInline
-          preload="metadata"
+          preload={gentleMode ? 'none' : 'metadata'}
           controls
           onPlaying={() => setPlaying(true)}
           aria-label={alt}

@@ -8,7 +8,13 @@ import { ChevronRight, Calendar, Star, Sun, CloudSun, MapPin, UtensilsCrossed, B
 import { Link } from 'wouter';
 import { StructuredData, buildDestinationSchema } from '../components/seo/StructuredData';
 import { CinematicVideo } from '../components/ui/CinematicVideo';
-import { MoroccoMap } from '../components/MoroccoMap';
+import { lazy, Suspense } from 'react';
+import { LazyMount } from '../components/perf/LazyMount';
+
+/** Map is below the fold — mount (and download its ~150 kB vendor chunk) only when scrolled near. */
+const MoroccoMap = lazy(() =>
+  import('../components/MoroccoMap').then((m) => ({ default: m.MoroccoMap })),
+);
 import { catalogImage, imagesForDestination, DEST_FOOD_IMAGE, type CatalogImage } from '@/data/imageCatalog';
 import { DESTINATION_SOURCES, SOURCES } from '@/data/sources';
 
@@ -372,7 +378,11 @@ export default function DestinationDetail() {
                   <MapPin className="w-5 h-5 text-primary" /> {t('dest_view_map')}
                 </h3>
                 <div className="rounded-2xl overflow-hidden">
-                  <MoroccoMap height={320} />
+                  <LazyMount minHeight={320}>
+                    <Suspense fallback={<div style={{ height: 320 }} className="bg-muted" />}>
+                      <MoroccoMap height={320} />
+                    </Suspense>
+                  </LazyMount>
                 </div>
                 <p className="text-xs text-muted-foreground mt-3 text-center">{t('dest_map_hint')}</p>
               </div>
