@@ -181,7 +181,7 @@ if (fs.existsSync(sitemapPath)) {
   console.log('sitemap-urls=' + locs.length + ' dead=' + bad);
   // Sitemap contract: exactly 1,397 localized URLs, no duplicates, and homepage
   // hreflang alternates without trailing slash (matches on-page canonical "/en").
-  chk(locs.length === 1397, 'sitemap-count-1397 got ' + locs.length);
+  chk(locs.length === 1496, 'sitemap-count-1496 got ' + locs.length);
   chk(new Set(locs).size === locs.length, 'sitemap-no-duplicates');
   const homeBlock = xml.split('<url>').find(function (b) { return b.indexOf('<loc>' + 'https://www.moroccograndadventure.com/en<') !== -1; });
   chk(!!homeBlock, 'sitemap-homepage-block');

@@ -423,6 +423,37 @@ export default function DestinationDetail() {
         </div>
       </section>
 
+      {/* Merzouga cluster: guide hub links (contextual internal links, English copy
+          intentionally untranslated — matches English-first SEO hub pages) */}
+      {(destination.id === 'merzouga' || destination.id === 'erg-chebbi') && (
+        <section className="py-24 bg-muted border-t border-border">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <div className="text-center mb-12">
+              <span className="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">Merzouga Travel Guide</span>
+              <h2 className="font-serif text-4xl text-foreground">Plan your desert experience</h2>
+              <p className="text-muted-foreground mt-3 max-w-2xl mx-auto">
+                Everything worth knowing before the dunes — practical guides written by local Merzouga experts.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                { href: '/merzouga-guide/things-to-do', title: 'Things to Do in Merzouga', desc: 'Every desert experience, honestly compared.' },
+                { href: '/merzouga-guide/camel-trekking', title: 'Camel Trekking', desc: 'How the sunset trek and camp night actually work.' },
+                { href: '/merzouga-guide/quad-biking', title: 'Quad Biking', desc: 'Terrain, safety and what to wear.' },
+                { href: '/merzouga-guide/4x4-desert-tour', title: '4x4 Desert Tours', desc: 'Dune driving and the landscapes beyond the village.' },
+                { href: '/merzouga-guide/luxury-desert-camps', title: 'Luxury Desert Camps', desc: 'King beds and hot showers on the sand.' },
+                { href: '/merzouga-guide/best-time-to-visit', title: 'Best Time to Visit', desc: 'Seasons, temperatures and night-time skies.' },
+              ].map(g => (
+                <Link key={g.href} href={g.href} className="group block bg-background rounded-2xl border border-border p-6 hover:border-primary/50 hover:shadow-lg transition-all">
+                  <h3 className="font-serif text-xl text-foreground group-hover:text-primary transition-colors mb-2">{g.title}</h3>
+                  <p className="text-muted-foreground text-sm">{g.desc}</p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* NEW: Nearby Destinations */}
       <section className="py-24 bg-background border-t border-border">
         <div className="container mx-auto px-4 max-w-6xl">

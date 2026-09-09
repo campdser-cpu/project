@@ -114,7 +114,7 @@ export const MERZOUGA_GUIDES: HubPage[] = [
     ],
     tours: ['3-day-sahara-marrakech', '7-day-imperial-cities-sahara-escape', '4-day-marrakech-merzouga-sahara'],
     destinations: ['merzouga', 'erg-chebbi'],
-    relatedGuides: ['desert-camps', 'luxury-desert-camps', 'best-time-to-visit'],
+    relatedGuides: ['desert-camps', 'luxury-desert-camps', 'best-time-to-visit', 'things-to-do', 'how-many-days', 'sahara-desert-guide', 'erg-chebbi-sunrise-sunset'],
     inlineImages: [{ imageId: 'berber-camel-guide-sahara-merzouga', after: 0 }, { imageId: 'sahara-dune-trekking-merzouga', after: 2 }],
   },
   {
@@ -169,7 +169,7 @@ export const MERZOUGA_GUIDES: HubPage[] = [
     ],
     tours: ['3-day-sahara-marrakech', 'honeymoon-morocco', '7-day-imperial-cities-sahara-escape'],
     destinations: ['merzouga', 'erg-chebbi'],
-    relatedGuides: ['luxury-desert-camps', 'camel-trekking', 'best-time-to-visit'],
+    relatedGuides: ['luxury-desert-camps', 'camel-trekking', 'best-time-to-visit', 'things-to-do', 'sahara-desert-guide', 'erg-chebbi-sunrise-sunset'],
     inlineImages: [{ imageId: 'sahara-bivouac-stars-merzouga', after: 0 }],
   },
   {
@@ -218,7 +218,7 @@ export const MERZOUGA_GUIDES: HubPage[] = [
     ],
     tours: ['honeymoon-morocco', '3-day-sahara-marrakech', '7-day-imperial-cities-sahara-escape'],
     destinations: ['merzouga', 'erg-chebbi'],
-    relatedGuides: ['desert-camps', 'camel-trekking', 'best-time-to-visit'],
+    relatedGuides: ['desert-camps', 'camel-trekking', 'best-time-to-visit', 'things-to-do', 'sahara-desert-guide', 'erg-chebbi-sunrise-sunset'],
     inlineImages: [{ imageId: 'luxury-desert-camp-sunset-merzouga', after: 0 }],
   },
   {
@@ -278,7 +278,7 @@ export const MERZOUGA_GUIDES: HubPage[] = [
     ],
     tours: ['3-day-sahara-marrakech', '4-day-marrakech-merzouga-sahara', '7-day-imperial-cities-sahara-escape'],
     destinations: ['merzouga', 'erg-chebbi'],
-    relatedGuides: ['desert-camps', 'luxury-desert-camps', 'camel-trekking', 'what-to-pack'],
+    relatedGuides: ['desert-camps', 'luxury-desert-camps', 'camel-trekking', 'what-to-pack', 'things-to-do', 'how-many-days', 'sahara-desert-guide', 'erg-chebbi-sunrise-sunset'],
   },
   {
     kind: 'merzouga',
@@ -334,7 +334,7 @@ export const MERZOUGA_GUIDES: HubPage[] = [
     ],
     tours: ['3-day-sahara-marrakech', '3-day-sahara-fes', '5-day-great-south-morocco'],
     destinations: ['merzouga', 'erg-chebbi', 'ait-ben-haddou', 'dades-valley', 'todra-gorge', 'ifrane'],
-    relatedGuides: ['camel-trekking', 'best-time-to-visit', 'what-to-pack'],
+    relatedGuides: ['camel-trekking', 'best-time-to-visit', 'what-to-pack', 'things-to-do', 'marrakech-to-merzouga', 'fes-to-merzouga'],
   },
   {
     kind: 'merzouga',
@@ -374,6 +374,19 @@ export const MERZOUGA_GUIDES: HubPage[] = [
           'Most visitors reach Erg Chebbi as part of a Merzouga tour; if you are driving yourself, a small off-road-capable vehicle makes it easier to access the highest crests, but a standard car reaches the main viewpoints.',
         ],
       },
+      {
+        heading: 'Sunrise and sunset on the dunes',
+        paragraphs: [
+          'Sunset is the social hour: the western faces of the erg turn from gold to deep red while camel lines trace the ridges below. Sunrise is the connoisseur\u2019s choice — the sand is cool underfoot, the village is still asleep, and the shadows on the eastern slopes run long and blue. Neither costs anything: walk up from Merzouga in under an hour, or time a camel trek or 4x4 outing to finish on a crest.',
+          'For photographers, the hour after sunrise beats the sunset rush — fewer footprints, softer contrast and the dune field to yourself.',
+        ],
+      },
+      {
+        heading: 'How long you need on Erg Chebbi',
+        paragraphs: [
+          'One night on the dunes gives you the classic sequence — sunset camel trek, camp dinner, sunrise ride back. Two nights let you add the wider country around the erg by 4x4 or quad, visit Khamlia for Gnawa music, and keep the midday heat free. Anything beyond two days in Merzouga itself is for slow travellers; the Sahara rewards depth, but the rest of southern Morocco is close and worth the miles.',
+        ],
+      },
     ],
     faqs: [
       { question: 'How high are the Erg Chebbi dunes?', answer: 'The dunes reach about 150 m at their highest crests — the tallest in Morocco. The field is roughly 28 km long and up to 9 km wide.' },
@@ -383,7 +396,7 @@ export const MERZOUGA_GUIDES: HubPage[] = [
     ],
     tours: ['3-day-sahara-marrakech', '2-day-zagora-desert-marrakech', '4-day-marrakech-merzouga-sahara'],
     destinations: ['merzouga', 'erg-chebbi'],
-    relatedGuides: ['camel-trekking', 'desert-camps', 'best-time-to-visit'],
+    relatedGuides: ['camel-trekking', 'desert-camps', 'best-time-to-visit', 'things-to-do', '4x4-desert-tour', 'quad-biking', 'sahara-desert-guide', 'erg-chebbi-sunrise-sunset'],
     sources: ['onmt-merzouga-region'],
   },
   {
@@ -442,7 +455,7 @@ export const MERZOUGA_GUIDES: HubPage[] = [
     ],
     tours: ['3-day-sahara-marrakech', '4-day-marrakech-merzouga-sahara', 'family-morocco-adventure'],
     destinations: ['merzouga', 'erg-chebbi'],
-    relatedGuides: ['camel-trekking', 'best-time-to-visit', 'desert-camps'],
+    relatedGuides: ['camel-trekking', 'best-time-to-visit', 'desert-camps', 'things-to-do'],
   },
   {
     kind: 'merzouga',
@@ -484,7 +497,482 @@ export const MERZOUGA_GUIDES: HubPage[] = [
     ],
     tours: ['3-day-sahara-marrakech', '4-day-marrakech-merzouga-sahara', '3-day-sahara-fes'],
     destinations: ['merzouga', 'erg-chebbi', 'zagora', 'todra-gorge'],
-    relatedGuides: ['camel-trekking', 'desert-camps', 'how-to-get-there', 'best-time-to-visit'],
+    relatedGuides: ['camel-trekking', 'desert-camps', 'how-to-get-there', 'best-time-to-visit', 'things-to-do', 'how-many-days'],
+  },
+  {
+    kind: 'merzouga',
+    slug: 'quad-biking',
+    title: 'Quad Biking in Merzouga — Riding the Edge of Erg Chebbi',
+    pageTitle: 'Quad Biking Merzouga — Sahara Quad Bike Tours at Erg Chebbi',
+    description: "What quad biking in Merzouga is really like — the terrain around Erg Chebbi, what to wear, when to ride and how a quad session fits around camel trekking and a night in a desert camp.",
+    ogImage: '/images/curated/sahara-desert-sunset-silhouette-dune-morocco.webp',
+    heroImage: '/images/curated/sahara-desert-sunset-silhouette-dune-morocco.webp',
+    heroAlt: 'Rider silhouette on a dune at sunset in the Sahara near Merzouga',
+    intro: 'A quad bike lets you cover in an hour what takes a camel a full evening: the gravel flats, palm groves, dry lakes and the base of the great Erg Chebbi dunes around Merzouga. This guide explains the terrain, what a ride involves and how to prepare.',
+    sections: [
+      { heading: 'What quad biking in Merzouga is like', paragraphs: [
+        'Quad biking around Merzouga is not dune-climbing on a machine — it is riding the varied country that surrounds the Erg Chebbi sand sea. You move across hard-packed gravel plains (called regs), through dusty palm groves, past nomad encampments and along the foot of the dunes, where the sand is firm enough to ride but soft enough to feel the terrain change under the wheels.',
+        'The rhythm is simple: a short safety briefing, a practice loop near the village until everyone is comfortable with the throttle and brakes, then a guided run into the desert with the guide choosing the line. It feels adventurous without being technically demanding — most first-time riders are relaxed within ten minutes.',
+      ] },
+      { heading: 'The terrain around Erg Chebbi', paragraphs: [
+        'The Merzouga area packs several very different landscapes into a small radius. West and south of the village are flat stony regs where you can ride fast and safely in a straight line. North of the dunes you cross the Dayet Srji, a seasonal salt lake that fills with water — and flamingos — after wet winters. Around Khamlia and the black-volcanic hills of Jerfoulf you ride gravel tracks between tiny Berber settlements.',
+        'Right at the edge of Erg Chebbi the sand becomes softer and riding gets slower and rougher; this is the dramatic part, with 150-metre dunes towering over the track. Deep dune climbing on a quad is not part of a standard guided ride — the dunes are reserved for camels, on foot, and for the 4x4s that know the safe lines.',
+      ] },
+      { heading: 'What to expect from a typical session', paragraphs: [
+        'A guided quad outing around Merzouga is usually measured in hours rather than days. You are given a helmet, shown how the machine works, and ride in a small group behind a local guide who knows where the flat ground, the photo stops and the soft patches are. Sessions are commonly scheduled for early morning or the couple of hours before sunset, when temperatures are pleasant and the light is at its best.',
+        'Exact duration, route and group size vary by operator and season — we confirm the details for your dates when you enquire, and we only work with licensed local operators who maintain their machines and brief riders properly.',
+      ] },
+      { heading: 'Safety and practical considerations', paragraphs: [
+        'Quads are straightforward but not toys. Listen to the briefing, keep a sensible gap from the rider in front, and do not race the guide — the desert is bigger than your throttle. Dust is constant, so sunglasses or goggles, a scarf or bandana for your face, and closed shoes matter more than you expect.',
+        'Riders should be reasonably fit and comfortable controlling a vehicle; the machines have real weight and the terrain can be bumpy. Not sure it suits someone in your group? A pillion seat on the guide-driven option or a 4x4 desert drive is the calmer alternative with the same scenery.',
+      ] },
+      { heading: 'What to wear', paragraphs: [
+        'Long trousers and closed shoes are non-negotiable — the exhaust and the sand both punish bare skin. A light long-sleeve shirt protects from sun and dust, and in summer a breathable layer beats a heavy jacket. Bring sunglasses, a scarf, sunscreen and water; a small backpack is fine, but keep it snug so it does not bounce around.',
+        'In winter (November to February) mornings are genuinely cold — bring a fleece you can stash when the day warms up. After sunset, even in spring and autumn, you will want a warm layer.',
+      ] },
+      { heading: 'Best time of day to ride', paragraphs: [
+        'Two windows stand out. Early morning offers cool air, empty desert and hard, predictable ground. The late-afternoon slot is the favourite for most travellers: you ride as the heat breaks, finish at the edge of the dunes in golden light, and can hand the quad straight back before walking to a sunset camel trek or heading to camp.',
+      ] },
+      { heading: 'Who quad biking suits', paragraphs: [
+        'Quads are popular with couples wanting an active afternoon, with groups of friends, and with teenagers old enough to ride their own machine — families often split between quads and a support vehicle. If your priority is silence, starlight and the slow desert pace, the camel trek and a night in camp remain the heart of the trip; the quad is the high-energy counterpoint, not a replacement.',
+      ] },
+      { heading: 'How it fits with camel trekking and your camp night', paragraphs: [
+        'The classic Merzouga day combines both worlds: quad in the late afternoon across the regs and nomad tracks, return to the village, then mount a camel at the dune line for the sunset climb to camp, dinner under the stars and a sunrise ride back. Because the two activities start and finish at different points around the village, they slot together naturally — tell us your dates and we sequence the day so you are never doubling back.',
+      ] },
+    ],
+    faqs: [
+      { question: 'Do I need experience to ride a quad in Merzouga?', answer: 'No. You get a briefing and a practice loop before leaving the village, and you ride behind a local guide who sets the pace. If you can ride a scooter or drive a car with gears, you will be fine.' },
+      { question: 'Can children ride quads?', answer: 'Age minimums are set by the operator and depend on the machine size; younger children usually ride as passengers with a parent or the guide. Tell us the ages in your group and we will match the right setup.' },
+      { question: 'Can quads climb the Erg Chebbi dunes?', answer: 'Standard guided rides stay on the firm ground around the dune field rather than climbing the tall crests. The dunes themselves are best experienced on foot or by camel — and driven safely only by the 4x4 drivers who know the lines.' },
+      { question: 'Is quad biking included in your tours?', answer: 'It can be added to most itineraries that include a full day in Merzouga — such as the 3-day Sahara tour from Marrakech or the 4-day Marrakech–Merzouga route. Ask us and we build it into your day.' },
+      { question: 'What happens if the sand is too soft or someone struggles?', answer: 'The guide chooses the route around soft patches, and any rider who is not comfortable can stop and continue by vehicle. Nobody is ever left to figure out the desert alone.' },
+    ],
+    tours: ['3-day-sahara-marrakech', '4-day-marrakech-merzouga-sahara', '3-day-sahara-fes'],
+    destinations: ['merzouga', 'erg-chebbi'],
+    relatedGuides: ['camel-trekking', '4x4-desert-tour', 'things-to-do', 'luxury-desert-camps', 'sahara-desert-guide'],
+    sources: ['onmt'],
+    inlineImages: [{ imageId: 'sahara-dune-trekking-merzouga', after: 1 }],
+  },
+  {
+    kind: 'merzouga',
+    slug: '4x4-desert-tour',
+    title: 'Merzouga 4x4 Desert Tour — Dune Driving Around Erg Chebbi',
+    pageTitle: 'Merzouga 4x4 Desert Tour — Dune Driving at Erg Chebbi',
+    description: "What a 4x4 desert tour around Merzouga and Erg Chebbi involves — dune driving, the desert landscapes beyond the village, cultural stops and practical expectations before you book.",
+    ogImage: '/images/dest/erg-chebbi.webp',
+    heroImage: '/images/dest/erg-chebbi.webp',
+    heroAlt: 'The Erg Chebbi dune field near Merzouga — classic 4x4 desert country',
+    intro: 'A 4x4 is the only comfortable way to meet the Sahara on its own terms: over the crests of Erg Chebbi, out to the nomad settlements and the seasonal lake, and through the black-stone desert where the asphalt ends. Here is what a Merzouga 4x4 desert tour actually involves.',
+    sections: [
+      { heading: 'Why the desert needs a 4x4', paragraphs: [
+        'The paved road ends at Merzouga village. Everything beyond it — the deep-sand corridors between the dunes, the stony hamada plain, the tracks to nomad families — is soft sand, gravel or rutted dirt. Regular cars stop at the viewpoints; a properly driven 4x4 with sand experience carries on into the middle of it.',
+        'This is why the classic "tour of the dunes" around Merzouga has always been done by Land Rover-style 4x4s with local drivers who read the sand the way sailors read water: where the wind has firmed it, where a crest will pitch the nose down, where to deflate the tyres and where to keep momentum.',
+      ] },
+      { heading: 'Dune driving on Erg Chebbi', paragraphs: [
+        'The signature part of any Merzouga 4x4 tour is driving onto the Erg Chebbi sand sea itself. Climbing a 150-metre dune from inside the vehicle feels steeper than any mountain road, then the crest breaks and the whole erg rolls out ahead of you. Drivers stop on the high ridges for photographs — the pattern of ripples and shadows changes by the hour.',
+        'Good drivers never fight the sand: they pick lines between the crests, keep speed steady on the soft sections and avoid the steepest faces in the heat of the day. It is exciting without being reckless, which is exactly the balance you want with family on board.',
+      ] },
+      { heading: 'The landscapes beyond the dunes', paragraphs: [
+        'The area around Merzouga is far more than sand. A half-day 4x4 loop typically takes in the Dayet Srji, a seasonal salt lake that draws flamingos after wet winters; the black volcanic stone desert of Jerfoulf, where films have been shot; fossil-rich ground where the Sahara was once a sea; and wide reg flats where you can stand with 360-degree horizon and hear nothing at all.',
+        'Because distances are short, you can cross several of these worlds in an afternoon — dunes, lake bed, black stone and gravel — and still be back at the dune line for sunset.',
+      ] },
+      { heading: 'Cultural stops along the way', paragraphs: [
+        'Where the itinerary allows, 4x4 tours around Merzouga pass through the small communities that live at the edge of the erg: Khamlia, known across Morocco for its Gnawa music, and the nomad families who still move with their herds across the plain. Visits are short and unhurried — a cup of mint tea, a little music, a conversation through your guide — and they are the reason many travellers call this drive the most memorable day of their Morocco trip.',
+        'These stops depend on who is around on the day and how your guide knows the families; nothing is staged on demand. We keep it that way deliberately.',
+      ] },
+      { heading: 'Practical expectations: comfort, bumps and timing', paragraphs: [
+        'Expect air-conditioning on the move, sand on the floor mats, and some jostling on soft sections — sit towards the middle if your back is sensitive. Half-day and full-day formats exist; whichever you choose, the best light for the dunes is early morning and the two hours before sunset, so well-planned tours build around those windows.',
+        'Vehicles are typically older-generation 4x4s maintained by their drivers rather than fleet-new SUVs — that is part of the character. If you want a newer vehicle, say so when booking and we will match you accordingly.',
+      ] },
+      { heading: 'What to bring', paragraphs: [
+        'Sun protection is the headline: sunscreen, sunglasses and a hat or scarf. Bring water, closed shoes for short walks on hot sand, and a warm layer for winter mornings and any stop after sunset. A camera with a charged battery — the light between dune crests is unlike anywhere else. A small bag is fine; leave hard suitcases at your riad or in the tour vehicle.',
+      ] },
+      { heading: 'Who a 4x4 desert tour suits', paragraphs: [
+        'Almost everyone, which is its strength: families with young children, travellers who cannot or do not want to ride camels or quads, photographers chasing the big landscape, and older visitors who still want to stand on a 150-metre dune. It pairs naturally with a camel trek — drive the far country in the morning, ride the camel to camp in the late afternoon.',
+      ] },
+    ],
+    faqs: [
+      { question: 'Is the 4x4 tour safe for children?', answer: 'Yes — it is the most family-friendly way to reach the deep dunes, with seat belts and a professional driver. Very young children may need a booster; mention ages when booking.' },
+      { question: 'Will we get stuck in the sand?', answer: 'Experienced drivers choose lines and tyre pressures that make getting stuck rare, and a second vehicle or shovel handles the occasional soft patch. It is part of the adventure, managed calmly.' },
+      { question: 'How long does a Merzouga 4x4 tour take?', answer: 'Formats vary by operator and season — most visitors choose between a half-day dune-and-villages loop and a fuller day that adds Khamlia and the nomad area. We confirm exact timing for your dates when you enquire.' },
+      { question: 'Can we combine the 4x4 tour with camel trekking and a night in camp?', answer: 'Yes, and it is the ideal combination: 4x4 in the morning or late afternoon, sunset camel trek to camp, dinner and stars, sunrise ride back. Tell us and we sequence the whole day.' },
+      { question: 'Do we need to book in advance?', answer: 'In peak season (October to April), yes — vehicles and good drivers are limited. A few days ahead is usually enough outside the busiest weeks.' },
+    ],
+    tours: ['3-day-sahara-marrakech', '4-day-marrakech-merzouga-sahara', '7-day-imperial-cities-sahara-escape'],
+    destinations: ['merzouga', 'erg-chebbi'],
+    relatedGuides: ['camel-trekking', 'quad-biking', 'things-to-do', 'desert-camps', 'sahara-desert-guide', 'erg-chebbi-sunrise-sunset'],
+    sources: ['onmt'],
+    inlineImages: [{ imageId: 'luxury-desert-camp-sunset-merzouga', after: 4 }],
+  },
+  {
+    kind: 'merzouga',
+    slug: 'things-to-do',
+    title: 'Things to Do in Merzouga — Every Desert Experience, Honestly Compared',
+    pageTitle: 'Things to Do in Merzouga — Camel Treks, Quads, 4x4s & Camps',
+    description: "All the things to do in Merzouga in one place — camel trekking on Erg Chebbi, quad biking, 4x4 desert tours, luxury camps, sunrise and sunset spots, music and culture — and how to combine them.",
+    ogImage: '/images/curated/camel-caravan-sunset-silhouette-sahara-desert.webp',
+    heroImage: '/images/curated/camel-caravan-sunset-silhouette-sahara-desert.webp',
+    heroAlt: 'Camel caravan silhouetted against a sunset dune ridge near Merzouga',
+    intro: 'Merzouga looks like a one-experience village from a distance — ride a camel, sleep in camp — but the reality is a whole menu of desert days. This is the honest overview: what each activity gives you, what it costs in time and effort, and how the pieces fit into one or two well-built days.',
+    sections: [
+      { heading: 'Camel trekking into Erg Chebbi', paragraphs: [
+        'The classic, and still the thing Merzouga does best. A one-hour sunset ride from the dune line to a camp between the crests, dinner and drumming by the fire, then a short sunrise ride back across cool sand. It suits absolutely everyone, needs no fitness to speak of, and delivers the desert postcard without machinery.',
+        'Read the full camel trekking guide for what actually happens, what to wear and how the camp night works.',
+      ] },
+      { heading: 'Quad biking around the dune field', paragraphs: [
+        'The high-energy option. Quads ride the regs, palm groves and nomad tracks that surround Erg Chebbi, finishing at the base of the dunes in golden light. Briefing and practice loop included; no experience needed. Best slotted in the late afternoon, handing the machine back just in time for your camel.',
+        'See the quad biking in Merzouga guide for terrain, safety and what to wear.',
+      ] },
+      { heading: '4x4 desert tours and dune driving', paragraphs: [
+        'The way to reach the country you cannot walk to: over the high Erg Chebbi crests with an experienced dune driver, out to the seasonal Dayet Srji lake, the black-stone desert of Jerfoulf and fossil beds where the Sahara was once sea. The most family-friendly deep-desert option, and the one photographers love.',
+        'Details, expectations and what to bring are in the Merzouga 4x4 desert tour guide.',
+      ] },
+      { heading: 'A night in a desert camp', paragraphs: [
+        'Whether standard or luxury, the camp night is what turns a dune visit into a desert trip: tagine dinner, Gnawa drumming around the fire, and a sky so crowded with stars that identifying constellations stops being a hobby and starts being obvious. Camps range from simple bivouacs to king-bed suites with hot showers on the sand.',
+        'Compare the options in our desert camps and luxury desert camps guides.',
+      ] },
+      { heading: 'Sunrise and sunset on the dunes', paragraphs: [
+        'The two free shows, and genuinely two different experiences. Sunset warms the western faces of Erg Chebbi from gold to deep red and draws the camel lines along the ridges; sunrise is quieter, cooler and crisper, with long blue shadows on the lee side. You do not need an activity ticket for either — walk up from the village, or time your camel or 4x4 outing to finish on a crest.',
+      ] },
+      { heading: 'Culture: Khamlia, Gnawa music and village life', paragraphs: [
+        'Merzouga is a living town, not a theme park. In Khamlia, a short drive south, the Gnawa community performs the hypnotic music their ancestors brought from sub-Saharan Africa — small, authentic and moving. Around the village you find bakeries, the date-palm oasis of Hassilabied, and nomad families on the plain beyond. Most 4x4 tours fold these in naturally; a quiet morning walk through the oasis is equally rewarding.',
+      ] },
+      { heading: 'Stargazing and the quiet hours', paragraphs: [
+        'With the nearest town light miles away, the night sky over Erg Chebbi is among the clearest in Morocco. The best stargazing is simply lying on cool sand away from camp lights after the fire dies down — or in the deep darkness on the far side of a crest. Bring a red-light torch or use your phone at minimum brightness; your eyes need twenty minutes to adapt.',
+      ] },
+      { heading: 'How to combine it all: one perfect day, two relaxed days', paragraphs: [
+        'With one full day: 4x4 desert loop in the morning, long lunch and pool time in the village, quad or sandboarding late afternoon, sunset camel to camp, dinner and stars. With two days, everything slows: add Khamlia and the oasis on the second morning, or a second camp night — many travellers say the second night, when the novelty fades and the silence sets in, is the better one.',
+        'Our tours are built around exactly these rhythms — the 3-day Marrakech Sahara tour, the 4-day Marrakech–Merzouga route and the 7-day Imperial Cities escape all give Merzouga a proper full day rather than an overnight dash.',
+      ] },
+    ],
+    faqs: [
+      { question: 'How many days do I need in Merzouga?', answer: 'Two nights is the sweet spot: arrive in the evening, one full desert day, leave the next morning. One night works if your schedule is tight, but you compress everything into a single sunset-to-sunrise window.' },
+      { question: 'What is the best activity in Merzouga for families?', answer: 'The 4x4 desert tour is the most forgiving with children, and the camel trek to camp works for almost every age. Quads suit teenagers; younger kids ride with a parent or the guide.' },
+      { question: 'Is Merzouga worth it compared with Agafay or Zagora?', answer: 'If the big dunes are the point of your trip, yes — Erg Chebbi is the tallest dune field in Morocco and the best-supported by tours. Agafay is a stone desert near Marrakech; Zagora is quieter but its dunes are smaller.' },
+      { question: 'Can I do everything in one day in Merzouga?', answer: 'Camel, quad, 4x4 and camp in one day is doable and common — the activities start and finish at different points around the village. But two days lets you keep the midday hours free, which matters in the warmer months.' },
+    ],
+    tours: ['3-day-sahara-marrakech', '4-day-marrakech-merzouga-sahara', '3-day-sahara-fes', '7-day-imperial-cities-sahara-escape'],
+    destinations: ['merzouga', 'erg-chebbi'],
+    relatedGuides: ['camel-trekking', 'quad-biking', '4x4-desert-tour', 'desert-camps', 'luxury-desert-camps', 'best-time-to-visit', 'how-many-days', 'sahara-desert-guide', 'erg-chebbi-sunrise-sunset'],
+    sources: ['onmt'],
+    inlineImages: [
+      { imageId: 'berber-camel-guide-sahara-merzouga', after: 0 },
+      { imageId: 'sahara-bivouac-stars-merzouga', after: 5 },
+    ],
+  },
+  {
+    kind: 'merzouga',
+    slug: 'marrakech-to-merzouga',
+    title: 'Marrakech to Merzouga — The Complete Sahara Route Guide',
+    pageTitle: 'Marrakech to Merzouga — Route, Stops & Itinerary Guide',
+    description: "How to get from Marrakech to Merzouga — the High Atlas crossing, Aït Ben Haddou, Dades Valley, Todra Gorge and Erg Chebbi, with realistic 3-day and 4-day itinerary guidance.",
+    ogImage: '/images/dest/ait-ben-haddou.webp',
+    heroImage: '/images/dest/ait-ben-haddou.webp',
+    heroAlt: 'Aït Ben Haddou ksar on the route from Marrakech to Merzouga',
+    intro: 'Marrakech is Morocco\'s most popular starting point for the Sahara, and the road south to Merzouga is a journey in its own right: over the High Atlas, past the UNESCO-listed ksar of Aït Ben Haddou, through kasbah country and palm-filled valleys, along the Todra Gorge, and finally to the Erg Chebbi dunes. This guide explains how the route actually works so you can choose the right itinerary.',
+    sections: [
+      { heading: 'Route overview: what the journey involves', paragraphs: [
+        'Marrakech and Merzouga are connected by a single practical corridor: south over the High Atlas mountains (the Tizi n\'Tichka pass road), down to Aït Ben Haddou and Ouarzazate, then east through the Dades Valley, past the Todra Gorge and the Rissani / Tafilalet area to Merzouga at the foot of Erg Chebbi. It is a serious overland route — this is why we say honestly that the road is part of the experience, not just a transfer.',
+        'Because the distances are real, the number of days matters more than the vehicle. A rushed version tries to do everything in two days; three days is the shortest format we consider genuinely practical; four days or more lets the journey breathe.',
+      ] },
+      { heading: 'How the journey works with a private tour', paragraphs: [
+        'On our private Marrakech Sahara itineraries you travel in your own air-conditioned vehicle with a professional driver-guide. The route is split into manageable driving days, with stops at the major sights along the corridor and an overnight in the Dades or Todra area before the desert day.',
+        'The desert day itself follows the classic pattern: reach Merzouga by late afternoon, meet the camel team at the dune line, trek into Erg Chebbi for sunset, and sleep in a desert camp between the dunes. The next morning starts with sunrise over the sand before the onward or return journey.',
+      ] },
+      { heading: 'The major stops and what each adds', paragraphs: [
+        'Aït Ben Haddou — the UNESCO World Heritage earthen ksar, one of southern Morocco\'s great sights and the moment the landscape turns unmistakably pre-Saharan.',
+        'Ouarzazate — the film-studio capital and practical gateway to the south; usually a lunch or brief stop rather than an overnight.',
+        'Dades Valley — kasbahs, rose-growing villages and switchback road country; our preferred first-night area because it splits the drive realistically.',
+        'Todra Gorge — towering rock walls with a walkable gorge floor; a short, memorable stop on day two.',
+        'Rissani and the Tafilalet area — the historic heart of Morocco\'s desert trade routes, close to Merzouga.',
+        'Merzouga and Erg Chebbi — the destination itself: Morocco\'s tallest dunes, the camel trek, the camp night and the sunrise.',
+      ] },
+      { heading: '3-day vs 4-day: choosing the right itinerary', paragraphs: [
+        'Three days is the shortest practical format: day one over the Atlas with Aït Ben Haddou and on to the Dades area, day two through Todra Gorge and Rissani to the dunes for the sunset camel trek and camp night, day three sunrise and the long return to Marrakech. It works, and it is honest about being a full schedule.',
+        'Four days changes the character of the trip. The return leg stops being a marathon, and you can add a proper half-day around Merzouga itself — the 4x4 desert loop, Khamlia, the oasis — instead of driving straight back. If you have the time, this is the version we recommend most often.',
+      ] },
+      { heading: 'Private vs shared: what we offer and why', paragraphs: [
+        'We run this route as a private journey — your own vehicle, your own driver, your own pace, and stops chosen around your party rather than a fixed coach timetable. This is how the itineraries in our tour pages are built and priced.',
+        'Shared group tours do exist on this corridor and can be cheaper, but they mean fixed stops, fixed departure logic and accommodation chosen by the operator rather than by you. We are transparent that ours is the private option; if budget is the deciding factor, that trade-off is yours to make.',
+      ] },
+      { heading: 'Best time to travel the Marrakech–Merzouga route', paragraphs: [
+        'Spring (March to May) and autumn (September to November) are the comfortable windows: pleasant days in the valleys, cold-tolerable nights in the desert. Summer works if you accept heat and plan the drives around mornings; winter brings genuinely cold desert nights but also the clearest skies and quietest dunes. Our month-by-month guide covers this in detail.',
+      ] },
+      { heading: 'What to pack for the road and the dunes', paragraphs: [
+        'Layers are the rule: the trip crosses climates, from the Atlas passes to warm valleys to cold desert nights. Long trousers and closed shoes for the camel trek, a scarf for sand and sun, sunscreen, sunglasses, and a warm jacket for evenings in camp. Our Merzouga packing list goes item by item.',
+      ] },
+      { heading: 'Common mistakes travellers make on this route', paragraphs: [
+        'Underestimating distances and booking two days when three is realistic; scheduling the desert night immediately after a late arrival in Marrakech; packing for hot days only and being cold at night in camp; and treating Aït Ben Haddou or the gorges as drive-by photo stops rather than short walks worth an hour. Every one of these is avoidable with a realistic itinerary — which is exactly what we build.',
+      ] },
+    ],
+    faqs: [
+      { question: 'How far is Merzouga from Marrakech?', answer: 'It is a long overland journey across the High Atlas and southern valleys — roughly a full driving day if pushed, which is why our itineraries split it over two comfortable travel days with an overnight in the Dades or Todra area.' },
+      { question: 'Is the Marrakech to Merzouga road good?', answer: 'The route is fully paved and well travelled. The driving is long rather than difficult, with mountain sections and winding valley roads where a professional local driver adds real value.' },
+      { question: 'Can you do Marrakech to Merzouga in 2 days?', answer: 'Technically yes, with one overnight stop, but it compresses both the Atlas crossing and the desert experience into very long days. Three days is the shortest format we recommend for the Merzouga route.' },
+      { question: 'Does the tour return to Marrakech or continue one-way?', answer: 'Both formats exist. The 3-day and 4-day Marrakech routes return to Marrakech; one-way connections toward Fes or onward city plans can be discussed in your private quote.' },
+      { question: 'What is included in a private Marrakech–Merzouga tour?', answer: 'Private air-conditioned transport with a professional driver, accommodation according to the selected package, and the desert experience described in the confirmed itinerary. Exact inclusions for your dates are confirmed before booking.' },
+    ],
+    tours: ['3-day-sahara-marrakech', '4-day-marrakech-merzouga-sahara', '2-day-zagora-desert-marrakech', '7-day-imperial-cities-sahara-escape'],
+    destinations: ['marrakech', 'ait-ben-haddou', 'ouarzazate', 'dades-valley', 'todra-gorge', 'merzouga', 'erg-chebbi'],
+    relatedGuides: ['how-many-days', 'camel-trekking', 'luxury-desert-camps', 'things-to-do', 'best-time-to-visit', 'what-to-pack', 'how-to-get-there', 'marrakech-vs-fes', 'sahara-desert-guide', 'erg-chebbi-sunrise-sunset'],
+    sources: ['onmt'],
+    inlineImages: [
+      { imageId: 'ait-ben-haddou-ouarzazate-unesco', after: 2 },
+      { imageId: 'ancient-berber-kasbah-ruins-southern-morocco', after: 3 },
+    ],
+  },
+  {
+    kind: 'merzouga',
+    slug: 'fes-to-merzouga',
+    title: 'Fes to Merzouga — The Middle Atlas Route to the Sahara',
+    pageTitle: 'Fes to Merzouga — Route Guide & Desert Itinerary',
+    description: "Fes to Merzouga route guide — Ifrane, the Middle Atlas cedar forests, Midelt, the Ziz Valley and Erg Chebbi, with realistic itinerary planning for a Fes Sahara trip.",
+    ogImage: '/images/dest/ifrane.webp',
+    heroImage: '/images/dest/ifrane.webp',
+    heroAlt: 'Ifrane in the Middle Atlas on the route from Fes to Merzouga',
+    intro: 'Fes is the natural Sahara gateway for travellers coming from Morocco\'s north. The route south to Merzouga climbs into the Middle Atlas, passes through Ifrane and cedar forest, crosses the high plateau country around Midelt, then descends the Ziz Valley — one long palm oasis — to Erfoud, Rissani and the Erg Chebbi dunes. It is the shortest of Morocco\'s great desert roads, and a spectacular one.',
+    sections: [
+      { heading: 'Route overview: why Fes works as a desert gateway', paragraphs: [
+        'The Moroccan National Tourist Office lists the Fes–Errachidia–Midelt–Merzouga corridor as a leading route toward the Sahara, and for good reason: leaving Fes after breakfast, you can be in completely different country by afternoon — alpine-style Middle Atlas towns, cedar forests with Barbary macaques, then high arid plateaus before the Ziz Valley drops you into palm-grove oasis country.',
+        'Compared with the Marrakech route, the Fes approach reaches the dunes with fewer forced overnight stops, which makes it ideal as the first leg of a one-way journey that continues on to the south — or as the start of a loop that finishes in Marrakech.',
+      ] },
+      { heading: 'The route, stage by stage', paragraphs: [
+        'Fes to Ifrane — the climb into the Middle Atlas. Ifrane is an alpine-style town, and the surrounding cedar forest is home to wild Barbary macaques; a short stop works well here.',
+        'Ifrane to Midelt — the high plateau crossing, apple-growing country and the transition from green mountains to pre-Saharan landscape.',
+        'Midelt to the Ziz Valley — the descent along the Ziz river through one of Morocco\'s great palm oases, with kasbahs and gorge scenery.',
+        'Ziz Valley to Erfoud and Rissani — the Tafilalet region, historic heart of the desert trade routes and the last towns before the sand.',
+        'Rissani to Merzouga — the final stretch to the dune line, timed for the late-afternoon camel trek into Erg Chebbi and the night in camp.',
+      ] },
+      { heading: 'Itinerary logic: how many days the route needs', paragraphs: [
+        'Fes to Merzouga is achievable as a one-day drive, but a one-day push means you see the dunes and nothing else. Our itineraries treat the journey as part of the trip: leave Fes in the morning, stop through Ifrane, the cedar forest and the Ziz Valley, and reach Merzouga in the late afternoon of day one — or split it with an overnight in the Ziz or Midelt area for a gentler pace.',
+        'The classic formats are the 3-day Fes–Merzouga–Fes loop and the 4-day one-way journey Fes → Merzouga → Dades → Aït Ben Haddou → Marrakech, which avoids backtracking entirely and is the format we recommend when you are continuing south.',
+      ] },
+      { heading: 'Key landscapes: what makes this road different', paragraphs: [
+        'The Fes route is a study in transitions. You leave a medieval imperial city, cross cool cedar forest where monkeys sit by the road, cross high plateau farmland, then watch the country turn progressively drier until the Ziz Valley opens into a ribbon of green palm trees between bare rock. By the time the first dunes of Erg Chebbi appear, you have crossed half of Morocco\'s ecological range in a day or two.',
+      ] },
+      { heading: 'Best time and what to pack', paragraphs: [
+        'The same seasonal logic as the southern route applies: spring and autumn are the comfortable windows, summer needs heat management, and winter nights in the desert are genuinely cold. Pack layers, sun protection, closed shoes for the camel trek and a warm layer for camp evenings — our Merzouga packing list covers the details.',
+      ] },
+      { heading: 'Fes to Marrakech via Merzouga', paragraphs: [
+        'Many travellers ask whether they can start in Fes and finish in Marrakech. Yes — and it is arguably the best-shaped Sahara itinerary in Morocco: the dunes sit naturally between the two cities, so a one-way private route (Fes → Middle Atlas → Merzouga → Todra Gorge → Dades Valley → Aït Ben Haddou → High Atlas → Marrakech) crosses the country without repeating a single road. Our 4-day Fes to Marrakech via Merzouga itinerary follows exactly this shape.',
+      ] },
+    ],
+    faqs: [
+      { question: 'How long does it take to get from Fes to Merzouga?', answer: 'It is roughly a full day\'s drive, usually split with stops through Ifrane, Midelt and the Ziz Valley. Our itineraries reach the dunes by late afternoon on day one, or split the journey with a Middle Atlas or Ziz overnight for a gentler pace.' },
+      { question: 'Is Fes or Marrakech closer to Merzouga?', answer: 'The Fes approach is generally the shorter drive to the dunes, while the Marrakech route passes more of the southern sights (Aït Ben Haddou, Ouarzazate, Dades, Todra). Our Marrakech vs Fes comparison walks through the trade-offs.' },
+      { question: 'Can I do a Fes to Merzouga day trip?', answer: 'No — the distances are too great for a same-day return, and a rushed trip would miss the camp night, which is the heart of the experience. Plan at least two days, ideally three or four.' },
+      { question: 'Does the tour continue to Marrakech afterwards?', answer: 'It can. Our 4-day Fes to Marrakech via Merzouga route is a one-way journey ending in Marrakech; other end points can be discussed in your private quote.' },
+      { question: 'What is there to see between Fes and Merzouga?', answer: 'Ifrane and the cedar forests, the Middle Atlas plateau, Midelt, the Ziz Valley palm oases, and the Rissani / Tafilalet area before the dunes. Each is a real stop, not a drive-by.' },
+    ],
+    tours: ['3-day-sahara-fes', '3-day-fes-merzouga-sahara', '4-day-fes-marrakech-via-merzouga', 'fes-5-day'],
+    destinations: ['fes', 'ifrane', 'merzouga', 'erg-chebbi'],
+    relatedGuides: ['how-many-days', 'camel-trekking', 'things-to-do', 'best-time-to-visit', 'what-to-pack', 'marrakech-vs-fes', 'how-to-get-there', 'sahara-desert-guide', 'erg-chebbi-sunrise-sunset'],
+    sources: ['onmt'],
+    inlineImages: [
+      { imageId: 'draa-valley-oasis-palm-grove', after: 1 },
+      { imageId: 'sahara-dune-trekking-merzouga', after: 3 },
+    ],
+  },
+  {
+    kind: 'merzouga',
+    slug: 'how-many-days',
+    title: 'How Many Days Do You Need in the Sahara?',
+    pageTitle: 'How Many Days in the Sahara? — Merzouga Trip Length Guide',
+    description: "How many days you need in the Sahara and Merzouga — an honest comparison of 1, 2, 3 and 4+ day desert trips, and what you can realistically experience at each length.",
+    ogImage: '/images/dest/merzouga.webp',
+    heroImage: '/images/dest/merzouga.webp',
+    heroAlt: 'The dunes of Erg Chebbi near Merzouga — how many days does a Sahara trip need?',
+    intro: 'Short answer: one night between the dunes is the minimum for the classic Sahara experience, and two nights is what we recommend most often. The longer answer depends on where you start, how much driving you accept per day, and what you want the desert to be — a highlight or the point of the trip. Here is the honest breakdown.',
+    sections: [
+      { heading: '1 day in the Sahara (one night between the dunes)', paragraphs: [
+        'One night in camp gives you the essential sequence: arrive in the late afternoon, sunset camel trek into Erg Chebbi, dinner and drumming at camp, sunrise over the dunes, and back out by mid-morning. Nothing about it is rushed on the sand itself — the experience is compact but complete.',
+        'The trade-off is the journey. From Marrakech, a one-night desert trip means very long driving days; from Fes it is more forgiving. One day is the right choice when the Sahara is a highlight of a wider Morocco itinerary and your schedule is genuinely tight.',
+      ] },
+      { heading: '2 days in the Sahara (two nights)', paragraphs: [
+        'Two nights is the sweet spot for most travellers. The first evening and night deliver the classic sequence; the second day — free of arrival logistics — is when the desert opens up: the 4x4 loop through the black-stone desert and nomad country, Khamlia and its Gnawa music, the oasis, or simply unhurried time on the dunes. The second camp night, when the novelty fades and the silence sets in, is often the one people remember.',
+        'If your Morocco itinerary can absorb it, this is the version we build most often.',
+      ] },
+      { heading: '3 days in the Sahara', paragraphs: [
+        'Three days suits slow travellers, photographers and families who want the desert to be a chapter of the trip rather than a single evening. You add depth rather than new categories: longer 4x4 explorations, a second night in a different camp, sandboarding, stargazing without a schedule, and time in the village and oasis.',
+        'Three days also pairs naturally with the wider southern route — the Dades Valley and Todra Gorge on the way in or out — making it the core of a well-paced 4- or 5-day desert journey.',
+      ] },
+      { heading: '4+ days (desert plus the route itself)', paragraphs: [
+        'Beyond three days in Merzouga itself, additional time is usually better spent on the journey — the Atlas, Aït Ben Haddou, the gorges — or on a one-way Fes-to-Marrakech desert crossing that sees the whole country once instead of doubling back. If the Sahara itself is the entire purpose of your trip, multi-day camel treks into the deeper desert can be discussed in your private quote.',
+      ] },
+      { heading: 'The quick answer', paragraphs: [
+        'One night: the classic, works from Fes, tight from Marrakech. Two nights: what we recommend most. Three nights: for slow travel and photography. Four or more: shift the extra days to the route, or talk to us about a deep-desert trek.',
+      ] },
+    ],
+    faqs: [
+      { question: 'Is one night in the Merzouga desert enough?', answer: 'For the essential experience — sunset camel trek, camp night, sunrise — yes. What one night cannot give you is a relaxed journey to the dunes or a full desert day. From Marrakech, plan at least a 3-day tour for one camp night.' },
+      { question: 'How many days do you need from Marrakech to Merzouga?', answer: 'Three days is the shortest practical format: two travel days with an overnight in the Dades or Todra area, and one night between the dunes. Four days makes it comfortable.' },
+      { question: 'How many days from Fes to Merzouga?', answer: 'The drive is shorter than from Marrakech — many itineraries reach the dunes on day one with scenic stops, making a 3-day Fes loop or a 4-day one-way Fes-to-Marrakech route very comfortable formats.' },
+      { question: 'Can you spend too long in the desert?', answer: 'After about three nights in Merzouga itself, most travellers get more value from varying the trip — the gorges, the valleys, the imperial cities — than from additional nights in the same camp area.' },
+    ],
+    tours: ['3-day-sahara-marrakech', '4-day-marrakech-merzouga-sahara', '3-day-sahara-fes', '3-day-fes-merzouga-sahara', '4-day-fes-marrakech-via-merzouga'],
+    destinations: ['merzouga', 'erg-chebbi'],
+    relatedGuides: ['things-to-do', 'camel-trekking', 'marrakech-to-merzouga', 'fes-to-merzouga', 'best-time-to-visit', 'desert-camps', 'sahara-desert-guide'],
+    sources: ['onmt'],
+    inlineImages: [
+      { imageId: 'sahara-dune-trekking-merzouga', after: 1 },
+      { imageId: 'luxury-desert-camp-sunset-merzouga', after: 4 },
+    ],
+  },
+  {
+    kind: 'merzouga',
+    slug: 'sahara-desert-guide',
+    title: 'Sahara Desert Travel Guide — Morocco Desert Trips Explained',
+    pageTitle: 'Sahara Desert Travel Guide — Morocco Desert Tours, Erg Chebbi & Merzouga',
+    description: 'The complete Morocco Sahara guide — Erg Chebbi, Merzouga, camel trekking, desert camps, quad and 4x4 experiences, and how Marrakech and Fes connect to the dunes.',
+    ogImage: '/images/curated/camel-caravan-sunset-silhouette-sahara-desert.webp',
+    heroImage: '/images/curated/camel-caravan-sunset-silhouette-sahara-desert.webp',
+    heroAlt: 'Camel caravan silhouetted on a Sahara dune ridge at sunset — the classic Morocco desert scene',
+    intro: 'The Moroccan Sahara is not one uniform sea of sand — it is a sprawl of gravel plains, oases and a few distinct dune fields, the most accessible of which is Erg Chebbi at Merzouga. This guide ties the whole desert picture together: what it is, how to experience it and how Marrakech and Fes reach it.',
+    sections: [
+      {
+        heading: 'Where the Sahara actually is in Morocco',
+        paragraphs: [
+          'The Sahara is the vast desert belt that runs across North Africa; only its far north-western fringe dips into Morocco. Travellers experience that fringe mainly as two dune fields (ergs): Erg Chebbi near Merzouga and the more remote Erg Chigaga beyond Zagora. Between them the terrain is largely gravel stony desert (known locally as reg) with scattered oases, plus the dramatic gorges and valleys of the southern High Atlas.',
+          'What draws most visitors to Merzouga is Erg Chebbi — Morocco\'s tallest dunes, up to roughly 150 metres, and the easiest to reach because the road runs almost to their edge. If you want the true silence of the deep desert and do not mind more driving, Erg Chigaga is the quieter alternative.',
+        ],
+      },
+      {
+        heading: 'The core desert experiences',
+        paragraphs: [
+          'The rhythms of a Sahara visit repeat everywhere in the Moroccan desert. Late in the afternoon you leave the village and cross to the dunes; at sunset you ride a camel along the crest line; after dark you eat in a desert camp and lie under a sky dense with stars; at dawn you climb a dune for sunrise before riding back. Around that core, travellers add faster, higher-energy activities: quad biking on the firm ground around the dune field, or a 4x4 drive that reaches the highest crests and the wider desert beyond.',
+          'None of these activities replaces the others — each suits a different mood and a different part of the day, and a well-planned Merzouga day often combines two of them.',
+        ],
+        bullets: [
+          'Camel trekking — slow, and the classic way to reach a camp at sunset',
+          'Desert camp night — dinner, music and stargazing between the dunes',
+          'Quad biking — a high-energy afternoon on the flats around the erg',
+          '4x4 drive — reaching the tall crests and the wider desert country',
+          'Sunrise and sunset — free, and the two best hours on the dunes',
+        ],
+      },
+      {
+        heading: 'The classic route from Marrakech',
+        paragraphs: [
+          'Most first-time desert trips start in Marrakech. The drive climbs over the High Atlas at Tizi n’Tichka, passes the UNESCO-listed ksar of Aït Ben Haddou and the film-town of Ouarzazate, then winds through the Dades Valley and the Todra Gorge before turning southeast to Merzouga. It is roughly a 9–10 hour drive and is best spread over two travel days, with an overnight in the Dades or Todra area.',
+          'Done over three to four days it becomes a loop that is also the most popular Sahara trip in Morocco — the Atlas, Aït Ben Haddou, the gorges and the dunes in one route. See the dedicated Marrakech-to-Merzouga route guide for the stops in detail.',
+        ],
+      },
+      {
+        heading: 'The classic route from Fes',
+        paragraphs: [
+          'A Fes-to-Merzouga trip is more direct. The road runs southeast through the Middle Atlas and the cedar town of Ifrane, over to Midelt, then down the long palm-lined Ziz Valley to Merzouga — roughly a 7–8 hour drive. Because it is shorter, a Fes departure can reach the dunes on the first day, which makes a 3-day Fes loop or a 4-day Fes-to-Marrakech one-way route very comfortable formats.',
+          'The scenery changes from green highlands to oasis to desert more gradually than on the Marrakech road. The Fes-to-Merzouga route guide covers the stops.',
+        ],
+      },
+{
+        heading: 'Sunrise, sunset and the night sky',
+        paragraphs: [
+          'The two best hours on the dunes are the golden hours around sunrise and sunset, when the sand turns from pale to amber to deep orange and the long shadows give the crests strong shape. After dark, away from village lights, the stargazing is among the clearest in Morocco — the Milky Way is frequently visible to the naked eye in the cooler months.',
+          'On our own Merzouga journeys the sequence is built from these hours: a sunset trek or 4x4 to catch the best light, a camp dinner under the stars, and a sunrise climb to begin the ride back. How the times shift through the seasons is covered in the dedicated sunrise and sunset guide.',
+        ],
+      },
+      {
+        heading: 'Culture on the desert fringe',
+        paragraphs: [
+          'The Sahara trip is not only dunes. South of Merzouga lies Khamlia, the Gnawa village whose music tradition draws visitors for late-afternoon performances. The weekly souk at Rissani, the historic trading town to the north, is a practical window into local life, and across the desert fringe you meet the nomad and semi-nomad communities who still live around the ergs. These cultural stops are optional but they genuinely round out the experience.',
+          'We never promise a staged or romanticised version of nomadic life — what we can offer is a respectful look at how people actually live around the dunes, arranged through local families and guides.',
+        ],
+      },
+      {
+        heading: 'Best time and how long to plan',
+        paragraphs: [
+          'October to April is the comfortable window for trekking and camps; summer daytime heat on the dunes regularly exceeds 40 °C and makes midday activity unpleasant. One night between the dunes delivers the essential sunset-camp-sunrise sequence; a full extra day adds room for quad, 4x4 and cultural stops. The best-time and how-many-days guides go deeper into both of these.',
+        ],
+      },
+    ],
+    faqs: [
+      { question: 'What is the difference between Erg Chebbi and Erg Chigaga?', answer: 'Erg Chebbi near Merzouga has Morocco\'s tallest dunes, is easy to reach, and is busy. Erg Chigaga beyond Zagora is more remote, has lower dunes, and is far quieter. Choose by whether you value convenience or solitude.' },
+      { question: 'Is it worth doing both camel and quad or 4x4 in the desert?', answer: 'They serve different moments. The camel trek is the slow, iconic way to the camp at sunset; quad and 4x4 are faster, high-energy ways to cover the wider desert and reach the tall crests. A full day in Merzouga easily combines a sunset camel ride with a daytime 4x4 or quad.' },
+      { question: 'How do Marrakech and Fes trips to the Sahara differ?', answer: 'Marrakech routes are longer (about 9–10 hours of driving) and pass the Atlas, Aït Ben Haddou, Ouarzazate and the Dades/Todra gorges. Fes routes are shorter (about 7–8 hours) via the Middle Atlas, Ifrane, Midelt and the Ziz Valley, and can reach the dunes by day one.' },
+      { question: 'Is the Sahara safe for a first-time traveller to Morocco?', answer: 'Yes. Desert travel near Merzouga runs along established routes with local guides and drivers, and the camps are built for travellers. The main genuinely challenging factors are heat in summer and cold desert nights in winter, both of which are about packing and timing rather than safety.' },
+      { question: 'Can I visit the Sahara without a tour?', answer: 'Yes — the dunes are public land and you can visit on foot or by shared transport from Merzouga. But a private driver or tour removes the logistics of the long desert approach and lets you stop at the gorges and valleys en route, which is why most travellers choose it.' },
+    ],
+    tours: ['3-day-sahara-marrakech', '4-day-marrakech-merzouga-sahara', '3-day-fes-merzouga-sahara', '4-day-fes-marrakech-via-merzouga', '3-day-sahara-agadir'],
+    destinations: ['merzouga', 'erg-chebbi', 'ouarzazate', 'ait-ben-haddou', 'dades-valley'],
+    relatedGuides: ['erg-chebbi', 'camel-trekking', 'desert-camps', 'quad-biking', '4x4-desert-tour', 'marrakech-to-merzouga', 'fes-to-merzouga', 'best-time-to-visit', 'how-many-days'],
+    sources: ['onmt-merzouga-region', 'onmt', 'natgeo-travel'],
+    inlineImages: [
+      { imageId: 'berber-camel-guide-sahara-merzouga', after: 1 },
+      { imageId: 'sahara-bivouac-stars-merzouga', after: 4 },
+    ],
+  },
+{
+    kind: 'merzouga',
+    slug: 'erg-chebbi-sunrise-sunset',
+    title: 'Erg Chebbi Sunrise & Sunset — Timing the Dunes',
+    pageTitle: 'Erg Chebbi Sunrise & Sunset Guide — Best Light on the Dunes',
+    description: 'When and where to see the best sunrise and sunset at Erg Chebbi near Merzouga — seasonal timings, photography notes and how camel treks and camp nights fit around the light.',
+    ogImage: '/images/curated/sahara-desert-sunset-silhouette-dune-morocco.webp',
+    heroImage: '/images/curated/sahara-desert-sunset-silhouette-dune-morocco.webp',
+    heroAlt: 'Silhouette of a traveller on a Sahara dune at sunset near Erg Chebbi, Morocco',
+    intro: 'The two hours that most people fly across the world for at Erg Chebbi are sunrise and sunset, when the dunes turn gold, orange and deep crimson. Here is what each one feels like, when the light falls through the year and how a Merzouga schedule is built around it.',
+    sections: [
+      {
+        heading: 'Why the golden hours matter on the dunes',
+        paragraphs: [
+          'Sand has no colour of its own — it takes on the colour of the light. At midday the Erg Chebbi dunes sit flat and pale, but in the first and last hour of daylight the long, low sun rakes across the crests and throws deep shadows that give the ridges strong three-dimensional shape. That is why essentially every meaningful desert photograph, and every memorable moment on the sand, happens at sunrise or sunset.',
+        ],
+      },
+      {
+        heading: 'Sunset at Erg Chebbi',
+        paragraphs: [
+          'Sunset is the social hour. The western faces of the dunes turn from gold to deep red, camel lines trace the ridge tops below you, and the village-facing edge of the erg fills with trekkers and photographers. You reach it by walking up from Merzouga in under an hour, or by timing a camel trek so you crest the ridge as the light turns.',
+          'Because everyone who wants a camp night arrives the same way, sunset at the dune line is lively rather than private. If you want the view more to yourself, rise early instead.',
+        ],
+        bullets: [
+          'The classic arrival: camel trek timed to crest the dunes as the sun sets',
+          'The western faces catch the last, reddest light of the day',
+          'Busiest hour of the day on the dunes near the village',
+        ],
+      },
+      {
+        heading: 'Sunrise at Erg Chebbi',
+        paragraphs: [
+          'Sunrise is the connoisseur\u2019s choice. The sand is cool underfoot, the village is still waking up, and the eastern slopes catch a clear, soft light that builds fast. You have the crests largely to yourself, and the shadows run long and blue before the day flattens the colour out.',
+          'If you are sleeping in a camp between the dunes, the classic morning is a short climb to a nearby crest for sunrise, then the camel ride back for breakfast in Merzouga. For photographers, the hour after sunrise usually beats the sunset rush — fewer footprints and softer contrast.',
+        ],
+      },
+      {
+        heading: 'How the timing shifts through the year',
+        paragraphs: [
+          'Trek and tour operators time departures to the light, so sunrise and sunset treks happen about an hour before the sun touches the horizon or just after it rises. Through the year the exact times swing with the seasons — roughly one hour either side depending on the month — but the golden-hour logic is the same every day of the year.',
+          'We never publish a fixed schedule because the precise time depends on the season and the route; on booking we confirm exact departure times for your dates. For planning, know that late-afternoon departures happen in every season and are the most common choice, with sunrise available for early risers in the cooler months.',
+        ],
+      },
+      {
+        heading: 'Photographing the golden hours',
+        paragraphs: [
+          'The ingredients for good dune photographs are simple: be on a high crest with the sun low and behind you or raking across the sand. A wide lens and a steady hand (or small tripod) are enough for most people; phones with a raised contrast setting cope fine with the orange tones. If you stay in a camp, the evening light on the tents and lanterns at dusk is often just as photogenic as the dunes themselves.',
+          'For a dark-sky shoot, the hour after astronomical twilight is the window for stargazing photography — the Milky Way is frequently visible to the naked eye in the cooler months, away from village lights.',
+        ],
+      },
+      {
+        heading: 'How the light fits a Merzouga day',
+        paragraphs: [
+          'The traveller\u2019s day is built around these two windows. Late afternoon: an optional quad on the flats or a 4x4 to the tall crests, then the sunset camel trek or drive onto the dune ridge. Dusk: camp dinner, music, and stargazing after the sky fully darkens. Dawn: a sunrise climb, then the ride or drive back for breakfast. Two golden hours, one camp night — that is the whole desert rhythm in a sentence.',
+        ],
+      },
+    ],
+faqs: [
+      { question: 'Is sunrise or sunset better at Erg Chebbi?', answer: 'Both are spectacular; they are simply different. Sunset is warmer and more social but busier; sunrise is quieter, cooler and often better for photography because the light is softer and the field is less crowded. If you sleep in a camp you can have both in one night.' },
+      { question: 'What time is sunset at Erg Chebbi?', answer: 'It changes with the season, but treks and drives are generally timed to reach the dune crest about an hour before sunset, throughout the year. Exact departure times are confirmed for your dates when you book.' },
+      { question: 'Can I see the dunes light up without a tour?', answer: 'Yes — the dunes are public land and you can walk up from Merzouga in under an hour. Many people also book just the camel trek or a 4x4 ride to the crest without staying in a camp.' },
+      { question: 'When is the best night for stargazing?', answer: 'The cooler, drier months (roughly October to April) are excellent for the night sky, and the hour after final twilight is the prime window. A camp night between the dunes puts you far from village lights.' },
+      { question: 'What should I bring for the golden hours?', answer: 'A warm layer for after sunset, closed shoes for the sand, water, and a charged camera or phone. A headlamp is useful for the walk back to camp in darkness.' },
+    ],
+    tours: ['3-day-sahara-marrakech', '4-day-marrakech-merzouga-sahara', '2-day-zagora-desert-marrakech'],
+    destinations: ['merzouga', 'erg-chebbi'],
+    relatedGuides: ['erg-chebbi', 'camel-trekking', 'desert-camps', 'best-time-to-visit', 'sahara-desert-guide'],
+    sources: ['onmt-merzouga-region'],
+    inlineImages: [
+      { imageId: 'sahara-dune-trekking-merzouga', after: 2 },
+      { imageId: 'sahara-bivouac-stars-merzouga', after: 4 },
+    ],
   },
   ];
 
@@ -721,6 +1209,61 @@ export const COMPARISONS: HubPage[] = [
       ['Price', 'Lower', 'Higher — ask for exact quote by dates'],
     ],
     // __COMPARISONS__
+  },
+  {
+    kind: 'comparison',
+    slug: 'marrakech-vs-fes',
+    title: 'Marrakech vs Fes — Which City for Your Sahara Trip?',
+    pageTitle: 'Marrakech vs Fes — Which Is Better for a Sahara Desert Tour?',
+    description: "Marrakech or Fes for your Sahara desert tour? Route character, landscapes, major stops and itinerary shapes compared honestly — so you choose by itinerary, not by hype.",
+    ogImage: '/images/dest/marrakech.webp',
+    heroImage: '/images/dest/marrakech.webp',
+    heroAlt: 'Marrakech and Fes — choosing the right starting point for a Sahara desert tour',
+    intro: 'Both Marrakech and Fes are genuine gateways to the Sahara — but they reach Merzouga by different roads, with different scenery, different journey lengths and different itinerary shapes. Neither is universally "better"; the right starting point depends on the rest of your Morocco plan. Here is the honest comparison.',
+    sections: [
+      { heading: 'The two routes are fundamentally different', paragraphs: [
+        'The Marrakech route crosses the High Atlas and runs through southern Morocco\'s greatest hits: Aït Ben Haddou, Ouarzazate, the Dades Valley and Todra Gorge. It is the sight-rich road — but also the longer one, which is why three days is the shortest practical Marrakech format.',
+        'The Fes route climbs into the Middle Atlas (Ifrane, cedar forest), crosses the plateau at Midelt and descends the Ziz Valley to the dunes. It is generally the shorter drive to Merzouga, greener and more mountain-quiet in character, with fewer headline stops but striking landscape transitions.',
+      ] },
+      { heading: 'Journey structure and length', paragraphs: [
+        'From Marrakech: plan 3 days minimum for one camp night (two long travel days around it), 4 days for a comfortable pace with a real desert day. Most Marrakech tours return to Marrakech, retracing the corridor.',
+        'From Fes: the dunes are closer, so a 3-day loop is more relaxed, and the standout option is the one-way Fes → Merzouga → Dades → Aït Ben Haddou → Marrakech route — a 4-day crossing that sees the country once and finishes in Marrakech. If your trip continues south, starting in Fes is structurally efficient.',
+      ] },
+      { heading: 'What you see along the way', paragraphs: [
+        'Marrakech side: the High Atlas pass country, Aït Ben Haddou (UNESCO), Ouarzazate, kasbah valleys, the Dades switchbacks, Todra Gorge — five or six major stops, which is exactly why the journey needs days.',
+        'Fes side: Ifrane and the cedar forests with Barbary macaques, the high plateau around Midelt, and the long Ziz Valley palm oasis down to Erfoud and Rissani. Fewer named sights, but a dramatic cross-section of Morocco\'s landscapes.',
+      ] },
+      { heading: 'Suitability: which traveller fits which city', paragraphs: [
+        'Choose Marrakech when the southern sights matter to you, when your trip is centred on the Red City, or when you want the classic "greatest hits" desert road with time built in (4 days).',
+        'Choose Fes when you are arriving from the north (Casablanca, Rabat, Meknes, Chefchaouen), when you want the shorter drive to the dunes, or when a one-way desert crossing finishing in Marrakech fits your onward plans.',
+        'Doing both cities? The one-way crossing between them via Merzouga is the best-shaped Sahara itinerary in Morocco — you never drive the same road twice.',
+      ] },
+      { heading: 'Our honest recommendation', paragraphs: [
+        'We do not rank the cities — we shape itineraries around them. Tell us where you land and where you need to finish, and we will tell you which route (or crossing) fits. The comparison table below summarises the trade-offs at a glance.',
+      ] },
+    ],
+    faqs: [
+      { question: 'Which is closer to the Sahara, Marrakech or Fes?', answer: 'Fes is generally the shorter drive to Merzouga. Marrakech compensates with the sight-rich southern route — Aït Ben Haddou, Ouarzazate, Dades and Todra — which is why its tours need a minimum of three days.' },
+      { question: 'Can you visit the Sahara from both Marrakech and Fes in one trip?', answer: 'Yes — that is exactly what a one-way Fes-to-Marrakech (or Marrakech-to-Fes) desert crossing does: the dunes sit naturally between the two cities, and you see the country once instead of backtracking.' },
+      { question: 'Is the Fes to Merzouga drive scenic?', answer: 'Very — but in a different register: alpine Middle Atlas towns, cedar forest, high plateau, then the long Ziz Valley palm oasis. The Marrakech route is more about kasbahs, gorges and UNESCO heritage stops.' },
+      { question: 'Which city is better for a first visit to Morocco?', answer: 'Both are rewarding first bases. If medinas and culture lead your list, Fes is extraordinary; if markets, food and mountain excursions lead it, Marrakech. For the desert specifically, let your arrival airport and onward direction decide.' },
+    ],
+    tours: ['3-day-sahara-marrakech', '4-day-marrakech-merzouga-sahara', '3-day-sahara-fes', '3-day-fes-merzouga-sahara', '4-day-fes-marrakech-via-merzouga'],
+    destinations: ['marrakech', 'fes', 'merzouga', 'erg-chebbi', 'ait-ben-haddou', 'ifrane'],
+    relatedGuides: ['marrakech-to-merzouga', 'fes-to-merzouga', 'how-many-days', 'camel-trekking', 'luxury-desert-camps'],
+    comparisonRows: [
+      ['Drive to Merzouga', 'Longer — High Atlas + southern valleys', 'Shorter — Middle Atlas + Ziz Valley'],
+      ['Major stops en route', 'Aït Ben Haddou, Ouarzazate, Dades, Todra Gorge', 'Ifrane, cedar forest, Midelt, Ziz Valley'],
+      ['Minimum for one camp night', '3 days (4 comfortable)', '3 days, relaxed loop'],
+      ['One-way option', 'Marrakech → Fes via dunes', 'Fes → Marrakech via dunes (most efficient)'],
+      ['Route character', 'Sight-rich "greatest hits" road', 'Landscape-transition road, quieter stops'],
+      ['Best when…', 'Southern sights matter; trip centred on Marrakech', 'Arriving from the north; continuing south afterwards'],
+    ],
+    sources: ['onmt'],
+    inlineImages: [
+      { imageId: 'jemaa-el-fna-night-marrakech', after: 0 },
+      { imageId: 'moroccan-palace-ceiling-muqarnas', after: 2 },
+    ],
   },
   // __COMPARISONS_END__
 ];

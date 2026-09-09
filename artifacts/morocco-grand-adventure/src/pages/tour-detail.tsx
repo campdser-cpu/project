@@ -18,6 +18,8 @@ import { usePromoActive } from '../components/promo/PromoProvider';
 import { StructuredData, buildTourSchema, buildReviewSchema, buildFaqSchema } from '../components/seo/StructuredData';
 import { TOUR_DEPARTURE_CITY, getCityHub } from '@/data/tour-hierarchy';
 import { TourBreadcrumbs } from '../components/tours/TourBreadcrumbs';
+import { tourDepthFor } from '@/data/tourDepth';
+import { MERZOUGA_GUIDES, COMPARISONS, TRAVEL_INFO } from '@/data/seoHub';
 
 /** Extract the leading number of days from a duration string like "3 Days / 2 Nights". */
 function parseDurationDays(duration: string): number {
@@ -320,6 +322,62 @@ export default function TourDetail() {
                 </ul>
               </div>
             </div>
+
+            {/* Tour depth: why choose / best for / plan with our guides.
+                English-authored copy (English-first phase) — same source the
+                prerendered HTML uses, so crawler and client content match. */}
+            {(() => {
+              const depth = tourDepthFor(tour.id);
+              if (!depth.whyChoose.length && !depth.bestFor && !depth.guideLinks.length) return null;
+              const allHubs = [...MERZOUGA_GUIDES, ...COMPARISONS, ...TRAVEL_INFO];
+              const guidePages = depth.guideLinks
+                .map((slug) => allHubs.find((q) => q.slug === slug))
+                .filter((p): p is NonNullable<typeof p> => Boolean(p));
+              const hubHref = (slug: string) => {
+                const p = guidePages.find((q) => q.slug === slug);
+                if (!p) return '#';
+                if (p.kind === 'comparison') return `/${lang}/comparisons/${p.slug}`;
+                if (p.kind === 'travel-info') return `/${lang}/travel-info/${p.slug}`;
+                return `/${lang}/merzouga-guide/${p.slug}`;
+              };
+              return (
+                <div className="mb-16 space-y-8">
+                  {depth.whyChoose.length > 0 && (
+                    <div>
+                      <h2 className="font-serif text-4xl text-foreground mb-6">Why choose this itinerary</h2>
+                      <ul className="space-y-3">
+                        {depth.whyChoose.map((w, i) => (
+                          <li key={i} className="flex items-start gap-3 text-muted-foreground">
+                            <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-1" /> {w}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  {depth.bestFor && (
+                    <div>
+                      <h2 className="font-serif text-4xl text-foreground mb-6">Who this tour is best for</h2>
+                      <p className="text-muted-foreground leading-relaxed">{depth.bestFor}</p>
+                    </div>
+                  )}
+                  {guidePages.length > 0 && (
+                    <div className="bg-muted/50 border border-border rounded-3xl p-8">
+                      <h2 className="font-serif text-3xl text-foreground mb-3">Plan with our guides</h2>
+                      <p className="text-muted-foreground text-sm mb-6">
+                        Practical details such as seasonal timing and packing are covered in the guides below; anything specific to your dates is confirmed before booking.
+                      </p>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        {guidePages.map((p) => (
+                          <Link key={p.slug} href={hubHref(p.slug)} className="group block bg-background rounded-2xl border border-border p-5 hover:border-primary/50 hover:shadow transition-all">
+                            <h3 className="font-serif text-lg text-foreground group-hover:text-primary transition-colors">{p.title}</h3>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              );
+            })()}
 
             {/* Luxury Gallery */}
             <div className="mb-16">

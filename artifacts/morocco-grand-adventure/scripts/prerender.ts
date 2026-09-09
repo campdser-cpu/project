@@ -35,6 +35,7 @@ import { destinations, contactInfo, reviews, type Review, type Tour, type Destin
 import { BLOG_ARTICLE_SECTIONS, BLOG_ARTICLE_CTA } from '../src/data/blog-article-sections';
 import { CITY_HUBS, TOUR_DEPARTURE_CITY, CITY_HUB_DURATIONS, tourIdsForCity, tourDurationDays } from '../src/data/tour-hierarchy';
 import { MERZOUGA_GUIDES, COMPARISONS, TRAVEL_INFO, type HubPage } from '../src/data/seoHub';
+import { tourDepthFor } from '../src/data/tourDepth';
 import { catalogImage, imagesForDestination, DEST_FOOD_IMAGE, type CatalogImage } from '../src/data/imageCatalog';
 import { SOURCES } from '../src/data/sources';
 import { languages, t as translate } from '../src/i18n/index';
@@ -467,13 +468,26 @@ function buildTourDetailContent(id: string, lang: Lang): string {
   // the tour's real duration has a dedicated /tours/from-<city>/<N>-days page.
   const tourDays = tourDurationDays(tour.duration);
   const hasDurationHub = Boolean(departCity && (CITY_HUB_DURATIONS[departCity] ?? []).includes(tourDays));
+  // Tour depth blocks (src/data/tourDepth.ts): authored why-choose / best-for
+  // copy plus contextual guide links resolved against all hub pages.
+  const depth = tourDepthFor(tour.id);
+  const whyChooseBlock = depth.whyChoose.length ? h2('Why choose this itinerary') + ul(depth.whyChoose) : '';
+  const bestForBlock = depth.bestFor ? h2('Who this tour is best for') + paragraph(depth.bestFor) : '';
+  const allHubsForDepth = [...MERZOUGA_GUIDES, ...COMPARISONS, ...TRAVEL_INFO];
+  const guideLinkItems = depth.guideLinks
+    .map((slug) => allHubsForDepth.find((q) => q.slug === slug))
+    .filter((p): p is NonNullable<typeof p> => Boolean(p))
+    .map((p) => link(`${SITE_URL}/${lang}${hubPathFor(p)}`, p.title));
+  const guideLinksBlock = guideLinkItems.length
+    ? h2('Plan with our guides') + ul(guideLinkItems) + paragraph('Practical details such as seasonal timing and packing are covered in the guides above; anything specific to your dates is confirmed before booking.')
+    : '';
   const durationHubCrumb = departHub && hasDurationHub
     ? ` › ${link(`${SITE_URL}/${lang}/tours/from-${departHub.slug}/${tourDays}-days`, fmt(tr(lang, 'hub_dur_crumb'), { days: tourDays, city: tr(lang, `hub_${departHub.id}_name`) }))}`
     : '';
   const breadcrumb = departHub
     ? `<p class="prerendered-breadcrumb">${link(`${SITE_URL}/${lang}`, tr(lang, 'nav_home'))} › ${link(`${SITE_URL}/${lang}/tours`, tr(lang, 'nav_tours'))} › ${link(`${SITE_URL}/${lang}/tours/from-${departHub.slug}`, tr(lang, `hub_${departHub.id}_title`))}${durationHubCrumb} › ${escapeHtml(tour.name)}</p>\n`
     : '';
-  return breadcrumb + h1(tour.name) + paragraph(tour.description ?? '') + paragraph(`${tr(lang, 'search_duration')}: ${tour.duration}`) + h2(tr(lang, 'tour_why_love')) + ul(tour.highlights) + (itinerary.length > 0 ? h2(tr(lang, 'tour_itinerary')) + ul(itinerary.map((d) => `${tr(lang, 'tour_day')} ${d.day}: ${d.title}`)) : '') + (included.length > 0 ? h2(tr(lang, 'tour_included')) + ul(included) : '') + (excluded.length > 0 ? h2(tr(lang, 'tour_not_included')) + ul(excluded) : '') + (faqs.length > 0 ? h2(tr(lang, 'nav_faq')) + faqBlock(faqs) : '') + (departHub ? h2(fmt(tr(lang, 'hub_related_title'), { city: tr(lang, `hub_${departHub.id}_name`) })) + paragraph(link(`${SITE_URL}/${lang}/tours/from-${departHub.slug}`, fmt(tr(lang, 'hub_related_browse'), { city: tr(lang, `hub_${departHub.id}_name`) }))) : '') + buildTopicalLinksContent({ tourId: tour.id }, lang);
+  return breadcrumb + h1(tour.name) + paragraph(tour.description ?? '') + paragraph(`${tr(lang, 'search_duration')}: ${tour.duration}`) + h2(tr(lang, 'tour_why_love')) + ul(tour.highlights) + whyChooseBlock + (itinerary.length > 0 ? h2(tr(lang, 'tour_itinerary')) + ul(itinerary.map((d) => `${tr(lang, 'tour_day')} ${d.day}: ${d.title}`)) : '') + (included.length > 0 ? h2(tr(lang, 'tour_included')) + ul(included) : '') + (excluded.length > 0 ? h2(tr(lang, 'tour_not_included')) + ul(excluded) : '') + (faqs.length > 0 ? h2(tr(lang, 'nav_faq')) + faqBlock(faqs) : '') + (departHub ? h2(fmt(tr(lang, 'hub_related_title'), { city: tr(lang, `hub_${departHub.id}_name`) })) + paragraph(link(`${SITE_URL}/${lang}/tours/from-${departHub.slug}`, fmt(tr(lang, 'hub_related_browse'), { city: tr(lang, `hub_${departHub.id}_name`) }))) : '') + bestForBlock + guideLinksBlock + buildTopicalLinksContent({ tourId: tour.id }, lang);
 }
 function buildDestinationsContent(lang: Lang): string {
   // Mirror the live /destinations page structure: localized H1 + intro, each
@@ -503,10 +517,20 @@ function buildDestinationDetailContent(destId: string, lang: Lang): string {
   const foodBlock = food
     ? h2(`${tr(lang, 'dest_local_food')} ${d.name}`) + catalogFigure(food, '(max-width: 768px) 100vw, 50vw')
     : '';
+  // Merzouga topical cluster: contextual links from the destination pages into
+  // the Merzouga guide hubs (same block the runtime DestinationDetail renders).
+  const merzougaGuideLinks = (destId === 'merzouga' || destId === 'erg-chebbi')
+    ? h2('Plan your desert experience') + ul(
+        MERZOUGA_GUIDES
+          .filter((p) => ['things-to-do', 'camel-trekking', 'quad-biking', '4x4-desert-tour', 'luxury-desert-camps', 'best-time-to-visit'].includes(p.slug))
+          .map((p) => link(`${SITE_URL}/${lang}/merzouga-guide/${p.slug}`, p.title))
+      )
+    : '';
   return h1(d.name) + paragraph(d.shortDesc) + paragraph(d.description) + h2(tr(lang, 'dest_about')) + ul(d.highlights)
     + (gallery ? h2(`${d.name} ${tr(lang, 'dest_pictures_title')}`) + gallery : '')
     + catalogBlock
     + foodBlock
+    + merzougaGuideLinks
     + buildTopicalLinksContent({ destinationId: d.id }, lang);
 }
 function buildAboutContent(lang: Lang): string {
