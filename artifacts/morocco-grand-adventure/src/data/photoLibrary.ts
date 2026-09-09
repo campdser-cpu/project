@@ -429,6 +429,101 @@ export const PHOTO_LIBRARY: Record<string, PhotoAsset> = {
 export const PUBLISHABLE_ASSET_IDS = Object.keys(PHOTO_LIBRARY)
   .filter((id) => !RESTRICTED_ASSETS[id]);
 
+/**
+ * Thematic stand-ins ONLY — NOT photographic identity.
+ *
+ * The original 46 source binaries are NOT in this repository (the supplied
+ * PDF embeds only ≤527px page thumbnails, which must never be published as
+ * originals). Until the original files are supplied, each Asset ID below is
+ * matched to an EXISTING production-quality repository image whose SUBJECT
+ * merely corresponds to what the PDF describes — a different photograph of
+ * the same place/theme. Nothing here claims two files are the same photo.
+ * Placement of those stand-in images is implemented in content.ts galleries
+ * and the About transport section. Deleting this block changes nothing at
+ * runtime: no component imports REPO_IMAGE_MATCHES.
+ *
+ * standInConfidence: 'close-subject' — different photo, same subject/place
+ *                    'same-theme'    — same location/theme, different subject
+ *                    'none'          — no corresponding repo image exists yet
+ */
+export type StandInConfidence = 'close-subject' | 'same-theme' | 'none';
+export interface RepoImageMatch {
+  image?: string;            // EXISTING repo stand-in path — a different photo, never an MGA original
+  standInConfidence: StandInConfidence;
+  placement?: string;        // where the matched image is implemented
+  note?: string;
+}
+export const REPO_IMAGE_MATCHES: Record<string, RepoImageMatch> = {
+/* eslint-disable */
+// PRE-GENERATED THEMATIC STAND-IN PLACEMENTS (NOT photographic duplicates).
+// Each entry maps an MGA Asset ID to an EXISTING repo image of the same
+// subject/theme, used as a truthful stand-in until originals are supplied.
+  // 1 — Desert & Sahara — camel trekking
+  'MGA-001': { image: '/images/catalog/berber-camel-guide-sahara-merzouga.webp', standInConfidence: 'close-subject', placement: 'Merzouga destination gallery; camel-trekking hub' },
+  'MGA-024': { image: '/images/curated/berber-guide-camels-sahara-desert-morocco.webp', standInConfidence: 'same-theme', note: 'caravan-by-day subject stand-in' },
+  'MGA-029': { standInConfidence: 'none', note: 'no woman-in-teal-dune image in repo' },
+  'MGA-031': { image: '/images/curated/sahara-desert-dunes-couple-sunset-merzouga.webp', standInConfidence: 'same-theme', placement: 'Merzouga destination gallery' },
+  // 2 — Quad biking (no vehicle imagery in repo)
+  'MGA-002': { standInConfidence: 'none', note: 'no quad image in repo; hub uses honest generic dune hero' },
+  'MGA-008': { standInConfidence: 'none' },
+  'MGA-011': { standInConfidence: 'none' },
+  'MGA-010': { standInConfidence: 'none' },
+  // 3 — 4x4 desert drive
+  'MGA-006': { standInConfidence: 'none', note: 'no 4x4 vehicle image in repo' },
+  // 4 — Luxury desert camp
+  'MGA-005': { image: '/images/curated/sahara-desert-camp-starry-night-lantern-merzouga.webp', standInConfidence: 'same-theme', placement: 'Merzouga destination gallery; luxury camp hubs' },
+  'MGA-034': { image: '/images/catalog/luxury-desert-camp-sunset-merzouga.webp', standInConfidence: 'same-theme', placement: 'Erg Chebbi destination gallery' },
+  // 5 — Erg Chebbi pure landscape
+  'MGA-033': { image: '/images/dest/erg-chebbi.webp', standInConfidence: 'same-theme', placement: 'Erg Chebbi hero + gallery' },
+  'MGA-028': { image: '/images/catalog/sahara-dune-trekking-merzouga.webp', standInConfidence: 'same-theme', placement: 'camel/quad hubs' },
+  // 6 — Marrakech Jemaa el-Fna
+  'MGA-017': { image: '/images/catalog/jemaa-el-fna-night-marrakech.webp', standInConfidence: 'close-subject', placement: 'Marrakech destination gallery' },
+  'MGA-003': { standInConfidence: 'none', note: 'no snake-charmer image in repo' },
+  'MGA-018': { image: '/images/dest/marrakech.webp', standInConfidence: 'same-theme', placement: 'Marrakech hero' },
+  // 7 — Marrakech culture & heritage
+  'MGA-013': { image: '/images/catalog/moroccan-palace-ceiling-muqarnas.webp', standInConfidence: 'same-theme', placement: 'Fes destination gallery (heritage interior)' },
+  'MGA-004': { image: '/images/catalog/tbourida-fantasia-marrakech.webp', standInConfidence: 'same-theme', note: 'ceremonial-dress culture shot near Koutoubia; not water sellers', placement: 'Marrakech destination gallery' },
+  'MGA-030': { standInConfidence: 'none', note: 'no Guerrab portrait in repo' },
+  // 8 — Marrakech souks & medina
+  'MGA-009': { image: '/images/curated/marrakech-souk-brass-lanterns-market.webp', standInConfidence: 'same-theme', placement: 'Marrakech destination gallery' },
+  'MGA-027': { image: '/images/curated/marrakech-medina-street-life-locals-morocco.webp', standInConfidence: 'same-theme', placement: 'Marrakech destination gallery' },
+  // 9 — Fes medina & culture
+  'MGA-020': { image: '/images/curated/fes-tannery-chouara-leather-dyeing-morocco.webp', standInConfidence: 'same-theme', note: 'leather-craft subject via Chouara tannery', placement: 'Fes destination gallery' },
+  'MGA-039': { image: '/images/catalog/moroccan-palace-ceiling-muqarnas.webp', standInConfidence: 'same-theme', placement: 'Fes destination gallery' },
+  'MGA-038': { image: '/images/curated/tannery-workers-dyeing-pits-fes.webp', standInConfidence: 'same-theme', placement: 'Fes destination gallery' },
+  // 10 — Chefchaouen
+  'MGA-019': { image: '/images/catalog/chefchaouen-blue-city-rif.webp', standInConfidence: 'close-subject', placement: 'Chefchaouen hero/gallery' },
+  // 11 — Ait Ben Haddou
+  'MGA-035': { image: '/images/curated/ait-ben-haddou-bridge-town-unesco-morocco.webp', standInConfidence: 'same-theme', note: 'river crossing + ksar', placement: 'Ait Ben Haddou destination gallery' },
+  'MGA-037': { image: '/images/curated/ait-benhaddou-kasbah-sunset-unesco-morocco.webp', standInConfidence: 'same-theme', placement: 'Ait Ben Haddou destination gallery' },
+  // 12 — Dades & Todra
+  'MGA-026': { image: '/images/curated/todra-gorge-river-canyon-high-atlas.webp', standInConfidence: 'same-theme', placement: 'Todra Gorge destination gallery' },
+  'MGA-036': { image: '/images/dest/dades-valley.webp', standInConfidence: 'same-theme', placement: 'Dades Valley hero' },
+  'MGA-040': { standInConfidence: 'none', note: 'no viewpoint figure image for Dades' },
+  // 13 — Atlas & road trips
+  'MGA-016': { image: '/images/hero/atlas-pano.webp', standInConfidence: 'same-theme', note: 'High Atlas panorama', placement: 'Destinations index hero' },
+  // 14 — Coast
+  'MGA-007': { standInConfidence: 'none', note: 'no aerial surf image in repo' },
+  'MGA-012': { standInConfidence: 'none', note: 'no surfer image in repo' },
+  'MGA-032': { standInConfidence: 'none', note: 'no camels-on-beach image in repo' },
+  // 15 — Essaouira
+  'MGA-025': { image: '/images/catalog/essaouira-sqala-du-port-atlantic.webp', standInConfidence: 'same-theme', note: 'Essaouira ramparts rather than blue door', placement: 'Essaouira destination gallery' },
+  // 16 — Merzouga accommodation & architecture
+  'MGA-021': { image: '/images/catalog/ancient-berber-kasbah-ruins-southern-morocco.webp', standInConfidence: 'same-theme', note: 'southern-Morocco kasbah architecture' },
+  'MGA-022': { image: '/images/riad/courtyard.webp', standInConfidence: 'same-theme', placement: 'Merzouga destination gallery (accommodation)' },
+  // 17 — Culture, food & crafts
+  'MGA-014': { image: '/images/catalog/moroccan-mint-tea-riad.webp', standInConfidence: 'close-subject', placement: 'shared culture imagery' },
+  'MGA-015': { standInConfidence: 'none', note: 'no blacksmith image in repo' },
+  // 18 — Location uncertain — DO NOT PUBLISH
+  'MGA-023': { standInConfidence: 'none', note: 'BLOCKED (unverified-location); never published, no derivatives' },
+  // 19 — Private transport fleet
+  'MGA-041': { standInConfidence: 'none', note: 'no Land Cruiser dune-crest image in repo' },
+  'MGA-042': { standInConfidence: 'none' },
+  'MGA-043': { image: '/images/personal/group-atlas.webp', standInConfidence: 'same-theme', note: 'private group road-trip subject', placement: 'About — Our cars & transport' },
+  'MGA-044': { image: '/images/personal/guests-van.webp', standInConfidence: 'same-theme', note: 'guests with private minivan', placement: 'About — Our cars & transport' },
+  'MGA-045': { image: '/images/personal/guests-sunset.webp', standInConfidence: 'same-theme', note: 'private desert journey experience', placement: 'About — Our cars & transport' },
+  'MGA-046': { standInConfidence: 'none', note: 'BLOCKED (verify-sticker); never published until TOURIS-ME sticker verified' },
+};
 export function isPublishable(assetId: string): boolean {
   const a = PHOTO_LIBRARY[assetId];
   return !!a && !RESTRICTED_ASSETS[assetId] && a.verification === 'approved' && !!a.src;

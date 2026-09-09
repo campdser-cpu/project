@@ -62,6 +62,21 @@ export const destinations: Destination[] = [
         alt: "Local man riding a motorbike through a stone archway in the old Marrakech medina",
         caption: "A local rider passes beneath a historic stone archway in the Marrakech medina.",
       },
+      {
+        src: "/images/catalog/jemaa-el-fna-night-marrakech.webp",
+        alt: "Crowds and food stalls filling Jemaa el-Fna square in Marrakech at night, the Koutoubia minaret beyond",
+        caption: "Jemaa el-Fna at night — food stalls, music and crowds.",
+      },
+      {
+        src: "/images/catalog/menara-gardens-pavilion-marrakech.webp",
+        alt: "The green-tiled Menara pavilion reflected in its basin with the Atlas behind, Marrakech",
+        caption: "The Menara pavilion and its reflecting pool, with the Atlas beyond.",
+      },
+      {
+        src: "/images/catalog/tbourida-fantasia-marrakech.webp",
+        alt: "Tbourida rider in ceremonial dress on horseback with a raised musket, the Koutoubia minaret of Marrakech behind",
+        caption: "Tbourida — a ceremonial horseman with his musket, Marrakech.",
+      },
                 ],
   },
   {
@@ -96,6 +111,16 @@ export const destinations: Destination[] = [
         alt: "Aerial view of the circular dye pits of the Chouara Tannery in Fes el-Bali, Morocco",
         caption: "The honeycomb of dye pits seen from the tannery viewing terrace.",
       },
+      {
+        src: "/images/catalog/moroccan-palace-ceiling-muqarnas.webp",
+        alt: "Intricately carved muqarnas cedar ceiling of a Moroccan palace",
+        caption: "A muqarnas cedar ceiling — zellij and carved plaster around it.",
+      },
+      {
+        src: "/images/catalog/moroccan-pastries-sweets.webp",
+        alt: "Woman holding a gift box of assorted Moroccan pastries — almond, coconut and sesame sweets",
+        caption: "A gift box of Moroccan pastries — almond, coconut and honey.",
+      },
 
     ],
   },
@@ -106,8 +131,15 @@ export const destinations: Destination[] = [
     shortDesc: "The forgotten imperial city — grand gates and Roman ruins nearby.",
     image: "/images/dest/meknes.webp",
     bestTime: "Mar – May, Sep – Nov",
-    description: "Often overlooked in favour of its more famous siblings, Meknès rewards the curious traveller with monumental Bab Mansour gate, the atmospheric medina, and easy access to the Roman ruins of Volubilis — a UNESCO World Heritage site.",
+    description: "Meknès is the quietest of the four imperial cities — and for many travellers the most rewarding. Sultan Moulay Ismail made it his 17th-century capital and left monumental works: the Bab Mansour gate, the vast Heri es-Souani granaries, and his own mausoleum. The medina is calmer than Fes or Marrakech, and Volubilis — the remarkably preserved Roman city among olive groves 30 km away — pairs naturally with a visit. Come for half a day from Fes, or stay a night and see the gates glow at dusk.",
     highlights: ["Bab Mansour Gate", "Mausoleum of Moulay Ismail", "Volubilis Roman Ruins", "Heri es-Souani", "Medina"],
+    gallery: [
+      {
+        src: "/images/dest/meknes.webp",
+        alt: "Bab Mansour gate in Meknes, Morocco",
+        caption: "The monumental Bab Mansour gate, Meknes."
+      },
+    ],
     region: "Northern Morocco",
     coords: { lat: 33.8935, lng: -5.5473 },
   },
@@ -153,7 +185,7 @@ export const destinations: Destination[] = [
     shortDesc: "Morocco's capital — the Kasbah of Oudayas and Hassan Tower.",
     image: "/images/dest/rabat.webp",
     bestTime: "Mar – Jun, Sep – Nov",
-    description: "Rabat, Morocco's capital, exudes a calm, regal elegance. The Kasbah of Oudayas, overlooking the Atlantic, and the unfinished Hassan Tower are must-sees. The modern city coexists beautifully with its ancient medina.",
+    description: "Rabat — Morocco’s capital and a UNESCO World Heritage city — pairs imperial history with Atlantic calm: the Hassan Tower and Mausoleum of Mohammed V, the cliff-top Kasbah of the Udayas with its blue lanes and Andalusian garden, and the modern Mohammed VI Tower skyline. The medina is relaxed, the corniche walkable, and the high-speed train puts Casablanca 50 minutes away. Rabat suits travellers who want imperial-city culture without Marrakech intensity.",
     highlights: ["Kasbah des Oudayas", "Hassan Tower", "Mohammed V Mausoleum", "Chellah Necropolis", "Medina"],
     region: "Atlantic Coast",
     coords: { lat: 34.0209, lng: -6.8416 },
@@ -200,6 +232,21 @@ export const destinations: Destination[] = [
         src: "/images/curated/sahara-desert-dunes-couple-sunset-merzouga.webp",
         alt: "Travelers walking a dune crest at sunset near Merzouga, Erg Chebbi",
         caption: "The sunset walk up the dune line is free, and never disappoints.",
+      },
+      {
+        src: "/images/catalog/amazigh-music-ceremony.webp",
+        alt: "Amazigh musicians in white djellabas playing bendir drums at an outdoor ceremony",
+        caption: "Amazigh musicians at an outdoor celebration.",
+      },
+      {
+        src: "/images/stock/stargazing-merzouga.webp",
+        alt: "Stargazing under the Milky Way in the Sahara desert near Merzouga, Morocco",
+        caption: "After dark the Erg Chebbi sky becomes the main event.",
+      },
+      {
+        src: "/images/riad/courtyard.webp",
+        alt: "Ornate Moroccan riad courtyard with carved stone facades and potted plants",
+        caption: "Kasbah hotels and riads at the gateway to the dunes.",
       },
     ],
   },
@@ -292,8 +339,15 @@ export const destinations: Destination[] = [
     shortDesc: "Gateway to Erg Chigaga and the ancient Draa Valley.",
     image: "/images/dest/zagora.webp",
     bestTime: "Oct – Mar",
-    description: "Zagora marks the beginning of the real Saharan experience in the Draa Valley. The famous 'Timbuktu 52 Days by Camel' sign captures its spirit. From here, jeep excursions into the remote Erg Chigaga — far from tourist crowds — offer a truly wild desert experience.",
+    description: "Zagora is the gateway to the southern Draa Valley and the famous Timbuktu sign — a reminder that trans-Saharan caravans once set off from here. The town is modest but the surroundings repay slow travel: palm groves, ksour villages, the Jbel Zagora sunset viewpoint, and desert-edge dunes at Tinfou. Travellers short on time often choose Zagora for a 2-day Sahara taste from Marrakech: a stony-reg desert experience rather than great sand seas, best combined with the Draa Valley road.",
     highlights: ["Erg Chigaga Dunes", "Draa Valley Oases", "Berber Camps", "Camel Trekking", "Date Palm Groves"],
+    gallery: [
+      {
+        src: "/images/dest/zagora.webp",
+        alt: "Palm groves and desert rooftops in Zagora, Draa Valley, Morocco",
+        caption: "Palm groves around Zagora in the Draa Valley."
+      },
+    ],
     region: "Southern Morocco",
     coords: { lat: 30.3295, lng: -5.8381 },
   },
@@ -304,8 +358,15 @@ export const destinations: Destination[] = [
     shortDesc: "Spectacular gorges, ancient kasbahs, and rose-scented oases.",
     image: "/images/dest/dades-valley.webp",
     bestTime: "Mar – Nov",
-    description: "The Dades Valley — the 'Valley of a Thousand Kasbahs' — runs from the High Atlas foothills down through one of Morocco's densest palm-and-almond oases. Two sights anchor a visit: the Monkey Fingers rock formation, a forest of eroded red ridges above the gorge, and the switchback road that zigzags up through the Dades Gorge itself. In May the valley's rose fields around El Kelaa M'Gouna harvest for the Rose Festival. On Morocco Grand Adventure itineraries the Dades is where the long drive from Marrakech breaks overnight — arriving in the late afternoon, you still have time to walk into the gorge before dinner and continue to Todra and Merzouga the next morning.",
+    description: "The Dades Valley — the Valley of a Thousand Kasbahs — runs east from Ouarzazate toward the Todra Gorge through terraced gardens, canyon walls and kasbahs on every bend. The famous switchbacks above Boulmane Dades offer one of the country’s great road views. Travellers pass through on every Marrakech–Merzouga itinerary, usually overnighting in a valley guesthouse. Walkers can explore the Monkey Toes rock formations; photographers should time the bends for late afternoon light.",
     highlights: ["Dades Gorge", "Monkey Fingers Rocks", "Rose Festival (May)", "Ancient Kasbahs", "Valley Trekking", "Switchback Road Views"],
+    gallery: [
+      {
+        src: "/images/dest/dades-valley.webp",
+        alt: "Terraced fields and kasbahs in the Dades Valley, Morocco",
+        caption: "Terraced gardens and kasbahs in the Dades Valley."
+      },
+    ],
     region: "Southern Morocco",
     coords: { lat: 31.4917, lng: -6.0166 },
   },
@@ -316,7 +377,7 @@ export const destinations: Destination[] = [
     shortDesc: "Towering 300m canyon walls — rock climbing and trekking paradise.",
     image: "/images/dest/todra-gorge.webp",
     bestTime: "Mar – Nov",
-    description: "The Todra (Todgha) Gorge is one of Morocco's most dramatic natural sights: a narrow corridor of limestone walls that soar up to 300 metres, closing to little more than 10 metres wide at its tightest point. A flat riverside path makes the first stretch of the gorge an easy walk for any fitness level, while climbers travel from around the world for the rock routes on its walls. Visit early in the morning, when sunlight first reaches the canyon floor and the rock turns gold — by midday the light goes flat and the car park fills. On Morocco Grand Adventure routes, Todra is the natural morning stop between the Dades Valley and Merzouga, and the short walk makes it a good leg-stretch before the final desert push.",
+    description: "The Todra Gorge is Morocco’s great canyon — 300-metre limestone walls narrowing to a corridor barely 10 metres wide, threaded by the Todra river and palm gardens. Climbers know its hundreds of bolted routes; walkers follow the gorge road or palmery trails; photographers come for dawn light on the orange cliffs. Every Marrakech–Merzouga itinerary passes through, usually with a riverside lunch and a short canyon walk before the road to Merzouga.",
     highlights: ["Rock Climbing", "Canyon Walk", "Berber Guesthouses", "Photography", "Sunrise Views", "300m Cliff Walls"],
     region: "Southern Morocco",
     coords: { lat: 31.5863, lng: -5.5822 },
@@ -340,8 +401,15 @@ export const destinations: Destination[] = [
     shortDesc: "Morocco's most beautiful oasis — 1,000-year-old palm grove.",
     image: "/images/dest/skoura.webp",
     bestTime: "Sep – May",
-    description: "The Skoura oasis is a verdant miracle in the pre-Saharan landscape. Over a thousand years old, its dense palm grove hides ancient kasbahs including the magnificent Amerhidil. Horseback rides and bicycle tours through the palmeraie are among Morocco's most peaceful experiences.",
+    description: "Skoura is a vast palm oasis on the Road of a Thousand Kasbahs, 40 km east of Ouarzazate — home to the beautifully restored Amridil Kasbah, one of Morocco’s finest kasbah museums with its olive press and rooftop views over the palms. Quiet tracks thread between mud-brick villages, ideal for a gentle walk or bike ride. Skoura suits travellers who want kasbah culture without the crowds of Aït Ben Haddou, fitting neatly into a night between Marrakech and the Dades Valley.",
     highlights: ["Amerhidil Kasbah", "Palmeraie Cycling", "Horse Riding", "Bird Watching", "Berber Villages"],
+    gallery: [
+      {
+        src: "/images/dest/skoura.webp",
+        alt: "Palm groves and kasbahs in the Skoura oasis, Morocco",
+        caption: "Palm groves and kasbahs of the Skoura oasis."
+      },
+    ],
     region: "Southern Morocco",
     coords: { lat: 31.0625, lng: -6.5572 },
   },
@@ -352,8 +420,15 @@ export const destinations: Destination[] = [
     shortDesc: "Morocco's most fragrant valley — blooms every April and May.",
     image: "/images/dest/roses-valley.webp",
     bestTime: "Apr – May (Rose Festival)",
-    description: "Nestled between the High Atlas and Anti-Atlas, the Valley of Roses (Vallée des Roses) comes alive each spring when the Damask rose blooms. The annual Rose Festival in Kelaat M'Gouna is a joyful celebration of colour, music, and rose-water perfume.",
+    description: "Each spring the Valley of Roses — centred on Kelaat M’Gouna between Skoura and the Dades — turns pink for the rose harvest, celebrated with the annual Rose Festival of music and rose-water distilling. Even outside harvest season the valley repays the detour: terraced rose fields, Berber villages, and the dramatic approach through the Dades switchbacks. Rose water, oil and soap from village cooperatives make genuinely local souvenirs.",
     highlights: ["Rose Festival", "Rose Water Distillery", "Kelaat M'Gouna Kasbah", "Valley Trekking", "Argan Oil Cooperatives"],
+    gallery: [
+      {
+        src: "/images/dest/roses-valley.webp",
+        alt: "Rose fields and village houses in the Valley of Roses, Morocco",
+        caption: "Rose fields in the Valley of Roses."
+      },
+    ],
     region: "Southern Morocco",
     coords: { lat: 31.2354, lng: -6.1261 },
   },
@@ -364,8 +439,15 @@ export const destinations: Destination[] = [
     shortDesc: "Morocco's longest river valley — date palms, kasbahs, and ancient trade routes.",
     image: "/images/dest/draa-valley.webp",
     bestTime: "Oct – Apr",
-    description: "The Draa Valley stretches over 200km from Ouarzazate to the Saharan dunes near Zagora. Ancient caravans once carried gold and salt through this corridor of oases. The road follows a hypnotic rhythm of palm grove, kasbah, palm grove, punctuated by villages where time moves slowly.",
+    description: "The Draa is Morocco’s longest river and its greatest palm-grove corridor: over 100 km of continuous oasis from Agdz to Zagora, studded with ancient ksour such as Tamnougalt. The N9 road follows the valley floor past kasbah villages, autumn date harvests and weekly souks. It is the scenic backbone of every Zagora itinerary and the quieter alternative to the busier Dades road — best savoured slowly, with a night in a valley kasbah guesthouse.",
     highlights: ["Agdez Kasbah", "Tamegroute Green Pottery", "Palm Grove Walks", "Ancient Ksour", "Zagora Dunes"],
+    gallery: [
+      {
+        src: "/images/dest/draa-valley.webp",
+        alt: "Palm-filled Draa Valley with kasbah villages, Morocco",
+        caption: "Kasbah villages along the palm-filled Draa Valley."
+      },
+    ],
     region: "Southern Morocco",
     coords: { lat: 30.6904, lng: -6.3588 },
   },
@@ -416,8 +498,15 @@ export const destinations: Destination[] = [
     shortDesc: "Gateway to Toubkal — base camp for Morocco's highest peak trek.",
     image: "/images/dest/imlil.webp",
     bestTime: "Apr – Oct",
-    description: "Imlil is the starting point for treks up Jebel Toubkal (4,167m), North Africa's highest peak. The dramatic Berber village sits at 1,740m in the High Atlas and is surrounded by walnut groves, apple orchards, and traditional villages. The luxury Kasbah du Toubkal offers extraordinary mountain hospitality.",
+    description: "Imlil is the trailhead for Toubkal — North Africa’s highest peak at 4,167 m — and the easiest taste of High Atlas life from Marrakech, 90 minutes away. Walnut groves, mule tracks, Berber guesthouses and waterfall walks make it a destination in its own right. Travellers come for day hikes, two-day Toubkal ascents, or simply mountain air and views up the Mizane valley. Winter can bring snow; spring and autumn are ideal for walking.",
     highlights: ["Toubkal Summit Trek", "Berber Village Stays", "Mule Trekking", "Setti Fatma Waterfalls", "Mountain Cooking Classes"],
+    gallery: [
+      {
+        src: "/images/dest/imlil.webp",
+        alt: "Mountain village of Imlil in the High Atlas, Morocco",
+        caption: "Imlil village in the High Atlas foothills."
+      },
+    ],
     region: "High Atlas",
     coords: { lat: 31.1356, lng: -7.9161 },
   },
@@ -428,8 +517,15 @@ export const destinations: Destination[] = [
     shortDesc: "Lush valley one hour from Marrakech — waterfalls and Berber markets.",
     image: "/images/dest/ourika-valley.webp",
     bestTime: "Year-round",
-    description: "The Ourika Valley is the perfect day trip from Marrakech — just an hour by car yet a world away. Terraced gardens cascade down Atlas slopes, argan cooperatives offer tastings, and the Setti Fatma waterfall rewards a short hike. The Monday Berber market at Aghbalou is especially vibrant.",
+    description: "The Ourika Valley is Marrakech’s closest mountain escape — a green corridor of riverside restaurants, Berber villages and the Setti Fatma waterfalls, under an hour from the city. Day-trippers come for mint tea on a riverside terrace, a guided walk to the falls, and saffron and argan cooperatives. It pairs well with a desert itinerary: mountains in the morning, medina by evening.",
     highlights: ["Setti Fatma Waterfalls", "Berber Market", "Argan Oil Cooperative", "Herb Gardens", "Lunch at Valley Restaurants"],
+    gallery: [
+      {
+        src: "/images/dest/ourika-valley.webp",
+        alt: "Green Ourika Valley with Atlas foothills, Morocco",
+        caption: "The green Ourika Valley below the Atlas."
+      },
+    ],
     region: "High Atlas",
     coords: { lat: 31.3714, lng: -7.7333 },
   },
@@ -440,8 +536,15 @@ export const destinations: Destination[] = [
     shortDesc: "Morocco's most spectacular waterfalls — Barbary macaques and rainbows.",
     image: "/images/dest/ouzoud.webp",
     bestTime: "Mar – May, Sep – Nov",
-    description: "The Ouzoud Falls are the highest in North Africa at 110 metres, plunging in a series of terraced tiers into a turquoise pool. Families of Barbary macaques play in the surrounding olive trees, and the mist creates perpetual rainbows. Local mills grind grain just as they have for centuries.",
+    description: "The Ouzoud Falls — 110 metres of tiered cascades about 150 km from Marrakech — are Morocco’s most famous waterfalls and a classic day trip. Small boats ferry visitors close to the spray, Barbary macaques work the olive groves above, and viewpoints and riverside paths reward a full afternoon. Visit in spring for maximum flow, or summer for the pools below. Combine with Azilal for a longer Atlas loop.",
     highlights: ["110m Waterfall", "Barbary Macaques", "Boat Tour below Falls", "Hammam", "Olive Oil Tasting"],
+    gallery: [
+      {
+        src: "/images/dest/ouzoud.webp",
+        alt: "Ouzoud waterfalls cascading in Morocco",
+        caption: "The Ouzoud waterfalls in full flow."
+      },
+    ],
     region: "Middle Atlas",
     coords: { lat: 32.0167, lng: -6.7167 },
   },
@@ -452,8 +555,15 @@ export const destinations: Destination[] = [
     shortDesc: "Morocco's Switzerland — pine forests and wild Barbary macaques.",
     image: "/images/dest/ifrane.webp",
     bestTime: "Apr – Oct (summer), Dec – Feb (snow)",
-    description: "Dubbed 'Little Switzerland', Ifrane is a French-built mountain resort with chalet-style architecture and crisp mountain air. Nearby Azrou's cedar forest is home to hundreds of wild Barbary macaques that come right up to visitors. In winter, snow transforms the region into a ski destination.",
+    description: "Ifrane surprises first-time visitors: an alpine-style town of slate roofs and cedar forests in the Middle Atlas, nicknamed Little Switzerland, built by the French in the 1930s. Travellers on Fes–Merzouga routes pass through for the stone lion statue and nearby Michlifen slopes in winter; in summer the town is a cool escape. The cedar woods around Azrou shelter Barbary macaques and good birdwatching.",
     highlights: ["Cedar Forest of Azrou", "Barbary Macaques", "Ifrane National Park", "Skiing at Mischliffen", "Lake Aaoua"],
+    gallery: [
+      {
+        src: "/images/dest/ifrane.webp",
+        alt: "Alpine-style streets of Ifrane in the Middle Atlas, Morocco",
+        caption: "Ifrane, the Middle Atlas alpine town."
+      },
+    ],
     region: "Middle Atlas",
     coords: { lat: 33.5333, lng: -5.1167 },
   },
@@ -465,10 +575,22 @@ export const destinations: Destination[] = [
     shortDesc: "Windswept coastal gem — blue boats, fresh seafood, and Gnawa music.",
     image: "/images/dest/essaouira.webp",
     bestTime: "Year-round",
-    description: "Essaouira is Morocco's windswept Atlantic port — a UNESCO-listed medina of whitewashed houses, blue shutters and 18th-century sea ramparts. The trade winds that named Wind City make its broad bay a kitesurf and windsurf magnet, and the working harbour still sells its catch at simple grill stalls by the Sqala du Port. Summer visitors should know the wind is constant — refreshing for sailing, cool for sunbathing — while spring and autumn are calmer. The Gnawa and World Music Festival around June fills the medina with drumming. Essaouira sits on the Atlantic side of the country: it slots naturally into Marrakech-based itineraries as a 2–3 night coastal counterpoint, reachable by an easy drive through the Argan region.",
+    description: "Essaouira — the Wind City of Africa — is Morocco’s most easygoing coastal town: a UNESCO-listed medina of blue-shuttered lanes, the Sqala ramparts with their cannon row over the Atlantic, a fishing port of blue boats, and wide beaches made for windsurfing and sunset walks. The Gnaoua World Music Festival fills the ramparts each summer. Three hours from Marrakech, it is the classic coast-and-culture add-on to a Sahara itinerary — and the port seafood grills are a rite of passage.",
     highlights: ["Ramparts & Medina", "Gnawa Music", "Kitesurfing", "Seafood at the Port", "Mellah Jewish Quarter", "Atlantic Beaches"],
     region: "Atlantic Coast",
     coords: { lat: 31.5085, lng: -9.7595 },
+    gallery: [
+      {
+        src: "/images/catalog/essaouira-sqala-du-port-atlantic.webp",
+        alt: "Stone Sqala du Port ramparts and cannons facing the Atlantic in Essaouira, Morocco",
+        caption: "The Sqala du Port ramparts face the Atlantic swell.",
+      },
+      {
+        src: "/images/dest/essaouira.webp",
+        alt: "Whitewashed medina walls and blue boats in the windswept port of Essaouira, Morocco",
+        caption: "Whitewashed walls, blue boats and a constant Atlantic breeze.",
+      },
+    ],
   },
   {
     id: "agadir",
@@ -477,8 +599,15 @@ export const destinations: Destination[] = [
     shortDesc: "Morocco's modern beach resort — golden sands and year-round sunshine.",
     image: "/images/dest/agadir.webp",
     bestTime: "Year-round",
-    description: "Agadir offers the classic beach holiday Morocco rarely advertises — 300 days of sunshine, a magnificent 8km crescent bay, and excellent resort hotels. Rebuilt after the 1960 earthquake, it has a modern European feel yet sits at the gateway to the wild Souss-Massa plain.",
+    description: "Agadir is Morocco’s purpose-built beach resort — rebuilt after the 1960 earthquake with wide Atlantic beaches, a long promenade, and winter sun from November to March. Beyond the beach: the Kasbah Oufella at sunset, the Souk El Had, the Souss-Massa lagoon, and day trips to Paradise Valley or Taghazout. Travellers combining beach time with desert tours can fly or drive to Marrakech and join a Sahara itinerary from there.",
     highlights: ["Agadir Beach", "Souk el Had", "Kasbah Ruins at Sunset", "Souss-Massa Bird Reserve", "Marina"],
+    gallery: [
+      {
+        src: "/images/dest/agadir.webp",
+        alt: "Wide sandy beach and promenade in Agadir, Morocco",
+        caption: "Agadir beach and promenade."
+      },
+    ],
     region: "Atlantic Coast",
     coords: { lat: 30.4278, lng: -9.5981 },
   },
@@ -489,8 +618,15 @@ export const destinations: Destination[] = [
     shortDesc: "World-class surf village — breaks, yoga retreats, and hippie vibes.",
     image: "/images/dest/taghazout.webp",
     bestTime: "Oct – Apr (surf season)",
-    description: "Once a quiet Amazigh fishing village, Taghazout has become Africa's surf mecca. Anchor Point, Killer Point, and Hash Point are legendary breaks drawing surf pilgrims year-round. The village retains a wonderfully laid-back bohemian atmosphere, with yoga retreats, fresh fish tagines, and vivid sunsets.",
+    description: "Taghazout is Morocco’s surf capital — a former fishing village turned surf town 20 minutes north of Agadir. Anchor Point’s long right-hand break draws experienced surfers in winter; beginners learn on the sandy beaches with the village’s surf schools. Beyond the waves: yoga studios, seafood grills, sunset cafés, and easy trips to Paradise Valley or Essaouira.",
     highlights: ["Anchor Point (surf)", "Killer Point (surf)", "Surf Lessons", "Yoga Retreats", "Sidi Kaouki Beach"],
+    gallery: [
+      {
+        src: "/images/dest/taghazout.webp",
+        alt: "Surf beach and fishing village of Taghazout, Morocco",
+        caption: "Taghazout, surf village on the Atlantic."
+      },
+    ],
     region: "Atlantic Coast",
     coords: { lat: 30.5435, lng: -9.7076 },
   },
@@ -501,8 +637,15 @@ export const destinations: Destination[] = [
     shortDesc: "Dramatic red rock arches rising from the Atlantic — one of Africa's most beautiful beaches.",
     image: "/images/dest/legzira.webp",
     bestTime: "Apr – Oct",
-    description: "Legzira's extraordinary natural rock arches, carved by centuries of Atlantic erosion, frame one of Morocco's most dramatic beaches. The red cliffs glow pink and orange at sunset. The beach is remote, relatively undiscovered, and utterly spectacular — a photographer's dream.",
+    description: "Legzira beach, between Sidi Ifni and Mirleft, is famous for its immense natural sandstone arches; sunset through the main arch is one of Morocco’s iconic coastal sights. (One of the two great arches collapsed in 2016, so see the survivor while planning respectfully.) The beach suits wild coastal walks and solitude rather than swimming — currents are strong. Combine with Sidi Ifni and Mirleft for a far-south Atlantic loop few tourists attempt.",
     highlights: ["Natural Rock Arches", "Sunset Photography", "Secluded Swimming", "Sidi Ifni Town (15min)", "Atlantic Cliffs Walk"],
+    gallery: [
+      {
+        src: "/images/dest/legzira.webp",
+        alt: "Natural stone arches on Legzira beach, Morocco",
+        caption: "The natural arches of Legzira beach."
+      },
+    ],
     region: "Atlantic Coast",
     coords: { lat: 29.3719, lng: -10.1736 },
   },
@@ -513,8 +656,15 @@ export const destinations: Destination[] = [
     shortDesc: "Portuguese citadel on the Atlantic — UNESCO-listed Citerne Portugaise.",
     image: "/images/dest/el-jadida.webp",
     bestTime: "Year-round",
-    description: "El Jadida's UNESCO-listed Portuguese Citadel is one of Morocco's most impressive coastal fortifications. The extraordinary underground cistern, built in 1514, features dramatic vaulted ceilings reflected in a shallow pool — it appeared in Orson Welles' Othello. The beach stretches for miles.",
+    description: "El Jadida — the former Portuguese Mazagan — guards a UNESCO-listed 16th-century fortress whose sea-washed ramparts and Manueline cistern are among Morocco’s most atmospheric historic sights; the cistern’s reflected light shaft is beloved by photographers. It pairs easily with Casablanca or Essaouira: wander the ramparts, swim at Deauville beach, and eat grilled fish in the old port. The Moussem of Moulay Abdellah adds horsemanship displays in summer.",
     highlights: ["Portuguese Citadel", "Citerne Portugaise", "El Jadida Beach", "Sidi Bouzid Beach", "Mazagan Heritage"],
+    gallery: [
+      {
+        src: "/images/dest/el-jadida.webp",
+        alt: "Portuguese cistern in El Jadida, Morocco",
+        caption: "The Portuguese cistern in El Jadida."
+      },
+    ],
     region: "Atlantic Coast",
     coords: { lat: 33.2316, lng: -8.5007 },
   },
@@ -526,8 +676,15 @@ export const destinations: Destination[] = [
     shortDesc: "Gateway between Africa and Europe — Strait of Gibraltar, art, and intrigue.",
     image: "/images/dest/tangier.webp",
     bestTime: "Mar – Oct",
-    description: "Tangier has always been a city of intrigue — where Africa and Europe face each other across a narrow strip of water. Beat Generation writers, painters, and spies have all passed through. The medina, the Kasbah, and Café Hafa perched above the Strait make it irresistibly atmospheric.",
+    description: "Tangier — where the Mediterranean meets the Atlantic — has always been Morocco’s gateway: ferries from Spain arrive in under an hour, and the high-speed train reaches Casablanca in two hours. Beyond logistics, the city rewards explorers: the storied Kasbah and Petit Socco, the Caves of Hercules and Cap Spartel, and a fast-modernising corniche. Tangier suits travellers arriving from Europe, or anyone building a north-to-south route ending in the Sahara.",
     highlights: ["Kasbah Museum", "Cap Spartel", "Hércules Caves", "Café Hafa", "Petit Socco"],
+    gallery: [
+      {
+        src: "/images/dest/tangier.webp",
+        alt: "Old town and harbour of Tangier, Morocco",
+        caption: "Tangier old town above the harbour."
+      },
+    ],
     region: "Northern Morocco",
     coords: { lat: 35.7595, lng: -5.8340 },
   },
@@ -538,8 +695,15 @@ export const destinations: Destination[] = [
     shortDesc: "The little Jerusalem — Spain's whitest medina and Andalusian heritage.",
     image: "/images/dest/tetouan.webp",
     bestTime: "Mar – Oct",
-    description: "Tétouan's UNESCO-listed medina is perhaps the best-preserved in Morocco. Its strong Andalusian influence — brought by Moorish refugees expelled from Spain in 1492 — gives it a distinctly European feel. The Royal Palace, the Museum of Moroccan Arts, and the lively craftsmen quarter are unmissable.",
+    description: "Tétouan — the White Dove — is Morocco’s best-preserved Andalusian city, its UNESCO-listed medina a maze of whitewashed lanes built by refugees from Granada. The archaeological museum, Royal Palace square and the Roman site of Tamuda reward half a day; the Rif mountains and Martil beach sit on the doorstep. Tetouan pairs naturally with Chefchaouen (one hour away) on a northern Morocco loop.",
     highlights: ["UNESCO Medina", "Spanish Quarter", "Royal Palace Gardens", "Museum of Moroccan Arts", "Artisan Souks"],
+    gallery: [
+      {
+        src: "/images/dest/tetouan.webp",
+        alt: "Whitewashed medina of Tetouan, Morocco",
+        caption: "The whitewashed medina of Tetouan."
+      },
+    ],
     region: "Northern Morocco",
     coords: { lat: 35.5733, lng: -5.3709 },
   },
@@ -550,8 +714,15 @@ export const destinations: Destination[] = [
     shortDesc: "Wild gorges, turquoise pools, and a natural stone bridge near Chefchaouen.",
     image: "/images/dest/akchour.webp",
     bestTime: "Apr – Oct",
-    description: "Akchour is Chefchaouen's wild counterpart — a hidden valley of turquoise-green rivers, deep gorges, and the natural limestone arch called 'God's Bridge'. Two spectacular hikes lead to the small and large waterfalls through forests of cedar and holm oak. Often combined with a Chefchaouen visit.",
+    description: "Akchour is Chefchaouen’s wild counterpart — a hidden valley of turquoise-green rivers, deep gorges, and the natural limestone arch called God’s Bridge. Two spectacular hikes lead to small and large waterfalls through cedar and holm-oak forests, with river pools for swimming in summer. The trailheads need half a day minimum; local guides add safety and knowledge. Often combined with a Chefchaouen visit as a mountain-and-blue-city pairing.",
     highlights: ["God's Bridge Natural Arch", "Akchour Waterfalls", "Swimming in Gorge Pools", "Rif Forest Trek", "Berber Lunch"],
+    gallery: [
+      {
+        src: "/images/dest/akchour.webp",
+        alt: "Akchour waterfalls and natural pools near Chefchaouen, Morocco",
+        caption: "Turquoise pools and waterfalls in the Akchour valley.",
+      },
+    ],
     region: "Northern Morocco",
     coords: { lat: 35.2333, lng: -5.2167 },
   },
@@ -563,8 +734,15 @@ export const destinations: Destination[] = [
     shortDesc: "The village of 45 kasbahs — remote, unspoiled, and spectacularly beautiful.",
     image: "/images/dest/nkob.webp",
     bestTime: "Sep – May",
-    description: "Nkob is Morocco's secret — a remote village in the Jbel Saghro known as 'the village of 45 kasbahs'. Few tourists reach it, yet the landscape of volcanic rock, palm oases, and ancient fortresses is extraordinary. Nearby Jbel Saghro treks offer a dramatic alternative to the Sahara.",
+    description: "Nkob is Morocco’s hidden gem — a remote village in the Jbel Saghro foothills known as the village of 45 kasbahs, where fortress-houses have stood for centuries against desert winds. Few tourists reach it, yet the landscape of volcanic rock, palm oases and ancient fortresses is extraordinary. It is a base for Jbel Saghro treks — a dramatic, crowd-free alternative to Toubkal — and for dark-sky stargazing far from city glow.",
     highlights: ["45 Kasbahs", "Jbel Saghro Trek", "Wild Camping", "Berber Traditions", "Dark Sky Stargazing"],
+    gallery: [
+      {
+        src: "/images/dest/nkob.webp",
+        alt: "Kasbah village of Nkob in southern Morocco",
+        caption: "Kasbah towers in the village of Nkob."
+      },
+    ],
     region: "Southern Morocco",
     coords: { lat: 30.8617, lng: -5.8447 },
   },
@@ -575,8 +753,15 @@ export const destinations: Destination[] = [
     shortDesc: "Unspoilt surf village between Tiznit and Sidi Ifni — wild Atlantic coast.",
     image: "/images/dest/mirleft.webp",
     bestTime: "Year-round",
-    description: "Mirleft sits between Tiznit and Sidi Ifni on a rugged stretch of Atlantic coast that feels like the end of the world in the best possible way. A string of wild beaches — Marabout, Safarkhal, Sidi Mohammed Ben Abdallah — offer solitude, surf, and sunsets that ignite the sky.",
+    description: "Mirleft is the Atlantic coast’s quiet escape — an unspoilt surf and fishing village between Tiznit and Sidi Ifni, wrapped around wild beaches and red cliffs. Days here mean surf at Marabout, cliff-top sunset walks, snorkelling in clear coves, and seafood grills in the small town. Travellers seeking solitude pair it with Legzira and Sidi Ifni on a far-south loop, or use it as a slow-coast contrast to a Sahara itinerary.",
     highlights: ["Wild Atlantic Beaches", "Cliff-Top Sunsets", "Surf", "Snorkelling", "Argan Forest Walks"],
+    gallery: [
+      {
+        src: "/images/dest/mirleft.webp",
+        alt: "Cliffs and beach at Mirleft on the Atlantic coast, Morocco",
+        caption: "Wild cliffs and beach at Mirleft."
+      },
+    ],
     region: "Atlantic Coast",
     coords: { lat: 29.5834, lng: -10.0474 },
   },

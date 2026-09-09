@@ -1012,7 +1012,7 @@ export const COMPARISONS: HubPage[] = [
     ],
     tours: ['3-day-sahara-marrakech', '2-day-zagora-desert-marrakech'],
     destinations: ['merzouga', 'zagora', 'erg-chebbi'],
-    relatedGuides: ['how-to-get-there'],
+    relatedGuides: ['how-to-get-there', 'erg-chebbi-vs-erg-chigaga', '2-day-vs-3-day-sahara-tour', 'marrakech-vs-fes'],
     comparisonRows: [
       ['Dunes', 'Erg Chebbi — tall (~150 m), close to the village', 'Erg Chigaga — wider, more remote, approached via Draa Valley'],
       ['Best for', 'First-time Sahara, Marrakech/Fes departures, classic camel trek', 'Deep-south loop, quiet desert, palm-valley scenery'],
@@ -1092,7 +1092,7 @@ export const COMPARISONS: HubPage[] = [
     ],
         tours: ['2-day-zagora-desert-marrakech', '3-day-sahara-marrakech'],
     destinations: ['zagora', 'merzouga', 'erg-chebbi', 'ait-ben-haddou', 'dades-valley'],
-    relatedGuides: ['merzouga-vs-zagora'],
+    relatedGuides: ['merzouga-vs-zagora', 'how-many-days', 'how-to-get-there', 'marrakech-vs-fes'],
     comparisonRows: [
       ['Driving per day', 'Two very long days (8–10+ h day one)', 'Split into manageable days (~5–6 h average)'],
       ['Stops en route', 'Brief only: Aït Ben Haddou, Draa Valley', 'Overnight at Aït Ben Haddou / Ouarzazate / Dades region'],
@@ -1140,7 +1140,7 @@ export const COMPARISONS: HubPage[] = [
     ],
     tours: ['3-day-sahara-marrakech', '7-day-imperial-cities-sahara-escape'],
     destinations: ['merzouga', 'ait-ben-haddou', 'marrakech', 'fes'],
-    relatedGuides: [],
+    relatedGuides: ['2-day-vs-3-day-sahara-tour', 'marrakech-vs-fes', 'luxury-camp-vs-standard-camp', 'how-many-days', 'how-to-get-there'],
     comparisonRows: [
       ['Price per person', 'Lower; published group price', 'Higher; you hire the vehicle'],
       ['Schedule', 'Fixed departure calendar', 'You set the dates and stops'],
@@ -1333,7 +1333,7 @@ export const TRAVEL_INFO: HubPage[] = [
     ],
     tours: ['3-day-sahara-marrakech', '7-day-imperial-cities-sahara-escape'],
     destinations: ['merzouga', 'essaouira', 'marrakech'],
-    relatedGuides: ['what-to-pack-morocco', 'getting-around-morocco'],
+    relatedGuides: ['what-to-pack-morocco', 'getting-around-morocco', 'best-time-to-visit', 'sahara-desert-guide'],
     sources: ['onmt', 'lonely-planet-morocco'],
   },
   {
@@ -1384,7 +1384,7 @@ export const TRAVEL_INFO: HubPage[] = [
     ],
     tours: ['3-day-sahara-marrakech', '4-day-marrakech-merzouga-sahara'],
     destinations: ['merzouga', 'marrakech'],
-    relatedGuides: ['best-time-to-visit-morocco', 'desert-camps'],
+    relatedGuides: ['best-time-to-visit-morocco', 'desert-camps', 'what-to-pack', 'sahara-desert-guide'],
     sources: ['onmt', 'lonely-planet-morocco'],
   },
   {
@@ -1428,7 +1428,7 @@ export const TRAVEL_INFO: HubPage[] = [
     ],
     tours: ['3-day-sahara-marrakech', '3-day-fes-merzouga-sahara', '5-day-great-south-morocco'],
     destinations: ['merzouga', 'ouarzazate', 'marrakech'],
-    relatedGuides: ['best-time-to-visit-morocco', 'how-to-get-there'],
+    relatedGuides: ['best-time-to-visit-morocco', 'how-to-get-there', 'marrakech-to-merzouga', 'fes-to-merzouga'],
     sources: ['onmt', 'lonely-planet-morocco'],
   },
 ];
