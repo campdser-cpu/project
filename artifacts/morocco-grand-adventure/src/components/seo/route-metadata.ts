@@ -245,20 +245,182 @@ const AR_ROUTE_META: Record<string,RouteMeta> = {
   '/blog':{title:'مدونة السفر في المغرب — أدلة ونصائح',description:'أدلة ونصائح عملية للسفر في المغرب من خبراء محليين.'},
 };
 
-// Per-language static route metadata for Italian, mirroring the AR_ROUTE_META
-// pattern above. Italian pages without an authored route-meta entry fall back
-// to the canonical English route metadata (see getLocalizedRouteMeta).
+// ── Per-locale static route metadata (multilingual SEO phase) ────────────────
+// Authored per-language <title>/<meta description> for the commercial hub
+// routes, based on per-locale market research
+// (docs/seo/multilingual-seo-strategy.md). Each locale uses its own search
+// terminology — this is NOT a translation of the English keyword strategy.
+// Routes without an entry keep canonical English metadata (see
+// getLocalizedRouteMeta). Facts are limited to real MGA services (private
+// tours, local guides, Merzouga/Erg Chebbi, camps, camel trekking, 4x4, day
+// trips, trip builder). No invented prices or claims.
+
+// French — vocabulary per ONMT-fr and FR-market usage (circuit, bivouac,
+// Villes Impériales, dromadaire). Home title already exists (FR_HOME_META).
+const FR_ROUTE_META: Record<string,RouteMeta> = {
+  '/tours':{title:'Circuits privés au Maroc — Itinéraires sur mesure',description:"Tous nos circuits privés au Maroc : désert de Merzouga, Villes Impériales et côte atlantique, au départ de Marrakech, Fès, Casablanca et Agadir."},
+  '/desert-tours':{title:'Circuit désert Maroc — Merzouga & dunes d\u2019Erg Chebbi',description:"Circuits privés dans le désert marocain : dromadaires au coucher du soleil, nuit en bivouac sous les étoiles et excursion 4x4 dans les dunes d'Erg Chebbi."},
+  '/marrakech-tours':{title:'Circuits au départ de Marrakech — Désert & Haut Atlas',description:"Circuits privés au départ de Marrakech : le Haut Atlas, Aït Ben Haddou et la vallée du Dadès jusqu'aux dunes de Merzouga — ou une excursion d'une journée."},
+  '/fes-tours':{title:'Circuits au départ de Fès — Merzouga & Chefchaouen',description:"Circuits privés au départ de Fès : le Moyen Atlas, la vallée du Ziz et les dunes de Merzouga — ou la bleue Chefchaouen."},
+  '/casablanca-tours':{title:'Circuits au départ de Casablanca — Grand tour du Maroc',description:"Circuits privés au départ de Casablanca : Villes Impériales, Volubilis et désert du Sahara en un seul voyage — durée et itinéraire à définir."},
+  '/agadir-tours':{title:'Circuits au départ d\u2019Agadir — Côte atlantique & Sahara',description:"Circuits privés au départ d'Agadir : par Essaouira et Marrakech ou par Ouarzazate jusqu'aux dunes d'Erg Chebbi — itinéraire sur mesure."},
+  '/luxury-camp':{title:'Bivouac de luxe à Merzouga — Nuit dans le désert',description:"Bivouac de luxe privé à Merzouga : le confort au cœur des dunes d'Erg Chebbi — équipement, repas et réservation en détail."},
+  '/camel-trekking':{title:'Dromadaire à Merzouga — Balade dans les dunes d\u2019Erg Chebbi',description:"Balade à dos de dromadaire à Merzouga : ce qui vous attend, quoi porter et comment se déroule un coucher de soleil dans les dunes d'Erg Chebbi."},
+  '/4x4-tours':{title:'Excursions 4x4 dans le désert marocain — Dunes & oasis',description:"Excursions privées en 4x4 autour de Merzouga : dunes, oasis, Khamlia et familles nomades — à la demi-journée, à la journée ou davantage."},
+  '/trip-builder':{title:'Voyage sur mesure au Maroc — Créez votre circuit privé',description:"Composez votre voyage au Maroc : durée, ville de départ, rythme et envies — devis personnalisé de nos guides sahariens locaux."},
+  '/merzouga-guide':{title:'Guide de Merzouga — Dunes, campements & conseils',description:"Guide pratique de Merzouga : Erg Chebbi, meilleure saison, campements, dromadaires et activités — par des guides locaux."},
+  '/day-trips':{title:'Excursions d\u2019une journée au Maroc — Retour le soir',description:"Excursions privées à la journée depuis Marrakech, Fès et Agadir : Ourika, Ouzoud, Essaouira, Chefchaouen — retour le même jour."},
+};
+
+// Spanish — vocabulary per Sahara Viajes / ES-market usage (tours por el
+// desierto, circuitos, excursiones de un día, campamento, paseo en camello).
+const ES_ROUTE_META: Record<string,RouteMeta> = {
+  '/':{title:'Viajes a Marruecos — Tours privados y desierto de Merzouga',description:"Agencia local del desierto: tours privados por Marruecos a medida — Erg Chebbi, ciudades imperiales y Atlas, con guía local. Pide tu presupuesto."},
+  '/tours':{title:'Tours por Marruecos — Circuitos privados a medida',description:"Catálogo de circuitos privados por Marruecos: rutas del desierto, ciudades imperiales y costa atlántica desde Marrakech, Fez, Casablanca y Agadir."},
+  '/desert-tours':{title:'Tours por el desierto de Marruecos — Merzouga y Erg Chebbi',description:"Rutas privadas al desierto de Merzouga: camellos al atardecer, campamento bajo las estrellas de Erg Chebbi y excursiones en 4x4 por las dunas."},
+  '/marrakech-tours':{title:'Tours desde Marrakech — Desierto, Atlas y rutas privadas',description:"Rutas privadas desde Marrakech: cruzar el Alto Atlas, Aït Ben Haddou y el valle del Dades hasta las dunas de Merzouga — o una excursión de un día."},
+  '/fes-tours':{title:'Tours desde Fez — Merzouga y Chefchaouen',description:"Rutas privadas desde Fez: el Atlas Medio, el valle del Ziz y las dunas de Merzouga — o la ciudad azul de Chefchaouen."},
+  '/casablanca-tours':{title:'Circuitos desde Casablanca — Gran tour de Marruecos',description:"Circuitos privados desde Casablanca: ciudades imperiales, Volubilis y el desierto de Merzouga en un solo viaje — duración flexible."},
+  '/agadir-tours':{title:'Tours desde Agadir — Costa atlántica y desierto',description:"Rutas privadas desde Agadir: por Essaouira y Marrakech o por Ouarzazate hasta las dunas de Erg Chebbi — itinerario a medida."},
+  '/luxury-camp':{title:'Campamento de lujo en Merzouga — Noche en el desierto',description:"Campamento privado de lujo en Merzouga: comodidad entre las dunas de Erg Chebbi — instalaciones, comidas y reserva, explicadas."},
+  '/camel-trekking':{title:'Paseo en camello por las dunas de Erg Chebbi',description:"Paseo en camello en Merzouga: qué esperar, qué llevar y cómo transcurre un atardecer entre las dunas de Erg Chebbi."},
+  '/4x4-tours':{title:'Excursiones en 4x4 por el desierto de Marruecos',description:"Excursiones privadas en 4x4 desde Merzouga: dunas, oasis, Khamlia y familias nómadas — de medio día, un día o más."},
+  '/trip-builder':{title:'Viaje a medida por Marruecos — Diseña tu circuito',description:"Diseña tu viaje privado a Marruecos: duración, ciudad de salida, ritmo e intereses — presupuesto de guías locales del Sahara."},
+  '/merzouga-guide':{title:'Guía de Merzouga — Dunas, campamentos y consejos',description:"Guía práctica de Merzouga: Erg Chebbi, mejor época, campamentos del desierto, camellos y actividades — por guías locales."},
+  '/day-trips':{title:'Excursiones de un día en Marruecos — Vuelta el mismo día',description:"Excursiones privadas de un día desde Marrakech, Fez y Agadir: Ourika, Ouzoud, Essaouira, Chefchaouen — con regreso el mismo día."},
+};
+
+// Italian — vocabulary per ONMT-it / IT-market usage (viaggio, vacanza nel
+// deserto, Città imperiali, escursione in cammello, gite di un giorno).
 const IT_ROUTE_META: Record<string,RouteMeta> = {
-  '/day-trips':{title:'Gite di un Giorno in Marocco — Escursioni Private',description:"Escursioni giornaliere private in Marocco da Marrakech, Fes e Merzouga: cascate di Ouzoud, Chefchaouen, Essaouira, Meknès e il deserto. Itinerario su misura con ritorno in giornata."},
+  '/':{title:'Viaggio in Marocco — Tour privati e deserto di Merzouga',description:"Agenzia locale del deserto: tour privati in Marocco su misura — Erg Chebbi, città imperiali e Atlas, con guida locale. Richiedi un preventivo."},
+  '/tours':{title:'Tour in Marocco — Viaggi privati su misura',description:"Tutti i tour privati in Marocco: itinerari nel deserto, città imperiali e costa atlantica da Marrakech, Fes, Casablanca e Agadir."},
+  '/desert-tours':{title:'Tour del deserto in Marocco — Merzouga ed Erg Chebbi',description:"Itinerari privati nel deserto di Merzouga: cammelli al tramonto, notte in campo tra le dune di Erg Chebbi ed escursioni in 4x4."},
+  '/marrakech-tours':{title:'Tour da Marrakech — Deserto, Atlas e itinerari privati',description:"Itinerari privati da Marrakech: l'Alto Atlas, Aït Ben Haddou e la valle del Dadès fino alle dune di Merzouga — o una gita di un giorno."},
+  '/fes-tours':{title:'Tour da Fes — Merzouga e Chefchaouen',description:"Itinerari privati da Fes: l'Atlas Medio, la valle dello Ziz e le dune di Merzouga — o la città blu di Chefchaouen."},
+  '/casablanca-tours':{title:'Giro del Marocco da Casablanca — Itinerari privati',description:"Itinerari privati da Casablanca: città imperiali, Volubilis e il deserto del Sahara in un solo viaggio — durata flessibile."},
+  '/agadir-tours':{title:'Tour da Agadir — Costa atlantica e deserto',description:"Itinerari privati da Agadir: via Essaouira e Marrakech o via Ouarzazate fino alle dune di Erg Chebbi — su misura."},
+  '/luxury-camp':{title:'Campo nel deserto di lusso a Merzouga — Notte in Sahara',description:"Campo privato di lusso a Merzouga: comfort tra le dune di Erg Chebbi — servizi, pasti e prenotazione, spiegati."},
+  '/camel-trekking':{title:'Escursione in cammello sulle dune di Erg Chebbi',description:"Escursione in cammello a Merzouga: cosa aspettarsi, cosa portare e come si svolge un tramonto tra le dune di Erg Chebbi."},
+  '/4x4-tours':{title:'Escursioni in 4x4 nel deserto del Marocco',description:"Escursioni private in 4x4 da Merzouga: dune, oasi, Khamlia e famiglie nomadi — mezza giornata, un giorno o più."},
+  '/trip-builder':{title:'Viaggio su misura in Marocco — Crea il tuo itinerario',description:"Crea il tuo viaggio privato in Marocco: durata, città di partenza, ritmo e interessi — preventivo delle nostre guide locali del Sahara."},
+  '/merzouga-guide':{title:'Guida di Merzouga — Dune, campi e consigli',description:"Guida pratica di Merzouga: Erg Chebbi, periodo migliore, campi nel deserto, cammelli e attività — da guide locali."},
+  '/day-trips':{title:'Gite di un Giorno in Marocco — Escursioni Private',description:"Escursioni giornaliere private in Marocco da Marrakech, Fes e Merzouga: cascate di Ouzoud, Chefchaouen, Essaouira, Meknès e il deserto. Ritorno in giornata."},
+};
+
+// German — vocabulary per ONMT-de / DE-market usage (Rundreise, Wüstentour,
+// Kaiserstädte, Kasbah-Straße, Wüstencamp, Kameltrekking).
+const DE_ROUTE_META: Record<string,RouteMeta> = {
+  '/':{title:'Marokko Rundreisen — Private Wüstentouren nach Maß',description:"Private Marokko-Rundreisen mit lokalen Sahara-Guides: Merzouga & Erg Chebbi, Kaiserstädte und Atlas — individuell ab Marrakesch oder Fes."},
+  '/tours':{title:'Marokko Touren — Private Rundreisen im Überblick',description:"Alle privaten Marokko-Rundreisen: Wüstentouren, Kaiserstädte und Atlantikküste ab Marrakesch, Fes, Casablanca und Agadir."},
+  '/desert-tours':{title:'Marokko Wüstentouren — Merzouga & Erg Chebbi',description:"Private Wüstentouren nach Merzouga: Kameltrekking im Sonnenuntergang, Nacht im Wüstencamp und 4x4-Excursionen über die Dünen von Erg Chebbi."},
+  '/marrakech-tours':{title:'Touren ab Marrakesch — Wüste, Atlas & Kasbah-Straße',description:"Private Touren ab Marrakesch: über den Hohen Atlas und Aït Ben Haddou ins Dadès-Tal bis zu den Dünen von Merzouga — oder als Tagestour."},
+  '/fes-tours':{title:'Touren ab Fes — Merzouga & Chefchaouen',description:"Private Touren ab Fes: durch den Mittleren Atlas und das Ziz-Tal nach Merzouga — oder zur blauen Stadt Chefchaouen."},
+  '/casablanca-tours':{title:'Rundreisen ab Casablanca — Große Marokko-Reise',description:"Private Rundreisen ab Casablanca: Kaiserstädte, Volubilis und die Sahara in einer Marokko-Reise — Dauer und Route flexibel."},
+  '/agadir-tours':{title:'Touren ab Agadir — Atlantikküste & Sahara',description:"Private Touren ab Agadir: über Essaouira und Marrakesch oder über Ouarzazate zu den Dünen von Erg Chebbi — individuell geplant."},
+  '/luxury-camp':{title:'Luxus-Wüstencamp in Merzouga — Nacht in der Sahara',description:"Privates Luxus-Wüstencamp bei Merzouga: Komfort zwischen den Dünen von Erg Chebbi — Ausstattung, Verpflegung und Buchung im Überblick."},
+  '/camel-trekking':{title:'Kameltrekking in Marokko — Dünen von Erg Chebbi',description:"Kameltrekking bei Merzouga: was Sie erwartet, passende Kleidung und der Ablauf einer Kameltour in den Dünen von Erg Chebbi."},
+  '/4x4-tours':{title:'4x4-Wüstentouren in Marokko — Dünen, Oasen & Nomaden',description:"Private 4x4-Excursionen bei Merzouga: Dünen, Oasen, Khamlia und Nomadenfamilien — halbtags, ganztags oder länger."},
+  '/trip-builder':{title:'Marokko Reise individuell — Private Rundreise planen',description:"Ihre private Marokko-Reise nach Maß: Dauer, Startort, Tempo und Interessen wählen — Angebot von lokalen Sahara-Guides."},
+  '/merzouga-guide':{title:'Merzouga Guide — Dünen, Camps & Reisetipps',description:"Praktischer Merzouga-Guide: Erg Chebbi, beste Reisezeit, Wüstencamps, Kameltrekking und Aktivitäten — von lokalen Guides."},
+  '/day-trips':{title:'Tagesausflüge in Marokko — Private Tagesausflüge',description:"Private Tagesausflüge ab Marrakesch, Fes und Agadir: Ourika, Ouzoud, Essaouira, Chefchaouen — mit Rückkehr am selben Tag."},
+};
+// Dutch — vocabulary per ONMT-nl / NL-market usage (rondreis, privéreis,
+// woestijnreis, Keizerlijke Steden, Kasbahroute).
+const NL_ROUTE_META: Record<string,RouteMeta> = {
+  '/':{title:'Rondreis Marokko — Privéreizen & woestijn van Merzouga',description:"Lokale Sahara-gidsen organiseren uw privérondreis Marokko: Erg Chebbi, Keizerlijke Steden en Atlas — op maat vanaf Marrakech of Fez."},
+  '/tours':{title:'Rondreis Marokko — Alle privéreizen op een rij',description:"Alle privérondreisen door Marokko: woestijnreizen, Keizerlijke Steden en Atlantische kust vanuit Marrakech, Fez, Casablanca en Agadir."},
+  '/desert-tours':{title:'Woestijnreis Marokko — Merzouga & Erg Chebbi',description:"Privéreizen naar de woestijn van Merzouga: kamelen bij zonsondergang, een nacht in een woestijnkamp en 4x4-excursies over de duinen van Erg Chebbi."},
+  '/marrakech-tours':{title:'Rondreisen vanuit Marrakech — Woestijn, Atlas & Kasbahs',description:"Privérondreisen vanuit Marrakech: over de Hoge Atlas en langs Aït Ben Haddou naar de duinen van Merzouga — of als dagexcursie."},
+  '/fes-tours':{title:'Rondreisen vanuit Fez — Merzouga & Chefchaouen',description:"Privérondreisen vanuit Fez: door de Midden-Atlas en het Ziz-dal naar Merzouga — of naar het blauwe Chefchaouen."},
+  '/casablanca-tours':{title:'Rondreis Marokko vanuit Casablanca — Grote rondreis',description:"Privérondreisen vanuit Casablanca: Keizerlijke Steden, Volubilis en de Sahara in één reis — duur en route naar wens."},
+  '/agadir-tours':{title:'Rondreisen vanuit Agadir — Atlantische kust & Sahara',description:"Privérondreisen vanuit Agadir: via Essaouira en Marrakech of via Ouarzazate naar de duinen van Erg Chebbi — op maat."},
+  '/luxury-camp':{title:'Luxe woestijnkamp in Merzouga — Nacht in de Sahara',description:"Privé-luxueus woestijnkamp bij Merzouga: comfort tussen de duinen van Erg Chebbi — voorzieningen, maaltijden en boeking uitgelegd."},
+  '/camel-trekking':{title:'Kamelen trektocht in Marokko — Duinen van Erg Chebbi',description:"Kamelen trektocht bij Merzouga: wat u kunt verwachten, wat u draagt en hoe een zonsondergang tussen de duinen verloopt."},
+  '/4x4-tours':{title:'4x4 woestijnexcursies in Marokko — Duinen & oases',description:"Privé 4x4-excursies vanuit Merzouga: duinen, oases, Khamlia en nomadenfamilies — halve dag, hele dag of langer."},
+  '/trip-builder':{title:'Rondreis Marokko op maat — Stel uw privéreis samen',description:"Stel uw privérondreis door Marokko samen: duur, startpunt, tempo en interesses — offerte van lokale Sahara-gidsen."},
+  '/merzouga-guide':{title:'Merzouga gids — Duinen, kampen & reistips',description:"Praktische Merzouga-gids: Erg Chebbi, beste reistijd, woestijnkampen, kamelen en activiteiten — van lokale gidsen."},
+  '/day-trips':{title:'Dagexcursies in Marokko — Terug dezelfde dag',description:"Privé dagexcursies vanuit Marrakech, Fez en Agadir: Ourika, Ouzoud, Essaouira, Chefchaouen — met terugkeer dezelfde dag."},
+};
+
+// Portuguese — PT-PT anchored per ONMT-pt usage (Marraquexe, Cidades
+// Imperiais, circuito privado, passeio de camelo, acampamento).
+const PT_ROUTE_META: Record<string,RouteMeta> = {
+  '/':{title:'Viagens a Marrocos — Circuitos privados e deserto de Merzouga',description:"Agência local do deserto: circuitos privados a Marrocos à medida — Erg Chebbi, Cidades Imperiais e Atlas, com guia local. Peça o seu orçamento."},
+  '/tours':{title:'Viagens a Marrocos — Circuitos privados à medida',description:"Todos os circuitos privados a Marrocos: rotas do deserto, Cidades Imperiais e costa atlântica a partir de Marraquexe, Fez, Casablanca e Agadir."},
+  '/desert-tours':{title:'Viagem ao deserto de Marrocos — Merzouga e Erg Chebbi',description:"Rotas privadas ao deserto de Merzouga: camelos ao pôr do sol, noite em acampamento sob as estrelas de Erg Chebbi e passeios de 4x4 nas dunas."},
+  '/marrakech-tours':{title:'Circuitos a partir de Marraquexe — Deserto e Alto Atlas',description:"Circuitos privados a partir de Marraquexe: o Alto Atlas, Aït Ben Haddou e o vale do Dadès até às dunas de Merzouga — ou uma excursão de um dia."},
+  '/fes-tours':{title:'Circuitos a partir de Fez — Merzouga e Chefchaouen',description:"Circuitos privados a partir de Fez: o Médio Atlas, o vale do Ziz e as dunas de Merzouga — ou a cidade azul de Chefchaouen."},
+  '/casablanca-tours':{title:'Grande viagem a Marrocos a partir de Casablanca',description:"Circuitos privados a partir de Casablanca: Cidades Imperiais, Volubilis e o deserto do Saara numa só viagem — duração flexível."},
+  '/agadir-tours':{title:'Circuitos a partir de Agadir — Costa atlântica e deserto',description:"Circuitos privados a partir de Agadir: por Essaouira e Marraquexe ou por Ouarzazate até às dunas de Erg Chebbi — à medida."},
+  '/luxury-camp':{title:'Acampamento de luxo no deserto de Merzouga',description:"Acampamento privado de luxo em Merzouga: conforto entre as dunas de Erg Chebbi — instalações, refeições e reserva, explicados."},
+  '/camel-trekking':{title:'Passeio de camelo nas dunas de Erg Chebbi',description:"Passeio de camelo em Merzouga: o que esperar, o que vestir e como decorre um pôr do sol entre as dunas de Erg Chebbi."},
+  '/4x4-tours':{title:'Excursões de 4x4 pelo deserto de Marrocos',description:"Excursões privadas de 4x4 desde Merzouga: dunas, oásis, Khamlia e famílias nómadas — meia hora, um dia ou mais."},
+  '/trip-builder':{title:'Viagem a Marrocos à medida — Crie o seu circuito',description:"Crie a sua viagem privada a Marrocos: duração, cidade de partida, ritmo e interesses — orçamento de guias locais do Saara."},
+  '/merzouga-guide':{title:'Guia de Merzouga — Dunas, campos e dicas',description:"Guia prático de Merzouga: Erg Chebbi, melhor época, acampamentos no deserto, camelos e atividades — por guias locais."},
+  '/day-trips':{title:'Excursões de um dia em Marrocos — Regreso no mesmo dia',description:"Excursões privadas de um dia a partir de Marraquexe, Fez e Agadir: Ourika, Ouzoud, Essaouira, Chefchaouen — com regresso no mesmo dia."},
+};
+// Chinese — per CN-market usage (AMC Voyages et al.): 私人定制游, 撒哈拉沙漠
+// 之旅, 沙漠帐篷营地, 一日游; entity names 梅尔祖卡/艾尔格切比/舍夫沙万.
+const ZH_ROUTE_META: Record<string,RouteMeta> = {
+  '/':{title:'摩洛哥旅游 — 私人定制游与撒哈拉沙漠之旅',description:"本地沙漠向导为您定制摩洛哥私人行程：梅尔祖卡艾尔格切比沙丘、皇城、阿特拉斯山脉，从马拉喀什或菲斯出发。"},
+  '/tours':{title:'摩洛哥旅游线路 — 全部私人定制行程',description:"浏览全部摩洛哥私人行程：沙漠之旅、皇城与大西洋海岸，从马拉喀什、菲斯、卡萨布兰卡和阿加迪尔出发。"},
+  '/desert-tours':{title:'摩洛哥撒哈拉沙漠之旅 — 梅尔祖卡与艾尔格切比',description:"前往梅尔祖卡的私人沙漠行程：日落骆驼骑行、艾尔格切比星空下的沙漠帐篷营地，以及四驱沙丘越野。"},
+  '/marrakech-tours':{title:'马拉喀什出发的摩洛哥行程 — 沙漠与阿特拉斯',description:"从马拉喀什出发的私人行程：穿越高阿特拉斯山脉、艾本哈杜和达德斯峡谷，直达梅尔祖卡沙丘——也可选择一日游。"},
+  '/fes-tours':{title:'菲斯出发的摩洛哥行程 — 梅尔祖卡与舍夫沙万',description:"从菲斯出发的私人行程：途经中阿特拉斯山脉和济兹河谷前往梅尔祖卡——或前往蓝色之城舍夫沙万。"},
+  '/casablanca-tours':{title:'卡萨布兰卡出发的摩洛哥环线之旅',description:"从卡萨布兰卡出发的私人行程：皇城、沃吕比利斯与撒哈拉沙漠一次走完——天数和路线灵活安排。"},
+  '/agadir-tours':{title:'阿加迪尔出发的摩洛哥行程 — 大西洋海岸与撒哈拉',description:"从阿加迪尔出发的私人行程：经索维拉和马拉喀什，或经瓦尔扎扎特前往艾尔格切比沙丘——按需定制。"},
+  '/luxury-camp':{title:'梅尔祖卡豪华沙漠帐篷营地 — 撒哈拉之夜',description:"梅尔祖卡私人豪华沙漠营地：在艾尔格切比沙丘之间享受舒适住宿——设施、餐饮与预订说明。"},
+  '/camel-trekking':{title:'艾尔格切比沙丘骆驼骑行体验',description:"梅尔祖卡骆驼骑行：体验内容、穿着准备，以及艾尔格切比沙丘日落骑行的完整过程。"},
+  '/4x4-tours':{title:'摩洛哥沙漠四驱越野之旅 — 沙丘、绿洲与游牧人家',description:"从梅尔祖卡出发的私人四驱越野：沙丘、绿洲、Khamlia 村与游牧家庭——半日、全天或更长行程。"},
+  '/trip-builder':{title:'摩洛哥行程定制 — 打造您的私人路线',description:"定制您的摩洛哥私人旅行：天数、出发城市、节奏和兴趣——当地撒哈拉向导为您提供方案报价。"},
+  '/merzouga-guide':{title:'梅尔祖卡旅游攻略 — 沙丘、营地与实用建议',description:"梅尔祖卡实用攻略：艾尔格切比、最佳旅行季节、沙漠营地、骆驼骑行与活动——由当地向导撰写。"},
+  '/day-trips':{title:'摩洛哥一日游 — 当天往返的私人行程',description:"从马拉喀什、菲斯和阿加迪尔出发的私人一日游：Ourika、Ouzoud 瀑布、索维拉、舍夫沙万——当天往返。"},
+};
+
+// Japanese — natural katakana entity naming per ja sources (マラケシ発, サハラ
+// 砂漠ツアー, メルズーガ, エルグ・チェビ, プライベートツアー, 日帰り).
+const JA_ROUTE_META: Record<string,RouteMeta> = {
+  '/':{title:'モロッコ ツアー — 専用車で巡るプライベート旅行',description:"現地サハラガイドが案内するモロッコのプライベートツアー：メルズーガのエルグ・チェビ、王道の皇城、アトラス山脈。マラケシやフェズ発で日程は自由設計。"},
+  '/tours':{title:'モロッコ ツアー一覧 — プライベート周遊プラン',description:"モロッコのプライベートツアー一覧：砂漠ツアー、皇城の周遊、大西洋岸。マラケシ、フェズ、カサブランカ、アガディール発。"},
+  '/desert-tours':{title:'モロッコ サハラ砂漠ツアー — メルズーガとエルグ・チェビ',description:"メルズーガへのプライベート砂漠ツアー：夕日のラクダ乗り、エルグ・チェビの星空下サハラキャンプ、4WDでの砂丘観光。"},
+  '/marrakech-tours':{title:'マラケシ発のモロッコ砂漠ツアー — アトラス山脈経由',description:"マラケシ発のプライベートツアー：高アトラス、アイト・ベン・ハドゥ、ダデス渓谷を経てメルズーガの砂丘へ。日帰りプランもご相談ください。"},
+  '/fes-tours':{title:'フェズ発のモロッコ旅 — メルズーガとシェフシャウエン',description:"フェズ発のプライベートツアー：中アトラスとジズ渓谷を抜けてメルズーガへ。または青い街シェフシャウエン方面へ。"},
+  '/casablanca-tours':{title:'カサブランカ発のモロッコ周遊プラン',description:"カサブランカ発のプライベート周遊：皇城とヴォルビリス遺跡、サハラ砂漠を一つの旅で。日程とルートは相談可能。"},
+  '/agadir-tours':{title:'アガディール発 — 大西洋岸とサハラ砂漠の旅',description:"アガディール発のプライベートツアー：エッサウィラとマラケシ経由、またはワルザザート経由でエルグ・チェビの砂丘へ。"},
+  '/luxury-camp':{title:'メルズーガの豪華砂漠キャンプ — サハラでの一夜',description:"メルズーガ近郊のプライベート豪華キャンプ：エルグ・チェビの砂丘の間での快適な宿泊。設備・食事・予約の案内。"},
+  '/camel-trekking':{title:'エルグ・チェビの砂丘ラクダ乗り体験',description:"メルズーガのラクダ乗り：当日の流れ、服装の準備、エルグ・チェビの砂丘で夕日を楽しむ体験の様子をご紹介。"},
+  '/4x4-tours':{title:'モロッコ砂漠の4WDツアー — 砂丘・オアシス・遊牧民',description:"メルズーガ発のプライベート4WDツアー：砂丘、オアシス、ハムリア村、遊牧民の家族を訪問。半日・終日から選べます。"},
+  '/trip-builder':{title:'モロッコ旅行のオーダーメイド — あなただけの旅程づくり',description:"モロッコのプライベート旅行を設計：日数、出発地、ペース、興味に合わせて。現地サハラガイドがお見積りします。"},
+  '/merzouga-guide':{title:'メルズーガ旅行ガイド — 砂丘・キャンプ・旅のヒント',description:"メルズーガの実用ガイド：エルグ・チェビ、ベストシーズン、砂漠キャンプ、ラクダ乗りとアクティビティ。現地ガイドが解説。"},
+  '/day-trips':{title:'モロッコ日帰りツアー — マラケシ発など当日帰着',description:"マラケシ、フェズ、アガディール発の日帰りツアー：ウリカ渓谷、ウズードの滝、エッサウィラ、シェフシャウエン。当日帰着。"},
+};
+
+// Korean — per KR-market usage and MGA's existing Korean organic visibility
+// (모로코 여행, 사막 투어, 메르주가, 에르그 셰비, 마라케시 출발).
+const KO_ROUTE_META: Record<string,RouteMeta> = {
+  '/':{title:'모로코 여행 — 프라이빗 맞춤 투어와 사하라 사막',description:"현지 사하라 가이드와 함께하는 모로코 프라이빗 여행: 메르주가 에르그 셰비, 왕도 도시, 아틀라스 산맥. 마라케시·페스 출발 맞춤 일정."},
+  '/tours':{title:'모로코 투어 — 프라이빗 일정 전체 보기',description:"모로코 프라이빗 투어 전체 목록: 사막 투어, 왕도 도시 일주, 대서양 연안. 마라케시, 페스, 카사블랑카, 아가디르 출발."},
+  '/desert-tours':{title:'모로코 사막 투어 — 메르주가와 에르그 셰비',description:"메르주가 프라이빗 사막 투어: 일몰 낙타 트레킹, 에르그 셰비 별빛 아래 사막 캠프, 4WD 모래언덕 탐험."},
+  '/marrakech-tours':{title:'마라케시 출발 모로코 사막 투어 — 아틀라스 경유',description:"마라케시 출발 프라이빗 투어: 아틀라스 산맥과 아이트 벤 하두, 다데스 계곡을 지나 메르주가 모래언덕까지. 당일 투어도 가능."},
+  '/fes-tours':{title:'페스 출발 모로코 여행 — 메르주가와 셰프샤우엔',description:"페스 출발 프라이빗 투어: 중부 아틀라스와 지즈 계곡을 지나 메르주가로 — 또는 푸른 도시 셰프샤우엔 방향으로."},
+  '/casablanca-tours':{title:'카사블랑카 출발 모로코 일주 여행',description:"카사블랑카 출발 프라이빗 투어: 왕도 도시, 볼루빌리스, 사하라 사막을 한 번의 여행으로. 기간과 경로는 자유롭게."},
+  '/agadir-tours':{title:'아가디르 출발 — 대서양 연안과 사하라 사막',description:"아가디르 출발 프라이빗 투어: 에사우이라와 마라케시 경유 또는 와르자자트 경유로 에르그 셰비 모래언덕까지 — 맞춤 일정."},
+  '/luxury-camp':{title:'메르주가 럭셔리 사막 캠프 — 사하라의 밤',description:"메르주가 프라이빗 럭셔리 사막 캠프: 에르그 셰비 모래언덕 사이의 편안한 숙박 — 시설, 식사, 예약 안내."},
+  '/camel-trekking':{title:'에르그 셰비 모래언덕 낙타 트레킹 체험',description:"메르주가 낙타 트레킹: 체험 내용, 준비물, 에르그 셰비 모래언덕에서의 일몰 라이딩 과정 소개."},
+  '/4x4-tours':{title:'모로코 사막 4WD 투어 — 모래언덕, 오아시스, 유목민',description:"메르주가 출발 프라이빗 4WD 투어: 모래언덕, 오아시스, 함리아 마을, 유목민 가족 방문. 반일·종일 선택 가능."},
+  '/trip-builder':{title:'모로코 맞춤 일정 만들기 — 나만의 프라이빗 코스',description:"모로코 프라이빗 여행 일정 설계: 기간, 출발 도시, 진행 속도, 관심사에 맞춰 현지 사하라 가이드가 견적을 제안합니다."},
+  '/merzouga-guide':{title:'메르주가 여행 가이드 — 모래언덕, 캠프, 여행 팁',description:"메르주가 실용 가이드: 에르그 셰비, 여행 베스트 시즌, 사막 캠프, 낙타 트레킹과 액티비티 — 현지 가이드가 설명합니다."},
+  '/day-trips':{title:'모로코 당일 투어 — 마라케시 출발 당일 귀국 코스',description:"마라케시, 페스, 아가디르 출발 프라이빗 당일 투어: 우리카 계곡, 우주드 폭포, 에사우이라, 셰프샤우엔 — 당일 복귀."},
 };
 // ── Localized route metadata ──────────────────────────────────────────────────
 // Single source of truth for per-page SEO title/description used by BOTH the
 // runtime <LocalizedHead> and the static prerender (`scripts/prerender.ts`).
 //
 // Order of precedence:
-//   1. Authoring-supplied per-language static overrides (currently Arabic only:
-//      AR_ROUTE_META). These exist for languages whose authors translated the
-//      static page copy.
+//   1. Authoring-supplied per-language static overrides (AR + FR + ES + IT +
+//      DE + NL + PT + ZH + JA + KO dictionaries above). These exist for
+//      languages whose market research justified authored native metadata.
 //   2. Tour / destination DETAIL pages: when a content-translation overlay was
 //      authored for the active language, surface the localized entity name +
 //      description + image as the SEO title/description. This is how localized
@@ -269,6 +431,20 @@ const IT_ROUTE_META: Record<string,RouteMeta> = {
 import { getLocalizedTour, getLocalizedDestination, contentOverlayExists } from '@/i18n/content';
 import { t as translate } from '@/i18n/index';
 import type { Lang } from '@/i18n/index';
+
+/** Authored static route metadata per language (English = canonical, no entry). */
+const LOCALIZED_ROUTE_META: Partial<Record<Lang, Record<string, RouteMeta>>> = {
+  ar: AR_ROUTE_META,
+  fr: FR_ROUTE_META,
+  es: ES_ROUTE_META,
+  it: IT_ROUTE_META,
+  de: DE_ROUTE_META,
+  nl: NL_ROUTE_META,
+  pt: PT_ROUTE_META,
+  zh: ZH_ROUTE_META,
+  ja: JA_ROUTE_META,
+  ko: KO_ROUTE_META,
+};
 
 const DESCRIPTION_MAX = 158;
 function truncate(text: string | undefined, max = DESCRIPTION_MAX): string {
@@ -281,16 +457,9 @@ function truncate(text: string | undefined, max = DESCRIPTION_MAX): string {
 export function getLocalizedRouteMeta(rest: string, lang: Lang = 'en'): RouteMeta {
   const normalized = rest === '' || rest === '/' ? '/' : rest.replace(/\/$/, '');
 
-  // 1. Per-language static overrides (Arabic).
-  if (lang === 'ar') {
-    const ar = AR_ROUTE_META[normalized];
-    if (ar) return ar;
-  }
-  // 1b. Per-language static overrides (Italian — mirrors AR_ROUTE_META).
-  if (lang === 'it') {
-    const it = IT_ROUTE_META[normalized];
-    if (it) return it;
-  }
+  // 1. Per-language static overrides (authored native metadata per locale).
+  const localized = LOCALIZED_ROUTE_META[lang]?.[normalized];
+  if (localized) return localized;
 
   // 2. Tour detail page — localized entity meta when an overlay exists.
   const tourMatch = normalized.match(/^\/tours\/([^/]+)$/);
