@@ -57,9 +57,14 @@ export default function DestinationDetail() {
       {/* Hero */}
       <section className="relative h-[70vh] w-full flex items-center justify-center pt-20">
         <div className="absolute inset-0 z-0">
-          <img 
-            src={destination.image} 
+          <img
+            src={destination.image}
+            srcSet={`${destination.image.replace(/\.webp$/, '-480w.webp')} 480w, ${destination.image.replace(/\.webp$/, '-768w.webp')} 768w, ${destination.image} ${destination.image.includes('-480w') ? 480 : 1200}w`}
+            sizes="100vw"
             alt={`${destination.name}, Morocco — ${destination.shortDesc}`}
+            width={1200}
+            height={675}
+            decoding="async"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/50 mix-blend-multiply" />

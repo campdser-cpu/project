@@ -15,7 +15,7 @@ const BRAND = 'Morocco Grand Adventure';
 //   equivalent of "Morocco" (avoids "… Morocco — Morocco Grand Adventure");
 // - never truncate or shorten a core title to force the brand in.
 const MOROCCO_TERM = /morocco|maroc|marruecos|marokko|marrocos|摩洛哥|モロッコ|모로코|المغرب/i;
-const SUFFIX_CORE_BUDGET = 52;
+const SUFFIX_CORE_BUDGET = 35;
 export function withBrandSuffix(core: string): string {
   const title = core.replace(/\s+/g, ' ').trim();
   if (!title) return BRAND;
@@ -131,11 +131,11 @@ export const routeMetadata: Record<string, RouteMeta> = {
   '/about':{title:'About Us | Morocco, Beyond the Journey',description:'Meet Morocco Grand Adventure — desert guides from Merzouga sharing the whole of Morocco through private, locally-designed journeys.',ogImage:'/images/about/about-dune-1600.webp'},
   '/contact':{title:'Contact Morocco Grand Adventure — Plan Your Morocco Journey',description:'Contact Morocco Grand Adventure by WhatsApp, email or phone to plan your Morocco journey.',ogImage:'/images/dest/merzouga.jpg'},
   '/desert-tours':{title:'Sahara Desert Tours — Merzouga, Erg Chebbi & Camps',description:'Explore the Sahara with Merzouga desert tours, camel trekking and desert camp experiences.',ogImage:'/images/dest/merzouga.jpg'},
-  '/luxury-camp':{title:'Luxury Desert Camp Morocco — Sahara Glamping',description:'Discover luxury desert camp experiences near Merzouga.',ogImage:'/images/personal/luxury-camp-dusk.jpg'},
-  '/camel-trekking':{title:'Camel Trekking Merzouga — Sahara Camel Rides',description:'Ride camels across the golden dunes of Erg Chebbi with local guides.',ogImage:'/images/personal/dunes-camels-poster.jpg'},
-  '/4x4-tours':{title:'4x4 Desert Tours Morocco — Sahara Off-Road Adventures',description:'Explore Erg Chebbi and the Sahara by 4x4 with local guides.',ogImage:'/images/dest/erg-chebbi.jpg'},
+  '/luxury-camp':{title:'Luxury Desert Camp Morocco — Sahara Glamping',description:'What a luxury desert camp near Merzouga includes — private tents with real beds, en-suite bathrooms, camp dinners under the stars and how to book a night.',ogImage:'/images/personal/luxury-camp-dusk.jpg'},
+  '/camel-trekking':{title:'Camel Trekking Merzouga — Sahara Camel Rides',description:'Ride camels across the golden dunes of Erg Chebbi with local guides — what a sunset trek involves, what to wear, and how the camp night that follows works.',ogImage:'/images/personal/dunes-camels-poster.jpg'},
+  '/4x4-tours':{title:'4x4 Desert Tours Morocco — Sahara Off-Road Adventures',description:'Explore Erg Chebbi and the Sahara by 4x4 with local guides — dune driving, oasis and nomad stops around Merzouga, and what a half- or full-day tour covers.',ogImage:'/images/dest/erg-chebbi.jpg'},
   '/marrakech-tours':{title:'Marrakech Tours — Private Day Trips & Morocco Tours',description:'Discover Marrakech and private journeys into the Atlas and southern Morocco.',ogImage:'/images/dest/marrakech.jpg'},
-  '/fes-tours':{title:'Fes Tours — Private Guided Morocco Tours',description:'Explore Fes, Chefchaouen and northern Morocco with local guides.',ogImage:'/images/dest/fes.jpg'},
+  '/fes-tours':{title:'Fes Tours — Private Guided Morocco Tours',description:'Explore Fes, Chefchaouen and northern Morocco with local guides — Middle Atlas crossings, Ziz Valley drives and private routes from Fes toward Merzouga.',ogImage:'/images/dest/fes.jpg'},
   '/day-trips':{title:'Morocco Day Trips — Personalized One-Day Experiences',description:'Explore Morocco on a one-day experience with same-day return. Request a personalized route and quote.',ogImage:'/images/dest/ouzoud.jpg'},
   '/merzouga-guide':{title:'Merzouga Travel Guide — Sahara Desert & Erg Chebbi',description:'A practical guide to Merzouga, Erg Chebbi, camel trekking and desert camp experiences.',ogImage:'/images/dest/merzouga.jpg'},
   '/travel-info':{title:'Morocco Travel Information — Practical Guides from Locals',description:'Practical Morocco travel information from a local team — when to go, what to pack and how to get around.',ogImage:'/images/catalog/draa-valley-oasis-palm-grove.webp'},
@@ -152,15 +152,15 @@ export const routeMetadata: Record<string, RouteMeta> = {
   '/merzouga-guide/erg-chebbi':{title:'Erg Chebbi Dunes — Morocco’s Tallest Sand Dunes',description:"About Erg Chebbi near Merzouga — why these dunes formed, how high they are and what to do on them.",ogImage:'/images/dest/erg-chebbi.webp'},
   '/merzouga-guide/what-to-pack':{title:'What to Pack for Merzouga — Sahara Packing List',description:"Practical packing list for a Merzouga desert night — layers, sun protection, footwear and what NOT to bring.",ogImage:'/images/hero/desert-pano.webp'},
   '/merzouga-guide/faq':{title:'Merzouga FAQ — Sahara Questions Answered',description:"Straight answers to the most common Merzouga and Sahara questions — planning, getting there and camp nights.",ogImage:'/images/dest/merzouga.webp'},
-  '/merzouga-guide/quad-biking':{title:'Quad Biking Merzouga — Sahara Quad Bike Tours at Erg Chebbi',description:"What quad biking in Merzouga is really like — the terrain around Erg Chebbi, what to wear, when to ride and how a quad session fits around camel trekking and a night in a desert camp.",ogImage:'/images/curated/sahara-desert-sunset-silhouette-dune-morocco.webp'},
-  '/merzouga-guide/4x4-desert-tour':{title:'Merzouga 4x4 Desert Tour — Dune Driving at Erg Chebbi',description:"What a 4x4 desert tour around Merzouga and Erg Chebbi involves — dune driving, the desert landscapes beyond the village, cultural stops and practical expectations before you book.",ogImage:'/images/dest/erg-chebbi.webp'},
-  '/merzouga-guide/things-to-do':{title:'Things to Do in Merzouga — Camel Treks, Quads, 4x4s & Camps',description:"All the things to do in Merzouga in one place — camel trekking on Erg Chebbi, quad biking, 4x4 desert tours, luxury camps, sunrise and sunset spots, music and culture — and how to combine them.",ogImage:'/images/curated/camel-caravan-sunset-silhouette-sahara-desert.webp'},
-  '/merzouga-guide/marrakech-to-merzouga':{title:'Marrakech to Merzouga — Route, Stops & Itinerary Guide',description:"How to get from Marrakech to Merzouga — the High Atlas crossing, Aït Ben Haddou, Dades Valley, Todra Gorge and Erg Chebbi, with realistic 3-day and 4-day itinerary guidance.",ogImage:'/images/dest/ait-ben-haddou.webp'},
-  '/merzouga-guide/fes-to-merzouga':{title:'Fes to Merzouga — Route Guide & Desert Itinerary',description:"Fes to Merzouga route guide — Ifrane, the Middle Atlas cedar forests, Midelt, the Ziz Valley and Erg Chebbi, with realistic itinerary planning for a Fes Sahara trip.",ogImage:'/images/dest/ifrane.webp'},
-  '/merzouga-guide/how-many-days':{title:'How Many Days in the Sahara? — Merzouga Trip Length Guide',description:"How many days you need in the Sahara and Merzouga — an honest comparison of 1, 2, 3 and 4+ day desert trips, and what you can realistically experience at each length.",ogImage:'/images/dest/merzouga.webp'},
+  '/merzouga-guide/quad-biking':{title:'Quad Biking Merzouga — Sahara Quad Bike Tours at Erg Chebbi',description:"What quad biking in Merzouga is really like — the Erg Chebbi terrain, what to wear, when to ride and how a session fits around camel trekking and a camp night.",ogImage:'/images/curated/sahara-desert-sunset-silhouette-dune-morocco.webp'},
+  '/merzouga-guide/4x4-desert-tour':{title:'Merzouga 4x4 Desert Tour — Dune Driving at Erg Chebbi',description:"What a 4x4 desert tour around Merzouga and Erg Chebbi involves — dune driving, the landscapes beyond the village, cultural stops and practical expectations.",ogImage:'/images/dest/erg-chebbi.webp'},
+  '/merzouga-guide/things-to-do':{title:'Things to Do in Merzouga — Camel Treks, Quads, 4x4s & Camps',description:"All the things to do in Merzouga in one place — camel trekking on Erg Chebbi, quad biking, 4x4 tours, luxury camps, sunrise spots and how to combine them.",ogImage:'/images/curated/camel-caravan-sunset-silhouette-sahara-desert.webp'},
+  '/merzouga-guide/marrakech-to-merzouga':{title:'Marrakech to Merzouga — Route, Stops & Itinerary Guide',description:"How to get from Marrakech to Merzouga — the High Atlas crossing, Aït Ben Haddou, Dades Valley, Todra Gorge and Erg Chebbi, with 3- and 4-day itinerary guidance.",ogImage:'/images/dest/ait-ben-haddou.webp'},
+  '/merzouga-guide/fes-to-merzouga':{title:'Fes to Merzouga — Route Guide & Desert Itinerary',description:"Fes to Merzouga route guide — Ifrane, the Middle Atlas cedar forests, Midelt, the Ziz Valley and Erg Chebbi, with realistic planning.",ogImage:'/images/dest/ifrane.webp'},
+  '/merzouga-guide/how-many-days':{title:'How Many Days in the Sahara? — Merzouga Trip Length Guide',description:"How many days you need in the Sahara and Merzouga — an honest comparison of 1, 2, 3 and 4+ day desert trips and what each length realistically covers.",ogImage:'/images/dest/merzouga.webp'},
   '/merzouga-guide/sahara-desert-guide':{title:'Sahara Desert Travel Guide — Morocco Desert Trips & Erg Chebbi',description:"The complete Morocco Sahara guide — Erg Chebbi, Merzouga, camel trekking, desert camps, quad and 4x4 experiences, and how Marrakech and Fes reach the dunes.",ogImage:'/images/curated/camel-caravan-sunset-silhouette-sahara-desert.webp'},
-  '/merzouga-guide/erg-chebbi-sunrise-sunset':{title:'Erg Chebbi Sunrise & Sunset — Best Light on the Sahara Dunes',description:"When and where to see the best sunrise and sunset at Erg Chebbi near Merzouga — seasonal timings, photography notes and how camel treks and camp nights fit around the light.",ogImage:'/images/curated/sahara-desert-sunset-silhouette-dune-morocco.webp'},
-  '/comparisons/marrakech-vs-fes':{title:'Marrakech vs Fes — Which Is Better for a Sahara Desert Tour?',description:"Marrakech or Fes for your Sahara desert tour? Route character, landscapes, major stops and itinerary shapes compared honestly — so you choose by itinerary, not by hype.",ogImage:'/images/dest/marrakech.webp'},
+  '/merzouga-guide/erg-chebbi-sunrise-sunset':{title:'Erg Chebbi Sunrise & Sunset — Best Light on the Sahara Dunes',description:"When and where to see the best sunrise and sunset at Erg Chebbi near Merzouga — seasonal timings, photography notes and how treks and camp nights fit the light.",ogImage:'/images/curated/sahara-desert-sunset-silhouette-dune-morocco.webp'},
+  '/comparisons/marrakech-vs-fes':{title:'Marrakech vs Fes — Which Is Better for a Sahara Desert Tour?',description:"Marrakech or Fes for your Sahara desert tour? Route character, landscapes, major stops and itinerary shapes compared honestly — choose by itinerary, not hype.",ogImage:'/images/dest/marrakech.webp'},
   '/comparisons/merzouga-vs-zagora':{title:'Merzouga vs Zagora — Which Sahara Base to Choose?',description:"Dunes, access and crowd levels compared for the two main Sahara gateways — and which journey suits each.",ogImage:'/images/dest/zagora.webp'},
   '/comparisons/erg-chebbi-vs-erg-chigaga':{title:'Erg Chebbi vs Erg Chigaga — Which Sahara Dunes?',description:"Tall iconic dunes versus wider, quieter dunes — a factual comparison of Morocco’s two Sahara ergs.",ogImage:'/images/dest/erg-chebbi.webp'},
   '/comparisons/2-day-vs-3-day-sahara-tour':{title:'2-Day vs 3-Day Sahara Tour — Which Fits?',description:"What a 2-day and a 3-day Sahara tour cover, the realistic timing and which suits a tight or relaxed trip.",ogImage:'/images/dest/merzouga.webp'},
@@ -170,10 +170,10 @@ export const routeMetadata: Record<string, RouteMeta> = {
 
 export const BLOG_META: Record<string,RouteMeta> = {
   'merzouga-luxury-desert-camp-guide':{title:'Merzouga Luxury Desert Camp Guide — Sahara Glamping',description:'Plan your Merzouga luxury desert camp stay: tent types, what a night includes, camel treks, best season and how to book your Sahara night.',ogImage:'/images/personal/luxury-camp-dusk.jpg'},
-  'best-time-to-visit-morocco-sahara':{title:'Best Time to Visit the Sahara Desert — Guide',description:'Planning guide for choosing a time to visit the Moroccan Sahara.',ogImage:'/images/dest/merzouga.jpg'},
-  'camel-trekking-etiquette-morocco':{title:'Camel Trekking in Morocco — What to Expect',description:'What first-time travelers should know before a camel trek in Morocco.',ogImage:'/images/personal/dunes-camels-poster.jpg'},
+  'best-time-to-visit-morocco-sahara':{title:'Best Time to Visit the Sahara Desert — Guide',description:'When to visit the Moroccan Sahara — month-by-month temperatures, crowds, sandstorm risk and the best months for camel trekking and camp nights.',ogImage:'/images/dest/merzouga.jpg'},
+  'camel-trekking-etiquette-morocco':{title:'Camel Trekking in Morocco — What to Expect',description:'What first-time travelers should know before a camel trek in Morocco — mounting, pacing, what to wear and how to photograph without spooking the animals.',ogImage:'/images/personal/dunes-camels-poster.jpg'},
   'marrakech-to-merzouga-roadtrip':{title:'Marrakech to Merzouga — Sahara Road Trip Guide',description:'A practical guide to the Marrakech to Merzouga route, stops and travel planning.',ogImage:'/images/dest/ait-ben-haddou.jpg'},
-  'morocco-packing-list-desert':{title:'Morocco Desert Packing List — What to Bring',description:'Practical essentials to pack for a Morocco Sahara trip.',ogImage:'/images/hero/desert-pano.jpg'},
+  'morocco-packing-list-desert':{title:'Morocco Desert Packing List — What to Bring',description:'Practical essentials to pack for a Morocco Sahara trip — layers for cold desert nights, sun protection, dune-ready footwear, and what not to bring to camp.',ogImage:'/images/hero/desert-pano.jpg'},
   'fes-chefchaouen-blue-city-guide':{title:'Fes to Chefchaouen — Morocco Blue City Guide',description:'Plan a journey from Fes to Chefchaouen and explore Morocco’s blue medina.',ogImage:'/images/dest/chefchaouen.jpg'},
 };
 
@@ -451,7 +451,7 @@ function truncate(text: string | undefined, max = DESCRIPTION_MAX): string {
   const s = (text ?? '').toString().replace(/\s+/g, ' ').trim();
   if (!s) return '';
   if (s.length <= max) return s;
-  return s.slice(0, max - 1).trimEnd() + '⬦';
+  return s.slice(0, max - 1).trimEnd().replace(/[,;:—–-]+$/, '') + '…';
 }
 
 export function getLocalizedRouteMeta(rest: string, lang: Lang = 'en'): RouteMeta {
@@ -466,20 +466,33 @@ export function getLocalizedRouteMeta(rest: string, lang: Lang = 'en'): RouteMet
   if (tourMatch) {
     const t = getLocalizedTour(tourMatch[1], lang);
     if (t && contentOverlayExists(lang, 'tours', t.id)) {
-      return { title: t.name, description: truncate(t.description), ogImage: t.image };
+      // Very short localized tour names (common in CJK/romance locales, e.g.
+      // a 9-character Chinese name) get the authored duration appended so the
+      // SERP title stays descriptive — duration is real authored data, not
+      // invented copy.
+      let title = t.name;
+      if (title.length < 25 && t.duration) title = `${title} — ${t.duration}`;
+      return { title, description: truncate(t.description), ogImage: t.image };
     }
   }
 
   // 3. Destination detail page — localized entity meta when an overlay exists.
   //    Title is enriched with the authored localized region for search context
   //    (e.g. "Erg Chebbi | Désert du Sahara"), never invented — region comes
-  //    from the same authored overlay as the name.
+  //    from the same authored overlay as the name. The full localized
+  //    description (not the one-line shortDesc) feeds the meta description so
+  //    SERP snippets are informative rather than a 60-character stub.
   const destMatch = normalized.match(/^\/destinations\/([^/]+)$/);
   if (destMatch) {
     const d = getLocalizedDestination(destMatch[1], lang);
     if (d && contentOverlayExists(lang, 'destinations', d.id)) {
       const regionSuffix = d.region && !d.name.includes(d.region) ? ` | ${d.region}` : '';
-      return { title: `${d.name}${regionSuffix}`, description: truncate(d.shortDesc || d.description), ogImage: d.image };
+      let title = `${d.name}${regionSuffix}`;
+      // Short localized titles (e.g. "Fès | Nord du Maroc") get the brand
+      // appended explicitly — withBrandSuffix would otherwise skip it because
+      // the region often contains "Maroc/Morocco".
+      if (title.length < 45) title = `${title} — ${BRAND}`;
+      return { title, description: truncate(d.description || d.shortDesc), ogImage: d.image };
     }
   }
 

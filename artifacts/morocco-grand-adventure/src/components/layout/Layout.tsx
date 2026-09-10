@@ -6,7 +6,6 @@ import { WhatsAppButton } from '../ui/WhatsAppButton';
 import { ScrollToTop } from '../ui/ScrollToTop';
 import { AIAssistant } from '../ui/AIAssistant';
 import { StickyBookingCTA } from '../ui/StickyBookingCTA';
-import { StructuredData, buildOrganizationSchema } from '../seo/StructuredData';
 import { trackEvent } from '@/lib/analytics';
 import { TopicalLinks } from '../seo/TopicalLinks';
 import { useLocation } from 'wouter';
@@ -109,7 +108,8 @@ export function Layout({ children }: LayoutProps) {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <StructuredData id="organization" data={buildOrganizationSchema()} />
+      {/* Brand Organization/TravelAgency JSON-LD comes from the static head
+          (index.html) — emitting it again here would duplicate the entity. */}
       <a
         href="#main-content"
         className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-primary focus:text-primary-foreground focus:font-bold focus:shadow-lg"

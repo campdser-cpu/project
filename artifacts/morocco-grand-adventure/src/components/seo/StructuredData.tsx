@@ -16,7 +16,11 @@ const DATA_ATTR = 'data-structured-data';
 
 const SITE_URL = 'https://www.moroccograndadventure.com';
 const BRAND = 'Morocco Grand Adventure';
-const ORGANIZATION_ID = `${SITE_URL}#organization`;
+// Must match the @id of the static TravelAgency block in index.html exactly
+// (note the slash before the fragment) so that isPartOf / worksFor / publisher
+// / author references resolve to that single, spec-valid brand entity instead
+// of creating a second, conflicting Organization node.
+const ORGANIZATION_ID = `${SITE_URL}/#organization`;
 
 /** Official social profile URLs used in sameAs across all Organization schemas. */
 export const ORGANIZATION_SAME_AS: string[] = [
@@ -96,20 +100,15 @@ export function buildAboutPageSchema(guides: { name: string; role: string; image
   return schemas;
 }
 
-/** Stable Organization schema for Morocco Grand Adventure — reuse on every page. */
-export function buildOrganizationSchema(): JsonLd {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
-    '@id': ORGANIZATION_ID,
-    name: BRAND,
-    url: SITE_URL,
-    logo: `${SITE_URL}/logo-official.png`,
-    description: 'Luxury desert tours and authentic cultural experiences across Morocco, guided by local Berber families from the Sahara.',
-    email: 'moroccograndadventure@gmail.com',
-    sameAs: ORGANIZATION_SAME_AS,
-    areaServed: 'Morocco',
-  };
+// NOTE: the brand Organization/TravelAgency entity is NOT re-emitted here at
+// runtime. The static head in index.html already carries the full TravelAgency
+// + WebSite JSON-LD on every page (and persists across SPA navigation), so a
+// runtime duplicate would create conflicting second brand entities — which is
+// exactly the duplicate-entity problem we removed.
+
+/** True only when the price string is a plain number (e.g. "450", not "Request a quote"). */
+function isNumericPrice(price: string | undefined): boolean {
+  return typeof price === 'string' && /^\d+(\.\d+)?$/.test(price.trim());
 }
 
 /** Map the supported language codes to the BCP-47 value used in HTML lang + schema inLanguage. */
@@ -158,6 +157,11 @@ export function buildTourSchema(
   const schemas: JsonLd[] = [];
 
   // Main Tour schema (modeled as a TouristTrip).
+  // TouristTrip is a Thing/Intangible — NOT a CreativeWork or Place — so
+  // `inLanguage`, `isAccessibleForFree` and `touristDestination` are not valid
+  // properties here and triggered schema.org validation errors on every tour
+  // page. They have been removed; the visible page still carries the same
+  // information for users.
   schemas.push({
     '@context': 'https://schema.org',
     '@type': 'TouristTrip',
@@ -168,37 +172,37 @@ export function buildTourSchema(
     url,
     provider: {
       '@type': 'TravelAgency',
-      '@id': `${SITE_URL}/#organization`,
+      '@id': ORGANIZATION_ID,
       name: BRAND,
       url: SITE_URL,
     },
-    offers: {
-      '@type': 'Offer',
-      '@id': `${url}#offer`,
-      price: tour.price,
-      priceCurrency: 'EUR',
-      url,
-      priceSpecification: {
-        '@type': 'PriceSpecification',
-        price: tour.price,
-        priceCurrency: 'EUR',
-        eligibleQuantity: {
-          '@type': 'QuantitativeValue',
-          minValue: 1,
-        },
-      },
-    },
+    // Offer.price must be a number. Tours whose pricing is not a fixed number
+    // ("Request a quote") must not emit an Offer with a non-numeric price.
+    ...(isNumericPrice(tour.price)
+      ? {
+          offers: {
+            '@type': 'Offer',
+            '@id': `${url}#offer`,
+            price: Number(tour.price),
+            priceCurrency: 'EUR',
+            url,
+            priceSpecification: {
+              '@type': 'PriceSpecification',
+              price: Number(tour.price),
+              priceCurrency: 'EUR',
+              eligibleQuantity: {
+                '@type': 'QuantitativeValue',
+                minValue: 1,
+              },
+            },
+          },
+        }
+      : {}),
     itinerary: (tour.itineraryDays ?? []).map((d) => ({
       '@type': 'ItemList',
       name: `Day ${d.day}: ${d.title}`,
       description: d.desc,
     })),
-    touristDestination: (tour.highlights ?? []).map((h) => ({
-      '@type': 'TouristDestination',
-      name: h,
-    })),
-    inLanguage: l,
-    isAccessibleForFree: false,
     touristType: ['Luxury Travelers', 'Adventure Seekers', 'Culture Enthusiasts', 'Couples', 'Families'],
   });
 
@@ -251,11 +255,11 @@ export function buildDestinationSchema(dest: {
   schemas.push({
     '@context': 'https://schema.org',
     '@type': 'TouristAttraction',
+    '@id': `${url}#attraction`,
     name: dest.name,
     description: dest.description,
     image: `${SITE_URL}${dest.image}`,
     url,
-    inLanguage: l,
     geo: {
       '@type': 'GeoCoordinates',
       latitude: dest.coords.lat,
@@ -267,7 +271,17 @@ export function buildDestinationSchema(dest: {
       addressCountry: 'MA',
     },
     touristType: dest.highlights,
-    bestTimeToVisit: dest.bestTime,
+    // `bestTimeToVisit` is NOT a schema.org property (404 on schema.org) and
+    // `inLanguage` is not valid on Place types — both caused schema.org
+    // validation errors on every destination page. The best-time data is
+    // preserved truthfully via the Place-valid `additionalProperty` instead.
+    additionalProperty: [
+      {
+        '@type': 'PropertyValue',
+        name: 'Best time to visit',
+        value: dest.bestTime,
+      },
+    ],
     containedInPlace: {
       '@type': 'Country',
       name: 'Morocco',

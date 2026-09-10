@@ -1037,6 +1037,19 @@ function injectHead(html: string, meta: RouteEntry['meta'], rest: string, lang: 
 function injectBody(html: string, bodyHtml: string): string { return html.replace('<div id="root"></div>', `<div id="root">\n<div class="prerendered-static">\n${bodyHtml}\n</div>\n  </div>`); }
 function injectLang(html: string, code: string, rtl: boolean): string { const attrs = rtl ? ` lang="${code}" dir="rtl"` : ` lang="${code}"`; return html.replace(/<html[^>]*>/, `<html${attrs}>`); }
 function injectStructuredData(html: string, schemas: Record<string, unknown>[]): string { if (!schemas.length) return html; const tags = schemas.map((s) => `    <script type="application/ld+json" data-prerendered="1">\n${JSON.stringify(s).replace(/</g, '\\u003c')}\n    </script>`).join('\n'); return html.replace('</head>', `${tags}\n\n  </head>`); }
+// index.html ships a homepage-only BreadcrumbList (single "Home" crumb) in its
+// static head. On every non-home route it would sit next to the route-specific
+// breadcrumb, producing two conflicting BreadcrumbLists on the same page.
+// Strip it everywhere except the homepage.
+function stripGlobalHomeBreadcrumb(html: string): string {
+  return html.replace(/[ \t]*<script type="application\/ld\+json">\s*\{\s*"@context": "https:\/\/schema\.org",\s*"@type": "BreadcrumbList",\s*"itemListElement": \[\s*\{\s*"@type": "ListItem",\s*"position": 1,\s*"name": "Home",\s*"item": "https:\/\/www\.moroccograndadventure\.com\/"\s*\}\s*\]\s*\}\s*<\/script>\s*/, '');
+}
+// The homepage LCP preload (hero image) is only correct on the homepage; on
+// every other route it forces an eager download of an image the page never
+// paints (wasted bandwidth on ~1,500 pages). Strip it from non-home routes.
+function stripHomeHeroPreload(html: string): string {
+  return html.replace(/[ \t]*<link rel="preload" as="image" href="\/images\/hero\/desert-pano\.webp"[^>]*>\s*/, '');
+}
 
 function main() {
   registerAllTranslations();
@@ -1048,7 +1061,8 @@ function main() {
     const routes = buildRoutes(lang.code);
     for (const route of routes) {
       const langMarked = injectLang(baseHtml, route.lang, route.rtl);
-      const htmlWithHead = injectHead(langMarked, route.meta, route.rest, lang.code);
+      const deDuped = route.rest === '/' || route.rest === '' ? langMarked : stripHomeHeroPreload(stripGlobalHomeBreadcrumb(langMarked));
+      const htmlWithHead = injectHead(deDuped, route.meta, route.rest, lang.code);
       const html = injectStructuredData(injectBody(htmlWithHead, buildNavTreeContent(lang.code) + route.content() + buildFooterContent(lang.code, route.rest)), route.schemas);
       const outPath = path.join(distDir, route.outFile);
       fs.mkdirSync(path.dirname(outPath), { recursive: true });

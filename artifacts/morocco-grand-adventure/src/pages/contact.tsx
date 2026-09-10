@@ -141,7 +141,7 @@ export default function Contact() {
                       View our verified Morocco Grand Adventure location on Google Maps.
                     </p>
                     <div className="flex items-center gap-2 mb-6">
-                      <a href="https://maps.app.goo.gl/UK3MENd42bC16mME7" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-primary hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary" aria-label="View Morocco Grand Adventure on Google Maps">
+                      <a href="https://www.google.com/maps/search/?api=1&query=Morocco%20Grand%20Adventure%20Merzouga" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-primary hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary" aria-label="View Morocco Grand Adventure on Google Maps">
                         <MapPin className="w-5 h-5" aria-hidden="true" />
                         <span>View on Google Maps</span>
                       </a>
