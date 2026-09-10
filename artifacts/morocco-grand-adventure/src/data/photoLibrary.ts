@@ -55,7 +55,7 @@ export const RESTRICTED_ASSETS: Record<string, PhotoVerification> = {
 
 export const PHOTO_LIBRARY: Record<string, PhotoAsset> = {
   'MGA-001': {
-    assetId: 'MGA-001', file: "1000206114.jpg", src: null,
+    assetId: 'MGA-001', file: "1000206114.jpg", src: '/images/library/mga-001.jpg', width: 257, height: 171,
     alt: "Berber guide leading a camel caravan across Erg Chebbi at dusk",
     title: "Erg Chebbi camel trekking at sunset",
     description: "Berber guide leading camel caravan at dusk — Erg Chebbi, Merzouga",
@@ -63,7 +63,7 @@ export const PHOTO_LIBRARY: Record<string, PhotoAsset> = {
     destination: "merzouga", context: "camel-trekking", verification: 'approved',
   },
   'MGA-002': {
-    assetId: 'MGA-002', file: "1000206106.jpg", src: null,
+    assetId: 'MGA-002', file: "1000206106.jpg", src: '/images/library/mga-002.jpg', width: 201, height: 268,
     alt: "Female tourist with arms outstretched on a quad bike at sunset at Erg Chebbi",
     title: "Quad biking on the Erg Chebbi dunes at sunset",
     description: "Female tourist arms outstretched on quad bike at sunset — Erg Chebbi",
@@ -71,7 +71,7 @@ export const PHOTO_LIBRARY: Record<string, PhotoAsset> = {
     destination: "merzouga", context: "quad-biking", verification: 'approved',
   },
   'MGA-003': {
-    assetId: 'MGA-003', file: "1000206101.jpg", src: null,
+    assetId: 'MGA-003', file: "1000206101.jpg", src: '/images/library/mga-003.jpg', width: 257, height: 171,
     alt: "Snake charmer performing at Jemaa el-Fna square in Marrakech",
     title: "Snake charmer at Jemaa el-Fna, Marrakech",
     description: "Snake charmer performing at Jemaa el-Fna square — Marrakech",
@@ -79,7 +79,7 @@ export const PHOTO_LIBRARY: Record<string, PhotoAsset> = {
     destination: "marrakech", context: "destination", verification: 'approved',
   },
   'MGA-004': {
-    assetId: 'MGA-004', file: "1000206117.jpg", src: null,
+    assetId: 'MGA-004', file: "1000206117.jpg", src: '/images/library/mga-004.jpg', width: 257, height: 170,
     alt: "Three traditional Moroccan Guerrab water sellers near Koutoubia Mosque",
     title: "Guerrab water sellers near Koutoubia Mosque, Marrakech",
     description: "Three traditional Moroccan Guerrab water sellers near Koutoubia Mosque",
@@ -87,7 +87,7 @@ export const PHOTO_LIBRARY: Record<string, PhotoAsset> = {
     destination: "marrakech", context: "culture", verification: 'approved',
   },
   'MGA-005': {
-    assetId: 'MGA-005', file: "1000206098.jpg", src: null,
+    assetId: 'MGA-005', file: "1000206098.jpg", src: '/images/library/mga-005.jpg', width: 179, height: 268,
     alt: "Tourist walking on a Moroccan rug lined with lanterns toward Erg Chebbi — luxury camp entrance",
     title: "Luxury desert camp entrance at Erg Chebbi",
     description: "Tourist walking on Moroccan rug lined with lanterns toward Erg Chebbi — luxury camp entrance",
@@ -95,7 +95,7 @@ export const PHOTO_LIBRARY: Record<string, PhotoAsset> = {
     destination: "merzouga", context: "luxury-camp", verification: 'approved',
   },
   'MGA-006': {
-    assetId: 'MGA-006', file: "1000206111.jpg", src: null,
+    assetId: 'MGA-006', file: "1000206111.jpg", src: '/images/library/mga-006.jpg', width: 467, height: 311,
     alt: "White 4x4 SUV performing dune bashing in the orange Sahara Desert",
     title: "4x4 dune bashing in the Sahara",
     description: "White 4x4 SUV performing dune bashing in the orange Sahara Desert",
@@ -103,7 +103,7 @@ export const PHOTO_LIBRARY: Record<string, PhotoAsset> = {
     destination: undefined, context: "4x4-desert-drive", verification: 'approved',
   },
   'MGA-007': {
-    assetId: 'MGA-007', file: "1000206113.webp", src: null,
+    assetId: 'MGA-007', file: "1000206113.webp", src: '/images/library/mga-007.jpg', width: 257, height: 171,
     alt: "Aerial view of surfers in the Atlantic with a Moroccan flag in the foreground",
     title: "Surfing the Moroccan Atlantic coast",
     description: "Aerial view of surfers in the Atlantic with Moroccan flag in foreground",
@@ -111,7 +111,7 @@ export const PHOTO_LIBRARY: Record<string, PhotoAsset> = {
     destination: "agadir", context: "destination", verification: 'approved',
   },
   'MGA-008': {
-    assetId: 'MGA-008', file: "1000206105.jpg", src: null,
+    assetId: 'MGA-008', file: "1000206105.jpg", src: '/images/library/mga-008.jpg', width: 201, height: 268,
     alt: "GOES Terrox 400s quad bike parked on an Erg Chebbi dune at golden hour",
     title: "ATV on the Erg Chebbi dunes at golden hour",
     description: "GOES Terrox 400s quad bike parked on Erg Chebbi dune at golden hour",
@@ -119,7 +119,7 @@ export const PHOTO_LIBRARY: Record<string, PhotoAsset> = {
     destination: "merzouga", context: "quad-biking", verification: 'approved',
   },
   'MGA-009': {
-    assetId: 'MGA-009', file: "1000206100.jpg", src: null,
+    assetId: 'MGA-009', file: "1000206100.jpg", src: '/images/library/mga-009.jpg', width: 179, height: 268,
     alt: "Aerial rooftop view over the colourful Marrakech souk, with Carpet Central Market visible",
     title: "Marrakech souk from above",
     description: "Aerial rooftop view over the colourful Marrakech souk — Carpet Central Market visible",
@@ -127,7 +127,7 @@ export const PHOTO_LIBRARY: Record<string, PhotoAsset> = {
     destination: "marrakech", context: "destination", verification: 'approved',
   },
   'MGA-010': {
-    assetId: 'MGA-010', file: "1000206116.jpg", src: null,
+    assetId: 'MGA-010', file: "1000206116.jpg", src: '/images/library/mga-010.jpg', width: 257, height: 170,
     alt: "Two quad bikers crossing pale Sahara dunes",
     title: "Quad biking across the Sahara dunes",
     description: "Two quad bikers crossing pale Sahara dunes",
@@ -135,7 +135,7 @@ export const PHOTO_LIBRARY: Record<string, PhotoAsset> = {
     destination: "merzouga", context: "quad-biking", verification: 'approved',
   },
   'MGA-011': {
-    assetId: 'MGA-011', file: "1000206107.jpg", src: null,
+    assetId: 'MGA-011', file: "1000206107.jpg", src: '/images/library/mga-011.jpg', width: 202, height: 269,
     alt: "Joyful female tourist standing on a quad bike on the Erg Chebbi dunes",
     title: "Standing up on a quad bike at Erg Chebbi",
     description: "Joyful female tourist standing on quad bike — Erg Chebbi dunes",
@@ -143,7 +143,7 @@ export const PHOTO_LIBRARY: Record<string, PhotoAsset> = {
     destination: "merzouga", context: "quad-biking", verification: 'approved',
   },
   'MGA-012': {
-    assetId: 'MGA-012', file: "1000206112.jpg", src: null,
+    assetId: 'MGA-012', file: "1000206112.jpg", src: '/images/library/mga-012.jpg', width: 179, height: 268,
     alt: "Three surfers on boards at golden hour with a Moroccan rocky cliff coast behind",
     title: "Surfers at golden hour on the Moroccan coast",
     description: "Three surfers on boards at golden hour with Moroccan rocky cliff coast behind",
@@ -151,7 +151,7 @@ export const PHOTO_LIBRARY: Record<string, PhotoAsset> = {
     destination: "agadir", context: "destination", verification: 'approved',
   },
   'MGA-013': {
-    assetId: 'MGA-013', file: "1000206104.webp", src: null,
+    assetId: 'MGA-013', file: "1000206104.webp", src: '/images/library/mga-013.jpg', width: 257, height: 189,
     alt: "Tourists inside the ornate courtyard of Ben Youssef Madrasa in Marrakech",
     title: "Ben Youssef Madrasa courtyard, Marrakech",
     description: "Tourists inside the ornate courtyard of Ben Youssef Madrasa — Marrakech",
@@ -159,7 +159,7 @@ export const PHOTO_LIBRARY: Record<string, PhotoAsset> = {
     destination: "marrakech", context: "heritage", verification: 'approved',
   },
   'MGA-014': {
-    assetId: 'MGA-014', file: "1000206115.jpg", src: null,
+    assetId: 'MGA-014', file: "1000206115.jpg", src: '/images/library/mga-014.jpg', width: 179, height: 269,
     alt: "Traditional Moroccan mint tea in ornate gold-decorated glasses beside a silver teapot",
     title: "Moroccan mint tea",
     description: "Traditional Moroccan mint tea in ornate gold-decorated glasses beside a silver teapot",
@@ -167,7 +167,7 @@ export const PHOTO_LIBRARY: Record<string, PhotoAsset> = {
     destination: undefined, context: "culture", verification: 'approved',
   },
   'MGA-015': {
-    assetId: 'MGA-015', file: "1000206118.jpg", src: null,
+    assetId: 'MGA-015', file: "1000206118.jpg", src: '/images/library/mga-015.jpg', width: 257, height: 171,
     alt: "Moroccan blacksmith hammering hot metal with sparks flying — traditional medina forge",
     title: "Blacksmith at a traditional medina forge",
     description: "Moroccan blacksmith hammering hot metal with sparks flying — traditional medina forge",
@@ -175,7 +175,7 @@ export const PHOTO_LIBRARY: Record<string, PhotoAsset> = {
     destination: undefined, context: "culture", verification: 'approved',
   },
   'MGA-016': {
-    assetId: 'MGA-016', file: "1000206099.jpg", src: null,
+    assetId: 'MGA-016', file: "1000206099.jpg", src: '/images/library/mga-016.jpg', width: 527, height: 292,
     alt: "Moroccan kasbah gateway on a desert road with snow-capped High Atlas behind",
     title: "Kasbah gateway on the road to the High Atlas",
     description: "Moroccan kasbah gateway on desert road with snow-capped High Atlas behind",
@@ -183,7 +183,7 @@ export const PHOTO_LIBRARY: Record<string, PhotoAsset> = {
     destination: undefined, context: "destination", verification: 'approved',
   },
   'MGA-017': {
-    assetId: 'MGA-017', file: "1000206102.jpg", src: null,
+    assetId: 'MGA-017', file: "1000206102.jpg", src: '/images/library/mga-017.jpg', width: 257, height: 192,
     alt: "Aerial night view of Jemaa el-Fna packed with illuminated food stalls in Marrakech",
     title: "Jemaa el-Fna at night, Marrakech",
     description: "Aerial night view of Jemaa el-Fna packed with illuminated food stalls — Marrakech",
@@ -191,7 +191,7 @@ export const PHOTO_LIBRARY: Record<string, PhotoAsset> = {
     destination: "marrakech", context: "destination", verification: 'approved',
   },
   'MGA-018': {
-    assetId: 'MGA-018', file: "1000206103.jpg", src: null,
+    assetId: 'MGA-018', file: "1000206103.jpg", src: '/images/library/mga-018.jpg', width: 467, height: 311,
     alt: "Daytime view of Jemaa el-Fna with vendors and terracotta buildings",
     title: "Jemaa el-Fna by day, Marrakech",
     description: "Daytime view of Jemaa el-Fna with vendors and terracotta buildings",
@@ -199,7 +199,7 @@ export const PHOTO_LIBRARY: Record<string, PhotoAsset> = {
     destination: "marrakech", context: "destination", verification: 'approved',
   },
   'MGA-019': {
-    assetId: 'MGA-019', file: "1000206097.jpg", src: null,
+    assetId: 'MGA-019', file: "1000206097.jpg", src: '/images/library/mga-019.jpg', width: 201, height: 311,
     alt: "Tourist overlooking the iconic blue-painted buildings of Chefchaouen from above",
     title: "Chefchaouen, the Blue City, from above",
     description: "Tourist overlooking the iconic blue-painted buildings of Chefchaouen from above",
@@ -207,7 +207,7 @@ export const PHOTO_LIBRARY: Record<string, PhotoAsset> = {
     destination: "chefchaouen", context: "destination", verification: 'approved',
   },
   'MGA-020': {
-    assetId: 'MGA-020', file: "1000206096.webp", src: null,
+    assetId: 'MGA-020', file: "1000206096.webp", src: '/images/library/mga-020.jpg', width: 257, height: 171,
     alt: "Evocative arched leather souk tunnel in the Fes medina",
     title: "Leather souk archway in Fes medina",
     description: "Evocative arched leather souk tunnel — Fes medina",
@@ -215,7 +215,7 @@ export const PHOTO_LIBRARY: Record<string, PhotoAsset> = {
     destination: "fes", context: "destination", verification: 'approved',
   },
   'MGA-021': {
-    assetId: 'MGA-021', file: "1000206092.jpg", src: null,
+    assetId: 'MGA-021', file: "1000206092.jpg", src: '/images/library/mga-021.jpg', width: 179, height: 268,
     alt: "Imposing mud-brick kasbah hotel fortress entrance with palm trees in Merzouga",
     title: "Kasbah hotel entrance in Merzouga",
     description: "Imposing mud-brick kasbah hotel fortress entrance with palm trees — Merzouga",
@@ -223,7 +223,7 @@ export const PHOTO_LIBRARY: Record<string, PhotoAsset> = {
     destination: "merzouga", context: "destination", verification: 'approved',
   },
   'MGA-022': {
-    assetId: 'MGA-022', file: "1000206094.jpg", src: null,
+    assetId: 'MGA-022', file: "1000206094.jpg", src: '/images/library/mga-022.jpg', width: 201, height: 268,
     alt: "Ornate Moroccan riad courtyard with carved stone facades in southern Morocco",
     title: "Ornate riad courtyard in southern Morocco",
     description: "Ornate Moroccan riad courtyard with carved stone facades — southern Morocco",
@@ -240,7 +240,7 @@ export const PHOTO_LIBRARY: Record<string, PhotoAsset> = {
     publishNote: "UNVERIFIED — DO NOT PUBLISH until location is independently verified as Morocco.",
   },
   'MGA-024': {
-    assetId: 'MGA-024', file: "1000206075.jpg", src: null,
+    assetId: 'MGA-024', file: "1000206075.jpg", src: '/images/library/mga-024.jpg', width: 257, height: 158,
     alt: "Camel caravan crossing the Erg Chebbi dunes by day near Merzouga",
     title: "Camel caravan crossing Erg Chebbi by day",
     description: "Camel caravan crossing Erg Chebbi by day, Merzouga",
@@ -248,7 +248,7 @@ export const PHOTO_LIBRARY: Record<string, PhotoAsset> = {
     destination: "merzouga", context: "camel-trekking", verification: 'approved',
   },
   'MGA-025': {
-    assetId: 'MGA-025', file: "1000206073.jpg", src: null,
+    assetId: 'MGA-025', file: "1000206073.jpg", src: '/images/library/mga-025.jpg', width: 201, height: 311,
     alt: "Female tourist posing at an iconic blue studded door with a Moroccan flag in Essaouira",
     title: "Blue studded door in Essaouira",
     description: "Female tourist posing at iconic blue studded door with Moroccan flag — Essaouira",
@@ -256,7 +256,7 @@ export const PHOTO_LIBRARY: Record<string, PhotoAsset> = {
     destination: "essaouira", context: "destination", verification: 'approved',
   },
   'MGA-026': {
-    assetId: 'MGA-026', file: "1000206084.jpg", src: null,
+    assetId: 'MGA-026', file: "1000206084.jpg", src: '/images/library/mga-026.jpg', width: 201, height: 268,
     alt: "Group of tourists walking through Todra Gorge with a Berber guide — red limestone cliffs",
     title: "Walking through Todra Gorge",
     description: "Group of tourists walking through Todra Gorge with Berber guide — red limestone cliffs",
@@ -264,7 +264,7 @@ export const PHOTO_LIBRARY: Record<string, PhotoAsset> = {
     destination: "todra-gorge", context: "destination", verification: 'approved',
   },
   'MGA-027': {
-    assetId: 'MGA-027', file: "1000206086.jpg", src: null,
+    assetId: 'MGA-027', file: "1000206086.jpg", src: '/images/library/mga-027.jpg', width: 201, height: 268,
     alt: "Atmospheric leather souk tunnel crammed with hanging bags in the Marrakech medina",
     title: "Leather souk tunnel in the Marrakech medina",
     description: "Atmospheric leather souk tunnel crammed with hanging bags — Marrakech medina",
@@ -272,7 +272,7 @@ export const PHOTO_LIBRARY: Record<string, PhotoAsset> = {
     destination: "marrakech", context: "destination", verification: 'approved',
   },
   'MGA-028': {
-    assetId: 'MGA-028', file: "1000206081.jpg", src: null,
+    assetId: 'MGA-028', file: "1000206081.jpg", src: '/images/library/mga-028.jpg', width: 257, height: 173,
     alt: "Tourist in a colourful Moroccan djellaba facing the Erg Chebbi dune sea near Merzouga",
     title: "Facing the Erg Chebbi dune sea",
     description: "Tourist in colourful Moroccan djellaba facing the Erg Chebbi dune sea, Merzouga",
@@ -280,7 +280,7 @@ export const PHOTO_LIBRARY: Record<string, PhotoAsset> = {
     destination: "merzouga", context: "sahara-landscape", verification: 'approved',
   },
   'MGA-029': {
-    assetId: 'MGA-029', file: "1000206091.jpg", src: null,
+    assetId: 'MGA-029', file: "1000206091.jpg", src: '/images/library/mga-029.jpg', width: 179, height: 268,
     alt: "Woman in a teal dress on rippled Erg Chebbi dunes at golden hour",
     title: "Erg Chebbi dunes at golden hour",
     description: "Woman in teal dress on rippled Erg Chebbi dunes at golden hour",
@@ -288,7 +288,7 @@ export const PHOTO_LIBRARY: Record<string, PhotoAsset> = {
     destination: "merzouga", context: "sahara-landscape", verification: 'approved',
   },
   'MGA-030': {
-    assetId: 'MGA-030', file: "1000206083.jpg", src: null,
+    assetId: 'MGA-030', file: "1000206083.jpg", src: '/images/library/mga-030.jpg', width: 207, height: 310,
     alt: "Close-up portrait of a smiling Guerrab water seller in ceremonial costume",
     title: "Guerrab water seller portrait, Marrakech",
     description: "Close-up portrait of smiling Guerrab water seller in ceremonial costume",
@@ -296,7 +296,7 @@ export const PHOTO_LIBRARY: Record<string, PhotoAsset> = {
     destination: "marrakech", context: "culture", verification: 'approved',
   },
   'MGA-031': {
-    assetId: 'MGA-031', file: "1000206071.jpg", src: null,
+    assetId: 'MGA-031', file: "1000206071.jpg", src: '/images/library/mga-031.jpg', width: 257, height: 171,
     alt: "Silhouette of a couple watching sunset from an Erg Chebbi dune — romantic Sahara",
     title: "Couple watching sunset over Erg Chebbi",
     description: "Silhouette of couple watching sunset from Erg Chebbi dune — romantic Sahara",
@@ -304,7 +304,7 @@ export const PHOTO_LIBRARY: Record<string, PhotoAsset> = {
     destination: "merzouga", context: "sahara-landscape", verification: 'approved',
   },
   'MGA-032': {
-    assetId: 'MGA-032', file: "1000206088.jpg", src: null,
+    assetId: 'MGA-032', file: "1000206088.jpg", src: '/images/library/mga-032.jpg', width: 476, height: 311,
     alt: "Camels resting on a wide Atlantic beach in Agadir, Morocco",
     title: "Camels on the beach in Agadir",
     description: "Camels resting on wide Atlantic beach — Agadir, Morocco",
@@ -312,7 +312,7 @@ export const PHOTO_LIBRARY: Record<string, PhotoAsset> = {
     destination: "agadir", context: "destination", verification: 'approved',
   },
   'MGA-033': {
-    assetId: 'MGA-033', file: "1000206093.jpg", src: null,
+    assetId: 'MGA-033', file: "1000206093.jpg", src: '/images/library/mga-033.jpg', width: 257, height: 171,
     alt: "Erg Chebbi dunes at blue hour — deep blue sky above glowing orange sand",
     title: "Erg Chebbi dunes at blue hour",
     description: "Erg Chebbi dunes at blue hour — deep blue sky above glowing orange sand",
@@ -320,7 +320,7 @@ export const PHOTO_LIBRARY: Record<string, PhotoAsset> = {
     destination: "merzouga", context: "sahara-landscape", verification: 'approved',
   },
   'MGA-034': {
-    assetId: 'MGA-034', file: "1000206090.jpg", src: null,
+    assetId: 'MGA-034', file: "1000206090.jpg", src: '/images/library/mga-034.jpg', width: 179, height: 268,
     alt: "Solitary date palm with a desert camp and oasis in the background at Erg Chebbi",
     title: "Date palm and desert camp at Erg Chebbi",
     description: "Solitary date palm with desert camp and oasis in background — Erg Chebbi",
@@ -328,7 +328,7 @@ export const PHOTO_LIBRARY: Record<string, PhotoAsset> = {
     destination: "merzouga", context: "luxury-camp", verification: 'approved',
   },
   'MGA-035': {
-    assetId: 'MGA-035', file: "1000206085.jpg", src: null,
+    assetId: 'MGA-035', file: "1000206085.jpg", src: '/images/library/mga-035.jpg', width: 244, height: 268,
     alt: "Ait Ben Haddou ksar reflected in the Ounila river — UNESCO World Heritage Site",
     title: "Ait Ben Haddou reflected in the Ounila river",
     description: "Ait Ben Haddou ksar reflected in the Ounila river — UNESCO World Heritage Site",
@@ -336,7 +336,7 @@ export const PHOTO_LIBRARY: Record<string, PhotoAsset> = {
     destination: "ait-ben-haddou", context: "heritage", verification: 'approved',
   },
   'MGA-036': {
-    assetId: 'MGA-036', file: "1000206074.jpg", src: null,
+    assetId: 'MGA-036', file: "1000206074.jpg", src: '/images/library/mga-036.jpg', width: 215, height: 268,
     alt: "Panoramic view of a traditional village in Dades Valley with the Atlas Mountain backdrop",
     title: "Dades Valley village with the Atlas behind",
     description: "Panoramic view of traditional village in Dades Valley with Atlas Mountain backdrop",
@@ -344,7 +344,7 @@ export const PHOTO_LIBRARY: Record<string, PhotoAsset> = {
     destination: "dades-valley", context: "destination", verification: 'approved',
   },
   'MGA-037': {
-    assetId: 'MGA-037', file: "1000206080.jpg", src: null,
+    assetId: 'MGA-037', file: "1000206080.jpg", src: '/images/library/mga-037.jpg', width: 179, height: 268,
     alt: "Tourist in a striped robe overlooking the ancient Ait Ben Haddou ksar from a rooftop",
     title: "View over Ait Ben Haddou from a rooftop",
     description: "Tourist in striped robe overlooking the ancient Ait Ben Haddou ksar from a rooftop",
@@ -352,7 +352,7 @@ export const PHOTO_LIBRARY: Record<string, PhotoAsset> = {
     destination: "ait-ben-haddou", context: "heritage", verification: 'approved',
   },
   'MGA-038': {
-    assetId: 'MGA-038', file: "1000206087.jpg", src: null,
+    assetId: 'MGA-038', file: "1000206087.jpg", src: '/images/library/mga-038.jpg', width: 209, height: 310,
     alt: "Busy souk alley lined with craft shops in the Fes medina",
     title: "Souk alley in the Fes medina",
     description: "Busy souk alley lined with craft shops — Fes medina",
@@ -360,7 +360,7 @@ export const PHOTO_LIBRARY: Record<string, PhotoAsset> = {
     destination: "fes", context: "destination", verification: 'approved',
   },
   'MGA-039': {
-    assetId: 'MGA-039', file: "1000206095.jpg", src: null,
+    assetId: 'MGA-039', file: "1000206095.jpg", src: '/images/library/mga-039.jpg', width: 179, height: 268,
     alt: "Madrasa courtyard at golden hour with ornate stucco and zellige tiles in Fes",
     title: "Madrasa courtyard at golden hour, Fes",
     description: "Madrasa courtyard at golden hour with ornate stucco and zellige tiles — Fes",
@@ -368,7 +368,7 @@ export const PHOTO_LIBRARY: Record<string, PhotoAsset> = {
     destination: "fes", context: "heritage", verification: 'approved',
   },
   'MGA-040': {
-    assetId: 'MGA-040', file: "1000206082.jpg", src: null,
+    assetId: 'MGA-040', file: "1000206082.jpg", src: '/images/library/mga-040.jpg', width: 445, height: 311,
     alt: "Person in a djellaba with arms wide above the lush Dades Valley oasis from a viewpoint",
     title: "Overlooking the Dades Valley oasis",
     description: "Person in djellaba with arms wide above the lush Dades Valley oasis from a viewpoint",
@@ -376,7 +376,7 @@ export const PHOTO_LIBRARY: Record<string, PhotoAsset> = {
     destination: "dades-valley", context: "destination", verification: 'approved',
   },
   'MGA-041': {
-    assetId: 'MGA-041', file: "1000206216.jpg", src: null,
+    assetId: 'MGA-041', file: "1000206216.jpg", src: '/images/library/mga-041.jpg', width: 168, height: 210,
     alt: "Silver Toyota Land Cruiser on a Sahara dune crest — private fleet hero image",
     title: "Morocco Grand Adventure private fleet on the dunes",
     description: "Silver Toyota Land Cruiser on Sahara dune crest — private fleet hero image",
@@ -384,7 +384,7 @@ export const PHOTO_LIBRARY: Record<string, PhotoAsset> = {
     destination: undefined, context: "fleet", verification: 'approved',
   },
   'MGA-042': {
-    assetId: 'MGA-042', file: "1000206220.jpg", src: null,
+    assetId: 'MGA-042', file: "1000206220.jpg", src: '/images/library/mga-042.jpg', width: 168, height: 76,
     alt: "Private Land Cruiser alongside a camel caravan — the ultimate Sahara combo, Erg Chebbi",
     title: "Land Cruiser and camel caravan at Erg Chebbi",
     description: "Private Land Cruiser alongside camel caravan — the ultimate Sahara combo, Erg Chebbi",
@@ -392,7 +392,7 @@ export const PHOTO_LIBRARY: Record<string, PhotoAsset> = {
     destination: "merzouga", context: "fleet", verification: 'approved',
   },
   'MGA-043': {
-    assetId: 'MGA-043', file: "1000206225.jpg", src: null,
+    assetId: 'MGA-043', file: "1000206225.jpg", src: '/images/library/mga-043.jpg', width: 168, height: 168,
     alt: "Four female friends posing on a silver Land Cruiser hood — private desert road trip",
     title: "Friends on the Land Cruiser hood",
     description: "Four female friends posing on silver Land Cruiser hood — private desert road trip",
@@ -400,7 +400,7 @@ export const PHOTO_LIBRARY: Record<string, PhotoAsset> = {
     destination: undefined, context: "fleet", verification: 'approved',
   },
   'MGA-044': {
-    assetId: 'MGA-044', file: "1000206229.jpg", src: null,
+    assetId: 'MGA-044', file: "1000206229.jpg", src: '/images/library/mga-044.jpg', width: 168, height: 111,
     alt: "Group loading into three private black minivans — Morocco Grand Adventure fleet",
     title: "Morocco Grand Adventure private minivans",
     description: "Group loading into three private black minivans — Morocco Grand Adventure fleet",
@@ -408,7 +408,7 @@ export const PHOTO_LIBRARY: Record<string, PhotoAsset> = {
     destination: undefined, context: "fleet", verification: 'approved',
   },
   'MGA-045': {
-    assetId: 'MGA-045', file: "1000206218.jpg", src: null,
+    assetId: 'MGA-045', file: "1000206218.jpg", src: '/images/library/mga-045.jpg', width: 168, height: 210,
     alt: "Black Land Cruiser at the entrance of Todra Gorge — private tour fleet at a heritage site",
     title: "Private Land Cruiser at Todra Gorge",
     description: "Black Land Cruiser at entrance of Todra Gorge — private tour fleet at heritage site",
@@ -432,15 +432,17 @@ export const PUBLISHABLE_ASSET_IDS = Object.keys(PHOTO_LIBRARY)
 /**
  * Thematic stand-ins ONLY — NOT photographic identity.
  *
- * The original 46 source binaries are NOT in this repository (the supplied
- * PDF embeds only ≤527px page thumbnails, which must never be published as
- * originals). Until the original files are supplied, each Asset ID below is
- * matched to an EXISTING production-quality repository image whose SUBJECT
- * merely corresponds to what the PDF describes — a different photograph of
- * the same place/theme. Nothing here claims two files are the same photo.
- * Placement of those stand-in images is implemented in content.ts galleries
- * and the About transport section. Deleting this block changes nothing at
- * runtime: no component imports REPO_IMAGE_MATCHES.
+ * UPDATE: the original 46 binaries are still not in the repository, but the
+ * official Photo Library PDF has been decoded (ASCII85+DCT) and the 44
+ * publishable photographs are now imported as derivative assets under
+ * /images/library/ (one JPEG per Asset ID — see PHOTO_LIBRARY[].src). Those are the ACTUAL
+ * PDF photographs — each was verified byte-level (SOI/EOI), decoded with
+ * sharp, and visually cross-checked against the PDF captions. The two
+ * restricted assets (MGA-023, MGA-046) remain unpublished.
+ *
+ * The REPO_IMAGE_MATCHES block below is retained as a historical record of
+ * the earlier stand-in strategy. Nothing imports it at runtime; the real
+ * library photos are now used instead. Do not add new placements here.
  *
  * standInConfidence: 'close-subject' — different photo, same subject/place
  *                    'same-theme'    — same location/theme, different subject
@@ -535,4 +537,27 @@ export function photo(id: string): PhotoAsset | undefined {
 
 export function photosForDestination(destId: string): PhotoAsset[] {
   return Object.values(PHOTO_LIBRARY).filter((a) => a.destination === destId);
+}
+
+/** True when the asset is approved AND its binary is published. */
+export function isPublished(a: PhotoAsset): boolean {
+  return a.verification === 'approved' && !!a.src;
+}
+
+/** All published official-library photographs, sorted by Asset ID. */
+export function publishableLibraryPhotos(): PhotoAsset[] {
+  return Object.values(PHOTO_LIBRARY).filter(isPublished).sort((a, b) => a.assetId.localeCompare(b.assetId));
+}
+
+/** Published library photographs recorded for a destination, by Asset ID. */
+export function publishablePhotosForDestination(destId: string): PhotoAsset[] {
+  return photosForDestination(destId).filter(isPublished).sort((a, b) => a.assetId.localeCompare(b.assetId));
+}
+
+/** Published library photographs recorded for one or more contexts, by Asset ID. */
+export function publishablePhotosForContexts(contexts: string[]): PhotoAsset[] {
+  const set = new Set(contexts);
+  return Object.values(PHOTO_LIBRARY)
+    .filter((a) => isPublished(a) && !!a.context && set.has(a.context))
+    .sort((a, b) => a.assetId.localeCompare(b.assetId));
 }

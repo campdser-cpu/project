@@ -3,7 +3,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Layout } from '../components/layout/Layout';
 import { contactInfo } from '@/data/content';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { X, ChevronLeft, ChevronRight, Play, Instagram } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight, Play, Instagram, Library } from 'lucide-react';
+import LibraryPhotoGrid from '@/components/LibraryPhotoGrid';
+import { publishableLibraryPhotos } from '@/data/photoLibrary';
 
 type GalleryItem = {
   src: string;
@@ -230,6 +232,18 @@ export default function Gallery() {
           </div>
         </section>
       )}
+
+      {/* Official photo library — the ACTUAL photographs from the official PDF */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <Library className="w-9 h-9 text-primary mx-auto mb-4" aria-hidden="true" />
+            <h2 className="font-serif text-4xl md:text-5xl text-foreground">{t('lib_h2')}</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto mt-3">{t('lib_sub')}</p>
+          </div>
+          <LibraryPhotoGrid photos={publishableLibraryPhotos()} aspect="h-60 md:h-72" />
+        </div>
+      </section>
 
       {/* Videos */}
       {filteredVideos.length > 0 && (

@@ -582,6 +582,8 @@ export type TranslationSet = {
   abt_resp_h2: string; abt_resp_p: string;
   abt_resp_1_t: string; abt_resp_1_d: string; abt_resp_2_t: string; abt_resp_2_d: string;
   abt_resp_3_t: string; abt_resp_3_d: string; abt_resp_4_t: string; abt_resp_4_d: string;
+  abt_fleet_h2: string; abt_fleet_p: string; abt_fleet_cap: string; abt_fleet_cta: string;
+  lib_h2: string; lib_sub: string; lib_cap: string;
   abt_why_h2: string;
   abt_why_1_t: string; abt_why_1_d: string; abt_why_2_t: string; abt_why_2_d: string;
   abt_why_3_t: string; abt_why_3_d: string; abt_why_4_t: string; abt_why_4_d: string;

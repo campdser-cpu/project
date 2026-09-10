@@ -1,6 +1,9 @@
 import { Link } from 'wouter';
+import { Car } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { verifiedGoogleReviews } from '@/data/verifiedReviews';
+import LibraryPhotoGrid from '@/components/LibraryPhotoGrid';
+import { publishablePhotosForContexts } from '@/data/photoLibrary';
 
 /** Editorial About page — 10 sections, fully i18n via abt_* keys. */
 const DUNE_PHOTO = {
@@ -42,6 +45,7 @@ function SectionHeading({ kicker, title, sub }: { kicker?: string; title: string
 
 export default function PremiumAboutSection() {
   const { t } = useLanguage();
+  const fleetPhotos = publishablePhotosForContexts(['fleet']);
   const grew = [1, 2, 3, 4, 5, 6].map((n) => ({ title: t(`abt_grown_${n}_t` as any), text: t(`abt_grown_${n}_d` as any) }));
   const travel = [1, 2, 3, 4, 5].map((n) => ({ title: t(`abt_travel_${n}_t` as any), text: t(`abt_travel_${n}_d` as any) }));
   const roles = [
@@ -233,6 +237,23 @@ export default function PremiumAboutSection() {
                 <p className="text-muted-foreground leading-relaxed">{r.text}</p>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 8 — Our Private Fleet (official photo library MGA-041…045) */}
+      <section className="py-20 md:py-32 bg-card border-y border-border [content-visibility:auto] [contain-intrinsic-size:auto_900px]">
+        <div className="container mx-auto px-4">
+          <SectionHeading title={t('abt_fleet_h2')} sub={t('abt_fleet_p')} />
+          <LibraryPhotoGrid photos={fleetPhotos} aspect="h-56 md:h-72" />
+          <p className="text-center text-xs text-muted-foreground mt-6">{t('abt_fleet_cap')}</p>
+          <div className="text-center mt-10">
+            <Link
+              to="/trip-builder"
+              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-full font-bold hover:bg-primary/90 transition-all hover:shadow-[0_8px_30px_rgba(201,168,76,0.4)] hover:-translate-y-1"
+            >
+              <Car className="w-5 h-5" aria-hidden="true" /> {t('abt_fleet_cta')}
+            </Link>
           </div>
         </div>
       </section>

@@ -38,6 +38,7 @@ import { MERZOUGA_GUIDES, COMPARISONS, TRAVEL_INFO, type HubPage } from '../src/
 import { tourDepthFor } from '../src/data/tourDepth';
 import { catalogImage, imagesForDestination, DEST_FOOD_IMAGE, type CatalogImage } from '../src/data/imageCatalog';
 import { SOURCES } from '../src/data/sources';
+import { publishablePhotosForContexts, publishableLibraryPhotos } from '../src/data/photoLibrary';
 import { languages, t as translate } from '../src/i18n/index';
 import type { Lang } from '../src/i18n/index';
 import {
@@ -188,6 +189,18 @@ function catalogFigure(img: CatalogImage, sizes: string): string {
   const src = img.src;
   const srcset = `${src.replace('.webp', '-480w.webp')} 480w, ${src.replace('.webp', '-768w.webp')} 768w, ${src} ${img.width}w`;
   return `    <figure>\n      <img src="${src}" srcset="${srcset}" sizes="${sizes}" alt="${escapeHtml(img.alt)}" width="${img.width}" height="${img.height}" loading="lazy" decoding="async" />\n      <figcaption>${escapeHtml(img.caption)}</figcaption>\n    </figure>\n`;
+}
+/**
+ * Official photo-library figure — renders the ACTUAL PDF-derived photograph
+ * (one JPEG per Asset ID under /images/library/). Mirrors LibraryPhotoGrid on the
+ * client: same src, alt, dimensions, loading="lazy". Restricted assets never
+ * reach here (publishablePhotosForContexts / publishableLibraryPhotos filter them).
+ */
+function libraryPhotoFigure(photo: { assetId: string; src: string | null; alt: string; description: string; width?: number; height?: number }): string {
+  if (!photo.src) return '';
+  const w = photo.width ? ' width="' + photo.width + '"' : '';
+  const h = photo.height ? ' height="' + photo.height + '"' : '';
+  return '    <figure>\n      <img src="' + photo.src + '" alt="' + escapeHtml(photo.alt) + '"' + w + h + ' loading="lazy" decoding="async" class="w-full h-full object-cover" />\n      <figcaption>' + escapeHtml(photo.description) + '</figcaption>\n    </figure>\n';
 }
 function hrefsFor(rest: string): string {
   const clean = rest === '/' ? '' : rest;
@@ -547,9 +560,9 @@ function buildAboutContent(lang: Lang): string {
     })
     .filter(Boolean)
     .join('\n');
-  const ctaLine = link(`${SITE_URL}/${lang}/tours`, tr(lang, 'abt_hero_cta_tours') || 'Explore Our Journeys')
-    + ' · '
-    + link(`${SITE_URL}/${lang}/trip-builder`, tr(lang, 'abt_hero_cta_private') || 'Build Your Private Trip');
+  // Our Private Fleet: official photo library MGA-041…045 (real PDF photographs)
+  const fleet = publishablePhotosForContexts(['fleet']);
+  const fleetFigs = fleet.map((p) => libraryPhotoFigure(p)).join('\n');
   return h1(tr(lang, 'abt_hero_h1') || tr(lang, 'nav_about'))
     + paragraph(tr(lang, 'abt_hero_sub'))
     + h2(tr(lang, 'abt_story_h2'))
@@ -561,10 +574,12 @@ function buildAboutContent(lang: Lang): string {
     + h2(tr(lang, 'abt_geo_h2'))
     + paragraph(tr(lang, 'abt_geo_p'))
     + (geoLinks ? `    <ul>\n${geoLinks}\n    </ul>\n` : '')
+    + h2(tr(lang, 'abt_fleet_h2'))
+    + paragraph(tr(lang, 'abt_fleet_p'))
+    + (fleetFigs ? `    <div class="grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">\n${fleetFigs}    </div>\n` : '')
+    + paragraph(tr(lang, 'abt_fleet_cap'))
     + h2(tr(lang, 'abt_why_h2'))
     + ul(whyTitles)
-    + h2(tr(lang, 'nav_tours'))
-    + rawParagraph(ctaLine)
     + h2(tr(lang, 'abt_promise_h2'))
     + paragraph(tr(lang, 'abt_promise_p'))
     + paragraph(tr(lang, 'abt_promise_line'));
@@ -774,7 +789,15 @@ function buildExperienceContent(rest: string, lang: Lang): string {
     ['/images/curated/camel-caravan-sunset-silhouette-sahara-desert.webp', 'Silhouette of a Berber guide leading two camels along a dune ridge at sunset in the Sahara', tr(lang, 'dt2_moments_cap2')],
     ['/images/curated/sahara-desert-sunset-silhouette-dune-morocco.webp', 'Silhouette of a woman with arms outstretched on a dune crest against a giant setting sun in the Sahara', tr(lang, 'dt2_moments_cap3')],
   ].map(([s, a, c]) => `      ${figureImg(s, a, c)}`).join('\n')}\n    </div>\n` : '';
-  return heading + intro + desertMoments + tBlocks + dBlocks;
+  // Official photo library: render the ACTUAL PDF-derived photographs on the gallery page
+  const galleryLibPhotos = rest === '/gallery' ? publishableLibraryPhotos().map((p) => libraryPhotoFigure(p)).join('\n') : '';
+  // Trip Builder: render a descriptive heading + WhatsApp CTA so the prerendered
+  // page is crawlable and functional (the SPA hydrates the interactive form).
+  const tripBuilderCta = rest === '/trip-builder' ? `
+    <h2>${escapeHtml(tr(lang, 'nav_build_journey'))}</h2>
+    <p>${escapeHtml(tr(lang, 'tb_sub'))}</p>
+    <p><a href="${contactInfo.whatsapp}?text=${encodeURIComponent(tr(lang, 'tb_sub'))}">${escapeHtml(tr(lang, 'nav_book_whatsapp'))}</a></p>` : '';
+  return heading + intro + desertMoments + galleryLibPhotos + tBlocks + dBlocks + tripBuilderCta;
 }
 
 // ── Data-driven hub / comparison pages (Merzouga guide + comparisons) ───────────

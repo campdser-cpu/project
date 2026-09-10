@@ -4,7 +4,7 @@ import { getLocalizedDestination, getLocalizedDestinations, getLocalizedTours, c
 import NotFound from './not-found';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { motion } from 'framer-motion';
-import { ChevronRight, Calendar, Star, Sun, CloudSun, MapPin, UtensilsCrossed, BedDouble } from 'lucide-react';
+import { ChevronRight, Calendar, Star, Sun, CloudSun, MapPin, UtensilsCrossed, BedDouble, Camera } from 'lucide-react';
 import { Link } from 'wouter';
 import { StructuredData, buildDestinationSchema } from '../components/seo/StructuredData';
 import { CinematicVideo } from '../components/ui/CinematicVideo';
@@ -17,6 +17,8 @@ const MoroccoMap = lazy(() =>
 );
 import { catalogImage, imagesForDestination, DEST_FOOD_IMAGE, type CatalogImage } from '@/data/imageCatalog';
 import { DESTINATION_SOURCES, SOURCES } from '@/data/sources';
+import LibraryPhotoGrid from '@/components/LibraryPhotoGrid';
+import { publishablePhotosForDestination } from '@/data/photoLibrary';
 
 // Semantic catalog photo — responsive, lazy, with intrinsic dimensions (no CLS).
 function CatalogPhoto({ img, sizes, className }: { img: CatalogImage; sizes: string; className?: string }) {
@@ -151,6 +153,20 @@ export default function DestinationDetail() {
                   })()}
                 </div>
               )}
+              {/* Official photo library — the ACTUAL PDF photographs recorded for this destination */}
+              {(() => {
+                const libPhotos = publishablePhotosForDestination(destination.id);
+                if (libPhotos.length === 0) return null;
+                return (
+                  <div className="mb-16">
+                    <h3 className="font-serif text-3xl text-foreground mb-2 flex items-center gap-3">
+                      <Camera className="w-8 h-8 text-primary" /> {t('lib_h2')}
+                    </h3>
+                    <p className="text-muted-foreground mb-6">{t('lib_sub')}</p>
+                    <LibraryPhotoGrid photos={libPhotos} sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" />
+                  </div>
+                );
+              })()}
               <div className="mb-16">
                 <h3 className="font-serif text-3xl text-foreground mb-6 flex items-center gap-3">
                   <UtensilsCrossed className="w-8 h-8 text-primary" /> {t('dest_local_food')} {destination.name}

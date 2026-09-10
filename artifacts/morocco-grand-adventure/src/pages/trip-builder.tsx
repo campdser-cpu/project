@@ -191,12 +191,38 @@ export default function TripBuilder() {
   }, [arrival, departure, days, selectedDestinations]);
 
   const whatsappLink = useMemo(() => {
-    const interestLabels = selectedInterests.map(id => INTERESTS_DATA.find(i=>i.id===id)?.id ?? id).filter(Boolean);
+    const interestLabels = selectedInterests
+      .map(id => {
+        const item = INTERESTS_DATA.find(i => i.id === id);
+        return item ? t(item.key) : id;
+      })
+      .filter(Boolean);
     const destNames = selectedDestinations.map(id => destinations.find(d=>d.id===id)?.name).filter(Boolean);
-    
-    const text = `*New Bespoke Journey Request*%0A%0A*Basics:*%0A- Route: ${arrival} to ${departure}%0A- Duration: ${days} days%0A- Travelers: ${travelers}%0A- Budget: ${budget}%0A%0A*Interests:*%0A${interestLabels.join(', ')}%0A%0A*Destinations:*%0A${destNames.join(', ')}`;
-    return `${contactInfo.whatsapp}?text=${text}`;
-  }, [arrival, departure, days, travelers, budget, selectedInterests, selectedDestinations]);
+
+    // Multi-line message built with real newlines, then URL-encoded as a whole
+    // (manual %0A + raw interpolation breaks on values containing & or #).
+    const lines = [
+      '*New Bespoke Journey Request*',
+      '',
+      '*Basics:*',
+      `- Route: ${arrival} to ${departure}`,
+      `- Duration: ${days} days`,
+      `- Travelers: ${travelers}`,
+      `- Budget: ${budget}`,
+      `- Interests: ${interestLabels.length ? interestLabels.join(', ') : '—'}`,
+      '',
+      '*Destinations:*',
+      destNames.length ? destNames.join(', ') : '—',
+    ];
+    if (itineraryData.itinerary.length > 0) {
+      lines.push('', '*Day-by-day itinerary:*');
+      for (const d of itineraryData.itinerary) {
+        lines.push(`Day ${d.day}: ${d.title}${d.distance > 0 ? ` — ${d.distance} km drive` : ''}`);
+      }
+      lines.push('', `Total driving distance: ~${itineraryData.totalDistance} km`);
+    }
+    return `${contactInfo.whatsapp}?text=${encodeURIComponent(lines.join('\n'))}`;
+  }, [t, arrival, departure, days, travelers, budget, selectedInterests, selectedDestinations, itineraryData]);
 
   return (
     <Layout>
