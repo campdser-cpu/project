@@ -809,7 +809,12 @@ const EXPERIENCE_PAGE_ROUTES: Record<string, { tours: string[]; destinations: st
   '/trip-builder': { tours: ['3-day-sahara-marrakech', '5-day-imperial-cities', '7-day-imperial-cities-sahara-escape', 'family-morocco-adventure', 'honeymoon-morocco'], destinations: ['marrakech', 'fes', 'merzouga', 'erg-chebbi', 'ait-ben-haddou'] },
 };
 function buildExperienceContent(rest: string, lang: Lang): string {
-  const meta = getRouteMeta(rest);
+  // Reuse the single localized-metadata mechanism (same source as <LocalizedHead>
+  // and metaFor above) so the crawlable H1/intro match the localized <title>
+  // instead of leaking the English route title on non-English hubs. Falls back
+  // to the canonical English meta when no authored translation exists — copy is
+  // never invented.
+  const meta = getLocalizedRouteMeta(rest, lang);
   const cfg = EXPERIENCE_PAGE_ROUTES[rest] ?? { tours: [], destinations: [] };
   const heading = h1(meta.title.replace(/\s*—.*$/, '').trim() || meta.title);
   const intro = paragraph(meta.description);
