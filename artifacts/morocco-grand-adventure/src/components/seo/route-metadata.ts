@@ -430,6 +430,7 @@ const KO_ROUTE_META: Record<string,RouteMeta> = {
 //      keeps the English copy rather than receiving a machine-generated page.
 import { getLocalizedTour, getLocalizedDestination, contentOverlayExists } from '@/i18n/content';
 import { getLocalizedGuide, guideOverlayExists } from '@/i18n/guides';
+import { localizedComparisonMeta } from '@/data/comparison-meta-i18n';
 import { t as translate } from '@/i18n/index';
 import type { Lang } from '@/i18n/index';
 
@@ -473,6 +474,16 @@ export function getLocalizedRouteMeta(rest: string, lang: Lang = 'en'): RouteMet
       const base = getRouteMeta(rest);
       return { title: g.pageTitle, description: truncate(g.description), ogImage: base.ogImage };
     }
+  }
+
+  // 2.5 Comparison pages — authored localized title/description per locale
+  //     (src/data/comparison-meta-i18n.ts). Feeds <title>/<meta description>/OG
+  //     so the SERP snippet matches the localized H1. Falls back to the canonical
+  //     English route metadata when no authored entry exists.
+  const compMatch = normalized.match(/^\/comparisons\/([^/]+)$/);
+  if (compMatch) {
+    const lm = localizedComparisonMeta(compMatch[1], lang);
+    if (lm) return { title: lm.pageTitle, description: truncate(lm.description), ogImage: getRouteMeta(rest).ogImage };
   }
 
   // 3. Tour detail page — localized entity meta when an overlay exists.

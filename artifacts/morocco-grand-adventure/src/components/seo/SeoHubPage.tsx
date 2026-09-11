@@ -13,6 +13,7 @@ import { getLocalizedTour, getLocalizedTours, getLocalizedDestination, getLocali
 import { getLocalizedGuide, guideOverlayExists, guideImageAlt, guideCrumb } from '@/i18n/guides';
 import { StructuredData, buildBreadcrumb, buildFaqSchema } from '@/components/seo/StructuredData';
 import { MERZOUGA_GUIDES, COMPARISONS, TRAVEL_INFO, ALL_HUB_PAGES, type HubPage } from '@/data/seoHub';
+import { localizedComparisonMeta } from '@/data/comparison-meta-i18n';
 import { catalogImage } from '@/data/imageCatalog';
 import { SOURCES } from '@/data/sources';
 import NotFound from '@/pages/not-found';
@@ -35,9 +36,15 @@ export default function MerzougaGuideTopic() {
 
 export function ComparisonPage() {
   const { slug } = useParams();
+  const { lang } = useLanguage();
   const page = COMPARISONS.find((p) => p.slug === slug);
   if (!page) return <NotFound />;
-  return <SeoHubPage page={page} />;
+  // Authored localized H1 for comparison pages (src/data/comparison-meta-i18n.ts);
+  // <title>/meta description come from getLocalizedRouteMeta via LocalizedHead.
+  // Body copy stays canonical English. Mirrors prerender buildHubPageContent.
+  const lm = localizedComparisonMeta(page.slug, lang);
+  const effective = lm ? { ...page, title: lm.title } : page;
+  return <SeoHubPage page={effective} />;
 }
 
 export function TravelInfoTopic() {

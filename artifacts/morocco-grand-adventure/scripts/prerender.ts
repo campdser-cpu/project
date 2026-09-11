@@ -35,6 +35,7 @@ import { destinations, contactInfo, reviews, type Review, type Tour, type Destin
 import { BLOG_ARTICLE_SECTIONS, BLOG_ARTICLE_CTA } from '../src/data/blog-article-sections';
 import { CITY_HUBS, TOUR_DEPARTURE_CITY, CITY_HUB_DURATIONS, tourIdsForCity, tourDurationDays } from '../src/data/tour-hierarchy';
 import { MERZOUGA_GUIDES, COMPARISONS, TRAVEL_INFO, type HubPage } from '../src/data/seoHub';
+import { localizedComparisonMeta } from '../src/data/comparison-meta-i18n';
 import { tourDepthFor } from '../src/data/tourDepth';
 import { catalogImage, imagesForDestination, DEST_FOOD_IMAGE, type CatalogImage } from '../src/data/imageCatalog';
 import { SOURCES } from '../src/data/sources';
@@ -859,9 +860,12 @@ function imageAltFor(slug: string, imageId: string, lang: Lang, fallback: string
 
 function buildHubPageContent(page: HubPage, lang: Lang): string {
   const localized = page.kind === 'merzouga' ? (getLocalizedGuide(page.slug, lang) ?? page) : page;
+  // Comparison pages: authored localized H1 (title) per locale; body copy stays
+  // canonical English. Mirrors the runtime SeoHubPage behavior.
+  const compMeta = page.kind === 'comparison' ? localizedComparisonMeta(page.slug, lang) : undefined;
   const linkTitle = (s: string) =>
     page.kind === 'merzouga' ? (getLocalizedGuide(s, lang)?.title ?? allHubsTitle(s)) : allHubsTitle(s);
-  let out = h1(localized.title) + paragraph(localized.intro);
+  let out = h1(compMeta?.title ?? localized.title) + paragraph(localized.intro);
   const figureAfter = new Map<number, string>();
   (localized.inlineImages ?? []).forEach((ii) => figureAfter.set(ii.after, ii.imageId));
   for (let i = 0; i < localized.sections.length; i++) {
@@ -984,7 +988,7 @@ function buildRoutes(lang: Lang): RouteEntry[] {
       buildBreadcrumb([
         { name: tr(lang, 'nav_home'), path: '/' },
         { name: 'Tour comparisons', path: '/' },
-        { name: page.title, path: rest },
+        { name: localizedComparisonMeta(page.slug, lang)?.title ?? page.title, path: rest },
       ], lang) as unknown as Record<string, unknown>,
       page.faqs.length ? (buildFaqSchema(page.faqs) as unknown as Record<string, unknown>) : null,
     ].filter(Boolean) as Record<string, unknown>[]);
