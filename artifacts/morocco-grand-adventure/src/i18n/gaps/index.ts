@@ -16,6 +16,11 @@ import { guideGaps } from './guides';
 import type { Lang } from '../index';
 
 export const i18nGaps: Partial<Record<Lang, Record<string, string>>> = {
+  // English gap completions: keys authored in the gap layer that are absent from
+  // locales/en.ts (e.g. pwig_* on the Merzouga Guide hub). Without this entry,
+  // t('en', 'pwig_heading') falls through registry.en → gap layer (undefined) →
+  // literal key, leaking "pwig_heading" into /en/merzouga-guide.
+  en: { ...guideGaps.en },
   fr: { ...guideGaps.fr, ...chromeGaps.fr, ...fr, ...aboutGaps.fr, ...about2Gaps.fr },
   es: { ...guideGaps.es, ...chromeGaps.es, ...es, ...aboutGaps.es, ...about2Gaps.es },
   it: { ...guideGaps.it, ...chromeGaps.it, ...it, ...aboutGaps.it, ...about2Gaps.it },
