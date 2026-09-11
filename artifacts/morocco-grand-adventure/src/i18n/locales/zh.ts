@@ -407,4 +407,32 @@ footer_route_highlights: "路线亮点",
     wa_book_now: "立即预订",
     layout_skip_content: "跳至内容",
     app_loading: "加载中...",
+
+  // ── Merzouga Guide hub (ExperiencePage hero/features/FAQs) — completes the
+  // mg_* set for this locale (mg_title/mg_breadcrumb/mg_f3_title live in the
+  // chrome gap layer). Wording: INFERRED — linguistically natural, not
+  // validated by search-volume data. Facts mirror the English source.
+  mg_hero_alt: "梅尔祖卡附近艾尔格切比的金色沙丘与日落时分的骆驼队",
+  mg_subtitle: "梅尔祖卡终极指南——艾尔格切比沙丘、豪华营地、骑骆驼、观星，以及完美撒哈拉之旅所需的一切。",
+  mg_cta: "规划您的梅尔祖卡之旅",
+  mg_f1_title: "艾尔格切比沙丘",
+  mg_f1_desc: "领略摩洛哥最具代表性的沙海——22 公里的金色沙丘最高达 150 米，随光线变幻不停。",
+  mg_f2_title: "日落骑骆驼",
+  mg_f2_desc: "梅尔祖卡的必玩体验——骑上骆驼穿越沙丘，看夕阳西下、大漠尽染金色。",
+  mg_f3_desc: "在我们专属的豪华营地，睡在带独立卫浴的真实床铺上，头顶是地球上最明亮的星空。",
+  mg_f4_title: "哈姆利亚格纳瓦村",
+  mg_f4_desc: "在“黑人的村庄”聆听直抵心灵的格纳瓦音乐——别处无法体验的文化之旅。",
+  mg_f5_title: "探访游牧家庭",
+  mg_f5_desc: "与撒哈拉游牧家庭共饮薄荷茶，感受延续数百年的生活方式。",
+  mg_f6_title: "观星",
+  mg_f6_desc: "艾尔格切比几乎零光污染，拥有全球数一数二的观星条件——银河尽收眼底。",
+  mg_faq1_q: "如何前往梅尔祖卡？",
+  mg_faq1_a: "大多数旅行者从马拉喀什（车程约 9-10 小时）或非斯（约 7 小时）出发。您的私人司机兼向导会安排好一切，并在沿途主要景点停靠。",
+  mg_faq2_q: "游览梅尔祖卡的最佳时间是什么时候？",
+  mg_faq2_a: "10 月至 4 月最为理想——白天温暖，夜晚凉爽舒适。夏季（6-8 月）白天可能极其炎热。",
+  mg_faq3_q: "应该住几晚？",
+  mg_faq3_a: "我们建议至少住 2 晚——一晚住豪华营地，一晚住沙漠酒店。这样既有时间体验营地，也能安排四驱越野，并在沙丘上迎接日出。",
+  mg_faq4_q: "梅尔祖卡安全吗？",
+  mg_faq4_a: "安全——梅尔祖卡是一个热情友好的小村庄，旅游业是当地的主要生计。我们的本地团队确保您的体验安全无忧、舒适自在。",
+
   } as Record<string, string>;

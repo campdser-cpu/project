@@ -407,4 +407,32 @@ footer_route_highlights: "Destaques da rota",
     wa_book_now: "Reservar Agora",
     layout_skip_content: "Saltar para o conteúdo",
     app_loading: "A carregar...",
+
+  // ── Merzouga Guide hub (ExperiencePage hero/features/FAQs) — completes the
+  // mg_* set for this locale (mg_title/mg_breadcrumb/mg_f3_title live in the
+  // chrome gap layer). Wording: INFERRED — linguistically natural, not
+  // validated by search-volume data. Facts mirror the English source.
+  mg_hero_alt: "Dunas douradas do Erg Chebbi em Merzouga com uma caravana de camelos ao pôr do sol",
+  mg_subtitle: "O guia definitivo de Merzouga — dunas do Erg Chebbi, acampamentos de luxo, passeios de camelo, observação de estrelas e tudo o que precisa para uma aventura perfeita no Saara.",
+  mg_cta: "Planeie a sua viagem a Merzouga",
+  mg_f1_title: "Dunas do Erg Chebbi",
+  mg_f1_desc: "Contemple o mar de areia mais icónico de Marrocos — 22 km de dunas douradas que se erguem até 150 metros, em constante mudança com a luz.",
+  mg_f2_title: "Passeio de camelo ao pôr do sol",
+  mg_f2_desc: "A experiência essencial de Merzouga — suba num camelo e atravesse as dunas enquanto o sol se põe e o deserto se doura.",
+  mg_f3_desc: "Durma em camas verdadeiras com casa de banho privativa sob as estrelas mais brilhantes do planeta, no nosso exclusivo acampamento de luxo.",
+  mg_f4_title: "Aldeia gnawa de Khamlia",
+  mg_f4_desc: "Ouça a comovente música gnawa na «aldeia dos homens negros» — uma experiência cultural que não existe em mais nenhum lugar.",
+  mg_f5_title: "Visitas a famílias nómadas",
+  mg_f5_desc: "Partilhe chá de menta com famílias nómadas do Saara e conheça um modo de vida que perdura há séculos.",
+  mg_f6_title: "Observação de estrelas",
+  mg_f6_desc: "Sem poluição luminosa, o Erg Chebbi oferece um dos melhores céus estrelados do planeta — a Via Láctea em todo o seu esplendor.",
+  mg_faq1_q: "Como chegar a Merzouga?",
+  mg_faq1_a: "A maioria dos viajantes chega de Marraquexe (cerca de 9-10 horas de estrada) ou de Fez (cerca de 7 horas). O seu motorista-guia privado trata de tudo, com paragens nos principais pontos de interesse ao longo do caminho.",
+  mg_faq2_q: "Qual é a melhor altura para visitar Merzouga?",
+  mg_faq2_a: "De outubro a abril é o ideal — dias quentes e noites frescas e agradáveis. Nos meses de verão (junho-agosto), pode fazer extremamente calor durante o dia.",
+  mg_faq3_q: "Quantas noites devo ficar?",
+  mg_faq3_a: "Recomendamos pelo menos 2 noites — uma no acampamento de luxo e outra num hotel do deserto. Assim há tempo para a experiência do acampamento, um passeio de 4x4 e um nascer do sol sobre as dunas.",
+  mg_faq4_q: "Merzouga é seguro?",
+  mg_faq4_a: "Sim — Merzouga é uma aldeia pequena e acolhedora onde o turismo é a principal fonte de rendimento. A nossa equipa local garante-lhe uma experiência em total segurança e conforto.",
+
   } as Record<string, string>;

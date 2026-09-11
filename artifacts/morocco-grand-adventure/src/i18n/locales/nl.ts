@@ -407,4 +407,32 @@ footer_route_highlights: "Routehoogtepunten",
     wa_book_now: "Nu boeken",
     layout_skip_content: "Naar inhoud springen",
     app_loading: "Laden...",
+
+  // ── Merzouga Guide hub (ExperiencePage hero/features/FAQs) — completes the
+  // mg_* set for this locale (mg_title/mg_breadcrumb/mg_f3_title live in the
+  // chrome gap layer). Wording: INFERRED — linguistically natural, not
+  // validated by search-volume data. Facts mirror the English source.
+  mg_hero_alt: "Gouden duinen van Erg Chebbi bij Merzouga met een kamelenkaravaan bij zonsondergang",
+  mg_subtitle: "De ultieme gids voor Merzouga — de duinen van Erg Chebbi, luxekampen, kamelentochten, sterrenkijken en alles wat u nodig heeft voor een perfect Sahara-avontuur.",
+  mg_cta: "Uw Merzouga-reis plannen",
+  mg_f1_title: "Duinen van Erg Chebbi",
+  mg_f1_desc: "Bewonder de meest iconische zandzee van Marokko — 22 km gouden duinen tot 150 meter hoog, voortdurend van vorm wisselend in het licht.",
+  mg_f2_title: "Kamelentocht bij zonsondergang",
+  mg_f2_desc: "De essentie van Merzouga — rijd te kameel over de duinen terwijl de zon ondergaat en de woestijn goudkleurig wordt.",
+  mg_f3_desc: "Slaap in echte bedden met eigen badkamer onder de helderste sterren op aarde, in ons exclusieve luxekamp.",
+  mg_f4_title: "Gnawa-dorp Khamlia",
+  mg_f4_desc: "Luister naar de ontroerende Gnawa-muziek in het 'dorp van de zwarte mensen' — een culturele ervaring zoals u die nergens anders vindt.",
+  mg_f5_title: "Bezoek aan nomadenfamilies",
+  mg_f5_desc: "Deel muntthee met nomadenfamilies in de Sahara en maak kennis met een levenswijze die al eeuwenlang bestaat.",
+  mg_f6_title: "Sterrenkijken",
+  mg_f6_desc: "Zonder lichtvervuiling biedt Erg Chebbi een van de mooiste sterrenhemels van de planeet — de Melkweg in al zijn glorie.",
+  mg_faq1_q: "Hoe kom ik in Merzouga?",
+  mg_faq1_a: "De meeste reizigers komen vanuit Marrakech (circa 9-10 uur rijden) of Fez (circa 7 uur). Uw privéchauffeur-gids regelt alles en stopt onderweg bij de belangrijkste bezienswaardigheden.",
+  mg_faq2_q: "Wanneer is de beste reistijd voor Merzouga?",
+  mg_faq2_a: "Oktober tot april is ideaal — warme dagen en koele, aangename nachten. In de zomermaanden (juni-augustus) kan het overdag extreem heet zijn.",
+  mg_faq3_q: "Hoeveel nachten moet ik blijven?",
+  mg_faq3_a: "Wij adviseren minimaal 2 nachten — één nacht in het luxekamp en één in een woestijnhotel. Zo is er tijd voor de kampervaring, een 4x4-tour en een zonsopgang boven de duinen.",
+  mg_faq4_q: "Is Merzouga veilig?",
+  mg_faq4_a: "Ja — Merzouga is een klein, gastvrij dorp waar toerisme de belangrijkste bron van inkomsten is. Ons lokale team zorgt voor een volledig veilige en comfortabele ervaring.",
+
   } as Record<string, string>;

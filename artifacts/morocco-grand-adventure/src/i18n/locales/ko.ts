@@ -407,4 +407,32 @@ footer_route_highlights: "경로 하이라이트",
     wa_book_now: "지금 예약",
     layout_skip_content: "본문으로 건너뛰기",
     app_loading: "불러오는 중...",
+
+  // ── Merzouga Guide hub (ExperiencePage hero/features/FAQs) — completes the
+  // mg_* set for this locale (mg_title/mg_breadcrumb/mg_f3_title live in the
+  // chrome gap layer). Wording: INFERRED — linguistically natural, not
+  // validated by search-volume data. Facts mirror the English source.
+  mg_hero_alt: "일몰 때 낙타 행렬이 지나가는 메르주가 에르그 셰비의 황금빛 사구",
+  mg_subtitle: "메르주가 완벽 가이드 — 에르그 셰비 사구, 럭셔리 캠프, 낙타 트레킹, 별보기, 그리고 완벽한 사하라 여행에 필요한 모든 것.",
+  mg_cta: "메르주가 여행 계획하기",
+  mg_f1_title: "에르그 셰비 사구",
+  mg_f1_desc: "모로코에서 가장 상징적인 모래바다 — 높이 150m에 이르는 22km의 황금빛 사구가 빛에 따라 끊임없이 모습을 바꿉니다.",
+  mg_f2_title: "노을의 낙타 트레킹",
+  mg_f2_desc: "메르주가의 필수 체험 — 낙타를 타고 사구를 넘으며 해가 지고 사막이 황금빛으로 물드는 순간을 만나보세요.",
+  mg_f3_desc: "전용 욕실을 갖춘 진짜 침대에서 잠듭니다 — 지구에서 가장 밝은 별빛 아래, 우리만의 럭셔리 캠프에서요.",
+  mg_f4_title: "그나와 음악의 마을 크믈리아",
+  mg_f4_desc: "'검은 사람들의 마을'이라 불리는 크믈리아에서 감성적인 그나와 음악을 들어보세요 — 다른 어디에서도 경험할 수 없는 문화 체험입니다.",
+  mg_f5_title: "유목민 가족 방문",
+  mg_f5_desc: "사하라 유목민 가족과 민트차를 나누며 수백 년을 이어온 삶의 방식을 가까이에서 경험하세요.",
+  mg_f6_title: "별보기",
+  mg_f6_desc: "광해가 전혀 없는 에르그 셰비는 세계 최고 수준의 별보기 명소 — 은하수가 온전한 빛으로 펼쳐집니다.",
+  mg_faq1_q: "메르주가에 어떻게 가나요?",
+  mg_faq1_a: "대부분의 여행자는 마라케시(차로 약 9-10시간) 또는 페스(약 7시간)에서 이동합니다. 전용 기사 가이드가 도중의 주요 명소에 들르며 모든 일정을 챙겨드립니다.",
+  mg_faq2_q: "메르주가를 방문하기 가장 좋은 시기는 언제인가요?",
+  mg_faq2_a: "10월부터 4월이 가장 좋습니다 — 낮은 따뜻하고 밤은 선선하고 쾌적합니다. 여름(6-8월)에는 낮 기온이 매우 높아질 수 있습니다.",
+  mg_faq3_q: "며칠 머무는 것이 좋을까요?",
+  mg_faq3_a: "최소 2박을 권합니다 — 럭셔리 캠프에서 1박, 사막 호텔에서 1박. 캠프 체험과 4WD 투어, 사구 위의 일출까지 여유 있게 즐길 수 있습니다.",
+  mg_faq4_q: "메르주가는 안전한가요?",
+  mg_faq4_a: "네 — 메르주가는 관광이 주요 생계인 작고 친절한 마을입니다. 현지 팀이 안전하고 편안한 경험을 책임집니다.",
+
   } as Record<string, string>;
