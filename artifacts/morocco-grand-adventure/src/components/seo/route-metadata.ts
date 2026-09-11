@@ -429,6 +429,7 @@ const KO_ROUTE_META: Record<string,RouteMeta> = {
 //      translation is ever *invented* — a language without an authored overlay
 //      keeps the English copy rather than receiving a machine-generated page.
 import { getLocalizedTour, getLocalizedDestination, contentOverlayExists } from '@/i18n/content';
+import { getLocalizedGuide, guideOverlayExists } from '@/i18n/guides';
 import { t as translate } from '@/i18n/index';
 import type { Lang } from '@/i18n/index';
 
@@ -461,7 +462,20 @@ export function getLocalizedRouteMeta(rest: string, lang: Lang = 'en'): RouteMet
   const localized = LOCALIZED_ROUTE_META[lang]?.[normalized];
   if (localized) return localized;
 
-  // 2. Tour detail page — localized entity meta when an overlay exists.
+  // 2. Merzouga guide page — localized SEO meta when a native guide overlay
+  //    was authored for the active language. The overlay's native pageTitle +
+  //    description feed the SEO tags, so SERP snippets agree with the page H1.
+  //    The canonical ogImage is preserved (images are never localized by path).
+  const guideMatch = normalized.match(/^\/merzouga-guide\/([^/]+)$/);
+  if (guideMatch && guideOverlayExists(lang, guideMatch[1])) {
+    const g = getLocalizedGuide(guideMatch[1], lang);
+    if (g) {
+      const base = getRouteMeta(rest);
+      return { title: g.pageTitle, description: truncate(g.description), ogImage: base.ogImage };
+    }
+  }
+
+  // 3. Tour detail page — localized entity meta when an overlay exists.
   const tourMatch = normalized.match(/^\/tours\/([^/]+)$/);
   if (tourMatch) {
     const t = getLocalizedTour(tourMatch[1], lang);

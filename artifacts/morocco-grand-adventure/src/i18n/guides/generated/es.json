@@ -1,0 +1,313 @@
+{
+  "how-many-days": {
+    "title": "¿Cuántos días necesitas en el Sáhara?",
+    "pageTitle": "¿Cuántos días en el Sáhara? — Guía de duración en Merzouga",
+    "description": "Cuántos días necesitas en el Sáhara y Merzouga — comparativa honesta de rutas de 1, 2, 3 y más días, y lo que cada duración permite de verdad.",
+    "heroAlt": "Las dunas de Erg Chebbi cerca de Merzouga — ¿cuántos días necesita una ruta por el Sáhara?",
+    "intro": "Respuesta corta: una noche entre las dunas es el mínimo para la experiencia sahariana clásica, y dos noches es lo que recomendamos con más frecuencia. La respuesta larga depende de dónde empieces, cuánto conduzcas aceptes por día y qué quieres que sea el desierto: un punto fuerte o el objetivo del viaje. Aquí está el desglose honesto.",
+    "sections": [
+      {
+        "heading": "1 día en el Sáhara (una noche entre las dunas)",
+        "paragraphs": [
+          "Una noche en campamento da la secuencia esencial: llegada al final de la tarde, camello al atardecer hacia Erg Chebbi, cena y tambores, salida del sol sobre las dunas, y regreso a media mañana. Nada se apresura sobre la arena misma: la experiencia es compacta pero completa.",
+          "La compensación es el viaje. Desde Marrakech, una ruta de una noche implica días de conducción muy largos; desde Fez es más llevadera. Un día es la opción correcta cuando el Sáhara es un punto fuerte de un itinerario más amplio por Marruecos y tu agenda es realmente ajustada."
+        ]
+      },
+      {
+        "heading": "2 días en el Sáhara (dos noches)",
+        "paragraphs": [
+          "Dos noches es el punto justo para la mayoría de los viajeros. La primera tarde y noche ofrecen la secuencia clásica; el segundo día — libre de la logística de llegada — es cuando el desierto se abre: la ruta en 4x4 por el desierto de piedra negra y el país nómada, Khamlia y su música gnawa, el oasis o simplemente tiempo sin prisa en las dunas. La segunda noche en campamento, cuando la novedad se desvanece y llega el silencio, suele ser la que uno recuerda.",
+          "Si tu itinerario por Marruecos puede absorberlo, esta es la versión que construimos más a menudo."
+        ]
+      },
+      {
+        "heading": "3 días en el Sáhara",
+        "paragraphs": [
+          "Tres días conviene a los viajeros lentos, a los fotógrafos y a las familias que quieren que el desierto sea un capítulo del viaje y no una sola tarde. Añades profundidad antes que categorías nuevas: exploraciones 4x4 más largas, una segunda noche en otro campamento, sandboard, observación de estrellas sin horario y tiempo en el pueblo y el oasis.",
+          "Tres días también encaja de forma natural con la ruta sur más amplia: el valle del Dadés y las gargantas del Todra a la ida o la vuelta, convirtiéndolo en el núcleo de un viaje desértico bien ritmado de 4 o 5 días."
+        ]
+      },
+      {
+        "heading": "4 días o más (el desierto más la propia ruta)",
+        "paragraphs": [
+          "Más allá de tres días en la propia Merzouga, el tiempo extra suele invertirse mejor en el viaje — el Atlas, Ait Ben Haddou, las gargantas — o en una travesía de una sola dirección Fez-Marrakech por el desierto que ve el país entero de una vez en lugar de deshacer el camino. Si el Sáhara en sí es el objetivo entero de tu viaje, se pueden discutir travesías de varios días a caballo hacia el desierto más profundo en tu presupuesto privado."
+        ]
+      },
+      {
+        "heading": "La respuesta rápida",
+        "paragraphs": [
+          "Una noche: la clásica, funciona desde Fez, ajustada desde Marrakech. Dos noches: lo que más recomendamos. Tres noches: para viaje lento y fotografía. Cuatro o más: mueve los días extra a la ruta, o háblanos de una travesía por el desierto profundo."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "¿Es suficiente una noche en el desierto de Merzouga?",
+        "answer": "Para la experiencia esencial — camello al atardecer, noche en campamento, salida del sol — sí. Lo que una noche no puede dar es un viaje relajado hasta las dunas ni un día desértico completo. Desde Marrakech, planifica al menos una ruta de 3 días para una noche en campamento."
+      },
+      {
+        "question": "¿Cuántos días se necesitan de Marrakech a Merzouga?",
+        "answer": "Tres días es el formato práctico más corto: dos días de ruta con una noche en la zona del Dadés o el Todra, y una noche entre las dunas. Cuatro días lo hace cómodo."
+      },
+      {
+        "question": "¿Cuántos días de Fez a Merzouga?",
+        "answer": "La conducción es más corta que desde Marrakech — muchos itinerarios llegan a las dunas el primer día con paradas panorámicas, lo que hace del bucle de 3 días desde Fez o de la ruta de una sola dirección Fez-Marrakech en 4 días formatos muy cómodos."
+      },
+      {
+        "question": "¿Se puede pasar demasiado tiempo en el desierto?",
+        "answer": "Tras unas tres noches en la propia Merzouga, la mayoría saca más partido de variar el viaje — las gargantas, los valles, las ciudades imperiales — que de más noches en la misma zona de campamento."
+      }
+    ],
+    "imageAlts": {
+      "sahara-dune-trekking-merzouga": "Senderistas subiendo la cresta de una alta duna del Sáhara cerca de Merzouga",
+      "luxury-desert-camp-sunset-merzouga": "Tiendas de un campamento de lujo en el desierto al atardecer entre las dunas de Merzouga"
+    },
+    "chrome": {
+      "crumb": "¿Cuántos días en el Sáhara?",
+      "imageAlts": {
+        "sahara-dune-trekking-merzouga": "Senderistas subiendo la cresta de una alta duna del Sáhara cerca de Merzouga",
+        "luxury-desert-camp-sunset-merzouga": "Tiendas de un campamento de lujo en el desierto al atardecer entre las dunas de Merzouga"
+      }
+    }
+  },
+  "camel-trekking": {
+    "title": "Trekking de camellos en Merzouga — Guía práctica",
+    "pageTitle": "Trekking de camellos en Merzouga — Paseos en camello por el Sáhara en Erg Chebbi",
+    "description": "Todo lo que necesitas saber antes de montar un camello hacia las dunas de Erg Chebbi cerca de Merzouga: cuándo ir, qué vestir, qué llevar y cómo funciona realmente una noche en el desierto.",
+    "heroAlt": "Silueta de un guía bereber dirigiendo camellos por una cresta de duna al atardecer en el Sáhara",
+    "intro": "Un paseo en camello hacia las dunas de Erg Chebbi es el corazón de cualquier visita a Merzouga. Esto es lo que ocurre realmente, cuánto dura y cómo prepararte para que tu paseo al atardecer sea relajado, no apresurado.",
+    "sections": [
+      {
+        "heading": "En qué consiste un trekking de camellos en Merzouga",
+        "paragraphs": [
+          "La mayoría de los paseos salen una hora antes del atardecer para cruzar la grava abierta entre el pueblo y las dunas y subir una cresta alta mientras la luz se vuelve naranja. Desde el borde de Erg Chebbi hasta un campamento desértico, el trayecto es de unos 50 a 70 minutos, avanzando despacio con paradas para fotos. A la vuelta, el paseo del amanecer sigue las mismas dunas en la luz tranquila de la mañana.",
+          "Montas un dromedario (camello de una joroba) guiado por un camellero local, un guía bereber de la zona de Merzouga. Los animales caminan en fila y siguen el terreno a su propio ritmo. A los principiantes les sorprende lo suave y sin prisa que es."
+        ],
+        "bullets": [
+          "Duración hasta el campamento: unos 50–70 minutos por trayecto",
+          "Ritmo diario: paseo al atardecer a la ida, al amanecer a la vuelta",
+          "Paso lento y constante, con paradas para fotos en las dunas",
+          "Quién guía: un camellero bereber local, no un agente de viajes"
+        ]
+      },
+      {
+        "heading": "Cuándo salir — mañana, atardecer o luna llena",
+        "paragraphs": [
+          "El paseo al atardecer es la elección clásica porque la luz es cálida y las dunas proyectan sombras largas. El paseo del amanecer es más silencioso, más fresco y suele ser el momento más fotogénico del viaje. Una noche de luna llena entre ambas es espectacular, aunque la luna nueva es mejor para ver las estrellas porque el cielo está más oscuro.",
+          "En verano la arena puede estar muy caliente, así que la mayoría de los guías prefieren las primeras horas de la mañana o la tarde. Alrededor del mediodía el calor aleja a la gente de las dunas abiertas."
+        ]
+      },
+      {
+        "heading": "Qué vestir y qué llevar",
+        "paragraphs": [
+          "La comodidad gana a la moda en un paseo en camello. Capas sueltas y transpirables te protegen del sol y del frescor de la noche desértica, y unos zapatos cerrados y cómodos facilitan subir y bajar. La protección solar — sombrero, gafas y crema de alto factor — importa incluso en invierno porque la luz es intensa. Un pañuelo ligero protege del viento y el polvo.",
+          "Lleva solo una pequeña bolsa de noche (muchos viajes transportan el equipaje principal por separado), más agua y tu cámara. Deja las cosas de valor. Las noches en el desierto son frías en invierno, así que mete una capa cálida aunque el día haya sido caluroso."
+        ],
+        "bullets": [
+          "Capas sueltas + capa cálida para la noche",
+          "Zapatos cerrados cómodos",
+          "Sombrero, gafas de sol y crema solar",
+          "Agua y bolsa pequeña; cámara a mano"
+        ]
+      },
+      {
+        "heading": "Cómo montar, bajar y viajar cómodo",
+        "paragraphs": [
+          "El camello se arrodilla para que subas con ayuda del camellero. Agárrate, inclínate un poco hacia atrás cuando se levante y deja que tu cuerpo siga el suave balanceo: las piernas rígidas se cansan rápido. Sigue las instrucciones del camellero y nunca te pongas directamente detrás del animal sin avisarlo.",
+          "Si dudas sobre tu movilidad, dínoslo antes de reservar. Podemos organizar un paseo más corto, un ritmo más lento o, donde convenga, una opción en 4x4 hasta las dunas para que todos disfruten del atardecer desde la arena."
+        ]
+      },
+      {
+        "heading": "Parejas, familias y viajeros mayores",
+        "paragraphs": [
+          "El paseo en camello conviene a casi todos, pero el balanceo, el paso de montar y el tiempo en las dunas no son para todo el mundo. Las familias con niños suelen encantarse, y los niños suelen ser los jinetes más entusiastas. Para viajeros mayores o con problemas de espalda, rodillas o equilibrio, adaptamos la experiencia: un paseo corto y suave hasta el campamento, o un 4x4 a un mirador de dunas en lugar de un trekking largo.",
+          "Cuéntanos con honestidad tu grupo al pedir presupuesto y daremos forma al día para que el desierto resulte accesible, no intimidante."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "¿Es seguro el paseo en camello para principiantes?",
+        "answer": "Sí. Los dromedarios son tranquilos y van guiados por un camellero local con experiencia. Te explican exactamente cómo montar, bajar y sentarte. Lo clave es el equilibrio al subir y escuchar al guía."
+      },
+      {
+        "question": "¿Cuánto dura el paseo en camello hasta un campamento?",
+        "answer": "Normalmente unos 50–70 minutos por trayecto desde el borde de Erg Chebbi cerca de Merzouga hasta el campamento, incluidas las paradas para fotos. Se pueden organizar rutas más cortas o largas."
+      },
+      {
+        "question": "¿Qué debo vestir en un paseo en camello al atardecer?",
+        "answer": "Capas sueltas y transpirables, zapatos cerrados cómodos, sombrero, gafas y crema solar. Lleva una capa más cálida porque las noches del desierto son frías, sobre todo en invierno."
+      },
+      {
+        "question": "¿Puedo llevar mi equipaje de noche en el camello?",
+        "answer": "Normalmente no la bolsa entera. La mayoría de los viajes transportan el equipaje principal por separado en vehículo y solo llevas una bolsa pequeña de noche en el paseo."
+      },
+      {
+        "question": "¿Y si no puedo montar en camello?",
+        "answer": "Podemos organizar un paseo más corto, un ritmo más lento o una ruta en 4x4 por las dunas para que igual disfrutes del atardecer desde la arena."
+      }
+    ],
+    "chrome": {
+      "crumb": "Trekking de camellos en Merzouga",
+      "imageAlts": {
+        "berber-camel-guide-sahara-merzouga": "Guía bereber dirigiendo camellos por las dunas del Sáhara cerca de Merzouga",
+        "sahara-dune-trekking-merzouga": "Senderistas subiendo la cresta de una alta duna del Sáhara cerca de Merzouga"
+      }
+    }
+  },
+  "best-time-to-visit": {
+    "title": "La mejor época para visitar Merzouga — Guía mes a mes",
+    "pageTitle": "Mejor época para visitar Merzouga — Cuándo ver el Sáhara",
+    "description": "Mes a mes, cuándo visitar Merzouga y Erg Chebbi — temperaturas, afluencia, tormentas de arena y los puntos dulces para una noche en el desierto del Sáhara.",
+    "heroAlt": "Luz del amanecer sobre las dunas de Erg Chebbi cerca de Merzouga",
+    "intro": "El desierto que rodea Merzouga está abierto todo el año, pero solo es realmente cómodo durante los meses más fríos. Aquí tienes cómo se siente cada época, para elegir bien el momento de tu noche en el Sáhara.",
+    "sections": [
+      {
+        "heading": "La respuesta corta",
+        "paragraphs": [
+          "Los mejores meses para Merzouga son, en líneas generales, de octubre a abril, cuando los días son cálidos y las noches frescas. En verano (junio-agosto) hace calor de día extremo que hace desagradables las dunas y el paseo en camello; en invierno (diciembre-febrero) hay días cómodos pero noches frías.",
+          "Para ver las estrellas funciona todo el año, pero para trekking y dormir en campamento, octubre-abril es la respuesta que recomiendan la mayoría de los guías locales."
+        ]
+      },
+      {
+        "heading": "Temporada de primavera (marzo-mayo)",
+        "paragraphs": [
+          "Los días se calientan rápido y los almendros y tamariscos florecen a lo largo del valle del Ziz. Las noches siguen siendo frescas para una hoguera. El sol de media tarde ya es fuerte, así que los paseos en camello son mejores temprano o tarde. Ventana popular entre los visitantes europeos; reserva con antelación."
+        ]
+      },
+      {
+        "heading": "Verano (junio-agosto) — evítalo para trekking",
+        "paragraphs": [
+          "Las temperaturas diurnas en las dunas superan con regularidad los 40 °C (104 °F). La mayoría de los tours cancela la actividad del mediodía y hasta los paseos en camello al atardecer pueden resultar agotadores hasta que la luz se apaga. Dormir en campamento es posible pero hace calor antes del amanecer. Solo recomendamos el verano a viajeros con un motivo concreto y alta tolerancia al calor; aun así ajustamos horarios y posición de las tiendas."
+        ]
+      },
+      {
+        "heading": "Temporada de otoño (septiembre-noviembre)",
+        "paragraphs": [
+          "Septiembre es el mes puente: el calor extremo se rompe, pero el desierto sigue muy cálido. En octubre los días son perfectos y las noches solo piden una capa ligera. Noviembre tiende al invierno, con mañanas más frescas. Octubre y abril son los meses más concurridos por una razón: también son el mejor equilibrio entre días cálidos y noches frescas."
+        ]
+      },
+      {
+        "heading": "Invierno (diciembre-febrero)",
+        "paragraphs": [
+          "Los días son suaves y perfectos para caminar por las dunas; las noches se vuelven realmente frías y pueden acercarse o bajar de cero sobre la arena abierta. Los campamentos de lujo añaden calefacción y mantas gruesas. El cielo está despejado y en calma, ideal para ver estrellas. Es nuestra temporada favorita."
+        ]
+      },
+      {
+        "heading": "Ramadán",
+        "paragraphs": [
+          "El Ramadán mueve el calendario cada año. Durante las horas de luz abren menos cafés y la energía del pueblo puede parecer más tranquila, aunque los campamentos desérticos siguen ofreciendo su programa nocturno completo tras la puesta del sol. No detiene los tours, pero pregunta si necesitas algo concreto sobre horarios y comidas."
+        ]
+      },
+      {
+        "heading": "Merzouga mes a mes",
+        "paragraphs": [
+          "Una imagen cualitativa del año en las dunas — sensación diurna, frío nocturno y qué implica para el trekking y las noches de campamento. Las temperaturas exactas varían de un año a otro, así que léelas como tendencias, no previsiones."
+        ],
+        "bullets": [
+          "Enero — Noches más frías, a menudo cerca de cero; días claros con luz magnífica. Capas cálidas esenciales.",
+          "Febrero — Noches frías; tardes más suaves. Empieza la flor del almendro. Ideal para caminar.",
+          "Marzo — Los días se calientan y las noches frescas. Posibles rachas de viento. Uno de los mejores meses para el trekking en camello.",
+          "Abril — Días cálidos, noches frescas, luz larga: un mes punta por algo. Se llenan los campamentos; reserva.",
+          "Mayo — Llega el calor del mediodía; mañanas y tardes agradables. El trekking pasa a temprano o tarde.",
+          "Junio — El calor sube rápido y se detiene la actividad del mediodía. Solo son cómodas las horas de mañana y atardecer.",
+          "Julio — El mes más caluroso: las dunas son duras de día y los campamentos se adaptan. Solo para alta tolerancia al calor.",
+          "Agosto — Sigue muy caluroso, remite solo un poco al final. Paseos al amanecer y descanso a la sombra.",
+          "Septiembre — El calor extremo se rompe poco a poco pero el desierto sigue cálido. Ventana tranquila antes de la cumbre otoñal.",
+          "Octubre — Vuelve el equilibrio ideal: días cálidos, noches con una capa ligera. Concurrido, reserva.",
+          "Noviembre — Mañanas frescas, días suaves, cielos claros. Estrellas magníficas y trekking cómodo.",
+          "Diciembre — Días suaves y soleados, noches que pueden acercarse a cero. Lleva capa cálida."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "¿Vale la pena visitar Merzouga en verano?",
+        "answer": "No para actividad en las dunas — el calor diurno supera con regularidad los 40 °C y el paseo en camello se vuelve desagradable. El verano solo merece la pena si tienes una razón concreta y toleras el calor sostenido."
+      },
+      {
+        "question": "¿Cuándo es la mejor época para el paseo en camello en Merzouga?",
+        "answer": "De octubre a abril, saliendo una hora antes del atardecer o al amanecer. La arena es cómoda y la luz es mejor en esas horas."
+      },
+      {
+        "question": "¿Las noches del desierto son de verdad frías en invierno?",
+        "answer": "Sí. En diciembre-febrero las temperaturas nocturnas en las dunas abiertas pueden acercarse a los 0 °C. Los campamentos de lujo ponen calefacción o mantas extra, pero lleva una capa cálida igualmente."
+      },
+      {
+        "question": "¿Afecta el Ramadán a los tours en Merzouga?",
+        "answer": "Los tours siguen funcionando con normalidad, aunque algunos servicios del pueblo abren más tarde. Las actividades de la noche, incluida la cena del campamento y los tambores, no se ven afectadas."
+      }
+    ],
+    "chrome": {
+      "crumb": "Mejor época para visitar Merzouga",
+      "imageAlts": {}
+    }
+  },
+  "what-to-pack": {
+    "title": "Qué llevar a Merzouga — Lista de equipaje para el desierto",
+    "pageTitle": "Qué llevar a Merzouga — Lista de equipaje para el desierto del Sáhara",
+    "description": "Una lista práctica de qué llevar a Merzouga y Erg Chebbi: capas, protección solar, calzado, equipo de cámara y pequeños lujos para una noche en el desierto.",
+    "heroAlt": "Vista panorámica sobre las dunas de Erg Chebbi bajo un cielo brillante",
+    "intro": "Haz la maleta para dos climas en un día: el sol caliente en las dunas y una noche desértica fresca, a veces fría. Aquí tienes una lista realista, no un cliché turístico.",
+    "sections": [
+      {
+        "heading": "Ropa: las capas son esenciales",
+        "paragraphs": [
+          "Piensa en dos capas: un top transpirable y pantalones sueltos para el día, más una capa más cálida para la tarde y la noche. El algodón o lino tipo desierto funciona; evita el vaquero con calor.",
+          "Unos térmicos o un polar es el artículo más útil tras la puesta del sol, sobre todo de octubre a marzo cuando las noches del desierto bajan mucho. Lleva sombrero para el sol y, si te quemas con facilidad, mangas largas."
+        ],
+        "bullets": [
+          "Camisa transpirable de manga larga + pantalones sueltos",
+          "Polar cálido o jersey ligero para la noche",
+          "Sombrero de sol + uno más cálido para la tarde"
+        ]
+      },
+      {
+        "heading": "Calzado y protección solar",
+        "paragraphs": [
+          "Los zapatos cerrados y cómodos son mejores que las sandalias en la arena caliente y al subir dunas. Unas botas de senderismo con agarre ayudan en la arena suelta. Gafas de sol y crema de alto factor importan incluso cuando no hace calor."
+        ],
+        "bullets": [
+          "Zapatos cerrados de senderismo o de arena",
+          "Gafas de sol (envolventes contra el polvo)",
+          "SPF 30+ y bálsamo labial"
+        ]
+      },
+      {
+        "heading": "Cámara y pequeños lujos",
+        "paragraphs": [
+          "Lleva una mochila pequeña, una botella de agua reutilizable y una batería externa. Para ver estrellas y el amanecer, una linterna frontal o pequeña es útil porque los campamentos apagan las luces tras medianoche. Un pañuelo protege del polvo en el camino a las dunas.",
+          "La mayoría sobrecarga con equipo de cámara — un teléfono y un objetivo ligero cubren casi todo. Lo que de verdad valorarás es una capa cálida y una batería cargada."
+        ]
+      },
+      {
+        "heading": "Qué NO llevar",
+        "paragraphs": [
+          "Equipaje pesado: si vas en tour, tus maletas principales suelen quedarse en el vehículo y solo llevas una bolsa pequeña de noche a las dunas. Joyas caras, objetos de valor y demasiada ropa: manténlo simple. Evita también cualquier cosa que dependa de un enchufe durante el paseo, porque estarás lejos del vehículo en la noche de campamento. Una linterna frontal y una batería externa son apuestas más seguras."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "¿Qué debo vestir en un paseo en camello al atardecer?",
+        "answer": "Capas sueltas, sombrero, gafas y crema solar, más una capa más cálida para después de la puesta del sol. Los zapatos cerrados cómodos facilitan montar más que las sandalias."
+      },
+      {
+        "question": "¿Necesito saco de dormir para el desierto?",
+        "answer": "Normalmente no — los campamentos dan mantas y colchones. Un saco es excesivo salvo que seas muy sensible al frío; una capa cálida dentro de un forro de saco es la alternativa más ligera."
+      },
+      {
+        "question": "¿Cuánto equipaje puedo llevar en el camello?",
+        "answer": "Solo una bolsa pequeña de noche. El equipaje principal suele quedarse con el vehículo y se transfiere aparte, así que prepara lo esencial para la noche por separado."
+      },
+      {
+        "question": "¿Es útil un pañuelo en el desierto?",
+        "answer": "Sí — contra el sol, el polvo y una brisa repentina de la tarde en las dunas."
+      }
+    ],
+    "chrome": {
+      "crumb": "Qué llevar a Merzouga",
+      "imageAlts": {}
+    }
+  }
+}

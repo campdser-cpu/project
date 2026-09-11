@@ -269,6 +269,26 @@ export const MERZOUGA_GUIDES: HubPage[] = [
           'Ramadan shifts the calendar each year. During daylight hours fewer cafes open and energy can feel quieter in town, though desert camps still serve their full evening programme after sunset. It does not stop tours, but ask if you need anything specific about timings and dining.',
         ],
       },
+      {
+        heading: 'Merzouga month by month',
+        paragraphs: [
+          'A qualitative picture of the year on the dunes — daytime feel, night-time cold, and what it means for trekking and camp nights. Exact temperatures vary year to year, so read these as tendencies, not forecasts.',
+        ],
+        bullets: [
+          'January — Coldest nights, often near freezing on the open sand; crisp, clear days with superb light. Warm layers are essential after sunset.',
+          'February — Nights still cold; afternoons turn milder. Almond blossom begins in the valleys on the route in. Excellent walking weather.',
+          'March — Days warm up properly while nights stay cool. Windy spells are possible. One of the finest months for camel trekking.',
+          'April — Warm days, cool nights, long light — a peak month for good reason. Camps fill up, so book ahead.',
+          'May — Midday heat arrives; mornings and evenings stay pleasant. Treks shift to early or late in the day.',
+          'June — The heat builds fast and midday dune activity stops. Only morning and sunset hours are comfortable.',
+          'July — The hottest month: the dunes are fierce by day and camps adjust schedules around the heat. Only for travellers with high heat tolerance.',
+          'August — Still extremely hot, easing only slightly late in the month. Sunrise treks and shaded midday rest are the rhythm.',
+          'September — The extreme heat gradually breaks but the desert stays very warm. A quieter window before the autumn peak.',
+          'October — The ideal balance returns: warm days, nights needing just a light layer. Busy — book ahead.',
+          'November — Cooler mornings, mild days, clear still skies. Superb stargazing and comfortable trekking.',
+          'December — Mild sunny days, nights that can dip near freezing. Luxury camps add heating and thick blankets; pack a warm layer regardless.',
+        ],
+      },
     ],
     faqs: [
       { question: 'Is Merzouga good to visit in summer?', answer: 'Not for dune activity — daytime heat regularly exceeds 40 °C and camel trekking becomes unpleasant. Summer is only worth it if you have a specific reason to travel then and can tolerate sustained heat.' },

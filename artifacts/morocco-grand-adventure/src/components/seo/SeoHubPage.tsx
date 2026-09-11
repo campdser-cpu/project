@@ -10,6 +10,7 @@ import { Layout } from '@/components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { contactInfo } from '@/data/content';
 import { getLocalizedTour, getLocalizedTours, getLocalizedDestination, getLocalizedDestinations } from '@/i18n/content';
+import { getLocalizedGuide, guideOverlayExists, guideImageAlt, guideCrumb } from '@/i18n/guides';
 import { StructuredData, buildBreadcrumb, buildFaqSchema } from '@/components/seo/StructuredData';
 import { MERZOUGA_GUIDES, COMPARISONS, TRAVEL_INFO, ALL_HUB_PAGES, type HubPage } from '@/data/seoHub';
 import { catalogImage } from '@/data/imageCatalog';
@@ -26,7 +27,8 @@ function pagePath(page: HubPage): string {
 // ── Public thin route components ─────────────────────────────────────────────
 export default function MerzougaGuideTopic() {
   const { slug } = useParams();
-  const page = MERZOUGA_GUIDES.find((p) => p.slug === slug);
+  const { lang } = useLanguage();
+  const page = getLocalizedGuide(slug ?? '', lang);
   if (!page) return <NotFound />;
   return <SeoHubPage page={page} />;
 }
@@ -50,12 +52,18 @@ export function SeoHubPage({ page }: { page: HubPage }) {
     const { lang, t } = useLanguage();
   const tours = getLocalizedTours(lang);
   const destinations = getLocalizedDestinations(lang);
+  const guideTitle = (s: string) => {
+    const over = page.kind === 'merzouga' && guideOverlayExists(lang, s)
+      ? getLocalizedGuide(s, lang)
+      : undefined;
+    return over?.title ?? ALL_HUB_PAGES.find((p) => p.slug === s)?.title ?? s;
+  };
   const bySlug = (s: string) => ALL_HUB_PAGES.find((p) => p.slug === s);
 
   const crumbs = [
     { name: t('nav_home'), path: '/' },
     page.kind === 'merzouga'
-      ? { name: 'Merzouga Travel Guide', path: '/merzouga-guide' }
+      ? { name: guideCrumb(lang, page.slug, t('mg_breadcrumb')), path: '/merzouga-guide' }
       : page.kind === 'comparison'
         ? { name: 'Tour comparisons', path: '/' }
         : { name: 'Travel information', path: '/travel-info' },
@@ -74,7 +82,7 @@ export function SeoHubPage({ page }: { page: HubPage }) {
           src={img.src}
           srcSet={`${img.src.replace('.webp', '-480w.webp')} 480w, ${img.src.replace('.webp', '-768w.webp')} 768w, ${img.src} ${img.width}w`}
           sizes="(max-width: 768px) 100vw, 768px"
-          alt={img.alt}
+          alt={guideImageAlt(lang, page.slug, imageId, img.alt)}
           width={img.width}
           height={img.height}
           loading="lazy"
@@ -192,7 +200,7 @@ export function SeoHubPage({ page }: { page: HubPage }) {
           <section className="py-16 md:py-24 bg-background">
             <div className="container mx-auto px-4 max-w-6xl">
               <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-8">
-                Related tours
+                {t('related_tours')}
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                                 {page.tours
@@ -232,7 +240,7 @@ export function SeoHubPage({ page }: { page: HubPage }) {
           <section className="py-16 md:py-24 bg-muted border-t border-border">
             <div className="container mx-auto px-4 max-w-6xl">
               <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-8">
-                Related destinations
+                {t('related_destinations')}
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                                 {page.destinations
@@ -273,7 +281,7 @@ export function SeoHubPage({ page }: { page: HubPage }) {
           <section className="py-16 md:py-24 bg-background">
             <div className="container mx-auto px-4 max-w-5xl">
               <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-8">
-                Keep planning
+                {t('guide_keep_planning')}
               </h2>
               <ul className="space-y-3">
                                 {page.relatedGuides
@@ -286,7 +294,7 @@ export function SeoHubPage({ page }: { page: HubPage }) {
                         className="group flex items-center text-foreground hover:text-primary transition-colors"
                       >
                         <ChevronRight className="w-4 h-4 text-primary mr-2 group-hover:translate-x-1 transition-transform" />
-                        {p.title}
+                        {guideTitle(p.slug)}
                       </Link>
                     </li>
                   ))}
@@ -300,7 +308,7 @@ export function SeoHubPage({ page }: { page: HubPage }) {
           <section className="py-16 md:py-24 bg-muted border-t border-border">
             <div className="container mx-auto px-4 max-w-3xl">
               <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-10">
-                Frequently asked questions
+                {t('guide_faq_heading')}
               </h2>
               <div className="space-y-4">
                 {page.faqs.map((f, i) => (
@@ -324,7 +332,7 @@ export function SeoHubPage({ page }: { page: HubPage }) {
         {page.sources && page.sources.length > 0 && (
           <section className="py-12 bg-background border-t border-border">
             <div className="container mx-auto px-4 max-w-3xl">
-              <h2 className="font-serif text-xl text-foreground mb-3">Sources & further information</h2>
+              <h2 className="font-serif text-xl text-foreground mb-3">{t('guide_sources_heading')}</h2>
               <ul className="space-y-2">
                 {page.sources.map((sid) => {
                   const s = SOURCES[sid];
@@ -347,18 +355,17 @@ export function SeoHubPage({ page }: { page: HubPage }) {
         <section className="py-16 md:py-24 bg-gradient-to-t from-primary/10 via-primary/5 to-transparent border-t border-border">
           <div className="container mx-auto px-4 text-center max-w-3xl">
             <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-4">
-              Ready for the real Sahara?
+              {t('guide_cta_heading')}
             </h2>
             <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-              Talk to a local Merzouga guide and shape the desert night that suits your
-              group, pace and budget.
+              {t('guide_cta_sub')}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
                 href="/trip-builder"
                 className="bg-primary text-primary-foreground px-8 py-4 rounded-full font-bold tracking-wide hover:bg-primary/90 transition-all"
               >
-                Build my Morocco journey
+                {t('guide_cta_build')}
               </Link>
               <a
                 href={contactInfo.whatsapp}
@@ -366,7 +373,7 @@ export function SeoHubPage({ page }: { page: HubPage }) {
                 rel="noreferrer"
                 className="bg-[#25D366] text-white px-8 py-4 rounded-full font-bold flex items-center gap-2 hover:bg-[#1fb959] transition-all"
               >
-                <SiWhatsapp className="w-5 h-5" /> WhatsApp a local expert
+                <SiWhatsapp className="w-5 h-5" /> {t('guide_cta_whatsapp')}
               </a>
             </div>
           </div>

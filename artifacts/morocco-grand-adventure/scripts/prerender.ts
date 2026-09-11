@@ -51,9 +51,11 @@ import {
   type BlogPost,
 } from '../src/i18n/content';
 import { getRouteMeta, getLocalizedRouteMeta, BLOG_META, HOME_META, FR_HOME_META, ogImageAlt, withBrandSuffix, type RouteMeta } from '../src/components/seo/route-metadata';
+import { getLocalizedGuide, guideImageAlt, guideCrumb } from '../src/i18n/guides';
 import { buildTourSchema, buildDestinationSchema, buildBlogPostSchema, buildReviewSchema, buildFaqSchema, buildBreadcrumb } from '../src/components/seo/StructuredData';
 import { registerAllTranslations } from '../src/i18n/locales';
 import { registerAllContentOverlays } from '../src/i18n/content/overlays';
+import { registerAllGuideOverlays } from '../src/i18n/guides/overlays';
 
 // ── Constants ────────────────────────────────────────────────────────────────
 const BRAND = 'Morocco Grand Adventure';
@@ -809,12 +811,23 @@ function hubPathFor(page: HubPage): string {
   return `/travel-info/${page.slug}`;
 }
 
+function allHubsTitle(slug: string): string {
+  return [...MERZOUGA_GUIDES, ...COMPARISONS, ...TRAVEL_INFO].find((q) => q.slug === slug)?.title ?? slug;
+}
+
+function imageAltFor(slug: string, imageId: string, lang: Lang, fallback: string): string {
+  return guideImageAlt(lang, slug, imageId, fallback);
+}
+
 function buildHubPageContent(page: HubPage, lang: Lang): string {
-  let out = h1(page.title) + paragraph(page.intro);
+  const localized = page.kind === 'merzouga' ? (getLocalizedGuide(page.slug, lang) ?? page) : page;
+  const linkTitle = (s: string) =>
+    page.kind === 'merzouga' ? (getLocalizedGuide(s, lang)?.title ?? allHubsTitle(s)) : allHubsTitle(s);
+  let out = h1(localized.title) + paragraph(localized.intro);
   const figureAfter = new Map<number, string>();
-  (page.inlineImages ?? []).forEach((ii) => figureAfter.set(ii.after, ii.imageId));
-  for (let i = 0; i < page.sections.length; i++) {
-    const sec = page.sections[i];
+  (localized.inlineImages ?? []).forEach((ii) => figureAfter.set(ii.after, ii.imageId));
+  for (let i = 0; i < localized.sections.length; i++) {
+    const sec = localized.sections[i];
     out += h2(sec.heading);
     for (const p of sec.paragraphs) out += paragraph(p);
     if (sec.bullets && sec.bullets.length) out += ul(sec.bullets);
@@ -822,7 +835,7 @@ function buildHubPageContent(page: HubPage, lang: Lang): string {
     if (imgId) {
       const img = catalogImage(imgId);
       if (img) {
-        out += `    <figure>\n      <img src="${img.src}" srcset="${img.src.replace('.webp', '-480w.webp')} 480w, ${img.src.replace('.webp', '-768w.webp')} 768w, ${img.src} ${img.width}w" sizes="(max-width: 768px) 100vw, 768px" alt="${escapeHtml(img.alt)}" width="${img.width}" height="${img.height}" loading="lazy" decoding="async">\n      <figcaption>${escapeHtml(img.caption)}</figcaption>\n    </figure>\n`;
+        out += `    <figure>\n      <img src="${img.src}" srcset="${img.src.replace('.webp', '-480w.webp')} 480w, ${img.src.replace('.webp', '-768w.webp')} 768w, ${img.src} ${img.width}w" sizes="(max-width: 768px) 100vw, 768px" alt="${escapeHtml(imageAltFor(page.slug, imgId, lang, img.alt))}" width="${img.width}" height="${img.height}" loading="lazy" decoding="async">\n      <figcaption>${escapeHtml(img.caption)}</figcaption>\n    </figure>\n`;
       }
     }
   }
@@ -835,25 +848,25 @@ function buildHubPageContent(page: HubPage, lang: Lang): string {
     table += '      </tbody>\n    </table>\n';
     out += `    <div class="table-wrap">\n${table}    </div>\n`;
   }
-  const relatedTours = page.tours.map((id) => getLocalizedTour(id, lang)).filter((t): t is NonNullable<typeof t> => Boolean(t)).map((t) => h2Link(`${SITE_URL}/${lang}/tours/${t.id}`, t.name) + paragraph(t.description ?? '')).join('');
-  if (relatedTours) out += h2('Related tours') + relatedTours;
-  const relatedDests = page.destinations.map((id) => getLocalizedDestination(id, lang)).filter((d): d is NonNullable<typeof d> => Boolean(d)).map((d) => h2Link(`${SITE_URL}/${lang}/destinations/${d.id}`, d.name) + paragraph(d.shortDesc)).join('');
-  if (relatedDests) out += h2('Related destinations') + relatedDests;
+  const relatedTours = localized.tours.map((id) => getLocalizedTour(id, lang)).filter((t): t is NonNullable<typeof t> => Boolean(t)).map((t) => h2Link(`${SITE_URL}/${lang}/tours/${t.id}`, t.name) + paragraph(t.description ?? '')).join('');
+  if (relatedTours) out += h2(tr(lang, 'related_tours')) + relatedTours;
+  const relatedDests = localized.destinations.map((id) => getLocalizedDestination(id, lang)).filter((d): d is NonNullable<typeof d> => Boolean(d)).map((d) => h2Link(`${SITE_URL}/${lang}/destinations/${d.id}`, d.name) + paragraph(d.shortDesc)).join('');
+  if (relatedDests) out += h2(tr(lang, 'related_destinations')) + relatedDests;
     const allHubs = [...MERZOUGA_GUIDES, ...COMPARISONS, ...TRAVEL_INFO];
-  const relatedGuideItems = page.relatedGuides.map((s) => {
+  const relatedGuideItems = localized.relatedGuides.map((s) => {
     const p = allHubs.find((q) => q.slug === s);
-    return p ? link(`${SITE_URL}/${lang}${hubPathFor(p)}`, p.title) : '';
+    return p ? link(`${SITE_URL}/${lang}${hubPathFor(p)}`, linkTitle(s)) : '';
   });
-  if (relatedGuideItems.length) out += h2('Keep planning') + ul(relatedGuideItems);
-  const faqs = faqBlock(page.faqs);
-  if (faqs) out += h2('Frequently asked questions') + faqs;
-  const pageSources = (page.sources ?? []).map((sid) => SOURCES[sid]).filter(Boolean);
+  if (relatedGuideItems.length) out += h2(tr(lang, 'guide_keep_planning')) + ul(relatedGuideItems);
+  const faqs = faqBlock(localized.faqs);
+  if (faqs) out += h2(tr(lang, 'guide_faq_heading')) + faqs;
+  const pageSources = (localized.sources ?? []).map((sid) => SOURCES[sid]).filter(Boolean);
   if (pageSources.length) {
-    out += h2('Sources & further information');
+    out += h2(tr(lang, 'guide_sources_heading'));
     out += ul(pageSources.map((s) => `<a href="${s.url}" rel="noopener noreferrer">${escapeHtml(s.title)}</a> — ${escapeHtml(s.publisher)}`));
   }
-  out += h2('Ready for the real Sahara?');
-  out += rawParagraph(`Talk to a local Merzouga guide and shape the desert night that suits your group, pace and budget. <a href="${SITE_URL}/${lang}/trip-builder">Build your Morocco journey</a> · <a href="${contactInfo.whatsapp}">WhatsApp a local expert</a>.`);
+  out += h2(tr(lang, 'guide_cta_heading'));
+  out += rawParagraph(`${escapeHtml(tr(lang, 'guide_cta_sub'))} <a href="${SITE_URL}/${lang}/trip-builder">${escapeHtml(tr(lang, 'guide_cta_build'))}</a> · <a href="${contactInfo.whatsapp}">${escapeHtml(tr(lang, 'guide_cta_whatsapp'))}</a>.`);
   return out;
 }
 
@@ -911,17 +924,21 @@ function buildRoutes(lang: Lang): RouteEntry[] {
     add(`/blog/${post.slug}`, `${lang}/blog/${post.slug}.html`, () => buildBlogArticleContent(post.slug, lang), meta ? (buildBlogPostSchema({ slug: post.slug, title: meta.title, description: meta.description, date: post.date, image: post.image }, lang) as Record<string, unknown>[]) : []);
   }
     for (const rest of Object.keys(EXPERIENCE_PAGE_ROUTES)) add(rest, `${lang}${rest}/index.html`, () => buildExperienceContent(rest, lang));
-  // Merzouga authority sub-pages + comparison pages (data-driven, English-authored).
+  // Merzouga authority sub-pages + comparison pages (hub copy localized via
+  // guide overlays; comparisons/travel-info stay canonical English).
   for (const page of MERZOUGA_GUIDES) {
     const rest = `/merzouga-guide/${page.slug}`;
-    add(rest, `${lang}${rest}/index.html`, () => buildHubPageContent(page, lang), [
-      buildBreadcrumb([
-        { name: tr(lang, 'nav_home'), path: '/' },
-        { name: 'Merzouga Travel Guide', path: '/merzouga-guide' },
-        { name: page.title, path: rest },
-      ], lang) as unknown as Record<string, unknown>,
-      buildFaqSchema(page.faqs) as unknown as Record<string, unknown>,
-    ]);
+    add(rest, `${lang}${rest}/index.html`, () => buildHubPageContent(page, lang), (() => {
+      const localized = getLocalizedGuide(page.slug, lang) ?? page;
+      return [
+        buildBreadcrumb([
+          { name: tr(lang, 'nav_home'), path: '/' },
+          { name: guideCrumb(lang, page.slug, tr(lang, 'mg_breadcrumb')), path: '/merzouga-guide' },
+          { name: localized.title, path: rest },
+        ], lang) as unknown as Record<string, unknown>,
+        buildFaqSchema(localized.faqs) as unknown as Record<string, unknown>,
+      ];
+    })());
   }
   for (const page of COMPARISONS) {
     const rest = `/comparisons/${page.slug}`;
@@ -1054,6 +1071,7 @@ function stripHomeHeroPreload(html: string): string {
 function main() {
   registerAllTranslations();
   registerAllContentOverlays();
+  registerAllGuideOverlays();
   if (!fs.existsSync(indexHtmlPath)) throw new Error(`[prerender] dist/index.html not found at ${indexHtmlPath}. Run \`pnpm run build\` (Vite build) before prerendering.`);
   const baseHtml = fs.readFileSync(indexHtmlPath, 'utf-8');
   let written = 0;

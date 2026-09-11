@@ -1,0 +1,108 @@
+// ─────────────────────────────────────────────────────────────────────────────
+// Guide chrome gap completions: the seven guide_* UI keys used by SeoHubPage
+// (section headings + conversion CTA). They intentionally live in the gap
+// layer — alongside other audited UI strings — so the generated locale files
+// remain untouched, and so every locale (including ones with partial
+// dictionaries) resolves a native label instead of leaking English.
+// ─────────────────────────────────────────────────────────────────────────────
+export const guideGaps = {
+  en: {
+    guide_keep_planning: 'Keep planning',
+    guide_faq_heading: 'Frequently asked questions',
+    guide_sources_heading: 'Sources & further information',
+    guide_cta_heading: 'Ready for the real Sahara?',
+    guide_cta_sub: 'Talk to a local Merzouga guide and shape the desert night that suits your group, pace and budget.',
+    guide_cta_build: 'Build my Morocco journey',
+    guide_cta_whatsapp: 'WhatsApp a local expert',
+  },
+  fr: {
+    guide_keep_planning: 'Continuez à préparer votre voyage',
+    guide_faq_heading: 'Questions fréquentes',
+    guide_sources_heading: 'Sources et informations complémentaires',
+    guide_cta_heading: 'Prêt pour le vrai Sahara ?',
+    guide_cta_sub: 'Parlez à un guide local de Merzouga et construisez la nuit dans le désert qui convient à votre groupe, votre rythme et votre budget.',
+    guide_cta_build: 'Composer mon voyage au Maroc',
+    guide_cta_whatsapp: 'WhatsApp avec un expert local',
+  },
+  es: {
+    guide_keep_planning: 'Sigue planificando tu viaje',
+    guide_faq_heading: 'Preguntas frecuentes',
+    guide_sources_heading: 'Fuentes e información adicional',
+    guide_cta_heading: '¿Listo para el verdadero Sáhara?',
+    guide_cta_sub: 'Habla con un guía local de Merzouga y diseña la noche en el desierto que mejor se adapte a tu grupo, tu ritmo y tu presupuesto.',
+    guide_cta_build: 'Diseñar mi viaje a Marruecos',
+    guide_cta_whatsapp: 'WhatsApp con un experto local',
+  },
+  it: {
+    guide_keep_planning: 'Continua a pianificare il tuo viaggio',
+    guide_faq_heading: 'Domande frequenti',
+    guide_sources_heading: 'Fonti e ulteriori informazioni',
+    guide_cta_heading: 'Pronto per il vero Sahara?',
+    guide_cta_sub: 'Parla con una guida locale di Merzouga e costruisci la notte nel deserto adatta al tuo gruppo, al tuo ritmo e al tuo budget.',
+    guide_cta_build: 'Crea il mio viaggio in Marocco',
+    guide_cta_whatsapp: 'WhatsApp con un esperto locale',
+  },
+  de: {
+    guide_keep_planning: 'Weiter planen',
+    guide_faq_heading: 'Häufige Fragen',
+    guide_sources_heading: 'Quellen & weitere Informationen',
+    guide_cta_heading: 'Bereit für die echte Sahara?',
+    guide_cta_sub: 'Sprich mit einem lokalen Guide aus Merzouga und gestalte die Wüstennacht, die zu deiner Gruppe, deinem Tempo und deinem Budget passt.',
+    guide_cta_build: 'Meine Marokko-Reise planen',
+    guide_cta_whatsapp: 'WhatsApp mit einem lokalen Experten',
+  },
+  nl: {
+    guide_keep_planning: 'Blijf je reis plannen',
+    guide_faq_heading: 'Veelgestelde vragen',
+    guide_sources_heading: 'Bronnen & meer informatie',
+    guide_cta_heading: 'Klaar voor de echte Sahara?',
+    guide_cta_sub: 'Praat met een lokale gids uit Merzouga en stel de woestijnnacht samen die past bij je groep, je tempo en je budget.',
+    guide_cta_build: 'Stel mijn Marokko-reis samen',
+    guide_cta_whatsapp: 'WhatsApp met een lokale expert',
+  },
+  pt: {
+    guide_keep_planning: 'Continue a planear a sua viagem',
+    guide_faq_heading: 'Perguntas frequentes',
+    guide_sources_heading: 'Fontes e informações adicionais',
+    guide_cta_heading: 'Pronto para o verdadeiro Saara?',
+    guide_cta_sub: 'Fale com um guia local de Merzouga e crie a noite no deserto ideal para o seu grupo, ritmo e orçamento.',
+    guide_cta_build: 'Criar a minha viagem a Marrocos',
+    guide_cta_whatsapp: 'WhatsApp com um especialista local',
+  },
+  zh: {
+    guide_keep_planning: '继续规划行程',
+    guide_faq_heading: '常见问题',
+    guide_sources_heading: '资料来源与更多信息',
+    guide_cta_heading: '准备好体验真正的撒哈拉了吗？',
+    guide_cta_sub: '与梅尔祖卡当地向导聊聊，打造适合您的团队、节奏和预算的沙漠之夜。',
+    guide_cta_build: '定制我的摩洛哥之旅',
+    guide_cta_whatsapp: 'WhatsApp 联系当地专家',
+  },
+  ja: {
+    guide_keep_planning: '旅行の計画を続ける',
+    guide_faq_heading: 'よくある質問',
+    guide_sources_heading: '情報源と関連情報',
+    guide_cta_heading: '本物のサハラへ出かけよう',
+    guide_cta_sub: 'メルズーガの現地ガイドに相談して、グループやペース、予算に合った砂漠の夜を作りましょう。',
+    guide_cta_build: 'モロッコ旅行をプランする',
+    guide_cta_whatsapp: '現地エキスパートにWhatsAppする',
+  },
+  ko: {
+    guide_keep_planning: '여행 계획 이어보기',
+    guide_faq_heading: '자주 묻는 질문',
+    guide_sources_heading: '출처 및 추가 정보',
+    guide_cta_heading: '진짜 사하라를 만날 준비되셨나요?',
+    guide_cta_sub: '메르주가 현지 가이드와 상담하고 그룹, 일정, 예산에 맞는 사막의 밤을 만들어 보세요.',
+    guide_cta_build: '나만의 모로코 여행 만들기',
+    guide_cta_whatsapp: '현지 전문가에게 WhatsApp 하기',
+  },
+  ar: {
+    guide_keep_planning: 'واصل التخطيط لرحلتك',
+    guide_faq_heading: 'الأسئلة الشائعة',
+    guide_sources_heading: 'المصادر ومعلومات إضافية',
+    guide_cta_heading: 'مستعد للصحراء الحقيقية؟',
+    guide_cta_sub: 'تحدث مع مرشد محلي من مرزوكة وصمّم ليلة الصحراء التي تناسب مجموعتك وإيقاعك وميزانيتك.',
+    guide_cta_build: 'صمّم رحلتي إلى المغرب',
+    guide_cta_whatsapp: 'واتساب مع خبير محلي',
+  },
+} as const;

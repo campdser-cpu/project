@@ -407,6 +407,14 @@ export type TranslationSet = {
   related_tours_hint: string;
   related_destinations: string;
   related_destinations_hint: string;
+  // ── Guide (seoHub) chrome ───────────────────────────────────────────────
+  guide_keep_planning: string;
+  guide_faq_heading: string;
+  guide_sources_heading: string;
+  guide_cta_heading: string;
+  guide_cta_sub: string;
+  guide_cta_build: string;
+  guide_cta_whatsapp: string;
   blog_post_1_title: string; blog_post_1_excerpt: string; blog_post_1_date: string; blog_post_1_read: string; blog_post_1_cat: string;
   blog_post_2_title: string; blog_post_2_excerpt: string; blog_post_2_date: string; blog_post_2_read: string; blog_post_2_cat: string;
   blog_post_3_title: string; blog_post_3_excerpt: string; blog_post_3_date: string; blog_post_3_read: string; blog_post_3_cat: string;
