@@ -1,0 +1,986 @@
+{
+ "MGA-001": {
+  "jpg": "/images/library/erg-chebbi-camel-trekking-sunset-morocco-mga-001.jpg",
+  "width": 1920,
+  "height": 1280,
+  "bytes": 108354,
+  "webp": [
+   {
+    "w": 480,
+    "url": "/images/library/srcset/erg-chebbi-camel-trekking-sunset-morocco-mga-001-480w.webp"
+   },
+   {
+    "w": 768,
+    "url": "/images/library/srcset/erg-chebbi-camel-trekking-sunset-morocco-mga-001-768w.webp"
+   },
+   {
+    "w": 1280,
+    "url": "/images/library/srcset/erg-chebbi-camel-trekking-sunset-morocco-mga-001-1280w.webp"
+   },
+   {
+    "w": 1920,
+    "url": "/images/library/srcset/erg-chebbi-camel-trekking-sunset-morocco-mga-001-1920w.webp"
+   }
+  ]
+ },
+ "MGA-002": {
+  "jpg": "/images/library/quad-biking-erg-chebbi-dunes-sunset-morocco-mga-002.jpg",
+  "width": 1278,
+  "height": 1704,
+  "bytes": 177622,
+  "webp": [
+   {
+    "w": 480,
+    "url": "/images/library/srcset/quad-biking-erg-chebbi-dunes-sunset-morocco-mga-002-480w.webp"
+   },
+   {
+    "w": 768,
+    "url": "/images/library/srcset/quad-biking-erg-chebbi-dunes-sunset-morocco-mga-002-768w.webp"
+   }
+  ]
+ },
+ "MGA-003": {
+  "jpg": "/images/library/snake-charmer-jemaa-el-fna-marrakech-mga-003.jpg",
+  "width": 1920,
+  "height": 1282,
+  "bytes": 330685,
+  "webp": [
+   {
+    "w": 480,
+    "url": "/images/library/srcset/snake-charmer-jemaa-el-fna-marrakech-mga-003-480w.webp"
+   },
+   {
+    "w": 768,
+    "url": "/images/library/srcset/snake-charmer-jemaa-el-fna-marrakech-mga-003-768w.webp"
+   },
+   {
+    "w": 1280,
+    "url": "/images/library/srcset/snake-charmer-jemaa-el-fna-marrakech-mga-003-1280w.webp"
+   },
+   {
+    "w": 1920,
+    "url": "/images/library/srcset/snake-charmer-jemaa-el-fna-marrakech-mga-003-1920w.webp"
+   }
+  ]
+ },
+ "MGA-004": {
+  "jpg": "/images/library/guerrab-water-sellers-koutoubia-marrakech-mga-004.jpg",
+  "width": 1920,
+  "height": 1277,
+  "bytes": 318424,
+  "webp": [
+   {
+    "w": 480,
+    "url": "/images/library/srcset/guerrab-water-sellers-koutoubia-marrakech-mga-004-480w.webp"
+   },
+   {
+    "w": 768,
+    "url": "/images/library/srcset/guerrab-water-sellers-koutoubia-marrakech-mga-004-768w.webp"
+   },
+   {
+    "w": 1280,
+    "url": "/images/library/srcset/guerrab-water-sellers-koutoubia-marrakech-mga-004-1280w.webp"
+   },
+   {
+    "w": 1920,
+    "url": "/images/library/srcset/guerrab-water-sellers-koutoubia-marrakech-mga-004-1920w.webp"
+   }
+  ]
+ },
+ "MGA-005": {
+  "jpg": "/images/library/luxury-desert-camp-entrance-erg-chebbi-mga-005.jpg",
+  "width": 1707,
+  "height": 2560,
+  "bytes": 702378,
+  "webp": [
+   {
+    "w": 480,
+    "url": "/images/library/srcset/luxury-desert-camp-entrance-erg-chebbi-mga-005-480w.webp"
+   },
+   {
+    "w": 768,
+    "url": "/images/library/srcset/luxury-desert-camp-entrance-erg-chebbi-mga-005-768w.webp"
+   },
+   {
+    "w": 1280,
+    "url": "/images/library/srcset/luxury-desert-camp-entrance-erg-chebbi-mga-005-1280w.webp"
+   },
+   {
+    "w": 1920,
+    "url": "/images/library/srcset/luxury-desert-camp-entrance-erg-chebbi-mga-005-1920w.webp"
+   }
+  ]
+ },
+ "MGA-006": {
+  "jpg": "/images/library/4x4-dune-bashing-sahara-morocco-mga-006.jpg",
+  "width": 1920,
+  "height": 1280,
+  "bytes": 183390,
+  "webp": [
+   {
+    "w": 480,
+    "url": "/images/library/srcset/4x4-dune-bashing-sahara-morocco-mga-006-480w.webp"
+   },
+   {
+    "w": 768,
+    "url": "/images/library/srcset/4x4-dune-bashing-sahara-morocco-mga-006-768w.webp"
+   },
+   {
+    "w": 1280,
+    "url": "/images/library/srcset/4x4-dune-bashing-sahara-morocco-mga-006-1280w.webp"
+   },
+   {
+    "w": 1920,
+    "url": "/images/library/srcset/4x4-dune-bashing-sahara-morocco-mga-006-1920w.webp"
+   }
+  ]
+ },
+ "MGA-007": {
+  "jpg": "/images/library/surfing-moroccan-atlantic-coast-mga-007.jpg",
+  "width": 1920,
+  "height": 1280,
+  "bytes": 315888,
+  "webp": [
+   {
+    "w": 480,
+    "url": "/images/library/srcset/surfing-moroccan-atlantic-coast-mga-007-480w.webp"
+   },
+   {
+    "w": 768,
+    "url": "/images/library/srcset/surfing-moroccan-atlantic-coast-mga-007-768w.webp"
+   },
+   {
+    "w": 1280,
+    "url": "/images/library/srcset/surfing-moroccan-atlantic-coast-mga-007-1280w.webp"
+   },
+   {
+    "w": 1920,
+    "url": "/images/library/srcset/surfing-moroccan-atlantic-coast-mga-007-1920w.webp"
+   }
+  ]
+ },
+ "MGA-008": {
+  "jpg": "/images/library/atv-erg-chebbi-dunes-golden-hour-morocco-mga-008.jpg",
+  "width": 1086,
+  "height": 1448,
+  "bytes": 202467,
+  "webp": [
+   {
+    "w": 480,
+    "url": "/images/library/srcset/atv-erg-chebbi-dunes-golden-hour-morocco-mga-008-480w.webp"
+   },
+   {
+    "w": 768,
+    "url": "/images/library/srcset/atv-erg-chebbi-dunes-golden-hour-morocco-mga-008-768w.webp"
+   }
+  ]
+ },
+ "MGA-009": {
+  "jpg": "/images/library/marrakech-souk-aerial-view-mga-009.jpg",
+  "width": 1707,
+  "height": 2560,
+  "bytes": 707827,
+  "webp": [
+   {
+    "w": 480,
+    "url": "/images/library/srcset/marrakech-souk-aerial-view-mga-009-480w.webp"
+   },
+   {
+    "w": 768,
+    "url": "/images/library/srcset/marrakech-souk-aerial-view-mga-009-768w.webp"
+   },
+   {
+    "w": 1280,
+    "url": "/images/library/srcset/marrakech-souk-aerial-view-mga-009-1280w.webp"
+   },
+   {
+    "w": 1920,
+    "url": "/images/library/srcset/marrakech-souk-aerial-view-mga-009-1920w.webp"
+   }
+  ]
+ },
+ "MGA-010": {
+  "jpg": "/images/library/quad-biking-sahara-dunes-morocco-mga-010.jpg",
+  "width": 1920,
+  "height": 1277,
+  "bytes": 333340,
+  "webp": [
+   {
+    "w": 480,
+    "url": "/images/library/srcset/quad-biking-sahara-dunes-morocco-mga-010-480w.webp"
+   },
+   {
+    "w": 768,
+    "url": "/images/library/srcset/quad-biking-sahara-dunes-morocco-mga-010-768w.webp"
+   },
+   {
+    "w": 1280,
+    "url": "/images/library/srcset/quad-biking-sahara-dunes-morocco-mga-010-1280w.webp"
+   },
+   {
+    "w": 1920,
+    "url": "/images/library/srcset/quad-biking-sahara-dunes-morocco-mga-010-1920w.webp"
+   }
+  ]
+ },
+ "MGA-011": {
+  "jpg": "/images/library/quad-bike-standing-erg-chebbi-morocco-mga-011.jpg",
+  "width": 946,
+  "height": 1261,
+  "bytes": 128381,
+  "webp": [
+   {
+    "w": 480,
+    "url": "/images/library/srcset/quad-bike-standing-erg-chebbi-morocco-mga-011-480w.webp"
+   },
+   {
+    "w": 768,
+    "url": "/images/library/srcset/quad-bike-standing-erg-chebbi-morocco-mga-011-768w.webp"
+   }
+  ]
+ },
+ "MGA-012": {
+  "jpg": "/images/library/surfers-golden-hour-moroccan-coast-mga-012.jpg",
+  "width": 1707,
+  "height": 2560,
+  "bytes": 660661,
+  "webp": [
+   {
+    "w": 480,
+    "url": "/images/library/srcset/surfers-golden-hour-moroccan-coast-mga-012-480w.webp"
+   },
+   {
+    "w": 768,
+    "url": "/images/library/srcset/surfers-golden-hour-moroccan-coast-mga-012-768w.webp"
+   },
+   {
+    "w": 1280,
+    "url": "/images/library/srcset/surfers-golden-hour-moroccan-coast-mga-012-1280w.webp"
+   },
+   {
+    "w": 1920,
+    "url": "/images/library/srcset/surfers-golden-hour-moroccan-coast-mga-012-1920w.webp"
+   }
+  ]
+ },
+ "MGA-013": {
+  "jpg": "/images/library/ben-youssef-madrasa-courtyard-marrakech-mga-013.jpg",
+  "width": 1920,
+  "height": 1419,
+  "bytes": 922332,
+  "webp": [
+   {
+    "w": 480,
+    "url": "/images/library/srcset/ben-youssef-madrasa-courtyard-marrakech-mga-013-480w.webp"
+   },
+   {
+    "w": 768,
+    "url": "/images/library/srcset/ben-youssef-madrasa-courtyard-marrakech-mga-013-768w.webp"
+   },
+   {
+    "w": 1280,
+    "url": "/images/library/srcset/ben-youssef-madrasa-courtyard-marrakech-mga-013-1280w.webp"
+   },
+   {
+    "w": 1920,
+    "url": "/images/library/srcset/ben-youssef-madrasa-courtyard-marrakech-mga-013-1920w.webp"
+   }
+  ]
+ },
+ "MGA-014": {
+  "jpg": "/images/library/moroccan-mint-tea-mga-014.jpg",
+  "width": 1702,
+  "height": 2560,
+  "bytes": 587838,
+  "webp": [
+   {
+    "w": 480,
+    "url": "/images/library/srcset/moroccan-mint-tea-mga-014-480w.webp"
+   },
+   {
+    "w": 768,
+    "url": "/images/library/srcset/moroccan-mint-tea-mga-014-768w.webp"
+   },
+   {
+    "w": 1280,
+    "url": "/images/library/srcset/moroccan-mint-tea-mga-014-1280w.webp"
+   },
+   {
+    "w": 1920,
+    "url": "/images/library/srcset/moroccan-mint-tea-mga-014-1920w.webp"
+   }
+  ]
+ },
+ "MGA-015": {
+  "jpg": "/images/library/blacksmith-traditional-medina-forge-morocco-mga-015.jpg",
+  "width": 1920,
+  "height": 1282,
+  "bytes": 477867,
+  "webp": [
+   {
+    "w": 480,
+    "url": "/images/library/srcset/blacksmith-traditional-medina-forge-morocco-mga-015-480w.webp"
+   },
+   {
+    "w": 768,
+    "url": "/images/library/srcset/blacksmith-traditional-medina-forge-morocco-mga-015-768w.webp"
+   },
+   {
+    "w": 1280,
+    "url": "/images/library/srcset/blacksmith-traditional-medina-forge-morocco-mga-015-1280w.webp"
+   },
+   {
+    "w": 1920,
+    "url": "/images/library/srcset/blacksmith-traditional-medina-forge-morocco-mga-015-1920w.webp"
+   }
+  ]
+ },
+ "MGA-016": {
+  "jpg": "/images/library/kasbah-gateway-high-atlas-road-morocco-mga-016.jpg",
+  "width": 1920,
+  "height": 1064,
+  "bytes": 230741,
+  "webp": [
+   {
+    "w": 480,
+    "url": "/images/library/srcset/kasbah-gateway-high-atlas-road-morocco-mga-016-480w.webp"
+   },
+   {
+    "w": 768,
+    "url": "/images/library/srcset/kasbah-gateway-high-atlas-road-morocco-mga-016-768w.webp"
+   },
+   {
+    "w": 1280,
+    "url": "/images/library/srcset/kasbah-gateway-high-atlas-road-morocco-mga-016-1280w.webp"
+   },
+   {
+    "w": 1920,
+    "url": "/images/library/srcset/kasbah-gateway-high-atlas-road-morocco-mga-016-1920w.webp"
+   }
+  ]
+ },
+ "MGA-017": {
+  "jpg": "/images/library/jemaa-el-fna-night-marrakech-mga-017.jpg",
+  "width": 1920,
+  "height": 1442,
+  "bytes": 417716,
+  "webp": [
+   {
+    "w": 480,
+    "url": "/images/library/srcset/jemaa-el-fna-night-marrakech-mga-017-480w.webp"
+   },
+   {
+    "w": 768,
+    "url": "/images/library/srcset/jemaa-el-fna-night-marrakech-mga-017-768w.webp"
+   },
+   {
+    "w": 1280,
+    "url": "/images/library/srcset/jemaa-el-fna-night-marrakech-mga-017-1280w.webp"
+   },
+   {
+    "w": 1920,
+    "url": "/images/library/srcset/jemaa-el-fna-night-marrakech-mga-017-1920w.webp"
+   }
+  ]
+ },
+ "MGA-018": {
+  "jpg": "/images/library/jemaa-el-fna-day-marrakech-mga-018.jpg",
+  "width": 1920,
+  "height": 1280,
+  "bytes": 403531,
+  "webp": [
+   {
+    "w": 480,
+    "url": "/images/library/srcset/jemaa-el-fna-day-marrakech-mga-018-480w.webp"
+   },
+   {
+    "w": 768,
+    "url": "/images/library/srcset/jemaa-el-fna-day-marrakech-mga-018-768w.webp"
+   },
+   {
+    "w": 1280,
+    "url": "/images/library/srcset/jemaa-el-fna-day-marrakech-mga-018-1280w.webp"
+   },
+   {
+    "w": 1920,
+    "url": "/images/library/srcset/jemaa-el-fna-day-marrakech-mga-018-1920w.webp"
+   }
+  ]
+ },
+ "MGA-019": {
+  "jpg": "/images/library/chefchaouen-blue-city-aerial-morocco-mga-019.jpg",
+  "width": 1376,
+  "height": 2133,
+  "bytes": 424015,
+  "webp": [
+   {
+    "w": 480,
+    "url": "/images/library/srcset/chefchaouen-blue-city-aerial-morocco-mga-019-480w.webp"
+   },
+   {
+    "w": 768,
+    "url": "/images/library/srcset/chefchaouen-blue-city-aerial-morocco-mga-019-768w.webp"
+   },
+   {
+    "w": 1280,
+    "url": "/images/library/srcset/chefchaouen-blue-city-aerial-morocco-mga-019-1280w.webp"
+   }
+  ]
+ },
+ "MGA-020": {
+  "jpg": "/images/library/leather-souk-archway-fes-medina-mga-020.jpg",
+  "width": 1920,
+  "height": 1280,
+  "bytes": 489910,
+  "webp": [
+   {
+    "w": 480,
+    "url": "/images/library/srcset/leather-souk-archway-fes-medina-mga-020-480w.webp"
+   },
+   {
+    "w": 768,
+    "url": "/images/library/srcset/leather-souk-archway-fes-medina-mga-020-768w.webp"
+   },
+   {
+    "w": 1280,
+    "url": "/images/library/srcset/leather-souk-archway-fes-medina-mga-020-1280w.webp"
+   },
+   {
+    "w": 1920,
+    "url": "/images/library/srcset/leather-souk-archway-fes-medina-mga-020-1920w.webp"
+   }
+  ]
+ },
+ "MGA-021": {
+  "jpg": "/images/library/kasbah-hotel-entrance-merzouga-morocco-mga-021.jpg",
+  "width": 1707,
+  "height": 2560,
+  "bytes": 613220,
+  "webp": [
+   {
+    "w": 480,
+    "url": "/images/library/srcset/kasbah-hotel-entrance-merzouga-morocco-mga-021-480w.webp"
+   },
+   {
+    "w": 768,
+    "url": "/images/library/srcset/kasbah-hotel-entrance-merzouga-morocco-mga-021-768w.webp"
+   },
+   {
+    "w": 1280,
+    "url": "/images/library/srcset/kasbah-hotel-entrance-merzouga-morocco-mga-021-1280w.webp"
+   },
+   {
+    "w": 1920,
+    "url": "/images/library/srcset/kasbah-hotel-entrance-merzouga-morocco-mga-021-1920w.webp"
+   }
+  ]
+ },
+ "MGA-022": {
+  "jpg": "/images/library/ornate-riad-courtyard-southern-morocco-mga-022.jpg",
+  "width": 1920,
+  "height": 2560,
+  "bytes": 820036,
+  "webp": [
+   {
+    "w": 480,
+    "url": "/images/library/srcset/ornate-riad-courtyard-southern-morocco-mga-022-480w.webp"
+   },
+   {
+    "w": 768,
+    "url": "/images/library/srcset/ornate-riad-courtyard-southern-morocco-mga-022-768w.webp"
+   },
+   {
+    "w": 1280,
+    "url": "/images/library/srcset/ornate-riad-courtyard-southern-morocco-mga-022-1280w.webp"
+   },
+   {
+    "w": 1920,
+    "url": "/images/library/srcset/ornate-riad-courtyard-southern-morocco-mga-022-1920w.webp"
+   }
+  ]
+ },
+ "MGA-024": {
+  "jpg": "/images/library/camel-caravan-erg-chebbi-day-morocco-mga-024.jpg",
+  "width": 1920,
+  "height": 1187,
+  "bytes": 101708,
+  "webp": [
+   {
+    "w": 480,
+    "url": "/images/library/srcset/camel-caravan-erg-chebbi-day-morocco-mga-024-480w.webp"
+   },
+   {
+    "w": 768,
+    "url": "/images/library/srcset/camel-caravan-erg-chebbi-day-morocco-mga-024-768w.webp"
+   },
+   {
+    "w": 1280,
+    "url": "/images/library/srcset/camel-caravan-erg-chebbi-day-morocco-mga-024-1280w.webp"
+   },
+   {
+    "w": 1920,
+    "url": "/images/library/srcset/camel-caravan-erg-chebbi-day-morocco-mga-024-1920w.webp"
+   }
+  ]
+ },
+ "MGA-025": {
+  "jpg": "/images/library/blue-studded-door-essaouira-morocco-mga-025.jpg",
+  "width": 1654,
+  "height": 2560,
+  "bytes": 408860,
+  "webp": [
+   {
+    "w": 480,
+    "url": "/images/library/srcset/blue-studded-door-essaouira-morocco-mga-025-480w.webp"
+   },
+   {
+    "w": 768,
+    "url": "/images/library/srcset/blue-studded-door-essaouira-morocco-mga-025-768w.webp"
+   },
+   {
+    "w": 1280,
+    "url": "/images/library/srcset/blue-studded-door-essaouira-morocco-mga-025-1280w.webp"
+   },
+   {
+    "w": 1920,
+    "url": "/images/library/srcset/blue-studded-door-essaouira-morocco-mga-025-1920w.webp"
+   }
+  ]
+ },
+ "MGA-026": {
+  "jpg": "/images/library/walking-todra-gorge-morocco-mga-026.jpg",
+  "width": 1920,
+  "height": 2560,
+  "bytes": 401826,
+  "webp": [
+   {
+    "w": 480,
+    "url": "/images/library/srcset/walking-todra-gorge-morocco-mga-026-480w.webp"
+   },
+   {
+    "w": 768,
+    "url": "/images/library/srcset/walking-todra-gorge-morocco-mga-026-768w.webp"
+   },
+   {
+    "w": 1280,
+    "url": "/images/library/srcset/walking-todra-gorge-morocco-mga-026-1280w.webp"
+   }
+  ]
+ },
+ "MGA-027": {
+  "jpg": "/images/library/leather-souk-tunnel-marrakech-medina-mga-027.jpg",
+  "width": 1920,
+  "height": 2560,
+  "bytes": 889830,
+  "webp": [
+   {
+    "w": 480,
+    "url": "/images/library/srcset/leather-souk-tunnel-marrakech-medina-mga-027-480w.webp"
+   },
+   {
+    "w": 768,
+    "url": "/images/library/srcset/leather-souk-tunnel-marrakech-medina-mga-027-768w.webp"
+   },
+   {
+    "w": 1280,
+    "url": "/images/library/srcset/leather-souk-tunnel-marrakech-medina-mga-027-1280w.webp"
+   },
+   {
+    "w": 1920,
+    "url": "/images/library/srcset/leather-souk-tunnel-marrakech-medina-mga-027-1920w.webp"
+   }
+  ]
+ },
+ "MGA-028": {
+  "jpg": "/images/library/erg-chebbi-dune-sea-morocco-mga-028.jpg",
+  "width": 1920,
+  "height": 1299,
+  "bytes": 487960,
+  "webp": [
+   {
+    "w": 480,
+    "url": "/images/library/srcset/erg-chebbi-dune-sea-morocco-mga-028-480w.webp"
+   },
+   {
+    "w": 768,
+    "url": "/images/library/srcset/erg-chebbi-dune-sea-morocco-mga-028-768w.webp"
+   },
+   {
+    "w": 1280,
+    "url": "/images/library/srcset/erg-chebbi-dune-sea-morocco-mga-028-1280w.webp"
+   },
+   {
+    "w": 1920,
+    "url": "/images/library/srcset/erg-chebbi-dune-sea-morocco-mga-028-1920w.webp"
+   }
+  ]
+ },
+ "MGA-029": {
+  "jpg": "/images/library/erg-chebbi-dunes-golden-hour-morocco-mga-029.jpg",
+  "width": 1707,
+  "height": 2560,
+  "bytes": 498475,
+  "webp": [
+   {
+    "w": 480,
+    "url": "/images/library/srcset/erg-chebbi-dunes-golden-hour-morocco-mga-029-480w.webp"
+   },
+   {
+    "w": 768,
+    "url": "/images/library/srcset/erg-chebbi-dunes-golden-hour-morocco-mga-029-768w.webp"
+   },
+   {
+    "w": 1280,
+    "url": "/images/library/srcset/erg-chebbi-dunes-golden-hour-morocco-mga-029-1280w.webp"
+   },
+   {
+    "w": 1920,
+    "url": "/images/library/srcset/erg-chebbi-dunes-golden-hour-morocco-mga-029-1920w.webp"
+   }
+  ]
+ },
+ "MGA-030": {
+  "jpg": "/images/library/guerrab-water-seller-portrait-marrakech-mga-030.jpg",
+  "width": 1707,
+  "height": 2560,
+  "bytes": 455650,
+  "webp": [
+   {
+    "w": 480,
+    "url": "/images/library/srcset/guerrab-water-seller-portrait-marrakech-mga-030-480w.webp"
+   },
+   {
+    "w": 768,
+    "url": "/images/library/srcset/guerrab-water-seller-portrait-marrakech-mga-030-768w.webp"
+   },
+   {
+    "w": 1280,
+    "url": "/images/library/srcset/guerrab-water-seller-portrait-marrakech-mga-030-1280w.webp"
+   },
+   {
+    "w": 1920,
+    "url": "/images/library/srcset/guerrab-water-seller-portrait-marrakech-mga-030-1920w.webp"
+   }
+  ]
+ },
+ "MGA-031": {
+  "jpg": "/images/library/couple-sunset-erg-chebbi-morocco-mga-031.jpg",
+  "width": 1920,
+  "height": 1280,
+  "bytes": 32437,
+  "webp": [
+   {
+    "w": 480,
+    "url": "/images/library/srcset/couple-sunset-erg-chebbi-morocco-mga-031-480w.webp"
+   },
+   {
+    "w": 768,
+    "url": "/images/library/srcset/couple-sunset-erg-chebbi-morocco-mga-031-768w.webp"
+   },
+   {
+    "w": 1280,
+    "url": "/images/library/srcset/couple-sunset-erg-chebbi-morocco-mga-031-1280w.webp"
+   },
+   {
+    "w": 1920,
+    "url": "/images/library/srcset/couple-sunset-erg-chebbi-morocco-mga-031-1920w.webp"
+   }
+  ]
+ },
+ "MGA-032": {
+  "jpg": "/images/library/camels-beach-agadir-morocco-mga-032.jpg",
+  "width": 1920,
+  "height": 1257,
+  "bytes": 629561,
+  "webp": [
+   {
+    "w": 480,
+    "url": "/images/library/srcset/camels-beach-agadir-morocco-mga-032-480w.webp"
+   },
+   {
+    "w": 768,
+    "url": "/images/library/srcset/camels-beach-agadir-morocco-mga-032-768w.webp"
+   },
+   {
+    "w": 1280,
+    "url": "/images/library/srcset/camels-beach-agadir-morocco-mga-032-1280w.webp"
+   },
+   {
+    "w": 1920,
+    "url": "/images/library/srcset/camels-beach-agadir-morocco-mga-032-1920w.webp"
+   }
+  ]
+ },
+ "MGA-033": {
+  "jpg": "/images/library/erg-chebbi-dunes-blue-hour-morocco-mga-033.jpg",
+  "width": 1920,
+  "height": 1280,
+  "bytes": 140342,
+  "webp": [
+   {
+    "w": 480,
+    "url": "/images/library/srcset/erg-chebbi-dunes-blue-hour-morocco-mga-033-480w.webp"
+   },
+   {
+    "w": 768,
+    "url": "/images/library/srcset/erg-chebbi-dunes-blue-hour-morocco-mga-033-768w.webp"
+   },
+   {
+    "w": 1280,
+    "url": "/images/library/srcset/erg-chebbi-dunes-blue-hour-morocco-mga-033-1280w.webp"
+   },
+   {
+    "w": 1920,
+    "url": "/images/library/srcset/erg-chebbi-dunes-blue-hour-morocco-mga-033-1920w.webp"
+   }
+  ]
+ },
+ "MGA-034": {
+  "jpg": "/images/library/date-palm-desert-camp-erg-chebbi-morocco-mga-034.jpg",
+  "width": 1707,
+  "height": 2560,
+  "bytes": 231540,
+  "webp": [
+   {
+    "w": 480,
+    "url": "/images/library/srcset/date-palm-desert-camp-erg-chebbi-morocco-mga-034-480w.webp"
+   },
+   {
+    "w": 768,
+    "url": "/images/library/srcset/date-palm-desert-camp-erg-chebbi-morocco-mga-034-768w.webp"
+   },
+   {
+    "w": 1280,
+    "url": "/images/library/srcset/date-palm-desert-camp-erg-chebbi-morocco-mga-034-1280w.webp"
+   },
+   {
+    "w": 1920,
+    "url": "/images/library/srcset/date-palm-desert-camp-erg-chebbi-morocco-mga-034-1920w.webp"
+   }
+  ]
+ },
+ "MGA-035": {
+  "jpg": "/images/library/ait-ben-haddou-ounila-river-reflection-morocco-mga-035.jpg",
+  "width": 1920,
+  "height": 2117,
+  "bytes": 630033,
+  "webp": [
+   {
+    "w": 480,
+    "url": "/images/library/srcset/ait-ben-haddou-ounila-river-reflection-morocco-mga-035-480w.webp"
+   },
+   {
+    "w": 768,
+    "url": "/images/library/srcset/ait-ben-haddou-ounila-river-reflection-morocco-mga-035-768w.webp"
+   },
+   {
+    "w": 1280,
+    "url": "/images/library/srcset/ait-ben-haddou-ounila-river-reflection-morocco-mga-035-1280w.webp"
+   },
+   {
+    "w": 1920,
+    "url": "/images/library/srcset/ait-ben-haddou-ounila-river-reflection-morocco-mga-035-1920w.webp"
+   }
+  ]
+ },
+ "MGA-036": {
+  "jpg": "/images/library/dades-valley-village-atlas-morocco-mga-036.jpg",
+  "width": 1920,
+  "height": 2400,
+  "bytes": 877444,
+  "webp": [
+   {
+    "w": 480,
+    "url": "/images/library/srcset/dades-valley-village-atlas-morocco-mga-036-480w.webp"
+   },
+   {
+    "w": 768,
+    "url": "/images/library/srcset/dades-valley-village-atlas-morocco-mga-036-768w.webp"
+   },
+   {
+    "w": 1280,
+    "url": "/images/library/srcset/dades-valley-village-atlas-morocco-mga-036-1280w.webp"
+   },
+   {
+    "w": 1920,
+    "url": "/images/library/srcset/dades-valley-village-atlas-morocco-mga-036-1920w.webp"
+   }
+  ]
+ },
+ "MGA-037": {
+  "jpg": "/images/library/ait-ben-haddou-rooftop-view-morocco-mga-037.jpg",
+  "width": 1707,
+  "height": 2560,
+  "bytes": 396003,
+  "webp": [
+   {
+    "w": 480,
+    "url": "/images/library/srcset/ait-ben-haddou-rooftop-view-morocco-mga-037-480w.webp"
+   },
+   {
+    "w": 768,
+    "url": "/images/library/srcset/ait-ben-haddou-rooftop-view-morocco-mga-037-768w.webp"
+   },
+   {
+    "w": 1280,
+    "url": "/images/library/srcset/ait-ben-haddou-rooftop-view-morocco-mga-037-1280w.webp"
+   },
+   {
+    "w": 1920,
+    "url": "/images/library/srcset/ait-ben-haddou-rooftop-view-morocco-mga-037-1920w.webp"
+   }
+  ]
+ },
+ "MGA-038": {
+  "jpg": "/images/library/souk-alley-fes-medina-mga-038.jpg",
+  "width": 1724,
+  "height": 2560,
+  "bytes": 668595,
+  "webp": [
+   {
+    "w": 480,
+    "url": "/images/library/srcset/souk-alley-fes-medina-mga-038-480w.webp"
+   },
+   {
+    "w": 768,
+    "url": "/images/library/srcset/souk-alley-fes-medina-mga-038-768w.webp"
+   },
+   {
+    "w": 1280,
+    "url": "/images/library/srcset/souk-alley-fes-medina-mga-038-1280w.webp"
+   },
+   {
+    "w": 1920,
+    "url": "/images/library/srcset/souk-alley-fes-medina-mga-038-1920w.webp"
+   }
+  ]
+ },
+ "MGA-039": {
+  "jpg": "/images/library/madrasa-courtyard-golden-hour-fes-mga-039.jpg",
+  "width": 1707,
+  "height": 2560,
+  "bytes": 1028822,
+  "webp": [
+   {
+    "w": 480,
+    "url": "/images/library/srcset/madrasa-courtyard-golden-hour-fes-mga-039-480w.webp"
+   },
+   {
+    "w": 768,
+    "url": "/images/library/srcset/madrasa-courtyard-golden-hour-fes-mga-039-768w.webp"
+   },
+   {
+    "w": 1280,
+    "url": "/images/library/srcset/madrasa-courtyard-golden-hour-fes-mga-039-1280w.webp"
+   },
+   {
+    "w": 1920,
+    "url": "/images/library/srcset/madrasa-courtyard-golden-hour-fes-mga-039-1920w.webp"
+   }
+  ]
+ },
+ "MGA-040": {
+  "jpg": "/images/library/dades-valley-oasis-overlook-morocco-mga-040.jpg",
+  "width": 1920,
+  "height": 1343,
+  "bytes": 806051,
+  "webp": [
+   {
+    "w": 480,
+    "url": "/images/library/srcset/dades-valley-oasis-overlook-morocco-mga-040-480w.webp"
+   },
+   {
+    "w": 768,
+    "url": "/images/library/srcset/dades-valley-oasis-overlook-morocco-mga-040-768w.webp"
+   },
+   {
+    "w": 1280,
+    "url": "/images/library/srcset/dades-valley-oasis-overlook-morocco-mga-040-1280w.webp"
+   },
+   {
+    "w": 1920,
+    "url": "/images/library/srcset/dades-valley-oasis-overlook-morocco-mga-040-1920w.webp"
+   }
+  ]
+ },
+ "MGA-041": {
+  "jpg": "/images/library/private-fleet-dunes-merzouga-morocco-mga-041.jpg",
+  "width": 1440,
+  "height": 1800,
+  "bytes": 88321,
+  "webp": [
+   {
+    "w": 480,
+    "url": "/images/library/srcset/private-fleet-dunes-merzouga-morocco-mga-041-480w.webp"
+   },
+   {
+    "w": 768,
+    "url": "/images/library/srcset/private-fleet-dunes-merzouga-morocco-mga-041-768w.webp"
+   },
+   {
+    "w": 1280,
+    "url": "/images/library/srcset/private-fleet-dunes-merzouga-morocco-mga-041-1280w.webp"
+   }
+  ]
+ },
+ "MGA-042": {
+  "jpg": "/images/library/land-cruiser-camel-caravan-erg-chebbi-mga-042.jpg",
+  "width": 1000,
+  "height": 453,
+  "bytes": 45550,
+  "webp": [
+   {
+    "w": 480,
+    "url": "/images/library/srcset/land-cruiser-camel-caravan-erg-chebbi-mga-042-480w.webp"
+   },
+   {
+    "w": 768,
+    "url": "/images/library/srcset/land-cruiser-camel-caravan-erg-chebbi-mga-042-768w.webp"
+   }
+  ]
+ },
+ "MGA-043": {
+  "jpg": "/images/library/friends-land-cruiser-hood-morocco-mga-043.jpg",
+  "width": 711,
+  "height": 711,
+  "bytes": 88946,
+  "webp": [
+   {
+    "w": 480,
+    "url": "/images/library/srcset/friends-land-cruiser-hood-morocco-mga-043-480w.webp"
+   }
+  ]
+ },
+ "MGA-044": {
+  "jpg": "/images/library/private-minivans-morocco-mga-044.jpg",
+  "width": 671,
+  "height": 446,
+  "bytes": 34184,
+  "webp": [
+   {
+    "w": 480,
+    "url": "/images/library/srcset/private-minivans-morocco-mga-044-480w.webp"
+   }
+  ]
+ },
+ "MGA-045": {
+  "jpg": "/images/library/land-cruiser-todra-gorge-entrance-mga-045.jpg",
+  "width": 1440,
+  "height": 1800,
+  "bytes": 434232,
+  "webp": [
+   {
+    "w": 480,
+    "url": "/images/library/srcset/land-cruiser-todra-gorge-entrance-mga-045-480w.webp"
+   },
+   {
+    "w": 768,
+    "url": "/images/library/srcset/land-cruiser-todra-gorge-entrance-mga-045-768w.webp"
+   },
+   {
+    "w": 1280,
+    "url": "/images/library/srcset/land-cruiser-todra-gorge-entrance-mga-045-1280w.webp"
+   }
+  ]
+ }
+}

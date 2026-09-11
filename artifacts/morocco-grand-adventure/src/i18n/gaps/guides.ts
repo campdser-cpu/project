@@ -14,6 +14,9 @@ export const guideGaps = {
     guide_cta_sub: 'Talk to a local Merzouga guide and shape the desert night that suits your group, pace and budget.',
     guide_cta_build: 'Build my Morocco journey',
     guide_cta_whatsapp: 'WhatsApp a local expert',
+    pwig_heading: 'Plan with our guides',
+    pwig_sub: 'Practical guides written by local Merzouga guides — trip length, seasons, camel trekking and packing.',
+    pwig_read: 'Read the guide',
   },
   fr: {
     guide_keep_planning: 'Continuez à préparer votre voyage',
@@ -23,6 +26,9 @@ export const guideGaps = {
     guide_cta_sub: 'Parlez à un guide local de Merzouga et construisez la nuit dans le désert qui convient à votre groupe, votre rythme et votre budget.',
     guide_cta_build: 'Composer mon voyage au Maroc',
     guide_cta_whatsapp: 'WhatsApp avec un expert local',
+    pwig_heading: 'Planifiez avec nos guides',
+    pwig_sub: 'Des guides pratiques rédigés par des guides locaux de Merzouga — durée, saisons, méharée et bagages.',
+    pwig_read: 'Lire le guide',
   },
   es: {
     guide_keep_planning: 'Sigue planificando tu viaje',
@@ -32,6 +38,9 @@ export const guideGaps = {
     guide_cta_sub: 'Habla con un guía local de Merzouga y diseña la noche en el desierto que mejor se adapte a tu grupo, tu ritmo y tu presupuesto.',
     guide_cta_build: 'Diseñar mi viaje a Marruecos',
     guide_cta_whatsapp: 'WhatsApp con un experto local',
+    pwig_heading: 'Planifica con nuestros guías',
+    pwig_sub: 'Guías prácticas escritas por guías locales de Merzouga: duración, estaciones, paseo en camello y equipaje.',
+    pwig_read: 'Leer la guía',
   },
   it: {
     guide_keep_planning: 'Continua a pianificare il tuo viaggio',
@@ -41,6 +50,9 @@ export const guideGaps = {
     guide_cta_sub: 'Parla con una guida locale di Merzouga e costruisci la notte nel deserto adatta al tuo gruppo, al tuo ritmo e al tuo budget.',
     guide_cta_build: 'Crea il mio viaggio in Marocco',
     guide_cta_whatsapp: 'WhatsApp con un esperto locale',
+    pwig_heading: 'Pianifica con le nostre guide',
+    pwig_sub: 'Guide pratiche scritte da guide locali di Merzouga: durata, stagioni, trekking in cammello e bagaglio.',
+    pwig_read: 'Leggi la guida',
   },
   de: {
     guide_keep_planning: 'Weiter planen',
@@ -50,6 +62,9 @@ export const guideGaps = {
     guide_cta_sub: 'Sprich mit einem lokalen Guide aus Merzouga und gestalte die Wüstennacht, die zu deiner Gruppe, deinem Tempo und deinem Budget passt.',
     guide_cta_build: 'Meine Marokko-Reise planen',
     guide_cta_whatsapp: 'WhatsApp mit einem lokalen Experten',
+    pwig_heading: 'Plane mit unseren Guides',
+    pwig_sub: 'Praktische Ratgeber von lokalen Guides aus Merzouga — Reisedauer, Jahreszeiten, Kameltrekking und Packliste.',
+    pwig_read: 'Ratgeber lesen',
   },
   nl: {
     guide_keep_planning: 'Blijf je reis plannen',
@@ -59,6 +74,9 @@ export const guideGaps = {
     guide_cta_sub: 'Praat met een lokale gids uit Merzouga en stel de woestijnnacht samen die past bij je groep, je tempo en je budget.',
     guide_cta_build: 'Stel mijn Marokko-reis samen',
     guide_cta_whatsapp: 'WhatsApp met een lokale expert',
+    pwig_heading: 'Plan met onze gidsen',
+    pwig_sub: 'Praktische gidsen van lokale gidsen uit Merzouga — reisduur, seizoenen, kamelentocht en paklijst.',
+    pwig_read: 'Lees de gids',
   },
   pt: {
     guide_keep_planning: 'Continue a planear a sua viagem',
@@ -68,6 +86,9 @@ export const guideGaps = {
     guide_cta_sub: 'Fale com um guia local de Merzouga e crie a noite no deserto ideal para o seu grupo, ritmo e orçamento.',
     guide_cta_build: 'Criar a minha viagem a Marrocos',
     guide_cta_whatsapp: 'WhatsApp com um especialista local',
+    pwig_heading: 'Planeie com os nossos guias',
+    pwig_sub: 'Guias práticos escritos por guias locais de Merzouga — duração, estações, passeio de camelo e bagagem.',
+    pwig_read: 'Ler o guia',
   },
   zh: {
     guide_keep_planning: '继续规划行程',
@@ -77,6 +98,9 @@ export const guideGaps = {
     guide_cta_sub: '与梅尔祖卡当地向导聊聊，打造适合您的团队、节奏和预算的沙漠之夜。',
     guide_cta_build: '定制我的摩洛哥之旅',
     guide_cta_whatsapp: 'WhatsApp 联系当地专家',
+    pwig_heading: '与我们的向导一起规划',
+    pwig_sub: '由梅尔祖卡当地向导撰写的实用指南——行程天数、季节、骆驼徒步与行李清单。',
+    pwig_read: '阅读指南',
   },
   ja: {
     guide_keep_planning: '旅行の計画を続ける',
@@ -86,6 +110,9 @@ export const guideGaps = {
     guide_cta_sub: 'メルズーガの現地ガイドに相談して、グループやペース、予算に合った砂漠の夜を作りましょう。',
     guide_cta_build: 'モロッコ旅行をプランする',
     guide_cta_whatsapp: '現地エキスパートにWhatsAppする',
+    pwig_heading: 'ガイドと一緒に計画する',
+    pwig_sub: 'メルズーガの現地ガイドが書いた実用ガイド——日数、季節、ラクダトレッキング、持ち物。',
+    pwig_read: 'ガイドを読む',
   },
   ko: {
     guide_keep_planning: '여행 계획 이어보기',
@@ -95,6 +122,9 @@ export const guideGaps = {
     guide_cta_sub: '메르주가 현지 가이드와 상담하고 그룹, 일정, 예산에 맞는 사막의 밤을 만들어 보세요.',
     guide_cta_build: '나만의 모로코 여행 만들기',
     guide_cta_whatsapp: '현지 전문가에게 WhatsApp 하기',
+    pwig_heading: '가이드와 함께 계획하기',
+    pwig_sub: '메르주가 현지 가이드가 집필한 실용 가이드 — 일정, 계절, 낙타 트레킹, 짐 꾸리기.',
+    pwig_read: '가이드 읽기',
   },
   ar: {
     guide_keep_planning: 'واصل التخطيط لرحلتك',
@@ -104,5 +134,8 @@ export const guideGaps = {
     guide_cta_sub: 'تحدث مع مرشد محلي من مرزوكة وصمّم ليلة الصحراء التي تناسب مجموعتك وإيقاعك وميزانيتك.',
     guide_cta_build: 'صمّم رحلتي إلى المغرب',
     guide_cta_whatsapp: 'واتساب مع خبير محلي',
+    pwig_heading: 'خطط مع مرشدينا',
+    pwig_sub: 'أدلة عملية كتبها مرشدون محليون من مرزوكة — المدة، المواسم، رحلات الجمال وقائمة الأمتعة.',
+    pwig_read: 'اقرأ الدليل',
   },
 } as const;

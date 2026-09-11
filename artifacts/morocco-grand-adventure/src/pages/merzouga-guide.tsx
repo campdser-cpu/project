@@ -1,4 +1,5 @@
 import { ExperiencePage, defaultTrustBadges } from '../components/ExperiencePage';
+import PlanWithGuides from '../components/PlanWithGuides';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function MerzougaGuide() {
@@ -30,6 +31,10 @@ export default function MerzougaGuide() {
         { question: t('mg_faq3_q'), answer: t('mg_faq3_a') },
         { question: t('mg_faq4_q'), answer: t('mg_faq4_a') },
       ]}
-    />
+    >
+      {/* Plan with our guides — mirrors the prerendered hub section so the
+          runtime SPA and the static HTML always show the same four cards. */}
+      <PlanWithGuides />
+    </ExperiencePage>
   );
 }

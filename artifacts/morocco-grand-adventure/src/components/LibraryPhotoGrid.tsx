@@ -1,4 +1,5 @@
 import type { PhotoAsset } from '@/data/photoLibrary';
+import { photoSrcSet } from '@/data/photoLibrary';
 
 /**
  * Official Photo Library grid — renders the ACTUAL photographs published from
@@ -32,6 +33,7 @@ export default function LibraryPhotoGrid({
           <div className={`relative overflow-hidden ${aspect}`}>
             <img
               src={photo.src ?? ''}
+              srcSet={photoSrcSet(photo)}
               alt={photo.alt}
               title={photo.title}
               width={photo.width}

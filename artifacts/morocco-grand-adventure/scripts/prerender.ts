@@ -38,7 +38,7 @@ import { MERZOUGA_GUIDES, COMPARISONS, TRAVEL_INFO, type HubPage } from '../src/
 import { tourDepthFor } from '../src/data/tourDepth';
 import { catalogImage, imagesForDestination, DEST_FOOD_IMAGE, type CatalogImage } from '../src/data/imageCatalog';
 import { SOURCES } from '../src/data/sources';
-import { publishablePhotosForContexts, publishableLibraryPhotos } from '../src/data/photoLibrary';
+import { publishablePhotosForContexts, publishableLibraryPhotos, photoSrcSet, type PhotoAsset } from '../src/data/photoLibrary';
 import { languages, t as translate } from '../src/i18n/index';
 import type { Lang } from '../src/i18n/index';
 import {
@@ -198,11 +198,13 @@ function catalogFigure(img: CatalogImage, sizes: string): string {
  * client: same src, alt, dimensions, loading="lazy". Restricted assets never
  * reach here (publishablePhotosForContexts / publishableLibraryPhotos filter them).
  */
-function libraryPhotoFigure(photo: { assetId: string; src: string | null; alt: string; description: string; width?: number; height?: number }): string {
+function libraryPhotoFigure(photo: PhotoAsset): string {
   if (!photo.src) return '';
   const w = photo.width ? ' width="' + photo.width + '"' : '';
   const h = photo.height ? ' height="' + photo.height + '"' : '';
-  return '    <figure>\n      <img src="' + photo.src + '" alt="' + escapeHtml(photo.alt) + '"' + w + h + ' loading="lazy" decoding="async" class="w-full h-full object-cover" />\n      <figcaption>' + escapeHtml(photo.description) + '</figcaption>\n    </figure>\n';
+  const srcset = photoSrcSet(photo);
+  const ss = srcset ? ' srcset="' + srcset + '" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"' : '';
+  return '    <figure>\n      <img src="' + photo.src + ss + '" alt="' + escapeHtml(photo.alt) + '"' + w + h + ' loading="lazy" decoding="async" class="w-full h-full object-cover" />\n      <figcaption>' + escapeHtml(photo.description) + '</figcaption>\n    </figure>\n';
 }
 function hrefsFor(rest: string): string {
   const clean = rest === '/' ? '' : rest;
@@ -272,6 +274,34 @@ function buildToursContent(lang: Lang): string {
     + h2(tr(lang, 'hub_by_departure_city'))
     + `    <ul class="prerendered-city-hubs">\n${cityLinks}\n    </ul>\n`
     + blocks;
+}
+
+/**
+ * "Plan with our guides" prerendered block for the Merzouga guide hub.
+ * Mirrors <PlanWithGuides> (src/components/PlanWithGuides.tsx): same four
+ * slugs, same order, same absolute /{lang}/merzouga-guide/{slug} hrefs, same
+ * localized titles/intros — so the static HTML and the hydrated SPA agree.
+ */
+export function buildPlanWithGuidesHtml(lang: Lang): string {
+  const slugs = ['how-many-days', 'camel-trekking', 'best-time-to-visit', 'what-to-pack'];
+  const cards = slugs
+    .map((slug) => {
+      const base = MERZOUGA_GUIDES.find((p) => p.slug === slug);
+      if (!base) return '';
+      const localized = getLocalizedGuide(slug, lang) ?? base;
+      const href = `${SITE_URL}/${lang}/merzouga-guide/${slug}`;
+      return `      <article class="prerendered-guide-card">\n`
+        + `        <h3><a href="${href}">${escapeHtml(localized.title)}</a></h3>\n`
+        + `        <p>${escapeHtml(localized.intro)}</p>\n`
+        + `        <p><a href="${href}" aria-label="${escapeHtml(localized.title)} — ${escapeHtml(tr(lang, 'pwig_read'))}">${escapeHtml(tr(lang, 'pwig_read'))}</a></p>\n`
+        + `      </article>\n`;
+    })
+    .join('');
+  return `<section class="prerendered-plan-with-guides">\n`
+    + `  <h2>${escapeHtml(tr(lang, 'pwig_heading'))}</h2>\n`
+    + `  <p>${escapeHtml(tr(lang, 'pwig_sub'))}</p>\n`
+    + `  <div class="prerendered-guide-cards">\n${cards}  </div>\n`
+    + `</section>\n`;
 }
 
 /** Prerendered markup for a departure-city hub (mirrors <TourCityHub>). */
@@ -799,7 +829,10 @@ function buildExperienceContent(rest: string, lang: Lang): string {
     <h2>${escapeHtml(tr(lang, 'nav_build_journey'))}</h2>
     <p>${escapeHtml(tr(lang, 'tb_sub'))}</p>
     <p><a href="${contactInfo.whatsapp}?text=${encodeURIComponent(tr(lang, 'tb_sub'))}">${escapeHtml(tr(lang, 'nav_book_whatsapp'))}</a></p>` : '';
-  return heading + intro + desertMoments + galleryLibPhotos + tBlocks + dBlocks + tripBuilderCta;
+  // Merzouga guide hub: "Plan with our guides" cards — mirrors <PlanWithGuides>
+  // so the static HTML contains the same four guide links as the hydrated SPA.
+  const planWithGuides = rest === '/merzouga-guide' ? buildPlanWithGuidesHtml(lang) : '';
+  return heading + intro + desertMoments + galleryLibPhotos + tBlocks + dBlocks + planWithGuides + tripBuilderCta;
 }
 
 // ── Data-driven hub / comparison pages (Merzouga guide + comparisons) ───────────
