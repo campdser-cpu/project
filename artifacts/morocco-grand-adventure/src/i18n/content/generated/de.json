@@ -907,6 +907,581 @@
       ],
       "category": "Familie",
       "description": "Marokko verzaubert Kinder und Erwachsene gleichermaßen. Diese Familienreise ist mit viel Feingefühl und einem angenehmen Tempo gestaltet, mit Erlebnissen, die jedes Alter begeistern — beim Kamelreiten in der Sahara, beim Erkunden uralter Kasbahs, beim Probieren von Streetfood in der Medina und beim Erlernen traditioneller Handwerkskunst von Berber-Handwerkern."
+    },
+    "marrakech-4-day": {
+      "name": "4-tägiger Marrakesch–Merzouga Sahara-Explorer",
+      "duration": "4 Tage / 3 Nächte",
+      "category": "Privat · Nur auf Anfrage",
+      "description": "Eine private viertägige Rundreise von Marrakesch in die Sahara und zurück. Sie erklimmen den Hohen Atlas, erkunden Aït Ben Haddou und die Kasbahs von Ouarzazate, durchqueren die Dades- und Todra-Schluchten und verbringen eine Nacht per Kamel im Erg Chebbi, bevor es über die Berge zurückgeht. Da für diese Reisedauer kein verifizierter öffentlicher Preis und keine feste Hotelliste veröffentlicht ist, wird die Tour auf Anfrage angeboten; Details werden rund um Ihre Termine bestätigt.",
+      "routeCaption": "Marrakesch → Hoher Atlas → Aït Ben Haddou → Dades & Todra → Merzouga & Erg Chebbi → zurück nach Marrakesch. Die klassische Sahara-Schleife in vier Tagen, mit mehr Zeit für die Wüste.",
+      "highlights": [
+        "Überquerung des Hohen Atlas über den Tizi-n'Tichka-Pass",
+        "Aït Ben Haddou und die Kasbahs von Ouarzazate",
+        "Dades- und Todra-Schluchten",
+        "Kamelritt bei Sonnenuntergang im Erg Chebbi",
+        "Eine Nacht im Sahara-Wüstencamp"
+      ],
+      "itineraryDays": [
+        {
+          "day": 1,
+          "title": "Marrakesch → Hoher Atlas → Aït Ben Haddou → Dades-Tal",
+          "desc": "Überqueren Sie den Tizi-n'Tichka-Pass über den Hohen Atlas mit weiten Ausblicken, besuchen Sie den berühmten Ksar von Aït Ben Haddou, halten Sie in Ouarzazate und Skoura und beenden Sie den Tag im eindrucksvollen Dades-Tal.",
+          "stops": [
+            "Tizi-n'Tichka",
+            "Aït Ben Haddou",
+            "Ouarzazate",
+            "Übernachtung: Dades-Tal"
+          ]
+        },
+        {
+          "day": 2,
+          "title": "Dades → Todra-Schlucht → Merzouga",
+          "desc": "Folgen Sie dem Dades-Canyon, spazieren Sie zwischen den steilen Wänden der Todra-Schlucht und fahren Sie dann weiter über die Wüstenebene nach Merzouga – für einen Kamelritt bei Sonnenuntergang in den Erg Chebbi und eine Nacht im Wüstencamp.",
+          "stops": [
+            "Dades-Schlucht",
+            "Todra-Schlucht",
+            "Kamelritt im Erg Chebbi",
+            "Nacht im Wüstencamp"
+          ]
+        },
+        {
+          "day": 3,
+          "title": "Merzouga → Rissani → Erfoud → Region Ouarzazate",
+          "desc": "Beobachten Sie den Sonnenaufgang über den Dünen, stöbern Sie auf dem Souk von Rissani und in Erfouds Fossilwerkstätten und fahren Sie dann westwärts an Skoura vorbei zur Übernachtung bei Ouarzazate.",
+          "stops": [
+            "Sonnenaufgang im Erg Chebbi",
+            "Rissani",
+            "Erfoud",
+            "Übernachtung: Raum Ouarzazate"
+          ]
+        },
+        {
+          "day": 4,
+          "title": "Ouarzazate → Aït Ben Haddou → Marrakesch",
+          "desc": "Kehren Sie über den Hohen Atlas zurück – mit Zeit für einen letzten Blick auf die Kasbah-Landschaft – und steigen Sie nach Marrakesch ab, wo die Tour endet.",
+          "stops": [
+            "Aït Ben Haddou",
+            "Tizi-n'Tichka",
+            "Ende: Marrakesch"
+          ]
+        }
+      ],
+      "included": [
+        "Privates, klimatisiertes Fahrzeug",
+        "Professioneller englischsprachiger Fahrer",
+        "Kraftstoff und Mautgebühren",
+        "Ausgewählte Riads, Gästehäuser und ein Wüstencamp gemäß bestätigtem Reiseverlauf",
+        "Frühstück und Abendessen gemäß Bestätigung",
+        "Kamelritt bei Sonnenuntergang und Nacht im Wüstencamp im Erg Chebbi"
+      ],
+      "excluded": [
+        "Internationale Flüge",
+        "Mittagessen und Getränke",
+        "Eintrittsgelder",
+        "Trinkgelder und persönliche Ausgaben"
+      ],
+      "faq": [
+        {
+          "question": "Ist diese Tour öffentlich bepreist?",
+          "answer": "Nein, sie ist nur auf Anfrage, da für eine viertägige Marrakesch-Merzouga-Rundreise derzeit kein verifizierter öffentlicher Preis veröffentlicht ist. Der Gesamtpreis wird rund um Ihre Termine bestätigt."
+        },
+        {
+          "question": "Wo endet die Tour?",
+          "answer": "Es ist eine Rundreise, die am vierten Tag nach Marrakesch zurückführen soll, wobei auch ein anderer Endpunkt als Einwegstrecke vereinbart werden kann."
+        },
+        {
+          "question": "Ist das Wüstencamp enthalten?",
+          "answer": "Ja, ein Kamelritt bei Sonnenuntergang und eine Nacht in einem Wüstencamp im Erg Chebbi sind Teil des vorgeschlagenen Reiseverlaufs und werden vor der Buchung bestätigt."
+        }
+      ],
+      "quoteOnly": true
+    },
+    "casablanca-3-day": {
+      "name": "3 Tage: Casablanca nach Fès über Rabat, Meknès & Volubilis",
+      "duration": "3 Tage / 2 Nächte",
+      "category": "Privat · Nur auf Anfrage",
+      "description": "Eine private Route auf Anfrage, die Casablanca, Marokkos Wirtschaftshauptstadt, über die Verwaltungshauptstadt Rabat, die blaue Stadt Chefchaouen, das kaiserliche Meknès und die römischen Ruinen von Volubilis mit Fès verbindet. Da kein verifizierter öffentlicher Preis und keine feste Hotelliste veröffentlicht sind, wird die Tour rund um Ihre Termine bestätigt, bevor Sie buchen.",
+      "routeCaption": "Casablanca → Rabat → Chefchaouen → Meknès & Volubilis → Fès. Eine kaiserliche Route durch den Norden mit Ziel Fès.",
+      "highlights": [
+        "Die Hassan-II.-Moschee an der Corniche von Casablanca",
+        "Rabat, die Atlantikhauptstadt, und ihre Kasbah",
+        "Die Kaiserstadt Meknès",
+        "Die römischen Ruinen von Volubilis",
+        "Ein geführter Tag in der Medina von Fès"
+      ],
+      "itineraryDays": [
+        {
+          "day": 1,
+          "title": "Casablanca → Rabat → Chefchaouen",
+          "desc": "Erleben Sie die Hassan-II.-Moschee und die Corniche in Casablanca, fahren Sie dann nordwärts über Rabat – dessen Atlantik-Kasbah und Hassan-Turm einen Stopp verdienen – bevor Sie die blaue Stadt Chefchaouen für die Nacht erreichen.",
+          "stops": [
+            "Hassan-II.-Moschee",
+            "Udayas-Kasbah in Rabat",
+            "Hassan-Turm",
+            "Übernachtung: Chefchaouen"
+          ]
+        },
+        {
+          "day": 2,
+          "title": "Chefchaouen → Meknès → Volubilis → Fès",
+          "desc": "Schlendern Sie am Morgen durch Chefchaouens blau getünchte Gassen, besuchen Sie dann das monumentale Bab-Mansour-Tor in Meknès und die römische Stätte Volubilis, bevor Sie in Fès für die Nacht ankommen.",
+          "stops": [
+            "Medina von Chefchaouen",
+            "Bab-Mansour-Tor",
+            "Volubilis",
+            "Übernachtung: Fès"
+          ]
+        },
+        {
+          "day": 3,
+          "title": "Geführtes Fès: Medina und Souks",
+          "desc": "Eine geführte Tour durch Fès: die Königstore, die mittelalterliche Medina rund um die Al-Qarawiyyin-Universität, die Gerberei Chouara und die Handwerker-Souks, wo die Tour endet.",
+          "stops": [
+            "Fès el-Bali",
+            "Al-Qarawiyyin-Universität",
+            "Gerberei Chouara",
+            "Ende: Fès"
+          ]
+        }
+      ],
+      "included": [
+        "Privates, klimatisiertes Fahrzeug",
+        "Professioneller englischsprachiger Fahrer",
+        "Kraftstoff und Mautgebühren",
+        "Ausgewählte Riads und Hotels gemäß bestätigtem Reiseverlauf",
+        "Frühstück gemäß Bestätigung",
+        "Offizieller lokaler Stadtführer in Fès"
+      ],
+      "excluded": [
+        "Internationale Flüge",
+        "Mittagessen und Getränke",
+        "Eintrittsgelder",
+        "Trinkgelder und persönliche Ausgaben"
+      ],
+      "faq": [
+        {
+          "question": "Ist dies eine Tour ab Casablanca zum Festpreis?",
+          "answer": "Nein, sie ist nur auf Anfrage, da für diese Route kein verifizierter öffentlicher Preis veröffentlicht ist. Zahlungen und Leistungen werden vor der Buchung bestätigt."
+        },
+        {
+          "question": "Wo endet die Tour?",
+          "answer": "Sie ist so angelegt, dass sie in Fès endet, wobei wir auch eine Rückkehr nach Casablanca oder einen Weitertransfer organisieren können."
+        },
+        {
+          "question": "Wird Chefchaouen besucht?",
+          "answer": "Ja, die Blaue Stadt ist der Nachtstopp am ersten Tag, sodass Ihnen dort ein Abend und ein Morgen bleiben."
+        }
+      ],
+      "quoteOnly": true
+    },
+    "casablanca-4-day": {
+      "name": "4 Tage: Casablanca nach Fès über Atlantikküste & Chefchaouen",
+      "duration": "4 Tage / 3 Nächte",
+      "category": "Privat · Nur auf Anfrage",
+      "description": "Eine entspannte private Route von Casablanca nach Fès entlang Marokkos Atlantik- und Nord-Highlights – in ruhigerem Tempo als eine kürzere Rundreise. Sie folgt der Küste an Rabat vorbei bis zur ummauerten Medina von Asilah, biegt landeinwärts in die Blaue Stadt Chefchaouen ab und führt weiter über das kaiserliche Meknès und die römische Stätte Volubilis bis nach Fès. Der Reiseverlauf wird rund um Ihre Termine auf Anfrage bestätigt.",
+      "routeCaption": "Casablanca → Rabat → Asilah → Chefchaouen → Meknès & Volubilis → Fès. Atlantik, Rif und Kaiserstädte in entspanntem Tempo.",
+      "highlights": [
+        "Die Hassan-II.-Moschee und die Corniche von Casablanca",
+        "Rabat und die Küstenroute nach Asilah",
+        "Die Blaue Stadt Chefchaouen",
+        "Das kaiserliche Meknès und die römischen Ruinen von Volubilis",
+        "Ein geführter Tag in Fès"
+      ],
+      "itineraryDays": [
+        {
+          "day": 1,
+          "title": "Casablanca → Rabat → Asilah",
+          "desc": "Bewundern Sie die Hassan-II.-Moschee und Casablancas Strandpromenade, halten Sie in Rabat für die Udayas-Kasbah und den Hassan-Turm und fahren Sie dann die Küste hinauf in die weiß getünchte Medina von Asilah für die Nacht.",
+          "stops": [
+            "Hassan-II.-Moschee",
+            "Rabat",
+            "Asilah",
+            "Übernachtung: Asilah"
+          ]
+        },
+        {
+          "day": 2,
+          "title": "Asilah → Chefchaouen",
+          "desc": "Schlendern Sie am Morgen über Asilahs kunstvolle Festungsmauern und durchqueren Sie dann den Rif zu den blau getünchten Straßen von Chefchaouen für einen entspannten Abend.",
+          "stops": [
+            "Medina von Asilah",
+            "Rif-Gebirge",
+            "Chefchaouen",
+            "Übernachtung: Chefchaouen"
+          ]
+        },
+        {
+          "day": 3,
+          "title": "Chefchaouen → Meknès → Volubilis → Fès",
+          "desc": "Genießen Sie das Morgenlicht in Chefchaouen, besuchen Sie dann Bab Mansour in Meknès und die römischen Ruinen von Volubilis, bevor Sie Fès für die Nacht erreichen.",
+          "stops": [
+            "Chefchaouen",
+            "Bab-Mansour-Tor",
+            "Volubilis",
+            "Übernachtung: Fès"
+          ]
+        },
+        {
+          "day": 4,
+          "title": "Geführtes Fès und Abreise",
+          "desc": "Eine geführte Tour durch Fès' Medina, Gerbereien und Souks, bevor die Tour endet – die Weiterreise wird nach Bedarf organisiert.",
+          "stops": [
+            "Fès el-Bali",
+            "Gerberei Chouara",
+            "Ende: Fès"
+          ]
+        }
+      ],
+      "included": [
+        "Privates, klimatisiertes Fahrzeug",
+        "Professioneller englischsprachiger Fahrer",
+        "Kraftstoff und Mautgebühren",
+        "Ausgewählte Riads und Hotels gemäß bestätigtem Reiseverlauf",
+        "Frühstück gemäß Bestätigung",
+        "Offizieller lokaler Stadtführer in Fès"
+      ],
+      "excluded": [
+        "Internationale Flüge",
+        "Mittagessen und Getränke",
+        "Eintrittsgelder",
+        "Trinkgelder und persönliche Ausgaben"
+      ],
+      "faq": [
+        {
+          "question": "Ist dies eine Tour zum Festpreis?",
+          "answer": "Nein, sie ist nur auf Anfrage, da für diese Route kein verifizierter öffentlicher Preis veröffentlicht ist. Der Gesamtpreis wird rund um Ihre Termine bestätigt."
+        },
+        {
+          "question": "Erreicht die Tour die Sahara?",
+          "answer": "Nein, diese Route konzentriert sich auf die Atlantikküste und die Kaiserstädte. Fragen Sie nach unseren Wüstentouren, wenn Sie weiter nach Süden möchten."
+        },
+        {
+          "question": "Was ist die letzte Stadt?",
+          "answer": "Die Tour ist so angelegt, dass sie in Fès endet; eine Rückkehr nach Casablanca oder eine Weiterreise wird auf Wunsch organisiert."
+        }
+      ],
+      "quoteOnly": true
+    },
+    "casablanca-5-day": {
+      "name": "5 Tage: Casablanca nach Merzouga & Fès – Wüstenroute",
+      "duration": "5 Tage / 4 Nächte",
+      "category": "Privat · Nur auf Anfrage",
+      "description": "Eine private Route von Casablanca ostwärts nach Fès und dann südwärts in die Sahara – mit einer Nacht in den Dünen des Erg Chebbi, bevor es nach Fès zurückgeht. Sie verbindet die Kaiserstädte und die römische Stätte Volubilis mit den Zedernwäldern des Mittleren Atlas, dem palmenreichen Ziz-Tal und einem Kamelritt bei Sonnenuntergang in Merzouga. Wird auf Anfrage angeboten; Details werden rund um Ihre Termine bestätigt.",
+      "routeCaption": "Casablanca → Fès → Meknès & Volubilis → Mittlerer Atlas → Merzouga & Erg Chebbi → Fès. Kaiserstädte und Sahara in einer Route.",
+      "highlights": [
+        "Die Hassan-II.-Moschee in Casablanca",
+        "Das kaiserliche Meknès, Volubilis und Fès",
+        "Ifrane und der zedernbewachsene Mittlere Atlas",
+        "Das Ziz-Tal und Merzouga",
+        "Kamelritt bei Sonnenuntergang und Nacht im Wüstencamp im Erg Chebbi"
+      ],
+      "itineraryDays": [
+        {
+          "day": 1,
+          "title": "Casablanca → Meknès → Volubilis → Fès",
+          "desc": "Verlassen Sie Casablanca nach der Hassan-II.-Moschee, besuchen Sie das kaiserliche Meknès und die römischen Ruinen von Volubilis und erreichen Sie Fès für die Nacht.",
+          "stops": [
+            "Hassan-II.-Moschee",
+            "Meknès",
+            "Volubilis",
+            "Übernachtung: Fès"
+          ]
+        },
+        {
+          "day": 2,
+          "title": "Fès → Ifrane → Mittlerer Atlas → Midelt → Merzouga",
+          "desc": "Durchqueren Sie die Zedernwälder des Mittleren Atlas über Ifrane, pausieren Sie in Midelt, folgen Sie den Oasen des Ziz-Tals und erreichen Sie Merzouga am Rand des Erg Chebbi.",
+          "stops": [
+            "Ifrane",
+            "Zedernwald",
+            "Midelt",
+            "Ziz-Tal",
+            "Übernachtung: Merzouga"
+          ]
+        },
+        {
+          "day": 3,
+          "title": "Erg Chebbi – Kamelritt und Wüstencamp",
+          "desc": "Ein Tag zwischen den Dünen, gekrönt von einem Kamelritt bei Sonnenuntergang in den Erg Chebbi und einer Nacht im Wüstencamp mit Abendessen und Musik.",
+          "stops": [
+            "Erg Chebbi",
+            "Kamelritt bei Sonnenuntergang",
+            "Nacht im Wüstencamp"
+          ]
+        },
+        {
+          "day": 4,
+          "title": "Merzouga → Rissani → Ziz-Tal → Region Midelt",
+          "desc": "Beobachten Sie den Sonnenaufgang über den Dünen, stöbern Sie auf dem Souk von Rissani und kehren Sie dann nordwärts durch das Ziz-Tal zurück zur Übernachtung in der Region Midelt.",
+          "stops": [
+            "Sonnenaufgang im Erg Chebbi",
+            "Rissani",
+            "Ziz-Tal",
+            "Übernachtung: Raum Midelt"
+          ]
+        },
+        {
+          "day": 5,
+          "title": "Midelt → Ifrane → Fès",
+          "desc": "Steigen Sie durch den Mittleren Atlas und Ifrane auf, um die Tour in Fès zu beenden, wo die Weiterreise organisiert werden kann.",
+          "stops": [
+            "Mittlerer Atlas",
+            "Ifrane",
+            "Ende: Fès"
+          ]
+        }
+      ],
+      "included": [
+        "Privates, klimatisiertes Fahrzeug",
+        "Professioneller englischsprachiger Fahrer",
+        "Kraftstoff und Mautgebühren",
+        "Ausgewählte Gästehäuser und ein Wüstencamp gemäß bestätigtem Reiseverlauf",
+        "Frühstück und Abendessen gemäß Bestätigung",
+        "Kamelritt bei Sonnenuntergang und Nacht im Wüstencamp im Erg Chebbi"
+      ],
+      "excluded": [
+        "Internationale Flüge",
+        "Mittagessen und Getränke",
+        "Eintrittsgelder",
+        "Trinkgelder und persönliche Ausgaben"
+      ],
+      "faq": [
+        {
+          "question": "Ist dies eine Casablanca-Tour zum Festpreis?",
+          "answer": "Nein, sie ist nur auf Anfrage, da für diese Route kein verifizierter öffentlicher Preis veröffentlicht ist. Zahlungen und Leistungen werden vor der Buchung bestätigt."
+        },
+        {
+          "question": "Wo endet die Route?",
+          "answer": "Sie ist so angelegt, dass sie am fünften Tag in Fès endet, wobei auch eine Rückkehr nach Casablanca organisiert werden kann."
+        },
+        {
+          "question": "Ist die Wüstennacht enthalten?",
+          "answer": "Ja, ein Kamelritt bei Sonnenuntergang und eine Nacht in einem Wüstencamp im Erg Chebbi sind Teil des vorgeschlagenen Reiseverlaufs."
+        }
+      ],
+      "quoteOnly": true
+    },
+    "casablanca-8-day": {
+      "name": "8 Tage: Große Marokko-Rundreise ab Casablanca (Kaiserstädte & Sahara)",
+      "duration": "8 Tage / 7 Nächte",
+      "category": "Privat · Nur auf Anfrage",
+      "description": "Eine private achttägige Rundreise ab und bis Casablanca, die Kaiserstädte, die Blaue Stadt, die Sahara und die Rote Stadt verbindet. Zu den Höhepunkten zählen Rabat, Chefchaouen, ein geführter Tag in Fès, eine Nacht in den Dünen des Erg Chebbi, die Todra- und Dades-Schluchten, der Ksar von Aït Ben Haddou und das Treiben von Marrakesch. Diese große Reiseroute wird auf Anfrage angeboten; jede Nacht und jede Leistung wird rund um Ihre Termine bestätigt.",
+      "routeCaption": "Casablanca → Rabat → Chefchaouen → Fès → Mittlerer Atlas → Merzouga → Dades & Todra → Marrakesch → Casablanca. Eine komplette Schleife durch Nord- und Südmarokko.",
+      "highlights": [
+        "Casablancas Hassan-II.-Moschee und Rabats Hauptstadt-Sehenswürdigkeiten",
+        "Chefchaouen, die Blaue Stadt, und Volubilis",
+        "Ein geführter Tag in Fès",
+        "Ifrane und der zedernbewachsene Mittlere Atlas",
+        "Merzouga, Erg Chebbi und eine Nacht im Wüstencamp",
+        "Todra- und Dades-Schluchten und die Kasbahs von Ouarzazate",
+        "Marrakeschs Paläste und der Jemaa el-Fnaa"
+      ],
+      "itineraryDays": [
+        {
+          "day": 1,
+          "title": "Casablanca → Rabat → Chefchaouen",
+          "desc": "Sehen Sie die Hassan-II.-Moschee und fahren Sie dann über Rabats Atlantik-Kasbah und den Hassan-Turm in die blau getünchten Straßen von Chefchaouen für die Nacht.",
+          "stops": [
+            "Hassan-II.-Moschee",
+            "Rabat",
+            "Chefchaouen",
+            "Übernachtung: Chefchaouen"
+          ]
+        },
+        {
+          "day": 2,
+          "title": "Chefchaouen → Volubilis → Meknès → Fès",
+          "desc": "Nehmen Sie Chefchaouens Morgenblau in sich auf, besuchen Sie die römischen Ruinen von Volubilis und das Bab-Mansour-Tor in Meknès und fahren Sie dann weiter nach Fès.",
+          "stops": [
+            "Chefchaouen",
+            "Volubilis",
+            "Meknès",
+            "Übernachtung: Fès"
+          ]
+        },
+        {
+          "day": 3,
+          "title": "Geführtes Fès – Medina, Gerbereien und Souks",
+          "desc": "Ein geführter Tag in Fès mit den Königstoren, Fès el-Bali rund um die Al-Qarawiyyin-Universität, der Gerberei Chouara und den Handwerker-Souks.",
+          "stops": [
+            "Fès el-Bali",
+            "Al-Qarawiyyin",
+            "Gerberei Chouara",
+            "Tore des Königspalasts"
+          ]
+        },
+        {
+          "day": 4,
+          "title": "Fès → Ifrane → Mittlerer Atlas → Ziz-Tal → Merzouga",
+          "desc": "Durchqueren Sie die Zedernwälder des Mittleren Atlas über Ifrane und die Palmenoasen des Ziz-Tals und erreichen Sie Merzouga für die Nacht.",
+          "stops": [
+            "Ifrane",
+            "Zedernwald",
+            "Ziz-Tal",
+            "Übernachtung: Merzouga"
+          ]
+        },
+        {
+          "day": 5,
+          "title": "Erg Chebbi – Kamelritt und Wüstencamp",
+          "desc": "Ein Tag an den großen Dünen, der mit einem Kamelritt bei Sonnenuntergang in den Erg Chebbi und einer Nacht im Wüstencamp endet.",
+          "stops": [
+            "Erg Chebbi",
+            "Kamelritt bei Sonnenuntergang",
+            "Nacht im Wüstencamp"
+          ]
+        },
+        {
+          "day": 6,
+          "title": "Merzouga → Rissani → Todra-Schlucht → Dades-Tal",
+          "desc": "Sonnenaufgang über den Dünen und der Souk von Rissani, dann die gewaltigen Wände der Todra-Schlucht und die Klippen des Dades-Tals für die Nacht.",
+          "stops": [
+            "Sonnenaufgang im Erg Chebbi",
+            "Rissani",
+            "Todra-Schlucht",
+            "Übernachtung: Dades-Tal"
+          ]
+        },
+        {
+          "day": 7,
+          "title": "Dades → Skoura → Aït Ben Haddou → Marrakesch",
+          "desc": "Passieren Sie die Oase Skoura und Ouarzazate, erkunden Sie den Ksar von Aït Ben Haddou, erklimmen Sie den Hohen Atlas und erreichen Sie Marrakesch am Abend.",
+          "stops": [
+            "Skoura",
+            "Aït Ben Haddou",
+            "Tizi-n'Tichka",
+            "Übernachtung: Marrakesch"
+          ]
+        },
+        {
+          "day": 8,
+          "title": "Morgen in Marrakesch → Casablanca",
+          "desc": "Ein letzter Morgen in Marrakesch, dann die Rückfahrt entlang der Autobahn nach Casablanca, um die Schleife zu schließen – oder weiter zum Flughafen, wie vereinbart.",
+          "stops": [
+            "Marrakesch",
+            "Küstenstraße",
+            "Ende: Casablanca"
+          ]
+        }
+      ],
+      "included": [
+        "Privates, klimatisiertes Fahrzeug",
+        "Professioneller englischsprachiger Fahrer",
+        "Kraftstoff und Mautgebühren",
+        "Ausgewählte Riads, Gästehäuser und ein Wüstencamp gemäß bestätigtem Reiseverlauf",
+        "Frühstück und Abendessen gemäß Bestätigung",
+        "Kamelritt bei Sonnenuntergang und Nacht im Wüstencamp im Erg Chebbi",
+        "Offizieller lokaler Stadtführer in Fès und Marrakesch"
+      ],
+      "excluded": [
+        "Internationale Flüge",
+        "Mittagessen und Getränke",
+        "Eintrittsgelder",
+        "Trinkgelder und persönliche Ausgaben"
+      ],
+      "faq": [
+        {
+          "question": "Ist dies eine Tour zum Festpreis?",
+          "answer": "Nein, sie ist nur auf Anfrage, da für diese große achttägige Rundreise kein verifizierter öffentlicher Preis veröffentlicht ist. Der Gesamtpreis wird rund um Ihre Termine bestätigt."
+        },
+        {
+          "question": "Wo beginnt und endet die Rundreise?",
+          "answer": "Sie beginnt und endet in Casablanca, was für Reisende praktisch ist, die in die Stadt ein- und aus ihr ausfliegen."
+        },
+        {
+          "question": "Sind die geführten Stadttage enthalten?",
+          "answer": "Ja, offizielle lokale Stadtführer für die Kulturtage in Fès und Marrakesch sind Teil des vorgeschlagenen Reiseverlaufs."
+        }
+      ],
+      "quoteOnly": true
+    },
+    "fes-4-day": {
+      "name": "4 Tage: Fès nach Merzouga – Sahara-Route",
+      "duration": "4 Tage / 3 Nächte",
+      "category": "Privat · Nur auf Anfrage",
+      "description": "Eine private Rundreise von Fès in die Sahara und zurück – in vier Tagen. Die Straße nach Süden durchquert die Zedernwälder und die Bergstadt Ifrane, steigt das palmenreiche Ziz-Tal hinab und erreicht Merzouga und die großen Dünen des Erg Chebbi für einen Kamelritt bei Sonnenuntergang und eine Nacht in der Wüste, bevor es nach Fès zurückgeht. Für diese Route existiert kein verifizierter öffentlicher Preis und keine feste Hotelliste, daher wird sie auf Anfrage angeboten; Details werden rund um Ihre Termine bestätigt.",
+      "routeCaption": "Fès → Ifrane → Mittlerer Atlas → Ziz-Tal → Merzouga & Erg Chebbi → zurück nach Fès. Die Sahara ab Fès in vier Tagen.",
+      "highlights": [
+        "Ifrane und der zedernbewachsene Mittlere Atlas",
+        "Der Palmenkorridor des Ziz-Tals",
+        "Merzouga und Erg Chebbi",
+        "Kamelritt bei Sonnenuntergang und Nacht im Wüstencamp",
+        "Souk von Rissani und Fossilien von Erfoud"
+      ],
+      "itineraryDays": [
+        {
+          "day": 1,
+          "title": "Fès → Ifrane → Mittlerer Atlas → Midelt → Ziz-Tal → Merzouga",
+          "desc": "Fahren Sie südwärts durch Ifrane und das Zedernland des Mittleren Atlas, pausieren Sie in Midelt, folgen Sie den Oasen des Ziz-Tals und erreichen Sie Merzouga für die Nacht.",
+          "stops": [
+            "Ifrane",
+            "Zedernwald",
+            "Midelt",
+            "Ziz-Tal",
+            "Übernachtung: Merzouga"
+          ]
+        },
+        {
+          "day": 2,
+          "title": "Merzouga und Erg Chebbi – Kamelritt und Wüstennacht",
+          "desc": "Erkunden Sie die Dünen und den Rand des Erg Chebbi und reiten Sie dann bei Sonnenuntergang auf einem Kamel in die Dünen – für eine Nacht im Wüstencamp mit Abendessen und Musik.",
+          "stops": [
+            "Erg Chebbi",
+            "Kamelritt bei Sonnenuntergang",
+            "Nacht im Wüstencamp"
+          ]
+        },
+        {
+          "day": 3,
+          "title": "Merzouga → Rissani → Erfoud → Region Midelt",
+          "desc": "Erleben Sie den Sonnenaufgang über den Dünen, besuchen Sie den Souk von Rissani und Erfouds Fossilwerkstätten und fahren Sie dann nordwärts durch das Ziz-Tal zur Übernachtung in der Region Midelt.",
+          "stops": [
+            "Sonnenaufgang im Erg Chebbi",
+            "Rissani",
+            "Erfoud",
+            "Übernachtung: Raum Midelt"
+          ]
+        },
+        {
+          "day": 4,
+          "title": "Midelt → Ifrane → Fès",
+          "desc": "Steigen Sie zurück durch den Mittleren Atlas und Ifrane auf, um in Fès zu enden, wo die Tour endet.",
+          "stops": [
+            "Ifrane",
+            "Mittlerer Atlas",
+            "Ende: Fès"
+          ]
+        }
+      ],
+      "included": [
+        "Privates, klimatisiertes Fahrzeug",
+        "Professioneller englischsprachiger Fahrer",
+        "Kraftstoff und Mautgebühren",
+        "Ausgewählte Gästehäuser und ein Wüstencamp gemäß bestätigtem Reiseverlauf",
+        "Frühstück und Abendessen gemäß Bestätigung",
+        "Kamelritt bei Sonnenuntergang und Nacht im Wüstencamp im Erg Chebbi"
+      ],
+      "excluded": [
+        "Internationale Flüge",
+        "Mittagessen und Getränke",
+        "Eintrittsgelder",
+        "Trinkgelder und persönliche Ausgaben"
+      ],
+      "faq": [
+        {
+          "question": "Ist dies eine Fès-Tour zum Festpreis?",
+          "answer": "Nein, sie ist nur auf Anfrage, da für diese viertägige Fès-Sahara-Route kein verifizierter öffentlicher Preis veröffentlicht ist. Zahlungen und Leistungen werden vor der Buchung bestätigt."
+        },
+        {
+          "question": "Ist Fès mit der Merzouga-Route verbunden?",
+          "answer": "Ja. Das marokkanische Fremdenverkehrsamt stellt Fès als Tor zur Sahara dar und dokumentiert die Verbindung Fès–Errachidia–Midelt–Merzouga."
+        },
+        {
+          "question": "Kehrt die Reise nach Fès zurück?",
+          "answer": "Die Standardroute ist eine Rundreise, die in Fès endet, wobei in Ihrem Angebot auch ein anderer Endpunkt als Einwegstrecke vereinbart werden kann."
+        }
+      ],
+      "quoteOnly": true
     }
   }
 }
