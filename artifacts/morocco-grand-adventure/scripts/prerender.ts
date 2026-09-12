@@ -523,9 +523,9 @@ function buildTourDetailContent(id: string, lang: Lang): string {
   const guideLinkItems = depth.guideLinks
     .map((slug) => allHubsForDepth.find((q) => q.slug === slug))
     .filter((p): p is NonNullable<typeof p> => Boolean(p))
-    .map((p) => link(`${SITE_URL}/${lang}${hubPathFor(p)}`, p.title));
+    .map((p) => link(`${SITE_URL}/${lang}${hubPathFor(p)}`, getLocalizedGuide(p.slug, lang)?.title ?? p.title));
   const guideLinksBlock = guideLinkItems.length
-    ? h2('Plan with our guides') + ul(guideLinkItems) + paragraph('Practical details such as seasonal timing and packing are covered in the guides above; anything specific to your dates is confirmed before booking.')
+    ? h2(tr(lang, 'pwig_heading')) + ul(guideLinkItems) + paragraph(tr(lang, 'pwig_sub'))
     : '';
   const durationHubCrumb = departHub && hasDurationHub
     ? ` › ${link(`${SITE_URL}/${lang}/tours/from-${departHub.slug}/${tourDays}-days`, fmt(tr(lang, 'hub_dur_crumb'), { days: tourDays, city: tr(lang, `hub_${departHub.id}_name`) }))}`

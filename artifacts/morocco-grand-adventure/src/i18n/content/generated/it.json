@@ -491,7 +491,71 @@
         "Trekking in cammello al tramonto"
       ],
       "category": "Deserto e avventura",
-      "description": "La classica avventura marocchina condensata in tre giornate indimenticabili. Attraversate le montagne dell’Atlante, esplorate la kasbah più fotografata al mondo, dormite sotto le stelle del Sahara in un elegante campo tendato di lusso e salite in cammello al tramonto sulle dune dorate di Erg Chebbi."
+      "description": "La classica avventura marocchina condensata in tre giornate indimenticabili. Attraversate le montagne dell’Atlante, esplorate la kasbah più fotografata al mondo, dormite sotto le stelle del Sahara in un elegante campo tendato di lusso e salite in cammello al tramonto sulle dune dorate di Erg Chebbi.",
+      "routeCaption": "Marrakech → Alto Atlante → Aït Ben Haddou → Valle del Dades → Gole del Todra → Merzouga ed Erg Chebbi → Marrakech. La strada è parte dell’esperienza, non un semplice trasferimento.",
+      "itineraryDays": [
+        {
+          "title": "Marrakech → Alto Atlante → Aït Ben Haddou → Valle del Dades",
+          "desc": "Si lascia Marrakech al mattino e si attraversa l’Alto Atlante verso il Marocco meridionale. Sosta ad Aït Ben Haddou, lo storico ksar in terra cruda patrimonio UNESCO, poi si prosegue attraverso Ouarzazate e i paesaggi in continuo mutamento della valle del Dades per la prima notte.",
+          "stops": [
+            "Marrakech",
+            "Montagne dell’Alto Atlante",
+            "Aït Ben Haddou (UNESCO)",
+            "Ouarzazate",
+            "Valle del Dades"
+          ]
+        },
+        {
+          "title": "Valle del Dades → Gole del Todra → Rissani → Merzouga",
+          "desc": "Si continua verso est attraverso il pre-Sahara, con tempo per le gole del Todra prima di dirigersi verso Rissani e Merzouga. Nel tardo pomeriggio si entra nelle dune di Erg Chebbi per il trekking in cammello al tramonto, poi si vive l’esperienza del campo nel deserto e la cena a cielo aperto.",
+          "stops": [
+            "Valle del Dades",
+            "Gole del Todra",
+            "Zona di Rissani",
+            "Merzouga",
+            "Erg Chebbi",
+            "Trekking in cammello al tramonto",
+            "Campo nel deserto"
+          ]
+        },
+        {
+          "title": "Merzouga → Marocco orientale → Medio Atlante → Marrakech",
+          "desc": "Si parte all’alba sulle dune e si inizia il rientro a Marrakech. È la giornata di strada più lunga, quindi l’itinerario mantiene il focus su un rientro realistico invece di promettere una lunga lista di attrazioni corse in fretta. Chi desidera più tempo a Merzouga può prolungare il viaggio a quattro giorni o più.",
+          "stops": [
+            "Alba a Merzouga",
+            "Zona di Rissani / Tafilalet",
+            "Zona della valle dello Ziz",
+            "Medio Atlante",
+            "Marrakech"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Tre giorni bastano davvero da Marrakech a Merzouga?",
+          "answer": "Tre giorni sono il formato pratico più breve per questa rotta overland. Funziona se volete le tappe meridionali principali e una notte in campo nel Sahara, ma dovete aspettarvi giornate di viaggio lunghe. Se preferite un ritmo più lento o più tempo nelle dune, quattro giorni o più sono la scelta migliore."
+        },
+        {
+          "question": "Quanta strada devo aspettarmi?",
+          "answer": "È un lungo viaggio su strada, non un breve trasferimento. La rotta attraversa l’Alto Atlante e le valli meridionali prima di raggiungere Merzouga, per poi rientrare a Marrakech. Preferiamo spiegarlo con onestà, così potete scegliere il numero di giorni giusto per il vostro stile di viaggio."
+        },
+        {
+          "question": "Com’è la parte del Sahara del viaggio?",
+          "answer": "Si raggiungono Merzouga e la zona dunale di Erg Chebbi il secondo giorno, poi si entra nelle dune per l’esperienza in cammello al tramonto e una notte al campo nel deserto. L’allestimento esatto del campo e i dettagli delle attività vengono confermati con voi prima della prenotazione, non dati per scontati."
+        },
+        {
+          "question": "Qual è il periodo migliore per questo tour nel Sahara?",
+          "answer": "L’Ufficio Nazionale Marocchino del Turismo indica la primavera e l’autunno come stagioni particolarmente adatte per il Sahara meridionale. Il tour può essere pianificato tutto l’anno, ma il caldo estivo e le notti invernali sono aspetti importanti nella scelta delle date."
+        },
+        {
+          "question": "Si può prenotare adesso e pagare dopo?",
+          "answer": "Sì. Il primo passo è contattarci con le vostre date preferite e le dimensioni del gruppo, così possiamo confermare l’itinerario e le condizioni di pagamento. Non inviate pagamenti finché i dettagli della prenotazione concordata non sono chiari. Eventuali acconti o saldi vengono confermati con voi prima del pagamento."
+        },
+        {
+          "question": "I voli sono inclusi?",
+          "answer": "I voli internazionali non fanno parte del prezzo di questo tour. Non esiste un mese unico che garantisca il biglietto aereo più economico per ogni viaggiatore, perché i prezzi dipendono dal paese di partenza, dalla compagnia aerea e dalle date. Una volta scelte le date del tour, possiamo aiutarvi a valutare il piano di arrivo e partenza più pratico."
+        }
+      ]
     },
     "5-day-imperial-cities": {
       "name": "Città Imperiali & Deserto in 5 Giorni",
@@ -501,10 +565,116 @@
         "Fes el-Bali",
         "Città Blu di Chefchaouen",
         "Deserto del Sahara",
-        "Monti dell'Atlante"
+        "Monti dell'Atlante",
+        "Meknès e Volubilis"
       ],
       "category": "Culturale",
-      "description": "Lasciati avvolgere dall’atmosfera delle quattro città imperiali del Marocco — Marrakech, Meknès, Fes e la Città Blu di Chefchaouen — prima di proseguire verso sud per una notte sotto le stelle nel deserto del Sahara."
+      "description": "Lasciati avvolgere dall’atmosfera delle quattro città imperiali del Marocco — Marrakech, Meknès, Fes e la Città Blu di Chefchaouen — prima di proseguire verso sud per una notte sotto le stelle nel deserto del Sahara.",
+      "routeCaption": "Da Marrakech, oltre l’Alto Atlante fino alle dune di Erg Chebbi, poi verso nord attraverso le città imperiali di Fes e Meknès fino alla medina blu di Chefchaouen. Toccate qualsiasi fermata numerata per esplorarla.",
+      "included": [
+        "Veicolo privato climatizzato",
+        "Autista professionista di lingua inglese",
+        "Carburante",
+        "Campo nel deserto di lusso",
+        "Trekking in cammello a Erg Chebbi",
+        "Guida locale ufficiale a Fes",
+        "Notti in riad/kasbah-hotel secondo l’itinerario (valle del Dades, Fes, Chefchaouen)",
+        "1 notte in campo nel deserto di lusso",
+        "Colazioni quotidiane",
+        "Cene secondo l’itinerario",
+        "Prelievo e rientro in hotel"
+      ],
+      "excluded": [
+        "Voli internazionali",
+        "Pranzi",
+        "Bevande",
+        "Biglietti d'ingresso a monumenti e musei",
+        "Mance e gratifiche",
+        "Spese personali"
+      ],
+      "gallery": [
+        {
+          "caption": "Dune dorate del Sahara e un campo nel deserto di lusso sulla rotta per Merzouga"
+        }
+      ],
+      "itineraryDays": [
+        {
+          "title": "Marrakech → Alto Atlante → Aït Ben Haddou → Valle del Dades",
+          "desc": "Si parte da Marrakech al mattino e si attraversa l’Alto Atlante dal valico del Tizi n’Tichka, il valico stradale più alto del Nord Africa. Sosta al villaggio fortificato di Aït Ben Haddou, patrimonio UNESCO, poi si prosegue attraverso Ouarzazate e l’oasi di Skoura fino alla scenografica valle del Dades, con pernottamento in un kasbah-hotel o in un riad.",
+          "stops": [
+            "Montagne dell’Alto Atlante",
+            "Valico del Tizi n'Tichka",
+            "Aït Ben Haddou (UNESCO)",
+            "Ouarzazate",
+            "Oasi di Skoura",
+            "Pernottamento: Valle del Dades (Cena e Colazione)"
+          ]
+        },
+        {
+          "title": "Valle del Dades → Gole del Todra → Merzouga (Erg Chebbi)",
+          "desc": "Si ammira la tortuosa valle del Dades prima di raggiungere le imponenti gole del Todra. Si prosegue attraverso villaggi berberi e palmeti fino a Merzouga, all’orlo del Sahara, dove in sella ai cammelli si attraversano al tramonto le dune dorate di Erg Chebbi fino a un campo nel deserto di lusso — con cena, musica berbera dal vivo e un cielo pieno di stelle.",
+          "stops": [
+            "Valle del Dades",
+            "Gole del Todra",
+            "Rissani (facoltativo)",
+            "Dune di Erg Chebbi",
+            "Trekking in cammello al tramonto",
+            "Campo nel deserto di lusso (Cena e Colazione)"
+          ]
+        },
+        {
+          "title": "Merzouga → Valle dello Ziz → Midelt → Fes",
+          "desc": "Ci si sveglia per l’alba sulle dune prima di colazione a Merzouga. Si prosegue verso nord attraverso gli infiniti palmeti della valle dello Ziz, con sosta a Midelt per il pranzo, poi si superano le foreste di cedri del Medio Atlante e la città di montagna di Ifrane prima di arrivare alla città imperiale di Fes.",
+          "stops": [
+            "Alba su Erg Chebbi",
+            "Valle dello Ziz",
+            "Midelt",
+            "Foresta di cedri e scimmie berbere",
+            "Ifrane",
+            "Pernottamento: Fes (Colazione)"
+          ]
+        },
+        {
+          "title": "Visita guidata di Fes",
+          "desc": "Si scopre una delle città vive più antiche del mondo con una guida locale ufficiale. Si esplorano le porte del Palazzo Reale e la labirintica medina medievale di Fes el-Bali, che ospita l’Università al Quaraouiyine, la celebre conceria Chouara e vivaci souk e botteghe artigiane. La serata è libera per gustare Fes con i vostri tempi.",
+          "stops": [
+            "Porte del Palazzo Reale",
+            "Medina di Fes el-Bali",
+            "Università al Quaraouiyine",
+            "Conceria Chouara",
+            "Souk e botteghe della ceramica"
+          ]
+        },
+        {
+          "title": "Fes → Meknès → Volubilis → Chefchaouen",
+          "desc": "Si raggiunge la città imperiale di Meknès per ammirare la monumentale porta Bab Mansour e il Mausoleo di Moulay Ismail, poi si passeggia tra i ruderi romani di Volubilis, notevolmente conservati. Si prosegue fino alla celebre Città Blu di Chefchaouen, dove pomeriggio e sera sono liberi per esplorare le fotogeniche viuzze della medina tinte di azzurro.",
+          "stops": [
+            "Porta Bab Mansour",
+            "Mausoleo di Moulay Ismail",
+            "Ruderi romani di Volubilis (UNESCO)",
+            "Medina di Chefchaouen",
+            "Pernottamento: Chefchaouen"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "È un tour privato?",
+          "answer": "Sì — ogni partenza è interamente privata, per il solo vostro gruppo. Viaggiate con un autista di lingua inglese a voi dedicato e stabilite insieme il ritmo, senza sconosciuti che si uniscono al gruppo."
+        },
+        {
+          "question": "Com’è la sistemazione?",
+          "answer": "Riad, kasbah-hotel e hotel cittadini scelti con cura, con camere private per tutto il soggiorno — nella valle del Dades, a Fes e a Chefchaouen — più una notte in un campo tendato di lusso sulle dune di Erg Chebbi, raggiunto in cammello, con cena e musica berbera dal vivo."
+        },
+        {
+          "question": "Dove termina questo tour?",
+          "answer": "Il tour si conclude a Chefchaouen, la Città Blu, il quinto giorno dopo la visita di Meknès e Volubilis. Al momento della prenotazione possiamo organizzare il trasporto di proseguimento — per esempio verso Fes o il rientro a Marrakech."
+        },
+        {
+          "question": "Come confermo la prenotazione?",
+          "answer": "Scriveteci su WhatsApp o tramite il modulo di contatto per bloccare le vostre date e adatteremo i dettagli a voi. Un piccolo acconto garantisce il tour, con il saldo pagabile prima o all’inizio del viaggio."
+        }
+      ]
     },
     "7-day-imperial-cities-sahara-escape": {
       "name": "Escursione di 7 Giorni tra Città Imperiali e Sahara",
@@ -703,7 +873,196 @@
         "Trekking in cammello al tramonto"
       ],
       "category": "Luna di Miele",
-      "description": "Pensato in esclusiva per le coppie, questo itinerario per la luna di miele intreccia il romanticismo in ogni momento. Suite private in riad, una cena a lume di candela nel Sahara, un volo in mongolfiera sopra l’Atlante all’alba e un rituale di hammam per due — il Marocco non è mai stato così intimo."
+      "description": "Pensato in esclusiva per le coppie, questo itinerario per la luna di miele intreccia il romanticismo in ogni momento. Suite private in riad, una cena a lume di candela nel Sahara, un volo in mongolfiera sopra l’Atlante all’alba e un rituale di hammam per due — il Marocco non è mai stato così intimo.",
+      "routeCaption": "Un grande anello romantico — dai riad e dai giardini di Marrakech, oltre l’Alto Atlante fino alla kasbah di Aït Ben Haddou e alle gole del Dades e del Todra, poi le dune dorate di Erg Chebbi a Merzouga, verso nord fino alla città imperiale di Fes e rientro a Marrakech. Toccate qualsiasi fermata numerata per esplorarla.",
+      "itineraryDays": [
+        {
+          "title": "Arrivo a Marrakech — ci si accomoda nella Città Rossa",
+          "desc": "Il vostro autista privato vi accoglie all’aeroporto di Marrakech e vi accompagna a un tradizionale riad di lusso nel cuore della medina. Vi installate con i vostri tempi, poi uscite nell’atmosfera di Jemaa el-Fnaa e nel labirinto a lume di candela dei souk per una prima serata delicata nella Città Rossa.",
+          "stops": [
+            "Prelievo in aeroporto",
+            "Riad di lusso privato",
+            "Jemaa el-Fnaa",
+            "Prima serata nella medina"
+          ]
+        },
+        {
+          "title": "Marrakech in due — giardini, palazzi e souk",
+          "desc": "La giornata si apre con una romantica planata in mongolfiera sopra l’Atlante all’alba, poi si esplorano il giardino Majorelle dai toni cobalto e gli squisiti cortili del Palazzo della Bahia. Si vagano insieme i souk della medina prima di tornare al riad per una serata rilassata.",
+          "stops": [
+            "Mongolfiera all’alba (facoltativa)",
+            "Giardino Majorelle",
+            "Palazzo della Bahia",
+            "Medina e souk",
+            "Pernottamento: Marrakech"
+          ]
+        },
+        {
+          "title": "Alto Atlante → Aït Ben Haddou → Valle del Dades",
+          "desc": "Si lascia Marrakech e si attraversano le montagne dell’Alto Atlante dal drammatico valico del Tizi n’Tichka, il valico stradale più alto del Nord Africa. Sosta al ksar fortificato di Aït Ben Haddou, patrimonio UNESCO, si prosegue attraverso Ouarzazate e l’oasi di Skoura e ci si addentra nella valle del Dades per la prima notte sulla rotta del deserto.",
+          "stops": [
+            "Montagne dell’Alto Atlante",
+            "Valico del Tizi n'Tichka",
+            "Aït Ben Haddou (UNESCO)",
+            "Ouarzazate",
+            "Pernottamento: Valle del Dades"
+          ]
+        },
+        {
+          "title": "Valle del Dades → Gole del Todra → Merzouga",
+          "desc": "Si ammirano i tornanti tortuosi e le formazioni in roccia rossa della valle del Dades prima di raggiungere le imponenti gole del Todra, un canyon alto 300 metri. Si prosegue tra palmeti e villaggi berberi fino a Merzouga, all’orlo del Sahara, dove le dune dorate di Erg Chebbi appaiono all’orizzonte.",
+          "stops": [
+            "Punti panoramici della valle del Dades",
+            "Gole del Todra",
+            "Palmeti e villaggi berberi",
+            "Arrivo a Merzouga"
+          ]
+        },
+        {
+          "title": "Erg Chebbi — trekking in cammello al tramonto e una notte tra le dune",
+          "desc": "A dorso di cammello si attraversano al tramonto le dune dorate di Erg Chebbi, quando la sabbia si accende di ambra e il deserto tace. Si passa la notte in un campo privato di lusso nel deserto sotto una coltre di stelle, con cena servita attorno al falò — il cuore romantico della luna di miele.",
+          "stops": [
+            "Trekking in cammello al tramonto",
+            "Dune di Erg Chebbi",
+            "Campo privato di lusso nel deserto",
+            "Cena sotto le stelle"
+          ]
+        },
+        {
+          "title": "Una lenta mattinata nel deserto a Merzouga",
+          "desc": "Si sveglia per uno spettacolare alba sulle dune e si gusta una mattinata lenta e senza fretta a Erg Chebbi — guardando la luce muoversi sulla sabbia o condividendo il tè alla menta con i berberi del posto. Una seconda notte rilassata vicino alle dune permette di assaporare il silenzio del Sahara.",
+          "stops": [
+            "Alba sulle dune",
+            "Erg Chebbi",
+            "Tè berbero e ospitalità",
+            "Seconda notte a Merzouga"
+          ]
+        },
+        {
+          "title": "Merzouga → Valle dello Ziz → Fes",
+          "desc": "Si risale verso nord la valle dello Ziz e i suoi infiniti palmeti, con sosta a Midelt per il pranzo prima di superare le foreste di cedri del Medio Atlante e la città di montagna di Ifrane. Si arriva la sera nella città imperiale di Fes.",
+          "stops": [
+            "Valle dello Ziz",
+            "Midelt",
+            "Medio Atlante e foreste di cedri",
+            "Ifrane",
+            "Pernottamento: Fes"
+          ]
+        },
+        {
+          "title": "La città imperiale di Fes",
+          "desc": "Si scopre una delle città vive più antiche del mondo con una guida locale ufficiale. Si esplorano le porte del Palazzo Reale e la labirintica medina medievale di Fes el-Bali — l’Università al Quaraouiyine, le celebre concerie e i vivaci souk artigiani — prima di una serata con i vostri tempi.",
+          "stops": [
+            "Porte del Palazzo Reale",
+            "Medina di Fes el-Bali",
+            "Università al Quaraouiyine",
+            "Concerie e souk",
+            "Pernottamento: Fes"
+          ]
+        },
+        {
+          "title": "Fes → Marrakech — il rientro panoramico",
+          "desc": "Si rientra a Marrakech attraverso le montagne del Medio Atlante, passando foreste, laghi e villaggi berberi tradizionali sulla panoramica strada verso sud. La serata è vostra, per un ultimo giro in Jemaa el-Fnaa.",
+          "stops": [
+            "Medio Atlante",
+            "Foreste e laghi",
+            "Arrivo a Marrakech",
+            "Serata a Jemaa el-Fnaa"
+          ]
+        },
+        {
+          "title": "Relax a Marrakech e partenza",
+          "desc": "Un’ultima mattinata senza fretta nella Città Rossa — un facoltativo rituale di hammam per due, un ultimo giro nei souk tra regali e ricordi — prima che il vostro autista privato vi accompagni in aeroporto per il viaggio di ritorno.",
+          "stops": [
+            "Mattinata di relax",
+            "Hammam per due (facoltativo)",
+            "Souk di Marrakech",
+            "Trasferimento aeroporto / hotel"
+          ]
+        }
+      ],
+      "included": [
+        "Riad di lusso privati con camere private per tutto il soggiorno",
+        "Una notte in un campo privato di lusso nel deserto",
+        "Trasporti privati climatizzati",
+        "Autista professionista di lingua inglese",
+        "Trekking in cammello a Erg Chebbi",
+        "Colazioni quotidiane",
+        "Cene secondo l’itinerario",
+        "Prelievo in hotel e aeroporto / rientro"
+      ],
+      "excluded": [
+        "Voli internazionali",
+        "Pranzi",
+        "Biglietti d'ingresso a monumenti e musei",
+        "Assicurazione di viaggio",
+        "Mance per autista e guide",
+        "Attività facoltative (volo in mongolfiera, trattamenti spa e hammam)",
+        "Spese personali e souvenir"
+      ],
+      "gallery": [
+        {
+          "caption": "Marrakech — la Città Rossa"
+        },
+        {
+          "caption": "Tè alla menta in un riad privato"
+        },
+        {
+          "caption": "Aït Ben Haddou — ksar UNESCO"
+        },
+        {
+          "caption": "Ouarzazate — porta del deserto"
+        },
+        {
+          "caption": "La tortuosa valle del Dades"
+        },
+        {
+          "caption": "Le imponenti gole del Todra"
+        },
+        {
+          "caption": "Dune di Erg Chebbi a Merzouga"
+        },
+        {
+          "caption": "Sabbie dorate di Erg Chebbi"
+        },
+        {
+          "caption": "Il nostro campo privato di lusso nel deserto al tramonto"
+        },
+        {
+          "caption": "Dune dorate all’alba"
+        },
+        {
+          "caption": "Tè alla menta con i nostri viaggiatori"
+        },
+        {
+          "caption": "Un tramonto nel Sahara in due"
+        },
+        {
+          "caption": "Fes — la città imperiale medievale"
+        }
+      ],
+      "faq": [
+        {
+          "question": "È un tour privato per la luna di miele?",
+          "answer": "Sì — ogni partenza è interamente privata, per il solo vostro gruppo. Viaggiate con autista e guida di lingua inglese a voi dedicati, senza sconosciuti che si uniscono al gruppo, così ritmo, soste ed esperienze sono interamente da godere insieme."
+        },
+        {
+          "question": "L’itinerario può essere personalizzato per la nostra luna di miele?",
+          "answer": "Assolutamente sì. La rotta è pensata come un itinerario di luna di miele flessibile e può essere modellato sulle vostre preferenze — una permanenza più lunga tra le dune, tempo extra a Marrakech o un ritmo giornaliero più dolce. Scriveteci su WhatsApp e confezioneremo i dettagli sulle vostre date."
+        },
+        {
+          "question": "Che livello di sistemazione è incluso?",
+          "answer": "Riad privati di lusso scelti con cura, con camere private per tutto il soggiorno, più una notte indimenticabile in un campo privato di fascia superiore a Erg Chebbi, con veri letti e bagni privati, raggiunto in cammello al tramonto."
+        },
+        {
+          "question": "Qual è il periodo migliore per viaggiare?",
+          "answer": "Il tour si svolge tutto l’anno. La primavera (marzo–maggio) e l’autunno (settembre–novembre) sono ideali, con giornate calde e notti nel deserto piacevoli. L’inverno è frizzante e limpido; l’estate è calda nell’interno, quindi partiamo presto e pianifichiamo aggirando il caldo."
+        },
+        {
+          "question": "Come confermo la prenotazione?",
+          "answer": "Scriveteci su WhatsApp per bloccare le vostre date e adatteremo i dettagli a voi. Un piccolo acconto garantisce il tour, con il saldo pagabile prima o all’inizio del viaggio."
+        }
+      ]
     },
     "8-day-marrakech-essaouira-agadir-sahara": {
       "name": "Avventura di 8 giorni tra Marrakech, Essaouira, Agadir e il Deserto del Sahara",
@@ -906,7 +1265,1893 @@
         "Incantatori di serpenti e cantastorie"
       ],
       "category": "Famiglia",
-      "description": "Il Marocco incanta bambini e adulti allo stesso modo. Questo itinerario pensato per le famiglie è scandito con cura e propone esperienze che conquistano tutte le età — cavalcare i cammelli nel Sahara, esplorare antiche kasbah, assaporare lo street food nella medina e apprendere i mestieri tradizionali dagli artigiani berberi."
+      "description": "Il Marocco incanta bambini e adulti allo stesso modo. Questo itinerario pensato per le famiglie è scandito con cura e propone esperienze che conquistano tutte le età — cavalcare i cammelli nel Sahara, esplorare antiche kasbah, assaporare lo street food nella medina e apprendere i mestieri tradizionali dagli artigiani berberi.",
+      "routeCaption": "Dalle piazze di Marrakech, oltre l’Alto Atlante, fino al campo dunare di Erg Chebbi a Merzouga, poi verso nord attraverso le città di montagna fino alla città imperiale di Fes. La rotta è scandita per le famiglie, con soste facili e tempo per esplorare. Toccate qualsiasi fermata numerata per esplorarla.",
+      "itineraryDays": [
+        {
+          "title": "Arrivo a Marrakech — primo assaggio della Città Rossa",
+          "desc": "Il vostro autista privato vi accoglie e vi installa nell’hotel o nel riad per famiglie a Marrakech. Questa sera fate un primo giro tranquillo nella medina e assaggiate qualche specialità di street food — tè alla menta, succhi freschi e dolci marocchini — prima di una notte anticipata dopo il viaggio.",
+          "stops": [
+            "Arrivo e trasferimento a Marrakech",
+            "Giro nella medina",
+            "Assaggio di street food",
+            "Pernottamento: Marrakech"
+          ]
+        },
+        {
+          "title": "Giornata in famiglia a Marrakech — piazze, mestieri e cantastorie",
+          "desc": "Una giornata rilassata in famiglia nella Città Rossa. Guardate gli incantatori di serpenti, i musicisti e i cantastorie di Jemaa el-Fna, vagate tra i souk colorati e provate i mestieri tradizionali con gli artigiani del posto — il tipo di esperienze pratiche che i bambini ricordano a lungo dopo la vacanza.",
+          "stops": [
+            "Jemaa el-Fna",
+            "Incantatori di serpenti e cantastorie",
+            "Souk e mestieri",
+            "Hammam adatto ai bambini (facoltativo)",
+            "Pernottamento: Marrakech"
+          ]
+        },
+        {
+          "title": "Attraversamento dell’Alto Atlante e passeggiata in mula",
+          "desc": "Si lascia la città e si sale nell’Alto Atlante dal drammatico valico del Tizi n’Tichka. Oggi la vostra famiglia scambia la strada con una placida passeggiata in mula tra le montagne, alla scoperta di panorami e suoni dell’alto paese marocchino con un ritmo facile e adatto alle famiglie.",
+          "stops": [
+            "Montagne dell’Alto Atlante",
+            "Valico del Tizi n'Tichka",
+            "Passeggiata in mula nell’Atlante",
+            "Villaggi berberi",
+            "Pernottamento: Valle del Dades"
+          ]
+        },
+        {
+          "title": "Aït Ben Haddou e la valle del Dades",
+          "desc": "Sosta al celebre villaggio fortificato UNESCO di Aït Ben Haddou, una kasbah secolare che potreste riconoscere dal cinema. Vagate insieme tra i suoi vicoli in terra cruda, poi seguite la strada tortuosa attraverso la valle del Dades, con i suoi tornanti aggrappati alle falesie e il suo drammatico paesaggio di roccia rossa.",
+          "stops": [
+            "Aït Ben Haddou (UNESCO)",
+            "Esplorazione della kasbah",
+            "Punti panoramici della valle del Dades",
+            "Pernottamento: Valle del Dades"
+          ]
+        },
+        {
+          "title": "Gole del Todra e la strada per il Sahara",
+          "desc": "Si passano le imponenti gole del Todra, uno dei canyon più drammatici del Marocco, poi si prosegue tra palmeti e villaggi berberi verso l’orlo del Sahara. Ai bambini piace vedere il paesaggio aprirsi mentre le dune dorate di Erg Chebbi appaiono all’orizzonte.",
+          "stops": [
+            "Gole del Todra",
+            "Palmeti e villaggi berberi",
+            "Dune di Erg Chebbi all’orizzonte",
+            "Pernottamento: Merzouga"
+          ]
+        },
+        {
+          "title": "Trekking in cammello al tramonto su Erg Chebbi",
+          "desc": "Il momento preferito da molte famiglie — una dolce passeggiata in cammello sulle dune dorate di Erg Chebbi al tramonto, quando la sabbia si accende di ambra e il deserto tace. Si dorme vicino alle dune e si sveglia su un’alba sul Sahara di cui i vostri bambini parleranno per anni.",
+          "stops": [
+            "Dune di Erg Chebbi",
+            "Trekking in cammello al tramonto",
+            "Notte in campo nel deserto",
+            "Serata piena di stelle",
+            "Pernottamento: Merzouga"
+          ]
+        },
+        {
+          "title": "Giornata in famiglia a Merzouga",
+          "desc": "Una giornata rilassata per rallentare: alba anticipata sulla sabbia, sandboarding e tempo libero sulle dune, visite con famiglie del posto e apprendimento dei mestieri tradizionali dagli artigiani berberi. Una giornata gentile che equilibra il divertimento attivo con un legame autentico con la vita del deserto.",
+          "stops": [
+            "Alba sulle dune",
+            "Sandboarding e tempo libero",
+            "Mestieri e ospitalità berbera",
+            "Pernottamento: Merzouga"
+          ]
+        },
+        {
+          "title": "Verso nord fino a Fes attraverso il Medio Atlante",
+          "desc": "Si saluta il deserto e si prosegue verso nord attraverso le città di montagna fino alla città imperiale di Fes. Il viaggio si spezza con soste facili e un assaggio degli altipiani del Medio Atlante prima di arrivare a Fes per l’ultima notte dell’avventura.",
+          "stops": [
+            "Viaggio verso nord",
+            "Città del Medio Atlante",
+            "Arrivo a Fes",
+            "Pernottamento: Fes"
+          ]
+        },
+        {
+          "title": "Mattina a Fes e partenza",
+          "desc": "Un breve sguardo guidato a Fes, il cuore culturale imperiale del Marocco, colgendo la medina nel suo momento più vivo. Dopo il pranzo il vostro autista privato vi accompagna in aeroporto o in hotel per il rientro, al termine della vostra avventura in famiglia in Marocco.",
+          "stops": [
+            "Medina e monumenti di Fes",
+            "Punti forti di Fes",
+            "Trasferimento aeroporto / hotel",
+            "Fine del tour"
+          ]
+        }
+      ],
+      "included": [
+        "Veicolo privato climatizzato",
+        "Autista professionista di lingua inglese",
+        "Carburante",
+        "Sistemazioni private per tutto il soggiorno",
+        "Notte in campo nel deserto con trekking in cammello",
+        "Colazioni quotidiane",
+        "Prelievo in hotel e riad / rientro",
+        "WiFi gratuito nella maggior parte degli hotel"
+      ],
+      "excluded": [
+        "Voli internazionali",
+        "Pranzi e bevande",
+        "Biglietti d'ingresso a monumenti e musei",
+        "Mance e gratifiche",
+        "Spese personali"
+      ],
+      "faq": [
+        {
+          "question": "Questo tour è adatto ai bambini?",
+          "answer": "Sì — questo itinerario è pensato per le famiglie. Usa un veicolo privato così stabilite voi il ritmo, tiene giornate di viaggio gestibili ed equilibra i momenti attivi come il trekking in cammello e la passeggiata in mula nell’Atlante con giornate rilassate tra piazze, souk e mestieri che piacciono a tutte le età."
+        },
+        {
+          "question": "È un tour privato?",
+          "answer": "Sì — ogni partenza è interamente privata, per la sola vostra famiglia. Viaggiate con un autista di lingua inglese a voi dedicato e, dove serve, una guida, senza sconosciuti che si uniscono al gruppo, così potete fermarvi quando i bambini hanno bisogno di una pausa."
+        },
+        {
+          "question": "Com’è la sistemazione?",
+          "answer": "Hotel e riad adatti alle famiglie, scelti con cura, con camere private per tutto il soggiorno, più una notte indimenticabile vicino alle dune di Erg Chebbi con veri letti. Pasti e sistemazioni sono organizzati intorno alle esigenze della vostra famiglia."
+        },
+        {
+          "question": "Qual è il periodo migliore per viaggiare in famiglia?",
+          "answer": "Il tour si svolge tutto l’anno. La primavera (marzo–maggio) e l’autunno (settembre–novembre) sono ideali, con giornate calde e notti piacevoli. L’estate è calda nell’interno, quindi partiamo presto e pianifichiamo aggirando il caldo; l’inverno è frizzante, limpido e più tranquillo."
+        },
+        {
+          "question": "Come confermo la prenotazione?",
+          "answer": "Scriveteci su WhatsApp per bloccare le vostre date e adatteremo i dettagli alla vostra famiglia. Un piccolo acconto garantisce il tour, con il saldo pagabile prima o all’inizio del viaggio."
+        }
+      ]
+    },
+    "marrakech-4-day": {
+      "name": "Esplorazione del Sahara da Marrakech a Merzouga in 4 giorni",
+      "duration": "4 giorni / 3 notti",
+      "category": "Privato · Solo su preventivo",
+      "description": "Un circuito privato di quattro giorni da Marrakech al Sahara e ritorno. Salite sull'Alto Atlante, esplorate Aït Ben Haddou e le kasbah di Ouarzazate, attraversate le gole del Dades e del Todra e trascorrete una notte in cammello a Erg Chebbi prima di rientrare attraverso le montagne. Poiché non esiste un prezzo pubblico verificato né un elenco fisso di hotel per questa durata, il tour è proposto solo su preventivo, con i dettagli confermati in base alle vostre date.",
+      "routeCaption": "Marrakech → Alto Atlante → Aït Ben Haddou → Dades e Todra → Merzouga e Erg Chebbi → ritorno a Marrakech.",
+      "highlights": [
+        "Attraversamento dell'Alto Atlante tramite il valico del Tizi n'Tichka",
+        "Aït Ben Haddou e le kasbah di Ouarzazate",
+        "Le gole del Dades e del Todra",
+        "Trekking in cammello al tramonto a Erg Chebbi",
+        "Una notte in un campo tendato nel deserto del Sahara"
+      ],
+      "included": [
+        "Veicolo privato climatizzato",
+        "Autista professionista di lingua inglese",
+        "Carburante e pedaggi",
+        "Riad, guesthouse e un campo nel deserto selezionati secondo l'itinerario confermato",
+        "Colazioni e cene come confermato",
+        "Trekking in cammello al tramonto e notte in campo nel deserto a Erg Chebbi"
+      ],
+      "excluded": [
+        "Voli internazionali",
+        "Pranzi e bevande",
+        "Biglietti d'ingresso",
+        "Mance e spese personali"
+      ],
+      "itineraryDays": [
+        {
+          "title": "Marrakech → Alto Atlante → Aït Ben Haddou → Valle del Dades",
+          "desc": "Attraversate il valico del Tizi n'Tichka sull'Alto Atlante con panorami mozzafiato, visitate il celebre ksar di Aït Ben Haddou, fermatevi a Ouarzazate e a Skoura e concludete la giornata nella suggestiva valle del Dades.",
+          "stops": [
+            "Tizi n'Tichka",
+            "Aït Ben Haddou",
+            "Ouarzazate",
+            "Pernottamento: Valle del Dades"
+          ]
+        },
+        {
+          "title": "Dades → Gole del Todra → Merzouga",
+          "desc": "Seguite il canyon del Dades, camminate tra le pareti verticalli delle gole del Todra, poi proseguite attraverso la pianura desertica fino a Merzouga per un trekking in cammello al tramonto a Erg Chebbi e una notte in un campo nel deserto.",
+          "stops": [
+            "Gole del Dades",
+            "Gole del Todra",
+            "Trekking in cammello a Erg Chebbi",
+            "Notte in campo nel deserto"
+          ]
+        },
+        {
+          "title": "Merzouga → Rissani → Erfoud → zona di Ouarzazate",
+          "desc": "Ammirate l’alba sulle dune, passeggiate nel souk di Rissani e tra le botteghe di fossili di Erfoud, poi dirigetevi a ovest passando per Skoura fino al pernottamento vicino a Ouarzazate.",
+          "stops": [
+            "Alba a Erg Chebbi",
+            "Rissani",
+            "Erfoud",
+            "Pernottamento: zona di Ouarzazate"
+          ]
+        },
+        {
+          "title": "Ouarzazate → Aït Ben Haddou → Marrakech",
+          "desc": "Rientro sull'Alto Atlante con tempo per un ultimo sguardo al paesaggio di kasbah, con discesa verso Marrakech dove il tour si conclude.",
+          "stops": [
+            "Aït Ben Haddou",
+            "Tizi n'Tichka",
+            "Fine: Marrakech"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Questo tour ha un prezzo pubblico?",
+          "answer": "No, è disponibile solo su preventivo, poiché al momento non è pubblicato un prezzo pubblico verificato per un circuito di quattro giorni Marrakech-Merzouga. Il totale viene confermato in base alle vostre date."
+        },
+        {
+          "question": "Dove termina il tour?",
+          "answer": "È un circuito pensato per rientrare a Marrakech il quarto giorno, ma è possibile organizzare un arrivo in una località diversa in senso unico."
+        },
+        {
+          "question": "Il campo nel deserto è incluso?",
+          "answer": "Sì, il trekking in cammello al tramonto e una notte in un campo nel deserto a Erg Chebbi fanno parte dell’itinerario proposto e vengono confermati prima della prenotazione."
+        }
+      ]
+    },
+    "casablanca-3-day": {
+      "name": "Da Casablanca a Fes in 3 giorni via Rabat, Meknès e Volubilis",
+      "duration": "3 giorni / 2 notti",
+      "category": "Privato · Solo su preventivo",
+      "description": "Un itinerario privato solo su preventivo che collega Casablanca, la capitale economica del Marocco, a Fes attraverso la capitale amministrativa Rabat, la città azzurra di Chefchaouen, l’imperiale Meknès e i ruderi romani di Volubilis. Poiché non è pubblicato alcun prezzo pubblico verificato né un elenco fisso di hotel, il tour viene confermato in base alle vostre date prima della prenotazione.",
+      "routeCaption": "Casablanca → Rabat → Chefchaouen → Meknès e Volubilis → Fes. Un giro imperiale del nord che si conclude a Fes.",
+      "highlights": [
+        "La moschea di Hassan II sul lungomare di Casablanca",
+        "Rabat, la capitale atlantica, e la sua kasbah",
+        "La città imperiale di Meknès",
+        "I ruderi romani di Volubilis",
+        "Una giornata guidata nella medina di Fes"
+      ],
+      "included": [
+        "Veicolo privato climatizzato",
+        "Autista professionista di lingua inglese",
+        "Carburante e pedaggi",
+        "Riad e hotel selezionati secondo l'itinerario confermato",
+        "Colazioni come confermato",
+        "Guida locale ufficiale a Fes"
+      ],
+      "excluded": [
+        "Voli internazionali",
+        "Pranzi e bevande",
+        "Biglietti d'ingresso",
+        "Mance e spese personali"
+      ],
+      "itineraryDays": [
+        {
+          "title": "Casablanca → Rabat → Chefchaouen",
+          "desc": "Ammirate la moschea di Hassan II e la Corniche di Casablanca, poi proseguite verso nord via Rabat, dove la kasbah atlantica e la Torre Hassan meritano una sosta, prima di arrivare alla città azzurra di Chefchaouen per la notte.",
+          "stops": [
+            "Moschea di Hassan II",
+            "Kasbah degli Oudaya di Rabat",
+            "Torre Hassan",
+            "Pernottamento: Chefchaouen"
+          ]
+        },
+        {
+          "title": "Chefchaouen → Meknès → Volubilis → Fes",
+          "desc": "Il mattino passeggiate tra i vicoli azzurri di Chefchaouen, poi visita alla monumentale porta Bab Mansour a Meknès e al sito romano di Volubilis prima di arrivare a Fes per la notte.",
+          "stops": [
+            "Medina di Chefchaouen",
+            "Porta Bab Mansour",
+            "Volubilis",
+            "Pernottamento: Fes"
+          ]
+        },
+        {
+          "title": "Visita guidata alla medina e ai souk di Fes",
+          "desc": "Un tour guidato di Fes: le porte reali, la medina medievale attorno all’Università al-Qarawiyyin, la conceria Chouara e i souk artigianali, dove il tour si conclude.",
+          "stops": [
+            "Fes el-Bali",
+            "Università al-Qarawiyyin",
+            "Conceria Chouara",
+            "Fine: Fes"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Questo tour di Casablanca ha un prezzo fisso?",
+          "answer": "No, è disponibile solo su preventivo, poiché per questo itinerario non è pubblicato un prezzo pubblico verificato. Pagamenti e inclusioni vengono confermati prima della prenotazione."
+        },
+        {
+          "question": "Dove termina il tour?",
+          "answer": "È pensato per concludersi a Fes, ma possiamo organizzare il rientro a Casablanca o un trasferimento verso un’altra destinazione."
+        },
+        {
+          "question": "Il tour include Chefchaouen?",
+          "answer": "Sì, la Città Azzurra è la tappa notturna del primo giorno, così potrete trarvi una serata e una mattinata."
+        }
+      ]
+    },
+    "casablanca-4-day": {
+      "name": "Da Casablanca a Fes in 4 giorni via costa atlantica e Chefchaouen",
+      "duration": "4 giorni / 3 notti",
+      "category": "Privato · Solo su preventivo",
+      "description": "Un itinerario privato e rilassato da Casablanca a Fes lungo le meraviglie atlantiche e settentrionali del Marocco, con un ritmo più morbido rispetto ai circuiti più brevi. Segue la costa oltre Rabat fino alla medina murata di Asilah, si volta verso l’interno alla Città Azzurra di Chefchaouen e prosegue attraverso l’imperiale Meknès e il sito romano di Volubilis fino a concludersi a Fes. L’itinerario viene confermato in base alle vostre date, solo su preventivo.",
+      "routeCaption": "Casablanca → Rabat → Asilah → Chefchaouen → Meknès e Volubilis → Fes.",
+      "highlights": [
+        "La moschea di Hassan II e la Corniche di Casablanca",
+        "Rabat e la strada costiera fino ad Asilah",
+        "La Città Azzurra di Chefchaouen",
+        "L’imperiale Meknès e i ruderi romani di Volubilis",
+        "Una giornata guidata a Fes"
+      ],
+      "included": [
+        "Veicolo privato climatizzato",
+        "Autista professionista di lingua inglese",
+        "Carburante e pedaggi",
+        "Riad e hotel selezionati secondo l'itinerario confermato",
+        "Colazioni come confermato",
+        "Guida locale ufficiale a Fes"
+      ],
+      "excluded": [
+        "Voli internazionali",
+        "Pranzi e bevande",
+        "Biglietti d'ingresso",
+        "Mance e spese personali"
+      ],
+      "itineraryDays": [
+        {
+          "title": "Casablanca → Rabat → Asilah",
+          "desc": "Ammirate la moschea di Hassan II e il lungomare di Casablanca, fermatevi a Rabat per la kasbah degli Oudaya e la Torre Hassan, poi proseguite lungo la costa fino alla medina imbiancata a calce di Asilah per la notte.",
+          "stops": [
+            "Moschea di Hassan II",
+            "Rabat",
+            "Asilah",
+            "Pernottamento: Asilah"
+          ]
+        },
+        {
+          "title": "Asilah → Chefchaouen",
+          "desc": "Il mattino passeggiate tra le mura ricoperte d’arte di Asilah, poi attraversate il Rif verso i vicoli azzurri di Chefchaouen per una serata all’insegna del relax.",
+          "stops": [
+            "Medina di Asilah",
+            "Montagne del Rif",
+            "Chefchaouen",
+            "Pernottamento: Chefchaouen"
+          ]
+        },
+        {
+          "title": "Chefchaouen → Meknès → Volubilis → Fes",
+          "desc": "Godetevi la luce del mattino a Chefchaouen, poi visitate Bab Mansour a Meknès e i ruderi romani di Volubilis prima di raggiungere Fes per la notte.",
+          "stops": [
+            "Chefchaouen",
+            "Porta Bab Mansour",
+            "Volubilis",
+            "Pernottamento: Fes"
+          ]
+        },
+        {
+          "title": "Visita guidata di Fes e partenza",
+          "desc": "Un tour guidato della medina, delle concerie e dei souk di Fes prima di concludere il tour, con gli spostamenti successivi organizzati secondo le esigenze.",
+          "stops": [
+            "Fes el-Bali",
+            "Conceria Chouara",
+            "Fine: Fes"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Questo tour ha un prezzo fisso?",
+          "answer": "No, è disponibile solo su preventivo, poiché per questo itinerario non è pubblicato un prezzo pubblico verificato. Il totale viene confermato in base alle vostre date."
+        },
+        {
+          "question": "Il tour raggiunge il Sahara?",
+          "answer": "No, questo itinerario è incentrato sulla costa atlantica e sulle città imperiali. Se desiderate proseguire verso sud, chiedeteci informazioni sui nostri tour nel deserto."
+        },
+        {
+          "question": "Qual è la città finale?",
+          "answer": "Il tour è pensato per concludersi a Fes, con rientro a Casablanca o proseguimento verso un’altra destinazione organizzati su richiesta."
+        }
+      ]
+    },
+    "casablanca-5-day": {
+      "name": "Da Casablanca a Merzouga e Fes in 5 giorni: la rotta del deserto",
+      "duration": "5 giorni / 4 notti",
+      "category": "Privato · Solo su preventivo",
+      "description": "Un itinerario privato da Casablanca verso est fino a Fes e poi a sud nel Sahara, con una notte tra le dune di Erg Chebbi prima del rientro a Fes. Abbina le città imperiali e il sito romano di Volubilis alle foreste di cedri del Medio Atlante, alla valle dello Ziz costellata di palme e a un trekking in cammello al tramonto a Merzouga. Proposto solo su preventivo, con i dettagli confermati in base alle vostre date.",
+      "routeCaption": "Casablanca → Fes → Meknès e Volubilis → Medio Atlante → Merzouga e Erg Chebbi → Fes.",
+      "highlights": [
+        "La moschea di Hassan II a Casablanca",
+        "Meknès, Volubilis e Fes",
+        "Ifrane e il Medio Atlante con le sue foreste di cedri",
+        "La valle dello Ziz e Merzouga",
+        "Trekking in cammello al tramonto e notte in campo nel deserto a Erg Chebbi"
+      ],
+      "included": [
+        "Veicolo privato climatizzato",
+        "Autista professionista di lingua inglese",
+        "Carburante e pedaggi",
+        "Guesthouse e un campo nel deserto selezionati secondo l'itinerario confermato",
+        "Colazioni e cene come confermato",
+        "Trekking in cammello al tramonto e notte in campo nel deserto a Erg Chebbi"
+      ],
+      "excluded": [
+        "Voli internazionali",
+        "Pranzi e bevande",
+        "Biglietti d'ingresso",
+        "Mance e spese personali"
+      ],
+      "itineraryDays": [
+        {
+          "title": "Casablanca → Meknès → Volubilis → Fes",
+          "desc": "Partenza da Casablanca dopo la moschea di Hassan II, visita all’imperiale Meknès e ai ruderi romani di Volubilis, arrivo a Fes per la notte.",
+          "stops": [
+            "Moschea di Hassan II",
+            "Meknès",
+            "Volubilis",
+            "Pernottamento: Fes"
+          ]
+        },
+        {
+          "title": "Fes → Ifrane → Medio Atlante → Midelt → Merzouga",
+          "desc": "Attraversate le foreste di cedri del Medio Atlante via Ifrane, pausa a Midelt, seguite le oasi della valle dello Ziz e arrivo a Merzouga, ai margini di Erg Chebbi.",
+          "stops": [
+            "Ifrane",
+            "Foresta di cedri",
+            "Midelt",
+            "Valle dello Ziz",
+            "Pernottamento: Merzouga"
+          ]
+        },
+        {
+          "title": "Erg Chebbi — trekking in cammello e campo nel deserto",
+          "desc": "Una giornata tra le dune, culminante in un giro in cammello al tramonto a Erg Chebbi e in una notte in un campo nel deserto con cena e musica.",
+          "stops": [
+            "Erg Chebbi",
+            "Trekking in cammello al tramonto",
+            "Notte in campo nel deserto"
+          ]
+        },
+        {
+          "title": "Merzouga → Rissani → valle dello Ziz → zona di Midelt",
+          "desc": "Ammirate l’alba sulle dune, passeggiate nel souk di Rissani, poi rientro a nord attraverso la valle dello Ziz fino al pernottamento nella zona di Midelt.",
+          "stops": [
+            "Alba a Erg Chebbi",
+            "Rissani",
+            "Valle dello Ziz",
+            "Pernottamento: zona di Midelt"
+          ]
+        },
+        {
+          "title": "Midelt → Ifrane → Fes",
+          "desc": "Si risale attraverso il Medio Atlante e Ifrane fino alla conclusione del tour a Fes, dove è possibile organizzare gli spostamenti successivi.",
+          "stops": [
+            "Medio Atlante",
+            "Ifrane",
+            "Fine: Fes"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Questo tour di Casablanca ha un prezzo fisso?",
+          "answer": "No, è disponibile solo su preventivo, poiché per questo itinerario non è pubblicato un prezzo pubblico verificato. Pagamenti e inclusioni vengono confermati prima della prenotazione."
+        },
+        {
+          "question": "Dove termina l’itinerario?",
+          "answer": "È pensato per concludersi a Fes il quinto giorno, ma è possibile organizzare il rientro a Casablanca."
+        },
+        {
+          "question": "La notte nel deserto è inclusa?",
+          "answer": "Sì, il trekking in cammello al tramonto e una notte in un campo nel deserto a Erg Chebbi fanno parte dell’itinerario proposto."
+        }
+      ]
+    },
+    "casablanca-8-day": {
+      "name": "Gran circuito del Marocco da Casablanca in 8 giorni (città imperiali e Sahara)",
+      "duration": "8 giorni / 7 notti",
+      "category": "Privato · Solo su preventivo",
+      "description": "Un circuito privato di otto giorni con partenza e arrivo a Casablanca che comprende le città imperiali, la Città Azzurra, il Sahara e la Città Rossa. Tra i momenti salienti: Rabat, Chefchaouen, una giornata guidata a Fes, una notte tra le dune di Erg Chebbi, le gole del Todra e del Dades, il ksar di Aït Ben Haddou e il vivace via vai di Marrakech. Questo grandioso itinerario è proposto solo su preventivo, con ogni notte e ogni inclusione confermati in base alle vostre date.",
+      "routeCaption": "Casablanca → Rabat → Chefchaouen → Fes → Medio Atlante → Merzouga → Dades e Todra → Marrakech → Casablanca. Un circuito completo del nord e del sud del Marocco.",
+      "highlights": [
+        "La moschea di Hassan II di Casablanca e i monumenti di Rabat",
+        "Chefchaouen, la Città Azzurra, e Volubilis",
+        "Una giornata guidata a Fes",
+        "Ifrane e il Medio Atlante con le sue foreste di cedri",
+        "Merzouga, Erg Chebbi e una notte in campo nel deserto",
+        "Le gole del Todra e del Dades e le kasbah di Ouarzazate",
+        "I palazzi di Marrakech e Jemaa el-Fnaa"
+      ],
+      "included": [
+        "Veicolo privato climatizzato",
+        "Autista professionista di lingua inglese",
+        "Carburante e pedaggi",
+        "Riad, guesthouse e un campo nel deserto selezionati secondo l'itinerario confermato",
+        "Colazioni e cene come confermato",
+        "Trekking in cammello al tramonto e notte in campo nel deserto a Erg Chebbi",
+        "Guida locale ufficiale a Fes e Marrakech"
+      ],
+      "excluded": [
+        "Voli internazionali",
+        "Pranzi e bevande",
+        "Biglietti d'ingresso",
+        "Mance e spese personali"
+      ],
+      "itineraryDays": [
+        {
+          "title": "Casablanca → Rabat → Chefchaouen",
+          "desc": "Visitate la moschea di Hassan II, poi proseguite via la kasbah atlantica di Rabat e la Torre Hassan fino ai vicoli azzurri di Chefchaouen per la notte.",
+          "stops": [
+            "Moschea di Hassan II",
+            "Rabat",
+            "Chefchaouen",
+            "Pernottamento: Chefchaouen"
+          ]
+        },
+        {
+          "title": "Chefchaouen → Volubilis → Meknès → Fes",
+          "desc": "Immergetevi nel blu del mattino di Chefchaouen, visitate i ruderi romani di Volubilis e la porta Bab Mansour a Meknès, poi proseguite per Fes.",
+          "stops": [
+            "Chefchaouen",
+            "Volubilis",
+            "Meknès",
+            "Pernottamento: Fes"
+          ]
+        },
+        {
+          "title": "Fes con guida — medina, concerie e souk",
+          "desc": "Una giornata guidata a Fes con le porte reali, Fes el-Bali attorno all’Università al-Qarawiyyin, la conceria Chouara e i souk artigianali.",
+          "stops": [
+            "Fes el-Bali",
+            "Al-Qarawiyyin",
+            "Conceria Chouara",
+            "Porte del Palazzo Reale"
+          ]
+        },
+        {
+          "title": "Fes → Ifrane → Medio Atlante → valle dello Ziz → Merzouga",
+          "desc": "Attraversate le foreste di cedri del Medio Atlante via Ifrane e le oasi di palme della valle dello Ziz, con arrivo a Merzouga per la notte.",
+          "stops": [
+            "Ifrane",
+            "Foresta di cedri",
+            "Valle dello Ziz",
+            "Pernottamento: Merzouga"
+          ]
+        },
+        {
+          "title": "Erg Chebbi — trekking in cammello e campo nel deserto",
+          "desc": "Una giornata tra le grandi dune, che si conclude con un giro in cammello al tramonto a Erg Chebbi e una notte in un campo nel deserto.",
+          "stops": [
+            "Erg Chebbi",
+            "Trekking in cammello al tramonto",
+            "Notte in campo nel deserto"
+          ]
+        },
+        {
+          "title": "Merzouga → Rissani → gole del Todra → valle del Dades",
+          "desc": "Alba sulle dune e souk di Rissani, poi le imponenti pareti delle gole del Todra e le gole della valle del Dades per la notte.",
+          "stops": [
+            "Alba a Erg Chebbi",
+            "Rissani",
+            "Gole del Todra",
+            "Pernottamento: Valle del Dades"
+          ]
+        },
+        {
+          "title": "Dades → Skoura → Aït Ben Haddou → Marrakech",
+          "desc": "Superate l’oasi di Skoura e Ouarzazate, esplorate il ksar di Aït Ben Haddou, salite sull’Alto Atlante e arrivo a Marrakech in serata.",
+          "stops": [
+            "Skoura",
+            "Aït Ben Haddou",
+            "Tizi n'Tichka",
+            "Pernottamento: Marrakech"
+          ]
+        },
+        {
+          "title": "Mattina a Marrakech → Casablanca",
+          "desc": "Un’ultima mattinata a Marrakech, poi il rientro in autostrada a Casablanca per completare il circuito, oppure proseguimento per l’aeroporto come organizzato.",
+          "stops": [
+            "Marrakech",
+            "Strada costiera",
+            "Fine: Casablanca"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Questo tour ha un prezzo fisso?",
+          "answer": "No, è disponibile solo su preventivo, poiché per questo grandioso circuito di otto giorni non è pubblicato un prezzo pubblico verificato. Il totale viene confermato in base alle vostre date."
+        },
+        {
+          "question": "Dove inizia e dove termina il circuito?",
+          "answer": "Ha inizio e fine a Casablanca, il che lo rende comodo per chi arriva e parte in aereo dalla città."
+        },
+        {
+          "question": "Le giornate guidate in città sono incluse?",
+          "answer": "Sì, le guide locali ufficiali per le giornate culturali a Fes e Marrakech fanno parte dell’itinerario proposto."
+        }
+      ]
+    },
+    "fes-4-day": {
+      "name": "Da Fes a Merzouga in 4 giorni: la rotta del Sahara",
+      "duration": "4 giorni / 3 notti",
+      "category": "Privato · Solo su preventivo",
+      "description": "Un viaggio privato di andata e ritorno da Fes al Sahara in quattro giorni. La strada verso sud attraversa le foreste di cedri e la città di montagna di Ifrane, scende nella valle dello Ziz costellata di palme e raggiunge Merzouga e le grandi dune di Erg Chebbi per un trekking in cammello al tramonto e una notte nel deserto prima del rientro a Fes. Per questa rotta non esistono un prezzo pubblico verificato né un elenco fisso di hotel, perciò è proposta solo su preventivo, con i dettagli confermati in base alle vostre date.",
+      "routeCaption": "Fes → Ifrane → Medio Atlante → valle dello Ziz → Merzouga e Erg Chebbi → ritorno a Fes.",
+      "highlights": [
+        "Ifrane e il Medio Atlante con le sue foreste di cedri",
+        "Il corridoio di palme della valle dello Ziz",
+        "Merzouga e Erg Chebbi",
+        "Trekking in cammello al tramonto e notte in campo nel deserto",
+        "Il souk di Rissani e i fossili di Erfoud"
+      ],
+      "included": [
+        "Veicolo privato climatizzato",
+        "Autista professionista di lingua inglese",
+        "Carburante e pedaggi",
+        "Guesthouse e un campo nel deserto selezionati secondo l'itinerario confermato",
+        "Colazioni e cene come confermato",
+        "Trekking in cammello al tramonto e notte in campo nel deserto a Erg Chebbi"
+      ],
+      "excluded": [
+        "Voli internazionali",
+        "Pranzi e bevande",
+        "Biglietti d'ingresso",
+        "Mance e spese personali"
+      ],
+      "itineraryDays": [
+        {
+          "title": "Fes → Ifrane → Medio Atlante → Midelt → valle dello Ziz → Merzouga",
+          "desc": "Si parte verso sud attraverso Ifrane e il paese dei cedri del Medio Atlante, pausa a Midelt, si seguono le oasi della valle dello Ziz e si arriva a Merzouga per la notte.",
+          "stops": [
+            "Ifrane",
+            "Foresta di cedri",
+            "Midelt",
+            "Valle dello Ziz",
+            "Pernottamento: Merzouga"
+          ]
+        },
+        {
+          "title": "Merzouga ed Erg Chebbi — trekking in cammello e notte nel deserto",
+          "desc": "Esplorate le dune e il margine di Erg Chebbi, poi in sella a un cammello tra le dune al tramonto per una notte in un campo nel deserto con cena e musica.",
+          "stops": [
+            "Erg Chebbi",
+            "Trekking in cammello al tramonto",
+            "Notte in campo nel deserto"
+          ]
+        },
+        {
+          "title": "Merzouga → Rissani → Erfoud → zona di Midelt",
+          "desc": "Ammirate l’alba sulle dune, visitate il souk di Rissani e le botteghe di fossili di Erfoud, poi proseguite verso nord attraverso la valle dello Ziz fino al pernottamento nella zona di Midelt.",
+          "stops": [
+            "Alba a Erg Chebbi",
+            "Rissani",
+            "Erfoud",
+            "Pernottamento: zona di Midelt"
+          ]
+        },
+        {
+          "title": "Midelt → Ifrane → Fes",
+          "desc": "Si risale attraverso il Medio Atlante e Ifrane fino alla conclusione a Fes, dove il tour termina.",
+          "stops": [
+            "Ifrane",
+            "Medio Atlante",
+            "Fine: Fes"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Questo tour da Fes ha un prezzo fisso?",
+          "answer": "No, è disponibile solo su preventivo, poiché per questa rotta di quattro giorni Fes-Sahara non è pubblicato un prezzo pubblico verificato. Pagamenti e inclusioni vengono confermati prima della prenotazione."
+        },
+        {
+          "question": "Fes è collegata alla rotta di Merzouga?",
+          "answer": "Sì. L’Ufficio Nazionale Marocchino del Turismo presenta Fes come porta d’accesso al Sahara e documenta il collegamento Fes-Errachidia-Midelt-Merzouga."
+        },
+        {
+          "question": "Il viaggio rientra a Fes?",
+          "answer": "La rotta standard è un andata e ritorno che si conclude a Fes, ma nel preventivo è possibile organizzare un arrivo in senso unico."
+        }
+      ]
+    },
+    "3-day-sahara-fes": {
+      "name": "Percorso privato nel Sahara da Fes in 3 giorni",
+      "duration": "3 giorni / 2 notti",
+      "category": "Privato · Solo su preventivo",
+      "description": "Un percorso privato solo su preventivo per chi parte da Fes e vuole raggiungere Merzouga e Erg Chebbi in tre giorni. L’Ufficio Nazionale Marocchino del Turismo conferma Fes come porta d’accesso verso il Sahara e documenta il collegamento Fes–Errachidia–Midelt–Merzouga. L’attuale fonte aziendale non pubblica un prezzo fisso per i tre giorni da Fes, né un elenco di sistemazioni o un programma di ritorno garantito, perciò questi dettagli vengono confermati prima della prenotazione e non inventati.",
+      "routeCaption": "Fes → Medio Atlante / Ifrane → regione Errachidia–Midelt → Merzouga ed Erg Chebbi. Fermate esatte, notti e piano di proseguimento o ritorno vengono confermati in base alle vostre date.",
+      "highlights": [
+        "Fes e il Medio Atlante",
+        "Ifrane e il paese delle foreste di cedri",
+        "I paesaggi di Errachidia e della valle dello Ziz",
+        "Merzouga ed Erg Chebbi",
+        "Esperienza nel deserto al tramonto"
+      ],
+      "included": [
+        "Pianificazione privata dell’itinerario",
+        "Percorso confermato in base alle vostre date",
+        "Trasporto privato quando incluso nel preventivo confermato",
+        "Esperienza nel deserto quando inclusa nell’itinerario confermato"
+      ],
+      "excluded": [
+        "Voli internazionali",
+        "Tutto ciò che non è esplicitamente incluso nel preventivo confermato",
+        "Spese personali e mance salvo diverso accordo"
+      ],
+      "itineraryDays": [
+        {
+          "title": "Fes → Medio Atlante → regione di Errachidia",
+          "desc": "Si viaggia verso sud da Fes attraverso il Medio Atlante verso la regione Errachidia–Midelt–Merzouga. La strada è essa stessa parte importante dell’esperienza, quindi la giornata è pianificata attorno a tempi di guida realistici e a fermate selezionate.",
+          "stops": [
+            "Fes",
+            "Ifrane",
+            "Medio Atlante",
+            "Midelt / regione di Errachidia"
+          ]
+        },
+        {
+          "title": "Regione di Errachidia → Merzouga → Erg Chebbi",
+          "desc": "Si prosegue verso Merzouga e le dune di Erg Chebbi. Se incluso nell’itinerario confermato, la parte desertica può comprendere un’esperienza in cammello al tramonto e una notte vicino alle dune. Sistemazioni e pasti vengono confermati prima del pagamento.",
+          "stops": [
+            "Zona della valle dello Ziz",
+            "Merzouga",
+            "Erg Chebbi",
+            "Esperienza nel deserto al tramonto"
+          ]
+        },
+        {
+          "title": "Merzouga → proseguimento",
+          "desc": "Si inizia con la mattina nel deserto e si prosegue verso la destinazione concordata nel vostro preventivo. Un rientro a Fes o una conclusione in senso unico possono essere discussi; nessun punto di arrivo fisso viene dichiarato prima della conferma.",
+          "stops": [
+            "Alba a Merzouga",
+            "Erg Chebbi",
+            "Destinazione di proseguimento confermata"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "È un tour da Fes a prezzo fisso?",
+          "answer": "No. È intenzionalmente solo su preventivo, perché il progetto attuale non contiene un prezzo pubblico verificato per tre giorni da Fes né un pacchetto di sistemazioni fisso. Il percorso e le condizioni di pagamento vengono confermati prima del pagamento."
+        },
+        {
+          "question": "Fes è collegata alla rotta di Merzouga?",
+          "answer": "Sì. L’Ufficio Nazionale Marocchino del Turismo presenta Fes tra le città che conducono verso il Sahara e indica il collegamento da Fes a Errachidia–Midelt–Merzouga."
+        },
+        {
+          "question": "Il viaggio può terminare in un luogo diverso da Fes?",
+          "answer": "Una conclusione altrove può essere discussa nel preventivo privato. Non pubblichiamo un punto di arrivo fisso finché non viene confermato."
+        },
+        {
+          "question": "Si può prenotare adesso e pagare dopo?",
+          "answer": "Richiedete prima l’itinerario. Confermiamo il percorso, le inclusioni e le condizioni di pagamento applicabili prima di qualsiasi pagamento."
+        }
+      ]
+    },
+    "3-day-sahara-agadir": {
+      "name": "Percorso privato nel Sahara da Agadir in 3 giorni",
+      "duration": "3 giorni / 2 notti",
+      "category": "Privato · Solo su preventivo",
+      "description": "Un percorso privato di pianificazione verso il Sahara di tre giorni, solo su preventivo, con partenza da Agadir. L’Ufficio Nazionale Marocchino del Turismo conferma Agadir come porta d’accesso verso il Sahara e documenta il collegamento del Marocco meridionale verso il deserto. L’attuale fonte aziendale non pubblica un prezzo fisso per i tre giorni da Agadir, né un pacchetto di sistemazioni o un programma di ritorno garantito, perciò questi dettagli commerciali vengono confermati prima della prenotazione.",
+      "routeCaption": "Agadir → Marocco meridionale / zona di Ouarzazate → Merzouga ed Erg Chebbi. Fermate stradali esatte, notti e destinazione finale vengono confermati nel preventivo privato.",
+      "highlights": [
+        "La costa atlantica di Agadir",
+        "I paesaggi del Marocco meridionale",
+        "Ouarzazate / pre-Sahara",
+        "Merzouga ed Erg Chebbi",
+        "Pianificazione privata del proseguimento"
+      ],
+      "included": [
+        "Pianificazione privata dell’itinerario",
+        "Percorso confermato in base alle vostre date",
+        "Trasporto privato quando incluso nel preventivo confermato",
+        "Esperienza nel deserto quando inclusa nell’itinerario confermato"
+      ],
+      "excluded": [
+        "Voli internazionali",
+        "Tutto ciò che non è esplicitamente incluso nel preventivo confermato",
+        "Spese personali e mance salvo diverso accordo"
+      ],
+      "itineraryDays": [
+        {
+          "title": "Agadir → Marocco meridionale → zona di Ouarzazate",
+          "desc": "Si parte dall’entroterra di Agadir attraverso il Marocco meridionale. La giornata è costruita attorno al viaggio stradale concreto, non a un elenco artificiale di fermate fisse.",
+          "stops": [
+            "Agadir",
+            "Marocco meridionale",
+            "Zona di Ouarzazate"
+          ]
+        },
+        {
+          "title": "Zona di Ouarzazate → Merzouga → Erg Chebbi",
+          "desc": "Si continua verso est fino a Merzouga ed Erg Chebbi. Se incluso nell’itinerario confermato, la parte desertica può comprendere un’esperienza in cammello al tramonto e una notte in campo. Sistemazioni e pasti vengono concordati prima del pagamento.",
+          "stops": [
+            "Zona di Ouarzazate",
+            "Merzouga",
+            "Erg Chebbi",
+            "Esperienza nel deserto al tramonto"
+          ]
+        },
+        {
+          "title": "Merzouga → proseguimento",
+          "desc": "Si godrà la mattina nel deserto e si prosegue verso la destinazione concordata nel vostro preventivo. Poiché tre giorni da Agadir sono un formato overland compatto, il percorso finale andrebbe scelto in base alle vostre date e ai piani di proseguimento.",
+          "stops": [
+            "Alba a Merzouga",
+            "Erg Chebbi",
+            "Destinazione di proseguimento confermata"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "È un tour Sahara da Agadir a prezzo fisso?",
+          "answer": "No. È solo su preventivo, perché il progetto attuale non contiene un prezzo pubblico verificato per tre giorni da Agadir né un pacchetto di sistemazioni fisso. Confermiamo l’itinerario reale e le condizioni di pagamento prima del pagamento."
+        },
+        {
+          "question": "Agadir conduce verso il Sahara?",
+          "answer": "Sì. L’Ufficio Nazionale Marocchino del Turismo identifica Agadir come una delle porte d’accesso verso il Sahara. Il percorso esatto dei tre giorni dipende dalle date di viaggio e dal luogo in cui dovete concludere."
+        },
+        {
+          "question": "L’itinerario può essere in senso unico?",
+          "answer": "La destinazione di proseguimento può essere discussa nel preventivo privato. Evitiamo di pubblicare un programma di ritorno fisso finché non viene confermato."
+        },
+        {
+          "question": "Si può prenotare adesso e pagare dopo?",
+          "answer": "Richiedete prima l’itinerario. Confermiamo il percorso, le inclusioni e le condizioni di pagamento applicabili prima di qualsiasi pagamento."
+        }
+      ]
+    },
+    "fes-5-day": {
+      "name": "Da Fes a Marrakech in 5 giorni via Merzouga, Dades e l’Atlante",
+      "duration": "5 giorni / 4 notti",
+      "category": "Privato · Solo su preventivo",
+      "description": "Un viaggio privato in senso unico che collega Fes e Marrakech attraverso il meglio del sud. Scende attraverso il Medio Atlante costellato di cedri fino alle dune di Erg Chebbi per una notte nel deserto, poi costeggia le gole del Todra e del Dades e attraversa l’Alto Atlante oltre Aït Ben Haddou fino a concludersi a Marrakech. Proposto solo su preventivo, con i dettagli confermati in base alle vostre date.",
+      "routeCaption": "Fes → Ifrane → Medio Atlante → Merzouga → Todra e Dades → Aït Ben Haddou → Marrakech. Un percorso in senso unico da Fes alla Città Rossa.",
+      "highlights": [
+        "Ifrane e il Medio Atlante con le sue foreste di cedri",
+        "La valle dello Ziz e le dune di Erg Chebbi",
+        "Trekking in cammello al tramonto e notte in campo nel deserto",
+        "Le gole del Todra e la valle del Dades",
+        "Aït Ben Haddou e l’Alto Atlante fino a Marrakech"
+      ],
+      "included": [
+        "Veicolo privato climatizzato",
+        "Autista professionista di lingua inglese",
+        "Carburante e pedaggi",
+        "Riad, guesthouse e un campo nel deserto selezionati secondo l'itinerario confermato",
+        "Colazioni e cene come confermato",
+        "Trekking in cammello al tramonto e notte in campo nel deserto a Erg Chebbi"
+      ],
+      "excluded": [
+        "Voli internazionali",
+        "Pranzi e bevande",
+        "Biglietti d'ingresso",
+        "Mance e spese personali"
+      ],
+      "itineraryDays": [
+        {
+          "title": "Fes → Ifrane → Medio Atlante → Valle dello Ziz → Merzouga",
+          "desc": "Si viaggia verso sud attraverso Ifrane e le foreste di cedri del Medio Atlante, si seguono le oasi della valle dello Ziz e si arriva a Merzouga per la notte.",
+          "stops": [
+            "Ifrane",
+            "Foresta di cedri del Medio Atlante",
+            "Valle dello Ziz",
+            "Pernottamento: Merzouga"
+          ]
+        },
+        {
+          "title": "Merzouga ed Erg Chebbi — trekking in cammello e notte nel deserto",
+          "desc": "Si passa la mattina tra le dune, poi in sella a un cammello verso Erg Chebbi al tramonto per una notte in un campo nel deserto con cena e musica berbera.",
+          "stops": [
+            "Erg Chebbi",
+            "Trekking in cammello al tramonto",
+            "Notte in campo nel deserto"
+          ]
+        },
+        {
+          "title": "Merzouga → Rissani → Gole del Todra → Valle del Dades",
+          "desc": "Si ammira l’alba, si passa al souk di Rissani, poi verso ovest attraverso le gole del Todra e fino al suggestivo paese di falesie della valle del Dades per la notte.",
+          "stops": [
+            "Alba a Erg Chebbi",
+            "Rissani",
+            "Gole del Todra",
+            "Pernottamento: Valle del Dades"
+          ]
+        },
+        {
+          "title": "Dades → Skoura → Aït Ben Haddou → Marrakech",
+          "desc": "Si superano i palmeti di Skoura e Ouarzazate, si ammira il ksar di Aït Ben Haddou, si attraversa il valico del Tizi n’Tichka sull’Alto Atlante e si arriva a Marrakech.",
+          "stops": [
+            "Skoura",
+            "Aït Ben Haddou",
+            "Tizi n'Tichka",
+            "Pernottamento: Marrakech"
+          ]
+        },
+        {
+          "title": "Mattina libera a Marrakech",
+          "desc": "Si godrà una mattinata all’insegna del relax in un riad di Marrakech, con tempo per i souk o Jemaa el-Fnaa prima del viaggio di proseguimento.",
+          "stops": [
+            "Marrakech",
+            "Fine: Marrakech"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Questo tour ha un prezzo fisso?",
+          "answer": "No, è solo su preventivo, poiché per questa rotta da Fes a Marrakech non è pubblicato un prezzo pubblico verificato. Il totale viene confermato in base alle vostre date."
+        },
+        {
+          "question": "Dove termina il percorso?",
+          "answer": "È pensato per concludersi a Marrakech, il che è comodo per chi parte in aereo dalla città; è possibile organizzare soluzioni diverse."
+        },
+        {
+          "question": "La notte nel deserto è inclusa?",
+          "answer": "Sì, un trekking in cammello al tramonto e una notte in un campo a Erg Chebbi fanno parte dell’itinerario proposto."
+        }
+      ]
+    },
+    "fes-8-day": {
+      "name": "Gran tour di 8 giorni da Fes: città imperiali e Sahara",
+      "duration": "8 giorni / 7 notti",
+      "category": "Privato · Solo su preventivo",
+      "description": "Un viaggio privato di otto giorni che inizia nella città imperiale di Fes, comprende Meknès, Volubilis e le foreste di cedri del Medio Atlante, trascorre una notte tra le dune di Erg Chebbi, costeggia le gole del Todra e del Dades e attraversa l’Alto Atlante per concludersi a Marrakech. Proposto come itinerario solo su preventivo, con ogni notte e ogni inclusione confermati in base alle vostre date.",
+      "routeCaption": "Fes → Meknès e Volubilis → Medio Atlante → Merzouga → Todra e Dades → Aït Ben Haddou → Marrakech. Un grande giro di otto giorni attraverso il Marocco imperiale e il deserto.",
+      "highlights": [
+        "Una giornata guidata a Fes e la città imperiale di Meknès",
+        "I ruderi romani di Volubilis",
+        "Ifrane e il Medio Atlante con le sue foreste di cedri",
+        "Merzouga, Erg Chebbi e una notte in campo nel deserto",
+        "Gole del Todra, valle del Dades e Aït Ben Haddou",
+        "I palazzi e i souk di Marrakech"
+      ],
+      "included": [
+        "Veicolo privato climatizzato",
+        "Autista professionista di lingua inglese",
+        "Carburante e pedaggi",
+        "Riad, guesthouse e un campo nel deserto selezionati secondo l'itinerario confermato",
+        "Colazioni e cene come confermato",
+        "Trekking in cammello al tramonto e notte in campo nel deserto a Erg Chebbi",
+        "Guida locale ufficiale a Fes e Marrakech"
+      ],
+      "excluded": [
+        "Voli internazionali",
+        "Pranzi e bevande",
+        "Biglietti d'ingresso",
+        "Mance e spese personali"
+      ],
+      "itineraryDays": [
+        {
+          "title": "Fes con guida — medina, concerie e souk",
+          "desc": "Una giornata guidata a Fes: le porte reali, la medina di Fes el-Bali attorno all’Università al Quaraouiyine, la conceria Chouara e l’artigianato dei souk antichi.",
+          "stops": [
+            "Fes el-Bali",
+            "Università al Quaraouiyine",
+            "Conceria Chouara",
+            "Porte del Palazzo Reale"
+          ]
+        },
+        {
+          "title": "Fes → Meknès → Volubilis → Medio Atlante",
+          "desc": "Si visitano i monumenti imperiali di Meknès e i ruderi romani di Volubilis, poi si prosegue verso sud attraverso Ifrane e le foreste di cedri fino al pernottamento nel Medio Atlante.",
+          "stops": [
+            "Porta Bab Mansour",
+            "Ruderi romani di Volubilis",
+            "Ifrane",
+            "Pernottamento: Medio Atlante"
+          ]
+        },
+        {
+          "title": "Medio Atlante → Valle dello Ziz → Merzouga",
+          "desc": "Si scende lungo la valle dello Ziz costellata di palme fino a Merzouga, con tempo per assaporare il margine di Erg Chebbi prima della notte.",
+          "stops": [
+            "Valle dello Ziz",
+            "Regione di Errachidia",
+            "Merzouga",
+            "Pernottamento: Merzouga"
+          ]
+        },
+        {
+          "title": "Erg Chebbi — trekking in cammello e campo nel deserto",
+          "desc": "Una giornata tra le grandi dune, culminante in un trekking in cammello al tramonto e una notte in un campo nel deserto con cena e musica.",
+          "stops": [
+            "Erg Chebbi",
+            "Trekking in cammello al tramonto",
+            "Notte in campo nel deserto"
+          ]
+        },
+        {
+          "title": "Merzouga → Gole del Todra → Valle del Dades",
+          "desc": "Dopo l’alba sulle dune, tappa a Rissani, passeggiata tra le pareti imponenti delle gole del Todra e conclusione tra le falesie della valle del Dades.",
+          "stops": [
+            "Alba a Erg Chebbi",
+            "Rissani",
+            "Gole del Todra",
+            "Pernottamento: Valle del Dades"
+          ]
+        },
+        {
+          "title": "Dades → Skoura → Aït Ben Haddou → Marrakech",
+          "desc": "Si supera l’oasi di Skoura e Ouarzazate, si esplora Aït Ben Haddou, si supera l’Alto Atlante e si arriva a Marrakech per la notte.",
+          "stops": [
+            "Skoura",
+            "Aït Ben Haddou",
+            "Tizi n'Tichka",
+            "Pernottamento: Marrakech"
+          ]
+        },
+        {
+          "title": "Marrakech con guida — palazzi, giardini e Jemaa el-Fnaa",
+          "desc": "Una giornata guidata completa nella Città Rossa, dal Palazzo della Bahia e il Giardino Majorelle ai souk e alla vita serale di Jemaa el-Fnaa.",
+          "stops": [
+            "Palazzo della Bahia",
+            "Giardino Majorelle",
+            "Koutoubia",
+            "Jemaa el-Fnaa"
+          ]
+        },
+        {
+          "title": "Mattina libera a Marrakech → proseguimento",
+          "desc": "Una mattinata all’insegna del relax a Marrakech prima del viaggio di proseguimento, con aiuto nell’organizzare i trasferimenti se necessario.",
+          "stops": [
+            "Marrakech",
+            "Fine: Marrakech"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Questo tour da Fes ha un prezzo fisso?",
+          "answer": "No, è solo su preventivo, poiché per questa rotta di otto giorni non è pubblicato un prezzo pubblico verificato. I dettagli vengono confermati in base alle vostre date."
+        },
+        {
+          "question": "Dove termina il tour?",
+          "answer": "È pensato per concludersi a Marrakech, sebbene un rientro a Fes o un arrivo in un luogo diverso possano essere organizzati."
+        },
+        {
+          "question": "Le giornate guidate in città sono incluse?",
+          "answer": "Sì, le guide locali ufficiali per le giornate culturali a Fes e Marrakech fanno parte dell’itinerario proposto."
+        }
+      ]
+    },
+    "agadir-4-day": {
+      "name": "Da Agadir a Marrakech in 4 giorni via Taroudant e l’Atlante",
+      "duration": "4 giorni / 3 notti",
+      "category": "Privato · Solo su preventivo",
+      "description": "Un percorso privato che collega l’Agadir costiera a Marrakech attraverso l’Anti-Atlante e l’Alto Atlante. Passa per i souk murati di Taroudant, i campi di zafferano di Taliouine, il paese delle kasbah di Ouarzazate e il celebre ksar di Aït Ben Haddou, con due notti a disposizione per godersi Marrakech. Proposto solo su preventivo, con i dettagli confermati in base alle vostre date.",
+      "routeCaption": "Agadir → Taroudant → Ouarzazate → Aït Ben Haddou → Marrakech.",
+      "highlights": [
+        "La promenade atlantica di Agadir e la sua kasbah",
+        "Le mura di Taroudant e le terrazze di zafferano di Taliouine",
+        "Aït Ben Haddou e le kasbah di Ouarzazate",
+        "L’attraversamento del Tizi n’Tichka sull’Alto Atlante",
+        "Due notti per esplorare Marrakech"
+      ],
+      "included": [
+        "Veicolo privato climatizzato",
+        "Autista professionista di lingua inglese",
+        "Carburante e pedaggi",
+        "Riad e hotel selezionati secondo l'itinerario confermato",
+        "Colazioni come confermato"
+      ],
+      "excluded": [
+        "Voli internazionali",
+        "Pranzi e bevande",
+        "Biglietti d'ingresso",
+        "Mance e spese personali"
+      ],
+      "itineraryDays": [
+        {
+          "title": "Agadir → Taroudant → Taliouine → Ouarzazate",
+          "desc": "Si parte da Agadir attraverso le pianure del Souss fino alle mura di Taroudant e al suo mercato dell’artigianato, si sale sulle terrazze di zafferano di Taliouine e si attraversa l’Anti-Atlante fino a Ouarzazate per la notte.",
+          "stops": [
+            "Taroudant",
+            "Taliouine",
+            "Anti-Atlante",
+            "Pernottamento: Ouarzazate"
+          ]
+        },
+        {
+          "title": "Ouarzazate → Aït Ben Haddou → Alto Atlante → Marrakech",
+          "desc": "Si ammirano Aït Ben Haddou e la kasbah di Taourirt, si attraversa l’Alto Atlante dal valico del Tizi n’Tichka e si arriva a Marrakech per la celebre serata di Jemaa el-Fnaa.",
+          "stops": [
+            "Aït Ben Haddou",
+            "Tizi n'Tichka",
+            "Jemaa el-Fnaa",
+            "Pernottamento: Marrakech"
+          ]
+        },
+        {
+          "title": "Marrakech con guida — palazzi, giardini e souk",
+          "desc": "Una giornata completa nella Città Rossa con una guida locale: il Palazzo della Bahia, la Koutoubia, i giardini e i souk labirintici, con tempo libero a Jemaa el-Fnaa.",
+          "stops": [
+            "Palazzo della Bahia",
+            "Koutoubia",
+            "Giardino Majorelle",
+            "Jemaa el-Fnaa"
+          ]
+        },
+        {
+          "title": "Mattina libera a Marrakech → ritorno o proseguimento",
+          "desc": "Una colazione senza fretta in un riad di Marrakech prima del rientro ad Agadir lungo la costa o del proseguimento verso un’altra destinazione, come concordato nel vostro preventivo.",
+          "stops": [
+            "Riad a Marrakech",
+            "Ritorno costiero",
+            "Fine: Agadir o proseguimento"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Questo tour ha un prezzo fisso?",
+          "answer": "No, è solo su preventivo, poiché per questa rotta non è pubblicato un prezzo pubblico verificato. Il totale viene confermato in base alle vostre date."
+        },
+        {
+          "question": "Il tour raggiunge il Sahara?",
+          "answer": "Questo itinerario si concentra su Taroudant, Ouarzazate, Aït Ben Haddou e Marrakech. Chiedeteci informazioni su un’estensione verso le dune di Merzouga."
+        },
+        {
+          "question": "Si può partire da Marrakech e concludere ad Agadir?",
+          "answer": "Sì, il senso di marcia è facile da invertire e lo adatteremo ai vostri voli."
+        }
+      ]
+    },
+    "agadir-5-day": {
+      "name": "Da Agadir a Marrakech in 5 giorni via Ouarzazate e Merzouga",
+      "duration": "5 giorni / 4 notti",
+      "category": "Privato · Solo su preventivo",
+      "description": "Un percorso privato in senso unico dalla costa di Agadir a Marrakech attraverso il paese delle kasbah e il Sahara. Attraversa Taroudant e le terrazze di zafferano di Taliouine, esplora Ouarzazate e Aït Ben Haddou, si insinua nelle gole del Dades e del Todra e trascorre un tramonto con un trekking in cammello e una notte in campo nel deserto a Erg Chebbi prima di concludersi a Marrakech. Proposto solo su preventivo, con i dettagli confermati in base alle vostre date.",
+      "routeCaption": "Agadir → Taroudant → Ouarzazate → Aït Ben Haddou → Dades e Todra → Merzouga → Marrakech.",
+      "highlights": [
+        "Taroudant e il paese dello zafferano di Taliouine",
+        "Aït Ben Haddou e le kasbah di Ouarzazate",
+        "Le gole del Dades e del Todra",
+        "Trekking in cammello al tramonto a Erg Chebbi",
+        "L’attraversamento dell’Alto Atlante fino a Marrakech"
+      ],
+      "included": [
+        "Veicolo privato climatizzato",
+        "Autista professionista di lingua inglese",
+        "Carburante e pedaggi",
+        "Riad, guesthouse e un campo nel deserto selezionati secondo l'itinerario confermato",
+        "Colazioni e cene come confermato",
+        "Trekking in cammello al tramonto e notte in campo nel deserto a Erg Chebbi"
+      ],
+      "excluded": [
+        "Voli internazionali",
+        "Pranzi e bevande",
+        "Biglietti d'ingresso",
+        "Mance e spese personali"
+      ],
+      "itineraryDays": [
+        {
+          "title": "Agadir → Taroudant → Taliouine → Ouarzazate",
+          "desc": "Si dirige verso l’interno attraverso le pianure del Souss, tappa alla città dei souk murata di Taroudant e ai campi di zafferano di Taliouine, poi si attraversa l’Anti-Atlante fino a Ouarzazate per la notte.",
+          "stops": [
+            "Taroudant",
+            "Taliouine",
+            "Anti-Atlante",
+            "Pernottamento: Ouarzazate"
+          ]
+        },
+        {
+          "title": "Ouarzazate → Aït Ben Haddou → Skoura → Valle del Dades",
+          "desc": "Visita ad Aït Ben Haddou e alla kasbah di Taourirt, si attraversano i palmeti di Skoura e ci si addentra tra le falesie della valle del Dades per la notte.",
+          "stops": [
+            "Aït Ben Haddou",
+            "Kasbah di Taourirt",
+            "Skoura",
+            "Pernottamento: Valle del Dades"
+          ]
+        },
+        {
+          "title": "Dades → Gole del Todra → Merzouga",
+          "desc": "Si segue il canyon del Dades, si cammina sotto le pareti imponenti delle gole del Todra, poi si prosegue fino a Merzouga per un trekking in cammello al tramonto a Erg Chebbi.",
+          "stops": [
+            "Gole del Dades",
+            "Gole del Todra",
+            "Trekking in cammello a Erg Chebbi",
+            "Notte in campo nel deserto"
+          ]
+        },
+        {
+          "title": "Merzouga → Rissani → Erfoud → zona di Ouarzazate",
+          "desc": "Alba sulle dune, il souk di Rissani e i fossili di Erfoud, poi verso ovest passando per Skoura fino al pernottamento vicino a Ouarzazate.",
+          "stops": [
+            "Alba a Erg Chebbi",
+            "Rissani",
+            "Erfoud",
+            "Pernottamento: zona di Ouarzazate"
+          ]
+        },
+        {
+          "title": "Ouarzazate → Alto Atlante → Marrakech",
+          "desc": "Si attraversa il valico del Tizi n’Tichka sull’Alto Atlante e si scende a Marrakech, dove il tour si conclude.",
+          "stops": [
+            "Tizi n'Tichka",
+            "Alto Atlante",
+            "Fine: Marrakech"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Questo tour ha un prezzo pubblico?",
+          "answer": "No, è solo su preventivo, poiché per questa rotta non è pubblicato un prezzo pubblico verificato. Il totale viene confermato in base alle vostre date."
+        },
+        {
+          "question": "Dove termina il percorso?",
+          "answer": "È pensato per concludersi a Marrakech; un rientro ad Agadir può essere organizzato nel vostro preventivo."
+        },
+        {
+          "question": "Il campo nel deserto è garantito?",
+          "answer": "Un trekking in cammello al tramonto e una notte in un campo a Erg Chebbi sono previsti nell’itinerario proposto e vengono confermati prima della prenotazione."
+        }
+      ]
+    },
+    "agadir-8-day": {
+      "name": "Gran circuito del Marocco meridionale da Agadir in 8 giorni",
+      "duration": "8 giorni / 7 notti",
+      "category": "Privato · Solo su preventivo",
+      "description": "Un circuito privato solo su preventivo che fa il giro completo del Marocco meridionale, dalla costa atlantica fino al rientro ad Agadir. Si viaggia verso l’interno passando per la città dei souk murata di Taroudant e le terrazze di zafferano di Taliouine, si attraversano i paesaggi da set cinematografico delle kasbah intorno a Ouarzazate, si costeggiano le gole del Dades e del Todra, si trascorre una notte tra le dune di Erg Chebbi e si rientra attraverso la valle del Draa ombreggiata dalle palme. Le notti esatte, le sistemazioni e il ritmo giornaliero vengono confermati in base alle vostre date prima della prenotazione, così nulla viene inventato in anticipo.",
+      "routeCaption": "Agadir → Taroudant → Ouarzazate → Aït Ben Haddou → Dades e Todra → Merzouga → Valle del Draa → rientro ad Agadir.",
+      "highlights": [
+        "La costa atlantica di Agadir e il suo lungomare",
+        "Le mura di Taroudant e il paese dello zafferano intorno a Taliouine",
+        "Ouarzazate, porta d’accesso alla rotta delle kasbah dell’Atlante",
+        "Le gole del Dades e del Todra",
+        "Merzouga, Erg Chebbi e una notte in campo nel deserto"
+      ],
+      "included": [
+        "Veicolo privato climatizzato",
+        "Autista professionista di lingua inglese",
+        "Carburante e pedaggi",
+        "Riad, kasbah-hotel e un campo nel deserto accuratamente selezionati secondo l'itinerario confermato",
+        "Colazioni e cene secondo il piano confermato",
+        "Trekking in cammello al tramonto e notte in campo nel deserto a Erg Chebbi"
+      ],
+      "excluded": [
+        "Voli internazionali",
+        "Pranzi e bevande",
+        "Biglietti d'ingresso ai monumenti e ai musei",
+        "Mance e spese personali"
+      ],
+      "itineraryDays": [
+        {
+          "title": "Agadir, costa, kasbah e promenade",
+          "desc": "Si comincia sull’Atlantico con un primo orientamento rilassato di Agadir: la promenade sul lungomare, la kasbah panoramica sulla collina e il vivace souk, tenendo la giornata leggera per assorbire l’aria di mare prima di dirigervi verso l’interno.",
+          "stops": [
+            "Spiaggia di Agadir",
+            "Belvedere della kasbah",
+            "Souk di Agadir"
+          ]
+        },
+        {
+          "title": "Agadir → Taroudant → Taliouine → Ouarzazate",
+          "desc": "Si attraversano le pianure del Souss fino alla città murata di Taroudant con le sue mura e il suo mercato dell’artigianato, poi si sale verso Taliouine, cuore dello zafferano marocchino, prima di superare l’Anti-Atlante fino a Ouarzazate per la notte.",
+          "stops": [
+            "Mura di Taroudant",
+            "Paese dello zafferano di Taliouine",
+            "Attraversamento dell’Anti-Atlante",
+            "Pernottamento: Ouarzazate"
+          ]
+        },
+        {
+          "title": "Ouarzazate → Aït Ben Haddou → Skoura → Valle del Dades",
+          "desc": "Si visita il ksar conservato di Aït Ben Haddou e la kasbah di Taourirt, stella del cinema, si passano i palmeti di Skoura e ci si addentra nella Valle delle Mille Kasbah per una notte nel Dades.",
+          "stops": [
+            "Ksar di Aït Ben Haddou",
+            "Kasbah di Taourirt",
+            "Oasi di Skoura",
+            "Pernottamento: Valle del Dades"
+          ]
+        },
+        {
+          "title": "Dades → Gole del Todra → Merzouga",
+          "desc": "Si segue il canyon del Dades e ci si ferma alle vertiginose pareti calcaree delle gole del Todra prima di attraversare la pianura desertica fino a Merzouga, dove un giro in cammello al tramonto vi conduce a Erg Chebbi per una notte sotto le stelle.",
+          "stops": [
+            "Gole del Dades",
+            "Gole del Todra",
+            "Merzouga",
+            "Campo nel deserto a Erg Chebbi"
+          ]
+        },
+        {
+          "title": "Merzouga → Rissani → Erfoud → Valle del Draa",
+          "desc": "Si guarda l’alba tingere d’oro le dune prima di esplorare i souk di Rissani e le botteghe dei fossili di Erfoud, poi si prosegue oltre le gole per perdersi tra le oasi di palme da dattero della valle del Draa.",
+          "stops": [
+            "Alba a Erg Chebbi",
+            "Souk di Rissani",
+            "Fossili di Erfoud",
+            "Pernottamento: Valle del Draa / Zagora"
+          ]
+        },
+        {
+          "title": "Valle del Draa → Zagora → Ouarzazate",
+          "desc": "Si percorre il lungo corridoio bordato di palme del Draa, con i suoi ksour in mattoni di fango e l’affaccio sulla «strada in senso unico per Timbuctu» a Zagora, poi si rientra a nord verso Ouarzazate per la notte.",
+          "stops": [
+            "Oasi della valle del Draa",
+            "Zagora, porta del deserto",
+            "Agdz",
+            "Pernottamento: Ouarzazate"
+          ]
+        },
+        {
+          "title": "Ouarzazate → Marrakech via l’Alto Atlante",
+          "desc": "Si supera il valico del Tizi n’Tichka sull’Alto Atlante con viste panoramiche, scendendo nella Città Rossa in tempo per l’atmosfera serale di Jemaa el-Fnaa. Pernottamento a Marrakech.",
+          "stops": [
+            "Valico del Tizi n'Tichka",
+            "Viste sull’Alto Atlante",
+            "Jemaa el-Fnaa",
+            "Pernottamento: Marrakech"
+          ]
+        },
+        {
+          "title": "Marrakech → Agadir lungo la costa",
+          "desc": "Si rientra sull’Atlantico attraverso le pianure verdi e le strade costiere, passando per la località da surf di Taghazout, e si torna ad Agadir per completare il giro. Il viaggio di proseguimento o un’estensione possono essere organizzati.",
+          "stops": [
+            "Strada costiera a nord di Agadir",
+            "Taghazout",
+            "Fine: Agadir"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "È un tour da Agadir a prezzo fisso?",
+          "answer": "No. È una rotta solo su preventivo, perché per essa non è attualmente pubblicato alcun prezzo pubblico verificato né un elenco di sistemazioni fisso. Il piano completo, le inclusioni e le condizioni di pagamento vengono confermati prima di qualsiasi pagamento."
+        },
+        {
+          "question": "Dove inizia e dove termina il circuito?",
+          "answer": "È pensato come un anello con inizio e fine ad Agadir, che raggiunge Marrakech a metà percorso. Una conclusione in senso unico (per esempio a Marrakech) può essere organizzata nel vostro preventivo privato."
+        },
+        {
+          "question": "La notte nel deserto è inclusa?",
+          "answer": "Sì, un trekking in cammello al tramonto e una notte in un campo nel deserto a Erg Chebbi fanno parte della rotta proposta e verranno confermati per iscritto prima della prenotazione."
+        }
+      ]
+    },
+    "2-day-zagora-desert-marrakech": {
+      "name": "Tour del deserto di Zagora da Marrakech in 2 giorni",
+      "duration": "2 giorni / 1 notte",
+      "category": "Deserto e Avventura",
+      "description": "Un compatto viaggio privato nel deserto da Marrakech a Zagora, per chi desidera un’esperienza del deserto meridionale senza impegnarsi nella più lunga rotta di Merzouga. Si attraversa l’Alto Atlante, si visitano Aït Ben Haddou e Ouarzazate, si prosegue attraverso la valle del Draa fino a Zagora e si rientra a Marrakech il giorno successivo.",
+      "routeCaption": "Marrakech → Alto Atlante → Aït Ben Haddou → Ouarzazate → Valle del Draa → Zagora → Marrakech.",
+      "highlights": [
+        "L’attraversamento dell’Alto Atlante",
+        "Aït Ben Haddou (UNESCO)",
+        "Ouarzazate e la valle del Draa",
+        "Esperienza nel deserto al tramonto nei pressi di Zagora",
+        "Notte in un campo nel deserto"
+      ],
+      "included": [
+        "Veicolo privato climatizzato",
+        "Autista professionista di lingua inglese",
+        "Carburante",
+        "Sistemazioni in base al pacchetto selezionato",
+        "Esperienza nel deserto descritta nell’itinerario confermato",
+        "Prelievo e rientro in hotel"
+      ],
+      "excluded": [
+        "Voli internazionali",
+        "Pranzi",
+        "Bevande",
+        "Biglietti d'ingresso ai monumenti e ai musei",
+        "Attività facoltative non indicate nell’itinerario confermato",
+        "Mance e gratifiche",
+        "Spese personali"
+      ],
+      "gallery": [
+        {
+          "caption": "Zagora e la porta della valle del Draa"
+        },
+        {
+          "caption": "Palmeti e paesaggi di kasbah della valle del Draa"
+        },
+        {
+          "caption": "Aït Ben Haddou sulla rotta verso sud da Marrakech"
+        }
+      ],
+      "itineraryDays": [
+        {
+          "title": "Marrakech → Alto Atlante → Aït Ben Haddou → Ouarzazate → Zagora",
+          "desc": "Si parte da Marrakech e si attraversa l’Alto Atlante prima di visitare il ksar di Aït Ben Haddou, inserito nella lista UNESCO. Si prosegue attraverso Ouarzazate e la valle del Draa fino a Zagora, dove il paesaggio diventa sempre più aperto e arido. La serata è riservata all’esperienza nel deserto confermata e al pernottamento.",
+          "stops": [
+            "Marrakech",
+            "Montagne dell’Alto Atlante",
+            "Aït Ben Haddou (UNESCO)",
+            "Ouarzazate",
+            "Valle del Draa",
+            "Zagora"
+          ]
+        },
+        {
+          "title": "Zagora → Valle del Draa → Alto Atlante → Marrakech",
+          "desc": "Si inizia il rientro dopo colazione, risalendo la valle del Draa verso Ouarzazate e attraversando l’Alto Atlante fino a Marrakech. È un formato veloce di due giorni, quindi chi preferisce più tempo nel deserto dovrebbe valutare un itinerario più lungo.",
+          "stops": [
+            "Zagora",
+            "Valle del Draa",
+            "Ouarzazate",
+            "Alto Atlante",
+            "Marrakech"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Il tour di 2 giorni a Zagora è privato?",
+          "answer": "Sì. L’itinerario è concepito come un viaggio privato per il vostro gruppo, con veicolo e autista dedicati."
+        },
+        {
+          "question": "È la stessa esperienza del Sahara di Merzouga?",
+          "answer": "No. Zagora è una regione desertica diversa da Erg Chebbi, vicino a Merzouga. Scegliete questa rotta più breve per la valle del Draa e Zagora; scegliete un itinerario via Merzouga quando le dune di Erg Chebbi sono la vostra priorità."
+        },
+        {
+          "question": "Il campo nel deserto è incluso?",
+          "answer": "Il pacchetto confermato specifica le sistemazioni e l’esperienza nel deserto incluse per le vostre date. Non diamo per scontato un campo o un upgrade particolare prima della prenotazione."
+        },
+        {
+          "question": "Si può prolungare il viaggio?",
+          "answer": "Sì. Se due giorni vi sembrano troppo compressi, chiedeteci di costruire una rotta privata più lunga attraverso la valle del Draa o con proseguimento verso Merzouga."
+        },
+        {
+          "question": "I pranzi sono inclusi?",
+          "answer": "I pranzi non sono inclusi salvo quanto espressamente indicato nell’itinerario confermato."
+        },
+        {
+          "question": "Come viene confermato il prezzo?",
+          "answer": "Questo tour è solo su preventivo, perché il prezzo finale dipende dalle vostre date, dalle dimensioni del gruppo e dalle sistemazioni selezionate. Contattateci prima e confermeremo l’itinerario e le condizioni commerciali prima del pagamento."
+        }
+      ]
+    },
+    "4-day-marrakech-merzouga-sahara": {
+      "name": "Tour del deserto del Sahara da Marrakech a Merzouga in 4 giorni",
+      "duration": "4 giorni / 3 notti",
+      "category": "Deserto e Avventura",
+      "description": "Un’alternativa più comoda al classico giro Marrakech–Merzouga di tre giorni. Il formato di quattro giorni mantiene i principali punti forti del sud ma dà al viaggio più respiro, con una giornata dedicata all’area di Merzouga prima del rientro a Marrakech.",
+      "routeCaption": "Marrakech → Alto Atlante → Aït Ben Haddou → Ouarzazate → Valle del Dades → Gole del Todra → Merzouga ed Erg Chebbi → Marrakech.",
+      "highlights": [
+        "L’attraversamento dell’Alto Atlante",
+        "Aït Ben Haddou e Ouarzazate",
+        "Valle del Dades e gole del Todra",
+        "Esperienza in cammello al tramonto a Erg Chebbi",
+        "Tempo extra a Merzouga",
+        "Notte in campo nel deserto"
+      ],
+      "included": [
+        "Veicolo privato climatizzato",
+        "Autista professionista di lingua inglese",
+        "Carburante",
+        "Sistemazioni in base al pacchetto selezionato",
+        "Esperienza nel deserto secondo l’itinerario confermato",
+        "Esperienza in cammello quando inclusa nel pacchetto confermato",
+        "Prelievo e rientro in hotel"
+      ],
+      "excluded": [
+        "Voli internazionali",
+        "Pranzi",
+        "Bevande",
+        "Biglietti d'ingresso",
+        "Attività facoltative",
+        "Mance e gratifiche",
+        "Spese personali"
+      ],
+      "gallery": [
+        {
+          "caption": "Valle del Dades sulla strada per Merzouga"
+        },
+        {
+          "caption": "Gole del Todra nell’Alto Atlante orientale"
+        },
+        {
+          "caption": "Merzouga all’orlo di Erg Chebbi"
+        },
+        {
+          "caption": "Le dune di Erg Chebbi"
+        }
+      ],
+      "itineraryDays": [
+        {
+          "title": "Marrakech → Alto Atlante → Aït Ben Haddou → Valle del Dades",
+          "desc": "Si attraversa l’Alto Atlante con sosta ad Aït Ben Haddou, poi si prosegue attraverso Ouarzazate e le valli meridionali fino alla valle del Dades. Il pernottimento spezza la lunga strada verso sud in una prima giornata gestibile.",
+          "stops": [
+            "Marrakech",
+            "Alto Atlante",
+            "Aït Ben Haddou",
+            "Ouarzazate",
+            "Valle del Dades"
+          ]
+        },
+        {
+          "title": "Valle del Dades → Gole del Todra → Erfoud → Merzouga",
+          "desc": "Si segue il paesaggio del Dades fino alle gole del Todra, poi si prosegue verso est attraverso il pre-Sahara verso Erfoud e Merzouga. Si arriva in tempo per l’esperienza nel deserto confermata e per il tramonto nella zona di Erg Chebbi.",
+          "stops": [
+            "Valle del Dades",
+            "Gole del Todra",
+            "Erfoud",
+            "Merzouga",
+            "Erg Chebbi"
+          ]
+        },
+        {
+          "title": "Merzouga ed Erg Chebbi — giornata nel Sahara",
+          "desc": "Si usa la giornata extra per vivere l’area di Merzouga con più calma. A seconda del piano confermato, si esplorano le dune e le comunità vicine, lasciando spazio all’alba o al tramonto invece di trascorrere l’intera giornata in autostrada.",
+          "stops": [
+            "Merzouga",
+            "Erg Chebbi",
+            "Alba nel deserto",
+            "Comunità locali",
+            "Pernottamento: zona di Merzouga"
+          ]
+        },
+        {
+          "title": "Merzouga → Valle dello Ziz → Alto Atlante → Marrakech",
+          "desc": "Dopo colazione, si inizia il rientro attraverso la valle dello Ziz e l’attraversamento dell’Atlante. L’ultimo giorno è un notevole viaggio su strada fino a Marrakech, con soste calibrate sulle condizioni del traffico e sull’itinerario concordato.",
+          "stops": [
+            "Merzouga",
+            "Valle dello Ziz",
+            "Alto Atlante",
+            "Marrakech"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Perché scegliere quattro giorni invece di tre?",
+          "answer": "Quattro giorni riducono la sensazione di una corsa continua su strada e vi danno una giornata dedicata all’area di Merzouga. È la scelta migliore quando il Sahara in sé conta quanto la rotta per arrivarci."
+        },
+        {
+          "question": "Questo tour include Erg Chebbi?",
+          "answer": "Sì. La rotta raggiunge Merzouga e la zona dunale di Erg Chebbi. Le sistemazioni nel deserto e gli arrangiamenti in cammello esatti vengono confermati con voi prima della prenotazione."
+        },
+        {
+          "question": "La sistemazione è inclusa?",
+          "answer": "Le sistemazioni vengono selezionate in base al pacchetto scelto e alla disponibilità confermata. Le strutture esatte non vengono promesse prima della prenotazione."
+        },
+        {
+          "question": "La rotta può essere personalizzata?",
+          "answer": "Sì. È un itinerario privato e può essere adattato al vostro ritmo preferito, ai vostri interessi e al punto di arrivo."
+        },
+        {
+          "question": "Il rientro a Marrakech è lungo?",
+          "answer": "Sì. Merzouga dista parecchio in auto da Marrakech. Il formato di quattro giorni aggiunge tempo nel deserto, ma il rientro finale resta comunque un’importante giornata di viaggio su strada."
+        },
+        {
+          "question": "Come viene confermato il prezzo?",
+          "answer": "Questo tour è solo su preventivo. Confermiamo le vostre date, le dimensioni del gruppo, la categoria delle sistemazioni e l’itinerario prima di fornire le condizioni commerciali finali."
+        }
+      ]
+    },
+    "5-day-great-south-morocco": {
+      "name": "Tour del Grande Sud del Marocco in 5 giorni",
+      "duration": "5 giorni / 4 notti",
+      "category": "Grande Sud",
+      "description": "Un circuito privato di cinque giorni nel Marocco meridionale, che unisce l’Alto Atlante, il paese delle kasbah intorno ad Aït Ben Haddou e al Dades, le gole del Todra e il Sahara intorno a Merzouga con la valle del Draa costellata di palme lungo il rientro.",
+      "routeCaption": "Marrakech → Alto Atlante → Aït Ben Haddou → Ouarzazate → Dades → Todra → Merzouga → Valle del Draa → Marrakech.",
+      "highlights": [
+        "L’Alto Atlante e il Tizi n’Tichka",
+        "Aït Ben Haddou",
+        "Le gole del Dades e del Todra",
+        "Merzouga ed Erg Chebbi",
+        "La valle del Draa e i paesaggi di kasbah del sud",
+        "Rientro a Marrakech"
+      ],
+      "included": [
+        "Veicolo privato climatizzato",
+        "Autista professionista di lingua inglese",
+        "Carburante",
+        "Sistemazioni in base al pacchetto selezionato",
+        "Esperienza nel deserto secondo l’itinerario confermato",
+        "Esperienza in cammello quando indicata",
+        "Prelievo e rientro in hotel"
+      ],
+      "excluded": [
+        "Voli internazionali",
+        "Pranzi",
+        "Bevande",
+        "Biglietti d'ingresso",
+        "Attività facoltative",
+        "Mance e gratifiche",
+        "Spese personali"
+      ],
+      "gallery": [
+        {
+          "caption": "Aït Ben Haddou"
+        },
+        {
+          "caption": "Valle del Dades"
+        },
+        {
+          "caption": "Merzouga ed Erg Chebbi"
+        },
+        {
+          "caption": "Palmeti della valle del Draa"
+        }
+      ],
+      "itineraryDays": [
+        {
+          "title": "Marrakech → Alto Atlante → Aït Ben Haddou → Dades",
+          "desc": "Si attraversa l’Alto Atlante, si visita Aït Ben Haddou e si prosegue attraverso Ouarzazate e le valli meridionali fino alla valle del Dades per il primo pernottamento.",
+          "stops": [
+            "Marrakech",
+            "Alto Atlante",
+            "Aït Ben Haddou",
+            "Ouarzazate",
+            "Valle del Dades"
+          ]
+        },
+        {
+          "title": "Dades → Gole del Todra → Erfoud → Merzouga",
+          "desc": "Si esplora il paesaggio del Dades, si prosegue fino alle gole del Todra e si viaggia verso est attraverso il pre-Sahara fino a Merzouga. Si raggiunge la zona di Erg Chebbi per l’esperienza nel deserto confermata.",
+          "stops": [
+            "Valle del Dades",
+            "Gole del Todra",
+            "Erfoud",
+            "Merzouga",
+            "Erg Chebbi"
+          ]
+        },
+        {
+          "title": "Merzouga → Erg Chebbi → Rissani e dintorni del deserto",
+          "desc": "Si conserva un ritmo lento per la giornata nel Sahara intorno a Merzouga. A seconda del piano concordato, si includono punti panoramici sulle dune, comunità locali, Rissani e tempo per il deserto all’alba o al tramonto.",
+          "stops": [
+            "Merzouga",
+            "Erg Chebbi",
+            "Rissani",
+            "Dintorni del deserto",
+            "Pernottamento: zona di Merzouga"
+          ]
+        },
+        {
+          "title": "Merzouga → Alnif → Nkob → Valle del Draa → Ouarzazate",
+          "desc": "Si lasciano le dune e si viaggia verso ovest attraverso i paesaggi di Alnif e Nkob, poi si segue la valle del Draa con i suoi palmeti e il suo paese di kasbah prima di proseguire verso Ouarzazate.",
+          "stops": [
+            "Merzouga",
+            "Alnif",
+            "Nkob",
+            "Valle del Draa",
+            "Ouarzazate"
+          ]
+        },
+        {
+          "title": "Ouarzazate → Aït Ben Haddou → Alto Atlante → Marrakech",
+          "desc": "Si rientra verso Marrakech passando per Aït Ben Haddou e l’Alto Atlante. L’ultimo giorno è calibrato sulla strada e sulle vostre soste preferite prima dell’arrivo a Marrakech.",
+          "stops": [
+            "Ouarzazate",
+            "Aït Ben Haddou",
+            "Alto Atlante",
+            "Marrakech"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Cosa rende questo un itinerario del Grande Sud?",
+          "answer": "La rotta si concentra sui paesaggi e sui corridoi culturali a sud dell’Alto Atlante: Aït Ben Haddou, il Dades, il Todra, Merzouga e la valle del Draa."
+        },
+        {
+          "question": "Merzouga è incluso?",
+          "answer": "Sì. La rotta raggiunge Merzouga e la zona di Erg Chebbi, con l’esperienza nel deserto esatta confermata come parte della vostra prenotazione."
+        },
+        {
+          "question": "È un tour privato?",
+          "answer": "Sì. È strutturato come un viaggio privato per il vostro gruppo."
+        },
+        {
+          "question": "Si può passare più tempo nel Sahara?",
+          "answer": "Sì. La rotta può essere adattata, e un formato più lungo via Merzouga potrebbe convenire meglio se il tempo nel deserto è la priorità."
+        },
+        {
+          "question": "I pasti sono inclusi?",
+          "answer": "I pasti dipendono dal pacchetto di sistemazioni confermato. L’itinerario finale indicherà quali colazioni e cene sono incluse."
+        },
+        {
+          "question": "Come viene confermato il prezzo?",
+          "answer": "Questo tour è solo su preventivo. Confermiamo le date, le dimensioni del gruppo e le scelte di sistemazione prima di confermare il prezzo finale."
+        }
+      ]
+    },
+    "3-day-fes-merzouga-sahara": {
+      "name": "Tour del deserto del Sahara da Fes a Merzouga in 3 giorni",
+      "duration": "3 giorni / 2 notti",
+      "category": "Sahara e Cultura",
+      "description": "Un viaggio privato mirato da Fes al Sahara di Merzouga. Si viaggia verso sud attraverso il Medio Atlante e la valle dello Ziz, si raggiunge Erg Chebbi per l’esperienza nel deserto, poi si prosegue o si rientra secondo il piano confermato. La rotta è volutamente compatta; chi desidera più tempo intorno alle dune dovrebbe prolungarla.",
+      "routeCaption": "Fes → Ifrane e Medio Atlante → Valle dello Ziz → Merzouga → Erg Chebbi.",
+      "highlights": [
+        "Partenza da Fes",
+        "Il Medio Atlante e le foreste di cedri",
+        "La valle dello Ziz",
+        "Merzouga ed Erg Chebbi",
+        "Esperienza nel deserto al tramonto",
+        "Notte in campo nel deserto"
+      ],
+      "included": [
+        "Pianificazione privata dell’itinerario",
+        "Percorso confermato in base alle vostre date",
+        "Trasporto privato quando incluso nel preventivo confermato",
+        "Esperienza nel deserto quando inclusa nell’itinerario confermato"
+      ],
+      "excluded": [
+        "Voli internazionali",
+        "Tutto ciò che non è esplicitamente incluso nel preventivo confermato",
+        "Spese personali e mance salvo diverso accordo"
+      ],
+      "gallery": [
+        {
+          "caption": "Fes, punto di partenza del viaggio verso sud"
+        },
+        {
+          "caption": "Ifrane nel Medio Atlante"
+        },
+        {
+          "caption": "Merzouga all’orlo di Erg Chebbi"
+        }
+      ],
+      "itineraryDays": [
+        {
+          "title": "Fes → Ifrane → Foresta di cedri → Midelt → Valle dello Ziz",
+          "desc": "Si parte da Fes e si attraversa il Medio Atlante passando per Ifrane e i paesaggi delle foreste di cedri. Si prosegue verso Midelt e la valle dello Ziz, con la strada stessa che offre il panorama mutevole dal Marocco settentrionale al pre-Sahara.",
+          "stops": [
+            "Fes",
+            "Ifrane",
+            "Foresta di cedri",
+            "Midelt",
+            "Valle dello Ziz"
+          ]
+        },
+        {
+          "title": "Valle dello Ziz → Erfoud → Merzouga → Erg Chebbi",
+          "desc": "Si prosegue verso Erfoud e Merzouga. Si arriva alle dune per l’esperienza nel deserto confermata, come un trasferimento in cammello al tramonto quando incluso, seguita dalla notte nella sistemazione confermata.",
+          "stops": [
+            "Valle dello Ziz",
+            "Erfoud",
+            "Merzouga",
+            "Erg Chebbi",
+            "Esperienza nel deserto al tramonto"
+          ]
+        },
+        {
+          "title": "Merzouga → proseguimento",
+          "desc": "Si inizia con la mattina nel deserto, poi si prosegue verso la destinazione concordata nel vostro preventivo. Un rientro a Fes o una conclusione in senso unico possono essere discussi; nessun punto di arrivo fisso viene dichiarato prima della conferma.",
+          "stops": [
+            "Alba a Merzouga",
+            "Erg Chebbi",
+            "Destinazione di proseguimento confermata"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "È possibile questa rotta in tre giorni?",
+          "answer": "Sì, ma si tratta di un itinerario overland compatto con una guida notevole. Se volete un’esperienza del Sahara più rilassata, richiedete una versione più lunga."
+        },
+        {
+          "question": "Il trekking in cammello è incluso?",
+          "answer": "L’esperienza nel deserto può includere un trasferimento in cammello quando questa opzione viene selezionata e confermata. Non diamo per scontate attività facoltative prima della prenotazione."
+        },
+        {
+          "question": "Dove dormiamo?",
+          "answer": "Le sistemazioni vengono selezionate in base al pacchetto scelto e alla disponibilità, con la notte nel deserto confermata prima della prenotazione."
+        },
+        {
+          "question": "Si può concludere in un luogo diverso da Fes?",
+          "answer": "Sì. In quanto viaggio privato, il punto di arrivo può essere discusso quando richiedete il preventivo."
+        },
+        {
+          "question": "I pranzi sono inclusi?",
+          "answer": "No, salvo quanto espressamente incluso nell’itinerario confermato."
+        },
+        {
+          "question": "Come viene confermato il prezzo?",
+          "answer": "Questo tour è solo su preventivo, perché date, dimensioni del gruppo e sistemazioni incidono sull’allestimento finale. Confermiamo le condizioni prima del pagamento."
+        }
+      ]
+    },
+    "4-day-fes-marrakech-via-merzouga": {
+      "name": "Da Fes a Marrakech via Merzouga in 4 giorni",
+      "duration": "4 giorni / 3 notti",
+      "category": "Sahara e Gran Tour",
+      "description": "Una rotta privata in senso unico che collega Fes e Marrakech attraverso il Sahara. Si viaggia dal Medio Atlante a Merzouga ed Erg Chebbi, poi si attraversano i paesaggi del Todra e del Dades prima di Aït Ben Haddou e dell’Alto Atlante, fino a concludersi a Marrakech.",
+      "routeCaption": "Fes → Medio Atlante → Merzouga ed Erg Chebbi → Gole del Todra → Valle del Dades → Aït Ben Haddou → Alto Atlante → Marrakech.",
+      "highlights": [
+        "Partenza da Fes",
+        "Il Medio Atlante e la valle dello Ziz",
+        "Esperienza nel Sahara a Erg Chebbi",
+        "Gole del Todra",
+        "Valle del Dades",
+        "Aït Ben Haddou",
+        "Arrivo a Marrakech"
+      ],
+      "included": [
+        "Veicolo privato climatizzato",
+        "Autista professionista di lingua inglese",
+        "Carburante",
+        "Sistemazioni in base al pacchetto selezionato",
+        "Esperienza nel deserto secondo l’itinerario confermato",
+        "Esperienza in cammello quando indicata",
+        "Prelievo e rientro in hotel"
+      ],
+      "excluded": [
+        "Voli internazionali",
+        "Pranzi",
+        "Bevande",
+        "Biglietti d'ingresso",
+        "Attività facoltative",
+        "Mance e gratifiche",
+        "Spese personali"
+      ],
+      "gallery": [
+        {
+          "caption": "Medina di Fes"
+        },
+        {
+          "caption": "Merzouga e il Sahara"
+        },
+        {
+          "caption": "Gole del Todra"
+        },
+        {
+          "caption": "Aït Ben Haddou"
+        }
+      ],
+      "itineraryDays": [
+        {
+          "title": "Fes → Ifrane → Midelt → Valle dello Ziz → Merzouga",
+          "desc": "Si lascia Fes e si attraversa il Medio Atlante passando per Ifrane e le foreste di cedri, proseguendo via Midelt e la valle dello Ziz fino a Merzouga. Il paesaggio desertico appare al termine della strada verso sud.",
+          "stops": [
+            "Fes",
+            "Ifrane",
+            "Foresta di cedri",
+            "Midelt",
+            "Valle dello Ziz",
+            "Merzouga"
+          ]
+        },
+        {
+          "title": "Merzouga → Erg Chebbi → Gole del Todra → Valle del Dades",
+          "desc": "Si gode il deserto al mattino prima di viaggiare verso ovest attraverso il pre-Sahara. Si prosegue fino alle gole del Todra e alla valle del Dades per il pernottamento, mantenendo la rotta concentrata sui paesaggi principali.",
+          "stops": [
+            "Merzouga",
+            "Erg Chebbi",
+            "Gole del Todra",
+            "Valle del Dades"
+          ]
+        },
+        {
+          "title": "Valle del Dades → Ouarzazate → Aït Ben Haddou",
+          "desc": "Si segue la strada meridionale attraverso Ouarzazate e si prosegue fino ad Aït Ben Haddou. Si prende tempo per esplorare il ksar storico prima del pernottamento nella zona circostante.",
+          "stops": [
+            "Valle del Dades",
+            "Ouarzazate",
+            "Aït Ben Haddou (UNESCO)"
+          ]
+        },
+        {
+          "title": "Aït Ben Haddou → Alto Atlante → Marrakech",
+          "desc": "Si attraversa l’Alto Atlante nell’ultima tappa verso Marrakech. L’arrivo è nella Città Rossa, con il punto di arrivo e gli orari confermati in base ai vostri piani.",
+          "stops": [
+            "Aït Ben Haddou",
+            "Alto Atlante",
+            "Marrakech"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Questo tour termina a Marrakech?",
+          "answer": "Sì. È concepito come una rotta privata in senso unico da Fes a Marrakech attraverso Merzouga e il Marocco meridionale."
+        },
+        {
+          "question": "Erg Chebbi è incluso?",
+          "answer": "Sì. La rotta raggiunge Merzouga e la zona dunale di Erg Chebbi. Le sistemazioni nel campo e gli arrangiamenti in cammello esatti vengono confermati prima della prenotazione."
+        },
+        {
+          "question": "Perché la rotta è di quattro giorni?",
+          "answer": "Quattro giorni danno al viaggio in senso unico spazio sufficiente per il Medio Atlante, il Sahara e le valli meridionali, senza cercare di forzare l’intera rotta in un unico trasferimento frettoloso."
+        },
+        {
+          "question": "Si possono aggiungere notti?",
+          "answer": "Sì. Notti aggiuntive o un itinerario più lento possono essere discussi come parte del piano di viaggio privato."
+        },
+        {
+          "question": "I biglietti d’ingresso sono inclusi?",
+          "answer": "I biglietti d’ingresso a monumenti e musei sono esclusi salvo espressa indicazione nell’itinerario confermato."
+        },
+        {
+          "question": "Come viene confermato il prezzo?",
+          "answer": "Questo è un itinerario solo su preventivo. Confermiamo le vostre date, le dimensioni del gruppo e le scelte di sistemazione prima di confermare il prezzo finale."
+        }
+      ]
     }
   }
 }
