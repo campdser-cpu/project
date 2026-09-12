@@ -2807,6 +2807,485 @@
           "caption": "Merzouga am Rand des Erg Chebbi"
         }
       ]
+    },
+    "2-day-zagora-desert-marrakech": {
+      "id": "2-day-zagora-desert-marrakech",
+      "name": "2-tägige Zagora-Wüstentour ab Marrakesch",
+      "duration": "2 Tage / 1 Nacht",
+      "category": "Privat · Nur auf Anfrage",
+      "highlights": [
+        "Überquerung des Hohen Atlas",
+        "Aït Ben Haddou (UNESCO)",
+        "Ouarzazate und Draa-Tal",
+        "Wüsten-Erlebnis bei Sonnenuntergang nahe Zagora",
+        "Nacht in einem Wüstencamp"
+      ],
+      "description": "Eine kompakte private Wüstenreise von Marrakesch nach Zagora für Reisende, die ein südliches Wüstenerlebnis wollen, ohne die längere Merzouga-Route zu wählen. Überqueren Sie den Hohen Atlas, besichtigen Sie Aït Ben Haddou und Ouarzazate, fahren Sie durch das Draa-Tal nach Zagora und kehren Sie am folgenden Tag nach Marrakesch zurück.",
+      "routeCaption": "Marrakesch → Hoher Atlas → Aït Ben Haddou → Ouarzazate → Draa-Tal → Zagora → Marrakesch.",
+      "itineraryDays": [
+        {
+          "day": 1,
+          "title": "Marrakesch → Hoher Atlas → Aït Ben Haddou → Ouarzazate → Zagora",
+          "desc": "Verlassen Sie Marrakesch und überqueren Sie den Hohen Atlas, bevor Sie den UNESCO-gelisteten Ksar Aït Ben Haddou besuchen. Weiter durch Ouarzazate und das Draa-Tal nach Zagora, wo die Landschaft zunehmend offen und trocken wird. Der Abend ist für das bestätigte Wüsten-Erlebnis und die Übernachtung reserviert.",
+          "stops": [
+            "Marrakesch",
+            "Hohes Atlasgebirge",
+            "Aït Ben Haddou (UNESCO)",
+            "Ouarzazate",
+            "Draa-Tal",
+            "Zagora"
+          ]
+        },
+        {
+          "day": 2,
+          "title": "Zagora → Draa-Tal → Hoher Atlas → Marrakesch",
+          "desc": "Nach dem Frühstück beginnt die Rückreise entlang des Draa-Tals Richtung Ouarzazate und über den Hohen Atlas nach Marrakesch. Das ist ein schnelles Zweitage-Format; wer mehr Zeit in der Wüste möchte, sollte eine längere Route in Betracht ziehen.",
+          "stops": [
+            "Zagora",
+            "Draa-Tal",
+            "Ouarzazate",
+            "Hoher Atlas",
+            "Marrakesch"
+          ]
+        }
+      ],
+      "included": [
+        "Privates, klimatisiertes Fahrzeug",
+        "Professioneller englischsprachiger Fahrer",
+        "Kraftstoff",
+        "Unterkunft gemäß gewähltem Paket",
+        "Wüsten-Erlebnis laut bestätigtem Reiseverlauf",
+        "Hotel-Abholung & Rückbringung"
+      ],
+      "excluded": [
+        "Internationale Flüge",
+        "Mittagessen",
+        "Getränke",
+        "Eintrittsgelder für Monumente und Museen",
+        "Optionale Aktivitäten, die nicht im bestätigten Reiseverlauf enthalten sind",
+        "Trinkgelder",
+        "Persönliche Ausgaben"
+      ],
+      "gallery": [
+        {
+          "caption": "Zagora und das Tor zum Draa-Tal"
+        },
+        {
+          "caption": "Palmenhaine und Kasbah-Landschaften im Draa-Tal"
+        },
+        {
+          "caption": "Aït Ben Haddou auf der Route südwärts ab Marrakesch"
+        }
+      ],
+      "faq": [
+        {
+          "question": "Ist die 2-tägige Zagora-Tour privat?",
+          "answer": "Ja. Der Reiseverlauf ist als private Reise für Ihre Gruppe konzipiert, mit eigenem Fahrzeug und Fahrer."
+        },
+        {
+          "question": "Ist das dasselbe Sahara-Erlebnis wie in Merzouga?",
+          "answer": "Nein. Zagora ist eine andere Wüstenregion als der Erg Chebbi bei Merzouga. Wählen Sie diese kürzere Route für das Draa-Tal und Zagora; wählen Sie eine Merzouga-Route, wenn die Dünen des Erg Chebbi Ihre Priorität sind."
+        },
+        {
+          "question": "Ist das Wüstencamp enthalten?",
+          "answer": "Das bestätigte Paket legt fest, welche Unterkunft und welches Wüsten-Erlebnis für Ihre Termine enthalten sind. Wir nehmen vor der Buchung kein bestimmtes Camp oder Upgrade an."
+        },
+        {
+          "question": "Kann ich die Reise verlängern?",
+          "answer": "Ja. Wenn zwei Tage zu gedrängt wirken, fragen Sie uns nach einer längeren privaten Route durch das Draa-Tal oder weiter nach Merzouga."
+        },
+        {
+          "question": "Sind Mittagessen enthalten?",
+          "answer": "Mittagessen sind nicht enthalten, sofern sie nicht ausdrücklich im bestätigten Reiseverlauf genannt werden."
+        },
+        {
+          "question": "Wie wird der Preis bestätigt?",
+          "answer": "Diese Tour ist nur auf Anfrage, da der endgültige Preis von Ihren Terminen, der Gruppengröße und der gewählten Unterkunft abhängt. Kontaktieren Sie uns zuerst – wir bestätigen Reiseverlauf und Konditionen vor jeder Zahlung."
+        }
+      ],
+      "quoteOnly": true
+    },
+    "4-day-marrakech-merzouga-sahara": {
+      "id": "4-day-marrakech-merzouga-sahara",
+      "name": "4-tägige Sahara-Wüstentour von Marrakesch nach Merzouga",
+      "duration": "4 Tage / 3 Nächte",
+      "category": "Privat · Nur auf Anfrage",
+      "highlights": [
+        "Überquerung des Hohen Atlas",
+        "Aït Ben Haddou und Ouarzazate",
+        "Dades-Tal und Todra-Schlucht",
+        "Kamel-Erlebnis bei Sonnenuntergang im Erg Chebbi",
+        "Extra Zeit in Merzouga",
+        "Nacht in einem Wüstencamp"
+      ],
+      "description": "Eine bequemere Alternative zur klassischen Dreitage-Schleife von Marrakesch nach Merzouga. Das Vier-Tage-Format bewahrt die Höhepunkte des Südens, gibt der Reise aber mehr Raum – mit einem eigenen Tag rund um Merzouga, bevor es zurück nach Marrakesch geht.",
+      "routeCaption": "Marrakesch → Hoher Atlas → Aït Ben Haddou → Ouarzazate → Dades-Tal → Todra-Schlucht → Merzouga & Erg Chebbi → Marrakesch.",
+      "itineraryDays": [
+        {
+          "day": 1,
+          "title": "Marrakesch → Hoher Atlas → Aït Ben Haddou → Dades-Tal",
+          "desc": "Überqueren Sie den Hohen Atlas und halten Sie an Aït Ben Haddou, bevor es durch Ouarzazate und die südlichen Täler in das Dades-Tal weitergeht. Die Übernachtung gliedert die lange Fahrt nach Süden in einen überschaubaren ersten Tag.",
+          "stops": [
+            "Marrakesch",
+            "Hoher Atlas",
+            "Aït Ben Haddou",
+            "Ouarzazate",
+            "Dades-Tal"
+          ]
+        },
+        {
+          "day": 2,
+          "title": "Dades-Tal → Todra-Schlucht → Erfoud → Merzouga",
+          "desc": "Folgen Sie der Landschaft des Dades-Tals zur Todra-Schlucht, dann ostwärts durch die Vor-Sahara Richtung Erfoud und Merzouga. Ankunft rechtzeitig für das bestätigte Wüsten-Erlebnis und den Sonnenuntergang im Gebiet des Erg Chebbi.",
+          "stops": [
+            "Dades-Tal",
+            "Todra-Schlucht",
+            "Erfoud",
+            "Merzouga",
+            "Erg Chebbi"
+          ]
+        },
+        {
+          "day": 3,
+          "title": "Merzouga und Erg Chebbi – Sahara-Tag",
+          "desc": "Nutzen Sie den zusätzlichen Tag, um die Gegend von Merzouga in ruhigerem Tempo zu erleben. Je nach bestätigtem Plan erkunden Sie Dünen und umliegende Gemeinden und lassen Raum für Sonnenaufgang oder Sonnenuntergang, statt den ganzen Tag auf der Straße zu verbringen.",
+          "stops": [
+            "Merzouga",
+            "Erg Chebbi",
+            "Wüstensonnenaufgang",
+            "Lokale Gemeinden",
+            "Übernachtung: Umgebung von Merzouga"
+          ]
+        },
+        {
+          "day": 4,
+          "title": "Merzouga → Ziz-Tal → Hoher Atlas → Marrakesch",
+          "desc": "Nach dem Frühstück beginnt die Rückfahrt durch das Ziz-Tal und über das Atlasgebirge. Der letzte Tag ist eine ausgedehnte Straßenetappe zurück nach Marrakesch, mit Stopps im Rhythmus der Straßenverhältnisse und Ihres vereinbarten Reiseverlaufs.",
+          "stops": [
+            "Merzouga",
+            "Ziz-Tal",
+            "Hoher Atlas",
+            "Marrakesch"
+          ]
+        }
+      ],
+      "included": [
+        "Privates, klimatisiertes Fahrzeug",
+        "Professioneller englischsprachiger Fahrer",
+        "Kraftstoff",
+        "Unterkunft gemäß gewähltem Paket",
+        "Wüsten-Erlebnis laut bestätigtem Reiseverlauf",
+        "Kamel-Erlebnis, sofern im bestätigten Paket enthalten",
+        "Hotel-Abholung & Rückbringung"
+      ],
+      "excluded": [
+        "Internationale Flüge",
+        "Mittagessen",
+        "Getränke",
+        "Eintrittsgelder",
+        "Optionale Aktivitäten",
+        "Trinkgelder",
+        "Persönliche Ausgaben"
+      ],
+      "gallery": [
+        {
+          "caption": "Dades-Tal auf der Straße nach Merzouga"
+        },
+        {
+          "caption": "Todra-Schlucht im östlichen Hohen Atlas"
+        },
+        {
+          "caption": "Merzouga am Rand des Erg Chebbi"
+        },
+        {
+          "caption": "Die Dünen des Erg Chebbi"
+        }
+      ],
+      "faq": [
+        {
+          "question": "Warum vier statt drei Tage?",
+          "answer": "Vier Tage nehmen das Gefühl eines durchgehenden Straßenrennens und geben Ihnen einen eigenen Tag rund um Merzouga. Die bessere Wahl, wenn die Sahara selbst ebenso wichtig ist wie die Route dorthin."
+        },
+        {
+          "question": "Ist der Erg Chebbi enthalten?",
+          "answer": "Ja. Die Route erreicht Merzouga und das Dünengebiet des Erg Chebbi. Die genauen Wüstencamp- und Kamel-Arrangements werden vor der Buchung mit Ihnen abgestimmt."
+        },
+        {
+          "question": "Ist die Unterkunft enthalten?",
+          "answer": "Die Unterkunft wird gemäß dem gewählten Paket und der bestätigten Verfügbarkeit ausgewählt. Konkrete Häuser werden vor der Buchung nicht zugesagt."
+        },
+        {
+          "question": "Kann die Route angepasst werden?",
+          "answer": "Ja. Dies ist ein privater Reiseverlauf und lässt sich um Ihr gewünschtes Tempo, Ihre Interessen und Ihren Zielort herum anpassen."
+        },
+        {
+          "question": "Ist die Rückfahrt nach Marrakesch lang?",
+          "answer": "Ja. Merzouga ist eine lange Fahrt von Marrakesch entfernt. Das Vier-Tage-Format bringt mehr Zeit in der Wüste, aber die letzte Rückreise bleibt eine ausgedehnte Fahrtetappe."
+        },
+        {
+          "question": "Wie wird der Preis bestätigt?",
+          "answer": "Diese Tour ist nur auf Anfrage. Wir bestätigen Ihre Termine, die Gruppengröße, die Unterkunftskategorie und den Reiseverlauf, bevor wir die endgültigen Konditionen nennen."
+        }
+      ],
+      "quoteOnly": true
+    },
+    "5-day-great-south-morocco": {
+      "id": "5-day-great-south-morocco",
+      "name": "5-tägige Groß-Süd-Marokko-Tour",
+      "duration": "5 Tage / 4 Nächte",
+      "category": "Privat · Nur auf Anfrage",
+      "highlights": [
+        "Hoher Atlas und Tizi-n'Tichka",
+        "Aït Ben Haddou",
+        "Dades- und Todra-Schluchten",
+        "Merzouga und Erg Chebbi",
+        "Draa-Tal und südliche Kasbah-Landschaften",
+        "Rückkehr nach Marrakesch"
+      ],
+      "description": "Eine private Fünftage-Rundreise durch das südlich Marokkos, die den Hohen Atlas, die Kasbach-Landschaften um Aït Ben Haddou und Dades, die Todra-Schlucht und die Sahara um Merzouga mit dem palmvollen Draa-Tal auf der Rückfahrt verbindet.",
+      "routeCaption": "Marrakesch → Hoher Atlas → Aït Ben Haddou → Ouarzazate → Dades → Todra → Merzouga → Draa-Tal → Marrakesch.",
+      "itineraryDays": [
+        {
+          "day": 1,
+          "title": "Marrakesch → Hoher Atlas → Aït Ben Haddou → Dades",
+          "desc": "Überqueren Sie den Hohen Atlas, besuchen Sie Aït Ben Haddou und fahren Sie weiter durch Ouarzazate und die südlichen Täler bis ins Dades-Tal zur ersten Übernachtung.",
+          "stops": [
+            "Marrakesch",
+            "Hoher Atlas",
+            "Aït Ben Haddou",
+            "Ouarzazate",
+            "Dades-Tal"
+          ]
+        },
+        {
+          "day": 2,
+          "title": "Dades → Todra-Schlucht → Erfoud → Merzouga",
+          "desc": "Erkunden Sie die Dades-Landschaft, weiter zur Todra-Schlucht und ostwärts durch die Vor-Sahara nach Merzouga. Erreichen Sie das Gebiet des Erg Chebbi für das bestätigte Wüsten-Erlebnis.",
+          "stops": [
+            "Dades-Tal",
+            "Todra-Schlucht",
+            "Erfoud",
+            "Merzouga",
+            "Erg Chebbi"
+          ]
+        },
+        {
+          "day": 3,
+          "title": "Merzouga → Erg Chebbi → Rissani und Wüste-Umgebung",
+          "desc": "Halten Sie einen langsameren Sahara-Tag rund um Merzouga ein. Je nach vereinbartem Plan gehören Dünenaufpunkte, lokale Gemeinden, Rissani und Zeit in der Wüste bei Sonnenaufgang oder Sonnenuntergang dazu.",
+          "stops": [
+            "Merzouga",
+            "Erg Chebbi",
+            "Rissani",
+            "Wüste-Umgebung",
+            "Übernachtung: Merzouga-Gegend"
+          ]
+        },
+        {
+          "day": 4,
+          "title": "Merzouga → Alnif → Nkob → Draa-Tal → Ouarzazate",
+          "desc": "Verlassen Sie die Dünen und fahren Sie westwärts durch die Landschaften von Alnif und Nkob, dann folgen Sie dem Draa-Tal mit seinen Palmenhainen und Kasbah-Landschaften weiter nach Ouarzazate.",
+          "stops": [
+            "Merzouga",
+            "Alnif",
+            "Nkob",
+            "Draa-Tal",
+            "Ouarzazate"
+          ]
+        },
+        {
+          "day": 5,
+          "title": "Ouarzazate → Aït Ben Haddou → Hoher Atlas → Marrakesch",
+          "desc": "Rückfahrt Richtung Marrakesch über Aït Ben Haddou und den Hohen Atlas. Der letzte Tag ist auf die Straße und Ihre bevorzugten Stopps abgestimmt, bevor Sie in Marrakesch ankommen.",
+          "stops": [
+            "Ouarzazate",
+            "Aït Ben Haddou",
+            "Hoher Atlas",
+            "Marrakesch"
+          ]
+        }
+      ],
+      "included": [
+        "Privates, klimatisiertes Fahrzeug",
+        "Professioneller englischsprachiger Fahrer",
+        "Kraftstoff",
+        "Unterkunft gemäß gewähltem Paket",
+        "Wüsten-Erlebnis laut bestätigtem Reiseverlauf",
+        "Kamel-Erlebnis, sofern spezifiziert",
+        "Hotel-Abholung & Rückbringung"
+      ],
+      "excluded": [
+        "Internationale Flüge",
+        "Mittagessen",
+        "Getränke",
+        "Eintrittsgelder",
+        "Optionale Aktivitäten",
+        "Trinkgelder",
+        "Persönliche Ausgaben"
+      ],
+      "gallery": [
+        {
+          "caption": "Aït Ben Haddou"
+        },
+        {
+          "caption": "Dades-Tal"
+        },
+        {
+          "caption": "Merzouga und Erg Chebbi"
+        },
+        {
+          "caption": "Palmenhaine des Draa-Tals"
+        }
+      ],
+      "faq": [
+        {
+          "question": "Was macht diesen Plan zur Großen Süd-Route?",
+          "answer": "Die Route konzentriert sich auf die Landschaften und Kulturkorridore südlich des Hohen Atlas: Aït Ben Haddou, Dades, Todra, Merzouga und das Draa-Tal."
+        },
+        {
+          "question": "Ist Merzouga enthalten?",
+          "answer": "Ja. Die Route erreicht Merzouga und das Gebiet des Erg Chebbi; das genaue Wüsten-Erlebnis wird als Teil Ihrer Buchung bestätigt."
+        },
+        {
+          "question": "Ist das privat?",
+          "answer": "Ja. Sie ist als private Reise für Ihre Gruppe konzipiert."
+        },
+        {
+          "question": "Können wir mehr Zeit in der Sahara verbringen?",
+          "answer": "Ja. Die Route lässt sich anpassen; ein längeres Merzouga-Format passt vielleicht besser, wenn die Wüstenzeit Vorrang hat."
+        },
+        {
+          "question": "Sind Mahlzeiten enthalten?",
+          "answer": "Mahlzeiten hängen vom bestätigten Unterkunftspaket ab. Der endgültige Reiseverlauf gibt an, welche Frühstücke und Abende enthalten sind."
+        },
+        {
+          "question": "Wie wird der Preis bestätigt?",
+          "answer": "Diese Tour ist nur auf Anfrage. Wir bestätigen Termine, Gruppengröße und Unterkunftswünsche, bevor wir den endgültigen Preis nennen."
+        }
+      ],
+      "quoteOnly": true
+    },
+    "4-day-fes-marrakech-via-merzouga": {
+      "id": "4-day-fes-marrakech-via-merzouga",
+      "name": "4-tägige Reise von Fès nach Marrakesch über Merzouga",
+      "duration": "4 Tage / 3 Nächte",
+      "category": "Privat · Nur auf Anfrage",
+      "highlights": [
+        "Abfahrt von Fès",
+        "Mittlerer Atlas und Ziz-Tal",
+        "Sahara-Erlebnis Erg Chebbi",
+        "Todra-Schlucht",
+        "Dades-Tal",
+        "Aït Ben Haddou",
+        "Ende in Marrakesch"
+      ],
+      "description": "Eine einwegige private Route, die Fès und Marrakesch über die Sahara verbindet. Reisen Sie vom Mittleren Atlas nach Merzouga und Erg Chebbi, dann überqueren Sie die Landschaften von Todra und Dades, vorbei an Aït Ben Haddou und dem Hohen Atlas, die in Marrakesch enden.",
+      "routeCaption": "Fès → Mittlerer Atlas → Merzouga & Erg Chebbi → Todra-Schlucht → Dades-Tal → Aït Ben Haddou → Hoher Atlas → Marrakesch.",
+      "itineraryDays": [
+        {
+          "day": 1,
+          "title": "Fès → Ifrane → Midelt → Ziz-Tal → Merzouga",
+          "desc": "Verlassen Sie Fès und überqueren Sie den Mittleren Atlas durch Ifrane und die Zedernwälder, weiter über Midelt und das Ziz-Tal nach Merzouga. Die Wüstenlandschaft erscheint am Ende der Straße nach Süden.",
+          "stops": [
+            "Fès",
+            "Ifrane",
+            "Zedernwald",
+            "Midelt",
+            "Ziz-Tal",
+            "Merzouga"
+          ]
+        },
+        {
+          "day": 2,
+          "title": "Merzouga → Erg Chebbi → Todra-Schlucht → Dades-Tal",
+          "desc": "Genießen Sie morgens die Wüste, bevor es westwärts durch die Vor-Sahara weitergeht. Weiter zur Todra-Schlucht und ins Dades-Tal zur Übernachtung, mit Fokus auf die großen Landschaften.",
+          "stops": [
+            "Merzouga",
+            "Erg Chebbi",
+            "Todra-Schlucht",
+            "Dades-Tal"
+          ]
+        },
+        {
+          "day": 3,
+          "title": "Dades-Tal → Ouarzazate → Aït Ben Haddou",
+          "desc": "Folgen Sie der südlichen Straße durch Ouarzazate und weiter nach Aït Ben Haddou. Nehmen Sie sich Zeit, den historischen Ksar zu erkunden, bevor die Übernachtung in der Umgebung folgt.",
+          "stops": [
+            "Dades-Tal",
+            "Ouarzazate",
+            "Aït Ben Haddou (UNESCO)"
+          ]
+        },
+        {
+          "day": 4,
+          "title": "Aït Ben Haddou → Hoher Atlas → Marrakesch",
+          "desc": "Überqueren Sie auf der letzten Etappe den Hohen Atlas nach Marrakesch. Der Zielort ist die Rote Stadt, mit Ankunftspunkt und Timing, das um Ihre Pläne herum bestimmt wird.",
+          "stops": [
+            "Aït Ben Haddou",
+            "Hoher Atlas",
+            "Marrakesch"
+          ]
+        }
+      ],
+      "included": [
+        "Privates, klimatisiertes Fahrzeug",
+        "Professioneller englischsprachiger Fahrer",
+        "Kraftstoff",
+        "Unterkunft gemäß gewähltem Paket",
+        "Wüsten-Erlebnis laut bestätigtem Reiseverlauf",
+        "Kamel-Erlebnis, sofern spezifiziert",
+        "Hotel-Abholung und Rückbringung"
+      ],
+      "excluded": [
+        "Internationale Flüge",
+        "Mittagessen",
+        "Getränke",
+        "Eintrittsgelder",
+        "Optionale Aktivitäten",
+        "Trinkgelder",
+        "Persönliche Ausgaben"
+      ],
+      "gallery": [
+        {
+          "caption": "Medina von Fès"
+        },
+        {
+          "caption": "Merzouga und die Sahara"
+        },
+        {
+          "caption": "Todra-Schlucht"
+        },
+        {
+          "caption": "Aït Ben Haddou"
+        }
+      ],
+      "faq": [
+        {
+          "question": "Endet diese Tour in Marrakesch?",
+          "answer": "Ja. Sie ist als einwegige private Route von Fès nach Marrakesch durch Merzouga und das südliche Marokko konzipiert."
+        },
+        {
+          "question": "Ist der Erg Chebbi enthalten?",
+          "answer": "Ja. Die Route erreicht Merzouga und das Dünengebiet des Erg Chebbi. Die genauen Camp- und Kamel-Arrangements werden vor der Buchung bestätigt."
+        },
+        {
+          "question": "Warum sind es vier Tage?",
+          "answer": "Vier Tage geben der Einweg-Route genug Raum für den Mittleren Atlas, die Sahara und die südlichen Täler, ohne die ganze Route in einen einzigen gehetzten Transfer zu zwingen."
+        },
+        {
+          "question": "Können wir Nächte hinzufügen?",
+          "answer": "Ja. Zusätzliche Nächte oder ein langsamerer Reiseverlauf können im Rahmen der privaten Reiseplanung besprochen werden."
+        },
+        {
+          "question": "Sind Eintrittsgelder enthalten?",
+          "answer": "Eintrittsgelder für Monumente und Museen sind ausgeschlossen, sofern nicht ausdrücklich im bestätigten Reiseverlauf genannt."
+        },
+        {
+          "question": "Wie wird der Preis bestätigt?",
+          "answer": "Dies ist ein Reiseverlauf nur auf Anfrage. Wir bestätigen Ihre Termine, Gruppengröße und Unterkunftswünsche, bevor wir den endgültigen Preis nennen."
+        }
+      ],
+      "quoteOnly": true
     }
   }
 }
