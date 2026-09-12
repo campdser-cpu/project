@@ -1482,6 +1482,552 @@
         }
       ],
       "quoteOnly": true
+    },
+    "fes-5-day": {
+      "name": "5 Tage: Fès nach Marrakesch über Merzouga, Dades & den Atlas",
+      "duration": "5 Tage / 4 Nächte",
+      "category": "Privat · Nur auf Anfrage",
+      "description": "Eine private Einwegreise, die Fès und Marrakesch über das Beste des Südens verbindet. Sie führt hinab durch den zederngesäumten Mittleren Atlas zu den Dünen des Erg Chebbi für eine Nacht in der Wüste, dann entlang der Todra- und Dades-Schluchten und über den Hohen Atlas vorbei an Aït Ben Haddou bis nach Marrakesch. Wird auf Anfrage angeboten; Details werden rund um Ihre Termine bestätigt.",
+      "routeCaption": "Fès → Ifrane → Mittlerer Atlas → Merzouga → Todra & Dades → Aït Ben Haddou → Marrakesch. Eine Einwegroute von Fès in die Rote Stadt.",
+      "highlights": [
+        "Ifrane und der zedernbewachsene Mittlere Atlas",
+        "Das Ziz-Tal und die Dünen des Erg Chebbi",
+        "Kamelritt bei Sonnenuntergang und Nacht im Wüstencamp",
+        "Todra-Schlucht und Dades-Tal",
+        "Aït Ben Haddou und über den Hohen Atlas nach Marrakesch"
+      ],
+      "itineraryDays": [
+        {
+          "day": 1,
+          "title": "Fès → Ifrane → Mittlerer Atlas → Ziz-Tal → Merzouga",
+          "desc": "Reisen Sie südwärts durch Ifrane und die Zedernwälder des Mittleren Atlas, folgen Sie den Oasen des Ziz-Tals und erreichen Sie Merzouga für die Nacht.",
+          "stops": [
+            "Ifrane",
+            "Zedernwald Mittlerer Atlas",
+            "Ziz-Tal",
+            "Übernachtung: Merzouga"
+          ]
+        },
+        {
+          "day": 2,
+          "title": "Merzouga und Erg Chebbi – Kamelritt und Wüstennacht",
+          "desc": "Verbringen Sie den Vormittag zwischen den Dünen und reiten Sie dann bei Sonnenuntergang auf einem Kamel in den Erg Chebbi – für eine Nacht im Wüstencamp mit Abendessen und Berbermusik.",
+          "stops": [
+            "Erg Chebbi",
+            "Kamelritt bei Sonnenuntergang",
+            "Nacht im Wüstencamp"
+          ]
+        },
+        {
+          "day": 3,
+          "title": "Merzouga → Rissani → Todra-Schlucht → Dades-Tal",
+          "desc": "Beobachten Sie den Sonnenaufgang, halten Sie am Souk von Rissani und fahren Sie dann westwärts durch die Todra-Schlucht in das markante Klippenland des Dades-Tals für die Nacht.",
+          "stops": [
+            "Sonnenaufgang im Erg Chebbi",
+            "Rissani",
+            "Todra-Schlucht",
+            "Übernachtung: Dades-Tal"
+          ]
+        },
+        {
+          "day": 4,
+          "title": "Dades → Skoura → Aït Ben Haddou → Marrakesch",
+          "desc": "Vorbei an den Palmenhainen von Skoura und Ouarzazate, Bewunderung für den Ksar von Aït Ben Haddou, Überquerung des Tizi-n'Tichka-Passes über den Hohen Atlas und Ankunft in Marrakesch.",
+          "stops": [
+            "Skoura",
+            "Aït Ben Haddou",
+            "Tizi-n'Tichka",
+            "Übernachtung: Marrakesch"
+          ]
+        },
+        {
+          "day": 5,
+          "title": "Ein freier Vormittag in Marrakesch",
+          "desc": "Genießen Sie einen entspannten Vormittag in einem Marrakescher Riad – mit Zeit für die Souks oder den Jemaa el-Fnaa, bevor Sie weiterreisen.",
+          "stops": [
+            "Marrakesch",
+            "Ende: Marrakesch"
+          ]
+        }
+      ],
+      "included": [
+        "Privates, klimatisiertes Fahrzeug",
+        "Professioneller englischsprachiger Fahrer",
+        "Kraftstoff und Mautgebühren",
+        "Ausgewählte Riads, Gästehäuser und ein Wüstencamp gemäß bestätigtem Reiseverlauf",
+        "Frühstück und Abendessen gemäß Bestätigung",
+        "Kamelritt bei Sonnenuntergang und Nacht im Wüstencamp im Erg Chebbi"
+      ],
+      "excluded": [
+        "Internationale Flüge",
+        "Mittagessen und Getränke",
+        "Eintrittsgelder",
+        "Trinkgelder und persönliche Ausgaben"
+      ],
+      "faq": [
+        {
+          "question": "Ist dies eine Tour zum Festpreis?",
+          "answer": "Nein, sie ist nur auf Anfrage, da für diese Route von Fès nach Marrakesch kein verifizierter öffentlicher Preis veröffentlicht ist. Der Gesamtpreis wird rund um Ihre Termine bestätigt."
+        },
+        {
+          "question": "Wo endet die Route?",
+          "answer": "Sie ist so angelegt, dass sie in Marrakesch endet, was für Reisende praktisch ist, die von dort abfliegen; andere Regelungen sind möglich."
+        },
+        {
+          "question": "Ist die Wüstennacht enthalten?",
+          "answer": "Ja, ein Kamelritt bei Sonnenuntergang und eine Nacht in einem Camp im Erg Chebbi sind Teil des vorgeschlagenen Reiseverlaufs."
+        }
+      ],
+      "quoteOnly": true
+    },
+    "fes-8-day": {
+      "name": "8 Tage: Fès – Kaiserstädte & Sahara Große Tour",
+      "duration": "8 Tage / 7 Nächte",
+      "category": "Privat · Nur auf Anfrage",
+      "description": "Eine private achttägige Reise, die in der Kaiserstadt Fès beginnt, Meknès, Volubilis und die Zedernwälder des Mittleren Atlas einschließt, eine Nacht in den Dünen des Erg Chebbi verbringt, die Todra- und Dades-Schluchten durchquert und über den Hohen Atlas nach Marrakesch führt. Wird als Reiseroute auf Anfrage angeboten; jede Nacht und jede Leistung wird rund um Ihre Termine bestätigt.",
+      "routeCaption": "Fès → Meknès & Volubilis → Mittlerer Atlas → Merzouga → Todra & Dades → Aït Ben Haddou → Marrakesch. Eine große achttägige Traverse durch das kaiserliche und das Wüsten-Marokko.",
+      "highlights": [
+        "Ein geführter Tag in Fès und die Kaiserstadt Meknès",
+        "Die römischen Ruinen von Volubilis",
+        "Ifrane und der zedernbewachsene Mittlere Atlas",
+        "Merzouga, Erg Chebbi und eine Nacht im Wüstencamp",
+        "Todra-Schlucht, Dades-Tal und Aït Ben Haddou",
+        "Marrakeschs Paläste und Souks"
+      ],
+      "itineraryDays": [
+        {
+          "day": 1,
+          "title": "Geführtes Fès – Medina, Gerbereien und Souks",
+          "desc": "Ein geführter Tag in Fès: die Königstore, die Medina Fès el-Bali rund um die Al-Qarawiyyin-Universität, die Gerberei Chouara und die Handwerke der alten Souks.",
+          "stops": [
+            "Fès el-Bali",
+            "Al-Qarawiyyin-Universität",
+            "Gerberei Chouara",
+            "Tore des Königspalasts"
+          ]
+        },
+        {
+          "day": 2,
+          "title": "Fès → Meknès → Volubilis → Mittlerer Atlas",
+          "desc": "Besuchen Sie die kaiserlichen Monumente von Meknès und die römischen Ruinen von Volubilis und fahren Sie dann südwärts durch Ifrane und die Zedernwälder zur Übernachtung im Mittleren Atlas.",
+          "stops": [
+            "Bab-Mansour-Tor",
+            "Römische Ruinen von Volubilis",
+            "Ifrane",
+            "Übernachtung: Mittlerer Atlas"
+          ]
+        },
+        {
+          "day": 3,
+          "title": "Mittlerer Atlas → Ziz-Tal → Merzouga",
+          "desc": "Steigen Sie in das palmenreiche Ziz-Tal hinab und erreichen Sie Merzouga – mit Zeit, vor der Nacht den Rand des Erg Chebbi zu spüren.",
+          "stops": [
+            "Ziz-Tal",
+            "Region Errachidia",
+            "Merzouga",
+            "Übernachtung: Merzouga"
+          ]
+        },
+        {
+          "day": 4,
+          "title": "Erg Chebbi – Kamelritt und Wüstencamp",
+          "desc": "Ein Tag an den großen Dünen, gekrönt von einem Kamelritt bei Sonnenuntergang und einer Nacht im Wüstencamp mit Abendessen und Musik.",
+          "stops": [
+            "Erg Chebbi",
+            "Kamelritt bei Sonnenuntergang",
+            "Nacht im Wüstencamp"
+          ]
+        },
+        {
+          "day": 5,
+          "title": "Merzouga → Todra-Schlucht → Dades-Tal",
+          "desc": "Nach dem Sonnenaufgang über den Dünen halten Sie in Rissani, spazieren zwischen den gewaltigen Wänden der Todra-Schlucht und enden in den Klippen des Dades-Tals.",
+          "stops": [
+            "Sonnenaufgang im Erg Chebbi",
+            "Rissani",
+            "Todra-Schlucht",
+            "Übernachtung: Dades-Tal"
+          ]
+        },
+        {
+          "day": 6,
+          "title": "Dades → Skoura → Aït Ben Haddou → Marrakesch",
+          "desc": "Passieren Sie die Oase Skoura und Ouarzazate, erkunden Sie Aït Ben Haddou, erklimmen Sie den Hohen Atlas und erreichen Sie Marrakesch für die Nacht.",
+          "stops": [
+            "Skoura",
+            "Aït Ben Haddou",
+            "Tizi-n'Tichka",
+            "Übernachtung: Marrakesch"
+          ]
+        },
+        {
+          "day": 7,
+          "title": "Geführtes Marrakesch – Paläste, Gärten und Jemaa el-Fnaa",
+          "desc": "Ein ganzer geführter Tag in der Roten Stadt – vom Bahia-Palast und Majorelle-Garten bis zu den Souks und dem Abendleben des Jemaa el-Fnaa.",
+          "stops": [
+            "Bahia-Palast",
+            "Majorelle-Garten",
+            "Koutoubia",
+            "Jemaa el-Fnaa"
+          ]
+        },
+        {
+          "day": 8,
+          "title": "Freier Vormittag in Marrakesch → Weiterreise",
+          "desc": "Ein entspannter Vormittag in Marrakesch vor Ihrer Weiterreise – mit Hilfe bei der Organisation von Transfers nach Bedarf.",
+          "stops": [
+            "Marrakesch",
+            "Ende: Marrakesch"
+          ]
+        }
+      ],
+      "included": [
+        "Privates, klimatisiertes Fahrzeug",
+        "Professioneller englischsprachiger Fahrer",
+        "Kraftstoff und Mautgebühren",
+        "Ausgewählte Riads, Gästehäuser und ein Wüstencamp gemäß bestätigtem Reiseverlauf",
+        "Frühstück und Abendessen gemäß Bestätigung",
+        "Kamelritt bei Sonnenuntergang und Nacht im Wüstencamp im Erg Chebbi",
+        "Offizieller lokaler Stadtführer in Fès und Marrakesch"
+      ],
+      "excluded": [
+        "Internationale Flüge",
+        "Mittagessen und Getränke",
+        "Eintrittsgelder",
+        "Trinkgelder und persönliche Ausgaben"
+      ],
+      "faq": [
+        {
+          "question": "Ist dies eine Fès-Tour zum Festpreis?",
+          "answer": "Nein, sie ist nur auf Anfrage, da für diese achttägige Route kein verifizierter öffentlicher Preis veröffentlicht ist. Details werden rund um Ihre Termine bestätigt."
+        },
+        {
+          "question": "Wo endet die Tour?",
+          "answer": "Sie ist so angelegt, dass sie in Marrakesch endet, wobei auch eine Rückkehr nach Fès oder ein anderer Endpunkt organisiert werden kann."
+        },
+        {
+          "question": "Sind die geführten Stadttage enthalten?",
+          "answer": "Ja, offizielle lokale Stadtführer für die Kulturtage in Fès und Marrakesch sind Teil des vorgeschlagenen Reiseverlaufs."
+        }
+      ],
+      "quoteOnly": true
+    },
+    "agadir-4-day": {
+      "name": "4 Tage: Agadir nach Marrakesch über Taroudant & den Atlas",
+      "duration": "4 Tage / 3 Nächte",
+      "category": "Privat · Nur auf Anfrage",
+      "description": "Eine private Route, die das Küsten-Agadir über den Antiatlas und den Hohen Atlas mit Marrakesch verbindet. Sie führt an den ummauerten Souks von Taroudant, den Safranfeldern von Taliouine, der Kasbahnlandschaft von Ouarzazate und dem berühmten Ksar von Aït Ben Haddou vorbei – mit zwei Nächten, um Marrakesch zu genießen. Wird auf Anfrage angeboten; Details werden rund um Ihre Termine bestätigt.",
+      "routeCaption": "Agadir → Taroudant → Ouarzazate → Aït Ben Haddou → Marrakesch. Vom Atlantik über die Kasbahnlandschaft in die Rote Stadt.",
+      "highlights": [
+        "Agadirs Atlantikpromenade und Kasbah",
+        "Taroudants Festungsmauern und die Safran-Terrassen von Taliouine",
+        "Aït Ben Haddou und die Kasbahs von Ouarzazate",
+        "Überquerung des Hohen Atlas am Tizi n'Tichka",
+        "Zwei Nächte, um Marrakesch zu entdecken"
+      ],
+      "itineraryDays": [
+        {
+          "day": 1,
+          "title": "Agadir → Taroudant → Taliouine → Ouarzazate",
+          "desc": "Abfahrt ab Agadir durch die Souss-Ebenen zu Taroudants Festungsmauern und Kunsthandwerksmarkt, Aufstieg zu den Safran-Terrassen von Taliouine und Überquerung des Antiatlas nach Ouarzazate für die Nacht.",
+          "stops": [
+            "Taroudant",
+            "Taliouine",
+            "Antiatlas",
+            "Übernachtung: Ouarzazate"
+          ]
+        },
+        {
+          "day": 2,
+          "title": "Ouarzazate → Aït Ben Haddou → Hoher Atlas → Marrakesch",
+          "desc": "Bewundern Sie Aït Ben Haddou und die Taourirt-Kasbah, überqueren Sie den Hohen Atlas am Tizi-n'Tichka-Pass und kommen Sie in Marrakesch zum berühmten Abend am Jemaa el-Fnaa an.",
+          "stops": [
+            "Aït Ben Haddou",
+            "Tizi-n'Tichka",
+            "Jemaa el-Fnaa",
+            "Übernachtung: Marrakesch"
+          ]
+        },
+        {
+          "day": 3,
+          "title": "Geführtes Marrakesch – Paläste, Gärten und Souks",
+          "desc": "Ein ganzer Tag in der Roten Stadt mit lokalem Stadtführer: der Bahia-Palast, die Koutoubia, die Gärten und die labyrinthartigen Souks – mit freier Zeit am Jemaa el-Fnaa.",
+          "stops": [
+            "Bahia-Palast",
+            "Koutoubia",
+            "Majorelle-Garten",
+            "Jemaa el-Fnaa"
+          ]
+        },
+        {
+          "day": 4,
+          "title": "Freier Morgen in Marrakesch → Rückkehr oder Weiterreise",
+          "desc": "Ein gemütliches Frühstück in einem Marrakescher Riad, bevor es entlang der Küste nach Agadir zurückgeht oder die Reise weitergeht – wie in Ihrem Angebot vereinbart.",
+          "stops": [
+            "Riad in Marrakesch",
+            "Rückfahrt entlang der Küste",
+            "Ende: Agadir oder Weiterreise"
+          ]
+        }
+      ],
+      "included": [
+        "Privates, klimatisiertes Fahrzeug",
+        "Professioneller englischsprachiger Fahrer",
+        "Kraftstoff und Mautgebühren",
+        "Ausgewählte Riads und Hotels gemäß bestätigtem Reiseverlauf",
+        "Frühstück gemäß Bestätigung"
+      ],
+      "excluded": [
+        "Internationale Flüge",
+        "Mittagessen und Getränke",
+        "Eintrittsgelder",
+        "Trinkgelder und persönliche Ausgaben"
+      ],
+      "faq": [
+        {
+          "question": "Ist dies eine Tour zum Festpreis?",
+          "answer": "Nein, sie ist nur auf Anfrage, da für diese Route kein verifizierter öffentlicher Preis veröffentlicht ist. Der Gesamtpreis wird rund um Ihre Termine bestätigt."
+        },
+        {
+          "question": "Erreicht die Tour die Sahara?",
+          "answer": "Dieser Reiseverlauf konzentriert sich auf Taroudant, Ouarzazate, Aït Ben Haddou und Marrakesch. Fragen Sie nach einer Verlängerung zu den Dünen von Merzouga."
+        },
+        {
+          "question": "Kann ich in Marrakesch beginnen und in Agadir enden?",
+          "answer": "Ja, die Richtung lässt sich leicht umkehren, und wir passen sie an Ihre Flüge an."
+        }
+      ],
+      "quoteOnly": true
+    },
+    "agadir-5-day": {
+      "name": "5 Tage: Agadir nach Marrakesch über Ouarzazate & Merzouga",
+      "duration": "5 Tage / 4 Nächte",
+      "category": "Privat · Nur auf Anfrage",
+      "description": "Eine private Einwegroute von der Küste Agadirs nach Marrakesch durch die Kasbahnlandschaft und die Sahara. Sie überquert Taroudant und die Safran-Terrassen von Taliouine, erkundet Ouarzazate und Aït Ben Haddou, durchquert die Dades- und Todra-Schluchten und verbringt einen Sonnenuntergang mit Kamelritt und Wüstencamp-Nacht im Erg Chebbi, bevor sie in Marrakesch endet. Wird auf Anfrage angeboten; Details werden rund um Ihre Termine bestätigt.",
+      "routeCaption": "Agadir → Taroudant → Ouarzazate → Aït Ben Haddou → Dades & Todra → Merzouga → Marrakesch. Küste, Kasbahs und Sahara in einer Route.",
+      "highlights": [
+        "Taroudant und das Safranland um Taliouine",
+        "Aït Ben Haddou und die Kasbahs von Ouarzazate",
+        "Dades- und Todra-Schluchten",
+        "Kamelritt bei Sonnenuntergang im Erg Chebbi",
+        "Überquerung des Hohen Atlas nach Marrakesch"
+      ],
+      "itineraryDays": [
+        {
+          "day": 1,
+          "title": "Agadir → Taroudant → Taliouine → Ouarzazate",
+          "desc": "Fahren Sie landeinwärts durch die Souss-Ebenen, halten Sie in der ummauerten Souk-Stadt Taroudant und bei den Safranfeldern von Taliouine und überqueren Sie dann den Antiatlas nach Ouarzazate für die Nacht.",
+          "stops": [
+            "Taroudant",
+            "Taliouine",
+            "Antiatlas",
+            "Übernachtung: Ouarzazate"
+          ]
+        },
+        {
+          "day": 2,
+          "title": "Ouarzazate → Aït Ben Haddou → Skoura → Dades-Tal",
+          "desc": "Besuchen Sie Aït Ben Haddou und die Taourirt-Kasbah, gleiten Sie durch die Palmenhaine von Skoura und winden Sie sich in die Klippen des Dades-Tals für die Nacht.",
+          "stops": [
+            "Aït Ben Haddou",
+            "Taourirt-Kasbah",
+            "Skoura",
+            "Übernachtung: Dades-Tal"
+          ]
+        },
+        {
+          "day": 3,
+          "title": "Dades → Todra-Schlucht → Merzouga",
+          "desc": "Folgen Sie dem Dades-Canyon, spazieren Sie unter den gewaltigen Wänden der Todra-Schlucht und fahren Sie dann weiter nach Merzouga für einen Kamelritt bei Sonnenuntergang in den Erg Chebbi.",
+          "stops": [
+            "Dades-Schlucht",
+            "Todra-Schlucht",
+            "Kamelritt im Erg Chebbi",
+            "Nacht im Wüstencamp"
+          ]
+        },
+        {
+          "day": 4,
+          "title": "Merzouga → Rissani → Erfoud → Region Ouarzazate",
+          "desc": "Sonnenaufgang über den Dünen, der Souk von Rissani und die Fossilien von Erfoud, dann westwärts an Skoura vorbei zur Übernachtung bei Ouarzazate.",
+          "stops": [
+            "Sonnenaufgang im Erg Chebbi",
+            "Rissani",
+            "Erfoud",
+            "Übernachtung: Raum Ouarzazate"
+          ]
+        },
+        {
+          "day": 5,
+          "title": "Ouarzazate → Hoher Atlas → Marrakesch",
+          "desc": "Überqueren Sie den Tizi-n'Tichka-Pass über den Hohen Atlas und steigen Sie nach Marrakesch hinab, wo die Tour endet.",
+          "stops": [
+            "Tizi-n'Tichka",
+            "Hoher Atlas",
+            "Ende: Marrakesch"
+          ]
+        }
+      ],
+      "included": [
+        "Privates, klimatisiertes Fahrzeug",
+        "Professioneller englischsprachiger Fahrer",
+        "Kraftstoff und Mautgebühren",
+        "Ausgewählte Riads, Gästehäuser und ein Wüstencamp gemäß bestätigtem Reiseverlauf",
+        "Frühstück und Abendessen gemäß Bestätigung",
+        "Kamelritt bei Sonnenuntergang und Nacht im Wüstencamp im Erg Chebbi"
+      ],
+      "excluded": [
+        "Internationale Flüge",
+        "Mittagessen und Getränke",
+        "Eintrittsgelder",
+        "Trinkgelder und persönliche Ausgaben"
+      ],
+      "faq": [
+        {
+          "question": "Ist diese Tour öffentlich bepreist?",
+          "answer": "Nein, sie ist nur auf Anfrage, da für diese Route kein verifizierter öffentlicher Preis veröffentlicht ist. Der Gesamtpreis wird rund um Ihre Termine bestätigt."
+        },
+        {
+          "question": "Wo endet die Route?",
+          "answer": "Sie ist so angelegt, dass sie in Marrakesch endet; eine Rückkehr nach Agadir kann in Ihrem Angebot vorgesehen werden."
+        },
+        {
+          "question": "Ist das Wüstencamp garantiert?",
+          "answer": "Ein Kamelritt bei Sonnenuntergang und eine Nacht in einem Camp im Erg Chebbi sind Teil des vorgeschlagenen Reiseverlaufs und werden vor der Buchung bestätigt."
+        }
+      ],
+      "quoteOnly": true
+    },
+    "agadir-8-day": {
+      "name": "8 Tage: Agadir Große Süd-Marokko Rundreise",
+      "duration": "8 Tage / 7 Nächte",
+      "category": "Privat · Nur auf Anfrage",
+      "description": "Eine private Rundreise auf Anfrage, die den ganzen Süden Marokkos von der Atlantikküste zurück nach Agadir umspannt. Sie reisen landeinwärts an der ummauerten Souk-Stadt Taroudant und den Safran-Terrassen von Taliouine vorbei, durchqueren die Film-Kulissen-Kasbahnlandschaft rund um Ouarzazate, winden sich durch die Dades- und Todra-Schluchten, verbringen eine Nacht in den Dünen des Erg Chebbi und kehren durch das palmengeschützte Draa-Tal zurück. Die genauen Nächte, Unterkünfte und das tägliche Tempo werden vor der Buchung rund um Ihre Termine bestätigt – nichts wird vorab erfunden.",
+      "routeCaption": "Agadir → Taroudant → Ouarzazate → Aït Ben Haddou → Dades & Todra → Merzouga → Draa-Tal → zurück nach Agadir. Die große Schleife durch den Süden Marokkos.",
+      "highlights": [
+        "Agadirs Atlantikküste und Strandpromenade",
+        "Taroudants Festungsmauern und das Safranland um Taliouine",
+        "Ouarzazate, Tor zur Kasbah-Straße des Atlas",
+        "Dades- und Todra-Schluchten",
+        "Merzouga, Erg Chebbi und eine Nacht im Wüstencamp"
+      ],
+      "itineraryDays": [
+        {
+          "day": 1,
+          "title": "Agadir – Küste, Kasbah und Promenade",
+          "desc": "Beginnen Sie am Atlantik mit einer entspannten Orientierung in Agadir: die Strandpromenade, der Kasbah-Aussichtspunkt auf dem Hügel und der lebhafte Souk – der Tag bleibt leicht, damit Sie die Meeresluft aufnehmen, bevor es landeinwärts geht.",
+          "stops": [
+            "Strand von Agadir",
+            "Kasbah-Aussichtspunkt",
+            "Souk von Agadir"
+          ]
+        },
+        {
+          "day": 2,
+          "title": "Agadir → Taroudant → Taliouine → Ouarzazate",
+          "desc": "Fahren Sie durch die Souss-Ebenen in die ummauerte Stadt Taroudant mit ihren Festungsmauern und ihrem Kunsthandwerksmarkt, steigen Sie dann auf nach Taliouine, Marokkos Safran-Herzland, und überqueren Sie den Antiatlas nach Ouarzazate für die Nacht.",
+          "stops": [
+            "Festungsmauern von Taroudant",
+            "Safranland von Taliouine",
+            "Überquerung des Antiatlas",
+            "Übernachtung: Ouarzazate"
+          ]
+        },
+        {
+          "day": 3,
+          "title": "Ouarzazate → Aït Ben Haddou → Skoura → Dades-Tal",
+          "desc": "Besuchen Sie den erhaltenen Ksar von Aït Ben Haddou und die als Filmkulisse berühmte Taourirt-Kasbah, passieren Sie die Palmenhaine von Skoura und winden Sie sich in das Tal der Tausend Kasbahs für eine Nacht im Dades.",
+          "stops": [
+            "Ksar von Aït Ben Haddou",
+            "Taourirt-Kasbah",
+            "Oase Skoura",
+            "Übernachtung: Dades-Tal"
+          ]
+        },
+        {
+          "day": 4,
+          "title": "Dades → Todra-Schlucht → Merzouga",
+          "desc": "Folgen Sie dem Dades-Canyon und pausieren Sie an den hoch aufragenden Kalksteinwänden der Todra-Schlucht, bevor Sie die Wüstenebene nach Merzouga überqueren – dort trägt Sie ein Kamelritt bei Sonnenuntergang in den Erg Chebbi für eine Nacht unter den Sternen.",
+          "stops": [
+            "Dades-Schlucht",
+            "Todra-Schlucht",
+            "Merzouga",
+            "Wüstencamp im Erg Chebbi"
+          ]
+        },
+        {
+          "day": 5,
+          "title": "Merzouga → Rissani → Erfoud → Draa-Tal",
+          "desc": "Beobachten Sie, wie die Dünen bei Sonnenaufgang golden werden, erkunden Sie dann die Souks von Rissani und die Fossilwerkstätten von Erfoud und reisen Sie an den Schluchten vorbei in die Dattelpalmen-Oasen des Draa-Tals.",
+          "stops": [
+            "Sonnenaufgang im Erg Chebbi",
+            "Souk von Rissani",
+            "Fossilien von Erfoud",
+            "Übernachtung: Draa-Tal / Zagora"
+          ]
+        },
+        {
+          "day": 6,
+          "title": "Draa-Tal → Zagora → Ouarzazate",
+          "desc": "Fahren Sie den langen palmenbesetzten Korridor des Draa entlang – mit seinen Lehmkasbahs und einem Blick auf die Einbahnstraße nach Timbuktu bei Zagora – und kehren Sie dann nordwärts nach Ouarzazate für die Nacht zurück.",
+          "stops": [
+            "Oasen des Draa-Tals",
+            "Wüstentor von Zagora",
+            "Agdz",
+            "Übernachtung: Ouarzazate"
+          ]
+        },
+        {
+          "day": 7,
+          "title": "Ouarzazate → Marrakesch über den Hohen Atlas",
+          "desc": "Überqueren Sie den Tizi-n'Tichka-Pass über den Hohen Atlas mit Panoramablicken und steigen Sie rechtzeitig zum Abendflair des Jemaa el-Fnaa in die Rote Stadt hinab. Übernachtung in Marrakesch.",
+          "stops": [
+            "Tizi-n'Tichka-Pass",
+            "Blicke auf den Hohen Atlas",
+            "Jemaa el-Fnaa",
+            "Übernachtung: Marrakesch"
+          ]
+        },
+        {
+          "day": 8,
+          "title": "Marrakesch → Agadir entlang der Küste",
+          "desc": "Kehren Sie durch grüne Ebenen und Küstenstraßen zum Atlantik zurück, passieren Sie den Surf-Ort Taghazout und kommen Sie wieder in Agadir an, um die Schleife zu schließen. Ihre Weiterreise oder Verlängerung kann organisiert werden.",
+          "stops": [
+            "Küstenstraße nördlich von Agadir",
+            "Taghazout",
+            "Ende: Agadir"
+          ]
+        }
+      ],
+      "included": [
+        "Privates, klimatisiertes Fahrzeug",
+        "Professioneller englischsprachiger Fahrer",
+        "Kraftstoff und Mautgebühren",
+        "Sorgfältig ausgewählte Riads, Kasbah-Hotels und ein Wüstencamp gemäß bestätigtem Reiseverlauf",
+        "Frühstück und Abendessen gemäß bestätigtem Plan",
+        "Kamelritt bei Sonnenuntergang und Nacht im Wüstencamp im Erg Chebbi"
+      ],
+      "excluded": [
+        "Internationale Flüge",
+        "Mittagessen und Getränke",
+        "Eintrittsgelder für Monumente und Museen",
+        "Trinkgelder und persönliche Ausgaben"
+      ],
+      "faq": [
+        {
+          "question": "Ist dies eine Tour zum Festpreis ab Agadir?",
+          "answer": "Nein. Dies ist eine Route auf Anfrage, da derzeit kein verifizierter öffentlicher Preis und keine feste Unterkunftsliste dafür veröffentlicht ist. Der vollständige Plan, die Leistungen und die Zahlungsbedingungen werden vor jeder Zahlung bestätigt."
+        },
+        {
+          "question": "Wo beginnt und endet die Rundreise?",
+          "answer": "Sie ist als Schleife angelegt, die in Agadir beginnt und endet und unterwegs Marrakesch erreicht. Ein Einweg-Endpunkt (z. B. in Marrakesch) kann in Ihrem privaten Angebot vereinbart werden."
+        },
+        {
+          "question": "Ist die Wüstennacht enthalten?",
+          "answer": "Ja, ein Kamelritt bei Sonnenuntergang und eine Nacht in einem Wüstencamp im Erg Chebbi sind Teil der vorgeschlagenen Route und werden vor der Buchung schriftlich bestätigt."
+        }
+      ],
+      "quoteOnly": true
     }
   }
 }
