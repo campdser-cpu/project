@@ -2028,6 +2028,260 @@
         }
       ],
       "quoteOnly": true
+    },
+    "3-day-sahara-fes": {
+      "name": "3 Tage: Private Sahara-Route ab Fès",
+      "duration": "3 Tage / 2 Nächte",
+      "category": "Privat · Nur auf Anfrage",
+      "description": "Eine private Route auf Anfrage für Reisende ab Fès, die in drei Tagen Merzouga und den Erg Chebbi erreichen möchten. Das Marokkanische Nationale Fremdenverkehrsamt bestätigt Fès als Tor zur Sahara und dokumentiert die Verbindung Fès–Errachidia–Midelt–Merzouga. Da die aktuellen Geschäftsdaten keinen Festpreis, keine feste Unterkunftsliste und keinen garantierten Rückfahrplan für drei Tage ab Fès enthalten, werden diese Details vor der Buchung bestätigt statt erfunden.",
+      "routeCaption": "Fès → Mittlerer Atlas / Ifrane → Region Errachidia–Midelt → Merzouga & Erg Chebbi. Stopps, Nächte und Weiterreise oder Rückfahrt werden rund um Ihre Termine bestätigt.",
+      "highlights": [
+        "Fès und der Mittlere Atlas",
+        "Ifrane und das Land der Zedernwälder",
+        "Landschaften von Errachidia / Ziz-Tal",
+        "Merzouga und Erg Chebbi",
+        "Wüsten-Erlebnis bei Sonnenuntergang"
+      ],
+      "itineraryDays": [
+        {
+          "day": 1,
+          "title": "Fès → Mittlerer Atlas → Region Errachidia",
+          "desc": "Reisen Sie von Fès aus nach Süden durch den Mittleren Atlas in Richtung der Region Errachidia–Midelt–Merzouga. Die Straße selbst ist ein wesentlicher Teil des Erlebnisses, daher ist der Tag um realistische Fahrzeiten und ausgewählte Stopps geplant.",
+          "stops": [
+            "Fès",
+            "Ifrane",
+            "Mittlerer Atlas",
+            "Region Midelt / Errachidia"
+          ]
+        },
+        {
+          "day": 2,
+          "title": "Region Errachidia → Merzouga → Erg Chebbi",
+          "desc": "Fahren Sie weiter nach Merzouga und zu den Dünen des Erg Chebbi. Sofern im bestätigten Reiseverlauf enthalten, kann der Wüstenteil ein Kamel-Erlebnis bei Sonnenuntergang und eine Nacht in Dünennähe umfassen. Unterkünfte und Mahlzeiten werden vor der Zahlung bestätigt.",
+          "stops": [
+            "Gebiet des Ziz-Tals",
+            "Merzouga",
+            "Erg Chebbi",
+            "Wüsten-Erlebnis bei Sonnenuntergang"
+          ]
+        },
+        {
+          "day": 3,
+          "title": "Merzouga → Weiterreise",
+          "desc": "Beginnen Sie mit dem Wüstenvormittag und fahren Sie dann zum in Ihrem Angebot vereinbarten Ziel weiter. Eine Rückkehr nach Fès oder ein Einweg-Endpunkt kann besprochen werden; ein fester Endpunkt wird erst nach Bestätigung angegeben.",
+          "stops": [
+            "Sonnenaufgang in Merzouga",
+            "Erg Chebbi",
+            "Bestätigtes Weiterreiseziel"
+          ]
+        }
+      ],
+      "included": [
+        "Private Reiseplanung",
+        "Route, bestätigt rund um Ihre Termine",
+        "Privater Transport, sofern im bestätigten Angebot enthalten",
+        "Wüsten-Erlebnis, sofern im bestätigten Reiseverlauf enthalten"
+      ],
+      "excluded": [
+        "Internationale Flüge",
+        "Alles, was nicht ausdrücklich im bestätigten Angebot enthalten ist",
+        "Persönliche Ausgaben und Trinkgelder, sofern nicht vereinbart"
+      ],
+      "faq": [
+        {
+          "question": "Ist dies eine Fès-Tour zum Festpreis?",
+          "answer": "Nein. Sie ist bewusst nur auf Anfrage, da das aktuelle Projekt keinen verifizierten öffentlichen Dreitage-Preis und kein festes Unterkunftspaket für Fès enthält. Route und Zahlungsbedingungen werden vor der Zahlung bestätigt."
+        },
+        {
+          "question": "Ist Fès mit der Merzouga-Route verbunden?",
+          "answer": "Ja. Das Marokkanische Nationale Fremdenverkehrsamt stellt Fès als eine der Städte dar, die zur Sahara führen, und listet die Verbindung von Fès nach Errachidia–Midelt–Merzouga auf."
+        },
+        {
+          "question": "Kann die Reise woanders als in Fès enden?",
+          "answer": "Ein weiterführender Endpunkt kann im privaten Angebot besprochen werden. Wir geben keinen festen Endpunkt an, bevor er bestätigt ist."
+        },
+        {
+          "question": "Kann ich jetzt buchen und später zahlen?",
+          "answer": "Fordern Sie zuerst den Reiseverlauf an. Wir bestätigen Route, Leistungen und geltende Zahlungsbedingungen, bevor eine Zahlung erfolgt."
+        }
+      ],
+      "quoteOnly": true
+    },
+    "3-day-sahara-agadir": {
+      "name": "3 Tage: Private Sahara-Route ab Agadir",
+      "duration": "3 Tage / 2 Nächte",
+      "category": "Privat · Nur auf Anfrage",
+      "description": "Eine private Dreitage-Route auf Anfrage zur Sahara-Planung ab Agadir. Das Marokkanische Nationale Fremdenverkehrsamt bestätigt Agadir als Tor zur Sahara und dokumentiert die Verbindung des Südens Marokkos in Richtung Wüste. Da die aktuellen Geschäftsdaten keinen Festpreis, kein festes Unterkunftspaket und keinen garantierten Rückfahrplan für drei Tage ab Agadir enthalten, werden diese kaufmännischen Details vor der Buchung bestätigt.",
+      "routeCaption": "Agadir → Süden Marokkos / Raum Ouarzazate → Merzouga & Erg Chebbi. Straßenstopps, Nächte und Endziel werden im privaten Angebot bestätigt.",
+      "highlights": [
+        "Agadirs Atlantikküste",
+        "Landschaften des Südens Marokkos",
+        "Ouarzazate / Vor-Sahara",
+        "Merzouga und Erg Chebbi",
+        "Private Weiterreiseplanung"
+      ],
+      "itineraryDays": [
+        {
+          "day": 1,
+          "title": "Agadir → Süden Marokkos → Raum Ouarzazate",
+          "desc": "Fahren Sie ab Agadir landeinwärts durch den Süden Marokkos. Der Tag ist um die praktische Straßenfahrt geplant statt um eine erdachte Liste fester Stopps.",
+          "stops": [
+            "Agadir",
+            "Süden Marokkos",
+            "Raum Ouarzazate"
+          ]
+        },
+        {
+          "day": 2,
+          "title": "Raum Ouarzazate → Merzouga → Erg Chebbi",
+          "desc": "Fahren Sie weiter ostwärts nach Merzouga und zum Erg Chebbi. Sofern im bestätigten Reiseverlauf enthalten, kann der Wüstenteil ein Kamel-Erlebnis bei Sonnenuntergang und eine Camp-Nacht umfassen. Unterkünfte und Mahlzeiten werden vor der Zahlung vereinbart.",
+          "stops": [
+            "Raum Ouarzazate",
+            "Merzouga",
+            "Erg Chebbi",
+            "Wüsten-Erlebnis bei Sonnenuntergang"
+          ]
+        },
+        {
+          "day": 3,
+          "title": "Merzouga → Weiterreise",
+          "desc": "Genießen Sie den Wüstenvormittag und fahren Sie zum in Ihrem Angebot vereinbarten Ziel weiter. Da drei Tage ab Agadir ein kompaktes Landreiseformat bedeuten, sollte die endgültige Route um Ihre Termine und Weiterreisepläne herum gewählt werden.",
+          "stops": [
+            "Sonnenaufgang in Merzouga",
+            "Erg Chebbi",
+            "Bestätigtes Weiterreiseziel"
+          ]
+        }
+      ],
+      "included": [
+        "Private Reiseplanung",
+        "Route, bestätigt rund um Ihre Termine",
+        "Privater Transport, sofern im bestätigten Angebot enthalten",
+        "Wüsten-Erlebnis, sofern im bestätigten Reiseverlauf enthalten"
+      ],
+      "excluded": [
+        "Internationale Flüge",
+        "Alles, was nicht ausdrücklich im bestätigten Angebot enthalten ist",
+        "Persönliche Ausgaben und Trinkgelder, sofern nicht vereinbart"
+      ],
+      "faq": [
+        {
+          "question": "Ist dies eine Agadir-Sahara-Tour zum Festpreis?",
+          "answer": "Nein. Sie ist nur auf Anfrage, da das aktuelle Projekt keinen verifizierten öffentlichen Dreitage-Preis und kein festes Unterkunftspaket für Agadir enthält. Wir bestätigen den tatsächlichen Reiseverlauf und die Zahlungsbedingungen vor der Zahlung."
+        },
+        {
+          "question": "Führt Agadir zur Sahara?",
+          "answer": "Ja. Das Marokkanische Nationale Fremdenverkehrsamt nennt Agadir als eines der Tore zur Sahara. Die genaue Dreitage-Route hängt von Ihren Reiseterminen und davon ab, wo Sie enden möchten."
+        },
+        {
+          "question": "Kann der Reiseverlauf einweg sein?",
+          "answer": "Das Weiterreiseziel kann im privaten Angebot besprochen werden. Wir vermeiden einen festen Rückfahrplan, bevor er bestätigt ist."
+        },
+        {
+          "question": "Kann ich jetzt buchen und später zahlen?",
+          "answer": "Fordern Sie zuerst den Reiseverlauf an. Wir bestätigen Route, Leistungen und geltende Zahlungsbedingungen, bevor eine Zahlung erfolgt."
+        }
+      ],
+      "quoteOnly": true
+    },
+    "3-day-fes-merzouga-sahara": {
+      "name": "3 Tage: Fès nach Merzouga Sahara-Wüstentour",
+      "duration": "3 Tage / 2 Nächte",
+      "category": "Sahara & Kultur",
+      "description": "Eine kompakte private Reise von Fès zur Sahara bei Merzouga. Sie reisen südwärts durch den Mittleren Atlas und das Ziz-Tal, erreichen den Erg Chebbi für das Wüsten-Erlebnis und fahren dann entsprechend dem bestätigten Plan weiter oder kehren zurück. Die Route ist bewusst kompakt; Reisende, die mehr Zeit an den Dünen verbringen möchten, sollten sie verlängern.",
+      "routeCaption": "Fès → Ifrane und Mittlerer Atlas → Ziz-Tal → Merzouga → Erg Chebbi.",
+      "highlights": [
+        "Abfahrt in Fès",
+        "Mittlerer Atlas und Zedernwälder",
+        "Ziz-Tal",
+        "Merzouga und Erg Chebbi",
+        "Wüsten-Erlebnis bei Sonnenuntergang",
+        "Nacht im Wüstencamp"
+      ],
+      "itineraryDays": [
+        {
+          "day": 1,
+          "title": "Fès → Ifrane → Zedernwald → Midelt → Ziz-Tal",
+          "desc": "Verlassen Sie Fès und überqueren Sie den Mittleren Atlas durch Ifrane und die Zedernwaldlandschaften. Fahren Sie weiter Richtung Midelt und in das Ziz-Tal – die Straße selbst bietet die wechselnden Bilder von Nordmarokko bis zur Vor-Sahara.",
+          "stops": [
+            "Fès",
+            "Ifrane",
+            "Zedernwald",
+            "Midelt",
+            "Ziz-Tal"
+          ]
+        },
+        {
+          "day": 2,
+          "title": "Ziz-Tal → Erfoud → Merzouga → Erg Chebbi",
+          "desc": "Fahren Sie weiter Richtung Erfoud und Merzouga. Kommen Sie an den Dünen für das bestätigte Wüsten-Erlebnis an – etwa ein Kameltransfer bei Sonnenuntergang, sofern enthalten – gefolgt von der Nacht in der bestätigten Unterkunft.",
+          "stops": [
+            "Ziz-Tal",
+            "Erfoud",
+            "Merzouga",
+            "Erg Chebbi",
+            "Wüsten-Erlebnis bei Sonnenuntergang"
+          ]
+        },
+        {
+          "day": 3,
+          "title": "Merzouga → Weiterreise",
+          "desc": "Beginnen Sie mit dem Wüstenvormittag und fahren Sie dann zum in Ihrem Angebot vereinbarten Ziel weiter. Eine Rückkehr nach Fès oder ein Einweg-Endpunkt kann besprochen werden; ein fester Endpunkt wird erst nach Bestätigung angegeben.",
+          "stops": [
+            "Sonnenaufgang in Merzouga",
+            "Erg Chebbi",
+            "Bestätigtes Weiterreiseziel"
+          ]
+        }
+      ],
+      "included": [
+        "Private Reiseplanung",
+        "Route, bestätigt rund um Ihre Termine",
+        "Privater Transport, sofern im bestätigten Angebot enthalten",
+        "Wüsten-Erlebnis, sofern im bestätigten Reiseverlauf enthalten"
+      ],
+      "excluded": [
+        "Internationale Flüge",
+        "Alles, was nicht ausdrücklich im bestätigten Angebot enthalten ist",
+        "Persönliche Ausgaben und Trinkgelder, sofern nicht vereinbart"
+      ],
+      "faq": [
+        {
+          "question": "Ist diese Route in drei Tagen machbar?",
+          "answer": "Ja, aber es ist eine kompakte Landreise mit beträchtlichen Fahrzeiten. Wenn Sie ein langsames Sahara-Erlebnis wünschen, fragen Sie nach einer längeren Version."
+        },
+        {
+          "question": "Ist Kameltrekking enthalten?",
+          "answer": "Das Wüsten-Erlebnis kann einen Kameltransfer umfassen, wenn diese Option ausgewählt und bestätigt wird. Wir nehmen optionale Aktivitäten nicht vor der Buchung an."
+        },
+        {
+          "question": "Wo schlafen wir?",
+          "answer": "Die Unterkunft wird je nach gewähltem Paket und Verfügbarkeit ausgewählt, wobei die Wüstennacht vor der Buchung bestätigt wird."
+        },
+        {
+          "question": "Können wir woanders als in Fès enden?",
+          "answer": "Ja. Als private Reise kann der Endpunkt besprochen werden, wenn Sie Ihr Angebot anfordern."
+        },
+        {
+          "question": "Sind Mittagessen enthalten?",
+          "answer": "Nicht, sofern sie nicht ausdrücklich im bestätigten Reiseverlauf enthalten sind."
+        },
+        {
+          "question": "Wie wird der Preis bestätigt?",
+          "answer": "Diese Tour ist nur auf Anfrage, da Termine, Gruppengröße und Unterkunft die endgültige Gestaltung beeinflussen. Wir bestätigen die Bedingungen vor der Zahlung."
+        }
+      ],
+      "gallery": [
+        {
+          "caption": "Fès, der Ausgangspunkt für die Reise nach Süden"
+        },
+        {
+          "caption": "Ifrane im Mittleren Atlas"
+        },
+        {
+          "caption": "Merzouga am Rand des Erg Chebbi"
+        }
+      ]
     }
   }
 }
