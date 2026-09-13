@@ -75,6 +75,26 @@ export default function Tours() {
         </div>
       </section>
 
+      {/* Student Tours — featured first in the Tours ecosystem. A standalone
+          university-travel experience, not one of the 24 canonical tour IDs. */}
+      <section className="bg-[#111110]">
+        <div className="container mx-auto px-4 max-w-6xl py-10 md:py-12 grid md:grid-cols-[1fr_auto] gap-8 items-center">
+          <div>
+            <span className="text-[12px] font-semibold uppercase block mb-3" style={{ letterSpacing: '0.2em', color: '#C9A84C' }}>
+              {t('st_home_eyebrow')}
+            </span>
+            <h2 className="font-serif text-white text-2xl md:text-4xl font-light leading-tight">{t('st_tours_label')}</h2>
+            <p className="mt-3 text-white/75 max-w-2xl text-sm md:text-base">{t('st_tours_desc')}</p>
+          </div>
+          <Link
+            href="/student-tours"
+            className="inline-flex items-center justify-center gap-2 px-7 py-4 bg-white text-black text-sm font-semibold tracking-wide hover:opacity-90 transition whitespace-nowrap"
+          >
+            {t('st_home_cta')} <ChevronRight className="w-4 h-4" />
+          </Link>
+        </div>
+      </section>
+
       <section className="py-16 md:py-20 bg-background border-b border-border">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-10">

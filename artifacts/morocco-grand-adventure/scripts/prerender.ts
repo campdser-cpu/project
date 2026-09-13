@@ -796,6 +796,8 @@ function buildBlogArticleBody(slug: string, lang: Lang): string {
 }
 
 const EXPERIENCE_PAGE_ROUTES: Record<string, { tours: string[]; destinations: string[] }> = {
+  // Student Tours — a standalone university-travel experience, not a 25th tour.
+  '/student-tours': { tours: ['3-day-sahara-marrakech', '5-day-imperial-cities', '7-day-imperial-cities-sahara-escape'], destinations: ['marrakech', 'ait-ben-haddou', 'merzouga', 'erg-chebbi', 'fes'] },
   '/desert-tours': { tours: ['3-day-sahara-marrakech', '7-day-imperial-cities-sahara-escape'], destinations: ['merzouga', 'erg-chebbi'] },
   '/luxury-camp': { tours: ['7-day-imperial-cities-sahara-escape', 'honeymoon-morocco'], destinations: ['merzouga', 'erg-chebbi'] },
   '/camel-trekking': { tours: ['3-day-sahara-marrakech'], destinations: ['merzouga', 'erg-chebbi'] },
@@ -817,7 +819,12 @@ function buildExperienceContent(rest: string, lang: Lang): string {
   // never invented.
   const meta = getLocalizedRouteMeta(rest, lang);
   const cfg = EXPERIENCE_PAGE_ROUTES[rest] ?? { tours: [], destinations: [] };
-  const heading = h1(meta.title.replace(/\s*—.*$/, '').trim() || meta.title);
+  // Student Tours authors a real editorial H1; every other experience hub
+  // derives its H1 from the localized meta title. Keeping the static H1 equal to
+  // the hydrated one avoids an SPA/prerender heading mismatch.
+  const heading = rest === '/student-tours'
+    ? h1(tr(lang, 'st_h1'))
+    : h1(meta.title.replace(/\s*—.*$/, '').trim() || meta.title);
   const intro = paragraph(meta.description);
   const tBlocks = cfg.tours.map((id) => getLocalizedTour(id, lang)).filter((t): t is NonNullable<typeof t> => Boolean(t)).map((t) => h2Link(`${SITE_URL}/${lang}/tours/${t.id}`, t.name) + paragraph(t.description ?? '') + paragraph(`${tr(lang, 'search_duration')}: ${t.duration}`) + ul(t.highlights)).join('');
   const dBlocks = cfg.destinations.map((id) => getLocalizedDestination(id, lang)).filter((d): d is NonNullable<typeof d> => Boolean(d)).map((d) => h2Link(`${SITE_URL}/${lang}/destinations/${d.id}`, d.name) + paragraph(d.shortDesc)).join('');
@@ -838,7 +845,42 @@ function buildExperienceContent(rest: string, lang: Lang): string {
   // Merzouga guide hub: "Plan with our guides" cards — mirrors <PlanWithGuides>
   // so the static HTML contains the same four guide links as the hydrated SPA.
   const planWithGuides = rest === '/merzouga-guide' ? buildPlanWithGuidesHtml(lang) : '';
-  return heading + intro + desertMoments + galleryLibPhotos + tBlocks + dBlocks + planWithGuides + tripBuilderCta;
+  // Student Tours: emit the positioning that matters for crawlers and for a
+  // coordinator landing from search — group size, single-coordinator booking,
+  // large-group caveat, learning themes and the FAQ. en+pt are authored; the
+  // other locales resolve these keys to English by design.
+  const studentTours = rest === '/student-tours' ? `
+    <p>${escapeHtml(tr(lang, 'st_groupsize'))}</p>
+    <p>${escapeHtml(tr(lang, 'st_coordinator'))}</p>
+    <h2>${escapeHtml(tr(lang, 'st_02_h2'))}</h2>
+    <p>${escapeHtml(tr(lang, 'st_02_p1'))}</p>
+    <h2>${escapeHtml(tr(lang, 'st_04_h2'))}</h2>
+    <p>${escapeHtml(tr(lang, 'st_04_intro'))}</p>
+    ${ul([1, 2, 3, 4, 5, 6, 7, 8].map((n) => `${tr(lang, `st_04_s${n}_label`)} — ${tr(lang, `st_04_s${n}_body`)}`))}
+    <p>${escapeHtml(tr(lang, 'st_04_places_p'))}</p>
+    <h2>${escapeHtml(tr(lang, 'st_05_h2'))}</h2>
+    ${ul([1, 2, 3, 4, 5, 6, 7].map((n) => `${tr(lang, `st_05_n${n}`)} — ${tr(lang, `st_05_t${n}`)}`))}
+    <p>${escapeHtml(tr(lang, 'st_05_caption'))}</p>
+    <h2>${escapeHtml(tr(lang, 'st_07_h2'))}</h2>
+    <p>${escapeHtml(tr(lang, 'st_07_body'))}</p>
+    ${ul([1, 2, 3, 4, 5, 6].map((n) => tr(lang, `st_07_th${n}`)))}
+    <h2>${escapeHtml(tr(lang, 'st_09_h2'))}</h2>
+    <p>${escapeHtml(tr(lang, 'st_09_body'))}</p>
+    ${ul([1, 2, 3, 4, 5, 6, 7, 8].map((n) => tr(lang, `st_09_e${n}`)))}
+    <p>${escapeHtml(tr(lang, 'st_09_note'))}</p>
+    <p>${escapeHtml(tr(lang, 'st_09_groups_p'))}</p>
+    <h2>${escapeHtml(tr(lang, 'st_11_h2'))}</h2>
+    <p>${escapeHtml(tr(lang, 'st_11_intro'))}</p>
+    ${ul([1, 2, 3].map((n) => `${tr(lang, `st_11_r${n}_days`)} ${tr(lang, `st_11_r${n}_unit`)} — ${tr(lang, `st_11_r${n}_title`)}: ${tr(lang, `st_11_r${n}_route`)} (${tr(lang, `st_11_r${n}_themes`)})`))}
+    <p>${escapeHtml(tr(lang, 'st_11_band_items'))}</p>
+    <h2>${escapeHtml(tr(lang, 'st_14_h2'))}</h2>
+    <p>${escapeHtml(tr(lang, 'st_14_honesty'))}</p>
+    <h2>${escapeHtml(tr(lang, 'st_15_faq_h2'))}</h2>
+    ${Array.from({ length: 13 }, (_, i) => `<h3>${escapeHtml(tr(lang, `st_15_q${i + 1}`))}</h3><p>${escapeHtml(tr(lang, `st_15_a${i + 1}`))}</p>`).join('\n    ')}
+    <h2>${escapeHtml(tr(lang, 'st_16_h2'))}</h2>
+    <p>${escapeHtml(tr(lang, 'st_16_body'))}</p>
+    <p><a href="${contactInfo.whatsapp}?text=${encodeURIComponent(tr(lang, 'st_16_cta'))}">${escapeHtml(tr(lang, 'st_16_cta'))}</a></p>` : '';
+  return heading + intro + studentTours + desertMoments + galleryLibPhotos + tBlocks + dBlocks + planWithGuides + tripBuilderCta;
 }
 
 // ── Data-driven hub / comparison pages (Merzouga guide + comparisons) ───────────
@@ -965,7 +1007,38 @@ function buildRoutes(lang: Lang): RouteEntry[] {
     const meta = BLOG_META[post.slug];
     add(`/blog/${post.slug}`, `${lang}/blog/${post.slug}.html`, () => buildBlogArticleContent(post.slug, lang), meta ? (buildBlogPostSchema({ slug: post.slug, title: meta.title, description: meta.description, date: post.date, image: post.image }, lang) as Record<string, unknown>[]) : []);
   }
-    for (const rest of Object.keys(EXPERIENCE_PAGE_ROUTES)) add(rest, `${lang}${rest}/index.html`, () => buildExperienceContent(rest, lang));
+    for (const rest of Object.keys(EXPERIENCE_PAGE_ROUTES)) {
+      // Student Tours carries Breadcrumb + FAQ + three example TouristTrips.
+      // No second Organization node: the site-wide TravelAgency entity already
+      // ships in the shared head and is referenced by @id here.
+      const schemas: Record<string, unknown>[] = rest === '/student-tours'
+        ? ([
+            buildBreadcrumb([
+              { name: tr(lang, 'nav_home'), path: '/' },
+              { name: tr(lang, 'nav_tours'), path: '/tours' },
+              { name: tr(lang, 'st_breadcrumb'), path: rest },
+            ], lang) as unknown as Record<string, unknown>,
+            buildFaqSchema(Array.from({ length: 13 }, (_, i) => ({
+              question: tr(lang, `st_15_q${i + 1}`), answer: tr(lang, `st_15_a${i + 1}`),
+            }))) as unknown as Record<string, unknown>,
+            ...[1, 2, 3].map((n) => ({
+              '@context': 'https://schema.org',
+              '@type': 'TouristTrip',
+              name: `${tr(lang, `st_11_r${n}_days`)} ${tr(lang, `st_11_r${n}_unit`)} — ${tr(lang, `st_11_r${n}_title`)}`,
+              description: `${tr(lang, `st_11_r${n}_route`)} · ${tr(lang, `st_11_r${n}_themes`)}`,
+              touristType: 'University and student groups (15+ participants)',
+              itinerary: {
+                '@type': 'ItemList',
+                itemListElement: tr(lang, `st_11_r${n}_route`).split('·').map((p, i) => ({
+                  '@type': 'ListItem', position: i + 1, name: p.trim(),
+                })),
+              },
+              provider: { '@type': 'TravelAgency', '@id': `${SITE_URL}/#organization`, name: 'Morocco Grand Adventure' },
+            })),
+          ])
+        : [];
+      add(rest, `${lang}${rest}/index.html`, () => buildExperienceContent(rest, lang), schemas);
+    }
   // Merzouga authority sub-pages + comparison pages (hub copy localized via
   // guide overlays; comparisons/travel-info stay canonical English).
   for (const page of MERZOUGA_GUIDES) {

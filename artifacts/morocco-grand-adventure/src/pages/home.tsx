@@ -349,6 +349,33 @@ export default function Home() {
         </motion.div>
       </section>
 
+      {/* Student Tours teaser — poster image only, never the hero video, so the
+          homepage keeps its weight. Full cinematic experience lives on /student-tours. */}
+      <section className="bg-background border-b border-border [content-visibility:auto] [contain-intrinsic-size:auto_420px]">
+        <div className="container mx-auto px-4 py-14 md:py-20 grid md:grid-cols-2 gap-8 md:gap-14 items-center">
+          <div className="aspect-[16/9] overflow-hidden order-2 md:order-1">
+            <picture>
+              <source type="image/webp" sizes="(max-width: 768px) 100vw, 50vw"
+                srcSet="/images/student-tours/student-group-atlas-flag-480w.webp 480w, /images/student-tours/student-group-atlas-flag-768w.webp 768w, /images/student-tours/student-group-atlas-flag-1280w.webp 1280w" />
+              <img src="/images/student-tours/student-group-atlas-flag.jpg"
+                alt={t('st_16_alt')} width={1600} height={863} loading="lazy" decoding="async"
+                className="w-full h-full object-cover" />
+            </picture>
+          </div>
+          <div className="order-1 md:order-2">
+            <span className="text-[12px] font-semibold uppercase block mb-4" style={{ letterSpacing: '0.2em', color: '#C9A84C' }}>
+              {t('st_home_eyebrow')}
+            </span>
+            <h2 className="font-serif text-2xl md:text-4xl text-foreground font-light leading-tight">{t('st_home_h2')}</h2>
+            <p className="mt-4 text-muted-foreground leading-relaxed">{t('st_home_body')}</p>
+            <Link href="/student-tours"
+              className="inline-flex items-center gap-2 mt-7 px-7 py-3.5 bg-foreground text-background text-sm font-semibold hover:bg-primary transition">
+              {t('st_home_cta')} <ChevronRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Trust Indicators — Subtle Strip */}
       <section className="bg-background py-8 md:py-10 border-b border-border z-10 relative [content-visibility:auto] [contain-intrinsic-size:auto_120px]">
         <div className="container mx-auto px-4">
