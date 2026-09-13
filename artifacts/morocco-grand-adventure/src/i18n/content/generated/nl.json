@@ -2693,6 +2693,465 @@
           "answer": "Deze tour is alleen op aanvraag, omdat de uiteindelijke prijs afhangt van uw reisdata, de groepsgrootte en de gekozen accommodatie. Neem eerst contact met ons op; wij bevestigen het reisschema en de commerciële voorwaarden vóór betaling."
         }
       ]
+    },
+    "4-day-marrakech-merzouga-sahara": {
+      "name": "4-daagse Sahara-tour van Marrakech naar Merzouga",
+      "duration": "4 dagen / 3 nachten",
+      "category": "Woestijn & Avontuur",
+      "highlights": [
+        "Oversteek van de Hoge Atlas",
+        "Aït Ben Haddou en Ouarzazate",
+        "De Dadesvallei en de Todra-kloof",
+        "Kameelbeleving bij zonsondergang in Erg Chebbi",
+        "Extra tijd in Merzouga",
+        "Overnachting in een woestijnkamp"
+      ],
+      "description": "Een comfortabeler alternatief voor de klassieke driedaagse rondreis Marrakech–Merzouga. Het vierdaagse formaat behoudt de belangrijkste hoogtepunten van het zuiden, maar geeft de reis meer lucht, met een volledige dag rond Merzouga voordat u terugkeert naar Marrakech.",
+      "routeCaption": "Marrakech → Hoge Atlas → Aït Ben Haddou → Ouarzazate → Dadesvallei → Todra-kloof → Merzouga & Erg Chebbi → Marrakech.",
+      "itineraryDays": [
+        {
+          "title": "Marrakech → Hoge Atlas → Aït Ben Haddou → Dadesvallei",
+          "desc": "U steekt de Hoge Atlas over en stopt bij Aït Ben Haddou, waarna u verder rijdt via Ouarzazate en de zuidelijke valleien naar de Dadesvallei. De overnachting verdeelt de lange weg zuidwaarts over een behapbare eerste dag.",
+          "stops": [
+            "Marrakech",
+            "Hoge Atlas",
+            "Aït Ben Haddou",
+            "Ouarzazate",
+            "Dadesvallei"
+          ]
+        },
+        {
+          "title": "Dadesvallei → Todra-kloof → Erfoud → Merzouga",
+          "desc": "U volgt het landschap van de Dades naar de Todra-kloof en reist daarna oostwaarts door de pre-Sahara richting Erfoud en Merzouga. U arriveert op tijd voor de bevestigde woestijnbeleving en de zonsondergang in het gebied van Erg Chebbi.",
+          "stops": [
+            "Dadesvallei",
+            "Todra-kloof",
+            "Erfoud",
+            "Merzouga",
+            "Erg Chebbi"
+          ]
+        },
+        {
+          "title": "Merzouga en Erg Chebbi — Sahara-dag",
+          "desc": "U gebruikt de extra dag om de omgeving van Merzouga in een rustiger tempo te beleven. Afhankelijk van het bevestigde plan verkent u de duinen en de nabijgelegen gemeenschappen, met ruimte voor de zonsopgang of zonsondergang in plaats van een hele dag onderweg.",
+          "stops": [
+            "Merzouga",
+            "Erg Chebbi",
+            "Zonsopgang in de woestijn",
+            "Lokale gemeenschappen",
+            "Overnachting: omgeving Merzouga"
+          ]
+        },
+        {
+          "title": "Merzouga → Zizvallei → Hoge Atlas → Marrakech",
+          "desc": "Na het ontbijt begint de terugrit door de Zizvallei en over de Atlas. De laatste dag is een stevige reis over de weg terug naar Marrakech, met stops die worden afgestemd op de wegomstandigheden en uw afgesproken reisschema.",
+          "stops": [
+            "Merzouga",
+            "Zizvallei",
+            "Hoge Atlas",
+            "Marrakech"
+          ]
+        }
+      ],
+      "included": [
+        "Privévoertuig met airconditioning",
+        "Professionele Engelssprekende chauffeur",
+        "Brandstof",
+        "Accommodatie volgens het gekozen pakket",
+        "Woestijnbeleving volgens het bevestigde reisschema",
+        "Kameelbeleving wanneer deze in het bevestigde pakket is opgenomen",
+        "Ophalen bij en afzetten bij het hotel"
+      ],
+      "excluded": [
+        "Internationale vluchten",
+        "Lunches",
+        "Dranken",
+        "Toegangskosten",
+        "Optionele activiteiten",
+        "Fooien",
+        "Persoonlijke uitgaven"
+      ],
+      "gallery": [
+        {
+          "caption": "De Dadesvallei op de weg naar Merzouga"
+        },
+        {
+          "caption": "De Todra-kloof in de oostelijke Hoge Atlas"
+        },
+        {
+          "caption": "Merzouga aan de rand van Erg Chebbi"
+        },
+        {
+          "caption": "De duinen van Erg Chebbi"
+        }
+      ],
+      "faq": [
+        {
+          "question": "Waarom vier dagen in plaats van drie?",
+          "answer": "Vier dagen haalt het gevoel van een aaneengesloten race over de weg weg en geeft u een volledige dag rond Merzouga. Het is de betere keuze wanneer de Sahara zelf net zo belangrijk is als de route ernaartoe."
+        },
+        {
+          "question": "Komt deze tour bij Erg Chebbi?",
+          "answer": "Ja. De route bereikt Merzouga en het duingebied van Erg Chebbi. De precieze afspraken over het woestijnkamp en de kamelen worden vóór de boeking met u bevestigd."
+        },
+        {
+          "question": "Is de accommodatie inbegrepen?",
+          "answer": "De accommodatie wordt gekozen op basis van het geselecteerde pakket en de bevestigde beschikbaarheid. Wij beloven geen specifieke adressen vóór de boeking."
+        },
+        {
+          "question": "Kan de route worden aangepast?",
+          "answer": "Ja. Dit is een privéreisschema dat kan worden aangepast aan uw gewenste tempo, uw interesses en het gewenste eindpunt."
+        },
+        {
+          "question": "Is de terugreis naar Marrakech lang?",
+          "answer": "Ja. Merzouga ligt op een flinke rijafstand van Marrakech. Het vierdaagse formaat voegt tijd in de woestijn toe, maar de laatste terugreis blijft een stevige rijdag."
+        },
+        {
+          "question": "Hoe wordt de prijs bevestigd?",
+          "answer": "Deze tour is alleen op aanvraag. Wij bevestigen uw reisdata, de groepsgrootte, de accommodatiecategorie en het reisschema voordat wij de definitieve commerciële voorwaarden geven."
+        }
+      ]
+    },
+    "5-day-great-south-morocco": {
+      "name": "5-daagse rondreis door het Grote Zuiden van Marokko",
+      "duration": "5 dagen / 4 nachten",
+      "category": "Het Grote Zuiden",
+      "highlights": [
+        "De Hoge Atlas en de Tizi n'Tichka-pas",
+        "Aït Ben Haddou",
+        "De kloven van Dades en Todra",
+        "Merzouga en Erg Chebbi",
+        "De Draa-vallei en de zuidelijke kasbahlandschappen",
+        "Terugkeer naar Marrakech"
+      ],
+      "description": "Een vijfdaagse privérondreis door Zuid-Marokko die de Hoge Atlas, het kasbahland rond Aït Ben Haddou en de Dades, de Todra-kloof en de Sahara bij Merzouga combineert met de palmrijke Draa-vallei op de terugweg.",
+      "routeCaption": "Marrakech → Hoge Atlas → Aït Ben Haddou → Ouarzazate → Dades → Todra → Merzouga → Draa-vallei → Marrakech.",
+      "itineraryDays": [
+        {
+          "title": "Marrakech → Hoge Atlas → Aït Ben Haddou → Dades",
+          "desc": "U steekt de Hoge Atlas over, bezoekt Aït Ben Haddou en reist verder via Ouarzazate en de zuidelijke valleien naar de Dadesvallei voor de eerste overnachting.",
+          "stops": [
+            "Marrakech",
+            "Hoge Atlas",
+            "Aït Ben Haddou",
+            "Ouarzazate",
+            "Dadesvallei"
+          ]
+        },
+        {
+          "title": "Dades → Todra-kloof → Erfoud → Merzouga",
+          "desc": "U verkent het landschap van de Dades, rijdt door naar de Todra-kloof en reist oostwaarts door de pre-Sahara naar Merzouga. U bereikt het gebied van Erg Chebbi voor de bevestigde woestijnbeleving.",
+          "stops": [
+            "Dadesvallei",
+            "Todra-kloof",
+            "Erfoud",
+            "Merzouga",
+            "Erg Chebbi"
+          ]
+        },
+        {
+          "title": "Merzouga → Erg Chebbi → Rissani en de woestijnomgeving",
+          "desc": "U houdt een rustige Sahara-dag rond Merzouga aan. Afhankelijk van het afgesproken plan omvat deze uitzichtpunten over de duinen, lokale gemeenschappen, Rissani en tijd voor de woestijn bij zonsopgang of zonsondergang.",
+          "stops": [
+            "Merzouga",
+            "Erg Chebbi",
+            "Rissani",
+            "Woestijnomgeving",
+            "Overnachting: omgeving Merzouga"
+          ]
+        },
+        {
+          "title": "Merzouga → Alnif → Nkob → Draa-vallei → Ouarzazate",
+          "desc": "U laat de duinen achter u en reist westwaarts door de landschappen rond Alnif en Nkob. Daarna volgt u de Draa-vallei met haar palmbossen en kasbahland, voordat u doorreist naar Ouarzazate.",
+          "stops": [
+            "Merzouga",
+            "Alnif",
+            "Nkob",
+            "Draa-vallei",
+            "Ouarzazate"
+          ]
+        },
+        {
+          "title": "Ouarzazate → Aït Ben Haddou → Hoge Atlas → Marrakech",
+          "desc": "U keert terug richting Marrakech via Aït Ben Haddou en de Hoge Atlas. De laatste dag wordt afgestemd op de weg en uw gewenste stops, voordat u in Marrakech aankomt.",
+          "stops": [
+            "Ouarzazate",
+            "Aït Ben Haddou",
+            "Hoge Atlas",
+            "Marrakech"
+          ]
+        }
+      ],
+      "included": [
+        "Privévoertuig met airconditioning",
+        "Professionele Engelssprekende chauffeur",
+        "Brandstof",
+        "Accommodatie volgens het gekozen pakket",
+        "Woestijnbeleving volgens het bevestigde reisschema",
+        "Kameelbeleving wanneer dit is gespecificeerd",
+        "Ophalen bij en afzetten bij het hotel"
+      ],
+      "excluded": [
+        "Internationale vluchten",
+        "Lunches",
+        "Dranken",
+        "Toegangskosten",
+        "Optionele activiteiten",
+        "Fooien",
+        "Persoonlijke uitgaven"
+      ],
+      "gallery": [
+        {
+          "caption": "Aït Ben Haddou"
+        },
+        {
+          "caption": "De Dadesvallei"
+        },
+        {
+          "caption": "Merzouga en Erg Chebbi"
+        },
+        {
+          "caption": "Palmbossen in de Draa-vallei"
+        }
+      ],
+      "faq": [
+        {
+          "question": "Wat maakt dit een reis door het Grote Zuiden?",
+          "answer": "De route richt zich op de landschappen en culturele corridors ten zuiden van de Hoge Atlas: Aït Ben Haddou, de Dades, de Todra, Merzouga en de Draa-vallei."
+        },
+        {
+          "question": "Is Merzouga onderdeel van de route?",
+          "answer": "Ja. De route bereikt Merzouga en het gebied van Erg Chebbi; de precieze woestijnbeleving wordt als onderdeel van uw boeking bevestigd."
+        },
+        {
+          "question": "Is dit een privéreis?",
+          "answer": "Ja. De reis is opgezet als een privéreis voor alleen uw gezelschap."
+        },
+        {
+          "question": "Kunnen wij meer tijd in de Sahara doorbrengen?",
+          "answer": "Ja. De route kan worden aangepast, en een langer formaat rond Merzouga past mogelijk beter bij u wanneer tijd in de woestijn de prioriteit is."
+        },
+        {
+          "question": "Zijn maaltijden inbegrepen?",
+          "answer": "Maaltijden hangen af van het bevestigde accommodatiepakket. In het definitieve reisschema staat vermeld welke ontbijten en diners zijn inbegrepen."
+        },
+        {
+          "question": "Hoe wordt de prijs bevestigd?",
+          "answer": "Deze tour is alleen op aanvraag. Wij bevestigen de reisdata, de groepsgrootte en de accommodatiekeuzes voordat wij de definitieve prijs bevestigen."
+        }
+      ]
+    },
+    "3-day-fes-merzouga-sahara": {
+      "name": "3-daagse Sahara-tour van Fes naar Merzouga",
+      "duration": "3 dagen / 2 nachten",
+      "category": "Sahara & Cultuur",
+      "highlights": [
+        "Vertrek vanuit Fes",
+        "De Midden-Atlas en de cederbossen",
+        "De Zizvallei",
+        "Merzouga en Erg Chebbi",
+        "Woestijnbeleving bij zonsondergang",
+        "Overnachting in een woestijnkamp"
+      ],
+      "description": "Een doelgerichte privéreis van Fes naar de Sahara bij Merzouga. U reist zuidwaarts door de Midden-Atlas en de Zizvallei, bereikt Erg Chebbi voor de woestijnbeleving en reist daarna verder of keert terug volgens het bevestigde plan. De route is bewust compact gehouden; wie meer tijd rond de duinen wil, kan de reis het beste verlengen.",
+      "routeCaption": "Fes → Ifrane en de Midden-Atlas → Zizvallei → Merzouga → Erg Chebbi.",
+      "itineraryDays": [
+        {
+          "title": "Fes → Ifrane → Cederbos → Midelt → Zizvallei",
+          "desc": "U verlaat Fes en steekt de Midden-Atlas over via Ifrane en de cederboslandschappen. Daarna reist u verder richting Midelt en de Zizvallei, waarbij de weg zelf het veranderende decor vormt van Noord-Marokko naar de pre-Sahara.",
+          "stops": [
+            "Fes",
+            "Ifrane",
+            "Cederbos",
+            "Midelt",
+            "Zizvallei"
+          ]
+        },
+        {
+          "title": "Zizvallei → Erfoud → Merzouga → Erg Chebbi",
+          "desc": "U reist verder richting Erfoud en Merzouga. Bij de duinen aangekomen volgt de bevestigde woestijnbeleving, zoals een kameeltransfer bij zonsondergang wanneer die is inbegrepen, gevolgd door de overnachting in de bevestigde accommodatie.",
+          "stops": [
+            "Zizvallei",
+            "Erfoud",
+            "Merzouga",
+            "Erg Chebbi",
+            "Woestijnbeleving bij zonsondergang"
+          ]
+        },
+        {
+          "title": "Merzouga → vervolgreis",
+          "desc": "De dag begint met de ochtend in de woestijn, waarna u verder reist naar de bestemming die in uw offerte is afgesproken. Een terugkeer naar Fes of een enkele reis met een ander eindpunt is bespreekbaar; wij leggen geen vaste eindbestemming vast zolang deze niet bevestigd is.",
+          "stops": [
+            "Zonsopgang in Merzouga",
+            "Erg Chebbi",
+            "Bevestigde vervolgbestemming"
+          ]
+        }
+      ],
+      "included": [
+        "Privé reisplanning",
+        "Route bevestigd rond uw reisdata",
+        "Privévervoer wanneer dit in de bevestigde offerte is opgenomen",
+        "Woestijnbeleving wanneer deze in het bevestigde reisschema is opgenomen"
+      ],
+      "excluded": [
+        "Internationale vluchten",
+        "Alles wat niet uitdrukkelijk in de bevestigde offerte is opgenomen",
+        "Persoonlijke uitgaven en fooien, tenzij anders afgesproken"
+      ],
+      "gallery": [
+        {
+          "caption": "Fes, het vertrekpunt voor de reis naar het zuiden"
+        },
+        {
+          "caption": "Ifrane in de Midden-Atlas"
+        },
+        {
+          "caption": "Merzouga aan de rand van Erg Chebbi"
+        }
+      ],
+      "faq": [
+        {
+          "question": "Is deze route in drie dagen te doen?",
+          "answer": "Ja, maar het is een compact reisschema over land met stevige rijtijden. Wilt u de Sahara rustiger beleven, vraag dan naar een langere versie."
+        },
+        {
+          "question": "Is een kameeltocht inbegrepen?",
+          "answer": "De woestijnbeleving kan een kameeltransfer omvatten wanneer die optie is gekozen en bevestigd. Wij gaan vooraf niet uit van optionele activiteiten."
+        },
+        {
+          "question": "Waar overnachten wij?",
+          "answer": "De accommodatie wordt gekozen op basis van het gekozen pakket en de beschikbaarheid; de nacht in de woestijn wordt vóór de boeking bevestigd."
+        },
+        {
+          "question": "Kunnen wij ergens anders dan in Fes eindigen?",
+          "answer": "Ja. Omdat dit een privéreis is, kan het eindpunt worden besproken wanneer u uw offerte aanvraagt."
+        },
+        {
+          "question": "Zijn lunches inbegrepen?",
+          "answer": "Niet, tenzij ze uitdrukkelijk in het bevestigde reisschema zijn opgenomen."
+        },
+        {
+          "question": "Hoe wordt de prijs bevestigd?",
+          "answer": "Deze tour is alleen op aanvraag, omdat de reisdata, de groepsgrootte en de accommodatie de uiteindelijke invulling bepalen. Wij bevestigen de voorwaarden vóór betaling."
+        }
+      ]
+    },
+    "4-day-fes-marrakech-via-merzouga": {
+      "name": "4-daagse reis Fes–Marrakech via Merzouga",
+      "duration": "4 dagen / 3 nachten",
+      "category": "Sahara & Grand Tour",
+      "highlights": [
+        "Vertrek vanuit Fes",
+        "De Midden-Atlas en de Zizvallei",
+        "Sahara-beleving in Erg Chebbi",
+        "De Todra-kloof",
+        "De Dadesvallei",
+        "Aït Ben Haddou",
+        "Eindpunt in Marrakech"
+      ],
+      "description": "Een privéroute in één richting die Fes en Marrakech met elkaar verbindt via de Sahara. U reist van de Midden-Atlas naar Merzouga en Erg Chebbi, doorkruist daarna de landschappen van Todra en Dades en eindigt via Aït Ben Haddou en de Hoge Atlas in Marrakech.",
+      "routeCaption": "Fes → Midden-Atlas → Merzouga & Erg Chebbi → Todra-kloof → Dadesvallei → Aït Ben Haddou → Hoge Atlas → Marrakech.",
+      "itineraryDays": [
+        {
+          "title": "Fes → Ifrane → Midelt → Zizvallei → Merzouga",
+          "desc": "U verlaat Fes en steekt de Midden-Atlas over via Ifrane en de cederbossen, om verder te reizen via Midelt en de Zizvallei naar Merzouga. Aan het einde van de weg zuidwaarts verschijnt het woestijnlandschap.",
+          "stops": [
+            "Fes",
+            "Ifrane",
+            "Cederbos",
+            "Midelt",
+            "Zizvallei",
+            "Merzouga"
+          ]
+        },
+        {
+          "title": "Merzouga → Erg Chebbi → Todra-kloof → Dadesvallei",
+          "desc": "U geniet 's ochtends van de woestijn en reist daarna westwaarts door de pre-Sahara. Via de Todra-kloof komt u aan in de Dadesvallei voor de overnachting, waarbij de route gericht blijft op de grote landschappen.",
+          "stops": [
+            "Merzouga",
+            "Erg Chebbi",
+            "Todra-kloof",
+            "Dadesvallei"
+          ]
+        },
+        {
+          "title": "Dadesvallei → Ouarzazate → Aït Ben Haddou",
+          "desc": "U volgt de zuidelijke weg via Ouarzazate en reist door naar Aït Ben Haddou. Neem de tijd om de historische ksar te verkennen voordat u in de omgeving overnacht.",
+          "stops": [
+            "Dadesvallei",
+            "Ouarzazate",
+            "Aït Ben Haddou (UNESCO)"
+          ]
+        },
+        {
+          "title": "Aït Ben Haddou → Hoge Atlas → Marrakech",
+          "desc": "Op de laatste etappe steekt u de Hoge Atlas over naar Marrakech. De reis eindigt in de Rode Stad, waarbij het aankomstpunt en het tijdstip rond uw plannen worden bevestigd.",
+          "stops": [
+            "Aït Ben Haddou",
+            "Hoge Atlas",
+            "Marrakech"
+          ]
+        }
+      ],
+      "included": [
+        "Privévoertuig met airconditioning",
+        "Professionele Engelssprekende chauffeur",
+        "Brandstof",
+        "Accommodatie volgens het gekozen pakket",
+        "Woestijnbeleving volgens het bevestigde reisschema",
+        "Kameelbeleving wanneer dit is gespecificeerd",
+        "Ophalen bij en afzetten bij het hotel"
+      ],
+      "excluded": [
+        "Internationale vluchten",
+        "Lunches",
+        "Dranken",
+        "Toegangskosten",
+        "Optionele activiteiten",
+        "Fooien",
+        "Persoonlijke uitgaven"
+      ],
+      "gallery": [
+        {
+          "caption": "De medina van Fes"
+        },
+        {
+          "caption": "Merzouga en de Sahara"
+        },
+        {
+          "caption": "De Todra-kloof"
+        },
+        {
+          "caption": "Aït Ben Haddou"
+        }
+      ],
+      "faq": [
+        {
+          "question": "Eindigt deze tour in Marrakech?",
+          "answer": "Ja. De reis is opgezet als een privéroute in één richting van Fes naar Marrakech, via Merzouga en Zuid-Marokko."
+        },
+        {
+          "question": "Komt de route bij Erg Chebbi?",
+          "answer": "Ja. De route bereikt Merzouga en het duingebied van Erg Chebbi. De precieze afspraken over het kamp en de kamelen worden vóór de boeking bevestigd."
+        },
+        {
+          "question": "Waarom duurt de route vier dagen?",
+          "answer": "Vier dagen geeft deze enkele reis voldoende ruimte voor de Midden-Atlas, de Sahara en de zuidelijke valleien, zonder de hele route in één gehaaste transfer te persen."
+        },
+        {
+          "question": "Kunnen wij nachten toevoegen?",
+          "answer": "Ja. Extra overnachtingen of een rustiger reisschema zijn bespreekbaar als onderdeel van het privéreisplan."
+        },
+        {
+          "question": "Zijn toegangskosten inbegrepen?",
+          "answer": "Toegangskosten voor monumenten en musea zijn uitgesloten, tenzij ze uitdrukkelijk in het bevestigde reisschema staan vermeld."
+        },
+        {
+          "question": "Hoe wordt de prijs bevestigd?",
+          "answer": "Dit is een reisschema op aanvraag. Wij bevestigen uw reisdata, de groepsgrootte en de accommodatiekeuzes voordat wij de definitieve prijs bevestigen."
+        }
+      ]
     }
   }
 }
