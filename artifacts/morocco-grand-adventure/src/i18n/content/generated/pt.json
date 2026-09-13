@@ -55,6 +55,54 @@
     {
       "question": "Podem atender restrições alimentares?",
       "answer": "Sem dúvida — menus vegetarianos, veganos, sem glúten, halal e específicos para alergias são todos contemplados. Informe-nos no momento da reserva."
+    },
+    {
+      "question": "O que está incluído nas vossas viagens ao deserto?",
+      "answer": "Todas as nossas viagens ao deserto incluem transporte privado com ar condicionado, motorista fluente em inglês, alojamento de luxo, pequeno-almoço e jantar diários, passeio de camelo em Erg Chebbi, uma noite num acampamento de luxo no deserto e recolha e entrega no hotel. Os voos internacionais, os almoços e as atividades opcionais ficam, regra geral, excluídos."
+    },
+    {
+      "question": "O que devem os viajantes levar para o acampamento no deserto do Saara?",
+      "answer": "Leve camadas de roupa quente para as noites frias do deserto, um lenço, protetor solar, óculos de sol, uma lanterna, calçado confortável e um carregador portátil. Fornecemos sacos-cama para o acampamento no deserto. O fato de banho é útil em alguns acampamentos de luxo com piscina."
+    },
+    {
+      "question": "Como se chega a Merzouga e ao deserto do Saara?",
+      "answer": "A viagem de Marrakech a Merzouga demora cerca de 9 a 10 horas, atravessando a cordilheira do Alto Atlas. A partir de Fes, são aproximadamente 7 a 8 horas. Organizamos transferes privados com paragens confortáveis. O mais habitual é chegar de avião a Marrakech ou a Fes."
+    },
+    {
+      "question": "O passeio de camelo é adequado para principiantes?",
+      "answer": "Sim — os nossos passeios de camelo são tranquilos e adequados a todos os níveis. Os camelos estão bem treinados e os passeios duram normalmente 1 a 2 horas, ao pôr do sol. Para quem prefere não montar, é possível organizar transferes em 4x4 até ao acampamento."
+    },
+    {
+      "question": "Como são os acampamentos no deserto?",
+      "answer": "Os nossos acampamentos de luxo no deserto têm camas verdadeiras, casas de banho privativas e elegantes tendas de estilo berbere sob as estrelas. O jantar é servido à volta da fogueira, com música berbere ao vivo. É uma experiência confortável, autêntica e inesquecível."
+    },
+    {
+      "question": "Podem organizar uma viagem durante o Ramadão?",
+      "answer": "Sim — Marrocos durante o Ramadão é uma experiência cultural especial. Alguns restaurantes poderão estar encerrados durante o dia, mas os nossos guias sabem lidar com isso com naturalidade. Os banquetes noturnos e os animados mercados da noite fazem desta uma altura única para visitar o país."
+    },
+    {
+      "question": "Qual é a política de cancelamento?",
+      "answer": "Cancelamento gratuito até 7 dias antes da sua viagem, com reembolso total. Os cancelamentos efetuados nos 7 dias anteriores poderão implicar um custo de 50%. As não comparências não são reembolsáveis. Recomendamos um seguro de viagem para total tranquilidade."
+    },
+    {
+      "question": "Preciso de seguro de viagem?",
+      "answer": "O seguro de viagem é vivamente recomendado para todas as viagens a Marrocos. Deve cobrir emergências médicas, cancelamento da viagem e extravio de bagagem. Se precisar, podemos aconselhá-lo sobre apólices adequadas."
+    },
+    {
+      "question": "As viagens são adequadas a crianças e a viajantes mais velhos?",
+      "answer": "Sem dúvida. As nossas viagens privadas são totalmente adaptáveis a famílias e a hóspedes mais velhos. O ritmo é flexível, os passeios de camelo são opcionais e os transferes em 4x4 podem substituir os troços a pé. Temos experiência com todas as idades."
+    },
+    {
+      "question": "Com quanta antecedência devo reservar?",
+      "answer": "Para as épocas altas (março a maio e setembro a novembro), recomendamos reservar com pelo menos 4 a 6 semanas de antecedência. Para viagens ao deserto no inverno ou para datas especiais, o ideal são 2 a 3 meses. As reservas de última hora são por vezes possíveis — basta perguntar."
+    },
+    {
+      "question": "Que tipo de veículos utilizam?",
+      "answer": "Utilizamos veículos modernos com ar condicionado, desde automóveis para 2 a 4 passageiros até carrinhas espaçosas para grupos maiores. Todos os veículos têm manutenção cuidada e são conduzidos por motoristas profissionais devidamente licenciados."
+    },
+    {
+      "question": "Asseguram a recolha e a entrega no aeroporto?",
+      "answer": "Sim — todas as nossas viagens incluem recolha e entrega gratuitas no aeroporto ou no hotel, em Marrakech, Fes e outras cidades principais. O seu motorista aguardará por si com um cartaz com o seu nome e ajudará com a bagagem."
     }
   ],
   "destinations": {
@@ -139,7 +187,9 @@
         "Passeios de Camelo",
         "Acampamentos de Luxo no Deserto",
         "Observação das Estrelas",
-        "Aldeias Berberes"
+        "Aldeias Berberes",
+        "Nascer do sol sobre as dunas",
+        "Mercado semanal de Rissani"
       ]
     },
     "erg-chebbi": {
@@ -153,7 +203,10 @@
         "Sandboard nas Dunas",
         "Noites de Música Berbere",
         "Passeio no Deserto em 4x4",
-        "Jantar em Acampamento de Luxo"
+        "Jantar em Acampamento de Luxo",
+        "Observação de estrelas",
+        "Passeios de quad",
+        "Música Gnawa em Khamlia"
       ]
     },
     "ouarzazate": {
@@ -167,7 +220,8 @@
         "Kasbah de Taourirt",
         "Aït Ben Haddou (30min)",
         "Vale do Draa",
-        "Oásis de Fint"
+        "Oásis de Fint",
+        "Rota das Kasbahs"
       ]
     },
     "ait-ben-haddou": {
@@ -181,7 +235,8 @@
         "Passeio por Locais de Filmagem",
         "Fotografia ao Nascer do Sol",
         "Visitas a Famílias Berberes",
-        "Workshops de Cerâmica"
+        "Workshops de Cerâmica",
+        "Vistas do celeiro no alto da colina"
       ]
     },
     "zagora": {
@@ -209,7 +264,8 @@
         "Rochas dos Dedos de Macaco",
         "Festival das Rosas (Maio)",
         "Kasbahs Ancestrais",
-        "Trekking no Vale"
+        "Trekking no Vale",
+        "Vistas da estrada em ziguezague"
       ]
     },
     "todra-gorge": {
@@ -223,7 +279,8 @@
         "Passeio pelo Desfiladeiro",
         "Casas de Hóspedes Berberes",
         "Fotografia",
-        "Vistas ao Nascer do Sol"
+        "Vistas ao Nascer do Sol",
+        "Paredes de falésia com 300 m"
       ]
     },
     "skoura": {
@@ -279,7 +336,8 @@
         "Praça Uta el-Hammam",
         "Fontes de Ras el-Ma",
         "Cascatas de Akchour",
-        "Caminhadas nas Montanhas Rif"
+        "Caminhadas nas Montanhas Rif",
+        "Miradouro da Mesquita Espanhola"
       ]
     },
     "imlil": {
@@ -349,7 +407,8 @@
         "Música Gnawa",
         "Kitesurf",
         "Marisco no Porto",
-        "Bairro Judaico Mellah"
+        "Bairro Judaico Mellah",
+        "Praias atlânticas"
       ]
     },
     "agadir": {
@@ -1788,6 +1847,1414 @@
           "answer": "A viagem foi concebida para terminar em Fes, com regresso a Casablanca ou continuação do percurso organizados mediante pedido."
         }
       ]
+    },
+    "casablanca-5-day": {
+      "name": "Rota do Deserto de 5 Dias: Casablanca a Merzouga e Fes",
+      "duration": "5 Dias / 4 Noites",
+      "highlights": [
+        "A Mesquita Hassan II, em Casablanca",
+        "A imperial Meknès, Volubilis e Fes",
+        "Ifrane e o Médio Atlas das florestas de cedros",
+        "O Vale do Ziz e Merzouga",
+        "Passeio de camelo ao pôr do sol e noite em acampamento no deserto, em Erg Chebbi"
+      ],
+      "category": "Privado · Apenas sob consulta",
+      "description": "Uma rota privada de Casablanca para leste, até Fes, e depois para sul, rumo ao Saara, com uma noite nas dunas de Erg Chebbi antes do regresso a Fes. Combina as cidades imperiais e o sítio romano de Volubilis com as florestas de cedros do Médio Atlas, o Vale do Ziz repleto de palmeiras e um passeio de camelo ao pôr do sol em Merzouga. Disponível apenas sob consulta, com os detalhes confirmados em função das suas datas.",
+      "routeCaption": "Casablanca → Fes → Meknès e Volubilis → Médio Atlas → Merzouga e Erg Chebbi → Fes.",
+      "included": [
+        "Veículo privado com ar condicionado",
+        "Motorista profissional fluente em inglês",
+        "Combustível e portagens",
+        "Casas de hóspedes e um acampamento no deserto selecionados, conforme o itinerário confirmado",
+        "Pequenos-almoços e jantares conforme confirmado",
+        "Passeio de camelo ao pôr do sol e noite em acampamento no deserto, em Erg Chebbi"
+      ],
+      "excluded": [
+        "Voos internacionais",
+        "Almoços e bebidas",
+        "Taxas de entrada",
+        "Gorjetas e despesas pessoais"
+      ],
+      "itineraryDays": [
+        {
+          "title": "Casablanca → Meknès → Volubilis → Fes",
+          "desc": "Parta de Casablanca depois de visitar a Mesquita Hassan II, conheça a imperial Meknès e as ruínas romanas de Volubilis e chegue a Fes para pernoitar.",
+          "stops": [
+            "Mesquita Hassan II",
+            "Meknès",
+            "Volubilis",
+            "Pernoita: Fes"
+          ]
+        },
+        {
+          "title": "Fes → Ifrane → Médio Atlas → Midelt → Merzouga",
+          "desc": "Atravesse as florestas de cedros do Médio Atlas, via Ifrane, faça uma pausa em Midelt, siga os oásis do Vale do Ziz e chegue a Merzouga, à beira de Erg Chebbi.",
+          "stops": [
+            "Ifrane",
+            "Floresta de cedros",
+            "Midelt",
+            "Vale do Ziz",
+            "Pernoita: Merzouga"
+          ]
+        },
+        {
+          "title": "Erg Chebbi — passeio de camelo e acampamento no deserto",
+          "desc": "Um dia entre as dunas, coroado por um passeio de camelo ao pôr do sol rumo a Erg Chebbi e uma noite em acampamento no deserto, com jantar e música.",
+          "stops": [
+            "Erg Chebbi",
+            "Passeio de camelo ao pôr do sol",
+            "Noite em acampamento no deserto"
+          ]
+        },
+        {
+          "title": "Merzouga → Rissani → Vale do Ziz → região de Midelt",
+          "desc": "Assista ao nascer do sol sobre as dunas, percorra o souk de Rissani e regresse depois para norte pelo Vale do Ziz, para pernoitar na região de Midelt.",
+          "stops": [
+            "Nascer do sol em Erg Chebbi",
+            "Rissani",
+            "Vale do Ziz",
+            "Pernoita: região de Midelt"
+          ]
+        },
+        {
+          "title": "Midelt → Ifrane → Fes",
+          "desc": "Suba pelo Médio Atlas e por Ifrane para terminar a viagem em Fes, onde é possível organizar a continuação do percurso.",
+          "stops": [
+            "Médio Atlas",
+            "Ifrane",
+            "Fim: Fes"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Este é um tour a partir de Casablanca com preço fixo?",
+          "answer": "Não. É disponibilizado apenas sob consulta, uma vez que não existe um preço público verificado publicado para esta rota. Os pagamentos e as inclusões são confirmados antes da reserva."
+        },
+        {
+          "question": "Onde termina o percurso?",
+          "answer": "Foi concebido para terminar em Fes no quinto dia, embora seja possível organizar o regresso a Casablanca."
+        },
+        {
+          "question": "A noite no deserto está incluída?",
+          "answer": "Sim. Um passeio de camelo ao pôr do sol e uma noite num acampamento no deserto em Erg Chebbi fazem parte do itinerário proposto."
+        }
+      ]
+    },
+    "casablanca-8-day": {
+      "name": "Grande Circuito de Marrocos de 8 Dias a partir de Casablanca",
+      "duration": "8 Dias / 7 Noites",
+      "highlights": [
+        "A Mesquita Hassan II, em Casablanca, e os monumentos da capital, Rabat",
+        "Chefchaouen, a Cidade Azul, e Volubilis",
+        "Um dia guiado em Fes",
+        "Ifrane e o Médio Atlas das florestas de cedros",
+        "Merzouga, Erg Chebbi e uma noite em acampamento no deserto",
+        "As gargantas de Todra e do Dades e as kasbahs de Ouarzazate",
+        "Os palácios de Marrakech e a praça Jemaa el-Fnaa"
+      ],
+      "category": "Privado · Apenas sob consulta",
+      "description": "Um circuito privado de oito dias que começa e termina em Casablanca e percorre as cidades imperiais, a Cidade Azul, o Saara e a Cidade Vermelha. Entre os pontos altos contam-se Rabat, Chefchaouen, um dia guiado em Fes, uma noite nas dunas de Erg Chebbi, as gargantas de Todra e do Dades, o ksar de Aït Ben Haddou e a animação de Marrakech. Este grande itinerário é disponibilizado apenas sob consulta, com cada noite e cada inclusão confirmadas em função das suas datas.",
+      "routeCaption": "Casablanca → Rabat → Chefchaouen → Fes → Médio Atlas → Merzouga → Dades e Todra → Marrakech → Casablanca. Um circuito completo pelo norte e pelo sul de Marrocos.",
+      "included": [
+        "Veículo privado com ar condicionado",
+        "Motorista profissional fluente em inglês",
+        "Combustível e portagens",
+        "Riads, casas de hóspedes e um acampamento no deserto selecionados, conforme o itinerário confirmado",
+        "Pequenos-almoços e jantares conforme confirmado",
+        "Passeio de camelo ao pôr do sol e noite em acampamento no deserto, em Erg Chebbi",
+        "Guia local oficial em Fes e em Marrakech"
+      ],
+      "excluded": [
+        "Voos internacionais",
+        "Almoços e bebidas",
+        "Taxas de entrada",
+        "Gorjetas e despesas pessoais"
+      ],
+      "itineraryDays": [
+        {
+          "title": "Casablanca → Rabat → Chefchaouen",
+          "desc": "Conheça a Mesquita Hassan II e siga depois, via kasbah atlântica de Rabat e Torre Hassan, até às ruas caiadas de azul de Chefchaouen, onde pernoitará.",
+          "stops": [
+            "Mesquita Hassan II",
+            "Rabat",
+            "Chefchaouen",
+            "Pernoita: Chefchaouen"
+          ]
+        },
+        {
+          "title": "Chefchaouen → Volubilis → Meknès → Fes",
+          "desc": "Absorva o azul matinal de Chefchaouen, visite as ruínas romanas de Volubilis e a porta de Bab Mansour, em Meknès, e prossiga depois para Fes.",
+          "stops": [
+            "Chefchaouen",
+            "Volubilis",
+            "Meknès",
+            "Pernoita: Fes"
+          ]
+        },
+        {
+          "title": "Fes com visita guiada — medina, curtumes e souks",
+          "desc": "Um dia guiado em Fes que inclui as portas reais, Fes el-Bali em torno da Universidade de Al Quaraouiyine, os curtumes de Chouara e os souks de artesãos.",
+          "stops": [
+            "Fes el-Bali",
+            "Al Quaraouiyine",
+            "Curtumes de Chouara",
+            "Portas do Palácio Real"
+          ]
+        },
+        {
+          "title": "Fes → Ifrane → Médio Atlas → Vale do Ziz → Merzouga",
+          "desc": "Atravesse as florestas de cedros do Médio Atlas, via Ifrane, e os oásis de palmeiras do Vale do Ziz, chegando a Merzouga para pernoitar.",
+          "stops": [
+            "Ifrane",
+            "Floresta de cedros",
+            "Vale do Ziz",
+            "Pernoita: Merzouga"
+          ]
+        },
+        {
+          "title": "Erg Chebbi — passeio de camelo e acampamento no deserto",
+          "desc": "Um dia junto às grandes dunas, terminando com um passeio de camelo ao pôr do sol rumo a Erg Chebbi e uma noite em acampamento no deserto.",
+          "stops": [
+            "Erg Chebbi",
+            "Passeio de camelo ao pôr do sol",
+            "Noite em acampamento no deserto"
+          ]
+        },
+        {
+          "title": "Merzouga → Rissani → Garganta de Todra → Vale do Dades",
+          "desc": "Nascer do sol sobre as dunas e visita ao souk de Rissani, seguidos das imensas paredes da Garganta de Todra e das falésias do Vale do Dades, onde pernoitará.",
+          "stops": [
+            "Nascer do sol em Erg Chebbi",
+            "Rissani",
+            "Garganta de Todra",
+            "Pernoita: Vale do Dades"
+          ]
+        },
+        {
+          "title": "Dades → Skoura → Aït Ben Haddou → Marrakech",
+          "desc": "Passe pelo oásis de Skoura e por Ouarzazate, explore o ksar de Aït Ben Haddou, suba ao Alto Atlas e chegue a Marrakech ao final do dia.",
+          "stops": [
+            "Skoura",
+            "Aït Ben Haddou",
+            "Tizi n'Tichka",
+            "Pernoita: Marrakech"
+          ]
+        },
+        {
+          "title": "Manhã em Marrakech → Casablanca",
+          "desc": "Uma última manhã em Marrakech e depois o regresso pela autoestrada até Casablanca, fechando o circuito, ou a ida para o aeroporto, conforme combinado.",
+          "stops": [
+            "Marrakech",
+            "Estrada costeira",
+            "Fim: Casablanca"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Esta viagem tem preço fixo?",
+          "answer": "Não. É disponibilizada apenas sob consulta, porque não existe um preço público verificado publicado para este grande circuito de oito dias. O valor total é confirmado em função das suas datas."
+        },
+        {
+          "question": "Onde começa e termina o circuito?",
+          "answer": "Começa e termina em Casablanca, o que é prático para quem chega e parte pelo aeroporto da cidade."
+        },
+        {
+          "question": "Os dias guiados nas cidades estão incluídos?",
+          "answer": "Sim. Os guias locais oficiais para os dias culturais em Fes e em Marrakech fazem parte do itinerário proposto."
+        }
+      ]
+    },
+    "fes-4-day": {
+      "name": "Rota do Saara de 4 Dias: Fes a Merzouga",
+      "duration": "4 Dias / 3 Noites",
+      "highlights": [
+        "Ifrane e o Médio Atlas das florestas de cedros",
+        "O corredor de palmeiras do Vale do Ziz",
+        "Merzouga e Erg Chebbi",
+        "Passeio de camelo ao pôr do sol e noite em acampamento no deserto",
+        "O souk de Rissani e os fósseis de Erfoud"
+      ],
+      "category": "Privado · Apenas sob consulta",
+      "description": "Uma viagem privada de ida e volta de Fes ao Saara ao longo de quatro dias. A estrada para sul atravessa as florestas de cedros e a vila de montanha de Ifrane, desce o Vale do Ziz repleto de palmeiras e chega a Merzouga e às grandes dunas de Erg Chebbi para um passeio de camelo ao pôr do sol e uma noite no deserto, antes do regresso a Fes. Não existe um preço público verificado nem uma lista fixa de hotéis para esta rota, pelo que é disponibilizada apenas sob consulta, com os detalhes confirmados em função das suas datas.",
+      "routeCaption": "Fes → Ifrane → Médio Atlas → Vale do Ziz → Merzouga e Erg Chebbi → regresso a Fes.",
+      "included": [
+        "Veículo privado com ar condicionado",
+        "Motorista profissional fluente em inglês",
+        "Combustível e portagens",
+        "Casas de hóspedes e um acampamento no deserto selecionados, conforme o itinerário confirmado",
+        "Pequenos-almoços e jantares conforme confirmado",
+        "Passeio de camelo ao pôr do sol e noite em acampamento no deserto, em Erg Chebbi"
+      ],
+      "excluded": [
+        "Voos internacionais",
+        "Almoços e bebidas",
+        "Taxas de entrada",
+        "Gorjetas e despesas pessoais"
+      ],
+      "itineraryDays": [
+        {
+          "title": "Fes → Ifrane → Médio Atlas → Midelt → Vale do Ziz → Merzouga",
+          "desc": "Siga para sul por Ifrane e pela região dos cedros do Médio Atlas, faça uma pausa em Midelt, percorra os oásis do Vale do Ziz e chegue a Merzouga para pernoitar.",
+          "stops": [
+            "Ifrane",
+            "Floresta de cedros",
+            "Midelt",
+            "Vale do Ziz",
+            "Pernoita: Merzouga"
+          ]
+        },
+        {
+          "title": "Merzouga e Erg Chebbi — passeio de camelo e noite no deserto",
+          "desc": "Explore as dunas e a orla de Erg Chebbi e siga depois de camelo até às dunas ao pôr do sol, para uma noite em acampamento no deserto, com jantar e música.",
+          "stops": [
+            "Erg Chebbi",
+            "Passeio de camelo ao pôr do sol",
+            "Noite em acampamento no deserto"
+          ]
+        },
+        {
+          "title": "Merzouga → Rissani → Erfoud → região de Midelt",
+          "desc": "Assista ao nascer do sol sobre as dunas, visite o souk de Rissani e as oficinas de fósseis de Erfoud e viaje depois para norte pelo Vale do Ziz, para pernoitar na região de Midelt.",
+          "stops": [
+            "Nascer do sol em Erg Chebbi",
+            "Rissani",
+            "Erfoud",
+            "Pernoita: região de Midelt"
+          ]
+        },
+        {
+          "title": "Midelt → Ifrane → Fes",
+          "desc": "Suba novamente pelo Médio Atlas e por Ifrane para terminar em Fes, onde a viagem chega ao fim.",
+          "stops": [
+            "Ifrane",
+            "Médio Atlas",
+            "Fim: Fes"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Este é um tour a partir de Fes com preço fixo?",
+          "answer": "Não. É disponibilizado apenas sob consulta, porque não existe um preço público verificado publicado para esta rota de quatro dias entre Fes e o Saara. Os pagamentos e as inclusões são confirmados antes da reserva."
+        },
+        {
+          "question": "Fes está ligada à rota de Merzouga?",
+          "answer": "Sim. O Gabinete Nacional Marroquino de Turismo apresenta Fes como porta de entrada para o Saara e documenta a ligação Fes–Errachidia–Midelt–Merzouga."
+        },
+        {
+          "question": "A viagem regressa a Fes?",
+          "answer": "A rota padrão é uma ida e volta que termina de novo em Fes, mas é possível organizar um final de percurso só de ida no seu orçamento."
+        }
+      ]
+    },
+    "fes-5-day": {
+      "name": "5 Dias de Fes a Marrakech via Merzouga, Dades e o Atlas",
+      "duration": "5 Dias / 4 Noites",
+      "highlights": [
+        "Ifrane e o Médio Atlas das florestas de cedros",
+        "O Vale do Ziz e as dunas de Erg Chebbi",
+        "Passeio de camelo ao pôr do sol e noite em acampamento no deserto",
+        "A Garganta de Todra e o Vale do Dades",
+        "Aït Ben Haddou e a travessia do Alto Atlas até Marrakech"
+      ],
+      "category": "Privado · Apenas sob consulta",
+      "description": "Uma viagem privada só de ida que liga Fes a Marrakech atravessando o melhor do sul. Desce pelo Médio Atlas orlado de cedros até às dunas de Erg Chebbi, para uma noite no deserto, e segue depois pelas gargantas de Todra e do Dades, cruzando o Alto Atlas por Aït Ben Haddou até terminar em Marrakech. Disponível apenas sob consulta, com os detalhes confirmados em função das suas datas.",
+      "routeCaption": "Fes → Ifrane → Médio Atlas → Merzouga → Todra e Dades → Aït Ben Haddou → Marrakech. Uma rota só de ida, de Fes à Cidade Vermelha.",
+      "included": [
+        "Veículo privado com ar condicionado",
+        "Motorista profissional fluente em inglês",
+        "Combustível e portagens",
+        "Riads, casas de hóspedes e um acampamento no deserto selecionados, conforme o itinerário confirmado",
+        "Pequenos-almoços e jantares conforme confirmado",
+        "Passeio de camelo ao pôr do sol e noite em acampamento no deserto, em Erg Chebbi"
+      ],
+      "excluded": [
+        "Voos internacionais",
+        "Almoços e bebidas",
+        "Taxas de entrada",
+        "Gorjetas e despesas pessoais"
+      ],
+      "itineraryDays": [
+        {
+          "title": "Fes → Ifrane → Médio Atlas → Vale do Ziz → Merzouga",
+          "desc": "Viaje para sul por Ifrane e pelas florestas de cedros do Médio Atlas, percorra os oásis do Vale do Ziz e chegue a Merzouga para pernoitar.",
+          "stops": [
+            "Ifrane",
+            "Floresta de cedros do Médio Atlas",
+            "Vale do Ziz",
+            "Pernoita: Merzouga"
+          ]
+        },
+        {
+          "title": "Merzouga e Erg Chebbi — passeio de camelo e noite no deserto",
+          "desc": "Passe a manhã entre as dunas e siga depois de camelo até Erg Chebbi ao pôr do sol, para uma noite em acampamento no deserto, com jantar e música berbere.",
+          "stops": [
+            "Erg Chebbi",
+            "Passeio de camelo ao pôr do sol",
+            "Noite em acampamento no deserto"
+          ]
+        },
+        {
+          "title": "Merzouga → Rissani → Garganta de Todra → Vale do Dades",
+          "desc": "Assista ao nascer do sol, passe pelo souk de Rissani e siga depois para oeste, pela Garganta de Todra, até à impressionante região de falésias do Vale do Dades, onde pernoitará.",
+          "stops": [
+            "Nascer do sol em Erg Chebbi",
+            "Rissani",
+            "Garganta de Todra",
+            "Pernoita: Vale do Dades"
+          ]
+        },
+        {
+          "title": "Dades → Skoura → Aït Ben Haddou → Marrakech",
+          "desc": "Atravesse os palmeirais de Skoura e Ouarzazate, admire o ksar de Aït Ben Haddou, cruze o Passo de Tizi n'Tichka sobre o Alto Atlas e chegue a Marrakech.",
+          "stops": [
+            "Skoura",
+            "Aït Ben Haddou",
+            "Tizi n'Tichka",
+            "Pernoita: Marrakech"
+          ]
+        },
+        {
+          "title": "Uma manhã livre em Marrakech",
+          "desc": "Desfrute de uma manhã tranquila num riad de Marrakech, com tempo para os souks ou para Jemaa el-Fnaa antes da continuação da sua viagem.",
+          "stops": [
+            "Marrakech",
+            "Fim: Marrakech"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Esta viagem tem preço fixo?",
+          "answer": "Não. É disponibilizada apenas sob consulta, uma vez que não existe um preço público verificado publicado para esta rota entre Fes e Marrakech. O valor total é confirmado em função das suas datas."
+        },
+        {
+          "question": "Onde termina o percurso?",
+          "answer": "Foi concebido para terminar em Marrakech, o que convém a quem parte do aeroporto da cidade; outras soluções podem ser combinadas."
+        },
+        {
+          "question": "A noite no deserto está incluída?",
+          "answer": "Sim. Um passeio de camelo ao pôr do sol e uma noite num acampamento em Erg Chebbi fazem parte do itinerário proposto."
+        }
+      ]
+    },
+    "fes-8-day": {
+      "name": "Grande Tour de 8 Dias: Cidades Imperiais de Fes e Saara",
+      "duration": "8 Dias / 7 Noites",
+      "highlights": [
+        "Um dia guiado em Fes e a cidade imperial de Meknès",
+        "As ruínas romanas de Volubilis",
+        "Ifrane e o Médio Atlas das florestas de cedros",
+        "Merzouga, Erg Chebbi e uma noite em acampamento no deserto",
+        "A Garganta de Todra, o Vale do Dades e Aït Ben Haddou",
+        "Os palácios e os souks de Marrakech"
+      ],
+      "category": "Privado · Apenas sob consulta",
+      "description": "Uma viagem privada de oito dias que começa na cidade imperial de Fes, percorre Meknès, Volubilis e as florestas de cedros do Médio Atlas, passa uma noite nas dunas de Erg Chebbi, atravessa as gargantas de Todra e do Dades e cruza o Alto Atlas para terminar em Marrakech. Disponível apenas sob consulta, com cada noite e cada inclusão confirmadas em função das suas datas.",
+      "routeCaption": "Fes → Meknès e Volubilis → Médio Atlas → Merzouga → Todra e Dades → Aït Ben Haddou → Marrakech. Um grande percurso de oito dias pelo Marrocos imperial e desértico.",
+      "included": [
+        "Veículo privado com ar condicionado",
+        "Motorista profissional fluente em inglês",
+        "Combustível e portagens",
+        "Riads, casas de hóspedes e um acampamento no deserto selecionados, conforme o itinerário confirmado",
+        "Pequenos-almoços e jantares conforme confirmado",
+        "Passeio de camelo ao pôr do sol e noite em acampamento no deserto, em Erg Chebbi",
+        "Guia local oficial em Fes e em Marrakech"
+      ],
+      "excluded": [
+        "Voos internacionais",
+        "Almoços e bebidas",
+        "Taxas de entrada",
+        "Gorjetas e despesas pessoais"
+      ],
+      "itineraryDays": [
+        {
+          "title": "Fes com visita guiada — medina, curtumes e souks",
+          "desc": "Um dia guiado em Fes: as portas reais, a medina de Fes el-Bali em torno da Universidade de Al Quaraouiyine, os curtumes de Chouara e o artesanato dos velhos souks.",
+          "stops": [
+            "Fes el-Bali",
+            "Universidade de Al Quaraouiyine",
+            "Curtumes de Chouara",
+            "Portas do Palácio Real"
+          ]
+        },
+        {
+          "title": "Fes → Meknès → Volubilis → Médio Atlas",
+          "desc": "Visite os monumentos imperiais de Meknès e as ruínas romanas de Volubilis e siga depois para sul, por Ifrane e pelas florestas de cedros, para pernoitar no alto Médio Atlas.",
+          "stops": [
+            "Porta de Bab Mansour",
+            "Ruínas romanas de Volubilis",
+            "Ifrane",
+            "Pernoita: Médio Atlas"
+          ]
+        },
+        {
+          "title": "Médio Atlas → Vale do Ziz → Merzouga",
+          "desc": "Desça o Vale do Ziz repleto de palmeiras e chegue a Merzouga, com tempo para sentir a orla de Erg Chebbi antes do anoitecer.",
+          "stops": [
+            "Vale do Ziz",
+            "Região de Errachidia",
+            "Merzouga",
+            "Pernoita: Merzouga"
+          ]
+        },
+        {
+          "title": "Erg Chebbi — passeio de camelo e acampamento no deserto",
+          "desc": "Um dia em torno das grandes dunas, coroado por um passeio de camelo ao pôr do sol e uma noite em acampamento no deserto, com jantar e música.",
+          "stops": [
+            "Erg Chebbi",
+            "Passeio de camelo ao pôr do sol",
+            "Noite em acampamento no deserto"
+          ]
+        },
+        {
+          "title": "Merzouga → Garganta de Todra → Vale do Dades",
+          "desc": "Depois do nascer do sol sobre as dunas, passe por Rissani, caminhe entre as imensas paredes da Garganta de Todra e termine o dia entre as falésias do Vale do Dades.",
+          "stops": [
+            "Nascer do sol em Erg Chebbi",
+            "Rissani",
+            "Garganta de Todra",
+            "Pernoita: Vale do Dades"
+          ]
+        },
+        {
+          "title": "Dades → Skoura → Aït Ben Haddou → Marrakech",
+          "desc": "Atravesse o oásis de Skoura e Ouarzazate, explore Aït Ben Haddou, suba ao Alto Atlas e chegue a Marrakech para pernoitar.",
+          "stops": [
+            "Skoura",
+            "Aït Ben Haddou",
+            "Tizi n'Tichka",
+            "Pernoita: Marrakech"
+          ]
+        },
+        {
+          "title": "Marrakech com visita guiada — palácios, jardins e Jemaa el-Fnaa",
+          "desc": "Um dia inteiro guiado na Cidade Vermelha, do Palácio da Bahia e do Jardim Majorelle aos souks e à vida noturna de Jemaa el-Fnaa.",
+          "stops": [
+            "Palácio da Bahia",
+            "Jardim Majorelle",
+            "Koutoubia",
+            "Jemaa el-Fnaa"
+          ]
+        },
+        {
+          "title": "Manhã livre em Marrakech → continuação",
+          "desc": "Uma manhã tranquila em Marrakech antes da continuação da sua viagem, com apoio na organização dos transportes necessários.",
+          "stops": [
+            "Marrakech",
+            "Fim: Marrakech"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Este é um tour a partir de Fes com preço fixo?",
+          "answer": "Não. É disponibilizado apenas sob consulta, porque não existe um preço público verificado publicado para esta rota de oito dias. Os detalhes são confirmados em função das suas datas."
+        },
+        {
+          "question": "Onde termina a viagem?",
+          "answer": "Foi concebida para terminar em Marrakech, embora seja possível organizar o regresso a Fes ou um final diferente."
+        },
+        {
+          "question": "Os dias guiados nas cidades estão incluídos?",
+          "answer": "Sim. Os guias locais oficiais para os dias culturais em Fes e em Marrakech fazem parte do itinerário proposto."
+        }
+      ]
+    },
+    "agadir-4-day": {
+      "name": "4 Dias de Agadir a Marrakech via Taroudant e o Atlas",
+      "duration": "4 Dias / 3 Noites",
+      "highlights": [
+        "A marginal atlântica e a kasbah de Agadir",
+        "As muralhas de Taroudant e os terraços de açafrão de Taliouine",
+        "Aït Ben Haddou e as kasbahs de Ouarzazate",
+        "A travessia do Alto Atlas pelo Tizi n'Tichka",
+        "Duas noites para explorar Marrakech"
+      ],
+      "category": "Privado · Apenas sob consulta",
+      "description": "Uma rota privada que liga a costeira Agadir a Marrakech, atravessando o Anti-Atlas e o Alto Atlas. Passa pelos souks muralhados de Taroudant, pelos campos de açafrão de Taliouine, pela região de kasbahs de Ouarzazate e pelo célebre ksar de Aït Ben Haddou, deixando duas noites para desfrutar de Marrakech. Disponível apenas sob consulta, com os detalhes confirmados em função das suas datas.",
+      "routeCaption": "Agadir → Taroudant → Ouarzazate → Aït Ben Haddou → Marrakech.",
+      "included": [
+        "Veículo privado com ar condicionado",
+        "Motorista profissional fluente em inglês",
+        "Combustível e portagens",
+        "Riads e hotéis selecionados, conforme o itinerário confirmado",
+        "Pequenos-almoços conforme confirmado"
+      ],
+      "excluded": [
+        "Voos internacionais",
+        "Almoços e bebidas",
+        "Taxas de entrada",
+        "Gorjetas e despesas pessoais"
+      ],
+      "itineraryDays": [
+        {
+          "title": "Agadir → Taroudant → Taliouine → Ouarzazate",
+          "desc": "Parta de Agadir pelas planícies do Souss até às muralhas e ao mercado de artesanato de Taroudant, suba aos terraços de açafrão de Taliouine e atravesse o Anti-Atlas até Ouarzazate, onde pernoitará.",
+          "stops": [
+            "Taroudant",
+            "Taliouine",
+            "Anti-Atlas",
+            "Pernoita: Ouarzazate"
+          ]
+        },
+        {
+          "title": "Ouarzazate → Aït Ben Haddou → Alto Atlas → Marrakech",
+          "desc": "Admire Aït Ben Haddou e a Kasbah de Taourirt, atravesse o Alto Atlas pelo Passo de Tizi n'Tichka e chegue a Marrakech a tempo do célebre serão em Jemaa el-Fnaa.",
+          "stops": [
+            "Aït Ben Haddou",
+            "Tizi n'Tichka",
+            "Jemaa el-Fnaa",
+            "Pernoita: Marrakech"
+          ]
+        },
+        {
+          "title": "Marrakech com visita guiada — palácios, jardins e souks",
+          "desc": "Um dia inteiro na Cidade Vermelha com um guia local: o Palácio da Bahia, a Koutoubia, os jardins e os labirínticos souks, com tempo livre em Jemaa el-Fnaa.",
+          "stops": [
+            "Palácio da Bahia",
+            "Koutoubia",
+            "Jardim Majorelle",
+            "Jemaa el-Fnaa"
+          ]
+        },
+        {
+          "title": "Manhã livre em Marrakech → regresso ou continuação",
+          "desc": "Um pequeno-almoço sem pressas num riad de Marrakech antes do regresso a Agadir pela costa ou da continuação da viagem, conforme acordado no seu orçamento.",
+          "stops": [
+            "Riad em Marrakech",
+            "Regresso pela costa",
+            "Fim: Agadir ou continuação"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Esta viagem tem preço fixo?",
+          "answer": "Não. É disponibilizada apenas sob consulta, uma vez que não existe um preço público verificado publicado para esta rota. O valor total é confirmado em função das suas datas."
+        },
+        {
+          "question": "A viagem chega ao Saara?",
+          "answer": "Este itinerário centra-se em Taroudant, Ouarzazate, Aït Ben Haddou e Marrakech. Consulte-nos sobre a possibilidade de o prolongar até às dunas de Merzouga."
+        },
+        {
+          "question": "Posso começar em Marrakech e terminar em Agadir?",
+          "answer": "Sim. O sentido é fácil de inverter e adaptaremos o percurso aos seus voos."
+        }
+      ]
+    },
+    "agadir-5-day": {
+      "name": "5 Dias de Agadir a Marrakech via Ouarzazate e Merzouga",
+      "duration": "5 Dias / 4 Noites",
+      "highlights": [
+        "Taroudant e a região do açafrão, em Taliouine",
+        "Aït Ben Haddou e as kasbahs de Ouarzazate",
+        "As gargantas do Dades e de Todra",
+        "Passeio de camelo ao pôr do sol em Erg Chebbi",
+        "A travessia do Alto Atlas até Marrakech"
+      ],
+      "category": "Privado · Apenas sob consulta",
+      "description": "Uma rota privada só de ida, da costa de Agadir até Marrakech, atravessando a região das kasbahs e o Saara. Passa por Taroudant e pelos terraços de açafrão de Taliouine, explora Ouarzazate e Aït Ben Haddou, percorre as gargantas do Dades e de Todra e reserva um pôr do sol para um passeio de camelo e uma noite em acampamento no deserto, em Erg Chebbi, antes de terminar em Marrakech. Disponível apenas sob consulta, com os detalhes confirmados em função das suas datas.",
+      "routeCaption": "Agadir → Taroudant → Ouarzazate → Aït Ben Haddou → Dades e Todra → Merzouga → Marrakech.",
+      "included": [
+        "Veículo privado com ar condicionado",
+        "Motorista profissional fluente em inglês",
+        "Combustível e portagens",
+        "Riads, casas de hóspedes e um acampamento no deserto selecionados, conforme o itinerário confirmado",
+        "Pequenos-almoços e jantares conforme confirmado",
+        "Passeio de camelo ao pôr do sol e noite em acampamento no deserto, em Erg Chebbi"
+      ],
+      "excluded": [
+        "Voos internacionais",
+        "Almoços e bebidas",
+        "Taxas de entrada",
+        "Gorjetas e despesas pessoais"
+      ],
+      "itineraryDays": [
+        {
+          "title": "Agadir → Taroudant → Taliouine → Ouarzazate",
+          "desc": "Siga para o interior pelas planícies do Souss, faça uma paragem na cidade muralhada de Taroudant e nos campos de açafrão de Taliouine e atravesse depois o Anti-Atlas até Ouarzazate, onde pernoitará.",
+          "stops": [
+            "Taroudant",
+            "Taliouine",
+            "Anti-Atlas",
+            "Pernoita: Ouarzazate"
+          ]
+        },
+        {
+          "title": "Ouarzazate → Aït Ben Haddou → Skoura → Vale do Dades",
+          "desc": "Visite Aït Ben Haddou e a Kasbah de Taourirt, atravesse os palmeirais de Skoura e siga pelas curvas até às falésias do Vale do Dades, onde pernoitará.",
+          "stops": [
+            "Aït Ben Haddou",
+            "Kasbah de Taourirt",
+            "Skoura",
+            "Pernoita: Vale do Dades"
+          ]
+        },
+        {
+          "title": "Dades → Garganta de Todra → Merzouga",
+          "desc": "Percorra o cânion do Dades, caminhe sob as imponentes paredes da Garganta de Todra e siga depois para Merzouga, para um passeio de camelo ao pôr do sol rumo a Erg Chebbi.",
+          "stops": [
+            "Garganta do Dades",
+            "Garganta de Todra",
+            "Passeio de camelo em Erg Chebbi",
+            "Noite em acampamento no deserto"
+          ]
+        },
+        {
+          "title": "Merzouga → Rissani → Erfoud → região de Ouarzazate",
+          "desc": "Nascer do sol sobre as dunas, o souk de Rissani e os fósseis de Erfoud, seguindo depois para oeste, passando por Skoura, para pernoitar perto de Ouarzazate.",
+          "stops": [
+            "Nascer do sol em Erg Chebbi",
+            "Rissani",
+            "Erfoud",
+            "Pernoita: região de Ouarzazate"
+          ]
+        },
+        {
+          "title": "Ouarzazate → Alto Atlas → Marrakech",
+          "desc": "Atravesse o Passo de Tizi n'Tichka sobre o Alto Atlas e desça até Marrakech, onde a viagem termina.",
+          "stops": [
+            "Tizi n'Tichka",
+            "Alto Atlas",
+            "Fim: Marrakech"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Esta viagem tem preço publicado?",
+          "answer": "Não. É disponibilizada apenas sob consulta, porque não existe um preço público verificado publicado para esta rota. O valor total é confirmado em função das suas datas."
+        },
+        {
+          "question": "Onde termina o percurso?",
+          "answer": "Foi concebido para terminar em Marrakech; o regresso a Agadir pode ser organizado no seu orçamento."
+        },
+        {
+          "question": "O acampamento no deserto está garantido?",
+          "answer": "Um passeio de camelo ao pôr do sol e uma noite num acampamento em Erg Chebbi constam do itinerário proposto e são confirmados antes da reserva."
+        }
+      ]
+    },
+    "agadir-8-day": {
+      "name": "Grande Circuito do Sul de Marrocos de 8 Dias a partir de Agadir",
+      "duration": "8 Dias / 7 Noites",
+      "highlights": [
+        "A costa atlântica e a frente de mar de Agadir",
+        "As muralhas de Taroudant e a região do açafrão em torno de Taliouine",
+        "Ouarzazate, porta de entrada para a rota das kasbahs do Atlas",
+        "As gargantas do Dades e de Todra",
+        "Merzouga, Erg Chebbi e uma noite em acampamento no deserto"
+      ],
+      "category": "Privado · Apenas sob consulta",
+      "description": "Um circuito privado, disponível apenas sob consulta, que percorre todo o sul de Marrocos, da costa atlântica de volta a Agadir. Viaje para o interior, passando pela cidade muralhada de Taroudant e pelos terraços de açafrão de Taliouine, atravesse as paisagens de kasbahs de cenário de cinema em torno de Ouarzazate, percorra as gargantas do Dades e de Todra, passe uma noite nas dunas de Erg Chebbi e regresse pelo Vale do Draa, à sombra das palmeiras. As noites exatas, o alojamento e o ritmo diário são confirmados em função das suas datas antes da reserva, pelo que nada é presumido antecipadamente.",
+      "routeCaption": "Agadir → Taroudant → Ouarzazate → Aït Ben Haddou → Dades e Todra → Merzouga → Vale do Draa → regresso a Agadir.",
+      "included": [
+        "Veículo privado com ar condicionado",
+        "Motorista profissional fluente em inglês",
+        "Combustível e portagens",
+        "Riads, hotéis-kasbah e um acampamento no deserto criteriosamente selecionados, conforme o itinerário confirmado",
+        "Pequenos-almoços e jantares conforme o plano confirmado",
+        "Passeio de camelo ao pôr do sol e noite em acampamento no deserto, em Erg Chebbi"
+      ],
+      "excluded": [
+        "Voos internacionais",
+        "Almoços e bebidas",
+        "Taxas de entrada em monumentos e museus",
+        "Gorjetas e despesas pessoais"
+      ],
+      "itineraryDays": [
+        {
+          "title": "Agadir: costa, kasbah e marginal",
+          "desc": "Comece junto ao Atlântico, com uma descoberta tranquila de Agadir: a marginal à beira-mar, o miradouro da kasbah no alto e o animado souk, mantendo o dia leve para absorver o ar do mar antes de seguir para o interior.",
+          "stops": [
+            "Praia de Agadir",
+            "Miradouro da kasbah",
+            "Souk de Agadir"
+          ]
+        },
+        {
+          "title": "Agadir → Taroudant → Taliouine → Ouarzazate",
+          "desc": "Atravesse as planícies do Souss até à cidade muralhada de Taroudant, para conhecer as suas muralhas e o mercado de artesanato, suba depois rumo a Taliouine, o coração do açafrão marroquino, e cruze o Anti-Atlas até Ouarzazate, onde pernoitará.",
+          "stops": [
+            "Muralhas de Taroudant",
+            "Região do açafrão de Taliouine",
+            "Travessia do Anti-Atlas",
+            "Pernoita: Ouarzazate"
+          ]
+        },
+        {
+          "title": "Ouarzazate → Aït Ben Haddou → Skoura → Vale do Dades",
+          "desc": "Visite o ksar preservado de Aït Ben Haddou e a Kasbah de Taourirt, estrela de cinema, atravesse os palmeirais de Skoura e siga depois pelas curvas do Vale das Mil Kasbahs para uma noite no Dades.",
+          "stops": [
+            "Ksar de Aït Ben Haddou",
+            "Kasbah de Taourirt",
+            "Oásis de Skoura",
+            "Pernoita: Vale do Dades"
+          ]
+        },
+        {
+          "title": "Dades → Garganta de Todra → Merzouga",
+          "desc": "Percorra o cânion do Dades e faça uma pausa junto às altíssimas paredes calcárias da Garganta de Todra, antes de atravessar a planície desértica até Merzouga, onde um passeio de camelo ao pôr do sol o leva a Erg Chebbi para uma noite sob as estrelas.",
+          "stops": [
+            "Garganta do Dades",
+            "Garganta de Todra",
+            "Merzouga",
+            "Acampamento no deserto em Erg Chebbi"
+          ]
+        },
+        {
+          "title": "Merzouga → Rissani → Erfoud → Vale do Draa",
+          "desc": "Veja as dunas ganharem tons dourados ao nascer do sol antes de explorar os souks de Rissani e as oficinas de fósseis de Erfoud, seguindo depois para além das gargantas até se perder nos oásis de palmeiras-tamareiras do Vale do Draa.",
+          "stops": [
+            "Nascer do sol em Erg Chebbi",
+            "Souk de Rissani",
+            "Fósseis de Erfoud",
+            "Pernoita: Vale do Draa / Zagora"
+          ]
+        },
+        {
+          "title": "Vale do Draa → Zagora → Ouarzazate",
+          "desc": "Percorra o longo corredor de palmeiras do Draa, com os seus ksour de adobe e a célebre placa da «estrada só de ida para Tombuctu», em Zagora, e regresse depois para norte, até Ouarzazate, onde pernoitará.",
+          "stops": [
+            "Oásis do Vale do Draa",
+            "Zagora, porta do deserto",
+            "Agdz",
+            "Pernoita: Ouarzazate"
+          ]
+        },
+        {
+          "title": "Ouarzazate → Marrakech pelo Alto Atlas",
+          "desc": "Atravesse o Passo de Tizi n'Tichka sobre o Alto Atlas, com vistas panorâmicas, descendo até à Cidade Vermelha a tempo da atmosfera noturna de Jemaa el-Fnaa. Pernoita em Marrakech.",
+          "stops": [
+            "Passo de Tizi n'Tichka",
+            "Vistas do Alto Atlas",
+            "Jemaa el-Fnaa",
+            "Pernoita: Marrakech"
+          ]
+        },
+        {
+          "title": "Marrakech → Agadir pela costa",
+          "desc": "Regresse ao Atlântico pelas planícies verdejantes e pelas estradas costeiras, passando pela vila de surf de Taghazout, e chegue de novo a Agadir para fechar o circuito. A continuação da viagem ou uma extensão podem ser organizadas.",
+          "stops": [
+            "Estrada costeira a norte de Agadir",
+            "Taghazout",
+            "Fim: Agadir"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Este é um tour a partir de Agadir com preço fixo?",
+          "answer": "Não. Esta é uma rota disponível apenas sob consulta, porque não existe atualmente um preço público verificado nem uma lista fixa de alojamentos publicada para ela. O plano completo, as inclusões e as condições de pagamento são confirmados antes de qualquer pagamento."
+        },
+        {
+          "question": "Onde começa e termina o circuito?",
+          "answer": "Foi concebido como um circuito que começa e termina em Agadir, chegando a Marrakech a meio do percurso. Um final só de ida (por exemplo, em Marrakech) pode ser organizado no seu orçamento privado."
+        },
+        {
+          "question": "A noite no deserto está incluída?",
+          "answer": "Sim. Um passeio de camelo ao pôr do sol e uma noite em acampamento no deserto, em Erg Chebbi, fazem parte da rota proposta e serão confirmados por escrito antes da reserva."
+        }
+      ]
+    },
+    "2-day-zagora-desert-marrakech": {
+      "name": "Tour de 2 Dias ao Deserto de Zagora a partir de Marrakech",
+      "duration": "2 Dias / 1 Noite",
+      "highlights": [
+        "Travessia do Alto Atlas",
+        "Aït Ben Haddou (UNESCO)",
+        "Ouarzazate e o Vale do Draa",
+        "Experiência no deserto ao pôr do sol, perto de Zagora",
+        "Noite em acampamento no deserto"
+      ],
+      "category": "Deserto & Aventura",
+      "description": "Uma viagem privada e compacta ao deserto, de Marrakech a Zagora, para quem procura uma experiência no deserto do sul sem se comprometer com a rota mais longa até Merzouga. Atravesse o Alto Atlas, visite Aït Ben Haddou e Ouarzazate, prossiga pelo Vale do Draa até Zagora e regresse a Marrakech no dia seguinte.",
+      "routeCaption": "Marrakech → Alto Atlas → Aït Ben Haddou → Ouarzazate → Vale do Draa → Zagora → Marrakech.",
+      "included": [
+        "Veículo privado com ar condicionado",
+        "Motorista profissional fluente em inglês",
+        "Combustível",
+        "Alojamento de acordo com o pacote selecionado",
+        "Experiência no deserto descrita no itinerário confirmado",
+        "Recolha e entrega no hotel"
+      ],
+      "excluded": [
+        "Voos internacionais",
+        "Almoços",
+        "Bebidas",
+        "Taxas de entrada em monumentos e museus",
+        "Atividades opcionais não indicadas no itinerário confirmado",
+        "Gorjetas e gratificações",
+        "Despesas pessoais"
+      ],
+      "itineraryDays": [
+        {
+          "title": "Marrakech → Alto Atlas → Aït Ben Haddou → Ouarzazate → Zagora",
+          "desc": "Parta de Marrakech e atravesse o Alto Atlas antes de visitar o ksar de Aït Ben Haddou, classificado pela UNESCO. Prossiga por Ouarzazate e pelo Vale do Draa até Zagora, onde a paisagem se torna cada vez mais aberta e árida. O serão é reservado para a experiência no deserto confirmada e para a pernoita.",
+          "stops": [
+            "Marrakech",
+            "Cordilheira do Alto Atlas",
+            "Aït Ben Haddou (UNESCO)",
+            "Ouarzazate",
+            "Vale do Draa",
+            "Zagora"
+          ]
+        },
+        {
+          "title": "Zagora → Vale do Draa → Alto Atlas → Marrakech",
+          "desc": "Inicie a viagem de regresso depois do pequeno-almoço, seguindo o Vale do Draa de volta a Ouarzazate e atravessando o Alto Atlas até Marrakech. Este é um formato rápido de dois dias, pelo que quem preferir mais tempo no deserto deve considerar um itinerário mais longo.",
+          "stops": [
+            "Zagora",
+            "Vale do Draa",
+            "Ouarzazate",
+            "Alto Atlas",
+            "Marrakech"
+          ]
+        }
+      ],
+      "gallery": [
+        {
+          "caption": "Zagora e a porta de entrada para o Vale do Draa"
+        },
+        {
+          "caption": "Palmeirais e paisagens de kasbahs do Vale do Draa"
+        },
+        {
+          "caption": "Aït Ben Haddou, na rota para sul a partir de Marrakech"
+        }
+      ],
+      "faq": [
+        {
+          "question": "O tour de 2 dias a Zagora é privado?",
+          "answer": "Sim. O itinerário foi concebido como uma viagem privada para o seu grupo, com veículo e motorista próprios."
+        },
+        {
+          "question": "É a mesma experiência do Saara que em Merzouga?",
+          "answer": "Não. Zagora é uma região desértica diferente de Erg Chebbi, junto a Merzouga. Escolha esta rota mais curta pelo Vale do Draa e por Zagora; opte por um itinerário a Merzouga quando as dunas de Erg Chebbi forem a sua prioridade."
+        },
+        {
+          "question": "O acampamento no deserto está incluído?",
+          "answer": "O pacote confirmado especifica o alojamento e a experiência no deserto incluídos para as suas datas. Não presumimos um acampamento específico nem qualquer melhoria antes da reserva."
+        },
+        {
+          "question": "Posso prolongar a viagem?",
+          "answer": "Sim. Se dois dias lhe parecerem demasiado condensados, peça-nos uma rota privada mais longa pelo Vale do Draa ou com continuação até Merzouga."
+        },
+        {
+          "question": "Os almoços estão incluídos?",
+          "answer": "Os almoços não estão incluídos, salvo indicação expressa no itinerário confirmado."
+        },
+        {
+          "question": "Como é confirmado o preço?",
+          "answer": "Esta viagem é disponibilizada apenas sob consulta, porque o preço final depende das suas datas, da dimensão do grupo e do alojamento escolhido. Contacte-nos primeiro e confirmaremos o itinerário e as condições comerciais antes do pagamento."
+        }
+      ]
+    },
+    "4-day-marrakech-merzouga-sahara": {
+      "name": "Tour de 4 Dias ao Deserto do Saara: Marrakech a Merzouga",
+      "duration": "4 Dias / 3 Noites",
+      "highlights": [
+        "Travessia do Alto Atlas",
+        "Aït Ben Haddou e Ouarzazate",
+        "O Vale do Dades e a Garganta de Todra",
+        "Experiência de camelo ao pôr do sol em Erg Chebbi",
+        "Tempo adicional em Merzouga",
+        "Noite em acampamento no deserto"
+      ],
+      "category": "Deserto & Aventura",
+      "description": "Uma alternativa mais confortável ao clássico circuito de três dias entre Marrakech e Merzouga. O formato de quatro dias mantém os principais pontos altos do sul, mas dá mais espaço à viagem, com um dia dedicado à região de Merzouga antes do regresso a Marrakech.",
+      "routeCaption": "Marrakech → Alto Atlas → Aït Ben Haddou → Ouarzazate → Vale do Dades → Garganta de Todra → Merzouga e Erg Chebbi → Marrakech.",
+      "included": [
+        "Veículo privado com ar condicionado",
+        "Motorista profissional fluente em inglês",
+        "Combustível",
+        "Alojamento de acordo com o pacote selecionado",
+        "Experiência no deserto de acordo com o itinerário confirmado",
+        "Experiência de camelo quando incluída no pacote confirmado",
+        "Recolha e entrega no hotel"
+      ],
+      "excluded": [
+        "Voos internacionais",
+        "Almoços",
+        "Bebidas",
+        "Taxas de entrada",
+        "Atividades opcionais",
+        "Gorjetas e gratificações",
+        "Despesas pessoais"
+      ],
+      "itineraryDays": [
+        {
+          "title": "Marrakech → Alto Atlas → Aït Ben Haddou → Vale do Dades",
+          "desc": "Atravesse o Alto Atlas e faça uma paragem em Aït Ben Haddou antes de prosseguir por Ouarzazate e pelos vales do sul até ao Vale do Dades. A pernoita divide a longa estrada para sul num primeiro dia comportável.",
+          "stops": [
+            "Marrakech",
+            "Alto Atlas",
+            "Aït Ben Haddou",
+            "Ouarzazate",
+            "Vale do Dades"
+          ]
+        },
+        {
+          "title": "Vale do Dades → Garganta de Todra → Erfoud → Merzouga",
+          "desc": "Siga a paisagem do Dades até à Garganta de Todra e prossiga depois para leste, pelo pré-Saara, rumo a Erfoud e Merzouga. Chegue a tempo da experiência no deserto confirmada e do pôr do sol na zona de Erg Chebbi.",
+          "stops": [
+            "Vale do Dades",
+            "Garganta de Todra",
+            "Erfoud",
+            "Merzouga",
+            "Erg Chebbi"
+          ]
+        },
+        {
+          "title": "Merzouga e Erg Chebbi — dia no Saara",
+          "desc": "Aproveite o dia adicional para conhecer a região de Merzouga a um ritmo mais calmo. Consoante o plano confirmado, explore as dunas e as comunidades vizinhas e reserve tempo para o nascer ou o pôr do sol, em vez de passar o dia inteiro na estrada.",
+          "stops": [
+            "Merzouga",
+            "Erg Chebbi",
+            "Nascer do sol no deserto",
+            "Comunidades locais",
+            "Pernoita: região de Merzouga"
+          ]
+        },
+        {
+          "title": "Merzouga → Vale do Ziz → Alto Atlas → Marrakech",
+          "desc": "Depois do pequeno-almoço, inicie a viagem de regresso pelo Vale do Ziz e pela travessia do Atlas. O último dia é uma jornada de estrada considerável até Marrakech, com paragens ajustadas às condições da via e ao itinerário acordado.",
+          "stops": [
+            "Merzouga",
+            "Vale do Ziz",
+            "Alto Atlas",
+            "Marrakech"
+          ]
+        }
+      ],
+      "gallery": [
+        {
+          "caption": "O Vale do Dades, na estrada para Merzouga"
+        },
+        {
+          "caption": "A Garganta de Todra, no Alto Atlas oriental"
+        },
+        {
+          "caption": "Merzouga, à beira de Erg Chebbi"
+        },
+        {
+          "caption": "As dunas de Erg Chebbi"
+        }
+      ],
+      "faq": [
+        {
+          "question": "Porquê escolher quatro dias em vez de três?",
+          "answer": "Quatro dias reduzem a sensação de uma corrida contínua na estrada e dão-lhe um dia dedicado à região de Merzouga. É a melhor escolha quando o Saara em si conta tanto como o caminho até lá."
+        },
+        {
+          "question": "Esta viagem inclui Erg Chebbi?",
+          "answer": "Sim. A rota chega a Merzouga e à zona das dunas de Erg Chebbi. Os pormenores exatos do acampamento no deserto e do passeio de camelo são confirmados consigo antes da reserva."
+        },
+        {
+          "question": "O alojamento está incluído?",
+          "answer": "O alojamento é selecionado de acordo com o pacote escolhido e a disponibilidade confirmada. Não prometemos unidades específicas antes da reserva."
+        },
+        {
+          "question": "A rota pode ser personalizada?",
+          "answer": "Sim. Este é um itinerário privado e pode ser ajustado ao seu ritmo preferido, aos seus interesses e ao ponto de chegada pretendido."
+        },
+        {
+          "question": "O regresso a Marrakech é longo?",
+          "answer": "Sim. Merzouga fica a uma longa distância de Marrakech. O formato de quatro dias acrescenta tempo no deserto, mas o regresso final continua a ser um dia de estrada considerável."
+        },
+        {
+          "question": "Como é confirmado o preço?",
+          "answer": "Esta viagem é disponibilizada apenas sob consulta. Confirmamos as suas datas, a dimensão do grupo, a categoria de alojamento e o itinerário antes de apresentar as condições comerciais finais."
+        }
+      ]
+    },
+    "5-day-great-south-morocco": {
+      "name": "Tour do Grande Sul de Marrocos em 5 Dias",
+      "duration": "5 Dias / 4 Noites",
+      "highlights": [
+        "O Alto Atlas e o Tizi n'Tichka",
+        "Aït Ben Haddou",
+        "As gargantas do Dades e de Todra",
+        "Merzouga e Erg Chebbi",
+        "O Vale do Draa e as paisagens de kasbahs do sul",
+        "Regresso a Marrakech"
+      ],
+      "category": "Grande Sul",
+      "description": "Um circuito privado de cinco dias pelo sul de Marrocos, que combina o Alto Atlas, a região das kasbahs em torno de Aït Ben Haddou e do Dades, a Garganta de Todra e o Saara nos arredores de Merzouga com o Vale do Draa, repleto de palmeiras, no regresso.",
+      "routeCaption": "Marrakech → Alto Atlas → Aït Ben Haddou → Ouarzazate → Dades → Todra → Merzouga → Vale do Draa → Marrakech.",
+      "included": [
+        "Veículo privado com ar condicionado",
+        "Motorista profissional fluente em inglês",
+        "Combustível",
+        "Alojamento de acordo com o pacote selecionado",
+        "Experiência no deserto de acordo com o itinerário confirmado",
+        "Experiência de camelo quando especificada",
+        "Recolha e entrega no hotel"
+      ],
+      "excluded": [
+        "Voos internacionais",
+        "Almoços",
+        "Bebidas",
+        "Taxas de entrada",
+        "Atividades opcionais",
+        "Gorjetas e gratificações",
+        "Despesas pessoais"
+      ],
+      "itineraryDays": [
+        {
+          "title": "Marrakech → Alto Atlas → Aït Ben Haddou → Dades",
+          "desc": "Atravesse o Alto Atlas, visite Aït Ben Haddou e prossiga por Ouarzazate e pelos vales do sul até ao Vale do Dades, para a primeira pernoita.",
+          "stops": [
+            "Marrakech",
+            "Alto Atlas",
+            "Aït Ben Haddou",
+            "Ouarzazate",
+            "Vale do Dades"
+          ]
+        },
+        {
+          "title": "Dades → Garganta de Todra → Erfoud → Merzouga",
+          "desc": "Explore a paisagem do Dades, siga até à Garganta de Todra e viaje para leste, pelo pré-Saara, até Merzouga. Chegue à zona de Erg Chebbi para a experiência no deserto confirmada.",
+          "stops": [
+            "Vale do Dades",
+            "Garganta de Todra",
+            "Erfoud",
+            "Merzouga",
+            "Erg Chebbi"
+          ]
+        },
+        {
+          "title": "Merzouga → Erg Chebbi → Rissani e arredores do deserto",
+          "desc": "Reserve um dia mais calmo no Saara, em torno de Merzouga. Consoante o plano acordado, inclua miradouros sobre as dunas, comunidades locais, Rissani e tempo para o deserto ao nascer ou ao pôr do sol.",
+          "stops": [
+            "Merzouga",
+            "Erg Chebbi",
+            "Rissani",
+            "Arredores do deserto",
+            "Pernoita: região de Merzouga"
+          ]
+        },
+        {
+          "title": "Merzouga → Alnif → Nkob → Vale do Draa → Ouarzazate",
+          "desc": "Deixe as dunas e viaje para oeste, pelas paisagens de Alnif e Nkob, seguindo depois o Vale do Draa, com os seus palmeirais e a sua região de kasbahs, antes de prosseguir até Ouarzazate.",
+          "stops": [
+            "Merzouga",
+            "Alnif",
+            "Nkob",
+            "Vale do Draa",
+            "Ouarzazate"
+          ]
+        },
+        {
+          "title": "Ouarzazate → Aït Ben Haddou → Alto Atlas → Marrakech",
+          "desc": "Regresse a Marrakech via Aït Ben Haddou e Alto Atlas. O último dia é ajustado à estrada e às paragens que preferir antes da chegada a Marrakech.",
+          "stops": [
+            "Ouarzazate",
+            "Aït Ben Haddou",
+            "Alto Atlas",
+            "Marrakech"
+          ]
+        }
+      ],
+      "gallery": [
+        {
+          "caption": "Aït Ben Haddou"
+        },
+        {
+          "caption": "Vale do Dades"
+        },
+        {
+          "caption": "Merzouga e Erg Chebbi"
+        },
+        {
+          "caption": "Palmeirais do Vale do Draa"
+        }
+      ],
+      "faq": [
+        {
+          "question": "O que faz deste um itinerário do Grande Sul?",
+          "answer": "A rota centra-se nas paisagens e nos corredores culturais a sul do Alto Atlas: Aït Ben Haddou, Dades, Todra, Merzouga e o Vale do Draa."
+        },
+        {
+          "question": "Merzouga está incluída?",
+          "answer": "Sim. A rota chega a Merzouga e à zona de Erg Chebbi, sendo a experiência exata no deserto confirmada como parte da sua reserva."
+        },
+        {
+          "question": "Esta viagem é privada?",
+          "answer": "Sim. Está estruturada como uma viagem privada para o seu grupo."
+        },
+        {
+          "question": "Podemos passar mais tempo no Saara?",
+          "answer": "Sim. A rota pode ser ajustada, e um formato mais longo em Merzouga poderá servir-lhe melhor se o tempo no deserto for a prioridade."
+        },
+        {
+          "question": "As refeições estão incluídas?",
+          "answer": "As refeições dependem do pacote de alojamento confirmado. O itinerário final indicará que pequenos-almoços e jantares estão incluídos."
+        },
+        {
+          "question": "Como é confirmado o preço?",
+          "answer": "Esta viagem é disponibilizada apenas sob consulta. Confirmamos as datas, a dimensão do grupo e as opções de alojamento antes de confirmar o preço final."
+        }
+      ]
+    },
+    "3-day-fes-merzouga-sahara": {
+      "name": "Tour de 3 Dias ao Deserto do Saara: Fes a Merzouga",
+      "duration": "3 Dias / 2 Noites",
+      "highlights": [
+        "Partida de Fes",
+        "O Médio Atlas e as florestas de cedros",
+        "O Vale do Ziz",
+        "Merzouga e Erg Chebbi",
+        "Experiência no deserto ao pôr do sol",
+        "Noite em acampamento no deserto"
+      ],
+      "category": "Saara & Cultura",
+      "description": "Uma viagem privada e focada, de Fes até ao Saara, em Merzouga. Viaje para sul pelo Médio Atlas e pelo Vale do Ziz, chegue a Erg Chebbi para a experiência no deserto e prossiga ou regresse de acordo com o plano confirmado. A rota é intencionalmente compacta; quem pretender mais tempo junto às dunas deve prolongá-la.",
+      "routeCaption": "Fes → Ifrane e Médio Atlas → Vale do Ziz → Merzouga → Erg Chebbi.",
+      "included": [
+        "Planeamento privado do itinerário",
+        "Rota confirmada em função das suas datas",
+        "Transporte privado quando incluído no orçamento confirmado",
+        "Experiência no deserto quando incluída no itinerário confirmado"
+      ],
+      "excluded": [
+        "Voos internacionais",
+        "Tudo o que não esteja explicitamente incluído no orçamento confirmado",
+        "Despesas pessoais e gratificações, salvo acordo em contrário"
+      ],
+      "itineraryDays": [
+        {
+          "title": "Fes → Ifrane → Floresta de Cedros → Midelt → Vale do Ziz",
+          "desc": "Parta de Fes e atravesse o Médio Atlas por Ifrane e pelas paisagens de florestas de cedros. Prossiga rumo a Midelt e ao Vale do Ziz, com a própria estrada a oferecer a mudança de cenário do norte de Marrocos para o pré-Saara.",
+          "stops": [
+            "Fes",
+            "Ifrane",
+            "Floresta de cedros",
+            "Midelt",
+            "Vale do Ziz"
+          ]
+        },
+        {
+          "title": "Vale do Ziz → Erfoud → Merzouga → Erg Chebbi",
+          "desc": "Prossiga rumo a Erfoud e Merzouga. Chegue às dunas para a experiência no deserto confirmada, como uma deslocação de camelo ao pôr do sol quando incluída, seguida da noite no alojamento confirmado.",
+          "stops": [
+            "Vale do Ziz",
+            "Erfoud",
+            "Merzouga",
+            "Erg Chebbi",
+            "Experiência no deserto ao pôr do sol"
+          ]
+        },
+        {
+          "title": "Merzouga → viagem de continuação",
+          "desc": "Comece com a manhã no deserto e siga depois para o destino acordado no seu orçamento. Um regresso a Fes ou um final de percurso só de ida podem ser discutidos; nenhum ponto de chegada é assumido antes de estar confirmado.",
+          "stops": [
+            "Nascer do sol em Merzouga",
+            "Erg Chebbi",
+            "Destino de continuação confirmado"
+          ]
+        }
+      ],
+      "gallery": [
+        {
+          "caption": "Fes, o ponto de partida para a viagem rumo ao sul"
+        },
+        {
+          "caption": "Ifrane, no Médio Atlas"
+        },
+        {
+          "caption": "Merzouga, à beira de Erg Chebbi"
+        }
+      ],
+      "faq": [
+        {
+          "question": "Esta rota é possível em três dias?",
+          "answer": "Sim, mas é um itinerário terrestre compacto, com bastante tempo de estrada. Se pretender uma experiência mais tranquila no Saara, peça-nos uma versão mais longa."
+        },
+        {
+          "question": "O passeio de camelo está incluído?",
+          "answer": "A experiência no deserto pode incluir uma deslocação de camelo quando essa opção é selecionada e confirmada. Não presumimos atividades opcionais antes da reserva."
+        },
+        {
+          "question": "Onde dormimos?",
+          "answer": "O alojamento é selecionado de acordo com o pacote escolhido e a disponibilidade, sendo a noite no deserto confirmada antes da reserva."
+        },
+        {
+          "question": "Podemos terminar noutro local que não Fes?",
+          "answer": "Sim. Sendo uma viagem privada, o ponto de chegada pode ser discutido quando solicitar o seu orçamento."
+        },
+        {
+          "question": "Os almoços estão incluídos?",
+          "answer": "Não, salvo se estiverem expressamente incluídos no itinerário confirmado."
+        },
+        {
+          "question": "Como é confirmado o preço?",
+          "answer": "Esta viagem é disponibilizada apenas sob consulta, porque as datas, a dimensão do grupo e o alojamento influenciam o arranjo final. Confirmamos as condições antes do pagamento."
+        }
+      ]
+    },
+    "4-day-fes-marrakech-via-merzouga": {
+      "name": "4 Dias de Fes a Marrakech via Merzouga",
+      "duration": "4 Dias / 3 Noites",
+      "highlights": [
+        "Partida de Fes",
+        "O Médio Atlas e o Vale do Ziz",
+        "A experiência do Saara em Erg Chebbi",
+        "A Garganta de Todra",
+        "O Vale do Dades",
+        "Aït Ben Haddou",
+        "Chegada a Marrakech"
+      ],
+      "category": "Saara & Grande Circuito",
+      "description": "Uma rota privada só de ida que liga Fes a Marrakech através do Saara. Viaje do Médio Atlas até Merzouga e Erg Chebbi e atravesse depois as paisagens de Todra e do Dades, antes de Aït Ben Haddou e do Alto Atlas o levarem a terminar em Marrakech.",
+      "routeCaption": "Fes → Médio Atlas → Merzouga e Erg Chebbi → Garganta de Todra → Vale do Dades → Aït Ben Haddou → Alto Atlas → Marrakech.",
+      "included": [
+        "Veículo privado com ar condicionado",
+        "Motorista profissional fluente em inglês",
+        "Combustível",
+        "Alojamento de acordo com o pacote selecionado",
+        "Experiência no deserto de acordo com o itinerário confirmado",
+        "Experiência de camelo quando especificada",
+        "Recolha e entrega no hotel"
+      ],
+      "excluded": [
+        "Voos internacionais",
+        "Almoços",
+        "Bebidas",
+        "Taxas de entrada",
+        "Atividades opcionais",
+        "Gorjetas e gratificações",
+        "Despesas pessoais"
+      ],
+      "itineraryDays": [
+        {
+          "title": "Fes → Ifrane → Midelt → Vale do Ziz → Merzouga",
+          "desc": "Parta de Fes e atravesse o Médio Atlas por Ifrane e pelas florestas de cedros, prosseguindo via Midelt e Vale do Ziz até Merzouga. A paisagem desértica surge no final da estrada para sul.",
+          "stops": [
+            "Fes",
+            "Ifrane",
+            "Floresta de cedros",
+            "Midelt",
+            "Vale do Ziz",
+            "Merzouga"
+          ]
+        },
+        {
+          "title": "Merzouga → Erg Chebbi → Garganta de Todra → Vale do Dades",
+          "desc": "Desfrute do deserto de manhã antes de viajar para oeste, pelo pré-Saara. Prossiga até à Garganta de Todra e ao Vale do Dades, onde pernoitará, mantendo a rota centrada nas grandes paisagens.",
+          "stops": [
+            "Merzouga",
+            "Erg Chebbi",
+            "Garganta de Todra",
+            "Vale do Dades"
+          ]
+        },
+        {
+          "title": "Vale do Dades → Ouarzazate → Aït Ben Haddou",
+          "desc": "Siga a estrada do sul por Ouarzazate e prossiga até Aït Ben Haddou. Reserve tempo para explorar o ksar histórico antes da pernoita na região envolvente.",
+          "stops": [
+            "Vale do Dades",
+            "Ouarzazate",
+            "Aït Ben Haddou (UNESCO)"
+          ]
+        },
+        {
+          "title": "Aït Ben Haddou → Alto Atlas → Marrakech",
+          "desc": "Atravesse o Alto Atlas na etapa final rumo a Marrakech. A chegada é na Cidade Vermelha, com o ponto e a hora de chegada confirmados em função dos seus planos.",
+          "stops": [
+            "Aït Ben Haddou",
+            "Alto Atlas",
+            "Marrakech"
+          ]
+        }
+      ],
+      "gallery": [
+        {
+          "caption": "A medina de Fes"
+        },
+        {
+          "caption": "Merzouga e o Saara"
+        },
+        {
+          "caption": "A Garganta de Todra"
+        },
+        {
+          "caption": "Aït Ben Haddou"
+        }
+      ],
+      "faq": [
+        {
+          "question": "Esta viagem termina em Marrakech?",
+          "answer": "Sim. Foi concebida como uma rota privada só de ida, de Fes a Marrakech, através de Merzouga e do sul de Marrocos."
+        },
+        {
+          "question": "Erg Chebbi está incluída?",
+          "answer": "Sim. A rota chega a Merzouga e à zona das dunas de Erg Chebbi. Os pormenores exatos do acampamento e do passeio de camelo são confirmados antes da reserva."
+        },
+        {
+          "question": "Porque é que a rota tem quatro dias?",
+          "answer": "Quatro dias dão à viagem só de ida espaço suficiente para o Médio Atlas, o Saara e os vales do sul, sem tentar comprimir todo o percurso num único trajeto apressado."
+        },
+        {
+          "question": "Podemos acrescentar noites?",
+          "answer": "Sim. Noites adicionais ou um itinerário mais tranquilo podem ser discutidos no âmbito do plano da viagem privada."
+        },
+        {
+          "question": "As taxas de entrada estão incluídas?",
+          "answer": "As taxas de entrada em monumentos e museus estão excluídas, salvo indicação expressa no itinerário confirmado."
+        },
+        {
+          "question": "Como é confirmado o preço?",
+          "answer": "Este é um itinerário disponibilizado apenas sob consulta. Confirmamos as suas datas, a dimensão do grupo e as opções de alojamento antes de confirmar o preço final."
+        }
+      ]
+    }
+  },
+  "blog": {
+    "merzouga-luxury-desert-camp-guide": {
+      "title": "O Guia Definitivo dos Acampamentos de Luxo no Deserto de Merzouga",
+      "excerpt": "De tendas privadas com casa de banho privativa a jantares gourmet sob a Via Láctea — descubra tudo o que precisa de saber sobre o glamping de luxo no Saara.",
+      "alt": "Acampamento de luxo no deserto, com tendas privadas ao pôr do sol, perto de Merzouga, Marrocos",
+      "canonicalTitle": "Acampamentos de Luxo em Merzouga — Guia Definitivo do Glamping no Saara",
+      "canonicalExcerpt": "De tendas privadas com casa de banho privativa a jantares gourmet sob a Via Láctea — tudo o que precisa de saber sobre o glamping de luxo no Saara de Merzouga."
+    },
+    "best-time-to-visit-morocco-sahara": {
+      "title": "Melhor Altura para Visitar o Deserto do Saara: Guia Completo Mês a Mês",
+      "excerpt": "Quando planear a sua viagem ao deserto de Merzouga? Os nossos especialistas locais analisam temperaturas, afluência e condições, mês a mês.",
+      "alt": "Dunas de Erg Chebbi à hora dourada, perto de Merzouga, Marrocos",
+      "canonicalTitle": "Melhor Altura para Visitar o Deserto do Saara — Guia Mês a Mês",
+      "canonicalExcerpt": "Quando planear a sua viagem ao deserto de Merzouga? Os nossos especialistas locais analisam temperaturas, afluência e condições ideais, mês a mês."
+    },
+    "camel-trekking-etiquette-morocco": {
+      "title": "Passeios de Camelo em Marrocos: O Que Esperar e Como Se Preparar",
+      "excerpt": "Tudo o que quem monta pela primeira vez precisa de saber — o que vestir, como subir, o que levar e as tradições por trás desta travessia saariana ancestral.",
+      "alt": "Camelos a atravessar dunas douradas ao pôr do sol, durante um passeio",
+      "canonicalTitle": "Passeios de Camelo em Marrocos — O Que Esperar e Como Se Preparar",
+      "canonicalExcerpt": "Tudo o que quem monta pela primeira vez precisa de saber — o que vestir, como subir, o que levar e as tradições por trás desta travessia saariana ancestral."
+    },
+    "marrakech-to-merzouga-roadtrip": {
+      "title": "De Marrakech a Merzouga: O Itinerário Definitivo de Viagem pelo Saara",
+      "excerpt": "Atravesse o Alto Atlas, explore Aït Ben Haddou, percorra o Vale do Dades e chegue às dunas douradas de Erg Chebbi — o guia completo da rota.",
+      "alt": "O ksar de Aït Ben Haddou ao pôr do sol, Património Mundial da UNESCO na rota Marrakech–Merzouga",
+      "canonicalTitle": "De Marrakech a Merzouga — Itinerário Definitivo de Viagem pelo Saara",
+      "canonicalExcerpt": "Atravesse o Alto Atlas, explore Aït Ben Haddou, percorra o Vale do Dades e chegue às dunas douradas de Erg Chebbi — o guia completo da rota."
+    },
+    "morocco-packing-list-desert": {
+      "title": "A Mala Perfeita para Marrocos: O Que Levar nas Viagens ao Deserto (2026)",
+      "excerpt": "O que levar para o Saara — de camadas de roupa respirável e proteção solar aos pequenos luxos que tornam uma noite no deserto inesquecível.",
+      "alt": "Panorama do deserto, com dunas ao longe e céu limpo — a referência definitiva para preparar a mala em Marrocos",
+      "canonicalTitle": "Mala para o Deserto em Marrocos — O Que Levar nas Viagens ao Saara",
+      "canonicalExcerpt": "O que levar para o Saara — camadas de roupa respirável, proteção solar e os essenciais que tornam uma noite no deserto inesquecível."
+    },
+    "fes-chefchaouen-blue-city-guide": {
+      "title": "De Fes a Chefchaouen: Descobrir a Cidade Azul de Marrocos",
+      "excerpt": "A viagem do coração cultural de Marrocos até à famosa medina azul — o que ver, onde ficar e como tirar o máximo partido da visita.",
+      "alt": "Edifícios e ruelas caiados de azul na medina de Chefchaouen, Marrocos",
+      "canonicalTitle": "De Fes a Chefchaouen — Descobrir a Cidade Azul de Marrocos",
+      "canonicalExcerpt": "A viagem do coração cultural de Marrocos até à famosa medina azul — o que ver, onde ficar e como tirar o máximo partido da visita."
     }
   }
 }
