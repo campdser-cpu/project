@@ -557,6 +557,153 @@
         }
       ]
     },
+    "3-day-sahara-fes": {
+      "name": "3-daagse privéroute naar de Sahara vanuit Fes",
+      "duration": "3 dagen / 2 nachten",
+      "category": "Privé · Alleen op aanvraag",
+      "highlights": [
+        "Fes en de Midden-Atlas",
+        "Ifrane en de cederbossen",
+        "Landschappen van Errachidia en de Zizvallei",
+        "Merzouga en Erg Chebbi",
+        "Woestijnbeleving bij zonsondergang"
+      ],
+      "description": "Een privéroute op aanvraag voor reizigers die vanuit Fes in drie dagen Merzouga en Erg Chebbi willen bereiken. Het Marokkaanse nationale bureau voor toerisme bevestigt Fes als toegangspoort richting de Sahara en documenteert de verbinding Fes–Errachidia–Midelt–Merzouga. De huidige bedrijfsgegevens bevatten geen vaste driedaagse prijs vanuit Fes, geen vastgelegde accommodatielijst en geen gegarandeerd terugreisschema; die details worden vóór de boeking bevestigd in plaats van ingevuld met aannames.",
+      "routeCaption": "Fes → Midden-Atlas / Ifrane → regio Errachidia–Midelt → Merzouga & Erg Chebbi. De exacte stops, overnachtingen en het vervolg- of terugreisplan worden rond uw reisdata bevestigd.",
+      "itineraryDays": [
+        {
+          "title": "Fes → Midden-Atlas → regio Errachidia",
+          "desc": "U reist vanuit Fes zuidwaarts door de Midden-Atlas richting de regio Errachidia–Midelt–Merzouga. De weg vormt een belangrijk onderdeel van de ervaring, dus de dag is ingedeeld rond realistische rijtijden en een aantal gekozen stops.",
+          "stops": [
+            "Fes",
+            "Ifrane",
+            "Midden-Atlas",
+            "Regio Midelt / Errachidia"
+          ]
+        },
+        {
+          "title": "Regio Errachidia → Merzouga → Erg Chebbi",
+          "desc": "U reist verder richting Merzouga en de duinen van Erg Chebbi. Wanneer dit in het bevestigde reisschema is opgenomen, kan het woestijngedeelte een kameelbeleving bij zonsondergang en een overnachting bij de duinen omvatten. Accommodatie en maaltijden worden vóór betaling bevestigd.",
+          "stops": [
+            "Omgeving Zizvallei",
+            "Merzouga",
+            "Erg Chebbi",
+            "Woestijnbeleving bij zonsondergang"
+          ]
+        },
+        {
+          "title": "Merzouga → vervolgreis",
+          "desc": "De dag begint met de ochtend in de woestijn, waarna u verder reist naar de bestemming die in uw offerte is afgesproken. Een terugkeer naar Fes of een enkele reis met een ander eindpunt is bespreekbaar; wij leggen geen vaste eindbestemming vast zolang deze niet bevestigd is.",
+          "stops": [
+            "Zonsopgang in Merzouga",
+            "Erg Chebbi",
+            "Bevestigde vervolgbestemming"
+          ]
+        }
+      ],
+      "included": [
+        "Privé reisplanning",
+        "Route bevestigd rond uw reisdata",
+        "Privévervoer wanneer dit in de bevestigde offerte is opgenomen",
+        "Woestijnbeleving wanneer deze in het bevestigde reisschema is opgenomen"
+      ],
+      "excluded": [
+        "Internationale vluchten",
+        "Alles wat niet uitdrukkelijk in de bevestigde offerte is opgenomen",
+        "Persoonlijke uitgaven en fooien, tenzij anders afgesproken"
+      ],
+      "faq": [
+        {
+          "question": "Is dit een tour vanuit Fes met een vaste prijs?",
+          "answer": "Nee. Deze route is bewust alleen op aanvraag, omdat het huidige project geen geverifieerde publieke driedaagse prijs vanuit Fes en geen vast accommodatiepakket bevat. De route en de betalingsvoorwaarden worden vóór betaling bevestigd."
+        },
+        {
+          "question": "Sluit Fes aan op de route naar Merzouga?",
+          "answer": "Ja. Het Marokkaanse nationale bureau voor toerisme presenteert Fes als een van de steden die richting de Sahara leiden en noemt de verbinding van Fes naar Errachidia–Midelt–Merzouga."
+        },
+        {
+          "question": "Kan de reis ergens anders dan in Fes eindigen?",
+          "answer": "Een afwijkende eindbestemming is bespreekbaar binnen de privéofferte. Wij publiceren geen vast eindpunt zolang dit niet bevestigd is."
+        },
+        {
+          "question": "Kan ik nu boeken en later betalen?",
+          "answer": "Vraag eerst het reisvoorstel aan. Wij bevestigen de route, de inbegrepen diensten en de geldende betalingsvoorwaarden voordat er een betaling plaatsvindt."
+        }
+      ]
+    },
+    "3-day-sahara-agadir": {
+      "name": "3-daagse privéroute naar de Sahara vanuit Agadir",
+      "duration": "3 dagen / 2 nachten",
+      "category": "Privé · Alleen op aanvraag",
+      "highlights": [
+        "Atlantische kust bij Agadir",
+        "Landschappen van Zuid-Marokko",
+        "Ouarzazate en de pre-Sahara",
+        "Merzouga en Erg Chebbi",
+        "Privéplanning van de vervolgreis"
+      ],
+      "description": "Een privéroute op aanvraag voor een driedaagse Sahara-planning met vertrek vanuit Agadir. Het Marokkaanse nationale bureau voor toerisme bevestigt Agadir als toegangspoort richting de Sahara en documenteert de verbinding vanuit Zuid-Marokko naar de woestijn. De huidige bedrijfsgegevens bevatten geen vaste driedaagse prijs vanuit Agadir, geen accommodatiepakket en geen gegarandeerd terugreisschema; die commerciële details worden vóór de boeking bevestigd.",
+      "routeCaption": "Agadir → Zuid-Marokko / omgeving Ouarzazate → Merzouga & Erg Chebbi. De exacte stops onderweg, de overnachtingen en de eindbestemming worden in de privéofferte bevestigd.",
+      "itineraryDays": [
+        {
+          "title": "Agadir → Zuid-Marokko → omgeving Ouarzazate",
+          "desc": "U reist vanuit Agadir landinwaarts door Zuid-Marokko. De dag is opgebouwd rond de praktische reis over de weg, en niet rond een bedachte lijst met vaste stops.",
+          "stops": [
+            "Agadir",
+            "Zuid-Marokko",
+            "Omgeving Ouarzazate"
+          ]
+        },
+        {
+          "title": "Omgeving Ouarzazate → Merzouga → Erg Chebbi",
+          "desc": "U reist oostwaarts verder richting Merzouga en Erg Chebbi. Wanneer dit in het bevestigde reisschema is opgenomen, kan het woestijngedeelte een kameelbeleving bij zonsondergang en een nacht in een kamp omvatten. Accommodatie en maaltijden worden vóór betaling afgesproken.",
+          "stops": [
+            "Omgeving Ouarzazate",
+            "Merzouga",
+            "Erg Chebbi",
+            "Woestijnbeleving bij zonsondergang"
+          ]
+        },
+        {
+          "title": "Merzouga → vervolgreis",
+          "desc": "U geniet van de ochtend in de woestijn en reist daarna verder naar de bestemming die in uw offerte is afgesproken. Omdat drie dagen vanuit Agadir een compacte route over land is, wordt de uiteindelijke routering gekozen rond uw reisdata en uw vervolgplannen.",
+          "stops": [
+            "Zonsopgang in Merzouga",
+            "Erg Chebbi",
+            "Bevestigde vervolgbestemming"
+          ]
+        }
+      ],
+      "included": [
+        "Privé reisplanning",
+        "Route bevestigd rond uw reisdata",
+        "Privévervoer wanneer dit in de bevestigde offerte is opgenomen",
+        "Woestijnbeleving wanneer deze in het bevestigde reisschema is opgenomen"
+      ],
+      "excluded": [
+        "Internationale vluchten",
+        "Alles wat niet uitdrukkelijk in de bevestigde offerte is opgenomen",
+        "Persoonlijke uitgaven en fooien, tenzij anders afgesproken"
+      ],
+      "faq": [
+        {
+          "question": "Is dit een Sahara-tour vanuit Agadir met een vaste prijs?",
+          "answer": "Nee. Deze route is alleen op aanvraag, omdat het huidige project geen geverifieerde publieke driedaagse prijs vanuit Agadir en geen vast accommodatiepakket bevat. Wij bevestigen het werkelijke reisschema en de betalingsvoorwaarden vóór betaling."
+        },
+        {
+          "question": "Leidt Agadir richting de Sahara?",
+          "answer": "Ja. Het Marokkaanse nationale bureau voor toerisme noemt Agadir een van de toegangspoorten richting de Sahara. De exacte driedaagse routering hangt af van uw reisdata en van de plaats waar u de reis wilt beëindigen."
+        },
+        {
+          "question": "Kan het reisschema een enkele reis zijn?",
+          "answer": "De vervolgbestemming is bespreekbaar binnen de privéofferte. Wij publiceren liever geen vast terugreisschema zolang dit niet bevestigd is."
+        },
+        {
+          "question": "Kan ik nu boeken en later betalen?",
+          "answer": "Vraag eerst het reisvoorstel aan. Wij bevestigen de route, de inbegrepen diensten en de geldende betalingsvoorwaarden voordat er een betaling plaatsvindt."
+        }
+      ]
+    },
     "5-day-imperial-cities": {
       "name": "5-daagse Keizerlijke Steden & Woestijn",
       "duration": "5 Dagen / 4 Nachten",
@@ -1399,6 +1546,246 @@
         {
           "question": "Hoe bevestig ik mijn boeking?",
           "answer": "Stuur ons een bericht via WhatsApp om uw data vast te leggen; wij stemmen de details af op uw gezin. Een kleine aanbetaling bevestigt uw tour, waarna het resterende bedrag vóór of bij aanvang van de reis kan worden voldaan."
+        }
+      ]
+    },
+    "marrakech-4-day": {
+      "name": "4-daagse Sahara-verkenning van Marrakech naar Merzouga",
+      "duration": "4 dagen / 3 nachten",
+      "category": "Privé · Alleen op aanvraag",
+      "highlights": [
+        "Oversteek van de Hoge Atlas via de Tizi n'Tichka-pas",
+        "Aït Ben Haddou en de kasbahs van Ouarzazate",
+        "De kloven van Dades en Todra",
+        "Kameeltocht bij zonsondergang in Erg Chebbi",
+        "Een nacht in een woestijnkamp in de Sahara"
+      ],
+      "description": "Een privérondreis van vier dagen vanuit Marrakech naar de Sahara en weer terug. U klimt over de Hoge Atlas, verkent Aït Ben Haddou en de kasbahs van Ouarzazate, rijdt door de kloven van Dades en Todra en brengt een nacht door in Erg Chebbi, waar u per kameel aankomt, voordat u over de bergen terugkeert. Omdat er voor deze reisduur geen geverifieerde publieke prijs of vaste hotellijst is gepubliceerd, wordt de tour alleen op aanvraag aangeboden, met details die rond uw reisdata worden bevestigd.",
+      "routeCaption": "Marrakech → Hoge Atlas → Aït Ben Haddou → Dades & Todra → Merzouga & Erg Chebbi → terug naar Marrakech.",
+      "itineraryDays": [
+        {
+          "title": "Marrakech → Hoge Atlas → Aït Ben Haddou → Dadesvallei",
+          "desc": "U steekt via de Tizi n'Tichka-pas de Hoge Atlas over, met weidse uitzichten onderweg. U bezoekt de beroemde ksar van Aït Ben Haddou, stopt in Ouarzazate en Skoura en sluit de dag af in de indrukwekkende Dadesvallei.",
+          "stops": [
+            "Tizi n'Tichka",
+            "Aït Ben Haddou",
+            "Ouarzazate",
+            "Overnachting: Dadesvallei"
+          ]
+        },
+        {
+          "title": "Dades → Todra-kloof → Merzouga",
+          "desc": "U volgt de canyon van Dades en wandelt tussen de steile wanden van de Todra-kloof. Daarna rijdt u over de woestijnvlakte naar Merzouga voor een kameeltocht bij zonsondergang de duinen van Erg Chebbi in, gevolgd door een nacht in een woestijnkamp.",
+          "stops": [
+            "Dades-kloof",
+            "Todra-kloof",
+            "Kameeltocht in Erg Chebbi",
+            "Nacht in het woestijnkamp"
+          ]
+        },
+        {
+          "title": "Merzouga → Rissani → Erfoud → regio Ouarzazate",
+          "desc": "U kijkt naar de zonsopgang boven de duinen, struint over de souk van Rissani en bezoekt de fossielenateliers van Erfoud. Daarna reist u westwaarts via Skoura naar uw overnachting in de omgeving van Ouarzazate.",
+          "stops": [
+            "Zonsopgang boven Erg Chebbi",
+            "Rissani",
+            "Erfoud",
+            "Overnachting: omgeving Ouarzazate"
+          ]
+        },
+        {
+          "title": "Ouarzazate → Aït Ben Haddou → Marrakech",
+          "desc": "U keert terug over de Hoge Atlas, met tijd voor een laatste blik op het kasbahlandschap, en daalt af naar Marrakech, waar de tour eindigt.",
+          "stops": [
+            "Aït Ben Haddou",
+            "Tizi n'Tichka",
+            "Einde: Marrakech"
+          ]
+        }
+      ],
+      "included": [
+        "Privévoertuig met airconditioning",
+        "Professionele Engelssprekende chauffeur",
+        "Brandstof en tolgelden",
+        "Geselecteerde riads, gastenverblijven en een woestijnkamp volgens het bevestigde reisschema",
+        "Ontbijt en diner zoals bevestigd",
+        "Kameeltocht bij zonsondergang en een nacht in het woestijnkamp bij Erg Chebbi"
+      ],
+      "excluded": [
+        "Internationale vluchten",
+        "Lunches en dranken",
+        "Toegangskosten",
+        "Fooien en persoonlijke uitgaven"
+      ],
+      "faq": [
+        {
+          "question": "Is de prijs van deze tour openbaar?",
+          "answer": "Nee, de tour is alleen op aanvraag omdat er op dit moment geen geverifieerde publieke prijs voor een vierdaagse rondreis Marrakech–Merzouga is gepubliceerd. Het totaalbedrag wordt rond uw reisdata bevestigd."
+        },
+        {
+          "question": "Waar eindigt de tour?",
+          "answer": "Het is een rondreis die op dag vier terugkeert naar Marrakech, al is een enkele reis met een ander eindpunt ook mogelijk."
+        },
+        {
+          "question": "Is het woestijnkamp inbegrepen?",
+          "answer": "Ja, een kameeltocht bij zonsondergang en een nacht in een woestijnkamp bij Erg Chebbi maken deel uit van het voorgestelde reisschema en worden vóór de boeking bevestigd."
+        }
+      ]
+    },
+    "casablanca-3-day": {
+      "name": "3-daagse reis Casablanca–Fes via Rabat, Meknès & Volubilis",
+      "duration": "3 dagen / 2 nachten",
+      "category": "Privé · Alleen op aanvraag",
+      "highlights": [
+        "De Hassan II-moskee aan de kust van Casablanca",
+        "Rabat, hoofdstad aan de Atlantische Oceaan, en haar kasbah",
+        "De keizerlijke stad Meknès",
+        "De Romeinse ruïnes van Volubilis",
+        "Een dag met gids in de medina van Fes"
+      ],
+      "description": "Een privéroute op aanvraag die Casablanca, de economische hoofdstad van Marokko, verbindt met Fes via de bestuurlijke hoofdstad Rabat, het blauwe stadje Chefchaouen, het keizerlijke Meknès en de Romeinse ruïnes van Volubilis. Omdat er geen geverifieerde publieke prijs of vaste hotellijst is gepubliceerd, wordt de tour vóór de boeking rond uw reisdata bevestigd.",
+      "routeCaption": "Casablanca → Rabat → Chefchaouen → Meknès & Volubilis → Fes. Een noordelijke tocht langs de keizerlijke steden, eindigend in Fes.",
+      "itineraryDays": [
+        {
+          "title": "Casablanca → Rabat → Chefchaouen",
+          "desc": "U begint met de Hassan II-moskee en de Corniche van Casablanca en rijdt daarna noordwaarts via Rabat, waar de kasbah aan de Atlantische Oceaan en de Hassan-toren een stop verdienen. Aan het eind van de dag bereikt u het blauwe stadje Chefchaouen voor de overnachting.",
+          "stops": [
+            "Hassan II-moskee",
+            "Kasbah van de Oudayas in Rabat",
+            "Hassan-toren",
+            "Overnachting: Chefchaouen"
+          ]
+        },
+        {
+          "title": "Chefchaouen → Meknès → Volubilis → Fes",
+          "desc": "In de ochtend dwaalt u door de blauwgekalkte steegjes van Chefchaouen. Daarna bezoekt u de monumentale poort Bab Mansour in Meknès en de Romeinse opgravingen van Volubilis, voordat u in Fes aankomt voor de nacht.",
+          "stops": [
+            "Medina van Chefchaouen",
+            "Bab Mansour-poort",
+            "Volubilis",
+            "Overnachting: Fes"
+          ]
+        },
+        {
+          "title": "Fes: medina en souks met gids",
+          "desc": "Een rondleiding door Fes: de koninklijke poorten, de middeleeuwse medina rond de Universiteit Al Quaraouiyine, de Chouara-leerlooierij en de ambachtssouks. Hier eindigt de tour.",
+          "stops": [
+            "Fes el-Bali",
+            "Universiteit Al Quaraouiyine",
+            "Chouara-leerlooierij",
+            "Einde: Fes"
+          ]
+        }
+      ],
+      "included": [
+        "Privévoertuig met airconditioning",
+        "Professionele Engelssprekende chauffeur",
+        "Brandstof en tolgelden",
+        "Geselecteerde riads en hotels volgens het bevestigde reisschema",
+        "Ontbijt zoals bevestigd",
+        "Officiële lokale gids in Fes"
+      ],
+      "excluded": [
+        "Internationale vluchten",
+        "Lunches en dranken",
+        "Toegangskosten",
+        "Fooien en persoonlijke uitgaven"
+      ],
+      "faq": [
+        {
+          "question": "Is dit een tour vanuit Casablanca met een vaste prijs?",
+          "answer": "Nee, de tour is alleen op aanvraag omdat er voor deze route geen geverifieerde publieke prijs is gepubliceerd. Betalingen en inbegrepen diensten worden vóór de boeking bevestigd."
+        },
+        {
+          "question": "Waar eindigt de tour?",
+          "answer": "De route is opgezet om in Fes te eindigen, al kunnen wij een terugreis naar Casablanca of een aansluitende transfer regelen."
+        },
+        {
+          "question": "Bezoekt de tour Chefchaouen?",
+          "answer": "Ja, de Blauwe Stad is de overnachtingsplaats op dag één, zodat u er een avond en een ochtend doorbrengt."
+        }
+      ]
+    },
+    "casablanca-4-day": {
+      "name": "4-daagse reis Casablanca–Fes via de Atlantische kust & Chefchaouen",
+      "duration": "4 dagen / 3 nachten",
+      "category": "Privé · Alleen op aanvraag",
+      "highlights": [
+        "De Hassan II-moskee en de Corniche van Casablanca",
+        "Rabat en de kustroute naar Asilah",
+        "Chefchaouen, de Blauwe Stad",
+        "Het keizerlijke Meknès en de Romeinse ruïnes van Volubilis",
+        "Een dag met gids in Fes"
+      ],
+      "description": "Een rustig opgebouwde privéroute van Casablanca naar Fes langs de Atlantische en noordelijke hoogtepunten van Marokko, met een kalmer tempo dan een kortere rondreis. U volgt de kust voorbij Rabat naar de ommuurde medina van Asilah, draait landinwaarts naar Chefchaouen, de Blauwe Stad, en reist verder via het keizerlijke Meknès en de Romeinse opgravingen van Volubilis om in Fes te eindigen. Het reisschema wordt op aanvraag rond uw reisdata bevestigd.",
+      "routeCaption": "Casablanca → Rabat → Asilah → Chefchaouen → Meknès & Volubilis → Fes.",
+      "itineraryDays": [
+        {
+          "title": "Casablanca → Rabat → Asilah",
+          "desc": "U bewondert de Hassan II-moskee en de kustboulevard van Casablanca, stopt in Rabat voor de Kasbah van de Oudayas en de Hassan-toren, en volgt daarna de kust noordwaarts naar de witgekalkte medina van Asilah voor de overnachting.",
+          "stops": [
+            "Hassan II-moskee",
+            "Rabat",
+            "Asilah",
+            "Overnachting: Asilah"
+          ]
+        },
+        {
+          "title": "Asilah → Chefchaouen",
+          "desc": "In de ochtend wandelt u langs de met kunst versierde stadsmuren van Asilah. Daarna steekt u het Rifgebergte over richting de blauwgekalkte straatjes van Chefchaouen, voor een ontspannen avond.",
+          "stops": [
+            "Medina van Asilah",
+            "Rifgebergte",
+            "Chefchaouen",
+            "Overnachting: Chefchaouen"
+          ]
+        },
+        {
+          "title": "Chefchaouen → Meknès → Volubilis → Fes",
+          "desc": "U geniet van het ochtendlicht in Chefchaouen en bezoekt daarna Bab Mansour in Meknès en de Romeinse ruïnes van Volubilis, voordat u Fes bereikt voor de nacht.",
+          "stops": [
+            "Chefchaouen",
+            "Bab Mansour-poort",
+            "Volubilis",
+            "Overnachting: Fes"
+          ]
+        },
+        {
+          "title": "Fes met gids en vertrek",
+          "desc": "Een rondleiding door de medina, de leerlooierijen en de souks van Fes, waarna de tour eindigt. Aansluitend vervoer regelen wij desgewenst.",
+          "stops": [
+            "Fes el-Bali",
+            "Chouara-leerlooierij",
+            "Einde: Fes"
+          ]
+        }
+      ],
+      "included": [
+        "Privévoertuig met airconditioning",
+        "Professionele Engelssprekende chauffeur",
+        "Brandstof en tolgelden",
+        "Geselecteerde riads en hotels volgens het bevestigde reisschema",
+        "Ontbijt zoals bevestigd",
+        "Officiële lokale gids in Fes"
+      ],
+      "excluded": [
+        "Internationale vluchten",
+        "Lunches en dranken",
+        "Toegangskosten",
+        "Fooien en persoonlijke uitgaven"
+      ],
+      "faq": [
+        {
+          "question": "Is dit een tour met een vaste prijs?",
+          "answer": "Nee, de tour is alleen op aanvraag omdat er voor deze route geen geverifieerde publieke prijs is gepubliceerd. Het totaalbedrag wordt rond uw reisdata bevestigd."
+        },
+        {
+          "question": "Komt de tour in de Sahara?",
+          "answer": "Nee, deze route richt zich op de Atlantische kust en de keizerlijke steden. Vraag naar onze woestijntours als u verder zuidwaarts wilt reizen."
+        },
+        {
+          "question": "Wat is de laatste stad?",
+          "answer": "De tour is opgezet om in Fes te eindigen, met op verzoek een terugreis naar Casablanca of aansluitend vervoer."
         }
       ]
     }
