@@ -21,6 +21,18 @@ const en: Record<string, string> = {
   st_h1: 'Explore Morocco. Learn Beyond the Classroom.',
   st_sub: 'Authentic cultural, educational and adventure experiences designed for university and student groups travelling across Morocco.',
   st_groupsize: 'Designed for university and student groups of 15+ participants',
+  st_groupsize_large: 'Larger groups can be considered with advance planning and coordinated logistics.',
+  st_cta_learn: 'Build Your Programme',
+  st_cta_group: 'Discuss Your Group',
+  st_cta_coord: 'Talk to a Group Coordinator',
+  // Place → Subject → Experience (section 05)
+  st_05_x1: 'Walk a UNESCO-listed medina and see how public space, trade and craft still organise a working city.',
+  st_05_x2: 'Cross the Tizi n’Tichka pass and read altitude, climate and agriculture changing valley by valley.',
+  st_05_x3: 'Study an earthen ksar on a former caravan route — architecture as a response to climate and defence.',
+  st_05_x4: 'Follow the water: khettara channels, palm groves and the fragile balance that keeps an oasis alive.',
+  st_05_x5: 'Meet the communities living at the desert edge and the Amazigh traditions that shape daily life.',
+  st_05_x6: 'Ride into Erg Chebbi, sleep under an unlit sky and experience scale, silence and orientation first-hand.',
+  st_05_x7: 'Trace centuries of scholarship, craft and urban life around Al-Qarawiyyin and the Fes el-Bali medina.',
   st_cta1: 'Plan a Student Trip',
   st_cta2: 'Explore Student Experiences',
   st_cue: 'MERZOUGA · MARRAKECH · FES · ATLAS · ERG CHEBBI',
@@ -249,7 +261,8 @@ const en: Record<string, string> = {
   st_home_cta: 'Explore Student Tours',
 
   // Tours listing entry
-  st_tours_label: 'Student Tours & University Travel',
+  st_tours_label: 'Student Tours',
+  st_nav_sub: 'University & Educational Travel',
   st_tours_desc: 'Educational, cultural and adventure programmes for university and student groups of 15+ participants.',
 };
 
@@ -260,6 +273,17 @@ const pt: Record<string, string> = {
   st_h1: 'Descubra Marrocos. Aprenda para além da sala de aula.',
   st_sub: 'Experiências culturais, educativas e de aventura autênticas, concebidas para grupos universitários e de estudantes em viagem por Marrocos.',
   st_groupsize: 'Concebido para grupos universitários e de estudantes a partir de 15 participantes',
+  st_groupsize_large: 'Grupos maiores podem ser considerados com planeamento antecipado e logística coordenada.',
+  st_cta_learn: 'Construir o programa',
+  st_cta_group: 'Falar sobre o seu grupo',
+  st_cta_coord: 'Falar com um coordenador de grupos',
+  st_05_x1: 'Percorra uma medina classificada pela UNESCO e veja como espaço público, comércio e artesanato ainda organizam uma cidade viva.',
+  st_05_x2: 'Atravesse o passo de Tizi n’Tichka e leia a altitude, o clima e a agricultura a mudarem de vale para vale.',
+  st_05_x3: 'Estude um ksar de terra numa antiga rota de caravanas — a arquitetura como resposta ao clima e à defesa.',
+  st_05_x4: 'Siga a água: canais de khettara, palmeirais e o equilíbrio frágil que mantém um oásis vivo.',
+  st_05_x5: 'Conheça as comunidades que vivem na orla do deserto e as tradições amazigh que moldam o quotidiano.',
+  st_05_x6: 'Entre em Erg Chebbi, durma sob um céu sem luzes e experimente escala, silêncio e orientação na primeira pessoa.',
+  st_05_x7: 'Percorra séculos de saber, artesanato e vida urbana em torno da Al-Qarawiyyin e da medina de Fes el-Bali.',
   st_cta1: 'Planear uma viagem de estudantes',
   st_cta2: 'Explorar as experiências',
   st_cue: 'MERZOUGA · MARRAKECH · FES · ATLAS · ERG CHEBBI',
@@ -470,7 +494,8 @@ const pt: Record<string, string> = {
   st_home_body: 'Programas culturais, educativos e de aventura para universidades, organizações estudantis e grupos liderados por docentes — organizados em todo o Marrocos por uma equipa local do Saara. Concebidos para grupos a partir de 15 participantes.',
   st_home_cta: 'Explorar viagens para estudantes',
 
-  st_tours_label: 'Viagens para Estudantes e Universitários',
+  st_tours_label: 'Viagens para Estudantes',
+  st_nav_sub: 'Viagens universitárias e educativas',
   st_tours_desc: 'Programas educativos, culturais e de aventura para grupos universitários e de estudantes a partir de 15 participantes.',
 };
 

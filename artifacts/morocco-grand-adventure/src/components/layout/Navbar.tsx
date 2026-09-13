@@ -86,6 +86,15 @@ export function Navbar() {
                       <div className="px-4 pb-3 flex flex-wrap gap-x-3 gap-y-1">{durations.slice(0, 3).map(days => <Link key={days} href={`/tours/from-${hub.slug}/${days}-days`} className="text-[11px] text-muted-foreground hover:text-primary">{fmtTemplate(t('hub_group_days_badge'), { days })}</Link>)}</div>
                     </div>;
                   })}
+                  {/* Student Tours — first-class experience, subtly set apart
+                      with a subtitle rather than a badge. Real <Link> so it is
+                      crawlable, localized and keyboard-reachable. */}
+                  <div className="border-t border-border">
+                    <Link href="/student-tours" className="block px-4 py-3 hover:bg-muted group/st focus-visible:bg-muted">
+                      <span className="block text-sm font-semibold text-foreground group-hover/st:text-primary">{t('st_tours_label')}</span>
+                      <span className="block text-[11px] text-muted-foreground mt-0.5">{t('st_nav_sub')}</span>
+                    </Link>
+                  </div>
                   <div className="border-t border-border">
                     <Link href="/tours/from-marrakech/3-days" className="block px-4 py-3 text-sm font-medium text-primary hover:bg-muted">{threeDayLabel('marrakech')}</Link>
                     <Link href="/marrakech-tours" className="block px-4 py-3 text-sm text-foreground hover:bg-muted hover:text-primary">{t('mk_breadcrumb')}</Link>
@@ -136,6 +145,10 @@ export function Navbar() {
         <Link href="/tours" className="text-lg font-medium text-foreground">{t('nav_tours')}</Link>
         <div className="pl-4 border-l-2 border-primary/20 space-y-3 py-2">
           <Link href="/tours" className="block font-semibold text-foreground">{t('tours_heading')}</Link>
+          <Link href="/student-tours" className="block">
+            <span className="block font-semibold text-foreground">{t('st_tours_label')}</span>
+            <span className="block text-xs text-muted-foreground">{t('st_nav_sub')}</span>
+          </Link>
           {CITY_HUBS.map(hub => <div key={hub.id} className="space-y-1"><Link href={`/tours/from-${hub.slug}`} className="block text-foreground font-medium">{cityTitle(hub.id)}</Link><div className="pl-3 flex flex-wrap gap-x-3 gap-y-1">{(CITY_HUB_DURATIONS[hub.id] ?? []).slice(0, 4).map(days => <Link key={days} href={`/tours/from-${hub.slug}/${days}-days`} className="text-sm text-muted-foreground hover:text-primary">{fmtTemplate(t('hub_group_days_badge'), { days })}</Link>)}</div></div>)}
           <Link href="/tours/from-marrakech/3-days" className="block text-primary font-semibold">{threeDayLabel('marrakech')}</Link>
           <Link href="/marrakech-tours" className="block text-muted-foreground">{t('mk_breadcrumb')}</Link>

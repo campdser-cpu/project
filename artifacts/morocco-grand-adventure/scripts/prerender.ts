@@ -851,6 +851,7 @@ function buildExperienceContent(rest: string, lang: Lang): string {
   // other locales resolve these keys to English by design.
   const studentTours = rest === '/student-tours' ? `
     <p>${escapeHtml(tr(lang, 'st_groupsize'))}</p>
+    <p>${escapeHtml(tr(lang, 'st_groupsize_large'))}</p>
     <p>${escapeHtml(tr(lang, 'st_coordinator'))}</p>
     <h2>${escapeHtml(tr(lang, 'st_02_h2'))}</h2>
     <p>${escapeHtml(tr(lang, 'st_02_p1'))}</p>
@@ -859,7 +860,7 @@ function buildExperienceContent(rest: string, lang: Lang): string {
     ${ul([1, 2, 3, 4, 5, 6, 7, 8].map((n) => `${tr(lang, `st_04_s${n}_label`)} — ${tr(lang, `st_04_s${n}_body`)}`))}
     <p>${escapeHtml(tr(lang, 'st_04_places_p'))}</p>
     <h2>${escapeHtml(tr(lang, 'st_05_h2'))}</h2>
-    ${ul([1, 2, 3, 4, 5, 6, 7].map((n) => `${tr(lang, `st_05_n${n}`)} — ${tr(lang, `st_05_t${n}`)}`))}
+    ${ul([1, 2, 3, 4, 5, 6, 7].map((n) => `${tr(lang, `st_05_n${n}`)} — ${tr(lang, `st_05_t${n}`)}: ${tr(lang, `st_05_x${n}`)}`))}
     <p>${escapeHtml(tr(lang, 'st_05_caption'))}</p>
     <h2>${escapeHtml(tr(lang, 'st_07_h2'))}</h2>
     <p>${escapeHtml(tr(lang, 'st_07_body'))}</p>

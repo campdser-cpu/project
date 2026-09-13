@@ -51,24 +51,42 @@ function Eyebrow({ children, onDark = false }: { children: React.ReactNode; onDa
 export default function StudentTours() {
   const { t, lang } = useLanguage();
   const videoRef = useRef<HTMLVideoElement | null>(null);
+  const heroRef = useRef<HTMLElement | null>(null);
   const [showVideo, setShowVideo] = useState(false);
+  const [videoPlaying, setVideoPlaying] = useState(false);
 
-  // Hero video is deferred: the poster + real HTML text paint first, then the
-  // video attaches only on a wide viewport when the user has not asked for
-  // reduced motion. It never blocks the initial render or the LCP.
+  // Hero video is deferred, NOT disabled on mobile. The poster and the real HTML
+  // text paint first; the <video> is only mounted once the hero is actually in
+  // view. The single 2.33 MB H.264 file is small enough to serve to phones too,
+  // so there is no second mobile encode and no width gate.
+  //
+  // The only opt-out is prefers-reduced-motion, which keeps the poster.
   useEffect(() => {
     if (typeof window === 'undefined') return;
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const wide = window.matchMedia('(min-width: 768px)').matches;
-    if (reduced || !wide) return;
-    const id = window.setTimeout(() => setShowVideo(true), 200);
-    return () => window.clearTimeout(id);
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const el = heroRef.current;
+    if (!el || typeof IntersectionObserver === 'undefined') { setShowVideo(true); return; }
+
+    const io = new IntersectionObserver((entries) => {
+      if (entries.some((e) => e.isIntersecting)) { setShowVideo(true); io.disconnect(); }
+    }, { rootMargin: '200px' });
+    io.observe(el);
+    return () => io.disconnect();
   }, []);
 
+  // iOS/Android only honour autoplay once the element is muted + playsInline and
+  // has a source attached. If the browser still refuses, the poster remains —
+  // the hero never shows a black frame.
   useEffect(() => {
     if (!showVideo) return;
     const v = videoRef.current;
-    if (v) v.play().catch(() => { /* autoplay refused — poster stays visible */ });
+    if (!v) return;
+    v.muted = true;
+    const play = () => v.play().then(() => setVideoPlaying(true)).catch(() => setVideoPlaying(false));
+    if (v.readyState >= 2) play();
+    else v.addEventListener('loadeddata', play, { once: true });
+    return () => v.removeEventListener('loadeddata', play);
   }, [showVideo]);
 
   const wa = `${contactInfo.whatsapp}?text=${encodeURIComponent(
@@ -80,7 +98,9 @@ export default function StudentTours() {
     label: t(`st_04_s${n}_label`),
     body: t(`st_04_s${n}_body`),
   }));
-  const route = [1, 2, 3, 4, 5, 6, 7].map((n) => ({ place: t(`st_05_n${n}`), theme: t(`st_05_t${n}`) }));
+  const route = [1, 2, 3, 4, 5, 6, 7].map((n) => ({
+    place: t(`st_05_n${n}`), theme: t(`st_05_t${n}`), detail: t(`st_05_x${n}`),
+  }));
   const why = [1, 2, 3, 4, 5, 6, 7, 8].map((n) => ({ t: t(`st_08_i${n}_t`), d: t(`st_08_i${n}_d`) }));
   const steps = [1, 2, 3, 4, 5, 6].map((n) => ({ n: String(n).padStart(2, '0'), t: t(`st_15_s${n}_t`), d: t(`st_15_s${n}_d`) }));
   const focus = [1, 2, 3, 4, 5, 6].map((n) => ({ t: t(`st_14_f${n}_t`), d: t(`st_14_f${n}_d`) }));
@@ -126,17 +146,26 @@ export default function StudentTours() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* 01 — HERO ------------------------------------------------------- */}
-      <section className="relative min-h-[88vh] md:min-h-[100vh] md:max-h-[900px] flex items-end overflow-hidden bg-black">
-        <img
-          src={`${IMG}/student-tours-hero-poster.jpg`} alt={t('st_hero_alt')} width={1600} height={900}
-          className="absolute inset-0 w-full h-full object-cover" fetchPriority="high" decoding="sync"
-        />
+      <section
+        ref={heroRef}
+        className="relative min-h-[600px] h-[88svh] md:h-auto md:min-h-[100vh] md:max-h-[900px] flex items-end overflow-hidden bg-black"
+      >
+        <picture>
+          <source type="image/webp" media="(max-width: 767px)" srcSet={`${IMG}/student-tours-hero-poster-768w.webp`} />
+          <source type="image/webp" srcSet={`${IMG}/student-tours-hero-poster.webp`} />
+          <img
+            src={`${IMG}/student-tours-hero-poster.jpg`} alt={t('st_hero_alt')} width={1600} height={900}
+            className="absolute inset-0 w-full h-full object-cover" fetchPriority="high" decoding="sync"
+          />
+        </picture>
         {showVideo && (
           <video
-            ref={videoRef} src="/videos/student-tours-hero.mp4" poster={`${IMG}/student-tours-hero-poster.jpg`}
-            muted loop playsInline autoPlay preload="none" aria-hidden="true" tabIndex={-1}
-            className="absolute inset-0 w-full h-full object-cover"
-          />
+            ref={videoRef} poster={`${IMG}/student-tours-hero-poster.jpg`}
+            muted loop playsInline autoPlay preload="metadata" aria-hidden="true" tabIndex={-1}
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${videoPlaying ? 'opacity-100' : 'opacity-0'}`}
+          >
+            <source src="/videos/student-tours-hero.mp4" type="video/mp4" />
+          </video>
         )}
         <div
           className="absolute inset-0"
@@ -148,10 +177,11 @@ export default function StudentTours() {
             <p className="text-[12px] font-semibold uppercase mb-5" style={{ letterSpacing: '0.22em', color: GOLD }}>{t('st_eyebrow')}</p>
             <h1 className="font-serif text-white font-light leading-[1.04] tracking-tight text-[clamp(2.5rem,6vw,4.6rem)]">{t('st_h1')}</h1>
             <div className="h-px w-14 my-7" style={{ background: GOLD }} aria-hidden="true" />
-            <p className="text-white/90 text-base md:text-lg leading-relaxed max-w-[34rem]">{t('st_sub')}</p>
-            <p className="inline-flex items-center gap-2 mt-6 px-4 py-2 text-white text-sm font-medium border" style={{ borderColor: GOLD }}>
-              <span aria-hidden="true" style={{ color: GOLD }}>●</span>{t('st_groupsize')}
-            </p>
+            <p className="text-white/90 text-[15px] md:text-lg leading-relaxed max-w-[34rem]">{t('st_sub')}</p>
+            <div className="mt-7 pl-4 border-l" style={{ borderColor: GOLD }}>
+              <p className="text-white text-sm md:text-base font-medium leading-snug">{t('st_groupsize')}</p>
+              <p className="text-white/70 text-[13px] md:text-sm mt-1.5 leading-snug max-w-[30rem]">{t('st_groupsize_large')}</p>
+            </div>
             <div className="flex flex-col sm:flex-row gap-3 mt-8">
               <a href={wa} target="_blank" rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-8 py-4 bg-white text-black text-sm font-semibold tracking-wide hover:opacity-90 transition">
@@ -230,17 +260,29 @@ export default function StudentTours() {
       <section className="py-16 md:py-24" style={{ background: '#F6F2EB' }}>
         <div className="container mx-auto px-4">
           <h2 className="font-serif text-3xl md:text-5xl font-light text-[#101010] text-center">{t('st_05_h2')}</h2>
-          <ol className="mt-14 grid gap-8 md:grid-cols-7 md:gap-2 md:relative">
-            <li aria-hidden="true" className="hidden md:block absolute left-0 right-0 top-[10px] h-px" style={{ background: '#D8CFC0' }} />
+          {/* Place → Subject → Experience. Vertical rail on mobile (no cramped
+              7-across grid), horizontal rail from lg up. */}
+          <ol className="mt-12 space-y-7 lg:space-y-0 lg:grid lg:grid-cols-7 lg:gap-4 lg:relative">
+            <li aria-hidden="true" className="hidden lg:block absolute left-0 right-0 top-[10px] h-px" style={{ background: '#D8CFC0' }} />
             {route.map((r) => (
-              <li key={r.place} className="relative md:text-center">
-                <span className="block w-[9px] h-[9px] rounded-full mb-4 md:mx-auto" style={{ background: GOLD }} aria-hidden="true" />
-                <span className="block text-[13px] font-semibold text-[#101010]" style={{ letterSpacing: '0.06em' }}>{r.place}</span>
-                <span className="block mt-1 text-[11px] uppercase" style={{ letterSpacing: '0.16em', color: '#8C857A' }}>{r.theme}</span>
+              <li key={r.place} className="relative grid grid-cols-[auto_1fr] gap-4 lg:block">
+                <span className="block w-[9px] h-[9px] rounded-full mt-2 lg:mt-0 lg:mb-4" style={{ background: GOLD }} aria-hidden="true" />
+                <div>
+                  <span className="block text-[13px] font-semibold text-[#101010]" style={{ letterSpacing: '0.06em' }}>{r.place}</span>
+                  <span className="block mt-1 text-[11px] uppercase" style={{ letterSpacing: '0.16em', color: GOLD }}>{r.theme}</span>
+                  <p className="mt-2 text-[13px] leading-relaxed" style={{ color: '#6E665C' }}>{r.detail}</p>
+                </div>
               </li>
             ))}
           </ol>
-          <p className="mt-12 text-center text-sm" style={{ color: '#6E665C' }}>{t('st_05_caption')}</p>
+          <p className="mt-12 text-sm lg:text-center" style={{ color: '#6E665C' }}>{t('st_05_caption')}</p>
+          <div className="mt-8 lg:text-center">
+            <a href={wa} target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-[#101010] border-b-2 pb-1 hover:opacity-70 transition"
+              style={{ borderColor: GOLD }}>
+              {t('st_cta_learn')} →
+            </a>
+          </div>
         </div>
       </section>
 
@@ -365,6 +407,13 @@ export default function StudentTours() {
               </li>
             ))}
           </ol>
+          <div className="mt-12">
+            <a href={wa} target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-foreground border-b-2 pb-1 hover:opacity-70 transition"
+              style={{ borderColor: GOLD }}>
+              {t('st_cta_coord')} →
+            </a>
+          </div>
         </div>
       </section>
 
@@ -392,6 +441,10 @@ export default function StudentTours() {
           <div className="container mx-auto text-center">
             <p className="text-[12px] font-semibold uppercase" style={{ letterSpacing: '0.2em', color: GOLD }}>{t('st_11_band')}</p>
             <p className="mt-4 text-white/80 text-sm max-w-4xl mx-auto">{t('st_11_band_items')}</p>
+            <a href={wa} target="_blank" rel="noopener noreferrer"
+              className="inline-flex mt-7 items-center justify-center px-7 py-3 border border-white/50 text-white text-sm font-semibold hover:bg-white hover:text-black transition">
+              {t('st_cta_group')}
+            </a>
           </div>
         </div>
       </section>
