@@ -23,6 +23,7 @@ const Contact = lazy(() => import('./pages/contact'));
 const TripBuilder = lazy(() => import('./pages/trip-builder'));
 const BuildYourDayTrip = lazy(() => import('./pages/build-your-day-trip'));
 const StudentTours = lazy(() => import('./pages/student-tours'));
+ const StudentToursUniversityGroups = lazy(() => import('./pages/student-tours-university-groups'));
 const DesertTours = lazy(() => import('./pages/desert-tours'));
 const LuxuryCamp = lazy(() => import('./pages/luxury-camp'));
 const CamelTrekking = lazy(() => import('./pages/camel-trekking'));
@@ -65,7 +66,7 @@ function AnimatedRouter() {
     <Route path="/tours" component={Tours} /><Route path={TOUR_DURATION_ROUTE} component={ToursFromCityDuration} /><Route path={TOUR_CITY_ROUTE} component={ToursFromCity} /><Route path="/tours/:id" component={TourDetail} />
     <Route path="/gallery" component={Gallery} /><Route path="/about" component={About} /><Route path="/contact" component={Contact} />
     <Route path="/trip-builder" component={TripBuilder} /><Route path="/build-your-day-trip" component={BuildYourDayTrip} />
-    <Route path="/student-tours" component={StudentTours} />
+    <Route path="/student-tours/university-groups" component={StudentToursUniversityGroups} /><Route path="/student-tours" component={StudentTours} />
     <Route path="/desert-tours" component={DesertTours} /><Route path="/luxury-camp" component={LuxuryCamp} /><Route path="/camel-trekking" component={CamelTrekking} /><Route path="/4x4-tours" component={FourByFourTours} />
     <Route path="/marrakech-tours" component={MarrakechTours} /><Route path="/fes-tours" component={FesTours} /><Route path="/agadir-tours" component={AgadirTours} /><Route path="/casablanca-tours" component={CasablancaTours} />
     <Route path="/day-trips" component={DayTrips} /><Route path="/merzouga-guide" component={MerzougaGuide} /><Route path="/merzouga-guide/:slug" component={MerzougaGuideTopic} /><Route path="/comparisons/:slug" component={ComparisonPage} /><Route path="/travel-info" component={TravelInfo} /><Route path="/travel-info/:slug" component={TravelInfoTopic} /><Route path="/faq" component={Faq} /><Route path="/blog" component={Blog} /><Route path="/blog/:slug" component={BlogPost} />

@@ -13,6 +13,7 @@
 // ─────────────────────────────────────────────────────────────────────────────
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'wouter';
+import { Layout } from '../components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { contactInfo } from '@/data/content';
 
@@ -116,6 +117,21 @@ export default function StudentTours() {
     { t: t('st_06_c6_t'), d: t('st_06_c6_d'), img: null, alt: '', w: 0, h: 0 },
   ];
 
+  // Where students travel — each place links to the canonical MGA page that
+  // already owns that destination's authority.
+  const places = [
+    { i: 1, to: '/destinations/marrakech', linkLabel: t('hub_marrakech_name') || 'Marrakech' },
+    { i: 2, to: '/fes-tours', linkLabel: t('hub_fes_name') || 'Fes' },
+    { i: 3, to: '/destinations/ait-ben-haddou', linkLabel: 'Aït Ben Haddou' },
+    { i: 4, to: '/destinations/dades-valley', linkLabel: t('st_wt_4_place') },
+    { i: 5, to: '/merzouga-guide', linkLabel: 'Merzouga' },
+    { i: 6, to: '/destinations/erg-chebbi', linkLabel: 'Erg Chebbi' },
+  ].map((p) => ({
+    ...p,
+    place: t(`st_wt_${p.i}_place`), subject: t(`st_wt_${p.i}_subject`),
+    exp: t(`st_wt_${p.i}_exp`), mean: t(`st_wt_${p.i}_mean`),
+  }));
+
   const journeys = [1, 2, 3].map((n) => ({
     days: t(`st_11_r${n}_days`), unit: t(`st_11_r${n}_unit`), title: t(`st_11_r${n}_title`),
     route: t(`st_11_r${n}_route`), themes: t(`st_11_r${n}_themes`),
@@ -142,7 +158,7 @@ export default function StudentTours() {
   };
 
   return (
-    <main>
+    <Layout>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* 01 — HERO ------------------------------------------------------- */}
@@ -282,6 +298,32 @@ export default function StudentTours() {
               style={{ borderColor: GOLD }}>
               {t('st_cta_learn')} →
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* 05b — WHERE STUDENTS TRAVEL --------------------------------------
+          PLACE → SUBJECT → EXPERIENCE → MEANING. Each entry carries the
+          student-learning context and links to the canonical MGA page that
+          already holds the destination authority — no duplication. */}
+      <section className="bg-background py-16 md:py-24">
+        <div className="container mx-auto px-4">
+          <h2 className="font-serif text-3xl md:text-5xl font-light text-foreground">{t('st_wt_h2')}</h2>
+          <p className="mt-4 text-muted-foreground max-w-2xl">{t('st_wt_intro')}</p>
+          <div className="mt-12 grid gap-x-12 gap-y-10 md:grid-cols-2">
+            {places.map((p) => (
+              <article key={p.place} className="border-t pt-6" style={{ borderColor: '#D8CFC0' }}>
+                <h3 className="font-serif text-xl md:text-2xl text-foreground">{p.place}</h3>
+                <p className="mt-1 text-[11px] uppercase" style={{ letterSpacing: '0.16em', color: GOLD }}>{p.subject}</p>
+                <p className="mt-4 text-sm text-muted-foreground leading-relaxed">{p.exp}</p>
+                <p className="mt-3 text-sm text-foreground leading-relaxed">{p.mean}</p>
+                <Link href={p.to}
+                  className="inline-flex items-center gap-1.5 mt-4 text-sm font-semibold text-foreground border-b pb-0.5 hover:opacity-70 transition"
+                  style={{ borderColor: GOLD }}>
+                  {t('st_wt_link')} {p.linkLabel} →
+                </Link>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -577,6 +619,6 @@ export default function StudentTours() {
           <p className="sr-only">{lang}</p>
         </div>
       </section>
-    </main>
+    </Layout>
   );
 }

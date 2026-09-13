@@ -797,6 +797,7 @@ function buildBlogArticleBody(slug: string, lang: Lang): string {
 
 const EXPERIENCE_PAGE_ROUTES: Record<string, { tours: string[]; destinations: string[] }> = {
   // Student Tours — a standalone university-travel experience, not a 25th tour.
+  '/student-tours/university-groups': { tours: [], destinations: [] },
   '/student-tours': { tours: ['3-day-sahara-marrakech', '5-day-imperial-cities', '7-day-imperial-cities-sahara-escape'], destinations: ['marrakech', 'ait-ben-haddou', 'merzouga', 'erg-chebbi', 'fes'] },
   '/desert-tours': { tours: ['3-day-sahara-marrakech', '7-day-imperial-cities-sahara-escape'], destinations: ['merzouga', 'erg-chebbi'] },
   '/luxury-camp': { tours: ['7-day-imperial-cities-sahara-escape', 'honeymoon-morocco'], destinations: ['merzouga', 'erg-chebbi'] },
@@ -824,6 +825,8 @@ function buildExperienceContent(rest: string, lang: Lang): string {
   // the hydrated one avoids an SPA/prerender heading mismatch.
   const heading = rest === '/student-tours'
     ? h1(tr(lang, 'st_h1'))
+    : rest === '/student-tours/university-groups'
+    ? h1(tr(lang, 'ug_h1'))
     : h1(meta.title.replace(/\s*—.*$/, '').trim() || meta.title);
   const intro = paragraph(meta.description);
   const tBlocks = cfg.tours.map((id) => getLocalizedTour(id, lang)).filter((t): t is NonNullable<typeof t> => Boolean(t)).map((t) => h2Link(`${SITE_URL}/${lang}/tours/${t.id}`, t.name) + paragraph(t.description ?? '') + paragraph(`${tr(lang, 'search_duration')}: ${t.duration}`) + ul(t.highlights)).join('');
@@ -844,11 +847,36 @@ function buildExperienceContent(rest: string, lang: Lang): string {
     <p><a href="${contactInfo.whatsapp}?text=${encodeURIComponent(tr(lang, 'tb_sub'))}">${escapeHtml(tr(lang, 'nav_book_whatsapp'))}</a></p>` : '';
   // Merzouga guide hub: "Plan with our guides" cards — mirrors <PlanWithGuides>
   // so the static HTML contains the same four guide links as the hydrated SPA.
+  // Contextual Student Tours backlink on the five most relevant hubs, so the
+  // hub is not an orphan in the internal-link graph.
+  const ST_BACKLINK_ROUTES = ['/desert-tours', '/merzouga-guide', '/marrakech-tours', '/fes-tours', '/destinations'];
+  const studentBacklink = ST_BACKLINK_ROUTES.includes(rest)
+    ? `\n    <p>${escapeHtml(tr(lang, 'st_backlink'))} ${link(`${SITE_URL}/${lang}/student-tours`, tr(lang, 'st_tours_label'))}</p>\n`
+    : '';
   const planWithGuides = rest === '/merzouga-guide' ? buildPlanWithGuidesHtml(lang) : '';
   // Student Tours: emit the positioning that matters for crawlers and for a
   // coordinator landing from search — group size, single-coordinator booking,
   // large-group caveat, learning themes and the FAQ. en+pt are authored; the
   // other locales resolve these keys to English by design.
+  // University Groups child page — coordinator/logistics intent. Distinct from
+  // the hub: group-size bands, what size affects, process and a dedicated FAQ.
+  const ugPage = rest === '/student-tours/university-groups' ? `
+    <p>${escapeHtml(tr(lang, 'ug_sub'))}</p>
+    <p>${escapeHtml(tr(lang, 'ug_intro'))}</p>
+    <h2>${escapeHtml(tr(lang, 'ug_sizes_h2'))}</h2>
+    <p>${escapeHtml(tr(lang, 'ug_sizes_intro'))}</p>
+    ${ul([1, 2, 3, 4, 5].map((n) => `${tr(lang, `ug_s${n}_t`)} — ${tr(lang, `ug_s${n}_d`)}`))}
+    <h2>${escapeHtml(tr(lang, 'ug_factors_h2'))}</h2>
+    ${ul([1, 2, 3, 4, 5, 6].map((n) => `${tr(lang, `ug_f${n}_t`)} — ${tr(lang, `ug_f${n}_d`)}`))}
+    <h2>${escapeHtml(tr(lang, 'ug_coord_h2'))}</h2>
+    <p>${escapeHtml(tr(lang, 'ug_coord_p'))}</p>
+    <h2>${escapeHtml(tr(lang, 'ug_process_h2'))}</h2>
+    ${ul([1, 2, 3, 4, 5, 6, 7].map((n) => `${tr(lang, `ug_p${n}_t`)} — ${tr(lang, `ug_p${n}_d`)}`))}
+    <h2>${escapeHtml(tr(lang, 'ug_faq_h2'))}</h2>
+    ${[1, 2, 3, 4, 5, 6, 7].map((n) => `<h3>${escapeHtml(tr(lang, `ug_q${n}`))}</h3><p>${escapeHtml(tr(lang, `ug_a${n}`))}</p>`).join('\n    ')}
+    <h2>${escapeHtml(tr(lang, 'ug_cta_h2'))}</h2>
+    <p>${escapeHtml(tr(lang, 'ug_cta_p'))}</p>
+    <p>${link(`${SITE_URL}/${lang}/student-tours`, tr(lang, 'ug_back'))}</p>` : '';
   const studentTours = rest === '/student-tours' ? `
     <p>${escapeHtml(tr(lang, 'st_groupsize'))}</p>
     <p>${escapeHtml(tr(lang, 'st_groupsize_large'))}</p>
@@ -862,6 +890,10 @@ function buildExperienceContent(rest: string, lang: Lang): string {
     <h2>${escapeHtml(tr(lang, 'st_05_h2'))}</h2>
     ${ul([1, 2, 3, 4, 5, 6, 7].map((n) => `${tr(lang, `st_05_n${n}`)} — ${tr(lang, `st_05_t${n}`)}: ${tr(lang, `st_05_x${n}`)}`))}
     <p>${escapeHtml(tr(lang, 'st_05_caption'))}</p>
+    <h2>${escapeHtml(tr(lang, 'st_wt_h2'))}</h2>
+    <p>${escapeHtml(tr(lang, 'st_wt_intro'))}</p>
+    ${ul([1, 2, 3, 4, 5, 6].map((n) => `${tr(lang, `st_wt_${n}_place`)} (${tr(lang, `st_wt_${n}_subject`)}) — ${tr(lang, `st_wt_${n}_exp`)} ${tr(lang, `st_wt_${n}_mean`)}`))}
+    <p>${link(`${SITE_URL}/${lang}/student-tours/university-groups`, tr(lang, 'ug_h1'))}</p>
     <h2>${escapeHtml(tr(lang, 'st_07_h2'))}</h2>
     <p>${escapeHtml(tr(lang, 'st_07_body'))}</p>
     ${ul([1, 2, 3, 4, 5, 6].map((n) => tr(lang, `st_07_th${n}`)))}
@@ -881,7 +913,7 @@ function buildExperienceContent(rest: string, lang: Lang): string {
     <h2>${escapeHtml(tr(lang, 'st_16_h2'))}</h2>
     <p>${escapeHtml(tr(lang, 'st_16_body'))}</p>
     <p><a href="${contactInfo.whatsapp}?text=${encodeURIComponent(tr(lang, 'st_16_cta'))}">${escapeHtml(tr(lang, 'st_16_cta'))}</a></p>` : '';
-  return heading + intro + studentTours + desertMoments + galleryLibPhotos + tBlocks + dBlocks + planWithGuides + tripBuilderCta;
+  return heading + intro + studentTours + ugPage + studentBacklink + desertMoments + galleryLibPhotos + tBlocks + dBlocks + planWithGuides + tripBuilderCta;
 }
 
 // ── Data-driven hub / comparison pages (Merzouga guide + comparisons) ───────────
@@ -1012,6 +1044,21 @@ function buildRoutes(lang: Lang): RouteEntry[] {
       // Student Tours carries Breadcrumb + FAQ + three example TouristTrips.
       // No second Organization node: the site-wide TravelAgency entity already
       // ships in the shared head and is referenced by @id here.
+      if (rest === '/student-tours/university-groups') {
+        const ugSchemas: Record<string, unknown>[] = [
+          buildBreadcrumb([
+            { name: tr(lang, 'nav_home'), path: '/' },
+            { name: tr(lang, 'nav_tours'), path: '/tours' },
+            { name: tr(lang, 'st_breadcrumb'), path: '/student-tours' },
+            { name: tr(lang, 'ug_breadcrumb'), path: rest },
+          ], lang) as unknown as Record<string, unknown>,
+          buildFaqSchema([1, 2, 3, 4, 5, 6, 7].map((n) => ({
+            question: tr(lang, `ug_q${n}`), answer: tr(lang, `ug_a${n}`),
+          }))) as unknown as Record<string, unknown>,
+        ];
+        add(rest, `${lang}${rest}/index.html`, () => buildExperienceContent(rest, lang), ugSchemas);
+        continue;
+      }
       const schemas: Record<string, unknown>[] = rest === '/student-tours'
         ? ([
             buildBreadcrumb([
