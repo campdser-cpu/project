@@ -1788,6 +1788,521 @@
           "answer": "De tour is opgezet om in Fes te eindigen, met op verzoek een terugreis naar Casablanca of aansluitend vervoer."
         }
       ]
+    },
+    "casablanca-5-day": {
+      "name": "5-daagse woestijnroute Casablanca–Merzouga–Fes",
+      "duration": "5 dagen / 4 nachten",
+      "category": "Privé · Alleen op aanvraag",
+      "highlights": [
+        "De Hassan II-moskee in Casablanca",
+        "Het keizerlijke Meknès, Volubilis en Fes",
+        "Ifrane en de cederbossen van de Midden-Atlas",
+        "De Zizvallei en Merzouga",
+        "Kameeltocht bij zonsondergang en een nacht in het woestijnkamp in Erg Chebbi"
+      ],
+      "description": "Een privéroute die vanuit Casablanca oostwaarts naar Fes voert en vervolgens zuidwaarts de Sahara in, met een nacht tussen de duinen van Erg Chebbi voordat u terugkeert naar Fes. De reis combineert de keizerlijke steden en de Romeinse opgravingen van Volubilis met de cederbossen van de Midden-Atlas, de palmrijke Zizvallei en een kameeltocht bij zonsondergang in Merzouga. De route wordt alleen op aanvraag aangeboden, met details die rond uw reisdata worden bevestigd.",
+      "routeCaption": "Casablanca → Fes → Meknès & Volubilis → Midden-Atlas → Merzouga & Erg Chebbi → Fes.",
+      "itineraryDays": [
+        {
+          "title": "Casablanca → Meknès → Volubilis → Fes",
+          "desc": "U verlaat Casablanca na een bezoek aan de Hassan II-moskee, bezoekt het keizerlijke Meknès en de Romeinse ruïnes van Volubilis, en komt aan in Fes voor de nacht.",
+          "stops": [
+            "Hassan II-moskee",
+            "Meknès",
+            "Volubilis",
+            "Overnachting: Fes"
+          ]
+        },
+        {
+          "title": "Fes → Ifrane → Midden-Atlas → Midelt → Merzouga",
+          "desc": "U steekt via Ifrane de cederbossen van de Midden-Atlas over, pauzeert in Midelt, volgt de oases van de Zizvallei en bereikt Merzouga aan de rand van Erg Chebbi.",
+          "stops": [
+            "Ifrane",
+            "Cederbos",
+            "Midelt",
+            "Zizvallei",
+            "Overnachting: Merzouga"
+          ]
+        },
+        {
+          "title": "Erg Chebbi — kameeltocht en woestijnkamp",
+          "desc": "Een dag tussen de duinen, met als afsluiting een kameelrit bij zonsondergang Erg Chebbi in en een nacht in een woestijnkamp met diner en muziek.",
+          "stops": [
+            "Erg Chebbi",
+            "Kameeltocht bij zonsondergang",
+            "Nacht in het woestijnkamp"
+          ]
+        },
+        {
+          "title": "Merzouga → Rissani → Zizvallei → regio Midelt",
+          "desc": "U kijkt naar de zonsopgang boven de duinen, struint over de souk van Rissani en reist daarna noordwaarts door de Zizvallei naar uw overnachting in de regio Midelt.",
+          "stops": [
+            "Zonsopgang boven Erg Chebbi",
+            "Rissani",
+            "Zizvallei",
+            "Overnachting: omgeving Midelt"
+          ]
+        },
+        {
+          "title": "Midelt → Ifrane → Fes",
+          "desc": "U klimt door de Midden-Atlas en Ifrane om de reis in Fes af te sluiten, waar wij desgewenst het vervolgvervoer regelen.",
+          "stops": [
+            "Midden-Atlas",
+            "Ifrane",
+            "Einde: Fes"
+          ]
+        }
+      ],
+      "included": [
+        "Privévoertuig met airconditioning",
+        "Professionele Engelssprekende chauffeur",
+        "Brandstof en tolgelden",
+        "Geselecteerde gastenverblijven en een woestijnkamp volgens het bevestigde reisschema",
+        "Ontbijt en diner zoals bevestigd",
+        "Kameeltocht bij zonsondergang en een nacht in het woestijnkamp bij Erg Chebbi"
+      ],
+      "excluded": [
+        "Internationale vluchten",
+        "Lunches en dranken",
+        "Toegangskosten",
+        "Fooien en persoonlijke uitgaven"
+      ],
+      "faq": [
+        {
+          "question": "Is dit een tour vanuit Casablanca met een vaste prijs?",
+          "answer": "Nee, de tour is alleen op aanvraag omdat er voor deze route geen geverifieerde publieke prijs is gepubliceerd. Betalingen en inbegrepen diensten worden vóór de boeking bevestigd."
+        },
+        {
+          "question": "Waar eindigt de route?",
+          "answer": "De route is opgezet om op dag vijf in Fes te eindigen, al kunnen wij een terugreis naar Casablanca regelen."
+        },
+        {
+          "question": "Is de overnachting in de woestijn inbegrepen?",
+          "answer": "Ja, een kameeltocht bij zonsondergang en een nacht in een woestijnkamp bij Erg Chebbi maken deel uit van het voorgestelde reisschema."
+        }
+      ]
+    },
+    "casablanca-8-day": {
+      "name": "8-daagse grote rondreis Casablanca – keizerlijke steden & Sahara",
+      "duration": "8 dagen / 7 nachten",
+      "category": "Privé · Alleen op aanvraag",
+      "highlights": [
+        "De Hassan II-moskee in Casablanca en de hoofdstedelijke bezienswaardigheden van Rabat",
+        "Chefchaouen, de Blauwe Stad, en Volubilis",
+        "Een dag met gids in Fes",
+        "Ifrane en de cederbossen van de Midden-Atlas",
+        "Merzouga, Erg Chebbi en een nacht in het woestijnkamp",
+        "De kloven van Todra en Dades en de kasbahs van Ouarzazate",
+        "De paleizen van Marrakech en Jemaa el-Fnaa"
+      ],
+      "description": "Een privérondreis van acht dagen die begint en eindigt in Casablanca en de keizerlijke steden, de Blauwe Stad, de Sahara en de Rode Stad met elkaar verbindt. Tot de hoogtepunten behoren Rabat, Chefchaouen, een dag met gids in Fes, een nacht tussen de duinen van Erg Chebbi, de kloven van Todra en Dades, de ksar van Aït Ben Haddou en de bedrijvigheid van Marrakech. Deze uitgebreide reis wordt alleen op aanvraag aangeboden, waarbij elke overnachting en elke inbegrepen dienst rond uw reisdata wordt bevestigd.",
+      "routeCaption": "Casablanca → Rabat → Chefchaouen → Fes → Midden-Atlas → Merzouga → Dades & Todra → Marrakech → Casablanca. Een complete rondreis door het noorden en zuiden van Marokko.",
+      "itineraryDays": [
+        {
+          "title": "Casablanca → Rabat → Chefchaouen",
+          "desc": "U bezoekt de Hassan II-moskee en reist daarna via de kasbah aan de Atlantische Oceaan en de Hassan-toren in Rabat naar de blauwgekalkte straatjes van Chefchaouen voor de overnachting.",
+          "stops": [
+            "Hassan II-moskee",
+            "Rabat",
+            "Chefchaouen",
+            "Overnachting: Chefchaouen"
+          ]
+        },
+        {
+          "title": "Chefchaouen → Volubilis → Meknès → Fes",
+          "desc": "U geniet van het ochtendblauw van Chefchaouen, bezoekt de Romeinse ruïnes van Volubilis en de poort Bab Mansour in Meknès, en reist daarna verder naar Fes.",
+          "stops": [
+            "Chefchaouen",
+            "Volubilis",
+            "Meknès",
+            "Overnachting: Fes"
+          ]
+        },
+        {
+          "title": "Fes met gids — medina, leerlooierijen en souks",
+          "desc": "Een dag met gids in Fes, langs de koninklijke poorten, Fes el-Bali rond de Universiteit Al Quaraouiyine, de Chouara-leerlooierij en de ambachtssouks.",
+          "stops": [
+            "Fes el-Bali",
+            "Al Quaraouiyine",
+            "Chouara-leerlooierij",
+            "Poorten van het Koninklijk Paleis"
+          ]
+        },
+        {
+          "title": "Fes → Ifrane → Midden-Atlas → Zizvallei → Merzouga",
+          "desc": "U steekt via Ifrane de cederbossen van de Midden-Atlas over en volgt de palmoases van de Zizvallei, om aan het eind van de dag in Merzouga aan te komen.",
+          "stops": [
+            "Ifrane",
+            "Cederbos",
+            "Zizvallei",
+            "Overnachting: Merzouga"
+          ]
+        },
+        {
+          "title": "Erg Chebbi — kameeltocht en woestijnkamp",
+          "desc": "Een dag bij de grote duinen, met als afsluiting een kameelrit bij zonsondergang Erg Chebbi in en een nacht in een woestijnkamp.",
+          "stops": [
+            "Erg Chebbi",
+            "Kameeltocht bij zonsondergang",
+            "Nacht in het woestijnkamp"
+          ]
+        },
+        {
+          "title": "Merzouga → Rissani → Todra-kloof → Dadesvallei",
+          "desc": "Zonsopgang boven de duinen en een bezoek aan de souk van Rissani, gevolgd door de enorme wanden van de Todra-kloof en de rotsformaties van de Dadesvallei, waar u overnacht.",
+          "stops": [
+            "Zonsopgang boven Erg Chebbi",
+            "Rissani",
+            "Todra-kloof",
+            "Overnachting: Dadesvallei"
+          ]
+        },
+        {
+          "title": "Dades → Skoura → Aït Ben Haddou → Marrakech",
+          "desc": "U passeert de oase van Skoura en Ouarzazate, verkent de ksar van Aït Ben Haddou, klimt over de Hoge Atlas en bereikt Marrakech tegen de avond.",
+          "stops": [
+            "Skoura",
+            "Aït Ben Haddou",
+            "Tizi n'Tichka",
+            "Overnachting: Marrakech"
+          ]
+        },
+        {
+          "title": "Ochtend in Marrakech → Casablanca",
+          "desc": "Een laatste ochtend in Marrakech, gevolgd door de terugreis over de snelweg naar Casablanca om de rondreis te voltooien, of rechtstreeks naar de luchthaven zoals afgesproken.",
+          "stops": [
+            "Marrakech",
+            "Kustweg",
+            "Einde: Casablanca"
+          ]
+        }
+      ],
+      "included": [
+        "Privévoertuig met airconditioning",
+        "Professionele Engelssprekende chauffeur",
+        "Brandstof en tolgelden",
+        "Geselecteerde riads, gastenverblijven en een woestijnkamp volgens het bevestigde reisschema",
+        "Ontbijt en diner zoals bevestigd",
+        "Kameeltocht bij zonsondergang en een nacht in het woestijnkamp bij Erg Chebbi",
+        "Officiële lokale gids in Fes en Marrakech"
+      ],
+      "excluded": [
+        "Internationale vluchten",
+        "Lunches en dranken",
+        "Toegangskosten",
+        "Fooien en persoonlijke uitgaven"
+      ],
+      "faq": [
+        {
+          "question": "Is dit een tour met een vaste prijs?",
+          "answer": "Nee, de tour is alleen op aanvraag omdat er voor deze uitgebreide achtdaagse rondreis geen geverifieerde publieke prijs is gepubliceerd. Het totaalbedrag wordt rond uw reisdata bevestigd."
+        },
+        {
+          "question": "Waar begint en eindigt de rondreis?",
+          "answer": "De rondreis begint en eindigt in Casablanca, wat handig is voor reizigers die op deze stad aan- en uitvliegen."
+        },
+        {
+          "question": "Zijn de stadsdagen met gids inbegrepen?",
+          "answer": "Ja, officiële lokale gidsen voor de culturele dagen in Fes en Marrakech maken deel uit van het voorgestelde reisschema."
+        }
+      ]
+    },
+    "fes-4-day": {
+      "name": "4-daagse Sahara-route van Fes naar Merzouga",
+      "duration": "4 dagen / 3 nachten",
+      "category": "Privé · Alleen op aanvraag",
+      "highlights": [
+        "Ifrane en de cederbossen van de Midden-Atlas",
+        "De palmenrijke corridor van de Zizvallei",
+        "Merzouga en Erg Chebbi",
+        "Kameeltocht bij zonsondergang en een nacht in het woestijnkamp",
+        "De souk van Rissani en de fossielen van Erfoud"
+      ],
+      "description": "Een privérondreis van vier dagen vanuit Fes naar de Sahara en weer terug. De weg zuidwaarts voert door de cederbossen en het bergstadje Ifrane, daalt af door de palmrijke Zizvallei en bereikt Merzouga en de grote duinen van Erg Chebbi voor een kameeltocht bij zonsondergang en een nacht in de woestijn, voordat u terugkeert naar Fes. Voor deze route bestaat geen geverifieerde publieke prijs of vaste hotellijst; de reis wordt daarom alleen op aanvraag aangeboden, met details die rond uw reisdata worden bevestigd.",
+      "routeCaption": "Fes → Ifrane → Midden-Atlas → Zizvallei → Merzouga & Erg Chebbi → terug naar Fes.",
+      "itineraryDays": [
+        {
+          "title": "Fes → Ifrane → Midden-Atlas → Midelt → Zizvallei → Merzouga",
+          "desc": "U reist zuidwaarts via Ifrane en het cedergebied van de Midden-Atlas, pauzeert in Midelt, volgt de oases van de Zizvallei en komt aan in Merzouga voor de nacht.",
+          "stops": [
+            "Ifrane",
+            "Cederbos",
+            "Midelt",
+            "Zizvallei",
+            "Overnachting: Merzouga"
+          ]
+        },
+        {
+          "title": "Merzouga en Erg Chebbi — kameeltocht en nacht in de woestijn",
+          "desc": "U verkent de duinen en de rand van Erg Chebbi en trekt bij zonsondergang per kameel de duinen in voor een nacht in een woestijnkamp met diner en muziek.",
+          "stops": [
+            "Erg Chebbi",
+            "Kameeltocht bij zonsondergang",
+            "Nacht in het woestijnkamp"
+          ]
+        },
+        {
+          "title": "Merzouga → Rissani → Erfoud → regio Midelt",
+          "desc": "U vangt de zonsopgang boven de duinen, bezoekt de souk van Rissani en de fossielenateliers van Erfoud, en reist daarna noordwaarts door de Zizvallei naar uw overnachting in de regio Midelt.",
+          "stops": [
+            "Zonsopgang boven Erg Chebbi",
+            "Rissani",
+            "Erfoud",
+            "Overnachting: omgeving Midelt"
+          ]
+        },
+        {
+          "title": "Midelt → Ifrane → Fes",
+          "desc": "U klimt terug door de Midden-Atlas en Ifrane om de reis in Fes af te sluiten, waar de tour eindigt.",
+          "stops": [
+            "Ifrane",
+            "Midden-Atlas",
+            "Einde: Fes"
+          ]
+        }
+      ],
+      "included": [
+        "Privévoertuig met airconditioning",
+        "Professionele Engelssprekende chauffeur",
+        "Brandstof en tolgelden",
+        "Geselecteerde gastenverblijven en een woestijnkamp volgens het bevestigde reisschema",
+        "Ontbijt en diner zoals bevestigd",
+        "Kameeltocht bij zonsondergang en een nacht in het woestijnkamp bij Erg Chebbi"
+      ],
+      "excluded": [
+        "Internationale vluchten",
+        "Lunches en dranken",
+        "Toegangskosten",
+        "Fooien en persoonlijke uitgaven"
+      ],
+      "faq": [
+        {
+          "question": "Is dit een tour vanuit Fes met een vaste prijs?",
+          "answer": "Nee, de tour is alleen op aanvraag omdat er voor deze vierdaagse route van Fes naar de Sahara geen geverifieerde publieke prijs is gepubliceerd. Betalingen en inbegrepen diensten worden vóór de boeking bevestigd."
+        },
+        {
+          "question": "Sluit Fes aan op de route naar Merzouga?",
+          "answer": "Ja. Het Marokkaanse nationale bureau voor toerisme presenteert Fes als toegangspoort tot de Sahara en documenteert de verbinding Fes–Errachidia–Midelt–Merzouga."
+        },
+        {
+          "question": "Keert de reis terug naar Fes?",
+          "answer": "De standaardroute is een rondreis die weer in Fes eindigt, maar een enkele reis met een ander eindpunt kan in uw offerte worden geregeld."
+        }
+      ]
+    },
+    "fes-5-day": {
+      "name": "5-daagse reis Fes–Marrakech via Merzouga, Dades & de Atlas",
+      "duration": "5 dagen / 4 nachten",
+      "category": "Privé · Alleen op aanvraag",
+      "highlights": [
+        "Ifrane en de cederbossen van de Midden-Atlas",
+        "De Zizvallei en de duinen van Erg Chebbi",
+        "Kameeltocht bij zonsondergang en een nacht in het woestijnkamp",
+        "De Todra-kloof en de Dadesvallei",
+        "Aït Ben Haddou en de Hoge Atlas richting Marrakech"
+      ],
+      "description": "Een privéreis in één richting die Fes en Marrakech verbindt via het mooiste van het zuiden. De route daalt door de met ceders omzoomde Midden-Atlas naar de duinen van Erg Chebbi voor een nacht in de woestijn, volgt daarna de kloven van Todra en Dades en steekt de Hoge Atlas over langs Aït Ben Haddou om in Marrakech te eindigen. De reis wordt alleen op aanvraag aangeboden, met details die rond uw reisdata worden bevestigd.",
+      "routeCaption": "Fes → Ifrane → Midden-Atlas → Merzouga → Todra & Dades → Aït Ben Haddou → Marrakech. Een enkele reis van Fes naar de Rode Stad.",
+      "itineraryDays": [
+        {
+          "title": "Fes → Ifrane → Midden-Atlas → Zizvallei → Merzouga",
+          "desc": "U reist zuidwaarts via Ifrane en de cederbossen van de Midden-Atlas, volgt de oases van de Zizvallei en komt aan in Merzouga voor de nacht.",
+          "stops": [
+            "Ifrane",
+            "Cederbos in de Midden-Atlas",
+            "Zizvallei",
+            "Overnachting: Merzouga"
+          ]
+        },
+        {
+          "title": "Merzouga en Erg Chebbi — kameeltocht en nacht in de woestijn",
+          "desc": "U brengt de ochtend door tussen de duinen en trekt bij zonsondergang per kameel Erg Chebbi in voor een nacht in een woestijnkamp met diner en Berbermuziek.",
+          "stops": [
+            "Erg Chebbi",
+            "Kameeltocht bij zonsondergang",
+            "Nacht in het woestijnkamp"
+          ]
+        },
+        {
+          "title": "Merzouga → Rissani → Todra-kloof → Dadesvallei",
+          "desc": "U kijkt naar de zonsopgang, doet de souk van Rissani aan en reist daarna westwaarts door de Todra-kloof naar het markante rotslandschap van de Dadesvallei, waar u overnacht.",
+          "stops": [
+            "Zonsopgang boven Erg Chebbi",
+            "Rissani",
+            "Todra-kloof",
+            "Overnachting: Dadesvallei"
+          ]
+        },
+        {
+          "title": "Dades → Skoura → Aït Ben Haddou → Marrakech",
+          "desc": "U passeert de palmbossen van Skoura en Ouarzazate, bewondert de ksar van Aït Ben Haddou, steekt via de Tizi n'Tichka-pas de Hoge Atlas over en arriveert in Marrakech.",
+          "stops": [
+            "Skoura",
+            "Aït Ben Haddou",
+            "Tizi n'Tichka",
+            "Overnachting: Marrakech"
+          ]
+        },
+        {
+          "title": "Een vrije ochtend in Marrakech",
+          "desc": "U geniet van een ontspannen ochtend in een riad in Marrakech, met tijd voor de souks of Jemaa el-Fnaa voordat u verder reist.",
+          "stops": [
+            "Marrakech",
+            "Einde: Marrakech"
+          ]
+        }
+      ],
+      "included": [
+        "Privévoertuig met airconditioning",
+        "Professionele Engelssprekende chauffeur",
+        "Brandstof en tolgelden",
+        "Geselecteerde riads, gastenverblijven en een woestijnkamp volgens het bevestigde reisschema",
+        "Ontbijt en diner zoals bevestigd",
+        "Kameeltocht bij zonsondergang en een nacht in het woestijnkamp bij Erg Chebbi"
+      ],
+      "excluded": [
+        "Internationale vluchten",
+        "Lunches en dranken",
+        "Toegangskosten",
+        "Fooien en persoonlijke uitgaven"
+      ],
+      "faq": [
+        {
+          "question": "Is dit een tour met een vaste prijs?",
+          "answer": "Nee, de tour is alleen op aanvraag omdat er voor deze route van Fes naar Marrakech geen geverifieerde publieke prijs is gepubliceerd. Het totaalbedrag wordt rond uw reisdata bevestigd."
+        },
+        {
+          "question": "Waar eindigt de route?",
+          "answer": "De route is opgezet om in Marrakech te eindigen, wat goed uitkomt voor reizigers die vanuit deze stad terugvliegen; andere afspraken zijn mogelijk."
+        },
+        {
+          "question": "Is de overnachting in de woestijn inbegrepen?",
+          "answer": "Ja, een kameeltocht bij zonsondergang en een nacht in een kamp bij Erg Chebbi maken deel uit van het voorgestelde reisschema."
+        }
+      ]
+    },
+    "fes-8-day": {
+      "name": "8-daagse grote rondreis vanuit Fes: keizerlijke steden & Sahara",
+      "duration": "8 dagen / 7 nachten",
+      "category": "Privé · Alleen op aanvraag",
+      "highlights": [
+        "Een dag met gids in Fes en de keizerlijke stad Meknès",
+        "De Romeinse ruïnes van Volubilis",
+        "Ifrane en de cederbossen van de Midden-Atlas",
+        "Merzouga, Erg Chebbi en een nacht in het woestijnkamp",
+        "De Todra-kloof, de Dadesvallei en Aït Ben Haddou",
+        "De paleizen en souks van Marrakech"
+      ],
+      "description": "Een privéreis van acht dagen die begint in de keizerlijke stad Fes, Meknès, Volubilis en de cederbossen van de Midden-Atlas aandoet, een nacht tussen de duinen van Erg Chebbi doorbrengt, de kloven van Todra en Dades volgt en ten slotte de Hoge Atlas oversteekt om in Marrakech te eindigen. De reis wordt aangeboden als een reisschema op aanvraag, waarbij elke overnachting en elke inbegrepen dienst rond uw reisdata wordt bevestigd.",
+      "routeCaption": "Fes → Meknès & Volubilis → Midden-Atlas → Merzouga → Todra & Dades → Aït Ben Haddou → Marrakech. Een grote achtdaagse tocht door het keizerlijke en het woestijnrijke Marokko.",
+      "itineraryDays": [
+        {
+          "title": "Fes met gids — medina, leerlooierijen en souks",
+          "desc": "Een dag met gids in Fes: de koninklijke poorten, de medina van Fes el-Bali rond de Universiteit Al Quaraouiyine, de Chouara-leerlooierij en het ambacht van de oude souks.",
+          "stops": [
+            "Fes el-Bali",
+            "Universiteit Al Quaraouiyine",
+            "Chouara-leerlooierij",
+            "Poorten van het Koninklijk Paleis"
+          ]
+        },
+        {
+          "title": "Fes → Meknès → Volubilis → Midden-Atlas",
+          "desc": "U bezoekt de keizerlijke monumenten van Meknès en de Romeinse ruïnes van Volubilis en reist daarna zuidwaarts via Ifrane en de cederbossen naar uw overnachting in de hoge Midden-Atlas.",
+          "stops": [
+            "Bab Mansour-poort",
+            "Romeinse ruïnes van Volubilis",
+            "Ifrane",
+            "Overnachting: Midden-Atlas"
+          ]
+        },
+        {
+          "title": "Midden-Atlas → Zizvallei → Merzouga",
+          "desc": "U daalt af door de palmrijke Zizvallei naar Merzouga, met tijd om de rand van Erg Chebbi te ervaren voordat de avond valt.",
+          "stops": [
+            "Zizvallei",
+            "Regio Errachidia",
+            "Merzouga",
+            "Overnachting: Merzouga"
+          ]
+        },
+        {
+          "title": "Erg Chebbi — kameeltocht en woestijnkamp",
+          "desc": "Een dag rond de grote duinen, met als hoogtepunt een kameeltocht bij zonsondergang en een nacht in een woestijnkamp met diner en muziek.",
+          "stops": [
+            "Erg Chebbi",
+            "Kameeltocht bij zonsondergang",
+            "Nacht in het woestijnkamp"
+          ]
+        },
+        {
+          "title": "Merzouga → Todra-kloof → Dadesvallei",
+          "desc": "Na de zonsopgang boven de duinen doet u Rissani aan, wandelt u langs de immense wanden van de Todra-kloof en sluit u de dag af tussen de rotswanden van de Dadesvallei.",
+          "stops": [
+            "Zonsopgang boven Erg Chebbi",
+            "Rissani",
+            "Todra-kloof",
+            "Overnachting: Dadesvallei"
+          ]
+        },
+        {
+          "title": "Dades → Skoura → Aït Ben Haddou → Marrakech",
+          "desc": "U passeert de oase van Skoura en Ouarzazate, verkent Aït Ben Haddou, klimt over de Hoge Atlas en bereikt Marrakech voor de nacht.",
+          "stops": [
+            "Skoura",
+            "Aït Ben Haddou",
+            "Tizi n'Tichka",
+            "Overnachting: Marrakech"
+          ]
+        },
+        {
+          "title": "Marrakech met gids — paleizen, tuinen en Jemaa el-Fnaa",
+          "desc": "Een volledige dag met gids in de Rode Stad, van het Bahia-paleis en de Majorelle-tuin tot de souks en het avondleven op Jemaa el-Fnaa.",
+          "stops": [
+            "Bahia-paleis",
+            "Majorelle-tuin",
+            "Koutoubia",
+            "Jemaa el-Fnaa"
+          ]
+        },
+        {
+          "title": "Vrije ochtend in Marrakech → vervolgreis",
+          "desc": "Een ontspannen ochtend in Marrakech voordat u verder reist, waarbij wij desgewenst helpen bij het regelen van transfers.",
+          "stops": [
+            "Marrakech",
+            "Einde: Marrakech"
+          ]
+        }
+      ],
+      "included": [
+        "Privévoertuig met airconditioning",
+        "Professionele Engelssprekende chauffeur",
+        "Brandstof en tolgelden",
+        "Geselecteerde riads, gastenverblijven en een woestijnkamp volgens het bevestigde reisschema",
+        "Ontbijt en diner zoals bevestigd",
+        "Kameeltocht bij zonsondergang en een nacht in het woestijnkamp bij Erg Chebbi",
+        "Officiële lokale gids in Fes en Marrakech"
+      ],
+      "excluded": [
+        "Internationale vluchten",
+        "Lunches en dranken",
+        "Toegangskosten",
+        "Fooien en persoonlijke uitgaven"
+      ],
+      "faq": [
+        {
+          "question": "Is dit een tour vanuit Fes met een vaste prijs?",
+          "answer": "Nee, de tour is alleen op aanvraag omdat er voor deze achtdaagse route geen geverifieerde publieke prijs is gepubliceerd. De details worden rond uw reisdata bevestigd."
+        },
+        {
+          "question": "Waar eindigt de tour?",
+          "answer": "De route is opgezet om in Marrakech te eindigen, al kunnen wij een terugreis naar Fes of een ander eindpunt regelen."
+        },
+        {
+          "question": "Zijn de stadsdagen met gids inbegrepen?",
+          "answer": "Ja, officiële lokale gidsen voor de culturele dagen in Fes en Marrakech maken deel uit van het voorgestelde reisschema."
+        }
+      ]
     }
   }
 }
