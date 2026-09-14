@@ -55,6 +55,54 @@
     {
       "question": "Kunnen jullie rekening houden met dieetwensen?",
       "answer": "Absoluut — vegetarische, veganistische, glutenvrije, halal- en allergievriendelijke menu’s worden allemaal verzorgd. Laat het ons weten bij uw boeking."
+    },
+    {
+      "question": "Wat is inbegrepen bij uw woestijnreizen?",
+      "answer": "Al onze woestijnreizen omvatten privévervoer met airconditioning, een Engelstalige chauffeur, verblijf in de luxeklasse, dagelijks ontbijt en diner, een kamelentocht in Erg Chebbi, één nacht in een luxe woestijnkamp en het ophalen en terugbrengen bij het hotel. Internationale vluchten, lunches en optionele activiteiten zijn doorgaans niet inbegrepen."
+    },
+    {
+      "question": "Wat moeten reizigers meenemen naar het woestijnkamp in de Sahara?",
+      "answer": "Neem warme kleding in lagen mee voor de koude woestijnnachten, plus een sjaal, zonnebrandcrème, een zonnebril, een zaklamp, comfortabele schoenen en een powerbank. Slaapzakken voor het woestijnkamp verzorgen wij. Zwemkleding is handig in enkele luxekampen met zwembad."
+    },
+    {
+      "question": "Hoe bereikt u Merzouga en de Sahara?",
+      "answer": "De rit van Marrakech naar Merzouga duurt ongeveer 9 tot 10 uur door het Hoge Atlasgebergte. Vanuit Fes is het ruwweg 7 tot 8 uur. Wij regelen privétransfers met comfortabele stops. Het gebruikelijkst is vliegen naar Marrakech of Fes."
+    },
+    {
+      "question": "Is een kamelentocht geschikt voor beginners?",
+      "answer": "Ja — onze kamelentochten verlopen rustig en zijn geschikt voor elk niveau. De kamelen zijn goed getraind en de tochten duren bij zonsondergang doorgaans één tot twee uur. Wie liever niet rijdt, kan met een 4x4 naar het kamp worden gebracht."
+    },
+    {
+      "question": "Hoe zien de woestijnkampen eruit?",
+      "answer": "Onze luxe woestijnkampen beschikken over echte bedden, eigen badkamers en elegante tenten in Berberstijl onder de sterren. Het diner wordt geserveerd rond het kampvuur met live Berbermuziek. Een comfortabele, authentieke en onvergetelijke ervaring."
+    },
+    {
+      "question": "Kunt u een reis tijdens de ramadan organiseren?",
+      "answer": "Ja — Marokko tijdens de ramadan is een bijzondere culturele ervaring. Sommige restaurants zijn overdag gesloten, maar onze gidsen gaan daar soepel mee om. De avondmaaltijden en de levendige nachtmarkten maken deze periode tot een uniek moment voor een bezoek."
+    },
+    {
+      "question": "Wat is het annuleringsbeleid?",
+      "answer": "Kosteloos annuleren tot 7 dagen voor uw reis, met volledige terugbetaling. Bij annulering binnen 7 dagen kan 50% in rekening worden gebracht. Bij niet verschijnen vindt geen terugbetaling plaats. Wij raden een reisverzekering aan zodat u volledig zorgeloos op pad gaat."
+    },
+    {
+      "question": "Heb ik een reisverzekering nodig?",
+      "answer": "Wij raden een reisverzekering sterk aan voor elke reis naar Marokko. Die zou medische noodgevallen, annulering van de reis en verlies van bagage moeten dekken. Desgewenst adviseren wij u graag over passende polissen."
+    },
+    {
+      "question": "Zijn de reizen geschikt voor kinderen en oudere reizigers?",
+      "answer": "Zeker. Onze privéreizen zijn volledig aan te passen aan gezinnen en oudere gasten. Het tempo is flexibel, kamelentochten zijn optioneel en stukken te voet kunnen worden vervangen door 4x4-transfers. Wij hebben ervaring met alle leeftijden."
+    },
+    {
+      "question": "Hoe ver van tevoren kunt u het beste boeken?",
+      "answer": "Voor het hoogseizoen (maart tot mei en september tot november) raden wij aan minstens 4 tot 6 weken van tevoren te boeken. Voor woestijnreizen in de winter of bijzondere data is 2 tot 3 maanden ideaal. Last-minute boekingen zijn soms mogelijk — vraag het ons gerust."
+    },
+    {
+      "question": "Welke voertuigen gebruikt u?",
+      "answer": "Wij rijden met moderne voertuigen met airconditioning, van personenauto's voor 2 tot 4 gasten tot ruime minibussen voor grotere groepen. Alle voertuigen worden goed onderhouden en bestuurd door professionele chauffeurs met de juiste vergunning."
+    },
+    {
+      "question": "Verzorgt u het ophalen en terugbrengen naar de luchthaven?",
+      "answer": "Ja — al onze reizen omvatten het kosteloos ophalen en terugbrengen vanaf de luchthaven of het hotel in Marrakech, Fes en andere grote steden. Uw chauffeur staat klaar met een naambordje en helpt u met de bagage."
     }
   ],
   "destinations": {
@@ -139,7 +187,9 @@
         "Kameeltochten",
         "Luxe woestijnkampen",
         "Sterrenkijken",
-        "Berberdorpen"
+        "Berberdorpen",
+        "Zonsopgang boven de duinen",
+        "Wekelijkse markt van Rissani"
       ]
     },
     "erg-chebbi": {
@@ -153,7 +203,10 @@
         "Dune Boarding",
         "Berbermuziekavonden",
         "4x4-woestijnrit",
-        "Diner in een luxekamp"
+        "Diner in een luxekamp",
+        "Sterren kijken",
+        "Quadrijden",
+        "Gnawa-muziek in Khamlia"
       ]
     },
     "ouarzazate": {
@@ -167,7 +220,8 @@
         "Taourirt Kasbah",
         "Aït Ben Haddou (30min)",
         "Draa Valley",
-        "Fint Oasis"
+        "Fint Oasis",
+        "Route van de Kasbahs"
       ]
     },
     "ait-ben-haddou": {
@@ -181,7 +235,8 @@
         "Filmlocatie-tour",
         "Fotografie bij zonsopgang",
         "Bezoeken aan Berberfamilies",
-        "Aardewerkworkshops"
+        "Aardewerkworkshops",
+        "Uitzicht vanaf de graanschuur op de heuvel"
       ]
     },
     "zagora": {
@@ -209,7 +264,8 @@
         "Rotsen van Monkey Fingers",
         "Rozenfestival (mei)",
         "Eeuwenoude kasbahs",
-        "Trektochten door de vallei"
+        "Trektochten door de vallei",
+        "Uitzicht op de haarspeldbochten"
       ]
     },
     "todra-gorge": {
@@ -223,7 +279,8 @@
         "Wandeling door de kloof",
         "Berberse gastenverblijven",
         "Fotografie",
-        "Zonsopgangsuitzichten"
+        "Zonsopgangsuitzichten",
+        "Rotswanden van 300 m hoog"
       ]
     },
     "skoura": {
@@ -279,7 +336,8 @@
         "Plaza Uta el-Hammam",
         "Bronnen van Ras el-Ma",
         "Watervallen van Akchour",
-        "Wandelingen in het Rifgebergte"
+        "Wandelingen in het Rifgebergte",
+        "Uitzichtpunt Spaanse Moskee"
       ]
     },
     "imlil": {
@@ -349,7 +407,8 @@
         "Gnawa-muziek",
         "Kitesurfen",
         "Zeevruchten aan de haven",
-        "Joodse wijk Mellah"
+        "Joodse wijk Mellah",
+        "Atlantische stranden"
       ]
     },
     "agadir": {
@@ -3152,6 +3211,50 @@
           "answer": "Dit is een reisschema op aanvraag. Wij bevestigen uw reisdata, de groepsgrootte en de accommodatiekeuzes voordat wij de definitieve prijs bevestigen."
         }
       ]
+    }
+  },
+  "blog": {
+    "merzouga-luxury-desert-camp-guide": {
+      "title": "De ultieme gids voor luxueuze woestijnkampen in Merzouga",
+      "excerpt": "Van privétenten met eigen badkamer tot gastronomische diners onder de Melkweg — alles wat u moet weten over luxe glamping in de Sahara.",
+      "alt": "Luxe woestijnkamp met privétenten bij zonsondergang nabij Merzouga, Marokko",
+      "canonicalTitle": "Luxe woestijnkampen in Merzouga — gids voor Sahara-glamping",
+      "canonicalExcerpt": "Van privétenten met eigen badkamer tot gastronomische diners onder de Melkweg — het belangrijkste over luxe glamping in de Sahara bij Merzouga."
+    },
+    "best-time-to-visit-morocco-sahara": {
+      "title": "De beste reistijd voor de Sahara-woestijn: een gids maand voor maand",
+      "excerpt": "Wanneer plant u uw woestijnreis naar Merzouga? Onze lokale experts bespreken temperaturen, drukte en ideale condities maand voor maand.",
+      "alt": "Duinen van Erg Chebbi tijdens het gouden uur nabij Merzouga, Marokko",
+      "canonicalTitle": "Beste reistijd voor de Sahara — maand voor maand",
+      "canonicalExcerpt": "Wanneer plant u uw woestijnreis naar Merzouga? Onze lokale experts bespreken temperaturen, drukte en ideale condities maand voor maand."
+    },
+    "camel-trekking-etiquette-morocco": {
+      "title": "Kamelenritten in Marokko: wat u kunt verwachten en hoe u zich voorbereidt",
+      "excerpt": "Alles wat eerstmalige ruiters moeten weten — wat u draagt, hoe u opstapt, wat u meeneemt en de tradities van deze eeuwenoude Saharareis.",
+      "alt": "Kamelen trekken bij zonsondergang over gouden duinen tijdens een woestijntocht",
+      "canonicalTitle": "Kamelenritten in Marokko — verwachting en voorbereiding",
+      "canonicalExcerpt": "Alles wat eerstmalige ruiters moeten weten — wat u draagt, hoe u opstapt, wat u meeneemt en de tradities van deze eeuwenoude Saharareis."
+    },
+    "marrakech-to-merzouga-roadtrip": {
+      "title": "Van Marrakech naar Merzouga: de ultieme Sahara-roadtrip-route",
+      "excerpt": "Steek de Hoge Atlas over, verken Aït Ben Haddou, slinger door het Dadèsdal en bereik de gouden duinen van Erg Chebbi — de complete routegids.",
+      "alt": "De ksar van Aït Ben Haddou bij zonsondergang, UNESCO-werelderfgoed op de route van Marrakech naar Merzouga",
+      "canonicalTitle": "Marrakech naar Merzouga — de Sahara-roadtrip-route",
+      "canonicalExcerpt": "Steek de Hoge Atlas over, verken Aït Ben Haddou en het Dadèsdal en bereik de gouden duinen van Erg Chebbi — de complete routegids."
+    },
+    "morocco-packing-list-desert": {
+      "title": "De perfecte paklijst voor Marokkaanse woestijnreizen (2026)",
+      "excerpt": "Wat u meeneemt naar de Sahara — ademende lagen, zonbescherming en de kleine luxes die een woestijnnacht onvergetelijk maken.",
+      "alt": "Woestijnpanorama met duinen in de verte en een heldere hemel — de ideale leidraad voor het inpakken in Marokko",
+      "canonicalTitle": "Paklijst Marokkaanse woestijn — wat mee naar de Sahara",
+      "canonicalExcerpt": "Wat u meeneemt naar de Sahara — ademende lagen, zonbescherming en de kleine luxes die een woestijnnacht onvergetelijk maken."
+    },
+    "fes-chefchaouen-blue-city-guide": {
+      "title": "Van Fes naar Chefchaouen: Marokko's Blauwe Stad ontdekken",
+      "excerpt": "De reis van het culturele hart van Marokko naar de beroemde blauwe medina — wat te zien, waar te verblijven en hoe er het meeste uit te halen.",
+      "alt": "Blauw geschilderde huizen en steegjes in de medina van Chefchaouen, Marokko",
+      "canonicalTitle": "Van Fes naar Chefchaouen — de Blauwe Stad van Marokko",
+      "canonicalExcerpt": "De reis van het culturele hart van Marokko naar de beroemde blauwe medina — wat te zien, waar te verblijven en wat de moeite waard is."
     }
   }
 }
