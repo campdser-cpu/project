@@ -504,6 +504,317 @@
       "imageAlts": {}
     }
   },
+  "faq": {
+    "title": "Häufige Fragen zu Merzouga — Antworten zur Sahara",
+    "pageTitle": "FAQ Merzouga — Fragen zur Sahara beantwortet",
+    "description": "Praktische Antworten auf die häufigsten Fragen zu Merzouga und zum Erg Chebbi: beste Reisezeit, Anreise, Camps, Kamelritte und was dich erwartet.",
+    "heroAlt": "Das Dorf Merzouga, hinter dem sich die Dünen des Erg Chebbi erheben",
+    "intro": "Klare Antworten auf die Fragen, die Reisende vor einer Reise nach Merzouga und in die Sahara tatsächlich stellen, gesammelt aus unserer Erfahrung als Begleiter in den Dünen.",
+    "sections": [
+      {
+        "heading": "Planung und Buchung",
+        "paragraphs": [
+          "Die meisten Gäste erreichen Merzouga im Rahmen einer Tour ab Marrakesch oder Fès und nicht auf eigene Faust. Wir klären genau, was enthalten ist, wo die Abholung stattfindet, welche Mahlzeiten dazugehören und wo du übernachtest — alles vor der ersten Zahlung, damit es in den Dünen keine Überraschungen gibt. In der Hauptsaison (Oktober bis November und Februar bis April) melde dich ein paar Tage früher, dann läuft die Planung entspannter."
+        ]
+      },
+      {
+        "heading": "Die Anreise nach Merzouga",
+        "paragraphs": [
+          "Realistisch sind ein privater Transfer oder eine Tour, denn der letzte Abschnitt führt über eine offene Schotterebene und der öffentliche Verkehr bis zu den Dünen ist begrenzt. Unser Ratgeber zur Anreise nach Merzouga nennt die realistischen Fahrzeiten ab jeder größeren Stadt."
+        ]
+      },
+      {
+        "heading": "Wie eine Nacht in den Dünen wirklich abläuft",
+        "paragraphs": [
+          "Du erreichst das Camp auf dem Kamel, siehst die Sonne von einer Düne aus untergehen, teilst ein Abendessen mit drei Gängen und ein Feuer mit Berbermusik und schläfst dann unter einem der klarsten Himmel Marokkos. Am nächsten Morgen reitest du zum Sonnenaufgang hinaus, bevor die Reise weitergeht. Der Komfort hängt von der Art des Camps ab; den Unterschied zwischen Standard und Luxus beschreiben wir ohne Beschönigung."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Wie viele Tage braucht man in Merzouga?",
+        "answer": "Zwei volle Tage sind das sinnvolle Minimum — eine Nacht im Camp und ein Sonnenaufgang — und drei Tage, wenn du zusätzlich das nahe Dades-Tal oder die Todra-Schlucht sehen willst. Ein Tag reicht nur für eine lange Fahrt an den Dünen vorbei."
+      },
+      {
+        "question": "Was ist der Unterschied zwischen Merzouga und Zagora?",
+        "answer": "Merzouga bietet Zugang zum Erg Chebbi, mit eindrucksvollen Dünen nahe am Dorf und dem klassischen Kamelritt. Zagora liegt weiter südlich am Draa-Tal, ist ruhiger und hat einen anderen Wüstencharakter. Unser Vergleich von Merzouga und Zagora geht ins Detail."
+      },
+      {
+        "question": "Kann man Merzouga als Tagesausflug ab Marrakesch besuchen?",
+        "answer": "Eigentlich nicht: Es sind 8 bis 10 Stunden Fahrt pro Richtung. Merzouga gehört in eine Reiseroute mit mindestens zwei Nächten, damit die Dünen und die Nacht im Camp nicht gehetzt wirken."
+      },
+      {
+        "question": "Muss ich ein Wüstencamp im Voraus buchen?",
+        "answer": "In der Hauptsaison ja: Die besseren Camps und Touren sind Tage im Voraus ausgebucht. Wir empfehlen, deine Nacht in Merzouga vor der Abreise festzulegen."
+      },
+      {
+        "question": "Ist es in der Sahara sehr heiß?",
+        "answer": "Das hängt von der Jahreszeit ab. Im Sommer sind die Tage extrem, und wir legen die Aktivitäten auf den Morgen und den Abend. Von Oktober bis April ist es angenehm, mit kühlen Nächten, für die du eine warme Schicht brauchst."
+      },
+      {
+        "question": "Reisen Frauen sicher nach Merzouga?",
+        "answer": "Ja. Die Wüstengebiete rund um Merzouga sind ruhig und auf Gäste eingestellt; viele unserer Gruppen sind Familien und Paare. Wir beraten dich gern zu Kleidung und Gepflogenheiten, damit du dich wohl und respektvoll bewegst."
+      }
+    ],
+    "chrome": {
+      "crumb": "Häufige Fragen",
+      "imageAlts": {}
+    }
+  },
+  "quad-biking": {
+    "title": "Quadfahren in Merzouga — unterwegs am Rand des Erg Chebbi",
+    "pageTitle": "Quadfahren in Merzouga — Quad-Touren in der Sahara",
+    "description": "Wie eine Quad-Tour in Merzouga wirklich abläuft: das Gelände rund um den Erg Chebbi, passende Kleidung, die beste Tageszeit und wie sie zum Kamelritt passt.",
+    "heroAlt": "Silhouette einer Quadfahrerin auf einer Düne bei Sonnenuntergang in der Sahara nahe Merzouga",
+    "intro": "Mit dem Quad legst du in einer Stunde zurück, wofür ein Kamel einen ganzen Abend braucht: die Schotterflächen, Palmenhaine, ausgetrockneten Seen und den Fuß der großen Dünen des Erg Chebbi rund um Merzouga. Dieser Ratgeber erklärt das Gelände, den Ablauf einer Tour und die Vorbereitung.",
+    "sections": [
+      {
+        "heading": "Wie eine Quad-Tour in Merzouga abläuft",
+        "paragraphs": [
+          "Quadfahren rund um Merzouga heißt nicht, Dünen mit einer Maschine zu erklimmen — es heißt, die abwechslungsreiche Landschaft rund um das Sandmeer des Erg Chebbi zu durchfahren. Du bewegst dich über festen Schotterboden (die sogenannten Regs), durch staubige Palmenhaine, an Nomadenlagern vorbei und am Fuß der Dünen entlang, wo der Sand fest genug zum Fahren und zugleich weich genug ist, um den Wechsel des Untergrunds unter den Rädern zu spüren.",
+          "Der Ablauf ist einfach: eine kurze Sicherheitseinweisung, eine Übungsrunde nahe dem Dorf, bis alle mit Gas und Bremse zurechtkommen, dann eine geführte Fahrt in die Wüste, bei der der Guide die Linie vorgibt. Es fühlt sich abenteuerlich an, ohne fahrtechnisch anspruchsvoll zu sein — die meisten Einsteiger sind nach zehn Minuten entspannt."
+        ]
+      },
+      {
+        "heading": "Das Gelände rund um den Erg Chebbi",
+        "paragraphs": [
+          "Die Gegend um Merzouga versammelt mehrere sehr unterschiedliche Landschaften auf kleinem Raum. Westlich und südlich des Dorfes liegen flache, steinige Regs, auf denen du geradeaus zügig und sicher fahren kannst. Nördlich der Dünen querst du den Dayet Srji, einen saisonalen Salzsee, der sich nach regenreichen Wintern mit Wasser und mit Flamingos füllt. Rund um Khamlia und die schwarzen Vulkanhügel von Jerfoulf führen Schotterpisten zwischen winzigen Berbersiedlungen hindurch.",
+          "Direkt am Rand des Erg Chebbi wird der Sand weicher, die Fahrt langsamer und ruppiger; das ist der eindrucksvolle Teil, mit 150 Meter hohen Dünen über der Piste. Das Erklimmen der großen Dünen mit dem Quad gehört nicht zu einer normalen geführten Tour — die Dünen bleiben den Kamelen, den Wanderern und den Geländewagen vorbehalten, deren Fahrer die sicheren Linien kennen."
+        ]
+      },
+      {
+        "heading": "Was dich bei einer typischen Ausfahrt erwartet",
+        "paragraphs": [
+          "Eine geführte Quad-Tour rund um Merzouga bemisst sich in Stunden, nicht in Tagen. Du bekommst einen Helm, es wird dir erklärt, wie die Maschine funktioniert, und du fährst in einer kleinen Gruppe hinter einem ortskundigen Guide, der weiß, wo der Boden flach ist, wo sich Fotostopps lohnen und wo der Sand weich wird. Üblich sind Termine am frühen Morgen oder in den zwei Stunden vor Sonnenuntergang, wenn die Temperaturen angenehm sind und das Licht am schönsten ist.",
+          "Genaue Dauer, Strecke und Gruppengröße hängen vom Anbieter und von der Saison ab — wir klären die Einzelheiten für deine Termine auf Anfrage und arbeiten ausschließlich mit lizenzierten örtlichen Anbietern, die ihre Maschinen warten und ordentlich einweisen."
+        ]
+      },
+      {
+        "heading": "Sicherheit und praktische Hinweise",
+        "paragraphs": [
+          "Quads sind leicht zu bedienen, aber kein Spielzeug. Hör auf die Einweisung, halte ausreichend Abstand zur Maschine vor dir und liefere dir kein Rennen mit dem Guide — die Wüste ist größer als dein Gasgriff. Staub ist ständig da, deshalb zählen Sonnen- oder Schutzbrille, ein Tuch fürs Gesicht und geschlossene Schuhe mehr, als du denkst.",
+          "Eine ordentliche Grundfitness und Sicherheit im Umgang mit einem Fahrzeug sollten vorhanden sein; die Maschinen haben echtes Gewicht und das Gelände kann holprig sein. Unsicher, ob es für jemanden in deiner Gruppe passt? Der Sozius bei der vom Guide gefahrenen Variante oder eine Geländewagenfahrt sind die ruhigere Alternative mit denselben Ausblicken."
+        ]
+      },
+      {
+        "heading": "Was du anziehen solltest",
+        "paragraphs": [
+          "Lange Hose und geschlossene Schuhe sind Pflicht — Auspuff und Sand sind gleichermaßen unnachsichtig mit unbedeckter Haut. Ein leichtes langärmeliges Hemd schützt vor Sonne und Staub, und im Sommer ist ein atmungsaktives Material besser als eine dicke Jacke. Nimm Sonnenbrille, Tuch, Sonnenschutz und Wasser mit; ein kleiner Rucksack ist in Ordnung, sollte aber eng sitzen, damit er nicht schlackert.",
+          "Im Winter (November bis Februar) sind die Morgen wirklich kalt — nimm ein Fleece mit, das du verstauen kannst, sobald es wärmer wird. Nach Sonnenuntergang wirst du auch im Frühling und Herbst eine warme Schicht brauchen."
+        ]
+      },
+      {
+        "heading": "Die beste Tageszeit für eine Ausfahrt",
+        "paragraphs": [
+          "Zwei Zeitfenster stechen heraus. Der frühe Morgen bringt kühle Luft, leere Wüste und festen, berechenbaren Boden. Der späte Nachmittag ist bei den meisten Reisenden beliebter: Du fährst, während die Hitze nachlässt, endest im goldenen Licht am Rand der Dünen und kannst das Quad direkt zurückgeben, bevor du zum Kamelritt bei Sonnenuntergang oder ins Camp aufbrichst."
+        ]
+      },
+      {
+        "heading": "Für wen Quadfahren passt",
+        "paragraphs": [
+          "Quads sind beliebt bei Paaren, die einen aktiven Nachmittag wollen, bei Freundesgruppen und bei Jugendlichen, die alt genug für eine eigene Maschine sind — Familien teilen sich oft zwischen Quads und einem Begleitfahrzeug auf. Wenn dir Stille, Sternenhimmel und das langsame Tempo der Wüste am wichtigsten sind, bleiben der Kamelritt und die Nacht im Camp das Herzstück der Reise; das Quad ist der schnelle Gegenpol, kein Ersatz."
+        ]
+      },
+      {
+        "heading": "Wie es sich mit Kamelritt und Camp-Nacht verbindet",
+        "paragraphs": [
+          "Der klassische Tag in Merzouga verbindet beide Welten: Quad am späten Nachmittag über die Regs und die Nomadenpisten, zurück ins Dorf, dann am Dünenrand aufs Kamel für den Aufstieg zum Camp bei Sonnenuntergang, Abendessen unter den Sternen und ein Ritt zurück bei Sonnenaufgang. Weil beide Aktivitäten an unterschiedlichen Punkten rund um das Dorf beginnen und enden, greifen sie natürlich ineinander — nenn uns deine Termine, und wir legen den Tag so, dass du keine Wege doppelt fährst."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Brauche ich Erfahrung, um in Merzouga Quad zu fahren?",
+        "answer": "Nein. Du bekommst eine Einweisung und eine Übungsrunde, bevor es aus dem Dorf hinausgeht, und fährst hinter einem ortskundigen Guide, der das Tempo vorgibt. Wer Roller fährt oder ein Auto mit Schaltung bewegt, kommt gut zurecht."
+      },
+      {
+        "question": "Dürfen Kinder Quad fahren?",
+        "answer": "Die Mindestalter legt der Anbieter fest und sie hängen von der Maschinengröße ab; jüngere Kinder fahren meist als Mitfahrer bei einem Elternteil oder beim Guide. Nenn uns das Alter in deiner Gruppe, und wir stellen die passende Variante zusammen."
+      },
+      {
+        "question": "Können Quads die Dünen des Erg Chebbi erklimmen?",
+        "answer": "Normale geführte Touren bleiben auf dem festen Boden rund um das Dünenfeld, statt die hohen Kämme zu befahren. Die Dünen selbst erlebt man am besten zu Fuß oder auf dem Kamel — und sicher befahren sie nur die Geländewagenfahrer, die die Linien kennen."
+      },
+      {
+        "question": "Ist Quadfahren in euren Touren enthalten?",
+        "answer": "Es lässt sich zu den meisten Reiserouten hinzufügen, die einen vollen Tag in Merzouga vorsehen, etwa der 3-Tage-Sahara-Tour ab Marrakesch oder der 4-Tage-Route Marrakesch-Merzouga. Sprich uns an, und wir bauen es in deinen Tag ein."
+      },
+      {
+        "question": "Was passiert, wenn der Sand zu weich ist oder jemand Schwierigkeiten hat?",
+        "answer": "Der Guide wählt die Strecke um weiche Stellen herum, und wer sich unwohl fühlt, kann anhalten und im Fahrzeug weiterfahren. Niemand bleibt je allein mit der Wüste zurück."
+      }
+    ],
+    "chrome": {
+      "crumb": "Quadfahren",
+      "imageAlts": {}
+    }
+  },
+  "4x4-desert-tour": {
+    "title": "Geländewagentour in Merzouga — Dünenfahrt am Erg Chebbi",
+    "pageTitle": "Geländewagentour Merzouga — Dünen am Erg Chebbi",
+    "description": "Was eine Geländewagentour rund um Merzouga und den Erg Chebbi umfasst: Dünenfahrt, die Landschaften hinter dem Dorf, kulturelle Stopps und was dich erwartet.",
+    "heroAlt": "Das Dünenfeld des Erg Chebbi bei Merzouga — klassisches Gelände für Wüstentouren mit dem Geländewagen",
+    "intro": "Ein Geländewagen ist die einzige bequeme Art, der Sahara zu ihren eigenen Bedingungen zu begegnen: über die Kämme des Erg Chebbi, hinaus zu den Nomadensiedlungen und zum saisonalen See und durch die Schwarzsteinwüste, wo der Asphalt endet. Das umfasst eine Geländewagentour in Merzouga wirklich.",
+    "sections": [
+      {
+        "heading": "Warum die Wüste einen Geländewagen verlangt",
+        "paragraphs": [
+          "Die asphaltierte Straße endet am Dorf Merzouga. Alles dahinter — die tiefen Sandkorridore zwischen den Dünen, die steinige Hamada-Ebene, die Pisten zu den Nomadenfamilien — ist weicher Sand, Schotter oder ausgefahrener Boden. Normale Autos bleiben an den Aussichtspunkten stehen; ein sauber gefahrener Geländewagen mit Sanderfahrung fährt mitten hinein.",
+          "Deshalb wird die klassische Dünenrunde rund um Merzouga seit jeher mit Geländewagen im Stil des Land Rover und mit ortskundigen Fahrern gefahren, die den Sand lesen wie Seeleute das Wasser: wo der Wind ihn verfestigt hat, wo ein Kamm die Schnauze nach unten zieht, wann der Reifendruck abgelassen wird und wann Schwung nötig ist."
+        ]
+      },
+      {
+        "heading": "Dünenfahrt auf dem Erg Chebbi",
+        "paragraphs": [
+          "Der prägende Teil jeder Geländewagentour in Merzouga ist die Fahrt auf das Sandmeer des Erg Chebbi selbst. Eine 150 Meter hohe Düne aus dem Fahrzeug heraus zu erklimmen wirkt steiler als jede Bergstraße; dann bricht der Kamm, und der ganze Erg rollt sich vor dir aus. Die Fahrer halten auf den hohen Rücken für Fotos — das Muster aus Rippeln und Schatten ändert sich von Stunde zu Stunde.",
+          "Gute Fahrer kämpfen nie gegen den Sand: Sie wählen ihre Linien zwischen den Kämmen, halten das Tempo auf weichen Abschnitten gleichmäßig und meiden die steilsten Hänge in der Tageshitze. Es ist aufregend, ohne waghalsig zu sein — genau die Balance, die du mit Familie an Bord willst."
+        ]
+      },
+      {
+        "heading": "Die Landschaften hinter den Dünen",
+        "paragraphs": [
+          "Die Gegend um Merzouga ist weit mehr als Sand. Eine halbtägige Runde im Geländewagen führt meist zum Dayet Srji, einem saisonalen Salzsee, der nach regenreichen Wintern Flamingos anzieht; zur schwarzen Vulkansteinwüste von Jerfoulf, wo Filme gedreht wurden; zu fossilreichem Boden, wo die Sahara einst ein Meer war; und auf weite Reg-Flächen, auf denen du mit einem Horizont von 360 Grad stehst und überhaupt nichts hörst.",
+          "Weil die Entfernungen kurz sind, durchquerst du an einem Nachmittag mehrere dieser Welten — Dünen, Seeboden, schwarzes Gestein und Schotter — und bist zum Sonnenuntergang wieder am Dünenrand."
+        ]
+      },
+      {
+        "heading": "Kulturelle Stopps unterwegs",
+        "paragraphs": [
+          "Wo es die Route zulässt, führen Geländewagentouren rund um Merzouga durch die kleinen Gemeinschaften am Rand des Ergs: Khamlia, in ganz Marokko für seine Gnawa-Musik bekannt, und die Nomadenfamilien, die mit ihren Herden noch immer über die Ebene ziehen. Die Besuche sind kurz und ohne Hast — ein Glas Minztee, etwas Musik, ein Gespräch über deinen Guide — und sie sind der Grund, warum viele Reisende diesen Tag als den eindrücklichsten ihrer Marokkoreise bezeichnen.",
+          "Diese Stopps hängen davon ab, wer an dem Tag vor Ort ist und wie dein Guide die Familien kennt; nichts wird auf Zuruf inszeniert. Das halten wir bewusst so."
+        ]
+      },
+      {
+        "heading": "Praktisch betrachtet: Komfort, Rütteln und Zeitplan",
+        "paragraphs": [
+          "Rechne mit Klimaanlage während der Fahrt, Sand auf den Fußmatten und etwas Durchschütteln auf weichen Abschnitten — setz dich eher in die Mitte, wenn dein Rücken empfindlich ist. Es gibt Halbtages- und Ganztagesformate; die schönste Lichtstimmung auf den Dünen liegt in jedem Fall am frühen Morgen und in den zwei Stunden vor Sonnenuntergang, gut geplante Touren richten sich danach.",
+          "Die Fahrzeuge sind meist Geländewagen älterer Baujahre, von ihren Fahrern selbst gepflegt, und keine fabrikneuen Flotten-SUV — das gehört zum Charakter dazu. Wenn du ein neueres Fahrzeug möchtest, sag es bei der Buchung, dann richten wir uns danach."
+        ]
+      },
+      {
+        "heading": "Was du mitnehmen solltest",
+        "paragraphs": [
+          "Sonnenschutz steht an erster Stelle: Creme, Sonnenbrille und Hut oder Tuch. Nimm Wasser mit, geschlossene Schuhe für kurze Wege über heißen Sand und eine warme Schicht für Wintermorgen und jeden Stopp nach Sonnenuntergang. Eine Kamera mit geladenem Akku — das Licht zwischen den Dünenkämmen gibt es so nirgendwo sonst. Eine kleine Tasche genügt; lass feste Koffer im Riad oder im Fahrzeug."
+        ]
+      },
+      {
+        "heading": "Für wen eine Geländewagentour passt",
+        "paragraphs": [
+          "Für fast alle, und das ist ihre Stärke: Familien mit kleinen Kindern, Reisende, die nicht auf Kamel oder Quad können oder wollen, Fotografierende auf der Suche nach der großen Landschaft und ältere Gäste, die trotzdem auf einer 150 Meter hohen Düne stehen möchten. Sie verbindet sich natürlich mit einem Kamelritt: das weite Land am Morgen befahren, am späten Nachmittag auf dem Kamel ins Camp reiten."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Ist die Geländewagentour für Kinder sicher?",
+        "answer": "Ja — sie ist die familienfreundlichste Art, die tiefen Dünen zu erreichen, mit Sicherheitsgurten und einem professionellen Fahrer. Sehr kleine Kinder brauchen eventuell eine Sitzerhöhung; nenn das Alter bei der Buchung."
+      },
+      {
+        "question": "Bleiben wir im Sand stecken?",
+        "answer": "Erfahrene Fahrer wählen Linien und Reifendrücke, die ein Feststecken selten machen, und ein zweites Fahrzeug oder eine Schaufel löst die gelegentliche weiche Stelle. Das gehört zum Abenteuer und wird gelassen gehandhabt."
+      },
+      {
+        "question": "Wie lange dauert eine Geländewagentour in Merzouga?",
+        "answer": "Die Formate hängen vom Anbieter und von der Saison ab — die meisten wählen zwischen einer halbtägigen Runde durch Dünen und Dörfer und einem volleren Tag, der Khamlia und das Nomadengebiet ergänzt. Die genauen Zeiten für deine Termine klären wir auf Anfrage."
+      },
+      {
+        "question": "Lässt sich die Geländewagentour mit Kamelritt und Camp-Nacht verbinden?",
+        "answer": "Ja, und das ist die ideale Kombination: Geländewagen am Morgen oder späten Nachmittag, Kamelritt zum Sonnenuntergang ins Camp, Abendessen und Sterne, Rückritt bei Sonnenaufgang. Sag Bescheid, und wir legen den ganzen Tag entsprechend."
+      },
+      {
+        "question": "Muss man im Voraus buchen?",
+        "answer": "In der Hauptsaison (Oktober bis April) ja — Fahrzeuge und gute Fahrer sind begrenzt. Außerhalb der vollsten Wochen reichen meist ein paar Tage Vorlauf."
+      }
+    ],
+    "chrome": {
+      "crumb": "Geländewagentour",
+      "imageAlts": {}
+    }
+  },
+  "things-to-do": {
+    "title": "Was man in Merzouga unternehmen kann — alle Wüstenerlebnisse im Vergleich",
+    "pageTitle": "Merzouga erleben — Kamele, Quads, Geländewagen, Camps",
+    "description": "Alle Unternehmungen in Merzouga auf einen Blick: Kamelritte am Erg Chebbi, Quadfahren, Geländewagentouren, Luxuscamps, Sonnenauf- und -untergänge, Musik und Kultur.",
+    "heroAlt": "Kamelkarawane als Silhouette vor einem Dünengrat bei Sonnenuntergang nahe Merzouga",
+    "intro": "Von außen wirkt Merzouga wie ein Ort mit einem einzigen Erlebnis — Kamel reiten, im Camp schlafen — doch tatsächlich gibt es eine ganze Bandbreite an Wüstentagen. Das ist der ehrliche Überblick: was dir jede Aktivität bringt, was sie an Zeit und Mühe kostet und wie sich die Teile zu einem oder zwei gut gebauten Tagen fügen.",
+    "sections": [
+      {
+        "heading": "Kamelritt in den Erg Chebbi",
+        "paragraphs": [
+          "Der Klassiker, und noch immer das, was Merzouga am besten kann. Eine Stunde auf dem Kamel bei Sonnenuntergang vom Dünenrand zu einem Camp zwischen den Kämmen, Abendessen und Trommeln am Feuer, dann ein kurzer Rückritt bei Sonnenaufgang über kühlen Sand. Das passt wirklich für alle, verlangt keinerlei Kondition und liefert das Wüstenbild ohne Maschinen.",
+          "Im ausführlichen Ratgeber zum Kamel-Trekking steht, was tatsächlich passiert, was du anziehen solltest und wie die Nacht im Camp abläuft."
+        ]
+      },
+      {
+        "heading": "Quadfahren rund um das Dünenfeld",
+        "paragraphs": [
+          "Die schnelle Variante. Quads befahren die Regs, Palmenhaine und Nomadenpisten rund um den Erg Chebbi und enden im goldenen Licht am Fuß der Dünen. Einweisung und Übungsrunde inklusive; Erfahrung ist nicht nötig. Am besten am späten Nachmittag, sodass du die Maschine rechtzeitig vor dem Kamelritt zurückgibst.",
+          "Der Ratgeber zum Quadfahren in Merzouga behandelt Gelände, Sicherheit und Kleidung."
+        ]
+      },
+      {
+        "heading": "Geländewagentouren und Dünenfahrten",
+        "paragraphs": [
+          "Der Weg in das Land, das du zu Fuß nicht erreichst: über die hohen Kämme des Erg Chebbi mit einem erfahrenen Fahrer, hinaus zum saisonalen Dayet Srji, zur Schwarzsteinwüste von Jerfoulf und zu den Fossilfeldern, wo die Sahara einst Meer war. Die familienfreundlichste Art, tief in die Wüste zu kommen, und die Lieblingsvariante der Fotografierenden.",
+          "Einzelheiten, Erwartungen und Packhinweise stehen im Ratgeber zur Geländewagentour in Merzouga."
+        ]
+      },
+      {
+        "heading": "Eine Nacht im Wüstencamp",
+        "paragraphs": [
+          "Ob einfach oder luxuriös ausgestattet: Die Nacht im Camp macht aus einem Dünenbesuch eine echte Wüstenreise — Abendessen mit Tajine, Gnawa-Trommeln am Feuer und ein Himmel, an dem so viele Sterne stehen, dass das Erkennen von Sternbildern kein Hobby mehr ist, sondern sich von selbst ergibt. Die Camps reichen vom schlichten Biwak bis zur Suite mit Doppelbett und warmer Dusche auf dem Sand.",
+          "Vergleiche die Möglichkeiten in unseren Ratgebern zu Wüstencamps und zu Luxuscamps."
+        ]
+      },
+      {
+        "heading": "Sonnenaufgang und Sonnenuntergang auf den Dünen",
+        "paragraphs": [
+          "Die beiden kostenlosen Schauspiele, und tatsächlich zwei verschiedene Erlebnisse. Der Sonnenuntergang wärmt die Westhänge des Erg Chebbi von Gold zu tiefem Rot und zeichnet die Kamelreihen auf den Graten nach; der Sonnenaufgang ist ruhiger, kühler und klarer, mit langen blauen Schatten auf der windabgewandten Seite. Für beides brauchst du kein Ticket — steig vom Dorf hinauf oder lege deinen Kamelritt oder deine Geländewagenfahrt so, dass sie auf einem Grat endet."
+        ]
+      },
+      {
+        "heading": "Kultur: Khamlia, Gnawa-Musik und Dorfleben",
+        "paragraphs": [
+          "Merzouga ist ein lebendiger Ort, kein Freizeitpark. In Khamlia, ein kurzes Stück südlich, spielt die Gnawa-Gemeinschaft die hypnotische Musik, die ihre Vorfahren aus Subsahara-Afrika mitbrachten — klein, ungekünstelt und bewegend. Rund um das Dorf findest du Backstuben, die Dattelpalmenoase Hassilabied und Nomadenfamilien auf der Ebene dahinter. Die meisten Geländewagentouren binden das ganz selbstverständlich ein; ein ruhiger Morgenspaziergang durch die Oase lohnt genauso."
+        ]
+      },
+      {
+        "heading": "Sternenhimmel und die stillen Stunden",
+        "paragraphs": [
+          "Weil der nächste Ort kilometerweit entfernt liegt, gehört der Nachthimmel über dem Erg Chebbi zu den klarsten Marokkos. Am besten legst du dich einfach auf den kühlen Sand abseits der Camplichter, sobald das Feuer heruntergebrannt ist — oder in die völlige Dunkelheit hinter einem Kamm. Nimm eine Lampe mit Rotlicht mit oder stell dein Handy auf die geringste Helligkeit: Deine Augen brauchen zwanzig Minuten, um sich anzupassen."
+        ]
+      },
+      {
+        "heading": "Wie du alles verbindest: ein perfekter Tag, zwei entspannte Tage",
+        "paragraphs": [
+          "Mit einem vollen Tag: Geländewagenrunde am Morgen, langes Mittagessen und Poolzeit im Dorf, Quad oder Sandboarding am späten Nachmittag, Kamelritt bei Sonnenuntergang ins Camp, Abendessen und Sterne. Mit zwei Tagen wird alles langsamer: Ergänze am zweiten Morgen Khamlia und die Oase oder eine zweite Nacht im Camp — viele Reisende sagen, dass genau diese zweite Nacht, wenn der Reiz des Neuen nachlässt und die Stille einsetzt, die schönere ist.",
+          "Unsere Touren sind genau auf diese Rhythmen gebaut: Die 3-Tage-Sahara-Tour ab Marrakesch, die 4-Tage-Route Marrakesch-Merzouga und die 7-Tage-Reise durch die Königsstädte geben Merzouga jeweils einen wirklich vollen Tag statt eines kurzen Übernachtungsstopps."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Wie viele Tage brauche ich in Merzouga?",
+        "answer": "Zwei Nächte sind das richtige Maß: Du kommst am Abend an, hast einen vollen Wüstentag und reist am nächsten Morgen weiter. Eine Nacht funktioniert bei knappem Zeitplan, drängt aber alles in ein einziges Fenster zwischen Sonnenuntergang und Sonnenaufgang."
+      },
+      {
+        "question": "Was ist in Merzouga die beste Aktivität für Familien?",
+        "answer": "Die Geländewagentour ist mit Kindern am unkompliziertesten, und der Kamelritt ins Camp passt für fast jedes Alter. Quads eignen sich für Jugendliche; jüngere Kinder fahren als Mitfahrer bei einem Elternteil oder beim Guide."
+      },
+      {
+        "question": "Lohnt sich Merzouga im Vergleich zu Agafay oder Zagora?",
+        "answer": "Wenn die großen Dünen das Ziel deiner Reise sind, ja: Der Erg Chebbi ist das höchste Dünenfeld Marokkos und am besten mit Touren erschlossen. Agafay ist eine Steinwüste nahe Marrakesch; Zagora ist ruhiger, seine Dünen sind aber kleiner."
+      },
+      {
+        "question": "Kann man in Merzouga alles an einem Tag machen?",
+        "answer": "Kamel, Quad, Geländewagen und Camp an einem Tag ist machbar und üblich — die Aktivitäten beginnen und enden an unterschiedlichen Punkten rund um das Dorf. Zwei Tage lassen dir aber die Mittagsstunden frei, was in den wärmeren Monaten viel ausmacht."
+      }
+    ],
+    "chrome": {
+      "crumb": "Merzouga erleben",
+      "imageAlts": {}
+    }
+  },
   "how-many-days": {
     "title": "Wie viele Tage brauchst du in der Sahara?",
     "pageTitle": "Wie viele Tage in der Sahara? — Ratgeber zur Reisedauer in Merzouga",
