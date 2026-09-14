@@ -55,6 +55,54 @@
     {
       "question": "Pouvez-vous répondre à des restrictions alimentaires ?",
       "answer": "Absolument — menus végétariens, véganes, sans gluten, halal et adaptés aux allergies sont tous pris en charge. Merci de nous en informer au moment de la réservation."
+    },
+    {
+      "question": "Que comprennent vos circuits dans le désert ?",
+      "answer": "Tous nos circuits dans le désert comprennent le transport privé climatisé, un chauffeur francophone ou anglophone, un hébergement de qualité, le petit-déjeuner et le dîner chaque jour, une randonnée à dos de chameau dans l’Erg Chebbi, une nuit en camp de luxe dans le désert, ainsi que la prise en charge et le retour à votre hôtel. Les vols internationaux, les déjeuners et les activités optionnelles ne sont généralement pas inclus."
+    },
+    {
+      "question": "Que faut-il emporter pour une nuit en camp dans le Sahara ?",
+      "answer": "Prévoyez des couches chaudes pour les nuits fraîches du désert, un foulard, de la crème solaire, des lunettes de soleil, une lampe torche, des chaussures confortables et une batterie externe. Les sacs de couchage sont fournis au camp. Un maillot de bain peut être utile dans certains camps de luxe équipés d’une piscine."
+    },
+    {
+      "question": "Comment rejoindre Merzouga et le désert du Sahara ?",
+      "answer": "Depuis Marrakech, comptez environ 9 à 10 heures de route par les montagnes du Haut Atlas. Depuis Fès, le trajet dure à peu près 7 à 8 heures. Nous organisons des transferts privés avec des pauses confortables. La plupart des voyageurs arrivent en avion à Marrakech ou à Fès."
+    },
+    {
+      "question": "La randonnée à dos de chameau convient-elle aux débutants ?",
+      "answer": "Oui — nos randonnées à dos de chameau sont douces et accessibles à tous. Les animaux sont bien dressés et les sorties durent généralement une à deux heures, au coucher du soleil. Pour celles et ceux qui préfèrent ne pas monter, un transfert en 4x4 jusqu’au camp peut être organisé."
+    },
+    {
+      "question": "À quoi ressemblent les camps dans le désert ?",
+      "answer": "Nos camps de luxe disposent de vrais lits, de salles de bain privatives et de tentes élégantes d’inspiration berbère, dressées sous les étoiles. Le dîner est servi autour du feu, accompagné de musique berbère en direct. C’est une expérience confortable, authentique et inoubliable."
+    },
+    {
+      "question": "Pouvez-vous organiser un voyage pendant le Ramadan ?",
+      "answer": "Oui — le Maroc pendant le Ramadan est une expérience culturelle particulière. Certains restaurants peuvent être fermés en journée, mais nos guides savent parfaitement composer avec ce rythme. Les repas du soir et l’animation des marchés nocturnes font de cette période un moment unique pour découvrir le pays."
+    },
+    {
+      "question": "Quelle est la politique d'annulation ?",
+      "answer": "Annulation gratuite jusqu’à 7 jours avant le départ, avec remboursement intégral. Les annulations dans les 7 jours précédant le départ peuvent entraîner des frais de 50 %. Les absences non signalées ne sont pas remboursables. Nous recommandons une assurance voyage pour partir l’esprit tranquille."
+    },
+    {
+      "question": "Une assurance voyage est-elle nécessaire ?",
+      "answer": "L’assurance voyage est vivement recommandée pour tout séjour au Maroc. Elle devrait couvrir les urgences médicales, l’annulation du voyage et la perte de bagages. Nous pouvons vous orienter vers le type de garanties à privilégier si vous le souhaitez."
+    },
+    {
+      "question": "Les circuits conviennent-ils aux enfants et aux voyageurs seniors ?",
+      "answer": "Tout à fait. Nos circuits privés s’adaptent entièrement aux familles et aux voyageurs plus âgés. Le rythme reste flexible, les randonnées à dos de chameau sont optionnelles et un transfert en 4x4 peut remplacer les portions à pied. Nous accueillons des voyageurs de tous âges."
+    },
+    {
+      "question": "Combien de temps à l’avance faut-il réserver ?",
+      "answer": "Pour la haute saison (de mars à mai et de septembre à novembre), nous conseillons de réserver au moins 4 à 6 semaines à l’avance. Pour un séjour dans le désert en hiver ou à des dates particulières, 2 à 3 mois constituent un délai idéal. Les réservations de dernière minute restent parfois possibles — n’hésitez pas à nous consulter."
+    },
+    {
+      "question": "Quels véhicules utilisez-vous ?",
+      "answer": "Nous utilisons des véhicules récents et climatisés, de la berline pour 2 à 4 personnes au minibus spacieux pour les groupes plus nombreux. Tous sont régulièrement entretenus et conduits par des chauffeurs professionnels titulaires des licences requises."
+    },
+    {
+      "question": "Assurez-vous les transferts depuis et vers l’aéroport ?",
+      "answer": "Oui — tous nos circuits comprennent la prise en charge et le retour à l’aéroport ou à l’hôtel, à Marrakech, Fès et dans les autres grandes villes. Votre chauffeur vous accueille avec une pancarte à votre nom et vous aide avec vos bagages."
     }
   ],
   "destinations": {
@@ -139,7 +187,9 @@
         "Randonnée à dos de chameau",
         "Camps de luxe dans le désert",
         "Observation des étoiles",
-        "Villages berbères"
+        "Villages berbères",
+        "Lever de soleil sur les dunes",
+        "Souk hebdomadaire de Rissani"
       ]
     },
     "erg-chebbi": {
@@ -153,7 +203,10 @@
         "Descente de dunes sur planche",
         "Soirées de musique berbère",
         "Excursion dans le désert en 4x4",
-        "Dîner dans un camp de luxe"
+        "Dîner dans un camp de luxe",
+        "Observation des étoiles",
+        "Randonnée en quad",
+        "Musique gnaoua à Khamlia"
       ]
     },
     "ouarzazate": {
@@ -167,7 +220,8 @@
         "Kasbah de Taourirt",
         "Aït Ben Haddou (30min)",
         "Vallée du Drâa",
-        "Oasis de Fint"
+        "Oasis de Fint",
+        "Route des Kasbahs"
       ]
     },
     "ait-ben-haddou": {
@@ -181,7 +235,8 @@
         "Visite des lieux de tournage",
         "Photographie au lever du soleil",
         "Visites de familles berbères",
-        "Ateliers de poterie"
+        "Ateliers de poterie",
+        "Panorama depuis le grenier fortifié"
       ]
     },
     "zagora": {
@@ -209,7 +264,8 @@
         "Rochers des Doigts du Singe",
         "Festival des Roses (mai)",
         "Kasbahs anciennes",
-        "Randonnée dans la vallée"
+        "Randonnée dans la vallée",
+        "Vues sur la route en lacets"
       ]
     },
     "todra-gorge": {
@@ -223,7 +279,8 @@
         "Randonnée dans les gorges",
         "Maisons d’hôtes berbères",
         "Photographie",
-        "Vues au lever du soleil"
+        "Vues au lever du soleil",
+        "Falaises de 300 mètres"
       ]
     },
     "skoura": {
@@ -279,7 +336,8 @@
         "Place Uta el-Hammam",
         "Sources de Ras el-Ma",
         "Cascades d’Akchour",
-        "Randonnées dans les montagnes du Rif"
+        "Randonnées dans les montagnes du Rif",
+        "Point de vue de la Mosquée espagnole"
       ]
     },
     "imlil": {
@@ -349,7 +407,8 @@
         "Musique gnaoua",
         "Kitesurf",
         "Fruits de mer au port",
-        "Quartier juif du Mellah"
+        "Quartier juif du Mellah",
+        "Plages de l'Atlantique"
       ]
     },
     "agadir": {
@@ -3152,6 +3211,50 @@
           "answer": "C'est un itinéraire sur devis. Nous confirmons vos dates, la taille du groupe et les choix d'hébergement avant de confirmer le prix final."
         }
       ]
+    }
+  },
+  "blog": {
+    "merzouga-luxury-desert-camp-guide": {
+      "title": "Le guide ultime des camps de luxe du désert à Merzouga",
+      "excerpt": "Des tentes privées avec salles de bain attenantes aux dîners gastronomiques sous la Voie lactée : tout ce qu'il faut savoir sur le « glamping » de luxe dans le Sahara.",
+      "alt": "Camp de luxe aux tentes privées au coucher du soleil près de Merzouga, au Maroc",
+      "canonicalTitle": "Camps de luxe à Merzouga — guide du glamping dans le Sahara",
+      "canonicalExcerpt": "Des tentes privées avec salle de bain aux dîners raffinés sous la Voie lactée — l’essentiel sur le glamping de luxe dans le Sahara de Merzouga."
+    },
+    "best-time-to-visit-morocco-sahara": {
+      "title": "Meilleure période pour visiter le Sahara : guide complet mois par mois",
+      "excerpt": "Quand planifier votre voyage à Merzouga ? Nos experts locaux détaillent températures, affluence et conditions, mois par mois.",
+      "alt": "Dunes de l’Erg Chebbi à l’heure dorée près de Merzouga, au Maroc",
+      "canonicalTitle": "Quand visiter le désert du Sahara — guide mois par mois",
+      "canonicalExcerpt": "Quand planifier votre séjour dans le désert de Merzouga ? Nos guides locaux détaillent les températures, l’affluence et les conditions idéales, mois après mois."
+    },
+    "camel-trekking-etiquette-morocco": {
+      "title": "Randonnée à dos de chameau au Maroc : à quoi s'attendre et comment se préparer",
+      "excerpt": "Tout ce que les débutants doivent savoir : quoi porter, comment monter, quoi emporter, et les traditions de ce voyage saharien ancestral.",
+      "alt": "Chameaux traversant les dunes dorées au coucher du soleil lors d’une randonnée",
+      "canonicalTitle": "Randonnée à dos de chameau au Maroc — à quoi s’attendre",
+      "canonicalExcerpt": "Tout ce qu’il faut savoir avant une première sortie — quoi porter, comment monter, quoi emporter, et les traditions de cette traversée saharienne."
+    },
+    "marrakech-to-merzouga-roadtrip": {
+      "title": "De Marrakech à Merzouga : l'itinéraire ultime de la route vers le Sahara",
+      "excerpt": "Traversez le Haut Atlas, explorez Aït Ben Haddou, serpentez dans la vallée du Dadès et atteignez les dunes dorées d'Erg Chebbi : le guide complet du parcours.",
+      "alt": "Le ksar d’Aït Ben Haddou au coucher du soleil, site du patrimoine mondial de l’UNESCO sur la route de Marrakech à Merzouga",
+      "canonicalTitle": "De Marrakech à Merzouga — itinéraire vers le Sahara",
+      "canonicalExcerpt": "Franchissez le Haut Atlas, découvrez Aït Ben Haddou, longez la vallée du Dadès et rejoignez les dunes dorées de l’Erg Chebbi — le guide complet de la route."
+    },
+    "morocco-packing-list-desert": {
+      "title": "La liste de bagages idéale pour un circuit dans le désert (2026)",
+      "excerpt": "Quoi emporter pour le Sahara : des couches respirantes et la protection solaire aux petites attentions qui rendent une nuit dans le désert inoubliable.",
+      "alt": "Panorama du désert avec dunes lointaines et ciel dégagé — la référence pour préparer sa valise au Maroc",
+      "canonicalTitle": "Valise pour le désert marocain — quoi emporter dans le Sahara",
+      "canonicalExcerpt": "Quoi emporter pour le Sahara — couches respirantes, protection solaire et l’essentiel qui rend une nuit dans le désert inoubliable."
+    },
+    "fes-chefchaouen-blue-city-guide": {
+      "title": "De Fès à Chefchaouen : à la découverte de la perle bleue du Maroc",
+      "excerpt": "Le voyage du cœur culturel du Maroc jusqu'à la célèbre médina bleue : que voir, où séjourner et comment en profiter au maximum.",
+      "alt": "Ruelles et maisons bleues de la médina de Chefchaouen, au Maroc",
+      "canonicalTitle": "De Fès à Chefchaouen — découvrir la ville bleue du Maroc",
+      "canonicalExcerpt": "Du cœur culturel du Maroc à la célèbre médina bleue — que voir, où loger et comment en profiter pleinement."
     }
   }
 }
