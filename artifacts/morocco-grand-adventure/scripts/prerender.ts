@@ -885,6 +885,8 @@ function buildExperienceContent(rest: string, lang: Lang): string {
     <p>${escapeHtml(tr(lang, 'st_coordinator'))}</p>
     <h2>${escapeHtml(tr(lang, 'st_02_h2'))}</h2>
     <p>${escapeHtml(tr(lang, 'st_02_p1'))}</p>
+    <h2>${escapeHtml(tr(lang, 'st_03_h2'))}</h2>
+    <p>${escapeHtml(tr(lang, 'st_03_line'))}</p>
     <h2>${escapeHtml(tr(lang, 'st_04_h2'))}</h2>
     <p>${escapeHtml(tr(lang, 'st_04_intro'))}</p>
     ${ul([1, 2, 3, 4, 5, 6, 7, 8].map((n) => `${tr(lang, `st_04_s${n}_label`)} — ${tr(lang, `st_04_s${n}_body`)}`))}
@@ -908,6 +910,8 @@ function buildExperienceContent(rest: string, lang: Lang): string {
     <p>${escapeHtml(tr(lang, 'st_11_intro'))}</p>
     ${[1, 2, 3].map((n) => `<h3>${escapeHtml(`${tr(lang, `st_11_r${n}_days`)} ${tr(lang, `st_11_r${n}_unit`)} — ${tr(lang, `st_11_r${n}_title`)}`)}</h3><p>${escapeHtml(tr(lang, `st_11_r${n}_route`))} (${escapeHtml(tr(lang, `st_11_r${n}_themes`))})</p><p>${escapeHtml(tr(lang, `st_11_r${n}_desc`))}</p><p>${escapeHtml(tr(lang, 'st_11_note'))}</p><p>${link(`${SITE_URL}/${lang}/tours/${JOURNEY_TOURS[n - 1]}`, `${tr(lang, 'st_11_cta')}: ${tr(lang, `st_11_r${n}_title`)}`)}</p>`).join('\n    ')}
     <p>${escapeHtml(tr(lang, 'st_11_band_items'))}</p>
+    <h2>${escapeHtml(tr(lang, 'st_13_h2'))}</h2>
+    <p>${escapeHtml(tr(lang, 'st_13_line'))}</p>
     <h2>${escapeHtml(tr(lang, 'st_14_h2'))}</h2>
     <p>${escapeHtml(tr(lang, 'st_14_honesty'))}</p>
     <h2>${escapeHtml(tr(lang, 'st_15_faq_h2'))}</h2>
