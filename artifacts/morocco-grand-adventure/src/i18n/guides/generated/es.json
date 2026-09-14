@@ -1,75 +1,4 @@
 {
-  "how-many-days": {
-    "title": "¿Cuántos días necesitas en el Sáhara?",
-    "pageTitle": "¿Cuántos días en el Sáhara? — Guía de duración en Merzouga",
-    "description": "Cuántos días necesitas en el Sáhara y Merzouga — comparativa honesta de rutas de 1, 2, 3 y más días, y lo que cada duración permite de verdad.",
-    "heroAlt": "Las dunas de Erg Chebbi cerca de Merzouga — ¿cuántos días necesita una ruta por el Sáhara?",
-    "intro": "Respuesta corta: una noche entre las dunas es el mínimo para la experiencia sahariana clásica, y dos noches es lo que recomendamos con más frecuencia. La respuesta larga depende de dónde empieces, cuánto conduzcas aceptes por día y qué quieres que sea el desierto: un punto fuerte o el objetivo del viaje. Aquí está el desglose honesto.",
-    "sections": [
-      {
-        "heading": "1 día en el Sáhara (una noche entre las dunas)",
-        "paragraphs": [
-          "Una noche en campamento da la secuencia esencial: llegada al final de la tarde, camello al atardecer hacia Erg Chebbi, cena y tambores, salida del sol sobre las dunas, y regreso a media mañana. Nada se apresura sobre la arena misma: la experiencia es compacta pero completa.",
-          "La compensación es el viaje. Desde Marrakech, una ruta de una noche implica días de conducción muy largos; desde Fez es más llevadera. Un día es la opción correcta cuando el Sáhara es un punto fuerte de un itinerario más amplio por Marruecos y tu agenda es realmente ajustada."
-        ]
-      },
-      {
-        "heading": "2 días en el Sáhara (dos noches)",
-        "paragraphs": [
-          "Dos noches es el punto justo para la mayoría de los viajeros. La primera tarde y noche ofrecen la secuencia clásica; el segundo día — libre de la logística de llegada — es cuando el desierto se abre: la ruta en 4x4 por el desierto de piedra negra y el país nómada, Khamlia y su música gnawa, el oasis o simplemente tiempo sin prisa en las dunas. La segunda noche en campamento, cuando la novedad se desvanece y llega el silencio, suele ser la que uno recuerda.",
-          "Si tu itinerario por Marruecos puede absorberlo, esta es la versión que construimos más a menudo."
-        ]
-      },
-      {
-        "heading": "3 días en el Sáhara",
-        "paragraphs": [
-          "Tres días conviene a los viajeros lentos, a los fotógrafos y a las familias que quieren que el desierto sea un capítulo del viaje y no una sola tarde. Añades profundidad antes que categorías nuevas: exploraciones 4x4 más largas, una segunda noche en otro campamento, sandboard, observación de estrellas sin horario y tiempo en el pueblo y el oasis.",
-          "Tres días también encaja de forma natural con la ruta sur más amplia: el valle del Dadés y las gargantas del Todra a la ida o la vuelta, convirtiéndolo en el núcleo de un viaje desértico bien ritmado de 4 o 5 días."
-        ]
-      },
-      {
-        "heading": "4 días o más (el desierto más la propia ruta)",
-        "paragraphs": [
-          "Más allá de tres días en la propia Merzouga, el tiempo extra suele invertirse mejor en el viaje — el Atlas, Ait Ben Haddou, las gargantas — o en una travesía de una sola dirección Fez-Marrakech por el desierto que ve el país entero de una vez en lugar de deshacer el camino. Si el Sáhara en sí es el objetivo entero de tu viaje, se pueden discutir travesías de varios días a caballo hacia el desierto más profundo en tu presupuesto privado."
-        ]
-      },
-      {
-        "heading": "La respuesta rápida",
-        "paragraphs": [
-          "Una noche: la clásica, funciona desde Fez, ajustada desde Marrakech. Dos noches: lo que más recomendamos. Tres noches: para viaje lento y fotografía. Cuatro o más: mueve los días extra a la ruta, o háblanos de una travesía por el desierto profundo."
-        ]
-      }
-    ],
-    "faqs": [
-      {
-        "question": "¿Es suficiente una noche en el desierto de Merzouga?",
-        "answer": "Para la experiencia esencial — camello al atardecer, noche en campamento, salida del sol — sí. Lo que una noche no puede dar es un viaje relajado hasta las dunas ni un día desértico completo. Desde Marrakech, planifica al menos una ruta de 3 días para una noche en campamento."
-      },
-      {
-        "question": "¿Cuántos días se necesitan de Marrakech a Merzouga?",
-        "answer": "Tres días es el formato práctico más corto: dos días de ruta con una noche en la zona del Dadés o el Todra, y una noche entre las dunas. Cuatro días lo hace cómodo."
-      },
-      {
-        "question": "¿Cuántos días de Fez a Merzouga?",
-        "answer": "La conducción es más corta que desde Marrakech — muchos itinerarios llegan a las dunas el primer día con paradas panorámicas, lo que hace del bucle de 3 días desde Fez o de la ruta de una sola dirección Fez-Marrakech en 4 días formatos muy cómodos."
-      },
-      {
-        "question": "¿Se puede pasar demasiado tiempo en el desierto?",
-        "answer": "Tras unas tres noches en la propia Merzouga, la mayoría saca más partido de variar el viaje — las gargantas, los valles, las ciudades imperiales — que de más noches en la misma zona de campamento."
-      }
-    ],
-    "imageAlts": {
-      "sahara-dune-trekking-merzouga": "Senderistas subiendo la cresta de una alta duna del Sáhara cerca de Merzouga",
-      "luxury-desert-camp-sunset-merzouga": "Tiendas de un campamento de lujo en el desierto al atardecer entre las dunas de Merzouga"
-    },
-    "chrome": {
-      "crumb": "¿Cuántos días en el Sáhara?",
-      "imageAlts": {
-        "sahara-dune-trekking-merzouga": "Senderistas subiendo la cresta de una alta duna del Sáhara cerca de Merzouga",
-        "luxury-desert-camp-sunset-merzouga": "Tiendas de un campamento de lujo en el desierto al atardecer entre las dunas de Merzouga"
-      }
-    }
-  },
   "camel-trekking": {
     "title": "Trekking de camellos en Merzouga — Guía práctica",
     "pageTitle": "Trekking de camellos en Merzouga — Paseos en camello por el Sáhara en Erg Chebbi",
@@ -153,6 +82,132 @@
         "berber-camel-guide-sahara-merzouga": "Guía bereber dirigiendo camellos por las dunas del Sáhara cerca de Merzouga",
         "sahara-dune-trekking-merzouga": "Senderistas subiendo la cresta de una alta duna del Sáhara cerca de Merzouga"
       }
+    }
+  },
+  "desert-camps": {
+    "title": "Campamentos en el desierto de Merzouga — guía completa",
+    "pageTitle": "Campamentos en Merzouga — guía estándar y de lujo",
+    "description": "Cómo elegir campamento en las dunas de Erg Chebbi: tiendas estándar frente a las de lujo, qué incluye la noche, baños, comidas, calefacción y cómo reservar el adecuado.",
+    "heroAlt": "Campamento en el desierto del Sáhara iluminado con farolillos bajo un cielo estrellado cerca de Merzouga",
+    "intro": "Dormir entre las dunas de Erg Chebbi es el gran momento de cualquier viaje a Merzouga. La decisión principal está entre un campamento bereber sencillo y uno de lujo: esta guía los compara sin adornos para que elijas bien tu noche.",
+    "sections": [
+      {
+        "heading": "Qué es realmente un campamento en el desierto",
+        "paragraphs": [
+          "Un campamento en el desierto es un pequeño conjunto de tiendas resguardado entre las dunas, a un paseo en camello de entre 20 minutos y una hora desde el pueblo de Merzouga. Llegas a lomos de camello, contemplas la puesta de sol, compartes una cena marroquí de tres platos, escuchas los tambores bereberes junto al fuego y duermes bajo una cantidad extraordinaria de estrellas. Por la mañana vuelves cabalgando sobre las dunas mientras amanece.",
+          "Todos los campamentos serios comparten este mismo ritmo. Lo que cambia, a veces bastante, es la tienda, la cama, el baño y el nivel de comodidad que te separa de la arena."
+        ]
+      },
+      {
+        "heading": "Campamentos bereberes estándar",
+        "paragraphs": [
+          "Los campamentos estándar son la experiencia clásica del desierto: colchones sencillos sobre plataformas, mantas y baños compartidos. Las tiendas son funcionales y acogedoras; la magia está en el fuego, la comida y el cielo, no en el equipamiento. Es justo lo que la mayoría imagina cuando piensa en dormir en el Sáhara, y encaja con quien busca una noche auténtica sin pagar por el lujo."
+        ]
+      },
+      {
+        "heading": "Campamentos de lujo en el desierto",
+        "paragraphs": [
+          "Los campamentos de lujo mantienen las mismas dunas y el mismo ritmo de la velada, pero mejoran el equipamiento: tiendas más amplias, camas de verdad, ropa de cama suave, alfombras y baño privado con inodoro y ducha de agua caliente. Algunos disponen de calefacción para las noches frías de invierno. Para los viajes de novios, para quien valora la comodidad o para quien quiere el encanto sin asperezas, el lujo suele ser la mejor opción."
+        ]
+      },
+      {
+        "heading": "Cómo decidir entre estándar y lujo",
+        "paragraphs": [
+          "Hazte tres preguntas. ¿Te importará caminar hasta un baño compartido de noche? ¿Necesitas tener asegurados una ducha caliente y un aseo privado? ¿Es la comodidad más importante que el presupuesto? Si la intimidad y el confort pesan, elige lujo. Si prefieres el ambiente comunitario del campamento y no te importa compartir baño, uno estándar te da exactamente las mismas dunas por menos."
+        ]
+      },
+      {
+        "heading": "Qué incluye una noche en el campamento",
+        "paragraphs": [
+          "Una noche habitual incluye el paseo en camello de ida y vuelta, una cena marroquí de tres platos, un desayuno sencillo y, con frecuencia, música bereber junto al fuego. Contemplar las estrellas no cuesta nada: en Erg Chebbi apenas hay contaminación lumínica. Confirma qué incluye exactamente al reservar, porque varía de un campamento a otro."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "¿Cuál es la diferencia entre un campamento estándar y uno de lujo?",
+        "answer": "La diferencia principal es la comodidad: los campamentos de lujo tienen camas de verdad, ropa de cama de calidad y baño privado con ducha caliente, mientras que los estándar usan camas sobre plataforma y baños compartidos. Ambos comparten las mismas dunas y el mismo programa nocturno."
+      },
+      {
+        "question": "¿Los campamentos de lujo tienen ducha caliente y baño privado?",
+        "answer": "Sí. La mayoría de los campamentos de lujo cerca de Merzouga ofrecen tiendas con baño propio, inodoro y ducha con agua caliente."
+      },
+      {
+        "question": "¿El agua de la ducha sale realmente caliente?",
+        "answer": "En la mayoría de los campamentos de lujo, sí: cuentan con duchas de agua caliente. En los campamentos estándar más básicos puede que solo dispongas de un aseo sencillo con agua fría, así que tenlo en cuenta."
+      },
+      {
+        "question": "¿Hace frío por la noche en los campamentos del desierto?",
+        "answer": "Es muy probable, sobre todo de octubre a marzo, cuando las noches del desierto pueden rozar los cero grados. Las tiendas de lujo suelen incluir calefacción o mantas adicionales; en cualquier campamento, lleva una prenda de abrigo."
+      },
+      {
+        "question": "¿Las comidas y el paseo en camello están incluidos en la noche de campamento?",
+        "answer": "Normalmente sí: la cena, el desayuno y el paseo en camello de ida y vuelta suelen formar parte del paquete. Confirma qué incluye exactamente al reservar."
+      }
+    ],
+    "chrome": {
+      "crumb": "Campamentos en el desierto",
+      "imageAlts": {}
+    }
+  },
+  "luxury-desert-camps": {
+    "title": "Campamentos de lujo en Merzouga — qué obtienes realmente",
+    "pageTitle": "Campamentos de lujo en Merzouga — glamping en el Sáhara",
+    "description": "Una mirada realista a los campamentos de lujo del Sáhara cerca de Merzouga: tiendas con baño propio, camas de verdad, ducha caliente y qué separa el lujo del estándar.",
+    "heroAlt": "Tienda de un campamento de lujo iluminada con luz cálida al anochecer entre las dunas cerca de Merzouga",
+    "intro": "Los campamentos de lujo cerca de Merzouga te permiten dormir entre las dunas de Erg Chebbi sin renunciar a una cama decente ni a una ducha caliente. Esto es lo que incluye realmente ese salto al lujo.",
+    "sections": [
+      {
+        "heading": "Qué convierte un campamento en campamento de lujo",
+        "paragraphs": [
+          "Una tienda de lujo en Erg Chebbi sigue siendo un campamento de tiendas: llegas a lomos de camello, cenas bajo las estrellas y duermes sobre la arena. La diferencia está en el equipamiento: una cama sólida con sábanas de calidad, alfombras y lámparas, un baño privado con inodoro y ducha de agua caliente y, a menudo, una terraza propia o calefacción para las noches frías.",
+          "Las dunas, la puesta de sol, los tambores y las estrellas son idénticos a los de un campamento estándar. El lujo cambia la comodidad con la que lo vives, no el desierto en sí."
+        ]
+      },
+      {
+        "heading": "La cuestión del baño privado",
+        "paragraphs": [
+          "Este es el detalle que más distingue a los campamentos de lujo de los estándar. En una tienda de lujo sueles tener un baño privado y cerrado, con agua caliente conducida hasta la propia tienda. En un campamento estándar compartes instalaciones situadas a poca distancia. Si para ti cuenta disponer de una ducha caliente y privada, el lujo es la mejora que de verdad importa."
+        ]
+      },
+      {
+        "heading": "La cena, el fuego y la noche del desierto",
+        "paragraphs": [
+          "Los campamentos de lujo suelen servir la misma cena marroquí de tres platos, generosa, que el resto de campamentos, aunque a menudo en un comedor más completo y con más opciones. Después de cenar, los tambores y los cantos bereberes de llamada y respuesta continúan junto al fuego, y el cielo nocturno sobre Erg Chebbi es un espectáculo en sí mismo. En invierno, los campamentos encienden estufas y añaden mantas para que la velada fría se mantenga confortable."
+        ]
+      },
+      {
+        "heading": "A quién le encajan mejor los campamentos de lujo",
+        "paragraphs": [
+          "El lujo encaja con los viajes de novios, con las parejas que celebran algo, con los viajeros de más edad que buscan comodidad y con quien quiere el romanticismo del Sáhara sin pasar apuros. Si tus prioridades son la intimidad, una ducha caliente y una cama realmente cómoda, el coste adicional suele estar bien invertido para una noche inolvidable."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "¿Los campamentos de lujo tienen de verdad ducha de agua caliente?",
+        "answer": "En la mayoría de los casos, sí: los campamentos de lujo cerca de Merzouga conducen agua caliente hasta un baño propio dentro de la tienda. Conviene confirmarlo al reservar, ya que las instalaciones varían de un campamento a otro."
+      },
+      {
+        "question": "¿Cómo es la cama en un campamento de lujo del Sáhara?",
+        "answer": "Las tiendas de lujo suelen tener una cama de verdad con somier, sábanas de calidad, mantas y almohadas, en lugar de un simple colchón en el suelo o sobre una plataforma."
+      },
+      {
+        "question": "¿Son caros los campamentos de lujo en el desierto?",
+        "answer": "Cuestan más que un campamento estándar, pero bastante menos de lo que podrías imaginar para una velada completa con camello, cena, música y tienda con baño propio. Te damos el precio exacto para tus fechas cuando nos solicitas un viaje."
+      },
+      {
+        "question": "¿Merece la pena un campamento de lujo para una sola noche?",
+        "answer": "Para muchos viajeros, sí: una noche es justo la duración adecuada para una estancia en el desierto, y el lujo hace que esa única noche resulte de verdad cómoda y memorable."
+      },
+      {
+        "question": "¿Se llega igualmente en camello a un campamento de lujo?",
+        "answer": "Sí. A la mayoría de los campamentos de lujo se llega de la misma manera: en camello al atardecer y de nuevo en camello después del amanecer, así que disfrutas tanto de la comodidad del glamping como del paseo clásico."
+      }
+    ],
+    "chrome": {
+      "crumb": "Campamentos de lujo",
+      "imageAlts": {}
     }
   },
   "best-time-to-visit": {
@@ -243,6 +298,145 @@
       "imageAlts": {}
     }
   },
+  "how-to-get-there": {
+    "title": "Cómo llegar a Merzouga — desde Marrakech, Fez y más allá",
+    "pageTitle": "Cómo llegar a Merzouga — desde Marrakech y Fez",
+    "description": "Cómo llegar a Merzouga y Erg Chebbi: tiempos de trayecto realistas y opciones de transporte público y autobús desde Marrakech, Fez, Ouarzazate y Agadir.",
+    "heroAlt": "La carretera de acceso ascendiendo hacia las dunas de Erg Chebbi desde el pueblo de Merzouga",
+    "intro": "Merzouga se encuentra en el extremo oriental de Marruecos, en la carretera hacia Errachidia y la frontera con Argelia. La mayoría de los visitantes llega por carretera desde las grandes ciudades imperiales: estos son los tiempos de viaje realistas y las opciones de transporte.",
+    "sections": [
+      {
+        "heading": "Desde Marrakech",
+        "paragraphs": [
+          "El trayecto de Marrakech a Merzouga son unas 9 o 10 horas de conducción sin paradas largas: aproximadamente 560 km. La ruta cruza el Alto Atlas por el Tizi n'Tichka, desciende hacia Ouarzazate y Aït Ben Haddou, recorre de punta a punta el Valle del Dades y la Garganta del Todra, y después sigue el valle del Ziz pasando por Errachidia y Midelt hasta Merzouga. Casi cualquier parada nocturna de esta ruta merece un alto en el camino.",
+          "La mayoría de los viajeros lo hace como primera jornada de un circuito de varios días, con parada en Aït Ben Haddou y noche en la zona del Dades o del Todra."
+        ]
+      },
+      {
+        "heading": "Desde Fez",
+        "paragraphs": [
+          "De Fez a Merzouga hay entre 7 y 8 horas de conducción: unos 550 km. La carretera se dirige al sureste a través del Medio Atlas, pasa por Ifrane (la localidad de los cedros) y continúa por Midelt y a lo largo del valle del Ziz, la ruta jalonada de palmerales que la Oficina Nacional Marroquí de Turismo describe como la conexión Fez–Errachidia–Midelt–Merzouga. El trayecto es más directo que el de Marrakech y el paisaje se abre desde el bosque de cedros hasta el oasis del desierto.",
+          "En invierno, esta carretera puede verse afectada por la niebla en las cotas más altas del Medio Atlas, de modo que un conductor privado o un circuito organizado resultan por lo general más fiables que el transporte público."
+        ]
+      },
+      {
+        "heading": "Desde Ouarzazate",
+        "paragraphs": [
+          "De Ouarzazate a Merzouga hay entre 3 y 3,5 horas: unos 230 km, por el valle del Draa y Tinzouline. Es un trayecto agradable y en general sencillo, y una etapa habitual en un circuito por el sur de Marruecos."
+        ]
+      },
+      {
+        "heading": "Desde Agadir",
+        "paragraphs": [
+          "De Agadir a Merzouga hay entre 6 y 7 horas de conducción: unos 500 km, cruzando del Atlántico al desierto por el Anti-Atlas y el valle del Draa. Es una jornada larga al volante, así que conviene planificar una parada para pernoctar."
+        ]
+      },
+      {
+        "heading": "Transporte público y conducir por tu cuenta",
+        "paragraphs": [
+          "No hay tren de pasajeros directo hasta Merzouga. Las opciones públicas realistas son los grand taxis y los autobuses desde Fez, Ouarzazate y Errachidia; las frecuencias son escasas y los enlaces tardan más que ir por carretera. Un conductor privado o un circuito privado desde tu ciudad de llegada es, con diferencia, la forma más cómoda y fiable, y te permite parar en Aït Ben Haddou o en el Valle del Dades sin prisas.",
+          "Conducir por tu cuenta es posible y las carreteras principales N9 y N13 están en un estado razonable, pero el combustible, la navegación y los largos tramos desérticos hacen que un conductor local suela compensar por la flexibilidad y la tranquilidad que aporta."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "¿Cuánto se tarda en coche de Marrakech a Merzouga?",
+        "answer": "Unas 9 o 10 horas de conducción (560 km) sin paradas largas. La mayoría lo hace como primer día de un circuito, con parada en Aït Ben Haddou y noche en las gargantas del Dades o del Todra."
+      },
+      {
+        "question": "¿Cuánto se tarda en coche de Fez a Merzouga?",
+        "answer": "Entre 7 y 8 horas (550 km), por el Medio Atlas, Ifrane, Midelt y el valle del Ziz. Es la aproximación más directa al desierto."
+      },
+      {
+        "question": "¿Llega el tren a Merzouga?",
+        "answer": "No hay servicio de pasajeros directo. El acceso ferroviario más cercano está en Ouarzazate o Fez; desde allí se continúa por carretera (grand taxi, autobús o traslado privado)."
+      },
+      {
+        "question": "¿La carretera a Merzouga está asfaltada y es segura?",
+        "answer": "Las principales N9 y N13 están asfaltadas y son transitables, aunque el último tramo que cruza la llanura de grava junto a las dunas no está asfaltado; con precaución resulta apto para un coche de alquiler normal."
+      },
+      {
+        "question": "¿Se puede llegar a Merzouga en autobús?",
+        "answer": "Sí, pero con poca frecuencia y de forma más lenta que en coche. Hay grand taxis desde Fez, Ouarzazate y Errachidia, con enlaces hasta Merzouga según la temporada y la demanda."
+      }
+    ],
+    "chrome": {
+      "crumb": "Cómo llegar",
+      "imageAlts": {}
+    }
+  },
+  "erg-chebbi": {
+    "title": "Erg Chebbi — las dunas más altas de Marruecos",
+    "pageTitle": "Dunas de Erg Chebbi, Merzouga — guía del Sáhara",
+    "description": "Sobre Erg Chebbi, junto a Merzouga: cómo se formó el mar de dunas, qué altura y longitud tiene, qué hacer sobre la arena y por qué es la gran puerta al Sáhara.",
+    "heroAlt": "El inmenso mar de dunas de Erg Chebbi elevándose hasta una cresta alta cerca de Merzouga",
+    "intro": "Erg Chebbi es el mar de dunas sahariano que convierte a Merzouga en el lugar más accesible de Marruecos para plantarse sobre la cima de un océano de arena. Esto es lo que lo hace singular y por qué atrae visitantes año tras año.",
+    "sections": [
+      {
+        "heading": "Qué es Erg Chebbi",
+        "paragraphs": [
+          "Erg Chebbi es un mar de arena seco y activo de unos 28 km de largo y 9 km de ancho en su punto más amplio, justo al oeste de Merzouga. Sus dunas se elevan hasta unos 150 m en la cresta más alta: las dunas exentas más altas de Marruecos. El nombre significa «el lugar de la arena», y todo el sistema se alimenta del viento que sopla sobre la llanura de grava que se extiende desde el pueblo.",
+          "A diferencia de las pequeñas dunas que rodean muchas puertas de entrada al Sáhara, las crestas de Erg Chebbi son lo bastante grandes como para recorrerlas y escalarlas, y se llega a ellas sin necesidad de 4x4 desde la carretera principal del valle, razón por la cual casi todos los circuitos por el Sáhara marroquí terminan aquí."
+        ]
+      },
+      {
+        "heading": "Cómo se formaron las dunas",
+        "paragraphs": [
+          "Erg Chebbi existe por el clima y la geología de la zona: las Altas Mesetas al norte y las estribaciones del Anti-Atlas al sur encauzan los vientos dominantes hacia las dunas, y la llanura de grava circundante aporta la arena. Es un erg vivo: las dunas se desplazan lentamente con cada estación, de modo que las crestas exactas cambian, aunque las grandes lomas junto a Merzouga llevan décadas en el mismo sitio."
+        ]
+      },
+      {
+        "heading": "Qué hacer realmente sobre las dunas",
+        "paragraphs": [
+          "Camina o sube una duna para ver el amanecer, cuando la arena está fresca y las sombras se estiran al máximo. Recorre una cresta a lomos de camello al atardecer, cuando todo el campo de dunas se tiñe de ámbar. Pasa la noche en un campamento escondido entre las dunas, con cena junto al fuego y estrellas, porque sobre la arena prácticamente no hay contaminación lumínica.",
+          "Otras experiencias habituales son el sandboard y las salidas cortas en 4x4 que suben a las crestas más altas para hacer fotos. Las dunas ofrecen además los mejores amaneceres y atardeceres de Marruecos, y el cielo nocturno de aquí es de los más limpios del país."
+        ]
+      },
+      {
+        "heading": "Otras notas prácticas sobre Erg Chebbi",
+        "paragraphs": [
+          "Las dunas son terreno público y se pueden recorrer libremente, aunque llegar a los mejores miradores puede requerir un breve trayecto en taxi compartido o en 4x4 desde Merzouga. Lleva calzado cerrado, porque en verano la arena caliente quema. Lleva agua, protección solar y una prenda ligera para después del atardecer. Las noches sobre las dunas son frescas incluso en verano.",
+          "La mayoría de los visitantes llega a Erg Chebbi dentro de un circuito por Merzouga; si conduces tú, un vehículo pequeño con capacidad todoterreno facilita el acceso a las crestas más altas, aunque un coche normal llega a los miradores principales."
+        ]
+      },
+      {
+        "heading": "Amanecer y atardecer sobre las dunas",
+        "paragraphs": [
+          "El atardecer es la hora social: las caras occidentales del erg pasan del dorado al rojo intenso mientras las filas de camellos dibujan las crestas más abajo. El amanecer es la elección de los entendidos: la arena está fresca bajo los pies, el pueblo sigue dormido y las sombras de las laderas orientales se alargan, azuladas. Ninguno de los dos cuesta nada: sube a pie desde Merzouga en menos de una hora, o calcula el paseo en camello o la salida en 4x4 para terminar sobre una cresta.",
+          "Para quien fotografía, la hora posterior al amanecer supera al bullicio del atardecer: menos huellas, contrastes más suaves y el campo de dunas para ti."
+        ]
+      },
+      {
+        "heading": "Cuánto tiempo necesitas en Erg Chebbi",
+        "paragraphs": [
+          "Una noche sobre las dunas te da la secuencia clásica: paseo en camello al atardecer, cena en el campamento y regreso al amanecer. Dos noches te permiten añadir los alrededores del erg en 4x4 o en quad, visitar Khamlia para escuchar música gnawa y dejar libres las horas de más calor. Más de dos días en Merzouga es cosa de viajeros pausados: el Sáhara premia la profundidad, pero el resto del sur de Marruecos queda cerca y compensa los kilómetros."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "¿Qué altura tienen las dunas de Erg Chebbi?",
+        "answer": "Las dunas alcanzan unos 150 m en sus crestas más altas, las mayores de Marruecos. El campo de dunas mide aproximadamente 28 km de largo y hasta 9 km de ancho."
+      },
+      {
+        "question": "¿Erg Chebbi es el desierto del Sáhara?",
+        "answer": "Erg Chebbi es un gran mar de dunas dentro del Sáhara, la parte que los visitantes conocen desde Merzouga. El Sáhara en sí abarca todo el continente; Erg Chebbi es su rincón más accesible en Marruecos."
+      },
+      {
+        "question": "¿Se puede visitar Erg Chebbi por libre?",
+        "answer": "Sí. Las dunas son terreno público. La mayoría llega a pie, en taxi compartido o con un breve paseo en camello desde el pueblo de Merzouga."
+      },
+      {
+        "question": "¿Cuál es la mejor luz para fotografiar Erg Chebbi?",
+        "answer": "El amanecer y el atardecer. Las dunas se vuelven doradas y después anaranjadas según sale o se pone el sol, y las sombras alargadas dan a las crestas un relieve muy marcado."
+      }
+    ],
+    "chrome": {
+      "crumb": "Erg Chebbi",
+      "imageAlts": {}
+    }
+  },
   "what-to-pack": {
     "title": "Qué llevar a Merzouga — Lista de equipaje para el desierto",
     "pageTitle": "Qué llevar a Merzouga — Lista de equipaje para el desierto del Sáhara",
@@ -308,6 +502,77 @@
     "chrome": {
       "crumb": "Qué llevar a Merzouga",
       "imageAlts": {}
+    }
+  },
+  "how-many-days": {
+    "title": "¿Cuántos días necesitas en el Sáhara?",
+    "pageTitle": "¿Cuántos días en el Sáhara? — Guía de duración en Merzouga",
+    "description": "Cuántos días necesitas en el Sáhara y Merzouga — comparativa honesta de rutas de 1, 2, 3 y más días, y lo que cada duración permite de verdad.",
+    "heroAlt": "Las dunas de Erg Chebbi cerca de Merzouga — ¿cuántos días necesita una ruta por el Sáhara?",
+    "intro": "Respuesta corta: una noche entre las dunas es el mínimo para la experiencia sahariana clásica, y dos noches es lo que recomendamos con más frecuencia. La respuesta larga depende de dónde empieces, cuánto conduzcas aceptes por día y qué quieres que sea el desierto: un punto fuerte o el objetivo del viaje. Aquí está el desglose honesto.",
+    "sections": [
+      {
+        "heading": "1 día en el Sáhara (una noche entre las dunas)",
+        "paragraphs": [
+          "Una noche en campamento da la secuencia esencial: llegada al final de la tarde, camello al atardecer hacia Erg Chebbi, cena y tambores, salida del sol sobre las dunas, y regreso a media mañana. Nada se apresura sobre la arena misma: la experiencia es compacta pero completa.",
+          "La compensación es el viaje. Desde Marrakech, una ruta de una noche implica días de conducción muy largos; desde Fez es más llevadera. Un día es la opción correcta cuando el Sáhara es un punto fuerte de un itinerario más amplio por Marruecos y tu agenda es realmente ajustada."
+        ]
+      },
+      {
+        "heading": "2 días en el Sáhara (dos noches)",
+        "paragraphs": [
+          "Dos noches es el punto justo para la mayoría de los viajeros. La primera tarde y noche ofrecen la secuencia clásica; el segundo día — libre de la logística de llegada — es cuando el desierto se abre: la ruta en 4x4 por el desierto de piedra negra y el país nómada, Khamlia y su música gnawa, el oasis o simplemente tiempo sin prisa en las dunas. La segunda noche en campamento, cuando la novedad se desvanece y llega el silencio, suele ser la que uno recuerda.",
+          "Si tu itinerario por Marruecos puede absorberlo, esta es la versión que construimos más a menudo."
+        ]
+      },
+      {
+        "heading": "3 días en el Sáhara",
+        "paragraphs": [
+          "Tres días conviene a los viajeros lentos, a los fotógrafos y a las familias que quieren que el desierto sea un capítulo del viaje y no una sola tarde. Añades profundidad antes que categorías nuevas: exploraciones 4x4 más largas, una segunda noche en otro campamento, sandboard, observación de estrellas sin horario y tiempo en el pueblo y el oasis.",
+          "Tres días también encaja de forma natural con la ruta sur más amplia: el valle del Dadés y las gargantas del Todra a la ida o la vuelta, convirtiéndolo en el núcleo de un viaje desértico bien ritmado de 4 o 5 días."
+        ]
+      },
+      {
+        "heading": "4 días o más (el desierto más la propia ruta)",
+        "paragraphs": [
+          "Más allá de tres días en la propia Merzouga, el tiempo extra suele invertirse mejor en el viaje — el Atlas, Ait Ben Haddou, las gargantas — o en una travesía de una sola dirección Fez-Marrakech por el desierto que ve el país entero de una vez en lugar de deshacer el camino. Si el Sáhara en sí es el objetivo entero de tu viaje, se pueden discutir travesías de varios días a caballo hacia el desierto más profundo en tu presupuesto privado."
+        ]
+      },
+      {
+        "heading": "La respuesta rápida",
+        "paragraphs": [
+          "Una noche: la clásica, funciona desde Fez, ajustada desde Marrakech. Dos noches: lo que más recomendamos. Tres noches: para viaje lento y fotografía. Cuatro o más: mueve los días extra a la ruta, o háblanos de una travesía por el desierto profundo."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "¿Es suficiente una noche en el desierto de Merzouga?",
+        "answer": "Para la experiencia esencial — camello al atardecer, noche en campamento, salida del sol — sí. Lo que una noche no puede dar es un viaje relajado hasta las dunas ni un día desértico completo. Desde Marrakech, planifica al menos una ruta de 3 días para una noche en campamento."
+      },
+      {
+        "question": "¿Cuántos días se necesitan de Marrakech a Merzouga?",
+        "answer": "Tres días es el formato práctico más corto: dos días de ruta con una noche en la zona del Dadés o el Todra, y una noche entre las dunas. Cuatro días lo hace cómodo."
+      },
+      {
+        "question": "¿Cuántos días de Fez a Merzouga?",
+        "answer": "La conducción es más corta que desde Marrakech — muchos itinerarios llegan a las dunas el primer día con paradas panorámicas, lo que hace del bucle de 3 días desde Fez o de la ruta de una sola dirección Fez-Marrakech en 4 días formatos muy cómodos."
+      },
+      {
+        "question": "¿Se puede pasar demasiado tiempo en el desierto?",
+        "answer": "Tras unas tres noches en la propia Merzouga, la mayoría saca más partido de variar el viaje — las gargantas, los valles, las ciudades imperiales — que de más noches en la misma zona de campamento."
+      }
+    ],
+    "imageAlts": {
+      "sahara-dune-trekking-merzouga": "Senderistas subiendo la cresta de una alta duna del Sáhara cerca de Merzouga",
+      "luxury-desert-camp-sunset-merzouga": "Tiendas de un campamento de lujo en el desierto al atardecer entre las dunas de Merzouga"
+    },
+    "chrome": {
+      "crumb": "¿Cuántos días en el Sáhara?",
+      "imageAlts": {
+        "sahara-dune-trekking-merzouga": "Senderistas subiendo la cresta de una alta duna del Sáhara cerca de Merzouga",
+        "luxury-desert-camp-sunset-merzouga": "Tiendas de un campamento de lujo en el desierto al atardecer entre las dunas de Merzouga"
+      }
     }
   }
 }
