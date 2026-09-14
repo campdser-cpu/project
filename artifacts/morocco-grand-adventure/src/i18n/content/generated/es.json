@@ -55,6 +55,54 @@
     {
       "question": "¿Podéis adaptaros a restricciones alimentarias?",
       "answer": "Por supuesto — contamos con menús vegetarianos, veganos, sin gluten, halal y adaptados a alergias. Por favor, infórmenos en el momento de la reserva."
+    },
+    {
+      "question": "¿Qué incluyen sus circuitos por el desierto?",
+      "answer": "Todos nuestros circuitos por el desierto incluyen transporte privado con aire acondicionado, conductor de habla inglesa, alojamiento de lujo, desayuno y cena diarios, travesía en camello por Erg Chebbi, una noche en un campamento de lujo en el desierto y recogida y regreso al hotel. Los vuelos internacionales, los almuerzos y las actividades opcionales normalmente no están incluidos."
+    },
+    {
+      "question": "¿Qué deben llevar los viajeros al campamento del Sahara?",
+      "answer": "Lleve capas de abrigo para las frías noches del desierto, un pañuelo, protector solar, gafas de sol, una linterna, calzado cómodo y una batería externa. Nosotros proporcionamos los sacos de dormir para el campamento del desierto. El bañador resulta útil en algunos campamentos de lujo que cuentan con piscina."
+    },
+    {
+      "question": "¿Cómo se llega a Merzouga y al desierto del Sahara?",
+      "answer": "El trayecto de Marrakech a Merzouga dura entre 9 y 10 horas atravesando la cordillera del Alto Atlas. Desde Fez son aproximadamente entre 7 y 8 horas. Organizamos traslados privados con paradas cómodas. Lo más habitual es volar a Marrakech o a Fez."
+    },
+    {
+      "question": "¿Es apta la travesía en camello para principiantes?",
+      "answer": "Sí: nuestras travesías en camello son suaves y aptas para todos los niveles. Los camellos están bien adiestrados y los recorridos duran normalmente entre 1 y 2 horas al atardecer. Para quienes prefieran no montar, pueden organizarse traslados en 4x4 hasta el campamento."
+    },
+    {
+      "question": "¿Cómo son los campamentos del desierto?",
+      "answer": "Nuestros campamentos de lujo en el desierto cuentan con camas de verdad, baños privados y elegantes jaimas de estilo bereber bajo las estrellas. La cena se sirve alrededor de una hoguera con música bereber en directo. Es una experiencia cómoda, auténtica e inolvidable."
+    },
+    {
+      "question": "¿Pueden organizar un viaje durante el Ramadán?",
+      "answer": "Sí: Marruecos durante el Ramadán es una experiencia cultural especial. Algunos restaurantes pueden estar cerrados durante el día, pero nuestros guías lo gestionan con soltura. Las cenas festivas y los animados mercados nocturnos convierten estas fechas en un momento único para visitar el país."
+    },
+    {
+      "question": "¿Cuál es la política de cancelación?",
+      "answer": "Cancelación gratuita hasta 7 días antes de su circuito, con reembolso íntegro. Las cancelaciones realizadas dentro de los 7 días previos pueden conllevar un cargo del 50 %. Las ausencias sin aviso no son reembolsables. Recomendamos contratar un seguro de viaje para viajar con total tranquilidad."
+    },
+    {
+      "question": "¿Necesito un seguro de viaje?",
+      "answer": "Recomendamos encarecidamente contratar un seguro de viaje para cualquier viaje a Marruecos. Conviene que cubra emergencias médicas, cancelación del viaje y pérdida de equipaje. Si lo desea, podemos asesorarle sobre las pólizas más adecuadas."
+    },
+    {
+      "question": "¿Son adecuados los circuitos para niños y viajeros de edad avanzada?",
+      "answer": "Por supuesto. Nuestros circuitos privados se adaptan por completo a familias y a huéspedes de mayor edad. El ritmo es flexible, las travesías en camello son opcionales y los traslados en 4x4 pueden sustituir los tramos a pie. Tenemos experiencia con todas las edades."
+    },
+    {
+      "question": "¿Con cuánta antelación conviene reservar?",
+      "answer": "Para la temporada alta (de marzo a mayo y de septiembre a noviembre) recomendamos reservar con al menos 4 a 6 semanas de antelación. Para viajes al desierto en invierno o fechas señaladas, lo ideal es hacerlo con 2 o 3 meses. A veces son posibles las reservas de última hora: no dude en consultarnos."
+    },
+    {
+      "question": "¿Qué tipo de vehículos utilizan?",
+      "answer": "Utilizamos vehículos modernos con aire acondicionado, desde turismos para 2 a 4 pasajeros hasta amplias furgonetas para grupos más numerosos. Todos los vehículos están en perfecto estado de mantenimiento y los conducen profesionales con la licencia correspondiente."
+    },
+    {
+      "question": "¿Ofrecen recogida y traslado al aeropuerto?",
+      "answer": "Sí: todos nuestros circuitos incluyen recogida y traslado gratuitos desde el aeropuerto o el hotel en Marrakech, Fez y otras ciudades principales. Su conductor le esperará con un cartel con su nombre y le ayudará con el equipaje."
     }
   ],
   "destinations": {
@@ -139,7 +187,9 @@
         "Travesías en camello",
         "Campamentos de lujo en el desierto",
         "Observación de estrellas",
-        "Pueblos bereberes"
+        "Pueblos bereberes",
+        "Amanecer sobre las dunas",
+        "Zoco semanal de Rissani"
       ]
     },
     "erg-chebbi": {
@@ -153,7 +203,10 @@
         "Sandboard",
         "Veladas de música bereber",
         "Ruta en 4x4 por el desierto",
-        "Cena en campamento de lujo"
+        "Cena en campamento de lujo",
+        "Observación de estrellas",
+        "Rutas en quad",
+        "Música gnawa en Khamlia"
       ]
     },
     "ouarzazate": {
@@ -167,7 +220,8 @@
         "Kasbah de Taourirt",
         "Aït Ben Haddou (30min)",
         "Valle del Draa",
-        "Oasis de Fint"
+        "Oasis de Fint",
+        "Ruta de las Kasbahs"
       ]
     },
     "ait-ben-haddou": {
@@ -181,7 +235,8 @@
         "Visita a localizaciones de cine",
         "Fotografía al amanecer",
         "Visitas a familias bereberes",
-        "Talleres de cerámica"
+        "Talleres de cerámica",
+        "Vistas desde el granero de la cima"
       ]
     },
     "zagora": {
@@ -209,7 +264,8 @@
         "Rocas de los Dedos del Mono",
         "Festival de la Rosa (mayo)",
         "Antiguas kasbahs",
-        "Senderismo por el valle"
+        "Senderismo por el valle",
+        "Vistas de la carretera en zigzag"
       ]
     },
     "todra-gorge": {
@@ -223,7 +279,8 @@
         "Paseo por el cañón",
         "Casas de huéspedes bereberes",
         "Fotografía",
-        "Vistas al amanecer"
+        "Vistas al amanecer",
+        "Paredes de 300 m de altura"
       ]
     },
     "skoura": {
@@ -279,7 +336,8 @@
         "Plaza Uta el-Hammam",
         "Manantiales de Ras el-Ma",
         "Cascadas de Akchour",
-        "Rutas de senderismo por el Rif"
+        "Rutas de senderismo por el Rif",
+        "Mirador de la Mezquita Española"
       ]
     },
     "imlil": {
@@ -349,7 +407,8 @@
         "Música gnawa",
         "Kitesurf",
         "Marisco en el puerto",
-        "Barrio judío del Mellah"
+        "Barrio judío del Mellah",
+        "Playas del Atlántico"
       ]
     },
     "agadir": {
@@ -3434,6 +3493,50 @@
         }
       ],
       "quoteOnly": true
+    }
+  },
+  "blog": {
+    "merzouga-luxury-desert-camp-guide": {
+      "title": "La guía definitiva de los campamentos de lujo en el desierto de Merzouga",
+      "excerpt": "Desde tiendas privadas con baño incorporado hasta cenas gourmet bajo la Vía Láctea: todo lo que necesitas saber sobre el glamping de lujo en el Sáhara.",
+      "alt": "Campamento de lujo en el desierto con jaimas privadas al atardecer cerca de Merzouga, Marruecos",
+      "canonicalTitle": "Campamentos de lujo en Merzouga — guía del glamping sahariano",
+      "canonicalExcerpt": "De las jaimas privadas con baño propio a las cenas gastronómicas bajo la Vía Láctea: lo esencial del glamping de lujo en el Sáhara de Merzouga."
+    },
+    "best-time-to-visit-morocco-sahara": {
+      "title": "La mejor época para visitar el desierto del Sáhara: guía mes a mes",
+      "excerpt": "¿Cuándo planear tu viaje al desierto de Merzouga? Nuestros expertos locales analizan temperaturas, aglomeraciones y condiciones ideales mes a mes.",
+      "alt": "Dunas de Erg Chebbi a la hora dorada cerca de Merzouga, Marruecos",
+      "canonicalTitle": "Mejor época para visitar el Sáhara — guía mes a mes",
+      "canonicalExcerpt": "¿Cuándo planificar su viaje al desierto de Merzouga? Nuestros expertos locales analizan temperaturas, afluencia y condiciones ideales mes a mes."
+    },
+    "camel-trekking-etiquette-morocco": {
+      "title": "Paseos en camello en Marruecos: qué esperar y cómo prepararse",
+      "excerpt": "Todo lo que necesita saber quien monta por primera vez: qué llevar puesto, cómo subir, qué empacar y las tradiciones de este ancestral viaje sahariano.",
+      "alt": "Camellos atravesando dunas doradas al atardecer durante una travesía por el desierto",
+      "canonicalTitle": "Travesías en camello en Marruecos — qué esperar y cómo prepararse",
+      "canonicalExcerpt": "Todo lo que debe saber quien monta por primera vez: qué ponerse, cómo subir, qué llevar y las tradiciones de este viaje sahariano ancestral."
+    },
+    "marrakech-to-merzouga-roadtrip": {
+      "title": "De Marrakech a Merzouga: el itinerario definitivo del viaje en coche por el Sáhara",
+      "excerpt": "Cruza el Alto Atlas, explora Aït Ben Haddou, serpentea por el valle del Dades y llega a las doradas dunas del erg Chebbi: la guía completa de la ruta.",
+      "alt": "El ksar de Aït Ben Haddou al atardecer, Patrimonio Mundial de la UNESCO en la ruta de Marrakech a Merzouga",
+      "canonicalTitle": "De Marrakech a Merzouga — itinerario por el Sáhara",
+      "canonicalExcerpt": "Cruce el Alto Atlas, descubra Aït Ben Haddou, recorra el valle del Dades y llegue a las dunas doradas de Erg Chebbi: la guía completa de la ruta."
+    },
+    "morocco-packing-list-desert": {
+      "title": "La lista de equipaje perfecta para los viajes al desierto de Marruecos (2026)",
+      "excerpt": "Qué empacar para el Sáhara: prendas transpirables, protección solar y los pequeños lujos que hacen inolvidable una noche en el desierto.",
+      "alt": "Panorámica del desierto con dunas lejanas y cielo despejado, la referencia definitiva para preparar el equipaje en Marruecos",
+      "canonicalTitle": "Equipaje para el desierto de Marruecos — qué llevar al Sáhara",
+      "canonicalExcerpt": "Qué llevar al Sáhara: capas transpirables, protección solar y lo imprescindible para que una noche en el desierto sea inolvidable."
+    },
+    "fes-chefchaouen-blue-city-guide": {
+      "title": "De Fez a Chefchaouen: explorando la ciudad azul de Marruecos",
+      "excerpt": "El viaje del corazón cultural de Marruecos a la famosa medina azul: qué ver, dónde alojarse y cómo aprovecharlo al máximo.",
+      "alt": "Edificios y callejones encalados de azul en la medina de Chefchaouen, Marruecos",
+      "canonicalTitle": "De Fez a Chefchaouen — la ciudad azul de Marruecos",
+      "canonicalExcerpt": "El viaje desde el corazón cultural de Marruecos hasta la célebre medina azul: qué ver, dónde alojarse y cómo aprovecharlo al máximo."
     }
   }
 }
