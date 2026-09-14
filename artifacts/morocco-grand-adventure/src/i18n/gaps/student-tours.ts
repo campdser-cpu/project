@@ -15,6 +15,19 @@
 
 const en: Record<string, string> = {
   st_breadcrumb: 'Student Tours',
+  // Journey Ideas -> existing canonical MGA tours (bridge, not new products)
+  st_11_note: 'Example journey \u2014 not a fixed package.',
+  st_11_cta: 'View the journey',
+  st_11_r1_desc: 'Cross the High Atlas, read an earthen ksar at A\u00eft Ben Haddou, then reach the dunes for a night in the Sahara. The shortest route that still reaches Erg Chebbi.',
+  st_11_r2_desc: 'A slower southern loop: mountain passes, the Dades and Todra gorges, oasis irrigation and the desert edge \u2014 strongest for geography and environment groups.',
+  st_11_r3_desc: 'Marrakech and Fes joined through the Sahara. Imperial cities, Al-Qarawiyyin, kasbah country and a desert night \u2014 the fullest cultural and historical sweep.',
+  // FAQ 14-16 (coordinator practicalities)
+  st_15_q14: 'Can you accommodate dietary requirements or food allergies for student groups?',
+  st_15_a14: 'Tell us during planning and we will raise it with the riads, hotels and desert camps on your route so meals can be arranged and confirmed before you travel. Vegetarian and common dietary needs are usually straightforward; allergies and stricter requirements need to be shared early so each property can confirm what it is able to do. We pass on exactly what you give us and confirm the arrangements in writing \u2014 we do not operate the kitchens ourselves, so we do not claim allergen-free preparation.',
+  st_15_q15: 'Do students need previous experience for quad or buggy activities?',
+  st_15_a15: 'No previous experience is normally expected for the beginner-level desert activities we arrange \u2014 participants are shown how the machine works and ride with a local guide leading the group. Exact conditions vary by activity and operator, including minimum ages and whether a participant drives alone or rides with a guide, so these are confirmed with the operator when the activity is arranged for your dates. Anyone who prefers not to take part can join the same outing by 4x4 instead.',
+  st_15_q16: 'How do you plan travel for international student groups?',
+  st_15_a16: 'We work backwards from the group. First the size and dates are established, then the itinerary and the transport it requires, then accommodation along the route, then the activities and any adjustments the group needs. Arrival and departure logistics are coordinated around your flights, and the whole programme is confirmed with the group coordinator before travel. Every element is agreed in advance rather than arranged on the day, and one named contact manages the programme on the ground.',
   st_backlink: 'Planning Morocco travel for a university or student group?',
   // Where students travel (hub) - PLACE > SUBJECT > EXPERIENCE > MEANING.
   // Links out to the canonical MGA page instead of duplicating it.
@@ -335,6 +348,17 @@ const en: Record<string, string> = {
 
 const pt: Record<string, string> = {
   st_breadcrumb: 'Viagens para Estudantes',
+  st_11_note: 'Exemplo de percurso \u2014 n\u00e3o \u00e9 um pacote fixo.',
+  st_11_cta: 'Ver o percurso',
+  st_11_r1_desc: 'Atravesse o Alto Atlas, leia um ksar de terra em A\u00eft Ben Haddou e chegue \u00e0s dunas para uma noite no Saara. A rota mais curta que ainda alcan\u00e7a Erg Chebbi.',
+  st_11_r2_desc: 'Um circuito do sul mais pausado: passos de montanha, as gargantas do Dades e de Todra, a irriga\u00e7\u00e3o dos o\u00e1sis e a orla do deserto \u2014 ideal para grupos de geografia e ambiente.',
+  st_11_r3_desc: 'Marrakech e Fes unidas pelo Saara. Cidades imperiais, a Al-Qarawiyyin, a regi\u00e3o das kasbahs e uma noite no deserto \u2014 a vis\u00e3o cultural e hist\u00f3rica mais completa.',
+  st_15_q14: 'Conseguem responder a requisitos alimentares ou alergias em grupos de estudantes?',
+  st_15_a14: 'Informe-nos durante o planeamento e levantaremos a quest\u00e3o junto dos riads, hot\u00e9is e acampamentos no deserto da sua rota, para que as refei\u00e7\u00f5es sejam organizadas e confirmadas antes da viagem. Necessidades vegetarianas e requisitos comuns s\u00e3o normalmente simples; alergias e exig\u00eancias mais estritas devem ser comunicadas cedo, para que cada unidade confirme o que consegue fazer. Transmitimos exatamente o que nos indicar e confirmamos as solu\u00e7\u00f5es por escrito \u2014 n\u00e3o gerimos as cozinhas, pelo que n\u00e3o afirmamos prepara\u00e7\u00e3o isenta de alerg\u00e9nios.',
+  st_15_q15: 'Os estudantes precisam de experi\u00eancia pr\u00e9via para atividades de quad ou buggy?',
+  st_15_a15: 'Normalmente n\u00e3o \u00e9 exigida experi\u00eancia pr\u00e9via para as atividades de n\u00edvel iniciante que organizamos \u2014 \u00e9 explicado como funciona a m\u00e1quina e percorre-se o trajeto com um guia local \u00e0 frente do grupo. As condi\u00e7\u00f5es exatas variam consoante a atividade e o operador, incluindo idades m\u00ednimas e se o participante conduz sozinho ou segue com um guia, pelo que s\u00e3o confirmadas com o operador quando a atividade \u00e9 marcada para as suas datas. Quem preferir n\u00e3o participar pode acompanhar a mesma sa\u00edda de 4x4.',
+  st_15_q16: 'Como planeiam viagens para grupos internacionais de estudantes?',
+  st_15_a16: 'Trabalhamos a partir do grupo. Primeiro estabelecem-se a dimens\u00e3o e as datas, depois o itiner\u00e1rio e o transporte que exige, em seguida o alojamento ao longo da rota e, por fim, as atividades e os ajustes necess\u00e1rios. A chegada e a partida s\u00e3o coordenadas em fun\u00e7\u00e3o dos voos, e todo o programa \u00e9 confirmado com o coordenador do grupo antes da viagem. Cada elemento \u00e9 acordado antecipadamente, e n\u00e3o improvisado no pr\u00f3prio dia, com um contacto designado a gerir o programa no terreno.',
   st_backlink: 'A planear uma viagem a Marrocos para um grupo universit\u00e1rio ou de estudantes?',
   st_wt_h2: 'Onde viajam os estudantes',
   st_wt_intro: 'Seis lugares, cada um lido atrav\u00e9s de uma disciplina diferente. Damos o contexto de aprendizagem; os guias ligados cont\u00eam todo o detalhe do destino.',

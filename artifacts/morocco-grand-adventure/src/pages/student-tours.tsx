@@ -105,7 +105,7 @@ export default function StudentTours() {
   const why = [1, 2, 3, 4, 5, 6, 7, 8].map((n) => ({ t: t(`st_08_i${n}_t`), d: t(`st_08_i${n}_d`) }));
   const steps = [1, 2, 3, 4, 5, 6].map((n) => ({ n: String(n).padStart(2, '0'), t: t(`st_15_s${n}_t`), d: t(`st_15_s${n}_d`) }));
   const focus = [1, 2, 3, 4, 5, 6].map((n) => ({ t: t(`st_14_f${n}_t`), d: t(`st_14_f${n}_d`) }));
-  const faqs = Array.from({ length: 13 }, (_, i) => ({ q: t(`st_15_q${i + 1}`), a: t(`st_15_a${i + 1}`) }));
+  const faqs = Array.from({ length: 16 }, (_, i) => ({ q: t(`st_15_q${i + 1}`), a: t(`st_15_a${i + 1}`) }));
   const pov = [1, 2, 3, 4, 5].map((n) => ({ l: t(`st_12_l${n}`), d: t(`st_12_d${n}`) }));
 
   const programmes = [
@@ -132,9 +132,15 @@ export default function StudentTours() {
     exp: t(`st_wt_${p.i}_exp`), mean: t(`st_wt_${p.i}_mean`),
   }));
 
+  // Journey Ideas bridge into MGA's real tour architecture. These are the
+  // EXISTING canonical tours — no student-specific duplicates were created, and
+  // the cards stay labelled as examples rather than fixed student packages.
+  // <Link> resolves against the wouter base, so each locale gets its own route.
+  const JOURNEY_TOURS = ['3-day-sahara-marrakech', '5-day-great-south-morocco', '7-day-imperial-cities-sahara-escape'];
   const journeys = [1, 2, 3].map((n) => ({
     days: t(`st_11_r${n}_days`), unit: t(`st_11_r${n}_unit`), title: t(`st_11_r${n}_title`),
     route: t(`st_11_r${n}_route`), themes: t(`st_11_r${n}_themes`),
+    desc: t(`st_11_r${n}_desc`), to: `/tours/${JOURNEY_TOURS[n - 1]}`,
   }));
 
   const internalLinks: { to: string; label: string }[] = [
@@ -472,9 +478,18 @@ export default function StudentTours() {
                   <span className="text-[11px] uppercase" style={{ letterSpacing: '0.16em', color: '#8C857A' }}>{j.unit}</span>
                 </div>
                 <h3 className="mt-4 font-serif text-xl text-[#101010]">{j.title}</h3>
+                <p className="mt-3 text-[11px] uppercase" style={{ letterSpacing: '0.14em', color: GOLD }}>{j.themes}</p>
                 <p className="mt-4 text-sm leading-relaxed" style={{ color: '#3A352E' }}>{j.route}</p>
+                <p className="mt-3 text-sm leading-relaxed" style={{ color: '#6E665C' }}>{j.desc}</p>
                 <div className="h-px w-full my-5" style={{ background: '#D8CFC0' }} aria-hidden="true" />
-                <p className="text-[11px] uppercase" style={{ letterSpacing: '0.14em', color: '#8C857A' }}>{j.themes}</p>
+                <p className="text-[11px]" style={{ color: '#8C857A' }}>{t('st_11_note')}</p>
+                <Link
+                  href={j.to}
+                  className="inline-flex items-center gap-1.5 mt-3 text-sm font-semibold text-[#101010] border-b-2 pb-0.5 hover:opacity-70 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+                  style={{ borderColor: GOLD }}
+                >
+                  {t('st_11_cta')}: {j.title} →
+                </Link>
               </article>
             ))}
           </div>

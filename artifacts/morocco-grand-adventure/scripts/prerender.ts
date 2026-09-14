@@ -877,6 +877,8 @@ function buildExperienceContent(rest: string, lang: Lang): string {
     <h2>${escapeHtml(tr(lang, 'ug_cta_h2'))}</h2>
     <p>${escapeHtml(tr(lang, 'ug_cta_p'))}</p>
     <p>${link(`${SITE_URL}/${lang}/student-tours`, tr(lang, 'ug_back'))}</p>` : '';
+  // Journey Ideas bridge to the EXISTING canonical tours (no new products).
+  const JOURNEY_TOURS = ['3-day-sahara-marrakech', '5-day-great-south-morocco', '7-day-imperial-cities-sahara-escape'];
   const studentTours = rest === '/student-tours' ? `
     <p>${escapeHtml(tr(lang, 'st_groupsize'))}</p>
     <p>${escapeHtml(tr(lang, 'st_groupsize_large'))}</p>
@@ -904,12 +906,12 @@ function buildExperienceContent(rest: string, lang: Lang): string {
     <p>${escapeHtml(tr(lang, 'st_09_groups_p'))}</p>
     <h2>${escapeHtml(tr(lang, 'st_11_h2'))}</h2>
     <p>${escapeHtml(tr(lang, 'st_11_intro'))}</p>
-    ${ul([1, 2, 3].map((n) => `${tr(lang, `st_11_r${n}_days`)} ${tr(lang, `st_11_r${n}_unit`)} — ${tr(lang, `st_11_r${n}_title`)}: ${tr(lang, `st_11_r${n}_route`)} (${tr(lang, `st_11_r${n}_themes`)})`))}
+    ${[1, 2, 3].map((n) => `<h3>${escapeHtml(`${tr(lang, `st_11_r${n}_days`)} ${tr(lang, `st_11_r${n}_unit`)} — ${tr(lang, `st_11_r${n}_title`)}`)}</h3><p>${escapeHtml(tr(lang, `st_11_r${n}_route`))} (${escapeHtml(tr(lang, `st_11_r${n}_themes`))})</p><p>${escapeHtml(tr(lang, `st_11_r${n}_desc`))}</p><p>${escapeHtml(tr(lang, 'st_11_note'))}</p><p>${link(`${SITE_URL}/${lang}/tours/${JOURNEY_TOURS[n - 1]}`, `${tr(lang, 'st_11_cta')}: ${tr(lang, `st_11_r${n}_title`)}`)}</p>`).join('\n    ')}
     <p>${escapeHtml(tr(lang, 'st_11_band_items'))}</p>
     <h2>${escapeHtml(tr(lang, 'st_14_h2'))}</h2>
     <p>${escapeHtml(tr(lang, 'st_14_honesty'))}</p>
     <h2>${escapeHtml(tr(lang, 'st_15_faq_h2'))}</h2>
-    ${Array.from({ length: 13 }, (_, i) => `<h3>${escapeHtml(tr(lang, `st_15_q${i + 1}`))}</h3><p>${escapeHtml(tr(lang, `st_15_a${i + 1}`))}</p>`).join('\n    ')}
+    ${Array.from({ length: 16 }, (_, i) => `<h3>${escapeHtml(tr(lang, `st_15_q${i + 1}`))}</h3><p>${escapeHtml(tr(lang, `st_15_a${i + 1}`))}</p>`).join('\n    ')}
     <h2>${escapeHtml(tr(lang, 'st_16_h2'))}</h2>
     <p>${escapeHtml(tr(lang, 'st_16_body'))}</p>
     <p><a href="${contactInfo.whatsapp}?text=${encodeURIComponent(tr(lang, 'st_16_cta'))}">${escapeHtml(tr(lang, 'st_16_cta'))}</a></p>` : '';
@@ -1066,7 +1068,7 @@ function buildRoutes(lang: Lang): RouteEntry[] {
               { name: tr(lang, 'nav_tours'), path: '/tours' },
               { name: tr(lang, 'st_breadcrumb'), path: rest },
             ], lang) as unknown as Record<string, unknown>,
-            buildFaqSchema(Array.from({ length: 13 }, (_, i) => ({
+            buildFaqSchema(Array.from({ length: 16 }, (_, i) => ({
               question: tr(lang, `st_15_q${i + 1}`), answer: tr(lang, `st_15_a${i + 1}`),
             }))) as unknown as Record<string, unknown>,
             ...[1, 2, 3].map((n) => ({
