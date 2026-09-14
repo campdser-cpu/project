@@ -1,75 +1,4 @@
 {
-  "how-many-days": {
-    "title": "Combien de jours faut-il dans le Sahara ?",
-    "pageTitle": "Combien de jours dans le Sahara ? — Guide de durée à Merzouga",
-    "description": "Combien de jours prévoir dans le Sahara et à Merzouga — comparatif honnête des séjours de 1, 2, 3 jours et plus, et ce que chaque durée permet vraiment.",
-    "heroAlt": "Les dunes de l'Erg Chebbi près de Merzouga — combien de jours faut-il pour le Sahara ?",
-    "intro": "Réponse courte : une nuit entre les dunes est le minimum pour l'expérience saharienne classique, et deux nuits est ce que nous recommandons le plus souvent. La réponse longue dépend de votre point de départ, du temps de route acceptable par jour, et de ce que vous voulez que le désert soit — un point fort ou le cœur du voyage. Voici le décryptage honnête.",
-    "sections": [
-      {
-        "heading": "1 jour dans le Sahara (une nuit entre les dunes)",
-        "paragraphs": [
-          "Une nuit au camp offre la séquence essentielle : arrivée en fin d'après-midi, méharée au coucher du soleil vers l'Erg Chebbi, dîner et percussions au camp, lever du soleil sur les dunes, puis retour en milieu de matinée. Sur le sable même, rien n'est bousculé — l'expérience est compacte mais complète.",
-          "Le compromis, c'est le trajet. Depuis Marrakech, un séjour d'une nuit signifie de très longues journées de route ; depuis Fès, c'est plus supportable. Un jour est le bon choix quand le Sahara est un point fort d'un itinéraire marocain plus large et que votre emploi du temps est vraiment serré."
-        ]
-      },
-      {
-        "heading": "2 jours dans le Sahara (deux nuits)",
-        "paragraphs": [
-          "Deux nuits, c'est l'équilibre idéal pour la plupart des voyageurs. La première soirée et la première nuit offrent la séquence classique ; le deuxième jour — libéré de la logistique d'arrivée — est celui où le désert s'ouvre vraiment : la boucle en 4x4 à travers le désert noir et le pays nomade, Khamlia et sa musique gnawa, l'oasis, ou simplement du temps libre sur les dunes. La deuxième nuit au camp, quand la nouveauté s'estompe et que le silence s'installe, est souvent celle dont on se souvient.",
-          "Si votre itinéraire au Maroc peut l'absorber, c'est la version que nous construisons le plus souvent."
-        ]
-      },
-      {
-        "heading": "3 jours dans le Sahara",
-        "paragraphs": [
-          "Trois jours conviennent aux voyageurs lents, aux photographes et aux familles qui veulent que le désert soit un chapitre du voyage plutôt qu'une seule soirée. On ajoute de la profondeur plutôt que des nouveautés : explorations 4x4 plus longues, deuxième nuit dans un autre camp, sandboard, observation des étoiles sans contrainte horaire, et du temps au village et à l'oasis.",
-          "Trois jours se marient aussi naturellement avec la route du sud au sens large — la vallée du Dadès et les gorges du Todra à l'aller ou au retour — ce qui en fait le cœur d'un voyage désertique bien rythmé de 4 ou 5 jours."
-        ]
-      },
-      {
-        "heading": "4 jours et plus (le désert plus la route elle-même)",
-        "paragraphs": [
-          "Au-delà de trois jours à Merzouga même, le temps supplémentaire est généralement mieux investi sur le trajet — l'Atlas, Aït Ben Haddou, les gorges — ou sur une traversée Fès-Marrakech via le désert qui montre tout le pays d'un coup au lieu de revenir sur ses pas. Si le Sahara lui-même est tout l'objet de votre voyage, des méharées de plusieurs jours vers le désert profond peuvent être discutées dans votre devis privé."
-        ]
-      },
-      {
-        "heading": "La réponse rapide",
-        "paragraphs": [
-          "Une nuit : la version classique, qui fonctionne depuis Fès, serrée depuis Marrakech. Deux nuits : ce que nous recommandons le plus. Trois nuits : pour le voyage lent et la photo. Quatre ou plus : reportez les jours supplémentaires sur la route, ou parlez-nous d'un trek dans le désert profond."
-        ]
-      }
-    ],
-    "faqs": [
-      {
-        "question": "Une nuit dans le désert de Merzouga suffit-elle ?",
-        "answer": "Pour l'essentiel — méharée au coucher du soleil, nuit au camp, lever du soleil — oui. Ce qu'une nuit ne peut pas offrir, c'est un trajet détendu jusqu'aux dunes ni une vraie journée dans le désert. Depuis Marrakech, prévoyez au moins un circuit de 3 jours pour une nuit au camp."
-      },
-      {
-        "question": "Combien de jours faut-il de Marrakech à Merzouga ?",
-        "answer": "Trois jours est le format pratique le plus court : deux journées de route avec une nuit dans la région du Dadès ou du Todra, et une nuit entre les dunes. Quatre jours rendent le voyage confortable."
-      },
-      {
-        "question": "Combien de jours depuis Fès jusqu'à Merzouga ?",
-        "answer": "La route est plus courte que depuis Marrakech — beaucoup d'itinéraires atteignent les dunes dès le premier jour avec des arrêts panoramiques, ce qui fait d'une boucle de 3 jours depuis Fès ou d'une traversée Fès-Marrakech en 4 jours des formats très confortables."
-      },
-      {
-        "question": "Peut-on rester trop longtemps dans le désert ?",
-        "answer": "Après environ trois nuits à Merzouga même, la plupart des voyageurs tirent plus de valeur d'un voyage varié — les gorges, les vallées, les villes impériales — que de nuits supplémentaires dans la même zone de camp."
-      }
-    ],
-    "imageAlts": {
-      "sahara-dune-trekking-merzouga": "Randonneurs gravissant la crête d'une haute dune du Sahara près de Merzouga",
-      "luxury-desert-camp-sunset-merzouga": "Tentes d'un camp de luxe dans le désert au coucher du soleil parmi les dunes de Merzouga"
-    },
-    "chrome": {
-      "crumb": "Combien de jours dans le Sahara ?",
-      "imageAlts": {
-        "sahara-dune-trekking-merzouga": "Randonneurs gravissant la crête d'une haute dune du Sahara près de Merzouga",
-        "luxury-desert-camp-sunset-merzouga": "Tentes d'un camp de luxe dans le désert au coucher du soleil parmi les dunes de Merzouga"
-      }
-    }
-  },
   "camel-trekking": {
     "title": "Méharées à Merzouga — Guide pratique",
     "pageTitle": "Méharées à Merzouga — Balades à dos de dromadaire au Sahara (Erg Chebbi)",
@@ -153,6 +82,132 @@
         "berber-camel-guide-sahara-merzouga": "Guide berbère menant des dromadaires dans les dunes du Sahara près de Merzouga",
         "sahara-dune-trekking-merzouga": "Randonneurs gravissant la crête d'une haute dune du Sahara près de Merzouga"
       }
+    }
+  },
+  "desert-camps": {
+    "title": "Camps dans le désert de Merzouga — le guide complet",
+    "pageTitle": "Camps du désert à Merzouga — guide des camps standard et de luxe",
+    "description": "Comment choisir son camp dans les dunes de l'Erg Chebbi : tentes standard ou de luxe, déroulé d'une nuit, sanitaires, repas, chauffage et conseils de réservation.",
+    "heroAlt": "Camp dans le désert du Sahara éclairé par des lanternes sous un ciel étoilé, près de Merzouga",
+    "intro": "Dormir au cœur des dunes de l'Erg Chebbi reste le temps fort d'un séjour à Merzouga. Le vrai choix se joue entre un camp berbère simple et un camp de luxe sous tente : ce guide les compare sans détour pour vous aider à choisir la nuit qui vous convient.",
+    "sections": [
+      {
+        "heading": "Ce qu'est réellement un camp dans le désert",
+        "paragraphs": [
+          "Un camp est un petit ensemble de tentes installé entre les dunes, à 20 minutes à une heure de dromadaire du village de Merzouga. Vous y arrivez à dos de dromadaire, assistez au coucher du soleil, partagez un dîner marocain en trois services, écoutez les percussions berbères autour du feu et dormez sous un ciel d'une densité d'étoiles peu commune. Au matin, vous repartez par les dunes au lever du soleil.",
+          "Tous les camps sérieux suivent ce même rythme. Ce qui change — parfois beaucoup — c'est la tente, le lit, la salle de bains et le degré de confort qui vous sépare du sable."
+        ]
+      },
+      {
+        "heading": "Les camps berbères standard",
+        "paragraphs": [
+          "Les camps standard offrent l'expérience classique du désert : matelas posés sur une base surélevée, couvertures et sanitaires communs. Les tentes sont fonctionnelles et chaleureuses ; la magie vient du feu, des repas et du ciel plutôt que des équipements. C'est l'image que la plupart des voyageurs se font d'une nuit dans le Sahara, et elle convient à ceux qui recherchent une nuit authentique sans payer pour le confort supplémentaire."
+        ]
+      },
+      {
+        "heading": "Les camps de luxe",
+        "paragraphs": [
+          "Les camps de luxe conservent les mêmes dunes et le même déroulé de soirée, mais montent d'un cran sur les équipements : tentes plus vastes, vrais lits, linge de qualité, tapis et salle de bains privative avec WC et douche chaude. Certains disposent d'un chauffage pour les nuits froides de l'hiver. Pour un voyage de noces, pour qui tient au confort ou pour qui souhaite l'enchantement sans la rusticité, cette formule est souvent la plus juste."
+        ]
+      },
+      {
+        "heading": "Comment choisir entre standard et luxe",
+        "paragraphs": [
+          "Posez-vous trois questions. Cela vous dérange-t-il de rejoindre des sanitaires communs en pleine nuit ? Avez-vous besoin d'une douche chaude et de WC privatifs assurés ? Le confort prime-t-il sur le budget ? Si l'intimité et le confort comptent, optez pour le luxe. Si vous appréciez l'ambiance collective du camp et que des sanitaires partagés ne vous gênent pas, un camp standard vous offre les mêmes dunes pour moins cher."
+        ]
+      },
+      {
+        "heading": "Ce que comprend une nuit au camp",
+        "paragraphs": [
+          "Une nuit type comprend la méharée à l'aller comme au retour, un dîner marocain en trois services, un petit-déjeuner simple et, le plus souvent, de la musique berbère autour du feu. L'observation des étoiles ne coûte rien : la pollution lumineuse est quasi inexistante sur l'Erg Chebbi. Confirmez les prestations exactes au moment de la réservation, car elles varient d'un camp à l'autre."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Quelle différence entre un camp standard et un camp de luxe ?",
+        "answer": "La différence tient au confort : les camps de luxe proposent de vrais lits, une literie de qualité et une salle de bains privative avec douche chaude, tandis que les camps standard utilisent des couchages sur base surélevée et des sanitaires communs. Les dunes et le programme de la soirée restent identiques."
+      },
+      {
+        "question": "Les camps de luxe disposent-ils de douches chaudes et de sanitaires privatifs ?",
+        "answer": "Oui. La plupart des camps de luxe proches de Merzouga proposent des tentes avec salle de bains privative, WC et douche chauffée."
+      },
+      {
+        "question": "L'eau de la douche est-elle vraiment chaude ?",
+        "answer": "Dans la plupart des camps de luxe, oui : les douches sont alimentées en eau chauffée. Dans les camps standard les plus simples, vous ne disposerez parfois que d'une toilette sommaire à l'eau froide : prévoyez-le."
+      },
+      {
+        "question": "Les nuits sont-elles froides dans les camps du désert ?",
+        "answer": "Très probablement, surtout d'octobre à mars, lorsque les températures nocturnes peuvent approcher de zéro. Les tentes de luxe comprennent généralement un chauffage ou des couvertures supplémentaires ; dans tous les cas, emportez une couche chaude."
+      },
+      {
+        "question": "Les repas et la méharée sont-ils inclus dans la nuit au camp ?",
+        "answer": "En principe oui : le dîner, le petit-déjeuner et la méharée aller-retour font habituellement partie de la formule. Confirmez les prestations exactes au moment de la réservation."
+      }
+    ],
+    "chrome": {
+      "crumb": "Camps dans le désert",
+      "imageAlts": {}
+    }
+  },
+  "luxury-desert-camps": {
+    "title": "Camps de luxe à Merzouga — ce que vous obtenez vraiment",
+    "pageTitle": "Camps de luxe à Merzouga — guide du glamping dans le Sahara",
+    "description": "Un regard concret sur les camps haut de gamme près de Merzouga : tentes avec salle de bains privative, vrais lits, douches chaudes, dîner et ce qui distingue le luxe du glamping standard.",
+    "heroAlt": "Tente d'un camp de luxe illuminée au crépuscule parmi les dunes, près de Merzouga",
+    "intro": "Les camps de luxe proches de Merzouga permettent de dormir au cœur des dunes de l'Erg Chebbi sans renoncer à un vrai lit ni à une douche chaude. Voici ce que recouvre concrètement ce passage au haut de gamme.",
+    "sections": [
+      {
+        "heading": "Ce qui fait un camp de luxe",
+        "paragraphs": [
+          "Une tente haut de gamme sur l'Erg Chebbi reste un campement sous toile : vous arrivez à dos de dromadaire, dînez sous les étoiles et dormez sur le sable. La différence tient aux aménagements : un lit solide avec du linge de qualité, des tapis et des lampes, une salle de bains privative avec WC et douche chaude, et souvent une terrasse privée ou un chauffage pour les nuits fraîches.",
+          "Les dunes, le coucher de soleil, les percussions et le ciel étoilé sont exactement les mêmes que dans un camp standard. Le luxe change le confort avec lequel vous les vivez, pas le désert lui-même."
+        ]
+      },
+      {
+        "heading": "La question de la salle de bains privative",
+        "paragraphs": [
+          "C'est le détail qui distingue le plus nettement les deux formules. Dans une tente haut de gamme, vous disposez généralement d'une salle de bains fermée et privative, alimentée en eau chaude jusqu'à la tente. Dans un camp standard, vous partagez des sanitaires situés à quelques pas. Si une douche chaude à l'abri des regards compte pour vous, c'est là que se situe la vraie différence."
+        ]
+      },
+      {
+        "heading": "Le dîner, le feu et la nuit dans le désert",
+        "paragraphs": [
+          "Les camps de luxe servent le plus souvent le même généreux dîner marocain en trois services que les autres camps, mais dans un cadre plus abouti et avec davantage de choix. Après le repas, les percussions et les chants berbères en question-réponse se prolongent autour du feu, et le ciel nocturne au-dessus de l'Erg Chebbi devient un spectacle à lui seul. En hiver, les camps allument des chauffages et ajoutent des couvertures pour que la soirée reste confortable."
+        ]
+      },
+      {
+        "heading": "À qui s'adressent les camps de luxe",
+        "paragraphs": [
+          "Cette formule convient aux voyages de noces, aux couples qui célèbrent une occasion, aux voyageurs plus âgés attachés au confort et à tous ceux qui souhaitent la poésie du Sahara sans l'inconfort. Si l'intimité, une douche chaude et un lit réellement confortable sont vos priorités, le supplément est généralement bien employé pour une nuit dont on se souvient."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Les camps de luxe ont-ils vraiment des douches chaudes ?",
+        "answer": "Dans la plupart des cas, oui : les camps haut de gamme proches de Merzouga acheminent l'eau chaude jusqu'à une salle de bains privative dans la tente. Il reste utile de le confirmer au moment de la réservation, car les équipements varient d'un camp à l'autre."
+      },
+      {
+        "question": "Comment est le lit dans un camp de luxe du Sahara ?",
+        "answer": "Les tentes haut de gamme disposent généralement d'un vrai lit sur sommier, avec draps de qualité, couvertures et oreillers, plutôt que d'un simple matelas posé au sol ou sur une base surélevée."
+      },
+      {
+        "question": "Les camps de luxe sont-ils chers ?",
+        "answer": "Ils coûtent davantage qu'un camp standard, mais nettement moins que ce que l'on imagine pour une soirée complète comprenant la méharée, le dîner, la musique et une tente avec salle de bains privative. Nous vous indiquons un tarif précis pour vos dates lorsque vous nous soumettez votre projet de voyage."
+      },
+      {
+        "question": "Un camp de luxe vaut-il la peine pour une seule nuit ?",
+        "answer": "Pour beaucoup de voyageurs, oui : une nuit correspond exactement à la bonne durée pour un séjour dans le désert, et le haut de gamme rend cette nuit unique réellement confortable et mémorable."
+      },
+      {
+        "question": "Rejoint-on aussi les camps de luxe à dos de dromadaire ?",
+        "answer": "Oui. La plupart des camps haut de gamme se rejoignent de la même façon : à dos de dromadaire au coucher du soleil, puis de nouveau après le lever du jour. Vous conservez donc à la fois le confort du glamping et la méharée classique."
+      }
+    ],
+    "chrome": {
+      "crumb": "Camps de luxe",
+      "imageAlts": {}
     }
   },
   "best-time-to-visit": {
@@ -243,6 +298,145 @@
       "imageAlts": {}
     }
   },
+  "how-to-get-there": {
+    "title": "Comment se rendre à Merzouga — depuis Marrakech, Fès et ailleurs",
+    "pageTitle": "Aller à Merzouga — rejoindre l'Erg Chebbi depuis Marrakech et Fès",
+    "description": "Rejoindre Merzouga et l'Erg Chebbi : temps de route réalistes et options en transport public ou en bus depuis Marrakech, Fès, Ouarzazate et Agadir.",
+    "heroAlt": "Route d'accès montant vers les dunes de l'Erg Chebbi depuis le village de Merzouga",
+    "intro": "Merzouga se situe à l'extrémité orientale du Maroc, sur la route d'Errachidia et de la frontière algérienne. La plupart des visiteurs y arrivent par la route depuis les grandes villes impériales : voici les durées de trajet réalistes et les solutions de transport.",
+    "sections": [
+      {
+        "heading": "Depuis Marrakech",
+        "paragraphs": [
+          "Le trajet de Marrakech à Merzouga représente environ 9 à 10 heures de route sans arrêts prolongés, soit près de 560 km. L'itinéraire franchit le Haut Atlas par le col du Tizi n'Tichka, redescend vers Ouarzazate et Aït Ben Haddou, longe la vallée du Dadès et les gorges du Todra, puis suit la vallée du Ziz en passant par Errachidia et Midelt jusqu'à Merzouga. Presque chaque étape de cette route mérite une pause.",
+          "La plupart des voyageurs en font la première journée d'un circuit de plusieurs jours, avec un arrêt à Aït Ben Haddou et une nuit dans la région du Dadès ou du Todra."
+        ]
+      },
+      {
+        "heading": "Depuis Fès",
+        "paragraphs": [
+          "De Fès à Merzouga, comptez environ 7 à 8 heures de route, soit près de 550 km. La route part vers le sud-est à travers le Moyen Atlas, passe par Ifrane et ses cédraies, puis continue par Midelt et la vallée du Ziz — l'axe bordé de palmiers que l'Office National Marocain du Tourisme présente comme la liaison Fès–Errachidia–Midelt–Merzouga. Le trajet est plus direct que depuis Marrakech et les paysages passent progressivement de la forêt de cèdres à l'oasis saharienne.",
+          "En hiver, cette route peut être gênée par le brouillard sur les hauteurs du Moyen Atlas : un chauffeur privé ou un circuit organisé se révèle alors généralement plus fiable que les transports publics."
+        ]
+      },
+      {
+        "heading": "Depuis Ouarzazate",
+        "paragraphs": [
+          "D'Ouarzazate à Merzouga, comptez environ 3 heures à 3 h 30, soit près de 230 km, par la vallée du Drâa et Tinzouline. Le trajet est agréable et sans difficulté particulière ; il constitue une étape courante d'une boucle dans le sud marocain."
+        ]
+      },
+      {
+        "heading": "Depuis Agadir",
+        "paragraphs": [
+          "D'Agadir à Merzouga, prévoyez environ 6 à 7 heures de route, soit près de 500 km, en passant de l'Atlantique au désert par l'Anti-Atlas et la vallée du Drâa. C'est une longue journée au volant : prévoyez une étape pour la nuit."
+        ]
+      },
+      {
+        "heading": "Transports publics et location de voiture",
+        "paragraphs": [
+          "Aucune ligne ferroviaire ne dessert directement Merzouga. Les solutions publiques réalistes sont les grands taxis et les bus depuis Fès, Ouarzazate et Errachidia ; les fréquences restent faibles et les correspondances allongent nettement le trajet. Un chauffeur privé ou un circuit privé au départ de votre ville d'arrivée reste de loin la formule la plus confortable et la plus fiable, et vous permet de vous arrêter à Aït Ben Haddou ou dans la vallée du Dadès sans précipitation.",
+          "Conduire soi-même est possible et les axes principaux N9 et N13 sont en état correct, mais le carburant, la navigation et les longues portions désertiques font qu'un chauffeur local vaut généralement la souplesse et la tranquillité d'esprit qu'il apporte."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Combien de temps dure le trajet de Marrakech à Merzouga ?",
+        "answer": "Environ 9 à 10 heures de route (560 km) sans arrêts prolongés. La plupart des voyageurs en font la première journée d'un circuit, avec un arrêt à Aït Ben Haddou et une nuit dans les gorges du Dadès ou du Todra."
+      },
+      {
+        "question": "Combien de temps dure le trajet de Fès à Merzouga ?",
+        "answer": "Environ 7 à 8 heures (550 km), par le Moyen Atlas, Ifrane, Midelt et la vallée du Ziz. C'est l'approche la plus directe vers le désert."
+      },
+      {
+        "question": "Le train dessert-il Merzouga ?",
+        "answer": "Il n'existe aucune desserte ferroviaire directe. Les gares les plus proches se trouvent à Ouarzazate ou à Fès ; il faut ensuite poursuivre par la route, en grand taxi, en bus ou en transfert privé."
+      },
+      {
+        "question": "La route vers Merzouga est-elle goudronnée et sûre ?",
+        "answer": "Les axes principaux N9 et N13 sont goudronnés et praticables. Le dernier tronçon, qui traverse la plaine caillouteuse près des dunes, n'est pas revêtu, mais reste accessible à une voiture de location classique en roulant prudemment."
+      },
+      {
+        "question": "Peut-on rejoindre Merzouga en bus ?",
+        "answer": "Oui, mais les fréquences sont faibles et le trajet plus long qu'en voiture. Des grands taxis circulent depuis Fès, Ouarzazate et Errachidia, avec des correspondances vers Merzouga qui dépendent de la saison et de la demande."
+      }
+    ],
+    "chrome": {
+      "crumb": "Comment s'y rendre",
+      "imageAlts": {}
+    }
+  },
+  "erg-chebbi": {
+    "title": "Erg Chebbi — les plus hautes dunes du Maroc",
+    "pageTitle": "Dunes de l'Erg Chebbi à Merzouga — guide du désert du Sahara",
+    "description": "L'Erg Chebbi près de Merzouga : formation du massif dunaire, dimensions et hauteur, activités sur les dunes et raisons d'en faire la principale porte d'entrée du Sahara.",
+    "heroAlt": "Vaste massif dunaire de l'Erg Chebbi s'élevant vers une haute crête, près de Merzouga",
+    "intro": "L'Erg Chebbi est le massif de dunes qui fait de Merzouga l'endroit le plus accessible du Maroc pour se tenir au sommet d'une mer de sable. Voici ce qui le distingue et ce qui attire les voyageurs année après année.",
+    "sections": [
+      {
+        "heading": "Ce qu'est l'Erg Chebbi",
+        "paragraphs": [
+          "L'Erg Chebbi est une mer de sable sèche et active d'environ 28 km de long sur 9 km de large dans sa partie la plus étendue, juste à l'ouest de Merzouga. Ses dunes culminent à quelque 150 m sur la crête la plus haute, ce qui en fait les plus hautes dunes libres du Maroc. Le nom signifie « le lieu du sable » et l'ensemble du système est alimenté par les vents qui balaient la plaine caillouteuse s'étendant depuis le village.",
+          "Contrairement aux petites dunes que l'on trouve autour de nombreuses portes d'entrée du Sahara, les crêtes de l'Erg Chebbi sont assez vastes pour être parcourues et gravies, et elles restent accessibles sans 4x4 depuis la route principale de la vallée — ce qui explique que la plupart des circuits sahariens du Maroc y aboutissent."
+        ]
+      },
+      {
+        "heading": "La formation des dunes",
+        "paragraphs": [
+          "L'Erg Chebbi doit son existence au climat et à la géologie locale : les Hauts Plateaux au nord et les contreforts de l'Anti-Atlas au sud canalisent les vents dominants vers les dunes, tandis que la plaine caillouteuse environnante fournit le sable. C'est un erg vivant : les dunes se déplacent lentement au fil des saisons, si bien que le tracé exact des crêtes évolue, mais les grandes lignes de relief proches de Merzouga sont en place depuis des décennies."
+        ]
+      },
+      {
+        "heading": "Que faire concrètement sur les dunes",
+        "paragraphs": [
+          "Gravissez une dune au lever du soleil, quand le sable est encore frais et que les ombres s'étirent au maximum. Parcourez une crête à dos de dromadaire au coucher du soleil, lorsque le massif entier vire à l'ambre. Passez la nuit dans un camp installé entre les dunes, pour un dîner près du feu et une soirée d'observation des étoiles, la pollution lumineuse étant quasi nulle sur le sable.",
+          "Le sandboard et les courtes sorties en 4x4 jusqu'aux crêtes les plus hautes, pour la photographie, comptent parmi les autres activités courantes. Les dunes offrent aussi les plus beaux levers et couchers de soleil du Maroc, et le ciel nocturne y est l'un des plus purs du pays."
+        ]
+      },
+      {
+        "heading": "Autres informations pratiques sur l'Erg Chebbi",
+        "paragraphs": [
+          "Les dunes relèvent du domaine public et se parcourent librement, même si rejoindre les meilleurs points de vue peut nécessiter un court trajet en taxi collectif ou en 4x4 depuis Merzouga. Portez des chaussures fermées : le sable brûle en été. Emportez de l'eau, une protection solaire et une couche légère pour l'après-coucher du soleil. Les nuits sur les dunes restent fraîches, même en été.",
+          "La plupart des visiteurs découvrent l'Erg Chebbi dans le cadre d'un circuit à Merzouga. Si vous conduisez vous-même, un petit véhicule à capacités tout-terrain facilite l'accès aux crêtes les plus hautes, mais une voiture classique atteint les principaux points de vue."
+        ]
+      },
+      {
+        "heading": "Lever et coucher de soleil sur les dunes",
+        "paragraphs": [
+          "Le coucher du soleil est le moment le plus animé : les versants ouest de l'erg passent de l'or au rouge profond tandis que les files de dromadaires dessinent les crêtes en contrebas. Le lever du soleil est le choix des connaisseurs : le sable est frais sous les pieds, le village dort encore et les ombres s'allongent, bleutées, sur les versants est. Ni l'un ni l'autre ne coûtent quoi que ce soit : montez à pied depuis Merzouga en moins d'une heure, ou calez une méharée ou une sortie en 4x4 pour terminer sur une crête.",
+          "Pour la photographie, l'heure qui suit le lever du soleil surpasse l'affluence du soir : moins de traces de pas, des contrastes plus doux et le massif dunaire pour vous seul."
+        ]
+      },
+      {
+        "heading": "Combien de temps prévoir sur l'Erg Chebbi",
+        "paragraphs": [
+          "Une nuit sur les dunes vous donne l'enchaînement classique : méharée au coucher du soleil, dîner au camp, retour à dos de dromadaire au lever du jour. Deux nuits permettent d'ajouter les environs de l'erg en 4x4 ou en quad, de visiter Khamlia pour sa musique gnaoua et de garder les heures chaudes du milieu de journée au repos. Au-delà de deux jours à Merzouga même, on entre dans le voyage lent ; le Sahara récompense la profondeur, mais le reste du sud marocain est tout proche et vaut le détour."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Quelle est la hauteur des dunes de l'Erg Chebbi ?",
+        "answer": "Les dunes atteignent environ 150 m sur leurs crêtes les plus hautes, ce qui en fait les plus élevées du Maroc. Le massif s'étend sur près de 28 km de long et jusqu'à 9 km de large."
+      },
+      {
+        "question": "L'Erg Chebbi est-il le désert du Sahara ?",
+        "answer": "L'Erg Chebbi est un vaste massif dunaire situé à l'intérieur du Sahara, la partie que les visiteurs découvrent depuis Merzouga. Le Sahara lui-même s'étend à l'échelle du continent ; l'Erg Chebbi en est le point le plus accessible au Maroc."
+      },
+      {
+        "question": "Peut-on visiter l'Erg Chebbi par ses propres moyens ?",
+        "answer": "Oui. Les dunes relèvent du domaine public. La plupart des visiteurs s'y rendent à pied, en taxi collectif ou lors d'une courte méharée au départ du village de Merzouga."
+      },
+      {
+        "question": "Quelle est la meilleure lumière pour photographier l'Erg Chebbi ?",
+        "answer": "Le lever et le coucher du soleil. Les dunes prennent des teintes dorées puis orangées à mesure que le soleil monte ou descend, et les ombres allongées donnent aux crêtes un relief marqué."
+      }
+    ],
+    "chrome": {
+      "crumb": "Erg Chebbi",
+      "imageAlts": {}
+    }
+  },
   "what-to-pack": {
     "title": "Que mettre dans sa valise pour Merzouga — Liste pour le désert",
     "pageTitle": "Que mettre dans sa valise pour Merzouga — Liste de bagage pour le Sahara",
@@ -308,6 +502,77 @@
     "chrome": {
       "crumb": "Que mettre dans sa valise pour Merzouga",
       "imageAlts": {}
+    }
+  },
+  "how-many-days": {
+    "title": "Combien de jours faut-il dans le Sahara ?",
+    "pageTitle": "Combien de jours dans le Sahara ? — Guide de durée à Merzouga",
+    "description": "Combien de jours prévoir dans le Sahara et à Merzouga — comparatif honnête des séjours de 1, 2, 3 jours et plus, et ce que chaque durée permet vraiment.",
+    "heroAlt": "Les dunes de l'Erg Chebbi près de Merzouga — combien de jours faut-il pour le Sahara ?",
+    "intro": "Réponse courte : une nuit entre les dunes est le minimum pour l'expérience saharienne classique, et deux nuits est ce que nous recommandons le plus souvent. La réponse longue dépend de votre point de départ, du temps de route acceptable par jour, et de ce que vous voulez que le désert soit — un point fort ou le cœur du voyage. Voici le décryptage honnête.",
+    "sections": [
+      {
+        "heading": "1 jour dans le Sahara (une nuit entre les dunes)",
+        "paragraphs": [
+          "Une nuit au camp offre la séquence essentielle : arrivée en fin d'après-midi, méharée au coucher du soleil vers l'Erg Chebbi, dîner et percussions au camp, lever du soleil sur les dunes, puis retour en milieu de matinée. Sur le sable même, rien n'est bousculé — l'expérience est compacte mais complète.",
+          "Le compromis, c'est le trajet. Depuis Marrakech, un séjour d'une nuit signifie de très longues journées de route ; depuis Fès, c'est plus supportable. Un jour est le bon choix quand le Sahara est un point fort d'un itinéraire marocain plus large et que votre emploi du temps est vraiment serré."
+        ]
+      },
+      {
+        "heading": "2 jours dans le Sahara (deux nuits)",
+        "paragraphs": [
+          "Deux nuits, c'est l'équilibre idéal pour la plupart des voyageurs. La première soirée et la première nuit offrent la séquence classique ; le deuxième jour — libéré de la logistique d'arrivée — est celui où le désert s'ouvre vraiment : la boucle en 4x4 à travers le désert noir et le pays nomade, Khamlia et sa musique gnawa, l'oasis, ou simplement du temps libre sur les dunes. La deuxième nuit au camp, quand la nouveauté s'estompe et que le silence s'installe, est souvent celle dont on se souvient.",
+          "Si votre itinéraire au Maroc peut l'absorber, c'est la version que nous construisons le plus souvent."
+        ]
+      },
+      {
+        "heading": "3 jours dans le Sahara",
+        "paragraphs": [
+          "Trois jours conviennent aux voyageurs lents, aux photographes et aux familles qui veulent que le désert soit un chapitre du voyage plutôt qu'une seule soirée. On ajoute de la profondeur plutôt que des nouveautés : explorations 4x4 plus longues, deuxième nuit dans un autre camp, sandboard, observation des étoiles sans contrainte horaire, et du temps au village et à l'oasis.",
+          "Trois jours se marient aussi naturellement avec la route du sud au sens large — la vallée du Dadès et les gorges du Todra à l'aller ou au retour — ce qui en fait le cœur d'un voyage désertique bien rythmé de 4 ou 5 jours."
+        ]
+      },
+      {
+        "heading": "4 jours et plus (le désert plus la route elle-même)",
+        "paragraphs": [
+          "Au-delà de trois jours à Merzouga même, le temps supplémentaire est généralement mieux investi sur le trajet — l'Atlas, Aït Ben Haddou, les gorges — ou sur une traversée Fès-Marrakech via le désert qui montre tout le pays d'un coup au lieu de revenir sur ses pas. Si le Sahara lui-même est tout l'objet de votre voyage, des méharées de plusieurs jours vers le désert profond peuvent être discutées dans votre devis privé."
+        ]
+      },
+      {
+        "heading": "La réponse rapide",
+        "paragraphs": [
+          "Une nuit : la version classique, qui fonctionne depuis Fès, serrée depuis Marrakech. Deux nuits : ce que nous recommandons le plus. Trois nuits : pour le voyage lent et la photo. Quatre ou plus : reportez les jours supplémentaires sur la route, ou parlez-nous d'un trek dans le désert profond."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Une nuit dans le désert de Merzouga suffit-elle ?",
+        "answer": "Pour l'essentiel — méharée au coucher du soleil, nuit au camp, lever du soleil — oui. Ce qu'une nuit ne peut pas offrir, c'est un trajet détendu jusqu'aux dunes ni une vraie journée dans le désert. Depuis Marrakech, prévoyez au moins un circuit de 3 jours pour une nuit au camp."
+      },
+      {
+        "question": "Combien de jours faut-il de Marrakech à Merzouga ?",
+        "answer": "Trois jours est le format pratique le plus court : deux journées de route avec une nuit dans la région du Dadès ou du Todra, et une nuit entre les dunes. Quatre jours rendent le voyage confortable."
+      },
+      {
+        "question": "Combien de jours depuis Fès jusqu'à Merzouga ?",
+        "answer": "La route est plus courte que depuis Marrakech — beaucoup d'itinéraires atteignent les dunes dès le premier jour avec des arrêts panoramiques, ce qui fait d'une boucle de 3 jours depuis Fès ou d'une traversée Fès-Marrakech en 4 jours des formats très confortables."
+      },
+      {
+        "question": "Peut-on rester trop longtemps dans le désert ?",
+        "answer": "Après environ trois nuits à Merzouga même, la plupart des voyageurs tirent plus de valeur d'un voyage varié — les gorges, les vallées, les villes impériales — que de nuits supplémentaires dans la même zone de camp."
+      }
+    ],
+    "imageAlts": {
+      "sahara-dune-trekking-merzouga": "Randonneurs gravissant la crête d'une haute dune du Sahara près de Merzouga",
+      "luxury-desert-camp-sunset-merzouga": "Tentes d'un camp de luxe dans le désert au coucher du soleil parmi les dunes de Merzouga"
+    },
+    "chrome": {
+      "crumb": "Combien de jours dans le Sahara ?",
+      "imageAlts": {
+        "sahara-dune-trekking-merzouga": "Randonneurs gravissant la crête d'une haute dune du Sahara près de Merzouga",
+        "luxury-desert-camp-sunset-merzouga": "Tentes d'un camp de luxe dans le désert au coucher du soleil parmi les dunes de Merzouga"
+      }
     }
   }
 }
