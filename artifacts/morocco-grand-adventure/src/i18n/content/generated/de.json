@@ -55,6 +55,54 @@
     {
       "question": "Können Sie auf besondere Ernährungsbedürfnisse eingehen?",
       "answer": "Absolut — vegetarische, vegane, glutenfreie, halale und allergiebezogene Menüs werden selbstverständlich berücksichtigt. Bitte informieren Sie uns bereits bei der Buchung."
+    },
+    {
+      "question": "Was ist in Ihren Wüstentouren enthalten?",
+      "answer": "Alle unsere Wüstentouren umfassen private, klimatisierte Transporte, einen englischsprachigen Fahrer, Unterkünfte der Luxusklasse, täglich Frühstück und Abendessen, das Kameltrekking im Erg Chebbi, eine Nacht in einem luxuriösen Wüstencamp sowie Abholung und Rücktransfer zum Hotel. Internationale Flüge, Mittagessen und optionale Aktivitäten sind in der Regel nicht enthalten."
+    },
+    {
+      "question": "Was sollten Reisende ins Wüstencamp in der Sahara mitnehmen?",
+      "answer": "Nehmen Sie warme Kleidung zum Überziehen für die kalten Wüstennächte mit, dazu ein Tuch, Sonnencreme, eine Sonnenbrille, eine Taschenlampe, bequeme Schuhe und eine Powerbank. Schlafsäcke für das Wüstencamp stellen wir. Badekleidung ist in einigen Luxuscamps mit Pool nützlich."
+    },
+    {
+      "question": "Wie gelangt man nach Merzouga und in die Sahara?",
+      "answer": "Die Fahrt von Marrakesch nach Merzouga dauert etwa 9 bis 10 Stunden über das Hohe Atlasgebirge. Von Fes sind es rund 7 bis 8 Stunden. Wir organisieren private Transfers mit bequemen Pausen. Am gängigsten ist ein Flug nach Marrakesch oder Fes."
+    },
+    {
+      "question": "Ist Kameltrekking auch für Anfänger geeignet?",
+      "answer": "Ja – unsere Kameltrekkings verlaufen ruhig und sind für alle Fitnessniveaus geeignet. Die Kamele sind gut ausgebildet, und die Touren dauern bei Sonnenuntergang in der Regel ein bis zwei Stunden. Wer lieber nicht reiten möchte, kann sich per 4x4 zum Camp bringen lassen."
+    },
+    {
+      "question": "Wie sind die Wüstencamps ausgestattet?",
+      "answer": "Unsere luxuriösen Wüstencamps bieten richtige Betten, eigene Bäder und elegante Zelte im Berberstil unter dem Sternenhimmel. Das Abendessen wird am Lagerfeuer mit live gespielter Berbermusik serviert. Ein komfortables, authentisches und unvergessliches Erlebnis."
+    },
+    {
+      "question": "Können Sie eine Reise während des Ramadan organisieren?",
+      "answer": "Ja – Marokko im Ramadan ist ein besonderes kulturelles Erlebnis. Manche Restaurants bleiben tagsüber geschlossen, doch unsere Guides gehen souverän damit um. Die abendlichen Festessen und die lebhaften Nachtmärkte machen diese Zeit zu einem einzigartigen Moment für einen Besuch."
+    },
+    {
+      "question": "Wie lauten die Stornierungsbedingungen?",
+      "answer": "Kostenfreie Stornierung bis 7 Tage vor Ihrer Tour mit vollständiger Rückerstattung. Bei Stornierungen innerhalb von 7 Tagen können 50 % berechnet werden. Bei Nichtantritt erfolgt keine Rückerstattung. Wir empfehlen eine Reiseversicherung, damit Sie völlig unbesorgt reisen können."
+    },
+    {
+      "question": "Benötige ich eine Reiseversicherung?",
+      "answer": "Wir empfehlen für jede Marokkoreise nachdrücklich eine Reiseversicherung. Sie sollte medizinische Notfälle, Reiserücktritt und Gepäckverlust abdecken. Auf Wunsch beraten wir Sie gern zu passenden Policen."
+    },
+    {
+      "question": "Sind die Touren für Kinder und ältere Reisende geeignet?",
+      "answer": "Selbstverständlich. Unsere privaten Touren lassen sich vollständig an Familien und ältere Gäste anpassen. Das Tempo ist flexibel, Kameltrekkings sind optional, und Wegstrecken zu Fuß lassen sich durch 4x4-Transfers ersetzen. Wir haben Erfahrung mit allen Altersgruppen."
+    },
+    {
+      "question": "Wie lange im Voraus sollte ich buchen?",
+      "answer": "Für die Hauptsaison (März bis Mai und September bis November) empfehlen wir eine Buchung mindestens 4 bis 6 Wochen im Voraus. Für Wüstenreisen im Winter oder besondere Termine sind 2 bis 3 Monate ideal. Kurzfristige Buchungen sind manchmal möglich – fragen Sie einfach nach."
+    },
+    {
+      "question": "Welche Fahrzeuge setzen Sie ein?",
+      "answer": "Wir setzen moderne, klimatisierte Fahrzeuge ein – von Limousinen für 2 bis 4 Gäste bis zu geräumigen Minivans für größere Gruppen. Alle Fahrzeuge sind bestens gewartet und werden von professionellen, lizenzierten Fahrern gelenkt."
+    },
+    {
+      "question": "Bieten Sie Abholung und Rücktransfer zum Flughafen an?",
+      "answer": "Ja – alle unsere Touren beinhalten die kostenlose Abholung und den Rücktransfer ab Flughafen oder Hotel in Marrakesch, Fes und weiteren größeren Städten. Ihr Fahrer erwartet Sie mit einem Namensschild und hilft Ihnen mit dem Gepäck."
     }
   ],
   "destinations": {
@@ -139,7 +187,9 @@
         "Kameltrekking",
         "Luxuriöse Wüstencamps",
         "Sternenbeobachtung",
-        "Berberdörfer"
+        "Berberdörfer",
+        "Sonnenaufgang über den Dünen",
+        "Wochenmarkt in Rissani"
       ]
     },
     "erg-chebbi": {
@@ -153,7 +203,10 @@
         "Dune Boarding",
         "Berber-Musikabende",
         "4x4-Wüstenfahrt",
-        "Dinner im Luxuscamp"
+        "Dinner im Luxuscamp",
+        "Sternenbeobachtung",
+        "Quadtouren",
+        "Gnawa-Musik in Khamlia"
       ]
     },
     "ouarzazate": {
@@ -167,7 +220,8 @@
         "Kasbah Taourirt",
         "Aït Ben Haddou (30min)",
         "Draâ-Tal",
-        "Fint-Oase"
+        "Fint-Oase",
+        "Straße der Kasbahs"
       ]
     },
     "ait-ben-haddou": {
@@ -181,7 +235,8 @@
         "Filmkulissen-Tour",
         "Fotografie zum Sonnenaufgang",
         "Besuche bei Berberfamilien",
-        "Töpferworkshops"
+        "Töpferworkshops",
+        "Ausblick vom Speicher auf dem Hügel"
       ]
     },
     "zagora": {
@@ -209,7 +264,8 @@
         "Affenfinger-Felsen",
         "Rosenfest (Mai)",
         "Uralte Kasbahs",
-        "Wandern im Tal"
+        "Wandern im Tal",
+        "Ausblicke auf die Serpentinenstraße"
       ]
     },
     "todra-gorge": {
@@ -223,7 +279,8 @@
         "Canyon-Wanderung",
         "Berber-Gästehäuser",
         "Fotografie",
-        "Sonnenaufgangsblicke"
+        "Sonnenaufgangsblicke",
+        "300 m hohe Felswände"
       ]
     },
     "skoura": {
@@ -279,7 +336,8 @@
         "Plaza Uta el-Hammam",
         "Ras-el-Ma-Quellen",
         "Akchour-Wasserfälle",
-        "Wanderungen im Rif-Gebirge"
+        "Wanderungen im Rif-Gebirge",
+        "Aussichtspunkt Spanische Moschee"
       ]
     },
     "imlil": {
@@ -349,7 +407,8 @@
         "Gnawa-Musik",
         "Kitesurfen",
         "Meeresfrüchte am Hafen",
-        "Jüdisches Viertel Mellah"
+        "Jüdisches Viertel Mellah",
+        "Atlantikstrände"
       ]
     },
     "agadir": {
@@ -3286,6 +3345,50 @@
         }
       ],
       "quoteOnly": true
+    }
+  },
+  "blog": {
+    "merzouga-luxury-desert-camp-guide": {
+      "title": "Der ultimative Guide zu Luxus-Wüstencamps in Merzouga",
+      "excerpt": "Von privaten Zelten mit eigenem Bad bis zum Gourmet-Dinner unter der Milchstraße – alles Wichtige über Luxus-Glamping in der Sahara.",
+      "alt": "Luxuriöses Wüstencamp mit privaten Zelten bei Sonnenuntergang nahe Merzouga, Marokko",
+      "canonicalTitle": "Luxus-Wüstencamps in Merzouga — Guide zum Sahara-Glamping",
+      "canonicalExcerpt": "Von privaten Zelten mit eigenem Bad bis zum Gourmet-Dinner unter der Milchstraße – das Wichtigste über Luxus-Glamping in der Sahara bei Merzouga."
+    },
+    "best-time-to-visit-morocco-sahara": {
+      "title": "Die beste Zeit für die Sahara: der komplette Monats-für-Monats-Guide",
+      "excerpt": "Wann solltest du deine Merzouga-Wüstenreise planen? Unsere lokalen Experten erklären Temperaturen, Besucherzahlen und Bedingungen Monat für Monat.",
+      "alt": "Dünen des Erg Chebbi zur goldenen Stunde nahe Merzouga, Marokko",
+      "canonicalTitle": "Beste Reisezeit für die Sahara — Monat für Monat",
+      "canonicalExcerpt": "Wann planst du deine Merzouga-Wüstenreise? Unsere lokalen Experten erklären Temperaturen, Besucherzahlen und Bedingungen Monat für Monat."
+    },
+    "camel-trekking-etiquette-morocco": {
+      "title": "Kameltrekking in Marokko: was dich erwartet und wie du dich vorbereitest",
+      "excerpt": "Alles für Erst-Reiter: Was anziehen, wie aufsteigen, was mitnehmen – und die Traditionen hinter dieser jahrhundertealten Saharareise.",
+      "alt": "Kamele ziehen bei Sonnenuntergang über goldene Dünen während einer Wüstentour",
+      "canonicalTitle": "Kameltrekking in Marokko — Vorbereitung und Ablauf",
+      "canonicalExcerpt": "Alles für Erst-Reiter: Was anziehen, wie aufsteigen, was mitnehmen – und die Traditionen hinter dieser jahrhundertealten Saharareise."
+    },
+    "marrakech-to-merzouga-roadtrip": {
+      "title": "Von Marrakesch nach Merzouga: die ultimative Sahara-Roadtrip-Route",
+      "excerpt": "Überquere den Hohen Atlas, erkunde Aït Ben Haddou, schlängle dich durch das Dades-Tal und erreiche die goldenen Dünen des Erg Chebbi – der komplette Routen-Guide.",
+      "alt": "Der Ksar Aït Ben Haddou bei Sonnenuntergang, UNESCO-Welterbe an der Route von Marrakesch nach Merzouga",
+      "canonicalTitle": "Marrakesch nach Merzouga — die Sahara-Roadtrip-Route",
+      "canonicalExcerpt": "Über den Hohen Atlas, vorbei an Aït Ben Haddou und durch das Dades-Tal bis zu den goldenen Dünen des Erg Chebbi – der komplette Routen-Guide."
+    },
+    "morocco-packing-list-desert": {
+      "title": "Die perfekte Packliste für Wüstentouren in Marokko (2026)",
+      "excerpt": "Was du für die Sahara einpacken solltest – von atmungsaktiven Schichten und Sonnenschutz bis zu den kleinen Luxusmomenten, die eine Wüstennacht unvergesslich machen.",
+      "alt": "Wüstenpanorama mit fernen Dünen und klarem Himmel – die ideale Orientierung fürs Packen in Marokko",
+      "canonicalTitle": "Packliste Marokko-Wüste — was in die Sahara mitmuss",
+      "canonicalExcerpt": "Was du für die Sahara einpacken solltest – atmungsaktive Schichten, Sonnenschutz und alles, was eine Wüstennacht unvergesslich macht."
+    },
+    "fes-chefchaouen-blue-city-guide": {
+      "title": "Von Fes nach Chefchaouen: Marokkos Blaue Perle entdecken",
+      "excerpt": "Die Reise vom kulturellen Herzen Marokkos zur berühmten blauen Medina – was du sehen kannst, wo du übernachtest und wie du das Beste daraus machst.",
+      "alt": "Blau getünchte Häuser und Gassen in der Medina von Chefchaouen, Marokko",
+      "canonicalTitle": "Von Fes nach Chefchaouen — Marokkos Blaue Perle",
+      "canonicalExcerpt": "Die Reise vom kulturellen Herzen Marokkos zur berühmten blauen Medina – was du sehen kannst, wo du übernachtest und was sich lohnt."
     }
   }
 }
