@@ -1,75 +1,4 @@
 {
-  "how-many-days": {
-    "title": "Hoeveel dagen heb je nodig in de Sahara?",
-    "pageTitle": "Hoeveel dagen in de Sahara? — Gids voor de reisduur in Merzouga",
-    "description": "Hoeveel dagen je nodig hebt in de Sahara en Merzouga — een eerlijke vergelijking van reizen van 1, 2, 3 en meer dagen, en wat je per duur werkelijk kunt beleven.",
-    "heroAlt": "De duinen van Erg Chebbi bij Merzouga — hoeveel dagen heeft een Saharareis nodig?",
-    "intro": "Kort antwoord: één nacht tussen de duinen is het minimum voor de klassieke Sahara-ervaring, en twee nachten raden we het vaakst aan. Het lange antwoord hangt af van waar je begint, hoeveel rijden je per dag accepteert en wat je van de woestijn wilt. Hier is de eerlijke verklaring.",
-    "sections": [
-      {
-        "heading": "1 dag in de Sahara (één nacht tussen de duinen)",
-        "paragraphs": [
-          "Eén nacht in het kamp geeft de essentiële opeenvolging: aankomst in de late middag, kameeltocht bij zonsondergang naar Erg Chebbi, diner en trommels, zonsopgang boven de duinen en terug voor de late ochtend. Op het zand zelf is niets gehaast: het is compact maar compleet.",
-          "Het compromis is de reis. Vanuit Marrakech betekent een reis van één nacht zeer lange rijdagen; vanuit Fès is het beter te doen. Eén dag is de juiste keuze wanneer de Sahara een hoogtepunt is binnen een bredere Marokko-reis en je planning echt krap zit."
-        ]
-      },
-      {
-        "heading": "2 dagen in de Sahara (twee nachten)",
-        "paragraphs": [
-          "Twee nachten is de ideale middenweg voor de meeste reizigers. De eerste avond en nacht leveren de klassieke opeenvolging; de tweede dag — vrij van aankomstlogistiek — is wanneer de woestijn zich opent: de 4x4-route door de zwarte steenwoestijn en het nomadenland, Khamlia met zijn gnawa-muziek, de oase of gewoon tijd zonder haast op de duinen. De tweede kampeeravond, als de nieuwigheid vervaagt en de stilte invalt, wordt vaak herinnerd.",
-          "Als je Marokko-route het kan opnemen, is dit de versie die we het vaakst bouwen."
-        ]
-      },
-      {
-        "heading": "3 dagen in de Sahara",
-        "paragraphs": [
-          "Drie dagen past bij langzame reizigers, fotografen en gezinnen die de woestijn als een hoofdstuk van de reis willen zien in plaats van één avond. Je voegt diepte toe in plaats van nieuwe categorieën: langere 4x4-verkenningen, een tweede nacht in een ander kamp, sandboarden, sterrenkijken zonder schema en tijd in het dorp en de oase.",
-          "Drie dagen passen ook natuurlijk bij de bredere zuidelijke route: de Dadès-vallei en de Todra-kloof op de heen- of terugweg, wat het de kern maakt van een goed getimede woestijnreis van 4 of 5 dagen."
-        ]
-      },
-      {
-        "heading": "4 dagen of meer (woestijn plus de route zelf)",
-        "paragraphs": [
-          "Boven drie dagen in Merzouga zelf besteed je extra tijd meestal beter aan de reis — de Atlas, Ait Ben Haddou, de kloven — of aan een eenrichtingstocht Fès-Marrakech door de woestijn die het hele land in één keer toont in plaats van terug te keren. Als de Sahara zelf het hele doel van je reis is, kunnen meerdaagse kameeltochten naar het diepere woestijninneringst worden besproken in je privéaanbod."
-        ]
-      },
-      {
-        "heading": "Het snelle antwoord",
-        "paragraphs": [
-          "Eén nacht: de klassieke, werkt vanuit Fès, krap vanuit Marrakech. Twee nachten: wat we het meest aanraden. Drie nachten: voor langzaam reizen en fotografie. Vier of meer: verplaats de extra dagen naar de route, of spreek ons aan op een diepewoestijntocht."
-        ]
-      }
-    ],
-    "faqs": [
-      {
-        "question": "Is één nacht in de Merzouga-woestijn genoeg?",
-        "answer": "Voor het wezenlijke — kameeltocht bij zonsondergang, kampeeravond, zonsopgang — ja. Wat één nacht niet kan geven, is een ontspannen reis naar de duinen of een volle woestijndag. Vanuit Marrakech plan je minstens een tour van 3 dagen voor één kampeeravond."
-      },
-      {
-        "question": "Hoeveel dagen heb je nodig van Marrakech naar Merzouga?",
-        "answer": "Drie dagen is het kortste praktische format: twee reisdagen met een overnachting in de Dadès- of Todra-streek en één nacht tussen de duinen. Vier dagen maakt het comfortabel."
-      },
-      {
-        "question": "Hoeveel dagen van Fès naar Merzouga?",
-        "answer": "Het rijden is korter dan vanuit Marrakech — veel routes bereiken de duinen op dag één met panoramische stops, wat een route van 3 dagen vanuit Fès of een eenrichtingstocht Fès-Marrakech in 4 dagen zeer comfortabele formats maakt."
-      },
-      {
-        "question": "Kun je te lang in de woestijn blijven?",
-        "answer": "Na ongeveer drie nachten in Merzouga zelf halen de meeste reizigers meer waarde uit afwisseling — de kloven, dalen, keizerlijke steden — dan uit extra nachten in dezelfde kampomgeving."
-      }
-    ],
-    "imageAlts": {
-      "sahara-dune-trekking-merzouga": "Wandelaars beklimmen de rand van een hoge Sahara-duin bij Merzouga",
-      "luxury-desert-camp-sunset-merzouga": "Tenten van een luxe kamp in de woestijn bij zonsondergang tussen de duinen van Merzouga"
-    },
-    "chrome": {
-      "crumb": "Hoeveel dagen in de Sahara?",
-      "imageAlts": {
-        "sahara-dune-trekking-merzouga": "Wandelaars beklimmen de rand van een hoge Sahara-duin bij Merzouga",
-        "luxury-desert-camp-sunset-merzouga": "Tenten van een luxe kamp in de woestijn bij zonsondergang tussen de duinen van Merzouga"
-      }
-    }
-  },
   "camel-trekking": {
     "title": "Kameeltocht in Merzouga — Een praktische gids",
     "pageTitle": "Kameeltocht in Merzouga — Kamelritten door de Sahara bij Erg Chebbi",
@@ -153,6 +82,132 @@
         "berber-camel-guide-sahara-merzouga": "Berberse gids leidt kamelen door de Sahara-duinen bij Merzouga",
         "sahara-dune-trekking-merzouga": "Wandelaars beklimmen de rand van een hoge Sahara-duin bij Merzouga"
       }
+    }
+  },
+  "desert-camps": {
+    "title": "Woestijnkampen in Merzouga — de complete gids",
+    "pageTitle": "Woestijnkampen in Merzouga — standaard en luxe",
+    "description": "Zo kies je een kamp in de duinen van Erg Chebbi: standaardtent of luxetent, wat de nacht omvat, badkamers, maaltijden, verwarming en hoe je het juiste boekt.",
+    "heroAlt": "Een woestijnkamp in de Sahara dat bij Merzouga onder een sterrenhemel door lantaarns wordt verlicht",
+    "intro": "Slapen tussen de duinen van Erg Chebbi is het hoogtepunt van elke reis naar Merzouga. De belangrijkste keuze gaat tussen een eenvoudig Berberkamp en een luxekamp: deze gids vergelijkt ze zonder omhaal, zodat je de juiste nacht kiest.",
+    "sections": [
+      {
+        "heading": "Wat een woestijnkamp werkelijk is",
+        "paragraphs": [
+          "Een woestijnkamp is een kleine tentennederzetting tussen de duinen, op 20 minuten tot een uur kameelrijden van het dorp Merzouga. Je komt aan op de kameel, ziet de zon ondergaan, deelt een Marokkaans diner van drie gangen, hoort Berbertrommels bij het vuur en slaapt onder buitengewoon veel sterren. In de ochtend rijd je over de duinen terug terwijl de zon opkomt.",
+          "Alle serieuze kampen volgen ditzelfde ritme. Wat verschilt, soms flink, zijn de tent, het bed, de badkamer en hoeveel comfort jou van het zand scheidt."
+        ]
+      },
+      {
+        "heading": "Eenvoudige Berberkampen",
+        "paragraphs": [
+          "Standaardkampen zijn de klassieke woestijnervaring: eenvoudige matrassen op podia, dekens en gedeelde badkamers. De tenten zijn functioneel en behaaglijk; de magie zit in het vuur, het eten en de hemel, niet in de inrichting. Precies dit zien de meeste mensen voor zich bij een nacht in de Sahara, en het past bij iedereen die een eerlijke nacht wil zonder voor luxe te betalen."
+        ]
+      },
+      {
+        "heading": "Luxekampen in de woestijn",
+        "paragraphs": [
+          "Luxekampen houden dezelfde duinen en hetzelfde avondritme aan, maar tillen de inrichting op: ruimere tenten, echte bedden, zacht beddengoed, tapijten en een eigen badkamer met toilet en warme douche. Sommige hebben verwarming voor koude winternachten. Voor huwelijksreizen, voor wie comfort belangrijk vindt of voor gasten die de charme zonder ongemak willen, is luxe meestal de verstandigere keuze."
+        ]
+      },
+      {
+        "heading": "Zo kies je tussen standaard en luxe",
+        "paragraphs": [
+          "Stel jezelf drie vragen. Vind je het vervelend om 's nachts naar een gedeelde badkamer te lopen? Heb je zekerheid nodig over een warme douche en een eigen toilet? Weegt comfort zwaarder dan het budget? Als privacy en gemak meetellen, kies luxe. Als je juist de gezellige kampsfeer zoekt en een gedeelde badkamer geen probleem is, geeft een standaardkamp je dezelfde duinen voor minder."
+        ]
+      },
+      {
+        "heading": "Wat een nacht in het kamp omvat",
+        "paragraphs": [
+          "Een gebruikelijke nacht omvat de kameeltocht heen en terug, een Marokkaans diner van drie gangen, een eenvoudig ontbijt en vaak Berbermuziek bij het vuur. Naar de sterren kijken kost niets: bij Erg Chebbi is er nauwelijks lichtvervuiling. Vraag bij het boeken precies na wat inbegrepen is, want dat verschilt per kamp."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Wat is het verschil tussen een standaardkamp en een luxekamp?",
+        "answer": "Het belangrijkste verschil is comfort: luxekampen hebben echte bedden, goed beddengoed en een eigen badkamer met warme douche, terwijl standaardkampen matrassen op podia en gedeelde badkamers gebruiken. De duinen en het avondprogramma zijn bij beide gelijk."
+      },
+      {
+        "question": "Hebben luxekampen warme douches en eigen badkamers?",
+        "answer": "Ja. De meeste luxekampen bij Merzouga bieden tenten met een eigen badkamer, toilet en warme douche."
+      },
+      {
+        "question": "Is het douchewater echt warm?",
+        "answer": "In de meeste luxekampen wel, daar wordt het water verwarmd. In heel eenvoudige standaardkampen heb je mogelijk alleen een korte wasbeurt met koud water, dus houd daar rekening mee."
+      },
+      {
+        "question": "Wordt het 's nachts koud in de woestijnkampen?",
+        "answer": "Zeer waarschijnlijk, vooral van oktober tot maart, wanneer de woestijnnachten tot bijna het vriespunt kunnen dalen. Luxetenten hebben meestal verwarming of extra dekens; neem in elk kamp een warme laag mee."
+      },
+      {
+        "question": "Zijn maaltijden en de kameeltocht inbegrepen bij een nacht in het kamp?",
+        "answer": "Meestal wel: diner, ontbijt en de kameeltocht heen en terug horen doorgaans bij het pakket. Vraag bij het boeken precies na wat inbegrepen is."
+      }
+    ],
+    "chrome": {
+      "crumb": "Woestijnkampen",
+      "imageAlts": {}
+    }
+  },
+  "luxury-desert-camps": {
+    "title": "Luxekampen in Merzouga — wat je werkelijk krijgt",
+    "pageTitle": "Luxekampen in Merzouga — glamping in de Sahara",
+    "description": "Een nuchtere blik op de luxekampen van de Sahara bij Merzouga: tenten met eigen badkamer, echte bedden, warme douches en wat luxe van standaard onderscheidt.",
+    "heroAlt": "De tent van een luxekamp die in de schemering warm oplicht tussen de duinen bij Merzouga",
+    "intro": "In de luxekampen bij Merzouga slaap je midden in de duinen van Erg Chebbi zonder een echt bed of een warme douche op te geven. Dit houdt die stap naar een hogere categorie werkelijk in.",
+    "sections": [
+      {
+        "heading": "Wat een kamp tot luxekamp maakt",
+        "paragraphs": [
+          "Een luxetent in Erg Chebbi blijft een tentenkamp: je rijdt er op de kameel heen, eet onder de sterren en slaapt op het zand. Het verschil zit in de inrichting: een stevig bed met goed beddengoed, tapijten en lampen, een eigen badkamer met toilet en warme douche en vaak een eigen terras of verwarming voor koude nachten.",
+          "De duinen, de zonsondergang, de trommels en de sterrenhemel zijn dezelfde als in een standaardkamp. Luxe verandert hoe comfortabel je dat beleeft, niet de woestijn zelf."
+        ]
+      },
+      {
+        "heading": "De kwestie van de eigen badkamer",
+        "paragraphs": [
+          "Dit is het detail dat luxekampen het duidelijkst van eenvoudige kampen scheidt. In een luxetent heb je meestal een eigen, afgesloten badkamer met warm water tot in de tent. In een standaardkamp deel je de voorzieningen op korte loopafstand. Als een warme douche voor jou alleen belangrijk is, is luxe de meerprijs die echt telt."
+        ]
+      },
+      {
+        "heading": "Diner, vuur en de woestijnnacht",
+        "paragraphs": [
+          "Luxekampen serveren doorgaans hetzelfde royale Marokkaanse diner van drie gangen als andere kampen, maar vaak in een ruimere eettent en met meer keuze. Na het eten gaan de trommels en de Berberzang in vraag-en-antwoordvorm door bij het vuur, en de nachthemel boven Erg Chebbi is een schouwspel op zich. In de winter zetten de kampen kachels neer en leggen ze extra dekens klaar, zodat de koude avond aangenaam blijft."
+        ]
+      },
+      {
+        "heading": "Voor wie luxekampen het beste passen",
+        "paragraphs": [
+          "Luxe past bij huwelijksreizen, bij stellen die iets vieren, bij oudere reizigers die op comfort gesteld zijn en bij iedereen die de charme van de Sahara zonder ontberingen wil. Als privacy, een warme douche en een werkelijk comfortabel bed voor jou meetellen, is de meerprijs voor die ene nacht meestal goed besteed."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Hebben luxekampen in de woestijn echt warme douches?",
+        "answer": "In de meeste gevallen wel: luxekampen bij Merzouga leiden warm water tot in een badkamer in de tent. Vraag het na bij het boeken, want de voorzieningen verschillen per kamp."
+      },
+      {
+        "question": "Hoe is het bed in een luxekamp in de Sahara?",
+        "answer": "Luxetenten hebben doorgaans een echt bed op een frame, met goed beddengoed, dekens en kussens in plaats van een eenvoudige matras op de grond of op een podium."
+      },
+      {
+        "question": "Zijn luxekampen in de woestijn duur?",
+        "answer": "Ze kosten meer dan een standaardkamp, maar duidelijk minder dan je zou verwachten voor een hele avond met kameel, diner, muziek en een tent met eigen badkamer. De exacte prijs voor jouw data geven we op aanvraag."
+      },
+      {
+        "question": "Is een luxekamp de moeite waard voor slechts één nacht?",
+        "answer": "Voor veel reizigers wel: één nacht is precies de juiste lengte voor een verblijf in de woestijn, en luxe maakt die ene nacht werkelijk comfortabel en memorabel."
+      },
+      {
+        "question": "Rijd je ook naar een luxekamp op de kameel?",
+        "answer": "Ja. De meeste luxekampen bereik je op dezelfde manier: op de kameel bij zonsondergang en na de zonsopkomst weer terug. Zo krijg je zowel het comfort van glamping als de klassieke tocht."
+      }
+    ],
+    "chrome": {
+      "crumb": "Luxekampen",
+      "imageAlts": {}
     }
   },
   "best-time-to-visit": {
@@ -243,6 +298,145 @@
       "imageAlts": {}
     }
   },
+  "how-to-get-there": {
+    "title": "Zo kom je in Merzouga — vanuit Marrakech, Fès en verder",
+    "pageTitle": "Zo kom je in Merzouga — vanuit Marrakech en Fès",
+    "description": "Zo bereik je Merzouga en Erg Chebbi: realistische reistijden en opties met bus en openbaar vervoer vanuit Marrakech, Fès, Ouarzazate en Agadir.",
+    "heroAlt": "De toegangsweg die vanaf het dorp Merzouga naar de duinen van Erg Chebbi omhoogloopt",
+    "intro": "Merzouga ligt aan de uiterste oostrand van Marokko, aan de weg naar Errachidia en de Algerijnse grens. De meeste bezoekers komen over land vanuit de grote koningssteden: dit zijn de realistische reistijden en de vervoersopties.",
+    "sections": [
+      {
+        "heading": "Vanuit Marrakech",
+        "paragraphs": [
+          "De rit van Marrakech naar Merzouga duurt zonder lange pauzes ongeveer 9 tot 10 uur, zo'n 560 km. De route steekt de Hoge Atlas over bij de Tizi n'Tichka, daalt af naar Ouarzazate en Aït Ben Haddou, doorkruist de Dades-vallei over de volle lengte en de Todra-kloof, en volgt daarna de Ziz-vallei langs Errachidia en Midelt tot Merzouga. Vrijwel elke tussenstop op deze route is een pauze waard.",
+          "De meeste reizigers leggen hem af als eerste dag van een meerdaagse rondreis, met een stop in Aït Ben Haddou en een overnachting in het gebied van de Dades of de Todra."
+        ]
+      },
+      {
+        "heading": "Vanuit Fès",
+        "paragraphs": [
+          "Van Fès naar Merzouga is het ongeveer 7 tot 8 uur rijden, zo'n 550 km. De weg loopt naar het zuidoosten door de Midden-Atlas, langs Ifrane, het stadje in de cederbossen, en verder over Midelt en door de Ziz-vallei — de met palmen omzoomde route die het Marokkaanse Verkeersbureau beschrijft als de verbinding Fès-Errachidia-Midelt-Merzouga. De rit is directer dan die vanuit Marrakech en het landschap opent zich van cederbos naar woestijnoase.",
+          "In de winter kan deze weg op de hogere delen van de Midden-Atlas last hebben van mist, waardoor een privéchauffeur of een georganiseerde tour doorgaans betrouwbaarder is dan het openbaar vervoer."
+        ]
+      },
+      {
+        "heading": "Vanuit Ouarzazate",
+        "paragraphs": [
+          "Van Ouarzazate naar Merzouga is het ongeveer 3 tot 3,5 uur, zo'n 230 km, via de Draa-vallei en Tinzouline. Het is een aangename en overwegend eenvoudige rit, en een gebruikelijke etappe op een rondreis door Zuid-Marokko."
+        ]
+      },
+      {
+        "heading": "Vanuit Agadir",
+        "paragraphs": [
+          "Van Agadir naar Merzouga is het ongeveer 6 tot 7 uur rijden, zo'n 500 km, van de Atlantische kust naar de woestijn via de Anti-Atlas en de Draa-vallei. Dat is een lange dag achter het stuur, dus plan een tussenovernachting in."
+        ]
+      },
+      {
+        "heading": "Openbaar vervoer en zelf rijden",
+        "paragraphs": [
+          "Er is geen directe treinverbinding naar Merzouga. De realistische opties met openbaar vervoer zijn grand taxi's en bussen vanuit Fès, Ouarzazate en Errachidia; ze rijden weinig en de overstappen kosten meer tijd dan de rit met de auto. Een privéchauffeur of een privétour vanaf je aankomststad is verreweg de comfortabelste en betrouwbaarste oplossing, en laat je zonder haast stoppen bij Aït Ben Haddou of in de Dades-vallei.",
+          "Zelf rijden kan, en de hoofdwegen N9 en N13 verkeren in redelijke staat. Brandstof, navigatie en lange woestijnstukken maken echter dat een lokale chauffeur zich meestal terugbetaalt in flexibiliteit en gemoedsrust."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Hoe lang duurt de rit van Marrakech naar Merzouga?",
+        "answer": "Ongeveer 9 tot 10 uur rijden (560 km) zonder lange pauzes. De meesten leggen hem af als eerste dag van een rondreis, met een stop in Aït Ben Haddou en een overnachting in de Dades- of Todra-kloof."
+      },
+      {
+        "question": "Hoe lang duurt de rit van Fès naar Merzouga?",
+        "answer": "Ongeveer 7 tot 8 uur (550 km), via de Midden-Atlas, Ifrane, Midelt en de Ziz-vallei. Dat is de directere aanvliegroute naar de woestijn."
+      },
+      {
+        "question": "Rijdt er een trein naar Merzouga?",
+        "answer": "Er is geen directe reizigersverbinding. De dichtstbijzijnde treinaansluitingen liggen in Ouarzazate of Fès; van daar ga je verder over de weg (grand taxi, bus of privétransfer)."
+      },
+      {
+        "question": "Is de weg naar Merzouga verhard en veilig?",
+        "answer": "De hoofdwegen N9 en N13 zijn verhard en goed berijdbaar. Het laatste stuk over de grindvlakte bij de duinen is onverhard, maar met enige voorzichtigheid ook geschikt voor een gewone huurauto."
+      },
+      {
+        "question": "Kun je met de bus naar Merzouga?",
+        "answer": "Ja, maar weinig frequent en langzamer dan met de auto. Grand taxi's rijden vanuit Fès, Ouarzazate en Errachidia, met aansluitingen naar Merzouga afhankelijk van het seizoen en de vraag."
+      }
+    ],
+    "chrome": {
+      "crumb": "Zo kom je er",
+      "imageAlts": {}
+    }
+  },
+  "erg-chebbi": {
+    "title": "Erg Chebbi — de hoogste duinen van Marokko",
+    "pageTitle": "Duinen van Erg Chebbi, Merzouga — gids voor de Sahara",
+    "description": "Erg Chebbi bij Merzouga: hoe het duinenveld ontstond, hoe hoog en hoe lang het is, wat je op het zand kunt doen en waarom het de toegangspoort tot de Sahara is.",
+    "heroAlt": "Het uitgestrekte duinenveld van Erg Chebbi dat bij Merzouga tot een hoge kam oploopt",
+    "intro": "Erg Chebbi is het duinenveld dat Merzouga tot de best bereikbare plek van Marokko maakt om boven op een zandzee te staan. Dit maakt het bijzonder, en hierom trekt het jaar na jaar bezoekers.",
+    "sections": [
+      {
+        "heading": "Wat Erg Chebbi is",
+        "paragraphs": [
+          "Erg Chebbi is een droge, actieve zandzee van ongeveer 28 km lang en op het breedste punt 9 km breed, direct ten westen van Merzouga. De duinen reiken op de hoogste kam tot zo'n 150 m: de hoogste vrijstaande duinen van Marokko. De naam betekent „de plek van het zand”, en het hele systeem wordt gevoed door de wind die over de grindvlakte waait die zich vanaf het dorp uitstrekt.",
+          "Anders dan de kleine duinen bij veel toegangen tot de Sahara zijn de kammen van Erg Chebbi groot genoeg om te belopen en te beklimmen, en ze zijn vanaf de hoofdweg in de vallei ook zonder terreinwagen bereikbaar. Daarom eindigen bijna alle Sahara-tours in Marokko hier."
+        ]
+      },
+      {
+        "heading": "Hoe de duinen zijn ontstaan",
+        "paragraphs": [
+          "Erg Chebbi bestaat dankzij het klimaat en de geologie van de streek: de hoogvlakten in het noorden en de uitlopers van de Anti-Atlas in het zuiden sturen de overheersende winden naar de duinen toe, en de omringende grindvlakte levert het zand. Het is een levende erg: de duinen verschuiven met elk seizoen langzaam, dus de precieze kammen veranderen, maar de hoge ruggen bij Merzouga liggen al decennia op dezelfde plek."
+        ]
+      },
+      {
+        "heading": "Wat je werkelijk op de duinen doet",
+        "paragraphs": [
+          "Loop of klim bij zonsopkomst een duin op, wanneer het zand koel is en de schaduwen het verst reiken. Rijd bij zonsondergang op de kameel over een duinkam, wanneer het hele veld amberkleurig wordt. Overnacht in een kamp tussen de duinen, met diner bij het vuur en een sterrenhemel, want op het zand is er praktisch geen lichtvervuiling.",
+          "Andere gangbare ervaringen zijn sandboarden en korte terreinwagenritten die voor foto's naar de hoogste kammen gaan. De duinen leveren bovendien de mooiste zonsopkomsten en zonsondergangen van Marokko, en de nachthemel hoort hier tot de helderste van het land."
+        ]
+      },
+      {
+        "heading": "Overige praktische punten over Erg Chebbi",
+        "paragraphs": [
+          "De duinen zijn openbaar terrein en vrij toegankelijk, al vraagt het bereiken van de beste uitzichtpunten soms een korte rit met de deeltaxi of de terreinwagen vanaf Merzouga. Draag dichte schoenen, want heet zand verbrandt in de zomer je voeten. Neem water mee, zonbescherming en een lichte laag voor na zonsondergang. De nachten op de duinen zijn zelfs in de zomer koel.",
+          "De meesten bereiken Erg Chebbi binnen een tour vanuit Merzouga. Wie zelf rijdt, komt met een kleine terreinvaardige auto makkelijker bij de hoogste kammen, maar ook een gewone auto haalt de belangrijkste uitzichtpunten."
+        ]
+      },
+      {
+        "heading": "Zonsopkomst en zonsondergang op de duinen",
+        "paragraphs": [
+          "De zonsondergang is het gezellige uur: de westhellingen van de erg gaan van goud naar diep rood, terwijl de kamelenrijen lager de kammen natekenen. De zonsopkomst is de keuze van de kenner: het zand is koel onder je voeten, het dorp slaapt nog, en de schaduwen op de oosthellingen rekken zich lang en blauwig uit. Beide kosten niets: loop in minder dan een uur vanaf Merzouga omhoog, of plan je kameeltocht of terreinwagenrit zo dat die op een kam eindigt.",
+          "Voor wie fotografeert verslaat het uur na zonsopkomst de drukte van de avond: minder voetsporen, zachtere contrasten en het duinenveld voor jezelf."
+        ]
+      },
+      {
+        "heading": "Hoeveel tijd je nodig hebt bij Erg Chebbi",
+        "paragraphs": [
+          "Eén nacht op de duinen geeft je de klassieke volgorde: kameeltocht bij zonsondergang, diner in het kamp en terugrit bij zonsopkomst. Twee nachten laten ruimte voor de wijdere omgeving van de erg met terreinwagen of quad, voor een bezoek aan Khamlia met gnawa-muziek en voor vrije uren tijdens de middaghitte. Meer dan twee dagen in Merzouga zelf is iets voor langzame reizigers: de Sahara beloont diepgang, maar de rest van Zuid-Marokko ligt dichtbij en is de kilometers waard."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Hoe hoog zijn de duinen van Erg Chebbi?",
+        "answer": "De duinen reiken op de hoogste kammen tot ongeveer 150 m en zijn daarmee de hoogste van Marokko. Het duinenveld meet zo'n 28 km in de lengte en tot 9 km in de breedte."
+      },
+      {
+        "question": "Is Erg Chebbi de Sahara?",
+        "answer": "Erg Chebbi is een groot duinenveld binnen de Sahara, het deel dat bezoekers vanuit Merzouga beleven. De Sahara zelf loopt over het hele continent; Erg Chebbi is de best bereikbare hoek ervan in Marokko."
+      },
+      {
+        "question": "Kun je Erg Chebbi op eigen houtje bezoeken?",
+        "answer": "Ja. De duinen zijn openbaar terrein. De meesten bereiken ze te voet, met de deeltaxi of met een korte kameeltocht vanaf het dorp Merzouga."
+      },
+      {
+        "question": "Wanneer is het licht bij Erg Chebbi het mooiste voor foto's?",
+        "answer": "Bij zonsopkomst en zonsondergang. De duinen kleuren goud en daarna oranje terwijl de zon opkomt of ondergaat, en de lange schaduwen geven de kammen een duidelijk reliëf."
+      }
+    ],
+    "chrome": {
+      "crumb": "Erg Chebbi",
+      "imageAlts": {}
+    }
+  },
   "what-to-pack": {
     "title": "Wat te pakken voor Merzouga — Woestijnpaklijst",
     "pageTitle": "Wat te pakken voor Merzouga — Paklijst voor de Sahara",
@@ -308,6 +502,77 @@
     "chrome": {
       "crumb": "Wat te pakken voor Merzouga",
       "imageAlts": {}
+    }
+  },
+  "how-many-days": {
+    "title": "Hoeveel dagen heb je nodig in de Sahara?",
+    "pageTitle": "Hoeveel dagen in de Sahara? — Gids voor de reisduur in Merzouga",
+    "description": "Hoeveel dagen je nodig hebt in de Sahara en Merzouga — een eerlijke vergelijking van reizen van 1, 2, 3 en meer dagen, en wat je per duur werkelijk kunt beleven.",
+    "heroAlt": "De duinen van Erg Chebbi bij Merzouga — hoeveel dagen heeft een Saharareis nodig?",
+    "intro": "Kort antwoord: één nacht tussen de duinen is het minimum voor de klassieke Sahara-ervaring, en twee nachten raden we het vaakst aan. Het lange antwoord hangt af van waar je begint, hoeveel rijden je per dag accepteert en wat je van de woestijn wilt. Hier is de eerlijke verklaring.",
+    "sections": [
+      {
+        "heading": "1 dag in de Sahara (één nacht tussen de duinen)",
+        "paragraphs": [
+          "Eén nacht in het kamp geeft de essentiële opeenvolging: aankomst in de late middag, kameeltocht bij zonsondergang naar Erg Chebbi, diner en trommels, zonsopgang boven de duinen en terug voor de late ochtend. Op het zand zelf is niets gehaast: het is compact maar compleet.",
+          "Het compromis is de reis. Vanuit Marrakech betekent een reis van één nacht zeer lange rijdagen; vanuit Fès is het beter te doen. Eén dag is de juiste keuze wanneer de Sahara een hoogtepunt is binnen een bredere Marokko-reis en je planning echt krap zit."
+        ]
+      },
+      {
+        "heading": "2 dagen in de Sahara (twee nachten)",
+        "paragraphs": [
+          "Twee nachten is de ideale middenweg voor de meeste reizigers. De eerste avond en nacht leveren de klassieke opeenvolging; de tweede dag — vrij van aankomstlogistiek — is wanneer de woestijn zich opent: de 4x4-route door de zwarte steenwoestijn en het nomadenland, Khamlia met zijn gnawa-muziek, de oase of gewoon tijd zonder haast op de duinen. De tweede kampeeravond, als de nieuwigheid vervaagt en de stilte invalt, wordt vaak herinnerd.",
+          "Als je Marokko-route het kan opnemen, is dit de versie die we het vaakst bouwen."
+        ]
+      },
+      {
+        "heading": "3 dagen in de Sahara",
+        "paragraphs": [
+          "Drie dagen past bij langzame reizigers, fotografen en gezinnen die de woestijn als een hoofdstuk van de reis willen zien in plaats van één avond. Je voegt diepte toe in plaats van nieuwe categorieën: langere 4x4-verkenningen, een tweede nacht in een ander kamp, sandboarden, sterrenkijken zonder schema en tijd in het dorp en de oase.",
+          "Drie dagen passen ook natuurlijk bij de bredere zuidelijke route: de Dadès-vallei en de Todra-kloof op de heen- of terugweg, wat het de kern maakt van een goed getimede woestijnreis van 4 of 5 dagen."
+        ]
+      },
+      {
+        "heading": "4 dagen of meer (woestijn plus de route zelf)",
+        "paragraphs": [
+          "Boven drie dagen in Merzouga zelf besteed je extra tijd meestal beter aan de reis — de Atlas, Ait Ben Haddou, de kloven — of aan een eenrichtingstocht Fès-Marrakech door de woestijn die het hele land in één keer toont in plaats van terug te keren. Als de Sahara zelf het hele doel van je reis is, kunnen meerdaagse kameeltochten naar het diepere woestijninneringst worden besproken in je privéaanbod."
+        ]
+      },
+      {
+        "heading": "Het snelle antwoord",
+        "paragraphs": [
+          "Eén nacht: de klassieke, werkt vanuit Fès, krap vanuit Marrakech. Twee nachten: wat we het meest aanraden. Drie nachten: voor langzaam reizen en fotografie. Vier of meer: verplaats de extra dagen naar de route, of spreek ons aan op een diepewoestijntocht."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is één nacht in de Merzouga-woestijn genoeg?",
+        "answer": "Voor het wezenlijke — kameeltocht bij zonsondergang, kampeeravond, zonsopgang — ja. Wat één nacht niet kan geven, is een ontspannen reis naar de duinen of een volle woestijndag. Vanuit Marrakech plan je minstens een tour van 3 dagen voor één kampeeravond."
+      },
+      {
+        "question": "Hoeveel dagen heb je nodig van Marrakech naar Merzouga?",
+        "answer": "Drie dagen is het kortste praktische format: twee reisdagen met een overnachting in de Dadès- of Todra-streek en één nacht tussen de duinen. Vier dagen maakt het comfortabel."
+      },
+      {
+        "question": "Hoeveel dagen van Fès naar Merzouga?",
+        "answer": "Het rijden is korter dan vanuit Marrakech — veel routes bereiken de duinen op dag één met panoramische stops, wat een route van 3 dagen vanuit Fès of een eenrichtingstocht Fès-Marrakech in 4 dagen zeer comfortabele formats maakt."
+      },
+      {
+        "question": "Kun je te lang in de woestijn blijven?",
+        "answer": "Na ongeveer drie nachten in Merzouga zelf halen de meeste reizigers meer waarde uit afwisseling — de kloven, dalen, keizerlijke steden — dan uit extra nachten in dezelfde kampomgeving."
+      }
+    ],
+    "imageAlts": {
+      "sahara-dune-trekking-merzouga": "Wandelaars beklimmen de rand van een hoge Sahara-duin bij Merzouga",
+      "luxury-desert-camp-sunset-merzouga": "Tenten van een luxe kamp in de woestijn bij zonsondergang tussen de duinen van Merzouga"
+    },
+    "chrome": {
+      "crumb": "Hoeveel dagen in de Sahara?",
+      "imageAlts": {
+        "sahara-dune-trekking-merzouga": "Wandelaars beklimmen de rand van een hoge Sahara-duin bij Merzouga",
+        "luxury-desert-camp-sunset-merzouga": "Tenten van een luxe kamp in de woestijn bij zonsondergang tussen de duinen van Merzouga"
+      }
     }
   }
 }
