@@ -12,7 +12,7 @@
 //   public/images/logo/mga-icon-512.png    (512x512 — PWA / Google)
 //   public/favicon.ico                     (16/32/48 PNG-compressed entries)
 //
-// The FULL brand logo (public/logo.svg, public/logo-official.png) is never
+// The FULL brand logo (public/logo-official.png) is never
 // touched. Run manually after changing favicon.svg, then commit the generated
 // assets. Not wired into the build to keep the deploy pipeline unchanged.
 // ─────────────────────────────────────────────────────────────────────────────

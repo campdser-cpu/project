@@ -386,9 +386,17 @@ export function buildBlogPostSchema(
         '@type': 'Organization',
         '@id': ORGANIZATION_ID,
         name: BRAND,
+        // Same logo node as the Organization/TravelAgency entity in the static
+        // head (index.html): identical @id, URL and dimensions, so the brand
+        // logo resolves to one consistent ImageObject across the whole graph.
         logo: {
           '@type': 'ImageObject',
+          '@id': `${SITE_URL}/#logo`,
           url: `${SITE_URL}/logo-official.png`,
+          contentUrl: `${SITE_URL}/logo-official.png`,
+          width: 600,
+          height: 600,
+          caption: BRAND,
         },
       },
       inLanguage: l,
