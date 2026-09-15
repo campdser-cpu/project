@@ -47,7 +47,7 @@ export function StickyBookingCTA() {
               href={contactInfo.whatsapp}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center justify-center gap-2 bg-[#25D366] text-white px-3 py-3 rounded-xl font-bold text-xs tracking-wide"
+              className="flex items-center justify-center gap-2 bg-[#25D366] text-[#0d2b1d] px-3 py-3 rounded-xl font-bold text-xs tracking-wide"
             >
               <SiWhatsapp className="w-4 h-4 shrink-0" /> {t('sticky_whatsapp')}
             </a>

@@ -176,7 +176,7 @@ export function ExperiencePage({
               target="_blank"
               rel="noreferrer"
               onClick={() => trackEvent('whatsapp_click', { source_page: id, placement: 'bottom' })}
-              className="bg-[#25D366] text-white px-8 py-4 rounded-full font-bold tracking-wide hover:bg-[#1fb959] transition-all hover:-translate-y-1 shadow-lg flex items-center gap-2"
+              className="bg-[#25D366] text-[#0d2b1d] px-8 py-4 rounded-full font-bold tracking-wide hover:bg-[#1fb959] transition-all hover:-translate-y-1 shadow-lg flex items-center gap-2"
             >
               <SiWhatsapp className="w-5 h-5" /> {t('exp_chat_whatsapp')}
             </a>

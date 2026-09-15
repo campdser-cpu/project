@@ -22,6 +22,12 @@
   --color-primary: hsl(var(--primary));
   --color-primary-foreground: hsl(var(--primary-foreground));
   --color-primary-border: var(--primary-border);
+  /* Accessible gold for SMALL TEXT on light surfaces. The brand gold
+     (--primary, hsl 44 55% 54%) is 2.15:1 against --background, which is fine
+     for fills, borders, icons and large display type but fails WCAG AA for
+     labels and eyebrows. This darker gold measures 5.36:1 on --background and
+     keeps the same hue/saturation, so the identity is unchanged. */
+  --color-primary-text: hsl(var(--primary-text));
 
   --color-secondary: hsl(var(--secondary));
   --color-secondary-foreground: hsl(var(--secondary-foreground));
@@ -102,6 +108,7 @@
 
   /* Matte Gold */
   --primary: 44 55% 54%;
+  --primary-text: 44 55% 30%;
   /* Dark forest green on gold for accessible contrast (small text ≥ 4.5:1). */
   --primary-foreground: 150 38% 12%;
 
@@ -110,7 +117,7 @@
   --secondary-foreground: 0 0% 100%;
 
   --muted: 37 30% 90%;
-  --muted-foreground: 150 20% 40%;
+  --muted-foreground: 150 20% 34%;
 
   /* Matte Gold light for accent */
   --accent: 44 40% 90%;
@@ -201,6 +208,10 @@
   --popover-border: 150 30% 25%;
 
   --primary: 44 55% 54%;
+  /* On the dark theme the full-strength gold already measures 6.68:1 against
+     the background, so the darkened light-theme variant would only make text
+     harder to read here. Keep them identical in dark mode. */
+  --primary-text: 44 55% 54%;
   --primary-foreground: 150 38% 12%;
 
   --secondary: 25 76% 31%;

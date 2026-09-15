@@ -2,6 +2,15 @@ type LogoProps = {
   /** 'dark' = light background (scrolled). 'light' = dark/hero background (transparent header). */
   variant?: 'dark' | 'light';
   className?: string;
+  /**
+   * Set when an ancestor already supplies the accessible name — the navbar
+   * wraps this in `<Link aria-label="Morocco Grand Adventure — Home">`. The
+   * mark is then purely decorative and must stay out of the accessibility
+   * tree, otherwise the link exposes a nested, duplicated image node. When
+   * false (e.g. the footer, where the logo stands alone) the SVG names itself
+   * with a <title>, the canonical mechanism for an inline SVG.
+   */
+  decorative?: boolean;
 };
 
 /**
@@ -16,7 +25,7 @@ type LogoProps = {
  * the same wordmark coordinates, type sizes, letter-spacing, rules and
  * ornaments, and the symbol occupies the same optical slot on the left.
  */
-export function Logo({ variant = 'dark', className = '' }: LogoProps) {
+export function Logo({ variant = 'dark', className = '', decorative = false }: LogoProps) {
   const ink = variant === 'dark' ? '#1E3B2C' : '#FFFFFF';
   const gold = variant === 'dark' ? '#A97C2F' : '#EFD9AC';
 
@@ -32,10 +41,13 @@ export function Logo({ variant = 'dark', className = '' }: LogoProps) {
       viewBox="0 0 975 290"
       width={975}
       height={290}
-      role="img"
-      aria-label="Morocco Grand Adventure"
+      {...(decorative
+        ? { 'aria-hidden': true as const, focusable: 'false' as const }
+        : { role: 'img' as const })}
       className={`w-auto transition-[height] duration-300 ease-out ${sizeClasses}`}
     >
+      {!decorative && <title>Morocco Grand Adventure</title>}
+
       {/* ================= BRAND SYMBOL (real logo drawing) ================= */}
       <image
         href="/images/logo/mga-emblem.webp"

@@ -105,7 +105,7 @@ export function TourCityHub({ hub }: { hub: CityHub }) {
               href={contactInfo.whatsapp}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 bg-[#25D366] text-white px-6 py-3 rounded-full font-bold hover:bg-[#1fb959] transition-colors"
+              className="inline-flex items-center gap-2 bg-[#25D366] text-[#0d2b1d] px-6 py-3 rounded-full font-bold hover:bg-[#1fb959] transition-colors"
             >
               <SiWhatsapp className="w-4 h-4" aria-hidden="true" /> {t('exp_chat_whatsapp')}
             </a>

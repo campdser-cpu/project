@@ -21,7 +21,7 @@ export function PromoCta({ tourName, size = 'md', full = false, className = '' }
       href={waPromoLink(message)}
       target="_blank"
       rel="noreferrer"
-      className={`group inline-flex items-center justify-center gap-2.5 rounded-full bg-[#25D366] font-bold text-white shadow-lg shadow-[#25D366]/30 transition-all hover:-translate-y-0.5 hover:bg-[#1ebe5b] hover:shadow-xl ${
+      className={`group inline-flex items-center justify-center gap-2.5 rounded-full bg-[#25D366] font-bold text-[#0d2b1d] shadow-lg shadow-[#25D366]/30 transition-all hover:-translate-y-0.5 hover:bg-[#1ebe5b] hover:shadow-xl ${
         size === 'lg' ? 'px-8 py-4 text-base md:text-lg' : 'px-6 py-3 text-sm md:text-base'
       } ${full ? 'w-full' : ''} ${className}`}
     >

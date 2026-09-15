@@ -191,7 +191,7 @@ export default function Contact() {
                         href={`${contactInfo.whatsapp}?text=${encodeURIComponent(waFallback)}`}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center gap-2 bg-[#25D366] text-white px-4 py-2 rounded-lg font-bold hover:opacity-90 transition-opacity"
+                        className="inline-flex items-center gap-2 bg-[#25D366] text-[#0d2b1d] px-4 py-2 rounded-lg font-bold hover:opacity-90 transition-opacity"
                       >
                         <SiWhatsapp className="w-4 h-4" /> Send inquiry on WhatsApp
                       </a>

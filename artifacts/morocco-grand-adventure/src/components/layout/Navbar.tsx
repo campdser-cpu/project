@@ -63,7 +63,7 @@ export function Navbar() {
     <nav className={navClass} aria-label={t('nav_tours')}>
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
-          <Link href="/" aria-label="Morocco Grand Adventure — Home" className="shrink-0"><Logo variant={solid ? 'dark' : 'light'} className={logoSize} /></Link>
+          <Link href="/" aria-label="Morocco Grand Adventure — Home" className="shrink-0"><Logo variant={solid ? 'dark' : 'light'} className={logoSize} decorative /></Link>
 
           <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
             <Link href="/" className={linkClass}>{t('nav_home')}</Link>

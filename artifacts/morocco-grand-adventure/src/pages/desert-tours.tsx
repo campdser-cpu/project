@@ -239,7 +239,7 @@ export default function DesertTours() {
             <Link href="/trip-builder" className="bg-primary text-primary-foreground px-8 py-4 rounded-full font-bold tracking-wide hover:bg-primary/90 transition-all hover:-translate-y-1 shadow-lg">
               {t('dt2_build')}
             </Link>
-            <a href={contactInfo.whatsapp} target="_blank" rel="noreferrer" className="bg-[#25D366] text-white px-8 py-4 rounded-full font-bold tracking-wide hover:bg-[#1fb959] transition-all hover:-translate-y-1 shadow-lg flex items-center gap-2">
+            <a href={contactInfo.whatsapp} target="_blank" rel="noreferrer" className="bg-[#25D366] text-[#0d2b1d] px-8 py-4 rounded-full font-bold tracking-wide hover:bg-[#1fb959] transition-all hover:-translate-y-1 shadow-lg flex items-center gap-2">
               <SiWhatsapp className="w-5 h-5" /> {t('dt2_chat')}
             </a>
           </div>

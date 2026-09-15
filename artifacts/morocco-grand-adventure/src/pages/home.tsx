@@ -375,7 +375,10 @@ export default function Home() {
             </picture>
           </div>
           <div className="order-1 md:order-2">
-            <span className="text-[12px] font-semibold uppercase block mb-4" style={{ letterSpacing: '0.2em', color: '#C9A84C' }}>
+            {/* The hard-coded brand gold (#C9A84C) measured 2.16:1 against the
+                light background at this 12px size. `text-primary-text` is the
+                same hue at AA-compliant lightness (4.69:1). */}
+            <span className="text-[12px] font-semibold uppercase block mb-4 text-primary-text" style={{ letterSpacing: '0.2em' }}>
               {t('st_home_eyebrow')}
             </span>
             <h2 className="font-serif text-2xl md:text-4xl text-foreground font-light leading-tight">{t('st_home_h2')}</h2>
@@ -391,7 +394,7 @@ export default function Home() {
       {/* Trust Indicators — Subtle Strip */}
       <section className="bg-background py-8 md:py-10 border-b border-border z-10 relative [content-visibility:auto] [contain-intrinsic-size:auto_120px]">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-3 md:flex md:flex-wrap justify-center items-center gap-6 md:gap-16 opacity-60">
+          <div className="grid grid-cols-3 md:flex md:flex-wrap justify-center items-center gap-6 md:gap-16">
             <div className="flex flex-col items-center gap-1.5 group">
               <Award className="w-6 h-6 md:w-7 md:h-7 text-primary group-hover:scale-110 transition-transform" />
               <span className="text-[10px] md:text-xs font-bold text-foreground tracking-wide text-center" dangerouslySetInnerHTML={{__html: t('award_best_operator').replace(' ', '<br/>')}}></span>

@@ -78,7 +78,7 @@ export function WhatsAppButton({ tour, destination, article, message }: WhatsApp
         transition={{ type: "spring", stiffness: 260, damping: 20, delay: 1 }}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
-        className="relative bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-xl shadow-[#25D366]/30 hover:shadow-2xl hover:shadow-[#25D366]/40 transition-shadow"
+        className="relative bg-[#25D366] text-[#0d2b1d] w-14 h-14 rounded-full flex items-center justify-center shadow-xl shadow-[#25D366]/30 hover:shadow-2xl hover:shadow-[#25D366]/40 transition-shadow"
         aria-label={t('wa_book_now')}
       >
         <span className="absolute inset-0 rounded-full border-2 border-[#25D366] animate-ping opacity-75"></span>

@@ -63,7 +63,7 @@ export function PromoBanner({ variant = 'full', className = '' }: Props) {
           <Countdown tone="onDark" />
         </div>
         <PromoCta size="lg" />
-        <p className="max-w-2xl text-xs leading-relaxed text-background/50">{t('promo_fineprint')}</p>
+        <p className="max-w-2xl text-xs leading-relaxed text-background/70">{t('promo_fineprint')}</p>
       </motion.div>
     </section>
   );
