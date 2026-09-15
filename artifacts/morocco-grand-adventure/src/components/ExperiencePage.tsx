@@ -90,7 +90,7 @@ export function ExperiencePage({
                 onClick={() => trackEvent('whatsapp_click', { source_page: id, placement: 'hero' })}
                 className="w-full sm:w-auto bg-white/10 backdrop-blur-md text-white border border-white/40 px-8 py-3.5 rounded-full text-sm font-bold tracking-widest uppercase hover:bg-white/20 hover:border-white/70 transition-all hover:-translate-y-1 flex items-center justify-center gap-2"
               >
-                <SiWhatsapp className="w-4 h-4" /> {t('exp_whatsapp_us')}
+                <SiWhatsapp className="w-4 h-4" aria-hidden="true" /> {t('exp_whatsapp_us')}
               </a>
             </div>
           </motion.div>
@@ -178,7 +178,7 @@ export function ExperiencePage({
               onClick={() => trackEvent('whatsapp_click', { source_page: id, placement: 'bottom' })}
               className="bg-[#25D366] text-[#0d2b1d] px-8 py-4 rounded-full font-bold tracking-wide hover:bg-[#1fb959] transition-all hover:-translate-y-1 shadow-lg flex items-center gap-2"
             >
-              <SiWhatsapp className="w-5 h-5" /> {t('exp_chat_whatsapp')}
+              <SiWhatsapp className="w-5 h-5" aria-hidden="true" /> {t('exp_chat_whatsapp')}
             </a>
           </div>
         </div>

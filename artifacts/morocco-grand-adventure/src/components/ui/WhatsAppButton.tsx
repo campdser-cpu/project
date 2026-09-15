@@ -82,7 +82,7 @@ export function WhatsAppButton({ tour, destination, article, message }: WhatsApp
         aria-label={t('wa_book_now')}
       >
         <span className="absolute inset-0 rounded-full border-2 border-[#25D366] animate-ping opacity-75"></span>
-        <SiWhatsapp className="w-7 h-7 relative z-10" />
+        <SiWhatsapp className="w-7 h-7 relative z-10" aria-hidden="true" />
       </motion.a>
     </div>
   );

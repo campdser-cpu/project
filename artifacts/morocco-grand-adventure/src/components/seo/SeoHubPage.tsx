@@ -380,7 +380,7 @@ export function SeoHubPage({ page }: { page: HubPage }) {
                 rel="noreferrer"
                 className="bg-[#25D366] text-[#0d2b1d] px-8 py-4 rounded-full font-bold flex items-center gap-2 hover:bg-[#1fb959] transition-all"
               >
-                <SiWhatsapp className="w-5 h-5" /> {t('guide_cta_whatsapp')}
+                <SiWhatsapp className="w-5 h-5" aria-hidden="true" /> {t('guide_cta_whatsapp')}
               </a>
             </div>
           </div>

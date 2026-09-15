@@ -47,7 +47,9 @@ export function TourCard({ tour, compact = false }: TourCardProps) {
       </div>
 
       <div className={`${compact ? 'p-5' : 'p-7'} flex flex-col`}>
-        <span className="text-xs font-bold text-primary tracking-wider uppercase mb-2 block">
+        {/* Tour cards always sit on the light card surface, where the full
+            brand gold is 2.15:1. The accessible gold token is the same hue. */}
+        <span className="text-xs font-bold text-primary-text tracking-wider uppercase mb-2 block">
           {tour.category ?? t('tour_private')}
         </span>
         <h3

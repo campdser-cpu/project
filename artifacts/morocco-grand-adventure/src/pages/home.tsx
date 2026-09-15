@@ -368,7 +368,7 @@ export default function Home() {
                   candidate than the ~397px it actually paints on mobile. */}
               <source type="image/webp"
                 sizes="(max-width: 767px) calc(100vw - 2rem), (max-width: 1279px) calc((100vw - 5.5rem) / 2), 596px"
-                srcSet="/images/student-tours/student-group-atlas-flag-480w.webp 480w, /images/student-tours/student-group-atlas-flag-768w.webp 768w, /images/student-tours/student-group-atlas-flag-1280w.webp 1280w" />
+                srcSet="/images/student-tours/student-group-atlas-flag-480w.webp 480w, /images/student-tours/student-group-atlas-flag-704w.webp 704w, /images/student-tours/student-group-atlas-flag-768w.webp 768w, /images/student-tours/student-group-atlas-flag-1280w.webp 1280w" />
               <img src="/images/student-tours/student-group-atlas-flag.jpg"
                 alt={t('st_16_alt')} width={1600} height={863} loading="lazy" decoding="async"
                 className="w-full h-full object-cover" />
@@ -426,7 +426,7 @@ export default function Home() {
       <section className="py-20 md:py-32 lg:py-40 bg-card [content-visibility:auto] [contain-intrinsic-size:auto_1200px]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 md:mb-16">
-            <span className="text-primary font-bold tracking-wider uppercase text-sm mb-3 block">
+            <span className="text-primary-text font-bold tracking-wider uppercase text-sm mb-3 block">
               {t('home_signature')}
             </span>
             <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl text-foreground mb-4">
@@ -484,7 +484,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-end mb-12 md:mb-16">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
-              <span className="text-primary font-bold tracking-wider uppercase text-sm mb-3 block">{t('section_destinations_sub')}</span>
+              <span className="text-primary-text font-bold tracking-wider uppercase text-sm mb-3 block">{t('section_destinations_sub')}</span>
               <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl text-foreground">{t('section_destinations')}</h2>
             </motion.div>
             <Link href="/destinations" className="hidden md:flex items-center gap-2 text-foreground font-semibold hover:text-primary transition-colors">
@@ -502,7 +502,7 @@ export default function Home() {
                 <img src={dest.image} alt={`${dest.name} — ${dest.shortDesc}`} loading="lazy" decoding="async" width={800} height={600} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
                 <div className="absolute bottom-0 left-0 p-5 md:p-6 z-20 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                  <span className="text-primary text-xs font-bold tracking-wider uppercase mb-2 block drop-shadow-md">{categoryLabel(dest.category, lang)}</span>
+                  <span className="text-primary-text text-xs font-bold tracking-wider uppercase mb-2 block drop-shadow-md">{categoryLabel(dest.category, lang)}</span>
                   <h3 className="font-serif text-xl md:text-2xl mb-1 drop-shadow-md">{dest.name}</h3>
                   <div className="flex items-center gap-1 text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 mt-2 text-primary">
                     {t('explore')} <ChevronRight className="w-3 h-3" />
@@ -518,7 +518,7 @@ export default function Home() {
       <section className="py-16 md:py-24 bg-card border-y border-border [content-visibility:auto] [contain-intrinsic-size:auto_800px]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 md:mb-16">
-            <span className="text-primary font-bold tracking-wider uppercase text-sm mb-3 block">{t('section_destinations_sub')}</span>
+            <span className="text-primary-text font-bold tracking-wider uppercase text-sm mb-3 block">{t('section_destinations_sub')}</span>
             <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl text-foreground mb-4">{t('section_map')}</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto text-base md:text-lg">{t('section_map_sub')}</p>
           </div>
@@ -533,7 +533,7 @@ export default function Home() {
       <section className="py-16 md:py-24 bg-background [content-visibility:auto] [contain-intrinsic-size:auto_1600px]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 md:mb-16">
-            <span className="text-primary font-bold tracking-wider uppercase text-sm mb-3 block">{t('section_tours_sub')}</span>
+            <span className="text-primary-text font-bold tracking-wider uppercase text-sm mb-3 block">{t('section_tours_sub')}</span>
             <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl text-foreground">{t('section_tours')}</h2>
           </div>
 
@@ -595,7 +595,7 @@ export default function Home() {
       <section className="py-16 md:py-24 bg-muted/40 border-y border-border [content-visibility:auto] [contain-intrinsic-size:auto_900px]">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-12 md:mb-16">
-            <span className="text-primary font-bold tracking-wider uppercase text-sm mb-3 block">{t('section_tours_sub')}</span>
+            <span className="text-primary-text font-bold tracking-wider uppercase text-sm mb-3 block">{t('section_tours_sub')}</span>
             <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl text-foreground">{t('section_city_hubs')}</h2>
             <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-base md:text-lg">{t('section_city_hubs_sub')}</p>
           </div>
@@ -641,7 +641,7 @@ export default function Home() {
       <section className="relative py-20 md:py-32 lg:py-40 bg-card border-y border-border overflow-hidden [content-visibility:auto] [contain-intrinsic-size:auto_800px]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-10 md:mb-12">
-            <span className="text-primary font-bold tracking-wider uppercase text-sm mb-3 block">{t('home_exp_sahara')}</span>
+            <span className="text-primary-text font-bold tracking-wider uppercase text-sm mb-3 block">{t('home_exp_sahara')}</span>
             <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl text-foreground mb-4">{t('home_exp_title')}</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto text-base md:text-lg">
               {t('home_exp_sub')}
@@ -716,7 +716,7 @@ export default function Home() {
             </figcaption>
           </figure>
           <div className="text-center lg:text-left">
-            <span className="text-primary font-bold tracking-wider uppercase text-sm mb-3 block">{t('home_about_kicker')}</span>
+            <span className="text-primary-text font-bold tracking-wider uppercase text-sm mb-3 block">{t('home_about_kicker')}</span>
             <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-6 leading-tight">{t('home_about_h2')}</h2>
             <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-4">{t('home_about_p')}</p>
             <p className="font-serif text-lg text-foreground mb-8">{t('home_about_sub')}</p>
@@ -768,7 +768,7 @@ export default function Home() {
       <section className="py-16 md:py-24 bg-card border-y border-border [content-visibility:auto] [contain-intrinsic-size:auto_900px]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 md:mb-16">
-            <span className="text-primary font-bold tracking-wider uppercase text-sm mb-3 block">{t('section_reviews_sub')}</span>
+            <span className="text-primary-text font-bold tracking-wider uppercase text-sm mb-3 block">{t('section_reviews_sub')}</span>
             <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl text-foreground mb-4">{t('section_reviews')}</h2>
           </div>
 

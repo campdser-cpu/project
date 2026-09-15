@@ -107,7 +107,7 @@ export default function Contact() {
                 <div className="space-y-8">
                   <a href={contactInfo.whatsapp} target="_blank" rel="noreferrer" className="flex items-center gap-6 group">
                     <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all">
-                      <SiWhatsapp className="w-8 h-8" />
+                      <SiWhatsapp className="w-8 h-8" aria-hidden="true" />
                     </div>
                     <div>
                       <p className="text-sm font-bold text-muted-foreground uppercase tracking-wider mb-1">{t('contact_fastest')}</p>
@@ -155,16 +155,16 @@ export default function Contact() {
                       <p className="text-sm font-bold text-foreground uppercase tracking-wider mb-4">Official Social Profiles</p>
                       <div className="flex gap-3">
                         <a href="https://www.instagram.com/morocco_grand_adventure/" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground transition-all" aria-label="Follow Morocco Grand Adventure on Instagram">
-                          <SiInstagram className="w-5 h-5" />
+                          <SiInstagram className="w-5 h-5" aria-hidden="true" />
                         </a>
                         <a href="https://youtube.com/@moroccograndadventure" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground transition-all" aria-label="Subscribe to Morocco Grand Adventure on YouTube">
-                          <SiYoutube className="w-5 h-5" />
+                          <SiYoutube className="w-5 h-5" aria-hidden="true" />
                         </a>
                         <a href="https://www.tiktok.com/@morocco.grand.adv" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground transition-all" aria-label="Follow Morocco Grand Adventure on TikTok">
-                          <SiTiktok className="w-5 h-5" />
+                          <SiTiktok className="w-5 h-5" aria-hidden="true" />
                         </a>
                         <a href="https://www.facebook.com/share/1DFzDX72P3/" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground transition-all" aria-label="Like Morocco Grand Adventure on Facebook">
-                          <SiFacebook className="w-5 h-5" />
+                          <SiFacebook className="w-5 h-5" aria-hidden="true" />
                         </a>
                       </div>
                     </div>
@@ -193,7 +193,7 @@ export default function Contact() {
                         rel="noreferrer"
                         className="inline-flex items-center gap-2 bg-[#25D366] text-[#0d2b1d] px-4 py-2 rounded-lg font-bold hover:opacity-90 transition-opacity"
                       >
-                        <SiWhatsapp className="w-4 h-4" /> Send inquiry on WhatsApp
+                        <SiWhatsapp className="w-4 h-4" aria-hidden="true" /> Send inquiry on WhatsApp
                       </a>
                     )}
                   </div>

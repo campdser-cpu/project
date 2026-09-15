@@ -231,19 +231,14 @@
          Vite/@tailwindcss inline-CSS proxy race that intermittently broke the
          production HTML build. Rendering is identical. -->
 
-    <!-- Lato (non-critical body font) — still via Google Fonts with an async
-         media="print" stylesheet so it never blocks render. -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
-    <noscript>
-      <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
-    </noscript>
-
-        <!-- DNS prefetch for external resources -->
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
-    <link rel="preload" as="image" href="/images/hero/desert-pano.webp" fetchpriority="high" />
+    <!-- Lato (body font) is now self-hosted — the same Lato v25 woff2 files
+         Google was serving, declared in src/index.css with Google's own
+         unicode-range split. The previous media="print"/onload delivery could
+         only apply AFTER load, so the first paint used the generic sans-serif
+         and the whole document reflowed when Lato arrived. Preloading the
+         latin 400 face (the body default) makes it available at first paint,
+         which removes that document-wide shift. -->
+    <link rel="preload" as="font" href="/fonts/lato-latin-400.woff2" type="font/woff2" crossorigin />    <link rel="preload" as="image" href="/images/hero/desert-pano.webp" fetchpriority="high" />
 
     <!-- Theme color -->
     <meta name="theme-color" content="#C9A84C" />
