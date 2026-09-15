@@ -224,8 +224,14 @@ export default function Home() {
             for the cinematic feel. */}
         <div className="absolute inset-0 z-10 flex flex-col items-center justify-center px-4 text-center">
           <motion.span
-            initial={{ opacity: 0, letterSpacing: '0.1em' }}
-            animate={{ opacity: 1, letterSpacing: '0.25em' }}
+            /* Animating letter-spacing re-ran layout on every frame for 1.4s
+               starting 0.4s in — i.e. straight through the LCP window — which
+               is the forced reflow PageSpeed attributed to the animation code.
+               The final spacing is already applied by `tracking-[0.25em]` in
+               className, so fading in on opacity alone renders the same end
+               state on the compositor without touching layout. */
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ duration: 1.4, delay: 0.4 }}
             className="text-primary font-bold tracking-[0.25em] uppercase text-xs md:text-sm mb-8 block drop-shadow-md"
           >
@@ -355,7 +361,13 @@ export default function Home() {
         <div className="container mx-auto px-4 py-14 md:py-20 grid md:grid-cols-2 gap-8 md:gap-14 items-center">
           <div className="aspect-[16/9] overflow-hidden order-2 md:order-1">
             <picture>
-              <source type="image/webp" sizes="(max-width: 768px) 100vw, 50vw"
+              {/* `sizes` must describe the real box, not the viewport: this image
+                  lives in a `container px-4` grid that is 1 column below md and
+                  2 columns (gap-14) above it, so it is never 100vw/50vw. The old
+                  values overstated the width and pushed the browser onto a larger
+                  candidate than the ~397px it actually paints on mobile. */}
+              <source type="image/webp"
+                sizes="(max-width: 767px) calc(100vw - 2rem), (max-width: 1279px) calc((100vw - 5.5rem) / 2), 596px"
                 srcSet="/images/student-tours/student-group-atlas-flag-480w.webp 480w, /images/student-tours/student-group-atlas-flag-768w.webp 768w, /images/student-tours/student-group-atlas-flag-1280w.webp 1280w" />
               <img src="/images/student-tours/student-group-atlas-flag.jpg"
                 alt={t('st_16_alt')} width={1600} height={863} loading="lazy" decoding="async"

@@ -655,3 +655,14 @@ const pt: Record<string, string> = {
 };
 
 export const studentToursGaps: Record<string, Record<string, string>> = { en, pt };
+
+/**
+ * English-only view of the Student Tours gap layer.
+ *
+ * The homepage and navbar render gap-only keys (st_home_h2, st_nav_sub, …) that
+ * do not exist in locales/en.ts, so the English gap layer has to be available on
+ * first paint or those keys would render raw. Exporting `en` on its own lets
+ * Rollup tree-shake the much larger `pt` block out of the eager bundle, since
+ * both are separate top-level consts.
+ */
+export { en as studentToursEnGaps };

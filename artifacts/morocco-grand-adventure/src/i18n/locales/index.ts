@@ -8,7 +8,8 @@
 // static import graph and every locale remains a separate, on-demand chunk.
 // ─────────────────────────────────────────────────────────────────────────────
 import type { Lang, TranslationSet } from '../index';
-import { registerTranslations } from '../index';
+import { registerTranslations, registerGaps } from '../index';
+import { i18nGaps } from '../gaps';
 import en from './en';
 import fr from './fr';
 import es from './es';
@@ -38,4 +39,11 @@ export function registerAllTranslations(): void {
   (Object.keys(allTranslations) as Lang[]).forEach((code) =>
     registerTranslations(code, allTranslations[code] as Partial<TranslationSet>),
   );
+  // The gap layer is lazily loaded in the browser (see `loadLocale`), so Node
+  // tooling must register it explicitly or prerendered non-English pages would
+  // silently lose every gap-only string.
+  (Object.keys(i18nGaps) as Lang[]).forEach((code) => {
+    const gaps = i18nGaps[code];
+    if (gaps) registerGaps(code, gaps);
+  });
 }

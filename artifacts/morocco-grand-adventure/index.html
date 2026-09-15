@@ -16,6 +16,14 @@
           script.async = true;
           script.src = 'https://www.googletagmanager.com/gtag/js?id=G-8FQ5M7DD37';
           document.head.appendChild(script);
+          // Ahrefs Analytics rides the same idle/interaction gate rather than
+          // loading eagerly in <head>, so the second analytics vendor also stays
+          // off the critical path instead of competing with the LCP.
+          var ahrefs = document.createElement('script');
+          ahrefs.async = true;
+          ahrefs.src = 'https://analytics.ahrefs.com/analytics.js';
+          ahrefs.setAttribute('data-key', 'NOx8MZ62TWoyXc0I5RpATQ');
+          document.head.appendChild(ahrefs);
         }
         ['pointerdown', 'keydown', 'touchstart'].forEach(function (event) {
           window.addEventListener(event, loadAnalytics, { once: true, passive: true });
@@ -213,7 +221,11 @@
          Google Fonts serves one Latin-subset WOFF2 for Playfair Display
          weights 400/500/600/700 (non-italic); we self-host that file for all
          four weights so the serif family renders identically. -->
-    <link rel="preload" as="font" href="/fonts/playfair-display-latin.woff2" type="font/woff2" />
+    <!-- `crossorigin` is REQUIRED on font preloads: fonts are always fetched in
+         anonymous CORS mode, so without it the preload lands in a different
+         cache partition than the @font-face request and the 38 KB file is
+         downloaded twice, wasting the critical path instead of shortening it. -->
+    <link rel="preload" as="font" href="/fonts/playfair-display-latin.woff2" type="font/woff2" crossorigin />
     <!-- Playfair Display @font-face (weights 400/500/600/700) is declared in
          src/index.css so index.html carries no inline <style>; this avoids a
          Vite/@tailwindcss inline-CSS proxy race that intermittently broke the
@@ -223,9 +235,9 @@
          media="print" stylesheet so it never blocks render. -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
     <noscript>
-      <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
     </noscript>
 
         <!-- DNS prefetch for external resources -->
@@ -245,8 +257,10 @@
     <meta name="ICBM" content="31.0988, -4.0134" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
 
-    <!-- Ahrefs Analytics (async, non-render-blocking) -->
-    <script src="https://analytics.ahrefs.com/analytics.js" data-key="NOx8MZ62TWoyXc0I5RpATQ" async></script>
+    <!-- Ahrefs Analytics is injected by the idle/interaction analytics bootstrap
+         at the top of <head> (same gate as GA4), so it never loads during the
+         initial render. Its origin is allow-listed in the CSP script-src /
+         connect-src in vercel.json. -->
 
   </head>
   <body>
