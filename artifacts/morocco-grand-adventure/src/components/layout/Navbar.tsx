@@ -49,6 +49,10 @@ export function Navbar() {
   }, [mobileOpen]);
 
   const solid = isScrolled || location === '/contact' || location === '/trip-builder';
+  // Logo presence: large and premium at the top of the page, compact once the
+  // navbar goes solid. Driven by the existing `solid` scroll state — no extra
+  // scroll listener — and animated by a CSS height transition on <Logo>.
+  const logoSize = solid ? 'h-10 sm:h-11 md:h-12 xl:h-14' : 'h-14 sm:h-16 xl:h-20';
   const navClass = `fixed w-full z-50 transition-all duration-300 ${solid ? 'bg-background/95 backdrop-blur-md shadow-sm py-2' : 'bg-transparent py-3 sm:py-4'}`;
   const linkClass = `text-sm font-medium tracking-wide transition-colors ${solid ? 'text-foreground hover:text-primary' : 'text-white hover:text-accent'}`;
   const cityLabel = (id: string) => t(`hub_${id}_name`);
@@ -59,7 +63,7 @@ export function Navbar() {
     <nav className={navClass} aria-label={t('nav_tours')}>
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
-          <Link href="/" aria-label="Morocco Grand Adventure — Home"><Logo variant={solid ? 'dark' : 'light'} /></Link>
+          <Link href="/" aria-label="Morocco Grand Adventure — Home" className="shrink-0"><Logo variant={solid ? 'dark' : 'light'} className={logoSize} /></Link>
 
           <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
             <Link href="/" className={linkClass}>{t('nav_home')}</Link>

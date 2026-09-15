@@ -20,7 +20,11 @@ export function Logo({ variant = 'dark', className = '' }: LogoProps) {
   const ink = variant === 'dark' ? '#1E3B2C' : '#FFFFFF';
   const gold = variant === 'dark' ? '#A97C2F' : '#EFD9AC';
 
-  // Default prominence for the navbar; callers (Footer) may pass explicit heights.
+  // Default prominence for the navbar; callers (Navbar, Footer) may pass
+  // explicit heights. The Navbar swaps between a large top-of-page state and a
+  // compact scrolled state, so height is transitioned here: width stays `auto`
+  // and follows the fixed 975x290 viewBox ratio, which keeps the emblem and
+  // wordmark scaling together with no distortion.
   const sizeClasses = className.includes('h-') ? className : 'h-10 sm:h-12 md:h-14';
 
   return (
@@ -30,7 +34,7 @@ export function Logo({ variant = 'dark', className = '' }: LogoProps) {
       height={290}
       role="img"
       aria-label="Morocco Grand Adventure"
-      className={`w-auto ${sizeClasses}`}
+      className={`w-auto transition-[height] duration-300 ease-out ${sizeClasses}`}
     >
       {/* ================= BRAND SYMBOL (real logo drawing) ================= */}
       <image
