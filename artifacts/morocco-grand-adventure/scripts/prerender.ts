@@ -54,7 +54,7 @@ import {
 import { getRouteMeta, getLocalizedRouteMeta, BLOG_META, HOME_META, FR_HOME_META, ogImageAlt, withBrandSuffix, type RouteMeta } from '../src/components/seo/route-metadata';
 import { getLocalizedGuide, guideImageAlt, guideCrumb } from '../src/i18n/guides';
 import { buildTourSchema, buildDestinationSchema, buildBlogPostSchema, buildReviewSchema, buildFaqSchema, buildBreadcrumb } from '../src/components/seo/StructuredData';
-import { getStudentTour, studentTours as studentTourList } from '../src/data/student-tours';
+import { getStudentTour, studentTours as studentTourList, studentTourSizes } from '../src/data/student-tours';
 import { registerAllTranslations } from '../src/i18n/locales';
 import { registerAllContentOverlays } from '../src/i18n/content/overlays';
 import { registerAllGuideOverlays } from '../src/i18n/guides/overlays';
@@ -971,7 +971,7 @@ function buildExperienceContent(rest: string, lang: Lang): string {
     (stProduct?.itinerary ?? []).filter((d) => d.images?.length).slice(0, 3).map((d) => d.day),
   );
   const studentTourDetail = stProduct ? `
-    ${stFigure(stProduct.hero, '100vw', true)}
+    ${stFigure(stProduct.hero, studentTourSizes.hero, true)}
     <p>${escapeHtml(stProduct.heroLead)}</p>
     <h2>Tour overview</h2>
     ${ul([
@@ -985,7 +985,7 @@ function buildExperienceContent(rest: string, lang: Lang): string {
     <h2>Why this works for students</h2>
     ${stProduct.whyStudents.map((p) => paragraph(p)).join('')}
     <h2>Itinerary</h2>
-    ${stProduct.itinerary.map((d) => `${d.chapter ? `<h3>${escapeHtml(d.chapter)}</h3>` : ''}<h3>${escapeHtml(`${d.day} — ${d.title}`)}</h3>${d.body.map((p) => paragraph(p)).join('')}${stPrerenderDays.has(d.day) && d.images?.[0] ? stFigure(d.images[0], '(max-width: 768px) 100vw, 640px') : ''}${d.notes && d.notes.length ? ul(d.notes) : ''}`).join('\n    ')}
+    ${stProduct.itinerary.map((d) => `${d.chapter ? `<h3>${escapeHtml(d.chapter)}</h3>` : ''}<h3>${escapeHtml(`${d.day} — ${d.title}`)}</h3>${d.body.map((p) => paragraph(p)).join('')}${stPrerenderDays.has(d.day) && d.images?.[0] ? stFigure(d.images[0], studentTourSizes.day(d.images)) : ''}${d.notes && d.notes.length ? ul(d.notes) : ''}`).join('\n    ')}
     <h2>What students will experience</h2>
     ${ul(stProduct.experiences.map((e) => `${e.title} — ${e.body}`))}
     <h2>Learning through experience</h2>

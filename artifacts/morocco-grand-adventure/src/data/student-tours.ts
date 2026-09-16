@@ -20,8 +20,10 @@ export type StudentTourImage = {
   /**
    * Path under /public/images WITHOUT extension, including the folder —
    * e.g. 'student-tours/students-erg-chebbi-dunes' or
-   * 'curated/todra-gorge-river-canyon-high-atlas'. Every referenced file was
-   * confirmed present on disk before being listed here.
+   * 'curated/marrakech-medina-motorbike-archway-local-life'. Every referenced
+   * file was opened and checked against its alt text before being listed here:
+   * several curated/ filenames do not describe their picture, so a curated
+   * name alone is never evidence of what a photo shows.
    */
   name: string;
   alt: string;
@@ -88,6 +90,8 @@ export type StudentTour = {
   /** Optional "a day in the journey" editorial beat. */
   dayInTheJourney?: { label: string; body: string }[];
   groupExperience: string[];
+  /** Signature activity photograph shown beside the experiences list. */
+  experiencesImage?: StudentTourImage;
   /** Photograph shown with the group-experience copy. */
   groupImage?: StudentTourImage;
   /** Photograph shown with the "a day in the journey" beats. */
@@ -101,6 +105,27 @@ export type StudentTour = {
   keyPlaces: string[];
   /** Contextual internal links (existing routes only). */
   related: { to: string; label: string }[];
+};
+
+/** Landscape frames get the wide editorial slot; portrait frames the narrow one. */
+export const isLandscape = (img: StudentTourImage): boolean => img.w / img.h >= 1.2;
+
+/**
+ * `sizes` for every photo slot. Shared by src/pages/student-tour-detail.tsx and
+ * scripts/prerender.ts so the crawlable <img> and the React <picture> choose
+ * the same candidate and the browser downloads each photograph once.
+ */
+export const studentTourSizes = {
+  // Rendered widths follow the page grid: the container is 992 / 1248 / 1504px
+  // wide at the lg / xl / 2xl breakpoints.
+  hero: '(min-width: 1024px) 55vw, 100vw',
+  day: (images: StudentTourImage[]): string =>
+    images.length > 1
+      ? '(min-width: 1536px) 410px, (min-width: 1280px) 335px, (min-width: 1024px) 260px, 50vw'
+      : isLandscape(images[0])
+        ? '(min-width: 1536px) 840px, (min-width: 1280px) 690px, (min-width: 1024px) 540px, 100vw'
+        : '(min-width: 1536px) 600px, (min-width: 1280px) 495px, (min-width: 1024px) 390px, 100vw',
+  feature: '(min-width: 1536px) 720px, (min-width: 1280px) 590px, (min-width: 1024px) 470px, 100vw',
 };
 
 const GROUPS = 'Organized for student and university groups of 15 or more participants.';
@@ -188,8 +213,8 @@ const threeDay: StudentTour = {
     'Three days in a vehicle together does something a classroom does not. Students talk to people they would not normally sit next to, and by the second day the group has usually reorganized itself.',
     'The desert evening is the part most groups remember. There is no signal to compete with, dinner is shared, and the conversation tends to run much longer than anyone planned.',
   ],
+  experiencesImage: { name: 'student-tours/student-group-atlas-flag', alt: 'Group holding a Morocco Grand Adventure banner at a mountain viewpoint', w: 1600, h: 863, widths: [480, 768, 1280], jpg: true },
   groupImage: { name: 'student-tours/student-drumming-desert-evening', alt: 'A student playing a hand drum beside a musician in a blue robe and black turban during an evening gathering', w: 1397, h: 1600, widths: [480, 768, 1280], jpg: true },
-  dayInTheJourneyImage: { name: 'student-tours/sahara-dunes-pointing-view', alt: 'A hand in an embroidered sleeve pointing out across golden dunes', w: 890, h: 1600, widths: [480, 768], jpg: true },
   included: [
     'Private transport for the group for the full route, with a driver',
     'Accommodation for two nights, including one night at a desert camp',
@@ -273,7 +298,7 @@ const fourDay: StudentTour = {
     {
       day: 'Day 2',
       title: 'Down the valleys to the sand',
-      images: [{ name: 'curated/todra-gorge-river-canyon-high-atlas', alt: 'The river canyon of Todra Gorge cutting between high rock walls', w: 787, h: 1400, widths: [480, 768] }],
+      images: [{ name: 'student-tours/river-gorge-narrows', alt: 'A shallow river running between the high red rock walls of a narrow gorge', w: 931, h: 1400, widths: [480, 768] }],
       body: [
         'A morning in the gorges. The rock closes in, the road follows the water, and the palm groves make the water visible in a way that a map never does. There is time to walk into a gorge rather than photograph it from the roadside.',
         'Through the afternoon the group moves southeast and the country opens out. The green line of the valleys thins, the horizon gets further away, and the ground turns pale and stony.',
@@ -284,7 +309,7 @@ const fourDay: StudentTour = {
     {
       day: 'Day 3',
       title: 'A day that stays in one place',
-      images: [{ name: 'student-tours/nomad-tent-desert', alt: 'A woven nomad tent pitched on open, stony desert ground', w: 1600, h: 1068, widths: [480, 768, 1280], jpg: true }, { name: 'student-tours/student-groups-4x4-sahara', alt: 'Students celebrating on the roofs of three 4x4 vehicles in the desert', w: 1544, h: 1600, widths: [480, 768, 1280], jpg: true }],
+      images: [{ name: 'student-tours/nomad-tent-desert', alt: 'A woven nomad tent on open, stony desert ground, with two people in long robes beside it', w: 1600, h: 1068, widths: [480, 768, 1280], jpg: true }, { name: 'student-tours/student-groups-4x4-sahara', alt: 'Students celebrating on the roofs of three 4x4 vehicles in the desert', w: 1544, h: 1600, widths: [480, 768, 1280], jpg: true }],
       body: [
         'This is the day the three-day program does not have. The group wakes for sunrise and then has the whole day around Erg Chebbi instead of getting back in a vehicle.',
         'How the day is used depends on the group. It can include time with people who live in the desert rather than visiting it, a look at how a nomad camp is actually set up and moved, and the practical business of water, shade and livestock in a place with very little of the first two. Where the group wants more activity, the dunes also allow 4x4 and buggy time on the sand.',
@@ -328,6 +353,8 @@ const fourDay: StudentTour = {
     'The full desert day is usually where the trip\'s best conversations happen — partly because there is time, and partly because there is nothing else competing for it.',
     'Shared meals do a lot of the work. Eating together twice a day for four days changes how a group talks by the end.',
   ],
+  experiencesImage: { name: 'student-tours/students-buggy-erg-chebbi', alt: 'Students standing on and beside a desert buggy in the dunes', w: 1345, h: 1169, widths: [480, 768, 1280], jpg: true },
+  dayInTheJourneyImage: { name: 'student-tours/camel-trek-erg-chebbi', alt: 'A line of camels with riders crossing orange sand dunes', w: 1280, h: 853, widths: [480, 768, 1280], jpg: true },
   groupImage: { name: 'student-tours/students-terrace-valley-view', alt: 'Students relaxing on a rooftop terrace above an earthen town, with mountains behind', w: 1437, h: 1600, widths: [480, 768, 1280], jpg: true },
   included: [
     'Private transport for the group for the full route, with a driver',
@@ -466,7 +493,7 @@ const tenDay: StudentTour = {
     {
       day: 'Day 7',
       title: 'Inside Fes el-Bali',
-      images: [{ name: 'curated/chouara-tannery-overhead-fes-el-bali', alt: 'The circular dye pits of the Chouara tannery seen from above in Fes el-Bali', w: 933, h: 1400, widths: [480, 768] }],
+      images: [{ name: 'curated/tannery-workers-dyeing-pits-fes', alt: 'Workers among the stone dye pits of a traditional leather tannery', w: 933, h: 1400, widths: [480, 768] }],
       body: [
         'Fes el-Bali is the reason this trip is ten days and not six. It is one of the largest car-free urban areas anywhere, and it does not reveal itself quickly. The group goes in with a local guide because that is the only sensible way to do it.',
         'The day covers the old city\'s craft economy — the tanneries, metalwork, weaving — and its scholarly history, including the university quarter. Students who found Marrakech overwhelming usually find Fes older, denser and quieter in a way they can work with.',
@@ -487,7 +514,7 @@ const tenDay: StudentTour = {
     {
       day: 'Day 9',
       title: 'A town you can see all of',
-      images: [{ name: 'curated/panoramic-view-chefchaouen-rif-mountains', alt: 'Chefchaouen’s blue-washed houses stacked below the Rif mountains', w: 1051, h: 1400, widths: [480, 768] }],
+      images: [{ name: 'student-tours/chefchaouen-blue-hillside', alt: 'Blue-washed houses of Chefchaouen climbing a hillside below a green mountain', w: 933, h: 1400, widths: [480, 768] }],
       body: [
         'Chefchaouen is small, steep and blue, and it is the only place on this itinerary where the group can see the whole town from above in ten minutes of walking. After a week of large cities and open desert, the scale is a relief.',
         'There is time in the medina, time to walk up for the view, and time that is genuinely unstructured — which after eight days of moving is worth scheduling deliberately.',
@@ -526,6 +553,7 @@ const tenDay: StudentTour = {
     'Multi-night stops matter more than students expect. Waking up somewhere for the second time changes how you look at it.',
     'The desert days and the Chefchaouen day are usually the two the group talks about most — one for the scale, one for the pace.',
   ],
+  groupImage: { name: 'student-tours/students-amazigh-dress-oasis', alt: 'Student group in colorful traditional dress holding the Amazigh flag among palm trees', w: 1280, h: 890, widths: [480, 768, 1280], jpg: true },
   included: [
     'Private transport for the group for the full route, with a driver',
     'Nine nights of accommodation, including two nights at a desert camp',

@@ -22,7 +22,9 @@
 // full audit): photos saved from other businesses' or individuals' Instagram
 // accounts, near-duplicate frames, a Pexels buggy photo whose country could not
 // be established, a Pexels photo of a stranger's child, and a Pexels photo
-// centred on a third-party hotel.
+// centred on a third-party hotel. Also left out: the owner-confirmed WhatsApp
+// photo of a lizard on a hand (IMG-20260321-WA0020), which no section's copy
+// describes.
 // ─────────────────────────────────────────────────────────────────────────────
 import fs from 'node:fs';
 import path from 'node:path';
@@ -56,7 +58,6 @@ export const MANIFEST = [
   { match: '(JPG)_10~2', out: 'students-terrace-kasbahs-river', ...OWNER },
   { match: '(JPG)_12~2', out: 'students-4x4-desert-dunes', ...OWNER },
   // ── owner-confirmed WhatsApp ──────────────────────────────────────────────
-  { match: 'IMG-20260321-WA0020', out: 'sahara-dunes-pointing-view', ...OWNER },
   { match: 'IMG-20260914-WA0015', out: 'camel-caravan-silhouette-sahara', ...OWNER },
   // ── Pexels (licensed) ─────────────────────────────────────────────────────
   {
@@ -76,6 +77,29 @@ export const MANIFEST = [
     url: 'https://www.pexels.com/photo/10541223/', title: null,
   },
 ];
+
+// Byte-for-byte copies from the committed curated/ library, under names that
+// describe the picture. The curated/ filenames of these two do NOT match their
+// content (the "hassan-ii-mosque-*" files show a river gorge and Chefchaouen),
+// so the Student Tour pages must not reference them by those names. Only the
+// sizes that exist in curated/ are copied; curated/ has no .jpg fallback.
+export const LIBRARY_COPIES = [
+  { from: 'curated/hassan-ii-mosque-minaret-casablanca', out: 'river-gorge-narrows' },
+  { from: 'curated/hassan-ii-mosque-interior-colonnades-casablanca', out: 'chefchaouen-blue-hillside' },
+];
+
+function copyFromLibrary({ from, out }) {
+  const images = path.join(root, 'public/images');
+  const copied = [];
+  for (const suffix of ['.webp', '-480w.webp', '-768w.webp', '-1280w.webp']) {
+    const src = path.join(images, `${from}${suffix}`);
+    if (!fs.existsSync(src)) continue;
+    fs.copyFileSync(src, path.join(OUT_DIR, `${out}${suffix}`));
+    copied.push(suffix);
+  }
+  if (!copied.includes('.webp')) throw new Error(`library copy missing: ${from}`);
+  return copied;
+}
 
 // Dense textures (a crowd against earthen architecture, aerial landscapes)
 // compress poorly, so those entries set a lower `quality`.
@@ -120,6 +144,7 @@ async function build(entry, files) {
 
 const invoked = process.argv[1] && path.resolve(process.argv[1]) === path.resolve(fileURLToPath(import.meta.url));
 if (invoked) {
+  for (const c of LIBRARY_COPIES) console.log(`${c.out.padEnd(40)} copied from ${c.from} [${copyFromLibrary(c).join(' ')}]`);
   if (!fs.existsSync(SRC_DIR)) throw new Error(`source folder missing: ${SRC_DIR}`);
   const files = fs.readdirSync(SRC_DIR);
   const results = [];

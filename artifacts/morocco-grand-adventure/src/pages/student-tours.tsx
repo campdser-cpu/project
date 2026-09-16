@@ -176,10 +176,13 @@ export default function StudentTours() {
     <Layout>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      {/* 01 — HERO ------------------------------------------------------- */}
+      {/* 01 — HERO -------------------------------------------------------
+          min-height, never a fixed height: on a phone the copy is taller than
+          the viewport allows, and a fixed box pushed the eyebrow up under the
+          navbar logo. The top padding keeps it clear of the fixed header. */}
       <section
         ref={heroRef}
-        className="relative min-h-[600px] h-[88svh] md:h-auto md:min-h-[100vh] md:max-h-[900px] flex items-end overflow-hidden bg-black"
+        className="relative min-h-[max(600px,88svh)] pt-28 md:pt-32 md:min-h-[100vh] md:max-h-[900px] flex items-end overflow-hidden bg-black"
       >
         <picture>
           <source type="image/webp" media="(max-width: 767px)" srcSet={`${IMG}/student-tours-hero-poster-768w.webp`} />
