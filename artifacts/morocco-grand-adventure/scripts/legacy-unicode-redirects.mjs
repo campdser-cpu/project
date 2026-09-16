@@ -30,8 +30,11 @@ if (invoked) {
   if (!fs.existsSync(dist)) throw new Error('dist directory missing');
   let written = 0;
   for (const [from, to] of LEGACY_REDIRECTS) {
+    // Derive the language from the URL's own locale segment. The template used
+    // to hardcode lang="ko", so the two /zh/ redirect pages declared Korean.
+    const lang = from.split('/')[1] || 'en';
     const html = `<!DOCTYPE html>
-<html lang="ko"><head>
+<html lang="${lang}"><head>
 <meta charset="utf-8">
 <title>Redirecting&hellip;</title>
 <meta name="description" content="This legacy URL has moved. Redirecting to the current page.">
