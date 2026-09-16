@@ -954,7 +954,7 @@ function buildExperienceContent(rest: string, lang: Lang): string {
     <h2>Why this works for students</h2>
     ${stProduct.whyStudents.map((p) => paragraph(p)).join('')}
     <h2>Itinerary</h2>
-    ${stProduct.itinerary.map((d) => `<h3>${escapeHtml(`${d.day} — ${d.title}`)}</h3>${d.body.map((p) => paragraph(p)).join('')}${d.notes && d.notes.length ? ul(d.notes) : ''}`).join('\n    ')}
+    ${stProduct.itinerary.map((d) => `${d.chapter ? `<h3>${escapeHtml(d.chapter)}</h3>` : ''}<h3>${escapeHtml(`${d.day} — ${d.title}`)}</h3>${d.body.map((p) => paragraph(p)).join('')}${d.notes && d.notes.length ? ul(d.notes) : ''}`).join('\n    ')}
     <h2>What students will experience</h2>
     ${ul(stProduct.experiences.map((e) => `${e.title} — ${e.body}`))}
     <h2>Learning through experience</h2>

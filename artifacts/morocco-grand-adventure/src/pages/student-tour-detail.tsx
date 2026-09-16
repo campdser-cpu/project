@@ -5,17 +5,21 @@ import { contactInfo } from '@/data/content';
 import { getStudentTour, studentTours, type StudentTourImage } from '@/data/student-tours';
 import NotFound from './not-found';
 
-const IMG = '/images/student-tours';
+const IMG = '/images';
 const GOLD = '#C9A84C';
 const SAND = '#F6F2EB';
 const INK = '#101010';
 
 /** Same responsive picture contract as the Student Tours hub: real intrinsic
  *  dimensions so nothing shifts, webp candidates that exist on disk, and eager
- *  loading only for the hero. */
+ *  loading only for the hero. `img.name` carries its folder, so photographs can
+ *  come from the wider Morocco Grand Adventure library, not just student-tours. */
 function Photo({
   img, className, sizes = '(max-width: 768px) 100vw, 50vw', eager = false,
 }: { img: StudentTourImage; className?: string; sizes?: string; eager?: boolean }) {
+  // Much of the curated/ and catalog/ library is WebP-only, so the <img>
+  // fallback follows what actually exists rather than assuming a .jpg sibling.
+  const fallback = `${IMG}/${img.name}.${img.jpg ? 'jpg' : 'webp'}`;
   return (
     <picture>
       <source
@@ -24,7 +28,7 @@ function Photo({
         srcSet={img.widths.map((x) => `${IMG}/${img.name}-${x}w.webp ${x}w`).join(', ')}
       />
       <img
-        src={`${IMG}/${img.name}.jpg`}
+        src={fallback}
         alt={img.alt}
         width={img.w}
         height={img.h}
@@ -146,24 +150,52 @@ export default function StudentTourDetail() {
             <h2 className="font-serif text-3xl md:text-5xl font-light text-foreground max-w-3xl">
               Day by day
             </h2>
-            <div className="mt-12 md:mt-16 space-y-14 md:space-y-20 max-w-4xl">
+            {/* Measure is capped at ~68ch so the prose stays readable on a phone
+                and does not run edge to edge on a wide desktop. */}
+            <div className="mt-12 md:mt-16 space-y-12 md:space-y-16 max-w-[68ch]">
               {tour.itinerary.map((d) => (
-                <article key={d.day} className="border-t border-border pt-8">
-                  <p className="text-[11px] uppercase" style={{ letterSpacing: '0.18em', color: GOLD }}>{d.day}</p>
-                  <h3 className="mt-3 font-serif text-2xl md:text-3xl font-light text-foreground">{d.title}</h3>
-                  <div className="mt-5 space-y-4">
-                    {d.body.map((p, i) => (
-                      <p key={i} className="text-base leading-relaxed" style={{ color: '#3A352E' }}>{p}</p>
-                    ))}
-                  </div>
-                  {d.notes && d.notes.length > 0 && (
-                    <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-2">
-                      {d.notes.map((n) => (
-                        <li key={n} className="text-[13px]" style={{ color: '#6E665C' }}>· {n}</li>
-                      ))}
-                    </ul>
+                <div key={d.day}>
+                  {/* Chapter breaks turn the long itinerary into movements
+                      instead of one continuous list. */}
+                  {d.chapter && (
+                    <p
+                      className="mb-10 md:mb-14 pt-6 md:pt-10 border-t-2 font-serif text-xl md:text-2xl font-light"
+                      style={{ borderColor: GOLD, color: INK }}
+                    >
+                      {d.chapter}
+                    </p>
                   )}
-                </article>
+                  <article className={d.chapter ? '' : 'border-t border-border pt-8'}>
+                    <p className="text-[11px] uppercase" style={{ letterSpacing: '0.18em', color: GOLD }}>{d.day}</p>
+                    <h3 className="mt-2 font-serif text-2xl md:text-3xl font-light text-foreground text-balance">
+                      {d.title}
+                    </h3>
+                    <div className="mt-5 space-y-4">
+                      {d.body.map((p, i) => (
+                        <p key={i} className="text-[17px] md:text-base leading-[1.75]" style={{ color: '#3A352E' }}>{p}</p>
+                      ))}
+                    </div>
+                    {/* One photograph per selected day, never after every
+                        paragraph. Aspect ratio is reserved by width/height so
+                        the image cannot shift the itinerary as it loads. */}
+                    {d.image && (
+                      <figure className="mt-7">
+                        <Photo
+                          img={d.image}
+                          sizes="(max-width: 768px) 100vw, 640px"
+                          className="w-full h-auto"
+                        />
+                      </figure>
+                    )}
+                    {d.notes && d.notes.length > 0 && (
+                      <ul className="mt-6 flex flex-wrap gap-x-5 gap-y-2 pt-4 border-t border-border/60">
+                        {d.notes.map((n) => (
+                          <li key={n} className="text-[13px]" style={{ color: '#6E665C' }}>{n}</li>
+                        ))}
+                      </ul>
+                    )}
+                  </article>
+                </div>
               ))}
             </div>
           </div>
