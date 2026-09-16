@@ -206,7 +206,11 @@ function libraryPhotoFigure(photo: PhotoAsset): string {
   const h = photo.height ? ' height="' + photo.height + '"' : '';
   const srcset = photoSrcSet(photo);
   const ss = srcset ? ' srcset="' + srcset + '" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"' : '';
-  return '    <figure>\n      <img src="' + photo.src + ss + '" alt="' + escapeHtml(photo.alt) + '"' + w + h + ' loading="lazy" decoding="async" class="w-full h-full object-cover" />\n      <figcaption>' + escapeHtml(photo.description) + '</figcaption>\n    </figure>\n';
+  // `ss` already begins with ' srcset="' and ends with a closing quote, so the
+  // src attribute must be closed BEFORE it is appended. Closing it afterwards
+  // made src swallow the whole srcset/sizes run (src="…jpg srcset="…"), which
+  // left every gallery image with an unusable src and no parsed srcset.
+  return '    <figure>\n      <img src="' + photo.src + '"' + ss + ' alt="' + escapeHtml(photo.alt) + '"' + w + h + ' loading="lazy" decoding="async" class="w-full h-full object-cover" />\n      <figcaption>' + escapeHtml(photo.description) + '</figcaption>\n    </figure>\n';
 }
 function hrefsFor(rest: string): string {
   const clean = rest === '/' ? '' : rest;
