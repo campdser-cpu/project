@@ -16,6 +16,7 @@ import { Link } from 'wouter';
 import { Layout } from '../components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { contactInfo } from '@/data/content';
+import { studentTours } from '@/data/student-tours';
 
 const IMG = '/images/student-tours';
 
@@ -132,15 +133,19 @@ export default function StudentTours() {
     exp: t(`st_wt_${p.i}_exp`), mean: t(`st_wt_${p.i}_mean`),
   }));
 
-  // Journey Ideas bridge into MGA's real tour architecture. These are the
-  // EXISTING canonical tours — no student-specific duplicates were created, and
-  // the cards stay labelled as examples rather than fixed student packages.
-  // <Link> resolves against the wouter base, so each locale gets its own route.
-  const JOURNEY_TOURS = ['3-day-sahara-marrakech', '5-day-great-south-morocco', '7-day-imperial-cities-sahara-escape'];
-  const journeys = [1, 2, 3].map((n) => ({
-    days: t(`st_11_r${n}_days`), unit: t(`st_11_r${n}_unit`), title: t(`st_11_r${n}_title`),
-    route: t(`st_11_r${n}_route`), themes: t(`st_11_r${n}_themes`),
-    desc: t(`st_11_r${n}_desc`), to: `/tours/${JOURNEY_TOURS[n - 1]}`,
+  // The three dedicated Student Tour products. These are their own product
+  // family (src/data/student-tours.ts) and deliberately do NOT link into the
+  // private /tours/* catalogue — a visitor who lands here stays inside the
+  // Student Tours ecosystem. <Link> resolves against the wouter base, so each
+  // locale gets its own route.
+  const journeys = studentTours.map((s) => ({
+    days: s.duration.split(' ')[0],
+    unit: 'Days',
+    title: s.title,
+    route: s.keyPlaces.join(' · '),
+    themes: s.overview.regions,
+    desc: s.cardSummary,
+    to: `/student-tours/${s.slug}`,
   }));
 
   const internalLinks: { to: string; label: string }[] = [
