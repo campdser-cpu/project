@@ -940,7 +940,28 @@ function buildExperienceContent(rest: string, lang: Lang): string {
   // copy is authored in English only (src/data/student-tours.ts); every locale
   // gets the same body until a translation batch is authored, which is the same
   // honest fallback the rest of the Student Tours section already uses.
+  // Emits one authentic Student Tours photograph into the crawlable HTML.
+  //
+  // This MIRRORS src/pages/student-tour-detail.tsx <Photo> exactly — same
+  // srcset candidates, same `sizes`, same intrinsic width/height, same
+  // loading/decoding — so the browser resolves to the identical file and the
+  // React render reuses the cached response instead of downloading a second
+  // copy. `#root` is rendered with createRoot (not hydrateRoot), so React
+  // replaces this markup wholesale and no hydration mismatch is possible.
+  //
+  // Only the hero is eager: discovering it in raw HTML lets the preload scanner
+  // start it before the JS bundle parses. Every other photograph stays lazy, so
+  // below-the-fold imagery is not pulled into the critical path.
+  const stFigure = (img: { name: string; alt: string; w: number; h: number; widths: number[]; jpg?: boolean }, sizes: string, eager = false): string => {
+    const fallback = `/images/${img.name}.${img.jpg ? 'jpg' : 'webp'}`;
+    const srcset = img.widths.map((w) => `/images/${img.name}-${w}w.webp ${w}w`).join(', ');
+    return `<img src="${fallback}" srcset="${srcset}" sizes="${sizes}" alt="${escapeHtml(img.alt)}"`
+      + ` width="${img.w}" height="${img.h}" loading="${eager ? 'eager' : 'lazy'}"`
+      + ` decoding="${eager ? 'sync' : 'async'}"${eager ? ' fetchpriority="high"' : ''} />`;
+  };
+
   const studentTourDetail = stProduct ? `
+    ${stFigure(stProduct.hero, '100vw', true)}
     <p>${escapeHtml(stProduct.heroLead)}</p>
     <h2>Tour overview</h2>
     ${ul([
@@ -954,7 +975,7 @@ function buildExperienceContent(rest: string, lang: Lang): string {
     <h2>Why this works for students</h2>
     ${stProduct.whyStudents.map((p) => paragraph(p)).join('')}
     <h2>Itinerary</h2>
-    ${stProduct.itinerary.map((d) => `${d.chapter ? `<h3>${escapeHtml(d.chapter)}</h3>` : ''}<h3>${escapeHtml(`${d.day} — ${d.title}`)}</h3>${d.body.map((p) => paragraph(p)).join('')}${d.notes && d.notes.length ? ul(d.notes) : ''}`).join('\n    ')}
+    ${stProduct.itinerary.map((d) => `${d.chapter ? `<h3>${escapeHtml(d.chapter)}</h3>` : ''}<h3>${escapeHtml(`${d.day} — ${d.title}`)}</h3>${d.body.map((p) => paragraph(p)).join('')}${d.image ? stFigure(d.image, '(max-width: 768px) 100vw, 640px') : ''}${d.notes && d.notes.length ? ul(d.notes) : ''}`).join('\n    ')}
     <h2>What students will experience</h2>
     ${ul(stProduct.experiences.map((e) => `${e.title} — ${e.body}`))}
     <h2>Learning through experience</h2>
