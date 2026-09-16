@@ -9,8 +9,11 @@
 // Content rules applied here: no invented hotels, universities, partnerships,
 // prices, statistics, certifications, testimonials or named guides. Where an
 // operational detail is not fixed, the copy says so plainly rather than
-// inventing a guarantee. Imagery is limited to the authentic Morocco Grand
-// Adventure library already in public/images/student-tours/.
+// inventing a guarantee. Imagery comes from photographs Morocco Grand Adventure
+// confirmed as its own, the existing curated/ library, and three Pexels
+// photographs. Provenance is recorded in scripts/build-student-tour-photos.mjs.
+// Alt text and copy describe what is visible; they never present the people
+// shown as named customers, and never name a place the image cannot support.
 // ─────────────────────────────────────────────────────────────────────────────
 
 export type StudentTourImage = {
@@ -31,6 +34,8 @@ export type StudentTourImage = {
    * WebP-only, so the <img> fallback must not blindly assume .jpg or it 404s.
    */
   jpg?: boolean;
+  /** CSS object-position used when the frame is cropped (e.g. the hero). */
+  position?: string;
 };
 
 export type StudentTourDay = {
@@ -43,9 +48,11 @@ export type StudentTourDay = {
   body: string[];
   /** Compact supporting facts. Kept short on purpose. */
   notes?: string[];
-  /** One supporting photograph for this day. Used sparingly — the itinerary is
-   *  prose first, not a gallery. Every file is confirmed present on disk. */
-  image?: StudentTourImage;
+  /** One photograph for this day, or two shown as a pair when the day covers
+   *  two distinct experiences. Used sparingly — the itinerary is prose first,
+   *  not a gallery. Only the FIRST image of a day is emitted into the
+   *  prerendered HTML (see scripts/prerender.ts). */
+  images?: StudentTourImage[];
 };
 
 export type StudentTourFaq = { q: string; a: string };
@@ -81,6 +88,10 @@ export type StudentTour = {
   /** Optional "a day in the journey" editorial beat. */
   dayInTheJourney?: { label: string; body: string }[];
   groupExperience: string[];
+  /** Photograph shown with the group-experience copy. */
+  groupImage?: StudentTourImage;
+  /** Photograph shown with the "a day in the journey" beats. */
+  dayInTheJourneyImage?: StudentTourImage;
   included: string[];
   notIncluded: string[];
   practical: { title: string; body: string }[];
@@ -103,14 +114,7 @@ const threeDay: StudentTour = {
     'Marrakech to the dunes of Erg Chebbi and back, built for groups with a short window and a long list of things they want to see.',
   heroLead:
     'Three days is enough to cross the High Atlas, stand inside a mud-brick ksar that has been filmed a hundred times, and sleep in the Sahara — if the route is planned around the driving rather than around a brochure.',
-  hero: {
-    name: 'student-tours/students-erg-chebbi-dunes',
-    alt: 'Student group walking the crest of a dune at Erg Chebbi in the Moroccan Sahara',
-    w: 1599,
-    h: 984,
-    widths: [480, 768, 1280],
-    jpg: true,
-  },
+  hero: { name: 'student-tours/student-group-sahara-dunes', alt: 'Student group standing together among the Sahara dunes', w: 1920, h: 1280, widths: [480, 768, 1280, 1600], jpg: true },
   metaTitle: '3-Day Morocco Student Tour | Marrakech, Atlas & Sahara',
   metaDescription:
     'A three-day student route from Marrakech over the High Atlas to Aït Ben Haddou and the Erg Chebbi dunes at Merzouga. For university groups of 15+.',
@@ -130,7 +134,7 @@ const threeDay: StudentTour = {
     {
       day: 'Day 1',
       title: 'Out of Marrakech, over the pass',
-      image: {name: 'curated/ait-ben-haddou-kasbah-sunrise-ouarzazate',alt: 'The earthen ksar of Aït Ben Haddou rising above its river valley at sunrise',w: 934,h: 1400,widths: [480,768]},
+      images: [{ name: 'student-tours/student-group-ait-ben-haddou-ksar', alt: 'Student group in front of the earthen ksar of Aït Ben Haddou', w: 1411, h: 1600, widths: [480, 768, 1280], jpg: true }],
       body: [
         'The group leaves Marrakech early, while the city is still loading itself into vans and scooters. Within an hour the road begins to climb, and the change is fast enough that students notice it from the window — flat palm ground gives way to switchbacks, then to bare rock, then to villages built in terraces on slopes that look too steep to farm.',
         'The route crosses the Tizi n\'Tichka pass. There are stops to get out, look back at where the road came from, and take the photographs everyone will take. On the far side the landscape turns red and dry, and the architecture changes with it: flat roofs, rammed earth, walls the same color as the ground they stand on.',
@@ -141,7 +145,7 @@ const threeDay: StudentTour = {
     {
       day: 'Day 2',
       title: 'Where the green line runs out',
-      image: {name: 'curated/todra-gorge-river-canyon-high-atlas',alt: 'The river canyon of Todra Gorge cutting between high rock walls',w: 787,h: 1400,widths: [480,768]},
+      images: [{ name: 'student-tours/students-sahara-dunes-evening', alt: 'Four students standing on a sand dune in the evening light', w: 1540, h: 1600, widths: [480, 768, 1280], jpg: true }],
       body: [
         'The second day is the one where students stop thinking of Morocco as a single place. The road follows valleys where a thin green line of palms runs along the water and everything outside that line is stone. The contrast is unmissable, and it explains settlement patterns better than any diagram.',
         'The group moves through the Dades and Todra areas, where the rock closes in and the road narrows between cliff walls. There is time to walk, to hear how sound behaves between the rock faces, and to see how villages use the water that comes through.',
@@ -152,7 +156,7 @@ const threeDay: StudentTour = {
     {
       day: 'Day 3',
       title: 'First light, then north',
-      image: {name: 'catalog/sahara-dune-trekking-merzouga',alt: 'Walking the dune ridges of the Sahara near Merzouga',w: 1280,h: 853,widths: [480,768]},
+      images: [{ name: 'student-tours/camel-caravan-silhouette-sahara', alt: 'Riders waving from a line of camels silhouetted against a low sun', w: 1076, h: 1280, widths: [480, 768], jpg: true }],
       body: [
         'Nobody has to be persuaded to get up for this one. The sun comes over the edge of the erg and the whole dune field changes color in about ten minutes — orange, then gold, then a flat pale yellow once it is properly up. It is also the coldest the group will be all trip, which surprises people.',
         'Then the long drive north. On a three-day program this day is honest about what it is: a travel day, with the whole southern half of the country running backwards past the window. What makes it worth doing is recognition — students spot the pass, the ksar and the palm valleys they went through two days ago and understand for the first time how they fit together.',
@@ -184,6 +188,8 @@ const threeDay: StudentTour = {
     'Three days in a vehicle together does something a classroom does not. Students talk to people they would not normally sit next to, and by the second day the group has usually reorganized itself.',
     'The desert evening is the part most groups remember. There is no signal to compete with, dinner is shared, and the conversation tends to run much longer than anyone planned.',
   ],
+  groupImage: { name: 'student-tours/student-drumming-desert-evening', alt: 'A student playing a hand drum beside a musician in a blue robe and black turban during an evening gathering', w: 1397, h: 1600, widths: [480, 768, 1280], jpg: true },
+  dayInTheJourneyImage: { name: 'student-tours/sahara-dunes-pointing-view', alt: 'A hand in an embroidered sleeve pointing out across golden dunes', w: 890, h: 1600, widths: [480, 768], jpg: true },
   included: [
     'Private transport for the group for the full route, with a driver',
     'Accommodation for two nights, including one night at a desert camp',
@@ -236,14 +242,7 @@ const fourDay: StudentTour = {
     'The same great crossing with a fourth day added where it matters most — more time in the desert and more room for the group to actually stop and look.',
   heroLead:
     'The fourth day is not an extra stop. It is the day that turns a fast transit into a trip students can process — a full desert morning, time in the oasis valleys, and an evening that is not cut short by tomorrow\'s drive.',
-  hero: {
-    name: 'student-tours/camel-trek-erg-chebbi',
-    alt: 'Camels crossing the dunes of Erg Chebbi in the late afternoon near Merzouga',
-    w: 1280,
-    h: 853,
-    widths: [480, 768, 1280],
-    jpg: true,
-  },
+  hero: { name: 'student-tours/students-dune-ridge-sahara', alt: 'Four students in white standing on a dune crest in the Sahara', w: 1920, h: 1280, widths: [480, 768, 1280, 1600], jpg: true },
   metaTitle: '4-Day Morocco Student Tour | Atlas, Oasis Valleys & Sahara',
   metaDescription:
     'A four-day student route from Marrakech to Aït Ben Haddou, the Dades and Todra valleys and two nights in the Erg Chebbi desert. For groups of 15+.',
@@ -263,7 +262,7 @@ const fourDay: StudentTour = {
     {
       day: 'Day 1',
       title: 'The climb out of the city',
-      image: {name: 'curated/ait-benhaddou-kasbah-sunset-unesco-morocco',alt: 'Aït Ben Haddou in late afternoon light, its earthen walls the colour of the hillside',w: 900,h: 1200,widths: [480,768],jpg: true},
+      images: [{ name: 'student-tours/students-terrace-kasbah-riverbed', alt: 'Students on a rooftop terrace overlooking earthen kasbahs, a riverbed and a palm grove', w: 1448, h: 1600, widths: [480, 768, 1280], jpg: true }],
       body: [
         'Marrakech thins out fast. Ten minutes past the last roundabout the ground starts tilting, and from there it is switchbacks for most of the morning. Students who slept through the start tend to wake up somewhere around the point where the villages stop being flat and start being stacked.',
         'This program takes the pass slowly. There are stops that a tighter schedule would skip — a walnut stand, a viewpoint where you can see three villages at once, the place where the road finally tops out and the whole southern side opens up in a completely different color.',
@@ -274,7 +273,7 @@ const fourDay: StudentTour = {
     {
       day: 'Day 2',
       title: 'Down the valleys to the sand',
-      image: {name: 'catalog/luxury-desert-camp-sunset-merzouga',alt: 'A desert camp in the dunes near Merzouga at sunset',w: 1080,h: 1440,widths: [480,768]},
+      images: [{ name: 'curated/todra-gorge-river-canyon-high-atlas', alt: 'The river canyon of Todra Gorge cutting between high rock walls', w: 787, h: 1400, widths: [480, 768] }],
       body: [
         'A morning in the gorges. The rock closes in, the road follows the water, and the palm groves make the water visible in a way that a map never does. There is time to walk into a gorge rather than photograph it from the roadside.',
         'Through the afternoon the group moves southeast and the country opens out. The green line of the valleys thins, the horizon gets further away, and the ground turns pale and stony.',
@@ -285,7 +284,7 @@ const fourDay: StudentTour = {
     {
       day: 'Day 3',
       title: 'A day that stays in one place',
-      image: {name: 'student-tours/students-buggy-erg-chebbi',alt: 'Group riding a dune buggy across the sand at Erg Chebbi',w: 1345,h: 1169,widths: [480,768,1280],jpg: true},
+      images: [{ name: 'student-tours/nomad-tent-desert', alt: 'A woven nomad tent pitched on open, stony desert ground', w: 1600, h: 1068, widths: [480, 768, 1280], jpg: true }, { name: 'student-tours/student-groups-4x4-sahara', alt: 'Students celebrating on the roofs of three 4x4 vehicles in the desert', w: 1544, h: 1600, widths: [480, 768, 1280], jpg: true }],
       body: [
         'This is the day the three-day program does not have. The group wakes for sunrise and then has the whole day around Erg Chebbi instead of getting back in a vehicle.',
         'How the day is used depends on the group. It can include time with people who live in the desert rather than visiting it, a look at how a nomad camp is actually set up and moved, and the practical business of water, shade and livestock in a place with very little of the first two. Where the group wants more activity, the dunes also allow 4x4 and buggy time on the sand.',
@@ -329,6 +328,7 @@ const fourDay: StudentTour = {
     'The full desert day is usually where the trip\'s best conversations happen — partly because there is time, and partly because there is nothing else competing for it.',
     'Shared meals do a lot of the work. Eating together twice a day for four days changes how a group talks by the end.',
   ],
+  groupImage: { name: 'student-tours/students-terrace-valley-view', alt: 'Students relaxing on a rooftop terrace above an earthen town, with mountains behind', w: 1437, h: 1600, widths: [480, 768, 1280], jpg: true },
   included: [
     'Private transport for the group for the full route, with a driver',
     'Three nights of accommodation, including two nights at a desert camp',
@@ -382,14 +382,7 @@ const tenDay: StudentTour = {
     'North to south across the whole country — imperial cities, the Rif, the Atlas and the Sahara — with enough time in each to understand how different they are from one another.',
   heroLead:
     'Ten days is long enough to stop generalizing about Morocco. The group sees a Roman-era site and a medieval university city and a blue mountain town and an erg, and by the end nobody is describing them with the same words.',
-  hero: {
-    name: 'student-tours/student-group-atlas-flag',
-    alt: 'Student group in Amazigh dress holding the Amazigh flag beside palms in a southern Moroccan oasis',
-    w: 1600,
-    h: 863,
-    widths: [480, 704, 768, 1280],
-    jpg: true,
-  },
+  hero: { name: 'student-tours/student-group-ait-ben-haddou-entrance', alt: 'Large student group gathered in an earthen lane at the entrance to Aït Ben Haddou', w: 1920, h: 1280, widths: [480, 768, 1280, 1600], jpg: true, position: 'center top' },
   metaTitle: '10-Day Morocco Student Tour | Imperial Cities, Rif & Sahara',
   metaDescription:
     'A ten-day student route linking Marrakech, Aït Ben Haddou, the Erg Chebbi Sahara, Fes and Chefchaouen. For university groups of 15+.',
@@ -419,7 +412,7 @@ const tenDay: StudentTour = {
     {
       day: 'Day 2',
       title: 'Marrakech at street level',
-      image: {name: 'curated/marrakech-medina-motorbike-archway-local-life',alt: 'A motorbike passing under an archway in the Marrakech medina',w: 900,h: 1200,widths: [480,768],jpg: true},
+      images: [{ name: 'curated/marrakech-medina-motorbike-archway-local-life', alt: 'A motorbike passing under an archway in the Marrakech medina', w: 900, h: 1200, widths: [480, 768], jpg: true }],
       body: [
         'A full day in Marrakech. The medina is the main event — a dense, walled, working city where the street pattern itself is the lesson. The group moves through souks organized by trade, past workshops where things are still made rather than only sold.',
         'There is time at the historic monuments and gardens the city is known for, which give the group somewhere quiet to actually talk about what they just walked through.',
@@ -430,6 +423,7 @@ const tenDay: StudentTour = {
     {
       day: 'Day 3',
       title: 'The pass, and the red country beyond it',
+      images: [{ name: 'student-tours/students-terrace-kasbahs-river', alt: 'Students on a rooftop terrace above earthen kasbahs, a dry riverbed and palm trees', w: 1556, h: 1600, widths: [480, 768, 1280], jpg: true }],
       chapter: 'Over the mountains, into the desert',
       body: [
         'Two days of Marrakech makes the far side of the mountains land harder. The city is loud and enclosed; four hours later the group is looking at a hundred kilometers of nothing, in a red that does not appear anywhere in the north of the country.',
@@ -441,6 +435,7 @@ const tenDay: StudentTour = {
     {
       day: 'Day 4',
       title: 'Following the water south',
+      images: [{ name: 'student-tours/village-palm-grove-atlas-foothills', alt: 'Village and palm grove at the foot of the Atlas Mountains', w: 1600, h: 1067, widths: [480, 768, 1280], jpg: true }],
       body: [
         'Through the Dades and Todra country, where palm groves trace the water and bare rock does everything else. There is time to walk into a gorge and see how the villages use what comes through.',
         'By late afternoon the mountains are behind the group and Erg Chebbi is ahead. The night is at a desert camp.',
@@ -450,6 +445,7 @@ const tenDay: StudentTour = {
     {
       day: 'Day 5',
       title: 'A day that belongs to the desert',
+      images: [{ name: 'student-tours/students-4x4-desert-dunes', alt: 'Students posing on and around a white 4x4 in the dunes', w: 1585, h: 1600, widths: [480, 768, 1280], jpg: true }],
       body: [
         'Sunrise, then a day in the desert rather than a drive out of it. This is where the group meets people who live in the desert, sees how a nomad camp works, and spends the cooler hours out on the dunes.',
         'Groups that want an active afternoon can take 4x4 or buggy time on the sand. Groups that want a slower one can have that instead.',
@@ -470,7 +466,7 @@ const tenDay: StudentTour = {
     {
       day: 'Day 7',
       title: 'Inside Fes el-Bali',
-      image: {name: 'curated/chouara-tannery-overhead-fes-el-bali',alt: 'The circular dye pits of the Chouara tannery seen from above in Fes el-Bali',w: 933,h: 1400,widths: [480,768]},
+      images: [{ name: 'curated/chouara-tannery-overhead-fes-el-bali', alt: 'The circular dye pits of the Chouara tannery seen from above in Fes el-Bali', w: 933, h: 1400, widths: [480, 768] }],
       body: [
         'Fes el-Bali is the reason this trip is ten days and not six. It is one of the largest car-free urban areas anywhere, and it does not reveal itself quickly. The group goes in with a local guide because that is the only sensible way to do it.',
         'The day covers the old city\'s craft economy — the tanneries, metalwork, weaving — and its scholarly history, including the university quarter. Students who found Marrakech overwhelming usually find Fes older, denser and quieter in a way they can work with.',
@@ -480,6 +476,7 @@ const tenDay: StudentTour = {
     {
       day: 'Day 8',
       title: 'Mosaics on a hillside',
+      images: [{ name: 'student-tours/whitewashed-hillside-town', alt: 'Whitewashed hillside town spread across two slopes', w: 1600, h: 1067, widths: [480, 768, 1280], jpg: true }],
       chapter: 'Roman ground and the Rif',
       body: [
         'North of Fes the group reaches a very different layer of history: Roman-era ruins on open farmland, with mosaics still in place and a street grid readable from ground level. Seeing a classical site in North Africa reframes a lot of what students assume about the Roman world.',
@@ -490,7 +487,7 @@ const tenDay: StudentTour = {
     {
       day: 'Day 9',
       title: 'A town you can see all of',
-      image: {name: 'curated/panoramic-view-chefchaouen-rif-mountains',alt: 'Chefchaouen’s blue-washed houses stacked below the Rif mountains',w: 1051,h: 1400,widths: [480,768]},
+      images: [{ name: 'curated/panoramic-view-chefchaouen-rif-mountains', alt: 'Chefchaouen’s blue-washed houses stacked below the Rif mountains', w: 1051, h: 1400, widths: [480, 768] }],
       body: [
         'Chefchaouen is small, steep and blue, and it is the only place on this itinerary where the group can see the whole town from above in ten minutes of walking. After a week of large cities and open desert, the scale is a relief.',
         'There is time in the medina, time to walk up for the view, and time that is genuinely unstructured — which after eight days of moving is worth scheduling deliberately.',

@@ -33,6 +33,7 @@ function Photo({
         width={img.w}
         height={img.h}
         className={className}
+        style={img.position ? { objectPosition: img.position } : undefined}
         loading={eager ? 'eager' : 'lazy'}
         decoding={eager ? 'sync' : 'async'}
         {...(eager ? { fetchPriority: 'high' as const } : {})}
@@ -175,17 +176,31 @@ export default function StudentTourDetail() {
                         <p key={i} className="text-[17px] md:text-base leading-[1.75]" style={{ color: '#3A352E' }}>{p}</p>
                       ))}
                     </div>
-                    {/* One photograph per selected day, never after every
-                        paragraph. Aspect ratio is reserved by width/height so
-                        the image cannot shift the itinerary as it loads. */}
-                    {d.image && (
+                    {/* Photographs sit directly under the paragraphs they
+                        illustrate, and only on selected days. The box size is
+                        known before the file arrives (intrinsic width/height,
+                        or a CSS aspect-ratio for pairs), so nothing shifts. */}
+                    {d.images?.length === 1 && (
                       <figure className="mt-7">
                         <Photo
-                          img={d.image}
+                          img={d.images[0]}
                           sizes="(max-width: 768px) 100vw, 640px"
-                          className="w-full h-auto"
+                          className="w-full h-auto max-h-[560px] object-cover"
                         />
                       </figure>
+                    )}
+                    {d.images && d.images.length > 1 && (
+                      <div className="mt-7 grid gap-3 sm:grid-cols-2">
+                        {d.images.map((img) => (
+                          <figure key={img.name}>
+                            <Photo
+                              img={img}
+                              sizes="(max-width: 640px) 100vw, 320px"
+                              className="w-full h-auto aspect-[4/3] object-cover"
+                            />
+                          </figure>
+                        ))}
+                      </div>
                     )}
                     {d.notes && d.notes.length > 0 && (
                       <ul className="mt-6 flex flex-wrap gap-x-5 gap-y-2 pt-4 border-t border-border/60">
@@ -236,13 +251,24 @@ export default function StudentTourDetail() {
           <section className="py-16 md:py-24" style={{ background: INK }}>
             <div className="container mx-auto px-4">
               <Eyebrow onDark>A day in the journey</Eyebrow>
-              <div className="mt-8 grid gap-8 md:grid-cols-4">
-                {tour.dayInTheJourney.map((d) => (
-                  <div key={d.label}>
-                    <p className="text-[11px] uppercase" style={{ letterSpacing: '0.16em', color: GOLD }}>{d.label}</p>
-                    <p className="mt-3 text-sm leading-relaxed text-white/80">{d.body}</p>
-                  </div>
-                ))}
+              <div className={tour.dayInTheJourneyImage ? 'mt-8 grid gap-10 md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] md:items-center' : 'mt-8'}>
+                {tour.dayInTheJourneyImage && (
+                  <figure>
+                    <Photo
+                      img={tour.dayInTheJourneyImage}
+                      sizes="(max-width: 768px) 100vw, 480px"
+                      className="w-full h-auto aspect-[4/3] md:aspect-[4/5] object-cover"
+                    />
+                  </figure>
+                )}
+                <div className={tour.dayInTheJourneyImage ? 'grid gap-8 sm:grid-cols-2' : 'grid gap-8 md:grid-cols-4'}>
+                  {tour.dayInTheJourney.map((d) => (
+                    <div key={d.label}>
+                      <p className="text-[11px] uppercase" style={{ letterSpacing: '0.16em', color: GOLD }}>{d.label}</p>
+                      <p className="mt-3 text-sm leading-relaxed text-white/80">{d.body}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </section>
@@ -250,12 +276,23 @@ export default function StudentTourDetail() {
 
         {/* GROUP EXPERIENCE ------------------------------------------------ */}
         <section className="bg-background py-16 md:py-24">
-          <div className="container mx-auto px-4 max-w-4xl">
+          <div className={`container mx-auto px-4 ${tour.groupImage ? 'max-w-6xl' : 'max-w-4xl'}`}>
             <Eyebrow>Traveling as a group</Eyebrow>
-            <div className="space-y-5">
-              {tour.groupExperience.map((p, i) => (
-                <p key={i} className="text-base md:text-lg leading-relaxed" style={{ color: '#3A352E' }}>{p}</p>
-              ))}
+            <div className={tour.groupImage ? 'grid gap-10 md:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] md:items-center' : ''}>
+              <div className="space-y-5">
+                {tour.groupExperience.map((p, i) => (
+                  <p key={i} className="text-base md:text-lg leading-relaxed" style={{ color: '#3A352E' }}>{p}</p>
+                ))}
+              </div>
+              {tour.groupImage && (
+                <figure>
+                  <Photo
+                    img={tour.groupImage}
+                    sizes="(max-width: 768px) 100vw, 460px"
+                    className="w-full h-auto aspect-[4/3] md:aspect-[4/5] object-cover"
+                  />
+                </figure>
+              )}
             </div>
           </div>
         </section>

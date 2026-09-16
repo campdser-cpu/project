@@ -956,7 +956,7 @@ function buildExperienceContent(rest: string, lang: Lang): string {
   // Only the hero is eager: discovering it in raw HTML lets the preload scanner
   // start it before the JS bundle parses. Every other photograph stays lazy, so
   // below-the-fold imagery is not pulled into the critical path.
-  const stFigure = (img: { name: string; alt: string; w: number; h: number; widths: number[]; jpg?: boolean }, sizes: string, eager = false): string => {
+  const stFigure = (img: { name: string; alt: string; w: number; h: number; widths: number[]; jpg?: boolean; position?: string }, sizes: string, eager = false): string => {
     const fallback = `/images/${img.name}.${img.jpg ? 'jpg' : 'webp'}`;
     const srcset = img.widths.map((w) => `/images/${img.name}-${w}w.webp ${w}w`).join(', ');
     return `<img src="${fallback}" srcset="${srcset}" sizes="${sizes}" alt="${escapeHtml(img.alt)}"`
@@ -964,6 +964,12 @@ function buildExperienceContent(rest: string, lang: Lang): string {
       + ` decoding="${eager ? 'sync' : 'async'}"${eager ? ' fetchpriority="high"' : ''} />`;
   };
 
+  // Keep the initial HTML light: the hero plus the FIRST photograph of the first
+  // three illustrated days. Pairs, the group photo and the day-in-the-journey
+  // photo are hydrated-only and lazy, so the prerendered image count stays at 4.
+  const stPrerenderDays = new Set(
+    (stProduct?.itinerary ?? []).filter((d) => d.images?.length).slice(0, 3).map((d) => d.day),
+  );
   const studentTourDetail = stProduct ? `
     ${stFigure(stProduct.hero, '100vw', true)}
     <p>${escapeHtml(stProduct.heroLead)}</p>
@@ -979,7 +985,7 @@ function buildExperienceContent(rest: string, lang: Lang): string {
     <h2>Why this works for students</h2>
     ${stProduct.whyStudents.map((p) => paragraph(p)).join('')}
     <h2>Itinerary</h2>
-    ${stProduct.itinerary.map((d) => `${d.chapter ? `<h3>${escapeHtml(d.chapter)}</h3>` : ''}<h3>${escapeHtml(`${d.day} — ${d.title}`)}</h3>${d.body.map((p) => paragraph(p)).join('')}${d.image ? stFigure(d.image, '(max-width: 768px) 100vw, 640px') : ''}${d.notes && d.notes.length ? ul(d.notes) : ''}`).join('\n    ')}
+    ${stProduct.itinerary.map((d) => `${d.chapter ? `<h3>${escapeHtml(d.chapter)}</h3>` : ''}<h3>${escapeHtml(`${d.day} — ${d.title}`)}</h3>${d.body.map((p) => paragraph(p)).join('')}${stPrerenderDays.has(d.day) && d.images?.[0] ? stFigure(d.images[0], '(max-width: 768px) 100vw, 640px') : ''}${d.notes && d.notes.length ? ul(d.notes) : ''}`).join('\n    ')}
     <h2>What students will experience</h2>
     ${ul(stProduct.experiences.map((e) => `${e.title} — ${e.body}`))}
     <h2>Learning through experience</h2>

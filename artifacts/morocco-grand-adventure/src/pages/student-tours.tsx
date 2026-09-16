@@ -146,6 +146,10 @@ export default function StudentTours() {
     themes: s.overview.regions,
     desc: s.cardSummary,
     to: `/student-tours/${s.slug}`,
+    // Each card previews its program with that page's hero photograph. The
+    // heroes live in student-tours/ with a .jpg fallback, which is what this
+    // page's <Photo> expects, so the bare filename is passed.
+    img: { ...s.hero, name: s.hero.name.replace(/^student-tours\//, '') },
   }));
 
   const internalLinks: { to: string; label: string }[] = [
@@ -478,6 +482,17 @@ export default function StudentTours() {
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             {journeys.map((j) => (
               <article key={j.title} className="p-8" style={{ background: '#E7DFD2' }}>
+                <div className="-mx-8 -mt-8 mb-7">
+                  <Photo
+                    name={j.img.name}
+                    alt={j.img.alt}
+                    w={j.img.w}
+                    h={j.img.h}
+                    widths={[480, 768, 1280]}
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="w-full h-auto aspect-[3/2] object-cover"
+                  />
+                </div>
                 <div className="flex items-baseline gap-2">
                   <span className="text-5xl font-light text-[#101010]">{j.days}</span>
                   <span className="text-[11px] uppercase" style={{ letterSpacing: '0.16em', color: '#8C857A' }}>{j.unit}</span>
