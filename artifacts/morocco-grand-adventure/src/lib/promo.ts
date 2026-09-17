@@ -16,6 +16,11 @@ export function isPromoActive(now: number = Date.now()): boolean {
   return now <= PROMO_DEADLINE.getTime();
 }
 
+/** True when a tour carries a real published price rather than the quote sentinel. */
+export function hasPublishedPrice(price: number | string): boolean {
+  return typeof price === 'number' ? Number.isFinite(price) && price > 0 : /\d/.test(price);
+}
+
 /** Discounted price (rounded), from a number or numeric string like "450". */
 export function discountedPrice(price: number | string): number {
   const n = typeof price === 'string' ? parseInt(price.replace(/[^\d.]/g, ''), 10) : price;

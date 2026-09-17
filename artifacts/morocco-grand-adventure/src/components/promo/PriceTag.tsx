@@ -1,4 +1,5 @@
-import { discountedPrice } from '@/lib/promo';
+import { discountedPrice, hasPublishedPrice } from '@/lib/promo';
+import { useLanguage } from '@/contexts/LanguageContext';
 import { usePromoActive } from './PromoProvider';
 
 type Size = 'sm' | 'md' | 'lg' | 'xl';
@@ -25,8 +26,10 @@ const OLD: Record<Size, string> = {
 /** Shows the discounted price with the original struck through (while promo active). */
 export function PriceTag({ price, size = 'md', tone = 'default', className = '' }: Props) {
   const active = usePromoActive();
-  if (typeof price === 'string' && !/\d/.test(price)) {
-    return <span className="font-semibold text-foreground">Request a quote</span>;
+  const { t } = useLanguage();
+  if (!hasPublishedPrice(price)) {
+    const tone_ = tone === 'onDark' ? 'text-white' : 'text-foreground';
+    return <span className={`font-semibold ${tone_} ${className}`}>{t('price_tailored')}</span>;
   }
   // MGA_QUOTE_ONLY_THREE_DAY_PRICE_V2
   const orig = typeof price === 'string' ? parseInt(price.replace(/[^\d.]/g, ''), 10) : price;

@@ -2,6 +2,7 @@ import { Link } from 'wouter';
 import { Clock, ChevronRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { PriceTag } from '../promo/PriceTag';
+import { hasPublishedPrice } from '@/lib/promo';
 import { PromoBadge } from '../promo/PromoBadge';
 import type { Tour } from '@/data/content';
 
@@ -64,7 +65,9 @@ export function TourCard({ tour, compact = false }: TourCardProps) {
         </p>
         <div className="flex items-center justify-between mt-auto pt-4 border-t border-border">
           <div>
-            <span className="text-xs text-muted-foreground uppercase tracking-wider block">{t('from')}</span>
+            {hasPublishedPrice(tour.price) && (
+              <span className="text-xs text-muted-foreground uppercase tracking-wider block">{t('from')}</span>
+            )}
             <PriceTag price={tour.price} size={compact ? 'sm' : 'md'} />
           </div>
           <span className="text-primary font-bold flex items-center gap-1 group-hover:gap-2 transition-all text-sm">

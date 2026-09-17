@@ -10,6 +10,7 @@ import { SiWhatsapp } from 'react-icons/si';
 import { PromoBanner } from '../components/promo/PromoBanner';
 import { PromoBadge } from '../components/promo/PromoBadge';
 import { PriceTag } from '../components/promo/PriceTag';
+import { hasPublishedPrice } from '@/lib/promo';
 import { CinematicVideo } from '../components/ui/CinematicVideo';
 import { ReviewCard } from '../components/ui/ReviewCard';
 
@@ -576,7 +577,9 @@ export default function Home() {
                   </div>
                   <div className="flex items-center justify-between pt-4 border-t border-border mt-auto">
                     <div>
-                      <span className="text-xs text-muted-foreground uppercase tracking-wider block">{t('from')}</span>
+                      {hasPublishedPrice(tour.price) && (
+                        <span className="text-xs text-muted-foreground uppercase tracking-wider block">{t('from')}</span>
+                      )}
                       <PriceTag price={tour.price} size="md" />
                     </div>
                     <Link href={`/tours/${tour.id}`} className="bg-foreground text-background hover:bg-primary hover:text-primary-foreground px-5 md:px-6 py-2.5 rounded-full text-sm font-bold transition-all shadow-md group-hover:shadow-lg">

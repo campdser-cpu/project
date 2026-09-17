@@ -1,7 +1,6 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useRoute, Link } from 'wouter';
 import { Layout } from '../components/layout/Layout';
-import { contactInfo } from '@/data/content';
 import { getLocalizedTour, getLocalizedTours, getLocalizedFaq, getLocalizedDestinations } from '@/i18n/content';
 import { lazy, Suspense } from 'react';
 import { LazyMount } from '../components/perf/LazyMount';
@@ -19,7 +18,7 @@ import { useState } from 'react';
 import { PromoBadge } from '../components/promo/PromoBadge';
 import { PriceTag } from '../components/promo/PriceTag';
 import { PromoBanner } from '../components/promo/PromoBanner';
-import { discountedPrice, waPromoLink } from '@/lib/promo';
+import { waPromoLink } from '@/lib/promo';
 import { usePromoActive } from '../components/promo/PromoProvider';
 import { StructuredData, buildTourSchema, buildReviewSchema, buildFaqSchema } from '../components/seo/StructuredData';
 import { TOUR_DEPARTURE_CITY, getCityHub } from '@/data/tour-hierarchy';
@@ -50,23 +49,13 @@ export default function TourDetail() {
   const departCity = TOUR_DEPARTURE_CITY[tour.id];
   const departHub = departCity ? getCityHub(departCity) : undefined;
 
-  // Dynamic pricing: use per-traveler tiers if available, else fall back to flat price
-  const tiers = tour.pricingTiers;
-  const pricePerPerson: number = tour.quoteOnly === true ? 0 : travelers >= 6
-    ? 0
-    : tiers
-      ? (tiers as Record<number, number>)[Math.min(travelers, 5)] ?? parseInt(tour.price)
-      : parseInt(tour.price);
-  const totalPrice = travelers >= 6 ? 0 : pricePerPerson * travelers;
-  const isGroupQuote = travelers >= 6;
-
-  // Limited-time 2026 promotion (10% off)
+  // Every private journey is quoted on the dates and the group, so this page
+  // never computes a total: the panel collects dates and party size and the
+  // team replies with the real figure.
   const promoOn = usePromoActive();
-  const discTotalPrice = discountedPrice(totalPrice);
 
   // Day-by-day itinerary — rendered only when the tour defines one matching its
   // real duration, so a tour can never display an itinerary for a different length.
-  const isThreeDaySahara = tour.id === '3-day-sahara-marrakech';
   const isQuoteOnly = tour.quoteOnly === true;
   const itinerary = tour.itineraryDays ?? [];
 
@@ -114,7 +103,7 @@ export default function TourDetail() {
   return (
     <Layout>
       {/* Schema.org structured data: Tour, FAQ, Breadcrumb */}
-      {!isQuoteOnly && <StructuredData id="tour" data={buildTourSchema(tour, params.id, lang)} />}
+      <StructuredData id="tour" data={buildTourSchema(tour, params.id, lang)} />
       {/* MGA_QUOTE_ONLY_THREE_DAY_UI_V1 */}
       {tour.faq && tour.faq.length > 0 && (
         <StructuredData id="tour-faq" data={buildFaqSchema(tour.faq)} />
@@ -156,7 +145,7 @@ export default function TourDetail() {
               <span className="flex items-center gap-2"><Users className="w-5 h-5 text-primary" /> {t('tour_private')}</span>
               <span className="flex items-baseline gap-2 md:pl-6 md:border-l border-white/20">
                 {isQuoteOnly ? (
-                  <span className="text-sm font-semibold text-white">Request a private quote</span>
+                  <span className="text-sm font-semibold text-white">{t('price_tailored')}</span>
                 ) : (
                   <>
                     <span className="text-sm font-sans font-normal text-white/80">{t('from')}</span>
@@ -437,13 +426,8 @@ export default function TourDetail() {
           <div className="lg:w-1/3">
             <div className="sticky top-28 bg-card border border-border rounded-3xl p-8 shadow-2xl">
 
-              <h3 className="font-serif text-2xl text-foreground mb-4">{isThreeDaySahara ? 'Book Now · Pay Later' : t('book_now')}</h3>
-              {isThreeDaySahara && (
-                <div className="mb-5 rounded-2xl border border-primary/25 bg-primary/5 p-4">
-                  <p className="font-semibold text-foreground text-sm">Confirm the trip before you pay.</p>
-                  <p className="mt-1 text-xs leading-relaxed text-muted-foreground">Send us your dates and group size first. We confirm the itinerary and payment terms with you before you make a payment.</p>
-                </div>
-              )}
+              <h3 className="font-serif text-2xl text-foreground mb-2">{t('book_quote_title')}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-5">{t('book_quote_lead')}</p>
               {/* MGA_THREE_DAY_ENRICHED_V1 */}
 
               {promoOn && (
@@ -456,44 +440,26 @@ export default function TourDetail() {
                 </div>
               )}
 
-              {/* Dynamic per-person pricing */}
-              <div className="mb-2">
-                {isGroupQuote ? (
-                  <span className="font-serif text-2xl text-foreground font-bold">{t('book_group_quote')}</span>
-                ) : (
-                  <>
-                    <PriceTag price={pricePerPerson} size="lg" />
-                    <span className="text-muted-foreground ml-2">{t('book_per_person')}</span>
-                  </>
-                )}
-              </div>
-              {tiers && !isGroupQuote && (
-                <div className="flex flex-wrap gap-1 mb-5">
-                  {([1,2,3,4,5] as const).map(n => (
-                    <button
-                      key={n}
-                      onClick={() => setTravelers(n)}
-                      className={`text-xs px-2.5 py-1 rounded-full border font-medium transition-all ${travelers === n ? 'bg-primary text-primary-foreground border-primary' : 'border-border text-muted-foreground hover:border-primary/50'}`}
-                    >
-                      {n}p ${promoOn ? discountedPrice((tiers as Record<number, number>)[n]) : (tiers as Record<number, number>)[n]}
-                    </button>
-                  ))}
-                  <button
-                    onClick={() => setTravelers(6)}
-                    className={`text-xs px-2.5 py-1 rounded-full border font-medium transition-all ${travelers >= 6 ? 'bg-primary text-primary-foreground border-primary' : 'border-border text-muted-foreground hover:border-primary/50'}`}
-                  >
-                    {t('group_6_plus')}
-                  </button>
-                </div>
-              )}
+              <p className="font-serif text-2xl text-foreground font-bold mb-5">{t('price_tailored')}</p>
+
+              {/* The three steps that actually happen — no payment is taken here. */}
+              <ol className="mb-6 space-y-3">
+                {[t('book_step1'), t('book_step2'), t('book_step3')].map((step, i) => (
+                  <li key={step} className="flex gap-3 text-sm text-muted-foreground">
+                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/15 text-xs font-bold text-primary-text">{i + 1}</span>
+                    <span className="leading-relaxed">{step}</span>
+                  </li>
+                ))}
+              </ol>
 
               {/* Booking Controls */}
-              <div className="space-y-5 mb-8">
+              <div className="space-y-5 mb-6">
                 <div className="space-y-2">
-                  <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider">{t('book_select_date')}</label>
+                  <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider" htmlFor="tour-date">{t('book_select_date')}</label>
                   <div className="relative">
-                    <CalendarDays className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-primary" />
+                    <CalendarDays className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-primary" aria-hidden="true" />
                     <input
+                      id="tour-date"
                       type="date"
                       value={date}
                       onChange={(e) => setDate(e.target.value)}
@@ -503,7 +469,7 @@ export default function TourDetail() {
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider">{t('book_travelers')}</label>
+                  <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider block">{t('book_travelers')}</span>
                   <div className="flex items-center justify-between bg-background border border-border rounded-xl p-2">
                     <button
                       onClick={() => setTravelers(Math.max(1, travelers - 1))}
@@ -522,17 +488,9 @@ export default function TourDetail() {
                     </button>
                   </div>
                 </div>
-
-                <div className="bg-muted p-4 rounded-xl flex justify-between items-center border border-border">
-                  <span className="font-bold text-foreground">{t('book_total')}</span>
-                  {isGroupQuote
-                    ? <span className="text-sm font-bold text-primary">{t('group_6_plus')}</span>
-                    : <PriceTag price={totalPrice} size="md" />
-                  }
-                </div>
               </div>
 
-              <div className="space-y-4 mb-8">
+              <div className="space-y-4 mb-6">
                 <a
                   href={promoOn
                     ? waPromoLink(`${t('promo_wa_message')}\n\n${tour.name} · ${travelers}p${date ? ` · ${date}` : ''}`)
@@ -541,34 +499,8 @@ export default function TourDetail() {
                   rel="noreferrer"
                   className="w-full bg-[#25D366] text-[#0d2b1d] py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-[#128C7E] transition-all hover:-translate-y-1 shadow-lg shadow-[#25D366]/30 text-lg"
                 >
-                  <SiWhatsapp className="w-6 h-6" aria-hidden="true" /> {promoOn ? t('promo_cta') : t('book_whatsapp')}
+                  <SiWhatsapp className="w-6 h-6" aria-hidden="true" /> {promoOn ? t('promo_cta') : t('price_quote_cta')}
                 </a>
-
-                {/* Quote-only routes never send an invented price to a payment provider. */}
-                {isQuoteOnly ? (
-                  <a href={contactInfo.whatsapp + '?text=' + encodeURIComponent('I am interested in ' + tour.name + '. Please confirm the itinerary, inclusions and payment terms before I pay.')} target="_blank" rel="noreferrer" className="w-full bg-foreground text-background py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-primary transition-all hover:-translate-y-1 shadow-lg text-lg">
-                    Request My Trip & Payment Terms
-                  </a>
-                ) : !isGroupQuote ? (
-                  <a
-                    href={`${contactInfo.paypal}/${promoOn ? discTotalPrice : totalPrice}`}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="w-full bg-[#003087] text-white py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-[#001f5e] transition-all hover:-translate-y-1 shadow-lg"
-                  >
-                    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 0 0-.607-.541c-.013.076-.026.175-.041.254-.93 4.778-4.005 7.201-9.138 7.201h-2.19a.563.563 0 0 0-.556.479l-1.187 7.527h-.506l-.24 1.516a.56.56 0 0 0 .554.647h3.882c.46 0 .85-.334.922-.788.06-.26.76-4.852.816-5.09a.932.932 0 0 1 .923-.788h.58c3.76 0 6.705-1.528 7.565-5.946.36-1.847.174-3.388-.777-4.471z"/></svg>
-                    {t('book_paypal')}
-                  </a>
-                ) : (
-                  <a
-                    href={`${contactInfo.whatsapp}?text=${encodeURIComponent(`I'm interested in a group booking for ${tour.name}. Please send me a custom quote.`)}`}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="w-full bg-foreground text-background py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-primary transition-colors text-lg"
-                  >
-                    {t('book_group_quote')}
-                  </a>
-                )}
 
                 <div className="relative flex py-2 items-center">
                   <div className="flex-grow border-t border-border"></div>
@@ -576,15 +508,21 @@ export default function TourDetail() {
                   <div className="flex-grow border-t border-border"></div>
                 </div>
 
+                <Link href={`/book?tour=${encodeURIComponent(tour.name)}`} className="block w-full bg-foreground text-background text-center py-4 rounded-xl font-bold hover:bg-primary hover:text-primary-foreground transition-colors text-lg">
+                  {t('book_form_cta')}
+                </Link>
+
                 <Link href="/contact" className="block w-full bg-background border-2 border-foreground text-foreground text-center py-4 rounded-xl font-bold hover:bg-foreground hover:text-background transition-colors text-lg">
                   {t('book_customize')}
                 </Link>
               </div>
 
+              <p className="text-[11px] leading-relaxed text-muted-foreground mb-6">{t('book_quote_note')}</p>
+
               <ul className="text-sm text-muted-foreground space-y-3 pt-6 border-t border-border">
-                <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-primary shrink-0" /> {t('book_free_cancel')}</li>
-                <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-primary shrink-0" /> {t('book_no_fees')}</li>
-                <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-primary shrink-0" /> {t('book_secure_payment')}</li>
+                <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-primary shrink-0" /> {t('book_fact_private')}</li>
+                <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-primary shrink-0" /> {t('book_fact_quote')}</li>
+                <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-primary shrink-0" /> {t('book_fact_terms')}</li>
               </ul>
             </div>
           </div>

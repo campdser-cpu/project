@@ -39,6 +39,7 @@ import { localizedComparisonMeta } from '../src/data/comparison-meta-i18n';
 import { tourDepthFor } from '../src/data/tourDepth';
 import { catalogImage, imagesForDestination, DEST_FOOD_IMAGE, type CatalogImage } from '../src/data/imageCatalog';
 import { SOURCES } from '../src/data/sources';
+import { BOOK_COPY } from '../src/data/book-copy';
 import { publishablePhotosForContexts, publishableLibraryPhotos, photoSrcSet, type PhotoAsset } from '../src/data/photoLibrary';
 import { languages, t as translate } from '../src/i18n/index';
 import type { Lang } from '../src/i18n/index';
@@ -143,6 +144,7 @@ const TOUR_ROUTES = [
 // MGA_THREE_DAY_PRERENDER_V1
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
+const NL = String.fromCharCode(10);
 const AMP = String.fromCharCode(38); // '&'
 const ENT = AMP;
 
@@ -358,7 +360,7 @@ function buildCityHubContent(slug: string, lang: Lang): string {
   for (const t of cityTours) {
     tourBlocks += h2(t.name)
       + paragraph(t.description ?? '')
-      + paragraph(`${tr(lang, 'search_duration')}: ${t.duration} · ${tr(lang, 'from')} ${t.quoteOnly ? t.price : '€' + t.price}`)
+      + paragraph(`${tr(lang, 'search_duration')}: ${t.duration} · ${t.quoteOnly ? tr(lang, 'price_tailored') : `${tr(lang, 'from')} €${t.price}`}`)
       + '<ul>' + t.highlights.map((x) => `      <li>${link(`${SITE_URL}/${lang}/tours/${t.id}`, x)}</li>`).join('\n') + '    </ul>'
       + rawParagraph(link(`${SITE_URL}/${lang}/tours/${t.id}`, tr(lang, 'tours_view') + ' ' + escapeHtml(t.name)));
   }
@@ -410,7 +412,7 @@ function buildDurationHubContent(slug: string, days: number, lang: Lang): string
   for (const t of matching) {
     tourBlocks += h2(t.name)
       + paragraph(t.description ?? '')
-      + paragraph(`${tr(lang, 'from')} ${t.quoteOnly ? t.price : '€' + t.price} · ${t.duration}`)
+      + paragraph(`${t.quoteOnly ? tr(lang, 'price_tailored') : `${tr(lang, 'from')} €${t.price}`} · ${t.duration}`)
       + rawParagraph(link(`${SITE_URL}/${lang}/tours/${t.id}`, tr(lang, 'tours_view') + ' ' + escapeHtml(t.name)));
   }
 
@@ -667,6 +669,23 @@ function buildContactContent(lang: Lang): string {
   const socialItems = CONTACT_SOCIAL_LINKS.map((s) => li(link(s.url, s.label))).join('\n');
   return h1(tr(lang, 'nav_contact')) + `    <ul>\n${contactItems.join('\n')}\n    </ul>\n` + h2(tr(lang, 'contact_socials_label') || 'Official Social Profiles') + `    <ul>\n${socialItems}\n    </ul>\n`;
 }
+/**
+ * /book — the booking-request page. The snapshot carries the same promise the
+ * form makes (a request now, payment only after the trip is confirmed) so the
+ * page reads correctly for crawlers and without JavaScript.
+ */
+function buildBookContent(lang: Lang): string {
+  const c = BOOK_COPY[lang] ?? BOOK_COPY.en;
+  return h1(c.title)
+    + paragraph(c.subtitle)
+    + paragraph(c.promise)
+    + h2(c.payLaterTitle)
+    + paragraph(c.payLaterText)
+    + ul(c.trust)
+    + rawParagraph(link(contactInfo.whatsapp, `${c.whatsapp} — ${contactInfo.whatsappNumber}`))
+    + rawParagraph(link(`${SITE_URL}/${lang}/tours`, tr(lang, 'nav_tours')))
+    + rawParagraph(link(`${SITE_URL}/${lang}/contact`, tr(lang, 'nav_contact')));
+}
 function buildFaqContent(lang: Lang): string { return h1(tr(lang, 'nav_faq')) + faqBlock(getLocalizedFaq(lang)); }
 
 const BLOG_SLUG_INDEX: Record<string, number> = {
@@ -758,10 +777,16 @@ function buildFooterContent(lang: Lang, rest: string): string {
   const destinationItems = getLocalizedDestinations(lang)
     .map((d) => `      <li>${link(`${SITE_URL}/${lang}/destinations/${d.id}`, d.name)}</li>`)
     .join('\n');
+  // Plan-your-trip group: the booking request, the itinerary builder and contact.
+  const planItems = [
+    { rest: '/book', label: tr(lang, 'book_quote_title') },
+    { rest: '/trip-builder', label: tr(lang, 'nav_build_journey') },
+    { rest: '/contact', label: tr(lang, 'nav_contact') },
+  ].map((x) => `      <li>${link(`${SITE_URL}/${lang}${x.rest}`, x.label)}</li>`).join(NL);
   const experienceItems = Object.keys(EXPERIENCE_PAGE_ROUTES)
     .map((rest) => `      <li>${link(`${SITE_URL}/${lang}${rest}`, experienceLabel(rest, lang))}</li>`)
     .join('\n');
-  return `<footer class="prerendered-site-footer">\n  <div>\n  <h2>${escapeHtml(tr(lang, 'nav_tours'))}</h2>\n  <ul>\n${cityItems}\n  </ul>\n  </div>\n  <div>\n  <h2>${escapeHtml(tr(lang, 'nav_destinations') || 'Destinations')}</h2>\n  <ul>\n${destinationItems}\n  </ul>\n  </div>\n  <div>\n  <h2>${escapeHtml(tr(lang, 'nav_experiences') || 'Experiences')}</h2>\n  <ul>\n${experienceItems}\n  </ul>\n  </div>\n${buildLanguageNav(rest)}</footer>\n`;
+  return `<footer class="prerendered-site-footer">\n  <div>\n  <h2>${escapeHtml(tr(lang, 'nav_tours'))}</h2>\n  <ul>\n${cityItems}\n  </ul>\n  </div>\n  <div>\n  <h2>${escapeHtml(tr(lang, 'nav_destinations') || 'Destinations')}</h2>\n  <ul>\n${destinationItems}\n  </ul>\n  </div>\n  <div>\n  <h2>${escapeHtml(tr(lang, 'nav_experiences') || 'Experiences')}</h2>\n  <ul>\n${experienceItems}\n  </ul>\n  </div>\n  <div>\n  <h2>${escapeHtml(tr(lang, 'footer_plan_title'))}</h2>\n  <ul>\n${planItems}\n  </ul>\n  </div>\n${buildLanguageNav(rest)}</footer>\n`;
 }
 
 // Crawlable language-version links for the current page. The hrefs are exactly
@@ -1161,6 +1186,7 @@ function buildRoutes(lang: Lang): RouteEntry[] {
   add('/destinations', `${lang}/destinations/index.html`, () => buildDestinationsContent(lang));
   add('/about', `${lang}/about/index.html`, () => buildAboutContent(lang));
   add('/contact', `${lang}/contact/index.html`, () => buildContactContent(lang));
+  add('/book', `${lang}/book/index.html`, () => buildBookContent(lang));
   add('/faq', `${lang}/faq/index.html`, () => buildFaqContent(lang));
   add('/blog', `${lang}/blog/index.html`, () => buildBlogContent(lang));
   for (const post of blogPosts) {
@@ -1327,8 +1353,12 @@ function buildRoutes(lang: Lang): RouteEntry[] {
       ]);
     }
   }
-  for (const id of TOUR_ROUTES) { const t = getLocalizedTour(id, lang); add(`/tours/${id}`, `${lang}/tours/${id}.html`, () => buildTourDetailContent(id, lang), t ? (t.quoteOnly
-      ? ([
+  // Every tour page carries the same schema set: the TouristTrip itself (its
+  // Offer appears only when a real price is published), the localized
+  // breadcrumb down from the departure-city hub, and the tour's FAQ.
+  for (const id of TOUR_ROUTES) { const t = getLocalizedTour(id, lang); add(`/tours/${id}`, `${lang}/tours/${id}.html`, () => buildTourDetailContent(id, lang), t ? (
+        ([
+          ...(buildTourSchema(t, id, lang).slice(0, 1) as Record<string, unknown>[]),
           buildBreadcrumb((() => {
             const city = TOUR_DEPARTURE_CITY[id];
             const hub = city ? CITY_HUBS.find((h) => h.id === city) : undefined;
@@ -1346,8 +1376,7 @@ function buildRoutes(lang: Lang): RouteEntry[] {
             return crumbs;
           })(), lang),
           ...(t.faq && t.faq.length ? [buildFaqSchema(t.faq)] : []),
-        ] as Record<string, unknown>[])
-      : (buildTourSchema(t, id, lang) as Record<string, unknown>[]))
+        ] as Record<string, unknown>[]))
     : [] /* MGA_THREE_DAY_SCHEMA_V1 */); }
   for (const dest of destinations) { const d = getLocalizedDestination(dest.id, lang); add(`/destinations/${dest.id}`, `${lang}/destinations/${dest.id}.html`, () => buildDestinationDetailContent(dest.id, lang), d ? (buildDestinationSchema(d, lang) as Record<string, unknown>[]) : []); }
   return routes;

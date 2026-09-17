@@ -751,7 +751,8 @@ export type Tour = {
   name: string;
   duration: string;
   highlights: string[];
-  price: string;           // base price (2 persons) for display
+  /** Kept for the rare fixed-price product; private journeys carry the quote sentinel. */
+  price: string;
   quoteOnly?: boolean;      // inquiry-only route; no public price is implied
   pricingTiers: PricingTier;
   image: string;
@@ -824,8 +825,9 @@ export const tours: Tour[] = [
       "Sunset camel trek in Erg Chebbi",
       "Night in a Sahara desert camp",
     ],
-    price: "450",
-    pricingTiers: { 1: 690, 2: 450, 3: 370, 4: 310, 5: 280 },
+    price: "Request a quote",
+    pricingTiers: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 },
+    quoteOnly: true,
     image: "/images/curated/berber-guide-camel-sahara-desert-merzouga.webp",
     aliases: ['3-days-marrakech-to-merzouga-desert-tour', 'merzouga-desert-tour'],
     description: "A three-day private journey from Marrakech to the dunes of Merzouga, built for travelers who want a real Sahara experience without pretending the road is short. Cross the High Atlas, visit Aït Ben Haddou, travel through the Dades Valley and Todra Gorge, reach Merzouga and Erg Chebbi for a sunset camel trek and desert-camp night, then return to Marrakech through the changing landscapes of southern Morocco. Three days is the shortest practical format for this overland route; if you prefer slower travel or more time in the desert, ask us about a longer itinerary.",
@@ -893,8 +895,9 @@ export const tours: Tour[] = [
     duration: "5 Days / 4 Nights",
     category: "Cultural",
     highlights: ["Atlas Mountains Crossing", "Aït Ben Haddou (UNESCO)", "Erg Chebbi Sahara & Luxury Camp", "Fes el-Bali Medina", "Chefchaouen Blue City", "Meknès & Volubilis"],
-    price: "780",
-    pricingTiers: { 1: 1180, 2: 780, 3: 640, 4: 540, 5: 490 },
+    price: "Request a quote",
+    pricingTiers: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 },
+    quoteOnly: true,
     image: "/images/tours/ait-ben-haddou-ounila-reflection.webp",
     aliases: ['3-days-fes-to-marrakech-desert-tour'],
     description: "From the ochre imperial capital of Marrakech to the blue-washed lanes of Chefchaouen, this five-day journey weaves together Morocco's greatest imperial cities and a night under the Sahara stars. Cross the High Atlas to the UNESCO ksar of Aït Ben Haddou, sleep in a luxury desert camp among the dunes of Erg Chebbi, explore the medieval labyrinth of Fes, and wander the Roman ruins of Volubilis.",
@@ -989,8 +992,9 @@ export const tours: Tour[] = [
       "Imperial Fes Guided Tour",
       "Cedar Forest & Barbary Monkeys",
     ],
-    price: "1200",
-    pricingTiers: { 1: 1820, 2: 1200, 3: 990, 4: 830, 5: 740 },
+    price: "Request a quote",
+    pricingTiers: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 },
+    quoteOnly: true,
     image: "/images/curated/ait-ben-haddou-bridge-town-unesco-morocco.webp",
     aliases: ['morocco-desert-tour'],
     description:
@@ -1109,8 +1113,9 @@ export const tours: Tour[] = [
     duration: "10 Days / 9 Nights",
     category: "Honeymoon",
     highlights: ["Luxury Riads Only", "Private Desert Camp", "Hot Air Balloon over Marrakech", "Hammam & Spa", "Sunset Camel Trek"],
-    price: "2500",
-    pricingTiers: { 1: 2500, 2: 2500, 3: 2500, 4: 2500, 5: 2500 },
+    price: "Request a quote",
+    pricingTiers: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 },
+    quoteOnly: true,
     image: "/images/tours/couple-sunset-erg-chebbi.webp",
     description: "Designed exclusively for couples, this honeymoon itinerary weaves romance into every moment. Private riad suites, a candlelit dinner in the Sahara, a hot air balloon flight over the Atlas at dawn, and a hamam ritual for two — Morocco has never been so intimate.",
     routeIds: ["marrakech", "ait-ben-haddou", "ouarzazate", "dades-valley", "todra-gorge", "merzouga", "erg-chebbi", "fes"],
@@ -1250,8 +1255,9 @@ export const tours: Tour[] = [
       "Erg Chebbi Camel Trek at Sunset",
       "Luxury Desert Camp under the Stars",
     ],
-    price: "1390",
-    pricingTiers: { 1: 1990, 2: 1390, 3: 1150, 4: 980, 5: 870 },
+    price: "Request a quote",
+    pricingTiers: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 },
+    quoteOnly: true,
     image: "/images/curated/todra-gorge-river-canyon-high-atlas.webp",
     description:
       "The ultimate grand loop of southern Morocco — from the palaces and souks of Marrakech to the windswept Atlantic port of Essaouira, down the surf coast through Taghazout and Agadir, then inland across saffron country to the UNESCO kasbah of Aït Ben Haddou, the dramatic Todra and Dades gorges, and finally the towering golden dunes of Erg Chebbi. Eight days of private travel, handpicked luxury riads and hotels, a night in a premium desert camp, and a camel trek beneath the Sahara stars.",
@@ -1374,8 +1380,9 @@ export const tours: Tour[] = [
     duration: "9 Days / 8 Nights",
     category: "Family",
     highlights: ["Marrakech Family Activities", "Atlas Mountain Mule Ride", "Desert Camel Trek", "Hammam for Kids", "Snake Charmers & Storytellers"],
-    price: "950",
-    pricingTiers: { 1: 1450, 2: 950, 3: 780, 4: 660, 5: 590 },
+    price: "Request a quote",
+    pricingTiers: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 },
+    quoteOnly: true,
     image: "/images/curated/cascading-waterfall-todra-gorge.webp",
     description: "Morocco captivates children and adults alike. This family itinerary is carefully paced with experiences that delight all ages — riding camels in the Sahara, exploring ancient kasbahs, tasting street food in the medina, and learning traditional crafts from Berber artisans.",
     routeIds: ["marrakech", "ait-ben-haddou", "dades-valley", "todra-gorge", "merzouga", "fes"],

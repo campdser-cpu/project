@@ -1,16 +1,11 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { AlertCircle } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Link, useLocation } from 'wouter';
-import Book from './book';
+import { Link } from 'wouter';
 
 export default function NotFound() {
   const { t } = useLanguage();
-  const [location] = useLocation();
 
-  // Keep the existing Wouter architecture stable while exposing the new
-  // booking flow at /book for all localized router bases.
-  if (location === '/book') return <Book />;
 
   return (
     <div className="min-h-screen w-full flex items-center justify-center bg-gray-50">

@@ -44,6 +44,7 @@ export function Footer() {
               <li><Link href="/about" className="text-white/70 hover:text-primary transition-colors">{t('nav_about')}</Link></li>
               <li><Link href="/blog" className="text-white/70 hover:text-primary transition-colors">{t('footer_travel_blog')}</Link></li>
               <li><Link href="/faq" className="text-white/70 hover:text-primary transition-colors">{t('footer_faq')}</Link></li>
+              <li><Link href="/book" className="text-white/70 hover:text-primary transition-colors">{t('book_quote_title')}</Link></li>
               <li><Link href="/contact" className="text-white/70 hover:text-primary transition-colors">{t('nav_contact')}</Link></li>
             </ul>
           </div>
