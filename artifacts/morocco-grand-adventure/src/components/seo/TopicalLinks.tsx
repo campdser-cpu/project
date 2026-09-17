@@ -1,6 +1,8 @@
 import { Link } from 'wouter';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { getLocalizedDestinations, getLocalizedTours } from '@/i18n/content';
+import { getLocalizedGuide } from '@/i18n/guides';
+import { COMPARISONS } from '@/data/seoHub';
 
 const RELATED_DESTINATION_IDS: Record<string, string[]> = {
   marrakech: ['ourika-valley', 'ait-ben-haddou', 'dades-valley'],
@@ -80,6 +82,9 @@ function SectionShell({ children, label }: { children: React.ReactNode; label: s
     </section>
   );
 }
+
+// The question every reader of a private itinerary asks first.
+const COMPARE_SLUG = 'private-vs-shared-tour';
 
 export function TopicalLinks({ destinationId, tourId, context }: TopicalLinksProps) {
   const { lang, t } = useLanguage();
@@ -204,7 +209,7 @@ export function TopicalLinks({ destinationId, tourId, context }: TopicalLinksPro
 
     return (
       <SectionShell label={t('td_your_route')}>
-        <div className="grid gap-8 md:grid-cols-2">
+        <div className="grid gap-8 md:grid-cols-3">
           {routeStops.length > 0 && (
             <div>
               <h2 className="font-serif text-2xl text-foreground mb-4">{t('td_your_route')}</h2>
@@ -217,6 +222,13 @@ export function TopicalLinks({ destinationId, tourId, context }: TopicalLinksPro
               <LinkList items={relatedTours} href={id => `/tours/${id}`} />
             </div>
           )}
+          <div>
+            <h2 className="font-serif text-2xl text-foreground mb-4">{t('compare_before_title')}</h2>
+            <LinkList
+              items={[{ id: COMPARE_SLUG, name: getLocalizedGuide(COMPARE_SLUG, lang)?.title ?? COMPARISONS.find((page) => page.slug === COMPARE_SLUG)?.title ?? '' }]}
+              href={id => `/comparisons/${id}`}
+            />
+          </div>
         </div>
       </SectionShell>
     );

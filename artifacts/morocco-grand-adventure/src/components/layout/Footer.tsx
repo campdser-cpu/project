@@ -31,7 +31,6 @@ export function Footer() {
               <a href="https://www.tiktok.com/@morocco.grand.adv" target="_blank" rel="noreferrer" aria-label="Follow Morocco Grand Adventure on TikTok" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"><SiTiktok className="w-5 h-5" aria-hidden="true" /></a>
               <a href="https://www.facebook.com/share/1DFzDX72P3/" target="_blank" rel="noreferrer" aria-label="Like Morocco Grand Adventure on Facebook" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"><SiFacebook className="w-5 h-5" aria-hidden="true" /></a>
             </div>
-            <p className="text-xs text-white/70">{t('footer_tagline_alt') ?? 'Morocco travel experiences and desert adventures.'}</p>
           </div>
           <div>
             <h3 className="font-serif text-xl font-medium mb-4 sm:mb-6 text-primary">{t('footer_quick_links')}</h3>
@@ -44,6 +43,7 @@ export function Footer() {
               <li><Link href="/about" className="text-white/70 hover:text-primary transition-colors">{t('nav_about')}</Link></li>
               <li><Link href="/blog" className="text-white/70 hover:text-primary transition-colors">{t('footer_travel_blog')}</Link></li>
               <li><Link href="/faq" className="text-white/70 hover:text-primary transition-colors">{t('footer_faq')}</Link></li>
+              <li><Link href="/things-to-do-in-morocco" className="text-white/70 hover:text-primary transition-colors">{t('ttd_footer_link')}</Link></li>
               <li><Link href="/book" className="text-white/70 hover:text-primary transition-colors">{t('book_quote_title')}</Link></li>
               <li><Link href="/contact" className="text-white/70 hover:text-primary transition-colors">{t('nav_contact')}</Link></li>
             </ul>

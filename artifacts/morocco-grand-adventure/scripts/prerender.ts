@@ -40,6 +40,8 @@ import { tourDepthFor } from '../src/data/tourDepth';
 import { catalogImage, imagesForDestination, DEST_FOOD_IMAGE, type CatalogImage } from '../src/data/imageCatalog';
 import { SOURCES } from '../src/data/sources';
 import { BOOK_COPY } from '../src/data/book-copy';
+import { THINGS_COPY } from '../src/data/things-to-do/all';
+import { THINGS, type GroupKey } from '../src/data/things-to-do/types';
 import { publishablePhotosForContexts, publishableLibraryPhotos, photoSrcSet, type PhotoAsset } from '../src/data/photoLibrary';
 import { languages, t as translate } from '../src/i18n/index';
 import type { Lang } from '../src/i18n/index';
@@ -264,7 +266,18 @@ function buildHomeContent(lang: Lang): string {
   // re-renders the identical poster — by then it is cache-warm, so the LCP
   // candidate paints almost instantly.
   const lcpPoster = `<img class="prerendered-lcp-poster" src="/images/hero/sahara-camel-riders-poster.webp" alt="" aria-hidden="true" width="720" height="1280" fetchpriority="high" />\n`;
-  return lcpPoster + heroH1Block + paragraph(tr(lang, 'hero_subtext')) + h2(tr(lang, 'section_destinations') || 'Top Destinations') + `    <ul>\n${destNames}\n    </ul>\n` + h2(tr(lang, 'section_tours') || 'Featured Tours') + `    <ul>\n${tourNames}\n    </ul>\n` + hubBlock + h2(tr(lang, 'section_reviews') || 'Traveler Stories') + `<div class="prerendered-reviews-container">\n${reviewBlocks}\n    </div>\n`;
+  // Where to start: the same six doors the page shows, so the crawlable
+  // snapshot links into the list, the destinations, the guide and the basics.
+  const discovery = [
+    { rest: '/things-to-do-in-morocco', label: 'ttd_footer_link' },
+    { rest: '/destinations', label: 'nav_destinations' },
+    { rest: '/merzouga-guide', label: 'footer_merzouga_guide' },
+    { rest: '/day-trips', label: 'nav_day_trips' },
+    { rest: '/travel-info', label: 'dest_travel_info' },
+    { rest: '/gallery', label: 'nav_gallery' },
+  ].map((d) => link(`${SITE_URL}/${lang}${d.rest}`, tr(lang, d.label)));
+  const discoveryBlock = h2(tr(lang, 'home_start_title')) + paragraph(tr(lang, 'home_start_sub')) + ul(discovery);
+  return lcpPoster + heroH1Block + paragraph(tr(lang, 'hero_subtext')) + discoveryBlock + h2(tr(lang, 'section_destinations') || 'Top Destinations') + `    <ul>\n${destNames}\n    </ul>\n` + h2(tr(lang, 'section_tours') || 'Featured Tours') + `    <ul>\n${tourNames}\n    </ul>\n` + hubBlock + h2(tr(lang, 'section_reviews') || 'Traveler Stories') + `<div class="prerendered-reviews-container">\n${reviewBlocks}\n    </div>\n`;
 }
 function buildHomeSchemas(lang: Lang): Record<string, unknown>[] {
   const reviewData = reviews.map((r) => ({ name: tr(lang, r.nameKey), text: tr(lang, r.quoteKey), rating: r.rating }));
@@ -534,7 +547,12 @@ function buildTopicalLinksContent(options: { destinationId?: string; tourId?: st
       ? `<div>\n        ${h2(tr(lang, 'tour_related')).trim()}\n        <div class="topical-link-list">${relatedTours.map((relatedTour) => ` ${link(`/${lang}/tours/${relatedTour.id}`, relatedTour.name)}`).join('')}</div>\n      </div>`
       : '';
 
-    return `<section class="border-t border-border bg-muted/40 py-12" aria-label="${escapeHtml(tr(lang, 'td_your_route'))}">\n  <div class="container mx-auto px-4 max-w-6xl">\n    <div class="grid gap-8 md:grid-cols-2">\n      ${routeLinks}\n      ${relatedTourLinks}\n    </div>\n  </div>\n</section>\n`;
+    const comparison = COMPARISONS.find((page) => page.slug === 'private-vs-shared-tour');
+    const compareLinks = comparison
+      ? `<div>\n        ${h2(tr(lang, 'compare_before_title')).trim()}\n        <div class="topical-link-list"> ${link(`/${lang}/comparisons/${comparison.slug}`, getLocalizedGuide(comparison.slug, lang)?.title ?? comparison.title)}</div>\n      </div>`
+      : '';
+
+    return `<section class="border-t border-border bg-muted/40 py-12" aria-label="${escapeHtml(tr(lang, 'td_your_route'))}">\n  <div class="container mx-auto px-4 max-w-6xl">\n    <div class="grid gap-8 md:grid-cols-3">\n      ${routeLinks}\n      ${relatedTourLinks}\n      ${compareLinks}\n    </div>\n  </div>\n</section>\n`;
   }
 
   return '';
@@ -574,7 +592,7 @@ function buildTourDetailContent(id: string, lang: Lang): string {
   const breadcrumb = departHub
     ? `<p class="prerendered-breadcrumb">${link(`${SITE_URL}/${lang}`, tr(lang, 'nav_home'))} › ${link(`${SITE_URL}/${lang}/tours`, tr(lang, 'nav_tours'))} › ${link(`${SITE_URL}/${lang}/tours/from-${departHub.slug}`, tr(lang, `hub_${departHub.id}_title`))}${durationHubCrumb} › ${escapeHtml(tour.name)}</p>\n`
     : '';
-  return breadcrumb + h1(tour.name) + paragraph(tour.description ?? '') + paragraph(`${tr(lang, 'search_duration')}: ${tour.duration}`) + h2(tr(lang, 'tour_why_love')) + ul(tour.highlights) + whyChooseBlock + (itinerary.length > 0 ? h2(tr(lang, 'tour_itinerary')) + ul(itinerary.map((d) => `${tr(lang, 'tour_day')} ${d.day}: ${d.title}`)) : '') + (included.length > 0 ? h2(tr(lang, 'tour_included')) + ul(included) : '') + (excluded.length > 0 ? h2(tr(lang, 'tour_not_included')) + ul(excluded) : '') + (faqs.length > 0 ? h2(tr(lang, 'nav_faq')) + faqBlock(faqs) : '') + (departHub ? h2(fmt(tr(lang, 'hub_related_title'), { city: tr(lang, `hub_${departHub.id}_name`) })) + paragraph(link(`${SITE_URL}/${lang}/tours/from-${departHub.slug}`, fmt(tr(lang, 'hub_related_browse'), { city: tr(lang, `hub_${departHub.id}_name`) }))) : '') + bestForBlock + guideLinksBlock + buildTopicalLinksContent({ tourId: tour.id }, lang);
+  return breadcrumb + h1(tour.name) + paragraph(tour.description ?? '') + paragraph(`${tr(lang, 'search_duration')}: ${tour.duration}`) + h2(tr(lang, 'tour_why_love')) + ul(tour.highlights) + whyChooseBlock + (itinerary.length > 0 ? h2(tr(lang, 'tour_itinerary')) + ul(itinerary.map((d) => `${tr(lang, 'tour_day')} ${d.day}: ${d.title}`)) : '') + (included.length > 0 ? h2(tr(lang, 'tour_included')) + ul(included) : '') + (excluded.length > 0 ? h2(tr(lang, 'tour_not_included')) + ul(excluded) : '') + (faqs.length > 0 ? h2(tr(lang, 'nav_faq')) + faqBlock(faqs) : '') + (departHub ? h2(fmt(tr(lang, 'hub_related_title'), { city: tr(lang, `hub_${departHub.id}_name`) })) + paragraph(link(`${SITE_URL}/${lang}/tours/from-${departHub.slug}`, fmt(tr(lang, 'hub_related_browse'), { city: tr(lang, `hub_${departHub.id}_name`) }))) : '') + bestForBlock + guideLinksBlock + rawParagraph(link(`${SITE_URL}/${lang}/book`, tr(lang, 'book_form_cta'))) + buildTopicalLinksContent({ tourId: tour.id }, lang);
 }
 function buildDestinationsContent(lang: Lang): string {
   // Mirror the live /destinations page structure: localized H1 + intro, each
@@ -617,6 +635,7 @@ function buildDestinationDetailContent(destId: string, lang: Lang): string {
     + (gallery ? h2(`${d.name} ${tr(lang, 'dest_pictures_title')}`) + gallery : '')
     + catalogBlock
     + foodBlock
+    + rawParagraph(link(`${SITE_URL}/${lang}/things-to-do-in-morocco`, tr(lang, 'ttd_footer_link')))
     + merzougaGuideLinks
     + buildTopicalLinksContent({ destinationId: d.id }, lang);
 }
@@ -685,6 +704,48 @@ function buildBookContent(lang: Lang): string {
     + rawParagraph(link(contactInfo.whatsapp, `${c.whatsapp} — ${contactInfo.whatsappNumber}`))
     + rawParagraph(link(`${SITE_URL}/${lang}/tours`, tr(lang, 'nav_tours')))
     + rawParagraph(link(`${SITE_URL}/${lang}/contact`, tr(lang, 'nav_contact')));
+}
+/**
+ * /things-to-do-in-morocco — the editorial list. The snapshot carries every
+ * entry (heading, photograph, two sentences, the practical line) and both of
+ * its onward links, so the page is complete without JavaScript and the
+ * destination tree gains twenty-five contextual links per language.
+ */
+function buildThingsToDoContent(lang: Lang): string {
+  const copy = THINGS_COPY[lang] ?? THINGS_COPY.en;
+  const order: GroupKey[] = ['sahara', 'marrakech', 'fes', 'south', 'coast', 'culture'];
+  let n = 0;
+  let out = h1(copy.heading) + paragraph(copy.intro);
+  for (const group of order) {
+    const entries = THINGS.filter((thing) => thing.group === group);
+    if (entries.length === 0) continue;
+    out += h2(copy.groups[group]);
+    for (const thing of entries) {
+      const item = copy.items[thing.id];
+      if (!item) continue;
+      n += 1;
+      const place = getLocalizedDestination(thing.destination, lang);
+      const img = thing.image;
+      out += `    <h3>${n}. ${escapeHtml(item.title)}</h3>\n`;
+      out += `    <figure>\n      <img src="${img.src}" srcset="${img.srcSet}" sizes="(min-width: 768px) 46vw, 100vw" alt="${escapeHtml(img.alt)}" width="${img.width}" height="${img.height}" loading="lazy" decoding="async" />\n    </figure>\n`;
+      out += paragraph(item.body) + paragraph(item.tip);
+      const links: string[] = [];
+      if (place) links.push(link(`${SITE_URL}/${lang}/destinations/${thing.destination}`, place.name));
+      links.push(link(`${SITE_URL}/${lang}${thing.link}`, copy.links[thing.linkKey]));
+      out += ul(links.map((l) => l));
+    }
+  }
+  const keepReading = [
+    { rest: '/merzouga-guide', label: 'footer_merzouga_guide' },
+    { rest: '/travel-info', label: 'dest_travel_info' },
+    { rest: '/blog', label: 'footer_travel_blog' },
+    { rest: '/faq', label: 'footer_faq' },
+  ].map((r) => link(`${SITE_URL}/${lang}${r.rest}`, tr(lang, r.label)));
+  out += ul(keepReading);
+  out += h2(copy.ctaTitle) + paragraph(copy.ctaText)
+    + rawParagraph(link(`${SITE_URL}/${lang}/trip-builder`, copy.ctaButton))
+    + rawParagraph(link(`${SITE_URL}/${lang}/tours`, tr(lang, 'nav_tours')));
+  return out;
 }
 function buildFaqContent(lang: Lang): string { return h1(tr(lang, 'nav_faq')) + faqBlock(getLocalizedFaq(lang)); }
 
@@ -780,6 +841,7 @@ function buildFooterContent(lang: Lang, rest: string): string {
   // Plan-your-trip group: the booking request, the itinerary builder and contact.
   const planItems = [
     { rest: '/book', label: tr(lang, 'book_quote_title') },
+    { rest: '/things-to-do-in-morocco', label: tr(lang, 'ttd_footer_link') },
     { rest: '/trip-builder', label: tr(lang, 'nav_build_journey') },
     { rest: '/contact', label: tr(lang, 'nav_contact') },
   ].map((x) => `      <li>${link(`${SITE_URL}/${lang}${x.rest}`, x.label)}</li>`).join(NL);
@@ -1187,6 +1249,12 @@ function buildRoutes(lang: Lang): RouteEntry[] {
   add('/about', `${lang}/about/index.html`, () => buildAboutContent(lang));
   add('/contact', `${lang}/contact/index.html`, () => buildContactContent(lang));
   add('/book', `${lang}/book/index.html`, () => buildBookContent(lang));
+  add('/things-to-do-in-morocco', `${lang}/things-to-do-in-morocco/index.html`, () => buildThingsToDoContent(lang), [
+    buildBreadcrumb([
+      { name: tr(lang, 'nav_home'), path: '/' },
+      { name: (THINGS_COPY[lang] ?? THINGS_COPY.en).heading, path: '/things-to-do-in-morocco' },
+    ], lang) as Record<string, unknown>,
+  ]);
   add('/faq', `${lang}/faq/index.html`, () => buildFaqContent(lang));
   add('/blog', `${lang}/blog/index.html`, () => buildBlogContent(lang));
   for (const post of blogPosts) {

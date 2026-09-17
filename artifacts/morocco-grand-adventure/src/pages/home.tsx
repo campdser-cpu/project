@@ -87,6 +87,17 @@ function getSignaturePlaces(t: (key: string) => string) {
   ];
 }
 
+// Six doors into the site for a visitor who is still deciding. Labels reuse the
+// navigation vocabulary; the one-liners are authored per language.
+const DISCOVERY = [
+  { href: '/things-to-do-in-morocco', label: 'ttd_footer_link', desc: 'home_start_ttd' },
+  { href: '/destinations', label: 'nav_destinations', desc: 'home_start_dest' },
+  { href: '/merzouga-guide', label: 'footer_merzouga_guide', desc: 'home_start_guide' },
+  { href: '/day-trips', label: 'nav_day_trips', desc: 'home_start_day' },
+  { href: '/travel-info', label: 'dest_travel_info', desc: 'home_start_info' },
+  { href: '/gallery', label: 'nav_gallery', desc: 'home_start_gallery' },
+] as const;
+
 export default function Home() {
   const { t, lang } = useLanguage();
   const [, setLocation] = useLocation();
@@ -427,6 +438,32 @@ export default function Home() {
 
       {/* Limited-time 2026 promotion */}
       <PromoBanner />
+
+      {/* Where to start — the discovery band */}
+      <section className="py-16 md:py-24 bg-background border-y border-border">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="max-w-2xl mb-10 md:mb-14">
+            <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-4">{t('home_start_title')}</h2>
+            <p className="text-muted-foreground leading-relaxed">{t('home_start_sub')}</p>
+          </div>
+          <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {DISCOVERY.map((door) => (
+              <li key={door.href}>
+                <Link
+                  href={door.href}
+                  className="group flex h-full flex-col gap-2 rounded-2xl border border-border bg-card p-6 transition-all hover:border-primary/50 hover:shadow-lg"
+                >
+                  <span className="flex items-center gap-2 font-serif text-xl text-foreground group-hover:text-primary transition-colors">
+                    {t(door.label)}
+                    <ChevronRight className="w-4 h-4 text-primary shrink-0 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                  </span>
+                  <span className="text-sm text-muted-foreground leading-relaxed">{t(door.desc)}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
 
       {/* Signature Morocco — Cinematic Destinations */}
       <section className="py-20 md:py-32 lg:py-40 bg-card [content-visibility:auto] [contain-intrinsic-size:auto_1200px]">

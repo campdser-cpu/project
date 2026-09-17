@@ -1,5 +1,6 @@
 // ─────────────────────────────────────────────────────────────────────────────
-// Quote-first pricing copy.
+// Quote-first pricing copy, plus the short labels the footer needs for the
+// booking and things-to-do pages.
 //
 // Every journey is private and priced per party: the total depends on the
 // dates, the group size and the accommodation chosen, so the site shows what
@@ -20,6 +21,7 @@ export const pricingGaps: Partial<Record<string, Record<string, string>>> = {
     book_fact_quote: "A written quote before you commit",
     book_fact_terms: "Payment terms agreed in writing",
     footer_plan_title: "Plan your trip",
+    ttd_footer_link: "Things to do in Morocco",
     price_quote_cta: 'Get your personalized quote',
     book_quote_title: 'Book now, pay later',
     book_quote_lead: 'Send your dates and group size — we reply with a personalized quote.',
@@ -35,6 +37,7 @@ export const pricingGaps: Partial<Record<string, Record<string, string>>> = {
     book_fact_quote: "Un devis écrit avant de vous engager",
     book_fact_terms: "Conditions de paiement convenues par écrit",
     footer_plan_title: "Préparer votre voyage",
+    ttd_footer_link: "Que faire au Maroc",
     price_quote_cta: 'Recevoir votre devis personnalisé',
     book_quote_title: 'Réservez maintenant, payez plus tard',
     book_quote_lead: 'Envoyez vos dates et le nombre de voyageurs : nous répondons avec un devis personnalisé.',
@@ -50,6 +53,7 @@ export const pricingGaps: Partial<Record<string, Record<string, string>>> = {
     book_fact_quote: "Un presupuesto por escrito antes de comprometerte",
     book_fact_terms: "Condiciones de pago acordadas por escrito",
     footer_plan_title: "Planifica tu viaje",
+    ttd_footer_link: "Qué hacer en Marruecos",
     price_quote_cta: 'Solicita tu presupuesto personalizado',
     book_quote_title: 'Reserva ahora, paga después',
     book_quote_lead: 'Envíanos tus fechas y el número de viajeros y te respondemos con un presupuesto personalizado.',
@@ -65,6 +69,7 @@ export const pricingGaps: Partial<Record<string, Record<string, string>>> = {
     book_fact_quote: "Un preventivo scritto prima di impegnarti",
     book_fact_terms: "Condizioni di pagamento concordate per iscritto",
     footer_plan_title: "Organizza il tuo viaggio",
+    ttd_footer_link: "Cosa fare in Marocco",
     price_quote_cta: 'Richiedi il tuo preventivo personalizzato',
     book_quote_title: 'Prenota ora, paghi dopo',
     book_quote_lead: 'Inviaci le tue date e il numero di viaggiatori: ti rispondiamo con un preventivo personalizzato.',
@@ -80,6 +85,7 @@ export const pricingGaps: Partial<Record<string, Record<string, string>>> = {
     book_fact_quote: "Ein schriftliches Angebot, bevor Sie zusagen",
     book_fact_terms: "Zahlungsbedingungen schriftlich vereinbart",
     footer_plan_title: "Reise planen",
+    ttd_footer_link: "Was man in Marokko tun kann",
     price_quote_cta: 'Persönliches Angebot anfordern',
     book_quote_title: 'Jetzt buchen, später bezahlen',
     book_quote_lead: 'Senden Sie uns Ihre Reisedaten und Gruppengröße — Sie erhalten ein persönliches Angebot.',
@@ -95,6 +101,7 @@ export const pricingGaps: Partial<Record<string, Record<string, string>>> = {
     book_fact_quote: "Een schriftelijke offerte voordat je vastlegt",
     book_fact_terms: "Betalingsvoorwaarden schriftelijk afgesproken",
     footer_plan_title: "Plan je reis",
+    ttd_footer_link: "Wat te doen in Marokko",
     price_quote_cta: 'Vraag je persoonlijke offerte aan',
     book_quote_title: 'Boek nu, betaal later',
     book_quote_lead: 'Stuur je reisdata en groepsgrootte — je krijgt een persoonlijke offerte.',
@@ -110,6 +117,7 @@ export const pricingGaps: Partial<Record<string, Record<string, string>>> = {
     book_fact_quote: "Um orçamento por escrito antes de se comprometer",
     book_fact_terms: "Condições de pagamento acordadas por escrito",
     footer_plan_title: "Planeie a sua viagem",
+    ttd_footer_link: "O que fazer em Marrocos",
     price_quote_cta: 'Peça o seu orçamento personalizado',
     book_quote_title: 'Reserve agora, pague depois',
     book_quote_lead: 'Envie as suas datas e o número de viajantes — respondemos com um orçamento personalizado.',
@@ -125,6 +133,7 @@ export const pricingGaps: Partial<Record<string, Record<string, string>>> = {
     book_fact_quote: "确认前先收到书面报价",
     book_fact_terms: "付款条件以书面方式确认",
     footer_plan_title: "规划您的行程",
+    ttd_footer_link: "摩洛哥有什么好玩的",
     price_quote_cta: '获取您的专属报价',
     book_quote_title: '先预订，后付款',
     book_quote_lead: '告诉我们您的日期和人数，我们会回复一份专属报价。',
@@ -140,6 +149,7 @@ export const pricingGaps: Partial<Record<string, Record<string, string>>> = {
     book_fact_quote: "お申し込み前に書面のお見積り",
     book_fact_terms: "お支払い条件は書面で取り決め",
     footer_plan_title: "旅の計画",
+    ttd_footer_link: "モロッコでしたいこと",
     price_quote_cta: '専用のお見積りを受け取る',
     book_quote_title: '今すぐ予約、お支払いは後で',
     book_quote_lead: 'ご希望の日程と人数をお知らせください。専用のお見積りをお送りします。',
@@ -155,6 +165,7 @@ export const pricingGaps: Partial<Record<string, Record<string, string>>> = {
     book_fact_quote: "결정 전에 서면 견적 제공",
     book_fact_terms: "결제 조건은 서면으로 합의",
     footer_plan_title: "여행 준비",
+    ttd_footer_link: "모로코에서 할 일",
     price_quote_cta: '맞춤 견적 받기',
     book_quote_title: '먼저 예약하고, 결제는 나중에',
     book_quote_lead: '여행 날짜와 인원을 보내 주시면 맞춤 견적을 보내 드립니다.',
@@ -170,6 +181,7 @@ export const pricingGaps: Partial<Record<string, Record<string, string>>> = {
     book_fact_quote: "عرض سعر مكتوب قبل أن تلتزم",
     book_fact_terms: "شروط الدفع متفق عليها كتابةً",
     footer_plan_title: "خطط لرحلتك",
+    ttd_footer_link: "ماذا تفعل في المغرب",
     price_quote_cta: 'احصل على عرض سعر مخصص',
     book_quote_title: 'احجز الآن وادفع لاحقًا',
     book_quote_lead: 'أرسل لنا تواريخ رحلتك وعدد المسافرين، ونرد عليك بعرض سعر مخصص.',

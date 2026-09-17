@@ -491,6 +491,12 @@ export default function DestinationDetail() {
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="font-serif text-4xl text-foreground">{t('dest_nearby')}</h2>
+            <Link
+              href="/things-to-do-in-morocco"
+              className="mt-4 inline-flex items-center gap-1 text-primary-text font-bold text-sm hover:gap-2 transition-all"
+            >
+              {t('ttd_footer_link')} <ChevronRight className="w-4 h-4" aria-hidden="true" />
+            </Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {nearbyDestinations.map(dest => (

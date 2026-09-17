@@ -21,6 +21,7 @@ const About = lazy(() => import('./pages/about'));
 const Gallery = lazy(() => import('./pages/gallery'));
 const Contact = lazy(() => import('./pages/contact'));
 const Book = lazy(() => import('./pages/book'));
+const ThingsToDo = lazy(() => import('./pages/things-to-do'));
 const TripBuilder = lazy(() => import('./pages/trip-builder'));
 const BuildYourDayTrip = lazy(() => import('./pages/build-your-day-trip'));
 const StudentTours = lazy(() => import('./pages/student-tours'));
@@ -66,7 +67,7 @@ function AnimatedRouter() {
     <Route path="/" component={Home} />
     <Route path="/destinations" component={Destinations} /><Route path="/destinations/:id" component={DestinationDetail} />
     <Route path="/tours" component={Tours} /><Route path={TOUR_DURATION_ROUTE} component={ToursFromCityDuration} /><Route path={TOUR_CITY_ROUTE} component={ToursFromCity} /><Route path="/tours/:id" component={TourDetail} />
-    <Route path="/gallery" component={Gallery} /><Route path="/about" component={About} /><Route path="/contact" component={Contact} /><Route path="/book" component={Book} />
+    <Route path="/gallery" component={Gallery} /><Route path="/about" component={About} /><Route path="/contact" component={Contact} /><Route path="/book" component={Book} /><Route path="/things-to-do-in-morocco" component={ThingsToDo} />
     <Route path="/trip-builder" component={TripBuilder} /><Route path="/build-your-day-trip" component={BuildYourDayTrip} />
     {/* Order matters: the literal /university-groups route must be matched before
         the /:slug student-tour product route, and the hub last. */}

@@ -6,6 +6,7 @@ export type RouteMeta = { title: string; description: string; ogImage?: string }
 import { catalogImage } from '@/data/imageCatalog';
 import { PHOTO_LIBRARY } from '@/data/photoLibrary';
 import { BOOK_COPY } from '@/data/book-copy';
+import { THINGS_COPY } from '@/data/things-to-do/all';
 
 const BRAND = 'Morocco Grand Adventure';
 
@@ -151,6 +152,7 @@ export const routeMetadata: Record<string, RouteMeta> = {
   '/travel-info/best-time-to-visit-morocco':{title:'Best Time to Visit Morocco — Season-by-Season Guide',description:'When to visit Morocco: spring and autumn for most regions, how summer and winter differ between the coast, mountains and Sahara.',ogImage:'/images/catalog/sahara-dune-trekking-merzouga.webp'},
   '/travel-info/what-to-pack-morocco':{title:'What to Pack for Morocco — Practical Packing List',description:'A realistic Morocco packing list: layers for cold desert nights, sun protection, footwear for medinas and dunes.',ogImage:'/images/catalog/sahara-dune-trekking-merzouga.webp'},
   '/travel-info/getting-around-morocco':{title:'Getting Around Morocco — Transport Options Explained',description:'Trains, buses and private drivers in Morocco — realistic driving times between Marrakech, Fes and the Sahara.',ogImage:'/images/catalog/ancient-berber-kasbah-ruins-southern-morocco.webp'},
+  '/things-to-do-in-morocco':{title:'25 Things to Do in Morocco — A Local Guide',description:'Twenty-five things worth doing in Morocco — Erg Chebbi, the Fes medina, the Todra Gorge, the Atlantic coast — with where each one is and what it is like.',ogImage:'/images/library/jemaa-el-fna-day-marrakech-mga-018.jpg'},
   '/book':{title:'Book a Morocco Tour — Request Your Dates, Pay Later',description:'Send your dates, group size and route to Morocco Grand Adventure. We confirm the itinerary and your quote first; payment terms are agreed before you pay.',ogImage:'/images/personal/guests-van.jpg'},
   '/faq':{title:'Morocco Travel FAQ — Questions About Tours & Travel',description:'Answers to common Morocco travel, desert tour, packing and booking questions.',ogImage:'/images/dest/merzouga.jpg'},
     '/blog':{title:'Morocco Travel Blog — Guides, Tips & Inspiration',description:'Morocco travel guides and practical advice from local Sahara specialists.',ogImage:'/images/og/morocco-grand-adventure-sahara.jpg'},
@@ -527,9 +529,16 @@ export function getLocalizedRouteMeta(rest: string, lang: Lang = 'en'): RouteMet
 
   // 2.4 /book — the booking-request page authors its own copy per language
   //     (src/data/book-copy.ts), so the SERP snippet matches what the page says.
-  if (normalized === '/book') {
+  if (normalized === '/book' && lang !== 'en') {
     const c = BOOK_COPY[lang];
     if (c) return { title: c.title, description: truncate(`${c.subtitle} ${c.promise}`), ogImage: getRouteMeta('/book').ogImage };
+  }
+
+  // 2.45 The twenty-five things — the page authors its own heading and lead
+  //      per language (src/data/things-to-do/<lang>.ts).
+  if (normalized === '/things-to-do-in-morocco' && lang !== 'en') {
+    const c = THINGS_COPY[lang];
+    if (c) return { title: c.heading, description: truncate(c.intro), ogImage: getRouteMeta('/things-to-do-in-morocco').ogImage };
   }
 
   // 2.5 Comparison pages — authored localized title/description per locale
