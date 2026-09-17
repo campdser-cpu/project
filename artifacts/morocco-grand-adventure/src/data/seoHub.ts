@@ -24,6 +24,13 @@ export type HubPage = {
   description: string;  // meta description
   ogImage: string;
   heroImage: string;
+  /** Responsive candidates for the hero (WebP derivatives that exist on disk). */
+  heroSrcSet?: string;
+  /** Intrinsic size of the hero file (for width/height attributes). */
+  heroWidth?: number;
+  heroHeight?: number;
+  /** CSS object-position for the cropped hero, when the subject is off-centre. */
+  heroPosition?: string;
   heroAlt: string;
   intro: string;
   sections: HubSection[];
@@ -52,9 +59,12 @@ export const MERZOUGA_GUIDES: HubPage[] = [
     title: 'Camel Trekking in Merzouga — A Practical Guide',
     pageTitle: 'Camel Trekking in Merzouga — Sahara Camel Rides at Erg Chebbi',
     description: "Everything you need to know before riding a camel into the Erg Chebbi dunes near Merzouga — when to go, what to wear, what to bring and how a desert night actually works.",
-    ogImage: '/images/curated/camel-caravan-sunset-silhouette-sahara-desert.webp',
-    heroImage: '/images/curated/camel-caravan-sunset-silhouette-sahara-desert.webp',
-    heroAlt: 'Silhouette of a Berber guide leading camels along a dune ridge at sunset in the Sahara',
+    ogImage: '/images/library/camel-caravan-erg-chebbi-day-morocco-mga-024.jpg',
+    heroImage: '/images/library/camel-caravan-erg-chebbi-day-morocco-mga-024.jpg',
+    heroWidth: 1920,
+    heroHeight: 1187,
+    heroSrcSet: '/images/library/srcset/camel-caravan-erg-chebbi-day-morocco-mga-024-480w.webp 480w, /images/library/srcset/camel-caravan-erg-chebbi-day-morocco-mga-024-768w.webp 768w, /images/library/srcset/camel-caravan-erg-chebbi-day-morocco-mga-024-1280w.webp 1280w, /images/library/srcset/camel-caravan-erg-chebbi-day-morocco-mga-024-1920w.webp 1920w',
+    heroAlt: 'Camel caravan crossing the Erg Chebbi dunes by day near Merzouga',
     intro: 'A camel ride into the Erg Chebbi dunes is the heart of any Merzouga visit. This is what actually happens, how long it takes and how to prepare so your sunset trek feels relaxed, not rushed.',
     sections: [
       {
@@ -123,9 +133,13 @@ export const MERZOUGA_GUIDES: HubPage[] = [
     title: 'Merzouga Desert Camps — A Complete Guide',
     pageTitle: 'Merzouga Desert Camps — Standard & Luxury Camp Guide',
     description: "How to choose a desert camp in the Erg Chebbi dunes — standard versus luxury tents, what a night includes, bathrooms, meals, heating and how to book the right one.",
-    ogImage: '/images/curated/sahara-desert-camp-starry-night-lantern-merzouga.webp',
-    heroImage: '/images/curated/sahara-desert-camp-starry-night-lantern-merzouga.webp',
-    heroAlt: 'A desert camp in the Sahara glowing with lanterns under a starry sky near Merzouga',
+    ogImage: '/images/library/date-palm-desert-camp-erg-chebbi-morocco-mga-034.jpg',
+    heroImage: '/images/library/date-palm-desert-camp-erg-chebbi-morocco-mga-034.jpg',
+    heroWidth: 1707,
+    heroHeight: 2560,
+    heroSrcSet: '/images/library/srcset/date-palm-desert-camp-erg-chebbi-morocco-mga-034-480w.webp 480w, /images/library/srcset/date-palm-desert-camp-erg-chebbi-morocco-mga-034-768w.webp 768w, /images/library/srcset/date-palm-desert-camp-erg-chebbi-morocco-mga-034-1280w.webp 1280w, /images/library/srcset/date-palm-desert-camp-erg-chebbi-morocco-mga-034-1920w.webp 1920w',
+    heroPosition: 'center 42%',
+    heroAlt: 'A lone date palm in the Erg Chebbi dunes, with a desert camp and palm grove behind it',
     intro: 'Sleeping inside the Erg Chebbi dunes is the highlight of a Merzouga trip. The main choice is between a simple Berber camp and a luxury tented camp — this guide compares them honestly so you pick the right night.',
     sections: [
       {
@@ -178,9 +192,13 @@ export const MERZOUGA_GUIDES: HubPage[] = [
     title: 'Luxury Desert Camps in Merzouga — What You Really Get',
     pageTitle: 'Luxury Desert Camps Merzouga — Sahara Glamping Guide',
     description: "A realistic look at luxury Sahara camps near Merzouga — en-suite tents, real beds, hot showers, private dinner and what separates luxury from standard glamping.",
-    ogImage: '/images/personal/luxury-camp-dusk.webp',
-    heroImage: '/images/personal/luxury-camp-dusk.webp',
-    heroAlt: 'A luxury desert camp tent glowing warm in the dusk light among the dunes near Merzouga',
+    ogImage: '/images/library/luxury-desert-camp-entrance-erg-chebbi-mga-005.jpg',
+    heroImage: '/images/library/luxury-desert-camp-entrance-erg-chebbi-mga-005.jpg',
+    heroWidth: 1707,
+    heroHeight: 2560,
+    heroSrcSet: '/images/library/srcset/luxury-desert-camp-entrance-erg-chebbi-mga-005-480w.webp 480w, /images/library/srcset/luxury-desert-camp-entrance-erg-chebbi-mga-005-768w.webp 768w, /images/library/srcset/luxury-desert-camp-entrance-erg-chebbi-mga-005-1280w.webp 1280w, /images/library/srcset/luxury-desert-camp-entrance-erg-chebbi-mga-005-1920w.webp 1920w',
+    heroPosition: 'center 60%',
+    heroAlt: 'A traveller walking along a lantern-lined rug at the entrance to a luxury desert camp in Erg Chebbi',
     intro: 'Luxury desert camps near Merzouga let you sleep inside the Erg Chebbi dunes without giving up a proper bed or a hot shower. Here is what the step up to luxury actually includes.',
     sections: [
       {
@@ -227,9 +245,13 @@ export const MERZOUGA_GUIDES: HubPage[] = [
     title: 'Best Time to Visit Merzouga — Month-by-Month Guide',
     pageTitle: 'Best Time to Visit Merzouga — When to See the Sahara (2026)',
     description: "Month-by-month when to visit Merzouga and Erg Chebbi — temperatures, crowds, sandstorms and the sweet spots for a Sahara desert night.",
-    ogImage: '/images/dest/merzouga.webp',
-    heroImage: '/images/dest/merzouga.webp',
-    heroAlt: 'Early morning light on the Erg Chebbi dunes near Merzouga village',
+    ogImage: '/images/library/erg-chebbi-dunes-golden-hour-morocco-mga-029.jpg',
+    heroImage: '/images/library/erg-chebbi-dunes-golden-hour-morocco-mga-029.jpg',
+    heroWidth: 1707,
+    heroHeight: 2560,
+    heroSrcSet: '/images/library/srcset/erg-chebbi-dunes-golden-hour-morocco-mga-029-480w.webp 480w, /images/library/srcset/erg-chebbi-dunes-golden-hour-morocco-mga-029-768w.webp 768w, /images/library/srcset/erg-chebbi-dunes-golden-hour-morocco-mga-029-1280w.webp 1280w, /images/library/srcset/erg-chebbi-dunes-golden-hour-morocco-mga-029-1920w.webp 1920w',
+    heroPosition: 'center 62%',
+    heroAlt: 'A woman in a teal dress standing on rippled Erg Chebbi dunes at golden hour',
     intro: 'The desert around Merzouga is open year round, but it is only truly comfortable to visit during the cooler months. Here is when each season feels like, so you can time your Sahara night right.',
     sections: [
       {
@@ -306,9 +328,13 @@ export const MERZOUGA_GUIDES: HubPage[] = [
     title: 'How to Get to Merzouga — From Marrakech, Fes and Beyond',
     pageTitle: 'How to Get to Merzouga — Travel to Erg Chebbi from Marrakech & Fes',
     description: "How to reach Merzouga and Erg Chebbi — realistic driving times and public/bus options from Marrakech, Fes, Ouarzazate and Agadir.",
-    ogImage: '/images/dest/erg-chebbi.webp',
-    heroImage: '/images/dest/erg-chebbi.webp',
-    heroAlt: 'The approach road climbing toward the Erg Chebbi dunes from Merzouga village',
+    ogImage: '/images/library/private-fleet-dunes-merzouga-morocco-mga-041.jpg',
+    heroImage: '/images/library/private-fleet-dunes-merzouga-morocco-mga-041.jpg',
+    heroWidth: 1440,
+    heroHeight: 1800,
+    heroSrcSet: '/images/library/srcset/private-fleet-dunes-merzouga-morocco-mga-041-480w.webp 480w, /images/library/srcset/private-fleet-dunes-merzouga-morocco-mga-041-768w.webp 768w, /images/library/srcset/private-fleet-dunes-merzouga-morocco-mga-041-1280w.webp 1280w',
+    heroPosition: 'center 55%',
+    heroAlt: 'A silver Toyota Land Cruiser parked on a dune crest in the Sahara',
     intro: 'Merzouga sits at the far eastern edge of Morocco, on the road to Errachidia and the Algerian border. Most visitors arrive by road from the main imperial cities — here are the realistic travel times and transport options.',
     sections: [
       {
@@ -364,7 +390,9 @@ export const MERZOUGA_GUIDES: HubPage[] = [
     description: "About Erg Chebbi near Merzouga — how the dune field formed, how high and long it is, what to do on the dunes and why it is the main Sahara access point.",
     ogImage: '/images/dest/erg-chebbi.webp',
     heroImage: '/images/dest/erg-chebbi.webp',
-    heroAlt: 'The vast Erg Chebbi dune field rising to a high crest near Merzouga',
+    heroWidth: 1024,
+    heroHeight: 683,
+    heroAlt: 'A person in a blue robe walking past green shrubs at the foot of the Erg Chebbi dunes',
     intro: 'Erg Chebbi is the Saharan dune field that makes Merzouga the most accessible place in Morocco to stand on top of a sea of sand. This is what makes it distinctive and why it draws visitors year after year.',
     sections: [
       {
@@ -425,9 +453,12 @@ export const MERZOUGA_GUIDES: HubPage[] = [
     title: 'What to Pack for Merzouga — Desert Packing List',
     pageTitle: 'What to Pack for Merzouga Desert — Sahara Packing List',
     description: "A practical packing list for Merzouga and Erg Chebbi — layers, sun protection, footwear, camera gear and small luxuries for a desert night.",
-    ogImage: '/images/hero/desert-pano.webp',
-    heroImage: '/images/hero/desert-pano.webp',
-    heroAlt: 'Panoramic view over the Erg Chebbi dunes under a bright sky',
+    ogImage: '/images/catalog/sahara-dune-trekking-merzouga.webp',
+    heroImage: '/images/catalog/sahara-dune-trekking-merzouga.webp',
+    heroWidth: 1280,
+    heroHeight: 853,
+    heroSrcSet: '/images/catalog/sahara-dune-trekking-merzouga-480w.webp 480w, /images/catalog/sahara-dune-trekking-merzouga-768w.webp 768w, /images/catalog/sahara-dune-trekking-merzouga.webp 1280w',
+    heroAlt: 'Walkers in head wraps and long, loose clothing crossing a dune near Merzouga',
     intro: 'Pack for two climates in one day: hot sun on the dunes and a cool (sometimes cold) desert night. Here is a realistic list, not a tourist cliché.',
     sections: [
       {
@@ -485,7 +516,9 @@ export const MERZOUGA_GUIDES: HubPage[] = [
     description: "Practical answers to the most common questions about Merzouga and Erg Chebbi — when to go, how to get there, camps, camel treks and what to expect.",
     ogImage: '/images/dest/merzouga.webp',
     heroImage: '/images/dest/merzouga.webp',
-    heroAlt: 'Merzouga village with the Erg Chebbi dunes rising behind it',
+    heroWidth: 1051,
+    heroHeight: 1400,
+    heroAlt: 'A man in a blue embroidered robe and white turban resting his head against a camel',
     intro: 'Straight answers to the questions travellers actually ask before a Merzouga and Sahara trip, gathered from our experience guiding the dunes.',
     sections: [
       {
@@ -525,9 +558,13 @@ export const MERZOUGA_GUIDES: HubPage[] = [
     title: 'Quad Biking in Merzouga — Riding the Edge of Erg Chebbi',
     pageTitle: 'Quad Biking Merzouga — Sahara Quad Bike Tours at Erg Chebbi',
     description: "What quad biking in Merzouga is really like — the terrain around Erg Chebbi, what to wear, when to ride and how a quad session fits around camel trekking and a night in a desert camp.",
-    ogImage: '/images/curated/sahara-desert-sunset-silhouette-dune-morocco.webp',
-    heroImage: '/images/curated/sahara-desert-sunset-silhouette-dune-morocco.webp',
-    heroAlt: 'Rider silhouette on a dune at sunset in the Sahara near Merzouga',
+    ogImage: '/images/student-tours/sahara-moonrise-vertical.jpg',
+    heroImage: '/images/student-tours/sahara-moonrise-vertical.webp',
+    heroWidth: 730,
+    heroHeight: 1280,
+    heroSrcSet: '/images/student-tours/sahara-moonrise-vertical-480w.webp 480w, /images/student-tours/sahara-moonrise-vertical.webp 730w',
+    heroPosition: 'center 70%',
+    heroAlt: 'A quad bike parked on a dune crest beneath a rising full moon',
     intro: 'A quad bike lets you cover in an hour what takes a camel a full evening: the gravel flats, palm groves, dry lakes and the base of the great Erg Chebbi dunes around Merzouga. This guide explains the terrain, what a ride involves and how to prepare.',
     sections: [
       { heading: 'What quad biking in Merzouga is like', paragraphs: [
@@ -579,9 +616,12 @@ export const MERZOUGA_GUIDES: HubPage[] = [
     title: 'Merzouga 4x4 Desert Tour — Dune Driving Around Erg Chebbi',
     pageTitle: 'Merzouga 4x4 Desert Tour — Dune Driving at Erg Chebbi',
     description: "What a 4x4 desert tour around Merzouga and Erg Chebbi involves — dune driving, the desert landscapes beyond the village, cultural stops and practical expectations before you book.",
-    ogImage: '/images/dest/erg-chebbi.webp',
-    heroImage: '/images/dest/erg-chebbi.webp',
-    heroAlt: 'The Erg Chebbi dune field near Merzouga — classic 4x4 desert country',
+    ogImage: '/images/library/4x4-dune-bashing-sahara-morocco-mga-006.jpg',
+    heroImage: '/images/library/4x4-dune-bashing-sahara-morocco-mga-006.jpg',
+    heroWidth: 1920,
+    heroHeight: 1280,
+    heroSrcSet: '/images/library/srcset/4x4-dune-bashing-sahara-morocco-mga-006-480w.webp 480w, /images/library/srcset/4x4-dune-bashing-sahara-morocco-mga-006-768w.webp 768w, /images/library/srcset/4x4-dune-bashing-sahara-morocco-mga-006-1280w.webp 1280w, /images/library/srcset/4x4-dune-bashing-sahara-morocco-mga-006-1920w.webp 1920w',
+    heroAlt: 'A white 4x4 kicking up sand as it drives across orange Sahara dunes',
     intro: 'A 4x4 is the only comfortable way to meet the Sahara on its own terms: over the crests of Erg Chebbi, out to the nomad settlements and the seasonal lake, and through the black-stone desert where the asphalt ends. Here is what a Merzouga 4x4 desert tour actually involves.',
     sections: [
       { heading: 'Why the desert needs a 4x4', paragraphs: [
@@ -630,9 +670,12 @@ export const MERZOUGA_GUIDES: HubPage[] = [
     title: 'Things to Do in Merzouga — Every Desert Experience, Honestly Compared',
     pageTitle: 'Things to Do in Merzouga — Camel Treks, Quads, 4x4s & Camps',
     description: "All the things to do in Merzouga in one place — camel trekking on Erg Chebbi, quad biking, 4x4 desert tours, luxury camps, sunrise and sunset spots, music and culture — and how to combine them.",
-    ogImage: '/images/curated/camel-caravan-sunset-silhouette-sahara-desert.webp',
-    heroImage: '/images/curated/camel-caravan-sunset-silhouette-sahara-desert.webp',
-    heroAlt: 'Camel caravan silhouetted against a sunset dune ridge near Merzouga',
+    ogImage: '/images/library/land-cruiser-camel-caravan-erg-chebbi-mga-042.jpg',
+    heroImage: '/images/library/land-cruiser-camel-caravan-erg-chebbi-mga-042.jpg',
+    heroWidth: 1000,
+    heroHeight: 453,
+    heroSrcSet: '/images/library/srcset/land-cruiser-camel-caravan-erg-chebbi-mga-042-480w.webp 480w, /images/library/srcset/land-cruiser-camel-caravan-erg-chebbi-mga-042-768w.webp 768w, /images/library/land-cruiser-camel-caravan-erg-chebbi-mga-042.jpg 1000w',
+    heroAlt: 'A private Land Cruiser parked beside a camel caravan in the Erg Chebbi dunes',
     intro: 'Merzouga looks like a one-experience village from a distance — ride a camel, sleep in camp — but the reality is a whole menu of desert days. This is the honest overview: what each activity gives you, what it costs in time and effort, and how the pieces fit into one or two well-built days.',
     sections: [
       { heading: 'Camel trekking into Erg Chebbi', paragraphs: [
@@ -686,9 +729,13 @@ export const MERZOUGA_GUIDES: HubPage[] = [
     title: 'Marrakech to Merzouga — The Complete Sahara Route Guide',
     pageTitle: 'Marrakech to Merzouga — Route, Stops & Itinerary Guide',
     description: "How to get from Marrakech to Merzouga — the High Atlas crossing, Aït Ben Haddou, Dades Valley, Todra Gorge and Erg Chebbi, with realistic 3-day and 4-day itinerary guidance.",
-    ogImage: '/images/dest/ait-ben-haddou.webp',
-    heroImage: '/images/dest/ait-ben-haddou.webp',
-    heroAlt: 'Aït Ben Haddou ksar on the route from Marrakech to Merzouga',
+    ogImage: '/images/library/ait-ben-haddou-rooftop-view-morocco-mga-037.jpg',
+    heroImage: '/images/library/ait-ben-haddou-rooftop-view-morocco-mga-037.jpg',
+    heroWidth: 1707,
+    heroHeight: 2560,
+    heroSrcSet: '/images/library/srcset/ait-ben-haddou-rooftop-view-morocco-mga-037-480w.webp 480w, /images/library/srcset/ait-ben-haddou-rooftop-view-morocco-mga-037-768w.webp 768w, /images/library/srcset/ait-ben-haddou-rooftop-view-morocco-mga-037-1280w.webp 1280w, /images/library/srcset/ait-ben-haddou-rooftop-view-morocco-mga-037-1920w.webp 1920w',
+    heroPosition: 'center 40%',
+    heroAlt: 'A traveller in a striped robe looking out over the earthen ksar of Aït Ben Haddou from a rooftop',
     intro: 'Marrakech is Morocco\'s most popular starting point for the Sahara, and the road south to Merzouga is a journey in its own right: over the High Atlas, past the UNESCO-listed ksar of Aït Ben Haddou, through kasbah country and palm-filled valleys, along the Todra Gorge, and finally to the Erg Chebbi dunes. This guide explains how the route actually works so you can choose the right itinerary.',
     sections: [
       { heading: 'Route overview: what the journey involves', paragraphs: [
@@ -749,7 +796,9 @@ export const MERZOUGA_GUIDES: HubPage[] = [
     description: "Fes to Merzouga route guide — Ifrane, the Middle Atlas cedar forests, Midelt, the Ziz Valley and Erg Chebbi, with realistic itinerary planning for a Fes Sahara trip.",
     ogImage: '/images/dest/ifrane.webp',
     heroImage: '/images/dest/ifrane.webp',
-    heroAlt: 'Ifrane in the Middle Atlas on the route from Fes to Merzouga',
+    heroWidth: 1200,
+    heroHeight: 900,
+    heroAlt: 'Forested mountain slopes above wide, open valleys under a clear sky',
     intro: 'Fes is the natural Sahara gateway for travellers coming from Morocco\'s north. The route south to Merzouga climbs into the Middle Atlas, passes through Ifrane and cedar forest, crosses the high plateau country around Midelt, then descends the Ziz Valley — one long palm oasis — to Erfoud, Rissani and the Erg Chebbi dunes. It is the shortest of Morocco\'s great desert roads, and a spectacular one.',
     sections: [
       { heading: 'Route overview: why Fes works as a desert gateway', paragraphs: [
@@ -799,9 +848,12 @@ export const MERZOUGA_GUIDES: HubPage[] = [
     title: 'How Many Days Do You Need in the Sahara?',
     pageTitle: 'How Many Days in the Sahara? — Merzouga Trip Length Guide',
     description: "How many days you need in the Sahara and Merzouga — an honest comparison of 1, 2, 3 and 4+ day desert trips, and what you can realistically experience at each length.",
-    ogImage: '/images/dest/merzouga.webp',
-    heroImage: '/images/dest/merzouga.webp',
-    heroAlt: 'The dunes of Erg Chebbi near Merzouga — how many days does a Sahara trip need?',
+    ogImage: '/images/personal/sahara-dunes-golden.jpg',
+    heroImage: '/images/personal/sahara-dunes-golden.webp',
+    heroWidth: 960,
+    heroHeight: 1200,
+    heroSrcSet: '/images/personal/sahara-dunes-golden-480w.webp 480w, /images/personal/sahara-dunes-golden-768w.webp 768w, /images/personal/sahara-dunes-golden.webp 960w',
+    heroAlt: 'Rippled golden dunes stretching to the horizon, seen from above',
     intro: 'Short answer: one night between the dunes is the minimum for the classic Sahara experience, and two nights is what we recommend most often. The longer answer depends on where you start, how much driving you accept per day, and what you want the desert to be — a highlight or the point of the trip. Here is the honest breakdown.',
     sections: [
       { heading: '1 day in the Sahara (one night between the dunes)', paragraphs: [
@@ -844,9 +896,12 @@ export const MERZOUGA_GUIDES: HubPage[] = [
     title: 'Sahara Desert Travel Guide — Morocco Desert Trips Explained',
     pageTitle: 'Sahara Desert Travel Guide — Morocco Desert Tours, Erg Chebbi & Merzouga',
     description: 'The complete Morocco Sahara guide — Erg Chebbi, Merzouga, camel trekking, desert camps, quad and 4x4 experiences, and how Marrakech and Fes connect to the dunes.',
-    ogImage: '/images/curated/camel-caravan-sunset-silhouette-sahara-desert.webp',
-    heroImage: '/images/curated/camel-caravan-sunset-silhouette-sahara-desert.webp',
-    heroAlt: 'Camel caravan silhouetted on a Sahara dune ridge at sunset — the classic Morocco desert scene',
+    ogImage: '/images/library/erg-chebbi-camel-trekking-sunset-morocco-mga-001.jpg',
+    heroImage: '/images/library/erg-chebbi-camel-trekking-sunset-morocco-mga-001.jpg',
+    heroWidth: 1920,
+    heroHeight: 1280,
+    heroSrcSet: '/images/library/srcset/erg-chebbi-camel-trekking-sunset-morocco-mga-001-480w.webp 480w, /images/library/srcset/erg-chebbi-camel-trekking-sunset-morocco-mga-001-768w.webp 768w, /images/library/srcset/erg-chebbi-camel-trekking-sunset-morocco-mga-001-1280w.webp 1280w, /images/library/srcset/erg-chebbi-camel-trekking-sunset-morocco-mga-001-1920w.webp 1920w',
+    heroAlt: 'A guide leading a camel caravan across the Erg Chebbi dunes at dusk',
     intro: 'The Moroccan Sahara is not one uniform sea of sand — it is a sprawl of gravel plains, oases and a few distinct dune fields, the most accessible of which is Erg Chebbi at Merzouga. This guide ties the whole desert picture together: what it is, how to experience it and how Marrakech and Fes reach it.',
     sections: [
       {
@@ -927,9 +982,12 @@ export const MERZOUGA_GUIDES: HubPage[] = [
     title: 'Erg Chebbi Sunrise & Sunset — Timing the Dunes',
     pageTitle: 'Erg Chebbi Sunrise & Sunset Guide — Best Light on the Dunes',
     description: 'When and where to see the best sunrise and sunset at Erg Chebbi near Merzouga — seasonal timings, photography notes and how camel treks and camp nights fit around the light.',
-    ogImage: '/images/curated/sahara-desert-sunset-silhouette-dune-morocco.webp',
-    heroImage: '/images/curated/sahara-desert-sunset-silhouette-dune-morocco.webp',
-    heroAlt: 'Silhouette of a traveller on a Sahara dune at sunset near Erg Chebbi, Morocco',
+    ogImage: '/images/library/couple-sunset-erg-chebbi-morocco-mga-031.jpg',
+    heroImage: '/images/library/couple-sunset-erg-chebbi-morocco-mga-031.jpg',
+    heroWidth: 1920,
+    heroHeight: 1280,
+    heroSrcSet: '/images/library/srcset/couple-sunset-erg-chebbi-morocco-mga-031-480w.webp 480w, /images/library/srcset/couple-sunset-erg-chebbi-morocco-mga-031-768w.webp 768w, /images/library/srcset/couple-sunset-erg-chebbi-morocco-mga-031-1280w.webp 1280w, /images/library/srcset/couple-sunset-erg-chebbi-morocco-mga-031-1920w.webp 1920w',
+    heroAlt: 'Two people silhouetted on an Erg Chebbi dune, watching the sun go down',
     intro: 'The two hours that most people fly across the world for at Erg Chebbi are sunrise and sunset, when the dunes turn gold, orange and deep crimson. Here is what each one feels like, when the light falls through the year and how a Merzouga schedule is built around it.',
     sections: [
       {

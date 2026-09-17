@@ -55,6 +55,11 @@ import { getRouteMeta, getLocalizedRouteMeta, BLOG_META, HOME_META, FR_HOME_META
 import { getLocalizedGuide, guideImageAlt, guideCrumb } from '../src/i18n/guides';
 import { buildTourSchema, buildDestinationSchema, buildBlogPostSchema, buildReviewSchema, buildFaqSchema, buildBreadcrumb } from '../src/components/seo/StructuredData';
 import { getStudentTour, studentTours as studentTourList, studentTourSizes } from '../src/data/student-tours';
+import { MERZOUGA_HUB_COPY } from '../src/data/merzouga-hub/all';
+import {
+  MG_BASICS, MG_CHOOSE, MG_COMPARISON, MG_FEATURED_GUIDES, MG_GUIDE_GROUPS, MG_IMAGES,
+  MG_PACK_GUIDES, MG_SIZES, MG_STORY, MG_TOURS, type MgImage,
+} from '../src/data/merzouga-hub/types';
 import { registerAllTranslations } from '../src/i18n/locales';
 import { registerAllContentOverlays } from '../src/i18n/content/overlays';
 import { registerAllGuideOverlays } from '../src/i18n/guides/overlays';
@@ -283,31 +288,59 @@ function buildToursContent(lang: Lang): string {
 }
 
 /**
- * "Plan with our guides" prerendered block for the Merzouga guide hub.
- * Mirrors <PlanWithGuides> (src/components/PlanWithGuides.tsx): same four
- * slugs, same order, same absolute /{lang}/merzouga-guide/{slug} hrefs, same
- * localized titles/intros — so the static HTML and the hydrated SPA agree.
+ * Merzouga Travel Guide hub. Mirrors src/pages/merzouga-guide.tsx from the same
+ * data (src/data/merzouga-hub): the locale's own copy, the same photographs
+ * with the same srcset/sizes (only the hero is eager), and absolute
+ * /{lang}/merzouga-guide/{slug} links to every guide. The runtime page renders
+ * with createRoot, so this markup is replaced rather than hydrated.
  */
-export function buildPlanWithGuidesHtml(lang: Lang): string {
-  const slugs = ['how-many-days', 'camel-trekking', 'best-time-to-visit', 'what-to-pack'];
-  const cards = slugs
-    .map((slug) => {
-      const base = MERZOUGA_GUIDES.find((p) => p.slug === slug);
-      if (!base) return '';
-      const localized = getLocalizedGuide(slug, lang) ?? base;
-      const href = `${SITE_URL}/${lang}/merzouga-guide/${slug}`;
-      return `      <article class="prerendered-guide-card">\n`
-        + `        <h3><a href="${href}">${escapeHtml(localized.title)}</a></h3>\n`
-        + `        <p>${escapeHtml(localized.intro)}</p>\n`
-        + `        <p><a href="${href}" aria-label="${escapeHtml(localized.title)} — ${escapeHtml(tr(lang, 'pwig_read'))}">${escapeHtml(tr(lang, 'pwig_read'))}</a></p>\n`
-        + `      </article>\n`;
-    })
-    .join('');
-  return `<section class="prerendered-plan-with-guides">\n`
-    + `  <h2>${escapeHtml(tr(lang, 'pwig_heading'))}</h2>\n`
-    + `  <p>${escapeHtml(tr(lang, 'pwig_sub'))}</p>\n`
-    + `  <div class="prerendered-guide-cards">\n${cards}  </div>\n`
-    + `</section>\n`;
+export function buildMerzougaHubHtml(lang: Lang): string {
+  const c = MERZOUGA_HUB_COPY[lang] ?? MERZOUGA_HUB_COPY.en;
+  const esc = escapeHtml;
+  const img = (i: MgImage, alt: string, sizes: string, eager = false) =>
+    `    <figure><img src="${i.src}" srcset="${i.srcSet}" sizes="${sizes}" alt="${esc(alt)}" width="${i.w}" height="${i.h}"`
+    + ` loading="${eager ? 'eager' : 'lazy'}" decoding="${eager ? 'sync' : 'async'}"${eager ? ' fetchpriority="high"' : ''} /></figure>\n`;
+  const guideOf = (slug: string) => getLocalizedGuide(slug, lang) ?? MERZOUGA_GUIDES.find((p) => p.slug === slug);
+  const url = (slug: string) => `${SITE_URL}/${lang}/merzouga-guide/${slug}`;
+  const read = tr(lang, 'pwig_read');
+  const list = (items: string[]) => `    <ul>\n${items.map((x) => `      <li>${x}</li>`).join('\n')}\n    </ul>\n`;
+  const guideLinks = (slugs: string[]) => list(slugs.map((s) => `<a href="${url(s)}">${esc(`${read}: ${guideOf(s)?.title ?? s}`)}</a>`));
+
+  let out = h1(c.hero.title) + img(MG_IMAGES.hero, c.hero.alt, MG_SIZES.hero, true) + paragraph(c.hero.lead);
+  out += `    <dl>\n${c.facts.map((f) => `      <dt>${esc(f.label)}</dt><dd>${esc(f.value)}</dd>`).join('\n')}\n    </dl>\n`;
+  for (const { id, guides } of MG_STORY) {
+    const s = c.story[id];
+    out += h2(s.heading) + s.paragraphs.map((p) => paragraph(p)).join('') + img(MG_IMAGES[id], s.alt, MG_SIZES.story) + guideLinks(guides);
+  }
+  out += h2(c.pack.heading) + paragraph(c.pack.intro);
+  for (const g of c.pack.groups) out += `    <h3>${esc(g.title)}</h3>\n` + list(g.items.map(esc));
+  out += img(MG_IMAGES.pack, c.pack.alt, MG_SIZES.side) + guideLinks(MG_PACK_GUIDES);
+  out += h2(c.basics.heading);
+  for (const { id, guides } of MG_BASICS) out += `    <h3>${esc(c.basics.items[id].title)}</h3>\n` + paragraph(c.basics.items[id].body) + guideLinks(guides);
+  out += h2(c.mistakes.heading) + `    <ol>\n${c.mistakes.items.map((m) => `      <li><strong>${esc(m.title)}</strong> — ${esc(m.body)}</li>`).join('\n')}\n    </ol>\n`;
+  out += h2(c.choose.heading);
+  for (const { id, guide } of MG_CHOOSE) out += `    <h3>${esc(c.choose.items[id].title)}</h3>\n` + paragraph(c.choose.items[id].body) + guideLinks([guide]);
+  out += rawParagraph(`<a href="${SITE_URL}/${lang}/comparisons/${MG_COMPARISON}">${esc(c.choose.compare)}</a>`);
+  out += h2(tr(lang, 'pwig_heading')) + paragraph(tr(lang, 'pwig_sub'));
+  for (const slug of MG_FEATURED_GUIDES) {
+    const g = guideOf(slug);
+    if (!g) continue;
+    out += `    <article class="prerendered-guide-card">\n      <h3><a href="${url(slug)}">${esc(g.title)}</a></h3>\n      <p>${esc(g.intro)}</p>\n`
+      + `      <p><a href="${url(slug)}" aria-label="${esc(g.title)} — ${esc(read)}">${esc(read)}</a></p>\n    </article>\n`;
+  }
+  out += `    <h3>${esc(c.guides.allHeading)}</h3>\n`;
+  for (const group of MG_GUIDE_GROUPS) {
+    out += `    <h4>${esc(c.guides.groups[group.id])}</h4>\n` + list(group.slugs.map((s) => `<a href="${url(s)}">${esc(guideOf(s)?.title ?? s)}</a>`));
+  }
+  const tours = MG_TOURS.map((id) => getLocalizedTour(id, lang)).filter((x): x is NonNullable<typeof x> => Boolean(x));
+  if (tours.length) {
+    out += h2(c.tours.heading);
+    for (const t of tours) out += `    <h3><a href="${SITE_URL}/${lang}/tours/${t.id}">${esc(t.name)}</a></h3>\n` + paragraph(`${t.duration} — ${t.description ?? ''}`);
+  }
+  out += h2(tr(lang, 'exp_faq_title')) + faqBlock([1, 2, 3, 4].map((n) => ({ question: tr(lang, `mg_faq${n}_q`), answer: tr(lang, `mg_faq${n}_a`) })));
+  out += h2(tr(lang, 'guide_cta_heading'));
+  out += rawParagraph(`${esc(tr(lang, 'guide_cta_sub'))} <a href="${SITE_URL}/${lang}/trip-builder">${esc(tr(lang, 'guide_cta_build'))}</a> · <a href="${contactInfo.whatsapp}">${esc(tr(lang, 'guide_cta_whatsapp'))}</a>.`);
+  return out;
 }
 
 /** Prerendered markup for a departure-city hub (mirrors <TourCityHub>). */
@@ -838,15 +871,20 @@ function buildExperienceContent(rest: string, lang: Lang): string {
   // derives its H1 from the localized meta title. Keeping the static H1 equal to
   // the hydrated one avoids an SPA/prerender heading mismatch.
   const stProduct = getStudentTour(rest.replace('/student-tours/', ''));
-  const heading = rest === '/student-tours'
+  // The Merzouga guide hub emits its own full editorial body (H1 included).
+  const isMerzougaHub = rest === '/merzouga-guide';
+  const heading = isMerzougaHub
+    ? buildMerzougaHubHtml(lang)
+    : rest === '/student-tours'
     ? h1(tr(lang, 'st_h1'))
     : rest === '/student-tours/university-groups'
     ? h1(tr(lang, 'ug_h1'))
     : stProduct
     ? h1(stProduct.title)
     : h1(meta.title.replace(/\s*—.*$/, '').trim() || meta.title);
-  const intro = paragraph(meta.description);
-  const tBlocks = cfg.tours.map((id) => getLocalizedTour(id, lang)).filter((t): t is NonNullable<typeof t> => Boolean(t)).map((t) => h2Link(`${SITE_URL}/${lang}/tours/${t.id}`, t.name) + paragraph(t.description ?? '') + paragraph(`${tr(lang, 'search_duration')}: ${t.duration}`) + ul(t.highlights)).join('');
+  const intro = isMerzougaHub ? '' : paragraph(meta.description);
+  // The hub lists its tours itself, under its own heading.
+  const tBlocks = isMerzougaHub ? '' : cfg.tours.map((id) => getLocalizedTour(id, lang)).filter((t): t is NonNullable<typeof t> => Boolean(t)).map((t) => h2Link(`${SITE_URL}/${lang}/tours/${t.id}`, t.name) + paragraph(t.description ?? '') + paragraph(`${tr(lang, 'search_duration')}: ${t.duration}`) + ul(t.highlights)).join('');
   const dBlocks = cfg.destinations.map((id) => getLocalizedDestination(id, lang)).filter((d): d is NonNullable<typeof d> => Boolean(d)).map((d) => h2Link(`${SITE_URL}/${lang}/destinations/${d.id}`, d.name) + paragraph(d.shortDesc)).join('');
   // Curated Sahara imagery for the desert-tours hub (Image-SEO pack).
   const desertMoments = rest === '/desert-tours' ? `\n    <h2>${escapeHtml(tr(lang, 'dt2_moments_title'))}</h2>\n    <p>${escapeHtml(tr(lang, 'dt2_moments_sub'))}</p>\n    <div class="grid gap-6 md:grid-cols-3">\n${[
@@ -862,15 +900,12 @@ function buildExperienceContent(rest: string, lang: Lang): string {
     <h2>${escapeHtml(tr(lang, 'nav_build_journey'))}</h2>
     <p>${escapeHtml(tr(lang, 'tb_sub'))}</p>
     <p><a href="${contactInfo.whatsapp}?text=${encodeURIComponent(tr(lang, 'tb_sub'))}">${escapeHtml(tr(lang, 'nav_book_whatsapp'))}</a></p>` : '';
-  // Merzouga guide hub: "Plan with our guides" cards — mirrors <PlanWithGuides>
-  // so the static HTML contains the same four guide links as the hydrated SPA.
   // Contextual Student Tours backlink on the five most relevant hubs, so the
   // hub is not an orphan in the internal-link graph.
   const ST_BACKLINK_ROUTES = ['/desert-tours', '/merzouga-guide', '/marrakech-tours', '/fes-tours', '/destinations'];
   const studentBacklink = ST_BACKLINK_ROUTES.includes(rest)
     ? `\n    <p>${escapeHtml(tr(lang, 'st_backlink'))} ${link(`${SITE_URL}/${lang}/student-tours`, tr(lang, 'st_tours_label'))}</p>\n`
     : '';
-  const planWithGuides = rest === '/merzouga-guide' ? buildPlanWithGuidesHtml(lang) : '';
   // Student Tours: emit the positioning that matters for crawlers and for a
   // coordinator landing from search — group size, single-coordinator booking,
   // large-group caveat, learning themes and the FAQ. en+pt are authored; the
@@ -1004,7 +1039,7 @@ function buildExperienceContent(rest: string, lang: Lang): string {
     ${studentTourList.filter((s) => s.slug !== stProduct.slug).map((s) => `<p>${link(`${SITE_URL}/${lang}/student-tours/${s.slug}`, s.title)}</p>`).join('\n    ')}
     ${stProduct.related.map((r) => `<p>${link(`${SITE_URL}/${lang}${r.to}`, r.label)}</p>`).join('\n    ')}` : '';
 
-  return heading + intro + studentTours + studentTourDetail + ugPage + studentBacklink + desertMoments + galleryLibPhotos + tBlocks + dBlocks + planWithGuides + tripBuilderCta;
+  return heading + intro + studentTours + studentTourDetail + ugPage + studentBacklink + desertMoments + galleryLibPhotos + tBlocks + dBlocks + tripBuilderCta;
 }
 
 // ── Data-driven hub / comparison pages (Merzouga guide + comparisons) ───────────

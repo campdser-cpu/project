@@ -110,18 +110,22 @@ export function SeoHubPage({ page }: { page: HubPage }) {
           data={buildFaqSchema(page.faqs) as unknown as Record<string, unknown>}
         />
       )}
-      <article className="pt-20">
-        {/* Hero */}
-        <section className="relative w-full h-[60vh] md:h-[70vh] flex items-center justify-center overflow-hidden">
+      <article>
+        {/* Hero — starts under the transparent navbar (white links need the dark
+            photo behind them); the top padding keeps the title clear of it. */}
+        <section className="relative w-full min-h-[60vh] md:min-h-[70vh] pt-24 pb-10 flex items-center justify-center overflow-hidden">
           <img
             src={page.heroImage}
+            srcSet={page.heroSrcSet}
+            sizes={page.heroSrcSet ? '100vw' : undefined}
             alt={page.heroAlt}
-            width={1920}
-            height={1080}
+            width={page.heroWidth ?? 1920}
+            height={page.heroHeight ?? 1080}
             fetchPriority="high"
             loading="eager"
             decoding="async"
             className="absolute inset-0 w-full h-full object-cover"
+            style={page.heroPosition ? { objectPosition: page.heroPosition } : undefined}
           />
           <div className="absolute inset-0 bg-black/50" />
           <div className="relative z-10 container mx-auto px-4 text-center max-w-4xl text-white">

@@ -213,7 +213,7 @@ export default function StudentTourDetail() {
 
   return (
     <Layout>
-      <main>
+      <div>
         {/* HERO ------------------------------------------------------------
             The photograph is never covered by copy. On a phone it sits on top
             (under the transparent navbar) with the title, route and booking
@@ -574,7 +574,7 @@ export default function StudentTourDetail() {
             </div>
           </div>
         </section>
-      </main>
+      </div>
     </Layout>
   );
 }

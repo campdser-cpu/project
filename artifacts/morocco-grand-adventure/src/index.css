@@ -253,6 +253,13 @@
     overflow-x: hidden;
   }
 
+  /* Korean: wrap between words. By default browsers break Hangul between any
+     two syllables, which splits words across lines in headings. */
+  :lang(ko) {
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+
   ::selection {
     background: hsl(var(--primary) / 0.22);
     color: hsl(var(--foreground));
