@@ -507,6 +507,16 @@ function truncate(text: string | undefined, max = DESCRIPTION_MAX): string {
   return s.slice(0, max - 1).trimEnd().replace(/[,;:—–-]+$/, '') + '…';
 }
 
+/** Blog slugs in the order their localized copy is keyed (blog_post_<n>_*). */
+const BLOG_POST_INDEX: Record<string, number> = {
+  'merzouga-luxury-desert-camp-guide': 1,
+  'best-time-to-visit-morocco-sahara': 2,
+  'camel-trekking-etiquette-morocco': 3,
+  'marrakech-to-merzouga-roadtrip': 4,
+  'morocco-packing-list-desert': 5,
+  'fes-chefchaouen-blue-city-guide': 6,
+};
+
 export function getLocalizedRouteMeta(rest: string, lang: Lang = 'en'): RouteMeta {
   const normalized = rest === '' || rest === '/' ? '/' : rest.replace(/\/$/, '');
 
@@ -532,6 +542,43 @@ export function getLocalizedRouteMeta(rest: string, lang: Lang = 'en'): RouteMet
   if (normalized === '/book' && lang !== 'en') {
     const c = BOOK_COPY[lang];
     if (c) return { title: c.title, description: truncate(`${c.subtitle} ${c.promise}`), ogImage: getRouteMeta('/book').ogImage };
+  }
+
+  // 2.4a The blog: every post's title and excerpt are authored per language
+  //      (blog_post_<n>_*), so the SERP snippet matches the page.
+  const blogPost = normalized.match(/^\/blog\/([a-z0-9-]+)$/);
+  if (blogPost && lang !== 'en') {
+    const n = BLOG_POST_INDEX[blogPost[1]];
+    if (n) {
+      const title = translate(lang, `blog_post_${n}_title`);
+      const excerpt = translate(lang, `blog_post_${n}_excerpt`);
+      if (title !== `blog_post_${n}_title` && excerpt !== `blog_post_${n}_excerpt`) {
+        return { title, description: truncate(excerpt), ogImage: BLOG_META[blogPost[1]]?.ogImage };
+      }
+    }
+  }
+  if (normalized === '/blog' && lang !== 'en') {
+    const title = translate(lang, 'blog_title');
+    const subtitle = translate(lang, 'blog_subtitle');
+    if (title !== 'blog_title' && subtitle !== 'blog_subtitle') {
+      return { title, description: truncate(subtitle), ogImage: getRouteMeta('/blog').ogImage };
+    }
+  }
+
+  // 2.4b Duration hubs (/tours/from-<city>/<n>-days) are formulaic, so they are
+  //      built from a localized template rather than served in English.
+  const durHub = normalized.match(/^\/tours\/from-([a-z]+)\/(\d+)-days$/);
+  if (durHub && lang !== 'en') {
+    const titleTpl = translate(lang, 'hub_dur_meta_title');
+    const descTpl = translate(lang, 'hub_dur_meta_desc');
+    const cityName = translate(lang, `hub_${durHub[1]}_name`);
+    if (titleTpl !== 'hub_dur_meta_title' && cityName !== `hub_${durHub[1]}_name`) {
+      const n = Number(durHub[2]);
+      // Arabic counts two differently from three and up.
+      const days = lang === 'ar' ? (n === 2 ? 'يومين' : `${n} أيام`) : String(n);
+      const fill = (tpl: string) => tpl.split('{days}').join(days).split('{city}').join(cityName);
+      return { title: fill(titleTpl), description: truncate(fill(descTpl)), ogImage: getRouteMeta(normalized).ogImage };
+    }
   }
 
   // 2.45 The twenty-five things — the page authors its own heading and lead
