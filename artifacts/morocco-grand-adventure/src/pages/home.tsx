@@ -4,7 +4,7 @@ import { Link, useLocation } from 'wouter';
 import { Star, MapPin, CheckCircle2, ChevronRight, Calendar, Users, Globe, Instagram, Phone, Search, Award, ShieldCheck, Leaf } from 'lucide-react';
 import { Layout } from '../components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { contactInfo, reviews as reviewData } from '@/data/content';
+import { contactInfo, reviews as reviewData, destinationImageAlt } from '@/data/content';
 import { getLocalizedTours, getLocalizedDestinations, categoryLabel } from '@/i18n/content';
 import { SiWhatsapp } from 'react-icons/si';
 import { PromoBanner } from '../components/promo/PromoBanner';
@@ -103,8 +103,8 @@ export default function Home() {
   // Tours by departure city — bridges the homepage to the city tour hubs so a
   // visitor can start from "where does this tour begin?" and reach the Sahara.
   const hubCards = [
-    { href: "/tours/from-marrakech", label: t('hub_marrakech_name'), image: "/images/curated/ait-ben-haddou-kasbah-sunrise-ouarzazate.webp", alt: "Ait Ben Haddou kasbah at sunrise near Marrakech, Morocco" },
-    { href: "/tours/from-fes", label: t('hub_fes_name'), image: "/images/curated/chouara-tannery-overhead-fes-el-bali.webp", alt: "Circular dye pits of the Chouara Tannery in Fes, Morocco" },
+    { href: "/tours/from-marrakech", label: t('hub_marrakech_name'), image: "/images/catalog/jemaa-el-fna-night-marrakech.webp", alt: "Jemaa el-Fna square at night with the Koutoubia minaret beyond, Marrakech" },
+    { href: "/tours/from-fes", label: t('hub_fes_name'), image: "/images/curated/leather-tanning-vats-fes-medina.webp", alt: "Stone dye vats of the Chouara Tannery in the Fes medina, Morocco" },
     { href: "/tours/from-casablanca", label: t('hub_casablanca_name'), image: "/images/curated/hassan-ii-mosque-interior-colonnades-casablanca.webp", alt: "Colonnaded interior of the Hassan II Mosque in Casablanca, Morocco" },
     { href: "/tours/from-agadir", label: t('hub_agadir_name'), image: "/images/dest/agadir.webp", alt: "The beach and promenade of Agadir on Morocco's Atlantic coast" },
   ];
@@ -133,8 +133,12 @@ export default function Home() {
         window.matchMedia('(max-width: 767px)').matches) ||
       (typeof window.matchMedia === 'function' &&
         window.matchMedia('(pointer: coarse)').matches);
+    // The movie is decorative motion: visitors who ask for reduced motion keep the still poster.
+    const prefersReducedMotion =
+      typeof window.matchMedia === 'function' &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const onIdle = () => {
-      if (prefersInteractionOnly) return;
+      if (prefersInteractionOnly || prefersReducedMotion) return;
       // Respect data-saver users: never force the 3.6 MB movie on them.
       const conn = (navigator as Navigator & {
         connection?: { saveData?: boolean };
@@ -148,6 +152,7 @@ export default function Home() {
       cleanup();
     };
     const onInteraction = () => {
+      if (prefersReducedMotion) return cleanup();
       startVideo();
       cleanup();
     };
@@ -190,9 +195,9 @@ export default function Home() {
             the video only mounts once the page is idle (see heroVideoReady). */}
         <div className="absolute inset-0 z-0 bg-black">
           <img
-            src="/images/hero/desert-pano.webp"
-  width={601}
-  height={900}
+            src="/images/hero/sahara-camel-riders-poster.webp"
+            width={720}
+            height={1280}
             alt=""
             aria-hidden="true"
             fetchPriority="high"
@@ -499,7 +504,7 @@ export default function Home() {
             {destinations.slice(0, 6).map((dest) => (
               <motion.div key={dest.id} variants={fadeInUp} className="group relative h-72 md:h-[420px] rounded-3xl overflow-hidden cursor-pointer shadow-sm hover:shadow-xl hover:shadow-primary/20 transition-all duration-500 border border-transparent hover:border-primary/50">
                 <Link href={`/destinations/${dest.id}`} className="absolute inset-0 z-10" aria-label={`Explore ${dest.name}`} />
-                <img src={dest.image} alt={`${dest.name} — ${dest.shortDesc}`} loading="lazy" decoding="async" width={800} height={600} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <img src={dest.image} alt={destinationImageAlt(dest, `${dest.name} — ${dest.shortDesc}`)} loading="lazy" decoding="async" width={800} height={600} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
                 <div className="absolute bottom-0 left-0 p-5 md:p-6 z-20 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                   <span className="text-primary-text text-xs font-bold tracking-wider uppercase mb-2 block drop-shadow-md">{categoryLabel(dest.category, lang)}</span>

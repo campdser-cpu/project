@@ -1523,7 +1523,7 @@
         "4": 0,
         "5": 0
       },
-      "image": "/images/curated/tin-mal-mosque-pointed-arches-high-atlas.webp",
+      "image": "/images/tours/guided-walk-todra-gorge.webp",
       "routeCaption": "Marrakech → Alto Atlas → Aït Ben Haddou → Dades y Todra → Merzouga y Erg Chebbi → regreso a Marrakech.",
       "description": "Un circuito privado de cuatro días desde Marrakech hasta el Sahara y de vuelta. Recorre el Alto Atlas, visita Aït Ben Haddou y los kasbahs de Ouarzazate, atraviesa las gargantas de Dades y Todra y pasa una noche a caballo de camellos en Erg Chebbi antes de volver a cruzar las montañas. Como no hay un precio público verificado ni una lista de alojamientos fija, el recorrido se oferta solo mediante presupuesto y los detalles se confirman con base en sus fechas.",
       "itineraryDays": [
@@ -1799,7 +1799,7 @@
         "4": 0,
         "5": 0
       },
-      "image": "/images/curated/camel-caravan-sunset-silhouette-sahara-desert.webp",
+      "image": "/images/tours/camel-trek-sunset-erg-chebbi.webp",
       "routeCaption": "Casablanca → Fes → Meknès y Volubilis → Atlas Medio → Merzouga y Erg Chebbi → Fes.",
       "description": "Una ruta privada desde Casablanca hacia el este hasta Fes y luego hacia el sur hasta el Sahara, con una noche en las dunas de Erg Chebbi antes de regresar a Fes. Combina las ciudades imperiales y el yacimiento romano de Volubilis con los bosques de cedro del Atlas Medio, el valle de Ziz lleno de palmeras y un paseo en camello al atardecer en Merzouga. Se oferta solo mediante presupuesto y los detalles se confirman según sus fechas.",
       "itineraryDays": [
@@ -2250,7 +2250,7 @@
         "4": 0,
         "5": 0
       },
-      "image": "/images/curated/chouara-tannery-overhead-fes-el-bali.webp",
+      "image": "/images/curated/leather-tanning-vats-fes-medina.webp",
       "routeIds": [
         "fes",
         "meknes",
@@ -2395,7 +2395,7 @@
         "4": 0,
         "5": 0
       },
-      "image": "/images/dest/agadir.webp",
+      "image": "/images/tours/ait-ben-haddou-rooftop-view.webp",
       "routeIds": [
         "agadir",
         "ouarzazate",

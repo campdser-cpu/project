@@ -778,7 +778,7 @@ export default {
   dest_pictures_title: "in Pictures",
   dt2_moments_cap1: "Endless golden dunes stretch to the horizon in the Erg Chebbi desert near Merzouga.",
   dt2_moments_cap2: "A Berber guide leads his camel caravan along the dune crest as the sun sets.",
-  dt2_moments_cap3: "A traveler's silhouette stands out against the giant golden sun over the Sahara dunes.",
+  dt2_moments_cap3: "Two travelers watch the sun go down from the crest of an Erg Chebbi dune.",
     dt2_title: "Sahara Desert Tours",
     dt2_subtitle: "Private Merzouga desert tours, Erg Chebbi camel treks, and luxury desert camps — crafted by locals born in the Sahara.",
     dt2_cta_explore: "Explore Desert Tours",

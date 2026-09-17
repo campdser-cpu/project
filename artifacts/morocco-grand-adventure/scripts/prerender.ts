@@ -185,8 +185,9 @@ function faqBlock(faqs: { question: string; answer: string }[]): string {
 }
 // Curated-image figure used by destination galleries and experience pages.
 // Alt text is natural/descriptive (never keyword-stuffed) per the Image-SEO pack.
-function figureImg(src: string, alt: string, caption: string): string {
-  return `    <figure>\n      <img src="${src}" alt="${escapeHtml(alt)}" loading="lazy" decoding="async" class="w-full h-72 md:h-96 object-cover" />\n      <figcaption>${escapeHtml(caption)}</figcaption>\n    </figure>\n`;
+function figureImg(src: string, alt: string, caption: string, size?: { width: number; height: number }): string {
+  const dims = size ? ` width="${size.width}" height="${size.height}"` : '';
+  return `    <figure>\n      <img src="${src}" alt="${escapeHtml(alt)}"${dims} loading="lazy" decoding="async" class="w-full h-72 md:h-96 object-cover" />\n      <figcaption>${escapeHtml(caption)}</figcaption>\n    </figure>\n`;
 }
 /**
  * Responsive catalog figure — mirrors the runtime CatalogPhoto / Local Food <img>
@@ -260,7 +261,7 @@ function buildHomeContent(lang: Lang): string {
   // shift / content jump for crawlers or users). React clears it on hydrate and
   // re-renders the identical poster — by then it is cache-warm, so the LCP
   // candidate paints almost instantly.
-  const lcpPoster = `<img class="prerendered-lcp-poster" src="/images/hero/desert-pano.webp" alt="" aria-hidden="true" width="601" height="900" fetchpriority="high" />\n`;
+  const lcpPoster = `<img class="prerendered-lcp-poster" src="/images/hero/sahara-camel-riders-poster.webp" alt="" aria-hidden="true" width="720" height="1280" fetchpriority="high" />\n`;
   return lcpPoster + heroH1Block + paragraph(tr(lang, 'hero_subtext')) + h2(tr(lang, 'section_destinations') || 'Top Destinations') + `    <ul>\n${destNames}\n    </ul>\n` + h2(tr(lang, 'section_tours') || 'Featured Tours') + `    <ul>\n${tourNames}\n    </ul>\n` + hubBlock + h2(tr(lang, 'section_reviews') || 'Traveler Stories') + `<div class="prerendered-reviews-container">\n${reviewBlocks}\n    </div>\n`;
 }
 function buildHomeSchemas(lang: Lang): Record<string, unknown>[] {
@@ -801,7 +802,7 @@ function buildBlogArticleContent(slug: string, lang: Lang): string {
     'best-time-to-visit-morocco-sahara': { title: 'Best Time to Visit the Sahara Desert: A Complete Month-by-Month Guide', excerpt: "When should you plan your Merzouga desert trip? Our local experts break down temperatures, crowds, and conditions month by month.", date: 'July 2026', read: '6 min read', cat: 'Travel Planning', image: '/images/dest/merzouga.webp' },
     'camel-trekking-etiquette-morocco': { title: 'Camel Trekking in Morocco: What to Expect and How to Prepare', excerpt: "Everything first-time riders need to know — what to wear, how to mount, what to bring, and the traditions behind this age-old Saharan journey.", date: 'June 2026', read: '7 min read', cat: 'Camel Trekking', image: '/images/personal/dunes-camels-poster.webp' },
     'marrakech-to-merzouga-roadtrip': { title: 'Marrakech to Merzouga: The Ultimate Sahara Road Trip Itinerary', excerpt: "Cross the High Atlas, explore Aït Ben Haddou, wind through the Dades Valley, and arrive at the golden dunes of Erg Chebbi — the complete route guide.", date: 'May 2026', read: '10 min read', cat: 'Road Trips', image: '/images/dest/ait-ben-haddou.webp' },
-    'morocco-packing-list-desert': { title: 'The Perfect Morocco Packing List for Desert Tours (2026)', excerpt: "What to pack for the Sahara — from breathable layers and sun protection to the little luxuries that make a desert night unforgettable.", date: 'April 2026', read: '5 min read', cat: 'Packing', image: '/images/hero/desert-pano.webp' },
+    'morocco-packing-list-desert': { title: 'The Perfect Morocco Packing List for Desert Tours (2026)', excerpt: "What to pack for the Sahara — from breathable layers and sun protection to the little luxuries that make a desert night unforgettable.", date: 'April 2026', read: '5 min read', cat: 'Packing', image: '/images/personal/guests-sunset-trimmed.webp' },
     'fes-chefchaouen-blue-city-guide': { title: "Fes to Chefchaouen: Exploring Morocco's Blue Pearl", excerpt: "The journey from Morocco's cultural heart to the Instagram-famous blue medina — what to see, where to stay, and how to make the most of it.", date: 'March 2026', read: '9 min read', cat: 'Imperial Cities', image: '/images/dest/chefchaouen.webp' },
   };
   const post = posts[slug];
@@ -888,10 +889,10 @@ function buildExperienceContent(rest: string, lang: Lang): string {
   const dBlocks = cfg.destinations.map((id) => getLocalizedDestination(id, lang)).filter((d): d is NonNullable<typeof d> => Boolean(d)).map((d) => h2Link(`${SITE_URL}/${lang}/destinations/${d.id}`, d.name) + paragraph(d.shortDesc)).join('');
   // Curated Sahara imagery for the desert-tours hub (Image-SEO pack).
   const desertMoments = rest === '/desert-tours' ? `\n    <h2>${escapeHtml(tr(lang, 'dt2_moments_title'))}</h2>\n    <p>${escapeHtml(tr(lang, 'dt2_moments_sub'))}</p>\n    <div class="grid gap-6 md:grid-cols-3">\n${[
-    ['/images/curated/sahara-desert-dunes-couple-sunset-merzouga.webp', 'Couple sitting on top of a golden dune admiring the endless Sahara desert at sunset near Merzouga', tr(lang, 'dt2_moments_cap1')],
-    ['/images/curated/camel-caravan-sunset-silhouette-sahara-desert.webp', 'Silhouette of a Berber guide leading two camels along a dune ridge at sunset in the Sahara', tr(lang, 'dt2_moments_cap2')],
-    ['/images/curated/sahara-desert-sunset-silhouette-dune-morocco.webp', 'Silhouette of a woman with arms outstretched on a dune crest against a giant setting sun in the Sahara', tr(lang, 'dt2_moments_cap3')],
-  ].map(([s, a, c]) => `      ${figureImg(s, a, c)}`).join('\n')}\n    </div>\n` : '';
+    ['/images/library/srcset/erg-chebbi-dune-sea-morocco-mga-028-768w.webp', 'Tourist in a colourful Moroccan djellaba facing the Erg Chebbi dune sea near Merzouga', tr(lang, 'dt2_moments_cap1'), 768, 520],
+    ['/images/library/srcset/erg-chebbi-camel-trekking-sunset-morocco-mga-001-768w.webp', 'Berber guide leading a camel caravan across Erg Chebbi at dusk', tr(lang, 'dt2_moments_cap2'), 768, 512],
+    ['/images/library/srcset/couple-sunset-erg-chebbi-morocco-mga-031-768w.webp', 'Silhouette of a couple watching sunset from an Erg Chebbi dune', tr(lang, 'dt2_moments_cap3'), 768, 512],
+  ].map(([s, a, c, w, h]) => `      ${figureImg(s as string, a as string, c as string, { width: w as number, height: h as number })}`).join('\n')}\n    </div>\n` : '';
   // Official photo library: render the ACTUAL PDF-derived photographs on the gallery page
   const galleryLibPhotos = rest === '/gallery' ? publishableLibraryPhotos().map((p) => libraryPhotoFigure(p)).join('\n') : '';
   // Trip Builder: render a descriptive heading + WhatsApp CTA so the prerendered
@@ -1372,6 +1373,7 @@ function injectHead(html: string, meta: RouteEntry['meta'], rest: string, lang: 
     html = html.replace(/<meta property="og:image" content="[^"]*"/, `<meta property="og:image" content="${SITE_URL}${meta.ogImage}"`);
     html = html.replace(/<meta property="og:image:alt" content="[^"]*"/, `<meta property="og:image:alt" content="${escapeHtml(ogImageAlt(meta.ogImage))}"`);
     html = html.replace(/<meta name="twitter:image" content="[^"]*"/, `<meta name="twitter:image" content="${SITE_URL}${meta.ogImage}"`);
+    html = html.replace(/<meta name="twitter:image:alt" content="[^"]*"/, `<meta name="twitter:image:alt" content="${escapeHtml(ogImageAlt(meta.ogImage))}"`);
   }
   html = html.replace(/<!-- Hreflang alternates[\s\S]*?<!-- Open Graph -->/, `<!-- Hreflang alternates (prerendered route-specific set) -->\n${hreflangLinks}\n\n    <!-- Open Graph -->`);
   return html;
@@ -1390,7 +1392,7 @@ function stripGlobalHomeBreadcrumb(html: string): string {
 // every other route it forces an eager download of an image the page never
 // paints (wasted bandwidth on ~1,500 pages). Strip it from non-home routes.
 function stripHomeHeroPreload(html: string): string {
-  return html.replace(/[ \t]*<link rel="preload" as="image" href="\/images\/hero\/desert-pano\.webp"[^>]*>\s*/, '');
+  return html.replace(/[ \t]*<link rel="preload" as="image" href="\/images\/hero\/sahara-camel-riders-poster\.webp"[^>]*>\s*/, '');
 }
 
 function main() {

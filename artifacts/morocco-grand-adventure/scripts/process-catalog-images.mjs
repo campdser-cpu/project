@@ -9,6 +9,11 @@
 //
 // Mirrors scripts/optimize-images.mjs conventions. Idempotent. Never deletes.
 // Run: node scripts/process-catalog-images.mjs
+//
+// NOTE (2026-09): several source JPEGs were mislabelled, so their outputs were
+// renamed to match their content by scripts/image-integrity-2026-09.mjs, and
+// four images carrying third-party overlays were withdrawn. Check each source
+// against its name before re-running this against the original folder.
 // ─────────────────────────────────────────────────────────────────────────────
 import * as fs from 'node:fs';
 import * as path from 'node:path';
@@ -23,7 +28,6 @@ const NAMES = [
   'berber-camel-guide-sahara-merzouga',
   'berber-child-baby-goat-village',
   'amazigh-woman-berber-jewellery',
-  'ait-ben-haddou-ouarzazate-unesco',
   'ancient-berber-kasbah-ruins-southern-morocco',
   'moroccan-cliff-dwellings-rock-cut',
   'hassan-ii-mosque-casablanca',
@@ -34,12 +38,9 @@ const NAMES = [
   'sahara-dune-trekking-merzouga',
   'menara-gardens-pavilion-marrakech',
   'hassan-ii-mosque-doorway-casablanca',
-  'grotte-assif-n-el-hed-river-cave',
   'draa-valley-oasis-palm-grove',
   'essaouira-sqala-du-port-atlantic',
   'sahara-bivouac-stars-merzouga',
-  'medina-agadir-heritage',
-  'fennec-fox-sahara-wildlife',
   'olive-preserved-lemon-market-stall',
   'moroccan-vegetable-tagine',
   'moroccan-mezze-couscous-tagine',

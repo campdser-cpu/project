@@ -1,5 +1,5 @@
 // ─────────────────────────────────────────────────────────────────────────────
-// Image Catalog — manifest of the 31 curated photographs from the official
+// Image Catalog — manifest of the 27 curated photographs from the official
 // Morocco Grand Adventure photo catalog.
 //
 // Each entry is the single source of truth for filename, intrinsic dimensions,
@@ -27,7 +27,7 @@ export type CatalogImage = {
 export const IMAGE_CATALOG: Record<string, CatalogImage> = {
   'jemaa-el-fna-night-marrakech': {
     src: '/images/catalog/jemaa-el-fna-night-marrakech.webp', file: 'jemaa-el-fna-night-marrakech.webp',
-    width: 1080, height: 1440,
+    width: 1280, height: 853,
     alt: 'Crowds and food stalls filling Jemaa el-Fna square in Marrakech at night, the Koutoubia minaret beyond',
     caption: 'Jemaa el-Fna at night — food stalls, music and crowds.',
     category: 'city', destinations: ['marrakech'],
@@ -42,9 +42,9 @@ export const IMAGE_CATALOG: Record<string, CatalogImage> = {
   'tbourida-fantasia-marrakech': {
     src: '/images/catalog/tbourida-fantasia-marrakech.webp', file: 'tbourida-fantasia-marrakech.webp',
     width: 1200, height: 1800,
-    alt: 'Tbourida rider in ceremonial dress on horseback with a raised musket, the Koutoubia minaret of Marrakech behind',
-    caption: 'Tbourida — a ceremonial horseman with his musket, Marrakech.',
-    category: 'culture', destinations: ['marrakech'],
+    alt: 'Tbourida rider in ceremonial dress on horseback with a raised musket, spectators and a minaret behind',
+    caption: 'Tbourida — a ceremonial horseman with his musket.',
+    category: 'culture', destinations: [],
   },
   'moroccan-palace-ceiling-muqarnas': {
     src: '/images/catalog/moroccan-palace-ceiling-muqarnas.webp', file: 'moroccan-palace-ceiling-muqarnas.webp',
@@ -55,7 +55,7 @@ export const IMAGE_CATALOG: Record<string, CatalogImage> = {
   },
   'moroccan-night-spice-herb-market': {
     src: '/images/catalog/moroccan-night-spice-herb-market.webp', file: 'moroccan-night-spice-herb-market.webp',
-    width: 1280, height: 853,
+    width: 1200, height: 1800,
     alt: 'Spice and herb stall lit by warm lamps in a Moroccan market at night',
     caption: 'A spice and herb stall under the lamps of a night market.',
     category: 'food', destinations: ['marrakech'],
@@ -125,24 +125,17 @@ export const IMAGE_CATALOG: Record<string, CatalogImage> = {
   },
   'hassan-ii-mosque-doorway-casablanca': {
     src: '/images/catalog/hassan-ii-mosque-doorway-casablanca.webp', file: 'hassan-ii-mosque-doorway-casablanca.webp',
-    width: 1280, height: 853,
+    width: 1080, height: 1440,
     alt: 'Ornate pointed-arch doorway of the Hassan II Mosque in Casablanca — carved marble arabesques, geometric metalwork doors and zellige tilework',
     caption: 'Carved doorway detail, Hassan II Mosque.',
     category: 'heritage', destinations: ['casablanca'],
   },
   'chefchaouen-blue-city-rif': {
     src: '/images/catalog/chefchaouen-blue-city-rif.webp', file: 'chefchaouen-blue-city-rif.webp',
-    width: 1200, height: 1800,
+    width: 1280, height: 853,
     alt: 'The blue-washed medina of Chefchaouen cascading down the hillside in the Rif Mountains',
     caption: 'The blue medina of Chefchaouen cascading down the hillside in the Rif Mountains.',
     category: 'city', destinations: ['chefchaouen'],
-  },
-  'grotte-assif-n-el-hed-river-cave': {
-    src: '/images/catalog/grotte-assif-n-el-hed-river-cave.webp', file: 'grotte-assif-n-el-hed-river-cave.webp',
-    width: 1080, height: 1350,
-    alt: "Sunlight falling into the river gorge and cave of Grotte Assif n'El Hed",
-    caption: "Inside the river cave of Grotte Assif n'El Hed.",
-    category: 'heritage', destinations: ['chefchaouen', 'akchour'],
   },
   'essaouira-sqala-du-port-atlantic': {
     src: '/images/catalog/essaouira-sqala-du-port-atlantic.webp', file: 'essaouira-sqala-du-port-atlantic.webp',
@@ -150,20 +143,6 @@ export const IMAGE_CATALOG: Record<string, CatalogImage> = {
     alt: 'Stone Sqala du Port ramparts and cannons facing the Atlantic in Essaouira',
     caption: "The Sqala du Port, watching over Essaouira's Atlantic harbour.",
     category: 'coast', destinations: ['essaouira'],
-  },
-  'medina-agadir-heritage': {
-    src: '/images/catalog/medina-agadir-heritage.webp', file: 'medina-agadir-heritage.webp',
-    width: 1080, height: 1350,
-    alt: 'Rebuilt heritage medina walls and gateway in Agadir',
-    caption: "The rebuilt heritage medina on Agadir's hillside.",
-    category: 'coast', destinations: ['agadir'],
-  },
-  'ait-ben-haddou-ouarzazate-unesco': {
-    src: '/images/catalog/ait-ben-haddou-ouarzazate-unesco.webp', file: 'ait-ben-haddou-ouarzazate-unesco.webp',
-    width: 720, height: 1280,
-    alt: 'Earthen ramparts and towers of the Ksar of Aït Ben Haddou near Ouarzazate',
-    caption: 'The earthen walls of Aït Ben Haddou, a UNESCO World Heritage Site.',
-    category: 'heritage', destinations: ['ait-ben-haddou', 'ouarzazate'],
   },
   'draa-valley-oasis-palm-grove': {
     src: '/images/catalog/draa-valley-oasis-palm-grove.webp', file: 'draa-valley-oasis-palm-grove.webp',
@@ -212,13 +191,6 @@ export const IMAGE_CATALOG: Record<string, CatalogImage> = {
     width: 853, height: 853,
     alt: 'Saharan bivouac lounge with lanterns, carpets and a thatched canopy at dusk near Merzouga',
     caption: 'A lantern-lit bivouac in the Erg Chebbi sands at dusk.',
-    category: 'desert', destinations: ['merzouga', 'erg-chebbi'],
-  },
-  'fennec-fox-sahara-wildlife': {
-    src: '/images/catalog/fennec-fox-sahara-wildlife.webp', file: 'fennec-fox-sahara-wildlife.webp',
-    width: 1080, height: 721,
-    alt: 'Fennec fox with large ears standing alert on Sahara sand',
-    caption: "The fennec fox — the Sahara's smallest wild resident.",
     category: 'desert', destinations: ['merzouga', 'erg-chebbi'],
   },
   'berber-child-baby-goat-village': {

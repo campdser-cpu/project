@@ -729,7 +729,7 @@ dt2_moments_sub: "Dune dorate, notti stellate e la silhouette senza tempo di una
 dest_pictures_title: "in foto",
 dt2_moments_cap1: "Dune dorate infinite si estendono fino all'orizzonte nel deserto dell'Erg Chebbi vicino Merzouga.",
 dt2_moments_cap2: "Una guida berbera conduce la sua carovana di cammelli lungo la cresta della duna al tramonto.",
-dt2_moments_cap3: "La silhouette di un viaggiatore si staglia davanti al grande sole dorato sulle dune del Sahara.",
+dt2_moments_cap3: "Due viaggiatori guardano il tramonto dalla cresta di una duna dell'Erg Chebbi.",
 dt2_title: "Tour nel Deserto del Sahara",
 dt2_subtitle: "Tour privati nel deserto di Merzouga, trekking su cammello nell'Erg Chebbi e campi di lusso: creati da locali nati nel Sahara.",
 dt2_cta_explore: "Scopri i tour nel deserto",

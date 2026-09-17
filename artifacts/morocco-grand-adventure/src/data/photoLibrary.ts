@@ -11,13 +11,16 @@
 //   • A destination is recorded ONLY when the library explicitly states one.
 //   • MGA-023 is BLOCKED (unverified location). MGA-046 is BLOCKED until the
 //     "TOURIS-ME" windscreen sticker is verified.
+//   • MGA-008 and MGA-021 are RESTRICTED: another business's name is legible
+//     in the frame (quad rental plate, hotel sign).
 // This manifest is additive: it never re-points existing /images/** URLs.
 // ─────────────────────────────────────────────────────────────────────────────
 
 export type PhotoVerification =
   | 'approved'
   | 'unverified-location'
-  | 'verify-sticker';
+  | 'verify-sticker'
+  | 'third-party-branding';
 
 export interface PhotoAsset {
   /** Authoritative Asset ID. Never changed. */
@@ -55,6 +58,8 @@ export interface PhotoAsset {
 }
 
 export const RESTRICTED_ASSETS: Record<string, PhotoVerification> = {
+  'MGA-008': 'third-party-branding',
+  'MGA-021': 'third-party-branding',
   'MGA-023': 'unverified-location',
   'MGA-046': 'verify-sticker',
 };
@@ -124,13 +129,13 @@ export const PHOTO_LIBRARY: Record<string, PhotoAsset> = {
     destination: "agadir", context: "destination", verification: 'approved',
   },
   'MGA-008': {
-    assetId: 'MGA-008', file: "1000206105.jpg", src: '/images/library/atv-erg-chebbi-dunes-golden-hour-morocco-mga-008.jpg',
-    webp: [{ w: 480, url: '/images/library/srcset/atv-erg-chebbi-dunes-golden-hour-morocco-mga-008-480w.webp' }, { w: 768, url: '/images/library/srcset/atv-erg-chebbi-dunes-golden-hour-morocco-mga-008-768w.webp' }], width: 1086, height: 1448,
+    assetId: 'MGA-008', file: "1000206105.jpg", src: null, width: 1086, height: 1448,
     alt: "GOES Terrox 400s quad bike parked on an Erg Chebbi dune at golden hour",
     title: "ATV on the Erg Chebbi dunes at golden hour",
     description: "GOES Terrox 400s quad bike parked on Erg Chebbi dune at golden hour",
     section: "Adventure — Quad Biking & ATV",
-    destination: "merzouga", context: "quad-biking", verification: 'approved',
+    destination: "merzouga", context: "quad-biking", verification: 'third-party-branding',
+    publishNote: "RESTRICTED — a rental operator's name plate is legible on the quad. Unpublished until a clean frame is supplied.",
   },
   'MGA-009': {
     assetId: 'MGA-009', file: "1000206100.jpg", src: '/images/library/marrakech-souk-aerial-view-mga-009.jpg',
@@ -241,13 +246,13 @@ export const PHOTO_LIBRARY: Record<string, PhotoAsset> = {
     destination: "fes", context: "destination", verification: 'approved',
   },
   'MGA-021': {
-    assetId: 'MGA-021', file: "1000206092.jpg", src: '/images/library/kasbah-hotel-entrance-merzouga-morocco-mga-021.jpg',
-    webp: [{ w: 480, url: '/images/library/srcset/kasbah-hotel-entrance-merzouga-morocco-mga-021-480w.webp' }, { w: 768, url: '/images/library/srcset/kasbah-hotel-entrance-merzouga-morocco-mga-021-768w.webp' }, { w: 1280, url: '/images/library/srcset/kasbah-hotel-entrance-merzouga-morocco-mga-021-1280w.webp' }, { w: 1920, url: '/images/library/srcset/kasbah-hotel-entrance-merzouga-morocco-mga-021-1920w.webp' }], width: 1707, height: 2560,
+    assetId: 'MGA-021', file: "1000206092.jpg", src: null, width: 1707, height: 2560,
     alt: "Imposing mud-brick kasbah hotel fortress entrance with palm trees in Merzouga",
     title: "Kasbah hotel entrance in Merzouga",
     description: "Imposing mud-brick kasbah hotel fortress entrance with palm trees — Merzouga",
     section: "Merzouga — Accommodation & Architecture",
-    destination: "merzouga", context: "destination", verification: 'approved',
+    destination: "merzouga", context: "destination", verification: 'third-party-branding',
+    publishNote: "RESTRICTED — a hotel's name sign is legible over the entrance. Unpublished: the site does not show other businesses' branding.",
   },
   'MGA-022': {
     assetId: 'MGA-022', file: "1000206094.jpg", src: '/images/library/ornate-riad-courtyard-southern-morocco-mga-022.jpg',
@@ -487,8 +492,8 @@ export const PUBLISHABLE_ASSET_IDS = Object.keys(PHOTO_LIBRARY)
  * publishable photographs are now imported as derivative assets under
  * /images/library/ (one JPEG per Asset ID — see PHOTO_LIBRARY[].src). Those are the ACTUAL
  * PDF photographs — each was verified byte-level (SOI/EOI), decoded with
- * sharp, and visually cross-checked against the PDF captions. The two
- * restricted assets (MGA-023, MGA-046) remain unpublished.
+ * sharp, and visually cross-checked against the PDF captions. The
+ * restricted assets (MGA-008, MGA-021, MGA-023, MGA-046) remain unpublished.
  *
  * The REPO_IMAGE_MATCHES block below is retained as a historical record of
  * the earlier stand-in strategy. Nothing imports it at runtime; the real
@@ -514,7 +519,7 @@ export const REPO_IMAGE_MATCHES: Record<string, RepoImageMatch> = {
   'MGA-001': { image: '/images/catalog/berber-camel-guide-sahara-merzouga.webp', standInConfidence: 'close-subject', placement: 'Merzouga destination gallery; camel-trekking hub' },
   'MGA-024': { image: '/images/curated/berber-guide-camels-sahara-desert-morocco.webp', standInConfidence: 'same-theme', note: 'caravan-by-day subject stand-in' },
   'MGA-029': { standInConfidence: 'none', note: 'no woman-in-teal-dune image in repo' },
-  'MGA-031': { image: '/images/curated/sahara-desert-dunes-couple-sunset-merzouga.webp', standInConfidence: 'same-theme', placement: 'Merzouga destination gallery' },
+  'MGA-031': { standInConfidence: 'none', note: 'former stand-in removed (third-party caption overlay)' },
   // 2 — Quad biking (no vehicle imagery in repo)
   'MGA-002': { standInConfidence: 'none', note: 'no quad image in repo; hub uses honest generic dune hero' },
   'MGA-008': { standInConfidence: 'none' },
@@ -523,7 +528,7 @@ export const REPO_IMAGE_MATCHES: Record<string, RepoImageMatch> = {
   // 3 — 4x4 desert drive
   'MGA-006': { standInConfidence: 'none', note: 'no 4x4 vehicle image in repo' },
   // 4 — Luxury desert camp
-  'MGA-005': { image: '/images/curated/sahara-desert-camp-starry-night-lantern-merzouga.webp', standInConfidence: 'same-theme', placement: 'Merzouga destination gallery; luxury camp hubs' },
+  'MGA-005': { standInConfidence: 'none', note: 'former stand-in removed (third-party caption overlay)' },
   'MGA-034': { image: '/images/catalog/luxury-desert-camp-sunset-merzouga.webp', standInConfidence: 'same-theme', placement: 'Erg Chebbi destination gallery' },
   // 5 — Erg Chebbi pure landscape
   'MGA-033': { image: '/images/dest/erg-chebbi.webp', standInConfidence: 'same-theme', placement: 'Erg Chebbi hero + gallery' },
@@ -534,20 +539,20 @@ export const REPO_IMAGE_MATCHES: Record<string, RepoImageMatch> = {
   'MGA-018': { image: '/images/dest/marrakech.webp', standInConfidence: 'same-theme', placement: 'Marrakech hero' },
   // 7 — Marrakech culture & heritage
   'MGA-013': { image: '/images/catalog/moroccan-palace-ceiling-muqarnas.webp', standInConfidence: 'same-theme', placement: 'Fes destination gallery (heritage interior)' },
-  'MGA-004': { image: '/images/catalog/tbourida-fantasia-marrakech.webp', standInConfidence: 'same-theme', note: 'ceremonial-dress culture shot near Koutoubia; not water sellers', placement: 'Marrakech destination gallery' },
+  'MGA-004': { image: '/images/catalog/tbourida-fantasia-marrakech.webp', standInConfidence: 'same-theme', note: 'ceremonial-dress culture shot; not water sellers', placement: 'Marrakech destination gallery' },
   'MGA-030': { standInConfidence: 'none', note: 'no Guerrab portrait in repo' },
   // 8 — Marrakech souks & medina
-  'MGA-009': { image: '/images/curated/marrakech-souk-brass-lanterns-market.webp', standInConfidence: 'same-theme', placement: 'Marrakech destination gallery' },
+  'MGA-009': { standInConfidence: 'none', note: 'former stand-in removed (third-party caption overlay)' },
   'MGA-027': { image: '/images/curated/marrakech-medina-street-life-locals-morocco.webp', standInConfidence: 'same-theme', placement: 'Marrakech destination gallery' },
   // 9 — Fes medina & culture
-  'MGA-020': { image: '/images/curated/fes-tannery-chouara-leather-dyeing-morocco.webp', standInConfidence: 'same-theme', note: 'leather-craft subject via Chouara tannery', placement: 'Fes destination gallery' },
+  'MGA-020': { standInConfidence: 'none', note: 'former stand-in removed (third-party caption overlay)' },
   'MGA-039': { image: '/images/catalog/moroccan-palace-ceiling-muqarnas.webp', standInConfidence: 'same-theme', placement: 'Fes destination gallery' },
   'MGA-038': { image: '/images/curated/tannery-workers-dyeing-pits-fes.webp', standInConfidence: 'same-theme', placement: 'Fes destination gallery' },
   // 10 — Chefchaouen
   'MGA-019': { image: '/images/catalog/chefchaouen-blue-city-rif.webp', standInConfidence: 'close-subject', placement: 'Chefchaouen hero/gallery' },
   // 11 — Ait Ben Haddou
   'MGA-035': { image: '/images/curated/ait-ben-haddou-bridge-town-unesco-morocco.webp', standInConfidence: 'same-theme', note: 'river crossing + ksar', placement: 'Ait Ben Haddou destination gallery' },
-  'MGA-037': { image: '/images/curated/ait-benhaddou-kasbah-sunset-unesco-morocco.webp', standInConfidence: 'same-theme', placement: 'Ait Ben Haddou destination gallery' },
+  'MGA-037': { standInConfidence: 'none', note: 'former stand-in removed (third-party caption overlay)' },
   // 12 — Dades & Todra
   'MGA-026': { image: '/images/curated/todra-gorge-river-canyon-high-atlas.webp', standInConfidence: 'same-theme', placement: 'Todra Gorge destination gallery' },
   'MGA-036': { image: '/images/dest/dades-valley.webp', standInConfidence: 'same-theme', placement: 'Dades Valley hero' },

@@ -9,6 +9,14 @@ import { SiWhatsapp } from 'react-icons/si';
 import { contactInfo } from '@/data/content';
 import { CinematicVideo } from '../components/ui/CinematicVideo';
 
+// Official photo-library photographs (src/data/photoLibrary.ts), one per caption.
+const LIB = '/images/library/srcset/';
+const DESERT_MOMENTS = [
+  { name: 'erg-chebbi-dune-sea-morocco-mga-028', width: 1920, height: 1299, alt: 'Tourist in a colourful Moroccan djellaba facing the Erg Chebbi dune sea near Merzouga', caption: 'dt2_moments_cap1' },
+  { name: 'erg-chebbi-camel-trekking-sunset-morocco-mga-001', width: 1920, height: 1280, alt: 'Berber guide leading a camel caravan across Erg Chebbi at dusk', caption: 'dt2_moments_cap2' },
+  { name: 'couple-sunset-erg-chebbi-morocco-mga-031', width: 1920, height: 1280, alt: 'Silhouette of a couple watching sunset from an Erg Chebbi dune', caption: 'dt2_moments_cap3' },
+] as const;
+
 export default function DesertTours() {
   const { t, lang } = useLanguage();
   const tours = getLocalizedTours(lang);
@@ -91,42 +99,22 @@ export default function DesertTours() {
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-3">
-            <figure className="rounded-3xl overflow-hidden shadow-lg border border-border bg-card">
-              <img
-                src="/images/curated/sahara-desert-dunes-couple-sunset-merzouga.webp"
-  width={900}
-  height={1200}
-                alt="Couple sitting on top of a golden dune admiring the endless Sahara desert at sunset near Merzouga"
-                loading="lazy"
-                decoding="async"
-                className="w-full h-72 md:h-80 object-cover"
-              />
-              <figcaption className="px-5 py-4 text-sm text-muted-foreground">{t('dt2_moments_cap1')}</figcaption>
-            </figure>
-            <figure className="rounded-3xl overflow-hidden shadow-lg border border-border bg-card">
-              <img
-                src="/images/curated/camel-caravan-sunset-silhouette-sahara-desert.webp"
-  width={900}
-  height={1200}
-                alt="Silhouette of a Berber guide leading two camels along a dune ridge at sunset in the Sahara"
-                loading="lazy"
-                decoding="async"
-                className="w-full h-72 md:h-80 object-cover"
-              />
-              <figcaption className="px-5 py-4 text-sm text-muted-foreground">{t('dt2_moments_cap2')}</figcaption>
-            </figure>
-            <figure className="rounded-3xl overflow-hidden shadow-lg border border-border bg-card">
-              <img
-                src="/images/curated/sahara-desert-sunset-silhouette-dune-morocco.webp"
-  width={900}
-  height={1200}
-                alt="Silhouette of a woman with arms outstretched on a dune crest against a giant setting sun in the Sahara"
-                loading="lazy"
-                decoding="async"
-                className="w-full h-72 md:h-80 object-cover"
-              />
-              <figcaption className="px-5 py-4 text-sm text-muted-foreground">{t('dt2_moments_cap3')}</figcaption>
-            </figure>
+            {DESERT_MOMENTS.map((m) => (
+              <figure key={m.name} className="rounded-3xl overflow-hidden shadow-lg border border-border bg-card">
+                <img
+                  src={`${LIB}${m.name}-768w.webp`}
+                  srcSet={`${LIB}${m.name}-480w.webp 480w, ${LIB}${m.name}-768w.webp 768w, ${LIB}${m.name}-1280w.webp 1280w`}
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                  width={m.width}
+                  height={m.height}
+                  alt={m.alt}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-72 md:h-80 object-cover"
+                />
+                <figcaption className="px-5 py-4 text-sm text-muted-foreground">{t(m.caption)}</figcaption>
+              </figure>
+            ))}
           </div>
         </div>
       </section>

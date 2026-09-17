@@ -11,7 +11,6 @@
 // says "group" (MGA flag proves an MGA group, not university status); the rest
 // are described as locations/scenes.
 // ─────────────────────────────────────────────────────────────────────────────
-import { useEffect, useRef, useState } from 'react';
 import { Link } from 'wouter';
 import { Layout } from '../components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -52,44 +51,6 @@ function Eyebrow({ children, onDark = false }: { children: React.ReactNode; onDa
 
 export default function StudentTours() {
   const { t, lang } = useLanguage();
-  const videoRef = useRef<HTMLVideoElement | null>(null);
-  const heroRef = useRef<HTMLElement | null>(null);
-  const [showVideo, setShowVideo] = useState(false);
-  const [videoPlaying, setVideoPlaying] = useState(false);
-
-  // Hero video is deferred, NOT disabled on mobile. The poster and the real HTML
-  // text paint first; the <video> is only mounted once the hero is actually in
-  // view. The single 2.33 MB H.264 file is small enough to serve to phones too,
-  // so there is no second mobile encode and no width gate.
-  //
-  // The only opt-out is prefers-reduced-motion, which keeps the poster.
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-    const el = heroRef.current;
-    if (!el || typeof IntersectionObserver === 'undefined') { setShowVideo(true); return; }
-
-    const io = new IntersectionObserver((entries) => {
-      if (entries.some((e) => e.isIntersecting)) { setShowVideo(true); io.disconnect(); }
-    }, { rootMargin: '200px' });
-    io.observe(el);
-    return () => io.disconnect();
-  }, []);
-
-  // iOS/Android only honour autoplay once the element is muted + playsInline and
-  // has a source attached. If the browser still refuses, the poster remains —
-  // the hero never shows a black frame.
-  useEffect(() => {
-    if (!showVideo) return;
-    const v = videoRef.current;
-    if (!v) return;
-    v.muted = true;
-    const play = () => v.play().then(() => setVideoPlaying(true)).catch(() => setVideoPlaying(false));
-    if (v.readyState >= 2) play();
-    else v.addEventListener('loadeddata', play, { once: true });
-    return () => v.removeEventListener('loadeddata', play);
-  }, [showVideo]);
 
   const wa = `${contactInfo.whatsapp}?text=${encodeURIComponent(
     'Hello Morocco Grand Adventure — I would like to plan a Student Tour for a university group.',
@@ -181,7 +142,6 @@ export default function StudentTours() {
           the viewport allows, and a fixed box pushed the eyebrow up under the
           navbar logo. The top padding keeps it clear of the fixed header. */}
       <section
-        ref={heroRef}
         className="relative min-h-[max(600px,88svh)] pt-28 md:pt-32 md:min-h-[100vh] md:max-h-[900px] flex items-end overflow-hidden bg-black"
       >
         <picture>
@@ -192,15 +152,6 @@ export default function StudentTours() {
             className="absolute inset-0 w-full h-full object-cover" fetchPriority="high" decoding="sync"
           />
         </picture>
-        {showVideo && (
-          <video
-            ref={videoRef} poster={`${IMG}/student-tours-hero-poster.jpg`}
-            muted loop playsInline autoPlay preload="metadata" aria-hidden="true" tabIndex={-1}
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${videoPlaying ? 'opacity-100' : 'opacity-0'}`}
-          >
-            <source src="/videos/student-tours-hero.mp4" type="video/mp4" />
-          </video>
-        )}
         <div
           className="absolute inset-0"
           style={{ background: 'linear-gradient(180deg, rgba(8,8,8,.42) 0%, rgba(8,8,8,0) 32%, rgba(8,8,8,0) 44%, rgba(8,8,8,.86) 100%)' }}

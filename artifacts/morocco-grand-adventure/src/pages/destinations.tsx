@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Layout } from '../components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { getLocalizedDestinations, getLocalizedTours, categoryLabel } from '@/i18n/content';
+import { destinationImageAlt } from '@/data/content';
 import { Link } from 'wouter';
 import { MapPin, ChevronRight } from 'lucide-react';
 import { PriceTag } from '../components/promo/PriceTag';
@@ -58,7 +59,7 @@ export default function Destinations() {
                 <div className="h-64 relative overflow-hidden">
                   <img
                     src={dest.image}
-                    alt={dest.name}
+                    alt={destinationImageAlt(dest, dest.name)}
                     width={900}
                     height={600}
                     loading={index < 3 ? 'eager' : 'lazy'}

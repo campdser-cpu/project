@@ -483,7 +483,7 @@ export default {
   dt2_moments_sub: "Dunes dorées, nuits étoilées et la silhouette intemporelle d'une caravane de chameaux — des scènes que vous vivrez lors de nos circuits sahariens au départ de Marrakech.",
   dt2_moments_cap1: "Des dunes dorées s'étendent à l'horizon dans le désert de l'Erg Chebbi près de Merzouga.",
   dt2_moments_cap2: "Un guide berbère mène sa caravane de chameaux sur la crête d'une dune au coucher du soleil.",
-  dt2_moments_cap3: "La silhouette d'une voyageuse se détache devant l'immense soleil doré sur les dunes du Sahara.",
+  dt2_moments_cap3: "Deux voyageurs regardent le soleil se coucher depuis la crête d'une dune de l'Erg Chebbi.",
   dest_pictures_title: "en images",
 // ── Tours departure-city & duration hubs ─────────────────────────────────
   hub_dur_daytrips: "Excursions d'une journée et courts séjours",

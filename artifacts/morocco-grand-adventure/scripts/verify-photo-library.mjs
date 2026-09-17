@@ -8,7 +8,7 @@ import { fileURLToPath } from 'node:url';
 // Enforces the official Photo Library source-of-truth rules:
 //   • All 46 Asset IDs (MGA-001 … MGA-046) are present in the manifest.
 //   • Original filenames are never renamed (compared against the official set).
-//   • Restricted assets (MGA-023, MGA-046) NEVER appear in rendered HTML,
+//   • Restricted assets (see RESTRICTED_ASSETS) NEVER appear in rendered HTML,
 //     the sitemap, or indexable/og output.
 //   • Required source-of-truth fields are non-empty for every asset.
 //

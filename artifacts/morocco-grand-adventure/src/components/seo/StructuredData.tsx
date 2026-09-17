@@ -243,6 +243,7 @@ export function buildDestinationSchema(dest: {
   name: string;
   description: string;
   image: string;
+  imageDecorative?: boolean;
   region: string;
   coords: { lat: number; lng: number };
   highlights: string[];
@@ -258,7 +259,8 @@ export function buildDestinationSchema(dest: {
     '@id': `${url}#attraction`,
     name: dest.name,
     description: dest.description,
-    image: `${SITE_URL}${dest.image}`,
+    // A decorative placeholder is not a photograph of the place.
+    ...(dest.imageDecorative ? {} : { image: `${SITE_URL}${dest.image}` }),
     url,
     geo: {
       '@type': 'GeoCoordinates',

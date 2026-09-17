@@ -784,7 +784,6 @@ export const MERZOUGA_GUIDES: HubPage[] = [
     relatedGuides: ['how-many-days', 'camel-trekking', 'luxury-desert-camps', 'things-to-do', 'best-time-to-visit', 'what-to-pack', 'how-to-get-there', 'marrakech-vs-fes', 'sahara-desert-guide', 'erg-chebbi-sunrise-sunset'],
     sources: ['onmt'],
     inlineImages: [
-      { imageId: 'ait-ben-haddou-ouarzazate-unesco', after: 2 },
       { imageId: 'ancient-berber-kasbah-ruins-southern-morocco', after: 3 },
     ],
   },

@@ -27,6 +27,8 @@ const SOURCES = ['personal/sahara-dunes-golden', 'personal/guide-guest-tea'];
   const trimmed = await sharp(src).extract({ left: 0, top: 0, width: 658, height: 1200 }).toBuffer();
   await sharp(trimmed).webp({ quality: 82, effort: 6 }).toFile(`${base}.webp`);
   await sharp(trimmed).resize({ width: 480 }).webp({ quality: 78, effort: 6 }).toFile(`${base}-480w.webp`);
+  // JPEG copy for Open Graph (the packing-list article shares this photo).
+  await sharp(trimmed).jpeg({ quality: 80, mozjpeg: true }).toFile(`${base}.jpg`);
   console.log(`personal/guests-sunset-trimmed.webp ${fs.statSync(`${base}.webp`).size} B (+480w)`);
 }
 

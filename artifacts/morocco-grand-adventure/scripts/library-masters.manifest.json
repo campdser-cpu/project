@@ -159,22 +159,6 @@
    }
   ]
  },
- "MGA-008": {
-  "jpg": "/images/library/atv-erg-chebbi-dunes-golden-hour-morocco-mga-008.jpg",
-  "width": 1086,
-  "height": 1448,
-  "bytes": 202467,
-  "webp": [
-   {
-    "w": 480,
-    "url": "/images/library/srcset/atv-erg-chebbi-dunes-golden-hour-morocco-mga-008-480w.webp"
-   },
-   {
-    "w": 768,
-    "url": "/images/library/srcset/atv-erg-chebbi-dunes-golden-hour-morocco-mga-008-768w.webp"
-   }
-  ]
- },
  "MGA-009": {
   "jpg": "/images/library/marrakech-souk-aerial-view-mga-009.jpg",
   "width": 1707,
@@ -448,30 +432,6 @@
    {
     "w": 1920,
     "url": "/images/library/srcset/leather-souk-archway-fes-medina-mga-020-1920w.webp"
-   }
-  ]
- },
- "MGA-021": {
-  "jpg": "/images/library/kasbah-hotel-entrance-merzouga-morocco-mga-021.jpg",
-  "width": 1707,
-  "height": 2560,
-  "bytes": 613220,
-  "webp": [
-   {
-    "w": 480,
-    "url": "/images/library/srcset/kasbah-hotel-entrance-merzouga-morocco-mga-021-480w.webp"
-   },
-   {
-    "w": 768,
-    "url": "/images/library/srcset/kasbah-hotel-entrance-merzouga-morocco-mga-021-768w.webp"
-   },
-   {
-    "w": 1280,
-    "url": "/images/library/srcset/kasbah-hotel-entrance-merzouga-morocco-mga-021-1280w.webp"
-   },
-   {
-    "w": 1920,
-    "url": "/images/library/srcset/kasbah-hotel-entrance-merzouga-morocco-mga-021-1920w.webp"
    }
   ]
  },

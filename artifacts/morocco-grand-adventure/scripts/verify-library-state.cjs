@@ -32,7 +32,7 @@ while ((m = blockRe.exec(raw))) {
       exists: fs.existsSync(file),
       width: +w[1],
       height: +h[1],
-      blocked: id === 'MGA-023' || id === 'MGA-046',
+      blocked: ['MGA-008', 'MGA-021', 'MGA-023', 'MGA-046'].includes(id),
     });
   }
 }

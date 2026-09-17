@@ -729,7 +729,7 @@ dt2_moments_sub: "Goldene Dünen, sternklare Nächte und die zeitlose Silhouette
 dest_pictures_title: "in Bildern",
 dt2_moments_cap1: "Endlose goldene Dünen ziehen sich bis zum Horizont durch die Erg-Chebbi-Wüste bei Merzouga.",
 dt2_moments_cap2: "Ein Berber-Guide führt seine Kamelkarawane bei Sonnenuntergang über den Dünenkamm.",
-dt2_moments_cap3: "Die Silhouette eines Reisenden vor der riesigen goldenen Sonne über den Sahara-Dünen.",
+dt2_moments_cap3: "Zwei Reisende beobachten vom Kamm einer Düne im Erg Chebbi den Sonnenuntergang.",
 dt2_title: "Sahara-Wüstentouren",
 dt2_subtitle: "Private Merzouga-Wüstentouren, Kameltrekking im Erg Chebbi und Luxus-Wüstencamps – gestaltet von Locals, die in der Sahara geboren sind.",
 dt2_cta_explore: "Wüstentouren entdecken",

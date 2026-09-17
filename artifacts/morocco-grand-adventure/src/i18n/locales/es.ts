@@ -729,7 +729,7 @@ dt2_moments_sub: "Dunas doradas, noches estrelladas y la silueta atemporal de un
 dest_pictures_title: "en imágenes",
 dt2_moments_cap1: "Dunas doradas infinitas se extienden hasta el horizonte en el desierto del Erg Chebbi, cerca de Merzouga.",
 dt2_moments_cap2: "Un guía bereber conduce su caravana de camellos por la cresta de la duna al atardecer.",
-dt2_moments_cap3: "La silueta de un viajero destaca frente al enorme sol dorado sobre las dunas del Sahara.",
+dt2_moments_cap3: "Dos viajeros contemplan la puesta de sol desde la cresta de una duna del Erg Chebbi.",
 dt2_title: "Tours por el Desierto del Sahara",
 dt2_subtitle: "Tours privados al desierto de Merzouga, paseos en camello por el Erg Chebbi y campamentos de lujo: creados por locales nacidos en el Sahara.",
 dt2_cta_explore: "Descubrir los tours por el desierto",

@@ -86,7 +86,10 @@ export function LocalizedHead() {
     upsertMeta('name', 'twitter:card', 'summary_large_image');
     upsertMeta('name', 'twitter:title', fullTitle);
     upsertMeta('name', 'twitter:description', description);
-    if (routeMeta.ogImage) upsertMeta('name', 'twitter:image', `${origin}${routeMeta.ogImage}`);
+    if (routeMeta.ogImage) {
+      upsertMeta('name', 'twitter:image', `${origin}${routeMeta.ogImage}`);
+      upsertMeta('name', 'twitter:image:alt', ogImageAlt(routeMeta.ogImage));
+    }
 
     document.head.querySelectorAll('link[data-i18n-alt]').forEach((n) => n.remove());
     const frag = document.createDocumentFragment();

@@ -31,10 +31,8 @@ const IMAGES: GalleryItem[] = [
   { src: '/images/dest/erg-chebbi.webp', categories: ['Desert'], caption: 'The golden sands of Erg Chebbi' },
   { src: '/images/dest/zagora.webp', categories: ['Desert'], caption: 'Zagora — gateway to the desert' },
   { src: '/images/dest/draa-valley.webp', categories: ['Desert', 'Landscapes'], caption: 'The palm groves of the Draa Valley' },
-  { src: '/images/hero/desert-pano.webp', categories: ['Desert', 'Landscapes'], caption: 'The Sahara at sunset' },
   { src: '/images/stock/stargazing-merzouga.webp', categories: ['Desert', 'Luxury Camp'], caption: 'Stargazing beneath the Milky Way' },
-  { src: '/images/curated/sahara-desert-camp-starry-night-lantern-merzouga.webp', categories: ['Desert', 'Luxury Camp'], caption: 'A traveler holds a lantern beneath the star-filled sky of the Sahara desert' },
-  { src: '/images/curated/berber-guide-camels-sahara-desert-morocco.webp', categories: ['My Journey as a Guide', 'Authenticity'], caption: 'A Berber desert guide rests among his camels in the heart of the Sahara' },
+  { src: '/images/curated/berber-guide-camels-sahara-desert-morocco.webp', categories: ['Desert'], caption: 'A desert guide resting with his camels on the dunes' },
   // --- From the photo journal (authentic images from our Morocco journeys) ---
   { src: '/images/pdf/img_0-optimized.webp', categories: ['Authenticity'], caption: 'Captured on the road with Morocco Grand Adventure' },
   { src: '/images/pdf/img_1-optimized.webp', categories: ['Authenticity'], caption: 'A moment from one of our private journeys in Morocco' },
@@ -56,12 +54,11 @@ const IMAGES: GalleryItem[] = [
   { src: '/images/personal/guide-portrait.webp', categories: ['My Journey as a Guide', 'Happy Travelers', 'Authenticity'], caption: 'Your local Berber guide' },
   // --- Landscapes (cities, mountains, coast) ---
   { src: '/images/dest/marrakech.webp', categories: ['Landscapes'], caption: 'Marrakech — the Red City' },
-  { src: '/images/dest/fes.webp', categories: ['Landscapes', 'Culture'], caption: 'Fes — the ancient tanneries' },
+  { src: '/images/dest/fes.webp', categories: ['Landscapes', 'Culture'], caption: 'Fes — the leather souk in the old medina' },
   { src: '/images/dest/chefchaouen.webp', categories: ['Landscapes'], caption: 'Chefchaouen — the Blue Pearl' },
-  { src: '/images/dest/meknes.webp', categories: ['Landscapes'], caption: 'Meknes — Bab Mansour Gate' },
   { src: '/images/dest/rabat.webp', categories: ['Landscapes'], caption: 'Rabat — Kasbah of the Udayas' },
-  { src: '/images/hero/medina-pano.webp', categories: ['Landscapes', 'Culture'], caption: 'Lanterns of the medina' },
-  { src: '/images/hero/atlas-pano.webp', categories: ['Landscapes'], caption: 'The High Atlas mountains' },
+  { src: '/images/hero/medina-pano.webp', categories: ['Landscapes', 'Culture'], caption: 'The Marrakech souks from above' },
+  { src: '/images/hero/atlas-pano.webp', categories: ['Landscapes'], caption: 'A kasbah gateway on the road through the High Atlas' },
   { src: '/images/dest/ait-ben-haddou.webp', categories: ['Landscapes', 'Culture'], caption: 'Aït Benhaddou — the ancient ksar' },
   { src: '/images/dest/dades-valley.webp', categories: ['Landscapes'], caption: 'The winding Dades Valley road' },
   { src: '/images/dest/todra-gorge.webp', categories: ['Landscapes'], caption: 'The towering Todra Gorge' },
@@ -84,12 +81,10 @@ const VIDEOS: VideoItem[] = [
   { src: '/videos/dunes-camels.mp4', poster: '/images/personal/dunes-camels-poster.webp', title: 'Lost in the Dunes', category: 'Camel Trekking', portrait: true },
   { src: '/videos/sahara-experience.mp4', poster: '/images/personal/luxury-camp-dusk.webp', title: 'Experience the Sahara', category: 'Desert' },
   { src: '/videos/merzouga-campfire.mp4', poster: '/images/dest/merzouga.webp', title: 'Campfire Nights in Merzouga', category: 'Culture' },
-  { src: '/videos/hero.mp4', poster: '/images/hero/desert-pano.webp', title: 'Morocco — A Cinematic Journey', category: 'Desert' },
+  { src: '/videos/hero.mp4', poster: '/images/hero/sahara-camel-riders-poster.webp', title: 'Morocco — A Cinematic Journey', category: 'Desert', portrait: true },
   { src: '/videos/ait-benhaddou-kasbah-unesco-morocco.mp4', poster: '/images/dest/ait-ben-haddou.webp', title: 'Aït Ben Haddou at Golden Hour', category: 'Landscapes' },
   { src: '/videos/chefchaouen-blue-city-morocco.mp4', poster: '/images/dest/chefchaouen.webp', title: 'The Blue Pearl', category: 'Landscapes' },
-  { src: '/videos/morocco-imperial-cities-desert-oasis-tour.mp4', poster: '/images/hero/desert-pano.webp', title: 'Morocco — A Journey of Contrasts', category: 'Landscapes' },
   { src: '/videos/sahara-desert-camel-trek-atlas-mountains-morocco.mp4', poster: '/images/personal/dunes-camels-poster.webp', title: 'Camel Trek Across the Dunes', category: 'Camel Trekking' },
-  { src: '/videos/sahara-desert-dunes-quad-biking-morocco.mp4', poster: '/images/dest/erg-chebbi.webp', title: 'Quad Biking the Dunes', category: 'Quad Adventure' },
 ];
 
 // The curated order the owner requested. A category is only shown when it
@@ -158,9 +153,7 @@ export default function Gallery() {
       {/* Hero */}
       <section className="relative h-[55vh] w-full flex items-center justify-center pt-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src="/images/hero/desert-pano.webp"
-  width={601}
-  height={900} alt="Morocco Gallery" className="w-full h-full object-cover" />
+          <img src="/images/hero/atlas-pano.webp" width={1400} height={776} alt="Moroccan kasbah gateway on a desert road with the snow-capped High Atlas behind" fetchPriority="high" decoding="async" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/50" />
         </div>
         <div className="relative z-10 text-center px-4 max-w-3xl">

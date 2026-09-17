@@ -8,7 +8,7 @@ import { Link } from 'wouter';
 import { SiWhatsapp } from 'react-icons/si';
 import { Layout } from '@/components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { contactInfo } from '@/data/content';
+import { contactInfo, destinationImageAlt } from '@/data/content';
 import { getLocalizedTour, getLocalizedTours, getLocalizedDestination, getLocalizedDestinations } from '@/i18n/content';
 import { getLocalizedGuide, guideOverlayExists, guideImageAlt, guideCrumb } from '@/i18n/guides';
 import { StructuredData, buildBreadcrumb, buildFaqSchema } from '@/components/seo/StructuredData';
@@ -266,7 +266,7 @@ export function SeoHubPage({ page }: { page: HubPage }) {
                       <div className="h-36 overflow-hidden">
                         <img
                           src={d.image}
-                          alt={d.name}
+                          alt={destinationImageAlt(d, d.name)}
                           width={900}
                           height={600}
                           loading="lazy"

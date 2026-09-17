@@ -17,6 +17,7 @@ import {
   blogPosts,
 } from '@/i18n/content';
 import { BLOG_ARTICLE_SECTIONS, BLOG_ARTICLE_CTA } from '@/data/blog-article-sections';
+import { destinationImageAlt } from '@/data/content';
 import { StructuredData, buildBlogPostSchema } from '@/components/seo/StructuredData';
 import { BLOG_META } from '@/components/seo/route-metadata';
 import NotFound from '../not-found';
@@ -223,7 +224,7 @@ export default function BlogPost() {
                         <div className="h-28 overflow-hidden rounded-md mb-3">
                           <img
                             src={dest.image}
-                            alt={dest.name}
+                            alt={destinationImageAlt(dest, dest.name)}
                             loading="lazy"
                             decoding="async"
                             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"

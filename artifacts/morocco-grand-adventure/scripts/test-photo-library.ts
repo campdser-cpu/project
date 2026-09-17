@@ -12,9 +12,9 @@ import {
 
 const siteRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
-// 1. Manifest contract: all 46 official assets, exactly 2 restricted.
+// 1. Manifest contract: all 46 official assets, exactly 4 restricted.
 assert.equal(Object.keys(PHOTO_LIBRARY).length, 46, 'manifest must contain all 46 official assets');
-assert.deepEqual(Object.keys(RESTRICTED_ASSETS).sort(), ['MGA-023', 'MGA-046']);
+assert.deepEqual(Object.keys(RESTRICTED_ASSETS).sort(), ['MGA-008', 'MGA-021', 'MGA-023', 'MGA-046']);
 
 // 2. Every approved asset is published to /images/library/<id>.jpg with a
 //    byte-valid JPEG (SOI + EOI) and intrinsic dimensions; restricted assets
@@ -34,7 +34,7 @@ for (const [id, a] of Object.entries(PHOTO_LIBRARY)) {
   assert.ok(a.width && a.height, `${id} missing intrinsic dimensions`);
   published++;
 }
-assert.equal(published, 44, 'exactly 44 photographs are published from the official library');
+assert.equal(published, 42, 'exactly 42 photographs are published from the official library');
 
 // 3. About / Our Private Fleet: MGA-041…045 render, MGA-046 never appears.
 const fleet = publishablePhotosForContexts(['fleet']).map((p) => p.assetId);

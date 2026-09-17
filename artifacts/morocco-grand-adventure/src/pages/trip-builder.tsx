@@ -2,7 +2,7 @@ import { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence, Variants } from 'framer-motion';
 import { Layout } from '../components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { contactInfo, destinations } from '@/data/content';
+import { contactInfo, destinations, destinationImageAlt } from '@/data/content';
 import { trackEvent } from '@/lib/analytics';
 import { categoryLabel } from '@/i18n/content';
 import {
@@ -429,7 +429,7 @@ export default function TripBuilder() {
                             }`}
                           >
                             <div className="h-48 md:h-56 relative">
-                              <img src={dest.image} alt={dest.name} width={800} height={600} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                              <img src={dest.image} alt={destinationImageAlt(dest, dest.name)} width={800} height={600} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
                               
                               {isSelected && (
