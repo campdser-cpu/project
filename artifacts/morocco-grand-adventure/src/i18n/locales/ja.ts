@@ -78,7 +78,6 @@ export default {
     book_total: "合計金額",
     book_whatsapp: "WhatsAppで予約",
     book_customize: "カスタマイズを依頼",
-    book_paypal: "PayPalで手付金を支払う",
     book_group_quote: "グループ見積もり（6名以上）",
     book_no_fees: "隠れた手数料なし",
     book_secure_payment: "安全な決済手段",

@@ -78,7 +78,6 @@ export default {
     book_total: "Totale prijs",
     book_whatsapp: "Boek via WhatsApp",
     book_customize: "Aanpassing aanvragen",
-    book_paypal: "Aanbetaling via PayPal",
     book_group_quote: "Groepsofferte (6+)",
     book_no_fees: "Geen verborgen kosten",
     book_secure_payment: "Veilige betaalopties",

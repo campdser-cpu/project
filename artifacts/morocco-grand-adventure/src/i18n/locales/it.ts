@@ -78,7 +78,6 @@ export default {
     book_total: "Prezzo totale",
     book_whatsapp: "Prenota via WhatsApp",
     book_customize: "Richiedi personalizzazione",
-    book_paypal: "Paga caparra con PayPal",
     book_group_quote: "Preventivo gruppo (6+)",
     book_no_fees: "Nessuna commissione nascosta",
     book_secure_payment: "Pagamento sicuro",

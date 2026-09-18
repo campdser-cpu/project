@@ -78,7 +78,6 @@ export default {
     book_total: "총 금액",
     book_whatsapp: "WhatsApp으로 예약",
     book_customize: "맞춤화 요청",
-    book_paypal: "PayPal로 보증금 결제",
     book_group_quote: "단체 견적 요청 (6명+)",
     book_no_fees: "숨겨진 수수료 없음",
     book_secure_payment: "안전한 결제 수단",

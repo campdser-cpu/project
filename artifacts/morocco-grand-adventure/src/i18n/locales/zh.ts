@@ -78,7 +78,6 @@ export default {
     book_total: "总价",
     book_whatsapp: "通过WhatsApp预订",
     book_customize: "申请定制",
-    book_paypal: "通过PayPal支付定金",
     book_group_quote: "团体报价（6人以上）",
     book_no_fees: "无隐藏费用",
     book_secure_payment: "安全支付方式",

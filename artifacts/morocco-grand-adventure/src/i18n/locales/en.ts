@@ -202,7 +202,6 @@ export default {
     book_total: "Total Price",
     book_whatsapp: "Book via WhatsApp",
     book_customize: "Request Customization",
-    book_paypal: "Pay Deposit with PayPal",
     book_group_quote: "Request Group Quote (6+)",
     book_no_fees: "No hidden booking fees",
     book_secure_payment: "Secure payment options",

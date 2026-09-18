@@ -78,7 +78,6 @@ export default {
     book_total: "Preço total",
     book_whatsapp: "Reservar pelo WhatsApp",
     book_customize: "Solicitar personalização",
-    book_paypal: "Pagar sinal com PayPal",
     book_group_quote: "Orçamento para grupo (6+)",
     book_no_fees: "Sem taxas ocultas",
     book_secure_payment: "Pagamento seguro",

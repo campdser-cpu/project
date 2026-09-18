@@ -78,7 +78,6 @@ export default {
     book_total: "السعر الإجمالي",
     book_whatsapp: "احجز عبر واتساب",
     book_customize: "طلب تخصيص",
-    book_paypal: "دفع مقدّم عبر PayPal",
     book_group_quote: "عرض مجموعة (+6)",
     book_no_fees: "لا رسوم خفية",
     book_secure_payment: "خيارات دفع آمنة",

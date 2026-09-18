@@ -103,7 +103,6 @@ export type TranslationSet = {
   book_total: string;
   book_whatsapp: string;
   book_customize: string;
-  book_paypal: string;
   book_group_quote: string;
   book_no_fees: string;
   book_secure_payment: string;
