@@ -1,7 +1,7 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useRoute, Link } from 'wouter';
 import { Layout } from '../components/layout/Layout';
-import { getLocalizedTour, getLocalizedTours, getLocalizedFaq, getLocalizedDestinations } from '@/i18n/content';
+import { getLocalizedTour, getLocalizedTours, getLocalizedFaq, getLocalizedDestinations, getLocalizedTourDepth } from '@/i18n/content';
 import { lazy, Suspense } from 'react';
 import { LazyMount } from '../components/perf/LazyMount';
 
@@ -23,7 +23,6 @@ import { usePromoActive } from '../components/promo/PromoProvider';
 import { StructuredData, buildTourSchema, buildReviewSchema, buildFaqSchema } from '../components/seo/StructuredData';
 import { TOUR_DEPARTURE_CITY, getCityHub } from '@/data/tour-hierarchy';
 import { TourBreadcrumbs } from '../components/tours/TourBreadcrumbs';
-import { tourDepthFor } from '@/data/tourDepth';
 import { MERZOUGA_GUIDES, COMPARISONS, TRAVEL_INFO } from '@/data/seoHub';
 import { getLocalizedGuide } from '@/i18n/guides';
 import { tours as canonicalTours } from '@/data/content';
@@ -362,7 +361,7 @@ export default function TourDetail() {
                 English-authored copy (English-first phase) — same source the
                 prerendered HTML uses, so crawler and client content match. */}
             {(() => {
-              const depth = tourDepthFor(tour.id);
+              const depth = getLocalizedTourDepth(tour.id, lang);
               if (!depth.whyChoose.length && !depth.bestFor && !depth.guideLinks.length) return null;
               const allHubs = [...MERZOUGA_GUIDES, ...COMPARISONS, ...TRAVEL_INFO];
               const guidePages = depth.guideLinks

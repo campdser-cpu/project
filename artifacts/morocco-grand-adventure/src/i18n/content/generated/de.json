@@ -3390,5 +3390,103 @@
       "canonicalTitle": "Von Fes nach Chefchaouen — Marokkos Blaue Perle",
       "canonicalExcerpt": "Die Reise vom kulturellen Herzen Marokkos zur berühmten blauen Medina – was du sehen kannst, wo du übernachtest und was sich lohnt."
     }
+  },
+  "tourDepth": {
+    "3-day-sahara-marrakech": {
+      "whyChoose": [
+        "Das kürzeste Format, das wir auf der Überlandstrecke Marrakesch–Merzouga für wirklich machbar halten — und wir sagen offen, dass das Programm dicht ist.",
+        "Es nimmt die prägenden Stationen der Strecke mit: die Überquerung des Hohen Atlas, Aït Ben Haddou (UNESCO), das Dades-Tal und die Todra-Schlucht.",
+        "Durchgehend eine private Reise — Ihr eigenes Fahrzeug und Ihr Fahrer-Guide, mit einer Wüstennacht rund um ein Kameltrekking bei Sonnenuntergang im Erg Chebbi."
+      ],
+      "bestFor": "Reisende, die die Sahara von Marrakesch aus zum ersten Mal erleben, die klassische Südroute und eine Nacht zwischen den Dünen wollen und dafür zwei lange Fahrtage in Kauf nehmen. Wenn Sie einen vierten Tag erübrigen können, bringt Ihnen die 4-Tage-Variante einen echten Wüstentag in Merzouga."
+    },
+    "4-day-marrakech-merzouga-sahara": {
+      "whyChoose": [
+        "Die komfortable Fassung der Route Marrakesch–Merzouga: Die Rückfahrt ist kein Marathon mehr.",
+        "Sie ergänzt einen echten halben Tag in Merzouga selbst — die Wüste ist ein Ort, nicht nur eine Übernachtung.",
+        "Durchgehend privates Fahrzeug und Fahrer-Guide, mit Stopps, die auf Ihre Gruppe zugeschnitten sind."
+      ],
+      "bestFor": "Reisende, die die Südroute ohne Hetze wollen: Paare und Familien, die Aït Ben Haddou, die Schluchten und einen ganzen Merzouga-Tag lieber genießen, als lange Fahrtage aneinanderzureihen."
+    },
+    "2-day-zagora-desert-marrakech": {
+      "whyChoose": [
+        "Die kompakte Variante in die Wüste des Südens: Hoher Atlas, Aït Ben Haddou, Ouarzazate und das Draa-Tal in zwei Tagen.",
+        "Eine andere Wüste als Merzouga — Zagora und das Draa-Tal, ruhiger und näher.",
+        "Durchgehend privates Fahrzeug und Fahrer-Guide."
+      ],
+      "bestFor": "Reisende mit genau zwei Tagen, die eine echte Wüstennacht ohne die längere Fahrt nach Merzouga möchten. Wenn die hohen Dünen des Erg Chebbi Priorität haben, wählen Sie stattdessen eine Merzouga-Route."
+    },
+    "3-day-sahara-fes": {
+      "whyChoose": [
+        "Der kürzere Weg zu den Dünen: Fes → Mittlerer Atlas → Ziz-Tal → Merzouga, zeitlich auf das Kameltrekking bei Sonnenuntergang abgestimmt.",
+        "Landschaftliche Stopps über Ifrane, die Zedernwälder und die Palmenoasen des Ziz — echte Halte, keine Durchfahrten.",
+        "Eine private Reise mit Ihrem eigenen Fahrer-Guide."
+      ],
+      "bestFor": "Reisende mit Standort Fes, die die Sahara ohne die längere Strecke ab Marrakesch wollen. Die Route lässt sich natürlich nach Süden verlängern — fragen Sie uns nach den One-Way-Varianten."
+    },
+    "3-day-fes-merzouga-sahara": {
+      "whyChoose": [
+        "Eine konzentrierte Runde Fes–Merzouga–Fes, mit den Überquerungen des Mittleren Atlas und des Ziz-Tals bereits enthalten.",
+        "Wüstennacht in den Dünen des Erg Chebbi, mit Kameltrekking bei Sonnenuntergang und Camp.",
+        "Durchgehend privates Fahrzeug und Fahrer-Guide."
+      ],
+      "bestFor": "Reisende, die in Fes starten und dort enden und sowohl die Dünen als auch die Atlaslandschaften dazwischen sehen wollen — eine kompakte Runde, die die längere Südstrecke vermeidet."
+    },
+    "4-day-fes-marrakech-via-merzouga": {
+      "whyChoose": [
+        "Die am besten geschnittene Sahara-Route Marokkos: eine One-Way-Durchquerung, die keine Strecke zweimal fährt.",
+        "Fes → Mittlerer Atlas → Merzouga und Erg Chebbi → Todra-Schlucht → Dades-Tal → Aït Ben Haddou → Marrakesch.",
+        "Privates Fahrzeug und Fahrer-Guide; die Wüste, die Schluchten und der UNESCO-Ksar in einer einzigen Reise."
+      ],
+      "bestFor": "Alle, die zwischen Marokkos zwei großen Reisestädten unterwegs sind und die Sahara als Bindeglied dazwischen wollen. Besonders passend, wenn Sie im Norden ankommen und in Marrakesch enden."
+    },
+    "5-day-great-south-morocco": {
+      "whyChoose": [
+        "Die große Runde durch Südmarokko: Marrakesch, der Atlas, Aït Ben Haddou, die Täler und Schluchten und die Sahara.",
+        "Fünf Tage geben jeder wichtigen Station echte Zeit statt eines Fotostopps.",
+        "Durchgehend privates Fahrzeug und Fahrer-Guide."
+      ],
+      "bestFor": "Reisende, die den tiefen Süden wollen — Kasbahs, Schluchten, Oasen und Dünen — in einem Tempo, das jeder Landschaft gerecht wird."
+    },
+    "7-day-imperial-cities-sahara-escape": {
+      "whyChoose": [
+        "Verbindet die Königsstädte mit einem echten Sahara-Abschnitt — Merzouga bekommt einen ganzen Wüstentag, keinen nächtlichen Zwischenstopp.",
+        "Eine zusammenhängende private Reise durch Marokkos kulturellen Norden und den Wüstensüden.",
+        "Durchgehend privates Fahrzeug und Fahrer-Guide."
+      ],
+      "bestFor": "Marokko-Erstbesucher mit einer Woche Zeit, die Medinas und Dünen in einer einzigen, gut getakteten Route sehen wollen."
+    },
+    "5-day-imperial-cities": {
+      "whyChoose": [
+        "Die Route der Königsstädte — Rabat, Meknès, Fes und Marrakesch — als eine private Reise.",
+        "Fünf Tage erlauben unaufgeregte Zeit in den Medinas, begleitet von erfahrenen örtlichen Guides.",
+        "Durchgehend privates Fahrzeug und Fahrer-Guide."
+      ],
+      "bestFor": "Reisende, die vor allem der Kultur wegen kommen. Sie möchten die Sahara ergänzen? Fragen Sie nach der 7-tägigen Route Königsstädte & Sahara-Auszeit, die diese Strecke bis zu den Dünen verlängert."
+    },
+    "honeymoon-morocco": {
+      "whyChoose": [
+        "Eine private Reise zu zweit, aufgebaut um romantische Unterkünfte — Riads, Luxus-Wüstencamps und ein Abschluss an der Küste.",
+        "Die Sahara-Nacht im Luxuscamp ist das Herzstück, keine Zusatzoption.",
+        "Vollständig privat: Ihr Fahrzeug, Ihr Fahrer, Ihr Tempo."
+      ],
+      "bestFor": "Paare und Hochzeitsreisende, die Zweisamkeit und Komfort suchen — private Camps, ruhige Riads und eine Wüstennacht, die richtig gemacht ist."
+    },
+    "family-morocco-adventure": {
+      "whyChoose": [
+        "Für Familien gebaut: überschaubare Fahrtage, abwechslungsreiche Aktivitäten und familienfreundliche Unterkünfte.",
+        "Enthält die Wüstennacht mit einem Kameltrekking, das für fast jedes Alter passt.",
+        "Durchgehend privates Fahrzeug und Fahrer-Guide."
+      ],
+      "bestFor": "Familien mit Kindern — die Route benennt die langen Strecken ehrlich und hält die Mischung der Aktivitäten abwechslungsreich genug für unterschiedliche Altersgruppen."
+    },
+    "8-day-marrakech-essaouira-agadir-sahara": {
+      "whyChoose": [
+        "Die weit ausgreifende private Reise: Marrakesch, die Atlantikküste (Essaouira, Agadir) und die Sahara in einer Route.",
+        "Acht Tage halten jede Etappe komfortabel, auch die Wüstendurchquerung.",
+        "Durchgehend privates Fahrzeug und Fahrer-Guide."
+      ],
+      "bestFor": "Reisende mit gut einer Woche Zeit, die Küste und Wüste wollen, ohne sich zwischen beiden entscheiden zu müssen."
+    }
   }
 }

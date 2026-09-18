@@ -36,7 +36,7 @@ import { BLOG_ARTICLE_SECTIONS, BLOG_ARTICLE_CTA } from '../src/data/blog-articl
 import { CITY_HUBS, TOUR_DEPARTURE_CITY, CITY_HUB_DURATIONS, tourIdsForCity, tourDurationDays } from '../src/data/tour-hierarchy';
 import { MERZOUGA_GUIDES, COMPARISONS, TRAVEL_INFO, type HubPage } from '../src/data/seoHub';
 import { localizedComparisonMeta } from '../src/data/comparison-meta-i18n';
-import { tourDepthFor } from '../src/data/tourDepth';
+import { getLocalizedTourDepth } from '../src/i18n/content';
 import { catalogImage, imagesForDestination, DEST_FOOD_IMAGE, type CatalogImage } from '../src/data/imageCatalog';
 import { SOURCES } from '../src/data/sources';
 import { BOOK_COPY } from '../src/data/book-copy';
@@ -661,7 +661,7 @@ function buildTourDetailContent(id: string, lang: Lang): string {
   const hasDurationHub = Boolean(departCity && (CITY_HUB_DURATIONS[departCity] ?? []).includes(tourDays));
   // Tour depth blocks (src/data/tourDepth.ts): authored why-choose / best-for
   // copy plus contextual guide links resolved against all hub pages.
-  const depth = tourDepthFor(tour.id);
+  const depth = getLocalizedTourDepth(tour.id, lang);
   const derived = deriveTourExperiences(canonicalTours.find((x) => x.id === tour.id) ?? {});
   const experiencesBlock = derived.included.length
     ? h2(tr(lang, 'jx_exp_title')) +

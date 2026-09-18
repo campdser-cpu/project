@@ -592,27 +592,27 @@
       "faq": [
         {
           "question": "Trois jours suffisent-ils vraiment de Marrakech à Merzouga ?",
-          "answer": "Trois jours est le format pratique le plus court pour cette route terrestre. Il convient quand vous voulez les étapes clés du sud et une nuit en camp au Sahara, mais prévoyez de longues journées de route. Si vous préférez un rythme plus détendu, choisissez un itinéraire de quatre jours ou plus."
+          "answer": "Trois jours constituent le format le plus court réellement praticable pour cette route terrestre. Cela fonctionne si vous voulez les étapes clés du sud et une nuit en camp dans le Sahara, mais il faut vous attendre à de longues journées de route. Si vous préférez un rythme plus lent ou davantage de temps dans les dunes, quatre jours ou plus sont le meilleur choix."
         },
         {
-          "question": "Ce circuit est-il privé ?",
-          "answer": "Oui, chaque départ est entièrement privé pour votre seul groupe. Vous voyagez avec votre propre chauffeur anglophone dédié, sans inconnus dans votre groupe, pour fixer le rythme et les arrêts comme bon vous semble."
+          "question": "À combien de route dois-je m'attendre ?",
+          "answer": "Il s'agit d'un long voyage par la route, et non d'un simple transfert. L'itinéraire traverse le Haut Atlas et les vallées du sud avant d'atteindre Merzouga, puis revient à Marrakech. Nous préférons l'expliquer honnêtement afin que vous puissiez choisir le nombre de jours adapté à votre façon de voyager."
         },
         {
-          "question": "Quel est le niveau des hébergements ?",
-          "answer": "Des riads et maisons d'hôtes triés sur le volet avec chambres privées tout au long du voyage, plus une nuit inoubliable dans un camp du désert près des dunes d'Erg Chebbi avec de vrais lits."
+          "question": "À quoi ressemble la partie saharienne du voyage ?",
+          "answer": "Vous atteignez Merzouga et le secteur des dunes de l'Erg Chebbi le deuxième jour, puis vous entrez dans les dunes pour le trekking en dromadaire au coucher du soleil et une nuit au camp dans le désert. L'aménagement exact du camp et le détail des activités sont confirmés avec vous avant la réservation plutôt que supposés."
         },
         {
-          "question": "Quelle est la meilleure période pour voyager ?",
-          "answer": "Le circuit fonctionne toute l'année. Le printemps (mars-mai) et l'automne (septembre-novembre) sont idéaux, avec des journées chaudes et des nuits agréables dans le désert. L'hiver est vif et dégagé ; l'été est chaud à l'intérieur, nous partons donc tôt et planifions autour de la chaleur."
+          "question": "Quelle est la meilleure période pour ce circuit dans le Sahara ?",
+          "answer": "L'Office national marocain du tourisme met en avant le printemps et l'automne comme saisons particulièrement propices au Sahara méridional. Le circuit peut s'organiser toute l'année, mais la chaleur de l'été et la fraîcheur des nuits d'hiver sont des éléments importants au moment de choisir vos dates."
         },
         {
-          "question": "Le trekking en dromadaire est-il inclus ?",
-          "answer": "Oui, un trekking en dromadaire au coucher du soleil dans Erg Chebbi puis une nuit en camp sous les étoiles font partie de l'expérience du désert."
+          "question": "Puis-je réserver maintenant et payer plus tard ?",
+          "answer": "Oui. L'envoi d'une demande est gratuit et ne vous engage à rien. Nous confirmons d'abord avec vous vos dates, votre itinéraire et le prix final ; un acompte de 20 % réserve ensuite le voyage, et les 80 % restants se règlent à votre arrivée au Maroc."
         },
         {
-          "question": "Comment confirmer ma réservation ?",
-          "answer": "Écrivez sur WhatsApp pour fixer vos dates et nous adapterons les détails à vos projets. L'envoi de la demande est gratuit. Une fois vos dates, votre itinéraire et le prix final confirmés, un acompte de 20 % réserve le voyage et les 80 % restants se règlent à votre arrivée au Maroc."
+          "question": "Les vols sont-ils inclus ?",
+          "answer": "Les vols internationaux ne font pas partie du prix de ce circuit. Aucun mois ne garantit le billet le moins cher pour tous les voyageurs, car les tarifs dépendent de votre pays de départ, de la compagnie aérienne et des dates. Une fois vos dates choisies, nous pouvons vous aider à réfléchir au plan d'arrivée et de départ le plus pratique."
         }
       ]
     },
@@ -3255,6 +3255,104 @@
       "alt": "Ruelles et maisons bleues de la médina de Chefchaouen, au Maroc",
       "canonicalTitle": "De Fès à Chefchaouen — découvrir la ville bleue du Maroc",
       "canonicalExcerpt": "Du cœur culturel du Maroc à la célèbre médina bleue — que voir, où loger et comment en profiter pleinement."
+    }
+  },
+  "tourDepth": {
+    "3-day-sahara-marrakech": {
+      "whyChoose": [
+        "Le format le plus court que nous jugeons réellement praticable sur la route terrestre Marrakech–Merzouga — et nous assumons que le programme est dense.",
+        "Il enchaîne les étapes phares du corridor : la traversée du Haut Atlas, Aït Ben Haddou (UNESCO), la vallée du Dadès et les gorges du Todra.",
+        "Un voyage privé de bout en bout — votre véhicule et votre chauffeur-guide, avec une nuit dans le désert construite autour d'un trekking en dromadaire au coucher du soleil dans l'Erg Chebbi."
+      ],
+      "bestFor": "Les voyageurs qui découvrent le Sahara au départ de Marrakech, qui veulent la route classique du sud et une nuit entre les dunes, et qui acceptent deux longues journées de route pour cela. Si vous pouvez libérer un quatrième jour, la version en 4 jours vous offre une vraie journée dans le désert de Merzouga."
+    },
+    "4-day-marrakech-merzouga-sahara": {
+      "whyChoose": [
+        "La version confortable de la route Marrakech–Merzouga : le trajet de retour cesse d'être un marathon.",
+        "Elle ajoute une vraie demi-journée autour de Merzouga — le désert est un lieu, pas seulement une étape pour la nuit.",
+        "Véhicule privé et chauffeur-guide sur tout le parcours, avec des arrêts adaptés à votre groupe."
+      ],
+      "bestFor": "Les voyageurs qui veulent la route du sud sans se presser : couples et familles qui préfèrent profiter d'Aït Ben Haddou, des gorges et d'une journée entière à Merzouga plutôt que d'enchaîner les longues étapes de route."
+    },
+    "2-day-zagora-desert-marrakech": {
+      "whyChoose": [
+        "L'option compacte vers le désert du sud : Haut Atlas, Aït Ben Haddou, Ouarzazate et la vallée du Drâa en deux jours.",
+        "Un désert différent de Merzouga — Zagora et la vallée du Drâa, plus calmes et plus proches.",
+        "Véhicule privé et chauffeur-guide sur tout le parcours."
+      ],
+      "bestFor": "Les voyageurs qui disposent exactement de deux jours et veulent une véritable nuit dans le désert sans la longue route de Merzouga. Si les hautes dunes de l'Erg Chebbi sont votre priorité, choisissez plutôt un itinéraire vers Merzouga."
+    },
+    "3-day-sahara-fes": {
+      "whyChoose": [
+        "La route la plus courte vers les dunes : Fès → Moyen Atlas → vallée du Ziz → Merzouga, calée sur le trekking en dromadaire au coucher du soleil.",
+        "Des arrêts panoramiques par Ifrane, les forêts de cèdres et les palmeraies du Ziz — de vraies haltes, pas de simples passages.",
+        "Un voyage privé avec votre propre chauffeur-guide."
+      ],
+      "bestFor": "Les voyageurs basés à Fès qui veulent le Sahara sans la longue route depuis Marrakech. Cet itinéraire se prolonge naturellement vers le sud — demandez-nous les formules en aller simple."
+    },
+    "3-day-fes-merzouga-sahara": {
+      "whyChoose": [
+        "Une boucle resserrée Fès–Merzouga–Fès, avec les traversées du Moyen Atlas et de la vallée du Ziz intégrées.",
+        "Une nuit dans le désert au cœur des dunes de l'Erg Chebbi, avec trekking en dromadaire au coucher du soleil et camp.",
+        "Véhicule privé et chauffeur-guide sur tout le parcours."
+      ],
+      "bestFor": "Les voyageurs qui partent de Fès et y reviennent, et qui veulent les dunes ainsi que les paysages de l'Atlas entre les deux — une boucle compacte qui évite la longue route du sud."
+    },
+    "4-day-fes-marrakech-via-merzouga": {
+      "whyChoose": [
+        "L'itinéraire saharien le mieux construit du Maroc : une traversée en aller simple qui ne refait jamais la même route.",
+        "Fès → Moyen Atlas → Merzouga et l'Erg Chebbi → gorges du Todra → vallée du Dadès → Aït Ben Haddou → Marrakech.",
+        "Véhicule privé et chauffeur-guide ; le désert, les gorges et le ksar classé à l'UNESCO en un seul voyage."
+      ],
+      "bestFor": "Tous ceux qui voyagent entre les deux grandes villes touristiques du Maroc et veulent faire du Sahara le trait d'union. Particulièrement pertinent si vous arrivez par le nord et terminez à Marrakech."
+    },
+    "5-day-great-south-morocco": {
+      "whyChoose": [
+        "Le grand tour du sud marocain : Marrakech, l'Atlas, Aït Ben Haddou, les vallées et les gorges, puis le Sahara.",
+        "Cinq jours donnent à chaque grande étape un vrai temps de visite au lieu d'un simple arrêt photo.",
+        "Véhicule privé et chauffeur-guide sur tout le parcours."
+      ],
+      "bestFor": "Les voyageurs qui veulent le grand sud — kasbahs, gorges, oasis et dunes — à un rythme qui rend justice à chaque paysage."
+    },
+    "7-day-imperial-cities-sahara-escape": {
+      "whyChoose": [
+        "Il associe les villes impériales à une véritable étape saharienne — Merzouga bénéficie d'une journée entière dans le désert, et non d'un simple passage nocturne.",
+        "Un seul voyage privé cohérent, couvrant le nord culturel et le sud désertique du Maroc.",
+        "Véhicule privé et chauffeur-guide sur tout le parcours."
+      ],
+      "bestFor": "Les voyageurs qui découvrent le Maroc, disposent d'une semaine et veulent les médinas et les dunes dans un même itinéraire bien rythmé."
+    },
+    "5-day-imperial-cities": {
+      "whyChoose": [
+        "La route des villes impériales — Rabat, Meknès, Fès et Marrakech — en un seul voyage privé.",
+        "Cinq jours permettent de parcourir les médinas sans hâte, accompagné de guides locaux expérimentés.",
+        "Véhicule privé et chauffeur-guide sur tout le parcours."
+      ],
+      "bestFor": "Les voyageurs venus d'abord pour la culture. Vous souhaitez ajouter le Sahara ? Demandez-nous le circuit de 7 jours Villes impériales et escapade saharienne, qui prolonge cette route jusqu'aux dunes."
+    },
+    "honeymoon-morocco": {
+      "whyChoose": [
+        "Un voyage privé pour deux, construit autour d'hébergements romantiques — riads, camps de luxe dans le désert et final sur la côte.",
+        "La nuit saharienne dans un camp de luxe est le cœur du voyage, pas une option ajoutée.",
+        "Entièrement privé : votre véhicule, votre chauffeur, votre rythme."
+      ],
+      "bestFor": "Les couples et les jeunes mariés qui recherchent intimité et confort — camps privés, riads paisibles et une nuit dans le désert réussie."
+    },
+    "family-morocco-adventure": {
+      "whyChoose": [
+        "Conçu pour les familles : des journées de route raisonnables, des activités variées et des hébergements adaptés aux enfants.",
+        "Il comprend la nuit dans le désert et un trekking en dromadaire accessible à presque tous les âges.",
+        "Véhicule privé et chauffeur-guide sur tout le parcours."
+      ],
+      "bestFor": "Les familles avec enfants — l'itinéraire annonce honnêtement les longues distances et garde un mélange d'activités assez varié pour les différents âges."
+    },
+    "8-day-marrakech-essaouira-agadir-sahara": {
+      "whyChoose": [
+        "Le grand voyage privé au long cours : Marrakech, la côte atlantique (Essaouira, Agadir) et le Sahara sur un même itinéraire.",
+        "Huit jours permettent de garder chaque étape confortable, y compris la traversée du désert.",
+        "Véhicule privé et chauffeur-guide sur tout le parcours."
+      ],
+      "bestFor": "Les voyageurs qui disposent d'une bonne semaine et veulent la côte et le désert sans avoir à choisir entre les deux."
     }
   }
 }

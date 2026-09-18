@@ -3256,5 +3256,103 @@
       "canonicalTitle": "Van Fes naar Chefchaouen — de Blauwe Stad van Marokko",
       "canonicalExcerpt": "De reis van het culturele hart van Marokko naar de beroemde blauwe medina — wat te zien, waar te verblijven en wat de moeite waard is."
     }
+  },
+  "tourDepth": {
+    "3-day-sahara-marrakech": {
+      "whyChoose": [
+        "De kortste opzet die wij op de landroute Marrakech–Merzouga echt haalbaar vinden — en we zeggen er eerlijk bij dat het programma vol zit.",
+        "Hij pakt de bepalende stops van de corridor mee: de oversteek van de Hoge Atlas, Aït Ben Haddou (UNESCO), de Dadesvallei en de Todrakloof.",
+        "Van begin tot eind een privéreis — je eigen voertuig en chauffeur-gids, met een woestijnnacht rond een kameeltocht bij zonsondergang in Erg Chebbi."
+      ],
+      "bestFor": "Reizigers die de Sahara voor het eerst vanuit Marrakech bezoeken, de klassieke zuidelijke route willen met één nacht tussen de duinen, en daar twee volle rijdagen voor over hebben. Kun je een vierde dag vrijmaken, dan levert de 4-daagse versie een echte woestijndag bij Merzouga op."
+    },
+    "4-day-marrakech-merzouga-sahara": {
+      "whyChoose": [
+        "De comfortabele versie van de route Marrakech–Merzouga: de terugweg is geen marathon meer.",
+        "Voegt een echte halve dag rond Merzouga zelf toe — de woestijn is een plek, niet alleen een overnachting.",
+        "Privévoertuig en chauffeur-gids op de hele route, met stops afgestemd op je gezelschap."
+      ],
+      "bestFor": "Reizigers die de zuidelijke route willen zonder haast: stellen en gezinnen die liever van Aït Ben Haddou, de kloven en een volle dag Merzouga genieten dan lange rijdagen aan elkaar te rijgen."
+    },
+    "2-day-zagora-desert-marrakech": {
+      "whyChoose": [
+        "De compacte optie richting de zuidelijke woestijn: Hoge Atlas, Aït Ben Haddou, Ouarzazate en de Draavallei in twee dagen.",
+        "Een andere woestijn dan Merzouga — Zagora en de Draavallei, rustiger en dichterbij.",
+        "Privévoertuig en chauffeur-gids op de hele route."
+      ],
+      "bestFor": "Reizigers met precies twee dagen die een echte woestijnnacht willen zonder de langere rit naar Merzouga. Zijn de hoge duinen van Erg Chebbi je prioriteit, kies dan liever een route naar Merzouga."
+    },
+    "3-day-sahara-fes": {
+      "whyChoose": [
+        "De kortere rit naar de duinen: Fes → Midden-Atlas → Zizvallei → Merzouga, afgestemd op de kameeltocht bij zonsondergang.",
+        "Panoramische stops via Ifrane, de cederbossen en de palmoasen van de Ziz — echte stops, geen langsrijden.",
+        "Een privéreis met je eigen chauffeur-gids."
+      ],
+      "bestFor": "Reizigers met Fes als uitvalsbasis die de Sahara willen zonder de langere weg vanaf Marrakech. Sluit vanzelf aan op een vervolg naar het zuiden — vraag ons naar de enkele-reisvarianten."
+    },
+    "3-day-fes-merzouga-sahara": {
+      "whyChoose": [
+        "Een strakke lus Fes–Merzouga–Fes, met de oversteken van de Midden-Atlas en de Zizvallei erin verwerkt.",
+        "Woestijnnacht tussen de duinen van Erg Chebbi, met kameeltocht bij zonsondergang en kamp.",
+        "Privévoertuig en chauffeur-gids op de hele route."
+      ],
+      "bestFor": "Reizigers die in Fes beginnen en eindigen en zowel de duinen als de Atlaslandschappen ertussen willen zien — een compacte lus die de langere zuidelijke weg vermijdt."
+    },
+    "4-day-fes-marrakech-via-merzouga": {
+      "whyChoose": [
+        "De best opgebouwde Sahara-route van Marokko: een enkele reis die nooit dezelfde weg twee keer rijdt.",
+        "Fes → Midden-Atlas → Merzouga en Erg Chebbi → Todrakloof → Dadesvallei → Aït Ben Haddou → Marrakech.",
+        "Privévoertuig en chauffeur-gids; de woestijn, de kloven en de UNESCO-ksar in één reis."
+      ],
+      "bestFor": "Iedereen die tussen Marokko's twee grote reissteden onderweg is en de Sahara als verbinding daartussen wil. Vooral sterk als je in het noorden aankomt en in Marrakech eindigt."
+    },
+    "5-day-great-south-morocco": {
+      "whyChoose": [
+        "De grote ronde door Zuid-Marokko: Marrakech, de Atlas, Aït Ben Haddou, de valleien en kloven, en de Sahara.",
+        "Vijf dagen geven elke belangrijke stop echte tijd in plaats van een fotostop.",
+        "Privévoertuig en chauffeur-gids op de hele route."
+      ],
+      "bestFor": "Reizigers die het diepe zuiden willen — kasba's, kloven, oasen en duinen — in een tempo dat elk landschap recht doet."
+    },
+    "7-day-imperial-cities-sahara-escape": {
+      "whyChoose": [
+        "Combineert de keizersteden met een volwaardig Sahara-deel — Merzouga krijgt een hele woestijndag, geen nachtelijke tussenstop.",
+        "Eén samenhangende privéreis door Marokko's culturele noorden en het woestijnzuiden.",
+        "Privévoertuig en chauffeur-gids op de hele route."
+      ],
+      "bestFor": "Eerste bezoekers aan Marokko met een week de tijd die de medina's en de duinen in één goed uitgebalanceerde route willen zien."
+    },
+    "5-day-imperial-cities": {
+      "whyChoose": [
+        "De route van de keizersteden — Rabat, Meknes, Fes en Marrakech — als één privéreis.",
+        "Vijf dagen maken onthaaste tijd in de medina's mogelijk, met deskundige lokale begeleiding.",
+        "Privévoertuig en chauffeur-gids op de hele route."
+      ],
+      "bestFor": "Reizigers die vooral voor cultuur komen. Wil je de Sahara erbij? Vraag ons naar de 7-daagse Keizersteden & Sahara-ontsnapping, die deze route doortrekt tot aan de duinen."
+    },
+    "honeymoon-morocco": {
+      "whyChoose": [
+        "Een privéreis voor twee, opgebouwd rond romantische verblijven — riads, luxe woestijnkampen en een afsluiting aan de kust.",
+        "De Sahara-nacht in een luxe kamp is het hart van de reis, geen toevoeging achteraf.",
+        "Volledig privé: je eigen voertuig, je eigen chauffeur, je eigen tempo."
+      ],
+      "bestFor": "Stellen en pasgetrouwden die intimiteit en comfort zoeken — privékampen, rustige riads en een woestijnnacht die goed is gedaan."
+    },
+    "family-morocco-adventure": {
+      "whyChoose": [
+        "Gemaakt voor gezinnen: behapbare rijdagen, gevarieerde activiteiten en kindvriendelijke verblijven.",
+        "Inclusief de woestijnnacht met een kameeltocht die voor bijna elke leeftijd werkt.",
+        "Privévoertuig en chauffeur-gids op de hele route."
+      ],
+      "bestFor": "Gezinnen met kinderen — de route benoemt de lange afstanden eerlijk en houdt de mix aan activiteiten gevarieerd genoeg voor verschillende leeftijden."
+    },
+    "8-day-marrakech-essaouira-agadir-sahara": {
+      "whyChoose": [
+        "De wijd uitwaaierende privéreis: Marrakech, de Atlantische kust (Essaouira, Agadir) en de Sahara in één route.",
+        "Acht dagen houden elk traject comfortabel, ook de woestijnoversteek.",
+        "Privévoertuig en chauffeur-gids op de hele route."
+      ],
+      "bestFor": "Reizigers met ruim een week die kust én woestijn willen zonder tussen die twee te hoeven kiezen."
+    }
   }
 }

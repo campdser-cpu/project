@@ -28,6 +28,18 @@ export type TourOverlay = {
   faq?: { question?: string; answer?: string }[];
 };
 
+/**
+ * "Why choose this itinerary" / "Who this tour is best for" — the authored
+ * depth copy in src/data/tourDepth.ts. Keyed by the same tour id; `whyChoose`
+ * is matched by index against the English array, like every other array here.
+ * guideLinks are NOT localized: they are hub slugs, and the guide overlay
+ * already translates each hub's title.
+ */
+export type TourDepthOverlay = {
+  whyChoose?: (string | undefined)[];
+  bestFor?: string;
+};
+
 export type BlogPostOverlay = {
   title?: string;
   excerpt?: string;
@@ -43,6 +55,8 @@ export type ContentOverlay = {
   experiences?: (string | undefined)[];
   destinations?: Record<string, DestinationOverlay>;
   tours?: Record<string, TourOverlay>;
+  /** Authored per-tour depth copy, keyed by tour id. */
+  tourDepth?: Record<string, TourDepthOverlay>;
   /** Global FAQ (indexed against the English `faqData` array). */
   faq?: { question?: string; answer?: string }[];
   /** Blog posts keyed by slug. */

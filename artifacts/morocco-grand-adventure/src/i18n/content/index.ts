@@ -22,6 +22,7 @@ import {
 } from '@/data/content';
 import type { Lang } from '@/i18n/index';
 import type { ContentOverlay } from './types';
+import { tourDepthFor, type TourDepth } from '@/data/tourDepth';
 
 // ── Locale overlay registry ─────────────────────────────────────────────────
 const overlayRegistry: Partial<Record<Lang, ContentOverlay>> = {};
@@ -119,6 +120,24 @@ export function localizeTour(tour: Tour, lang: Lang): Tour {
 
 export function getLocalizedTours(lang: Lang): Tour[] {
   return toursEN.map((t) => localizeTour(t, lang));
+}
+
+/**
+ * Authored depth copy for a tour, in `lang`.
+ *
+ * Structure stays canonical — guideLinks are hub slugs, and the guide overlay
+ * localizes each hub title. Only the two prose fields are swapped, each falling
+ * back to English when a locale has not authored it.
+ */
+export function getLocalizedTourDepth(id: string, lang: Lang): TourDepth {
+  const base = tourDepthFor(id);
+  const o = getOverlay(lang)?.tourDepth?.[id];
+  if (!o) return base;
+  return {
+    ...base,
+    whyChoose: pickArr(base.whyChoose, o.whyChoose),
+    bestFor: pickText(base.bestFor, o.bestFor),
+  };
 }
 
 export function getLocalizedTour(id: string, lang: Lang): Tour | undefined {

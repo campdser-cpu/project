@@ -3256,5 +3256,103 @@
       "canonicalTitle": "Da Fes a Chefchaouen — la città blu del Marocco",
       "canonicalExcerpt": "Il viaggio dal cuore culturale del Marocco alla famosa medina blu: cosa vedere, dove soggiornare e come vivere l'esperienza al meglio."
     }
+  },
+  "tourDepth": {
+    "3-day-sahara-marrakech": {
+      "whyChoose": [
+        "Il formato più breve che consideriamo davvero praticabile sulla strada Marrakech–Merzouga, e ammettiamo che il programma sia intenso.",
+        "Tocca le tappe simbolo del corridoio: la traversata dell'Alto Atlante, Ait Ben Haddou (UNESCO), la valle del Dades e le gole del Todra.",
+        "Un viaggio privato dall'inizio alla fine: il vostro veicolo e il vostro autista-guida, con la notte nel deserto costruita attorno a un trekking in cammello al tramonto nell'Erg Chebbi."
+      ],
+      "bestFor": "Chi scopre il Sahara partendo da Marrakech, vuole la classica rotta del sud e una notte tra le dune, e accetta due lunghe giornate di strada per averle. Se riuscite a liberare un quarto giorno, la versione di 4 giorni vi regala una vera giornata di deserto a Merzouga."
+    },
+    "4-day-marrakech-merzouga-sahara": {
+      "whyChoose": [
+        "La versione comoda della rotta Marrakech–Merzouga: il ritorno smette di essere una maratona.",
+        "Aggiunge una vera mezza giornata a Merzouga: il deserto è un luogo, non solo una sosta per la notte.",
+        "Veicolo privato e autista-guida per tutto il percorso, con soste pensate sul vostro gruppo."
+      ],
+      "bestFor": "Chi vuole la rotta del sud senza correre: coppie e famiglie che preferiscono godersi Ait Ben Haddou, le gole e una giornata intera a Merzouga piuttosto che incatenare lunghi trasferimenti."
+    },
+    "2-day-zagora-desert-marrakech": {
+      "whyChoose": [
+        "L'opzione compatta verso il deserto del sud: Alto Atlante, Ait Ben Haddou, Ouarzazate e la valle del Draa in due giorni.",
+        "Un deserto diverso da Merzouga: Zagora e la valle del Draa, più tranquilli e più vicini.",
+        "Veicolo privato e autista-guida per tutto il percorso."
+      ],
+      "bestFor": "Chi ha esattamente due giorni e vuole una notte autentica nel deserto senza la strada più lunga per Merzouga. Se la priorità sono le alte dune dell'Erg Chebbi, scegliete piuttosto un itinerario verso Merzouga."
+    },
+    "3-day-sahara-fes": {
+      "whyChoose": [
+        "Il tragitto più breve verso le dune: Fes → Medio Atlante → valle dello Ziz → Merzouga, calibrato sul trekking in cammello al tramonto.",
+        "Soste panoramiche tra Ifrane, le foreste di cedri e i palmeti dello Ziz: soste vere, non semplici passaggi.",
+        "Un viaggio privato con il vostro autista-guida."
+      ],
+      "bestFor": "Chi alloggia a Fes e vuole il Sahara senza la strada più lunga da Marrakech. Si presta naturalmente a un proseguimento verso sud: chiedeteci le formule di sola andata."
+    },
+    "3-day-fes-merzouga-sahara": {
+      "whyChoose": [
+        "Un anello compatto Fes–Merzouga–Fes, con le traversate del Medio Atlante e della valle dello Ziz già incluse.",
+        "Notte nel deserto tra le dune dell'Erg Chebbi, con trekking in cammello al tramonto e campo tendato.",
+        "Veicolo privato e autista-guida per tutto il percorso."
+      ],
+      "bestFor": "Chi parte e torna a Fes e vuole le dune insieme ai paesaggi dell'Atlante che stanno in mezzo: un anello compatto che evita la strada più lunga del sud."
+    },
+    "4-day-fes-marrakech-via-merzouga": {
+      "whyChoose": [
+        "L'itinerario sahariano meglio costruito del Marocco: una traversata di sola andata che non ripete mai la stessa strada.",
+        "Fes → Medio Atlante → Merzouga ed Erg Chebbi → gole del Todra → valle del Dades → Ait Ben Haddou → Marrakech.",
+        "Veicolo privato e autista-guida; il deserto, le gole e lo ksar patrimonio UNESCO in un solo viaggio."
+      ],
+      "bestFor": "Chi si sposta tra le due grandi città turistiche del Marocco e vuole fare del Sahara il ponte tra loro. Particolarmente indicato se arrivate da nord e concludete a Marrakech."
+    },
+    "5-day-great-south-morocco": {
+      "whyChoose": [
+        "Il grande giro del sud del Marocco: Marrakech, l'Atlante, Ait Ben Haddou, le valli e le gole, e il Sahara.",
+        "Cinque giorni danno a ogni tappa importante un tempo di visita reale invece di una sosta per le foto.",
+        "Veicolo privato e autista-guida per tutto il percorso."
+      ],
+      "bestFor": "Chi vuole il profondo sud — kasbah, gole, oasi e dune — a un ritmo che renda giustizia a ciascun paesaggio."
+    },
+    "7-day-imperial-cities-sahara-escape": {
+      "whyChoose": [
+        "Unisce le città imperiali a una vera tappa sahariana: a Merzouga spetta una giornata intera di deserto, non una toccata e fuga notturna.",
+        "Un unico viaggio privato e coerente, che copre il nord culturale e il sud desertico del Marocco.",
+        "Veicolo privato e autista-guida per tutto il percorso."
+      ],
+      "bestFor": "Chi visita il Marocco per la prima volta, ha una settimana a disposizione e vuole le medine e le dune in un solo itinerario ben ritmato."
+    },
+    "5-day-imperial-cities": {
+      "whyChoose": [
+        "La rotta delle città imperiali — Rabat, Meknès, Fes e Marrakech — come un solo viaggio privato.",
+        "Cinque giorni permettono di attraversare le medine senza fretta, con guide locali esperte.",
+        "Veicolo privato e autista-guida per tutto il percorso."
+      ],
+      "bestFor": "Chi viaggia soprattutto per la cultura. Volete aggiungere il Sahara? Chiedeteci il tour di 7 giorni Città Imperiali e Fuga nel Sahara, che prolunga questa rotta fino alle dune."
+    },
+    "honeymoon-morocco": {
+      "whyChoose": [
+        "Un viaggio privato per due, costruito attorno a soggiorni romantici: riad, campi di lusso nel deserto e finale sulla costa.",
+        "La notte sahariana in un campo di lusso è il cuore del viaggio, non un'aggiunta.",
+        "Interamente privato: il vostro veicolo, il vostro autista, il vostro ritmo."
+      ],
+      "bestFor": "Coppie e sposi in luna di miele che cercano intimità e comfort: campi privati, riad tranquilli e una notte nel deserto fatta come si deve."
+    },
+    "family-morocco-adventure": {
+      "whyChoose": [
+        "Pensato per le famiglie: giornate di strada gestibili, attività varie e soggiorni adatti ai bambini.",
+        "Comprende la notte nel deserto e un trekking in cammello adatto a quasi tutte le età.",
+        "Veicolo privato e autista-guida per tutto il percorso."
+      ],
+      "bestFor": "Famiglie con bambini: l'itinerario dichiara onestamente le lunghe distanze e mantiene un mix di attività abbastanza vario per età diverse."
+    },
+    "8-day-marrakech-essaouira-agadir-sahara": {
+      "whyChoose": [
+        "Il grande viaggio privato di ampio respiro: Marrakech, la costa atlantica (Essaouira, Agadir) e il Sahara in un'unica rotta.",
+        "Otto giorni mantengono comoda ogni tratta, compresa la traversata del deserto.",
+        "Veicolo privato e autista-guida per tutto il percorso."
+      ],
+      "bestFor": "Chi ha poco più di una settimana e vuole costa e deserto senza dover scegliere tra i due."
+    }
   }
 }
