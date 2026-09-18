@@ -44,6 +44,10 @@ export function Logo({ variant = 'dark', className = '', decorative = false }: L
       {...(decorative
         ? { 'aria-hidden': true as const, focusable: 'false' as const }
         : { role: 'img' as const })}
+      // The wordmark is Latin text. Without this it inherits the page's RTL
+      // direction on Arabic pages, which runs the letters back from their x
+      // origin and clips "MOROCCO" out of the viewBox.
+      direction="ltr"
       className={`w-auto transition-[height] duration-300 ease-out ${sizeClasses}`}
     >
       {!decorative && <title>Morocco Grand Adventure</title>}

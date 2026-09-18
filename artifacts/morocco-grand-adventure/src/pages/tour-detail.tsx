@@ -164,7 +164,8 @@ export default function TourDetail() {
         <TourBreadcrumbs
           items={[
             { label: t('nav_tours'), href: '/tours' },
-            ...(departHub ? [{ label: departHub.title, href: `/tours/from-${departHub.slug}` }] : []),
+            // The hub's canonical title is English; the crumb uses the localized label.
+            ...(departHub ? [{ label: t(`hub_${departHub.id}_title`), href: `/tours/from-${departHub.slug}` }] : []),
             { label: tour.name },
           ]}
         />
