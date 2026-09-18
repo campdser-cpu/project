@@ -150,6 +150,56 @@ const NL = String.fromCharCode(10);
 const AMP = String.fromCharCode(38); // '&'
 const ENT = AMP;
 
+/**
+ * Intrinsic size of a public/ image, read straight from the file header
+ * (JPEG SOF, PNG IHDR, WebP VP8/VP8L/VP8X) and cached per path. Share images
+ * are not all 1200x630, and telling a crawler the wrong size is worse than
+ * saying nothing.
+ */
+function readImageSize(buf: Buffer): { width: number; height: number } | null {
+  if (buf.length > 24 && buf.toString('ascii', 1, 4) === 'PNG') {
+    return { width: buf.readUInt32BE(16), height: buf.readUInt32BE(20) };
+  }
+  if (buf.length > 30 && buf.toString('ascii', 0, 4) === 'RIFF' && buf.toString('ascii', 8, 12) === 'WEBP') {
+    const chunk = buf.toString('ascii', 12, 16);
+    if (chunk === 'VP8 ') return { width: buf.readUInt16LE(26) & 0x3fff, height: buf.readUInt16LE(28) & 0x3fff };
+    if (chunk === 'VP8L') {
+      const bits = buf.readUInt32LE(21);
+      return { width: (bits & 0x3fff) + 1, height: ((bits >> 14) & 0x3fff) + 1 };
+    }
+    if (chunk === 'VP8X') {
+      const w = 1 + (buf[24] | (buf[25] << 8) | (buf[26] << 16));
+      const h = 1 + (buf[27] | (buf[28] << 8) | (buf[29] << 16));
+      return { width: w, height: h };
+    }
+    return null;
+  }
+  if (buf.length > 4 && buf[0] === 0xff && buf[1] === 0xd8) {
+    let i = 2;
+    while (i + 9 < buf.length) {
+      if (buf[i] !== 0xff) { i += 1; continue; }
+      const marker = buf[i + 1];
+      const isSof = (marker >= 0xc0 && marker <= 0xc3) || (marker >= 0xc5 && marker <= 0xc7) || (marker >= 0xc9 && marker <= 0xcb) || (marker >= 0xcd && marker <= 0xcf);
+      if (isSof) return { height: buf.readUInt16BE(i + 5), width: buf.readUInt16BE(i + 7) };
+      if (marker === 0xd8 || marker === 0x01 || (marker >= 0xd0 && marker <= 0xd7)) { i += 2; continue; }
+      i += 2 + buf.readUInt16BE(i + 2);
+    }
+  }
+  return null;
+}
+
+const ogSizeCache = new Map<string, { width: number; height: number } | null>();
+function ogImageSize(url: string): { width: number; height: number } | null {
+  if (!ogSizeCache.has(url)) {
+    try {
+      ogSizeCache.set(url, readImageSize(fs.readFileSync(path.join(scriptDir, '..', 'public', decodeURI(url)))));
+    } catch {
+      ogSizeCache.set(url, null);
+    }
+  }
+  return ogSizeCache.get(url) ?? null;
+}
+
 function escapeHtml(text: string): string {
   return text
     .replace(/&/g, ENT + 'amp;')
@@ -1471,6 +1521,13 @@ function injectHead(html: string, meta: RouteEntry['meta'], rest: string, lang: 
     html = html.replace(/<meta property="og:image:alt" content="[^"]*"/, `<meta property="og:image:alt" content="${escapeHtml(ogImageAlt(meta.ogImage))}"`);
     html = html.replace(/<meta name="twitter:image" content="[^"]*"/, `<meta name="twitter:image" content="${SITE_URL}${meta.ogImage}"`);
     html = html.replace(/<meta name="twitter:image:alt" content="[^"]*"/, `<meta name="twitter:image:alt" content="${escapeHtml(ogImageAlt(meta.ogImage))}"`);
+    const ogSize = ogImageSize(meta.ogImage);
+    if (ogSize) {
+      html = html.replace(/<meta property="og:image:width" content="[^"]*"/, `<meta property="og:image:width" content="${ogSize.width}"`);
+      html = html.replace(/<meta property="og:image:height" content="[^"]*"/, `<meta property="og:image:height" content="${ogSize.height}"`);
+    } else {
+      html = html.replace(/[ \t]*<meta property="og:image:(?:width|height)" content="[^"]*"[^>]*>\n?/g, '');
+    }
   }
   html = html.replace(/<!-- Hreflang alternates[\s\S]*?<!-- Open Graph -->/, `<!-- Hreflang alternates (prerendered route-specific set) -->\n${hreflangLinks}\n\n    <!-- Open Graph -->`);
   return html;

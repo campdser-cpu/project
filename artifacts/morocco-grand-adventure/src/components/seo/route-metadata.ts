@@ -4,6 +4,7 @@ export type RouteMeta = { title: string; description: string; ogImage?: string }
 // Import the catalog's canonical alt text so OG image alt descriptions stay in
 // sync with the actual subject of every shared image (catalog photos included).
 import { catalogImage } from '@/data/imageCatalog';
+import { destinations } from '@/data/content';
 import { PHOTO_LIBRARY } from '@/data/photoLibrary';
 import { BOOK_COPY } from '@/data/book-copy';
 import { THINGS_COPY } from '@/data/things-to-do/all';
@@ -245,6 +246,12 @@ const OG_IMAGE_ALTS: Record<string, string> = {
 export function ogImageAlt(ogImage?: string): string {
   if (!ogImage) return 'Morocco Grand Adventure — private journeys through Morocco';
   if (OG_IMAGE_ALTS[ogImage]) return OG_IMAGE_ALTS[ogImage];
+  const dest = ogImage.match(/\/images\/dest\/([a-z-]+)\.(?:jpg|webp)$/);
+  if (dest) {
+    const place = destinations.find((d) => d.id === dest[1]);
+    // A decorative placeholder is not a photograph of the place.
+    if (place && !place.imageDecorative) return `${place.name}, Morocco — ${place.shortDesc}`;
+  }
   if (ogImage.includes('/images/library/')) {
     const photo = Object.values(PHOTO_LIBRARY).find((a) => a.src === ogImage);
     if (photo) return photo.alt;
@@ -258,6 +265,8 @@ export function ogImageAlt(ogImage?: string): string {
 }
 
 const AR_ROUTE_META: Record<string,RouteMeta> = {
+  "/gallery":{title:"صور وفيديوهات من المغرب — الصحراء والمدن العتيقة",description:"صور ومقاطع من الصحراء والمدن العتيقة والجبال ومخيمات الصحراء في المغرب."},
+  "/travel-info":{title:"معلومات عملية للسفر إلى المغرب — من فريق محلي",description:"معلومات عملية للسفر في المغرب: متى تزور، وماذا تحزم، وكيف تتنقل."},
   '/student-tours/university-groups':{title:"سفر المجموعات الجامعية إلى المغرب | رحلات طلابية",description:"كيف يؤثر حجم المجموعة والمهلة الزمنية واللوجستيات على برنامج طلابي في المغرب — من 15 مشاركًا إلى مجموعات أكبر بتخطيط مسبق."},
   '/student-tours':{title:"رحلات طلابية إلى المغرب | سفر جامعي وتعليمي",description:"برامج سفر طلابية وجامعية في المغرب — ثقافة وتاريخ والصحراء ومغامرة، تُنظَّم لمجموعات طلابية من 15 مشاركًا فأكثر."},
   '/':{title:'رحلات المغرب — جولات الصحراء ومراكش',description:'رحلات خاصة في المغرب تشمل مرزوكة والصحراء ومراكش وفاس والمدن الإمبراطورية مع خبراء محليين.'},
@@ -291,6 +300,12 @@ const AR_ROUTE_META: Record<string,RouteMeta> = {
 // French — vocabulary per ONMT-fr and FR-market usage (circuit, bivouac,
 // Villes Impériales, dromadaire). Home title already exists (FR_HOME_META).
 const FR_ROUTE_META: Record<string,RouteMeta> = {
+  "/destinations":{title:"Destinations au Maroc — Sahara, villes impériales, Atlas",description:"Découvrez les grandes destinations du Maroc : Marrakech, Fès, Merzouga, Chefchaouen, l’Atlas et la côte atlantique."},
+  "/gallery":{title:"Photos et vidéos du Maroc — Sahara, médinas et montagnes",description:"Photos et vidéos prises au Sahara, dans les médinas, les montagnes et les campements du désert marocain."},
+  "/about":{title:"À propos | Le Maroc, au-delà du voyage",description:"Morocco Grand Adventure : des guides du désert de Merzouga qui font découvrir tout le Maroc en voyages privés conçus sur place."},
+  "/contact":{title:"Contact — préparez votre voyage au Maroc",description:"Contactez Morocco Grand Adventure par WhatsApp, e-mail ou téléphone pour préparer votre voyage au Maroc."},
+  "/travel-info":{title:"Infos pratiques Maroc — guides d’une équipe locale",description:"Informations pratiques pour voyager au Maroc : quand partir, quoi emporter et comment se déplacer."},
+  "/faq":{title:"FAQ voyage au Maroc — questions fréquentes",description:"Réponses aux questions courantes sur les circuits, le désert, les bagages et la réservation au Maroc."},
   '/student-tours/university-groups':{title:"Voyages de groupes universitaires au Maroc",description:"Comment la taille du groupe, les délais et la logistique façonnent un programme étudiant au Maroc — de 15 participants aux grands groupes planifiés à l’avance."},
   '/student-tours':{title:"Voyages étudiants au Maroc | Séjours universitaires",description:"Programmes de voyage étudiants et universitaires au Maroc : culture, histoire, Sahara et aventure, organisés pour des groupes de 15 participants ou plus."},
   '/tours':{title:'Circuits privés au Maroc — Itinéraires sur mesure',description:"Tous nos circuits privés au Maroc : désert de Merzouga, Villes Impériales et côte atlantique, au départ de Marrakech, Fès, Casablanca et Agadir."},
@@ -310,6 +325,12 @@ const FR_ROUTE_META: Record<string,RouteMeta> = {
 // Spanish — vocabulary per Sahara Viajes / ES-market usage (tours por el
 // desierto, circuitos, excursiones de un día, campamento, paseo en camello).
 const ES_ROUTE_META: Record<string,RouteMeta> = {
+  "/destinations":{title:"Destinos en Marruecos — Sáhara, ciudades imperiales y Atlas",description:"Descubre los grandes destinos de Marruecos: Marrakech, Fez, Merzouga, Chauen, el Atlas y la costa atlántica."},
+  "/gallery":{title:"Fotos y vídeos de Marruecos — Sáhara, medinas y montañas",description:"Fotografías y vídeos del Sáhara, las medinas, las montañas y los campamentos del desierto marroquí."},
+  "/about":{title:"Quiénes somos | Marruecos, más allá del viaje",description:"Morocco Grand Adventure: guías del desierto de Merzouga que muestran todo Marruecos en viajes privados diseñados sobre el terreno."},
+  "/contact":{title:"Contacto — planifica tu viaje a Marruecos",description:"Contacta con Morocco Grand Adventure por WhatsApp, correo o teléfono para planificar tu viaje a Marruecos."},
+  "/travel-info":{title:"Información práctica de Marruecos — guías locales",description:"Información práctica para viajar a Marruecos: cuándo ir, qué llevar y cómo moverse."},
+  "/faq":{title:"Preguntas frecuentes sobre viajar a Marruecos",description:"Respuestas a las dudas más comunes sobre circuitos, desierto, equipaje y reservas en Marruecos."},
   '/student-tours/university-groups':{title:"Viajes de grupos universitarios a Marruecos",description:"Cómo el tamaño del grupo, la antelación y la logística definen un programa estudiantil en Marruecos: desde 15 participantes hasta grupos grandes con planificación previa."},
   '/student-tours':{title:"Viajes de estudiantes a Marruecos | Viajes universitarios",description:"Programas de viaje para estudiantes y universidades en Marruecos: cultura, historia, Sáhara y aventura, para grupos organizados de 15 o más participantes."},
   '/':{title:'Viajes a Marruecos — Tours privados y desierto de Merzouga',description:"Agencia local del desierto: tours privados por Marruecos a medida — Erg Chebbi, ciudades imperiales y Atlas, con guía local. Pide tu presupuesto."},
@@ -330,6 +351,12 @@ const ES_ROUTE_META: Record<string,RouteMeta> = {
 // Italian — vocabulary per ONMT-it / IT-market usage (viaggio, vacanza nel
 // deserto, Città imperiali, escursione in cammello, gite di un giorno).
 const IT_ROUTE_META: Record<string,RouteMeta> = {
+  "/destinations":{title:"Destinazioni in Marocco — Sahara, città imperiali e Atlante",description:"Scopri le principali destinazioni del Marocco: Marrakech, Fes, Merzouga, Chefchaouen, l’Atlante e la costa atlantica."},
+  "/gallery":{title:"Foto e video del Marocco — Sahara, medine e montagne",description:"Fotografie e video dal Sahara, dalle medine, dalle montagne e dai campi tendati del deserto marocchino."},
+  "/about":{title:"Chi siamo | Marocco, oltre il viaggio",description:"Morocco Grand Adventure: guide del deserto di Merzouga che raccontano tutto il Marocco con viaggi privati costruiti sul posto."},
+  "/contact":{title:"Contatti — organizza il tuo viaggio in Marocco",description:"Contatta Morocco Grand Adventure via WhatsApp, e-mail o telefono per organizzare il tuo viaggio in Marocco."},
+  "/travel-info":{title:"Informazioni pratiche sul Marocco — da un team locale",description:"Informazioni pratiche per viaggiare in Marocco: quando andare, cosa mettere in valigia e come spostarsi."},
+  "/faq":{title:"FAQ viaggio in Marocco — domande frequenti",description:"Risposte alle domande più comuni su tour, deserto, bagagli e prenotazioni in Marocco."},
   '/student-tours/university-groups':{title:"Viaggi di gruppi universitari in Marocco",description:"Come dimensione del gruppo, tempi e logistica definiscono un programma studentesco in Marocco: da 15 partecipanti a gruppi più grandi con pianificazione anticipata."},
   '/student-tours':{title:"Viaggi studenteschi in Marocco | Viaggi universitari",description:"Programmi di viaggio per studenti e università in Marocco: cultura, storia, Sahara e avventura, organizzati per gruppi da 15 partecipanti in su."},
   '/':{title:'Viaggio in Marocco — Tour privati e deserto di Merzouga',description:"Agenzia locale del deserto: tour privati in Marocco su misura — Erg Chebbi, città imperiali e Atlas, con guida locale. Richiedi un preventivo."},
@@ -350,6 +377,12 @@ const IT_ROUTE_META: Record<string,RouteMeta> = {
 // German — vocabulary per ONMT-de / DE-market usage (Rundreise, Wüstentour,
 // Kaiserstädte, Kasbah-Straße, Wüstencamp, Kameltrekking).
 const DE_ROUTE_META: Record<string,RouteMeta> = {
+  "/destinations":{title:"Reiseziele in Marokko — Sahara, Königsstädte, Atlas",description:"Entdecken Sie Marokkos wichtigste Reiseziele: Marrakesch, Fès, Merzouga, Chefchaouen, den Atlas und die Atlantikküste."},
+  "/gallery":{title:"Marokko in Bildern und Videos — Sahara, Medinas, Berge",description:"Fotos und Videos aus der Sahara, den Medinas, den Bergen und den Wüstencamps Marokkos."},
+  "/about":{title:"Über uns | Marokko, jenseits der Reise",description:"Morocco Grand Adventure: Wüstenguides aus Merzouga, die ganz Marokko in privat geplanten Reisen zeigen."},
+  "/contact":{title:"Kontakt — planen Sie Ihre Marokko-Reise",description:"Kontaktieren Sie Morocco Grand Adventure per WhatsApp, E-Mail oder Telefon, um Ihre Marokko-Reise zu planen."},
+  "/travel-info":{title:"Praktische Marokko-Infos — von einem lokalen Team",description:"Praktische Informationen für Marokko: beste Reisezeit, Packliste und wie man vor Ort unterwegs ist."},
+  "/faq":{title:"Marokko-FAQ — häufige Fragen zu Reisen und Touren",description:"Antworten auf häufige Fragen zu Marokko-Reisen, Wüstentouren, Gepäck und Buchung."},
   '/student-tours/university-groups':{title:"Universitätsgruppenreisen in Marokko",description:"Wie Gruppengröße, Vorlaufzeit und Logistik ein Studienprogramm in Marokko prägen — von 15 Teilnehmenden bis zu größeren Gruppen mit früher Planung."},
   '/student-tours':{title:"Studienreisen Marokko | Universitäts- & Bildungsreisen",description:"Studien- und Universitätsreisen in Marokko: Kultur, Geschichte, Sahara und Abenteuer — organisiert für Studierendengruppen ab 15 Teilnehmenden."},
   '/':{title:'Marokko Rundreisen — Private Wüstentouren nach Maß',description:"Private Marokko-Rundreisen mit lokalen Sahara-Guides: Merzouga & Erg Chebbi, Kaiserstädte und Atlas — individuell ab Marrakesch oder Fes."},
@@ -369,6 +402,12 @@ const DE_ROUTE_META: Record<string,RouteMeta> = {
 // Dutch — vocabulary per ONMT-nl / NL-market usage (rondreis, privéreis,
 // woestijnreis, Keizerlijke Steden, Kasbahroute).
 const NL_ROUTE_META: Record<string,RouteMeta> = {
+  "/destinations":{title:"Bestemmingen in Marokko — Sahara, koningssteden, Atlas",description:"Ontdek de belangrijkste bestemmingen van Marokko: Marrakech, Fez, Merzouga, Chefchaouen, de Atlas en de Atlantische kust."},
+  "/gallery":{title:"Marokko in foto’s en video’s — Sahara, medina’s, bergen",description:"Foto’s en video’s uit de Sahara, de medina’s, de bergen en de woestijnkampen van Marokko."},
+  "/about":{title:"Over ons | Marokko, voorbij de reis",description:"Morocco Grand Adventure: woestijngidsen uit Merzouga die heel Marokko laten zien met privéreizen die ter plekke worden ontworpen."},
+  "/contact":{title:"Contact — plan je reis door Marokko",description:"Neem contact op met Morocco Grand Adventure via WhatsApp, e-mail of telefoon om je reis door Marokko te plannen."},
+  "/travel-info":{title:"Praktische reisinfo Marokko — van een lokaal team",description:"Praktische informatie voor Marokko: wanneer te gaan, wat mee te nemen en hoe je je verplaatst."},
+  "/faq":{title:"Veelgestelde vragen over reizen in Marokko",description:"Antwoorden op veelgestelde vragen over rondreizen, de woestijn, bagage en boeken in Marokko."},
   '/student-tours/university-groups':{title:"Universitaire groepsreizen in Marokko",description:"Hoe groepsgrootte, doorlooptijd en logistiek een studentenprogramma in Marokko bepalen — van 15 deelnemers tot grotere groepen met vroege planning."},
   '/student-tours':{title:"Studiereizen Marokko | Universitaire & educatieve reizen",description:"Studie- en universiteitsreizen in Marokko: cultuur, geschiedenis, Sahara en avontuur, georganiseerd voor studentengroepen vanaf 15 deelnemers."},
   '/':{title:'Rondreis Marokko — Privéreizen & woestijn van Merzouga',description:"Lokale Sahara-gidsen organiseren uw privérondreis Marokko: Erg Chebbi, Keizerlijke Steden en Atlas — op maat vanaf Marrakech of Fez."},
@@ -389,6 +428,12 @@ const NL_ROUTE_META: Record<string,RouteMeta> = {
 // Portuguese — PT-PT anchored per ONMT-pt usage (Marraquexe, Cidades
 // Imperiais, circuito privado, passeio de camelo, acampamento).
 const PT_ROUTE_META: Record<string,RouteMeta> = {
+  "/destinations":{title:"Destinos em Marrocos — Sara, cidades imperiais e Atlas",description:"Descubra os principais destinos de Marrocos: Marraquexe, Fez, Merzouga, Chefchaouen, o Atlas e a costa atlântica."},
+  "/gallery":{title:"Marrocos em fotos e vídeos — Sara, medinas e montanhas",description:"Fotografias e vídeos do Sara, das medinas, das montanhas e dos acampamentos do deserto marroquino."},
+  "/about":{title:"Quem somos | Marrocos, para além da viagem",description:"Morocco Grand Adventure: guias do deserto de Merzouga que mostram todo o Marrocos em viagens privadas desenhadas no terreno."},
+  "/contact":{title:"Contacto — planeie a sua viagem a Marrocos",description:"Contacte a Morocco Grand Adventure por WhatsApp, e-mail ou telefone para planear a sua viagem a Marrocos."},
+  "/travel-info":{title:"Informações práticas sobre Marrocos — equipa local",description:"Informações práticas para viajar em Marrocos: quando ir, o que levar e como circular."},
+  "/faq":{title:"Perguntas frequentes sobre viajar em Marrocos",description:"Respostas às dúvidas mais comuns sobre circuitos, deserto, bagagem e reservas em Marrocos."},
   '/student-tours/university-groups':{title:"Viagens de grupos universitários em Marrocos",description:"Como a dimensão do grupo, a antecedência e a logística moldam um programa de estudantes em Marrocos — de 15 participantes a grupos maiores com planeamento antecipado."},
   '/student-tours':{title:"Viagens de estudantes em Marrocos | Viagens universitárias",description:"Programas de viagem para estudantes e universidades em Marrocos: cultura, história, Saara e aventura, para grupos organizados a partir de 15 participantes."},
   '/':{title:'Viagens a Marrocos — Circuitos privados e deserto de Merzouga',description:"Agência local do deserto: circuitos privados a Marrocos à medida — Erg Chebbi, Cidades Imperiais e Atlas, com guia local. Peça o seu orçamento."},
@@ -408,6 +453,12 @@ const PT_ROUTE_META: Record<string,RouteMeta> = {
 // Chinese — per CN-market usage (AMC Voyages et al.): 私人定制游, 撒哈拉沙漠
 // 之旅, 沙漠帐篷营地, 一日游; entity names 梅尔祖卡/艾尔格切比/舍夫沙万.
 const ZH_ROUTE_META: Record<string,RouteMeta> = {
+  "/destinations":{title:"摩洛哥目的地 — 撒哈拉、皇城与阿特拉斯",description:"探索摩洛哥的主要目的地：马拉喀什、非斯、梅尔祖卡、舍夫沙万、阿特拉斯山脉与大西洋海岸。"},
+  "/gallery":{title:"摩洛哥照片与视频 — 撒哈拉、麦地那与山区",description:"来自撒哈拉、麦地那、山区与沙漠营地的照片和视频。"},
+  "/about":{title:"关于我们 | 摩洛哥，不止于旅程",description:"Morocco Grand Adventure：来自梅尔祖卡的沙漠向导，用本地设计的私人行程带您走遍摩洛哥。"},
+  "/contact":{title:"联系我们 — 规划您的摩洛哥之旅",description:"通过 WhatsApp、邮件或电话联系 Morocco Grand Adventure，一起规划您的摩洛哥行程。"},
+  "/travel-info":{title:"摩洛哥实用信息 — 来自本地团队的指南",description:"摩洛哥旅行的实用信息：何时前往、如何打包、怎样出行。"},
+  "/faq":{title:"摩洛哥旅行常见问题",description:"关于摩洛哥行程、沙漠之旅、行李与预订的常见问题解答。"},
   '/student-tours/university-groups':{title:"摩洛哥大学团队旅行 | 学生游学",description:"团队规模、筹备时间与后勤如何影响摩洛哥学生项目——从 15 人起，更大团队需提前规划。"},
   '/student-tours':{title:"摩洛哥学生游学 | 大学团队与教育旅行",description:"摩洛哥学生与大学游学项目：文化、历史、撒哈拉与探险体验，为 15 人以上的学生团队统筹安排。"},
   '/':{title:'摩洛哥旅游 — 私人定制游与撒哈拉沙漠之旅',description:"本地沙漠向导为您定制摩洛哥私人行程：梅尔祖卡艾尔格切比沙丘、皇城、阿特拉斯山脉，从马拉喀什或菲斯出发。"},
@@ -428,6 +479,12 @@ const ZH_ROUTE_META: Record<string,RouteMeta> = {
 // Japanese — natural katakana entity naming per ja sources (マラケシ発, サハラ
 // 砂漠ツアー, メルズーガ, エルグ・チェビ, プライベートツアー, 日帰り).
 const JA_ROUTE_META: Record<string,RouteMeta> = {
+  "/destinations":{title:"モロッコの目的地 — サハラ、帝都、アトラス",description:"マラケシュ、フェズ、メルズーガ、シャウエン、アトラス山脈、大西洋岸まで、モロッコの主要な目的地をご紹介します。"},
+  "/gallery":{title:"モロッコの写真と動画 — サハラ、メディナ、山",description:"サハラ、メディナ、山々、砂漠のキャンプで撮影した写真と動画。"},
+  "/about":{title:"私たちについて | モロッコ、旅のその先へ",description:"Morocco Grand Adventure はメルズーガの砂漠ガイド。現地で組み立てるプライベートな旅で、モロッコ全土をご案内します。"},
+  "/contact":{title:"お問い合わせ — モロッコの旅のご相談",description:"WhatsApp、メール、電話で Morocco Grand Adventure へ。モロッコの旅を一緒に組み立てます。"},
+  "/travel-info":{title:"モロッコ旅行の実用情報 — 現地チームの案内",description:"モロッコ旅行の実用情報：いつ行くか、何を持っていくか、どう移動するか。"},
+  "/faq":{title:"モロッコ旅行のよくある質問",description:"ツアー、砂漠、持ち物、予約について、よくいただく質問への回答。"},
   '/student-tours/university-groups':{title:"モロッコ大学団体旅行 | 学生ツアー",description:"グループ規模・準備期間・ロジスティクスがモロッコの学生プログラムに与える影響。15名から、大人数は事前計画が必要です。"},
   '/student-tours':{title:"モロッコ学生ツアー | 大学・教育旅行プログラム",description:"モロッコの学生・大学向け旅行プログラム。文化、歴史、サハラ、アドベンチャーを15名以上の学生グループ向けに手配します。"},
   '/':{title:'モロッコ ツアー — 専用車で巡るプライベート旅行',description:"現地サハラガイドが案内するモロッコのプライベートツアー：メルズーガのエルグ・チェビ、王道の皇城、アトラス山脈。マラケシやフェズ発で日程は自由設計。"},
@@ -448,6 +505,12 @@ const JA_ROUTE_META: Record<string,RouteMeta> = {
 // Korean — per KR-market usage and MGA's existing Korean organic visibility
 // (모로코 여행, 사막 투어, 메르주가, 에르그 셰비, 마라케시 출발).
 const KO_ROUTE_META: Record<string,RouteMeta> = {
+  "/destinations":{title:"모로코 여행지 — 사하라, 제국 도시, 아틀라스",description:"마라케시, 페스, 메르주가, 셰프샤우엔, 아틀라스산맥과 대서양 해안까지 모로코의 주요 여행지를 살펴보세요."},
+  "/gallery":{title:"모로코 사진과 영상 — 사하라, 메디나, 산",description:"사하라와 메디나, 산과 사막 캠프에서 찍은 사진과 영상."},
+  "/about":{title:"소개 | 모로코, 여행 그 너머",description:"Morocco Grand Adventure는 메르주가의 사막 가이드입니다. 현지에서 짜는 프라이빗 여정으로 모로코 전역을 안내합니다."},
+  "/contact":{title:"문의 — 모로코 여행 계획하기",description:"WhatsApp, 이메일, 전화로 Morocco Grand Adventure에 문의해 모로코 여행을 함께 계획하세요."},
+  "/travel-info":{title:"모로코 여행 실용 정보 — 현지 팀의 안내",description:"모로코 여행 실용 정보: 언제 갈지, 무엇을 챙길지, 어떻게 이동할지."},
+  "/faq":{title:"모로코 여행 자주 묻는 질문",description:"투어와 사막 여행, 짐, 예약에 대해 자주 묻는 질문과 답변."},
   '/student-tours/university-groups':{title:"모로코 대학 단체 여행 | 학생 투어",description:"단체 규모, 준비 기간, 물류가 모로코 학생 프로그램에 미치는 영향 — 15명부터, 대규모는 사전 계획이 필요합니다."},
   '/student-tours':{title:"모로코 학생 투어 | 대학·교육 여행 프로그램",description:"모로코 학생 및 대학 여행 프로그램 — 문화, 역사, 사하라, 액티비티를 15명 이상 학생 단체를 위해 준비합니다."},
   '/':{title:'모로코 여행 — 프라이빗 맞춤 투어와 사하라 사막',description:"현지 사하라 가이드와 함께하는 모로코 프라이빗 여행: 메르주가 에르그 셰비, 왕도 도시, 아틀라스 산맥. 마라케시·페스 출발 맞춤 일정."},

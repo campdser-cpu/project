@@ -79,8 +79,12 @@ export function LocalizedHead() {
     if (routeMeta.ogImage) {
       const ogImage = `${origin}${routeMeta.ogImage}`;
       upsertMeta('property', 'og:image', ogImage);
-      upsertMeta('property', 'og:image:width', '1200');
-      upsertMeta('property', 'og:image:height', '630');
+      // The prerendered page carries the measured size of its own share image.
+      // On a client-side route change we cannot measure, so drop the claim
+      // rather than repeat the previous page's numbers.
+      document.head
+        .querySelectorAll('meta[property="og:image:width"], meta[property="og:image:height"]')
+        .forEach((node) => node.remove());
       upsertMeta('property', 'og:image:alt', ogImageAlt(routeMeta.ogImage));
     }
     upsertMeta('name', 'twitter:card', 'summary_large_image');
