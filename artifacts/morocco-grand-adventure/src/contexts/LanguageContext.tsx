@@ -3,6 +3,7 @@ import { navigate } from 'wouter/use-browser-location';
 import { type Lang, languages, t as translate, loadLocale } from '../i18n/index';
 import { loadContent } from '../i18n/content';
 import { loadGuides } from '../i18n/guides';
+import { loadExperiences } from '../i18n/experiences';
 import { parseLangPath, langHref, localizeInternalHref } from '../lib/i18n-routing';
 
 export type { Lang };
@@ -34,6 +35,7 @@ export function LanguageProvider({ lang, children }: { lang: Lang; children: Rea
     loadLocale(lang);
     loadContent(lang);
     loadGuides(lang);
+    loadExperiences(lang);
   }, [lang]);
 
   // Keep every internal anchor in the active language, including links from
@@ -57,7 +59,7 @@ export function LanguageProvider({ lang, children }: { lang: Lang; children: Rea
     if (newLang === lang) return;
     const { rest } = parseLangPath(window.location.pathname);
     try { localStorage.setItem(STORAGE_KEY, newLang); } catch {}
-    await Promise.all([loadLocale(newLang), loadContent(newLang), loadGuides(newLang)]);
+    await Promise.all([loadLocale(newLang), loadContent(newLang), loadGuides(newLang), loadExperiences(newLang)]);
     navigate(langHref(newLang, rest, window.location.search, window.location.hash));
   };
 

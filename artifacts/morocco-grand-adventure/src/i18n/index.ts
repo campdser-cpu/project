@@ -66,11 +66,6 @@ export type TranslationSet = {
   search_any_style: string;
   search_find_tour: string;
   // ── Trust / Awards ────────────────────────────────────────────────────────
-  trust_travelers: string;
-  trust_expertise: string;
-  trust_specialists: string;
-  trust_licensed: string;
-  trust_eco: string;
   // ── Home sections ─────────────────────────────────────────────────────────
   section_destinations: string;
   section_destinations_sub: string;

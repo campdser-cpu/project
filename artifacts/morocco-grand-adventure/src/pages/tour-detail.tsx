@@ -25,6 +25,11 @@ import { TOUR_DEPARTURE_CITY, getCityHub } from '@/data/tour-hierarchy';
 import { TourBreadcrumbs } from '../components/tours/TourBreadcrumbs';
 import { tourDepthFor } from '@/data/tourDepth';
 import { MERZOUGA_GUIDES, COMPARISONS, TRAVEL_INFO } from '@/data/seoHub';
+import { tours as canonicalTours } from '@/data/content';
+import { deriveTourExperiences } from '@/data/tour-experiences';
+import { IncludedExperiences } from '../components/tours/IncludedExperiences';
+import { HowBookingWorks } from '../components/tours/HowBookingWorks';
+import { TailorJourney } from '../components/tours/TailorJourney';
 
 /** Extract the leading number of days from a duration string like "3 Days / 2 Nights". */
 function parseDurationDays(duration: string): number {
@@ -99,6 +104,16 @@ export default function TourDetail() {
   const routeStops = getLocalizedDestinations(lang)
     .filter(d => tour.routeIds?.includes(d.id))
     .sort((a, b) => (tour.routeIds ? tour.routeIds.indexOf(a.id) - tour.routeIds.indexOf(b.id) : 0));
+
+  // Included experiences are derived from the CANONICAL English itinerary:
+  // the stop → experience map in tour-experiences.ts is keyed on the English
+  // stop text, and the overlays translate the resulting labels afterwards.
+  // Deriving from the localized tour would silently match nothing outside /en.
+  const canonicalTour = canonicalTours.find(x => x.id === tour.id);
+  const experiences = deriveTourExperiences(canonicalTour ?? {});
+  const destinationNames = Object.fromEntries(
+    getLocalizedDestinations(lang).map(d => [d.id, d.name]),
+  );
 
   return (
     <Layout>
@@ -296,7 +311,16 @@ export default function TourDetail() {
             </div>
             )}
 
-            {/* Included / Excluded */}
+            {/* What you will experience — derived from this tour's own stops. */}
+            <IncludedExperiences
+              included={experiences.included}
+              optional={experiences.optional}
+              lang={lang}
+              t={t}
+              destinationNames={destinationNames}
+            />
+
+            {/* What the price covers (and does not) — the tour's own lists. */}
             <div className="grid md:grid-cols-2 gap-8 mb-16">
               <div className="bg-muted border border-border p-8 rounded-3xl">
                 <h3 className="font-serif text-2xl text-foreground mb-6 flex items-center gap-3">
@@ -323,6 +347,16 @@ export default function TourDetail() {
               </div>
             </div>
 
+            <HowBookingWorks t={t} className="mb-10" />
+
+            <TailorJourney
+              t={t}
+              tripName={tour.name}
+              bookHref={`/${lang}/book`}
+              defaultDays={parseDurationDays(tour.duration)}
+              className="mb-16"
+            />
+
             {/* Tour depth: why choose / best for / plan with our guides.
                 English-authored copy (English-first phase) — same source the
                 prerendered HTML uses, so crawler and client content match. */}
@@ -344,7 +378,7 @@ export default function TourDetail() {
                 <div className="mb-16 space-y-8">
                   {depth.whyChoose.length > 0 && (
                     <div>
-                      <h2 className="font-serif text-4xl text-foreground mb-6">Why choose this itinerary</h2>
+                      <h2 className="font-serif text-4xl text-foreground mb-6">{t('jx_why_choose')}</h2>
                       <ul className="space-y-3">
                         {depth.whyChoose.map((w, i) => (
                           <li key={i} className="flex items-start gap-3 text-muted-foreground">
@@ -356,7 +390,7 @@ export default function TourDetail() {
                   )}
                   {depth.bestFor && (
                     <div>
-                      <h2 className="font-serif text-4xl text-foreground mb-6">Who this tour is best for</h2>
+                      <h2 className="font-serif text-4xl text-foreground mb-6">{t('jx_best_for')}</h2>
                       <p className="text-muted-foreground leading-relaxed">{depth.bestFor}</p>
                     </div>
                   )}

@@ -1,0 +1,266 @@
+{
+  "erg-chebbi": {
+    "label": "Dunes de l'Erg Chebbi",
+    "blurb": "La grande mer de dunes près de Merzouga — le Sahara que l'on imagine, et le paysage autour duquel ce voyage est construit."
+  },
+  "merzouga": {
+    "label": "Merzouga",
+    "blurb": "Le village au pied des dunes où commence la partie désert du voyage, et où Morocco Grand Adventure est installé."
+  },
+  "camel-trek": {
+    "label": "Balade à dos de dromadaire au coucher du soleil",
+    "blurb": "Entrez dans l'Erg Chebbi quand la lumière baisse, guidé à pied par un homme du désert, et arrivez au camp quand les dunes brillent encore."
+  },
+  "desert-camp": {
+    "label": "Nuit en camp dans le désert",
+    "blurb": "Dormez entre les dunes sous la tente, au lieu de reprendre la route vers une ville pour la nuit."
+  },
+  "luxury-desert-camp": {
+    "label": "Camp de luxe dans le désert",
+    "blurb": "Un camp avec de vrais lits, des salles de bain privées et le dîner servi à ciel ouvert, installé au milieu des dunes."
+  },
+  "desert-stars": {
+    "label": "Dîner sous les étoiles",
+    "blurb": "Le dîner au camp et la soirée dehors — aucune lumière de ville près de l'Erg Chebbi ne vient effacer le ciel."
+  },
+  "desert-sunrise": {
+    "label": "Lever du soleil sur les dunes",
+    "blurb": "Levez-vous tôt pour la première lumière sur l'Erg Chebbi, quand le sable change de couleur et que les crêtes s'allongent d'ombre."
+  },
+  "sandboarding": {
+    "label": "Sandboard",
+    "blurb": "Des planches sont disponibles sur les dunes pour qui veut essayer de descendre une face de l'Erg Chebbi."
+  },
+  "4x4-desert": {
+    "label": "Sortie en 4x4 dans le désert",
+    "blurb": "Traversez le sable en quatre-quatre pour atteindre des parties du désert où la route ne va pas."
+  },
+  "khamlia-gnawa": {
+    "label": "Khamlia et la musique gnaoua",
+    "blurb": "Un village au sud de Merzouga dont la communauté joue la musique gnaoua — une tradition venue par le Sahara, toujours vivante ici."
+  },
+  "nomad-families": {
+    "label": "Thé chez des familles nomades",
+    "blurb": "Une halte chez des familles qui vivent encore dans le désert autour de Merzouga, autour du thé à la menthe sur lequel repose l'hospitalité d'ici."
+  },
+  "rissani": {
+    "label": "Souk de Rissani",
+    "blurb": "La ville-marché près de Merzouga, et l'un des souks les moins mis en scène de la route du sud — le plus animé les jours de marché."
+  },
+  "erfoud": {
+    "label": "Erfoud et ses fossiles",
+    "blurb": "La ville avant Merzouga, connue pour la pierre à fossiles extraite aux alentours et travaillée dans ses ateliers."
+  },
+  "black-desert": {
+    "label": "Le désert noir",
+    "blurb": "La hamada sombre et caillouteuse sur la route des dunes — un rappel que le Sahara n'est pas fait que de sable."
+  },
+  "high-atlas": {
+    "label": "Traversée du Haut Atlas",
+    "blurb": "La route franchit le Haut Atlas par le col du Tizi n'Tichka, avec le temps de s'arrêter là où la vue s'ouvre."
+  },
+  "middle-atlas": {
+    "label": "Traversée du Moyen Atlas",
+    "blurb": "Le massif plus vert entre Fès et le désert — pâturages d'altitude, lacs et villes de pierre."
+  },
+  "cedar-forest": {
+    "label": "Forêt de cèdres",
+    "blurb": "La cédraie du Moyen Atlas, où les magots vivent en liberté au bord de la route."
+  },
+  "todra-gorge": {
+    "label": "Gorges du Todra",
+    "blurb": "Entrez à pied dans le canyon, là où les parois calcaires se resserrent à quelques centaines de mètres et montent à la verticale."
+  },
+  "dades-valley": {
+    "label": "Vallée du Dadès",
+    "blurb": "Roche rouge, palmeraies et villages de terre le long de la rivière — l'étape classique entre la montagne et le désert."
+  },
+  "draa-valley": {
+    "label": "Vallée du Drâa",
+    "blurb": "La longue palmeraie qui suit la rivière vers le sud, avec ses kasbahs dressées au-dessus des jardins."
+  },
+  "ziz-valley": {
+    "label": "Vallée du Ziz",
+    "blurb": "Une large vallée de palmiers creusée dans la roche nue sur la route du sud — le belvédère qui la domine est l'un des plus beaux arrêts de la journée."
+  },
+  "valley-of-roses": {
+    "label": "Vallée des Roses",
+    "blurb": "La vallée où l'on cultive et distille la rose de Damas, récoltée à la fin du printemps."
+  },
+  "skoura": {
+    "label": "Oasis de Skoura",
+    "blurb": "Une palmeraie vivante, faite de kasbahs et de jardins, et non un simple point de vue depuis la route."
+  },
+  "anti-atlas": {
+    "label": "Anti-Atlas",
+    "blurb": "Le massif plus ancien et plus sec à l'intérieur des terres, traversé sur les itinéraires du sud."
+  },
+  "rif-mountains": {
+    "label": "Montagnes du Rif",
+    "blurb": "Le massif vert du nord dans lequel Chefchaouen est bâtie."
+  },
+  "ifrane": {
+    "label": "Ifrane",
+    "blurb": "La ville du Moyen Atlas aux toits pentus et aux jardins, construite dans les années 1930 et sans équivalent sur la route."
+  },
+  "midelt": {
+    "label": "Midelt",
+    "blurb": "La ville du haut plateau entre les deux Atlas, et la pause habituelle sur la longue route Fès–Merzouga."
+  },
+  "ait-ben-haddou": {
+    "label": "Aït Ben Haddou",
+    "blurb": "Montez dans le ksar de terre de l'autre côté de la rivière — inscrit au patrimoine mondial de l'UNESCO et l'arrêt le plus saisissant de la route du sud."
+  },
+  "ouarzazate": {
+    "label": "Ouarzazate",
+    "blurb": "La ville où se rejoignent les routes du sud, avec la kasbah Taourirt en bordure et les studios de cinéma à la sortie."
+  },
+  "taourirt-kasbah": {
+    "label": "Kasbah Taourirt",
+    "blurb": "La kasbah de terre damée de Ouarzazate, un dédale de pièces et d'escaliers derrière un mur extérieur tout simple."
+  },
+  "atlas-studios": {
+    "label": "Atlas Studios",
+    "blurb": "Les studios de cinéma à la sortie de Ouarzazate, où subsistent des décors de tournages réalisés dans le sud marocain."
+  },
+  "volubilis": {
+    "label": "Volubilis",
+    "blurb": "La cité romaine près de Meknès, inscrite au patrimoine mondial de l'UNESCO, dont les mosaïques sont restées en place là où se tenaient les maisons."
+  },
+  "meknes": {
+    "label": "Meknès",
+    "blurb": "La ville impériale de Moulay Ismaïl — la porte Bab Mansour, le mausolée et les murailles autour des anciens greniers."
+  },
+  "marrakech": {
+    "label": "Marrakech",
+    "blurb": "La ville rouge au pied de l'Atlas, point de départ ou d'arrivée habituel des itinéraires du sud."
+  },
+  "jemaa-el-fna": {
+    "label": "Jemaa el-Fna",
+    "blurb": "La grande place de Marrakech, qui se remplit à la tombée de la nuit de cuisines ambulantes, de musiciens et de conteurs."
+  },
+  "marrakech-souks": {
+    "label": "Souks de Marrakech",
+    "blurb": "Les ruelles couvertes au nord de la place, toujours organisées par métier — cuir, métal, teinturiers, tapis."
+  },
+  "koutoubia": {
+    "label": "Mosquée Koutoubia",
+    "blurb": "Le minaret du XIIe siècle auquel toutes les autres tours de Marrakech se mesurent."
+  },
+  "bahia-palace": {
+    "label": "Palais de la Bahia",
+    "blurb": "Un palais du XIXe siècle aux plafonds de cèdre peint, aux cours et aux salles carrelées, dans la médina de Marrakech."
+  },
+  "saadian-tombs": {
+    "label": "Tombeaux saadiens",
+    "blurb": "Le jardin funéraire royal de Marrakech, muré puis rouvert au XXe siècle, richement décoré à l'intérieur."
+  },
+  "majorelle-garden": {
+    "label": "Jardin Majorelle",
+    "blurb": "La villa-jardin bleu cobalt de Marrakech, plantée de cactus et de bambous."
+  },
+  "fes": {
+    "label": "Fès",
+    "blurb": "La plus ancienne des villes impériales, et le départ de la route nord vers le désert."
+  },
+  "fes-el-bali": {
+    "label": "Médina de Fès el-Bali",
+    "blurb": "La vieille ville close de murs, inscrite au patrimoine mondial de l'UNESCO, où les ruelles sont trop étroites pour les voitures."
+  },
+  "chouara-tannery": {
+    "label": "Tannerie Chouara",
+    "blurb": "Les cuves de teinture en pierre des tanneries de Fès, travaillées à la main comme elles le sont depuis des siècles."
+  },
+  "al-quaraouiyine": {
+    "label": "Al Quaraouiyine",
+    "blurb": "Fondée à Fès en 859 et généralement présentée comme la plus ancienne université encore en activité au monde."
+  },
+  "chefchaouen": {
+    "label": "Chefchaouen",
+    "blurb": "La ville bleue du Rif, assez petite pour se parcourir d'un bout à l'autre, et plus belle tôt le matin."
+  },
+  "rabat": {
+    "label": "Rabat",
+    "blurb": "La capitale sur l'Atlantique — la kasbah des Oudayas au-dessus du fleuve et la tour Hassan sur la hauteur."
+  },
+  "hassan-ii-mosque": {
+    "label": "Mosquée Hassan II",
+    "blurb": "La mosquée bâtie au-dessus de l'Atlantique à Casablanca, dotée de l'un des plus hauts minarets du monde."
+  },
+  "essaouira": {
+    "label": "Essaouira",
+    "blurb": "Le port atlantique fortifié — remparts, port de pêche en activité et vent presque tous les jours."
+  },
+  "agadir": {
+    "label": "Agadir",
+    "blurb": "La ville balnéaire atlantique reconstruite après 1960, avec sa longue plage et sa marina."
+  },
+  "taghazout": {
+    "label": "Taghazout",
+    "blurb": "Le village de surf au nord d'Agadir, dont les spots fonctionnent le mieux en hiver."
+  },
+  "zagora": {
+    "label": "Zagora",
+    "blurb": "La ville du désert au bout du Drâa — plus proche de Marrakech que Merzouga, avec des dunes plus modestes."
+  },
+  "taroudant": {
+    "label": "Taroudant",
+    "blurb": "Une ville-marché fortifiée dans les terres à partir d'Agadir, ceinte de remparts de terre."
+  },
+  "asilah": {
+    "label": "Asilah",
+    "blurb": "Une petite ville blanche de la côte atlantique nord, dont les murs de la médina sont couverts de fresques."
+  },
+  "nkob": {
+    "label": "Nkob",
+    "blurb": "Une ville-oasis sur la route du sud, connue pour le nombre de kasbahs qui l'entourent."
+  },
+  "argan-cooperative": {
+    "label": "Coopérative d'huile d'argan",
+    "blurb": "Une coopérative de femmes qui pressent l'huile d'argan à la main, sur la route même où poussent les arganiers."
+  },
+  "berber-hospitality": {
+    "label": "Hospitalité amazighe",
+    "blurb": "Le thé à la menthe chez les familles rencontrées en chemin — la forme ordinaire que prend l'accueil dans le sud marocain."
+  },
+  "berber-music": {
+    "label": "Musique amazighe",
+    "blurb": "Tambours et chants joués en direct le soir — pas un spectacle, mais la manière dont la musique se fait ici."
+  },
+  "berber-villages": {
+    "label": "Villages amazighs",
+    "blurb": "Des villages de terre dans les vallées, bâtis avec le sol sur lequel ils reposent et toujours habités."
+  },
+  "crafts": {
+    "label": "Souks et ateliers d'artisans",
+    "blurb": "Les ateliers où se fabriquent réellement la poterie, le métal et le cuir vendus dans les souks."
+  },
+  "street-food": {
+    "label": "Dégustation de cuisine de rue",
+    "blurb": "Mangez là où la file d'attente est locale — grillades, marchands de soupe et comptoirs à pâtisseries plutôt qu'un menu fixe."
+  },
+  "saffron": {
+    "label": "Pays du safran de Taliouine",
+    "blurb": "Les collines autour de Taliouine, où le safran marocain est cultivé et cueilli à la main en automne."
+  },
+  "atlas-mule-ride": {
+    "label": "Balade à dos de mulet dans l'Atlas",
+    "blurb": "Une courte montée sur les sentiers au-dessus de la vallée, comme on s'y déplace depuis toujours."
+  },
+  "quad-biking": {
+    "label": "Quad",
+    "blurb": "Des quads peuvent être organisés sur les dunes. Réservation et paiement séparés."
+  },
+  "hammam": {
+    "label": "Hammam",
+    "blurb": "Un bain de vapeur et un gommage traditionnels, à réserver sur une après-midi libre."
+  },
+  "hot-air-balloon": {
+    "label": "Montgolfière à l'aube",
+    "blurb": "Un vol au lever du jour au-dessus de la plaine de Marrakech, organisé avec un opérateur local."
+  },
+  "paradise-valley": {
+    "label": "Paradise Valley",
+    "blurb": "Les gorges de palmiers et les vasques d'eau dans les collines derrière Agadir."
+  }
+}

@@ -5,10 +5,11 @@ import { Layout } from '../components/layout/Layout';
 import { contactInfo } from '@/data/content';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { BOOK_COPY } from '@/data/book-copy';
+import { HowBookingWorks } from '../components/tours/HowBookingWorks';
 
 
 export default function Book() {
-  const { lang } = useLanguage();
+  const { lang, t: tr } = useLanguage();
   const [, navigate] = useLocation();
   const c = BOOK_COPY[lang] ?? BOOK_COPY.en;
   const params = useMemo(() => new URLSearchParams(window.location.search), []);
@@ -86,10 +87,14 @@ export default function Book() {
       </form>
 
       <aside className="space-y-5 lg:sticky lg:top-28">
-        <div className="bg-card border border-border rounded-[2rem] p-7 shadow-lg"><div className="flex items-center gap-3 mb-4"><ShieldCheck className="w-6 h-6 text-primary"/><h2 className="font-serif text-2xl text-foreground">{c.payLaterTitle}</h2></div><p className="text-muted-foreground leading-relaxed">{c.payLaterText}</p><ul className="mt-6 space-y-3">{c.trust.map(item=><li key={item} className="flex gap-3 text-sm text-foreground"><CheckCircle2 className="w-5 h-5 text-primary shrink-0"/>{item}</li>)}</ul></div>
-        <div className="bg-foreground text-background rounded-[2rem] p-7"><div className="flex items-center gap-3 mb-3"><Mail className="w-5 h-5 text-primary"/><span className="font-bold">{contactInfo.email}</span></div><p className="text-background/70 text-sm">We confirm the booking details before asking for payment.</p></div>
+        <div className="bg-card border border-border rounded-[2rem] p-7 shadow-lg"><div className="flex items-center gap-3 mb-4"><ShieldCheck className="w-6 h-6 text-primary"/><h2 className="font-serif text-2xl text-foreground">{c.payLaterTitle}</h2></div><ul className="space-y-3">{c.trust.map(item=><li key={item} className="flex gap-3 text-sm text-foreground"><CheckCircle2 className="w-5 h-5 text-primary shrink-0"/>{item}</li>)}</ul></div>
+        <div className="bg-foreground text-background rounded-[2rem] p-7"><div className="flex items-center gap-3 mb-3"><Mail className="w-5 h-5 text-primary"/><span className="font-bold">{contactInfo.email}</span></div><p className="text-background/70 text-sm">{c.promise}</p></div>
       </aside>
     </div>
+
+    {/* The payment sequence, from the same component the tour pages use, so
+        the request form and the tours can never describe it differently. */}
+    <HowBookingWorks t={tr} className="mt-10" />
   </div></main></Layout>;
 }
 

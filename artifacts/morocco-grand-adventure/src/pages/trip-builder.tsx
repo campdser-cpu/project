@@ -44,6 +44,12 @@ const BUDGET_KEYS: { value: Budget; labelKey: string; descKey: string }[] = [
   { value: '>$1000', labelKey: 'tb_budget_ultra', descKey: 'tb_budget_ultra_desc' },
 ];
 
+/** Trip length the request flow supports: one day to a full month. */
+const clampDays = (raw: string): number => {
+  const n = parseInt(raw, 10);
+  return Number.isNaN(n) ? 1 : Math.max(1, Math.min(30, n));
+};
+
 const getDistance = (lat1: number, lon1: number, lat2: number, lon2: number) => {
   const R = 6371; // km
   const dLat = (lat2 - lat1) * Math.PI / 180;
@@ -319,13 +325,38 @@ export default function TripBuilder() {
                       <div className="space-y-6">
                         <div>
                           <div className="flex justify-between mb-3">
-                            <label className="block text-xs font-bold text-muted-foreground uppercase tracking-wider">{t('tb_duration_label')}</label>
+                            <label htmlFor="tb-days" className="block text-xs font-bold text-muted-foreground uppercase tracking-wider">{t('tb_duration_label')}</label>
                             <span className="font-bold text-primary">{days} {t('days')}</span>
                           </div>
-                          <div className="flex items-center gap-6 bg-background border border-border rounded-2xl p-5 shadow-sm">
-                            <Calendar className="w-6 h-6 text-primary shrink-0" />
-                            <input type="range" min="3" max="14" value={days} onChange={e => setDays(parseInt(e.target.value))} className="w-full accent-primary h-2 bg-muted rounded-full appearance-none cursor-pointer" />
+                          {/* 1–30 days: a month in Morocco is a request we support,
+                              so the control must be able to express it. The number
+                              box beside the slider makes an exact value reachable
+                              without dragging — easier on a phone and with a
+                              keyboard. */}
+                          <div className="flex items-center gap-4 bg-background border border-border rounded-2xl p-5 shadow-sm">
+                            <Calendar className="w-6 h-6 text-primary shrink-0" aria-hidden="true" />
+                            <input
+                              id="tb-days"
+                              type="range"
+                              min={1}
+                              max={30}
+                              value={days}
+                              aria-describedby="tb-days-hint"
+                              onChange={e => setDays(clampDays(e.target.value))}
+                              className="w-full accent-primary h-2 bg-muted rounded-full appearance-none cursor-pointer"
+                            />
+                            <input
+                              type="number"
+                              inputMode="numeric"
+                              min={1}
+                              max={30}
+                              value={days}
+                              aria-label={t('tb_duration_label')}
+                              onChange={e => setDays(clampDays(e.target.value))}
+                              className="w-20 shrink-0 rounded-xl border border-border bg-background px-3 py-2 text-center text-base font-bold text-foreground outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+                            />
                           </div>
+                          <p id="tb-days-hint" className="mt-2 text-sm text-muted-foreground">{t('jx_f_days_hint')}</p>
                         </div>
                         <div>
                           <div className="flex justify-between mb-3">

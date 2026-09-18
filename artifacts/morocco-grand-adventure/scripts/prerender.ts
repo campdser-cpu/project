@@ -66,6 +66,10 @@ import {
 import { registerAllTranslations } from '../src/i18n/locales';
 import { registerAllContentOverlays } from '../src/i18n/content/overlays';
 import { registerAllGuideOverlays } from '../src/i18n/guides/overlays';
+import { registerAllExperienceOverlays } from '../src/i18n/experiences/overlays';
+import { tours as canonicalTours } from '../src/data/content';
+import { deriveTourExperiences, type DerivedExperience } from '../src/data/tour-experiences';
+import { localizeExperience } from '../src/i18n/experiences';
 
 // ── Constants ────────────────────────────────────────────────────────────────
 const BRAND = 'Morocco Grand Adventure';
@@ -228,6 +232,12 @@ function rawParagraph(html: string): string {
 function ul(items: string[]): string {
   if (items.length === 0) return '';
   const lis = items.map((item) => `      <li>${escapeHtml(item)}</li>`).join('\n');
+  return `    <ul>\n${lis}\n    </ul>\n`;
+}
+/** List whose items are already-safe inline HTML (e.g. an experience + its link). */
+function rawUl(items: string[]): string {
+  if (items.length === 0) return '';
+  const lis = items.map((item) => `      <li>${item}</li>`).join('\n');
   return `    <ul>\n${lis}\n    </ul>\n`;
 }
 function faqBlock(faqs: { question: string; answer: string }[]): string {
@@ -608,6 +618,32 @@ function buildTopicalLinksContent(options: { destinationId?: string; tourId?: st
   return '';
 }
 
+/**
+ * Experience list for the prerendered tour page.
+ *
+ * Derived from the CANONICAL English itinerary (the stop → experience map is
+ * keyed on English stop text) and then localized through the overlay, exactly
+ * as the React component does — so crawler and client see the same list.
+ */
+function experienceItems(items: DerivedExperience[], lang: Lang): string[] {
+  return items.map((item) => {
+    const e = localizeExperience(item, lang);
+    const status = item.status === 'confirmed' ? ` (${escapeHtml(tr(lang, 'jx_exp_confirmed'))})` : '';
+    const dest = e.destinationId
+      ? ` ${link(`${SITE_URL}/${lang}/destinations/${e.destinationId}`, fmt(tr(lang, 'jx_exp_explore'), { n: getLocalizedDestinations(lang).find((d) => d.id === e.destinationId)?.name ?? e.label }))}`
+      : '';
+    return `<strong>${escapeHtml(e.label)}</strong>${status} — ${escapeHtml(e.blurb)}${dest}`;
+  });
+}
+
+/** The four booking steps, stated once in the gap layer and rendered here. */
+function bookingStepsBlock(lang: Lang): string {
+  const steps = [1, 2, 3, 4].map(
+    (n) => `${escapeHtml(tr(lang, `jx_hbw_${n}_t`))}: ${escapeHtml(tr(lang, `jx_hbw_${n}_d`))}`,
+  );
+  return h2(tr(lang, 'jx_hbw_title')) + ul(steps) + paragraph(tr(lang, 'jx_hbw_cancel'));
+}
+
 function buildTourDetailContent(id: string, lang: Lang): string {
   const tour = getLocalizedTour(id, lang);
   if (!tour) return h1('Tour Not Found') + paragraph('This tour could not be found.');
@@ -626,8 +662,18 @@ function buildTourDetailContent(id: string, lang: Lang): string {
   // Tour depth blocks (src/data/tourDepth.ts): authored why-choose / best-for
   // copy plus contextual guide links resolved against all hub pages.
   const depth = tourDepthFor(tour.id);
-  const whyChooseBlock = depth.whyChoose.length ? h2('Why choose this itinerary') + ul(depth.whyChoose) : '';
-  const bestForBlock = depth.bestFor ? h2('Who this tour is best for') + paragraph(depth.bestFor) : '';
+  const derived = deriveTourExperiences(canonicalTours.find((x) => x.id === tour.id) ?? {});
+  const experiencesBlock = derived.included.length
+    ? h2(tr(lang, 'jx_exp_title')) +
+      paragraph(tr(lang, 'jx_exp_lead')) +
+      (derived.included.some((e) => e.status === 'confirmed') ? paragraph(tr(lang, 'jx_exp_confirmed_note')) : '') +
+      rawUl(experienceItems(derived.included, lang))
+    : '';
+  const optionalBlock = derived.optional.length
+    ? h2(tr(lang, 'jx_opt_title')) + paragraph(tr(lang, 'jx_opt_lead')) + rawUl(experienceItems(derived.optional, lang))
+    : '';
+  const whyChooseBlock = depth.whyChoose.length ? h2(tr(lang, 'jx_why_choose')) + ul(depth.whyChoose) : '';
+  const bestForBlock = depth.bestFor ? h2(tr(lang, 'jx_best_for')) + paragraph(depth.bestFor) : '';
   const allHubsForDepth = [...MERZOUGA_GUIDES, ...COMPARISONS, ...TRAVEL_INFO];
   const guideLinkItems = depth.guideLinks
     .map((slug) => allHubsForDepth.find((q) => q.slug === slug))
@@ -642,7 +688,7 @@ function buildTourDetailContent(id: string, lang: Lang): string {
   const breadcrumb = departHub
     ? `<p class="prerendered-breadcrumb">${link(`${SITE_URL}/${lang}`, tr(lang, 'nav_home'))} › ${link(`${SITE_URL}/${lang}/tours`, tr(lang, 'nav_tours'))} › ${link(`${SITE_URL}/${lang}/tours/from-${departHub.slug}`, tr(lang, `hub_${departHub.id}_title`))}${durationHubCrumb} › ${escapeHtml(tour.name)}</p>\n`
     : '';
-  return breadcrumb + h1(tour.name) + paragraph(tour.description ?? '') + paragraph(`${tr(lang, 'search_duration')}: ${tour.duration}`) + h2(tr(lang, 'tour_why_love')) + ul(tour.highlights) + whyChooseBlock + (itinerary.length > 0 ? h2(tr(lang, 'tour_itinerary')) + ul(itinerary.map((d) => `${tr(lang, 'tour_day')} ${d.day}: ${d.title}`)) : '') + (included.length > 0 ? h2(tr(lang, 'tour_included')) + ul(included) : '') + (excluded.length > 0 ? h2(tr(lang, 'tour_not_included')) + ul(excluded) : '') + (faqs.length > 0 ? h2(tr(lang, 'nav_faq')) + faqBlock(faqs) : '') + (departHub ? h2(fmt(tr(lang, 'hub_related_title'), { city: tr(lang, `hub_${departHub.id}_name`) })) + paragraph(link(`${SITE_URL}/${lang}/tours/from-${departHub.slug}`, fmt(tr(lang, 'hub_related_browse'), { city: tr(lang, `hub_${departHub.id}_name`) }))) : '') + bestForBlock + guideLinksBlock + rawParagraph(link(`${SITE_URL}/${lang}/book`, tr(lang, 'book_form_cta'))) + buildTopicalLinksContent({ tourId: tour.id }, lang);
+  return breadcrumb + h1(tour.name) + paragraph(tour.description ?? '') + paragraph(`${tr(lang, 'search_duration')}: ${tour.duration}`) + h2(tr(lang, 'tour_why_love')) + ul(tour.highlights) + whyChooseBlock + (itinerary.length > 0 ? h2(tr(lang, 'tour_itinerary')) + ul(itinerary.map((d) => `${tr(lang, 'tour_day')} ${d.day}: ${d.title}`)) : '') + experiencesBlock + optionalBlock + (included.length > 0 ? h2(tr(lang, 'tour_included')) + ul(included) : '') + (excluded.length > 0 ? h2(tr(lang, 'tour_not_included')) + ul(excluded) : '') + bookingStepsBlock(lang) + (faqs.length > 0 ? h2(tr(lang, 'nav_faq')) + faqBlock(faqs) : '') + (departHub ? h2(fmt(tr(lang, 'hub_related_title'), { city: tr(lang, `hub_${departHub.id}_name`) })) + paragraph(link(`${SITE_URL}/${lang}/tours/from-${departHub.slug}`, fmt(tr(lang, 'hub_related_browse'), { city: tr(lang, `hub_${departHub.id}_name`) }))) : '') + bestForBlock + guideLinksBlock + rawParagraph(link(`${SITE_URL}/${lang}/book`, tr(lang, 'book_form_cta'))) + buildTopicalLinksContent({ tourId: tour.id }, lang);
 }
 function buildDestinationsContent(lang: Lang): string {
   // Mirror the live /destinations page structure: localized H1 + intro, each
@@ -749,8 +795,10 @@ function buildBookContent(lang: Lang): string {
     + paragraph(c.subtitle)
     + paragraph(c.promise)
     + h2(c.payLaterTitle)
-    + paragraph(c.payLaterText)
     + ul(c.trust)
+    // The four-step sequence, from the same strings the component renders, so
+    // the crawlable /book page states the policy exactly as the page does.
+    + bookingStepsBlock(lang)
     + rawParagraph(link(contactInfo.whatsapp, `${c.whatsapp} — ${contactInfo.whatsappNumber}`))
     + rawParagraph(link(`${SITE_URL}/${lang}/tours`, tr(lang, 'nav_tours')))
     + rawParagraph(link(`${SITE_URL}/${lang}/contact`, tr(lang, 'nav_contact')));
@@ -1555,6 +1603,7 @@ function main() {
   registerAllTranslations();
   registerAllContentOverlays();
   registerAllGuideOverlays();
+  registerAllExperienceOverlays();
   if (!fs.existsSync(indexHtmlPath)) throw new Error(`[prerender] dist/index.html not found at ${indexHtmlPath}. Run \`pnpm run build\` (Vite build) before prerendering.`);
   const baseHtml = fs.readFileSync(indexHtmlPath, 'utf-8');
   let written = 0;

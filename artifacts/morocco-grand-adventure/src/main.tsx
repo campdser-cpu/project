@@ -8,6 +8,7 @@ import { parseLangPath, preferredLang } from './lib/i18n-routing';
 import { loadLocale } from './i18n';
 import { loadContent } from './i18n/content';
 import { loadGuides } from './i18n/guides';
+import { loadExperiences } from './i18n/experiences';
 
 // Locale-based code splitting bootstrap: resolve the active language from the
 // URL (falling back to the visitor's preferred language), load ONLY that
@@ -17,7 +18,7 @@ import { loadGuides } from './i18n/guides';
 async function bootstrap() {
   const { lang } = parseLangPath(window.location.pathname);
   const active = lang ?? preferredLang();
-  await Promise.all([loadLocale(active), loadContent(active), loadGuides(active)]);
+  await Promise.all([loadLocale(active), loadContent(active), loadGuides(active), loadExperiences(active)]);
   createRoot(document.getElementById('root')!).render(<App />);
 }
 

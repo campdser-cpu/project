@@ -1,0 +1,266 @@
+{
+  "erg-chebbi": {
+    "label": "Duinen van Erg Chebbi",
+    "blurb": "De hoge duinenzee bij Merzouga — de Sahara die de meeste reizigers voor ogen hebben, en het landschap waar deze reis om draait."
+  },
+  "merzouga": {
+    "label": "Merzouga",
+    "blurb": "Het dorp aan de rand van de duinen waar het woestijndeel van de reis begint, en waar Morocco Grand Adventure gevestigd is."
+  },
+  "camel-trek": {
+    "label": "Kameeltocht bij zonsondergang",
+    "blurb": "De duinen van Erg Chebbi in terwijl het licht zakt, te voet begeleid door een gids uit de woestijn, en aankomen bij het kamp terwijl het zand nog gloeit."
+  },
+  "desert-camp": {
+    "label": "Nacht in een woestijnkamp",
+    "blurb": "Slapen tussen de duinen in een tentenkamp, in plaats van terugrijden naar een stad om te overnachten."
+  },
+  "luxury-desert-camp": {
+    "label": "Luxe woestijnkamp",
+    "blurb": "Een kamp met echte bedden, eigen badkamers en een diner in de openlucht, midden tussen de duinen."
+  },
+  "desert-stars": {
+    "label": "Diner onder de sterren",
+    "blurb": "Diner in het kamp en een avond buiten — bij Erg Chebbi is er geen stadslicht dat de sterrenhemel wegdrukt."
+  },
+  "desert-sunrise": {
+    "label": "Zonsopkomst boven de duinen",
+    "blurb": "Vroeg op voor het eerste licht op Erg Chebbi, wanneer het zand van kleur verschiet en de kammen lange schaduwen werpen."
+  },
+  "sandboarding": {
+    "label": "Sandboarden",
+    "blurb": "Bij de duinen liggen boards klaar voor wie een flank van Erg Chebbi af wil."
+  },
+  "4x4-desert": {
+    "label": "4x4-rit door de woestijn",
+    "blurb": "Met vierwielaandrijving door het zand, naar delen van de woestijn waar geen weg heen loopt."
+  },
+  "khamlia-gnawa": {
+    "label": "Khamlia en gnawamuziek",
+    "blurb": "Een dorp ten zuiden van Merzouga waar de gemeenschap gnawamuziek speelt — een traditie die via de Sahara hierheen kwam en hier nog leeft."
+  },
+  "nomad-families": {
+    "label": "Thee bij nomadenfamilies",
+    "blurb": "Een stop bij families die rond Merzouga nog in de woestijn wonen, bij de muntthee waar de gastvrijheid hier op rust."
+  },
+  "rissani": {
+    "label": "Soek van Rissani",
+    "blurb": "Het marktstadje bij Merzouga, en een van de minst opgepoetste soeks van de zuidelijke route — het drukst op marktdagen."
+  },
+  "erfoud": {
+    "label": "Erfoud en de fossielen",
+    "blurb": "Het stadje vóór Merzouga, bekend om het fossielhoudende gesteente dat in de buurt wordt gewonnen en in de werkplaatsen wordt bewerkt."
+  },
+  "black-desert": {
+    "label": "De zwarte woestijn",
+    "blurb": "De donkere, stenige hamada op weg naar de duinen — een herinnering dat de Sahara grotendeels niet uit zand bestaat."
+  },
+  "high-atlas": {
+    "label": "Oversteek van de Hoge Atlas",
+    "blurb": "De weg klimt over de Hoge Atlas via de Tizi n'Tichka-pas, met tijd om te stoppen waar het uitzicht opengaat."
+  },
+  "middle-atlas": {
+    "label": "Oversteek van de Midden-Atlas",
+    "blurb": "Het groenere gebergte tussen Fes en de woestijn — hoogweiden, meren en stadjes van steen."
+  },
+  "cedar-forest": {
+    "label": "Cederwoud",
+    "blurb": "Het cederbos van de Midden-Atlas, waar berberapen vrij langs de weg leven."
+  },
+  "todra-gorge": {
+    "label": "Todrakloof",
+    "blurb": "Te voet de canyon in, waar de kalkwanden tot een paar honderd meter naderen en kaarsrecht omhoog gaan."
+  },
+  "dades-valley": {
+    "label": "Dadesvallei",
+    "blurb": "Rode rots, palmtuinen en lemen dorpen langs de rivier — de klassieke overnachting tussen bergen en woestijn."
+  },
+  "draa-valley": {
+    "label": "Draavallei",
+    "blurb": "De lange palmoase die de rivier naar het zuiden volgt, met kasba's boven de tuinen."
+  },
+  "ziz-valley": {
+    "label": "Zizvallei",
+    "blurb": "Een brede palmvallei uitgesneden in kaal gesteente op de weg naar het zuiden — het uitzichtpunt erboven is een van de mooiste stops van de dag."
+  },
+  "valley-of-roses": {
+    "label": "Rozenvallei",
+    "blurb": "De vallei waar damascenerrozen worden geteeld en gedistilleerd, geoogst in het late voorjaar."
+  },
+  "skoura": {
+    "label": "Oase van Skoura",
+    "blurb": "Een werkende palmoase van kasba's en tuinen, geen uitzichtpunt dat je vanaf de weg bekijkt."
+  },
+  "anti-atlas": {
+    "label": "Anti-Atlas",
+    "blurb": "Het oudere, drogere gebergte landinwaarts, dat op de zuidelijke routes wordt overgestoken."
+  },
+  "rif-mountains": {
+    "label": "Rifgebergte",
+    "blurb": "Het groene noordelijke gebergte waarin Chefchaouen ligt."
+  },
+  "ifrane": {
+    "label": "Ifrane",
+    "blurb": "Het stadje in de Midden-Atlas met puntdaken en tuinen, gebouwd in de jaren dertig en anders dan alles op de route."
+  },
+  "midelt": {
+    "label": "Midelt",
+    "blurb": "Het plateaustadje tussen de twee Atlasketens, en de gebruikelijke onderbreking op de lange weg Fes–Merzouga."
+  },
+  "ait-ben-haddou": {
+    "label": "Aït Ben Haddou",
+    "blurb": "Omhoog door de lemen ksar aan de overkant van de rivier — UNESCO-werelderfgoed en de indrukwekkendste stop van de zuidelijke route."
+  },
+  "ouarzazate": {
+    "label": "Ouarzazate",
+    "blurb": "De stad waar de zuidelijke routes samenkomen, met de Taourirt-kasba aan de rand en filmstudio's aan de buitenkant."
+  },
+  "taourirt-kasbah": {
+    "label": "Taourirt-kasba",
+    "blurb": "De kasba van stampleem in Ouarzazate, een doolhof van kamers en trappen achter een kale buitenmuur."
+  },
+  "atlas-studios": {
+    "label": "Atlas Studios",
+    "blurb": "De filmstudio's buiten Ouarzazate, waar decors van in Zuid-Marokko opgenomen producties nog overeind staan."
+  },
+  "volubilis": {
+    "label": "Volubilis",
+    "blurb": "De Romeinse stad bij Meknes, UNESCO-werelderfgoed, met mozaïekvloeren nog op hun plek waar de huizen stonden."
+  },
+  "meknes": {
+    "label": "Meknes",
+    "blurb": "De keizerstad van Moulay Ismail — de Bab Mansour-poort, het mausoleum en de muren rond de oude graanschuren."
+  },
+  "marrakech": {
+    "label": "Marrakech",
+    "blurb": "De rode stad aan de voet van de Atlas, en het gebruikelijke begin- of eindpunt van de zuidelijke routes."
+  },
+  "jemaa-el-fna": {
+    "label": "Jemaa el-Fna",
+    "blurb": "Het hoofdplein van Marrakech, dat zich na zonsondergang vult met eetkraampjes, muzikanten en vertellers."
+  },
+  "marrakech-souks": {
+    "label": "Soeks van Marrakech",
+    "blurb": "De overdekte steegjes ten noorden van het plein, nog altijd per ambacht ingedeeld — leer, metaal, ververs, tapijten."
+  },
+  "koutoubia": {
+    "label": "Koutoubia-moskee",
+    "blurb": "De twaalfde-eeuwse minaret waaraan elke andere toren in Marrakech wordt afgemeten."
+  },
+  "bahia-palace": {
+    "label": "Bahia-paleis",
+    "blurb": "Een negentiende-eeuws paleis met beschilderde cederhouten plafonds, binnenhoven en betegelde zalen in de medina van Marrakech."
+  },
+  "saadian-tombs": {
+    "label": "Saadiaanse graven",
+    "blurb": "De dichtgemetselde koninklijke graftuin van Marrakech, in de twintigste eeuw heropend en vanbinnen rijk versierd."
+  },
+  "majorelle-garden": {
+    "label": "Jardin Majorelle",
+    "blurb": "De kobaltblauwe tuinvilla in Marrakech, beplant met cactussen en bamboe."
+  },
+  "fes": {
+    "label": "Fes",
+    "blurb": "De oudste van de keizersteden, en het begin van de noordelijke route naar de woestijn."
+  },
+  "fes-el-bali": {
+    "label": "Medina van Fes el-Bali",
+    "blurb": "De ommuurde oude stad, UNESCO-werelderfgoed, waar de steegjes te smal zijn voor auto's."
+  },
+  "chouara-tannery": {
+    "label": "Chouara-leerlooierij",
+    "blurb": "De stenen verfkuipen van de leerlooierijen van Fes, met de hand bewerkt zoals al eeuwenlang."
+  },
+  "al-quaraouiyine": {
+    "label": "Al Quaraouiyine",
+    "blurb": "In 859 gesticht in Fes en doorgaans beschreven als de oudste onafgebroken werkende universiteit ter wereld."
+  },
+  "chefchaouen": {
+    "label": "Chefchaouen",
+    "blurb": "Het blauwgeschilderde stadje in het Rif, klein genoeg om van kant tot kant te belopen en het mooist vroeg op de dag."
+  },
+  "rabat": {
+    "label": "Rabat",
+    "blurb": "De hoofdstad aan de Atlantische Oceaan — de Kasba van de Oudaya boven de rivier en de Hassantoren op de heuvel."
+  },
+  "hassan-ii-mosque": {
+    "label": "Hassan II-moskee",
+    "blurb": "De moskee die in Casablanca boven de oceaan is gebouwd, met een van de hoogste minaretten ter wereld."
+  },
+  "essaouira": {
+    "label": "Essaouira",
+    "blurb": "De ommuurde Atlantische havenstad — vestingmuren, een werkende vissershaven en bijna elke dag wind."
+  },
+  "agadir": {
+    "label": "Agadir",
+    "blurb": "De Atlantische badstad die na 1960 werd herbouwd, met een lang strand en een jachthaven."
+  },
+  "taghazout": {
+    "label": "Taghazout",
+    "blurb": "Het surfdorp ten noorden van Agadir, waar de golven het best lopen in de winter."
+  },
+  "zagora": {
+    "label": "Zagora",
+    "blurb": "De zuidelijke woestijnstad aan het eind van de Draa — dichter bij Marrakech dan Merzouga, met kleinere duinen."
+  },
+  "taroudant": {
+    "label": "Taroudant",
+    "blurb": "Een ommuurd marktstadje landinwaarts van Agadir, omsloten door lemen wallen."
+  },
+  "asilah": {
+    "label": "Asilah",
+    "blurb": "Een wit stadje aan de noordelijke Atlantische kust, met muurschilderingen op de medinamuren."
+  },
+  "nkob": {
+    "label": "Nkob",
+    "blurb": "Een oasestadje aan de zuidelijke weg, bekend om het aantal kasba's dat eromheen staat."
+  },
+  "argan-cooperative": {
+    "label": "Arganoliecoöperatie",
+    "blurb": "Een vrouwencoöperatie die arganolie met de hand perst, langs de weg waar de bomen werkelijk groeien."
+  },
+  "berber-hospitality": {
+    "label": "Amazigh-gastvrijheid",
+    "blurb": "Muntthee bij de families langs de route — de gewone vorm die welkom heten in Zuid-Marokko aanneemt."
+  },
+  "berber-music": {
+    "label": "Amazigh-muziek",
+    "blurb": "Trommels en zang, 's avonds live gespeeld — geen podiumshow, maar de manier waarop hier muziek wordt gemaakt."
+  },
+  "berber-villages": {
+    "label": "Amazigh-dorpen",
+    "blurb": "Lemen dorpen in de valleien, gebouwd uit de grond waarop ze staan en nog steeds bewoond."
+  },
+  "crafts": {
+    "label": "Soeks en ambachtswerkplaatsen",
+    "blurb": "De werkplaatsen waar het aardewerk, metaal en leer uit de soeks daadwerkelijk wordt gemaakt."
+  },
+  "street-food": {
+    "label": "Streetfood proeven",
+    "blurb": "Eten waar de rij uit buurtbewoners bestaat — grills, soepkraampjes en gebakstalletjes in plaats van een vast menu."
+  },
+  "saffron": {
+    "label": "Saffraanstreek van Taliouine",
+    "blurb": "De heuvels rond Taliouine, waar de Marokkaanse saffraan groeit en in de herfst met de hand wordt geplukt."
+  },
+  "atlas-mule-ride": {
+    "label": "Muilezeltocht in de Atlas",
+    "blurb": "Een kort stuk over de bergpaden boven de vallei, zoals men zich hier altijd heeft verplaatst."
+  },
+  "quad-biking": {
+    "label": "Quadrijden",
+    "blurb": "Quads zijn bij de duinen te regelen. Apart te boeken en te betalen."
+  },
+  "hammam": {
+    "label": "Hammam",
+    "blurb": "Een traditioneel stoombad met scrub, te boeken op een vrije middag."
+  },
+  "hot-air-balloon": {
+    "label": "Luchtballon bij zonsopkomst",
+    "blurb": "Een vlucht bij het eerste licht boven de vlakte buiten Marrakech, geregeld met een lokale aanbieder."
+  },
+  "paradise-valley": {
+    "label": "Paradise Valley",
+    "blurb": "De palmkloof met rotspoelen in de heuvels achter Agadir."
+  }
+}
