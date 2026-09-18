@@ -59,7 +59,7 @@ export default function Destinations() {
                 <div className="h-64 relative overflow-hidden">
                   <img
                     src={dest.image}
-                    alt={destinationImageAlt(dest, dest.name)}
+                    alt={destinationImageAlt(dest, dest.name, t('dest_alt_unverified'))}
                     width={900}
                     height={600}
                     loading={index < 3 ? 'eager' : 'lazy'}

@@ -315,7 +315,7 @@ function buildHomeContent(lang: Lang): string {
   // shift / content jump for crawlers or users). React clears it on hydrate and
   // re-renders the identical poster — by then it is cache-warm, so the LCP
   // candidate paints almost instantly.
-  const lcpPoster = `<img class="prerendered-lcp-poster" src="/images/hero/sahara-camel-riders-poster.webp" alt="" aria-hidden="true" width="720" height="1280" fetchpriority="high" />\n`;
+  const lcpPoster = `<picture>\n      <source media="(min-width: 1024px)" type="image/webp" srcset="/images/hero/sahara-caravan-desktop-1280w.webp 1280w, /images/hero/sahara-caravan-desktop-1920w.webp 1920w" sizes="100vw" />\n      <img class="prerendered-lcp-poster" src="/images/hero/sahara-camel-riders-poster.webp" alt="" aria-hidden="true" width="720" height="1280" fetchpriority="high" />\n    </picture>\n`;
   // Where to start: the same six doors the page shows, so the crawlable
   // snapshot links into the list, the destinations, the guide and the basics.
   const discovery = [
@@ -1546,7 +1546,9 @@ function stripGlobalHomeBreadcrumb(html: string): string {
 // every other route it forces an eager download of an image the page never
 // paints (wasted bandwidth on ~1,500 pages). Strip it from non-home routes.
 function stripHomeHeroPreload(html: string): string {
-  return html.replace(/[ \t]*<link rel="preload" as="image" href="\/images\/hero\/sahara-camel-riders-poster\.webp"[^>]*>\s*/, '');
+  // Both hero preloads (the phone poster and the desktop frame) belong to the
+  // homepage only; elsewhere they would fetch an image the page never paints.
+  return html.replace(/[ \t]*<link rel="preload" as="image" href="\/images\/hero\/sahara-(?:camel-riders-poster|caravan-desktop-1920w)\.webp"[^>]*>\s*/g, '');
 }
 
 function main() {

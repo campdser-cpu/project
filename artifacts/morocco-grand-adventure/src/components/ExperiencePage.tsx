@@ -1,9 +1,9 @@
 import { ReactNode } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'wouter';
-import { CheckCircle2, ChevronRight, Star, ShieldCheck, Clock, Users, MapPin } from 'lucide-react';
+import { CheckCircle2, ChevronRight, MapPin, Route, Compass, FileText } from 'lucide-react';
 import { Layout } from './layout/Layout';
-import { contactInfo } from '@/data/content';
+import { contactInfo, destinations, tours } from '@/data/content';
 import { SiWhatsapp } from 'react-icons/si';
 import { StructuredData, buildBreadcrumb } from './seo/StructuredData';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -187,13 +187,19 @@ export function ExperiencePage({
   );
 }
 
+/**
+ * Badges shown on every experience page. They state facts this project can
+ * back up — counts taken from the site's own data, where the team is based,
+ * and how booking works — rather than awards, ratings or traveller numbers,
+ * for which no evidence exists here.
+ */
 export function defaultTrustBadges() {
   const { t } = useLanguage();
+  const fill = (key: string, n?: number) => (n == null ? t(key) : t(key).split('{n}').join(String(n)));
   return [
-    { icon: <Star className="w-5 h-5" />, label: t('exp_rating') },
-    { icon: <Users className="w-5 h-5" />, label: t('exp_travelers') },
-    { icon: <ShieldCheck className="w-5 h-5" />, label: t('exp_licensed') },
-    { icon: <Clock className="w-5 h-5" />, label: t('exp_support') },
-    { icon: <MapPin className="w-5 h-5" />, label: t('exp_local_experts') },
+    { icon: <MapPin className="w-5 h-5" />, label: fill('trust_destinations', destinations.length) },
+    { icon: <Route className="w-5 h-5" />, label: fill('trust_itineraries', tours.length) },
+    { icon: <Compass className="w-5 h-5" />, label: fill('trust_based') },
+    { icon: <FileText className="w-5 h-5" />, label: fill('trust_quote') },
   ];
 }

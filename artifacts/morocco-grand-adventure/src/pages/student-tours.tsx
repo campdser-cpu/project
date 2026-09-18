@@ -5,6 +5,11 @@
 // alongside the 24 tour products. Copy comes from src/i18n/gaps/student-tours.ts
 // (en + pt authored; other locales fall through to English by design).
 //
+// The hub hero poster predates the supplied library (commit 852d578) and its
+// origin is not documented: it carries no mark and is not a frame of the
+// withdrawn reel, but nothing evidences whose trip it shows. Its alt therefore
+// describes only what is visible — see IMAGE-PROVENANCE.md.
+//
 // Photography: real client photographs extracted from the supplied Student
 // Tours image library. Alt text follows the confirmed truth rule — only the
 // frames verified as student groups say "student group"; the Atlas flag frame

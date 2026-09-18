@@ -224,7 +224,7 @@ export default function BlogPost() {
                         <div className="h-28 overflow-hidden rounded-md mb-3">
                           <img
                             src={dest.image}
-                            alt={destinationImageAlt(dest, dest.name)}
+                            alt={destinationImageAlt(dest, dest.name, t('dest_alt_unverified'))}
                             loading="lazy"
                             decoding="async"
                             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"

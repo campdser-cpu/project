@@ -62,7 +62,7 @@ export default function DestinationDetail() {
             src={destination.image}
             srcSet={`${destination.image.replace(/\.webp$/, '-480w.webp')} 480w, ${destination.image.replace(/\.webp$/, '-768w.webp')} 768w, ${destination.image} ${destination.image.includes('-480w') ? 480 : 1200}w`}
             sizes="100vw"
-            alt={destinationImageAlt(destination, `${destination.name}, Morocco — ${destination.shortDesc}`)}
+            alt={destinationImageAlt(destination, `${destination.name}, Morocco — ${destination.shortDesc}`, t('dest_alt_unverified'))}
             width={1200}
             height={675}
             decoding="async"
@@ -501,7 +501,7 @@ export default function DestinationDetail() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {nearbyDestinations.map(dest => (
               <Link key={dest.id} href={`/destinations/${dest.id}`} className="group relative h-64 rounded-2xl overflow-hidden border border-transparent hover:border-primary/50 transition-all shadow-sm hover:shadow-xl">
-                <img src={dest.image} srcSet={`${dest.image.replace(/\.webp$/, '-480w.webp')} 480w, ${dest.image.replace(/\.webp$/, '-768w.webp')} 768w, ${dest.image} 1200w`} sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" alt={destinationImageAlt(dest, dest.name)} width={1200} height={675} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <img src={dest.image} srcSet={`${dest.image.replace(/\.webp$/, '-480w.webp')} 480w, ${dest.image.replace(/\.webp$/, '-768w.webp')} 768w, ${dest.image} 1200w`} sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" alt={destinationImageAlt(dest, dest.name, t('dest_alt_unverified'))} width={1200} height={675} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
                 <div className="absolute bottom-6 left-6 text-white">
                   <h3 className="font-serif text-2xl mb-1">{dest.name}</h3>

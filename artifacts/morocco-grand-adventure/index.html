@@ -238,7 +238,8 @@
          and the whole document reflowed when Lato arrived. Preloading the
          latin 400 face (the body default) makes it available at first paint,
          which removes that document-wide shift. -->
-    <link rel="preload" as="font" href="/fonts/lato-latin-400.woff2" type="font/woff2" crossorigin />    <link rel="preload" as="image" href="/images/hero/sahara-camel-riders-poster.webp" fetchpriority="high" />
+    <link rel="preload" as="font" href="/fonts/lato-latin-400.woff2" type="font/woff2" crossorigin />    <link rel="preload" as="image" href="/images/hero/sahara-camel-riders-poster.webp" media="(max-width: 1023px)" fetchpriority="high" />
+    <link rel="preload" as="image" href="/images/hero/sahara-caravan-desktop-1920w.webp" imagesrcset="/images/hero/sahara-caravan-desktop-1280w.webp 1280w, /images/hero/sahara-caravan-desktop-1920w.webp 1920w" imagesizes="100vw" media="(min-width: 1024px)" fetchpriority="high" />
 
     <!-- Theme color -->
     <meta name="theme-color" content="#C9A84C" />

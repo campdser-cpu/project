@@ -116,7 +116,7 @@ const en: Record<string, string> = {
   st_cta1: 'Plan a Student Trip',
   st_cta2: 'Explore Student Experiences',
   st_cue: 'MERZOUGA · MARRAKECH · FES · ATLAS · ERG CHEBBI',
-  st_hero_alt: 'Student group on the dunes of Erg Chebbi near Merzouga, Morocco',
+  st_hero_alt: 'Four travellers with arms raised on a sand dune at golden hour',
   st_coordinator: 'One coordinator. One clear plan. A complete Moroccan experience.',
 
   // 02 — More than a trip
@@ -442,7 +442,7 @@ const pt: Record<string, string> = {
   st_cta1: 'Planear uma viagem de estudantes',
   st_cta2: 'Explorar as experiências',
   st_cue: 'MERZOUGA · MARRAKECH · FES · ATLAS · ERG CHEBBI',
-  st_hero_alt: 'Grupo de estudantes nas dunas de Erg Chebbi, perto de Merzouga, Marrocos',
+  st_hero_alt: 'Quatro viajantes de braços erguidos sobre uma duna ao entardecer',
   st_coordinator: 'Um coordenador. Um plano claro. Uma experiência marroquina completa.',
 
   st_02_eyebrow: '01 — A IDEIA',

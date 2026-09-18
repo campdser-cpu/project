@@ -1,10 +1,12 @@
 import { useState, useRef, useEffect, lazy, Suspense } from 'react';
 import { motion, type Variants } from 'framer-motion';
 import { Link, useLocation } from 'wouter';
-import { Star, MapPin, CheckCircle2, ChevronRight, Calendar, Users, Globe, Instagram, Phone, Search, Award, ShieldCheck, Leaf } from 'lucide-react';
+import { Star, MapPin, CheckCircle2, ChevronRight, Calendar, Users, Globe, Instagram, Phone, Search, Route, Compass, FileText, ShieldCheck } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 import { Layout } from '../components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { contactInfo, reviews as reviewData, destinationImageAlt } from '@/data/content';
+import { contactInfo, reviews as reviewData, destinationImageAlt, destinations, tours } from '@/data/content';
+import { verifiedGoogleReviews } from '@/data/verifiedReviews';
 import { getLocalizedTours, getLocalizedDestinations, categoryLabel } from '@/i18n/content';
 import { SiWhatsapp } from 'react-icons/si';
 import { PromoBanner } from '../components/promo/PromoBanner';
@@ -87,6 +89,24 @@ function getSignaturePlaces(t: (key: string) => string) {
   ];
 }
 
+// Trust signals. Each one is verifiable: the first two are counted from
+// src/data/content.ts, the third is the business address in contactInfo, the
+// fourth is what /book and the tour panels do, and the last links to the Google
+// listing the reviews in src/data/verifiedReviews.ts were transcribed from.
+type TrustSignal = { key: string; count?: number; icon: LucideIcon; href: string; external?: boolean };
+const TRUST_SIGNALS: TrustSignal[] = [
+  { key: 'trust_destinations', count: destinations.length, icon: MapPin, href: '/destinations' },
+  { key: 'trust_itineraries', count: tours.length, icon: Route, href: '/tours' },
+  { key: 'trust_based', icon: Compass, href: '/about' },
+  { key: 'trust_quote', icon: FileText, href: '/book' },
+  { key: 'trust_reviews', icon: Star, href: verifiedGoogleReviews[0]?.sourceUrl ?? 'https://www.google.com/maps/search/?api=1&query=Morocco%20Grand%20Adventure%20Merzouga', external: true },
+];
+
+/** Fill the one placeholder these labels use. */
+function fmtTrust(label: string, count?: number): string {
+  return count == null ? label : label.split('{n}').join(String(count));
+}
+
 // Six doors into the site for a visitor who is still deciding. Labels reuse the
 // navigation vocabulary; the one-liners are authored per language.
 const DISCOVERY = [
@@ -140,6 +160,12 @@ export default function Home() {
     // on genuine user interaction — this prevents the 3.6 MB hero video from
     // ever competing with first paint on mobile. On desktop we start it during
     // idle time to preserve the cinematic experience.
+    // The footage is 720x1280. On a wide screen it would have to be blown up
+    // and cropped, so desktop keeps the landscape photograph instead and never
+    // downloads the movie at all.
+    const isWideScreen =
+      typeof window.matchMedia === 'function' && window.matchMedia('(min-width: 1024px)').matches;
+    if (isWideScreen) return;
     const prefersInteractionOnly =
       (typeof window.matchMedia === 'function' &&
         window.matchMedia('(max-width: 767px)').matches) ||
@@ -206,16 +232,30 @@ export default function Home() {
                 {/* Background: poster + optional video. Renders immediately on first paint;
             the video only mounts once the page is idle (see heroVideoReady). */}
         <div className="absolute inset-0 z-0 bg-black">
-          <img
-            src="/images/hero/sahara-camel-riders-poster.webp"
-            width={720}
-            height={1280}
-            alt=""
-            aria-hidden="true"
-            fetchPriority="high"
-            decoding="async"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
+          {/* Two intentional compositions rather than one stretched frame: a
+              landscape photograph from the official library on wide screens, and
+              the portrait poster (the first frame of the hero footage) on phones,
+              where the footage itself is native. */}
+          <picture>
+            <source
+              media="(min-width: 1024px)"
+              type="image/webp"
+              srcSet="/images/hero/sahara-caravan-desktop-1280w.webp 1280w, /images/hero/sahara-caravan-desktop-1920w.webp 1920w"
+              sizes="100vw"
+              width={1920}
+              height={1080}
+            />
+            <img
+              src="/images/hero/sahara-camel-riders-poster.webp"
+              width={720}
+              height={1280}
+              alt=""
+              aria-hidden="true"
+              fetchPriority="high"
+              decoding="async"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+          </picture>
           {heroVideoReady && (
             <video
               autoPlay
@@ -229,9 +269,12 @@ export default function Home() {
               <source src="/videos/hero.mp4" type="video/mp4" />
             </video>
           )}
-          {/* Layered cinematic overlays */}
+          {/* Layered scrims. The desktop frame is a bright dusk sky, so the
+              centre needs its own veil for the headline to stay legible — the
+              phone poster is darker and needs less. */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/75" />
-                    <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/20" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/20" />
+          <div className="absolute inset-0 bg-black/15 lg:bg-black/35" />
         </div>
 
 
@@ -408,31 +451,31 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Trust Indicators — Subtle Strip */}
+      {/* What we can actually show: counts from our own data, where we are,
+          how booking works, and the reviews themselves. No awards, ratings or
+          traveller counts are claimed — nothing in this project evidences them. */}
       <section className="bg-background py-8 md:py-10 border-b border-border z-10 relative [content-visibility:auto] [contain-intrinsic-size:auto_120px]">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-3 md:flex md:flex-wrap justify-center items-center gap-6 md:gap-16">
-            <div className="flex flex-col items-center gap-1.5 group">
-              <Award className="w-6 h-6 md:w-7 md:h-7 text-primary group-hover:scale-110 transition-transform" />
-              <span className="text-[10px] md:text-xs font-bold text-foreground tracking-wide text-center" dangerouslySetInnerHTML={{__html: t('award_best_operator').replace(' ', '<br/>')}}></span>
-            </div>
-            <div className="flex flex-col items-center gap-1.5 group">
-              <Star className="w-6 h-6 md:w-7 md:h-7 text-primary group-hover:scale-110 transition-transform" />
-              <span className="text-[10px] md:text-xs font-bold text-foreground tracking-wide text-center" dangerouslySetInnerHTML={{__html: t('award_tripadvisor').replace(' ', '<br/>')}}></span>
-            </div>
-            <div className="flex flex-col items-center gap-1.5 group">
-              <Users className="w-6 h-6 md:w-7 md:h-7 text-primary group-hover:scale-110 transition-transform" />
-              <span className="text-[10px] md:text-xs font-bold text-foreground tracking-wide text-center" dangerouslySetInnerHTML={{__html: t('award_trusted').replace(' ', '<br/>')}}></span>
-            </div>
-            <div className="flex flex-col items-center gap-1.5 group">
-              <ShieldCheck className="w-6 h-6 md:w-7 md:h-7 text-primary group-hover:scale-110 transition-transform" />
-              <span className="text-[10px] md:text-xs font-bold text-foreground tracking-wide text-center" dangerouslySetInnerHTML={{__html: t('award_licensed').replace(' ', '<br/>')}}></span>
-            </div>
-            <div className="flex flex-col items-center gap-1.5 group col-span-3 md:col-span-1">
-              <Leaf className="w-6 h-6 md:w-7 md:h-7 text-primary group-hover:scale-110 transition-transform" />
-              <span className="text-[10px] md:text-xs font-bold text-foreground tracking-wide text-center" dangerouslySetInnerHTML={{__html: t('award_eco').replace(' ', '<br/>')}}></span>
-            </div>
-          </div>
+          <ul className="grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-3 lg:flex lg:flex-wrap lg:justify-center lg:gap-14">
+            {TRUST_SIGNALS.map((signal) => {
+              const label = fmtTrust(t(signal.key), signal.count);
+              const inner = (
+                <>
+                  <signal.icon className="w-6 h-6 md:w-7 md:h-7 text-primary shrink-0" aria-hidden="true" />
+                  <span className="text-xs md:text-sm font-semibold text-foreground text-center leading-snug">{label}</span>
+                </>
+              );
+              return (
+                <li key={signal.key} className="flex flex-col items-center gap-2">
+                  {signal.external ? (
+                    <a href={signal.href} target="_blank" rel="noreferrer" className="flex flex-col items-center gap-2 hover:text-primary transition-colors">{inner}</a>
+                  ) : (
+                    <Link href={signal.href} className="flex flex-col items-center gap-2 hover:text-primary transition-colors">{inner}</Link>
+                  )}
+                </li>
+              );
+            })}
+          </ul>
         </div>
       </section>
 
@@ -542,7 +585,7 @@ export default function Home() {
             {destinations.slice(0, 6).map((dest) => (
               <motion.div key={dest.id} variants={fadeInUp} className="group relative h-72 md:h-[420px] rounded-3xl overflow-hidden cursor-pointer shadow-sm hover:shadow-xl hover:shadow-primary/20 transition-all duration-500 border border-transparent hover:border-primary/50">
                 <Link href={`/destinations/${dest.id}`} className="absolute inset-0 z-10" aria-label={`Explore ${dest.name}`} />
-                <img src={dest.image} alt={destinationImageAlt(dest, `${dest.name} — ${dest.shortDesc}`)} loading="lazy" decoding="async" width={800} height={600} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <img src={dest.image} alt={destinationImageAlt(dest, `${dest.name} — ${dest.shortDesc}`, t('dest_alt_unverified'))} loading="lazy" decoding="async" width={800} height={600} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
                 <div className="absolute bottom-0 left-0 p-5 md:p-6 z-20 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                   <span className="text-primary-text text-xs font-bold tracking-wider uppercase mb-2 block drop-shadow-md">{categoryLabel(dest.category, lang)}</span>

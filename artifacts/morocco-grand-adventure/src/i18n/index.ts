@@ -71,11 +71,6 @@ export type TranslationSet = {
   trust_specialists: string;
   trust_licensed: string;
   trust_eco: string;
-  award_best_operator: string;
-  award_tripadvisor: string;
-  award_trusted: string;
-  award_licensed: string;
-  award_eco: string;
   // ── Home sections ─────────────────────────────────────────────────────────
   section_destinations: string;
   section_destinations_sub: string;
@@ -350,11 +345,6 @@ export type TranslationSet = {
   exp_ready_sub: string;
   exp_build_journey: string;
   exp_chat_whatsapp: string;
-  exp_rating: string;
-  exp_travelers: string;
-  exp_licensed: string;
-  exp_support: string;
-  exp_local_experts: string;
   // ── Navbar ────────────────────────────────────────────────────────────────
   nav_experiences: string;
   nav_sahara_desert_tours: string;

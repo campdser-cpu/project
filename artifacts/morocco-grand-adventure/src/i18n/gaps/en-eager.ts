@@ -16,6 +16,7 @@ import { guideGaps } from './guides';
 import { studentToursEnGaps } from './student-tours';
 import { pricingGaps } from './pricing';
 import { discoveryGaps } from './discovery';
+import { trustGaps } from './trust';
 
 /** English gap completions: keys authored in the gap layer, absent from locales/en.ts. */
 export const enGaps: Record<string, string> = {
@@ -23,4 +24,5 @@ export const enGaps: Record<string, string> = {
   ...studentToursEnGaps,
   ...pricingGaps.en,
   ...discoveryGaps.en,
+  ...trustGaps.en,
 };

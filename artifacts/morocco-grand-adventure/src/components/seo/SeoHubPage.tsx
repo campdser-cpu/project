@@ -266,7 +266,7 @@ export function SeoHubPage({ page }: { page: HubPage }) {
                       <div className="h-36 overflow-hidden">
                         <img
                           src={d.image}
-                          alt={destinationImageAlt(d, d.name)}
+                          alt={destinationImageAlt(d, d.name, t('dest_alt_unverified'))}
                           width={900}
                           height={600}
                           loading="lazy"

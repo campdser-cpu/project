@@ -103,7 +103,7 @@ const DESTINATION_META: Record<string, RouteMeta> = {
   imlil:{title:'Imlil — Atlas Mountains Tours & Travel Guide',description:'Explore Imlil and the Atlas Mountains, Berber villages and trekking routes.',ogImage:'/images/dest/imlil.jpg'},
   'ourika-valley':{title:'Ourika Valley — Morocco Tours & Travel Guide',description:'Discover Ourika Valley, mountain landscapes and Berber villages near Marrakech.',ogImage:'/images/dest/ourika-valley.jpg'},
   ouzoud:{title:'Ouzoud Waterfalls — Morocco Tours & Travel Guide',description:'Visit Ouzoud Waterfalls and explore the surrounding Middle Atlas landscapes.',ogImage:'/images/dest/ouzoud.jpg'},
-  ifrane:{title:'Ifrane & Cedar Forest — Morocco Tours & Travel Guide',description:'Discover Ifrane and the cedar forests of Morocco’s Middle Atlas.',ogImage:'/images/dest/ifrane.jpg'},
+  ifrane:{title:'Ifrane & Cedar Forest — Morocco Tours & Travel Guide',description:'Discover Ifrane and the cedar forests of Morocco’s Middle Atlas.',ogImage:'/images/og/morocco-grand-adventure-sahara.jpg'},
   essaouira:{title:'Essaouira — Morocco Tours & Travel Guide',description:'Explore Essaouira, its Atlantic medina, harbour and coastal atmosphere.',ogImage:'/images/dest/essaouira.jpg'},
   agadir:{title:'Agadir — Morocco Tours & Travel Guide',description:'Discover Agadir, its Atlantic coast and beaches in southern Morocco.',ogImage:'/images/dest/agadir.jpg'},
   taghazout:{title:'Taghazout — Morocco Surf Tours & Travel Guide',description:'Explore Taghazout and Morocco’s Atlantic surf coast.',ogImage:'/images/dest/taghazout.jpg'},
@@ -249,8 +249,8 @@ export function ogImageAlt(ogImage?: string): string {
   const dest = ogImage.match(/\/images\/dest\/([a-z-]+)\.(?:jpg|webp)$/);
   if (dest) {
     const place = destinations.find((d) => d.id === dest[1]);
-    // A decorative placeholder is not a photograph of the place.
-    if (place && !place.imageDecorative) return `${place.name}, Morocco — ${place.shortDesc}`;
+    // Neither a placeholder nor an unverified photograph may name the place.
+    if (place && !place.imageDecorative && !place.imageUnverified) return `${place.name}, Morocco — ${place.shortDesc}`;
   }
   if (ogImage.includes('/images/library/')) {
     const photo = Object.values(PHOTO_LIBRARY).find((a) => a.src === ogImage);
@@ -693,7 +693,7 @@ export function getLocalizedRouteMeta(rest: string, lang: Lang = 'en'): RouteMet
       // appended explicitly — withBrandSuffix would otherwise skip it because
       // the region often contains "Maroc/Morocco".
       if (title.length < 45) title = `${title} — ${BRAND}`;
-      return { title, description: truncate(d.description || d.shortDesc), ogImage: d.imageDecorative ? getRouteMeta(rest).ogImage : d.image };
+      return { title, description: truncate(d.description || d.shortDesc), ogImage: d.imageDecorative || d.imageUnverified ? getRouteMeta(rest).ogImage : d.image };
     }
   }
 

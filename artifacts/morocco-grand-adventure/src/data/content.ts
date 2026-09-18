@@ -25,6 +25,13 @@ export type Destination = {
    * the place: it renders with empty alt and is left out of image metadata.
    */
   imageDecorative?: boolean;
+  /**
+   * True when `image` is a real photograph whose location we cannot verify.
+   * It still illustrates the page, but nothing may state that it shows this
+   * place: the alt describes only what is visible and the image stays out of
+   * the page's schema and share metadata.
+   */
+  imageUnverified?: boolean;
   bestTime: string;
   description: string;
   highlights: string[];
@@ -38,9 +45,19 @@ export type Destination = {
   gallery?: DestinationGalleryImage[];
 };
 export type DestinationGalleryImage = { src: string; alt: string; caption: string };
-/** Alt text for a destination's main image — empty when the image is decorative. */
-export function destinationImageAlt(d: Pick<Destination, 'imageDecorative'>, alt: string): string {
-  return d.imageDecorative ? '' : alt;
+/**
+ * Alt text for a destination's main image: empty for a decorative placeholder,
+ * a description of what is visible when the location is unverified, and the
+ * full localized alt when the photograph is of the place it claims.
+ */
+export function destinationImageAlt(
+  d: Pick<Destination, 'imageDecorative' | 'imageUnverified'>,
+  alt: string,
+  unverifiedAlt = '',
+): string {
+  if (d.imageDecorative) return '';
+  if (d.imageUnverified) return unverifiedAlt;
+  return alt;
 }
 export const destinations: Destination[] = [
   // ── Imperial Cities ────────────────────────────────────────────────────────
@@ -516,16 +533,12 @@ export const destinations: Destination[] = [
     category: "Mountains",
     shortDesc: "Morocco's Switzerland — pine forests and wild Barbary macaques.",
     image: "/images/dest/ifrane.webp",
+    // The photograph shows oak woodland above farmland; nothing in it
+    // identifies Ifrane, and no verified Ifrane photograph exists.
+    imageUnverified: true,
     bestTime: "Apr – Oct (summer), Dec – Feb (snow)",
     description: "Ifrane surprises first-time visitors: an alpine-style town of slate roofs and cedar forests in the Middle Atlas, nicknamed Little Switzerland, built by the French in the 1930s. Travellers on Fes–Merzouga routes pass through for the stone lion statue and nearby Michlifen slopes in winter; in summer the town is a cool escape. The cedar woods around Azrou shelter Barbary macaques and good birdwatching.",
     highlights: ["Cedar Forest of Azrou", "Barbary Macaques", "Ifrane National Park", "Skiing at Mischliffen", "Lake Aaoua"],
-    gallery: [
-      {
-        src: "/images/dest/ifrane.webp",
-        alt: "Alpine-style streets of Ifrane in the Middle Atlas, Morocco",
-        caption: "Ifrane, the Middle Atlas alpine town."
-      },
-    ],
     region: "Middle Atlas",
     coords: { lat: 33.5333, lng: -5.1167 },
   },
@@ -1078,7 +1091,6 @@ export const tours: Tour[] = [
       { src: "/images/dest/merzouga.webp", caption: "Erg Chebbi dunes at Merzouga" },
       { src: "/images/personal/luxury-camp-dusk.webp", caption: "Our luxury desert camp at dusk" },
       { src: "/images/personal/sahara-dunes-golden.webp", caption: "Golden dunes at sunrise" },
-      { src: "/images/dest/ifrane.webp", caption: "Ifrane — the Switzerland of Morocco" },
       { src: "/images/dest/fes.webp", caption: "Fes — the medieval imperial city" },
       { src: "/images/dest/marrakech.webp", caption: "Marrakech — the Red City" },
       { src: "/images/personal/guide-guest-tea.webp", caption: "Sweet mint tea with our guests" },
@@ -2078,7 +2090,6 @@ export const tours: Tour[] = [
     excluded: ["International flights", "Anything not explicitly included in the confirmed quote", "Personal expenses and gratuities unless agreed"],
     gallery: [
       { src: "/images/dest/fes.webp", caption: "Fes, the starting point for the southern journey" },
-      { src: "/images/dest/ifrane.webp", caption: "Ifrane in the Middle Atlas" },
       { src: "/images/dest/merzouga.webp", caption: "Merzouga at the edge of Erg Chebbi" },
     ],
     faq: [
