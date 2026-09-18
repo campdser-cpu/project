@@ -184,15 +184,20 @@ export default function TripBuilder() {
     
     const distToDep = getDistance(lastCoords.lat, lastCoords.lng, getCityCoords(departure).lat, getCityCoords(departure).lng);
     totalDistance += distToDep;
-    itinerary.push({
-      day: currentDay,
-      title: `${t('tb_itinerary_departure')} ${departure}`,
-      description: `Travel to ${departure} for your onward journey.`,
-      distance: Math.round(distToDep),
-      dest: null,
-      stay: null
-    });
-    
+    // A one-day trip has no separate departure day: the arrival day is the
+    // whole trip. Only add the onward-travel day when the trip is longer,
+    // otherwise asking for 1 day would show a two-day itinerary.
+    if (days > 1) {
+      itinerary.push({
+        day: currentDay,
+        title: `${t('tb_itinerary_departure')} ${departure}`,
+        description: `Travel to ${departure} for your onward journey.`,
+        distance: Math.round(distToDep),
+        dest: null,
+        stay: null
+      });
+    }
+
     return { itinerary, totalDistance, nights: [...new Set(nights)] };
   }, [arrival, departure, days, selectedDestinations]);
 
