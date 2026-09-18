@@ -856,7 +856,7 @@ export const tours: Tour[] = [
       { question: "How much driving should I expect?", answer: "This is a long road journey rather than a short transfer. The route crosses the High Atlas and southern valleys before reaching Merzouga, then returns to Marrakech. We prefer to explain that honestly so you can choose the right number of days for your travel style." },
       { question: "What is the Sahara part of the trip like?", answer: "You reach Merzouga and the Erg Chebbi dune area on the second day, then head into the dunes for the sunset camel experience and a night at the desert camp. The exact camp setup and activity details are confirmed with you before booking rather than assumed." },
       { question: "When is the best time for this Sahara tour?", answer: "Morocco's National Tourist Office highlights spring and autumn as especially suitable seasons for the southern Sahara. The tour can be planned year-round, but summer heat and winter nights are important considerations when choosing dates." },
-      { question: "Can I book now and pay later?", answer: "Yes. The first step is to contact us with your preferred dates and group size so we can confirm the itinerary and payment terms. Do not send payment until the agreed booking details are clear. Any deposit or balance arrangement is confirmed with you before payment." },
+      { question: "Can I book now and pay later?", answer: "Yes. Sending a request is free and commits you to nothing. We confirm your dates, itinerary and final price with you first; a 20% deposit then secures the booking, and the remaining 80% is paid on arrival in Morocco." },
       { question: "Are flights included?", answer: "International flights are not part of this tour price. There is no single month that guarantees the cheapest airfare for every traveler because prices depend on your departure country, airline and dates. Once your tour dates are chosen, we can help you think through the most practical arrival and departure plan." },
     ],
     // MGA_THREE_DAY_ENRICHED_V1
@@ -987,7 +987,7 @@ export const tours: Tour[] = [
       },
       {
         question: "How do I confirm my booking?",
-        answer: "Message us on WhatsApp or through the contact form to lock in your dates and we'll tailor the details to you. A small deposit secures your tour, with the balance payable before or at the start of the trip.",
+        answer: "Message us on WhatsApp or through the contact form to lock in your dates and we'll tailor the details to you. Sending the request is free. Once we have confirmed your dates, itinerary and final price, a 20% deposit secures the booking and the remaining 80% is paid on arrival in Morocco.",
       },
     ],
   },
@@ -1115,7 +1115,7 @@ export const tours: Tour[] = [
       },
       {
         question: "How do I confirm my booking?",
-        answer: "Message us on WhatsApp to lock in your dates and we'll tailor the details to you. A small deposit secures your tour, with the balance payable before or at the start of the trip.",
+        answer: "Message us on WhatsApp to lock in your dates and we'll tailor the details to you. Sending the request is free. Once we have confirmed your dates, itinerary and final price, a 20% deposit secures the booking and the remaining 80% is paid on arrival in Morocco.",
       },
     ],
   },
@@ -1249,7 +1249,7 @@ export const tours: Tour[] = [
       },
       {
         question: "How do I confirm my booking?",
-        answer: "Message us on WhatsApp to lock in your dates and we'll tailor the details to you. A small deposit secures your tour, with the balance payable before or at the start of the trip.",
+        answer: "Message us on WhatsApp to lock in your dates and we'll tailor the details to you. Sending the request is free. Once we have confirmed your dates, itinerary and final price, a 20% deposit secures the booking and the remaining 80% is paid on arrival in Morocco.",
       },
     ],
   },
@@ -1382,7 +1382,7 @@ export const tours: Tour[] = [
       },
       {
         question: "How do I confirm my booking?",
-        answer: "Message us on WhatsApp to lock in your dates and we'll tailor the details to you. A small deposit secures your tour, with the balance payable before or at the start of the trip.",
+        answer: "Message us on WhatsApp to lock in your dates and we'll tailor the details to you. Sending the request is free. Once we have confirmed your dates, itinerary and final price, a 20% deposit secures the booking and the remaining 80% is paid on arrival in Morocco.",
       },
     ],
   },
@@ -1491,7 +1491,7 @@ export const tours: Tour[] = [
       },
       {
         question: "How do I confirm my booking?",
-        answer: "Message us on WhatsApp to lock in your dates and we'll tailor the details to your family. A small deposit secures your tour, with the balance payable before or at the start of the trip.",
+        answer: "Message us on WhatsApp to lock in your dates and we'll tailor the details to your family. Sending the request is free. Once we have confirmed your dates, itinerary and final price, a 20% deposit secures the booking and the remaining 80% is paid on arrival in Morocco.",
       },
     ],
   },
@@ -2180,7 +2180,7 @@ export const faqData = [
   },
   {
     question: "How can I pay?",
-    answer: "We accept bank transfer, PayPal, and cash (MAD/EUR/USD). A 20% deposit secures your reservation; the balance is due on arrival. WhatsApp us for a personalised quote."
+    answer: "We accept bank transfer, PayPal, and cash (MAD/EUR/USD). Sending a request is free — once we have confirmed your trip, a 20% deposit secures the booking and the remaining 80% is paid on arrival in Morocco."
   },
   {
     question: "Can you accommodate dietary restrictions?",

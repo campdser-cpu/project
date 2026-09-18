@@ -110,7 +110,6 @@ export type TranslationSet = {
   book_customize: string;
   book_paypal: string;
   book_group_quote: string;
-  book_free_cancel: string;
   book_no_fees: string;
   book_secure_payment: string;
   // ── Tour page ─────────────────────────────────────────────────────────────
@@ -214,7 +213,6 @@ export type TranslationSet = {
   tb_summary_travelers: string;
   tb_summary_driving: string;
   tb_request: string;
-  tb_deposit: string;
   tb_quote_note: string;
   tb_edit: string;
   // ── Footer ────────────────────────────────────────────────────────────────
@@ -384,7 +382,6 @@ export type TranslationSet = {
   faq_q6: string; faq_a6: string;
   faq_q7: string; faq_a7: string;
   faq_q8: string; faq_a8: string;
-  faq_q9: string; faq_a9: string;
   faq_q10: string; faq_a10: string;
   // ── Blog page ─────────────────────────────────────────────────────────────
   blog_hero_alt: string;
