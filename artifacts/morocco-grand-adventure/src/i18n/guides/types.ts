@@ -4,8 +4,8 @@
 // Canonical English copy lives in src/data/seoHub.ts. These overlays provide
 // genuinely native (hand-authored, not machine-copied) translations keyed by
 // guide slug + field. Any missing field falls back to English at merge time,
-// so a partial overlay can never blank a page — but all four guides are fully
-// authored for all ten non-English locales.
+// so a partial overlay can never blank a page — and all sixteen Merzouga guide
+// topics are now authored for all ten non-English locales.
 // Arrays merge by index against the English arrays (same convention as the
 // tour/destination content overlays in src/i18n/content).
 // ─────────────────────────────────────────────────────────────────────────────
@@ -39,16 +39,8 @@ export type GuideOverlay = {
   chrome?: GuideChromeOverlay;
 };
 
-/** Slugs of the four guides covered by these overlays. */
-export const LOCALIZED_GUIDE_SLUGS = [
-  'how-many-days',
-  'camel-trekking',
-  'best-time-to-visit',
-  'what-to-pack',
-] as const;
-
-export type LocalizedGuideSlug = (typeof LOCALIZED_GUIDE_SLUGS)[number];
-
-export function isLocalizedGuideSlug(slug: string): slug is LocalizedGuideSlug {
-  return (LOCALIZED_GUIDE_SLUGS as readonly string[]).includes(slug);
-}
+// There was a LOCALIZED_GUIDE_SLUGS constant here naming the four guides that
+// had overlays. Nothing consumed it, and every topic is now authored in every
+// locale, so it would only have recorded a fact that is no longer true. Ask
+// guideOverlayExists() in ./index.ts if you need to know whether a particular
+// slug has an overlay for a locale.
