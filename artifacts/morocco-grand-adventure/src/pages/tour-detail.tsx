@@ -25,6 +25,7 @@ import { TOUR_DEPARTURE_CITY, getCityHub } from '@/data/tour-hierarchy';
 import { TourBreadcrumbs } from '../components/tours/TourBreadcrumbs';
 import { tourDepthFor } from '@/data/tourDepth';
 import { MERZOUGA_GUIDES, COMPARISONS, TRAVEL_INFO } from '@/data/seoHub';
+import { getLocalizedGuide } from '@/i18n/guides';
 import { tours as canonicalTours } from '@/data/content';
 import { deriveTourExperiences } from '@/data/tour-experiences';
 import { IncludedExperiences } from '../components/tours/IncludedExperiences';
@@ -396,14 +397,15 @@ export default function TourDetail() {
                   )}
                   {guidePages.length > 0 && (
                     <div className="bg-muted/50 border border-border rounded-3xl p-8">
-                      <h2 className="font-serif text-3xl text-foreground mb-3">Plan with our guides</h2>
-                      <p className="text-muted-foreground text-sm mb-6">
-                        Practical details such as seasonal timing and packing are covered in the guides below; anything specific to your dates is confirmed before booking.
-                      </p>
+                      <h2 className="font-serif text-3xl text-foreground mb-3">{t('pwig_heading')}</h2>
+                      <p className="text-muted-foreground text-sm mb-6">{t('pwig_sub')}</p>
                       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                         {guidePages.map((p) => (
                           <Link key={p.slug} href={hubHref(p.slug)} className="group block bg-background rounded-2xl border border-border p-5 hover:border-primary/50 hover:shadow transition-all">
-                            <h3 className="font-serif text-lg text-foreground group-hover:text-primary transition-colors">{p.title}</h3>
+                            {/* Localized guide title, matching the prerendered
+                                markup; falls back to the canonical English title
+                                for a locale with no overlay for that guide. */}
+                            <h3 className="font-serif text-lg text-foreground group-hover:text-primary transition-colors">{getLocalizedGuide(p.slug, lang)?.title ?? p.title}</h3>
                           </Link>
                         ))}
                       </div>
