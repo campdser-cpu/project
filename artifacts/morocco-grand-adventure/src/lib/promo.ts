@@ -11,9 +11,24 @@ export const PROMO_DISCOUNT = 0.1; // 10% off
 // global UTC instant (which would expire early for western-hemisphere users).
 export const PROMO_DEADLINE = new Date('2026-12-31T23:59:59');
 
-/** Whether the promotion is still running (before the deadline). */
+/**
+ * Master switch for the promotion, currently OFF.
+ *
+ * The tours now carry published premium private prices. A "Save 10%" badge
+ * beside a price that is not discounted would be a claim the checkout never
+ * honours, and crossing out a higher figure nobody was ever charged would be a
+ * fake original. So the promotion is disabled at its single gate: every badge,
+ * banner and CTA reads `isPromoActive()` and disappears together, leaving no
+ * half-live discount messaging anywhere.
+ *
+ * The deadline machinery below is untouched, so turning a real, funded offer
+ * back on is one boolean — but a future offer must discount an actual price.
+ */
+export const PROMO_ENABLED = false;
+
+/** Whether the promotion is running: enabled, and before the deadline. */
 export function isPromoActive(now: number = Date.now()): boolean {
-  return now <= PROMO_DEADLINE.getTime();
+  return PROMO_ENABLED && now <= PROMO_DEADLINE.getTime();
 }
 
 /** True when a tour carries a real published price rather than the quote sentinel. */

@@ -46,6 +46,17 @@ import {
   fromPricePerPerson,
   validateRateBehaviour,
 } from '../src/lib/pricing';
+import {
+  LADDER_STEP,
+  TOUR_LADDER,
+  fromParty,
+  fromPrice,
+  getLadder,
+  hasLadder,
+  isValidLadder,
+  ladderPrice,
+  supportedPartySizes,
+} from '../src/data/pricing/ladder';
 
 // ── FIXTURES — invented for this test only ───────────────────────────────────
 
@@ -347,77 +358,215 @@ for (const tourId of ['fixture-3-day', 'fixture-8-day']) {
   assert.equal(validateRateBehaviour('nope', FIXTURE_RATES, FIXTURE_TOURS)[0].rule, 'tour-configured');
 }
 
-// ── 6. PRODUCTION REGRESSION — nothing is priceable today ────────────────────
+// ── 6. PRODUCTION REGRESSION — only the anchor is priced ─────────────────────
+//
+// The customer-facing price now comes from the LADDER, not from the cost engine.
+// The cost engine must stay switched off: it exists for internal validation, and
+// a rate card left configured by accident would put a cost-derived number on a
+// page.
+
+const ANCHOR = '3-day-sahara-marrakech';
 
 {
-  assert.equal(RATE_CARD.configured, false, 'the production rate card must stay unconfigured');
+  assert.equal(RATE_CARD.configured, false, 'the cost-engine rate card must stay unconfigured');
   assert.equal(
     Object.keys(TOUR_PRICING).length,
     0,
-    'no tour may be costed until the business supplies its rates',
+    'no tour may be costed in the cost engine — prices come from the ladder',
   );
 
-  // With the real card and registry, every tour in the catalogue refuses to
-  // price — including through the public helpers the UI actually calls.
   const { tours } = await import('../src/data/content');
   assert.equal(tours.length, 24, 'the catalogue is 24 tours');
+
+  // Every tour in the catalogue is now published.
+  const PENDING: string[] = [];
+  const priced = tours.filter((t) => t.quoteOnly === false);
+  assert.equal(priced.length, 24, 'all 24 tours are published');
+  assert.equal(tours.length - priced.length, PENDING.length, 'no tour is left quote-only');
+  assert.equal(tours.find((t) => t.id === ANCHOR)!.price, '425', 'the anchor card shows the two-traveller price');
+
+  // Card price and ladder must agree on every published tour, and a quote-only
+  // tour must have neither.
   for (const tour of tours) {
-    assert.equal(tour.quoteOnly, true, `${tour.id} must stay quote-only`);
-    assert.equal(tour.price, 'Request a quote', `${tour.id} must carry no published price`);
+    if (PENDING.includes(tour.id)) continue;
+    assert.equal(tour.quoteOnly, false, `${tour.id} is published`);
+    assert.ok(hasLadder(tour.id), `${tour.id} must have a published ladder`);
+    const from = fromPrice(tour.id)!;
+    assert.equal(
+      Number(tour.price), from.perPerson,
+      `${tour.id}: the card price must equal the ladder's from price`,
+    );
+    assert.ok(Number(tour.price) > 0, `${tour.id}: card price must be positive`);
+  }
+
+  // The cost engine still refuses everything, anchor included.
+  for (const tour of tours) {
     for (const n of [1, 2, 3, 4, 5, 6]) {
-      const r = estimate({
-        tourId: tour.id,
-        travelers: n,
-        accommodation: 'luxury',
-        camp: 'luxury',
-        rooms: shared(n),
-      });
-      assert.equal(r.status, 'unconfigured', `${tour.id} × ${n} must not produce a price`);
+      const r = estimate(
+        { tourId: tour.id, travelers: n, accommodation: 'luxury', camp: 'luxury', rooms: shared(n) },
+      );
+      assert.equal(r.status, 'unconfigured', `${tour.id} × ${n}: the cost engine must not price anything`);
     }
-    assert.equal(fromPricePerPerson(tour.id).configured, false, `${tour.id} must have no "from" price`);
+    assert.equal(fromPricePerPerson(tour.id).configured, false, `${tour.id}: cost engine has no "from" price`);
   }
 }
 
-// ── 7. REGRESSION — the 10% promo stays dormant on quote-only tours ──────────
-//
-// The site carries a live "save 10%" promotion. PriceTag only renders the
-// struck-through original and the discounted figure when a tour has a published
-// price, so today the promo is invisible on every tour card — not because it is
-// switched off, but because there is no number to discount. Publishing a price
-// without deciding about the promo would therefore silently light up a discount
-// on all 24 tours. This pins that door shut.
+// ── 6b. THE LADDER ───────────────────────────────────────────────────────────
 
 {
-  const { isPromoActive, hasPublishedPrice, discountedPrice } = await import('../src/lib/promo');
-  const { tours } = await import('../src/data/content');
-
-  // The guard is only meaningful while the promotion is actually running.
-  assert.equal(isPromoActive(), true, 'the promo is live, so this regression matters');
-
-  for (const tour of tours) {
-    assert.equal(
-      hasPublishedPrice(tour.price),
-      false,
-      `${tour.id} must have no published price, or the promo would render a discount on it`,
-    );
+  // The approved anchor, exactly.
+  const expected: Record<number, { pp: number; total: number }> = {
+    1: { pp: 600, total: 600 },
+    2: { pp: 425, total: 850 },
+    3: { pp: 410, total: 1230 },
+    4: { pp: 395, total: 1580 },
+    5: { pp: 380, total: 1900 },
+    6: { pp: 365, total: 2190 },
+  };
+  for (const [nStr, want] of Object.entries(expected)) {
+    const n = Number(nStr);
+    const got = ladderPrice(ANCHOR, n);
+    assert.ok(got, `${n} travellers must be priced`);
+    assert.equal(got.perPerson, want.pp, `${n} travellers: per person`);
+    assert.equal(got.total, want.total, `${n} travellers: total`);
+    assert.equal(got.total, got.perPerson * n, `${n} travellers: total = per person × travellers`);
+    assert.ok(Number.isInteger(got.perPerson) && got.perPerson > 0, `${n}: price is a positive whole number`);
   }
 
-  // Sanity-check the gate itself, so this test cannot pass because
-  // hasPublishedPrice is broken and returns false for everything.
+  // The €15 rule, stated independently of the numbers above.
+  for (let n = 3; n <= 6; n++) {
+    const a = ladderPrice(ANCHOR, n - 1)!;
+    const b = ladderPrice(ANCHOR, n)!;
+    assert.equal(a.perPerson - b.perPerson, LADDER_STEP, `${n - 1}→${n}: exactly €${LADDER_STEP} less per person`);
+  }
+
+  // Per person falls, total rises — at every step including 1→2.
+  for (let n = 2; n <= 6; n++) {
+    const a = ladderPrice(ANCHOR, n - 1)!;
+    const b = ladderPrice(ANCHOR, n)!;
+    assert.ok(b.perPerson < a.perPerson, `${n - 1}→${n}: per person must fall`);
+    assert.ok(b.total > a.total, `${n - 1}→${n}: total must rise`);
+  }
+
+  // Parties outside the ladder are not priced — they are not extrapolated.
+  for (const n of [0, 7, 8, 12, 50, -1, NaN, Infinity]) {
+    assert.equal(ladderPrice(ANCHOR, n), undefined, `party of ${n} must not be priced`);
+  }
+  // A fractional count floors, matching estimate() and roomArrangements() — the
+  // traveller input is an integer field, so this is defence, not a feature.
+  assert.deepEqual(ladderPrice(ANCHOR, 2.9), ladderPrice(ANCHOR, 2), 'a fractional party floors');
+  assert.equal(ladderPrice('not-a-tour', 2), undefined, 'an unknown tour is never priced');
+
+  // The card's "from" price is the TWO-traveller price, never the cheapest.
+  const from = fromPrice(ANCHOR);
+  assert.ok(from, 'the anchor has a from price');
+  assert.equal(from.perPerson, 425, 'from price is the 2-traveller rate');
+  assert.notEqual(from.perPerson, ladderPrice(ANCHOR, 6)!.perPerson, 'from price is NOT the 6-traveller rate');
+  assert.equal(from.perPerson, Number((await import('../src/data/content')).tours.find((t) => t.id === ANCHOR)!.price),
+    'the card price and the ladder agree');
+
+  // ── Restricted-party products ──────────────────────────────────────────────
+  // The honeymoon is a two-person journey and only that. No solo price, no
+  // three-to-six ladder: every other size must fall through to the quote flow.
+  {
+    const HM = 'honeymoon-morocco';
+    assert.deepEqual(supportedPartySizes(HM), [2], 'the honeymoon publishes exactly one party size');
+    const two = ladderPrice(HM, 2)!;
+    assert.equal(two.perPerson, 1450);
+    assert.equal(two.total, 2900);
+    for (const n of [1, 3, 4, 5, 6, 7]) {
+      assert.equal(ladderPrice(HM, n), undefined, `honeymoon must not price ${n} travellers`);
+    }
+    assert.equal(fromParty(HM), 2, 'the honeymoon card describes two travellers');
+    assert.equal(fromPrice(HM)!.perPerson, 1450);
+    assert.equal(getLadder(HM)!.solo, undefined, 'the honeymoon carries no solo price');
+  }
+
+  // The family tour publishes a solo price and three-to-six, but quotes a couple.
+  {
+    const FAM = 'family-morocco-adventure';
+    assert.deepEqual(supportedPartySizes(FAM), [1, 3, 4, 5, 6], 'family skips two travellers');
+    assert.equal(ladderPrice(FAM, 2), undefined, 'a couple on the family tour goes to the quote flow');
+    assert.equal(ladderPrice(FAM, 3)!.perPerson, 950);
+    assert.equal(fromParty(FAM), 3, 'the family card describes three travellers');
+    assert.equal(fromPrice(FAM)!.perPerson, 950);
+  }
+
+  // The two premium tours, exactly as approved.
+  {
+    const cases: [string, number, number][] = [
+      ['8-day-marrakech-essaouira-agadir-sahara', 1480, 1050],
+      ['5-day-imperial-cities', 985, 700],
+    ];
+    for (const [id, solo, base] of cases) {
+      assert.equal(ladderPrice(id, 1)!.perPerson, solo, `${id}: solo`);
+      for (let n = 2; n <= 6; n++) {
+        assert.equal(ladderPrice(id, n)!.perPerson, base - LADDER_STEP * (n - 2), `${id}: ${n} travellers`);
+      }
+      assert.equal(ladderPrice(id, 7), undefined, `${id}: 7+ is quote flow`);
+    }
+    // The anchor was NOT raised because its name contains "Luxury".
+    assert.equal(ladderPrice(ANCHOR, 2)!.perPerson, 425, 'the anchor stays at the approved 425');
+  }
+
+  // Guards reject a ladder that cannot hold.
+  assert.equal(isValidLadder({ solo: 600, groupBase: 425, minTravelers: 1, maxTravelers: 6 }), true);
+  assert.equal(isValidLadder({ solo: 400, groupBase: 425, minTravelers: 1, maxTravelers: 6 }), false, 'solo below group base');
+  assert.equal(isValidLadder({ solo: 600, groupBase: 50, minTravelers: 1, maxTravelers: 6 }), false, 'step would drive price to zero');
+  assert.equal(isValidLadder({ solo: 600, groupBase: 0, minTravelers: 1, maxTravelers: 6 }), false, 'zero base');
+  assert.equal(isValidLadder({ solo: 600, groupBase: -10, minTravelers: 1, maxTravelers: 6 }), false, 'negative base');
+  assert.equal(isValidLadder({ solo: 600, groupBase: 425.5, minTravelers: 1, maxTravelers: 6 }), false, 'non-integer money');
+  assert.equal(isValidLadder({ solo: 600, groupBase: 425, minTravelers: 1, maxTravelers: 9 }), false, 'beyond the ladder max');
+
+  // Every published ladder in production must satisfy those guards and produce
+  // sane money at every size it claims to cover.
+  for (const [id, l] of Object.entries(TOUR_LADDER)) {
+    assert.ok(isValidLadder(l), `${id}: published ladder must be valid`);
+    for (const n of supportedPartySizes(id)) {
+      const p = ladderPrice(id, n)!;
+      assert.ok(p && p.perPerson > 0 && p.total > 0, `${id} × ${n}: no zero or negative price`);
+      assert.ok(!Number.isNaN(p.perPerson) && !Number.isNaN(p.total), `${id} × ${n}: no NaN`);
+    }
+  }
+}
+
+// ── 7. REGRESSION — no discount messaging anywhere ───────────────────────────
+//
+// The tours now carry published premium private prices. A "Save 10%" badge next
+// to a price that is not discounted would be a claim the booking never honours,
+// and a struck-through "original" nobody was ever charged would be a fake. The
+// promotion is therefore off at its single gate, and PriceTag has no discount
+// path left at all. This pins both shut.
+
+{
+  const { isPromoActive, hasPublishedPrice, PROMO_ENABLED } = await import('../src/lib/promo');
+  const { tours } = await import('../src/data/content');
+
+  assert.equal(PROMO_ENABLED, false, 'the promotion must stay switched off');
+  assert.equal(isPromoActive(), false, 'no promo UI may render while prices are published');
+  // Even with the deadline far in the future, the master switch wins.
+  assert.equal(isPromoActive(new Date('2026-01-01').getTime()), false, 'the switch beats the deadline');
+
+  // Every tour publishes a price, and none of them may show a discount.
+  const withPrice = tours.filter((t) => hasPublishedPrice(t.price));
+  assert.equal(withPrice.length, 24, 'all 24 tours publish a price');
+
+  // Sanity-check the gate itself, so this cannot pass because hasPublishedPrice
+  // is broken and returns false for everything.
   assert.equal(hasPublishedPrice('450'), true);
   assert.equal(hasPublishedPrice(450), true);
-  assert.equal(discountedPrice('450'), 405);
+  assert.equal(hasPublishedPrice('Request a quote'), false);
 
-  // Structural: PriceTag must take its no-price branch BEFORE it computes a
-  // discount. This reads the component source rather than rendering it — there
-  // is no DOM in this test runner — so it proves the ordering, not the pixels.
+  // Structural: PriceTag must NOT discount. The published prices are the
+  // premium private rates the business charges; crossing out a higher figure
+  // that was never charged would be a fake discount. No DOM in this runner, so
+  // this reads the component source and proves the discount path is gone.
   const { readFileSync } = await import('node:fs');
   const src = readFileSync(new URL('../src/components/promo/PriceTag.tsx', import.meta.url), 'utf8');
-  const guard = src.indexOf('if (!hasPublishedPrice(price))');
-  const discount = src.indexOf('discountedPrice(');
-  assert.ok(guard > -1, 'PriceTag must gate on hasPublishedPrice');
-  assert.ok(discount > -1, 'PriceTag must be the component that applies the discount');
-  assert.ok(guard < discount, 'PriceTag must return the tailored-quote line before discounting');
+  assert.ok(src.includes('if (!hasPublishedPrice(price))'), 'PriceTag still gates on hasPublishedPrice');
+  assert.ok(!src.includes('discountedPrice'), 'PriceTag must not apply the promo discount to a published price');
+  assert.ok(!src.includes('line-through'), 'PriceTag must not render a struck-through original');
+  assert.ok(!src.includes('usePromoActive'), 'PriceTag must not depend on the promo at all');
 }
 
 console.log('Pricing engine tests: PASS');

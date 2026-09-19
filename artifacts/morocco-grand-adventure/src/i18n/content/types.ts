@@ -25,7 +25,13 @@ export type TourOverlay = {
   excluded?: (string | undefined)[];
   itineraryDays?: { title?: string; desc?: string; stops?: (string | undefined)[] }[];
   gallery?: { caption?: string }[];
-  faq?: { question?: string; answer?: string }[];
+  /**
+   * Indexed against the English FAQ array. Entries may be null so a locale can
+   * translate one answer without having to restate the whole list: the merge
+   * reads `faq?.[i]?.question` per index and falls back to English wherever the
+   * overlay has nothing. zh, ja, ko and ar use this for the price FAQ.
+   */
+  faq?: ({ question?: string; answer?: string } | null)[];
 };
 
 /**

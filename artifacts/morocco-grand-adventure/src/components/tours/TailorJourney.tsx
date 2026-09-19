@@ -31,8 +31,8 @@ import {
   findArrangement,
   roomArrangements,
 } from '@/data/pricing/rooms';
-import { campNights, getTourPricing, hotelNights } from '@/data/pricing/tours';
-import { estimate, formatMoney } from '@/lib/pricing';
+import { LADDER_MAX, getLadder, ladderPrice } from '@/data/pricing/ladder';
+import { formatMoney } from '@/lib/pricing';
 
 type Props = {
   t: (key: string) => string;
@@ -183,26 +183,16 @@ export function TailorJourney({
   // Price, or the reason there isn't one. Today every tour is quote-only: the
   // rate card is unconfigured and no tour is costed, so this is always null and
   // the panel below renders the tailored-quote line instead of a figure.
-  const price = useMemo(() => {
-    if (!tourId) return null;
-    const cfg = getTourPricing(tourId);
-    if (!cfg) return null;
-    const accommodation = COMFORT.find((c) => c.value === comfort)?.tier;
-    const campTier = CAMP.find((c) => c.value === camp)?.tier;
-    // A tier only has to be chosen where it changes the price. A route with no
-    // night under canvas is not held back waiting for a camp answer, and a route
-    // with no hotel night is not held back waiting for a comfort answer.
-    if (!accommodation && hotelNights(cfg).length > 0) return null;
-    if (!campTier && campNights(cfg) > 0) return null;
-    const r = estimate({
-      tourId,
-      travelers: travellers,
-      accommodation: (accommodation ?? 'standard') as AccommodationTier,
-      camp: (campTier ?? 'standard') as CampTier,
-      rooms: arrangement,
-    });
-    return r.status === 'priced' ? r : null;
-  }, [tourId, comfort, camp, travellers, arrangement]);
+  // The published price for this party, straight from the ladder. Undefined for
+  // a tour that has no published price, and for a party outside what the ladder
+  // covers — both fall through to the quote line rather than to a guess.
+  const ladder = tourId ? getLadder(tourId) : undefined;
+  const price = useMemo(
+    () => (tourId ? ladderPrice(tourId, travellers) ?? null : null),
+    [tourId, travellers],
+  );
+  /** A priced tour, but this party is too large for the published ladder. */
+  const overLadder = Boolean(ladder) && travellers > (ladder?.maxTravelers ?? LADDER_MAX);
 
   // Operator-facing summary. Preferences the traveller left blank are omitted
   // rather than sent as a guess. The estimate is included only when one exists —
@@ -220,8 +210,9 @@ export function TailorJourney({
     if (camp) lines.push(`Desert camp: ${camp}`);
     if (pace) lines.push(`Pace: ${pace}`);
     if (price) {
-      lines.push(`Estimated total: €${price.total}`);
-      lines.push(`Estimated per person: €${price.perPerson}`);
+      // The published selling price only. No cost, no margin, no breakdown.
+      lines.push(`Price per person: €${price.perPerson}`);
+      lines.push(`Total: €${price.total}`);
     }
     if (notes.trim()) lines.push(`Notes: ${notes.trim()}`);
     return lines.join('\n');
@@ -389,22 +380,29 @@ export function TailorJourney({
         <div className="mt-5 border-t border-border pt-5">
           {price ? (
             <>
-              <p className="text-sm font-bold uppercase tracking-wide text-muted-foreground">
-                {t('px_estimate')}
-              </p>
-              <p className="mt-1 font-serif text-4xl font-bold text-foreground">
-                {formatMoney(price.total, price.currency, lang)}{' '}
-                <span className="text-base font-sans font-semibold text-muted-foreground">
-                  {t('px_total')}
-                </span>
-              </p>
-              <p className="mt-1 text-lg font-semibold text-foreground">
+              {/* Per person first, then the total: the traveller compares the
+                  per-head figure, and the total answers "so what do we pay?". */}
+              <p className="font-serif text-4xl font-bold text-foreground">
                 {formatMoney(price.perPerson, price.currency, lang)}{' '}
-                <span className="text-base font-normal text-muted-foreground">
+                <span className="text-base font-sans font-normal text-muted-foreground">
                   {t('px_per_person')}
                 </span>
               </p>
-              <p className="mt-3 text-sm text-muted-foreground">{t('px_estimate_note')}</p>
+              <p className="mt-1 text-lg font-semibold text-foreground">
+                {formatMoney(price.total, price.currency, lang)}{' '}
+                <span className="text-base font-normal text-muted-foreground">
+                  {t('px_total')}
+                </span>
+              </p>
+              <p className="mt-3 text-sm text-muted-foreground">{t('px_price_note')}</p>
+            </>
+          ) : overLadder ? (
+            <>
+              {/* A priced tour, but a party bigger than the published ladder.
+                  We say so and hand over to the quote flow rather than
+                  extrapolating a seventh, eighth or fortieth traveller. */}
+              <p className="font-serif text-2xl text-foreground">{t('px_price_pending')}</p>
+              <p className="mt-2 text-sm text-muted-foreground">{t('px_quote_above')}</p>
             </>
           ) : (
             <>

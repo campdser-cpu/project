@@ -627,7 +627,7 @@
         "Experiência no deserto ao pôr do sol"
       ],
       "category": "Privado · Apenas sob consulta",
-      "description": "Uma rota privada, disponível apenas sob consulta, para viajantes que partem de Fes e pretendem chegar a Merzouga e a Erg Chebbi em três dias. O Gabinete Nacional Marroquino de Turismo confirma Fes como porta de entrada para o Saara e documenta a ligação Fes–Errachidia–Midelt–Merzouga. Os dados comerciais atuais não publicam um preço fixo de três dias a partir de Fes, nem uma lista de alojamentos ou um horário de regresso garantido, pelo que esses detalhes são confirmados antes da reserva, em vez de presumidos.",
+      "description": "Uma rota privada, disponível apenas sob consulta, para viajantes que partem de Fes e pretendem chegar a Merzouga e a Erg Chebbi em três dias. O Gabinete Nacional Marroquino de Turismo confirma Fes como porta de entrada para o Saara e documenta a ligação Fes–Errachidia–Midelt–Merzouga. Os dados comerciais atuais não publicam um preço fixo de três dias a partir de Fes, nem uma lista de alojamentos ou um horário de regresso garantido, pelo que esses detalhes são confirmados antes da reserva, em vez de presumidos. Publicamos um preço inicial por pessoa para este percurso; o total exato depende do número de viajantes e do alojamento escolhido, e é confirmado com as suas datas antes da reserva.",
       "routeCaption": "Fes → Médio Atlas / Ifrane → região de Errachidia–Midelt → Merzouga e Erg Chebbi. As paragens exatas, as noites e o plano de continuação ou regresso são confirmados em função das suas datas.",
       "included": [
         "Planeamento privado do itinerário",
@@ -674,7 +674,7 @@
       "faq": [
         {
           "question": "Este é um tour a partir de Fes com preço fixo?",
-          "answer": "Não. É intencionalmente disponibilizado apenas sob consulta, porque o projeto atual não contém um preço público verificado de três dias a partir de Fes nem um pacote de alojamento fixo. A rota e as condições de pagamento são confirmadas antes do pagamento."
+          "answer": "Publicamos um preço inicial por pessoa para este percurso. O total exato depende de quantos viajam — o preço por pessoa desce à medida que o grupo cresce — e do alojamento escolhido, por isso confirmamos o valor final com as suas datas antes de qualquer pagamento. Pode pedir-nos para ajustar o itinerário antes."
         },
         {
           "question": "Fes está ligada à rota de Merzouga?",
@@ -701,7 +701,7 @@
         "Planeamento privado da continuação da viagem"
       ],
       "category": "Privado · Apenas sob consulta",
-      "description": "Uma rota privada de planeamento de três dias ao Saara, disponível apenas sob consulta, com partida de Agadir. O Gabinete Nacional Marroquino de Turismo confirma Agadir como porta de entrada para o Saara e documenta a ligação do sul de Marrocos ao deserto. Os dados comerciais atuais não publicam um preço fixo de três dias a partir de Agadir, nem um pacote de alojamento ou um horário de regresso garantido, pelo que esses detalhes comerciais são confirmados antes da reserva.",
+      "description": "Uma rota privada de planeamento de três dias ao Saara, disponível apenas sob consulta, com partida de Agadir. O Gabinete Nacional Marroquino de Turismo confirma Agadir como porta de entrada para o Saara e documenta a ligação do sul de Marrocos ao deserto. Os dados comerciais atuais não publicam um preço fixo de três dias a partir de Agadir, nem um pacote de alojamento ou um horário de regresso garantido, pelo que esses detalhes comerciais são confirmados antes da reserva. Publicamos um preço inicial por pessoa para este percurso; o total exato depende do número de viajantes e do alojamento escolhido, e é confirmado com as suas datas antes da reserva.",
       "routeCaption": "Agadir → sul de Marrocos / região de Ouarzazate → Merzouga e Erg Chebbi. As paragens exatas na estrada, as noites e o destino final são confirmados no orçamento privado.",
       "included": [
         "Planeamento privado do itinerário",
@@ -747,7 +747,7 @@
       "faq": [
         {
           "question": "Este é um tour ao Saara a partir de Agadir com preço fixo?",
-          "answer": "Não. É disponibilizado apenas sob consulta, porque o projeto atual não contém um preço público verificado de três dias a partir de Agadir nem um pacote de alojamento fixo. Confirmamos o itinerário efetivo e as condições de pagamento antes do pagamento."
+          "answer": "Publicamos um preço inicial por pessoa para este percurso. O total exato depende de quantos viajam — o preço por pessoa desce à medida que o grupo cresce — e do alojamento escolhido, por isso confirmamos o valor final com as suas datas antes de qualquer pagamento. Pode pedir-nos para ajustar o itinerário antes."
         },
         {
           "question": "Agadir dá acesso ao Saara?",
@@ -1619,7 +1619,7 @@
         "Uma noite num acampamento no deserto do Saara"
       ],
       "category": "Privado · Apenas sob consulta",
-      "description": "Um circuito privado de quatro dias de Marrakech ao Saara e de regresso. Suba ao Alto Atlas, explore Aït Ben Haddou e as kasbahs de Ouarzazate, percorra as gargantas do Dades e de Todra e passe uma noite em Erg Chebbi, alcançada de camelo, antes de regressar pelas montanhas. Como não existe um preço público verificado nem uma lista fixa de hotéis publicada para esta duração, a viagem é proposta apenas sob consulta, com os detalhes confirmados em função das suas datas.",
+      "description": "Um circuito privado de quatro dias de Marrakech ao Saara e de regresso. Suba ao Alto Atlas, explore Aït Ben Haddou e as kasbahs de Ouarzazate, percorra as gargantas do Dades e de Todra e passe uma noite em Erg Chebbi, alcançada de camelo, antes de regressar pelas montanhas. Publicamos um preço inicial por pessoa para este percurso; o total exato depende do número de viajantes e do alojamento escolhido, e é confirmado com as suas datas antes da reserva.",
       "routeCaption": "Marrakech → Alto Atlas → Aït Ben Haddou → Dades e Todra → Merzouga e Erg Chebbi → regresso a Marrakech.",
       "included": [
         "Veículo privado com ar condicionado",
@@ -1679,7 +1679,7 @@
       "faq": [
         {
           "question": "Esta viagem tem preço publicado?",
-          "answer": "Não. É disponibilizada apenas sob consulta, porque não existe atualmente um preço público verificado para um circuito de quatro dias entre Marrakech e Merzouga. O valor total é confirmado em função das suas datas."
+          "answer": "Publicamos um preço inicial por pessoa para este percurso. O total exato depende de quantos viajam — o preço por pessoa desce à medida que o grupo cresce — e do alojamento escolhido, por isso confirmamos o valor final com as suas datas antes de qualquer pagamento. Pode pedir-nos para ajustar o itinerário antes."
         },
         {
           "question": "Onde termina a viagem?",
@@ -1702,7 +1702,7 @@
         "Um dia guiado na medina de Fes"
       ],
       "category": "Privado · Apenas sob consulta",
-      "description": "Uma rota privada, disponível apenas sob consulta, que liga Casablanca, a capital económica de Marrocos, a Fes, passando pela capital administrativa de Rabat, pela vila azul de Chefchaouen, pela imperial Meknès e pelas ruínas romanas de Volubilis. Como não existe um preço público verificado nem uma lista fixa de hotéis publicada, a viagem é confirmada em função das suas datas antes da reserva.",
+      "description": "Uma rota privada, disponível apenas sob consulta, que liga Casablanca, a capital económica de Marrocos, a Fes, passando pela capital administrativa de Rabat, pela vila azul de Chefchaouen, pela imperial Meknès e pelas ruínas romanas de Volubilis. Publicamos um preço inicial por pessoa para este percurso; o total exato depende do número de viajantes e do alojamento escolhido, e é confirmado com as suas datas antes da reserva.",
       "routeCaption": "Casablanca → Rabat → Chefchaouen → Meknès e Volubilis → Fes. Um percurso imperial pelo norte, com final em Fes.",
       "included": [
         "Veículo privado com ar condicionado",
@@ -1753,7 +1753,7 @@
       "faq": [
         {
           "question": "Este é um tour a partir de Casablanca com preço fixo?",
-          "answer": "Não. É disponibilizado apenas sob consulta, porque não existe um preço público verificado publicado para esta rota. Os pagamentos e as inclusões são confirmados antes da reserva."
+          "answer": "Publicamos um preço inicial por pessoa para este percurso. O total exato depende de quantos viajam — o preço por pessoa desce à medida que o grupo cresce — e do alojamento escolhido, por isso confirmamos o valor final com as suas datas antes de qualquer pagamento. Pode pedir-nos para ajustar o itinerário antes."
         },
         {
           "question": "Onde termina a viagem?",
@@ -1776,7 +1776,7 @@
         "Um dia guiado em Fes"
       ],
       "category": "Privado · Apenas sob consulta",
-      "description": "Uma rota privada e tranquila de Casablanca a Fes, ao longo dos pontos altos da costa atlântica e do norte de Marrocos, com um ritmo mais suave do que o de um circuito mais curto. Segue a costa, passando por Rabat, até à medina muralhada de Asilah, volta-se para o interior rumo à Cidade Azul de Chefchaouen e continua pela imperial Meknès e pelo sítio romano de Volubilis, terminando em Fes. O itinerário é confirmado em função das suas datas, apenas sob consulta.",
+      "description": "Uma rota privada e tranquila de Casablanca a Fes, ao longo dos pontos altos da costa atlântica e do norte de Marrocos, com um ritmo mais suave do que o de um circuito mais curto. Segue a costa, passando por Rabat, até à medina muralhada de Asilah, volta-se para o interior rumo à Cidade Azul de Chefchaouen e continua pela imperial Meknès e pelo sítio romano de Volubilis, terminando em Fes. O itinerário é confirmado em função das suas datas, apenas sob consulta. Publicamos um preço inicial por pessoa para este percurso; o total exato depende do número de viajantes e do alojamento escolhido, e é confirmado com as suas datas antes da reserva.",
       "routeCaption": "Casablanca → Rabat → Asilah → Chefchaouen → Meknès e Volubilis → Fes.",
       "included": [
         "Veículo privado com ar condicionado",
@@ -1836,7 +1836,7 @@
       "faq": [
         {
           "question": "Esta viagem tem preço fixo?",
-          "answer": "Não. É disponibilizada apenas sob consulta, uma vez que não existe um preço público verificado publicado para esta rota. O valor total é confirmado em função das suas datas."
+          "answer": "Publicamos um preço inicial por pessoa para este percurso. O total exato depende de quantos viajam — o preço por pessoa desce à medida que o grupo cresce — e do alojamento escolhido, por isso confirmamos o valor final com as suas datas antes de qualquer pagamento. Pode pedir-nos para ajustar o itinerário antes."
         },
         {
           "question": "A viagem chega ao Saara?",
@@ -1859,7 +1859,7 @@
         "Passeio de camelo ao pôr do sol e noite em acampamento no deserto, em Erg Chebbi"
       ],
       "category": "Privado · Apenas sob consulta",
-      "description": "Uma rota privada de Casablanca para leste, até Fes, e depois para sul, rumo ao Saara, com uma noite nas dunas de Erg Chebbi antes do regresso a Fes. Combina as cidades imperiais e o sítio romano de Volubilis com as florestas de cedros do Médio Atlas, o Vale do Ziz repleto de palmeiras e um passeio de camelo ao pôr do sol em Merzouga. Disponível apenas sob consulta, com os detalhes confirmados em função das suas datas.",
+      "description": "Uma rota privada de Casablanca para leste, até Fes, e depois para sul, rumo ao Saara, com uma noite nas dunas de Erg Chebbi antes do regresso a Fes. Combina as cidades imperiais e o sítio romano de Volubilis com as florestas de cedros do Médio Atlas, o Vale do Ziz repleto de palmeiras e um passeio de camelo ao pôr do sol em Merzouga. Disponível apenas sob consulta, com os detalhes confirmados em função das suas datas. Publicamos um preço inicial por pessoa para este percurso; o total exato depende do número de viajantes e do alojamento escolhido, e é confirmado com as suas datas antes da reserva.",
       "routeCaption": "Casablanca → Fes → Meknès e Volubilis → Médio Atlas → Merzouga e Erg Chebbi → Fes.",
       "included": [
         "Veículo privado com ar condicionado",
@@ -1929,7 +1929,7 @@
       "faq": [
         {
           "question": "Este é um tour a partir de Casablanca com preço fixo?",
-          "answer": "Não. É disponibilizado apenas sob consulta, uma vez que não existe um preço público verificado publicado para esta rota. Os pagamentos e as inclusões são confirmados antes da reserva."
+          "answer": "Publicamos um preço inicial por pessoa para este percurso. O total exato depende de quantos viajam — o preço por pessoa desce à medida que o grupo cresce — e do alojamento escolhido, por isso confirmamos o valor final com as suas datas antes de qualquer pagamento. Pode pedir-nos para ajustar o itinerário antes."
         },
         {
           "question": "Onde termina o percurso?",
@@ -1954,7 +1954,7 @@
         "Os palácios de Marrakech e a praça Jemaa el-Fnaa"
       ],
       "category": "Privado · Apenas sob consulta",
-      "description": "Um circuito privado de oito dias que começa e termina em Casablanca e percorre as cidades imperiais, a Cidade Azul, o Saara e a Cidade Vermelha. Entre os pontos altos contam-se Rabat, Chefchaouen, um dia guiado em Fes, uma noite nas dunas de Erg Chebbi, as gargantas de Todra e do Dades, o ksar de Aït Ben Haddou e a animação de Marrakech. Este grande itinerário é disponibilizado apenas sob consulta, com cada noite e cada inclusão confirmadas em função das suas datas.",
+      "description": "Um circuito privado de oito dias que começa e termina em Casablanca e percorre as cidades imperiais, a Cidade Azul, o Saara e a Cidade Vermelha. Entre os pontos altos contam-se Rabat, Chefchaouen, um dia guiado em Fes, uma noite nas dunas de Erg Chebbi, as gargantas de Todra e do Dades, o ksar de Aït Ben Haddou e a animação de Marrakech. Este grande itinerário é disponibilizado apenas sob consulta, com cada noite e cada inclusão confirmadas em função das suas datas. Publicamos um preço inicial por pessoa para este percurso; o total exato depende do número de viajantes e do alojamento escolhido, e é confirmado com as suas datas antes da reserva.",
       "routeCaption": "Casablanca → Rabat → Chefchaouen → Fes → Médio Atlas → Merzouga → Dades e Todra → Marrakech → Casablanca. Um circuito completo pelo norte e pelo sul de Marrocos.",
       "included": [
         "Veículo privado com ar condicionado",
@@ -2054,7 +2054,7 @@
       "faq": [
         {
           "question": "Esta viagem tem preço fixo?",
-          "answer": "Não. É disponibilizada apenas sob consulta, porque não existe um preço público verificado publicado para este grande circuito de oito dias. O valor total é confirmado em função das suas datas."
+          "answer": "Publicamos um preço inicial por pessoa para este percurso. O total exato depende de quantos viajam — o preço por pessoa desce à medida que o grupo cresce — e do alojamento escolhido, por isso confirmamos o valor final com as suas datas antes de qualquer pagamento. Pode pedir-nos para ajustar o itinerário antes."
         },
         {
           "question": "Onde começa e termina o circuito?",
@@ -2077,7 +2077,7 @@
         "O souk de Rissani e os fósseis de Erfoud"
       ],
       "category": "Privado · Apenas sob consulta",
-      "description": "Uma viagem privada de ida e volta de Fes ao Saara ao longo de quatro dias. A estrada para sul atravessa as florestas de cedros e a vila de montanha de Ifrane, desce o Vale do Ziz repleto de palmeiras e chega a Merzouga e às grandes dunas de Erg Chebbi para um passeio de camelo ao pôr do sol e uma noite no deserto, antes do regresso a Fes. Não existe um preço público verificado nem uma lista fixa de hotéis para esta rota, pelo que é disponibilizada apenas sob consulta, com os detalhes confirmados em função das suas datas.",
+      "description": "Uma viagem privada de ida e volta de Fes ao Saara ao longo de quatro dias. A estrada para sul atravessa as florestas de cedros e a vila de montanha de Ifrane, desce o Vale do Ziz repleto de palmeiras e chega a Merzouga e às grandes dunas de Erg Chebbi para um passeio de camelo ao pôr do sol e uma noite no deserto, antes do regresso a Fes. Publicamos um preço inicial por pessoa para este percurso; o total exato depende do número de viajantes e do alojamento escolhido, e é confirmado com as suas datas antes da reserva.",
       "routeCaption": "Fes → Ifrane → Médio Atlas → Vale do Ziz → Merzouga e Erg Chebbi → regresso a Fes.",
       "included": [
         "Veículo privado com ar condicionado",
@@ -2137,7 +2137,7 @@
       "faq": [
         {
           "question": "Este é um tour a partir de Fes com preço fixo?",
-          "answer": "Não. É disponibilizado apenas sob consulta, porque não existe um preço público verificado publicado para esta rota de quatro dias entre Fes e o Saara. Os pagamentos e as inclusões são confirmados antes da reserva."
+          "answer": "Publicamos um preço inicial por pessoa para este percurso. O total exato depende de quantos viajam — o preço por pessoa desce à medida que o grupo cresce — e do alojamento escolhido, por isso confirmamos o valor final com as suas datas antes de qualquer pagamento. Pode pedir-nos para ajustar o itinerário antes."
         },
         {
           "question": "Fes está ligada à rota de Merzouga?",
@@ -2160,7 +2160,7 @@
         "Aït Ben Haddou e a travessia do Alto Atlas até Marrakech"
       ],
       "category": "Privado · Apenas sob consulta",
-      "description": "Uma viagem privada só de ida que liga Fes a Marrakech atravessando o melhor do sul. Desce pelo Médio Atlas orlado de cedros até às dunas de Erg Chebbi, para uma noite no deserto, e segue depois pelas gargantas de Todra e do Dades, cruzando o Alto Atlas por Aït Ben Haddou até terminar em Marrakech. Disponível apenas sob consulta, com os detalhes confirmados em função das suas datas.",
+      "description": "Uma viagem privada só de ida que liga Fes a Marrakech atravessando o melhor do sul. Desce pelo Médio Atlas orlado de cedros até às dunas de Erg Chebbi, para uma noite no deserto, e segue depois pelas gargantas de Todra e do Dades, cruzando o Alto Atlas por Aït Ben Haddou até terminar em Marrakech. Disponível apenas sob consulta, com os detalhes confirmados em função das suas datas. Publicamos um preço inicial por pessoa para este percurso; o total exato depende do número de viajantes e do alojamento escolhido, e é confirmado com as suas datas antes da reserva.",
       "routeCaption": "Fes → Ifrane → Médio Atlas → Merzouga → Todra e Dades → Aït Ben Haddou → Marrakech. Uma rota só de ida, de Fes à Cidade Vermelha.",
       "included": [
         "Veículo privado com ar condicionado",
@@ -2228,7 +2228,7 @@
       "faq": [
         {
           "question": "Esta viagem tem preço fixo?",
-          "answer": "Não. É disponibilizada apenas sob consulta, uma vez que não existe um preço público verificado publicado para esta rota entre Fes e Marrakech. O valor total é confirmado em função das suas datas."
+          "answer": "Publicamos um preço inicial por pessoa para este percurso. O total exato depende de quantos viajam — o preço por pessoa desce à medida que o grupo cresce — e do alojamento escolhido, por isso confirmamos o valor final com as suas datas antes de qualquer pagamento. Pode pedir-nos para ajustar o itinerário antes."
         },
         {
           "question": "Onde termina o percurso?",
@@ -2252,7 +2252,7 @@
         "Os palácios e os souks de Marrakech"
       ],
       "category": "Privado · Apenas sob consulta",
-      "description": "Uma viagem privada de oito dias que começa na cidade imperial de Fes, percorre Meknès, Volubilis e as florestas de cedros do Médio Atlas, passa uma noite nas dunas de Erg Chebbi, atravessa as gargantas de Todra e do Dades e cruza o Alto Atlas para terminar em Marrakech. Disponível apenas sob consulta, com cada noite e cada inclusão confirmadas em função das suas datas.",
+      "description": "Uma viagem privada de oito dias que começa na cidade imperial de Fes, percorre Meknès, Volubilis e as florestas de cedros do Médio Atlas, passa uma noite nas dunas de Erg Chebbi, atravessa as gargantas de Todra e do Dades e cruza o Alto Atlas para terminar em Marrakech. Disponível apenas sob consulta, com cada noite e cada inclusão confirmadas em função das suas datas. Publicamos um preço inicial por pessoa para este percurso; o total exato depende do número de viajantes e do alojamento escolhido, e é confirmado com as suas datas antes da reserva.",
       "routeCaption": "Fes → Meknès e Volubilis → Médio Atlas → Merzouga → Todra e Dades → Aït Ben Haddou → Marrakech. Um grande percurso de oito dias pelo Marrocos imperial e desértico.",
       "included": [
         "Veículo privado com ar condicionado",
@@ -2351,7 +2351,7 @@
       "faq": [
         {
           "question": "Este é um tour a partir de Fes com preço fixo?",
-          "answer": "Não. É disponibilizado apenas sob consulta, porque não existe um preço público verificado publicado para esta rota de oito dias. Os detalhes são confirmados em função das suas datas."
+          "answer": "Publicamos um preço inicial por pessoa para este percurso. O total exato depende de quantos viajam — o preço por pessoa desce à medida que o grupo cresce — e do alojamento escolhido, por isso confirmamos o valor final com as suas datas antes de qualquer pagamento. Pode pedir-nos para ajustar o itinerário antes."
         },
         {
           "question": "Onde termina a viagem?",
@@ -2374,7 +2374,7 @@
         "Duas noites para explorar Marrakech"
       ],
       "category": "Privado · Apenas sob consulta",
-      "description": "Uma rota privada que liga a costeira Agadir a Marrakech, atravessando o Anti-Atlas e o Alto Atlas. Passa pelos souks muralhados de Taroudant, pelos campos de açafrão de Taliouine, pela região de kasbahs de Ouarzazate e pelo célebre ksar de Aït Ben Haddou, deixando duas noites para desfrutar de Marrakech. Disponível apenas sob consulta, com os detalhes confirmados em função das suas datas.",
+      "description": "Uma rota privada que liga a costeira Agadir a Marrakech, atravessando o Anti-Atlas e o Alto Atlas. Passa pelos souks muralhados de Taroudant, pelos campos de açafrão de Taliouine, pela região de kasbahs de Ouarzazate e pelo célebre ksar de Aït Ben Haddou, deixando duas noites para desfrutar de Marrakech. Disponível apenas sob consulta, com os detalhes confirmados em função das suas datas. Publicamos um preço inicial por pessoa para este percurso; o total exato depende do número de viajantes e do alojamento escolhido, e é confirmado com as suas datas antes da reserva.",
       "routeCaption": "Agadir → Taroudant → Ouarzazate → Aït Ben Haddou → Marrakech.",
       "included": [
         "Veículo privado com ar condicionado",
@@ -2433,7 +2433,7 @@
       "faq": [
         {
           "question": "Esta viagem tem preço fixo?",
-          "answer": "Não. É disponibilizada apenas sob consulta, uma vez que não existe um preço público verificado publicado para esta rota. O valor total é confirmado em função das suas datas."
+          "answer": "Publicamos um preço inicial por pessoa para este percurso. O total exato depende de quantos viajam — o preço por pessoa desce à medida que o grupo cresce — e do alojamento escolhido, por isso confirmamos o valor final com as suas datas antes de qualquer pagamento. Pode pedir-nos para ajustar o itinerário antes."
         },
         {
           "question": "A viagem chega ao Saara?",
@@ -2456,7 +2456,7 @@
         "A travessia do Alto Atlas até Marrakech"
       ],
       "category": "Privado · Apenas sob consulta",
-      "description": "Uma rota privada só de ida, da costa de Agadir até Marrakech, atravessando a região das kasbahs e o Saara. Passa por Taroudant e pelos terraços de açafrão de Taliouine, explora Ouarzazate e Aït Ben Haddou, percorre as gargantas do Dades e de Todra e reserva um pôr do sol para um passeio de camelo e uma noite em acampamento no deserto, em Erg Chebbi, antes de terminar em Marrakech. Disponível apenas sob consulta, com os detalhes confirmados em função das suas datas.",
+      "description": "Uma rota privada só de ida, da costa de Agadir até Marrakech, atravessando a região das kasbahs e o Saara. Passa por Taroudant e pelos terraços de açafrão de Taliouine, explora Ouarzazate e Aït Ben Haddou, percorre as gargantas do Dades e de Todra e reserva um pôr do sol para um passeio de camelo e uma noite em acampamento no deserto, em Erg Chebbi, antes de terminar em Marrakech. Disponível apenas sob consulta, com os detalhes confirmados em função das suas datas. Publicamos um preço inicial por pessoa para este percurso; o total exato depende do número de viajantes e do alojamento escolhido, e é confirmado com as suas datas antes da reserva.",
       "routeCaption": "Agadir → Taroudant → Ouarzazate → Aït Ben Haddou → Dades e Todra → Merzouga → Marrakech.",
       "included": [
         "Veículo privado com ar condicionado",
@@ -2526,7 +2526,7 @@
       "faq": [
         {
           "question": "Esta viagem tem preço publicado?",
-          "answer": "Não. É disponibilizada apenas sob consulta, porque não existe um preço público verificado publicado para esta rota. O valor total é confirmado em função das suas datas."
+          "answer": "Publicamos um preço inicial por pessoa para este percurso. O total exato depende de quantos viajam — o preço por pessoa desce à medida que o grupo cresce — e do alojamento escolhido, por isso confirmamos o valor final com as suas datas antes de qualquer pagamento. Pode pedir-nos para ajustar o itinerário antes."
         },
         {
           "question": "Onde termina o percurso?",
@@ -2549,7 +2549,7 @@
         "Merzouga, Erg Chebbi e uma noite em acampamento no deserto"
       ],
       "category": "Privado · Apenas sob consulta",
-      "description": "Um circuito privado, disponível apenas sob consulta, que percorre todo o sul de Marrocos, da costa atlântica de volta a Agadir. Viaje para o interior, passando pela cidade muralhada de Taroudant e pelos terraços de açafrão de Taliouine, atravesse as paisagens de kasbahs de cenário de cinema em torno de Ouarzazate, percorra as gargantas do Dades e de Todra, passe uma noite nas dunas de Erg Chebbi e regresse pelo Vale do Draa, à sombra das palmeiras. As noites exatas, o alojamento e o ritmo diário são confirmados em função das suas datas antes da reserva, pelo que nada é presumido antecipadamente.",
+      "description": "Um circuito privado, disponível apenas sob consulta, que percorre todo o sul de Marrocos, da costa atlântica de volta a Agadir. Viaje para o interior, passando pela cidade muralhada de Taroudant e pelos terraços de açafrão de Taliouine, atravesse as paisagens de kasbahs de cenário de cinema em torno de Ouarzazate, percorra as gargantas do Dades e de Todra, passe uma noite nas dunas de Erg Chebbi e regresse pelo Vale do Draa, à sombra das palmeiras. As noites exatas, o alojamento e o ritmo diário são confirmados em função das suas datas antes da reserva, pelo que nada é presumido antecipadamente. Publicamos um preço inicial por pessoa para este percurso; o total exato depende do número de viajantes e do alojamento escolhido, e é confirmado com as suas datas antes da reserva.",
       "routeCaption": "Agadir → Taroudant → Ouarzazate → Aït Ben Haddou → Dades e Todra → Merzouga → Vale do Draa → regresso a Agadir.",
       "included": [
         "Veículo privado com ar condicionado",
@@ -2648,7 +2648,7 @@
       "faq": [
         {
           "question": "Este é um tour a partir de Agadir com preço fixo?",
-          "answer": "Não. Esta é uma rota disponível apenas sob consulta, porque não existe atualmente um preço público verificado nem uma lista fixa de alojamentos publicada para ela. O plano completo, as inclusões e as condições de pagamento são confirmados antes de qualquer pagamento."
+          "answer": "Publicamos um preço inicial por pessoa para este percurso. O total exato depende de quantos viajam — o preço por pessoa desce à medida que o grupo cresce — e do alojamento escolhido, por isso confirmamos o valor final com as suas datas antes de qualquer pagamento. Pode pedir-nos para ajustar o itinerário antes."
         },
         {
           "question": "Onde começa e termina o circuito?",
@@ -2749,7 +2749,7 @@
         },
         {
           "question": "Como é confirmado o preço?",
-          "answer": "Esta viagem é disponibilizada apenas sob consulta, porque o preço final depende das suas datas, da dimensão do grupo e do alojamento escolhido. Contacte-nos primeiro e confirmaremos o itinerário e as condições comerciais antes do pagamento."
+          "answer": "Publicamos um preço inicial por pessoa para este percurso. O total exato depende de quantos viajam — o preço por pessoa desce à medida que o grupo cresce — e do alojamento escolhido, por isso confirmamos o valor final com as suas datas antes de qualquer pagamento. Pode pedir-nos para ajustar o itinerário antes."
         }
       ]
     },
@@ -2867,7 +2867,7 @@
         },
         {
           "question": "Como é confirmado o preço?",
-          "answer": "Esta viagem é disponibilizada apenas sob consulta. Confirmamos as suas datas, a dimensão do grupo, a categoria de alojamento e o itinerário antes de apresentar as condições comerciais finais."
+          "answer": "Publicamos um preço inicial por pessoa para este percurso. O total exato depende de quantos viajam — o preço por pessoa desce à medida que o grupo cresce — e do alojamento escolhido, por isso confirmamos o valor final com as suas datas antes de qualquer pagamento. Pode pedir-nos para ajustar o itinerário antes."
         }
       ]
     },
@@ -2996,7 +2996,7 @@
         },
         {
           "question": "Como é confirmado o preço?",
-          "answer": "Esta viagem é disponibilizada apenas sob consulta. Confirmamos as datas, a dimensão do grupo e as opções de alojamento antes de confirmar o preço final."
+          "answer": "Publicamos um preço inicial por pessoa para este percurso. O total exato depende de quantos viajam — o preço por pessoa desce à medida que o grupo cresce — e do alojamento escolhido, por isso confirmamos o valor final com as suas datas antes de qualquer pagamento. Pode pedir-nos para ajustar o itinerário antes."
         }
       ]
     },
@@ -3092,7 +3092,7 @@
         },
         {
           "question": "Como é confirmado o preço?",
-          "answer": "Esta viagem é disponibilizada apenas sob consulta, porque as datas, a dimensão do grupo e o alojamento influenciam o arranjo final. Confirmamos as condições antes do pagamento."
+          "answer": "Publicamos um preço inicial por pessoa para este percurso. O total exato depende de quantos viajam — o preço por pessoa desce à medida que o grupo cresce — e do alojamento escolhido, por isso confirmamos o valor final com as suas datas antes de qualquer pagamento. Pode pedir-nos para ajustar o itinerário antes."
         }
       ]
     },
@@ -3208,7 +3208,7 @@
         },
         {
           "question": "Como é confirmado o preço?",
-          "answer": "Este é um itinerário disponibilizado apenas sob consulta. Confirmamos as suas datas, a dimensão do grupo e as opções de alojamento antes de confirmar o preço final."
+          "answer": "Publicamos um preço inicial por pessoa para este percurso. O total exato depende de quantos viajam — o preço por pessoa desce à medida que o grupo cresce — e do alojamento escolhido, por isso confirmamos o valor final com as suas datas antes de qualquer pagamento. Pode pedir-nos para ajustar o itinerário antes."
         }
       ]
     }

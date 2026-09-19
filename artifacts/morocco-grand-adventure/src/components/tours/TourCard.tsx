@@ -3,6 +3,7 @@ import { Clock, ChevronRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { PriceTag } from '../promo/PriceTag';
 import { hasPublishedPrice } from '@/lib/promo';
+import { fromParty } from '@/data/pricing/ladder';
 import { PromoBadge } from '../promo/PromoBadge';
 import type { Tour } from '@/data/content';
 
@@ -64,11 +65,24 @@ export function TourCard({ tour, compact = false }: TourCardProps) {
           {tour.highlights.slice(0, 3).join(' · ')}
         </p>
         <div className="flex items-center justify-between mt-auto pt-4 border-t border-border">
-          <div>
+          <div className="min-w-0">
             {hasPublishedPrice(tour.price) && (
               <span className="text-xs text-muted-foreground uppercase tracking-wider block">{t('from')}</span>
             )}
-            <PriceTag price={tour.price} size={compact ? 'sm' : 'md'} />
+            <span className="inline-flex items-baseline gap-1.5">
+              <PriceTag price={tour.price} size={compact ? 'sm' : 'md'} />
+              {hasPublishedPrice(tour.price) && (
+                <span className="text-xs text-muted-foreground">{t('px_per_person')}</span>
+              )}
+            </span>
+            {/* The "from" figure is the two-traveller price, and the card says
+                so. A cheaper six-traveller headline would be true and
+                misleading — most people reading this card travel as a pair. */}
+            {hasPublishedPrice(tour.price) && fromParty(tour.id) && (
+              <span className="mt-0.5 block text-xs text-muted-foreground">
+                {t('px_from_basis').replace('{n}', String(fromParty(tour.id)))}
+              </span>
+            )}
           </div>
           <span className="text-primary font-bold flex items-center gap-1 group-hover:gap-2 transition-all text-sm">
             {t('tours_view')} <ChevronRight className="w-4 h-4" aria-hidden="true" />

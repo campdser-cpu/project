@@ -1,6 +1,5 @@
-import { discountedPrice, hasPublishedPrice } from '@/lib/promo';
+import { hasPublishedPrice } from '@/lib/promo';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { usePromoActive } from './PromoProvider';
 
 type Size = 'sm' | 'md' | 'lg' | 'xl';
 type Props = {
@@ -16,34 +15,25 @@ const NUM: Record<Size, string> = {
   lg: 'text-3xl',
   xl: 'text-4xl md:text-5xl',
 };
-const OLD: Record<Size, string> = {
-  sm: 'text-xs',
-  md: 'text-sm',
-  lg: 'text-lg',
-  xl: 'text-xl',
-};
-
-/** Shows the discounted price with the original struck through (while promo active). */
+/**
+ * Shows a tour's published price, or the tailored-quote line where there is none.
+ *
+ * The published price is shown plainly, with no struck-through "original" beside
+ * it. The site-wide 10% promotion no longer applies to these prices: they are the
+ * premium private rates the business publishes, and inventing a higher figure to
+ * cross out would be a fake discount on a price that was never charged.
+ */
 export function PriceTag({ price, size = 'md', tone = 'default', className = '' }: Props) {
-  const active = usePromoActive();
   const { t } = useLanguage();
   if (!hasPublishedPrice(price)) {
     const tone_ = tone === 'onDark' ? 'text-white' : 'text-foreground';
     return <span className={`font-semibold ${tone_} ${className}`}>{t('price_tailored')}</span>;
   }
-  // MGA_QUOTE_ONLY_THREE_DAY_PRICE_V2
-  const orig = typeof price === 'string' ? parseInt(price.replace(/[^\d.]/g, ''), 10) : price;
-  const disc = discountedPrice(orig);
-  const strike = tone === 'onDark' ? 'text-white/60' : 'text-muted-foreground';
-  const plain = tone === 'onDark' ? 'text-white' : 'text-foreground';
-
-  if (!active) {
-    return <span className={`font-serif font-bold ${plain} ${NUM[size]} ${className}`}>€{orig}</span>;
+  const amount = typeof price === 'string' ? parseInt(price.replace(/[^\d.]/g, ''), 10) : price;
+  if (!Number.isFinite(amount) || amount <= 0) {
+    const tone_ = tone === 'onDark' ? 'text-white' : 'text-foreground';
+    return <span className={`font-semibold ${tone_} ${className}`}>{t('price_tailored')}</span>;
   }
-  return (
-    <span className={`inline-flex items-baseline gap-2 ${className}`}>
-      <span className={`font-medium line-through ${strike} ${OLD[size]}`}>€{orig}</span>
-      <span className={`font-serif font-bold text-primary ${NUM[size]}`}>€{disc}</span>
-    </span>
-  );
+  const plain = tone === 'onDark' ? 'text-white' : 'text-foreground';
+  return <span className={`font-serif font-bold ${plain} ${NUM[size]} ${className}`}>€{amount}</span>;
 }
