@@ -262,5 +262,45 @@
   "paradise-valley": {
     "label": "Paradise Valley",
     "blurb": "Les gorges de palmiers et les vasques d'eau dans les collines derrière Agadir."
+  },
+  "riad-stay": {
+    "label": "Une nuit en riad",
+    "blurb": "Une maison traditionnelle organisée autour de son patio, au cœur de la médina — au calme derrière les murs, à quelques minutes de la place."
+  },
+  "merzouga-hotel": {
+    "label": "Une nuit au pied des dunes",
+    "blurb": "Un hôtel en bordure de Merzouga plutôt qu'un camp : un lit, une douche, et les dunes toujours devant la porte."
+  },
+  "royal-palace-fes": {
+    "label": "Les portes du Palais Royal",
+    "blurb": "Les portes de cuivre de Dar el-Makhzen à Fès — le palais ne se visite pas, mais ces portes comptent parmi les plus beaux travaux de métal du Maroc."
+  },
+  "mellah-fes": {
+    "label": "Le Mellah",
+    "blurb": "L'ancien quartier juif de Fès, dont les maisons à balcons donnent sur la rue — à l'inverse des demeures tournées vers l'intérieur de la médina."
+  },
+  "agdz": {
+    "label": "Agdz",
+    "blurb": "La ville où commencent les palmeraies du Drâa, au pied du Jbel Kissane."
+  },
+  "alnif": {
+    "label": "Alnif",
+    "blurb": "Une petite ville sur la route du désert, connue des collectionneurs pour les fossiles des collines alentour."
+  },
+  "beni-mellal": {
+    "label": "Beni Mellal",
+    "blurb": "Une ville de marché au pied du Moyen Atlas, entourée des vergers et des oliveraies de la plaine du Tadla."
+  },
+  "errachidia": {
+    "label": "Errachidia",
+    "blurb": "La ville administrative du Ziz, et le point où la route du sud entre vraiment dans le désert."
+  },
+  "atlantic-coast-drive": {
+    "label": "La route de la côte atlantique",
+    "blurb": "La route en bord d'océan entre Essaouira et Agadir — les arganiers d'un côté, les spots de surf de l'autre."
+  },
+  "beach-sunset": {
+    "label": "Coucher de soleil sur la plage",
+    "blurb": "La grande plage atlantique d'Essaouira en fin de journée, quand le vent tombe et que la lumière s'étire."
   }
 }

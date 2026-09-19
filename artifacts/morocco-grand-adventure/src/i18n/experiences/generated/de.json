@@ -262,5 +262,45 @@
   "paradise-valley": {
     "label": "Paradise Valley",
     "blurb": "Die Palmenschlucht mit Felsbecken in den Hügeln hinter Agadir."
+  },
+  "riad-stay": {
+    "label": "Eine Nacht in einem Riad",
+    "blurb": "Ein traditionelles Haus um seinen eigenen Innenhof, mitten in der Medina — hinter den Mauern still, wenige Minuten vom Platz entfernt."
+  },
+  "merzouga-hotel": {
+    "label": "Eine Nacht an den Dünen",
+    "blurb": "Ein Hotel am Rand von Merzouga statt eines Camps: ein Bett, eine Dusche — und die Dünen trotzdem vor der Tür."
+  },
+  "royal-palace-fes": {
+    "label": "Die Tore des Königspalasts",
+    "blurb": "Die Messingtore von Dar el-Makhzen in Fes. Der Palast selbst ist nicht zu besichtigen, die Tore aber zählen zu den schönsten Metallarbeiten Marokkos."
+  },
+  "mellah-fes": {
+    "label": "Die Mellah",
+    "blurb": "Das alte jüdische Viertel von Fes, dessen Häuser Balkone zur Straße haben — anders als die nach innen gewandten Häuser der Medina."
+  },
+  "agdz": {
+    "label": "Agdz",
+    "blurb": "Der Ort, an dem die Palmengärten des Draa beginnen, am Fuß des Jbel Kissane."
+  },
+  "alnif": {
+    "label": "Alnif",
+    "blurb": "Eine kleine Stadt an der Wüstenstraße, unter Sammlern für die Fossilien der umliegenden Hügel bekannt."
+  },
+  "beni-mellal": {
+    "label": "Beni Mellal",
+    "blurb": "Eine Marktstadt unterhalb des Mittleren Atlas, umgeben von den Obst- und Olivenhainen der Tadla-Ebene."
+  },
+  "errachidia": {
+    "label": "Errachidia",
+    "blurb": "Die Verwaltungsstadt am Ziz und der Punkt, an dem die Straße nach Süden endgültig in Wüstenland übergeht."
+  },
+  "atlantic-coast-drive": {
+    "label": "Die Atlantikküstenstraße",
+    "blurb": "Die Straße am Ozean zwischen Essaouira und Agadir — Arganbäume auf der einen Seite, Surfbreaks auf der anderen."
+  },
+  "beach-sunset": {
+    "label": "Sonnenuntergang am Strand",
+    "blurb": "Der weite Atlantikstrand von Essaouira am Tagesende, wenn der Wind nachlässt und das Licht lang wird."
   }
 }

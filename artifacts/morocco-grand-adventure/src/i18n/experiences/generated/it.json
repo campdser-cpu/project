@@ -262,5 +262,45 @@
   "paradise-valley": {
     "label": "Paradise Valley",
     "blurb": "La gola di palme e le pozze d'acqua sulle colline dietro Agadir."
+  },
+  "riad-stay": {
+    "label": "Una notte in un riad",
+    "blurb": "Una casa tradizionale costruita attorno al proprio cortile, dentro la medina: silenziosa dietro i muri, a pochi minuti dalla piazza."
+  },
+  "merzouga-hotel": {
+    "label": "Una notte accanto alle dune",
+    "blurb": "Un hotel ai margini di Merzouga invece di un campo: un letto, una doccia e le dune comunque davanti alla porta."
+  },
+  "royal-palace-fes": {
+    "label": "Le porte del Palazzo Reale",
+    "blurb": "Le porte in ottone di Dar el-Makhzen a Fes. Il palazzo non si visita, ma quelle porte sono tra i lavori in metallo più belli del Marocco."
+  },
+  "mellah-fes": {
+    "label": "Il Mellah",
+    "blurb": "L'antico quartiere ebraico di Fes, con case dai balconi affacciati sulla strada, al contrario delle abitazioni rivolte all'interno della medina."
+  },
+  "agdz": {
+    "label": "Agdz",
+    "blurb": "La cittadina dove cominciano i palmeti del Draa, ai piedi del Jbel Kissane."
+  },
+  "alnif": {
+    "label": "Alnif",
+    "blurb": "Un piccolo centro sulla strada del deserto, noto ai collezionisti per i fossili delle colline circostanti."
+  },
+  "beni-mellal": {
+    "label": "Beni Mellal",
+    "blurb": "Una città di mercato sotto il Medio Atlante, circondata dai frutteti e dagli uliveti della piana del Tadla."
+  },
+  "errachidia": {
+    "label": "Errachidia",
+    "blurb": "Il centro amministrativo dello Ziz, e il punto in cui la strada verso sud entra davvero nel deserto."
+  },
+  "atlantic-coast-drive": {
+    "label": "La strada costiera atlantica",
+    "blurb": "La strada lungo l'oceano tra Essaouira e Agadir: argania da un lato, onde da surf dall'altro."
+  },
+  "beach-sunset": {
+    "label": "Tramonto sulla spiaggia",
+    "blurb": "L'ampia spiaggia atlantica di Essaouira a fine giornata, quando il vento cala e la luce si allunga."
   }
 }

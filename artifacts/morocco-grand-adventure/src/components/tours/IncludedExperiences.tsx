@@ -31,7 +31,7 @@ type Props = {
 };
 
 /** Display order of the groups; any group with no entries is skipped. */
-const GROUP_ORDER: ExperienceKind[] = ['desert', 'landscape', 'heritage', 'city', 'culture', 'activity'];
+const GROUP_ORDER: ExperienceKind[] = ['desert', 'landscape', 'heritage', 'city', 'culture', 'activity', 'stay'];
 const GROUP_KEY: Record<ExperienceKind, string> = {
   desert: 'jx_grp_desert',
   landscape: 'jx_grp_landscape',
@@ -39,6 +39,7 @@ const GROUP_KEY: Record<ExperienceKind, string> = {
   city: 'jx_grp_city',
   culture: 'jx_grp_culture',
   activity: 'jx_grp_activity',
+  stay: 'jx_grp_stay',
 };
 
 /**

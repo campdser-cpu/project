@@ -262,5 +262,45 @@
   "paradise-valley": {
     "label": "Paradise Valley",
     "blurb": "El desfiladero de palmeras y las pozas de agua en las colinas detrás de Agadir."
+  },
+  "riad-stay": {
+    "label": "Una noche en un riad",
+    "blurb": "Una casa tradicional organizada en torno a su patio, dentro de la medina: tranquila tras los muros y a minutos de la plaza."
+  },
+  "merzouga-hotel": {
+    "label": "Una noche junto a las dunas",
+    "blurb": "Un hotel al borde de Merzouga en lugar de un campamento: una cama, una ducha y las dunas aún a la puerta."
+  },
+  "royal-palace-fes": {
+    "label": "Las puertas del Palacio Real",
+    "blurb": "Las puertas de latón de Dar el-Majzén en Fez. El palacio no se visita, pero sus puertas están entre los mejores trabajos de metal de Marruecos."
+  },
+  "mellah-fes": {
+    "label": "La Mellah",
+    "blurb": "El antiguo barrio judío de Fez, con casas de balcones abiertos a la calle, al contrario que las viviendas hacia dentro de la medina."
+  },
+  "agdz": {
+    "label": "Agdz",
+    "blurb": "La localidad donde empiezan los palmerales del Draa, al pie del Yebel Kissane."
+  },
+  "alnif": {
+    "label": "Alnif",
+    "blurb": "Un pueblo pequeño en la carretera del desierto, conocido entre coleccionistas por los fósiles de sus cerros."
+  },
+  "beni-mellal": {
+    "label": "Beni Mellal",
+    "blurb": "Una ciudad de mercado bajo el Medio Atlas, rodeada por los huertos y olivares de la llanura del Tadla."
+  },
+  "errachidia": {
+    "label": "Errachidia",
+    "blurb": "La capital administrativa del Ziz y el punto en que la carretera del sur entra de lleno en tierra desértica."
+  },
+  "atlantic-coast-drive": {
+    "label": "La carretera de la costa atlántica",
+    "blurb": "La carretera junto al océano entre Esauira y Agadir: arganes a un lado, olas de surf al otro."
+  },
+  "beach-sunset": {
+    "label": "Atardecer en la playa",
+    "blurb": "La amplia playa atlántica de Esauira al final del día, cuando cae el viento y la luz se alarga."
   }
 }

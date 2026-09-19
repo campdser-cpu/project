@@ -37,7 +37,7 @@
 // a meal or a guarantee the tour data does not state.
 // ─────────────────────────────────────────────────────────────────────────────
 
-export type ExperienceKind = 'landscape' | 'heritage' | 'city' | 'desert' | 'culture' | 'activity';
+export type ExperienceKind = 'landscape' | 'heritage' | 'city' | 'desert' | 'culture' | 'activity' | 'stay';
 
 export type ExperienceDef = {
   /** Stable id — also the key used by the translation overlays. */
@@ -461,6 +461,65 @@ export const EXPERIENCES: Record<string, ExperienceDef> = {
     label: 'Paradise Valley',
     blurb: 'The palm gorge and rock pools in the hills behind Agadir.',
   },
+
+  // ── Where you sleep ───────────────────────────────────────────────────────
+  // Accommodation is part of what a traveller receives, so the itineraries'
+  // own overnight stops are surfaced rather than hidden. Each of these comes
+  // from a stop the tour already names; none promises a specific property,
+  // because the tour data never names one.
+  'riad-stay': {
+    id: 'riad-stay', kind: 'stay',
+    label: 'A night in a riad',
+    blurb: 'A traditional house built around its own courtyard, inside the medina — quiet behind the walls, minutes from the square.',
+    image: '/images/library/ornate-riad-courtyard-southern-morocco-mga-022.jpg',
+  },
+  'merzouga-hotel': {
+    id: 'merzouga-hotel', kind: 'stay',
+    label: 'A night by the dunes',
+    blurb: 'A hotel on the edge of Merzouga rather than a camp — a bed, a shower and the dunes still on the doorstep.',
+  },
+
+  // ── Places the itineraries name that had no card yet ───────────────────────
+  'royal-palace-fes': {
+    id: 'royal-palace-fes', kind: 'heritage',
+    label: 'The Royal Palace gates',
+    blurb: 'The brass gates of Dar el-Makhzen in Fes — the palace itself is closed to visitors, but the gates are among the finest metalwork in Morocco.',
+  },
+  'mellah-fes': {
+    id: 'mellah-fes', kind: 'heritage',
+    label: 'The Mellah',
+    blurb: 'The old Jewish quarter of Fes, with balconied houses that face the street — unlike the inward-looking homes of the medina.',
+  },
+  agdz: {
+    id: 'agdz', kind: 'landscape',
+    label: 'Agdz',
+    blurb: 'The town where the Draa palm groves begin, under the flank of Jbel Kissane.',
+  },
+  alnif: {
+    id: 'alnif', kind: 'landscape',
+    label: 'Alnif',
+    blurb: 'A small town on the desert road, known among collectors for the fossils found in the hills around it.',
+  },
+  'beni-mellal': {
+    id: 'beni-mellal', kind: 'city',
+    label: 'Beni Mellal',
+    blurb: 'A market town below the Middle Atlas, surrounded by the orchards and olive groves of the Tadla plain.',
+  },
+  errachidia: {
+    id: 'errachidia', kind: 'city',
+    label: 'Errachidia',
+    blurb: 'The administrative town of the Ziz, and the point where the road south turns properly into desert country.',
+  },
+  'atlantic-coast-drive': {
+    id: 'atlantic-coast-drive', kind: 'landscape',
+    label: 'The Atlantic coast road',
+    blurb: 'The road along the ocean between Essaouira and Agadir — argan trees on one side, surf breaks on the other.',
+  },
+  'beach-sunset': {
+    id: 'beach-sunset', kind: 'landscape',
+    label: 'Sunset on the beach',
+    blurb: 'The wide Atlantic beach at Essaouira at the end of the day, when the wind drops and the light goes long.',
+  },
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -632,6 +691,35 @@ const STOP_ALIASES: Record<string, string> = {
   'kid friendly hammam': 'hammam',
   'hot air balloon at dawn': 'hot-air-balloon',
   'paradise valley': 'paradise-valley',
+
+  // accommodation
+  'private luxury riad': 'riad-stay',
+  'traditional riad': 'riad-stay',
+  'marrakech riad': 'riad-stay',
+  'luxury hotel in merzouga': 'merzouga-hotel',
+  'merzouga hotel': 'merzouga-hotel',
+
+  // places the itineraries name
+  'royal palace gates': 'royal-palace-fes',
+  'royal palace': 'royal-palace-fes',
+  'jewish quarter': 'mellah-fes',
+  agdz: 'agdz',
+  alnif: 'alnif',
+  'beni mellal': 'beni-mellal',
+  'errachidia region': 'errachidia',
+  // Only genuinely coastal drives. The bare "Coastal road" stop belongs to the
+  // Marrakech→Casablanca leg, which runs inland, so it stays unmapped rather
+  // than promising an ocean road the traveller will not see.
+  'atlantic coast': 'atlantic-coast-drive',
+  'scenic coastal drive': 'atlantic-coast-drive',
+  'coastal road north of agadir': 'atlantic-coast-drive',
+  'sunset on the beach': 'beach-sunset',
+
+  // wording variants of stops that already have a card
+  'overnight in ouarzazate': 'ouarzazate',
+  'merzouga area': 'merzouga',
+  'second night in merzouga': 'merzouga',
+  'midelt area': 'midelt',
 };
 
 /** Reduce an itinerary stop to its lookup key. */

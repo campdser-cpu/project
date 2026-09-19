@@ -262,5 +262,45 @@
   "paradise-valley": {
     "label": "Paradise Valley",
     "blurb": "A garganta de palmeiras e as poças de rocha nas colinas por trás de Agadir."
+  },
+  "riad-stay": {
+    "label": "Uma noite num riad",
+    "blurb": "Uma casa tradicional organizada em torno do seu pátio, dentro da medina — silenciosa atrás dos muros, a minutos da praça."
+  },
+  "merzouga-hotel": {
+    "label": "Uma noite junto às dunas",
+    "blurb": "Um hotel à beira de Merzouga em vez de um acampamento: uma cama, um duche e as dunas ainda à porta."
+  },
+  "royal-palace-fes": {
+    "label": "As portas do Palácio Real",
+    "blurb": "As portas de latão de Dar el-Makhzen, em Fez. O palácio não se visita, mas as portas estão entre os melhores trabalhos em metal de Marrocos."
+  },
+  "mellah-fes": {
+    "label": "A Mellah",
+    "blurb": "O antigo bairro judaico de Fez, com casas de varandas voltadas para a rua — ao contrário das habitações viradas para dentro da medina."
+  },
+  "agdz": {
+    "label": "Agdz",
+    "blurb": "A vila onde começam os palmeirais do Draa, ao pé do Jbel Kissane."
+  },
+  "alnif": {
+    "label": "Alnif",
+    "blurb": "Uma pequena vila na estrada do deserto, conhecida entre colecionadores pelos fósseis das colinas em redor."
+  },
+  "beni-mellal": {
+    "label": "Beni Mellal",
+    "blurb": "Uma cidade de mercado sob o Médio Atlas, rodeada pelos pomares e olivais da planície do Tadla."
+  },
+  "errachidia": {
+    "label": "Errachidia",
+    "blurb": "A cidade administrativa do Ziz e o ponto em que a estrada para sul entra verdadeiramente em terra desértica."
+  },
+  "atlantic-coast-drive": {
+    "label": "A estrada da costa atlântica",
+    "blurb": "A estrada junto ao oceano entre Essaouira e Agadir — argâneiras de um lado, ondas de surf do outro."
+  },
+  "beach-sunset": {
+    "label": "Pôr do sol na praia",
+    "blurb": "O largo areal atlântico de Essaouira ao fim do dia, quando o vento abranda e a luz se alonga."
   }
 }

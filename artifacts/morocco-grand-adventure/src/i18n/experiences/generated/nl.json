@@ -262,5 +262,45 @@
   "paradise-valley": {
     "label": "Paradise Valley",
     "blurb": "De palmkloof met rotspoelen in de heuvels achter Agadir."
+  },
+  "riad-stay": {
+    "label": "Een nacht in een riad",
+    "blurb": "Een traditioneel huis rond een eigen binnenplaats, midden in de medina — stil achter de muren, minuten van het plein."
+  },
+  "merzouga-hotel": {
+    "label": "Een nacht bij de duinen",
+    "blurb": "Een hotel aan de rand van Merzouga in plaats van een kamp: een bed, een douche, en de duinen nog altijd voor de deur."
+  },
+  "royal-palace-fes": {
+    "label": "De poorten van het Koninklijk Paleis",
+    "blurb": "De messing poorten van Dar el-Makhzen in Fes. Het paleis zelf is niet te bezoeken, maar de poorten horen bij het mooiste metaalwerk van Marokko."
+  },
+  "mellah-fes": {
+    "label": "De Mellah",
+    "blurb": "De oude Joodse wijk van Fes, met huizen waarvan de balkons op straat uitkijken — anders dan de naar binnen gekeerde huizen van de medina."
+  },
+  "agdz": {
+    "label": "Agdz",
+    "blurb": "Het stadje waar de palmtuinen van de Draa beginnen, aan de voet van de Jbel Kissane."
+  },
+  "alnif": {
+    "label": "Alnif",
+    "blurb": "Een klein stadje aan de woestijnweg, bij verzamelaars bekend om de fossielen uit de heuvels eromheen."
+  },
+  "beni-mellal": {
+    "label": "Beni Mellal",
+    "blurb": "Een marktstad onder de Midden-Atlas, omringd door de boomgaarden en olijfgaarden van de Tadla-vlakte."
+  },
+  "errachidia": {
+    "label": "Errachidia",
+    "blurb": "De bestuursstad van de Ziz, en het punt waar de weg naar het zuiden echt woestijnland in gaat."
+  },
+  "atlantic-coast-drive": {
+    "label": "De Atlantische kustweg",
+    "blurb": "De weg langs de oceaan tussen Essaouira en Agadir — arganbomen aan de ene kant, surfbreaks aan de andere."
+  },
+  "beach-sunset": {
+    "label": "Zonsondergang op het strand",
+    "blurb": "Het brede Atlantische strand van Essaouira aan het eind van de dag, als de wind gaat liggen en het licht lang wordt."
   }
 }
