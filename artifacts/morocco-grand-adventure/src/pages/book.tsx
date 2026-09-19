@@ -14,13 +14,19 @@ export default function Book() {
   const c = BOOK_COPY[lang] ?? BOOK_COPY.en;
   const params = useMemo(() => new URLSearchParams(window.location.search), []);
   const initialTrip = params.get('tour') || params.get('experience') || '';
+  // The journey configurator hands its selection over in the query string. Only
+  // the tour name was being read, so a traveller who chose dates, party size,
+  // rooms and preferences arrived at an empty form and had to say it all again.
+  const initialTravelers = Math.max(1, Math.min(50, Number(params.get('travelers')) || 2));
+  const initialRooms = params.get('rooms') || '';
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
-  const [date, setDate] = useState('');
-  const [travelers, setTravelers] = useState(2);
+  const [date, setDate] = useState(params.get('date') || '');
+  const [travelers, setTravelers] = useState(initialTravelers);
   const [trip, setTrip] = useState(initialTrip);
-  const [message, setMessage] = useState('');
+  const [rooms] = useState(initialRooms);
+  const [message, setMessage] = useState(params.get('notes') || '');
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
 
   const whatsappHref = useMemo(() => {
@@ -32,10 +38,11 @@ export default function Book() {
       `Date: ${date || 'Flexible'}`,
       `Travelers: ${travelers}`,
       `Tour / experience: ${trip || 'To be discussed'}`,
+      ...(rooms ? [`Room arrangement: ${rooms}`] : []),
       `Message: ${message || 'None'}`,
     ].join('\n');
     return `${contactInfo.whatsapp}?text=${encodeURIComponent(text)}`;
-  }, [name, email, phone, date, travelers, trip, message]);
+  }, [name, email, phone, date, travelers, trip, rooms, message]);
 
   async function submit(event: FormEvent) {
     event.preventDefault();
@@ -53,7 +60,7 @@ export default function Book() {
           travelers: String(travelers),
           destinations: '',
           tourInterest: trip,
-          accommodation: '',
+          accommodation: rooms,
           message: `BOOK NOW — PAY LATER\n\n${message.trim()}`,
         }),
       });

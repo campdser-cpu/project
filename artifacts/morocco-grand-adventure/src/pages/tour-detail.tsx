@@ -352,6 +352,8 @@ export default function TourDetail() {
             <TailorJourney
               t={t}
               tripName={tour.name}
+              tourId={tour.id}
+              lang={lang}
               bookHref={`/${lang}/book`}
               defaultDays={parseDurationDays(tour.duration)}
               className="mb-16"

@@ -24,11 +24,27 @@ import { useId, useMemo, useState } from 'react';
 import { CalendarDays, ChevronDown, Users } from 'lucide-react';
 import { SiWhatsapp } from 'react-icons/si';
 import { contactInfo } from '@/data/content';
+import type { AccommodationTier, CampTier } from '@/data/pricing/rates';
+import {
+  arrangementLabel,
+  arrangementLabelEn,
+  findArrangement,
+  roomArrangements,
+} from '@/data/pricing/rooms';
+import { campNights, getTourPricing, hotelNights } from '@/data/pricing/tours';
+import { estimate, formatMoney } from '@/lib/pricing';
 
 type Props = {
   t: (key: string) => string;
   /** Tour or journey being tailored; empty for the open-ended builder. */
   tripName?: string;
+  /**
+   * Tour id, used to look up pricing configuration. Journeys with no costed
+   * configuration — which today is every one of them — stay quote-only.
+   */
+  tourId?: string;
+  /** Locale, for formatting a price once one exists. */
+  lang?: string;
   /** Localized path to the request form, e.g. /fr/book. */
   bookHref: string;
   /** Starting day count — the tour's own duration where there is one. */
@@ -39,25 +55,106 @@ type Props = {
 const MIN_DAYS = 1;
 const MAX_DAYS = 30;
 
-type Choice = { value: string; labelKey: string };
+type Tier = AccommodationTier | CampTier;
+type Choice = { value: string; labelKey: string; tier?: Tier };
 const STYLE: Choice[] = [
   { value: 'Private', labelKey: 'jx_f_private' },
   { value: 'Shared', labelKey: 'jx_f_shared' },
 ];
 const COMFORT: Choice[] = [
-  { value: 'Standard', labelKey: 'jx_f_comfort_standard' },
-  { value: 'Luxury', labelKey: 'jx_f_comfort_luxury' },
+  { value: 'Standard', labelKey: 'jx_f_comfort_standard', tier: 'standard' },
+  { value: 'Luxury', labelKey: 'jx_f_comfort_luxury', tier: 'luxury' },
 ];
 const CAMP: Choice[] = [
-  { value: 'Standard camp', labelKey: 'jx_f_camp_standard' },
-  { value: 'Luxury camp', labelKey: 'jx_f_camp_luxury' },
+  { value: 'Standard camp', labelKey: 'jx_f_camp_standard', tier: 'standard' },
+  { value: 'Luxury camp', labelKey: 'jx_f_camp_luxury', tier: 'luxury' },
 ];
 const PACE: Choice[] = [
   { value: 'Relaxed', labelKey: 'jx_f_pace_relaxed' },
   { value: 'See as much as possible', labelKey: 'jx_f_pace_full' },
 ];
 
-export function TailorJourney({ t, tripName = '', bookHref, defaultDays, className = '' }: Props) {
+const LEGEND = 'mb-2 block text-sm font-bold text-foreground';
+
+/** One line of the selection summary. */
+function SummaryRow({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="flex min-w-0 items-baseline justify-between gap-3 border-b border-border/50 pb-1.5">
+      <dt className="shrink-0 text-sm text-muted-foreground">{label}</dt>
+      <dd className="min-w-0 break-words text-right text-sm font-semibold text-foreground">{value}</dd>
+    </div>
+  );
+}
+
+/**
+ * Radio group rendered as chips. Hoisted out of the component body on purpose:
+ * declared inline it was a fresh component type on every render, so React
+ * unmounted and remounted the inputs each time one was chosen and keyboard focus
+ * was lost after every selection — the opposite of what this file's own
+ * accessibility notes promise.
+ */
+function OptionGroup({
+  uid,
+  name,
+  label,
+  options,
+  value,
+  onChange,
+  t,
+  includeAny = true,
+  labelFor,
+}: {
+  uid: string;
+  name: string;
+  label: string;
+  options: Choice[];
+  value: string;
+  onChange: (v: string) => void;
+  t: (key: string) => string;
+  includeAny?: boolean;
+  /** Overrides the default `t(labelKey)` — used where labels are assembled. */
+  labelFor?: (o: Choice) => string;
+}) {
+  const all = includeAny ? [{ value: '', labelKey: 'jx_f_any' }, ...options] : options;
+  return (
+    <fieldset className="min-w-0">
+      <legend className={LEGEND}>{label}</legend>
+      <div className="flex flex-wrap gap-2">
+        {all.map((o) => {
+          const id = `${uid}-${name}-${o.value || 'any'}`;
+          return (
+            <span key={id}>
+              <input
+                type="radio"
+                id={id}
+                name={`${uid}-${name}`}
+                className="peer sr-only"
+                checked={value === o.value}
+                onChange={() => onChange(o.value)}
+              />
+              <label
+                htmlFor={id}
+                className="inline-block cursor-pointer rounded-full border border-border px-4 py-2.5 text-sm font-semibold text-foreground transition-colors peer-checked:border-primary peer-checked:bg-primary peer-checked:text-primary-foreground peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-primary"
+              >
+                {labelFor ? labelFor(o) : t(o.labelKey)}
+              </label>
+            </span>
+          );
+        })}
+      </div>
+    </fieldset>
+  );
+}
+
+export function TailorJourney({
+  t,
+  tripName = '',
+  tourId,
+  lang = 'en',
+  bookHref,
+  defaultDays,
+  className = '',
+}: Props) {
   const uid = useId();
   const [open, setOpen] = useState(false);
   const [date, setDate] = useState('');
@@ -70,9 +167,46 @@ export function TailorJourney({ t, tripName = '', bookHref, defaultDays, classNa
   const [camp, setCamp] = useState('');
   const [pace, setPace] = useState('');
   const [notes, setNotes] = useState('');
+  // Only the arrangement's id is held. Resolving it against the current party
+  // size each render means changing the traveller count cannot leave a stale
+  // arrangement selected: one that no longer fits simply resolves back to the
+  // deferred option.
+  const [roomId, setRoomId] = useState('defer');
+
+  const arrangements = useMemo(() => roomArrangements(travellers), [travellers]);
+  const arrangement = useMemo(() => findArrangement(travellers, roomId), [travellers, roomId]);
+  const roomChoices: Choice[] = useMemo(
+    () => arrangements.map((a) => ({ value: a.id, labelKey: a.id })),
+    [arrangements],
+  );
+
+  // Price, or the reason there isn't one. Today every tour is quote-only: the
+  // rate card is unconfigured and no tour is costed, so this is always null and
+  // the panel below renders the tailored-quote line instead of a figure.
+  const price = useMemo(() => {
+    if (!tourId) return null;
+    const cfg = getTourPricing(tourId);
+    if (!cfg) return null;
+    const accommodation = COMFORT.find((c) => c.value === comfort)?.tier;
+    const campTier = CAMP.find((c) => c.value === camp)?.tier;
+    // A tier only has to be chosen where it changes the price. A route with no
+    // night under canvas is not held back waiting for a camp answer, and a route
+    // with no hotel night is not held back waiting for a comfort answer.
+    if (!accommodation && hotelNights(cfg).length > 0) return null;
+    if (!campTier && campNights(cfg) > 0) return null;
+    const r = estimate({
+      tourId,
+      travelers: travellers,
+      accommodation: (accommodation ?? 'standard') as AccommodationTier,
+      camp: (campTier ?? 'standard') as CampTier,
+      rooms: arrangement,
+    });
+    return r.status === 'priced' ? r : null;
+  }, [tourId, comfort, camp, travellers, arrangement]);
 
   // Operator-facing summary. Preferences the traveller left blank are omitted
-  // rather than sent as a guess.
+  // rather than sent as a guess. The estimate is included only when one exists —
+  // never a placeholder, and never the internal cost breakdown.
   const summary = useMemo(() => {
     const lines = [
       tripName ? `Trip: ${tripName}` : 'Trip: to be discussed',
@@ -82,11 +216,16 @@ export function TailorJourney({ t, tripName = '', bookHref, defaultDays, classNa
     ];
     if (style) lines.push(`Style: ${style}`);
     if (comfort) lines.push(`Comfort: ${comfort}`);
+    lines.push(`Room arrangement: ${arrangementLabelEn(arrangement)}`);
     if (camp) lines.push(`Desert camp: ${camp}`);
     if (pace) lines.push(`Pace: ${pace}`);
+    if (price) {
+      lines.push(`Estimated total: €${price.total}`);
+      lines.push(`Estimated per person: €${price.perPerson}`);
+    }
     if (notes.trim()) lines.push(`Notes: ${notes.trim()}`);
     return lines.join('\n');
-  }, [tripName, date, travellers, days, style, comfort, camp, pace, notes]);
+  }, [tripName, date, travellers, days, style, comfort, arrangement, camp, pace, price, notes]);
 
   const whatsappHref = `${contactInfo.whatsapp}?text=${encodeURIComponent(summary)}`;
   const formHref = `${bookHref}?${new URLSearchParams({
@@ -94,54 +233,12 @@ export function TailorJourney({ t, tripName = '', bookHref, defaultDays, classNa
     date,
     travelers: String(travellers),
     days: String(days),
+    rooms: arrangementLabelEn(arrangement),
     notes: summary,
   }).toString()}`;
 
   const field = 'w-full rounded-xl border border-border bg-background px-4 py-3.5 text-base text-foreground outline-none transition-colors focus:border-primary focus:ring-2 focus:ring-primary/20';
-  const legend = 'mb-2 block text-sm font-bold text-foreground';
-
-  function OptionGroup({
-    name,
-    label,
-    options,
-    value,
-    onChange,
-  }: {
-    name: string;
-    label: string;
-    options: Choice[];
-    value: string;
-    onChange: (v: string) => void;
-  }) {
-    return (
-      <fieldset className="min-w-0">
-        <legend className={legend}>{label}</legend>
-        <div className="flex flex-wrap gap-2">
-          {[{ value: '', labelKey: 'jx_f_any' }, ...options].map((o) => {
-            const id = `${uid}-${name}-${o.value || 'any'}`;
-            return (
-              <span key={id}>
-                <input
-                  type="radio"
-                  id={id}
-                  name={`${uid}-${name}`}
-                  className="peer sr-only"
-                  checked={value === o.value}
-                  onChange={() => onChange(o.value)}
-                />
-                <label
-                  htmlFor={id}
-                  className="inline-block cursor-pointer rounded-full border border-border px-4 py-2.5 text-sm font-semibold text-foreground transition-colors peer-checked:border-primary peer-checked:bg-primary peer-checked:text-primary-foreground peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-primary"
-                >
-                  {t(o.labelKey)}
-                </label>
-              </span>
-            );
-          })}
-        </div>
-      </fieldset>
-    );
-  }
+  const legend = LEGEND;
 
   return (
     <section
@@ -230,11 +327,33 @@ export function TailorJourney({ t, tripName = '', bookHref, defaultDays, classNa
 
       <div id={`${uid}-more`} hidden={!open} className="mt-6 space-y-6 border-t border-border pt-6">
         <div className="grid gap-6 sm:grid-cols-2">
-          <OptionGroup name="style" label={t('jx_f_style')} options={STYLE} value={style} onChange={setStyle} />
-          <OptionGroup name="comfort" label={t('jx_f_comfort')} options={COMFORT} value={comfort} onChange={setComfort} />
-          <OptionGroup name="camp" label={t('jx_f_camp')} options={CAMP} value={camp} onChange={setCamp} />
-          <OptionGroup name="pace" label={t('jx_f_pace')} options={PACE} value={pace} onChange={setPace} />
+          <OptionGroup uid={uid} t={t} name="style" label={t('jx_f_style')} options={STYLE} value={style} onChange={setStyle} />
+          <OptionGroup uid={uid} t={t} name="comfort" label={t('jx_f_comfort')} options={COMFORT} value={comfort} onChange={setComfort} />
+          <OptionGroup uid={uid} t={t} name="camp" label={t('jx_f_camp')} options={CAMP} value={camp} onChange={setCamp} />
+          <OptionGroup uid={uid} t={t} name="pace" label={t('jx_f_pace')} options={PACE} value={pace} onChange={setPace} />
         </div>
+
+        {/* Rooms. The options are generated from the party size, so the group
+            re-shapes itself as the traveller count changes, and it never offers
+            a room type this project cannot evidence (no triples, no family
+            rooms). The deferred option is always present and is the default:
+            Morocco Grand Adventure books these rooms with the guesthouses on the
+            route rather than holding inventory of its own. */}
+        <div>
+          <OptionGroup
+            uid={uid}
+            t={t}
+            name="rooms"
+            label={t('px_rooms')}
+            options={roomChoices}
+            value={arrangement.id}
+            onChange={setRoomId}
+            includeAny={false}
+            labelFor={(o) => arrangementLabel(findArrangement(travellers, o.value), t)}
+          />
+          <p className="mt-2 text-sm text-muted-foreground">{t('px_rooms_hint')}</p>
+        </div>
+
         <div>
           <label htmlFor={`${uid}-notes`} className={legend}>
             {t('jx_f_notes')}
@@ -250,7 +369,53 @@ export function TailorJourney({ t, tripName = '', bookHref, defaultDays, classNa
         </div>
       </div>
 
-      <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+      {/* What the traveller has chosen, and what it costs — or, while no tour is
+          costed, the plain statement that the figure comes from us. There is no
+          placeholder amount, no "€0" and no "from" label here: an unpriced
+          journey shows the quote line, which is what actually happens. */}
+      <div className="mt-8 rounded-2xl border border-border bg-background p-5 md:p-6">
+        <h3 className="mb-3 text-sm font-bold uppercase tracking-wide text-muted-foreground">
+          {t('px_summary')}
+        </h3>
+        <dl className="grid gap-x-6 gap-y-2 sm:grid-cols-2">
+          <SummaryRow label={t('book_travelers')} value={String(travellers)} />
+          <SummaryRow label={t('jx_f_days')} value={String(days)} />
+          {style && <SummaryRow label={t('jx_f_style')} value={t(STYLE.find((o) => o.value === style)!.labelKey)} />}
+          {comfort && <SummaryRow label={t('jx_f_comfort')} value={t(COMFORT.find((o) => o.value === comfort)!.labelKey)} />}
+          <SummaryRow label={t('px_rooms')} value={arrangementLabel(arrangement, t)} />
+          {camp && <SummaryRow label={t('jx_f_camp')} value={t(CAMP.find((o) => o.value === camp)!.labelKey)} />}
+        </dl>
+
+        <div className="mt-5 border-t border-border pt-5">
+          {price ? (
+            <>
+              <p className="text-sm font-bold uppercase tracking-wide text-muted-foreground">
+                {t('px_estimate')}
+              </p>
+              <p className="mt-1 font-serif text-4xl font-bold text-foreground">
+                {formatMoney(price.total, price.currency, lang)}{' '}
+                <span className="text-base font-sans font-semibold text-muted-foreground">
+                  {t('px_total')}
+                </span>
+              </p>
+              <p className="mt-1 text-lg font-semibold text-foreground">
+                {formatMoney(price.perPerson, price.currency, lang)}{' '}
+                <span className="text-base font-normal text-muted-foreground">
+                  {t('px_per_person')}
+                </span>
+              </p>
+              <p className="mt-3 text-sm text-muted-foreground">{t('px_estimate_note')}</p>
+            </>
+          ) : (
+            <>
+              <p className="font-serif text-2xl text-foreground">{t('px_price_pending')}</p>
+              <p className="mt-2 text-sm text-muted-foreground">{t('px_price_pending_note')}</p>
+            </>
+          )}
+        </div>
+      </div>
+
+      <div className="mt-6 flex flex-col gap-3 sm:flex-row">
         <a
           href={whatsappHref}
           target="_blank"
