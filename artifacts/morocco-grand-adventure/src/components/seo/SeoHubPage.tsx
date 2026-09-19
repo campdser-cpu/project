@@ -349,11 +349,11 @@ export function SeoHubPage({ page }: { page: HubPage }) {
                   const s = SOURCES[sid];
                   if (!s) return null;
                   return (
+                    // Cited as text, not linked. The source is still named so
+                    // the claim stays checkable, but the page does not hand the
+                    // reader off to an external tourism site.
                     <li key={sid} className="text-sm text-muted-foreground">
-                      <a href={s.url} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-                        {s.title}
-                      </a>{' '}
-                      — {s.publisher}
+                      <span className="font-medium text-foreground">{s.title}</span> — {s.publisher}
                     </li>
                   );
                 })}

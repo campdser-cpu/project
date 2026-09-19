@@ -4,8 +4,13 @@
 // Maps key factual claims on the site to the strongest available source, per
 // the source hierarchy: official/primary sources first (UNESCO, ONMT), then
 // reputable editorial sources. This file is editorial infrastructure: it does
-// NOT render on every page. Pages cite a source only when the citation
-// genuinely helps the traveler (descriptive anchor, normal HTML link).
+// NOT render on every page.
+//
+// Sources are CITED BY NAME, NOT LINKED. Pages print "<title> — <publisher>"
+// as plain text so a reader can still see what a claim rests on and check it
+// themselves, while the site does not hand travellers off to external tourism
+// sites, competitors or editorial publishers. The `url` below is kept for our
+// own re-verification against `lastVerified`; it is not rendered as an anchor.
 //
 // `lastVerified` prevents stale facts: any claim tied to a source here must be
 // re-checked against that source before the date is rolled forward.

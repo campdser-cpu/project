@@ -1292,7 +1292,11 @@ function buildHubPageContent(page: HubPage, lang: Lang): string {
   const pageSources = (localized.sources ?? []).map((sid) => SOURCES[sid]).filter(Boolean);
   if (pageSources.length) {
     out += h2(tr(lang, 'guide_sources_heading'));
-    out += ul(pageSources.map((s) => `<a href="${s.url}" rel="noopener noreferrer">${escapeHtml(s.title)}</a> — ${escapeHtml(s.publisher)}`));
+    // Named, not linked: the source stays visible so the claim is checkable,
+    // but the page does not emit an outbound link to an external tourism site.
+    // (This also removes the escaped-anchor artefact these lines produced —
+    // ul() escapes its input, so the old markup rendered as literal text.)
+    out += ul(pageSources.map((s) => `${s.title} — ${s.publisher}`));
   }
   out += h2(tr(lang, 'guide_cta_heading'));
   out += rawParagraph(`${escapeHtml(tr(lang, 'guide_cta_sub'))} <a href="${SITE_URL}/${lang}/trip-builder">${escapeHtml(tr(lang, 'guide_cta_build'))}</a> · <a href="${contactInfo.whatsapp}">${escapeHtml(tr(lang, 'guide_cta_whatsapp'))}</a>.`);

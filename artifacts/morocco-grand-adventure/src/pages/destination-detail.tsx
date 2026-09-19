@@ -148,8 +148,9 @@ export default function DestinationDetail() {
                           const s = SOURCES[sid];
                           if (!s) return null;
                           return (
+                            // Named, not linked — see SeoHubPage for the reasoning.
                             <span key={sid}>
-                              <a href={s.url} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">{s.title}</a>
+                              <span className="font-medium text-foreground">{s.title}</span>
                               {' '}— {s.publisher}.{' '}
                             </span>
                           );
