@@ -367,12 +367,16 @@ export default function TourDetail() {
               const guidePages = depth.guideLinks
                 .map((slug) => allHubs.find((q) => q.slug === slug))
                 .filter((p): p is NonNullable<typeof p> => Boolean(p));
+              // Base-relative: these go to wouter's <Link>, and the router is
+              // mounted with base={`${RAW_BASE}/${lang}`} (App.tsx). Including
+              // the locale here made wouter emit /fr/fr/merzouga-guide/… — a
+              // path with no prerendered file and no rewrite, i.e. a 404.
               const hubHref = (slug: string) => {
                 const p = guidePages.find((q) => q.slug === slug);
                 if (!p) return '#';
-                if (p.kind === 'comparison') return `/${lang}/comparisons/${p.slug}`;
-                if (p.kind === 'travel-info') return `/${lang}/travel-info/${p.slug}`;
-                return `/${lang}/merzouga-guide/${p.slug}`;
+                if (p.kind === 'comparison') return `/comparisons/${p.slug}`;
+                if (p.kind === 'travel-info') return `/travel-info/${p.slug}`;
+                return `/merzouga-guide/${p.slug}`;
               };
               return (
                 <div className="mb-16 space-y-8">

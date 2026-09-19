@@ -41,12 +41,21 @@ const GROUP_KEY: Record<ExperienceKind, string> = {
   activity: 'jx_grp_activity',
 };
 
-function hubHref(slug: string, lang: Lang): string | undefined {
+/**
+ * Base-relative hub path.
+ *
+ * These paths are handed to wouter's <Link>, and the router is mounted with
+ * base={`${RAW_BASE}/${lang}`} (see App.tsx). Wouter prepends that base, so a
+ * path must NOT carry the locale itself: `/${lang}/merzouga-guide/x` would be
+ * rendered as `/fr/fr/merzouga-guide/x`, which has no prerendered file and no
+ * rewrite in vercel.json — a hard 404.
+ */
+function hubHref(slug: string): string | undefined {
   const page = [...MERZOUGA_GUIDES, ...COMPARISONS, ...TRAVEL_INFO].find((p) => p.slug === slug);
   if (!page) return undefined;
-  if (page.kind === 'comparison') return `/${lang}/comparisons/${page.slug}`;
-  if (page.kind === 'travel-info') return `/${lang}/travel-info/${page.slug}`;
-  return `/${lang}/merzouga-guide/${page.slug}`;
+  if (page.kind === 'comparison') return `/comparisons/${page.slug}`;
+  if (page.kind === 'travel-info') return `/travel-info/${page.slug}`;
+  return `/merzouga-guide/${page.slug}`;
 }
 
 function ExperienceCard({
@@ -64,7 +73,7 @@ function ExperienceCard({
 }) {
   const e = localizeExperience(exp, lang);
   const destName = e.destinationId ? destinationNames[e.destinationId] : undefined;
-  const guide = e.hubSlug ? hubHref(e.hubSlug, lang) : undefined;
+  const guide = e.hubSlug ? hubHref(e.hubSlug) : undefined;
 
   return (
     <li className="flex gap-4 rounded-2xl border border-border bg-background p-4">
@@ -101,7 +110,7 @@ function ExperienceCard({
           <p className="mt-2 flex flex-wrap gap-x-4 gap-y-1">
             {destName && (
               <Link
-                href={`/${lang}/destinations/${e.destinationId}`}
+                href={`/destinations/${e.destinationId}`}
                 className="inline-flex items-center gap-1 text-sm font-semibold text-primary underline underline-offset-2 hover:no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
               >
                 {t('jx_exp_explore').split('{n}').join(destName)}
