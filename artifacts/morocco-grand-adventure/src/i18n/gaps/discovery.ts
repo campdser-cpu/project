@@ -13,6 +13,8 @@
 
 export const discoveryGaps: Partial<Record<string, Record<string, string>>> = {
   en: {
+    dest_through_lens: 'through our lens',
+    dest_plan_experience: 'Plan your desert experience',
     hub_dur_meta_title: "{days}-Day Tours From {city} — Private Morocco Itineraries",
     hub_dur_meta_desc: "Private {days}-day Morocco tours from {city} — the Sahara, imperial cities and the Atlas. Pick your pace and plan a tailored departure with local experts.",
     home_start_title: 'Not sure where to start?',
@@ -26,6 +28,8 @@ export const discoveryGaps: Partial<Record<string, Record<string, string>>> = {
     home_start_gallery: 'Photographs from the road, taken on our journeys',
   },
   fr: {
+    dest_through_lens: 'vu par nous',
+    dest_plan_experience: 'Préparez votre expérience du désert',
     hub_dur_meta_title: "Circuits de {days} jours au départ de {city} — itinéraires privés au Maroc",
     hub_dur_meta_desc: "Circuits privés de {days} jours au Maroc au départ de {city} : le Sahara, les villes impériales et l’Atlas. Choisissez votre rythme et préparez un départ sur mesure.",
     home_start_title: 'Vous ne savez pas par où commencer ?',
@@ -39,6 +43,8 @@ export const discoveryGaps: Partial<Record<string, Record<string, string>>> = {
     home_start_gallery: 'Des photos prises sur la route, pendant nos voyages',
   },
   es: {
+    dest_through_lens: 'con nuestra mirada',
+    dest_plan_experience: 'Planifica tu experiencia en el desierto',
     hub_dur_meta_title: "Circuitos de {days} días desde {city} — itinerarios privados por Marruecos",
     hub_dur_meta_desc: "Circuitos privados de {days} días por Marruecos desde {city}: el Sáhara, las ciudades imperiales y el Atlas. Elige tu ritmo y planifica una salida a medida.",
     home_start_title: '¿No sabes por dónde empezar?',
@@ -52,6 +58,8 @@ export const discoveryGaps: Partial<Record<string, Record<string, string>>> = {
     home_start_gallery: 'Fotografías tomadas en la carretera, en nuestros viajes',
   },
   it: {
+    dest_through_lens: 'con i nostri occhi',
+    dest_plan_experience: 'Organizza la tua esperienza nel deserto',
     hub_dur_meta_title: "Tour di {days} giorni da {city} — itinerari privati in Marocco",
     hub_dur_meta_desc: "Tour privati di {days} giorni in Marocco da {city}: il Sahara, le città imperiali e l’Atlante. Scegli il tuo ritmo e pianifica una partenza su misura.",
     home_start_title: 'Non sai da dove cominciare?',
@@ -65,6 +73,8 @@ export const discoveryGaps: Partial<Record<string, Record<string, string>>> = {
     home_start_gallery: 'Fotografie scattate lungo la strada, durante i nostri viaggi',
   },
   de: {
+    dest_through_lens: 'mit unseren Augen',
+    dest_plan_experience: 'Planen Sie Ihr Wüstenerlebnis',
     hub_dur_meta_title: "{days}-Tage-Touren ab {city} — private Marokko-Reisen",
     hub_dur_meta_desc: "Private {days}-Tage-Touren durch Marokko ab {city}: Sahara, Königsstädte und Atlas. Wählen Sie Ihr Tempo und planen Sie eine maßgeschneiderte Abreise.",
     home_start_title: 'Sie wissen nicht, wo Sie anfangen sollen?',
@@ -78,6 +88,8 @@ export const discoveryGaps: Partial<Record<string, Record<string, string>>> = {
     home_start_gallery: 'Fotos von unterwegs, auf unseren Reisen entstanden',
   },
   nl: {
+    dest_through_lens: 'door onze lens',
+    dest_plan_experience: 'Plan je woestijnervaring',
     hub_dur_meta_title: "{days}-daagse reizen vanuit {city} — privéroutes door Marokko",
     hub_dur_meta_desc: "Privéreizen van {days} dagen door Marokko vanuit {city}: de Sahara, de koningssteden en de Atlas. Kies je tempo en plan een reis op maat.",
     home_start_title: 'Weet je niet waar te beginnen?',
@@ -91,6 +103,8 @@ export const discoveryGaps: Partial<Record<string, Record<string, string>>> = {
     home_start_gallery: 'Foto’s van onderweg, gemaakt tijdens onze reizen',
   },
   pt: {
+    dest_through_lens: 'pelo nosso olhar',
+    dest_plan_experience: 'Planeie a sua experiência no deserto',
     hub_dur_meta_title: "Circuitos de {days} dias a partir de {city} — itinerários privados em Marrocos",
     hub_dur_meta_desc: "Circuitos privados de {days} dias em Marrocos a partir de {city}: o Sara, as cidades imperiais e o Atlas. Escolha o seu ritmo e planeie uma partida à medida.",
     home_start_title: 'Não sabe por onde começar?',
@@ -104,6 +118,9 @@ export const discoveryGaps: Partial<Record<string, Record<string, string>>> = {
     home_start_gallery: 'Fotografias da estrada, feitas nas nossas viagens',
   },
   zh: {
+    dest_pictures_title: '图片集',
+    dest_through_lens: '镜头下的风景',
+    dest_plan_experience: '规划您的沙漠之旅',
     hub_dur_meta_title: "{city}出发 {days} 日私人行程 — 摩洛哥定制之旅",
     hub_dur_meta_desc: "从{city}出发的 {days} 天摩洛哥私人行程：撒哈拉、皇城与阿特拉斯山脉。由本地团队按您的节奏定制出发安排。",
     home_start_title: '不知道从哪里开始？',
@@ -117,6 +134,9 @@ export const discoveryGaps: Partial<Record<string, Record<string, string>>> = {
     home_start_gallery: '旅途中拍下的照片',
   },
   ja: {
+    dest_pictures_title: 'フォトギャラリー',
+    dest_through_lens: '私たちの視点で',
+    dest_plan_experience: '砂漠の旅を計画する',
     hub_dur_meta_title: "{city}発 {days}日間のプライベートツアー — モロッコ",
     hub_dur_meta_desc: "{city}発、{days}日間のモロッコ・プライベートツアー。サハラ、帝都、アトラス山脈を、現地のチームがご希望のペースに合わせて手配します。",
     home_start_title: 'どこから始めるか迷ったら',
@@ -130,6 +150,9 @@ export const discoveryGaps: Partial<Record<string, Record<string, string>>> = {
     home_start_gallery: '旅の途中で撮った写真',
   },
   ko: {
+    dest_pictures_title: '사진 갤러리',
+    dest_through_lens: '우리의 시선으로',
+    dest_plan_experience: '사막 여행 계획하기',
     hub_dur_meta_title: "{city} 출발 {days}일 프라이빗 모로코 투어",
     hub_dur_meta_desc: "{city}에서 출발하는 {days}일 모로코 프라이빗 투어 — 사하라, 제국 도시, 아틀라스. 현지 팀이 원하는 속도에 맞춰 일정을 구성합니다.",
     home_start_title: '어디서부터 시작할지 고민이라면',
@@ -143,6 +166,9 @@ export const discoveryGaps: Partial<Record<string, Record<string, string>>> = {
     home_start_gallery: '여행 중에 찍은 사진들',
   },
   ar: {
+    dest_pictures_title: 'بالصور',
+    dest_through_lens: 'بعدستنا',
+    dest_plan_experience: 'خطّط لتجربتك في الصحراء',
     hub_dur_meta_title: "جولات {days} انطلاقًا من {city} — برامج خاصة في المغرب",
     hub_dur_meta_desc: "جولات خاصة في المغرب لمدة {days} انطلاقًا من {city}: الصحراء والمدن الإمبراطورية وجبال الأطلس. اختر إيقاعك وخطّط انطلاقة مخصصة مع فريق محلي.",
     home_start_title: 'لا تعرف من أين تبدأ؟',

@@ -129,7 +129,7 @@ export default function DestinationDetail() {
               {imagesForDestination(destination.id).length > 0 && (
                 <div className="mb-16">
                   <h3 className="font-serif text-3xl text-foreground mb-6 flex items-center gap-3">
-                    <MapPin className="w-8 h-8 text-primary" /> {destination.name} through our lens
+                    <MapPin className="w-8 h-8 text-primary" /> {destination.name} {t('dest_through_lens')}
                   </h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     {imagesForDestination(destination.id).map((img) => (
@@ -463,7 +463,7 @@ export default function DestinationDetail() {
           <div className="container mx-auto px-4 max-w-6xl">
             <div className="text-center mb-12">
               <span className="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">Merzouga Travel Guide</span>
-              <h2 className="font-serif text-4xl text-foreground">Plan your desert experience</h2>
+              <h2 className="font-serif text-4xl text-foreground">{t('dest_plan_experience')}</h2>
               <p className="text-muted-foreground mt-3 max-w-2xl mx-auto">
                 Everything worth knowing before the dunes — practical guides written by local Merzouga experts.
               </p>

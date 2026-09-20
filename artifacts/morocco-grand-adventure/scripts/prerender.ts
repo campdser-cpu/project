@@ -713,7 +713,7 @@ function buildDestinationDetailContent(destId: string, lang: Lang): string {
   // photograph. No cap so every mapped catalog image is discoverable.
   const catalog = imagesForDestination(destId);
   const catalogBlock = catalog.length
-    ? h2(`${d.name} through our lens`) + catalog.map((img) => catalogFigure(img, '(max-width: 640px) 100vw, 50vw')).join('\n')
+    ? h2(`${d.name} ${tr(lang, 'dest_through_lens')}`) + catalog.map((img) => catalogFigure(img, '(max-width: 640px) 100vw, 50vw')).join('\n')
     : '';
   const food = catalogImage(DEST_FOOD_IMAGE[d.id] ?? '');
   const foodBlock = food
@@ -722,7 +722,7 @@ function buildDestinationDetailContent(destId: string, lang: Lang): string {
   // Merzouga topical cluster: contextual links from the destination pages into
   // the Merzouga guide hubs (same block the runtime DestinationDetail renders).
   const merzougaGuideLinks = (destId === 'merzouga' || destId === 'erg-chebbi')
-    ? h2('Plan your desert experience') + ul(
+    ? h2(tr(lang, 'dest_plan_experience')) + ul(
         MERZOUGA_GUIDES
           .filter((p) => ['things-to-do', 'camel-trekking', 'quad-biking', '4x4-desert-tour', 'luxury-desert-camps', 'best-time-to-visit'].includes(p.slug))
           .map((p) => link(`${SITE_URL}/${lang}/merzouga-guide/${p.slug}`, p.title))
