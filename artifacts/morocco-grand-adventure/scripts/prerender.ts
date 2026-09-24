@@ -72,6 +72,8 @@ import { tours as canonicalTours } from '../src/data/content';
 import { deriveTourExperiences, type DerivedExperience } from '../src/data/tour-experiences';
 import { localizeExperience } from '../src/i18n/experiences';
 
+import { deriveTourInclusions, type InclusionItem, type MealRow } from '../src/data/tour-inclusions';
+
 // ── Constants ────────────────────────────────────────────────────────────────
 const BRAND = 'Morocco Grand Adventure';
 const SITE_URL = 'https://www.moroccograndadventure.com';
@@ -220,6 +222,10 @@ function h1(text: string): string {
 function h2(text: string): string {
   return `    <h2>${escapeHtml(text)}</h2>\n`;
 }
+function h3(text: string): string {
+  return `    <h3>${escapeHtml(text)}</h3>\n`;
+}
+
 function h2Link(url: string, text: string): string {
   return `    <h2>${link(url, text)}</h2>\n`;
 }
@@ -645,6 +651,36 @@ function bookingStepsBlock(lang: Lang): string {
   return h2(tr(lang, 'jx_hbw_title')) + ul(steps) + paragraph(tr(lang, 'jx_hbw_cancel'));
 }
 
+function tourInclusionsBlock(canonical: Tour, localized: Tour, lang: Lang): string {
+  const inc = deriveTourInclusions(canonical, localized);
+  if (!inc.included.length && !inc.notIncluded.length) return '';
+  const itemText = (it: InclusionItem) => {
+    if (it.label) return it.label;
+    const s = it.key ? tr(lang, it.key) : '';
+    return it.nights ? s.split('{n}').join(String(it.nights)) : s;
+  };
+  const incItems = inc.included.map((it) => {
+    const status = it.status === 'confirmed' ? ` (${escapeHtml(tr(lang, 'jx_exp_confirmed'))})` : '';
+    return `<strong>${escapeHtml(itemText(it))}</strong>${status}`;
+  });
+  const excItems = inc.notIncluded.map((it) => escapeHtml(itemText(it)));
+  const destMap = Object.fromEntries(getLocalizedDestinations(lang).map((d) => [d.id, d.name]));
+  const mealItems = inc.meals.map((m) => {
+    const place = (m.placeId && destMap[m.placeId]) || m.place;
+    const b = m.breakfast === 'included' ? tr(lang, 'jx_inc_meal_included') : m.breakfast === 'confirmed' ? tr(lang, 'jx_exp_confirmed') : tr(lang, 'jx_inc_meal_not_included');
+    const d = m.dinner === 'included' ? tr(lang, 'jx_inc_meal_included') : m.dinner === 'confirmed' ? tr(lang, 'jx_exp_confirmed') : tr(lang, 'jx_inc_meal_not_included');
+    return `${tr(lang, 'jx_inc_night').split('{n}').join(String(m.night))}: ${escapeHtml(place)} — ${escapeHtml(tr(lang, 'jx_inc_meal_breakfast'))}: ${escapeHtml(b)} | ${escapeHtml(tr(lang, 'jx_inc_meal_dinner'))}: ${escapeHtml(d)}`;
+  });
+  return (
+    h2(tr(lang, 'tour_included')) +
+    paragraph(tr(lang, 'jx_inc_lead')) +
+    (inc.hasConfirmed ? paragraph(tr(lang, 'jx_inc_confirmed_note')) : '') +
+    rawUl(incItems) +
+    (mealItems.length ? h3(tr(lang, 'jx_inc_meals_title')) + paragraph(tr(lang, 'jx_inc_meals_lead')) + ul(mealItems) : '') +
+    (excItems.length ? h2(tr(lang, 'tour_not_included')) + ul(excItems) : '')
+  );
+}
+
 function buildTourDetailContent(id: string, lang: Lang): string {
   const tour = getLocalizedTour(id, lang);
   if (!tour) return h1('Tour Not Found') + paragraph('This tour could not be found.');
@@ -689,7 +725,9 @@ function buildTourDetailContent(id: string, lang: Lang): string {
   const breadcrumb = departHub
     ? `<p class="prerendered-breadcrumb">${link(`${SITE_URL}/${lang}`, tr(lang, 'nav_home'))} › ${link(`${SITE_URL}/${lang}/tours`, tr(lang, 'nav_tours'))} › ${link(`${SITE_URL}/${lang}/tours/from-${departHub.slug}`, tr(lang, `hub_${departHub.id}_title`))}${durationHubCrumb} › ${escapeHtml(tour.name)}</p>\n`
     : '';
-  return breadcrumb + h1(tour.name) + paragraph(tour.description ?? '') + paragraph(`${tr(lang, 'search_duration')}: ${tour.duration}`) + h2(tr(lang, 'tour_why_love')) + ul(tour.highlights) + whyChooseBlock + (itinerary.length > 0 ? h2(tr(lang, 'tour_itinerary')) + ul(itinerary.map((d) => `${tr(lang, 'tour_day')} ${d.day}: ${d.title}`)) : '') + experiencesBlock + optionalBlock + (included.length > 0 ? h2(tr(lang, 'tour_included')) + ul(included) : '') + (excluded.length > 0 ? h2(tr(lang, 'tour_not_included')) + ul(excluded) : '') + bookingStepsBlock(lang) + (faqs.length > 0 ? h2(tr(lang, 'nav_faq')) + faqBlock(faqs) : '') + (departHub ? h2(fmt(tr(lang, 'hub_related_title'), { city: tr(lang, `hub_${departHub.id}_name`) })) + paragraph(link(`${SITE_URL}/${lang}/tours/from-${departHub.slug}`, fmt(tr(lang, 'hub_related_browse'), { city: tr(lang, `hub_${departHub.id}_name`) }))) : '') + bestForBlock + guideLinksBlock + rawParagraph(link(`${SITE_URL}/${lang}/book`, tr(lang, 'book_form_cta'))) + buildTopicalLinksContent({ tourId: tour.id }, lang);
+  const canonical = canonicalTours.find((x) => x.id === tour.id) ?? tour;
+  const inclusionsHtml = tourInclusionsBlock(canonical, tour, lang);
+  return breadcrumb + h1(tour.name) + paragraph(tour.description ?? '') + paragraph(`${tr(lang, 'search_duration')}: ${tour.duration}`) + h2(tr(lang, 'tour_why_love')) + ul(tour.highlights) + whyChooseBlock + (itinerary.length > 0 ? h2(tr(lang, 'tour_itinerary')) + ul(itinerary.map((d) => `${tr(lang, 'tour_day')} ${d.day}: ${d.title}`)) : '') + experiencesBlock + optionalBlock + inclusionsHtml + bookingStepsBlock(lang) + (faqs.length > 0 ? h2(tr(lang, 'nav_faq')) + faqBlock(faqs) : '') + (departHub ? h2(fmt(tr(lang, 'hub_related_title'), { city: tr(lang, `hub_${departHub.id}_name`) })) + paragraph(link(`${SITE_URL}/${lang}/tours/from-${departHub.slug}`, fmt(tr(lang, 'hub_related_browse'), { city: tr(lang, `hub_${departHub.id}_name`) }))) : '') + bestForBlock + guideLinksBlock + rawParagraph(link(`${SITE_URL}/${lang}/book`, tr(lang, 'book_form_cta'))) + buildTopicalLinksContent({ tourId: tour.id }, lang);
 }
 function buildDestinationsContent(lang: Lang): string {
   // Mirror the live /destinations page structure: localized H1 + intro, each

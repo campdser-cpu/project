@@ -28,6 +28,9 @@ import { getLocalizedGuide } from '@/i18n/guides';
 import { tours as canonicalTours } from '@/data/content';
 import { deriveTourExperiences } from '@/data/tour-experiences';
 import { IncludedExperiences } from '../components/tours/IncludedExperiences';
+import { TourInclusions } from '../components/tours/TourInclusions';
+import { TourInquiryForm } from '../components/tours/TourInquiryForm';
+import { deriveTourInclusions } from '@/data/tour-inclusions';
 import { HowBookingWorks } from '../components/tours/HowBookingWorks';
 import { TailorJourney } from '../components/tours/TailorJourney';
 
@@ -114,6 +117,8 @@ export default function TourDetail() {
   const destinationNames = Object.fromEntries(
     getLocalizedDestinations(lang).map(d => [d.id, d.name]),
   );
+  // Comprehensive inclusions & meal breakdown: canonical itinerary + localized copy.
+  const inclusions = deriveTourInclusions(canonicalTour ?? tour, tour);
 
   return (
     <Layout>
@@ -320,32 +325,13 @@ export default function TourDetail() {
               destinationNames={destinationNames}
             />
 
-            {/* What the price covers (and does not) — the tour's own lists. */}
-            <div className="grid md:grid-cols-2 gap-8 mb-16">
-              <div className="bg-muted border border-border p-8 rounded-3xl">
-                <h3 className="font-serif text-2xl text-foreground mb-6 flex items-center gap-3">
-                  <span className="bg-primary/20 p-2 rounded-full"><Check className="text-primary w-5 h-5" /></span>
-                  {t('tour_included')}
-                </h3>
-                <ul className="space-y-4 text-foreground font-medium text-sm">
-                  {included.map((inc, i) => (
-                    <li key={i} className="flex items-start gap-3"><CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-0.5" /> {inc}</li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="bg-card border border-border p-8 rounded-3xl">
-                <h3 className="font-serif text-2xl text-foreground mb-6 flex items-center gap-3">
-                  <span className="bg-destructive/10 p-2 rounded-full"><X className="text-destructive w-5 h-5" /></span>
-                  {t('tour_not_included')}
-                </h3>
-                <ul className="space-y-4 text-muted-foreground text-sm">
-                  {excluded.map((exc, i) => (
-                    <li key={i} className="flex items-start gap-3"><X className="w-4 h-4 text-destructive/50 shrink-0 mt-0.5" /> {exc}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+            {/* What's Included / Not Included & Meals night by night */}
+            <TourInclusions
+              inclusions={inclusions}
+              destinationNames={destinationNames}
+              t={t}
+              className="mb-16"
+            />
 
             <HowBookingWorks t={t} className="mb-10" />
 
@@ -549,6 +535,14 @@ export default function TourDetail() {
                   <span className="shrink-0 mx-4 text-muted-foreground text-xs uppercase tracking-widest">or</span>
                   <div className="flex-grow border-t border-border"></div>
                 </div>
+
+                <TourInquiryForm
+                  tourName={tour.name}
+                  lang={lang}
+                  travelDate={date}
+                  travelers={travelers}
+                  t={t}
+                />
 
                 <Link href={`/book?tour=${encodeURIComponent(tour.name)}`} className="block w-full bg-foreground text-background text-center py-4 rounded-xl font-bold hover:bg-primary hover:text-primary-foreground transition-colors text-lg">
                   {t('book_form_cta')}
