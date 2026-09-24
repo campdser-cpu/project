@@ -63,7 +63,15 @@ export function TourInclusions({ inclusions, destinationNames, t, className }: P
   const { included, notIncluded, meals } = inclusions;
   if (!included.length && !notIncluded.length) return null;
 
-  const place = (row: MealRow) => (row.placeId ? destinationNames[row.placeId] ?? row.place : row.place);
+  const place = (row: MealRow) => {
+    const dest = row.placeId ? destinationNames[row.placeId] : undefined;
+    // Keep the itinerary's own accommodation wording whenever it says more
+    // than the destination ("Merzouga Hotel" vs "Merzouga", "Luxury Desert
+    // Camp" vs "Erg Chebbi"); only fall back to the destination name when
+    // the row carries none.
+    if (dest && row.place && row.place.toLowerCase().includes(dest.toLowerCase())) return row.place;
+    return row.place || dest || '';
+  };
 
   return (
     <section className={className ?? 'mb-16'} aria-labelledby="journey-inclusions">

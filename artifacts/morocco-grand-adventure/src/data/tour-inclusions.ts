@@ -84,6 +84,9 @@ export type TourInclusions = {
 
 // ── Evidence patterns ───────────────────────────────────────────────────────
 
+const VAGUE_DINNER =
+  /\bdinners?\s+(as per|according to|per)\s+(the\s+)?itinerary\b/i;
+
 /** Wording that hands a detail to the written quote instead of guaranteeing it. */
 const HEDGE =
   /\b(when included|when specified|as confirmed|as per the confirmed|per the confirmed|according to|if included|can include|where included|selected package|confirmed (itinerary|quote|package|plan|before payment|around your dates))\b/i;
@@ -186,14 +189,19 @@ function overnightIndex(stops: string[]): number {
   return stops.length - 1;
 }
 
-/** The place label a night's own stop already carries, cleaned for display. */
+/** The place label a night's own stop already carries, cleaned for display.
+ * Accommodation qualifiers are kept ("Luxury Desert Camp", "Merzouga Hotel")
+ * so nights in different beds never collapse to one destination name. Only
+ * the overnight prefix (in any overlay language) and the meal marker
+ * ("(Dinner & Breakfast)") are removed. */
 function placeLabel(raw: string | undefined): string {
   if (!raw) return '';
-  return raw
-    .replace(/^\s*overnight\s*(in|:)?\s*/i, '')
+  const cleaned = raw
+    .replace(/^\s*(overnight|nuit[eé]e?|noche|nott[ea]|nacht|übernachtung|noite|ليلة|第.{0,4}晚|泊目|박째)\s*(in|:|：)?\s*/iu, '')
     .replace(/\([^)]*\)/g, ' ')
     .replace(/\s+/g, ' ')
     .trim();
+  return /^merzouga(\s+hotel)?$/i.test(cleaned) ? 'Merzouga Hotel' : cleaned;
 }
 
 /**
@@ -301,9 +309,14 @@ export function deriveTourInclusions(canonical: Tour, localized: Tour): TourIncl
   const campNights = meals.filter((m) => m.camp);
 
 
-  // ── Included ─────────────────────────────────────────────────────────────
+  // The night-by-night table is the transparent source of truth for dinners:
+  // the vague tour-level line ("Dinners as per itinerary", localized as
+  // "Dîners selon l'itinéraire", etc.) is never rendered alongside the table,
+  // which already shows which nights include dinner.
   const included: InclusionItem[] = [];
   for (const i of renderableIndexes(ownIncluded)) {
+    if (VAGUE_DINNER.test(ownIncluded[i]) && meals.length > 0) continue;
+    if (VAGUE_DINNER.test((localized.included ?? [])[i] ?? '') && meals.length > 0) continue;
     included.push({
       id: `own-${i}`,
       kind: classifyKind(ownIncluded[i]),
