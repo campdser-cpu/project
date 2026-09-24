@@ -40,10 +40,10 @@ assert.deepEqual(mealState('1 Days / 1 Nights', ['Overnight: Dades Valley (Dinne
 assert.deepEqual(mealState('1 Days / 1 Nights', ['Overnight: Merzouga Hotel (Dinner & Breakfast)'], 'dinner'), ['included']);
 assert.deepEqual(mealState('1 Days / 1 Nights', ['Overnight: Merzouga Hotel (Dinner & Breakfast)'], 'breakfast'), ['included']);
 
-// D–F: breakfast-only city nights, repeated city nights, and no explicit dinner.
-assert.deepEqual(mealState('3 Days / 2 Nights', ['Overnight: Fes (Breakfast)', 'Overnight: Marrakech (Breakfast)'], 'dinner'), ['not_included', 'not_included']);
-assert.deepEqual(mealState('4 Days / 3 Nights', ['Overnight: Fes (Breakfast)', 'Overnight: Fes (Breakfast)', 'Overnight: Marrakech (Breakfast)'], 'dinner'), ['not_included', 'not_included', 'not_included']);
-assert.deepEqual(mealState('2 Days / 1 Nights', ['Overnight: Fes (Breakfast)'], 'dinner'), ['not_included']);
+// D–G: missing evidence is unspecified, not an invented negative claim.
+assert.deepEqual(mealState('3 Days / 2 Nights', ['Overnight: Fes (Breakfast)', 'Overnight: Marrakech (Breakfast)'], 'dinner'), ['unspecified', 'unspecified']);
+assert.deepEqual(mealState('4 Days / 3 Nights', ['Overnight: Fes (Breakfast)', 'Overnight: Fes (Breakfast)', 'Overnight: Marrakech (Breakfast)'], 'dinner'), ['unspecified', 'unspecified', 'unspecified']);
+assert.deepEqual(mealState('2 Days / 1 Nights', ['Overnight: Fes (Breakfast)'], 'dinner'), ['unspecified']);
 
 // G–H: optional activities and explicitly excluded entry costs remain separate.
 const optional = tour('optional', '2 Days / 1 Nights', ['Overnight: Marrakech'], ['Sunset camel trek'], ['Optional quad biking', 'Monument entrance fees']);
@@ -53,7 +53,18 @@ assert.ok(optionalResult.notIncluded.some((item) => item.label === 'Optional qua
 assert.ok(optionalResult.notIncluded.some((item) => item.label === 'Monument entrance fees'));
 assert.equal(optionalResult.notIncluded.some((item) => item.label === 'International flights'), false);
 
-// Canonical 7-day accuracy case: exact nights, no vague dinner line, and specific city exclusions.
+// Canonical 3-day case: two nights only; unsupported Dades meals stay unspecified,
+// while the itinerary-supported desert-camp dinner remains included.
+const sahara3 = tours.find((item) => item.id === '3-day-sahara-marrakech');
+assert.ok(sahara3);
+const sahara3Result = deriveTourInclusions(sahara3, sahara3);
+assert.equal(sahara3Result.nights, 2);
+assert.equal(sahara3Result.meals.length, 2);
+assert.equal(sahara3Result.meals.some((row) => row.breakfast === 'not_included' || row.dinner === 'not_included'), false);
+assert.equal(sahara3Result.meals.some((row) => row.place === 'Dades Valley' && row.dinner === 'unspecified'), true);
+assert.equal(sahara3Result.meals.some((row) => row.camp && row.dinner === 'included'), true);
+
+// Canonical 7-day accuracy case: exact nights, no vague dinner line, and no invented city exclusions.
 const imperial = tours.find((item) => item.id === '7-day-imperial-cities-sahara-escape');
 assert.ok(imperial);
 const imperialResult = deriveTourInclusions(imperial, imperial);
@@ -61,13 +72,13 @@ assert.deepEqual(imperialResult.meals.map((row) => [row.place, row.breakfast, ro
   ['Dades Valley', 'included', 'included'],
   ['Luxury Desert Camp', 'included', 'included'],
   ['Merzouga Hotel', 'included', 'included'],
-  ['Fes', 'included', 'not_included'],
-  ['Fes', 'included', 'not_included'],
-  ['Marrakech', 'included', 'not_included'],
+  ['Fes', 'included', 'unspecified'],
+  ['Fes', 'included', 'unspecified'],
+  ['Marrakech', 'included', 'unspecified'],
 ]);
 assert.equal(imperialResult.dinnerSummary.count, 3);
 assert.deepEqual(imperialResult.dinnerSummary.nights.map((row) => row.place), ['Dades Valley', 'Luxury Desert Camp', 'Merzouga Hotel']);
-assert.deepEqual(imperialResult.cityDinnersExcluded.map((row) => row.place), ['Fes', 'Marrakech']);
+assert.deepEqual(imperialResult.cityDinnersExcluded, []);
 assert.equal(imperialResult.included.some((item) => /Dinners as per itinerary/i.test(item.label ?? '')), false);
 
 // Overlay pass: French stop wording must not change the factual states or specific locations.

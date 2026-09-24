@@ -688,8 +688,8 @@ function tourInclusionsBlock(canonical: Tour, localized: Tour, lang: Lang): stri
   const mealItems = inc.meals.map((m) => {
     const dest = (m.placeId && destMap[m.placeId]) || '';
     const place = dest && m.place && m.place.toLowerCase().includes(dest.toLowerCase()) ? m.place : m.place || dest;
-    const b = m.breakfast === 'included' ? tr(lang, 'jx_inc_meal_included') : m.breakfast === 'confirmed' ? tr(lang, 'jx_exp_confirmed') : tr(lang, 'jx_inc_meal_not_included');
-    const d = m.dinner === 'included' ? tr(lang, 'jx_inc_meal_included') : m.dinner === 'confirmed' ? tr(lang, 'jx_exp_confirmed') : tr(lang, 'jx_inc_meal_not_included');
+    const b = m.breakfast === 'included' ? tr(lang, 'jx_inc_meal_included') : m.breakfast === 'confirmed' ? tr(lang, 'jx_exp_confirmed') : m.breakfast === 'not_included' ? tr(lang, 'jx_inc_meal_not_included') : tr(lang, 'jx_inc_meal_unspecified');
+    const d = m.dinner === 'included' ? tr(lang, 'jx_inc_meal_included') : m.dinner === 'confirmed' ? tr(lang, 'jx_exp_confirmed') : m.dinner === 'not_included' ? tr(lang, 'jx_inc_meal_not_included') : tr(lang, 'jx_inc_meal_unspecified');
     return `${tr(lang, 'jx_inc_night').split('{n}').join(String(m.night))}: ${escapeHtml(place)} — ${escapeHtml(tr(lang, 'jx_inc_meal_breakfast'))}: ${escapeHtml(b)} | ${escapeHtml(tr(lang, 'jx_inc_meal_dinner'))}: ${escapeHtml(d)}`;
   });
   return (

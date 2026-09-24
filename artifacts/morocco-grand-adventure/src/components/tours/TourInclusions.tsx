@@ -51,6 +51,14 @@ function MealChip({ label, state, t }: { label: string; state: MealState; t: (ke
       </span>
     );
   }
+  if (state === 'unspecified') {
+    return (
+      <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-muted/40 px-3 py-1 text-xs font-semibold text-muted-foreground">
+        <Minus className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
+        {label} · {t('jx_inc_meal_unspecified')}
+      </span>
+    );
+  }
   return (
     <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-muted px-3 py-1 text-xs font-semibold text-muted-foreground">
       <X className="h-3.5 w-3.5 shrink-0 text-destructive/60" aria-hidden="true" />

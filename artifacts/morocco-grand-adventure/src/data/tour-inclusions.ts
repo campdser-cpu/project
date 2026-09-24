@@ -46,8 +46,8 @@ import { destinations } from '@/data/content';
 export type InclusionKind = 'transport' | 'stay' | 'meal' | 'experience' | 'service' | 'other';
 /** `confirmed` = the tour's own wording leaves it to the written quote. */
 export type InclusionStatus = 'included' | 'confirmed';
-/** Per-night meal state: included, agreed in the quote, or not provided. */
-export type MealState = 'included' | 'confirmed' | 'not_included';
+/** Per-night meal state: included, agreed in the quote, explicitly excluded, or unspecified. */
+export type MealState = 'included' | 'confirmed' | 'not_included' | 'unspecified';
 
 export type InclusionItem = {
   id: string;
@@ -121,6 +121,16 @@ const NOMAD = /nomad/;
 const SANDBOARD = /sandboard/;
 const GUIDED = /official local guide|local guide|guided (tour|visit|walk)/;
 const VEHICLE = /vehicle|transport|minivan|minibus|\bcar\b|private driver|driver|fuel|tolls|pick-?up|drop-?off/;
+
+/** Only explicit named visits/experiences, not every destination mentioned in prose. */
+const NAMED_VISITS = [
+  { id: 'ait-ben-haddou', pattern: /ait[ -]?ben[ -]?haddou/i, label: 'Visit Aït Ben Haddou' },
+  { id: 'todra-gorge', pattern: /todra(?: gorge| canyon)?/i, label: 'Visit Todra Gorge' },
+  { id: 'dades-valley', pattern: /dades valley/i, label: 'Visit Dades Valley' },
+  { id: 'black-desert', pattern: /black desert/i, label: 'Black Desert experience' },
+  { id: 'fossil-beds', pattern: /fossil beds?/i, label: 'Fossil beds experience' },
+  { id: 'hidden-oasis', pattern: /hidden oasis/i, label: 'Oasis experience' },
+] as const;
 
 /** Overnight stop, as the itineraries write it ("Overnight: Fes (Breakfast)"). */
 const OVERNIGHT = /^overnight\b/i;
@@ -261,7 +271,7 @@ function mealStateFor(
   if (serves) return 'included';
   if (daily) return 'included';
   if (hedgedMealsInText || hedgedTourLevel) return 'confirmed';
-  return 'not_included';
+  return 'unspecified';
 }
 
 
@@ -502,13 +512,24 @@ export function deriveTourInclusions(canonical: Tour, localized: Tour): TourIncl
       covers: SANDBOARD,
     });
   }
+  const visitCorpus = days.flatMap((day) => day.stops ?? []).join(' | ');
+  for (const visit of NAMED_VISITS) {
+    if (!visit.pattern.test(visitCorpus)) continue;
+    derived.push({
+      id: `visit-${visit.id}`,
+      kind: 'experience',
+      status: 'included',
+      key: visit.id === 'ait-ben-haddou' ? 'jx_inc_visit_ait' : `jx_inc_visit_${visit.id.replaceAll('-', '_')}`,
+      covers: visit.pattern,
+    });
+  }
   if (GUIDED.test(corpus)) {
     derived.push({ id: 'guided', kind: 'service', status: 'included', key: 'jx_inc_guided', covers: /guide/ });
   }
 
   // A meal becomes a headline inclusion only when it is genuinely provided: the
   // night-by-night table below carries the exceptions.
-  const anyBreakfast = meals.some((m) => m.breakfast !== 'not_included');
+  const anyBreakfast = meals.some((m) => m.breakfast === 'included' || m.breakfast === 'confirmed');
   if (anyBreakfast && !breakfastEntry && !breakfastDaily) {
     derived.push({
       id: 'breakfast',
@@ -518,7 +539,7 @@ export function deriveTourInclusions(canonical: Tour, localized: Tour): TourIncl
       covers: BREAKFAST,
     });
   }
-  const breakfastCamp = campNights.find((m) => m.breakfast !== 'not_included');
+  const breakfastCamp = campNights.find((m) => m.breakfast === 'included' || m.breakfast === 'confirmed');
   if (breakfastCamp) {
     derived.push({
       id: 'breakfast-camp',
@@ -528,7 +549,7 @@ export function deriveTourInclusions(canonical: Tour, localized: Tour): TourIncl
       covers: /camp[^|]{0,40}breakfast|breakfast[^|]{0,40}camp/,
     });
   }
-  const dinnerCamp = campNights.find((m) => m.dinner !== 'not_included');
+  const dinnerCamp = campNights.find((m) => m.dinner === 'included' || m.dinner === 'confirmed');
   if (dinnerCamp) {
     derived.push({
       id: 'dinner-camp',
