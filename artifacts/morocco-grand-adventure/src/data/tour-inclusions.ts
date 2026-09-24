@@ -78,6 +78,8 @@ export type TourInclusions = {
   included: InclusionItem[];
   notIncluded: InclusionItem[];
   meals: MealRow[];
+  dinnerSummary: { count: number; nights: { night: number; place: string; placeId?: string }[] };
+  cityDinnersExcluded: { place: string; placeId?: string; nights: number[] }[];
   /** True when anything is left to the written quote rather than stated. */
   hasConfirmed: boolean;
 };
@@ -95,8 +97,16 @@ const DAY_HEDGE = /\b(if included|can include|when included|when specified|where
 /** Meal words used to notice a hedged meal statement ("meals are confirmed before payment"). */
 const MEAL_WORD = /\b(meal|meals|half.?board|breakfast|dinner)\b/i;
 
-const BREAKFAST = /\bbreakfasts?\b/i;
-const DINNER = /\bdinners?\b/i;
+/** Meal words, multilingual: the tour-level lists are localized by overlays. */
+const BREAKFAST_WORD =
+  /breakfasts?|petit[-\s]?d[ée]jeuner|desayuno|colazione|fr[üu]hst[üu]ck|ontbijt|pequeno|早餐|朝食|아침| ?إفطار|فطور/i;
+const DINNER_WORD =
+  /dinners?|d[uû]ners?|cenas?|abendessen|diners?|jantares?|晚餐|夕食|저녁| ?عشاء/i;
+/** Markers on the night's own stop: "(Dinner & Breakfast)" / "(Breakfast)". */
+const BREAKFAST_MARKER = new RegExp(`\\((?:${BREAKFAST_WORD.source})[^)]*\\)`, 'i');
+const DINNER_MARKER = new RegExp(`\\((?:${DINNER_WORD.source})[^)]*\\)|\\([^)]*(?:${DINNER_WORD.source})\\)`, 'i');
+const BREAKFAST = BREAKFAST_WORD;
+const DINNER = DINNER_WORD;
 const DAILY_BREAKFAST = /\bdaily breakfasts?\b|\bbreakfasts? daily\b/i;
 const DAILY_DINNER = /\bdaily dinners?\b|\bdinners? daily\b/i;
 
@@ -114,9 +124,10 @@ const VEHICLE = /vehicle|transport|minivan|minibus|\bcar\b|private driver|driver
 
 /** Overnight stop, as the itineraries write it ("Overnight: Fes (Breakfast)"). */
 const OVERNIGHT = /^overnight\b/i;
-/** Stops that are something you do, not somewhere you sleep. */
-const NOT_A_PLACE =
-  /sunrise|sunset|experience|optional|evening|star|dinner|breakfast|music|tea|drive|transfer|arrival|arrive|departure|free time|leisure|end of tour|route|journey|travell?ers/i;
+/** The same marker inside a content overlay (non-English "overnight"). */
+const OVERNIGHT_LOCALIZED =
+  /overnight|nuit[eé]e?|noche|nott[ea]|nacht|übernachtung|noite|overnachting|overnattning|overnattelse|yöpyminen|éjszaka| overnatning|nocleg|noćenje|nočitev|innoptare| overnighter| övernattning|nat[:\s]|ночь|ночлег| overnachten| overnachting| overnatter| overnatt|نوم|مبيت|ليلة|过夜|住宿|泊|박|숙박|宿泊/i;
+/** Meal evidence and itinerary matching ─────────────────────────────────────── */
 
 // ── Helpers ─────────────────────────────────────────────────────────────────
 
@@ -178,15 +189,21 @@ function classifyKind(text: string): InclusionKind {
 const KIND_ORDER: InclusionKind[] = ['transport', 'stay', 'meal', 'experience', 'service', 'other'];
 
 /** Which stop of a night's own itinerary names where the traveller sleeps. */
-function overnightIndex(stops: string[]): number {
+function overnightIndex(stops: string[], localizedStops: string[] = stops): number {
+  // Match against the canonical AND the localized stops: an overlay whose
+  // translation drops the "Overnight" wording must not lose the night.
   const stated = stops.findIndex((s) => OVERNIGHT.test(s.trim()));
   if (stated >= 0) return stated;
+  const localizedStated = localizedStops.findIndex((s) => OVERNIGHT_LOCALIZED.test(s.trim()));
+  if (localizedStated >= 0) return localizedStated;
   const camp = stops.findIndex((s) => CAMP.test(s.toLowerCase()));
   if (camp >= 0) return camp;
-  for (let i = stops.length - 1; i >= 0; i -= 1) {
-    if (!NOT_A_PLACE.test(stops[i])) return i;
-  }
-  return stops.length - 1;
+  const accommodation = stops.findIndex((s) => /\b(hotel|riad|camp|riad|kasbah|guesthouse|desert camp|luxury desert camp)\b/i.test(s));
+  if (accommodation >= 0) return accommodation;
+  // No actual overnight/accommodation stop is named. Return -1 so the caller
+  // uses the day's arrival destination rather than an activity stop such as
+  // "Souks & pottery workshops".
+  return -1;
 }
 
 /** The place label a night's own stop already carries, cleaned for display.
@@ -197,7 +214,7 @@ function overnightIndex(stops: string[]): number {
 function placeLabel(raw: string | undefined): string {
   if (!raw) return '';
   const cleaned = raw
-    .replace(/^\s*(overnight|nuit[eé]e?|noche|nott[ea]|nacht|übernachtung|noite|ليلة|第.{0,4}晚|泊目|박째)\s*(in|:|：)?\s*/iu, '')
+    .replace(/^\s*(overnight|nuit[eé]e?|noche|nott[ea]|nacht|übernachtung|noite|overnachting|overnattning|overnattelse|yöpyminen|éjszaka|overnatning|nocleg|noćenje|nočitev|innoptare|overnighter|övernattning|نوم|مبيت|ليلة|过夜|住宿|第.{0,4}晚|泊目|박째|숙박|宿泊)(?:\s+in)?\s*[:：]?\s*/iu, '')
     .replace(/\([^)]*\)/g, ' ')
     .replace(/\s+/g, ' ')
     .trim();
@@ -226,19 +243,109 @@ function lastDestinationIn(text: string): string | undefined {
 
 function mealStateFor(
   dayText: string,
-  mealPattern: RegExp,
+  nightText: string,
+  meal: 'breakfast' | 'dinner',
   hedgedMealsInText: boolean,
   daily: boolean,
   hedgedTourLevel: boolean,
 ): MealState {
-  if (mealPattern.test(dayText)) return 'included';
+  // Evidence for THIS night only: its own stop's marker ("(Dinner &
+  // Breakfast)", "(Breakfast)"), or prose that serves the meal AT the stay
+  // ("traditional Moroccan dinner ... before sleeping ... in the camp";
+  // "wake for sunrise ... and breakfast in Merzouga"). A bare meal word
+  // elsewhere, or a meal served in another city, is never enough on its own.
+  const marker = meal === 'breakfast' ? BREAKFAST_MARKER : DINNER_MARKER;
+  if (marker.test(nightText)) return 'included';
+  const serves =
+    meal === 'breakfast' ? servesBreakfastAtStay(dayText, nightText) : servesDinnerAtStay(dayText, nightText);
+  if (serves) return 'included';
   if (daily) return 'included';
   if (hedgedMealsInText || hedgedTourLevel) return 'confirmed';
   return 'not_included';
 }
 
 
-// ── Derivation ──────────────────────────────────────────────────────────────
+// ── Word-boundary + multilingual night matching ─────────────────────────────
+
+/** True when `text` contains `word` as a standalone token (Unicode-aware). */
+function hasWord(text: string, word: string): boolean {
+  const escaped = word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  return new RegExp(`(^|[^\\p{L}\\p{N}])${escaped}([^\\p{L}\\p{N}]|$)`, 'iu').test(text);
+}
+
+/** The stay a night's own stop names ("Luxury Desert Camp", "Fes"). */
+function nightStayName(nightText: string): string {
+  return placeLabel(nightText).toLowerCase();
+}
+
+/**
+ * True when the day's prose serves dinner AT this night's stay.
+ *
+ * The meal and the stay must appear in the same sentence: "enjoy a
+ * traditional Moroccan dinner ... before sleeping under the stars in a
+ * luxury desert camp". A dinner served in another city never qualifies.
+ */
+function servesDinnerAtStay(dayText: string, nightText: string): boolean {
+  const stay = nightStayName(nightText);
+  const sentences = dayText.split(/(?<=[.!?])\s+/u);
+  const stayWords = stay.split(/[^a-z0-9\u00c0-\u024f\u1e00-\u1eff]+/iu).filter((w) => w.length > 3);
+  const stayIn = (s: string) => {
+    const low = s.toLowerCase();
+    if (stay && low.includes(stay)) return true;
+    if (/\bcamp\b/i.test(stay) && /\bcamp\b/i.test(s)) return true;
+    if (/\bhotel\b/i.test(stay) && /\bhotel\b/i.test(s)) return true;
+    if (/\bdesert\b/i.test(stay) && /\bdesert\b/i.test(s)) return true;
+    return stayWords.length > 0 && stayWords.some((w) => low.includes(w));
+  };
+  for (const s of sentences) {
+    if (!hasWord(s, 'dinner') && !/d[uû]ner|cena|abendessen|diner|jantar|晚餐|夕食|저녁| عشاء/i.test(s)) continue;
+    // A dinner word by itself is not enough. It must be tied to this night's
+    // stay (camp/hotel/riad), or explicitly be a camp meal. This prevents a
+    // dinner mentioned in a city description from becoming a city inclusion.
+    if (!stayIn(s) && !/camp[^.]{0,50}(dinner|meal)|(?:dinner|meal)[^.]{0,50}camp/i.test(s)) continue;
+    if (
+      /camp[^.]{0,60}dinner|dinner[^.]{0,60}camp|campfire[^.]{0,40}dinner|dinner[^.]{0,40}campfire|half.?board|full.?board|demi.?pension|pensi[oó]n|mezza pensione|halvpension|volpension/i.test(
+        s,
+      ) ||
+      /traditional[^.]{0,40}dinner|dinner[^.]{0,40}berber|berber[^.]{0,40}dinner|moroccan dinner/i.test(s) ||
+      (/sleep|overnight|stay/i.test(s) && stayIn(s))
+    ) {
+      return true;
+    }
+  }
+  return false;
+}
+
+/**
+ * True when the day's prose serves breakfast AT this night's stay.
+ *
+ * Same-sentence rule as dinner: "wake for sunrise over the dunes and
+ * breakfast in Merzouga", "after breakfast, marvel at ... then ... before
+ * sleeping ... in the camp".
+ */
+function servesBreakfastAtStay(dayText: string, nightText: string): boolean {
+  const stay = nightStayName(nightText);
+  const stayWords = stay.split(/[^a-z0-9\u00c0-\u024f\u1e00-\u1eff]+/iu).filter((w) => w.length > 3);
+  const mentionsStay = (s: string) => {
+    const low = s.toLowerCase();
+    if (stay && low.includes(stay)) return true;
+    if (stayWords.length > 0 && stayWords.some((w) => low.includes(w))) return true;
+    return /\bcamp\b/i.test(stay) && /\bcamp\b/i.test(s);
+  };
+  if (/half.?board|full.?board|bed[^&]*&[^&]*breakfast|breakfast included/i.test(dayText)) return true;
+  const sentences = dayText.split(/(?<=[.!?])\s+/u);
+  for (const s of sentences) {
+    if (!/breakfast|petit[-\s]?d[ée]jeuner|desayuno|colazione|fr[üu]hst[üu]ck|ontbijt|pequeno|早餐|朝食|아침| إفطار|فطور/i.test(s)) {
+      continue;
+    }
+    // Breakfast must be connected to this stay. A generic "after breakfast"
+    // at the start of a travel day is not enough by itself.
+    if (mentionsStay(s) && /breakfast|petit[-\s]?d[ée]jeuner|desayuno|colazione|fr[üu]hst[üu]ck|ontbijt|pequeno|早餐|朝食|아침| إفطار|فطور/i.test(s)) {
+      return true;
+    }
+  }
+  return false;
+}
 
 /**
  * Derive what a tour's price covers.
@@ -253,7 +360,6 @@ export function deriveTourInclusions(canonical: Tour, localized: Tour): TourIncl
   const ownIncluded = canonical.included ?? [];
   const ownExcluded = canonical.excluded ?? [];
   const ownIncludedText = ownIncluded.join(' | ').toLowerCase();
-  const ownExcludedText = ownExcluded.join(' | ').toLowerCase();
   const corpus = [
     canonical.description ?? '',
     ...(canonical.highlights ?? []),
@@ -266,7 +372,7 @@ export function deriveTourInclusions(canonical: Tour, localized: Tour): TourIncl
   const nights = nightsFromDuration(canonical.duration, days.length);
 
   // ── Meals, night by night ────────────────────────────────────────────────
-  const breakfastEntry = ownIncluded.find((s) => BREAKFAST.test(s));
+  const breakfastEntry = ownIncluded.find((s) => BREAKFAST.test(s) && !DAILY_BREAKFAST.test(s));
   const dinnerEntry = ownIncluded.find((s) => DINNER.test(s));
   const breakfastDaily = ownIncluded.some((s) => DAILY_BREAKFAST.test(s));
   const dinnerDaily = ownIncluded.some((s) => DAILY_DINNER.test(s));
@@ -278,31 +384,48 @@ export function deriveTourInclusions(canonical: Tour, localized: Tour): TourIncl
     const index = night - 1;
     const day = days[index];
     if (!day) break;
-    const dayText = `${day.title} ${day.desc} ${day.stops.join(' ')}`;
-    const hedgedMeals = (DAY_HEDGE.test(dayText) || HEDGE.test(dayText)) && MEAL_WORD.test(dayText);
+    const nextDay = days[index + 1];
+    const nextText = nextDay ? `${nextDay.title} ${nextDay.desc} ${nextDay.stops.join(' ')}` : '';
     const stops = day.stops ?? [];
     const localizedStops = localized.itineraryDays?.[index]?.stops ?? stops;
-    const stopIndex = overnightIndex(stops);
-    // Where this night is spent: the itinerary's own overnight stop when it
-    // marks one, otherwise the destination the day ends at. Reading the
-    // canonical text keeps the match independent of the translation; the
-    // component swaps the id for the localized place name.
+    // Match the overnight stop against the canonical AND the localized text:
+    // when an overlay drops the English "Overnight" wording, the localized
+    // stop still names the same night.
+    const stopIndex = overnightIndex(stops, localizedStops);
+    // The night's own text is where its meals are stated: its overnight stop
+    // first, then — only when the stop carries no marker — the day's own
+    // prose that serves a meal AT that stay. Never the whole corpus: a
+    // "dinner" mentioned for another city must not leak into this night.
+    const nightStop = stops[stopIndex] ?? '';
+    const localizedNightStop = localizedStops[stopIndex] ?? nightStop;
+    const nightText = `${nightStop} ${localizedNightStop}`;
+    const dayText = `${day.title} ${day.desc} ${stops.join(' ')}`;
+    const hedgedMeals = (DAY_HEDGE.test(dayText) || HEDGE.test(dayText)) && MEAL_WORD.test(dayText);
+    // The place shown for this night is the itinerary's own overnight stop
+    // when it names one. Otherwise use the destination the day actually
+    // arrives at, never the last activity stop ("Souks & pottery workshops").
     const explicitStop =
-      OVERNIGHT.test((stops[stopIndex] ?? '').trim()) || CAMP.test((stops[stopIndex] ?? '').toLowerCase());
-    // Match destinations against where the day's own title ends (the place the
-    // itinerary says it arrives at) and its last place-like stop — not the whole
-    // description, which can name a valley the day only drives through, or the
-    // city it departed from.
+      OVERNIGHT.test((stops[stopIndex] ?? '').trim()) ||
+      OVERNIGHT_LOCALIZED.test((localizedStops[stopIndex] ?? '').trim()) ||
+      CAMP.test((stops[stopIndex] ?? '').toLowerCase());
     const titleEnd = (day.title.split('→').pop() ?? day.title).trim();
     const placeId = explicitStop
       ? lastDestinationIn(stops[stopIndex] ?? '')
       : lastDestinationIn(titleEnd) ?? lastDestinationIn(stops[stopIndex] ?? '');
+    const rawPlace = explicitStop
+      ? localizedStops[stopIndex] ?? stops[stopIndex]
+      : placeId
+        ? destinations.find((d) => d.id === placeId)?.name
+        : titleEnd;
     meals.push({
       night,
-      place: placeLabel(localizedStops[stopIndex] ?? localizedStops[localizedStops.length - 1] ?? day.title),
+      place: placeLabel(rawPlace) || placeLabel(localizedStops[stopIndex] ?? localizedStops[localizedStops.length - 1] ?? ''),
       ...(placeId ? { placeId } : {}),
-      breakfast: mealStateFor(dayText, BREAKFAST, hedgedMeals, breakfastDaily, breakfastHedged),
-      dinner: mealStateFor(dayText, DINNER, hedgedMeals, dinnerDaily, dinnerHedged),
+      // The morning meal at a stay is served the NEXT morning: "Wake for
+      // sunrise over the dunes and breakfast in Merzouga" belongs to the
+      // night that ends at the stay, not to the day that starts there.
+      breakfast: mealStateFor(`${dayText} ${nextText}`, nightText, 'breakfast', hedgedMeals, breakfastDaily, breakfastHedged),
+      dinner: mealStateFor(dayText, nightText, 'dinner', hedgedMeals, dinnerDaily, dinnerHedged),
       camp: CAMP.test(stops.join(' ').toLowerCase()),
     });
   }
@@ -315,6 +438,10 @@ export function deriveTourInclusions(canonical: Tour, localized: Tour): TourIncl
   // which already shows which nights include dinner.
   const included: InclusionItem[] = [];
   for (const i of renderableIndexes(ownIncluded)) {
+    // The exact breakfast count is rendered from the night table. Do not show
+    // the canonical "Daily breakfasts" shorthand a second time beside it.
+    if (DAILY_BREAKFAST.test(ownIncluded[i]) && meals.length > 0) continue;
+    if (DAILY_DINNER.test(ownIncluded[i]) && meals.length > 0) continue;
     if (VAGUE_DINNER.test(ownIncluded[i]) && meals.length > 0) continue;
     if (VAGUE_DINNER.test((localized.included ?? [])[i] ?? '') && meals.length > 0) continue;
     included.push({
@@ -382,7 +509,7 @@ export function deriveTourInclusions(canonical: Tour, localized: Tour): TourIncl
   // A meal becomes a headline inclusion only when it is genuinely provided: the
   // night-by-night table below carries the exceptions.
   const anyBreakfast = meals.some((m) => m.breakfast !== 'not_included');
-  if (anyBreakfast && !breakfastEntry) {
+  if (anyBreakfast && !breakfastEntry && !breakfastDaily) {
     derived.push({
       id: 'breakfast',
       kind: 'meal',
@@ -432,7 +559,34 @@ export function deriveTourInclusions(canonical: Tour, localized: Tour): TourIncl
   const kindRank = (k: InclusionKind) => KIND_ORDER.indexOf(k);
   included.sort((a, b) => kindRank(a.kind) - kindRank(b.kind));
 
+  // ── Dinner summary: the exact nights, from the night table ────────────────
+  // Replaces the vague "Dinners as per itinerary" with the factual list:
+  // "3 dinners: Dades Valley, Luxury Desert Camp, Merzouga Hotel". City
+  // nights without dinner ("Overnight: Fes (Breakfast)") group into
+  // "Dinner in Fes / Dinner in Marrakech" exclusion lines instead of a
+  // blanket "Dinner not included" that would contradict the included ones.
+  const dinnerNights = meals
+    .filter((m) => m.dinner === 'included')
+    .map((m) => ({ night: m.night, place: m.place, ...(m.placeId ? { placeId: m.placeId } : {}) }));
+  const dinnerSummary = { count: dinnerNights.length, nights: dinnerNights };
+  const cityGroups = new Map<string, { place: string; placeId?: string; nights: number[] }>();
+  for (const m of meals.filter((m) => m.dinner === 'not_included' && !m.camp)) {
+    // Only summarize imperial-city nights as "Dinner in Fes" / "Dinner in
+    // Marrakech". A missing dinner in a non-city overnight is already clear in
+    // the night table; do not mislabel it as a city dinner.
+    const destination = m.placeId ? destinations.find((d) => d.id === m.placeId) : undefined;
+    if (!destination || destination.category !== 'Imperial Cities') continue;
+    const key = (m.placeId ?? m.place).toLowerCase();
+    const existing = cityGroups.get(key);
+    if (existing) existing.nights.push(m.night);
+    else cityGroups.set(key, { place: m.place, ...(m.placeId ? { placeId: m.placeId } : {}), nights: [m.night] });
+  }
+  const cityDinnersExcluded = [...cityGroups.values()];
+
   // ── Not included ─────────────────────────────────────────────────────────
+  // Only the tour's own excluded list is shown. Nothing is added from a
+  // universal policy: a tour that does not state flights, lunches, fees, or
+  // tips in its canonical `excluded` list must not be told it excludes them.
   const notIncluded: InclusionItem[] = [];
   for (const i of renderableIndexes(ownExcluded)) {
     notIncluded.push({
@@ -442,25 +596,14 @@ export function deriveTourInclusions(canonical: Tour, localized: Tour): TourIncl
       label: (localized.excluded ?? ownExcluded)[i] ?? ownExcluded[i],
     });
   }
-  // Baseline exclusions that hold for every journey offered here, added only
-  // when the tour's own list does not already say them. These are restrictions,
-  // never services: nothing is claimed that the tour has not published.
-  const baseline: { key: string; covers: RegExp }[] = [
-    { key: 'tour_exc_flights', covers: /flight|airfare/ },
-    { key: 'tour_exc_lunches', covers: /lunch|drink/ },
-    { key: 'tour_exc_entrance', covers: /entrance|monument|museum|ticket/ },
-    { key: 'tour_exc_tips', covers: /tip|gratuit|personal expense/ },
-  ];
-  for (const item of baseline) {
-    if (item.covers.test(ownExcludedText)) continue;
-    notIncluded.push({ id: `base-${item.key}`, kind: 'other', status: 'included', key: item.key });
-  }
 
   return {
     nights,
     included,
     notIncluded,
     meals,
+    dinnerSummary,
+    cityDinnersExcluded,
     hasConfirmed:
       included.some((i) => i.status === 'confirmed') ||
       meals.some((m) => m.breakfast === 'confirmed' || m.dinner === 'confirmed'),

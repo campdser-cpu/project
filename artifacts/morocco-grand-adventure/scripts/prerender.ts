@@ -654,17 +654,37 @@ function bookingStepsBlock(lang: Lang): string {
 function tourInclusionsBlock(canonical: Tour, localized: Tour, lang: Lang): string {
   const inc = deriveTourInclusions(canonical, localized);
   if (!inc.included.length && !inc.notIncluded.length) return '';
+  const destMap = Object.fromEntries(getLocalizedDestinations(lang).map((d) => [d.id, d.name]));
   const itemText = (it: InclusionItem) => {
     if (it.label) return it.label;
     const s = it.key ? tr(lang, it.key) : '';
     return it.nights ? s.split('{n}').join(String(it.nights)) : s;
   };
+  const fmt = (s: string, values: Record<string, string | number>) => Object.entries(values).reduce((out, [k, v]) => out.split(`{${k}}`).join(String(v)), s);
   const incItems = inc.included.map((it) => {
     const status = it.status === 'confirmed' ? ` (${escapeHtml(tr(lang, 'jx_exp_confirmed'))})` : '';
     return `<strong>${escapeHtml(itemText(it))}</strong>${status}`;
   });
-  const excItems = inc.notIncluded.map((it) => escapeHtml(itemText(it)));
-  const destMap = Object.fromEntries(getLocalizedDestinations(lang).map((d) => [d.id, d.name]));
+  const breakfastCount = inc.meals.filter((m) => m.breakfast === 'included').length;
+  if (breakfastCount > 0) {
+    incItems.push(`<strong>${escapeHtml(fmt(tr(lang, 'jx_inc_breakfasts_count'), { n: breakfastCount }))}</strong>`);
+  }
+  if (inc.dinnerSummary.count > 0) {
+    const lines = inc.dinnerSummary.nights.map((row) => {
+      const dest = (row.placeId && destMap[row.placeId]) || '';
+      const place = dest && row.place && row.place.toLowerCase().includes(dest.toLowerCase()) ? row.place : row.place || dest;
+      return escapeHtml(fmt(tr(lang, 'jx_inc_dinner_at'), { place }));
+    });
+    incItems.push(`<strong>${escapeHtml(fmt(tr(lang, 'jx_inc_dinners_count'), { n: inc.dinnerSummary.count }))}</strong> ${lines.map((x) => `<strong>${x}</strong>`).join(', ')}`);
+  }
+  const excItems = [
+    ...inc.notIncluded.map((it) => escapeHtml(itemText(it))),
+    ...inc.cityDinnersExcluded.map((group) => {
+      const dest = (group.placeId && destMap[group.placeId]) || '';
+      const place = dest && group.place && group.place.toLowerCase().includes(dest.toLowerCase()) ? group.place : group.place || dest;
+      return escapeHtml(fmt(tr(lang, 'jx_inc_dinner_in'), { place }));
+    }),
+  ];
   const mealItems = inc.meals.map((m) => {
     const dest = (m.placeId && destMap[m.placeId]) || '';
     const place = dest && m.place && m.place.toLowerCase().includes(dest.toLowerCase()) ? m.place : m.place || dest;

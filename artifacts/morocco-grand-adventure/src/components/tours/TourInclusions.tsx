@@ -60,7 +60,7 @@ function MealChip({ label, state, t }: { label: string; state: MealState; t: (ke
 }
 
 export function TourInclusions({ inclusions, destinationNames, t, className }: Props) {
-  const { included, notIncluded, meals } = inclusions;
+  const { included, notIncluded, meals, dinnerSummary, cityDinnersExcluded } = inclusions;
   if (!included.length && !notIncluded.length) return null;
 
   const place = (row: MealRow) => {
@@ -72,6 +72,7 @@ export function TourInclusions({ inclusions, destinationNames, t, className }: P
     if (dest && row.place && row.place.toLowerCase().includes(dest.toLowerCase())) return row.place;
     return row.place || dest || '';
   };
+  const breakfastCount = meals.filter((row) => row.breakfast === 'included').length;
 
   return (
     <section className={className ?? 'mb-16'} aria-labelledby="journey-inclusions">
@@ -105,6 +106,29 @@ export function TourInclusions({ inclusions, destinationNames, t, className }: P
                 </li>
               ))}
             </ul>
+          )}
+
+          {breakfastCount > 0 && (
+            <div className="mb-6 flex items-start gap-2 rounded-2xl border border-green-500/20 bg-green-500/5 p-4 text-sm font-semibold text-green-800">
+              <Check className="mt-0.5 h-4 w-4 shrink-0 text-green-600" aria-hidden="true" />
+              {t('jx_inc_breakfasts_count').split('{n}').join(String(breakfastCount))}
+            </div>
+          )}
+
+          {dinnerSummary.count > 0 && (
+            <div className="mb-6 space-y-2 rounded-2xl border border-green-500/20 bg-green-500/5 p-4">
+              <p className="text-sm font-semibold text-green-800">
+                {t('jx_inc_dinners_count').split('{n}').join(String(dinnerSummary.count))}
+              </p>
+              <ul className="space-y-2">
+                {dinnerSummary.nights.map((row) => (
+                  <li key={`included-dinner-${row.night}`} className="flex items-start gap-2 text-sm text-foreground">
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-green-600" aria-hidden="true" />
+                    {t('jx_inc_dinner_at').split('{place}').join(place({ place: row.place, placeId: row.placeId, night: row.night, breakfast: 'not_included', dinner: 'included', camp: false }))}
+                  </li>
+                ))}
+              </ul>
+            </div>
           )}
 
           {meals.length > 0 && (
@@ -145,6 +169,12 @@ export function TourInclusions({ inclusions, destinationNames, t, className }: P
                 <li key={item.id} className="flex items-start gap-3 text-muted-foreground">
                   <X className="mt-0.5 h-4 w-4 shrink-0 text-destructive/50" aria-hidden="true" />
                   {itemLabel(item, t)}
+                </li>
+              ))}
+              {cityDinnersExcluded.map((group) => (
+                <li key={`excluded-dinner-${group.place}`} className="flex items-start gap-3 text-muted-foreground">
+                  <X className="mt-0.5 h-4 w-4 shrink-0 text-destructive/50" aria-hidden="true" />
+                  {t('jx_inc_dinner_in').split('{place}').join(place({ place: group.place, placeId: group.placeId, night: group.nights[0], breakfast: 'included', dinner: 'not_included', camp: false }))}
                 </li>
               ))}
             </ul>
