@@ -50,7 +50,7 @@ export const TOUR_DEPARTURE_CITY: Record<string, DepartureCity> = {
   'fes-8-day': 'fes',
   'agadir-4-day': 'agadir',
   'agadir-5-day': 'agadir',
-  'agadir-8-day': 'agadir',  '3-day-sahara-fes': 'fes',
+  'agadir-8-day': 'agadir',
   '3-day-sahara-agadir': 'agadir',
 };
 

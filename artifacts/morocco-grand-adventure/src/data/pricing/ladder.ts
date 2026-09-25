@@ -69,7 +69,6 @@ export const TOUR_LADDER: Readonly<Record<string, TourLadder>> = {
 
   // ── 3 days ────────────────────────────────────────────────────────────────
   '3-day-sahara-marrakech': STANDARD(600, 425), // the approved anchor
-  '3-day-sahara-fes': STANDARD(600, 425),
   '3-day-sahara-agadir': STANDARD(600, 425),
   '3-day-fes-merzouga-sahara': STANDARD(600, 425),
   'casablanca-3-day': STANDARD(600, 425),

@@ -2319,6 +2319,11 @@
       "source": "/ar/مدونة-السفر/:rest*",
       "destination": "/ar/blog/:rest*",
       "permanent": true
+    },
+    {
+      "source": "/:lang/tours/3-day-sahara-fes",
+      "destination": "/:lang/tours/3-day-fes-merzouga-sahara",
+      "permanent": true
     }
   ],
   "headers": [

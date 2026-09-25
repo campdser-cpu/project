@@ -864,27 +864,6 @@ export const tours: Tour[] = [
     // MGA_THREE_DAY_ENRICHED_V1
   },
   {
-    id: "3-day-sahara-fes", name: "3-Day Private Sahara Route from Fes", duration: "3 Days / 2 Nights", category: "Private · Quote Only", quoteOnly: false,
-    highlights: ["Fes and the Middle Atlas", "Ifrane and cedar-forest country", "Errachidia / Ziz Valley landscapes", "Merzouga and Erg Chebbi", "Sunset desert experience"],
-    price: "425", pricingTiers: { 1: 600, 2: 425, 3: 410, 4: 395, 5: 380 }, image: "/images/dest/erg-chebbi.webp",
-    description: "A private route for travelers starting in Fes who want to reach Merzouga and Erg Chebbi in three days. The Moroccan National Tourist Office confirms Fes as a gateway toward the Sahara and documents the Fes–Errachidia–Midelt–Merzouga connection. A starting price per person is published for this route; the exact total depends on your party size and the accommodation you choose, and is confirmed around your dates before booking.",
-    routeIds: ["fes", "ifrane", "merzouga", "erg-chebbi"], routeCaption: "Fes → Middle Atlas / Ifrane → Errachidia–Midelt region → Merzouga & Erg Chebbi. Exact stops, nights and onward/return plan are confirmed around your dates.",
-    itineraryDays: [
-      { day: 1, title: "Fes → Middle Atlas → Errachidia region", desc: "Travel south from Fes through the Middle Atlas toward the Errachidia–Midelt–Merzouga region. The road is a major part of the experience, so the day is planned around realistic driving and selected stops.", stops: ["Fes", "Ifrane", "Middle Atlas", "Midelt / Errachidia region"] },
-      { day: 2, title: "Errachidia region → Merzouga → Erg Chebbi", desc: "Continue toward Merzouga and the Erg Chebbi dunes. If included in the confirmed itinerary, the desert portion can include a sunset camel experience and a night near the dunes. Accommodation and meals are confirmed before payment.", stops: ["Ziz Valley area", "Merzouga", "Erg Chebbi", "Sunset desert experience"] },
-      { day: 3, title: "Merzouga → onward journey", desc: "Begin with the desert morning, then continue to the destination agreed in your quote. A return to Fes or a one-way finish can be discussed; no fixed ending is claimed until confirmed.", stops: ["Merzouga sunrise", "Erg Chebbi", "Confirmed onward destination"] }
-    ],
-    included: ["Private itinerary planning", "Route confirmed around your dates", "Private transport when included in the confirmed quote", "Desert experience when included in the confirmed itinerary"],
-    excluded: ["International flights", "Anything not explicitly included in the confirmed quote", "Personal expenses and gratuities unless agreed"],
-    faq: [
-      { question: "Is this a fixed-price Fes tour?", answer: "A starting price per person is published for this route. Your exact total depends on how many of you travel — the per-person price comes down as the group grows — and on the accommodation you choose, so we confirm the final figure with your dates before any payment. You are welcome to ask us to adjust the itinerary first." },
-      { question: "Is Fes connected to the Merzouga route?", answer: "Yes. The Moroccan National Tourist Office presents Fes as one of the cities leading toward the Sahara and lists the Fes to Errachidia–Midelt–Merzouga connection." },
-      { question: "Can the trip end somewhere other than Fes?", answer: "An onward finish can be discussed in the private quote. We do not publish a fixed ending point until it is confirmed." },
-      { question: "Can I book now and pay later?", answer: "Request the itinerary first. We confirm the route, inclusions and applicable payment terms before any payment is made." }
-    ],
-    // MGA_THREE_DAY_CITY_ROUTES_V1
-  },
-  {
     id: "3-day-sahara-agadir", name: "3-Day Private Sahara Route from Agadir", duration: "3 Days / 2 Nights", category: "Private · Quote Only", quoteOnly: false,
     highlights: ["Agadir Atlantic coast", "Southern Morocco landscapes", "Ouarzazate / pre-Sahara", "Merzouga and Erg Chebbi", "Private onward planning"],
     price: "425", pricingTiers: { 1: 600, 2: 425, 3: 410, 4: 395, 5: 380 }, image: "/images/tours/camels-beach-agadir.webp",

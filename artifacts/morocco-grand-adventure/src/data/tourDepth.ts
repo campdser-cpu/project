@@ -51,15 +51,6 @@ export const TOUR_DEPTH: Record<string, TourDepth> = {
     bestFor: 'Travellers with exactly two days who want a genuine desert night without the longer Merzouga drive. If the tall Erg Chebbi dunes are your priority, choose a Merzouga itinerary instead.',
     guideLinks: ['marrakech-to-merzouga', 'desert-camps', 'camel-trekking', 'best-time-to-visit', 'what-to-pack', 'how-many-days'],
   },
-  '3-day-sahara-fes': {
-    whyChoose: [
-      'The shorter drive to the dunes: Fes → Middle Atlas → Ziz Valley → Merzouga, timed for the sunset camel trek.',
-      'Scenic stops through Ifrane, the cedar forests and the Ziz palm oases — real stops, not drive-bys.',
-      'Private journey with your own driver-guide.',
-    ],
-    bestFor: 'Northbound travellers based in Fes who want the Sahara without the longer Marrakech road. Pairs naturally with a southern continuation — ask about the one-way formats.',
-    guideLinks: FES_CORE,
-  },
   // __TOUR_DEPTH_2__
   '3-day-fes-merzouga-sahara': {
     whyChoose: [

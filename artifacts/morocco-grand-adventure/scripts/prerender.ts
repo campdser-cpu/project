@@ -130,7 +130,6 @@ const TOUR_ROUTES = [
   'honeymoon-morocco',
   '8-day-marrakech-essaouira-agadir-sahara',
   'family-morocco-adventure',
-  '3-day-sahara-fes',
   '3-day-sahara-agadir',
   'marrakech-4-day',
   'casablanca-3-day',

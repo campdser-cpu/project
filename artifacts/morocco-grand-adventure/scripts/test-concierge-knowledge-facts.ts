@@ -26,7 +26,7 @@ function fact(question: string, check: () => void) {
 }
 
 const sahara3 = byId('3-day-sahara-marrakech');
-const fes3 = byId('3-day-sahara-fes');
+const fes3 = byId('3-day-fes-merzouga-sahara');
 const agadir3 = byId('3-day-sahara-agadir');
 const imperial7 = byId('7-day-imperial-cities-sahara-escape');
 const honeymoon = byId('honeymoon-morocco');
