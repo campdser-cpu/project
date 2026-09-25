@@ -376,13 +376,15 @@ const ANCHOR = '3-day-sahara-marrakech';
   );
 
   const { tours } = await import('../src/data/content');
-  assert.equal(tours.length, 24, 'the catalogue is 24 tours');
+  assert.equal(tours.length, 27, 'the catalogue is 27 tours');
 
-  // Every tour in the catalogue is now published.
-  const PENDING: string[] = [];
+  // Every tour in the catalogue is published except those explicitly pending
+  // a quote — today just the 14-day grand journey, whose fourteen-day scope
+  // has no priced-catalogue precedent and is deliberately not invented.
+  const PENDING: string[] = ['14-day-grand-morocco-journey'];
   const priced = tours.filter((t) => t.quoteOnly === false);
-  assert.equal(priced.length, 24, 'all 24 tours are published');
-  assert.equal(tours.length - priced.length, PENDING.length, 'no tour is left quote-only');
+  assert.equal(priced.length, 26, 'all tours except the pending ones are published');
+  assert.equal(tours.length - priced.length, PENDING.length, 'only the pending tours are quote-only');
   assert.equal(tours.find((t) => t.id === ANCHOR)!.price, '425', 'the anchor card shows the two-traveller price');
 
   // Card price and ladder must agree on every published tour, and a quote-only
@@ -547,9 +549,10 @@ const ANCHOR = '3-day-sahara-marrakech';
   // Even with the deadline far in the future, the master switch wins.
   assert.equal(isPromoActive(new Date('2026-01-01').getTime()), false, 'the switch beats the deadline');
 
-  // Every tour publishes a price, and none of them may show a discount.
+  // Every tour publishes a price except the pending quote-only ones, and none
+  // of the priced tours may show a discount.
   const withPrice = tours.filter((t) => hasPublishedPrice(t.price));
-  assert.equal(withPrice.length, 24, 'all 24 tours publish a price');
+  assert.equal(withPrice.length, 26, 'all tours except the pending ones publish a price');
 
   // Sanity-check the gate itself, so this cannot pass because hasPublishedPrice
   // is broken and returns false for everything.

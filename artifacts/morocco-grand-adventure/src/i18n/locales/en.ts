@@ -1076,6 +1076,14 @@ export default {
     "With one of the sunniest climates in Morocco, Agadir pairs a long, sandy bay with easy access to the laid-back surf town of Taghazout and the walled souks of Taroudant. Heading inland, the road climbs through the Saffron Valley to Ouarzazate, the Dades and Todra gorges and the Erg Chebbi dunes. We can start a private itinerary in Agadir and shape the rest around how many days you have and where you want to finish.",
   hub_agadir_hero_alt: "The beach and promenade of Agadir, on Morocco's Atlantic coast",
 
+  hub_tangier_name: "Tangier",
+  hub_tangier_title: "Tours from Tangier",
+  hub_tangier_intro:
+    "Tangier is Morocco's northern gateway — a short ferry from Spain and a fast train from Casablanca — and the natural start for a route through the Rif mountains rather than the southern desert road.",
+  hub_tangier_body:
+    "From Tangier you can reach the UNESCO-listed Andalusian medina of Tétouan in under an hour, the blue-washed lanes of Chefchaouen, and the wild river gorges and waterfalls of the Akchour valley. Our private tours from Tangier range from a compact three-day loop through the north back to Tangier, to a one-way five-day route continuing south through the Middle Atlas cedar forests to the imperial city of Fes.",
+  hub_tangier_hero_alt: "The old town and harbour of Tangier on the Strait of Gibraltar, Morocco",
+
   hub_short_on_time: "Short on time?",
   hub_short_on_time_sub: "See our {city} routes grouped by duration, including the classic 3-day layout.",
   hub_browse_3day: "Browse 3-day tours from {city}",

@@ -115,6 +115,42 @@ export const TOUR_DEPTH: Record<string, TourDepth> = {
     bestFor: 'Families with children — the itinerary paces the long distances honestly and keeps the activity mix varied enough for different ages.',
     guideLinks: ['how-many-days', 'camel-trekking', 'things-to-do', 'best-time-to-visit', 'what-to-pack'],
   },
+  'tangier-3-day': {
+    whyChoose: [
+      'A genuinely different Morocco from the desert routes: the Rif mountains, Andalusian architecture and a cooler, greener pace.',
+      'Two nights in Chefchaouen give a real day for the Akchour valley, not just a drive-through.',
+      'A round trip back to Tangier, the natural arrival point for travellers reaching Morocco from Spain.',
+    ],
+    bestFor: 'Travellers arriving in the north — by ferry from Spain or flying into Tangier — who want the Rif and the blue city without also committing to the Sahara. Pairs naturally with a separate desert trip on another visit.',
+    guideLinks: [],
+  },
+  'tangier-5-day': {
+    whyChoose: [
+      'A one-way route from Tangier to Fes through the north rather than a there-and-back loop.',
+      'Two nights in Chefchaouen for a full Akchour day, then the Middle Atlas cedar forests around Ifrane on the way south.',
+      'Finishes with a guided day in Fes el-Bali, so the route ends inside Morocco’s oldest medina rather than on the road.',
+    ],
+    bestFor: 'Travellers who want to see northern Morocco properly before continuing south, or who are arriving via Tangier and heading toward Fes and the rest of the country afterward.',
+    guideLinks: [],
+  },
+  'marrakech-essaouira-2-day': {
+    whyChoose: [
+      'The shortest genuine change of scene from Marrakech: three hours to the Atlantic instead of another day in the medina heat.',
+      'Essaouira’s UNESCO-listed medina and the Sqala du Port ramparts are a real coastal counterpoint to Marrakech, not a beach add-on.',
+      'A private round trip, so the pace is entirely yours.',
+    ],
+    bestFor: 'Travellers with a short window who want sea air and a different architectural register from Marrakech, without folding it into a longer desert itinerary.',
+    guideLinks: [],
+  },
+  '14-day-grand-morocco-journey': {
+    whyChoose: [
+      'The complete private circuit — coast, south, Sahara, imperial cities and the north — built from the same legs as our shorter tours, joined into one route.',
+      'Two full nights at Erg Chebbi, including a full desert day rather than a sunset-and-leave visit.',
+      'Multi-night stops in Fes and Chefchaouen instead of a different city every day.',
+    ],
+    bestFor: 'Travellers with two weeks who want to understand how Morocco’s regions relate to each other rather than seeing one of them in isolation. If two weeks is more than you have, the same route exists in shorter forms.',
+    guideLinks: ['marrakech-to-merzouga', 'camel-trekking', 'luxury-desert-camps', 'how-many-days', 'best-time-to-visit'],
+  },
   '8-day-marrakech-essaouira-agadir-sahara': {
     whyChoose: [
       'The wide-sweeping private journey: Marrakech, the Atlantic coast (Essaouira, Agadir) and the Sahara in one route.',

@@ -66,12 +66,17 @@ const STANDARD = (solo: number, groupBase: number): TourLadder => ({
 export const TOUR_LADDER: Readonly<Record<string, TourLadder>> = {
   // ── 2 days ────────────────────────────────────────────────────────────────
   '2-day-zagora-desert-marrakech': STANDARD(425, 300),
+  // Same duration class and cost shape as the Zagora anchor (private vehicle +
+  // driver + one night's accommodation) — the published 2-day rate, not a new
+  // figure invented for this route.
+  'marrakech-essaouira-2-day': STANDARD(425, 300),
 
   // ── 3 days ────────────────────────────────────────────────────────────────
   '3-day-sahara-marrakech': STANDARD(600, 425), // the approved anchor
   '3-day-sahara-agadir': STANDARD(600, 425),
   '3-day-fes-merzouga-sahara': STANDARD(600, 425),
   'casablanca-3-day': STANDARD(600, 425),
+  'tangier-3-day': STANDARD(600, 425),
 
   // ── 4 days ────────────────────────────────────────────────────────────────
   'marrakech-4-day': STANDARD(750, 530),
@@ -89,6 +94,7 @@ export const TOUR_LADDER: Readonly<Record<string, TourLadder>> = {
   'casablanca-5-day': STANDARD(880, 625),
   'fes-5-day': STANDARD(880, 625),
   'agadir-5-day': STANDARD(880, 625),
+  'tangier-5-day': STANDARD(880, 625),
 
   // ── 7 days ────────────────────────────────────────────────────────────────
   '7-day-imperial-cities-sahara-escape': STANDARD(1135, 805),

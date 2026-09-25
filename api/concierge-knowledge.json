@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-25T16:44:31.883Z",
+  "generatedAt": "2026-09-25T20:42:32.592Z",
   "contact": {
     "whatsapp": "https://wa.me/212699846818",
     "whatsappNumber": "+212 699 846 818",
@@ -3098,6 +3098,563 @@
         {
           "question": "How is the price confirmed?",
           "answer": "A starting price per person is published for this route. Your exact total depends on how many of you travel — the per-person price comes down as the group grows — and on the accommodation you choose, so we confirm the final figure with your dates before any payment. You are welcome to ask us to adjust the itinerary first."
+        }
+      ]
+    },
+    {
+      "id": "tangier-3-day",
+      "name": "3-Day North Morocco: Tangier, Chefchaouen & Tétouan",
+      "category": "Northern Morocco Route",
+      "duration": "3 Days / 2 Nights",
+      "nights": 2,
+      "startCity": "tangier",
+      "route": "Tangier → Tétouan → Chefchaouen → Akchour → Chefchaouen → Tangier. A round-trip loop through the Rif and the north, back to your point of arrival.",
+      "private": true,
+      "highlights": [
+        "Tangier's Kasbah and Strait of Gibraltar views",
+        "Tétouan's UNESCO Andalusian medina",
+        "Chefchaouen, the blue city",
+        "Akchour gorges and God's Bridge",
+        "A compact loop back to Tangier"
+      ],
+      "bestFor": "Travellers arriving in the north — by ferry from Spain or flying into Tangier — who want the Rif and the blue city without also committing to the Sahara. Pairs naturally with a separate desert trip on another visit.",
+      "whyChoose": [
+        "A genuinely different Morocco from the desert routes: the Rif mountains, Andalusian architecture and a cooler, greener pace.",
+        "Two nights in Chefchaouen give a real day for the Akchour valley, not just a drive-through.",
+        "A round trip back to Tangier, the natural arrival point for travellers reaching Morocco from Spain."
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Tangier → Tétouan → Chefchaouen",
+          "summary": "Leave Tangier and drive south to Tétouan, whose UNESCO-listed medina was built by refugees from Granada — one of the best-preserved Andalusian old towns in Morocco. Continue into the Rif mountains to Chefchaouen for the first night among its blue-washed lanes."
+        },
+        {
+          "day": 2,
+          "title": "Chefchaouen → Akchour valley → Chefchaouen",
+          "summary": "A full day into the Akchour valley, Chefchaouen's wild counterpart: turquoise river pools, forested gorges, and a choice of hikes to the small waterfall or the larger one past the natural limestone arch known as God's Bridge. Return to Chefchaouen for a second night in the same medina."
+        },
+        {
+          "day": 3,
+          "title": "Chefchaouen → Tangier",
+          "summary": "A free morning to walk Chefchaouen's medina before the drive back to Tangier. Depending on timing, the route can pause at Cap Spartel or the Caves of Hercules, where the Atlantic meets the Mediterranean, before the tour ends in Tangier."
+        }
+      ],
+      "transport": [
+        "Private air-conditioned vehicle for the full route",
+        "Professional English-speaking driver",
+        "Fuel"
+      ],
+      "accommodation": [
+        "Accommodation for two nights in Chefchaouen, according to the selected package (confirmed in the written quote, not guaranteed)",
+        "Hotel pick-up and drop-off in Tangier"
+      ],
+      "desertExperiences": [],
+      "visitsAndLandscapes": [],
+      "guideAndServices": [],
+      "meals": [
+        {
+          "night": 1,
+          "place": "Chefchaouen",
+          "breakfast": "included",
+          "dinner": "unspecified"
+        },
+        {
+          "night": 2,
+          "place": "Chefchaouen",
+          "breakfast": "included",
+          "dinner": "unspecified"
+        }
+      ],
+      "notIncluded": [
+        "International flights",
+        "Lunches and drinks",
+        "Monument and museum entrance fees",
+        "Tips and personal expenses"
+      ],
+      "hasQuoteDependentItems": true,
+      "pricing": {
+        "published": true,
+        "currency": "EUR",
+        "solo": 600,
+        "perPersonByPartySize": {
+          "1": 600,
+          "2": 425,
+          "3": 410,
+          "4": 395,
+          "5": 380,
+          "6": 365
+        },
+        "note": "Per-person price in EUR by party size. Larger groups outside the listed range, or party sizes not listed, are quote-only."
+      },
+      "faq": [
+        {
+          "question": "Is this route different from the Sahara tours?",
+          "answer": "Yes. This loop stays entirely in northern Morocco — the Rif mountains, Chefchaouen and Tétouan — and does not travel to the Sahara. If you want the desert as well, ask us about combining this with a longer itinerary, or see the 5-day Tangier to Fes route."
+        },
+        {
+          "question": "How difficult is the Akchour hike?",
+          "answer": "There are two options: a shorter walk to the small waterfall, manageable for most fitness levels, and a longer route to God's Bridge and the large waterfall, which involves more scrambling over rock. We confirm which suits your group before the day."
+        },
+        {
+          "question": "Can this tour start somewhere other than Tangier?",
+          "answer": "It's designed as a Tangier loop, since most travelers reach northern Morocco by ferry from Spain or by flying into Tangier. A pickup from Tétouan airport can be discussed if that fits your arrival better."
+        },
+        {
+          "question": "Can I book now and pay later?",
+          "answer": "Yes. Sending a request is free and commits you to nothing. We confirm your dates, itinerary and final price with you first; a 20% deposit then secures the booking, and the remaining 80% is paid on arrival in Morocco."
+        }
+      ]
+    },
+    {
+      "id": "tangier-5-day",
+      "name": "5-Day Tangier to Fes via the Rif & North Morocco",
+      "category": "Northern Morocco Route",
+      "duration": "5 Days / 4 Nights",
+      "nights": 4,
+      "startCity": "tangier",
+      "route": "Tangier → Tétouan → Chefchaouen → Akchour & the Rif → Middle Atlas & Ifrane → Fes. A one-way private route from the northern coast to the imperial city of Fes.",
+      "private": true,
+      "highlights": [
+        "Tangier departure, Strait of Gibraltar",
+        "Tétouan's Andalusian medina",
+        "Two nights in Chefchaouen with a full Akchour day",
+        "Middle Atlas cedar forest and Ifrane",
+        "One-way finish in Fes"
+      ],
+      "bestFor": "Travellers who want to see northern Morocco properly before continuing south, or who are arriving via Tangier and heading toward Fes and the rest of the country afterward.",
+      "whyChoose": [
+        "A one-way route from Tangier to Fes through the north rather than a there-and-back loop.",
+        "Two nights in Chefchaouen for a full Akchour day, then the Middle Atlas cedar forests around Ifrane on the way south.",
+        "Finishes with a guided day in Fes el-Bali, so the route ends inside Morocco’s oldest medina rather than on the road."
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Tangier → Tétouan → Chefchaouen",
+          "summary": "Depart Tangier for Tétouan and its UNESCO-listed Andalusian medina, then continue into the Rif to Chefchaouen for the first of two nights."
+        },
+        {
+          "day": 2,
+          "title": "Akchour valley — waterfalls and God's Bridge",
+          "summary": "A full day in the Akchour valley: river pools, forest trails, and the natural stone arch known as God's Bridge. Return to the same accommodation in Chefchaouen for the second night."
+        },
+        {
+          "day": 3,
+          "title": "Chefchaouen → Middle Atlas → Ifrane",
+          "summary": "Leave the blue city and climb into the Middle Atlas. The cedar forests around Ifrane and Azrou shelter wild Barbary macaques, and the town itself — alpine-style architecture built in the 1930s — is a cool contrast to the coast and the Rif."
+        },
+        {
+          "day": 4,
+          "title": "Ifrane → Fes",
+          "summary": "A shorter driving day into Fes, Morocco's cultural and spiritual capital. The afternoon and evening are free to settle in before the guided day ahead."
+        },
+        {
+          "day": 5,
+          "title": "Guided day in Fes → tour ends",
+          "summary": "An official local guide leads the medina of Fes el-Bali — the Royal Palace gates, the Chouara Tannery, Al Quaraouiyine University and the souks. The tour ends with transfer to your Fes hotel or the airport."
+        }
+      ],
+      "transport": [
+        "Private air-conditioned vehicle for the full route",
+        "Professional English-speaking driver",
+        "Fuel"
+      ],
+      "accommodation": [
+        "Accommodation for four nights, according to the selected package (confirmed in the written quote, not guaranteed)",
+        "Hotel pick-up in Tangier and drop-off in Fes"
+      ],
+      "desertExperiences": [],
+      "visitsAndLandscapes": [],
+      "guideAndServices": [
+        "Official local guide for the Fes medina day"
+      ],
+      "meals": [
+        {
+          "night": 1,
+          "place": "Chefchaouen",
+          "breakfast": "included",
+          "dinner": "unspecified"
+        },
+        {
+          "night": 2,
+          "place": "Chefchaouen",
+          "breakfast": "included",
+          "dinner": "unspecified"
+        },
+        {
+          "night": 3,
+          "place": "Ifrane",
+          "breakfast": "included",
+          "dinner": "unspecified"
+        },
+        {
+          "night": 4,
+          "place": "Fes",
+          "breakfast": "included",
+          "dinner": "unspecified"
+        }
+      ],
+      "notIncluded": [
+        "International flights",
+        "Lunches and drinks",
+        "Monument and museum entrance fees",
+        "Tips and personal expenses"
+      ],
+      "hasQuoteDependentItems": true,
+      "pricing": {
+        "published": true,
+        "currency": "EUR",
+        "solo": 880,
+        "perPersonByPartySize": {
+          "1": 880,
+          "2": 625,
+          "3": 610,
+          "4": 595,
+          "5": 580,
+          "6": 565
+        },
+        "note": "Per-person price in EUR by party size. Larger groups outside the listed range, or party sizes not listed, are quote-only."
+      },
+      "faq": [
+        {
+          "question": "Why travel from Tangier to Fes through the north instead of the desert route?",
+          "answer": "This itinerary is built around the Rif and northern Morocco rather than the Sahara — Chefchaouen, Tétouan and Akchour, then the Middle Atlas cedar forests. If you want the Sahara as well, our Fes-based desert routes pick up from where this one finishes."
+        },
+        {
+          "question": "Does this tour finish in Fes?",
+          "answer": "Yes, it's a one-way private route ending in Fes. Onward travel — south to Merzouga, or elsewhere — can be discussed as a separate leg once you're there."
+        },
+        {
+          "question": "Is two nights enough in Chefchaouen?",
+          "answer": "It gives a full day for Akchour without rushing, plus the evening to walk the medina — more time than a one-night stop allows. Groups who want longer in the north can ask about extending it."
+        },
+        {
+          "question": "Can I book now and pay later?",
+          "answer": "Yes. Sending a request is free and commits you to nothing. We confirm your dates, itinerary and final price with you first; a 20% deposit then secures the booking, and the remaining 80% is paid on arrival in Morocco."
+        }
+      ]
+    },
+    {
+      "id": "marrakech-essaouira-2-day",
+      "name": "2-Day Marrakech to Essaouira: Atlantic Coast Escape",
+      "category": "Coastal Escape",
+      "duration": "2 Days / 1 Night",
+      "nights": 1,
+      "startCity": "marrakech",
+      "route": "Marrakech → Essaouira → Marrakech. A short private escape to the Atlantic coast, three hours from the Red City.",
+      "private": true,
+      "highlights": [
+        "Three-hour private transfer to the Atlantic coast",
+        "Essaouira's UNESCO-listed medina",
+        "Sqala du Port ramparts and the fishing harbour",
+        "A genuine change of pace from Marrakech",
+        "Round trip back to Marrakech"
+      ],
+      "bestFor": "Travellers with a short window who want sea air and a different architectural register from Marrakech, without folding it into a longer desert itinerary.",
+      "whyChoose": [
+        "The shortest genuine change of scene from Marrakech: three hours to the Atlantic instead of another day in the medina heat.",
+        "Essaouira’s UNESCO-listed medina and the Sqala du Port ramparts are a real coastal counterpoint to Marrakech, not a beach add-on.",
+        "A private round trip, so the pace is entirely yours."
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Marrakech → Essaouira",
+          "summary": "Leave Marrakech in the morning for the three-hour drive to the coast. The afternoon is free to walk the medina, the Sqala du Port ramparts and the fishing harbour, or simply watch the Atlantic from a port-side terrace."
+        },
+        {
+          "day": 2,
+          "title": "Essaouira → Marrakech",
+          "summary": "A free morning in Essaouira — the port, the beach, or the ramparts in the morning light — before the drive back to Marrakech, arriving early afternoon."
+        }
+      ],
+      "transport": [
+        "Private air-conditioned vehicle for the full route",
+        "Professional English-speaking driver",
+        "Fuel"
+      ],
+      "accommodation": [
+        "One night's accommodation in Essaouira, according to the selected package (confirmed in the written quote, not guaranteed)",
+        "Hotel pick-up and drop-off in Marrakech"
+      ],
+      "desertExperiences": [],
+      "visitsAndLandscapes": [],
+      "guideAndServices": [],
+      "meals": [
+        {
+          "night": 1,
+          "place": "Essaouira",
+          "breakfast": "included",
+          "dinner": "unspecified"
+        }
+      ],
+      "notIncluded": [
+        "International flights",
+        "Lunches and drinks",
+        "Kitesurfing, surfing or other water-sport lessons (available locally, not included)",
+        "Monument and museum entrance fees",
+        "Tips and personal expenses"
+      ],
+      "hasQuoteDependentItems": true,
+      "pricing": {
+        "published": true,
+        "currency": "EUR",
+        "solo": 425,
+        "perPersonByPartySize": {
+          "1": 425,
+          "2": 300,
+          "3": 285,
+          "4": 270,
+          "5": 255,
+          "6": 240
+        },
+        "note": "Per-person price in EUR by party size. Larger groups outside the listed range, or party sizes not listed, are quote-only."
+      },
+      "faq": [
+        {
+          "question": "Is this tour part of a Sahara itinerary?",
+          "answer": "No — this is a coastal route only, with no desert leg. Travelers who want both the coast and the Sahara in one trip should look at our 8-day Marrakech, Essaouira, Agadir & Sahara journey instead."
+        },
+        {
+          "question": "Is one night enough in Essaouira?",
+          "answer": "It's a genuine but compact escape — enough for the medina, the ramparts and the port. If you'd rather have a full free day on the coast, ask us about extending to three days."
+        },
+        {
+          "question": "How long is the drive?",
+          "answer": "About three hours each way on a paved road, with a stop possible along the way if you'd like one."
+        },
+        {
+          "question": "Can I book now and pay later?",
+          "answer": "Yes. Sending a request is free and commits you to nothing. We confirm your dates, itinerary and final price with you first; a 20% deposit then secures the booking, and the remaining 80% is paid on arrival in Morocco."
+        }
+      ]
+    },
+    {
+      "id": "14-day-grand-morocco-journey",
+      "name": "14-Day Grand Morocco: Imperial Cities, Atlantic Coast, Sahara & the North",
+      "category": "Grand Journey",
+      "duration": "14 Days / 13 Nights",
+      "nights": 13,
+      "startCity": "marrakech",
+      "route": "Marrakech → Essaouira → Agadir → Ouarzazate & Aït Ben Haddou → Dades Valley → Todra Gorge → Merzouga & Erg Chebbi → Ifrane → Fes & Meknès → Chefchaouen → Rabat → Casablanca.",
+      "private": true,
+      "highlights": [
+        "Marrakech, the Atlantic coast, the south, the Sahara, the imperial cities and the north in one private route",
+        "Two full nights at Erg Chebbi, including a full desert day",
+        "Aït Ben Haddou, Dades Valley and Todra Gorge",
+        "Fes el-Bali with an official local guide",
+        "Chefchaouen and a finish in Casablanca"
+      ],
+      "bestFor": "Travellers with two weeks who want to understand how Morocco’s regions relate to each other rather than seeing one of them in isolation. If two weeks is more than you have, the same route exists in shorter forms.",
+      "whyChoose": [
+        "The complete private circuit — coast, south, Sahara, imperial cities and the north — built from the same legs as our shorter tours, joined into one route.",
+        "Two full nights at Erg Chebbi, including a full desert day rather than a sunset-and-leave visit.",
+        "Multi-night stops in Fes and Chefchaouen instead of a different city every day."
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Arrival in Marrakech",
+          "summary": "Settle in and take a first, unhurried walk through the medina and Jemaa el-Fna in the evening."
+        },
+        {
+          "day": 2,
+          "title": "Marrakech → Essaouira",
+          "summary": "Drive three hours to the Atlantic coast. The afternoon is free for Essaouira's UNESCO-listed medina and the Sqala du Port ramparts."
+        },
+        {
+          "day": 3,
+          "title": "Essaouira → Agadir",
+          "summary": "Continue down the coast to Agadir, Morocco's purpose-built beach resort, with time for the promenade or the Kasbah Oufella at sunset."
+        },
+        {
+          "day": 4,
+          "title": "Agadir → Ouarzazate",
+          "summary": "Head inland toward Ouarzazate, gateway to the pre-Sahara, through the changing landscape of southern Morocco."
+        },
+        {
+          "day": 5,
+          "title": "Ouarzazate → Aït Ben Haddou → Dades Valley",
+          "summary": "Visit the UNESCO-listed ksar of Aït Ben Haddou before continuing to the Dades Valley for the night."
+        },
+        {
+          "day": 6,
+          "title": "Dades Valley → Todra Gorge → Merzouga",
+          "summary": "Drive through Todra Gorge before reaching Merzouga in the late afternoon for a sunset camel trek into Erg Chebbi and the first night at the desert camp."
+        },
+        {
+          "day": 7,
+          "title": "A full day at Erg Chebbi",
+          "summary": "Sunrise over the dunes, then a full day around Merzouga rather than a rushed departure — time with the desert communities, and the dunes again in the cooler late afternoon. Second night at the camp."
+        },
+        {
+          "day": 8,
+          "title": "Merzouga → Ziz Valley → Ifrane → Fes",
+          "summary": "Head north through the Ziz Valley's palm oases and the Middle Atlas cedar forests around Ifrane, arriving in Fes by evening."
+        },
+        {
+          "day": 9,
+          "title": "Guided day in Fes",
+          "summary": "An official local guide leads Fes el-Bali — the Royal Palace gates, the Chouara Tannery, Al Quaraouiyine University and the souks."
+        },
+        {
+          "day": 10,
+          "title": "Fes → Meknès → Chefchaouen",
+          "summary": "A stop in Meknès, one of Morocco's historic imperial cities, on the way north to the blue-washed lanes of Chefchaouen."
+        },
+        {
+          "day": 11,
+          "title": "Chefchaouen",
+          "summary": "A full day in and around the blue city — the medina, Plaza Uta el-Hammam, and the viewpoint above town — at a deliberately slower pace after nine days on the road."
+        },
+        {
+          "day": 12,
+          "title": "Chefchaouen → Rabat",
+          "summary": "Head south to Rabat, Morocco's capital, for the Kasbah of the Udayas and the Hassan Tower."
+        },
+        {
+          "day": 13,
+          "title": "Rabat → Casablanca",
+          "summary": "A short final drive to Casablanca, with time for the Hassan II Mosque on the Atlantic and the art-deco streets of the city centre."
+        },
+        {
+          "day": 14,
+          "title": "Departure from Casablanca",
+          "summary": "Transfer to Casablanca airport, or onward as agreed in your confirmed itinerary."
+        }
+      ],
+      "transport": [
+        "Private air-conditioned vehicle and driver-guide for the full route, when included in the confirmed quote (confirmed in the written quote, not guaranteed)"
+      ],
+      "accommodation": [
+        "Accommodation for 13 nights, according to the selected package, including two nights at a desert camp near Merzouga (confirmed in the written quote, not guaranteed)",
+        "Hotel and airport pick-up and drop-off"
+      ],
+      "desertExperiences": [
+        "The desert experience at Erg Chebbi — sunset camel trek — when included in the confirmed itinerary (confirmed in the written quote, not guaranteed)",
+        "Desert sunrise over the dunes (confirmed in the written quote, not guaranteed)"
+      ],
+      "visitsAndLandscapes": [
+        "Visit Todra Gorge (confirmed in the written quote, not guaranteed)",
+        "Visit Dades Valley (confirmed in the written quote, not guaranteed)"
+      ],
+      "guideAndServices": [
+        "Official local guide for the Fes medina day"
+      ],
+      "meals": [
+        {
+          "night": 1,
+          "place": "Marrakech",
+          "breakfast": "included",
+          "dinner": "unspecified"
+        },
+        {
+          "night": 2,
+          "place": "Essaouira",
+          "breakfast": "included",
+          "dinner": "unspecified"
+        },
+        {
+          "night": 3,
+          "place": "Agadir",
+          "breakfast": "included",
+          "dinner": "unspecified"
+        },
+        {
+          "night": 4,
+          "place": "Ouarzazate",
+          "breakfast": "included",
+          "dinner": "unspecified"
+        },
+        {
+          "night": 5,
+          "place": "Dades Valley",
+          "breakfast": "included",
+          "dinner": "included"
+        },
+        {
+          "night": 6,
+          "place": "Erg Chebbi desert camp",
+          "breakfast": "included",
+          "dinner": "included"
+        },
+        {
+          "night": 7,
+          "place": "Erg Chebbi desert camp",
+          "breakfast": "included",
+          "dinner": "included"
+        },
+        {
+          "night": 8,
+          "place": "Fes",
+          "breakfast": "included",
+          "dinner": "unspecified"
+        },
+        {
+          "night": 9,
+          "place": "Fes",
+          "breakfast": "included",
+          "dinner": "unspecified"
+        },
+        {
+          "night": 10,
+          "place": "Chefchaouen",
+          "breakfast": "included",
+          "dinner": "unspecified"
+        },
+        {
+          "night": 11,
+          "place": "Chefchaouen",
+          "breakfast": "included",
+          "dinner": "unspecified"
+        },
+        {
+          "night": 12,
+          "place": "Rabat",
+          "breakfast": "included",
+          "dinner": "unspecified"
+        },
+        {
+          "night": 13,
+          "place": "Casablanca",
+          "breakfast": "included",
+          "dinner": "unspecified"
+        }
+      ],
+      "notIncluded": [
+        "International flights",
+        "Lunches and drinks",
+        "Monument and museum entrance fees",
+        "Optional activities such as 4x4 excursions, quad biking or a hot air balloon flight",
+        "Tips and personal expenses",
+        "Anything not written into your confirmed quote"
+      ],
+      "hasQuoteDependentItems": true,
+      "pricing": {
+        "published": false,
+        "note": "No published starting price for this route; the total is confirmed with the traveler’s dates and party size before booking."
+      },
+      "faq": [
+        {
+          "question": "Why is this tour quote-only when the shorter tours have a published price?",
+          "answer": "A fourteen-day private route varies a great deal by season, pace and the accommodation standard you choose, in a way a single headline price can't represent honestly. We confirm the real figure once we know your dates, party size and preferences."
+        },
+        {
+          "question": "Is fourteen days too long, or too much driving?",
+          "answer": "It's built from the same legs as our shorter tours, joined together rather than compressed — two full nights at the dunes instead of one, and multi-night stops in Fes and Chefchaouen so it isn't a different city every day. If two weeks is more than you want, ask us about the 7-day or 10-day versions of this same route."
+        },
+        {
+          "question": "Can the route be shortened or reordered?",
+          "answer": "Yes. This itinerary is a starting point — cities and regions can be added, dropped or reordered once we know what matters most to you and how many days you actually have."
+        },
+        {
+          "question": "Does the desert portion include two nights?",
+          "answer": "Yes, this itinerary gives Merzouga a full day rather than a sunset-and-leave visit — arrival with a camel trek on day one, then a complete day around Erg Chebbi before continuing north."
+        },
+        {
+          "question": "Can I book now and pay later?",
+          "answer": "Request the itinerary first. We confirm the route, inclusions and applicable payment terms before any payment is made."
         }
       ]
     }

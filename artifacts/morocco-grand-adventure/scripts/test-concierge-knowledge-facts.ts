@@ -90,7 +90,10 @@ fact('7-day tour: which dinners are included vs. unspecified?', () => {
 
 fact('7-day tour: 2-person price?', () => {
   assert.equal(imperial7.pricing.published, true);
-  if (imperial7.pricing.published) assert.equal(imperial7.pricing.perPersonByPartySize['2'], 805);
+  // The JSON-inferred pricing type widens across tours whose shape differs
+  // (a quote-only tour carries no perPersonByPartySize at all), so TS can't
+  // narrow this from the published check above alone; already asserted true.
+  if (imperial7.pricing.published) assert.equal(imperial7.pricing.perPersonByPartySize!['2'], 805);
 });
 
 fact('Is transport private? (business-wide fact, not per-tour)', () => {
@@ -139,7 +142,7 @@ fact('What is the price for an unsupported/custom party size? (must be absent, n
   // Honeymoon is a 2-person-only product: no solo price, no 3-6 ladder.
   assert.equal(honeymoon.pricing.published, true);
   if (honeymoon.pricing.published) {
-    assert.deepEqual(Object.keys(honeymoon.pricing.perPersonByPartySize), ['2']);
+    assert.deepEqual(Object.keys(honeymoon.pricing.perPersonByPartySize ?? {}), ['2']);
     assert.equal(honeymoon.pricing.solo, undefined, 'no solo price must exist for a 2-person-only product');
   }
 });

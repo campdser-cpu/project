@@ -229,7 +229,12 @@ export function enforceStateInvariants(answer: string, state: string, tourIds: s
     const tour = TOUR_BY_ID.get(id);
     if (!tour || !tour.pricing.published) continue;
     if (typeof tour.pricing.solo === 'number') realPrices.add(tour.pricing.solo);
-    for (const p of Object.values(tour.pricing.perPersonByPartySize)) realPrices.add(p as number);
+    // The JSON-inferred type widens across tours whose pricing shape differs
+    // (e.g. a quote-only tour with no perPersonByPartySize at all), so this
+    // stays optional even inside the `published` branch. A published tour
+    // always has it populated in practice; this is a type-safety fallback,
+    // not a behavior change.
+    for (const p of Object.values(tour.pricing.perPersonByPartySize ?? {})) realPrices.add(p as number);
   }
   const allMatch = priceMentions.every((n) => realPrices.has(n));
   return allMatch ? state : 'contact_required';

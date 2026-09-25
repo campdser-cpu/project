@@ -155,7 +155,7 @@ assert.deepEqual(
   ['included', 'included', 'included', 'unspecified', 'unspecified', 'unspecified'],
 );
 assert.equal(imperial!.pricing.published, true);
-if (imperial!.pricing.published) assert.equal(imperial!.pricing.perPersonByPartySize['2'], 805);
+if (imperial!.pricing.published) assert.equal(imperial!.pricing.perPersonByPartySize!['2'], 805);
 
 const sahara3 = knowledge.tours.find((t) => t.id === '3-day-sahara-marrakech');
 assert.ok(sahara3);

@@ -31,6 +31,7 @@ const DESTINATIONS = [
   { slug: 'essaouira', key: 'Essaouira' },
   { slug: 'agadir', key: 'Agadir' },
   { slug: 'chefchaouen', key: 'Chefchaouen' },
+  { slug: 'tangier', key: 'Tangier' },
 ] as const;
 
 function SectionHeading({ kicker, title, sub }: { kicker?: string; title: string; sub?: string }) {

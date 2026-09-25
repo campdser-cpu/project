@@ -15,13 +15,14 @@
 // itineraries that are not supported by the shipped data.
 // ─────────────────────────────────────────────────────────────────────────────
 
-export type DepartureCity = 'marrakech' | 'casablanca' | 'fes' | 'agadir';
+export type DepartureCity = 'marrakech' | 'casablanca' | 'fes' | 'agadir' | 'tangier';
 
 export const DEPARTURE_CITIES: DepartureCity[] = [
   'marrakech',
   'casablanca',
   'fes',
   'agadir',
+  'tangier',
 ];
 
 /**
@@ -52,6 +53,10 @@ export const TOUR_DEPARTURE_CITY: Record<string, DepartureCity> = {
   'agadir-5-day': 'agadir',
   'agadir-8-day': 'agadir',
   '3-day-sahara-agadir': 'agadir',
+  'tangier-3-day': 'tangier',
+  'tangier-5-day': 'tangier',
+  'marrakech-essaouira-2-day': 'marrakech',
+  '14-day-grand-morocco-journey': 'marrakech',
 };
 
 // MGA_THREE_DAY_HIERARCHY_V1
@@ -152,6 +157,20 @@ export const CITY_HUBS: CityHub[] = [
     destinationIds: ['agadir', 'taghazout', 'essaouira', 'marrakech', 'ait-ben-haddou', 'merzouga'],
     hasDurationDrive: false,
   },
+  {
+    id: 'tangier',
+    slug: 'tangier',
+    name: 'Tangier',
+    heroImage: '/images/dest/tangier.webp',
+    heroAlt: 'The old town and harbour of Tangier on the Strait of Gibraltar, Morocco',
+    title: 'Tours from Tangier',
+    intro:
+      'Tangier is Morocco’s northern gateway — a short ferry from Spain and a fast train from Casablanca — and the natural start for a route through the Rif mountains rather than the southern desert road.',
+    body:
+      'From Tangier you can reach the UNESCO-listed Andalusian medina of Tétouan in under an hour, the blue-washed lanes of Chefchaouen, and the wild river gorges and waterfalls of the Akchour valley. Our private tours from Tangier range from a compact three-day loop through the north back to Tangier, to a one-way five-day route continuing south through the Middle Atlas cedar forests to the imperial city of Fes.',
+    destinationIds: ['tangier', 'tetouan', 'chefchaouen', 'akchour'],
+    hasDurationDrive: false,
+  },
 ];
 
 export function getCityHub(slug: string): CityHub | undefined {
@@ -172,10 +191,11 @@ export function getCityHub(slug: string): CityHub | undefined {
 // MGA_MISSING_TOURS_V1
 
 export const CITY_HUB_DURATIONS: Record<DepartureCity, number[]> = {
-  marrakech: [2, 3, 4, 5, 6, 7, 8, 9, 10],
+  marrakech: [2, 3, 4, 5, 6, 7, 8, 9, 10, 14],
   casablanca: [3, 4, 5, 6, 7, 8],
   fes: [3, 4, 5, 6, 7, 8],
   agadir: [3, 4, 5, 6, 7, 8],
+  tangier: [3, 4, 5],
 };
 
 /** Canonical URL path for a city+duration hub, e.g. /tours/from-marrakech/3-days. */

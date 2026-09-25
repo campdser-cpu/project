@@ -147,6 +147,10 @@ const TOUR_ROUTES = [
   '5-day-great-south-morocco',
   '3-day-fes-merzouga-sahara',
   '4-day-fes-marrakech-via-merzouga',
+  'tangier-3-day',
+  'tangier-5-day',
+  'marrakech-essaouira-2-day',
+  '14-day-grand-morocco-journey',
 ];
 
 // MGA_THREE_DAY_PRERENDER_V1
