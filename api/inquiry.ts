@@ -1,6 +1,7 @@
 // ─────────────────────────────────────────────────────────────────────────────
 // Vercel Serverless Function — POST /api/inquiry
 // ─────────────────────────────────────────────────────────────────────────────
+import { withCors, json, readBoundedJsonBody } from './_lib/http';
 
 const INQUIRY_TO_EMAIL = 'inquiries@moroccograndadventure.com';
 const INQUIRY_FROM_EMAIL = 'inquiries@moroccograndadventure.com';
@@ -74,60 +75,13 @@ function buildEmailHtml(i: Record<string, string>): string {
     row('Tour / activity', i.tourInterest) + row('Accommodation', i.accommodation) + row('Message', i.message) + '</table></div>';
 }
 
-function allowedOrigin(request: Request): string | null {
-  const origin = request.headers.get('origin');
-  if (!origin) return null;
-  try {
-    const originUrl = new URL(origin);
-    const requestHost = request.headers.get('host')?.split(':')[0]?.toLowerCase();
-    const sameHost = Boolean(requestHost && originUrl.hostname.toLowerCase() === requestHost);
-    const local = ['localhost', '127.0.0.1'].includes(originUrl.hostname.toLowerCase());
-    return sameHost || local ? origin : null;
-  } catch {
-    return null;
-  }
-}
-
-function withCors(request: Request, res: Response): Response {
-  const headers = new Headers(res.headers);
-  const origin = allowedOrigin(request);
-  if (origin) {
-    headers.set('Access-Control-Allow-Origin', origin);
-    headers.set('Vary', 'Origin');
-  }
-  headers.set('Access-Control-Allow-Methods', 'POST, OPTIONS');
-  headers.set('Access-Control-Allow-Headers', 'Content-Type');
-  headers.set('X-Content-Type-Options', 'nosniff');
-  return new Response(res.body, { status: res.status, statusText: res.statusText, headers });
-}
-
-function json(body: unknown, status: number): Response {
-  return new Response(JSON.stringify(body), { status, headers: { 'Content-Type': 'application/json' } });
-}
-
 export async function handleInquiry(request: Request): Promise<Response> {
   if (request.method === 'OPTIONS') return withCors(request, new Response(null, { status: 204 }));
   if (request.method !== 'POST') return withCors(request, json({ success: false, error: 'Method not allowed. Use POST.' }, 405));
 
-  const declaredLength = Number(request.headers.get('content-length') || 0);
-  if (declaredLength > MAX_BODY_BYTES) return withCors(request, json({ success: false, error: 'Request body is too large.' }, 413));
-
-  let rawBody: string;
-  try {
-    rawBody = await request.text();
-  } catch {
-    return withCors(request, json({ success: false, error: 'Invalid request body.' }, 400));
-  }
-  if (new TextEncoder().encode(rawBody).byteLength > MAX_BODY_BYTES) return withCors(request, json({ success: false, error: 'Request body is too large.' }, 413));
-
-  let body: Record<string, unknown>;
-  try {
-    const parsed: unknown = JSON.parse(rawBody);
-    if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) throw new Error('Expected object');
-    body = parsed as Record<string, unknown>;
-  } catch {
-    return withCors(request, json({ success: false, error: 'Invalid JSON body.' }, 400));
-  }
+  const parsed = await readBoundedJsonBody(request, MAX_BODY_BYTES);
+  if (!parsed.ok) return parsed.response;
+  const body = parsed.body;
 
   if (typeof body.website === 'string' && body.website.trim()) return withCors(request, json({ success: false, error: 'Invalid inquiry.' }, 400));
 

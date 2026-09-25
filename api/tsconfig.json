@@ -3,7 +3,8 @@
   "compilerOptions": {
     "lib": ["es2022", "dom", "dom.iterable"],
     "types": ["node"],
-    "incremental": false
+    "incremental": false,
+    "resolveJsonModule": true
   },
-  "include": ["inquiry.ts"]
+  "include": ["inquiry.ts", "concierge.ts", "_lib/**/*.ts"]
 }

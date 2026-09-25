@@ -4,7 +4,7 @@ import { Navbar } from './Navbar';
 import { Footer } from './Footer';
 import { WhatsAppButton } from '../ui/WhatsAppButton';
 import { ScrollToTop } from '../ui/ScrollToTop';
-import { AIAssistant } from '../ui/AIAssistant';
+import { ConciergeChat } from '../ui/ConciergeChat';
 import { StickyBookingCTA } from '../ui/StickyBookingCTA';
 import { trackEvent } from '@/lib/analytics';
 import { TopicalLinks } from '../seo/TopicalLinks';
@@ -126,7 +126,7 @@ export function Layout({ children }: LayoutProps) {
       {isTripBuilder && <TopicalLinks context="trip-builder" />}
       <Footer />
       {idle && <WhatsAppButton />}
-      {idle && <AIAssistant />}
+      {idle && <ConciergeChat />}
       <ScrollToTop />
       {idle && <StickyBookingCTA />}
     </div>
