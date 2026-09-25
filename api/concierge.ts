@@ -294,7 +294,12 @@ export async function handleConcierge(request: Request): Promise<Response> {
       },
       body: JSON.stringify({
         model,
-        max_tokens: 1024,
+        // claude-sonnet-5 runs adaptive thinking by default when `thinking`
+        // is omitted (unlike the 4.6-generation models this endpoint was
+        // originally tuned against). At 1024, reasoning alone could exhaust
+        // the budget before the forced `respond` call completes — stop_reason
+        // "max_tokens", no tool_use block, surfaced to clients as a 502.
+        max_tokens: 4096,
         system: buildSystemPrompt(lang),
         messages: [...history.map((h) => ({ role: h.role, content: h.content })), { role: 'user', content: message }],
         tools: [RESPOND_TOOL],
