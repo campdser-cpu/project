@@ -43,7 +43,7 @@
 import type { Tour } from '@/data/content';
 import { destinations } from '@/data/content';
 
-export type InclusionKind = 'transport' | 'stay' | 'meal' | 'experience' | 'service' | 'other';
+export type InclusionKind = 'transport' | 'stay' | 'meal' | 'experience' | 'landscape' | 'service' | 'other';
 /** `confirmed` = the tour's own wording leaves it to the written quote. */
 export type InclusionStatus = 'included' | 'confirmed';
 /** Per-night meal state: included, agreed in the quote, explicitly excluded, or unspecified. */
@@ -122,14 +122,19 @@ const SANDBOARD = /sandboard/;
 const GUIDED = /official local guide|local guide|guided (tour|visit|walk)/;
 const VEHICLE = /vehicle|transport|minivan|minibus|\bcar\b|private driver|driver|fuel|tolls|pick-?up|drop-?off/;
 
-/** Only explicit named visits/experiences, not every destination mentioned in prose. */
+/**
+ * Only explicit named visits/experiences, not every destination mentioned in
+ * prose. The overland heritage/landscape stops (`kind: 'landscape'`) are kept
+ * apart from the in-desert activities (`kind: 'experience'`) so the commercial
+ * summary can group "Visits & Landscapes" separately from "Desert Experiences".
+ */
 const NAMED_VISITS = [
-  { id: 'ait-ben-haddou', pattern: /ait[ -]?ben[ -]?haddou/i, label: 'Visit Aït Ben Haddou' },
-  { id: 'todra-gorge', pattern: /todra(?: gorge| canyon)?/i, label: 'Visit Todra Gorge' },
-  { id: 'dades-valley', pattern: /dades valley/i, label: 'Visit Dades Valley' },
-  { id: 'black-desert', pattern: /black desert/i, label: 'Black Desert experience' },
-  { id: 'fossil-beds', pattern: /fossil beds?/i, label: 'Fossil beds experience' },
-  { id: 'hidden-oasis', pattern: /hidden oasis/i, label: 'Oasis experience' },
+  { id: 'ait-ben-haddou', kind: 'landscape', pattern: /ait[ -]?ben[ -]?haddou/i, key: 'jx_inc_visit_ait', label: 'Visit Aït Ben Haddou' },
+  { id: 'todra-gorge', kind: 'landscape', pattern: /todra(?: gorge| canyon)?/i, key: 'jx_inc_visit_todra', label: 'Visit Todra Gorge' },
+  { id: 'dades-valley', kind: 'landscape', pattern: /dades valley/i, key: 'jx_inc_visit_dades', label: 'Visit Dades Valley' },
+  { id: 'black-desert', kind: 'experience', pattern: /black desert/i, key: 'jx_inc_visit_black_desert', label: 'Black Desert experience' },
+  { id: 'fossil-beds', kind: 'experience', pattern: /fossil beds?/i, key: 'jx_inc_visit_fossil_beds', label: 'Fossil beds experience' },
+  { id: 'hidden-oasis', kind: 'experience', pattern: /hidden oasis/i, key: 'jx_inc_visit_hidden_oasis', label: 'Oasis experience' },
 ] as const;
 
 /** Overnight stop, as the itineraries write it ("Overnight: Fes (Breakfast)"). */
@@ -196,7 +201,7 @@ function classifyKind(text: string): InclusionKind {
   return 'other';
 }
 
-const KIND_ORDER: InclusionKind[] = ['transport', 'stay', 'meal', 'experience', 'service', 'other'];
+const KIND_ORDER: InclusionKind[] = ['transport', 'stay', 'meal', 'experience', 'landscape', 'service', 'other'];
 
 /** Which stop of a night's own itinerary names where the traveller sleeps. */
 function overnightIndex(stops: string[], localizedStops: string[] = stops): number {
@@ -517,9 +522,9 @@ export function deriveTourInclusions(canonical: Tour, localized: Tour): TourIncl
     if (!visit.pattern.test(visitCorpus)) continue;
     derived.push({
       id: `visit-${visit.id}`,
-      kind: 'experience',
+      kind: visit.kind,
       status: 'included',
-      key: visit.id === 'ait-ben-haddou' ? 'jx_inc_visit_ait' : `jx_inc_visit_${visit.id.replaceAll('-', '_')}`,
+      key: visit.key,
       covers: visit.pattern,
     });
   }

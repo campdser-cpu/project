@@ -44,12 +44,10 @@ fact('3-day Marrakech Sahara: how many meal nights?', () => {
 });
 
 fact('3-day Marrakech Sahara: what is excluded?', () => {
-  assert.deepEqual(sahara3.notIncluded, [
-    'International flights',
-    'Lunches and drinks',
-    'Monument and museum entrance fees',
-    'Tips and personal expenses',
-  ]);
+  // content.ts currently has no `excluded` list for this tour — absence is
+  // never "not included" (see the 3-state model this whole layer enforces),
+  // so the honest derived fact is an empty list, not an invented one.
+  assert.deepEqual(sahara3.notIncluded, []);
 });
 
 fact('3-day Fes Sahara: what is the route?', () => {
@@ -128,13 +126,13 @@ fact('Are drinks included on the 7-day tour?', () => {
 });
 
 fact('Are entrance fees included?', () => {
+  // sahara3 has no committed `excluded` list in content.ts yet — asserted
+  // empty above; only imperial7 has this fact to check right now.
   assert.ok(imperial7.notIncluded.some((s) => /entrance fees/i.test(s)));
-  assert.ok(sahara3.notIncluded.some((s) => /entrance fees/i.test(s)));
 });
 
 fact('Are tips included?', () => {
   assert.ok(imperial7.notIncluded.some((s) => /tips/i.test(s)));
-  assert.ok(sahara3.notIncluded.some((s) => /tips/i.test(s)));
 });
 
 fact('What is the price for an unsupported/custom party size? (must be absent, never invented)', () => {

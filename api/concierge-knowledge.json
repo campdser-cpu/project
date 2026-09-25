@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-25T01:32:21.638Z",
+  "generatedAt": "2026-09-25T11:26:07.400Z",
   "contact": {
     "whatsapp": "https://wa.me/212699846818",
     "whatsappNumber": "+212 699 846 818",
@@ -80,12 +80,7 @@
           "dinner": "included"
         }
       ],
-      "notIncluded": [
-        "International flights",
-        "Lunches and drinks",
-        "Monument and museum entrance fees",
-        "Tips and personal expenses"
-      ],
+      "notIncluded": [],
       "hasQuoteDependentItems": false,
       "pricing": {
         "published": true,
@@ -131,18 +126,18 @@
     {
       "id": "3-day-sahara-fes",
       "name": "3-Day Private Sahara Route from Fes",
-      "category": "Private Sahara Route",
+      "category": "Private · Quote Only",
       "duration": "3 Days / 2 Nights",
       "nights": 2,
       "startCity": "fes",
       "route": "Fes → Middle Atlas / Ifrane → Errachidia–Midelt region → Merzouga & Erg Chebbi. Exact stops, nights and onward/return plan are confirmed around your dates.",
       "private": true,
       "highlights": [
-        "Fes to the Sahara in three days",
-        "Ifrane and the Middle Atlas cedar forest",
-        "The Ziz corridor toward Merzouga",
-        "Erg Chebbi and the Merzouga dunes",
-        "Private, and built around your dates"
+        "Fes and the Middle Atlas",
+        "Ifrane and cedar-forest country",
+        "Errachidia / Ziz Valley landscapes",
+        "Merzouga and Erg Chebbi",
+        "Sunset desert experience"
       ],
       "bestFor": "Northbound travellers based in Fes who want the Sahara without the longer Marrakech road. Pairs naturally with a southern continuation — ask about the one-way formats.",
       "whyChoose": [
@@ -154,34 +149,34 @@
         {
           "day": 1,
           "title": "Fes → Middle Atlas → Errachidia region",
-          "summary": "Leave Fes and climb into the Middle Atlas, through the cedar forest and stone-built streets of Ifrane before dropping toward the Errachidia–Midelt corridor. It's a full day on the road — the kind of drive where the country changes under you, from imperial city to mountain town to the edge of the pre-Sahara plains."
+          "summary": "Travel south from Fes through the Middle Atlas toward the Errachidia–Midelt–Merzouga region. The road is a major part of the experience, so the day is planned around realistic driving and selected stops."
         },
         {
           "day": 2,
           "title": "Errachidia region → Merzouga → Erg Chebbi",
-          "summary": "Continue toward Merzouga at the edge of Erg Chebbi. If included in the confirmed itinerary, the desert portion can include a sunset camel trek across the dunes and a night near the dunes, with accommodation and meals confirmed before payment."
+          "summary": "Continue toward Merzouga and the Erg Chebbi dunes. If included in the confirmed itinerary, the desert portion can include a sunset camel experience and a night near the dunes. Accommodation and meals are confirmed before payment."
         },
         {
           "day": 3,
           "title": "Merzouga → onward journey",
-          "summary": "Wake to the dunes at first light, then move on toward wherever your route takes you next. Because this is a private journey, the finish point is yours to choose — a return to Fes, or a one-way finish further into Morocco — and we set it with you before you travel."
+          "summary": "Begin with the desert morning, then continue to the destination agreed in your quote. A return to Fes or a one-way finish can be discussed; no fixed ending is claimed until confirmed."
         }
       ],
       "transport": [
-        "Private transport for the full route, when included in your confirmed quote (confirmed in the written quote, not guaranteed)"
+        "Private transport when included in the confirmed quote (confirmed in the written quote, not guaranteed)"
       ],
       "accommodation": [
         "Accommodation for 2 nights as shown in the itinerary (confirmed in the written quote, not guaranteed)",
         "Night in the desert camp (confirmed in the written quote, not guaranteed)"
       ],
       "desertExperiences": [
-        "The desert experience at Erg Chebbi, when included in your confirmed itinerary (confirmed in the written quote, not guaranteed)",
+        "Desert experience when included in the confirmed itinerary (confirmed in the written quote, not guaranteed)",
         "Sunset camel trek at Erg Chebbi (confirmed in the written quote, not guaranteed)",
         "Desert sunrise over the dunes (confirmed in the written quote, not guaranteed)"
       ],
       "visitsAndLandscapes": [],
       "guideAndServices": [
-        "Private itinerary planning, built around your dates",
+        "Private itinerary planning",
         "Route confirmed around your dates (confirmed in the written quote, not guaranteed)"
       ],
       "meals": [
@@ -200,8 +195,8 @@
       ],
       "notIncluded": [
         "International flights",
-        "Anything not written into your confirmed quote",
-        "Personal expenses and tips, unless agreed in advance"
+        "Anything not explicitly included in the confirmed quote",
+        "Personal expenses and gratuities unless agreed"
       ],
       "hasQuoteDependentItems": true,
       "pricing": {
@@ -224,20 +219,12 @@
           "answer": "A starting price per person is published for this route. Your exact total depends on how many of you travel — the per-person price comes down as the group grows — and on the accommodation you choose, so we confirm the final figure with your dates before any payment. You are welcome to ask us to adjust the itinerary first."
         },
         {
-          "question": "How much driving should I expect?",
-          "answer": "This is a genuine overland route, not a short transfer. Fes to Merzouga crosses the Middle Atlas and the long Ziz corridor in a single push — expect a full day on the road before the desert, and a similar drive back or onward on day three."
-        },
-        {
           "question": "Is Fes connected to the Merzouga route?",
           "answer": "Yes. The Moroccan National Tourist Office presents Fes as one of the cities leading toward the Sahara and lists the Fes to Errachidia–Midelt–Merzouga connection."
         },
         {
-          "question": "Is the camel trek guaranteed?",
-          "answer": "The desert evening — including a camel trek out to camp — is part of most itineraries on this route. Because every private journey is tailored to your dates, we confirm exactly what's included in writing before you pay anything."
-        },
-        {
           "question": "Can the trip end somewhere other than Fes?",
-          "answer": "Yes — as a private journey, we set the finish point with you before you travel. It depends on where you want to go next, so we don't publish one fixed ending."
+          "answer": "An onward finish can be discussed in the private quote. We do not publish a fixed ending point until it is confirmed."
         },
         {
           "question": "Can I book now and pay later?",
@@ -248,57 +235,51 @@
     {
       "id": "3-day-sahara-agadir",
       "name": "3-Day Private Sahara Route from Agadir",
-      "category": "Private Sahara Route",
+      "category": "Private · Quote Only",
       "duration": "3 Days / 2 Nights",
       "nights": 2,
       "startCity": "agadir",
       "route": "Agadir → southern Morocco / Ouarzazate area → Merzouga & Erg Chebbi. Exact road stops, nights and final destination are confirmed in the private quote.",
       "private": true,
       "highlights": [
-        "Agadir's Atlantic coast to the Sahara",
-        "Inland through southern Morocco",
-        "Ouarzazate and the pre-Sahara",
+        "Agadir Atlantic coast",
+        "Southern Morocco landscapes",
+        "Ouarzazate / pre-Sahara",
         "Merzouga and Erg Chebbi",
-        "Private, with a flexible finish"
-      ],
-      "bestFor": "Travellers based on the Atlantic coast — Agadir, Taghazout, Essaouira — who want the Sahara without first backtracking to Marrakech or Fes, and who are comfortable with a compact, quote-first itinerary rather than a fixed package.",
-      "whyChoose": [
-        "The direct road from the Atlantic coast to the Sahara: Agadir → southern Morocco → the Ouarzazate area → Merzouga.",
-        "Skips the busier Marrakech–Merzouga corridor for a quieter southern approach.",
-        "Private journey with your own driver-guide, route confirmed around your dates."
+        "Private onward planning"
       ],
       "itinerary": [
         {
           "day": 1,
           "title": "Agadir → Southern Morocco → Ouarzazate area",
-          "summary": "Leave the Atlantic behind and head inland from Agadir through the hills and valleys of southern Morocco toward Ouarzazate — a long, changing drive rather than a string of photo stops."
+          "summary": "Head inland from Agadir through southern Morocco. The day is designed around the practical road journey rather than a fabricated checklist of fixed stops."
         },
         {
           "day": 2,
           "title": "Ouarzazate area → Merzouga → Erg Chebbi",
-          "summary": "Continue east toward Merzouga and Erg Chebbi. If included in the confirmed itinerary, the desert portion can include a sunset camel trek across the dunes and a camp night, with accommodation and meals agreed before payment."
+          "summary": "Continue east toward Merzouga and Erg Chebbi. If included in the confirmed itinerary, the desert portion can include a sunset camel experience and a camp night. Accommodation and meals are agreed before payment."
         },
         {
           "day": 3,
           "title": "Merzouga → onward journey",
-          "summary": "Wake to the desert morning, then continue toward wherever your route takes you next. Three days from Agadir is a compact overland format, so the final routing — return, or onward — is set with you around your dates."
+          "summary": "Enjoy the desert morning and continue to the destination agreed in your quote. Because three days from Agadir is a compact overland format, the final routing should be chosen around your dates and onward plans."
         }
       ],
       "transport": [
-        "Private transport for the full route, when included in your confirmed quote (confirmed in the written quote, not guaranteed)"
+        "Private transport when included in the confirmed quote (confirmed in the written quote, not guaranteed)"
       ],
       "accommodation": [
         "Accommodation for 2 nights as shown in the itinerary (confirmed in the written quote, not guaranteed)",
         "Night in the desert camp (confirmed in the written quote, not guaranteed)"
       ],
       "desertExperiences": [
-        "The desert experience at Erg Chebbi, when included in your confirmed itinerary (confirmed in the written quote, not guaranteed)",
+        "Desert experience when included in the confirmed itinerary (confirmed in the written quote, not guaranteed)",
         "Sunset camel trek at Erg Chebbi (confirmed in the written quote, not guaranteed)",
         "Desert sunrise over the dunes (confirmed in the written quote, not guaranteed)"
       ],
       "visitsAndLandscapes": [],
       "guideAndServices": [
-        "Private itinerary planning, built around your dates",
+        "Private itinerary planning",
         "Route confirmed around your dates (confirmed in the written quote, not guaranteed)"
       ],
       "meals": [
@@ -317,8 +298,8 @@
       ],
       "notIncluded": [
         "International flights",
-        "Anything not written into your confirmed quote",
-        "Personal expenses and tips, unless agreed in advance"
+        "Anything not explicitly included in the confirmed quote",
+        "Personal expenses and gratuities unless agreed"
       ],
       "hasQuoteDependentItems": true,
       "pricing": {
@@ -341,20 +322,12 @@
           "answer": "A starting price per person is published for this route. Your exact total depends on how many of you travel — the per-person price comes down as the group grows — and on the accommodation you choose, so we confirm the final figure with your dates before any payment. You are welcome to ask us to adjust the itinerary first."
         },
         {
-          "question": "How much driving should I expect?",
-          "answer": "Agadir to Merzouga is a genuine overland route, not a short transfer — a full day through southern Morocco and the Ouarzazate area before the desert, with a similar drive back or onward on day three. There's no shortcut for this distance."
-        },
-        {
           "question": "Does Agadir lead toward the Sahara?",
           "answer": "Yes. The Moroccan National Tourist Office identifies Agadir as one of the gateways toward the Sahara. The exact three-day routing depends on travel dates and where you need to finish."
         },
         {
-          "question": "Is the camel trek guaranteed?",
-          "answer": "The desert evening — including a camel trek out to camp — is part of most itineraries on this route. Because every private journey is tailored to your dates, we confirm exactly what's included in writing before you pay anything."
-        },
-        {
           "question": "Can the itinerary be one-way?",
-          "answer": "Yes — the onward destination is set with you before you travel. It depends on where you're headed next, so we don't publish a fixed return schedule."
+          "answer": "The onward destination can be discussed in the private quote. We avoid publishing a fixed return schedule until it is confirmed."
         },
         {
           "question": "Can I book now and pay later?",
@@ -538,7 +511,7 @@
         {
           "day": 3,
           "title": "A Full Day in the Sahara Desert",
-          "summary": "Wake for a spectacular sunrise over the dunes and spend a full day exploring the desert — visit the village of Khamlia for soulful Gnawa music, share tea with nomad families, and discover the Black Desert, fossil beds, and a hidden oasis. Optional quad bikes, buggies, and sandboarding fill the afternoon before a second night at your hotel on the edge of the dunes."
+          "summary": "Wake for a spectacular sunrise over the dunes and spend a full day exploring the desert — visit the village of Khamlia for soulful Gnawa music, share tea with nomad families, and discover the Black Desert, fossil beds, and a hidden oasis. Optional quad bikes, buggies, and sandboarding fill the afternoon before another magical desert evening."
         },
         {
           "day": 4,
@@ -656,7 +629,7 @@
         },
         {
           "question": "What is the accommodation like?",
-          "answer": "Handpicked hotels and riads with private rooms throughout, plus a night in a luxury tented camp on the dunes of Erg Chebbi — real beds and en-suite bathrooms, not a bare-bones bivouac."
+          "answer": "Handpicked hotels and riads with private rooms throughout, plus one unforgettable night in a luxury tented camp on the dunes of Erg Chebbi, with real beds and en-suite bathrooms."
         },
         {
           "question": "How much time is spent in the Sahara?",
@@ -1343,7 +1316,7 @@
     {
       "id": "casablanca-3-day",
       "name": "3-Day Casablanca to Fes via Rabat, Meknès & Volubilis",
-      "category": "Private Imperial Cities Route",
+      "category": "Private · Quote Only",
       "duration": "3 Days / 2 Nights",
       "nights": 2,
       "startCity": "casablanca",
@@ -1355,12 +1328,6 @@
         "The imperial city of Meknès",
         "The Roman ruins of Volubilis",
         "A guided day in the medina of Fes"
-      ],
-      "bestFor": "Travellers flying into Casablanca who want Morocco's imperial cities and the Blue City covered properly before continuing on to Fes or elsewhere — this route does not reach the Sahara.",
-      "whyChoose": [
-        "A practical route for travellers landing in Casablanca who want the imperial north in one loop: Rabat, Chefchaouen, Meknès and Volubilis, finishing in Fes.",
-        "A full overnight in Chefchaouen rather than a rushed day stop.",
-        "Private vehicle and driver-guide, with a guided day in the Fes medina to finish."
       ],
       "itinerary": [
         {
@@ -1439,10 +1406,6 @@
         {
           "question": "Does the tour visit Chefchaouen?",
           "answer": "Yes, the Blue City is the night stop on day one, so you have an evening and a morning there."
-        },
-        {
-          "question": "Are dinners included?",
-          "answer": "Breakfast is confirmed with your itinerary. Dinner isn't part of this route's standard inclusions, so you're free to choose your own each evening — both Chefchaouen and Fes have excellent options — unless you'd like us to add half-board to your quote."
         }
       ]
     },
@@ -3004,9 +2967,9 @@
       "route": "Fes → Ifrane and Middle Atlas → Ziz Valley → Merzouga → Erg Chebbi.",
       "private": true,
       "highlights": [
-        "Fes to the Sahara in three days",
-        "Ifrane and the Middle Atlas cedar forests",
-        "The Ziz Valley corridor",
+        "Fes departure",
+        "Middle Atlas and cedar forests",
+        "Ziz Valley",
         "Merzouga and Erg Chebbi",
         "Sunset desert experience",
         "Desert camp night"
@@ -3021,34 +2984,34 @@
         {
           "day": 1,
           "title": "Fes → Ifrane → Cedar Forest → Midelt → Ziz Valley",
-          "summary": "Leave Fes and climb into the Middle Atlas, through Ifrane and its cedar forest, then on toward Midelt and the long Ziz Valley corridor — a day where the scenery does the work, from northern Morocco to the edge of the pre-Sahara."
+          "summary": "Leave Fes and cross the Middle Atlas through Ifrane and the cedar-forest landscapes. Continue toward Midelt and the Ziz Valley, with the road itself providing the changing scenery from northern Morocco to the pre-Sahara."
         },
         {
           "day": 2,
           "title": "Ziz Valley → Erfoud → Merzouga → Erg Chebbi",
-          "summary": "Continue toward Erfoud and on to Merzouga at the edge of Erg Chebbi. Arrive at the dunes for the confirmed desert experience — a sunset camel transfer, when included — followed by the night at your confirmed accommodation."
+          "summary": "Continue toward Erfoud and Merzouga. Arrive at the dunes for the confirmed desert experience, such as a sunset camel transfer when included, followed by the night at the confirmed accommodation."
         },
         {
           "day": 3,
           "title": "Merzouga → onward journey",
-          "summary": "Wake to the desert morning, then move on toward wherever your route takes you next. As a private journey, the finish point — a return to Fes, or onward elsewhere in Morocco — is yours to choose, and we set it with you before you travel."
+          "summary": "Begin with the desert morning, then continue to the destination agreed in your quote. A return to Fes or a one-way finish can be discussed; no fixed ending is claimed until confirmed."
         }
       ],
       "transport": [
-        "Private transport for the full route, when included in your confirmed quote (confirmed in the written quote, not guaranteed)"
+        "Private transport when included in the confirmed quote (confirmed in the written quote, not guaranteed)"
       ],
       "accommodation": [
         "Accommodation for 2 nights as shown in the itinerary (confirmed in the written quote, not guaranteed)",
         "Night in the desert camp (confirmed in the written quote, not guaranteed)"
       ],
       "desertExperiences": [
-        "The desert experience at Erg Chebbi, when included in your confirmed itinerary (confirmed in the written quote, not guaranteed)",
+        "Desert experience when included in the confirmed itinerary (confirmed in the written quote, not guaranteed)",
         "Sunset camel trek at Erg Chebbi (confirmed in the written quote, not guaranteed)",
         "Desert sunrise over the dunes (confirmed in the written quote, not guaranteed)"
       ],
       "visitsAndLandscapes": [],
       "guideAndServices": [
-        "Private itinerary planning, built around your dates",
+        "Private itinerary planning",
         "Route confirmed around your dates (confirmed in the written quote, not guaranteed)"
       ],
       "meals": [
@@ -3067,8 +3030,8 @@
       ],
       "notIncluded": [
         "International flights",
-        "Anything not written into your confirmed quote",
-        "Personal expenses and tips, unless agreed in advance"
+        "Anything not explicitly included in the confirmed quote",
+        "Personal expenses and gratuities unless agreed"
       ],
       "hasQuoteDependentItems": true,
       "pricing": {
@@ -3088,23 +3051,23 @@
       "faq": [
         {
           "question": "Is this route possible in three days?",
-          "answer": "Yes, but it's a compact overland itinerary with substantial driving each day. If you'd rather move at a slower pace with more time in the dunes, ask us about the four-day Fes to Marrakech via Merzouga route instead."
+          "answer": "Yes, but it is a compact overland itinerary with substantial driving. If you want a slower Sahara experience, ask for a longer version."
         },
         {
           "question": "Is camel trekking included?",
-          "answer": "The desert experience can include a camel transfer, when that's part of your confirmed itinerary — we tell you exactly what's included in writing before you pay anything."
+          "answer": "The desert experience can include a camel transfer when that option is selected and confirmed. We do not assume optional activities before booking."
         },
         {
           "question": "Where do we sleep?",
-          "answer": "Accommodation is selected for the chosen package and availability, with the desert night confirmed before booking."
+          "answer": "Accommodation is selected according to the chosen package and availability, with the desert night confirmed before booking."
         },
         {
           "question": "Can we finish somewhere other than Fes?",
-          "answer": "Yes. As a private journey, the finish point is set with you when you request your quote."
+          "answer": "Yes. As a private journey, the finish point can be discussed when you request your quote."
         },
         {
           "question": "Are lunches included?",
-          "answer": "Not unless it's written into your confirmed itinerary."
+          "answer": "Not unless explicitly included in the confirmed itinerary."
         },
         {
           "question": "How is the price confirmed?",
