@@ -9,6 +9,7 @@ export const contactInfo = {
   instagram: "https://www.instagram.com/morocco_grand_adventure/",
   email: "moroccograndadventure@gmail.com",
   website: "https://www.moroccograndadventure.com",
+  tripadvisor: "https://www.tripadvisor.com/Attraction_Review-g304017-d34678153-Reviews-Morocco_Grand_Adventure-Merzouga_Draa_Tafilalet.html",
   paypal: "https://www.paypal.me/MohamedbouGhrara683",
   ownerName: "Mohamed BouGhrara",
   companyName: "Morocco Grand Adventure",
