@@ -131,6 +131,14 @@ export const routeMetadata: Record<string, RouteMeta> = {
   '/tours/from-casablanca':{title:'Tours From Casablanca — Private Morocco Itineraries',description:'Plan a private Morocco itinerary starting in Casablanca.',ogImage:'/images/dest/casablanca.jpg'},
   '/tours/from-fes':{title:'Tours From Fes — Private Morocco & Sahara Tours',description:'Private tours from Fes including imperial cities, Chefchaouen and Sahara routes.',ogImage:'/images/dest/fes.jpg'},
   '/tours/from-agadir':{title:'Tours From Agadir — Coast & Sahara Private Tours',description:'Private Morocco journeys starting in Agadir and exploring the Atlantic coast and south.',ogImage:'/images/dest/agadir.jpg'},
+  // The Tangier hub already gets a localized title/description from the
+  // hub_tangier_title/hub_tangier_intro path in getLocalizedRouteMeta, which
+  // takes priority over this flat entry — so this entry doesn't change
+  // title/description. What was actually missing here was explicit route
+  // metadata for this hub, and specifically a Tangier ogImage: without it,
+  // social shares fell back to the generic homepage Sahara photo instead of
+  // a Tangier-specific image.
+  '/tours/from-tangier':{title:'Tours From Tangier — Private Rif & Chefchaouen Tours',description:'Private Morocco tours departing Tangier — Chefchaouen, Tétouan and the Rif Mountains, with a one-way route on to Fes.',ogImage:'/images/dest/tangier.jpg'},
   '/tours/from-marrakech/3-days':{title:'3-Day Tours From Marrakech — Sahara Desert & Merzouga',description:'Explore the High Atlas, Aït Ben Haddou, Dades Valley and Merzouga on a three-day route.',ogImage:'/images/dest/marrakech.jpg'},
   '/gallery':{title:'Morocco Photo & Video Gallery — Sahara & Morocco',description:'Photos and videos from Morocco’s Sahara, medinas, mountains and desert camps.',ogImage:'/images/hero/atlas-pano.jpg'},
   '/trip-builder':{title:'Build Your Morocco Itinerary — Custom Trip Planner',description:'Plan a bespoke Morocco itinerary in minutes: pick your dates, departure city, trip length and interests, then request a personalised quote from our local team.',ogImage:'/images/personal/luxury-camp-dusk.jpg'},

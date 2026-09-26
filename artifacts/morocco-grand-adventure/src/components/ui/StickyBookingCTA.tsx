@@ -5,6 +5,7 @@ import { Phone, Calendar } from 'lucide-react';
 import { contactInfo } from '@/data/content';
 import { SiWhatsapp } from 'react-icons/si';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { defaultMessageForRoute } from './WhatsAppButton';
 
 const BOOK_LABELS: Record<string, string> = {
   en: 'Book Now — Pay Later', fr: 'Réserver — Payer plus tard', es: 'Reserva — Paga después', it: 'Prenota — Paga dopo', de: 'Jetzt buchen — später zahlen', nl: 'Boek nu — betaal later', pt: 'Reserve — pague depois', zh: '立即预订 — 稍后付款', ja: '今すぐ予約 — 後払い', ko: '지금 예약 — 나중에 결제', ar: 'احجز الآن — ادفع لاحقًا',
@@ -25,6 +26,13 @@ export function StickyBookingCTA() {
   if (location === '/contact' || location === '/trip-builder' || location === '/build-your-day-trip') return null;
 
   const bookLabel = BOOK_LABELS[lang] ?? BOOK_LABELS.en;
+  // This is the primary WhatsApp CTA on mobile — the floating WhatsAppButton
+  // hides below lg specifically to defer to this bar. It was previously a
+  // bare link with no message at all, so a tap opened an empty chat with no
+  // context on the busiest device for this site. Reuses the same route-aware
+  // message builder as the desktop button so mobile and desktop travelers
+  // land in an equally well-primed conversation.
+  const whatsappHref = `${contactInfo.whatsapp}?text=${encodeURIComponent(defaultMessageForRoute(location))}`;
 
   return (
     <AnimatePresence>
@@ -44,7 +52,7 @@ export function StickyBookingCTA() {
               <Calendar className="w-4 h-4 shrink-0" /> {bookLabel}
             </Link>
             <a
-              href={contactInfo.whatsapp}
+              href={whatsappHref}
               target="_blank"
               rel="noreferrer"
               className="flex items-center justify-center gap-2 bg-[#25D366] text-[#0d2b1d] px-3 py-3 rounded-xl font-bold text-xs tracking-wide"

@@ -22,7 +22,7 @@ type WhatsAppButtonContext = {
  * Build a contextual WhatsApp intro message based on the current route
  * so travelers get a page-relevant message instead of a generic one.
  */
-function defaultMessageForRoute(path: string): string {
+export function defaultMessageForRoute(path: string): string {
   const base = (msg: string) =>
     `Hello Morocco Grand Adventure, ${msg} I'd like to travel around available dates for my group. Could you please send me the available options and details?`;
 
@@ -32,11 +32,17 @@ function defaultMessageForRoute(path: string): string {
   if (/^\/desert-tours/.test(path)) return base('I’m interested in a Sahara desert trip.');
   if (/^\/camel-trekking/.test(path)) return base('I’m interested in camel trekking.');
   if (/^\/4x4-tours/.test(path)) return base('I’m interested in a 4x4 desert tour.');
+  // More specific city/duration hub first, so it doesn't fall into the
+  // generic single-tour line below (e.g. /tours/from-marrakech/3-days).
+  if (/^\/tours\/from-/.test(path)) return base('I’m interested in a private Morocco tour from this city — could you help me choose an itinerary?');
   if (/^\/tours\/.+/.test(path)) return base('I’m interested in this tour — could you check availability for me?');
+  if (/^\/tours$/.test(path)) return base('I’m interested in a private Morocco tour — I’d like help choosing an itinerary.');
   if (/^\/blog\/.+/.test(path)) return base('I’m interested in this Morocco itinerary from your blog.');
   if (/^\/luxury-camp/.test(path)) return base('I’m interested in your luxury desert camp.');
   if (/^\/marrakech-tours/.test(path)) return base('I’m interested in a Marrakech tour.');
   if (/^\/fes-tours/.test(path)) return base('I’m interested in a Fès tour.');
+  if (/^\/agadir-tours/.test(path)) return base('I’m interested in an Agadir tour.');
+  if (/^\/casablanca-tours/.test(path)) return base('I’m interested in a Casablanca tour.');
   if (/^\/day-trips/.test(path)) return base('I’m interested in a day trip.');
   if (/^\/merzouga-guide/.test(path)) return base('I’m interested in a Merzouga desert trip.');
   if (/^\/destinations\/.+/.test(path)) return base('I’m interested in this destination.');
