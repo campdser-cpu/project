@@ -39,8 +39,17 @@ if (!detail.includes(marker)) {
   fs.writeFileSync(detailPath, detail, 'utf8');
 }
 
-await import('./fix-three-day-city-enrichment.mjs');
-await import('./enrich-three-day-cities.mjs');
+// fix-three-day-city-enrichment.mjs and enrich-three-day-cities.mjs are
+// deliberately NOT imported. Both belonged to a one-time bootstrap that
+// originally created quote-only "3-day-sahara-fes" / "3-day-sahara-agadir"
+// stubs before either route had real pricing. That migration is permanently
+// done: 3-day-sahara-fes was later retired and consolidated into
+// 3-day-fes-merzouga-sahara, and 3-day-sahara-agadir has long carried real,
+// published pricing in content.ts. enrich-three-day-cities.mjs's
+// marker-missing branch is no longer safe to run — it would reintroduce the
+// retired Fes tour and inject a second, stale, all-zero-priced Agadir
+// object — so it must never execute again. Re-adding either import would be
+// a regression.
 // enrich-three-day-price-tag.mjs is deliberately NOT imported. It patched
 // PriceTag.tsx at build time so a non-numeric price rendered "Request a
 // quote"; PriceTag now does that itself, via hasPublishedPrice(), and returns
