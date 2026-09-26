@@ -4,7 +4,7 @@ import { Instagram, Mail, MapPin, Phone } from 'lucide-react';
 import { contactInfo } from '@/data/content';
 import { CITY_HUBS } from '@/data/tour-hierarchy';
 import { getLocalizedDestinations, getLocalizedTours } from '@/i18n/content';
-import { SiWhatsapp, SiYoutube, SiTiktok, SiFacebook } from 'react-icons/si';
+import { SiWhatsapp, SiYoutube, SiTiktok, SiFacebook, SiTripadvisor } from 'react-icons/si';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const AUTHORITY_DESTINATION_IDS = ['marrakech', 'fes', 'ait-ben-haddou', 'dades-valley', 'merzouga', 'erg-chebbi'];
@@ -30,6 +30,7 @@ export function Footer() {
               <a href="https://youtube.com/@moroccograndadventure" target="_blank" rel="noreferrer" aria-label="Subscribe to Morocco Grand Adventure on YouTube" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"><SiYoutube className="w-5 h-5" aria-hidden="true" /></a>
               <a href="https://www.tiktok.com/@morocco.grand.adv" target="_blank" rel="noreferrer" aria-label="Follow Morocco Grand Adventure on TikTok" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"><SiTiktok className="w-5 h-5" aria-hidden="true" /></a>
               <a href="https://www.facebook.com/share/1DFzDX72P3/" target="_blank" rel="noreferrer" aria-label="Like Morocco Grand Adventure on Facebook" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"><SiFacebook className="w-5 h-5" aria-hidden="true" /></a>
+              <a href={contactInfo.tripadvisor} target="_blank" rel="noreferrer" aria-label="Read Morocco Grand Adventure reviews on Tripadvisor" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"><SiTripadvisor className="w-5 h-5" aria-hidden="true" /></a>
             </div>
           </div>
           <div>

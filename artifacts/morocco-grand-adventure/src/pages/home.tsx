@@ -1,20 +1,21 @@
 import { useState, useRef, useEffect, lazy, Suspense } from 'react';
 import { motion, type Variants } from 'framer-motion';
 import { Link, useLocation } from 'wouter';
-import { Star, MapPin, CheckCircle2, ChevronRight, Calendar, Users, Globe, Instagram, Phone, Search, Route, Compass, FileText, ShieldCheck } from 'lucide-react';
+import { Star, MapPin, CheckCircle2, ChevronRight, Calendar, Users, Globe, Instagram, Phone, Search, Route, Compass, FileText, ShieldCheck, ExternalLink, MessageCircle } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { Layout } from '../components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { contactInfo, reviews as reviewData, destinationImageAlt, destinations, tours } from '@/data/content';
 import { verifiedGoogleReviews } from '@/data/verifiedReviews';
 import { getLocalizedTours, getLocalizedDestinations, categoryLabel } from '@/i18n/content';
-import { SiWhatsapp } from 'react-icons/si';
+import { SiWhatsapp, SiGoogle, SiTripadvisor } from 'react-icons/si';
 import { PromoBanner } from '../components/promo/PromoBanner';
 import { PromoBadge } from '../components/promo/PromoBadge';
 import { PriceTag } from '../components/promo/PriceTag';
 import { hasPublishedPrice } from '@/lib/promo';
 import { CinematicVideo } from '../components/ui/CinematicVideo';
 import { ReviewCard } from '../components/ui/ReviewCard';
+import { TripadvisorWidget } from '../components/ui/TripadvisorWidget';
 
 /** Lazy-load the Leaflet map so its ~150 kB chunk (+ OpenStreetMap tiles) is
  *  only fetched once the map approaches the viewport — the homepage stays
@@ -78,16 +79,22 @@ function MapSection() {
   );
 }
 
-function getSignaturePlaces(t: (key: string) => string) {
-  return [
-    { name: t('home_place1_name'), description: t('home_place1_desc'), image: "/images/dest/merzouga.webp" },
-    { name: t('home_place2_name'), description: t('home_place2_desc'), image: "/images/personal/luxury-camp-dusk.webp" },
-    { name: t('home_place3_name'), description: t('home_place3_desc'), image: "/images/dest/dades-valley.webp" },
-    { name: t('home_place4_name'), description: t('home_place4_desc'), image: "/images/dest/draa-valley.webp" },
-    { name: t('home_place5_name'), description: t('home_place5_desc'), image: "/images/dest/marrakech.webp" },
-    { name: t('home_place6_name'), description: t('home_place6_desc'), image: "/images/dest/todra-gorge.webp" },
-  ];
-}
+// The six-photo "Signature Morocco" tile grid this replaced carried zero
+// links (verified: no <Link>/<a> wrapped any tile) and its 6 image paths are
+// all reused elsewhere in the site (destinations gallery, IG grid, etc.), so
+// nothing here — including src/data/content.ts and the image files
+// themselves — needed to change to remove it. The trust/value row below
+// (HOME_TRUST_CARDS) replaces it with genuinely useful, evidence-based
+// reasons to book, per the same design-system conventions already used by
+// the "Why Choose Us" and "Where to start" sections on this page.
+type TrustCard = { titleKey: string; descKey: string; icon: LucideIcon; href: string; kind: 'internal' | 'hash' | 'external' };
+const HOME_TRUST_CARDS: TrustCard[] = [
+  { titleKey: 'home_trust_card1_title', descKey: 'home_trust_card1_desc', icon: Route, href: '/trip-builder', kind: 'internal' },
+  { titleKey: 'home_trust_card2_title', descKey: 'home_trust_card2_desc', icon: MapPin, href: '/about', kind: 'internal' },
+  { titleKey: 'home_trust_card3_title', descKey: 'home_trust_card3_desc', icon: Users, href: '/about', kind: 'internal' },
+  { titleKey: 'home_trust_card4_title', descKey: 'home_trust_card4_desc', icon: Star, href: '#reviews', kind: 'hash' },
+  { titleKey: 'home_trust_card5_title', descKey: 'home_trust_card5_desc', icon: MessageCircle, href: contactInfo.whatsapp, kind: 'external' },
+];
 
 // Trust signals. Each one is verifiable: the first two are counted from
 // src/data/content.ts, the third is the business address in contactInfo, the
@@ -123,8 +130,6 @@ export default function Home() {
   const [, setLocation] = useLocation();
   const tours = getLocalizedTours(lang);
   const destinations = getLocalizedDestinations(lang);
-  const signaturePlaces = getSignaturePlaces(t);
-
   const igItems = [
   { src: "/images/personal/guests-sunset.webp", alt: t('home_ig_alt1') },
   { src: "/images/personal/group-atlas.webp", alt: t('home_ig_alt2') },
@@ -508,59 +513,72 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Signature Morocco — Cinematic Destinations */}
-      <section className="py-20 md:py-32 lg:py-40 bg-card [content-visibility:auto] [contain-intrinsic-size:auto_1200px]">
+      {/* Book With Confidence — trust/value row. Replaces the former six-photo
+          "Signature Morocco" decorative grid (no links, all six images reused
+          elsewhere on the site — see the HOME_TRUST_CARDS comment above) with
+          five evidence-based reasons to trust and book: every claim traces to
+          existing, already-published content (Why Choose Us / About page
+          stats / the real trip-builder, WhatsApp and reviews architecture),
+          not invented years, counts, awards or certifications. */}
+      <section className="py-16 md:py-24 bg-card border-y border-border [content-visibility:auto] [contain-intrinsic-size:auto_700px]">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12 md:mb-16">
+          <div className="text-center mb-12 md:mb-14">
             <span className="text-primary-text font-bold tracking-wider uppercase text-sm mb-3 block">
-              {t('home_signature')}
+              {t('home_trust_kicker')}
             </span>
-            <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl text-foreground mb-4">
-              {t('home_signature_title')}
+            <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-4">
+              {t('home_trust_title')}
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto text-base md:text-lg">
-              {t('home_signature_sub')}
+              {t('home_trust_sub')}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-            {signaturePlaces.map((place, index) => (
-              <motion.div
-                key={place.name}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.08 }}
-                className="group relative h-72 md:h-[420px] overflow-hidden rounded-3xl shadow-xl border border-white/10"
-              >
-                <img
-                  src={place.image}
-                  srcSet={`${place.image.replace(/\.webp$/, '-480w.webp')} 480w, ${place.image.replace(/\.webp$/, '-768w.webp')} 768w, ${place.image}`}
-                  sizes="(max-width: 768px) 92vw, (max-width: 1024px) 46vw, 30vw"
-                  alt={`${place.name} — ${place.description}`}
-                  loading="lazy"
-                  decoding="async"
-                  width={768}
-                  height={1024}
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent" />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
-
-                <div className="absolute bottom-0 left-0 right-0 p-5 md:p-8 text-white">
-                  <div className="mb-2 md:mb-3 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs uppercase tracking-[0.2em] backdrop-blur-md">
-                    {t('home_morocco_badge')}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-6">
+            {HOME_TRUST_CARDS.map((card, index) => {
+              const inner = (
+                <>
+                  <div className="bg-primary/10 p-3 rounded-full text-primary shrink-0 w-fit">
+                    <card.icon className="w-5 h-5 md:w-6 md:h-6" aria-hidden="true" />
                   </div>
-                  <h3 className="font-serif text-xl md:text-3xl mb-2 md:mb-3 drop-shadow-lg">
-                    {place.name}
+                  <h3 className="font-bold text-foreground text-base md:text-lg mt-4 mb-2 flex items-center gap-1.5 group-hover:text-primary transition-colors">
+                    {t(card.titleKey)}
+                    <ChevronRight className="w-4 h-4 text-primary shrink-0 transition-transform group-hover:translate-x-1" aria-hidden="true" />
                   </h3>
-                  <p className="text-white/80 text-sm md:text-base max-w-md leading-relaxed">
-                    {place.description}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
+                  <p className="text-sm text-muted-foreground leading-relaxed">{t(card.descKey)}</p>
+                  {card.titleKey === 'home_trust_card4_title' && (
+                    <div className="flex items-center gap-3 mt-4 text-muted-foreground">
+                      <SiGoogle className="w-4 h-4" aria-hidden="true" />
+                      <SiTripadvisor className="w-4 h-4" aria-hidden="true" />
+                    </div>
+                  )}
+                </>
+              );
+              const cardClass =
+                'group flex h-full flex-col rounded-3xl border border-border bg-background p-6 md:p-7 transition-all duration-300 hover:shadow-lg hover:border-primary/30';
+              return (
+                <motion.div
+                  key={card.titleKey}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.08 }}
+                >
+                  {card.kind === 'internal' ? (
+                    <Link href={card.href} className={cardClass}>{inner}</Link>
+                  ) : (
+                    <a
+                      href={card.href}
+                      target={card.kind === 'external' ? '_blank' : undefined}
+                      rel={card.kind === 'external' ? 'noopener noreferrer' : undefined}
+                      className={cardClass}
+                    >
+                      {inner}
+                    </a>
+                  )}
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -853,7 +871,7 @@ export default function Home() {
       </section>
 
       {/* Customer Reviews */}
-      <section className="py-16 md:py-24 bg-card border-y border-border [content-visibility:auto] [contain-intrinsic-size:auto_900px]">
+      <section id="reviews" className="py-16 md:py-24 bg-card border-y border-border [content-visibility:auto] [contain-intrinsic-size:auto_900px]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 md:mb-16">
             <span className="text-primary-text font-bold tracking-wider uppercase text-sm mb-3 block">{t('section_reviews_sub')}</span>
@@ -873,6 +891,39 @@ export default function Home() {
               />
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Also on Tripadvisor — deliberately its own section, visually and
+          structurally separate from the Google reviews above: its own
+          heading, its own source badge (Tripadvisor's own widget branding,
+          not ours), its own outbound link. Nothing here is merged with
+          verifiedGoogleReviews or Google's rating/review count.
+          Mounted eagerly, NOT behind LazyMount: the official widget script
+          only enhances the DOM via a `window.onload = window.taValidate`
+          hook it registers itself once it finishes loading (confirmed by
+          reading its actual response body). Gating the mount behind
+          LazyMount's scroll-triggered IntersectionObserver reliably delayed
+          that registration until after `window.onload` had already fired,
+          so the hook was set but never invoked and the widget never
+          progressed past its static logo fallback — confirmed via a real
+          Chromium test. Mounting immediately (the external script itself
+          stays `async`, so this costs nothing on the critical path) lets
+          the registration happen before `load` fires. */}
+      <section className="py-12 md:py-16 bg-background border-b border-border">
+        <div className="container mx-auto px-4 max-w-xl text-center">
+          <h2 className="font-serif text-2xl md:text-3xl text-foreground mb-6">{t('tripadvisor_section_title')}</h2>
+          <div className="flex justify-center mb-6">
+            <TripadvisorWidget />
+          </div>
+          <a
+            href={contactInfo.tripadvisor}
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+            className="inline-flex items-center gap-2 text-primary font-bold hover:underline"
+          >
+            {t('tripadvisor_read_reviews')} <ExternalLink className="w-4 h-4" aria-hidden="true" />
+          </a>
         </div>
       </section>
 
