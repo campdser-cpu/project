@@ -867,7 +867,7 @@ export const tours: Tour[] = [
   {
     id: "3-day-sahara-agadir", name: "3-Day Private Sahara Route from Agadir", duration: "3 Days / 2 Nights", category: "Private · Quote Only", quoteOnly: false,
     highlights: ["Agadir Atlantic coast", "Southern Morocco landscapes", "Ouarzazate / pre-Sahara", "Merzouga and Erg Chebbi", "Private onward planning"],
-    price: "425", pricingTiers: { 1: 600, 2: 425, 3: 410, 4: 395, 5: 380 }, image: "/images/tours/camels-beach-agadir.webp",
+    price: "425", pricingTiers: { 1: 600, 2: 425, 3: 410, 4: 395, 5: 380 }, image: "/images/catalog/luxury-desert-camp-sunset-merzouga.webp",
     description: "A private three-day Sahara planning route starting in Agadir. The Moroccan National Tourist Office confirms Agadir as a gateway toward the Sahara and documents the southern Morocco connection toward the desert. A starting price per person is published for this route; the exact total depends on your party size and the accommodation you choose, and is confirmed around your dates before booking.",
     routeIds: ["agadir", "ouarzazate", "merzouga", "erg-chebbi"], routeCaption: "Agadir → southern Morocco / Ouarzazate area → Merzouga & Erg Chebbi. Exact road stops, nights and final destination are confirmed in the private quote.",
     itineraryDays: [
@@ -952,7 +952,7 @@ export const tours: Tour[] = [
       "Personal expenses",
     ],
     gallery: [
-      { src: "/images/pdf/img_2-optimized.webp", caption: "Golden Sahara dunes and a luxury desert camp on the route to Merzouga" },
+      { src: "/images/pdf/img_2-optimized.webp", caption: "A traditional djellaba-clad local passing an ornately carved medina doorway" },
     ],
     faq: [
       {
@@ -2213,7 +2213,7 @@ export const tours: Tour[] = [
     price: "",
     pricingTiers: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 },
     quoteOnly: true,
-    image: "/images/curated/ait-ben-haddou-bridge-town-unesco-morocco.webp",
+    image: "/images/curated/panoramic-view-chefchaouen-rif-mountains.webp",
     description: "The complete private Morocco circuit for travelers with two weeks to give it: Marrakech, the Atlantic coast at Essaouira and Agadir, the southern kasbah road through Ouarzazate and Aït Ben Haddou, the Dades and Todra valleys, two full nights at the Erg Chebbi dunes, the imperial cities of Fes and Meknès, the Rif town of Chefchaouen, and a finish in Casablanca. Fourteen days is long enough to cover the country's major regions without turning every day into a transfer — every leg of this route already exists as one of our shorter itineraries, joined into a single journey. Because a route this long varies enormously by pace, season and accommodation choice, it is quoted individually rather than sold at a fixed per-person price.",
     routeIds: ["marrakech", "essaouira", "agadir", "ouarzazate", "ait-ben-haddou", "dades-valley", "todra-gorge", "merzouga", "erg-chebbi", "ifrane", "fes", "meknes", "chefchaouen", "rabat", "casablanca"],
     routeCaption: "Marrakech → Essaouira → Agadir → Ouarzazate & Aït Ben Haddou → Dades Valley → Todra Gorge → Merzouga & Erg Chebbi → Ifrane → Fes & Meknès → Chefchaouen → Rabat → Casablanca.",

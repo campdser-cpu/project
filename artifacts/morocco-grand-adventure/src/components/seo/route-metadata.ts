@@ -67,7 +67,7 @@ const TOUR_META: Record<string, RouteMeta> = {
   'tangier-3-day': { title: '3-Day Tangier, Chefchaouen & Tétouan North Morocco Tour', description: 'A private round trip from Tangier through Tétouan, the blue city of Chefchaouen and the Akchour valley waterfalls.', ogImage: '/images/dest/chefchaouen.webp' },
   'tangier-5-day': { title: '5-Day Tangier to Fes via Chefchaouen & the Rif', description: 'A one-way private route from Tangier through Tétouan, Chefchaouen, the Akchour valley and the Middle Atlas to Fes.', ogImage: '/images/dest/akchour.webp' },
   'marrakech-essaouira-2-day': { title: '2-Day Marrakech to Essaouira Atlantic Coast Tour', description: 'A private two-day escape from Marrakech to the Atlantic coast at Essaouira — UNESCO medina, ramparts and the harbour.', ogImage: '/images/catalog/essaouira-sqala-du-port-atlantic.webp' },
-  '14-day-grand-morocco-journey': { title: '14-Day Grand Morocco Tour — Coast, Sahara, Imperial Cities & North', description: 'The complete private Morocco circuit: Marrakech, the Atlantic coast, the south, two nights at Erg Chebbi, Fes, Meknès, Chefchaouen and a finish in Casablanca.', ogImage: '/images/curated/ait-ben-haddou-bridge-town-unesco-morocco.webp' },
+  '14-day-grand-morocco-journey': { title: '14-Day Grand Morocco Tour — Coast, Sahara, Imperial Cities & North', description: 'The complete private Morocco circuit: Marrakech, the Atlantic coast, the south, two nights at Erg Chebbi, Fes, Meknès, Chefchaouen and a finish in Casablanca.', ogImage: '/images/curated/panoramic-view-chefchaouen-rif-mountains.webp' },
 };
 const TOUR_ALIASES: Record<string,string> = {
   '3-days-marrakech-to-merzouga-desert-tour':'3-day-sahara-marrakech',

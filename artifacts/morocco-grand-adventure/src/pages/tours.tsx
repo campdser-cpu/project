@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Layout } from '../components/layout/Layout';
 import { tours } from '@/data/content';
-import { CITY_HUBS } from '@/data/tour-hierarchy';
+import { CITY_HUBS, TOUR_DEPARTURE_CITY } from '@/data/tour-hierarchy';
 import { getLocalizedTour } from '@/i18n/content';
 import { Link, useSearch } from 'wouter';
 import { motion } from 'framer-motion';
@@ -39,8 +39,15 @@ function tourMatchesStyle(tour: typeof tours[0], style: string): boolean {
   }
 }
 
+// Uses TOUR_DEPARTURE_CITY (tour-hierarchy.ts), the same authoritative
+// per-tour departure mapping the city hubs are built from — not a name
+// substring match. A name-based match silently dropped real departures
+// whose title doesn't mention the city (e.g. "Romantic Morocco Honeymoon"
+// and "Family Morocco Adventure" both depart Marrakech but never say so in
+// the name), which would have made a real tour vanish under its own
+// departure-city filter.
 function tourMatchesCity(tour: typeof tours[0], city: string): boolean {
-  return tour.name.toLowerCase().includes(city.toLowerCase());
+  return TOUR_DEPARTURE_CITY[tour.id] === city;
 }
 
 export default function Tours() {
@@ -50,6 +57,36 @@ export default function Tours() {
   const cityFilter = params.get('city') || '';
   const durationFilter = params.get('duration') || '';
   const styleFilter = params.get('style') || '';
+
+  // Toggle one filter dimension while preserving the others, and let clicking
+  // an already-active pill clear just that dimension. Builds on the existing
+  // ?city=/?duration=/?style= contract already read above and already
+  // excluded from indexing in robots.txt — this only adds a real UI on top
+  // of filtering logic that previously had no on-page control anywhere in
+  // the app (grep confirmed no link in the codebase ever set these params).
+  function filterHref(key: 'city' | 'duration' | 'style', value: string): string {
+    const next = new URLSearchParams(search);
+    const active = next.get(key) === value;
+    if (active) next.delete(key);
+    else next.set(key, value);
+    const qs = next.toString();
+    return qs ? `/tours?${qs}` : '/tours';
+  }
+
+  const durationOptions: Array<{ value: string; label: string }> = [
+    { value: '1-2', label: t('tours_dur_1_2') },
+    { value: '3-4', label: t('tours_dur_3_4') },
+    { value: '5-7', label: t('tours_dur_5_7') },
+    { value: '8-14', label: t('tours_dur_8_14') },
+  ];
+  const styleOptions: Array<{ value: string; label: string }> = [
+    { value: 'desert', label: t('tours_style_desert') },
+    { value: 'imperial', label: t('tours_style_imperial') },
+    { value: 'mountains', label: t('tours_style_mountains') },
+    { value: 'coastal', label: t('tours_style_coastal') },
+  ];
+  const pillClass = (active: boolean) =>
+    `rounded-full border px-4 py-2 text-sm font-semibold transition-colors ${active ? 'bg-primary text-primary-foreground border-primary' : 'border-border hover:border-primary hover:text-primary'}`;
 
   const filteredTours = useMemo(() => tours.filter(tour => {
     if (cityFilter && !tourMatchesCity(tour, cityFilter)) return false;
@@ -118,6 +155,38 @@ export default function Tours() {
             {CITY_HUBS.map((hub) => (
               <Link key={`three-${hub.id}`} href={`/tours/from-${hub.slug}/3-days`} className="rounded-xl border border-border px-4 py-3 text-center font-semibold hover:border-primary hover:text-primary transition-colors">
                 {t('hub_dur_h1').replace('{days}', '3').replace('{city}', t(`hub_${hub.id}_name`))}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-8 bg-card border-b border-border">
+        <div className="container mx-auto px-4 max-w-6xl space-y-4">
+          <div className="flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-muted-foreground">
+            <Filter className="w-4 h-4" aria-hidden="true" />
+            <span>{t('hub_by_departure_city')}</span>
+          </div>
+          <div className="flex flex-wrap gap-2" role="group" aria-label={t('hub_by_departure_city')}>
+            {CITY_HUBS.map((hub) => (
+              <Link key={hub.id} href={filterHref('city', hub.id)} className={pillClass(cityFilter === hub.id)}>
+                {t(`hub_${hub.id}_name`)}
+              </Link>
+            ))}
+          </div>
+          <div className="text-sm font-bold uppercase tracking-wider text-muted-foreground pt-2">{t('tours_filter_duration')}</div>
+          <div className="flex flex-wrap gap-2" role="group" aria-label={t('tours_filter_duration')}>
+            {durationOptions.map((opt) => (
+              <Link key={opt.value} href={filterHref('duration', opt.value)} className={pillClass(durationFilter === opt.value)}>
+                {opt.label}
+              </Link>
+            ))}
+          </div>
+          <div className="text-sm font-bold uppercase tracking-wider text-muted-foreground pt-2">{t('tours_filter_style')}</div>
+          <div className="flex flex-wrap gap-2" role="group" aria-label={t('tours_filter_style')}>
+            {styleOptions.map((opt) => (
+              <Link key={opt.value} href={filterHref('style', opt.value)} className={pillClass(styleFilter === opt.value)}>
+                {opt.label}
               </Link>
             ))}
           </div>
