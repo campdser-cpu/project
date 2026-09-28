@@ -752,11 +752,23 @@ export type PricingTier = {
   4: number;
   5: number;
 };
+// Optional stop-by-stop detail for a day, used only when a real, verified
+// breakdown exists. Absent for every tour today — the timeline falls back to
+// `desc` + `stops` unchanged. `time` is a label, not a guarantee ("around
+// 09:30", "after lunch"); never populate it with an invented exact time.
+export type ItineraryStop = {
+  title: string;
+  time?: string;
+  desc?: string;
+  lunch?: 'included' | 'not_included';
+};
 export type ItineraryDay = {
   day: number;
   title: string;
   desc: string;
   stops: string[];
+  /** Real stop-by-stop breakdown, when verified detail exists beyond `desc`/`stops`. */
+  stopDetails?: ItineraryStop[];
 };
 export type TourFaq = { question: string; answer: string };
 export type TourGalleryImage = { src: string; caption: string };
@@ -784,6 +796,8 @@ export type Tour = {
   excluded?: string[];
   gallery?: TourGalleryImage[];
   faq?: TourFaq[];
+  /** Short, verified practical facts (best time, packing, physical demands). No section renders when absent. */
+  practicalInfo?: string[];
 };
 export const tourSlugAliases: Record<string, string> = {
   '3-days-marrakech-to-merzouga-desert-tour': '3-day-sahara-marrakech',
@@ -850,9 +864,25 @@ export const tours: Tour[] = [
     routeIds: ["marrakech", "ait-ben-haddou", "ouarzazate", "dades-valley", "todra-gorge", "merzouga", "erg-chebbi"],
     routeCaption: "Marrakech → High Atlas → Aït Ben Haddou → Dades Valley → Todra Gorge → Merzouga & Erg Chebbi → Marrakech. The road is part of the experience, not just a transfer.",
     itineraryDays: [
-      { day: 1, title: "Marrakech → High Atlas → Aït Ben Haddou → Dades Valley", desc: "Leave Marrakech in the morning and cross the High Atlas toward southern Morocco. Stop at Aït Ben Haddou, the historic earthen ksar and UNESCO World Heritage property, then continue through Ouarzazate and the changing landscapes of the Dades Valley for the first night.", stops: ["Marrakech", "High Atlas Mountains", "Aït Ben Haddou (UNESCO)", "Ouarzazate", "Dades Valley"] },
-      { day: 2, title: "Dades Valley → Todra Gorge → Rissani → Merzouga", desc: "Continue east through the pre-Sahara, with time for Todra Gorge before heading toward Rissani and Merzouga. In the late afternoon, enter the Erg Chebbi dunes for the camel trek around sunset, then enjoy the desert camp experience and dinner under the open sky.", stops: ["Dades Valley", "Todra Gorge", "Rissani area", "Merzouga", "Erg Chebbi", "Sunset camel trek", "Desert camp"] },
-      { day: 3, title: "Merzouga → Eastern Morocco → Middle Atlas → Marrakech", desc: "Wake for sunrise over the dunes, then begin the return journey to Marrakech. This is the longest road day, so the itinerary keeps the focus on a realistic return rather than promising a long list of rushed attractions. Travelers who want more time in Merzouga can extend the trip to four days or more.", stops: ["Merzouga sunrise", "Rissani / Tafilalet area", "Ziz Valley area", "Middle Atlas", "Marrakech"] },
+      { day: 1, title: "Marrakech → High Atlas → Aït Ben Haddou → Dades Valley", desc: "Leave Marrakech in the morning and cross the High Atlas toward southern Morocco. Stop at Aït Ben Haddou, the historic earthen ksar and UNESCO World Heritage property, then continue through Ouarzazate and the changing landscapes of the Dades Valley for the first night.", stops: ["Marrakech", "High Atlas Mountains", "Aït Ben Haddou (UNESCO)", "Ouarzazate", "Dades Valley"],
+        stopDetails: [
+          { title: "Depart Marrakech", time: "Morning", desc: "Cross the High Atlas toward southern Morocco." },
+          { title: "Aït Ben Haddou (UNESCO)", desc: "Stop at the historic earthen ksar and UNESCO World Heritage property." },
+          { title: "Ouarzazate", desc: "Continue through Ouarzazate." },
+          { title: "Dades Valley", desc: "Arrive in the changing landscapes of the Dades Valley for the first night." },
+        ] },
+      { day: 2, title: "Dades Valley → Todra Gorge → Rissani → Merzouga", desc: "Continue east through the pre-Sahara, with time for Todra Gorge before heading toward Rissani and Merzouga. In the late afternoon, enter the Erg Chebbi dunes for the camel trek around sunset, then enjoy the desert camp experience and dinner under the open sky.", stops: ["Dades Valley", "Todra Gorge", "Rissani area", "Merzouga", "Erg Chebbi", "Sunset camel trek", "Desert camp"],
+        stopDetails: [
+          { title: "Todra Gorge", desc: "Continue east through the pre-Sahara, with time for Todra Gorge." },
+          { title: "Rissani area → Merzouga", desc: "Head toward Rissani and Merzouga." },
+          { title: "Erg Chebbi dunes", time: "Late afternoon", desc: "Enter the Erg Chebbi dunes." },
+          { title: "Sunset camel trek & desert camp", time: "Around sunset", desc: "Camel trek around sunset, then the desert camp experience and dinner under the open sky." },
+        ] },
+      { day: 3, title: "Merzouga → Eastern Morocco → Middle Atlas → Marrakech", desc: "Wake for sunrise over the dunes, then begin the return journey to Marrakech. This is the longest road day, so the itinerary keeps the focus on a realistic return rather than promising a long list of rushed attractions. Travelers who want more time in Merzouga can extend the trip to four days or more.", stops: ["Merzouga sunrise", "Rissani / Tafilalet area", "Ziz Valley area", "Middle Atlas", "Marrakech"],
+        stopDetails: [
+          { title: "Sunrise over the dunes", desc: "Wake for sunrise over the dunes at Merzouga." },
+          { title: "Return journey to Marrakech", desc: "The longest road day of the trip, via the Rissani/Tafilalet area, the Ziz Valley and the Middle Atlas." },
+        ] },
     ],
     faq: [
       { question: "Is three days really enough for Marrakech to Merzouga?", answer: "Three days is the shortest practical format for this overland route. It works when you want the key southern stops and one Sahara camp night, but you should expect long travel days. If you want a slower pace or more time in the dunes, four days or more is the better choice." },
@@ -861,6 +891,10 @@ export const tours: Tour[] = [
       { question: "When is the best time for this Sahara tour?", answer: "Morocco's National Tourist Office highlights spring and autumn as especially suitable seasons for the southern Sahara. The tour can be planned year-round, but summer heat and winter nights are important considerations when choosing dates." },
       { question: "Can I book now and pay later?", answer: "Yes. Sending a request is free and commits you to nothing. We confirm your dates, itinerary and final price with you first; a 20% deposit then secures the booking, and the remaining 80% is paid on arrival in Morocco." },
       { question: "Are flights included?", answer: "International flights are not part of this tour price. There is no single month that guarantees the cheapest airfare for every traveler because prices depend on your departure country, airline and dates. Once your tour dates are chosen, we can help you think through the most practical arrival and departure plan." },
+    ],
+    practicalInfo: [
+      "Best travel season: Morocco's National Tourist Office highlights spring and autumn as especially suitable for the southern Sahara; the tour runs year-round, but summer heat and winter desert nights are worth considering when choosing dates.",
+      "This is a long overland route with substantial driving each day rather than a series of short transfers.",
     ],
     // MGA_THREE_DAY_ENRICHED_V1
   },
@@ -904,30 +938,60 @@ export const tours: Tour[] = [
         title: "Marrakech → High Atlas → Aït Ben Haddou → Dades Valley",
         desc: "Depart Marrakech in the morning and cross the High Atlas over the Tizi n'Tichka Pass, the highest road pass in North Africa. Stop at the UNESCO-listed fortified village of Aït Ben Haddou, then continue through Ouarzazate and the Skoura Oasis to the dramatic Dades Valley for an overnight stay in a kasbah hotel or riad.",
         stops: ["High Atlas Mountains", "Tizi n'Tichka Pass", "Aït Ben Haddou (UNESCO)", "Ouarzazate", "Skoura Oasis", "Overnight: Dades Valley (Dinner & Breakfast)"],
+        stopDetails: [
+          { title: "Depart Marrakech", time: "Morning", desc: "Cross the High Atlas over the Tizi n'Tichka Pass, the highest road pass in North Africa." },
+          { title: "Aït Ben Haddou (UNESCO)", desc: "Stop at the UNESCO-listed fortified village." },
+          { title: "Ouarzazate & Skoura Oasis", desc: "Continue through Ouarzazate and the Skoura Oasis." },
+          { title: "Overnight: Dades Valley", desc: "Arrive in the dramatic Dades Valley for an overnight stay in a kasbah hotel or riad." },
+        ],
       },
       {
         day: 2,
         title: "Dades Valley → Todra Gorge → Merzouga (Erg Chebbi)",
         desc: "Admire the winding Dades Valley before driving to the towering Todra Gorge. Continue through Berber villages and palm oases to Merzouga at the edge of the Sahara, where you ride camels across the golden dunes of Erg Chebbi at sunset to a luxury desert camp — dinner, live Berber music and star-filled skies included.",
         stops: ["Dades Valley", "Todra Gorge", "Rissani (optional)", "Erg Chebbi dunes", "Sunset camel trek", "Luxury desert camp (Dinner & Breakfast)"],
+        stopDetails: [
+          { title: "Dades Valley", desc: "Admire the winding Dades Valley." },
+          { title: "Todra Gorge", desc: "Drive to the towering Todra Gorge." },
+          { title: "Rissani (optional) → Merzouga", desc: "Continue through Berber villages and palm oases to Merzouga at the edge of the Sahara." },
+          { title: "Sunset camel trek — Erg Chebbi", time: "Sunset", desc: "Ride camels across the golden dunes of Erg Chebbi." },
+          { title: "Luxury desert camp", desc: "Dinner, live Berber music and star-filled skies." },
+        ],
       },
       {
         day: 3,
         title: "Merzouga → Ziz Valley → Midelt → Fes",
         desc: "Wake for sunrise over the dunes before breakfast in Merzouga. Head north through the Ziz Valley's endless palm oases, stopping in Midelt for lunch, then pass the cedar forests of the Middle Atlas and the mountain town of Ifrane before arriving at the imperial city of Fes.",
         stops: ["Sunrise over Erg Chebbi", "Ziz Valley", "Midelt", "Cedar forest & Barbary monkeys", "Ifrane", "Overnight: Fes (Breakfast)"],
+        stopDetails: [
+          { title: "Sunrise over Erg Chebbi", desc: "Wake for sunrise over the dunes before breakfast in Merzouga." },
+          { title: "Ziz Valley", desc: "Head north through the Ziz Valley's endless palm oases." },
+          { title: "Midelt", lunch: "not_included", desc: "Stop in Midelt for lunch." },
+          { title: "Cedar forest & Ifrane", desc: "Pass the cedar forests of the Middle Atlas and the mountain town of Ifrane, home to Barbary monkeys." },
+          { title: "Overnight: Fes", desc: "Arrive at the imperial city of Fes." },
+        ],
       },
       {
         day: 4,
         title: "Guided Tour of Fes",
         desc: "Discover one of the world's oldest living cities with an official local guide. Explore the Royal Palace gates and the labyrinthine medieval medina of Fes el-Bali, home to Al Quaraouiyine University, the famous Chouara Tannery and bustling souks and artisan workshops. Your evening is free to savour Fes at your own pace.",
         stops: ["Royal Palace gates", "Fes el-Bali medina", "Al Quaraouiyine University", "Chouara Tannery", "Souks & pottery workshops"],
+        stopDetails: [
+          { title: "Royal Palace gates", desc: "Explore the Royal Palace gates with an official local guide." },
+          { title: "Fes el-Bali medina", desc: "Wander the labyrinthine medieval medina, home to Al Quaraouiyine University and the famous Chouara Tannery." },
+          { title: "Souks & pottery workshops", time: "Evening free", desc: "Browse the bustling souks and artisan workshops. Your evening is free to savour Fes at your own pace." },
+        ],
       },
       {
         day: 5,
         title: "Fes → Meknès → Volubilis → Chefchaouen",
         desc: "Travel to the imperial city of Meknès to admire the monumental Bab Mansour gate and the Mausoleum of Moulay Ismail, then wander the remarkably preserved Roman ruins of Volubilis. Continue on to the famous Blue City of Chefchaouen, where the afternoon and evening are free to explore the photogenic, blue-washed streets of the medina.",
         stops: ["Bab Mansour Gate", "Mausoleum of Moulay Ismail", "Volubilis Roman Ruins (UNESCO)", "Chefchaouen medina", "Overnight: Chefchaouen"],
+        stopDetails: [
+          { title: "Meknès — Bab Mansour Gate & Mausoleum of Moulay Ismail", desc: "Admire the monumental Bab Mansour gate and the Mausoleum of Moulay Ismail." },
+          { title: "Volubilis (UNESCO)", desc: "Wander the remarkably preserved Roman ruins." },
+          { title: "Overnight: Chefchaouen", time: "Afternoon & evening free", desc: "Explore the photogenic, blue-washed streets of the medina at your own pace." },
+        ],
       },
     ],
     included: [
@@ -1004,42 +1068,83 @@ export const tours: Tour[] = [
         title: "Marrakech → Aït Ben Haddou → Ouarzazate → Dades Valley",
         desc: "Meet your private driver in Marrakech and travel across the spectacular High Atlas Mountains via the Tizi n'Tichka Pass. Visit the UNESCO World Heritage site of Aït Ben Haddou, then continue to Ouarzazate, famous for its film studios. Drive through the Skoura Oasis and the Valley of Roses before arriving in the beautiful Dades Valley for the night.",
         stops: ["High Atlas Mountains", "Tizi n'Tichka Pass", "Aït Ben Haddou (UNESCO)", "Ouarzazate", "Skoura Oasis", "Valley of Roses", "Overnight: Dades Valley (Dinner & Breakfast)"],
+        stopDetails: [
+          { title: "Marrakech — meet your driver", desc: "Travel across the spectacular High Atlas Mountains via the Tizi n'Tichka Pass." },
+          { title: "Aït Ben Haddou (UNESCO)", desc: "Visit the UNESCO World Heritage site." },
+          { title: "Ouarzazate", desc: "Continue to Ouarzazate, famous for its film studios." },
+          { title: "Skoura Oasis & Valley of Roses", desc: "Drive through the Skoura Oasis and the Valley of Roses." },
+          { title: "Overnight: Dades Valley", desc: "Arrive in the beautiful Dades Valley for the night." },
+        ],
       },
       {
         day: 2,
         title: "Dades Valley → Todra Gorge → Merzouga Sahara",
         desc: "After breakfast, marvel at the magnificent Todra Gorge, then drive through palm groves and Berber villages toward Merzouga. Ride camels across the golden dunes of Erg Chebbi as the sun sets, then enjoy a traditional Moroccan dinner and live Berber music before sleeping under the stars in a luxury desert camp.",
         stops: ["Todra Gorge", "Palm groves & Berber villages", "Erg Chebbi dunes", "Sunset camel trek", "Berber music", "Overnight: Luxury Desert Camp (Dinner & Breakfast)"],
+        stopDetails: [
+          { title: "Todra Gorge", time: "After breakfast", desc: "Marvel at the magnificent Todra Gorge." },
+          { title: "Palm groves & Berber villages", desc: "Drive through palm groves and Berber villages toward Merzouga." },
+          { title: "Sunset camel trek — Erg Chebbi", time: "Sunset", desc: "Ride camels across the golden dunes of Erg Chebbi." },
+          { title: "Luxury desert camp", desc: "Traditional Moroccan dinner and live Berber music before sleeping under the stars." },
+        ],
       },
       {
         day: 3,
         title: "A Full Day in the Sahara Desert",
         desc: "Wake for a spectacular sunrise over the dunes and spend a full day exploring the desert — visit the village of Khamlia for soulful Gnawa music, share tea with nomad families, and discover the Black Desert, fossil beds, and a hidden oasis. Optional quad bikes, buggies, and sandboarding fill the afternoon before another magical desert evening.",
         stops: ["Sunrise over the dunes", "Khamlia village & Gnawa music", "Tea with nomad families", "Black Desert & fossils", "Oasis", "Sandboarding", "Overnight: Merzouga Hotel (Dinner & Breakfast)"],
+        stopDetails: [
+          { title: "Sunrise over the dunes", time: "Sunrise", desc: "Wake for a spectacular sunrise over the dunes." },
+          { title: "Khamlia village", desc: "Visit the village of Khamlia for soulful Gnawa music." },
+          { title: "Nomad families, Black Desert & oasis", desc: "Share tea with nomad families and discover the Black Desert, fossil beds and a hidden oasis." },
+          { title: "Quad bikes, buggies & sandboarding (optional)", time: "Afternoon", desc: "Optional activities fill the afternoon before another magical desert evening." },
+        ],
       },
       {
         day: 4,
         title: "Merzouga → Ziz Valley → Midelt → Ifrane → Fes",
         desc: "Travel north through the spectacular Ziz Valley and its endless palm oases, stopping in Midelt for lunch. Visit the cedar forest where Barbary monkeys roam, pass through Ifrane — the 'Switzerland of Morocco' — and arrive in the imperial city of Fes.",
         stops: ["Ziz Valley", "Midelt", "Cedar Forest & Barbary monkeys", "Ifrane", "Overnight: Fes (Breakfast)"],
+        stopDetails: [
+          { title: "Ziz Valley", desc: "Travel north through the spectacular Ziz Valley and its endless palm oases." },
+          { title: "Midelt", lunch: "not_included", desc: "Stop in Midelt for lunch." },
+          { title: "Cedar Forest & Ifrane", desc: "Visit the cedar forest where Barbary monkeys roam, then pass through Ifrane, the 'Switzerland of Morocco'." },
+          { title: "Overnight: Fes", desc: "Arrive in the imperial city of Fes." },
+        ],
       },
       {
         day: 5,
         title: "Guided Tour of Fes",
         desc: "Discover one of the world's oldest living cities with an official local guide. Explore the Royal Palace gates, the Jewish Quarter, and the labyrinthine medieval medina — home to Al Quaraouiyine University, the famous tanneries, bustling souks, and traditional pottery workshops. Your evening is free to explore at your own pace.",
         stops: ["Royal Palace", "Jewish Quarter", "Medieval Medina", "Al Quaraouiyine University", "Tanneries", "Souks & pottery workshops", "Overnight: Fes (Breakfast)"],
+        stopDetails: [
+          { title: "Royal Palace & Jewish Quarter", desc: "Explore the Royal Palace gates and the Jewish Quarter with an official local guide." },
+          { title: "Medieval Medina — Al Quaraouiyine University & Tanneries", desc: "Wander the labyrinthine medina, home to Al Quaraouiyine University and the famous tanneries." },
+          { title: "Souks & pottery workshops", time: "Evening free", desc: "Browse the bustling souks and traditional pottery workshops. Your evening is free to explore at your own pace." },
+        ],
       },
       {
         day: 6,
         title: "Fes → Cedar Forest → Beni Mellal → Marrakech",
         desc: "Leave Fes and travel through the Middle Atlas Mountains, passing beautiful forests, lakes, waterfalls, and traditional Berber villages on the scenic road back to Marrakech, where the evening is yours to enjoy.",
         stops: ["Middle Atlas Mountains", "Forests, lakes & waterfalls", "Beni Mellal", "Overnight: Marrakech (Breakfast)"],
+        stopDetails: [
+          { title: "Middle Atlas Mountains", desc: "Travel through the Middle Atlas, passing forests, lakes, waterfalls and traditional Berber villages." },
+          { title: "Beni Mellal" },
+          { title: "Overnight: Marrakech", time: "Evening free", desc: "Arrive in Marrakech, where the evening is yours to enjoy." },
+        ],
       },
       {
         day: 7,
         title: "Marrakech Guided Tour & Departure",
         desc: "Explore the Red City with a certified local guide, visiting the exquisite Bahia Palace, the towering Koutoubia Mosque, the Saadian Tombs, the vibrant Jemaa el-Fna square, and the traditional souks — with an optional stop at the Majorelle Garden. Transfer to your hotel or Marrakech Airport at the end of your journey.",
         stops: ["Bahia Palace", "Koutoubia Mosque", "Saadian Tombs", "Majorelle Garden (optional)", "Jemaa el-Fna", "Traditional souks", "Airport / hotel drop-off"],
+        stopDetails: [
+          { title: "Bahia Palace & Koutoubia Mosque", desc: "Visit the exquisite Bahia Palace and the towering Koutoubia Mosque with a certified local guide." },
+          { title: "Saadian Tombs & Majorelle Garden (optional)", desc: "See the Saadian Tombs, with an optional stop at the Majorelle Garden." },
+          { title: "Jemaa el-Fna & traditional souks", desc: "Explore the vibrant Jemaa el-Fna square and the traditional souks." },
+          { title: "Airport / hotel drop-off", desc: "Transfer to your hotel or Marrakech Airport at the end of your journey." },
+        ],
       },
     ],
     included: [
@@ -1100,6 +1205,9 @@ export const tours: Tour[] = [
         answer: "Message us on WhatsApp to lock in your dates and we'll tailor the details to you. Sending the request is free. Once we have confirmed your dates, itinerary and final price, a 20% deposit secures the booking and the remaining 80% is paid on arrival in Morocco.",
       },
     ],
+    practicalInfo: [
+      "Best travel season: spring (March–May) and autumn (September–November) are ideal, with warm days and comfortable desert nights; summer is hot inland, so early starts help, and winter is crisp and clear.",
+    ],
   },
   {
     id: "honeymoon-morocco",
@@ -1122,60 +1230,109 @@ export const tours: Tour[] = [
         title: "Arrive in Marrakech — Settle into the Red City",
         desc: "Meet your private driver at Marrakech airport and transfer to a traditional luxury riad in the heart of the medina. Settle in at your own pace, then step out into the atmosphere of Jemaa el-Fnaa and the candlelit maze of the souks for a gentle first evening in the Red City.",
         stops: ["Airport pick-up", "Private luxury riad", "Jemaa el-Fnaa", "First evening in the medina"],
+        stopDetails: [
+          { title: "Airport pick-up & private riad", desc: "Meet your private driver at Marrakech airport and transfer to a traditional luxury riad in the medina." },
+          { title: "Jemaa el-Fnaa & the souks", time: "Evening", desc: "Step out into the atmosphere of Jemaa el-Fnaa and the candlelit maze of the souks for a gentle first evening." },
+        ],
       },
       {
         day: 2,
         title: "Marrakech for Two — Gardens, Palaces & the Souks",
         desc: "Begin the day with a private hot air balloon drift over the Atlas at dawn, then explore the cobalt-blue Majorelle Garden and the exquisite courtyards of Bahia Palace. Wander the medina's souks together before returning to your riad for a relaxed evening.",
         stops: ["Hot air balloon at dawn (optional)", "Majorelle Garden", "Bahia Palace", "Medina & souks", "Overnight: Marrakech"],
+        stopDetails: [
+          { title: "Hot air balloon (optional)", time: "Dawn", desc: "A private hot air balloon drift over the Atlas." },
+          { title: "Majorelle Garden & Bahia Palace", desc: "Explore the cobalt-blue Majorelle Garden and the exquisite courtyards of Bahia Palace." },
+          { title: "Medina & souks", time: "Evening", desc: "Wander the medina's souks together before returning to your riad for a relaxed evening." },
+        ],
       },
       {
         day: 3,
         title: "High Atlas → Aït Ben Haddou → Dades Valley",
         desc: "Leave Marrakech and cross the High Atlas Mountains over the dramatic Tizi n'Tichka Pass, the highest road pass in North Africa. Stop at the UNESCO-listed fortified ksar of Aït Ben Haddou, continue through Ouarzazate and the Skoura oasis, and wind into the Dades Valley for your first night on the desert route.",
         stops: ["High Atlas Mountains", "Tizi n'Tichka Pass", "Aït Ben Haddou (UNESCO)", "Ouarzazate", "Overnight: Dades Valley"],
+        stopDetails: [
+          { title: "High Atlas — Tizi n'Tichka Pass", desc: "Cross the High Atlas Mountains over the dramatic Tizi n'Tichka Pass, the highest road pass in North Africa." },
+          { title: "Aït Ben Haddou (UNESCO)", desc: "Stop at the UNESCO-listed fortified ksar." },
+          { title: "Ouarzazate & Skoura oasis", desc: "Continue through Ouarzazate and the Skoura oasis." },
+          { title: "Overnight: Dades Valley", desc: "Wind into the Dades Valley for your first night on the desert route." },
+        ],
       },
       {
         day: 4,
         title: "Dades Valley → Todra Gorge → Merzouga",
         desc: "Admire the winding switchbacks and red-rock formations of the Dades Valley before driving to the towering Todra Gorge, a 300-metre-high canyon. Continue through palm groves and Berber villages to Merzouga on the edge of the Sahara, where the golden dunes of Erg Chebbi appear on the horizon.",
         stops: ["Dades Valley viewpoints", "Todra Gorge", "Palm groves & Berber villages", "Arrive in Merzouga"],
+        stopDetails: [
+          { title: "Dades Valley viewpoints", desc: "Admire the winding switchbacks and red-rock formations of the Dades Valley." },
+          { title: "Todra Gorge", desc: "Drive to the towering Todra Gorge, a 300-metre-high canyon." },
+          { title: "Palm groves & Berber villages", desc: "Continue through palm groves and Berber villages toward Merzouga." },
+          { title: "Arrive in Merzouga", desc: "The golden dunes of Erg Chebbi appear on the horizon." },
+        ],
       },
       {
         day: 5,
         title: "Erg Chebbi — Sunset Camel Trek & a Night in the Dunes",
         desc: "Ride camels across the golden dunes of Erg Chebbi at sunset, when the sand glows amber and the desert goes quiet. Spend the night in a private luxury desert camp under a canopy of stars, with dinner served around the campfire — the romantic centrepiece of the honeymoon.",
         stops: ["Sunset camel trek", "Erg Chebbi dunes", "Private luxury desert camp", "Dinner under the stars"],
+        stopDetails: [
+          { title: "Sunset camel trek — Erg Chebbi", time: "Sunset", desc: "Ride camels across the golden dunes, when the sand glows amber and the desert goes quiet." },
+          { title: "Private luxury desert camp", desc: "Spend the night under a canopy of stars, with dinner served around the campfire." },
+        ],
       },
       {
         day: 6,
         title: "A Slow Desert Morning in Merzouga",
         desc: "Wake for a spectacular sunrise over the dunes and enjoy a slow, unhurried morning at Erg Chebbi — watching the light move across the sand, or sharing mint tea with local Berbers. A relaxed second night near the dunes lets you savour the silence of the Sahara.",
         stops: ["Sunrise over the dunes", "Erg Chebbi", "Berber tea & hospitality", "Second night in Merzouga"],
+        stopDetails: [
+          { title: "Sunrise over the dunes", time: "Sunrise", desc: "A spectacular sunrise, then a slow, unhurried morning at Erg Chebbi watching the light move across the sand." },
+          { title: "Berber tea & hospitality", desc: "Share mint tea with local Berbers." },
+          { title: "Second night in Merzouga", desc: "A relaxed second night near the dunes to savour the silence of the Sahara." },
+        ],
       },
       {
         day: 7,
         title: "Merzouga → Ziz Valley → Fes",
         desc: "Head north through the Ziz Valley and its endless palm oases, stopping in Midelt for lunch before passing the cedar forests of the Middle Atlas and the mountain town of Ifrane. Arrive in the evening at the imperial city of Fes.",
         stops: ["Ziz Valley", "Midelt", "Middle Atlas & cedar forests", "Ifrane", "Overnight: Fes"],
+        stopDetails: [
+          { title: "Ziz Valley", desc: "Head north through the Ziz Valley and its endless palm oases." },
+          { title: "Midelt", lunch: "not_included", desc: "Stop in Midelt for lunch." },
+          { title: "Middle Atlas & Ifrane", desc: "Pass the cedar forests of the Middle Atlas and the mountain town of Ifrane." },
+          { title: "Overnight: Fes", time: "Evening", desc: "Arrive at the imperial city of Fes." },
+        ],
       },
       {
         day: 8,
         title: "The Imperial City of Fes",
         desc: "Discover one of the world's oldest living cities with an official local guide. Explore the Royal Palace gates and the labyrinthine medieval medina of Fes el-Bali — Al Quaraouiyine University, the famous tanneries and bustling artisan souks — before an evening at your own pace.",
         stops: ["Royal Palace gates", "Fes el-Bali medina", "Al Quaraouiyine University", "Tanneries & souks", "Overnight: Fes"],
+        stopDetails: [
+          { title: "Royal Palace gates", desc: "Explore the Royal Palace gates with an official local guide." },
+          { title: "Fes el-Bali medina", desc: "Wander the labyrinthine medieval medina — Al Quaraouiyine University, the famous tanneries and bustling artisan souks." },
+          { title: "Overnight: Fes", time: "Evening free", desc: "An evening at your own pace." },
+        ],
       },
       {
         day: 9,
         title: "Fes → Marrakech — The Scenic Return",
         desc: "Return to Marrakech through the Middle Atlas Mountains, passing forests, lakes and traditional Berber villages on the scenic road south. The evening is yours to enjoy a last wander through Jemaa el-Fnaa.",
         stops: ["Middle Atlas", "Forests & lakes", "Arrive in Marrakech", "Evening at Jemaa el-Fnaa"],
+        stopDetails: [
+          { title: "Middle Atlas — forests & lakes", desc: "Return to Marrakech through the Middle Atlas Mountains, passing forests, lakes and traditional Berber villages." },
+          { title: "Evening at Jemaa el-Fnaa", time: "Evening", desc: "A last wander through Jemaa el-Fnaa." },
+        ],
       },
       {
         day: 10,
         title: "Leisure in Marrakech & Departure",
         desc: "A relaxed final morning in the Red City — an optional hammam ritual for two, a last visit to the souks for gifts and mementoes — before your private driver transfers you to the airport for the journey home.",
         stops: ["Leisure morning", "Hammam for two (optional)", "Marrakech souks", "Airport / hotel transfer"],
+        stopDetails: [
+          { title: "Leisure morning in Marrakech", time: "Morning", desc: "An optional hammam ritual for two and a last visit to the souks for gifts and mementoes." },
+          { title: "Airport transfer", desc: "Your private driver transfers you to the airport for the journey home." },
+        ],
       },
     ],
     included: [
@@ -1234,6 +1391,9 @@ export const tours: Tour[] = [
         answer: "Message us on WhatsApp to lock in your dates and we'll tailor the details to you. Sending the request is free. Once we have confirmed your dates, itinerary and final price, a 20% deposit secures the booking and the remaining 80% is paid on arrival in Morocco.",
       },
     ],
+    practicalInfo: [
+      "Best travel season: spring (March–May) and autumn (September–November) are ideal, with warm days and comfortable desert nights; summer is hot inland, so early starts help, and winter is crisp and clear.",
+    ],
   },
   {
     id: "8-day-marrakech-essaouira-agadir-sahara",
@@ -1265,48 +1425,90 @@ export const tours: Tour[] = [
         title: "Marrakech — Arrival & the Red City",
         desc: "Your private driver welcomes you at Marrakech airport and transfers you to a traditional riad in the heart of the medina. Settle in, then step into the theatre of Jemaa el-Fnaa, admire the soaring Koutoubia Mosque, and lose yourself in the exquisite mosaics of Bahia Palace as the city glows at dusk.",
         stops: ["Airport pickup", "Traditional riad", "Jemaa el-Fnaa", "Koutoubia Mosque", "Bahia Palace"],
+        stopDetails: [
+          { title: "Airport pickup & riad", desc: "Your private driver welcomes you at Marrakech airport and transfers you to a traditional riad in the medina." },
+          { title: "Jemaa el-Fnaa & Koutoubia Mosque", desc: "Step into the theatre of Jemaa el-Fnaa and admire the soaring Koutoubia Mosque." },
+          { title: "Bahia Palace", time: "Dusk", desc: "Lose yourself in the exquisite mosaics of Bahia Palace as the city glows at dusk." },
+        ],
       },
       {
         day: 2,
         title: "Marrakech → Essaouira",
         desc: "Drive west toward the Atlantic, pausing at a women's argan oil cooperative along the way. Reach the breezy port city of Essaouira and wander its UNESCO-listed medina and working fishing port, finishing with a golden sunset over the beach.",
         stops: ["Argan oil cooperative", "Atlantic coast", "Essaouira Medina", "Fishing port", "Sunset on the beach"],
+        stopDetails: [
+          { title: "Argan oil cooperative", desc: "Drive west toward the Atlantic, pausing at a women's argan oil cooperative." },
+          { title: "Essaouira medina & fishing port", desc: "Wander the UNESCO-listed medina and working fishing port of Essaouira." },
+          { title: "Sunset on the beach", time: "Sunset", desc: "Finish with a golden sunset over the beach." },
+        ],
       },
       {
         day: 3,
         title: "Essaouira → Agadir",
         desc: "Follow the scenic coastal road south through the laid-back surf village of Taghazout, with an optional detour to the palm-fringed pools of Paradise Valley, before arriving at Agadir's modern marina and its long, sun-soaked beach.",
         stops: ["Scenic coastal drive", "Taghazout", "Paradise Valley (optional)", "Agadir Marina", "Agadir Beach"],
+        stopDetails: [
+          { title: "Taghazout", desc: "Follow the scenic coastal road south through the laid-back surf village of Taghazout." },
+          { title: "Paradise Valley (optional)", desc: "An optional detour to the palm-fringed pools of Paradise Valley." },
+          { title: "Agadir Marina & Beach", desc: "Arrive at Agadir's modern marina and its long, sun-soaked beach." },
+        ],
       },
       {
         day: 4,
         title: "Agadir → Taroudant → Taliouine → Ouarzazate",
         desc: "Head inland to the walled town of Taroudant, the 'Grandmother of Marrakech', then on through Taliouine — Morocco's saffron capital — and its fragrant fields. Continue to Ouarzazate, gateway to the desert, visiting the mighty Kasbah Taourirt before your overnight stay.",
         stops: ["Taroudant", "Saffron fields", "Kasbah Taourirt", "Overnight in Ouarzazate"],
+        stopDetails: [
+          { title: "Taroudant", desc: "Head inland to the walled town of Taroudant, the 'Grandmother of Marrakech'." },
+          { title: "Taliouine saffron fields", desc: "Continue through Taliouine, Morocco's saffron capital, and its fragrant fields." },
+          { title: "Kasbah Taourirt — Ouarzazate", desc: "Visit the mighty Kasbah Taourirt in Ouarzazate before your overnight stay." },
+        ],
       },
       {
         day: 5,
         title: "Ouarzazate → Aït Ben Haddou → Dades Valley",
         desc: "Tour the famous Atlas Studios, then explore the UNESCO-listed ksar of Aït Ben Haddou, a fortified earthen city seen in countless films. Drive on through the Valley of Roses to the sculpted red rock formations of the Dades Gorges.",
         stops: ["Atlas Studios", "UNESCO Aït Ben Haddou", "Valley of Roses", "Dades Gorges"],
+        stopDetails: [
+          { title: "Atlas Studios", desc: "Tour the famous Atlas Studios." },
+          { title: "Aït Ben Haddou (UNESCO)", desc: "Explore the UNESCO-listed ksar, a fortified earthen city seen in countless films." },
+          { title: "Valley of Roses & Dades Gorges", desc: "Drive through the Valley of Roses to the sculpted red rock formations of the Dades Gorges." },
+        ],
       },
       {
         day: 6,
         title: "Dades Valley → Todra Gorge → Merzouga",
         desc: "Marvel at the towering walls of the Todra Canyon and pass through traditional Berber villages on the way to the edge of the Sahara at Erg Chebbi. Trade the vehicle for camels and trek into the dunes to your luxury desert camp for dinner and live Berber music under the stars.",
         stops: ["Todra Canyon", "Berber villages", "Erg Chebbi dunes", "Camel trekking", "Luxury desert camp", "Traditional Berber music"],
+        stopDetails: [
+          { title: "Todra Canyon", desc: "Marvel at the towering walls of the Todra Canyon." },
+          { title: "Berber villages", desc: "Pass through traditional Berber villages on the way to the edge of the Sahara at Erg Chebbi." },
+          { title: "Camel trek — Erg Chebbi", desc: "Trade the vehicle for camels and trek into the dunes." },
+          { title: "Luxury desert camp", desc: "Dinner and live Berber music under the stars." },
+        ],
       },
       {
         day: 7,
         title: "Merzouga — A Full Day in the Sahara",
         desc: "Wake for a spectacular sunrise over the dunes, then explore deeper by 4x4 — meeting nomad families and hearing soulful Gnawa music. Optional quad biking and sandboarding fill the afternoon before a final desert sunset and a night in a luxury hotel in Merzouga.",
         stops: ["Sunrise in the Sahara", "4x4 desert tour", "Nomad families", "Gnawa music", "Quad bike (optional)", "Sandboarding", "Sunset", "Luxury hotel in Merzouga"],
+        stopDetails: [
+          { title: "Sunrise in the Sahara", time: "Sunrise", desc: "Wake for a spectacular sunrise over the dunes." },
+          { title: "4x4 desert tour", desc: "Explore deeper by 4x4 — meeting nomad families and hearing soulful Gnawa music." },
+          { title: "Quad biking & sandboarding (optional)", time: "Afternoon", desc: "Optional activities fill the afternoon." },
+          { title: "Desert sunset — Luxury hotel in Merzouga", time: "Sunset", desc: "A final desert sunset and a night in a luxury hotel in Merzouga." },
+        ],
       },
       {
         day: 8,
         title: "Merzouga → Marrakech",
         desc: "Journey back across the roof of Morocco — through Alnif and the palm oases of the Draa Valley, then climbing the High Atlas Mountains over the dramatic Tizi n'Tichka Pass before arriving back in Marrakech.",
         stops: ["Alnif", "Draa Valley", "High Atlas Mountains", "Tizi n'Tichka Pass", "Arrival in Marrakech"],
+        stopDetails: [
+          { title: "Alnif & Draa Valley", desc: "Journey back across the roof of Morocco through Alnif and the palm oases of the Draa Valley." },
+          { title: "High Atlas — Tizi n'Tichka Pass", desc: "Climb the High Atlas Mountains over the dramatic Tizi n'Tichka Pass." },
+          { title: "Arrival in Marrakech", desc: "Arrive back in Marrakech." },
+        ],
       },
     ],
     included: [
@@ -1367,6 +1569,10 @@ export const tours: Tour[] = [
         answer: "Message us on WhatsApp to lock in your dates and we'll tailor the details to you. Sending the request is free. Once we have confirmed your dates, itinerary and final price, a 20% deposit secures the booking and the remaining 80% is paid on arrival in Morocco.",
       },
     ],
+    practicalInfo: [
+      "Best travel season: spring (March–May) and autumn (September–November) bring warm days and comfortable desert nights; summer is hot inland but the Atlantic coast stays pleasant, and winter is crisp and clear.",
+      "The camel trek to the desert camp is optional and short — a 4x4 transfer can be arranged instead if preferred, making the route adaptable for families or less mobile travelers.",
+    ],
   },
   {
     id: "family-morocco-adventure",
@@ -1387,54 +1593,96 @@ export const tours: Tour[] = [
         title: "Arrive in Marrakech — First Taste of the Red City",
         desc: "Meet your private driver and settle into your family hotel or riad in Marrakech. This evening, take an easy first wander through the medina and try a few street-food bites — mint tea, fresh juices and Moroccan pastries — before an early night after the journey.",
         stops: ["Marrakech arrival & transfer", "Medina wander", "Street food tasting", "Overnight: Marrakech"],
+        stopDetails: [
+          { title: "Marrakech arrival & transfer", desc: "Meet your private driver and settle into your family hotel or riad." },
+          { title: "Medina wander & street food", time: "Evening", desc: "An easy first wander through the medina and street-food bites — mint tea, fresh juices and Moroccan pastries — before an early night after the journey." },
+        ],
       },
       {
         day: 2,
         title: "Marrakech Family Day — Squares, Crafts & Storytellers",
         desc: "A relaxed family day in the Red City. Watch the snake charmers, musicians and storytellers of Jemaa el-Fna, wander the colourful souks, and try traditional crafts with local artisans — the kind of hands-on experiences children remember long after the holiday.",
         stops: ["Jemaa el-Fna", "Snake charmers & storytellers", "Souks & crafts", "Kid-friendly hammam (optional)", "Overnight: Marrakech"],
+        stopDetails: [
+          { title: "Jemaa el-Fna — snake charmers & storytellers", desc: "Watch the snake charmers, musicians and storytellers of Jemaa el-Fna." },
+          { title: "Souks & crafts", desc: "Wander the colourful souks and try traditional crafts with local artisans." },
+          { title: "Kid-friendly hammam (optional)" },
+        ],
       },
       {
         day: 3,
         title: "High Atlas Crossing & Mountain Mule Ride",
         desc: "Leave the city and climb into the High Atlas over the dramatic Tizi n'Tichka mountain pass. Today your family swaps the road for a gentle mule ride through the mountains, meeting the sights and sounds of Morocco's high country at an easy, family-friendly pace.",
         stops: ["High Atlas Mountains", "Tizi n'Tichka Pass", "Atlas mule ride", "Berber villages", "Overnight: Dades Valley"],
+        stopDetails: [
+          { title: "High Atlas — Tizi n'Tichka Pass", desc: "Climb into the High Atlas over the dramatic Tizi n'Tichka mountain pass." },
+          { title: "Atlas mule ride", desc: "Your family swaps the road for a gentle mule ride through the mountains, at an easy, family-friendly pace." },
+          { title: "Berber villages" },
+          { title: "Overnight: Dades Valley" },
+        ],
       },
       {
         day: 4,
         title: "Aït Ben Haddou & the Dades Valley",
         desc: "Stop at the famous UNESCO fortified village of Aït Ben Haddou, a centuries-old kasbah you may recognise from the cinema. Wander its clay lanes together, then follow the winding road through the Dades Valley, with its cliff-hugging turns and dramatic red rock landscape.",
         stops: ["Aït Ben Haddou (UNESCO)", "Kasbah exploration", "Dades Valley viewpoints", "Overnight: Dades Valley"],
+        stopDetails: [
+          { title: "Aït Ben Haddou (UNESCO)", desc: "Stop at the famous fortified village, a centuries-old kasbah you may recognise from the cinema. Wander its clay lanes together." },
+          { title: "Dades Valley viewpoints", desc: "Follow the winding road through the Dades Valley, with its cliff-hugging turns and dramatic red rock landscape." },
+        ],
       },
       {
         day: 5,
         title: "Todra Gorge & the Road to the Sahara",
         desc: "Pass through the towering Todra Gorge, one of Morocco's most dramatic canyons, then continue through palm groves and Berber villages towards the edge of the Sahara. Kids love watching the landscape open out as the golden dunes of Erg Chebbi appear on the horizon.",
         stops: ["Todra Gorge", "Palm groves & Berber villages", "Erg Chebbi dunes on the horizon", "Overnight: Merzouga"],
+        stopDetails: [
+          { title: "Todra Gorge", desc: "Pass through the towering Todra Gorge, one of Morocco's most dramatic canyons." },
+          { title: "Palm groves & Berber villages", desc: "Continue through palm groves and Berber villages towards the edge of the Sahara." },
+          { title: "Erg Chebbi dunes on the horizon", desc: "The golden dunes of Erg Chebbi appear on the horizon." },
+          { title: "Overnight: Merzouga" },
+        ],
       },
       {
         day: 6,
         title: "Camel Trek at Sunset over Erg Chebbi",
         desc: "The highlight for many families — a gentle camel trek across the golden dunes of Erg Chebbi at sunset, when the sand glows amber and the desert goes quiet. Sleep near the dunes and wake to a sunrise over the Sahara your children will talk about for years.",
         stops: ["Erg Chebbi dunes", "Sunset camel trek", "Desert camp night", "Star-filled evening", "Overnight: Merzouga"],
+        stopDetails: [
+          { title: "Sunset camel trek — Erg Chebbi", time: "Sunset", desc: "A gentle camel trek across the golden dunes, when the sand glows amber and the desert goes quiet." },
+          { title: "Desert camp night", desc: "Sleep near the dunes under a star-filled evening and wake to a Sahara sunrise." },
+        ],
       },
       {
         day: 7,
         title: "Family Day in Merzouga",
         desc: "A relaxed day to slow down: early sunrise over the sand, sandboarding and time on the dunes, visits with local families, and learning traditional crafts from Berber artisans. A gentle day that balances active fun with real connection to desert life.",
         stops: ["Sunrise over the dunes", "Sandboarding & free time", "Berber crafts & hospitality", "Overnight: Merzouga"],
+        stopDetails: [
+          { title: "Sunrise over the dunes", time: "Early morning", desc: "An early sunrise over the sand." },
+          { title: "Sandboarding & free time", desc: "Sandboarding and time on the dunes." },
+          { title: "Berber crafts & hospitality", desc: "Visits with local families and learning traditional crafts from Berber artisans." },
+        ],
       },
       {
         day: 8,
         title: "North to Fes Through the Mid-Atlas",
         desc: "Bid farewell to the desert and drive north through the mountain towns towards the imperial city of Fes. Break the journey with easy stops and a taste of the Middle Atlas highlands before arriving in Fes for the final night of the adventure.",
         stops: ["Journey north", "Mid-Atlas towns", "Arrival in Fes", "Overnight: Fes"],
+        stopDetails: [
+          { title: "Journey north — Mid-Atlas towns", desc: "Drive north through the mountain towns, with easy stops and a taste of the Middle Atlas highlands." },
+          { title: "Overnight: Fes", desc: "Arrive in Fes for the final night of the adventure." },
+        ],
       },
       {
         day: 9,
         title: "Morning in Fes & Departure",
         desc: "A short guided glimpse of Fes, Morocco's imperial cultural heart, catching the medina's atmosphere at its liveliest. After lunch your private driver transfers you to the airport or hotel for the journey home at the end of your family Morocco adventure.",
         stops: ["Fes medina & sights", "Fes highlights", "Airport / hotel transfer", "End of tour"],
+        stopDetails: [
+          { title: "Fes medina & highlights", desc: "A short guided glimpse of Fes, Morocco's imperial cultural heart, catching the medina's atmosphere at its liveliest." },
+          { title: "Airport / hotel transfer", time: "After lunch", lunch: "not_included", desc: "Your private driver transfers you to the airport or hotel for the journey home." },
+        ],
       },
     ],
     included: [
@@ -1476,6 +1724,10 @@ export const tours: Tour[] = [
         answer: "Message us on WhatsApp to lock in your dates and we'll tailor the details to your family. Sending the request is free. Once we have confirmed your dates, itinerary and final price, a 20% deposit secures the booking and the remaining 80% is paid on arrival in Morocco.",
       },
     ],
+    practicalInfo: [
+      "Best travel season: spring (March–May) and autumn (September–November) are ideal, with warm days and comfortable nights; summer is hot inland (early starts help), and winter is crisp, clear and quieter.",
+      "The private vehicle keeps travel days manageable, balancing active highlights like the camel trek and Atlas mule ride with more relaxed days exploring squares, souks and crafts.",
+    ],
   },
 {
   id: "marrakech-4-day",
@@ -1497,10 +1749,30 @@ export const tours: Tour[] = [
   routeCaption: "Marrakech → High Atlas → Aït Ben Haddou → Dades & Todra → Merzouga & Erg Chebbi → return to Marrakech.",
   description: "A private four-day loop from Marrakech to the Sahara and back. You climb the High Atlas, explore Aït Ben Haddou and the Ouarzazate kasbahs, thread the Dades and Todra gorges and spend a night by camel in Erg Chebbi before returning across the mountains. A starting price per person is published for this route; the exact total depends on your party size and the accommodation you choose, and is confirmed around your dates before booking.",
   itineraryDays: [
-    { day: 1, title: "Marrakech → High Atlas → Aït Ben Haddou → Dades Valley", desc: "Cross the Tizi n'Tichka pass over the High Atlas with sweeping views, visit the famous ksar of Aït Ben Haddou, stop at Ouarzazate and Skoura, and finish the day in the dramatic Dades Valley.", stops: ["Tizi n'Tichka", "Aït Ben Haddou", "Ouarzazate", "Overnight: Dades Valley"] },
-    { day: 2, title: "Dades → Todra Gorge → Merzouga", desc: "Follow the Dades canyon, walk between the sheer walls of Todra Gorge, then continue across the desert plain to Merzouga for a sunset camel trek into Erg Chebbi and a night in a desert camp.", stops: ["Dades Gorge", "Todra Gorge", "Erg Chebbi camel trek", "Desert camp night"] },
-    { day: 3, title: "Merzouga → Rissani → Erfoud → Ouarzazate region", desc: "Watch the sunrise over the dunes, browse the Rissani souk and Erfoud's fossil workshops, then head west past Skoura to overnight near Ouarzazate.", stops: ["Erg Chebbi sunrise", "Rissani", "Erfoud", "Overnight: Ouarzazate area"] },
-    { day: 4, title: "Ouarzazate → Aït Ben Haddou → Marrakech", desc: "Return over the High Atlas with time for a last look at the kasbah landscape, descending to Marrakech to end the tour.", stops: ["Aït Ben Haddou", "Tizi n'Tichka", "End: Marrakech"] },
+    { day: 1, title: "Marrakech → High Atlas → Aït Ben Haddou → Dades Valley", desc: "Cross the Tizi n'Tichka pass over the High Atlas with sweeping views, visit the famous ksar of Aït Ben Haddou, stop at Ouarzazate and Skoura, and finish the day in the dramatic Dades Valley.", stops: ["Tizi n'Tichka", "Aït Ben Haddou", "Ouarzazate", "Overnight: Dades Valley"],
+      stopDetails: [
+        { title: "Tizi n'Tichka pass — High Atlas", desc: "Cross the High Atlas with sweeping views." },
+        { title: "Aït Ben Haddou", desc: "Visit the famous ksar." },
+        { title: "Ouarzazate & Skoura", desc: "Stop at Ouarzazate and Skoura." },
+        { title: "Overnight: Dades Valley", desc: "Finish the day in the dramatic Dades Valley." },
+      ] },
+    { day: 2, title: "Dades → Todra Gorge → Merzouga", desc: "Follow the Dades canyon, walk between the sheer walls of Todra Gorge, then continue across the desert plain to Merzouga for a sunset camel trek into Erg Chebbi and a night in a desert camp.", stops: ["Dades Gorge", "Todra Gorge", "Erg Chebbi camel trek", "Desert camp night"],
+      stopDetails: [
+        { title: "Dades Gorge & Todra Gorge", desc: "Follow the Dades canyon and walk between the sheer walls of Todra Gorge." },
+        { title: "Sunset camel trek — Erg Chebbi", time: "Sunset", desc: "Continue across the desert plain to Merzouga for a camel trek into Erg Chebbi." },
+        { title: "Desert camp night" },
+      ] },
+    { day: 3, title: "Merzouga → Rissani → Erfoud → Ouarzazate region", desc: "Watch the sunrise over the dunes, browse the Rissani souk and Erfoud's fossil workshops, then head west past Skoura to overnight near Ouarzazate.", stops: ["Erg Chebbi sunrise", "Rissani", "Erfoud", "Overnight: Ouarzazate area"],
+      stopDetails: [
+        { title: "Erg Chebbi sunrise", time: "Sunrise", desc: "Watch the sunrise over the dunes." },
+        { title: "Rissani & Erfoud", desc: "Browse the Rissani souk and Erfoud's fossil workshops." },
+        { title: "Overnight: Ouarzazate area", desc: "Head west past Skoura to overnight near Ouarzazate." },
+      ] },
+    { day: 4, title: "Ouarzazate → Aït Ben Haddou → Marrakech", desc: "Return over the High Atlas with time for a last look at the kasbah landscape, descending to Marrakech to end the tour.", stops: ["Aït Ben Haddou", "Tizi n'Tichka", "End: Marrakech"],
+      stopDetails: [
+        { title: "Aït Ben Haddou & Tizi n'Tichka", desc: "Return over the High Atlas with time for a last look at the kasbah landscape." },
+        { title: "End: Marrakech", desc: "Descend to Marrakech to end the tour." },
+      ] },
   ],
   included: [
     "Private air-conditioned vehicle",
@@ -1537,9 +1809,24 @@ export const tours: Tour[] = [
   routeCaption: "Casablanca → Rabat → Chefchaouen → Meknès & Volubilis → Fes. A northern imperial sweep ending in Fes.",
   description: "A private route linking Casablanca, Morocco's economic capital, with Fes via the administrative capital of Rabat, the blue town of Chefchaouen, imperial Meknès and the Roman ruins of Volubilis. A starting price per person is published for this route; the exact total depends on your party size and the accommodation you choose, and is confirmed around your dates before booking.",
   itineraryDays: [
-    { day: 1, title: "Casablanca → Rabat → Chefchaouen", desc: "Take in the Hassan II Mosque and the Corniche in Casablanca, then drive north via Rabat, whose Atlantic kasbah and Hassan Tower merit a stop, before reaching the blue town of Chefchaouen for the night.", stops: ["Hassan II Mosque", "Rabat's Udayas Kasbah", "Hassan Tower", "Overnight: Chefchaouen"] },
-    { day: 2, title: "Chefchaouen → Meknès → Volubilis → Fes", desc: "Wander Chefchaouen's blue-washed alleys in the morning, then visit the monumental Bab Mansour gate in Meknès and the Roman site of Volubilis before arriving in Fes for the night.", stops: ["Chefchaouen medina", "Bab Mansour Gate", "Volubilis", "Overnight: Fes"] },
-    { day: 3, title: "Guided Fes medina and souks", desc: "A guided tour of Fes: the royal gates, the medieval medina around Al Quaraouiyine University, the Chouara tannery and the artisan souks, where the tour ends.", stops: ["Fes el-Bali", "Al Quaraouiyine University", "Chouara Tannery", "End: Fes"] },
+    { day: 1, title: "Casablanca → Rabat → Chefchaouen", desc: "Take in the Hassan II Mosque and the Corniche in Casablanca, then drive north via Rabat, whose Atlantic kasbah and Hassan Tower merit a stop, before reaching the blue town of Chefchaouen for the night.", stops: ["Hassan II Mosque", "Rabat's Udayas Kasbah", "Hassan Tower", "Overnight: Chefchaouen"],
+      stopDetails: [
+        { title: "Hassan II Mosque & the Corniche", desc: "Take in the Hassan II Mosque and the Corniche in Casablanca." },
+        { title: "Rabat — Udayas Kasbah & Hassan Tower", desc: "Drive north via Rabat, whose Atlantic kasbah and Hassan Tower merit a stop." },
+        { title: "Overnight: Chefchaouen", desc: "Reach the blue town of Chefchaouen for the night." },
+      ] },
+    { day: 2, title: "Chefchaouen → Meknès → Volubilis → Fes", desc: "Wander Chefchaouen's blue-washed alleys in the morning, then visit the monumental Bab Mansour gate in Meknès and the Roman site of Volubilis before arriving in Fes for the night.", stops: ["Chefchaouen medina", "Bab Mansour Gate", "Volubilis", "Overnight: Fes"],
+      stopDetails: [
+        { title: "Chefchaouen medina", time: "Morning", desc: "Wander Chefchaouen's blue-washed alleys." },
+        { title: "Meknès — Bab Mansour Gate", desc: "Visit the monumental Bab Mansour gate." },
+        { title: "Volubilis", desc: "See the Roman site of Volubilis." },
+        { title: "Overnight: Fes", desc: "Arrive in Fes for the night." },
+      ] },
+    { day: 3, title: "Guided Fes medina and souks", desc: "A guided tour of Fes: the royal gates, the medieval medina around Al Quaraouiyine University, the Chouara tannery and the artisan souks, where the tour ends.", stops: ["Fes el-Bali", "Al Quaraouiyine University", "Chouara Tannery", "End: Fes"],
+      stopDetails: [
+        { title: "Fes el-Bali — royal gates & medina", desc: "A guided tour of Fes: the royal gates and the medieval medina around Al Quaraouiyine University." },
+        { title: "Chouara Tannery & artisan souks", desc: "Visit the Chouara tannery and the artisan souks, where the tour ends." },
+      ] },
   ],
   included: [
     "Private air-conditioned vehicle",
@@ -1576,10 +1863,29 @@ export const tours: Tour[] = [
   routeCaption: "Casablanca → Rabat → Asilah → Chefchaouen → Meknès & Volubilis → Fes.",
   description: "A relaxed private route from Casablanca to Fes along Morocco's Atlantic and northern highlights, with a gentler pace than a shorter circuit. It follows the coast past Rabat to the walled medina of Asilah, turns inland to the Blue City of Chefchaouen, and continues through imperial Meknès and the Roman site of Volubilis to finish in Fes. The itinerary is confirmed around your dates on a basis. A starting price per person is published for this route; the exact total depends on your party size and the accommodation you choose, and is confirmed around your dates before booking.",
   itineraryDays: [
-    { day: 1, title: "Casablanca → Rabat → Asilah", desc: "Admire the Hassan II Mosque and Casablanca's seafront, stop in Rabat for the Udayas Kasbah and Hassan Tower, then continue up the coast to the whitewashed medina of Asilah for the night.", stops: ["Hassan II Mosque", "Rabat", "Asilah", "Overnight: Asilah"] },
-    { day: 2, title: "Asilah → Chefchaouen", desc: "Wander Asilah's art-filled ramparts in the morning, then cross the Rif toward the blue-washed streets of Chefchaouen for a relaxed evening.", stops: ["Asilah medina", "Rif Mountains", "Chefchaouen", "Overnight: Chefchaouen"] },
-    { day: 3, title: "Chefchaouen → Meknès → Volubilis → Fes", desc: "Enjoy the morning light in Chefchaouen, then visit Bab Mansour in Meknès and the Roman ruins of Volubilis before reaching Fes for the night.", stops: ["Chefchaouen", "Bab Mansour Gate", "Volubilis", "Overnight: Fes"] },
-    { day: 4, title: "Guided Fes and departure", desc: "A guided tour of Fes's medina, tanneries and souks before finishing the tour, with onward travel arranged as needed.", stops: ["Fes el-Bali", "Chouara Tannery", "End: Fes"] },
+    { day: 1, title: "Casablanca → Rabat → Asilah", desc: "Admire the Hassan II Mosque and Casablanca's seafront, stop in Rabat for the Udayas Kasbah and Hassan Tower, then continue up the coast to the whitewashed medina of Asilah for the night.", stops: ["Hassan II Mosque", "Rabat", "Asilah", "Overnight: Asilah"],
+      stopDetails: [
+        { title: "Hassan II Mosque & Casablanca seafront", desc: "Admire the Hassan II Mosque and Casablanca's seafront." },
+        { title: "Rabat — Udayas Kasbah & Hassan Tower", desc: "Stop in Rabat for the Udayas Kasbah and Hassan Tower." },
+        { title: "Overnight: Asilah", desc: "Continue up the coast to the whitewashed medina of Asilah for the night." },
+      ] },
+    { day: 2, title: "Asilah → Chefchaouen", desc: "Wander Asilah's art-filled ramparts in the morning, then cross the Rif toward the blue-washed streets of Chefchaouen for a relaxed evening.", stops: ["Asilah medina", "Rif Mountains", "Chefchaouen", "Overnight: Chefchaouen"],
+      stopDetails: [
+        { title: "Asilah medina", time: "Morning", desc: "Wander Asilah's art-filled ramparts." },
+        { title: "Overnight: Chefchaouen", time: "Evening", desc: "Cross the Rif toward the blue-washed streets of Chefchaouen for a relaxed evening." },
+      ] },
+    { day: 3, title: "Chefchaouen → Meknès → Volubilis → Fes", desc: "Enjoy the morning light in Chefchaouen, then visit Bab Mansour in Meknès and the Roman ruins of Volubilis before reaching Fes for the night.", stops: ["Chefchaouen", "Bab Mansour Gate", "Volubilis", "Overnight: Fes"],
+      stopDetails: [
+        { title: "Chefchaouen", time: "Morning", desc: "Enjoy the morning light in Chefchaouen." },
+        { title: "Meknès — Bab Mansour Gate", desc: "Visit Bab Mansour in Meknès." },
+        { title: "Volubilis", desc: "See the Roman ruins of Volubilis." },
+        { title: "Overnight: Fes", desc: "Reach Fes for the night." },
+      ] },
+    { day: 4, title: "Guided Fes and departure", desc: "A guided tour of Fes's medina, tanneries and souks before finishing the tour, with onward travel arranged as needed.", stops: ["Fes el-Bali", "Chouara Tannery", "End: Fes"],
+      stopDetails: [
+        { title: "Fes el-Bali & Chouara Tannery", desc: "A guided tour of Fes's medina, tanneries and souks." },
+        { title: "End: Fes", desc: "The tour finishes, with onward travel arranged as needed." },
+      ] },
   ],
   included: [
     "Private air-conditioned vehicle",
@@ -1594,6 +1900,9 @@ export const tours: Tour[] = [
     { question: "Is this a fixed-price tour?", answer: "A starting price per person is published for this route. Your exact total depends on how many of you travel — the per-person price comes down as the group grows — and on the accommodation you choose, so we confirm the final figure with your dates before any payment. You are welcome to ask us to adjust the itinerary first." },
     { question: "Does the tour reach the Sahara?", answer: "No, this route focuses on the Atlantic coast and the imperial cities. Ask about our desert tours if you wish to continue south." },
     { question: "What is the final city?", answer: "The tour is designed to end in Fes, with a return to Casablanca or onward travel arranged on request." },
+  ],
+  practicalInfo: [
+    "This route focuses on the Atlantic coast and the imperial cities rather than the Sahara — for a desert route heading south, ask about our dedicated desert tours.",
   ],
 },
 {
@@ -1616,11 +1925,34 @@ export const tours: Tour[] = [
   routeCaption: "Casablanca → Fes → Meknès & Volubilis → Middle Atlas → Merzouga & Erg Chebbi → Fes.",
   description: "A private route from Casablanca east to Fes and then south into the Sahara, with a night in the dunes at Erg Chebbi before returning to Fes. It pairs the imperial cities and the Roman site of Volubilis with the cedar forests of the Middle Atlas, the palm-filled Ziz Valley and a sunset camel trek in Merzouga. Offered on a basis with details confirmed around your dates. A starting price per person is published for this route; the exact total depends on your party size and the accommodation you choose, and is confirmed around your dates before booking.",
   itineraryDays: [
-    { day: 1, title: "Casablanca → Meknès → Volubilis → Fes", desc: "Leave Casablanca after the Hassan II Mosque, visit imperial Meknès and the Roman ruins of Volubilis, and arrive in Fes for the night.", stops: ["Hassan II Mosque", "Meknès", "Volubilis", "Overnight: Fes"] },
-    { day: 2, title: "Fes → Ifrane → Middle Atlas → Midelt → Merzouga", desc: "Cross the cedar forests of the Middle Atlas via Ifrane, pause in Midelt, follow the Ziz Valley's oases and reach Merzouga on the edge of Erg Chebbi.", stops: ["Ifrane", "Cedar forest", "Midelt", "Ziz Valley", "Overnight: Merzouga"] },
-    { day: 3, title: "Erg Chebbi — camel trek and desert camp", desc: "A day among the dunes, capped by a sunset camel ride into Erg Chebbi and a night in a desert camp with dinner and music.", stops: ["Erg Chebbi", "Sunset camel trek", "Desert camp night"] },
-    { day: 4, title: "Merzouga → Rissani → Ziz Valley → Midelt region", desc: "Watch the sunrise over the dunes, browse the Rissani souk, then return north through the Ziz Valley to overnight in the Midelt region.", stops: ["Erg Chebbi sunrise", "Rissani", "Ziz Valley", "Overnight: Midelt area"] },
-    { day: 5, title: "Midelt → Ifrane → Fes", desc: "Climb through the Middle Atlas and Ifrane to finish the tour in Fes, where onward travel can be arranged.", stops: ["Middle Atlas", "Ifrane", "End: Fes"] },
+    { day: 1, title: "Casablanca → Meknès → Volubilis → Fes", desc: "Leave Casablanca after the Hassan II Mosque, visit imperial Meknès and the Roman ruins of Volubilis, and arrive in Fes for the night.", stops: ["Hassan II Mosque", "Meknès", "Volubilis", "Overnight: Fes"],
+      stopDetails: [
+        { title: "Hassan II Mosque", desc: "Leave Casablanca after the Hassan II Mosque." },
+        { title: "Meknès & Volubilis", desc: "Visit imperial Meknès and the Roman ruins of Volubilis." },
+        { title: "Overnight: Fes", desc: "Arrive in Fes for the night." },
+      ] },
+    { day: 2, title: "Fes → Ifrane → Middle Atlas → Midelt → Merzouga", desc: "Cross the cedar forests of the Middle Atlas via Ifrane, pause in Midelt, follow the Ziz Valley's oases and reach Merzouga on the edge of Erg Chebbi.", stops: ["Ifrane", "Cedar forest", "Midelt", "Ziz Valley", "Overnight: Merzouga"],
+      stopDetails: [
+        { title: "Ifrane & cedar forest", desc: "Cross the cedar forests of the Middle Atlas via Ifrane." },
+        { title: "Midelt & Ziz Valley", desc: "Pause in Midelt and follow the Ziz Valley's oases." },
+        { title: "Overnight: Merzouga", desc: "Reach Merzouga on the edge of Erg Chebbi." },
+      ] },
+    { day: 3, title: "Erg Chebbi — camel trek and desert camp", desc: "A day among the dunes, capped by a sunset camel ride into Erg Chebbi and a night in a desert camp with dinner and music.", stops: ["Erg Chebbi", "Sunset camel trek", "Desert camp night"],
+      stopDetails: [
+        { title: "Erg Chebbi dunes", desc: "A day among the dunes." },
+        { title: "Sunset camel trek & desert camp", time: "Sunset", desc: "A sunset camel ride into Erg Chebbi and a night in a desert camp with dinner and music." },
+      ] },
+    { day: 4, title: "Merzouga → Rissani → Ziz Valley → Midelt region", desc: "Watch the sunrise over the dunes, browse the Rissani souk, then return north through the Ziz Valley to overnight in the Midelt region.", stops: ["Erg Chebbi sunrise", "Rissani", "Ziz Valley", "Overnight: Midelt area"],
+      stopDetails: [
+        { title: "Erg Chebbi sunrise", time: "Sunrise", desc: "Watch the sunrise over the dunes." },
+        { title: "Rissani souk", desc: "Browse the Rissani souk." },
+        { title: "Overnight: Midelt area", desc: "Return north through the Ziz Valley to overnight in the Midelt region." },
+      ] },
+    { day: 5, title: "Midelt → Ifrane → Fes", desc: "Climb through the Middle Atlas and Ifrane to finish the tour in Fes, where onward travel can be arranged.", stops: ["Middle Atlas", "Ifrane", "End: Fes"],
+      stopDetails: [
+        { title: "Middle Atlas & Ifrane", desc: "Climb through the Middle Atlas and Ifrane." },
+        { title: "End: Fes", desc: "Finish the tour in Fes, where onward travel can be arranged." },
+      ] },
   ],
   included: [
     "Private air-conditioned vehicle",
@@ -1659,14 +1991,52 @@ export const tours: Tour[] = [
   routeCaption: "Casablanca → Rabat → Chefchaouen → Fes → Middle Atlas → Merzouga → Dades & Todra → Marrakech → Casablanca. A complete loop of northern and southern Morocco.",
   description: "A private eight-day loop beginning and ending in Casablanca that takes in the imperial cities, the Blue City, the Sahara and the Red City. Highlights include Rabat, Chefchaouen, a guided day in Fes, a night in the dunes at Erg Chebbi, the Todra and Dades gorges, the Aït Ben Haddou ksar and the bustle of Marrakech. This grand itinerary is offered on a basis, with every night and inclusion confirmed around your dates. A starting price per person is published for this route; the exact total depends on your party size and the accommodation you choose, and is confirmed around your dates before booking.",
   itineraryDays: [
-    { day: 1, title: "Casablanca → Rabat → Chefchaouen", desc: "See the Hassan II Mosque, then travel via Rabat's Atlantic kasbah and Hassan Tower to the blue-washed streets of Chefchaouen for the night.", stops: ["Hassan II Mosque", "Rabat", "Chefchaouen", "Overnight: Chefchaouen"] },
-    { day: 2, title: "Chefchaouen → Volubilis → Meknès → Fes", desc: "Absorb Chefchaouen's morning blue, visit the Roman ruins of Volubilis and the Bab Mansour gate in Meknès, then continue to Fes.", stops: ["Chefchaouen", "Volubilis", "Meknès", "Overnight: Fes"] },
-    { day: 3, title: "Guided Fes — medina, tanneries and souks", desc: "A guided day in Fes including the royal gates, Fes el-Bali around Al Quaraouiyine University, the Chouara tannery and the artisan souks.", stops: ["Fes el-Bali", "Al Quaraouiyine", "Chouara Tannery", "Royal Palace gates"] },
-    { day: 4, title: "Fes → Ifrane → Middle Atlas → Ziz Valley → Merzouga", desc: "Cross the cedar forests of the Middle Atlas via Ifrane and the Ziz Valley's palm oases, arriving in Merzouga for the night.", stops: ["Ifrane", "Cedar forest", "Ziz Valley", "Overnight: Merzouga"] },
-    { day: 5, title: "Erg Chebbi — camel trek and desert camp", desc: "A day at the great dunes, ending with a sunset camel ride into Erg Chebbi and a night in a desert camp.", stops: ["Erg Chebbi", "Sunset camel trek", "Desert camp night"] },
-    { day: 6, title: "Merzouga → Rissani → Todra Gorge → Dades Valley", desc: "Sunrise over the dunes and the Rissani souk, then the vast walls of Todra Gorge and the cliffs of the Dades Valley for the night.", stops: ["Erg Chebbi sunrise", "Rissani", "Todra Gorge", "Overnight: Dades Valley"] },
-    { day: 7, title: "Dades → Skoura → Aït Ben Haddou → Marrakech", desc: "Pass the Skoura oasis and Ouarzazate, explore the ksar of Aït Ben Haddou, climb the High Atlas and reach Marrakech by evening.", stops: ["Skoura", "Aït Ben Haddou", "Tizi n'Tichka", "Overnight: Marrakech"] },
-    { day: 8, title: "Marrakech morning → Casablanca", desc: "A final morning in Marrakech, then the return along the highway to Casablanca to complete the loop, or onward to the airport as arranged.", stops: ["Marrakech", "Coastal road", "End: Casablanca"] },
+    { day: 1, title: "Casablanca → Rabat → Chefchaouen", desc: "See the Hassan II Mosque, then travel via Rabat's Atlantic kasbah and Hassan Tower to the blue-washed streets of Chefchaouen for the night.", stops: ["Hassan II Mosque", "Rabat", "Chefchaouen", "Overnight: Chefchaouen"],
+      stopDetails: [
+        { title: "Hassan II Mosque", desc: "See the Hassan II Mosque." },
+        { title: "Rabat — Atlantic kasbah & Hassan Tower", desc: "Travel via Rabat's Atlantic kasbah and Hassan Tower." },
+        { title: "Overnight: Chefchaouen", desc: "Reach the blue-washed streets of Chefchaouen for the night." },
+      ] },
+    { day: 2, title: "Chefchaouen → Volubilis → Meknès → Fes", desc: "Absorb Chefchaouen's morning blue, visit the Roman ruins of Volubilis and the Bab Mansour gate in Meknès, then continue to Fes.", stops: ["Chefchaouen", "Volubilis", "Meknès", "Overnight: Fes"],
+      stopDetails: [
+        { title: "Chefchaouen", time: "Morning", desc: "Absorb Chefchaouen's morning blue." },
+        { title: "Volubilis & Meknès", desc: "Visit the Roman ruins of Volubilis and the Bab Mansour gate in Meknès." },
+        { title: "Overnight: Fes", desc: "Continue to Fes." },
+      ] },
+    { day: 3, title: "Guided Fes — medina, tanneries and souks", desc: "A guided day in Fes including the royal gates, Fes el-Bali around Al Quaraouiyine University, the Chouara tannery and the artisan souks.", stops: ["Fes el-Bali", "Al Quaraouiyine", "Chouara Tannery", "Royal Palace gates"],
+      stopDetails: [
+        { title: "Royal Palace gates & Fes el-Bali", desc: "A guided day in Fes including the royal gates and Fes el-Bali around Al Quaraouiyine University." },
+        { title: "Chouara Tannery & souks", desc: "Visit the Chouara tannery and the artisan souks." },
+      ] },
+    { day: 4, title: "Fes → Ifrane → Middle Atlas → Ziz Valley → Merzouga", desc: "Cross the cedar forests of the Middle Atlas via Ifrane and the Ziz Valley's palm oases, arriving in Merzouga for the night.", stops: ["Ifrane", "Cedar forest", "Ziz Valley", "Overnight: Merzouga"],
+      stopDetails: [
+        { title: "Ifrane & cedar forest", desc: "Cross the cedar forests of the Middle Atlas via Ifrane." },
+        { title: "Ziz Valley", desc: "Follow the Ziz Valley's palm oases." },
+        { title: "Overnight: Merzouga", desc: "Arrive in Merzouga for the night." },
+      ] },
+    { day: 5, title: "Erg Chebbi — camel trek and desert camp", desc: "A day at the great dunes, ending with a sunset camel ride into Erg Chebbi and a night in a desert camp.", stops: ["Erg Chebbi", "Sunset camel trek", "Desert camp night"],
+      stopDetails: [
+        { title: "Erg Chebbi dunes", desc: "A day at the great dunes." },
+        { title: "Sunset camel trek & desert camp", time: "Sunset", desc: "A sunset camel ride into Erg Chebbi and a night in a desert camp." },
+      ] },
+    { day: 6, title: "Merzouga → Rissani → Todra Gorge → Dades Valley", desc: "Sunrise over the dunes and the Rissani souk, then the vast walls of Todra Gorge and the cliffs of the Dades Valley for the night.", stops: ["Erg Chebbi sunrise", "Rissani", "Todra Gorge", "Overnight: Dades Valley"],
+      stopDetails: [
+        { title: "Erg Chebbi sunrise", time: "Sunrise", desc: "Sunrise over the dunes." },
+        { title: "Rissani souk", desc: "The Rissani souk." },
+        { title: "Todra Gorge", desc: "The vast walls of Todra Gorge." },
+        { title: "Overnight: Dades Valley", desc: "The cliffs of the Dades Valley for the night." },
+      ] },
+    { day: 7, title: "Dades → Skoura → Aït Ben Haddou → Marrakech", desc: "Pass the Skoura oasis and Ouarzazate, explore the ksar of Aït Ben Haddou, climb the High Atlas and reach Marrakech by evening.", stops: ["Skoura", "Aït Ben Haddou", "Tizi n'Tichka", "Overnight: Marrakech"],
+      stopDetails: [
+        { title: "Skoura & Ouarzazate", desc: "Pass the Skoura oasis and Ouarzazate." },
+        { title: "Aït Ben Haddou", desc: "Explore the ksar of Aït Ben Haddou." },
+        { title: "Overnight: Marrakech", time: "Evening", desc: "Climb the High Atlas and reach Marrakech by evening." },
+      ] },
+    { day: 8, title: "Marrakech morning → Casablanca", desc: "A final morning in Marrakech, then the return along the highway to Casablanca to complete the loop, or onward to the airport as arranged.", stops: ["Marrakech", "Coastal road", "End: Casablanca"],
+      stopDetails: [
+        { title: "Marrakech — final morning", time: "Morning", desc: "A final morning in Marrakech." },
+        { title: "End: Casablanca", desc: "Return along the highway to Casablanca to complete the loop, or onward to the airport as arranged." },
+      ] },
   ],
   included: [
     "Private air-conditioned vehicle",
@@ -1682,6 +2052,9 @@ export const tours: Tour[] = [
     { question: "Is this a fixed-price tour?", answer: "A starting price per person is published for this route. Your exact total depends on how many of you travel — the per-person price comes down as the group grows — and on the accommodation you choose, so we confirm the final figure with your dates before any payment. You are welcome to ask us to adjust the itinerary first." },
     { question: "Where does the circuit start and end?", answer: "It begins and ends in Casablanca, making it convenient for travelers flying in and out of the city." },
     { question: "Are the guided city days included?", answer: "Yes, official local guides for the Fes and Marrakech cultural days are part of the proposed itinerary." },
+  ],
+  practicalInfo: [
+    "This circuit begins and ends in Casablanca, which is convenient for travelers flying in and out of the same city.",
   ],
 },
 {
@@ -1704,10 +2077,28 @@ export const tours: Tour[] = [
   routeCaption: "Fes → Ifrane → Middle Atlas → Ziz Valley → Merzouga & Erg Chebbi → return to Fes.",
   description: "A private round trip from Fes to the Sahara and back over four days. The road south crosses the cedar forests and mountain town of Ifrane, descends the palm-filled Ziz Valley, and reaches Merzouga and the great dunes of Erg Chebbi for a sunset camel trek and a night in the desert before returning to Fes. A starting price per person is published for this route; the exact total depends on your party size and the accommodation you choose, and is confirmed around your dates before booking.",
   itineraryDays: [
-    { day: 1, title: "Fes → Ifrane → Middle Atlas → Midelt → Ziz Valley → Merzouga", desc: "Head south through Ifrane and the cedar country of the Middle Atlas, pause in Midelt, follow the Ziz Valley's oases, and arrive at Merzouga for the night.", stops: ["Ifrane", "Cedar forest", "Midelt", "Ziz Valley", "Overnight: Merzouga"] },
-    { day: 2, title: "Merzouga and Erg Chebbi — camel trek and desert night", desc: "Explore the dunes and the Erg Chebbi edge, then ride a camel into the dunes at sunset for a night in a desert camp with dinner and music.", stops: ["Erg Chebbi", "Sunset camel trek", "Desert camp night"] },
-    { day: 3, title: "Merzouga → Rissani → Erfoud → Midelt region", desc: "Catch the sunrise over the dunes, visit the Rissani souk and Erfoud's fossil workshops, then travel north through the Ziz Valley to overnight in the Midelt region.", stops: ["Erg Chebbi sunrise", "Rissani", "Erfoud", "Overnight: Midelt area"] },
-    { day: 4, title: "Midelt → Ifrane → Fes", desc: "Climb back through the Middle Atlas and Ifrane to finish in Fes, where the tour ends.", stops: ["Ifrane", "Middle Atlas", "End: Fes"] },
+    { day: 1, title: "Fes → Ifrane → Middle Atlas → Midelt → Ziz Valley → Merzouga", desc: "Head south through Ifrane and the cedar country of the Middle Atlas, pause in Midelt, follow the Ziz Valley's oases, and arrive at Merzouga for the night.", stops: ["Ifrane", "Cedar forest", "Midelt", "Ziz Valley", "Overnight: Merzouga"],
+      stopDetails: [
+        { title: "Ifrane & cedar forest", desc: "Head south through Ifrane and the cedar country of the Middle Atlas." },
+        { title: "Midelt & Ziz Valley", desc: "Pause in Midelt and follow the Ziz Valley's oases." },
+        { title: "Overnight: Merzouga", desc: "Arrive at Merzouga for the night." },
+      ] },
+    { day: 2, title: "Merzouga and Erg Chebbi — camel trek and desert night", desc: "Explore the dunes and the Erg Chebbi edge, then ride a camel into the dunes at sunset for a night in a desert camp with dinner and music.", stops: ["Erg Chebbi", "Sunset camel trek", "Desert camp night"],
+      stopDetails: [
+        { title: "Erg Chebbi", desc: "Explore the dunes and the Erg Chebbi edge." },
+        { title: "Sunset camel trek & desert camp", time: "Sunset", desc: "Ride a camel into the dunes for a night in a desert camp with dinner and music." },
+      ] },
+    { day: 3, title: "Merzouga → Rissani → Erfoud → Midelt region", desc: "Catch the sunrise over the dunes, visit the Rissani souk and Erfoud's fossil workshops, then travel north through the Ziz Valley to overnight in the Midelt region.", stops: ["Erg Chebbi sunrise", "Rissani", "Erfoud", "Overnight: Midelt area"],
+      stopDetails: [
+        { title: "Erg Chebbi sunrise", time: "Sunrise", desc: "Catch the sunrise over the dunes." },
+        { title: "Rissani & Erfoud", desc: "Visit the Rissani souk and Erfoud's fossil workshops." },
+        { title: "Overnight: Midelt area", desc: "Travel north through the Ziz Valley to overnight in the Midelt region." },
+      ] },
+    { day: 4, title: "Midelt → Ifrane → Fes", desc: "Climb back through the Middle Atlas and Ifrane to finish in Fes, where the tour ends.", stops: ["Ifrane", "Middle Atlas", "End: Fes"],
+      stopDetails: [
+        { title: "Middle Atlas & Ifrane", desc: "Climb back through the Middle Atlas and Ifrane." },
+        { title: "End: Fes", desc: "Finish in Fes, where the tour ends." },
+      ] },
   ],
   included: [
     "Private air-conditioned vehicle",
@@ -1744,11 +2135,33 @@ export const tours: Tour[] = [
   routeCaption: "Fes → Ifrane → Middle Atlas → Merzouga → Todra & Dades → Aït Ben Haddou → Marrakech. A one-way route from Fes to the Red City.",
   description: "A private one-way journey that links Fes and Marrakech across the very best of the south. It drops through the cedar-fringed Middle Atlas to the dunes of Erg Chebbi for a night in the desert, then traces the Todra and Dades gorges and crosses the High Atlas past Aït Ben Haddou to finish in Marrakech. Offered on a basis, with details confirmed around your dates. A starting price per person is published for this route; the exact total depends on your party size and the accommodation you choose, and is confirmed around your dates before booking.",
   itineraryDays: [
-    { day: 1, title: "Fes → Ifrane → Middle Atlas → Ziz Valley → Merzouga", desc: "Travel south through Ifrane and the cedar forests of the Middle Atlas, follow the oases of the Ziz Valley, and arrive in Merzouga for the night.", stops: ["Ifrane", "Middle Atlas cedar forest", "Ziz Valley", "Overnight: Merzouga"] },
-    { day: 2, title: "Merzouga and Erg Chebbi — camel trek and desert night", desc: "Spend the morning among the dunes, then ride a camel into Erg Chebbi at sunset for a night in a desert camp with dinner and Berber music.", stops: ["Erg Chebbi", "Sunset camel trek", "Desert camp night"] },
-    { day: 3, title: "Merzouga → Rissani → Todra Gorge → Dades Valley", desc: "Watch the sunrise, call at Rissani's souk, then head west through Todra Gorge and into the Dades Valley's striking cliff country for the night.", stops: ["Erg Chebbi sunrise", "Rissani", "Todra Gorge", "Overnight: Dades Valley"] },
-    { day: 4, title: "Dades → Skoura → Aït Ben Haddou → Marrakech", desc: "Pass the Skoura palm groves and Ouarzazate, admire the ksar of Aït Ben Haddou, cross the Tizi n'Tichka pass over the High Atlas and arrive in Marrakech.", stops: ["Skoura", "Aït Ben Haddou", "Tizi n'Tichka", "Overnight: Marrakech"] },
-    { day: 5, title: "A free morning in Marrakech", desc: "Enjoy a relaxed morning in a Marrakech riad, with time for the souks or Jemaa el-Fnaa before your onward travel.", stops: ["Marrakech", "End: Marrakech"] },
+    { day: 1, title: "Fes → Ifrane → Middle Atlas → Ziz Valley → Merzouga", desc: "Travel south through Ifrane and the cedar forests of the Middle Atlas, follow the oases of the Ziz Valley, and arrive in Merzouga for the night.", stops: ["Ifrane", "Middle Atlas cedar forest", "Ziz Valley", "Overnight: Merzouga"],
+      stopDetails: [
+        { title: "Ifrane & Middle Atlas cedar forest", desc: "Travel south through Ifrane and the cedar forests of the Middle Atlas." },
+        { title: "Ziz Valley", desc: "Follow the oases of the Ziz Valley." },
+        { title: "Overnight: Merzouga", desc: "Arrive in Merzouga for the night." },
+      ] },
+    { day: 2, title: "Merzouga and Erg Chebbi — camel trek and desert night", desc: "Spend the morning among the dunes, then ride a camel into Erg Chebbi at sunset for a night in a desert camp with dinner and Berber music.", stops: ["Erg Chebbi", "Sunset camel trek", "Desert camp night"],
+      stopDetails: [
+        { title: "Erg Chebbi dunes", time: "Morning", desc: "Spend the morning among the dunes." },
+        { title: "Sunset camel trek & desert camp", time: "Sunset", desc: "Ride a camel into Erg Chebbi for a night in a desert camp with dinner and Berber music." },
+      ] },
+    { day: 3, title: "Merzouga → Rissani → Todra Gorge → Dades Valley", desc: "Watch the sunrise, call at Rissani's souk, then head west through Todra Gorge and into the Dades Valley's striking cliff country for the night.", stops: ["Erg Chebbi sunrise", "Rissani", "Todra Gorge", "Overnight: Dades Valley"],
+      stopDetails: [
+        { title: "Erg Chebbi sunrise", time: "Sunrise", desc: "Watch the sunrise." },
+        { title: "Rissani souk", desc: "Call at Rissani's souk." },
+        { title: "Overnight: Dades Valley", desc: "Head west through Todra Gorge and into the Dades Valley's striking cliff country for the night." },
+      ] },
+    { day: 4, title: "Dades → Skoura → Aït Ben Haddou → Marrakech", desc: "Pass the Skoura palm groves and Ouarzazate, admire the ksar of Aït Ben Haddou, cross the Tizi n'Tichka pass over the High Atlas and arrive in Marrakech.", stops: ["Skoura", "Aït Ben Haddou", "Tizi n'Tichka", "Overnight: Marrakech"],
+      stopDetails: [
+        { title: "Skoura & Ouarzazate", desc: "Pass the Skoura palm groves and Ouarzazate." },
+        { title: "Aït Ben Haddou", desc: "Admire the ksar." },
+        { title: "Overnight: Marrakech", desc: "Cross the Tizi n'Tichka pass over the High Atlas and arrive in Marrakech." },
+      ] },
+    { day: 5, title: "A free morning in Marrakech", desc: "Enjoy a relaxed morning in a Marrakech riad, with time for the souks or Jemaa el-Fnaa before your onward travel.", stops: ["Marrakech", "End: Marrakech"],
+      stopDetails: [
+        { title: "Marrakech — relaxed morning", time: "Morning", desc: "Enjoy a relaxed morning in a Marrakech riad, with time for the souks or Jemaa el-Fnaa before your onward travel." },
+      ] },
   ],
   included: [
     "Private air-conditioned vehicle",
@@ -1763,6 +2176,9 @@ export const tours: Tour[] = [
     { question: "Is this a fixed-price tour?", answer: "A starting price per person is published for this route. Your exact total depends on how many of you travel — the per-person price comes down as the group grows — and on the accommodation you choose, so we confirm the final figure with your dates before any payment. You are welcome to ask us to adjust the itinerary first." },
     { question: "Where does the route finish?", answer: "It is designed to end in Marrakech, which suits travelers flying out of the city; other arrangements can be made." },
     { question: "Is the desert night included?", answer: "Yes, a sunset camel trek and a night in an Erg Chebbi camp are part of the proposed itinerary." },
+  ],
+  practicalInfo: [
+    "This route is designed to end in Marrakech, which suits travelers flying out of the city; other finishing arrangements can be made.",
   ],
 },
 {
@@ -1786,14 +2202,49 @@ export const tours: Tour[] = [
   routeCaption: "Fes → Meknès & Volubilis → Middle Atlas → Merzouga → Todra & Dades → Aït Ben Haddou → Marrakech. A grand eight-day sweep across imperial and desert Morocco.",
   description: "A private eight-day journey that begins in the imperial city of Fes, takes in Meknès, Volubilis and the cedar forests of the Middle Atlas, spends a night in the dunes at Erg Chebbi, threads the Todra and Dades gorges, and crosses the High Atlas to finish in Marrakech. Offered as a itinerary, with every night and inclusion confirmed around your dates. A starting price per person is published for this route; the exact total depends on your party size and the accommodation you choose, and is confirmed around your dates before booking.",
   itineraryDays: [
-    { day: 1, title: "Guided Fes — medina, tanneries and souks", desc: "A guided day in Fes: the royal gates, the medina of Fes el-Bali around Al Quaraouiyine University, the Chouara tannery and the crafts of the old souks.", stops: ["Fes el-Bali", "Al Quaraouiyine University", "Chouara Tannery", "Royal Palace gates"] },
-    { day: 2, title: "Fes → Meknès → Volubilis → Middle Atlas", desc: "Visit the imperial monuments of Meknès and the Roman ruins of Volubilis, then head south through Ifrane and the cedar forests to overnight in the High Middle Atlas.", stops: ["Bab Mansour Gate", "Volubilis Roman ruins", "Ifrane", "Overnight: Middle Atlas"] },
-    { day: 3, title: "Middle Atlas → Ziz Valley → Merzouga", desc: "Descend the palm-filled Ziz Valley and reach Merzouga, with time to feel the edge of Erg Chebbi before the night.", stops: ["Ziz Valley", "Errachidia region", "Merzouga", "Overnight: Merzouga"] },
-    { day: 4, title: "Erg Chebbi — camel trek and desert camp", desc: "A day around the great dunes capped by a sunset camel trek and a night in a desert camp with dinner and music.", stops: ["Erg Chebbi", "Sunset camel trek", "Desert camp night"] },
-    { day: 5, title: "Merzouga → Todra Gorge → Dades Valley", desc: "After sunrise over the dunes, call at Rissani, walk Todra Gorge's immense walls, and finish among the cliffs of the Dades Valley.", stops: ["Erg Chebbi sunrise", "Rissani", "Todra Gorge", "Overnight: Dades Valley"] },
-    { day: 6, title: "Dades → Skoura → Aït Ben Haddou → Marrakech", desc: "Pass the Skoura oasis and Ouarzazate, explore Aït Ben Haddou, climb over the High Atlas and reach Marrakech for the night.", stops: ["Skoura", "Aït Ben Haddou", "Tizi n'Tichka", "Overnight: Marrakech"] },
-    { day: 7, title: "Guided Marrakech — palaces, gardens and Jemaa el-Fnaa", desc: "A full guided day in the Red City from the Bahia Palace and Majorelle Garden to the souks and the evening life of Jemaa el-Fnaa.", stops: ["Bahia Palace", "Majorelle Garden", "Koutoubia", "Jemaa el-Fnaa"] },
-    { day: 8, title: "Marrakech free morning → onward", desc: "A relaxed morning in Marrakech before your onward travel, with help arranging transfers as needed.", stops: ["Marrakech", "End: Marrakech"] },
+    { day: 1, title: "Guided Fes — medina, tanneries and souks", desc: "A guided day in Fes: the royal gates, the medina of Fes el-Bali around Al Quaraouiyine University, the Chouara tannery and the crafts of the old souks.", stops: ["Fes el-Bali", "Al Quaraouiyine University", "Chouara Tannery", "Royal Palace gates"],
+      stopDetails: [
+        { title: "Royal Palace gates & Fes el-Bali", desc: "A guided day in Fes: the royal gates and the medina of Fes el-Bali around Al Quaraouiyine University." },
+        { title: "Chouara Tannery & old souks", desc: "The Chouara tannery and the crafts of the old souks." },
+      ] },
+    { day: 2, title: "Fes → Meknès → Volubilis → Middle Atlas", desc: "Visit the imperial monuments of Meknès and the Roman ruins of Volubilis, then head south through Ifrane and the cedar forests to overnight in the High Middle Atlas.", stops: ["Bab Mansour Gate", "Volubilis Roman ruins", "Ifrane", "Overnight: Middle Atlas"],
+      stopDetails: [
+        { title: "Meknès — Bab Mansour Gate", desc: "Visit the imperial monuments of Meknès." },
+        { title: "Volubilis (Roman ruins)", desc: "See the Roman ruins of Volubilis." },
+        { title: "Overnight: Middle Atlas", desc: "Head south through Ifrane and the cedar forests to overnight in the High Middle Atlas." },
+      ] },
+    { day: 3, title: "Middle Atlas → Ziz Valley → Merzouga", desc: "Descend the palm-filled Ziz Valley and reach Merzouga, with time to feel the edge of Erg Chebbi before the night.", stops: ["Ziz Valley", "Errachidia region", "Merzouga", "Overnight: Merzouga"],
+      stopDetails: [
+        { title: "Ziz Valley & Errachidia region", desc: "Descend the palm-filled Ziz Valley." },
+        { title: "Overnight: Merzouga", desc: "Reach Merzouga, with time to feel the edge of Erg Chebbi before the night." },
+      ] },
+    { day: 4, title: "Erg Chebbi — camel trek and desert camp", desc: "A day around the great dunes capped by a sunset camel trek and a night in a desert camp with dinner and music.", stops: ["Erg Chebbi", "Sunset camel trek", "Desert camp night"],
+      stopDetails: [
+        { title: "Erg Chebbi dunes", desc: "A day around the great dunes." },
+        { title: "Sunset camel trek & desert camp", time: "Sunset", desc: "A sunset camel trek and a night in a desert camp with dinner and music." },
+      ] },
+    { day: 5, title: "Merzouga → Todra Gorge → Dades Valley", desc: "After sunrise over the dunes, call at Rissani, walk Todra Gorge's immense walls, and finish among the cliffs of the Dades Valley.", stops: ["Erg Chebbi sunrise", "Rissani", "Todra Gorge", "Overnight: Dades Valley"],
+      stopDetails: [
+        { title: "Erg Chebbi sunrise", time: "Sunrise", desc: "After sunrise over the dunes." },
+        { title: "Rissani", desc: "Call at Rissani." },
+        { title: "Todra Gorge", desc: "Walk Todra Gorge's immense walls." },
+        { title: "Overnight: Dades Valley", desc: "Finish among the cliffs of the Dades Valley." },
+      ] },
+    { day: 6, title: "Dades → Skoura → Aït Ben Haddou → Marrakech", desc: "Pass the Skoura oasis and Ouarzazate, explore Aït Ben Haddou, climb over the High Atlas and reach Marrakech for the night.", stops: ["Skoura", "Aït Ben Haddou", "Tizi n'Tichka", "Overnight: Marrakech"],
+      stopDetails: [
+        { title: "Skoura & Ouarzazate", desc: "Pass the Skoura oasis and Ouarzazate." },
+        { title: "Aït Ben Haddou", desc: "Explore Aït Ben Haddou." },
+        { title: "Overnight: Marrakech", desc: "Climb over the High Atlas and reach Marrakech for the night." },
+      ] },
+    { day: 7, title: "Guided Marrakech — palaces, gardens and Jemaa el-Fnaa", desc: "A full guided day in the Red City from the Bahia Palace and Majorelle Garden to the souks and the evening life of Jemaa el-Fnaa.", stops: ["Bahia Palace", "Majorelle Garden", "Koutoubia", "Jemaa el-Fnaa"],
+      stopDetails: [
+        { title: "Bahia Palace & Majorelle Garden", desc: "A full guided day in the Red City from the Bahia Palace and Majorelle Garden." },
+        { title: "Koutoubia & Jemaa el-Fnaa", time: "Evening", desc: "The souks and the evening life of Jemaa el-Fnaa." },
+      ] },
+    { day: 8, title: "Marrakech free morning → onward", desc: "A relaxed morning in Marrakech before your onward travel, with help arranging transfers as needed.", stops: ["Marrakech", "End: Marrakech"],
+      stopDetails: [
+        { title: "Marrakech — relaxed morning", time: "Morning", desc: "A relaxed morning in Marrakech before your onward travel." },
+      ] },
   ],
   included: [
     "Private air-conditioned vehicle",
@@ -1831,9 +2282,22 @@ export const tours: Tour[] = [
   routeCaption: "Agadir → Taroudant → Ouarzazate → Aït Ben Haddou → Marrakech.",
   description: "A private route linking coastal Agadir with Marrakech across the Anti-Atlas and High Atlas. It passes the walled souks of Taroudant, the saffron fields of Taliouine, the kasbah country of Ouarzazate and the famous ksar of Aït Ben Haddou, with two nights left to enjoy Marrakech. Offered on a basis, with details confirmed around your dates. A starting price per person is published for this route; the exact total depends on your party size and the accommodation you choose, and is confirmed around your dates before booking.",
   itineraryDays: [
-    { day: 1, title: "Agadir → Taroudant → Taliouine → Ouarzazate", desc: "Depart Agadir through the Souss plains to Taroudant's ramparts and crafts market, climb the saffron terraces of Taliouine and cross the Anti-Atlas to Ouarzazate for the night.", stops: ["Taroudant", "Taliouine", "Anti-Atlas", "Overnight: Ouarzazate"] },
-    { day: 2, title: "Ouarzazate → Aït Ben Haddou → High Atlas → Marrakech", desc: "Admire Aït Ben Haddou and Taourirt Kasbah, cross the High Atlas over the Tizi n'Tichka pass and arrive in Marrakech for the famous evening of Jemaa el-Fnaa.", stops: ["Aït Ben Haddou", "Tizi n'Tichka", "Jemaa el-Fnaa", "Overnight: Marrakech"] },
-    { day: 3, title: "Guided Marrakech — palaces, gardens and souks", desc: "A full day in the Red City with a local guide: the Bahia Palace, Koutoubia, the gardens and the labyrinthine souks, with free time at Jemaa el-Fnaa.", stops: ["Bahia Palace", "Koutoubia", "Majorelle Garden", "Jemaa el-Fnaa"] },
+    { day: 1, title: "Agadir → Taroudant → Taliouine → Ouarzazate", desc: "Depart Agadir through the Souss plains to Taroudant's ramparts and crafts market, climb the saffron terraces of Taliouine and cross the Anti-Atlas to Ouarzazate for the night.", stops: ["Taroudant", "Taliouine", "Anti-Atlas", "Overnight: Ouarzazate"],
+      stopDetails: [
+        { title: "Taroudant", desc: "Depart Agadir through the Souss plains to Taroudant's ramparts and crafts market." },
+        { title: "Taliouine saffron terraces", desc: "Climb the saffron terraces of Taliouine." },
+        { title: "Overnight: Ouarzazate", desc: "Cross the Anti-Atlas to Ouarzazate for the night." },
+      ] },
+    { day: 2, title: "Ouarzazate → Aït Ben Haddou → High Atlas → Marrakech", desc: "Admire Aït Ben Haddou and Taourirt Kasbah, cross the High Atlas over the Tizi n'Tichka pass and arrive in Marrakech for the famous evening of Jemaa el-Fnaa.", stops: ["Aït Ben Haddou", "Tizi n'Tichka", "Jemaa el-Fnaa", "Overnight: Marrakech"],
+      stopDetails: [
+        { title: "Aït Ben Haddou & Taourirt Kasbah", desc: "Admire Aït Ben Haddou and Taourirt Kasbah." },
+        { title: "Overnight: Marrakech — Jemaa el-Fnaa", time: "Evening", desc: "Cross the High Atlas over the Tizi n'Tichka pass and arrive in Marrakech for the famous evening of Jemaa el-Fnaa." },
+      ] },
+    { day: 3, title: "Guided Marrakech — palaces, gardens and souks", desc: "A full day in the Red City with a local guide: the Bahia Palace, Koutoubia, the gardens and the labyrinthine souks, with free time at Jemaa el-Fnaa.", stops: ["Bahia Palace", "Koutoubia", "Majorelle Garden", "Jemaa el-Fnaa"],
+      stopDetails: [
+        { title: "Bahia Palace & Koutoubia", desc: "A full day in the Red City with a local guide: the Bahia Palace and Koutoubia." },
+        { title: "Majorelle Garden & souks", desc: "The gardens and the labyrinthine souks, with free time at Jemaa el-Fnaa." },
+      ] },
     { day: 4, title: "Marrakech free morning → return or onward", desc: "A slow breakfast in a Marrakech riad before returning to Agadir along the coast or continuing onward, as agreed in your quote.", stops: ["Marrakech riad", "Coastal return", "End: Agadir or onward"] },
   ],
   included: [
@@ -1848,6 +2312,9 @@ export const tours: Tour[] = [
     { question: "Is this a fixed-price tour?", answer: "A starting price per person is published for this route. Your exact total depends on how many of you travel — the per-person price comes down as the group grows — and on the accommodation you choose, so we confirm the final figure with your dates before any payment. You are welcome to ask us to adjust the itinerary first." },
     { question: "Does the tour reach the Sahara?", answer: "This itinerary focuses on Taroudant, Ouarzazate, Aït Ben Haddou and Marrakech. Ask about extending toward the Merzouga dunes." },
     { question: "Can I start in Marrakech and finish in Agadir?", answer: "Yes, the direction is easy to reverse and we will shape it around your flights." },
+  ],
+  practicalInfo: [
+    "This itinerary focuses on Taroudant, Ouarzazate, Aït Ben Haddou and Marrakech rather than the Sahara — ask about extending it toward the Merzouga dunes.",
   ],
 },
 {
@@ -1870,11 +2337,34 @@ export const tours: Tour[] = [
   routeCaption: "Agadir → Taroudant → Ouarzazate → Aït Ben Haddou → Dades & Todra → Merzouga → Marrakech.",
   description: "A private one-way route from the Agadir coast to Marrakech across the kasbah country and the Sahara. It crosses Taroudant and the saffron terraces of Taliouine, explores Ouarzazate and Aït Ben Haddou, threads the Dades and Todra gorges, and spends a sunset with a camel trek and a desert-camp night at Erg Chebbi before finishing in Marrakech. Offered on a basis, with details confirmed around your dates. A starting price per person is published for this route; the exact total depends on your party size and the accommodation you choose, and is confirmed around your dates before booking.",
   itineraryDays: [
-    { day: 1, title: "Agadir → Taroudant → Taliouine → Ouarzazate", desc: "Head inland through the Souss plains, stop at the walled souk city of Taroudant and the saffron fields of Taliouine, then cross the Anti-Atlas to Ouarzazate for the night.", stops: ["Taroudant", "Taliouine", "Anti-Atlas", "Overnight: Ouarzazate"] },
-    { day: 2, title: "Ouarzazate → Aït Ben Haddou → Skoura → Dades Valley", desc: "Visit Aït Ben Haddou and Taourirt Kasbah, drift through the Skoura palm groves and wind into the Dades Valley's cliffs for the night.", stops: ["Aït Ben Haddou", "Taourirt Kasbah", "Skoura", "Overnight: Dades Valley"] },
-    { day: 3, title: "Dades → Todra Gorge → Merzouga", desc: "Trace the Dades canyon, walk beneath Todra Gorge's towering walls, then continue to Merzouga for a sunset camel trek into Erg Chebbi.", stops: ["Dades Gorge", "Todra Gorge", "Erg Chebbi camel trek", "Desert camp night"] },
-    { day: 4, title: "Merzouga → Rissani → Erfoud → Ouarzazate region", desc: "Sunrise over the dunes, the Rissani souk and Erfoud's fossils, then west past Skoura to overnight near Ouarzazate.", stops: ["Erg Chebbi sunrise", "Rissani", "Erfoud", "Overnight: Ouarzazate area"] },
-    { day: 5, title: "Ouarzazate → High Atlas → Marrakech", desc: "Cross the Tizi n'Tichka pass over the High Atlas and descend to Marrakech, where the tour ends.", stops: ["Tizi n'Tichka", "High Atlas", "End: Marrakech"] },
+    { day: 1, title: "Agadir → Taroudant → Taliouine → Ouarzazate", desc: "Head inland through the Souss plains, stop at the walled souk city of Taroudant and the saffron fields of Taliouine, then cross the Anti-Atlas to Ouarzazate for the night.", stops: ["Taroudant", "Taliouine", "Anti-Atlas", "Overnight: Ouarzazate"],
+      stopDetails: [
+        { title: "Taroudant", desc: "Head inland through the Souss plains, stop at the walled souk city of Taroudant." },
+        { title: "Taliouine saffron fields", desc: "The saffron fields of Taliouine." },
+        { title: "Overnight: Ouarzazate", desc: "Cross the Anti-Atlas to Ouarzazate for the night." },
+      ] },
+    { day: 2, title: "Ouarzazate → Aït Ben Haddou → Skoura → Dades Valley", desc: "Visit Aït Ben Haddou and Taourirt Kasbah, drift through the Skoura palm groves and wind into the Dades Valley's cliffs for the night.", stops: ["Aït Ben Haddou", "Taourirt Kasbah", "Skoura", "Overnight: Dades Valley"],
+      stopDetails: [
+        { title: "Aït Ben Haddou & Taourirt Kasbah", desc: "Visit Aït Ben Haddou and Taourirt Kasbah." },
+        { title: "Skoura palm groves", desc: "Drift through the Skoura palm groves." },
+        { title: "Overnight: Dades Valley", desc: "Wind into the Dades Valley's cliffs for the night." },
+      ] },
+    { day: 3, title: "Dades → Todra Gorge → Merzouga", desc: "Trace the Dades canyon, walk beneath Todra Gorge's towering walls, then continue to Merzouga for a sunset camel trek into Erg Chebbi.", stops: ["Dades Gorge", "Todra Gorge", "Erg Chebbi camel trek", "Desert camp night"],
+      stopDetails: [
+        { title: "Dades Gorge & Todra Gorge", desc: "Trace the Dades canyon, walk beneath Todra Gorge's towering walls." },
+        { title: "Sunset camel trek — Erg Chebbi", time: "Sunset", desc: "Continue to Merzouga for a sunset camel trek into Erg Chebbi." },
+      ] },
+    { day: 4, title: "Merzouga → Rissani → Erfoud → Ouarzazate region", desc: "Sunrise over the dunes, the Rissani souk and Erfoud's fossils, then west past Skoura to overnight near Ouarzazate.", stops: ["Erg Chebbi sunrise", "Rissani", "Erfoud", "Overnight: Ouarzazate area"],
+      stopDetails: [
+        { title: "Erg Chebbi sunrise", time: "Sunrise", desc: "Sunrise over the dunes." },
+        { title: "Rissani & Erfoud", desc: "The Rissani souk and Erfoud's fossils." },
+        { title: "Overnight: Ouarzazate area", desc: "West past Skoura to overnight near Ouarzazate." },
+      ] },
+    { day: 5, title: "Ouarzazate → High Atlas → Marrakech", desc: "Cross the Tizi n'Tichka pass over the High Atlas and descend to Marrakech, where the tour ends.", stops: ["Tizi n'Tichka", "High Atlas", "End: Marrakech"],
+      stopDetails: [
+        { title: "Tizi n'Tichka pass — High Atlas", desc: "Cross the Tizi n'Tichka pass over the High Atlas." },
+        { title: "End: Marrakech", desc: "Descend to Marrakech, where the tour ends." },
+      ] },
   ],
   included: [
     "Private air-conditioned vehicle",
@@ -1911,14 +2401,50 @@ export const tours: Tour[] = [
   routeCaption: "Agadir → Taroudant → Ouarzazate → Aït Ben Haddou → Dades & Todra → Merzouga → Draa Valley → back to Agadir.",
   description: "A private circuit that loops the whole of southern Morocco from the Atlantic coast back to Agadir. You travel inland past the walled souk city of Taroudant and the saffron terraces of Taliouine, cross the film-set kasbah landscapes around Ouarzazate, thread the Dades and Todra gorges, spend a night in the dunes at Erg Chebbi and return through the palm-shaded Draa Valley. The exact nights, accommodation and daily pace are confirmed around your dates before booking, so nothing is invented in advance. A starting price per person is published for this route; the exact total depends on your party size and the accommodation you choose, and is confirmed around your dates before booking.",
   itineraryDays: [
-    { day: 1, title: "Agadir, coast, kasbah and promenade", desc: "Start on the Atlantic with a relaxed orientation of Agadir: the beachfront promenade, the hilltop kasbah viewpoint and the lively souk, keeping the day light so you absorb the sea air before heading inland.", stops: ["Agadir beach", "Kasbah viewpoint", "Agadir souk"] },
-    { day: 2, title: "Agadir → Taroudant → Taliouine → Ouarzazate", desc: "Drive through the Souss plains to the walled city of Taroudant for its ramparts and craft market, then climb toward Taliouine, Morocco's saffron heartland, before crossing the Anti-Atlas to Ouarzazate for the night.", stops: ["Taroudant ramparts", "Taliouine saffron country", "Anti-Atlas crossing", "Overnight: Ouarzazate"] },
-    { day: 3, title: "Ouarzazate → Aït Ben Haddou → Skoura → Dades Valley", desc: "Visit the preserved ksar of Aït Ben Haddou and the cinema-star Taourirt Kasbah, pass the palm groves of Skoura, then wind into the Valley of a Thousand Kasbahs for a night in the Dades.", stops: ["Aït Ben Haddou ksar", "Taourirt Kasbah", "Skoura oasis", "Overnight: Dades Valley"] },
-    { day: 4, title: "Dades → Todra Gorge → Merzouga", desc: "Follow the Dades canyon and pause at the soaring limestone walls of Todra Gorge before crossing the desert plain to Merzouga, where a sunset camel ride carries you into Erg Chebbi for a night under the stars.", stops: ["Dades Gorge", "Todra Gorge", "Merzouga", "Erg Chebbi desert camp"] },
-    { day: 5, title: "Merzouga → Rissani → Erfoud → Draa Valley", desc: "Watch the dunes turn gold at sunrise before exploring the souks of Rissani and the fossil workshops of Erfoud, then travel past the gorges to lose yourself in the date-palm oases of the Draa Valley.", stops: ["Erg Chebbi sunrise", "Rissani souk", "Erfoud fossils", "Overnight: Draa Valley / Zagora"] },
-    { day: 6, title: "Draa Valley → Zagora → Ouarzazate", desc: "Ride the long palm-fringed corridor of the Draa, with its mud-brick ksour and glimpse of the 'one-way road to Timbuktu' at Zagora, then return north to Ouarzazate for the night.", stops: ["Draa Valley oases", "Zagora's desert gateway", "Agdz", "Overnight: Ouarzazate"] },
-    { day: 7, title: "Ouarzazate → Marrakech via the High Atlas", desc: "Cross the Tizi n'Tichka pass over the High Atlas with panoramic views, descending into the Red City in time for the evening atmosphere of Jemaa el-Fnaa. Overnight in Marrakech.", stops: ["Tizi n'Tichka pass", "High Atlas views", "Jemaa el-Fnaa", "Overnight: Marrakech"] },
-    { day: 8, title: "Marrakech → Agadir along the coast", desc: "Return to the Atlantic through the green plains and coastal roads, passing the surf town of Taghazout, and arrive back in Agadir to complete the loop. Your onward travel or extension can be arranged.", stops: ["Coastal road north of Agadir", "Taghazout", "End: Agadir"] },
+    { day: 1, title: "Agadir, coast, kasbah and promenade", desc: "Start on the Atlantic with a relaxed orientation of Agadir: the beachfront promenade, the hilltop kasbah viewpoint and the lively souk, keeping the day light so you absorb the sea air before heading inland.", stops: ["Agadir beach", "Kasbah viewpoint", "Agadir souk"],
+      stopDetails: [
+        { title: "Agadir beachfront promenade", desc: "A relaxed orientation of Agadir: the beachfront promenade." },
+        { title: "Kasbah viewpoint & souk", desc: "The hilltop kasbah viewpoint and the lively souk, keeping the day light so you absorb the sea air before heading inland." },
+      ] },
+    { day: 2, title: "Agadir → Taroudant → Taliouine → Ouarzazate", desc: "Drive through the Souss plains to the walled city of Taroudant for its ramparts and craft market, then climb toward Taliouine, Morocco's saffron heartland, before crossing the Anti-Atlas to Ouarzazate for the night.", stops: ["Taroudant ramparts", "Taliouine saffron country", "Anti-Atlas crossing", "Overnight: Ouarzazate"],
+      stopDetails: [
+        { title: "Taroudant ramparts", desc: "Drive through the Souss plains to the walled city of Taroudant for its ramparts and craft market." },
+        { title: "Taliouine saffron country", desc: "Climb toward Taliouine, Morocco's saffron heartland." },
+        { title: "Overnight: Ouarzazate", desc: "Cross the Anti-Atlas to Ouarzazate for the night." },
+      ] },
+    { day: 3, title: "Ouarzazate → Aït Ben Haddou → Skoura → Dades Valley", desc: "Visit the preserved ksar of Aït Ben Haddou and the cinema-star Taourirt Kasbah, pass the palm groves of Skoura, then wind into the Valley of a Thousand Kasbahs for a night in the Dades.", stops: ["Aït Ben Haddou ksar", "Taourirt Kasbah", "Skoura oasis", "Overnight: Dades Valley"],
+      stopDetails: [
+        { title: "Aït Ben Haddou & Taourirt Kasbah", desc: "Visit the preserved ksar of Aït Ben Haddou and the cinema-star Taourirt Kasbah." },
+        { title: "Skoura oasis", desc: "Pass the palm groves of Skoura." },
+        { title: "Overnight: Dades Valley", desc: "Wind into the Valley of a Thousand Kasbahs for a night in the Dades." },
+      ] },
+    { day: 4, title: "Dades → Todra Gorge → Merzouga", desc: "Follow the Dades canyon and pause at the soaring limestone walls of Todra Gorge before crossing the desert plain to Merzouga, where a sunset camel ride carries you into Erg Chebbi for a night under the stars.", stops: ["Dades Gorge", "Todra Gorge", "Merzouga", "Erg Chebbi desert camp"],
+      stopDetails: [
+        { title: "Dades Gorge & Todra Gorge", desc: "Follow the Dades canyon and pause at the soaring limestone walls of Todra Gorge." },
+        { title: "Sunset camel ride — Erg Chebbi desert camp", time: "Sunset", desc: "Cross the desert plain to Merzouga, where a sunset camel ride carries you into Erg Chebbi for a night under the stars." },
+      ] },
+    { day: 5, title: "Merzouga → Rissani → Erfoud → Draa Valley", desc: "Watch the dunes turn gold at sunrise before exploring the souks of Rissani and the fossil workshops of Erfoud, then travel past the gorges to lose yourself in the date-palm oases of the Draa Valley.", stops: ["Erg Chebbi sunrise", "Rissani souk", "Erfoud fossils", "Overnight: Draa Valley / Zagora"],
+      stopDetails: [
+        { title: "Erg Chebbi sunrise", time: "Sunrise", desc: "Watch the dunes turn gold at sunrise." },
+        { title: "Rissani souk & Erfoud fossils", desc: "Explore the souks of Rissani and the fossil workshops of Erfoud." },
+        { title: "Overnight: Draa Valley / Zagora", desc: "Travel past the gorges to lose yourself in the date-palm oases of the Draa Valley." },
+      ] },
+    { day: 6, title: "Draa Valley → Zagora → Ouarzazate", desc: "Ride the long palm-fringed corridor of the Draa, with its mud-brick ksour and glimpse of the 'one-way road to Timbuktu' at Zagora, then return north to Ouarzazate for the night.", stops: ["Draa Valley oases", "Zagora's desert gateway", "Agdz", "Overnight: Ouarzazate"],
+      stopDetails: [
+        { title: "Draa Valley oases", desc: "Ride the long palm-fringed corridor of the Draa, with its mud-brick ksour." },
+        { title: "Zagora's desert gateway", desc: "A glimpse of the 'one-way road to Timbuktu' at Zagora." },
+        { title: "Overnight: Ouarzazate", desc: "Return north to Ouarzazate for the night." },
+      ] },
+    { day: 7, title: "Ouarzazate → Marrakech via the High Atlas", desc: "Cross the Tizi n'Tichka pass over the High Atlas with panoramic views, descending into the Red City in time for the evening atmosphere of Jemaa el-Fnaa. Overnight in Marrakech.", stops: ["Tizi n'Tichka pass", "High Atlas views", "Jemaa el-Fnaa", "Overnight: Marrakech"],
+      stopDetails: [
+        { title: "Tizi n'Tichka pass — High Atlas views", desc: "Cross the Tizi n'Tichka pass over the High Atlas with panoramic views." },
+        { title: "Overnight: Marrakech — Jemaa el-Fnaa", time: "Evening", desc: "Descend into the Red City in time for the evening atmosphere of Jemaa el-Fnaa." },
+      ] },
+    { day: 8, title: "Marrakech → Agadir along the coast", desc: "Return to the Atlantic through the green plains and coastal roads, passing the surf town of Taghazout, and arrive back in Agadir to complete the loop. Your onward travel or extension can be arranged.", stops: ["Coastal road north of Agadir", "Taghazout", "End: Agadir"],
+      stopDetails: [
+        { title: "Coastal road & Taghazout", desc: "Return to the Atlantic through the green plains and coastal roads, passing the surf town of Taghazout." },
+        { title: "End: Agadir", desc: "Arrive back in Agadir to complete the loop." },
+      ] },
   ],
   included: [
     "Private air-conditioned vehicle",
@@ -1939,6 +2465,9 @@ export const tours: Tour[] = [
     { question: "Where does the circuit start and end?", answer: "It is designed as a loop beginning and ending in Agadir, reaching Marrakech midway. A one-way finish (for example in Marrakech) can be arranged in your private quote." },
     { question: "Is the desert night included?", answer: "Yes, a sunset camel trek and a night in a desert camp at Erg Chebbi are part of the proposed route and will be confirmed in writing before booking." },
   ],
+  practicalInfo: [
+    "This circuit begins and ends in Agadir, reaching Marrakech midway — a one-way finish (for example in Marrakech) can be arranged in your private quote.",
+  ],
 },
   {
     id: "2-day-zagora-desert-marrakech",
@@ -1955,7 +2484,13 @@ export const tours: Tour[] = [
     routeIds: ["marrakech", "ait-ben-haddou", "ouarzazate", "draa-valley", "zagora"],
     routeCaption: "Marrakech → High Atlas → Aït Ben Haddou → Ouarzazate → Draa Valley → Zagora → Marrakech.",
     itineraryDays: [
-      { day: 1, title: "Marrakech → High Atlas → Aït Ben Haddou → Ouarzazate → Zagora", desc: "Leave Marrakech and cross the High Atlas before visiting the UNESCO-listed ksar of Aït Ben Haddou. Continue through Ouarzazate and the Draa Valley to Zagora, where the landscape becomes increasingly open and arid. The evening is reserved for the confirmed desert experience and overnight stay.", stops: ["Marrakech", "High Atlas Mountains", "Aït Ben Haddou (UNESCO)", "Ouarzazate", "Draa Valley", "Zagora"] },
+      { day: 1, title: "Marrakech → High Atlas → Aït Ben Haddou → Ouarzazate → Zagora", desc: "Leave Marrakech and cross the High Atlas before visiting the UNESCO-listed ksar of Aït Ben Haddou. Continue through Ouarzazate and the Draa Valley to Zagora, where the landscape becomes increasingly open and arid. The evening is reserved for the confirmed desert experience and overnight stay.", stops: ["Marrakech", "High Atlas Mountains", "Aït Ben Haddou (UNESCO)", "Ouarzazate", "Draa Valley", "Zagora"],
+        stopDetails: [
+          { title: "Depart Marrakech", desc: "Cross the High Atlas." },
+          { title: "Aït Ben Haddou (UNESCO)", desc: "Visit the UNESCO-listed ksar." },
+          { title: "Ouarzazate & Draa Valley", desc: "Continue through Ouarzazate and the Draa Valley." },
+          { title: "Zagora", time: "Evening", desc: "The landscape becomes increasingly open and arid. The evening is reserved for the confirmed desert experience and overnight stay." },
+        ] },
       { day: 2, title: "Zagora → Draa Valley → High Atlas → Marrakech", desc: "Start the return journey after breakfast, following the Draa Valley back toward Ouarzazate and crossing the High Atlas to Marrakech. This is a fast two-day format, so travellers who prefer more time in the desert should consider a longer itinerary.", stops: ["Zagora", "Draa Valley", "Ouarzazate", "High Atlas", "Marrakech"] },
     ],
     included: ["Private air-conditioned vehicle", "Professional English-speaking driver", "Fuel", "Accommodation according to the selected package", "Desert experience described in the confirmed itinerary", "Hotel pick-up & drop-off"],
@@ -1973,6 +2508,9 @@ export const tours: Tour[] = [
       { question: "Are lunches included?", answer: "Lunches are not included unless they are specifically stated in the confirmed itinerary." },
       { question: "How is the price confirmed?", answer: "A starting price per person is published for this route. Your exact total depends on how many of you travel — the per-person price comes down as the group grows — and on the accommodation you choose, so we confirm the final figure with your dates before any payment. You are welcome to ask us to adjust the itinerary first." },
     ],
+    practicalInfo: [
+      "Zagora is a different desert region from Erg Chebbi near Merzouga — choose this shorter route for the Draa Valley and Zagora, or a Merzouga itinerary when the Erg Chebbi dunes are the priority.",
+    ],
   },
   {
     id: "4-day-marrakech-merzouga-sahara",
@@ -1989,10 +2527,24 @@ export const tours: Tour[] = [
     routeIds: ["marrakech", "ait-ben-haddou", "ouarzazate", "dades-valley", "todra-gorge", "merzouga", "erg-chebbi"],
     routeCaption: "Marrakech → High Atlas → Aït Ben Haddou → Ouarzazate → Dades Valley → Todra Gorge → Merzouga & Erg Chebbi → Marrakech.",
     itineraryDays: [
-      { day: 1, title: "Marrakech → High Atlas → Aït Ben Haddou → Dades Valley", desc: "Cross the High Atlas and stop at Aït Ben Haddou before continuing through Ouarzazate and the southern valleys to the Dades Valley. The overnight stay breaks the long road south into a manageable first day.", stops: ["Marrakech", "High Atlas", "Aït Ben Haddou", "Ouarzazate", "Dades Valley"] },
-      { day: 2, title: "Dades Valley → Todra Gorge → Erfoud → Merzouga", desc: "Follow the Dades landscape to Todra Gorge, then continue east through the pre-Sahara toward Erfoud and Merzouga. Arrive in time for the confirmed desert experience and sunset in the Erg Chebbi area.", stops: ["Dades Valley", "Todra Gorge", "Erfoud", "Merzouga", "Erg Chebbi"] },
+      { day: 1, title: "Marrakech → High Atlas → Aït Ben Haddou → Dades Valley", desc: "Cross the High Atlas and stop at Aït Ben Haddou before continuing through Ouarzazate and the southern valleys to the Dades Valley. The overnight stay breaks the long road south into a manageable first day.", stops: ["Marrakech", "High Atlas", "Aït Ben Haddou", "Ouarzazate", "Dades Valley"],
+        stopDetails: [
+          { title: "High Atlas crossing", desc: "Cross the High Atlas." },
+          { title: "Aït Ben Haddou", desc: "Stop at Aït Ben Haddou." },
+          { title: "Ouarzazate & southern valleys", desc: "Continue through Ouarzazate and the southern valleys." },
+          { title: "Overnight: Dades Valley", desc: "The overnight stay breaks the long road south into a manageable first day." },
+        ] },
+      { day: 2, title: "Dades Valley → Todra Gorge → Erfoud → Merzouga", desc: "Follow the Dades landscape to Todra Gorge, then continue east through the pre-Sahara toward Erfoud and Merzouga. Arrive in time for the confirmed desert experience and sunset in the Erg Chebbi area.", stops: ["Dades Valley", "Todra Gorge", "Erfoud", "Merzouga", "Erg Chebbi"],
+        stopDetails: [
+          { title: "Todra Gorge", desc: "Follow the Dades landscape to Todra Gorge." },
+          { title: "Erfoud → Merzouga", desc: "Continue east through the pre-Sahara toward Erfoud and Merzouga." },
+          { title: "Erg Chebbi", time: "Sunset", desc: "Arrive in time for the confirmed desert experience and sunset in the Erg Chebbi area." },
+        ] },
       { day: 3, title: "Merzouga and Erg Chebbi — Sahara Day", desc: "Use the extra day to experience the Merzouga area at a slower pace. Depending on the confirmed plan, explore the dunes and nearby communities and leave room for sunrise or sunset rather than spending the whole day on the road.", stops: ["Merzouga", "Erg Chebbi", "Desert sunrise", "Local communities", "Overnight: Merzouga area"] },
-      { day: 4, title: "Merzouga → Ziz Valley → High Atlas → Marrakech", desc: "After breakfast, begin the return drive through the Ziz Valley and across the Atlas. The final day is a substantial road journey back to Marrakech, with stops paced around road conditions and your agreed itinerary.", stops: ["Merzouga", "Ziz Valley", "High Atlas", "Marrakech"] },
+      { day: 4, title: "Merzouga → Ziz Valley → High Atlas → Marrakech", desc: "After breakfast, begin the return drive through the Ziz Valley and across the Atlas. The final day is a substantial road journey back to Marrakech, with stops paced around road conditions and your agreed itinerary.", stops: ["Merzouga", "Ziz Valley", "High Atlas", "Marrakech"],
+        stopDetails: [
+          { title: "Return journey", time: "After breakfast", desc: "Begin the return drive through the Ziz Valley and across the Atlas — a substantial road journey back to Marrakech, with stops paced around road conditions." },
+        ] },
     ],
     included: ["Private air-conditioned vehicle", "Professional English-speaking driver", "Fuel", "Accommodation according to selected package", "Desert experience according to confirmed itinerary", "Camel experience when included in the confirmed package", "Hotel pick-up & drop-off"],
     excluded: ["International flights", "Lunches", "Drinks", "Entrance fees", "Optional activities", "Tips & gratuities", "Personal expenses"],
@@ -2010,6 +2562,9 @@ export const tours: Tour[] = [
       { question: "Is the return to Marrakech long?", answer: "Yes. Merzouga is a long drive from Marrakech. The four-day format adds time in the desert but the final return remains a substantial road day." },
       { question: "How is the price confirmed?", answer: "A starting price per person is published for this route. Your exact total depends on how many of you travel — the per-person price comes down as the group grows — and on the accommodation you choose, so we confirm the final figure with your dates before any payment. You are welcome to ask us to adjust the itinerary first." },
     ],
+    practicalInfo: [
+      "Merzouga is a long drive from Marrakech — the four-day format adds time in the desert, but the final return to Marrakech remains a substantial road day.",
+    ],
   },
   {
     id: "5-day-great-south-morocco",
@@ -2026,11 +2581,31 @@ export const tours: Tour[] = [
     routeIds: ["marrakech", "ait-ben-haddou", "ouarzazate", "dades-valley", "todra-gorge", "merzouga", "erg-chebbi", "draa-valley", "zagora"],
     routeCaption: "Marrakech → High Atlas → Aït Ben Haddou → Ouarzazate → Dades → Todra → Merzouga → Draa Valley → Marrakech.",
     itineraryDays: [
-      { day: 1, title: "Marrakech → High Atlas → Aït Ben Haddou → Dades", desc: "Cross the High Atlas, visit Aït Ben Haddou and continue through Ouarzazate and the southern valleys to the Dades Valley for the first overnight stay.", stops: ["Marrakech", "High Atlas", "Aït Ben Haddou", "Ouarzazate", "Dades Valley"] },
-      { day: 2, title: "Dades → Todra Gorge → Erfoud → Merzouga", desc: "Explore the Dades landscape, continue to Todra Gorge and travel east through the pre-Sahara to Merzouga. Reach the Erg Chebbi area for the confirmed desert experience.", stops: ["Dades Valley", "Todra Gorge", "Erfoud", "Merzouga", "Erg Chebbi"] },
+      { day: 1, title: "Marrakech → High Atlas → Aït Ben Haddou → Dades", desc: "Cross the High Atlas, visit Aït Ben Haddou and continue through Ouarzazate and the southern valleys to the Dades Valley for the first overnight stay.", stops: ["Marrakech", "High Atlas", "Aït Ben Haddou", "Ouarzazate", "Dades Valley"],
+        stopDetails: [
+          { title: "High Atlas crossing", desc: "Cross the High Atlas." },
+          { title: "Aït Ben Haddou", desc: "Visit Aït Ben Haddou." },
+          { title: "Ouarzazate & southern valleys", desc: "Continue through Ouarzazate and the southern valleys." },
+          { title: "Overnight: Dades Valley", desc: "The first overnight stay." },
+        ] },
+      { day: 2, title: "Dades → Todra Gorge → Erfoud → Merzouga", desc: "Explore the Dades landscape, continue to Todra Gorge and travel east through the pre-Sahara to Merzouga. Reach the Erg Chebbi area for the confirmed desert experience.", stops: ["Dades Valley", "Todra Gorge", "Erfoud", "Merzouga", "Erg Chebbi"],
+        stopDetails: [
+          { title: "Dades Valley & Todra Gorge", desc: "Explore the Dades landscape and continue to Todra Gorge." },
+          { title: "Erfoud → Merzouga", desc: "Travel east through the pre-Sahara to Merzouga." },
+          { title: "Erg Chebbi", desc: "Reach the Erg Chebbi area for the confirmed desert experience." },
+        ] },
       { day: 3, title: "Merzouga → Erg Chebbi → Rissani and desert surroundings", desc: "Keep a slower Sahara day around Merzouga. Depending on the agreed plan, include dune viewpoints, local communities, Rissani and time for the desert at sunrise or sunset.", stops: ["Merzouga", "Erg Chebbi", "Rissani", "Desert surroundings", "Overnight: Merzouga area"] },
-      { day: 4, title: "Merzouga → Alnif → Nkob → Draa Valley → Ouarzazate", desc: "Leave the dunes and travel west through the landscapes around Alnif and Nkob, then follow the Draa Valley with its palm groves and kasbah country before continuing to Ouarzazate.", stops: ["Merzouga", "Alnif", "Nkob", "Draa Valley", "Ouarzazate"] },
-      { day: 5, title: "Ouarzazate → Aït Ben Haddou → High Atlas → Marrakech", desc: "Return toward Marrakech via Aït Ben Haddou and the High Atlas. The final day is paced around the road and your preferred stops before arrival in Marrakech.", stops: ["Ouarzazate", "Aït Ben Haddou", "High Atlas", "Marrakech"] },
+      { day: 4, title: "Merzouga → Alnif → Nkob → Draa Valley → Ouarzazate", desc: "Leave the dunes and travel west through the landscapes around Alnif and Nkob, then follow the Draa Valley with its palm groves and kasbah country before continuing to Ouarzazate.", stops: ["Merzouga", "Alnif", "Nkob", "Draa Valley", "Ouarzazate"],
+        stopDetails: [
+          { title: "Alnif & Nkob", desc: "Travel west through the landscapes around Alnif and Nkob." },
+          { title: "Draa Valley", desc: "Follow the Draa Valley with its palm groves and kasbah country." },
+          { title: "Ouarzazate", desc: "Continue to Ouarzazate." },
+        ] },
+      { day: 5, title: "Ouarzazate → Aït Ben Haddou → High Atlas → Marrakech", desc: "Return toward Marrakech via Aït Ben Haddou and the High Atlas. The final day is paced around the road and your preferred stops before arrival in Marrakech.", stops: ["Ouarzazate", "Aït Ben Haddou", "High Atlas", "Marrakech"],
+        stopDetails: [
+          { title: "Aït Ben Haddou", desc: "Return toward Marrakech via Aït Ben Haddou." },
+          { title: "High Atlas → Marrakech", desc: "Cross the High Atlas, with the final day paced around the road and your preferred stops before arrival in Marrakech." },
+        ] },
     ],
     included: ["Private air-conditioned vehicle", "Professional English-speaking driver", "Fuel", "Accommodation according to selected package", "Desert experience according to confirmed itinerary", "Camel experience when specified", "Hotel pick-up & drop-off"],
     excluded: ["International flights", "Lunches", "Drinks", "Entrance fees", "Optional activities", "Tips & gratuities", "Personal expenses"],
@@ -2064,7 +2639,11 @@ export const tours: Tour[] = [
     routeIds: ["fes", "ifrane", "merzouga", "erg-chebbi"],
     routeCaption: "Fes → Ifrane and Middle Atlas → Ziz Valley → Merzouga → Erg Chebbi.",
     itineraryDays: [
-      { day: 1, title: "Fes → Ifrane → Cedar Forest → Midelt → Ziz Valley", desc: "Leave Fes and cross the Middle Atlas through Ifrane and the cedar-forest landscapes. Continue toward Midelt and the Ziz Valley, with the road itself providing the changing scenery from northern Morocco to the pre-Sahara.", stops: ["Fes", "Ifrane", "Cedar Forest", "Midelt", "Ziz Valley"] },
+      { day: 1, title: "Fes → Ifrane → Cedar Forest → Midelt → Ziz Valley", desc: "Leave Fes and cross the Middle Atlas through Ifrane and the cedar-forest landscapes. Continue toward Midelt and the Ziz Valley, with the road itself providing the changing scenery from northern Morocco to the pre-Sahara.", stops: ["Fes", "Ifrane", "Cedar Forest", "Midelt", "Ziz Valley"],
+        stopDetails: [
+          { title: "Ifrane & Cedar Forest", desc: "Leave Fes and cross the Middle Atlas through Ifrane and the cedar-forest landscapes." },
+          { title: "Midelt & Ziz Valley", desc: "Continue toward Midelt and the Ziz Valley, with the road itself providing the changing scenery from northern Morocco to the pre-Sahara." },
+        ] },
       { day: 2, title: "Ziz Valley → Erfoud → Merzouga → Erg Chebbi", desc: "Continue toward Erfoud and Merzouga. Arrive at the dunes for the confirmed desert experience, such as a sunset camel transfer when included, followed by the night at the confirmed accommodation.", stops: ["Ziz Valley", "Erfoud", "Merzouga", "Erg Chebbi", "Sunset desert experience"] },
       { day: 3, title: "Merzouga → onward journey", desc: "Begin with the desert morning, then continue to the destination agreed in your quote. A return to Fes or a one-way finish can be discussed; no fixed ending is claimed until confirmed.", stops: ["Merzouga sunrise", "Erg Chebbi", "Confirmed onward destination"] },
     ],
@@ -2082,6 +2661,9 @@ export const tours: Tour[] = [
       { question: "Are lunches included?", answer: "Not unless explicitly included in the confirmed itinerary." },
       { question: "How is the price confirmed?", answer: "A starting price per person is published for this route. Your exact total depends on how many of you travel — the per-person price comes down as the group grows — and on the accommodation you choose, so we confirm the final figure with your dates before any payment. You are welcome to ask us to adjust the itinerary first." },
     ],
+    practicalInfo: [
+      "This is a compact overland itinerary with substantial driving — if you want a slower Sahara experience, ask for a longer version.",
+    ],
   },
   {
     id: "4-day-fes-marrakech-via-merzouga",
@@ -2098,10 +2680,27 @@ export const tours: Tour[] = [
     routeIds: ["fes", "ifrane", "merzouga", "erg-chebbi", "todra-gorge", "dades-valley", "ait-ben-haddou", "marrakech"],
     routeCaption: "Fes → Middle Atlas → Merzouga & Erg Chebbi → Todra Gorge → Dades Valley → Aït Ben Haddou → High Atlas → Marrakech.",
     itineraryDays: [
-      { day: 1, title: "Fes → Ifrane → Midelt → Ziz Valley → Merzouga", desc: "Leave Fes and cross the Middle Atlas through Ifrane and the cedar forests, continuing via Midelt and the Ziz Valley to Merzouga. The desert landscape appears at the end of the road south.", stops: ["Fes", "Ifrane", "Cedar Forest", "Midelt", "Ziz Valley", "Merzouga"] },
-      { day: 2, title: "Merzouga → Erg Chebbi → Todra Gorge → Dades Valley", desc: "Enjoy the desert in the morning before travelling west through the pre-Sahara. Continue to Todra Gorge and the Dades Valley for the overnight stay, keeping the route focused on the major landscapes.", stops: ["Merzouga", "Erg Chebbi", "Todra Gorge", "Dades Valley"] },
-      { day: 3, title: "Dades Valley → Ouarzazate → Aït Ben Haddou", desc: "Follow the southern road through Ouarzazate and continue to Aït Ben Haddou. Take time to explore the historic ksar before the overnight stay in the surrounding area.", stops: ["Dades Valley", "Ouarzazate", "Aït Ben Haddou (UNESCO)"] },
-      { day: 4, title: "Aït Ben Haddou → High Atlas → Marrakech", desc: "Cross the High Atlas on the final leg to Marrakech. The finish is in the Red City, with the arrival point and timing confirmed around your plans.", stops: ["Aït Ben Haddou", "High Atlas", "Marrakech"] },
+      { day: 1, title: "Fes → Ifrane → Midelt → Ziz Valley → Merzouga", desc: "Leave Fes and cross the Middle Atlas through Ifrane and the cedar forests, continuing via Midelt and the Ziz Valley to Merzouga. The desert landscape appears at the end of the road south.", stops: ["Fes", "Ifrane", "Cedar Forest", "Midelt", "Ziz Valley", "Merzouga"],
+        stopDetails: [
+          { title: "Ifrane & Cedar Forest", desc: "Leave Fes and cross the Middle Atlas through Ifrane and the cedar forests." },
+          { title: "Midelt & Ziz Valley", desc: "Continue via Midelt and the Ziz Valley to Merzouga." },
+          { title: "Merzouga", desc: "The desert landscape appears at the end of the road south." },
+        ] },
+      { day: 2, title: "Merzouga → Erg Chebbi → Todra Gorge → Dades Valley", desc: "Enjoy the desert in the morning before travelling west through the pre-Sahara. Continue to Todra Gorge and the Dades Valley for the overnight stay, keeping the route focused on the major landscapes.", stops: ["Merzouga", "Erg Chebbi", "Todra Gorge", "Dades Valley"],
+        stopDetails: [
+          { title: "Erg Chebbi", time: "Morning", desc: "Enjoy the desert in the morning before travelling west through the pre-Sahara." },
+          { title: "Todra Gorge & Dades Valley", desc: "Continue to Todra Gorge and the Dades Valley for the overnight stay, keeping the route focused on the major landscapes." },
+        ] },
+      { day: 3, title: "Dades Valley → Ouarzazate → Aït Ben Haddou", desc: "Follow the southern road through Ouarzazate and continue to Aït Ben Haddou. Take time to explore the historic ksar before the overnight stay in the surrounding area.", stops: ["Dades Valley", "Ouarzazate", "Aït Ben Haddou (UNESCO)"],
+        stopDetails: [
+          { title: "Ouarzazate", desc: "Follow the southern road through Ouarzazate." },
+          { title: "Aït Ben Haddou (UNESCO)", desc: "Continue to Aït Ben Haddou. Take time to explore the historic ksar before the overnight stay in the surrounding area." },
+        ] },
+      { day: 4, title: "Aït Ben Haddou → High Atlas → Marrakech", desc: "Cross the High Atlas on the final leg to Marrakech. The finish is in the Red City, with the arrival point and timing confirmed around your plans.", stops: ["Aït Ben Haddou", "High Atlas", "Marrakech"],
+        stopDetails: [
+          { title: "High Atlas crossing", desc: "Cross the High Atlas on the final leg to Marrakech." },
+          { title: "Marrakech", desc: "The finish is in the Red City." },
+        ] },
     ],
     included: ["Private air-conditioned vehicle", "Professional English-speaking driver", "Fuel", "Accommodation according to selected package", "Desert experience according to confirmed itinerary", "Camel experience when specified", "Hotel pick-up and drop-off"],
     excluded: ["International flights", "Lunches", "Drinks", "Entrance fees", "Optional activities", "Tips & gratuities", "Personal expenses"],
@@ -2118,6 +2717,9 @@ export const tours: Tour[] = [
       { question: "Can we add nights?", answer: "Yes. Additional nights or a slower itinerary can be discussed as part of the private trip plan." },
       { question: "Are entrance fees included?", answer: "Monument and museum entrance fees are excluded unless specifically stated in the confirmed itinerary." },
       { question: "How is the price confirmed?", answer: "A starting price per person is published for this route. Your exact total depends on how many of you travel — the per-person price comes down as the group grows — and on the accommodation you choose, so we confirm the final figure with your dates before any payment. You are welcome to ask us to adjust the itinerary first." },
+    ],
+    practicalInfo: [
+      "Four days gives this one-way journey enough room for the Middle Atlas, Sahara and southern valleys, rather than forcing the entire route into a single rushed transfer.",
     ],
   },
   // MGA_MISSING_TOURS_V1
@@ -2136,9 +2738,22 @@ export const tours: Tour[] = [
     routeIds: ["tangier", "tetouan", "chefchaouen", "akchour"],
     routeCaption: "Tangier → Tétouan → Chefchaouen → Akchour → Chefchaouen → Tangier. A round-trip loop through the Rif and the north, back to your point of arrival.",
     itineraryDays: [
-      { day: 1, title: "Tangier → Tétouan → Chefchaouen", desc: "Leave Tangier and drive south to Tétouan, whose UNESCO-listed medina was built by refugees from Granada — one of the best-preserved Andalusian old towns in Morocco. Continue into the Rif mountains to Chefchaouen for the first night among its blue-washed lanes.", stops: ["Tangier", "Tétouan (UNESCO medina)", "Rif Mountains", "Overnight: Chefchaouen (Breakfast)"] },
-      { day: 2, title: "Chefchaouen → Akchour valley → Chefchaouen", desc: "A full day into the Akchour valley, Chefchaouen's wild counterpart: turquoise river pools, forested gorges, and a choice of hikes to the small waterfall or the larger one past the natural limestone arch known as God's Bridge. Return to Chefchaouen for a second night in the same medina.", stops: ["Akchour waterfalls", "God's Bridge natural arch", "Rif forest trail", "Overnight: Chefchaouen (Breakfast)"] },
-      { day: 3, title: "Chefchaouen → Tangier", desc: "A free morning to walk Chefchaouen's medina before the drive back to Tangier. Depending on timing, the route can pause at Cap Spartel or the Caves of Hercules, where the Atlantic meets the Mediterranean, before the tour ends in Tangier.", stops: ["Chefchaouen medina", "Cap Spartel (optional stop)", "Hercules Caves (optional stop)", "End: Tangier"] },
+      { day: 1, title: "Tangier → Tétouan → Chefchaouen", desc: "Leave Tangier and drive south to Tétouan, whose UNESCO-listed medina was built by refugees from Granada — one of the best-preserved Andalusian old towns in Morocco. Continue into the Rif mountains to Chefchaouen for the first night among its blue-washed lanes.", stops: ["Tangier", "Tétouan (UNESCO medina)", "Rif Mountains", "Overnight: Chefchaouen (Breakfast)"],
+        stopDetails: [
+          { title: "Tétouan (UNESCO medina)", desc: "Drive south to Tétouan, whose UNESCO-listed medina was built by refugees from Granada — one of the best-preserved Andalusian old towns in Morocco." },
+          { title: "Rif Mountains → Chefchaouen", desc: "Continue into the Rif mountains to Chefchaouen for the first night among its blue-washed lanes." },
+        ] },
+      { day: 2, title: "Chefchaouen → Akchour valley → Chefchaouen", desc: "A full day into the Akchour valley, Chefchaouen's wild counterpart: turquoise river pools, forested gorges, and a choice of hikes to the small waterfall or the larger one past the natural limestone arch known as God's Bridge. Return to Chefchaouen for a second night in the same medina.", stops: ["Akchour waterfalls", "God's Bridge natural arch", "Rif forest trail", "Overnight: Chefchaouen (Breakfast)"],
+        stopDetails: [
+          { title: "Akchour valley", desc: "Turquoise river pools and forested gorges, with a choice of hikes to the small waterfall or the larger one past the natural limestone arch known as God's Bridge." },
+          { title: "Overnight: Chefchaouen", desc: "Return to Chefchaouen for a second night in the same medina." },
+        ] },
+      { day: 3, title: "Chefchaouen → Tangier", desc: "A free morning to walk Chefchaouen's medina before the drive back to Tangier. Depending on timing, the route can pause at Cap Spartel or the Caves of Hercules, where the Atlantic meets the Mediterranean, before the tour ends in Tangier.", stops: ["Chefchaouen medina", "Cap Spartel (optional stop)", "Hercules Caves (optional stop)", "End: Tangier"],
+        stopDetails: [
+          { title: "Chefchaouen medina", time: "Morning", desc: "A free morning to walk Chefchaouen's medina before the drive back to Tangier." },
+          { title: "Cap Spartel / Hercules Caves (optional)", desc: "Depending on timing, the route can pause here, where the Atlantic meets the Mediterranean." },
+          { title: "End: Tangier" },
+        ] },
     ],
     included: ["Private air-conditioned vehicle for the full route", "Professional English-speaking driver", "Fuel", "Accommodation for two nights in Chefchaouen, according to the selected package", "Hotel pick-up and drop-off in Tangier"],
     excluded: ["International flights", "Lunches and drinks", "Monument and museum entrance fees", "Tips and personal expenses"],
@@ -2147,6 +2762,9 @@ export const tours: Tour[] = [
       { question: "How difficult is the Akchour hike?", answer: "There are two options: a shorter walk to the small waterfall, manageable for most fitness levels, and a longer route to God's Bridge and the large waterfall, which involves more scrambling over rock. We confirm which suits your group before the day." },
       { question: "Can this tour start somewhere other than Tangier?", answer: "It's designed as a Tangier loop, since most travelers reach northern Morocco by ferry from Spain or by flying into Tangier. A pickup from Tétouan airport can be discussed if that fits your arrival better." },
       { question: "Can I book now and pay later?", answer: "Yes. Sending a request is free and commits you to nothing. We confirm your dates, itinerary and final price with you first; a 20% deposit then secures the booking, and the remaining 80% is paid on arrival in Morocco." },
+    ],
+    practicalInfo: [
+      "The Akchour valley offers two hike options: a shorter walk to the small waterfall, manageable for most fitness levels, and a longer route to God's Bridge and the large waterfall involving more scrambling over rock.",
     ],
   },
   {
@@ -2163,11 +2781,30 @@ export const tours: Tour[] = [
     routeIds: ["tangier", "tetouan", "akchour", "chefchaouen", "ifrane", "fes"],
     routeCaption: "Tangier → Tétouan → Chefchaouen → Akchour & the Rif → Middle Atlas & Ifrane → Fes. A one-way private route from the northern coast to the imperial city of Fes.",
     itineraryDays: [
-      { day: 1, title: "Tangier → Tétouan → Chefchaouen", desc: "Depart Tangier for Tétouan and its UNESCO-listed Andalusian medina, then continue into the Rif to Chefchaouen for the first of two nights.", stops: ["Tangier", "Tétouan (UNESCO medina)", "Overnight: Chefchaouen (Breakfast)"] },
-      { day: 2, title: "Akchour valley — waterfalls and God's Bridge", desc: "A full day in the Akchour valley: river pools, forest trails, and the natural stone arch known as God's Bridge. Return to the same accommodation in Chefchaouen for the second night.", stops: ["Akchour waterfalls", "God's Bridge natural arch", "Overnight: Chefchaouen (Breakfast)"] },
-      { day: 3, title: "Chefchaouen → Middle Atlas → Ifrane", desc: "Leave the blue city and climb into the Middle Atlas. The cedar forests around Ifrane and Azrou shelter wild Barbary macaques, and the town itself — alpine-style architecture built in the 1930s — is a cool contrast to the coast and the Rif.", stops: ["Chefchaouen medina", "Middle Atlas", "Overnight: Ifrane (Breakfast)"] },
-      { day: 4, title: "Ifrane → Fes", desc: "A shorter driving day into Fes, Morocco's cultural and spiritual capital. The afternoon and evening are free to settle in before the guided day ahead.", stops: ["Ifrane cedar forest", "Overnight: Fes (Breakfast)"] },
-      { day: 5, title: "Guided day in Fes → tour ends", desc: "An official local guide leads the medina of Fes el-Bali — the Royal Palace gates, the Chouara Tannery, Al Quaraouiyine University and the souks. The tour ends with transfer to your Fes hotel or the airport.", stops: ["Fes el-Bali medina", "Chouara Tannery", "Al Quaraouiyine University", "End: Fes"] },
+      { day: 1, title: "Tangier → Tétouan → Chefchaouen", desc: "Depart Tangier for Tétouan and its UNESCO-listed Andalusian medina, then continue into the Rif to Chefchaouen for the first of two nights.", stops: ["Tangier", "Tétouan (UNESCO medina)", "Overnight: Chefchaouen (Breakfast)"],
+        stopDetails: [
+          { title: "Tétouan (UNESCO medina)", desc: "Depart Tangier for Tétouan and its UNESCO-listed Andalusian medina." },
+          { title: "Overnight: Chefchaouen", desc: "Continue into the Rif to Chefchaouen for the first of two nights." },
+        ] },
+      { day: 2, title: "Akchour valley — waterfalls and God's Bridge", desc: "A full day in the Akchour valley: river pools, forest trails, and the natural stone arch known as God's Bridge. Return to the same accommodation in Chefchaouen for the second night.", stops: ["Akchour waterfalls", "God's Bridge natural arch", "Overnight: Chefchaouen (Breakfast)"],
+        stopDetails: [
+          { title: "Akchour valley", desc: "River pools, forest trails, and the natural stone arch known as God's Bridge." },
+          { title: "Overnight: Chefchaouen", desc: "Return to the same accommodation for the second night." },
+        ] },
+      { day: 3, title: "Chefchaouen → Middle Atlas → Ifrane", desc: "Leave the blue city and climb into the Middle Atlas. The cedar forests around Ifrane and Azrou shelter wild Barbary macaques, and the town itself — alpine-style architecture built in the 1930s — is a cool contrast to the coast and the Rif.", stops: ["Chefchaouen medina", "Middle Atlas", "Overnight: Ifrane (Breakfast)"],
+        stopDetails: [
+          { title: "Middle Atlas — cedar forests", desc: "Leave the blue city and climb into the Middle Atlas. The cedar forests around Ifrane and Azrou shelter wild Barbary macaques." },
+          { title: "Overnight: Ifrane", desc: "The town itself — alpine-style architecture built in the 1930s — is a cool contrast to the coast and the Rif." },
+        ] },
+      { day: 4, title: "Ifrane → Fes", desc: "A shorter driving day into Fes, Morocco's cultural and spiritual capital. The afternoon and evening are free to settle in before the guided day ahead.", stops: ["Ifrane cedar forest", "Overnight: Fes (Breakfast)"],
+        stopDetails: [
+          { title: "Overnight: Fes", time: "Afternoon & evening free", desc: "A shorter driving day into Fes, Morocco's cultural and spiritual capital. Free to settle in before the guided day ahead." },
+        ] },
+      { day: 5, title: "Guided day in Fes → tour ends", desc: "An official local guide leads the medina of Fes el-Bali — the Royal Palace gates, the Chouara Tannery, Al Quaraouiyine University and the souks. The tour ends with transfer to your Fes hotel or the airport.", stops: ["Fes el-Bali medina", "Chouara Tannery", "Al Quaraouiyine University", "End: Fes"],
+        stopDetails: [
+          { title: "Fes el-Bali medina", desc: "An official local guide leads the medina — the Royal Palace gates, the Chouara Tannery, Al Quaraouiyine University and the souks." },
+          { title: "End: Fes", desc: "The tour ends with transfer to your Fes hotel or the airport." },
+        ] },
     ],
     included: ["Private air-conditioned vehicle for the full route", "Professional English-speaking driver", "Fuel", "Accommodation for four nights, according to the selected package", "Official local guide for the Fes medina day", "Hotel pick-up in Tangier and drop-off in Fes"],
     excluded: ["International flights", "Lunches and drinks", "Monument and museum entrance fees", "Tips and personal expenses"],
@@ -2192,8 +2829,16 @@ export const tours: Tour[] = [
     routeIds: ["marrakech", "essaouira"],
     routeCaption: "Marrakech → Essaouira → Marrakech. A short private escape to the Atlantic coast, three hours from the Red City.",
     itineraryDays: [
-      { day: 1, title: "Marrakech → Essaouira", desc: "Leave Marrakech in the morning for the three-hour drive to the coast. The afternoon is free to walk the medina, the Sqala du Port ramparts and the fishing harbour, or simply watch the Atlantic from a port-side terrace.", stops: ["Marrakech", "Essaouira medina", "Sqala du Port", "Overnight: Essaouira (Breakfast)"] },
-      { day: 2, title: "Essaouira → Marrakech", desc: "A free morning in Essaouira — the port, the beach, or the ramparts in the morning light — before the drive back to Marrakech, arriving early afternoon.", stops: ["Essaouira port", "Return to Marrakech", "End: Marrakech"] },
+      { day: 1, title: "Marrakech → Essaouira", desc: "Leave Marrakech in the morning for the three-hour drive to the coast. The afternoon is free to walk the medina, the Sqala du Port ramparts and the fishing harbour, or simply watch the Atlantic from a port-side terrace.", stops: ["Marrakech", "Essaouira medina", "Sqala du Port", "Overnight: Essaouira (Breakfast)"],
+        stopDetails: [
+          { title: "Depart Marrakech", time: "Morning", desc: "The three-hour drive to the coast." },
+          { title: "Essaouira medina & Sqala du Port", time: "Afternoon free", desc: "Walk the medina, the Sqala du Port ramparts and the fishing harbour, or simply watch the Atlantic from a port-side terrace." },
+        ] },
+      { day: 2, title: "Essaouira → Marrakech", desc: "A free morning in Essaouira — the port, the beach, or the ramparts in the morning light — before the drive back to Marrakech, arriving early afternoon.", stops: ["Essaouira port", "Return to Marrakech", "End: Marrakech"],
+        stopDetails: [
+          { title: "Essaouira — free morning", time: "Morning", desc: "The port, the beach, or the ramparts in the morning light." },
+          { title: "Return to Marrakech", time: "Early afternoon", desc: "The drive back to Marrakech." },
+        ] },
     ],
     included: ["Private air-conditioned vehicle for the full route", "Professional English-speaking driver", "Fuel", "One night's accommodation in Essaouira, according to the selected package", "Hotel pick-up and drop-off in Marrakech"],
     excluded: ["International flights", "Lunches and drinks", "Kitesurfing, surfing or other water-sport lessons (available locally, not included)", "Monument and museum entrance fees", "Tips and personal expenses"],
@@ -2202,6 +2847,9 @@ export const tours: Tour[] = [
       { question: "Is one night enough in Essaouira?", answer: "It's a genuine but compact escape — enough for the medina, the ramparts and the port. If you'd rather have a full free day on the coast, ask us about extending to three days." },
       { question: "How long is the drive?", answer: "About three hours each way on a paved road, with a stop possible along the way if you'd like one." },
       { question: "Can I book now and pay later?", answer: "Yes. Sending a request is free and commits you to nothing. We confirm your dates, itinerary and final price with you first; a 20% deposit then secures the booking, and the remaining 80% is paid on arrival in Morocco." },
+    ],
+    practicalInfo: [
+      "The drive between Marrakech and Essaouira is about three hours each way on a paved road, with a stop possible along the way if you'd like one.",
     ],
   },
   {
@@ -2222,9 +2870,21 @@ export const tours: Tour[] = [
       { day: 2, title: "Marrakech → Essaouira", desc: "Drive three hours to the Atlantic coast. The afternoon is free for Essaouira's UNESCO-listed medina and the Sqala du Port ramparts.", stops: ["Essaouira medina", "Overnight: Essaouira (Breakfast)"] },
       { day: 3, title: "Essaouira → Agadir", desc: "Continue down the coast to Agadir, Morocco's purpose-built beach resort, with time for the promenade or the Kasbah Oufella at sunset.", stops: ["Agadir beach", "Overnight: Agadir (Breakfast)"] },
       { day: 4, title: "Agadir → Ouarzazate", desc: "Head inland toward Ouarzazate, gateway to the pre-Sahara, through the changing landscape of southern Morocco.", stops: ["Ouarzazate area", "Overnight: Ouarzazate (Breakfast)"] },
-      { day: 5, title: "Ouarzazate → Aït Ben Haddou → Dades Valley", desc: "Visit the UNESCO-listed ksar of Aït Ben Haddou before continuing to the Dades Valley for the night.", stops: ["Aït Ben Haddou (UNESCO)", "Overnight: Dades Valley (Dinner & Breakfast)"] },
-      { day: 6, title: "Dades Valley → Todra Gorge → Merzouga", desc: "Drive through Todra Gorge before reaching Merzouga in the late afternoon for a sunset camel trek into Erg Chebbi and the first night at the desert camp.", stops: ["Todra Gorge", "Sunset camel trek", "Overnight: Erg Chebbi desert camp (Dinner & Breakfast)"] },
-      { day: 7, title: "A full day at Erg Chebbi", desc: "Sunrise over the dunes, then a full day around Merzouga rather than a rushed departure — time with the desert communities, and the dunes again in the cooler late afternoon. Second night at the camp.", stops: ["Sunrise over the dunes", "Merzouga", "Overnight: Erg Chebbi desert camp (Dinner & Breakfast)"] },
+      { day: 5, title: "Ouarzazate → Aït Ben Haddou → Dades Valley", desc: "Visit the UNESCO-listed ksar of Aït Ben Haddou before continuing to the Dades Valley for the night.", stops: ["Aït Ben Haddou (UNESCO)", "Overnight: Dades Valley (Dinner & Breakfast)"],
+        stopDetails: [
+          { title: "Aït Ben Haddou (UNESCO)", desc: "Visit the UNESCO-listed ksar." },
+          { title: "Overnight: Dades Valley", desc: "Continue to the Dades Valley for the night." },
+        ] },
+      { day: 6, title: "Dades Valley → Todra Gorge → Merzouga", desc: "Drive through Todra Gorge before reaching Merzouga in the late afternoon for a sunset camel trek into Erg Chebbi and the first night at the desert camp.", stops: ["Todra Gorge", "Sunset camel trek", "Overnight: Erg Chebbi desert camp (Dinner & Breakfast)"],
+        stopDetails: [
+          { title: "Todra Gorge", desc: "Drive through Todra Gorge." },
+          { title: "Sunset camel trek — Erg Chebbi", time: "Late afternoon / sunset", desc: "Reach Merzouga for a sunset camel trek into Erg Chebbi and the first night at the desert camp." },
+        ] },
+      { day: 7, title: "A full day at Erg Chebbi", desc: "Sunrise over the dunes, then a full day around Merzouga rather than a rushed departure — time with the desert communities, and the dunes again in the cooler late afternoon. Second night at the camp.", stops: ["Sunrise over the dunes", "Merzouga", "Overnight: Erg Chebbi desert camp (Dinner & Breakfast)"],
+        stopDetails: [
+          { title: "Sunrise over the dunes", time: "Sunrise", desc: "A full day around Merzouga rather than a rushed departure — time with the desert communities." },
+          { title: "Dunes — late afternoon", time: "Cooler late afternoon", desc: "The dunes again in the cooler late afternoon. Second night at the camp." },
+        ] },
       { day: 8, title: "Merzouga → Ziz Valley → Ifrane → Fes", desc: "Head north through the Ziz Valley's palm oases and the Middle Atlas cedar forests around Ifrane, arriving in Fes by evening.", stops: ["Ziz Valley", "Ifrane", "Overnight: Fes (Breakfast)"] },
       { day: 9, title: "Guided day in Fes", desc: "An official local guide leads Fes el-Bali — the Royal Palace gates, the Chouara Tannery, Al Quaraouiyine University and the souks.", stops: ["Fes el-Bali medina", "Chouara Tannery", "Overnight: Fes (Breakfast)"] },
       { day: 10, title: "Fes → Meknès → Chefchaouen", desc: "A stop in Meknès, one of Morocco's historic imperial cities, on the way north to the blue-washed lanes of Chefchaouen.", stops: ["Meknès", "Overnight: Chefchaouen (Breakfast)"] },
@@ -2241,6 +2901,9 @@ export const tours: Tour[] = [
       { question: "Can the route be shortened or reordered?", answer: "Yes. This itinerary is a starting point — cities and regions can be added, dropped or reordered once we know what matters most to you and how many days you actually have." },
       { question: "Does the desert portion include two nights?", answer: "Yes, this itinerary gives Merzouga a full day rather than a sunset-and-leave visit — arrival with a camel trek on day one, then a complete day around Erg Chebbi before continuing north." },
       { question: "Can I book now and pay later?", answer: "Request the itinerary first. We confirm the route, inclusions and applicable payment terms before any payment is made." },
+    ],
+    practicalInfo: [
+      "This fourteen-day route is built from the same legs as the shorter tours joined together rather than compressed — two full nights at Erg Chebbi instead of one, and multi-night stops in Fes and Chefchaouen, so it isn't a different city every day.",
     ],
   },
 ];
