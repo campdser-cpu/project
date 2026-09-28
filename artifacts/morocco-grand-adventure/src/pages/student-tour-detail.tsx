@@ -10,6 +10,8 @@ import {
   type StudentTourDay,
   type StudentTourImage,
 } from '@/data/student-tours';
+import { TourBreadcrumbs } from '../components/tours/TourBreadcrumbs';
+import { TourInquiryForm } from '../components/tours/TourInquiryForm';
 import NotFound from './not-found';
 
 const IMG = '/images';
@@ -179,7 +181,7 @@ function PlainDay({ d }: { d: StudentTourDay }) {
 
 export default function StudentTourDetail() {
   const [, params] = useRoute('/student-tours/:slug');
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const tour = params?.slug ? getStudentTour(params.slug) : undefined;
 
   // Unknown slug under /student-tours/ falls through to the standard 404 rather
@@ -270,6 +272,16 @@ export default function StudentTourDetail() {
             </div>
           </div>
         </section>
+
+        {/* BREADCRUMBS — same component and dark bar as private tour pages -- */}
+        <div className="bg-black/50 backdrop-blur border-b border-white/10">
+          <TourBreadcrumbs
+            items={[
+              { label: t('st_tours_label') || 'Student Tours', href: '/student-tours' },
+              { label: tour.title },
+            ]}
+          />
+        </div>
 
         {/* AT A GLANCE ----------------------------------------------------- */}
         <section className="text-white" style={{ background: INK }}>
@@ -526,7 +538,7 @@ export default function StudentTourDetail() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center bg-[#25D366] px-8 py-4 text-sm font-bold tracking-wide text-[#0d2b1d] transition hover:opacity-90"
               >
-                Plan a Student Trip
+                Chat on WhatsApp
               </a>
               <Link
                 href="/student-tours/university-groups"
@@ -534,6 +546,9 @@ export default function StudentTourDetail() {
               >
                 University group logistics
               </Link>
+            </div>
+            <div className="mx-auto mt-8 max-w-md rounded-2xl bg-white p-6 text-left shadow-xl">
+              <TourInquiryForm tourName={tour.title} lang={lang} t={t} />
             </div>
           </div>
         </section>

@@ -128,7 +128,7 @@ export const studentTourSizes = {
   feature: '(min-width: 1536px) 720px, (min-width: 1280px) 590px, (min-width: 1024px) 470px, 100vw',
 };
 
-const GROUPS = 'Organized for student and university groups of 15 or more participants.';
+const GROUPS = 'Organized for student and university groups — tell us your numbers so we can plan vehicles, accommodation and desert camp capacity around them.';
 
 // ── 3-Day ────────────────────────────────────────────────────────────────────
 const threeDay: StudentTour = {
@@ -142,7 +142,7 @@ const threeDay: StudentTour = {
   hero: { name: 'student-tours/student-group-sahara-dunes', alt: 'Student group standing together among the Sahara dunes', w: 1920, h: 1280, widths: [480, 768, 1280, 1600], jpg: true },
   metaTitle: '3-Day Morocco Student Tour | Marrakech, Atlas & Sahara',
   metaDescription:
-    'A three-day student route from Marrakech over the High Atlas to Aït Ben Haddou and the Erg Chebbi dunes at Merzouga. For university groups of 15+.',
+    'A three-day student route from Marrakech over the High Atlas to Aït Ben Haddou and the Erg Chebbi dunes at Merzouga. For university and student groups.',
   overview: {
     start: 'Marrakech',
     end: 'Marrakech',
@@ -245,7 +245,7 @@ const threeDay: StudentTour = {
   faqs: [
     { q: 'Is three days really enough to reach the Sahara from Marrakech?', a: 'Yes, and this route is built specifically for it. It is an honest three days with two long driving stretches. If your group wants more time on the ground and less time moving, the 4-day program is the better fit.' },
     { q: 'Can the itinerary be adapted for our university group?', a: 'Yes. Tell us the academic focus, the group size and your dates, and we will adjust stops, timing and the balance between travel and time on site.' },
-    { q: 'What group sizes do you work with?', a: 'These programs are organized for groups of 15 or more. Larger groups are possible with more lead time, since vehicles and desert camp capacity need to be arranged in advance.' },
+    { q: 'What group sizes do you work with?', a: 'Tell us how many are travelling and we will plan around it. Vehicles and desert camp capacity are arranged in advance, so larger groups simply need more lead time.' },
     { q: 'Can we start or end somewhere other than Marrakech?', a: 'Often yes. A one-way version finishing in another city changes the driving plan, so send us your arrival and departure points and we will tell you what the route looks like.' },
     { q: 'How much free time will students have?', a: 'This is the most scheduled of the three programs because of the distances. There is free time in the desert and, where the timing works, in Marrakech at the end. If you want more, the longer programs build it in.' },
     { q: 'How does a professor or group leader start planning?', a: 'Message us with your group size, home institution country, approximate dates and what you want students to get out of the trip. We will come back with a route and the practical detail behind it.' },
@@ -270,7 +270,7 @@ const fourDay: StudentTour = {
   hero: { name: 'student-tours/students-dune-ridge-sahara', alt: 'Four students in white standing on a dune crest in the Sahara', w: 1920, h: 1280, widths: [480, 768, 1280, 1600], jpg: true },
   metaTitle: '4-Day Morocco Student Tour | Atlas, Oasis Valleys & Sahara',
   metaDescription:
-    'A four-day student route from Marrakech to Aït Ben Haddou, the Dades and Todra valleys and two nights in the Erg Chebbi desert. For groups of 15+.',
+    'A four-day student route from Marrakech to Aït Ben Haddou, the Dades and Todra valleys and two nights in the Erg Chebbi desert. For university and student groups.',
   overview: {
     start: 'Marrakech',
     end: 'Marrakech',
@@ -389,13 +389,167 @@ const fourDay: StudentTour = {
     { q: 'Can the trip focus on a particular academic subject?', a: 'Yes. Tell us the department or course and we will weight the stops accordingly — geography and environment, architecture and heritage, or culture and language are all straightforward to emphasize on this route.' },
     { q: 'Can dietary requirements be arranged?', a: 'Yes, with advance notice. Vegetarian, vegan, gluten-free and halal are all workable; send the list with numbers when you confirm the group.' },
     { q: 'Can we swap the 4x4 and buggy time for something else?', a: 'Yes. Some groups replace it with more time on foot, more time with local hosts, or a slower afternoon. It is your program.' },
-    { q: 'What group sizes do you work with?', a: 'Groups of 15 or more. Larger groups need more lead time because vehicles and desert camp capacity are arranged in advance.' },
+    { q: 'What group sizes do you work with?', a: 'Tell us how many are travelling and we will plan around it. Larger groups need more lead time because vehicles and desert camp capacity are arranged in advance.' },
     { q: 'How do we start planning?', a: 'Send your group size, country, approximate dates and what you want students to take away. We will reply with a route and the logistics behind it.' },
   ],
   keyPlaces: ['Marrakech', 'Aït Ben Haddou', 'Dades & Todra', 'Merzouga', 'Erg Chebbi'],
   related: [
     { to: '/destinations/erg-chebbi', label: 'Erg Chebbi' },
     { to: '/camel-trekking', label: 'Camel Trekking' },
+    { to: '/merzouga-guide', label: 'Merzouga Guide' },
+  ],
+};
+
+// ── 5-Day ────────────────────────────────────────────────────────────────────
+const fiveDay: StudentTour = {
+  slug: '5-day-morocco-student-tour',
+  duration: '5 Days',
+  title: '5-Day Morocco Student Tour',
+  cardSummary:
+    'The same Atlas-to-Sahara crossing as the 4-Day program, with a real day in Marrakech first instead of leaving the city on the first morning.',
+  heroLead:
+    'A day in Marrakech before the road south changes what the desert means when the group finally reaches it — the contrast between the packed medina and the open erg is the point, not an accident of scheduling.',
+  hero: { name: 'student-tours/students-erg-chebbi-dunes', alt: 'Students walking across a large dune field at Erg Chebbi', w: 1599, h: 984, widths: [480, 768, 1280], jpg: true },
+  metaTitle: '5-Day Morocco Student Tour | Marrakech, Sahara & Merzouga',
+  metaDescription:
+    'A five-day student route from Marrakech over the High Atlas to Aït Ben Haddou and two nights in the Erg Chebbi desert at Merzouga. For university and student groups.',
+  overview: {
+    start: 'Marrakech',
+    end: 'Marrakech',
+    regions: 'Marrakech · High Atlas · Ounila Valley · Dades & Todra · Erg Chebbi / Merzouga',
+    style: 'A city day followed by an overland route with two nights in the desert',
+    groups: GROUPS,
+  },
+  whyStudents: [
+    'Both the 3-Day and 4-Day programs leave Marrakech on the first morning, which means the group never actually spends time in the city they landed in. This program fixes that: a full day in the medina first, so the crossing into the Atlas and the desert beyond it reads as a real change of country rather than just another stop.',
+    'The desert side of the route is unchanged from the 4-Day program — the same two nights at Erg Chebbi, including the full day with no driving — because that structure already works. The extra day goes to Marrakech, not to stretching the parts that were already right.',
+    'It suits a group that wants the complete southern-loop experience — city, mountains, valleys, dunes — without extending as far north as the 10-Day itinerary does.',
+  ],
+  itinerary: [
+    {
+      day: 'Day 1',
+      title: 'Landing in the Red City',
+      images: [{ name: 'curated/marrakech-medina-motorbike-archway-local-life', alt: 'A motorbike passing under an archway in the Marrakech medina', w: 900, h: 1200, widths: [480, 768], jpg: true }],
+      body: [
+        'The group arrives and settles into Marrakech, and the day is built around the city rather than around getting out of it. The medina is the main event — a dense, walled, working city where the street pattern itself is the lesson, with souks organized by trade and workshops where things are still made rather than only sold.',
+        'There is time at the city\'s historic monuments and gardens, which give the group somewhere quiet to talk about what they just walked through before the pace changes tomorrow.',
+        'In the evening, Jemaa el-Fna — loud, crowded and genuinely unlike anything most students have experienced. It is worth going in with a plan for where to meet.',
+      ],
+      notes: ['Arrival in Marrakech', 'Medina and souks by trade', 'Jemaa el-Fna in the evening'],
+    },
+    {
+      day: 'Day 2',
+      title: 'Out of Marrakech, over the pass',
+      images: [{ name: 'student-tours/student-group-ait-ben-haddou-ksar', alt: 'Student group in front of the earthen ksar of Aït Ben Haddou', w: 1411, h: 1600, widths: [480, 768, 1280], jpg: true }],
+      body: [
+        'After a day inside the walls, the change on the road out is sharper. The route climbs into the High Atlas over the Tizi n\'Tichka pass, with stops to get out and look back at where the road came from. On the far side the landscape turns red and dry, and the architecture changes with it: flat roofs, rammed earth, walls the same color as the ground they stand on.',
+        'By afternoon the group reaches Aït Ben Haddou, a ksar — a fortified village of earthen buildings stacked up a hillside above a river. Walking up through it is the fastest way to understand why it was built the way it was; from the top, the valley reads as a defensive position rather than a view.',
+        'The group continues toward the Dades Valley for the first night outside Marrakech.',
+      ],
+      notes: ['Tizi n\'Tichka pass', 'Aït Ben Haddou ksar', 'Overnight in the Dades Valley area'],
+    },
+    {
+      day: 'Day 3',
+      title: 'Where the green line runs out',
+      images: [{ name: 'student-tours/students-sahara-dunes-evening', alt: 'Four students standing on a sand dune in the evening light', w: 1540, h: 1600, widths: [480, 768, 1280], jpg: true }],
+      body: [
+        'The road follows valleys where a thin green line of palms runs along the water and everything outside that line is stone — a contrast that explains settlement patterns better than any diagram. The group moves through the Dades and Todra areas, where the rock closes in and the road narrows between cliff walls, with time to walk and hear how sound behaves between the rock faces.',
+        'Then the mountains simply stop. The ground flattens out, the color goes pale, and somewhere ahead there is a low orange line that most people assume is cloud until it does not move. That is Erg Chebbi.',
+        'The group gets out onto the sand before the light goes, rides camels into the dunes at sunset, and sleeps at a camp among them — the first of two nights in the desert.',
+      ],
+      notes: ['Dades and Todra gorge country', 'Sunset camel trek at Erg Chebbi', 'First night at a desert camp'],
+    },
+    {
+      day: 'Day 4',
+      title: 'A day that stays in one place',
+      images: [{ name: 'student-tours/nomad-tent-desert', alt: 'A woven nomad tent on open, stony desert ground, with two people in long robes beside it', w: 1600, h: 1068, widths: [480, 768, 1280], jpg: true }, { name: 'student-tours/student-groups-4x4-sahara', alt: 'Students celebrating on the roofs of three 4x4 vehicles in the desert', w: 1544, h: 1600, widths: [480, 768, 1280], jpg: true }],
+      body: [
+        'The group wakes for sunrise over the dunes and then has the whole day around Erg Chebbi instead of getting back in a vehicle. How it is used depends on the group: it can include time with people who live in the desert rather than visiting it, and a look at how a nomad camp is actually set up and moved. Where the group wants more activity, the dunes also allow 4x4 and buggy time on the sand.',
+        'Late afternoon is for the dunes again, when the light is better and the heat has gone. The second night is at the camp, and because nobody is driving in the morning, the evening runs as long as the group wants it to.',
+      ],
+      notes: ['Sunrise over the dunes', 'Time with desert communities', 'Optional 4x4 or buggy on the sand', 'Second night at camp'],
+    },
+    {
+      day: 'Day 5',
+      title: 'The road back',
+      body: [
+        'The group leaves Merzouga after breakfast and heads back toward Marrakech, running the route in reverse. Students spot the transitions they missed on the way out — the pass, the ksar, the palm valleys — and the mountains arrive as a surprise rather than a departure point.',
+        'There are stops along the way, and the group reaches Marrakech in the evening, five days after a city that by now feels like it belongs to a different trip.',
+      ],
+      notes: ['Return crossing of the Atlas', 'Arrival Marrakech'],
+    },
+  ],
+  experiences: [
+    { title: 'A real day in Marrakech', body: 'The medina, souks organized by trade, and Jemaa el-Fna in the evening — not just a drive-through on the way to somewhere else.' },
+    { title: 'Crossing the High Atlas', body: 'A mountain road with real elevation change, taken slowly enough to stop and look at it.' },
+    { title: 'Aït Ben Haddou', body: 'An earthen ksar walked from the river up to the granary at the top, with the valley opening out behind.' },
+    { title: 'Gorge and oasis country', body: 'Palm groves, irrigation channels and cliff-walled gorges through the Dades and Todra areas.' },
+    { title: 'Two nights in the Sahara', body: 'A sunset camel trek into Erg Chebbi followed by a full day with no driving, so the desert stops being a photo stop and starts being a place.' },
+    { title: 'Meeting desert communities', body: 'Time with people who live in the desert, on their ground and on their terms.' },
+  ],
+  learning: [
+    { subject: 'Urban life and trade', body: 'A working medina economy seen at street level — trades grouped by guild, workshops where goods are still made, and a street pattern that predates any planning department.' },
+    { subject: 'Geography', body: 'The route south is a single continuous transect: irrigated plain, mountain pass, arid plateau, gorge, erg. Students see the sequence rather than reading it.' },
+    { subject: 'Architecture', body: 'Earthen construction is easiest to understand standing inside it — wall thickness, small openings, shaded courtyards, and why the material matches the ground.' },
+    { subject: 'Water and settlement', body: 'Oasis agriculture makes the relationship between water access and where people live unusually legible.' },
+    { subject: 'Amazigh culture', body: 'The valleys and the desert the route passes through are Amazigh, and language, craft and daily life differ from what the group saw in Marrakech.' },
+  ],
+  dayInTheJourney: [
+    { label: 'Morning', body: 'Sunrise on the dunes, then breakfast at camp with the day still cool.' },
+    { label: 'Midday', body: 'Out of the sun. This is when desert life slows down, and the group\'s schedule does the same.' },
+    { label: 'Late afternoon', body: 'Back onto the sand — walking, camels, or an active session on the dunes.' },
+    { label: 'Evening', body: 'Dinner at camp, music where the night allows it, and no reason to end it early.' },
+  ],
+  groupExperience: [
+    'A day in Marrakech before the road trip starts gives the group a shared reference point — the noise and density of the medina — to measure the desert against later. By the time they reach the dunes, the contrast does real work.',
+    'With two nights in the same desert camp, the group settles. Students stop managing logistics in their heads and start paying attention to where they are.',
+    'Shared meals do a lot of the work. Eating together twice a day for five days changes how a group talks by the end.',
+  ],
+  experiencesImage: { name: 'student-tours/camel-trek-erg-chebbi', alt: 'A line of camels with riders crossing orange sand dunes', w: 1280, h: 853, widths: [480, 768, 1280], jpg: true },
+  groupImage: { name: 'student-tours/student-drumming-desert-evening', alt: 'A student playing a hand drum beside a musician in a blue robe and black turban during an evening gathering', w: 1397, h: 1600, widths: [480, 768, 1280], jpg: true },
+  dayInTheJourneyImage: { name: 'student-tours/sahara-moonrise-vertical', alt: 'The moon rising over dark desert dunes', w: 730, h: 1280, widths: [480], jpg: true },
+  included: [
+    'Private transport for the group for the full route, with a driver',
+    'Accommodation for four nights, including two nights at a desert camp',
+    'Breakfasts, and dinners on the nights the group is with us',
+    'A local guide accompanying the group',
+    'Camel experience at Erg Chebbi',
+    'Time with desert communities as agreed in the final program',
+  ],
+  notIncluded: [
+    'International and domestic flights',
+    'Travel insurance',
+    'Lunches and drinks unless agreed in the final program',
+    '4x4 or buggy sessions unless included in the confirmed itinerary',
+    'Personal spending, tips and optional activities',
+    'Entrance fees to sites not listed in the confirmed itinerary',
+  ],
+  practical: [
+    { title: 'Accommodation', body: 'Four nights: one in Marrakech, one in the valley country on the way out, and two at a desert camp near Merzouga. Sharing arrangements are set with the group leader before travel.' },
+    { title: 'Transport', body: 'Private vehicles sized to the group. Two of the five days are substantial driving days; the desert day in the middle has almost none, which is the point of the format.' },
+    { title: 'Meals and dietary needs', body: 'Vegetarian, vegan, gluten-free and halal requirements can be arranged when the group tells us in advance. Send the list with numbers and we will confirm what is workable on each part of the route.' },
+    { title: 'What to bring', body: 'Layers for cold desert nights, comfortable shoes for the medina and for walking on sand and rock, sun protection, a head covering, and a power bank.' },
+    { title: 'Weather', body: 'Spring and autumn are the most comfortable for this route. Summer is hot in Marrakech and the pre-Sahara, and winter nights in the desert are cold — both are workable with the right preparation and a slightly adjusted daily rhythm.' },
+  ],
+  support: [
+    'A Morocco Grand Adventure guide travels with the group for the full route, and the same team plans and runs the trip.',
+    'Group leaders have a direct contact for the duration of the program rather than a call center.',
+    'Our team is based in Merzouga, so the desert portion is run by people who live where the group is sleeping.',
+    'Pace, stops and free time can be adjusted during the trip if the group needs it — tell the guide and we will work with it.',
+  ],
+  faqs: [
+    { q: 'What does the extra day add compared to the 4-Day program?', a: 'A full day in Marrakech before the group leaves the city, instead of departing on the first morning. The desert side of the route — two nights at Erg Chebbi including the full free day — is the same as the 4-Day program.' },
+    { q: 'Is five days enough to see Marrakech properly?', a: 'It is enough for a real first impression — the medina, the souks and Jemaa el-Fna — rather than a rushed transit. Groups who want more time in the city and less driving overall should ask about extending the program.' },
+    { q: 'Can the itinerary be adapted for our university group?', a: 'Yes. Tell us the academic focus, the group size and your dates, and we will adjust stops, timing and the balance between travel and time on site.' },
+    { q: 'What group sizes do you work with?', a: 'Tell us how many are travelling and we will plan around it. Vehicles, accommodation and desert camp capacity are arranged in advance, so larger groups simply need more lead time.' },
+    { q: 'Can dietary requirements be arranged?', a: 'Yes, with advance notice. Vegetarian, vegan, gluten-free and halal are all workable; send the list with numbers when you confirm the group.' },
+    { q: 'How does a professor or group leader start planning?', a: 'Message us with your group size, home institution country, approximate dates and what you want students to get out of the trip. We will come back with a route and the practical detail behind it.' },
+  ],
+  keyPlaces: ['Marrakech', 'Tizi n\'Tichka', 'Aït Ben Haddou', 'Dades & Todra', 'Erg Chebbi'],
+  related: [
+    { to: '/destinations/marrakech', label: 'Marrakech' },
+    { to: '/destinations/ait-ben-haddou', label: 'Aït Ben Haddou' },
+    { to: '/destinations/erg-chebbi', label: 'Erg Chebbi' },
     { to: '/merzouga-guide', label: 'Merzouga Guide' },
   ],
 };
@@ -412,7 +566,7 @@ const tenDay: StudentTour = {
   hero: { name: 'student-tours/student-group-ait-ben-haddou-entrance', alt: 'Large student group gathered in an earthen lane at the entrance to Aït Ben Haddou', w: 1920, h: 1280, widths: [480, 768, 1280, 1600], jpg: true, position: 'center top' },
   metaTitle: '10-Day Morocco Student Tour | Imperial Cities, Rif & Sahara',
   metaDescription:
-    'A ten-day student route linking Marrakech, Aït Ben Haddou, the Erg Chebbi Sahara, Fes and Chefchaouen. For university groups of 15+.',
+    'A ten-day student route linking Marrakech, Aït Ben Haddou, the Erg Chebbi Sahara, Fes and Chefchaouen. For university and student groups.',
   overview: {
     start: 'Marrakech or Casablanca',
     end: 'Marrakech or Fes, depending on the group\'s flights',
@@ -589,7 +743,7 @@ const tenDay: StudentTour = {
     { q: 'Can the tour start and end in different cities?', a: 'Yes, and on a ten-day route that often makes sense — for example arriving in one city and departing from another so the group is not retracing. Send us your flight constraints.' },
     { q: 'Can we adjust which cities are included?', a: 'Yes. The north-to-south spine is what makes the route work, but individual stops can be swapped, extended or dropped depending on your priorities and dates.' },
     { q: 'How much of the trip is driving?', a: 'It is a large country and there are two substantial travel days. We tell you where they fall when we send the route so there are no surprises.' },
-    { q: 'What group sizes do you work with?', a: 'Groups of 15 or more. For a ten-day program with multi-night city stops, more lead time means better accommodation options.' },
+    { q: 'What group sizes do you work with?', a: 'Tell us how many are travelling and we will plan around it. For a ten-day program with multi-night city stops, more lead time means better accommodation options.' },
     { q: 'Can dietary requirements be handled for the whole route?', a: 'Yes, with advance notice. The range of locations is why we ask for the list early rather than on arrival.' },
     { q: 'How does a study-abroad coordinator start the conversation?', a: 'Message us with the institution\'s country, group size, target dates, academic focus and any fixed constraints. We will come back with a route, the logistics and the parts we would push back on.' },
   ],
@@ -602,7 +756,13 @@ const tenDay: StudentTour = {
   ],
 };
 
-export const studentTours: StudentTour[] = [threeDay, fourDay, tenDay];
+// Order matters here: it drives both the hub's display order (3/4/5/10-Day)
+// and the position-indexed st_11_r{n}_* i18n keys read by scripts/prerender.ts.
+// r1→3-Day and r2→4-Day are unchanged; r3 and r4's TRANSLATED CONTENT were
+// swapped (in src/i18n/gaps/student-tours.ts, en+pt) to now describe 5-Day and
+// 10-Day respectively, so the key numbers stay stable while correctly tracking
+// which tour sits at each array position.
+export const studentTours: StudentTour[] = [threeDay, fourDay, fiveDay, tenDay];
 
 export const studentTourSlugs = studentTours.map((t) => t.slug);
 

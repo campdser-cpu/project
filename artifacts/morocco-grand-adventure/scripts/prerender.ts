@@ -59,6 +59,11 @@ import { getRouteMeta, getLocalizedRouteMeta, BLOG_META, HOME_META, FR_HOME_META
 import { getLocalizedGuide, guideImageAlt, guideCrumb } from '../src/i18n/guides';
 import { buildTourSchema, buildDestinationSchema, buildBlogPostSchema, buildReviewSchema, buildFaqSchema, buildBreadcrumb } from '../src/components/seo/StructuredData';
 import { getStudentTour, studentTours as studentTourList, studentTourSizes } from '../src/data/student-tours';
+// Data-driven index list (1, 2, 3, ...) for the st_11_r{n}_* card-copy keys and
+// the hub's TouristTrip schema loop — derives its length from the actual
+// Student Tours data, so adding a tour only means authoring its st_11_r{n}_*
+// keys, not also updating a separate literal [1,2,3] list in two places.
+const JOURNEY_INDEXES = studentTourList.map((_, i) => i + 1);
 import { MERZOUGA_HUB_COPY } from '../src/data/merzouga-hub/all';
 import {
   MG_BASICS, MG_CHOOSE, MG_COMPARISON, MG_FEATURED_GUIDES, MG_GUIDE_GROUPS, MG_IMAGES,
@@ -1085,12 +1090,6 @@ function buildBlogArticleBody(slug: string, lang: Lang): string {
 const EXPERIENCE_PAGE_ROUTES: Record<string, { tours: string[]; destinations: string[] }> = {
   // Student Tours — a standalone university-travel experience, not a 25th tour.
   '/student-tours/university-groups': { tours: [], destinations: [] },
-  // The three dedicated Student Tour products. Empty tours/destinations keeps
-  // the generic experience-hub builder from injecting private-tour blocks —
-  // these pages emit their own itinerary content (see studentTourDetail below).
-  '/student-tours/3-day-morocco-student-tour': { tours: [], destinations: [] },
-  '/student-tours/4-day-morocco-student-tour': { tours: [], destinations: [] },
-  '/student-tours/10-day-morocco-student-tour': { tours: [], destinations: [] },
   // Journey cards now point at the dedicated Student Tour products, so the hub
   // no longer injects private-tour blocks. Destinations stay: they are
   // contextual place links, not competing tour products.
@@ -1108,6 +1107,15 @@ const EXPERIENCE_PAGE_ROUTES: Record<string, { tours: string[]; destinations: st
   '/gallery': { tours: [], destinations: ['marrakech', 'chefchaouen', 'merzouga', 'fes'] },
   '/trip-builder': { tours: ['3-day-sahara-marrakech', '5-day-imperial-cities', '7-day-imperial-cities-sahara-escape', 'family-morocco-adventure', 'honeymoon-morocco'], destinations: ['marrakech', 'fes', 'merzouga', 'erg-chebbi', 'ait-ben-haddou'] },
 };
+// Register the dedicated Student Tour product routes from the actual Student
+// Tours data, rather than a separately-maintained literal list — adding a new
+// Student Tour (src/data/student-tours.ts) is then enough on its own to make
+// this loop discover and prerender its page. Empty tours/destinations keeps
+// the generic experience-hub builder from injecting private-tour blocks —
+// these pages emit their own itinerary content (see studentTourDetail below).
+for (const slug of studentTourList.map((s) => s.slug)) {
+  EXPERIENCE_PAGE_ROUTES[`/student-tours/${slug}`] = { tours: [], destinations: [] };
+}
 function buildExperienceContent(rest: string, lang: Lang): string {
   // Reuse the single localized-metadata mechanism (same source as <LocalizedHead>
   // and metaFor above) so the crawlable H1/intro match the localized <title>
@@ -1211,7 +1219,7 @@ function buildExperienceContent(rest: string, lang: Lang): string {
     <p>${escapeHtml(tr(lang, 'st_09_groups_p'))}</p>
     <h2>${escapeHtml(tr(lang, 'st_11_h2'))}</h2>
     <p>${escapeHtml(tr(lang, 'st_11_intro'))}</p>
-    ${[1, 2, 3].map((n) => `<h3>${escapeHtml(`${tr(lang, `st_11_r${n}_days`)} ${tr(lang, `st_11_r${n}_unit`)} — ${tr(lang, `st_11_r${n}_title`)}`)}</h3><p>${escapeHtml(tr(lang, `st_11_r${n}_route`))} (${escapeHtml(tr(lang, `st_11_r${n}_themes`))})</p><p>${escapeHtml(tr(lang, `st_11_r${n}_desc`))}</p><p>${escapeHtml(tr(lang, 'st_11_note'))}</p><p>${link(`${SITE_URL}/${lang}/student-tours/${JOURNEY_TOURS[n - 1]}`, `${tr(lang, 'st_11_cta')}: ${tr(lang, `st_11_r${n}_title`)}`)}</p>`).join('\n    ')}
+    ${JOURNEY_INDEXES.map((n) => `<h3>${escapeHtml(`${tr(lang, `st_11_r${n}_days`)} ${tr(lang, `st_11_r${n}_unit`)} — ${tr(lang, `st_11_r${n}_title`)}`)}</h3><p>${escapeHtml(tr(lang, `st_11_r${n}_route`))} (${escapeHtml(tr(lang, `st_11_r${n}_themes`))})</p><p>${escapeHtml(tr(lang, `st_11_r${n}_desc`))}</p><p>${escapeHtml(tr(lang, 'st_11_note'))}</p><p>${link(`${SITE_URL}/${lang}/student-tours/${JOURNEY_TOURS[n - 1]}`, `${tr(lang, 'st_11_cta')}: ${tr(lang, `st_11_r${n}_title`)}`)}</p>`).join('\n    ')}
     <p>${escapeHtml(tr(lang, 'st_11_band_items'))}</p>
     <h2>${escapeHtml(tr(lang, 'st_13_h2'))}</h2>
     <p>${escapeHtml(tr(lang, 'st_13_line'))}</p>
@@ -1465,7 +1473,7 @@ function buildRoutes(lang: Lang): RouteEntry[] {
             name: stp.title,
             description: stp.metaDescription,
             url: `${SITE_URL}/${lang}${rest}`,
-            touristType: 'University and student groups (15+ participants)',
+            touristType: 'University and student groups',
             provider: { '@id': `${SITE_URL}/#organization` },
             itinerary: {
               '@type': 'ItemList',
@@ -1491,12 +1499,12 @@ function buildRoutes(lang: Lang): RouteEntry[] {
             buildFaqSchema(Array.from({ length: 16 }, (_, i) => ({
               question: tr(lang, `st_15_q${i + 1}`), answer: tr(lang, `st_15_a${i + 1}`),
             }))) as unknown as Record<string, unknown>,
-            ...[1, 2, 3].map((n) => ({
+            ...JOURNEY_INDEXES.map((n) => ({
               '@context': 'https://schema.org',
               '@type': 'TouristTrip',
               name: `${tr(lang, `st_11_r${n}_days`)} ${tr(lang, `st_11_r${n}_unit`)} — ${tr(lang, `st_11_r${n}_title`)}`,
               description: `${tr(lang, `st_11_r${n}_route`)} · ${tr(lang, `st_11_r${n}_themes`)}`,
-              touristType: 'University and student groups (15+ participants)',
+              touristType: 'University and student groups',
               itinerary: {
                 '@type': 'ItemList',
                 itemListElement: tr(lang, `st_11_r${n}_route`).split('·').map((p, i) => ({
