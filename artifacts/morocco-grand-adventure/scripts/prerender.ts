@@ -78,6 +78,7 @@ import { deriveTourExperiences, type DerivedExperience } from '../src/data/tour-
 import { localizeExperience } from '../src/i18n/experiences';
 
 import { deriveTourInclusions, type InclusionItem, type MealRow } from '../src/data/tour-inclusions';
+import { deriveTourStartEnd } from '../src/data/tour-quick-facts';
 
 // ── Constants ────────────────────────────────────────────────────────────────
 const BRAND = 'Morocco Grand Adventure';
@@ -756,7 +757,35 @@ function buildTourDetailContent(id: string, lang: Lang): string {
     : '';
   const canonical = canonicalTours.find((x) => x.id === tour.id) ?? tour;
   const inclusionsHtml = tourInclusionsBlock(canonical, tour, lang);
-  return breadcrumb + h1(tour.name) + paragraph(tour.description ?? '') + paragraph(`${tr(lang, 'search_duration')}: ${tour.duration}`) + h2(tr(lang, 'tour_why_love')) + ul(tour.highlights) + whyChooseBlock + (itinerary.length > 0 ? h2(tr(lang, 'tour_itinerary')) + ul(itinerary.map((d) => `${tr(lang, 'tour_day')} ${d.day}: ${d.title}`)) : '') + experiencesBlock + optionalBlock + inclusionsHtml + bookingStepsBlock(lang) + (faqs.length > 0 ? h2(tr(lang, 'nav_faq')) + faqBlock(faqs) : '') + (departHub ? h2(fmt(tr(lang, 'hub_related_title'), { city: tr(lang, `hub_${departHub.id}_name`) })) + paragraph(link(`${SITE_URL}/${lang}/tours/from-${departHub.slug}`, fmt(tr(lang, 'hub_related_browse'), { city: tr(lang, `hub_${departHub.id}_name`) }))) : '') + bestForBlock + guideLinksBlock + rawParagraph(link(`${SITE_URL}/${lang}/book`, tr(lang, 'book_form_cta'))) + buildTopicalLinksContent({ tourId: tour.id }, lang);
+  // Quick Facts: mirrors the client's "at a glance" panel in tour-detail.tsx —
+  // same verified start/end derivation (tour-quick-facts.ts) and the same
+  // per-night "where you'll sleep" summary reused from the meals data below,
+  // so the crawlable HTML states nothing the visible page doesn't.
+  const startEnd = deriveTourStartEnd(canonical, destinations);
+  const qfDestMap = Object.fromEntries(getLocalizedDestinations(lang).map((d) => [d.id, d.name]));
+  const qfStartName = startEnd ? qfDestMap[startEnd.startId] : undefined;
+  const qfEndName = startEnd?.endId ? qfDestMap[startEnd.endId] : undefined;
+  const qfInclusions = deriveTourInclusions(canonical, tour);
+  const qfNightPlace = (row: MealRow): string => {
+    const dest = row.placeId ? qfDestMap[row.placeId] : undefined;
+    if (dest && row.place && row.place.toLowerCase().includes(dest.toLowerCase())) return row.place;
+    return row.place || dest || '';
+  };
+  const qfSleepPlaces: string[] = [];
+  for (const row of qfInclusions.meals) {
+    const label = qfNightPlace(row);
+    if (label && qfSleepPlaces[qfSleepPlaces.length - 1] !== label) qfSleepPlaces.push(label);
+  }
+  const qfSleepSummary = qfSleepPlaces.join(' · ');
+  const quickFactsBlock = (qfStartName || qfEndName || qfSleepSummary)
+    ? `\n    <h2>${escapeHtml(tr(lang, 'jx_qf_heading'))}</h2>\n    <dl class="prerendered-quick-facts">\n`
+      + `      <dt>${escapeHtml(tr(lang, 'search_duration'))}</dt><dd>${escapeHtml(tour.duration)}</dd>\n`
+      + (qfStartName ? `      <dt>${escapeHtml(tr(lang, 'jx_qf_starts'))}</dt><dd>${escapeHtml(qfStartName)}</dd>\n` : '')
+      + (qfEndName ? `      <dt>${escapeHtml(tr(lang, 'jx_qf_ends'))}</dt><dd>${escapeHtml(qfEndName)}${startEnd?.isRoundTrip ? ` (${escapeHtml(tr(lang, 'jx_qf_round_trip'))})` : ''}</dd>\n` : '')
+      + (qfSleepSummary ? `      <dt>${escapeHtml(tr(lang, 'jx_grp_stay'))}</dt><dd>${escapeHtml(qfSleepSummary)}</dd>\n` : '')
+      + `    </dl>\n`
+    : '';
+  return breadcrumb + h1(tour.name) + paragraph(tour.description ?? '') + paragraph(`${tr(lang, 'search_duration')}: ${tour.duration}`) + quickFactsBlock + h2(tr(lang, 'tour_why_love')) + ul(tour.highlights) + whyChooseBlock + (itinerary.length > 0 ? h2(tr(lang, 'tour_itinerary')) + ul(itinerary.map((d) => `${tr(lang, 'tour_day')} ${d.day}: ${d.title}`)) : '') + experiencesBlock + optionalBlock + inclusionsHtml + bookingStepsBlock(lang) + (faqs.length > 0 ? h2(tr(lang, 'nav_faq')) + faqBlock(faqs) : '') + (departHub ? h2(fmt(tr(lang, 'hub_related_title'), { city: tr(lang, `hub_${departHub.id}_name`) })) + paragraph(link(`${SITE_URL}/${lang}/tours/from-${departHub.slug}`, fmt(tr(lang, 'hub_related_browse'), { city: tr(lang, `hub_${departHub.id}_name`) }))) : '') + bestForBlock + guideLinksBlock + rawParagraph(link(`${SITE_URL}/${lang}/book`, tr(lang, 'book_form_cta'))) + buildTopicalLinksContent({ tourId: tour.id }, lang);
 }
 function buildDestinationsContent(lang: Lang): string {
   // Mirror the live /destinations page structure: localized H1 + intro, each

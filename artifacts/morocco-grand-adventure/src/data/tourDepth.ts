@@ -160,6 +160,96 @@ export const TOUR_DEPTH: Record<string, TourDepth> = {
     bestFor: 'Travellers with a full week-plus who want coast and desert without choosing between them.',
     guideLinks: ['how-many-days', 'camel-trekking', 'luxury-desert-camps', 'things-to-do', 'best-time-to-visit', 'what-to-pack'],
   },
+  'marrakech-4-day': {
+    whyChoose: [
+      'A round trip from Marrakech that reaches the Sahara without the longer southern detours — the High Atlas, Aït Ben Haddou, the Dades and Todra gorges and a night in the Erg Chebbi dunes.',
+      'Four days give the return drive real breathing room compared with a three-day version of the same corridor.',
+      'Private vehicle and driver-guide throughout, with the route confirmed around your dates.',
+    ],
+    bestFor: 'Travellers based in Marrakech who want the classic Sahara route at a fuller pace than a three-day trip allows — the same corridor, one extra day of comfort.',
+    guideLinks: MARRAKECH_CORE,
+  },
+  'fes-4-day': {
+    whyChoose: [
+      'A round trip from Fes into the Sahara without changing base — the cedar forests of Ifrane, the Ziz Valley oases and a night in the Erg Chebbi dunes.',
+      'Returns to Fes on day four, so onward travel from the same city is simple to plan.',
+      'Private vehicle and driver-guide throughout.',
+    ],
+    bestFor: 'Travellers staying in or flying through Fes who want the Sahara as a there-and-back trip rather than a one-way crossing.',
+    guideLinks: FES_CORE,
+  },
+  'fes-5-day': {
+    whyChoose: [
+      'A one-way private crossing from Fes to Marrakech, with an extra day over a four-day version of the same corridor to slow the pace.',
+      'The full southern sweep: Ifrane and the Middle Atlas, a night in the Erg Chebbi dunes, the Todra and Dades gorges and Aït Ben Haddou.',
+      'Ends with a free morning in Marrakech rather than a rushed arrival.',
+    ],
+    bestFor: 'Travellers moving between Fes and Marrakech who would rather take five unhurried days over this route than four fuller ones.',
+    guideLinks: FES_CORE,
+  },
+  'fes-8-day': {
+    whyChoose: [
+      'Combines guided days in both Fes and Marrakech with the full desert corridor between them — Meknès, Volubilis, the Sahara at Erg Chebbi and the Dades and Todra gorges.',
+      'Eight days give the imperial cities and the desert crossing equal weight, rather than treating one as a detour from the other.',
+      'Private vehicle and driver-guide throughout, with official local guides in Fes and Marrakech.',
+    ],
+    bestFor: 'Travellers with over a week who want Morocco\'s imperial north and the Sahara covered properly in one private journey, starting in Fes and finishing in Marrakech.',
+    guideLinks: FES_CORE,
+  },
+  'agadir-4-day': {
+    whyChoose: [
+      'A private route from the Atlantic coast to Marrakech through Taroudant\'s ramparts and the saffron terraces of Taliouine, rather than the busier direct road.',
+      'Two nights left in Marrakech at the end, with a full guided day in the city.',
+      'Private vehicle and driver-guide throughout — this route does not reach the Sahara.',
+    ],
+    bestFor: 'Travellers based in Agadir who want the kasbah country and Aït Ben Haddou on the way to Marrakech, without committing to the longer desert route.',
+    guideLinks: ['how-many-days', 'best-time-to-visit', 'what-to-pack'],
+  },
+  'agadir-5-day': {
+    whyChoose: [
+      'The Agadir-to-Marrakech route with the Sahara added — Taroudant, Taliouine\'s saffron terraces, the Dades and Todra gorges and a night in the Erg Chebbi dunes.',
+      'One extra day over a four-day version of this route buys the desert night that shorter trip leaves out.',
+      'Private vehicle and driver-guide throughout.',
+    ],
+    bestFor: 'Travellers on the Atlantic coast who want a genuine Sahara night on their way to Marrakech, not just the kasbah country.',
+    guideLinks: ['camel-trekking', 'luxury-desert-camps', 'how-many-days', 'best-time-to-visit', 'what-to-pack'],
+  },
+  'agadir-8-day': {
+    whyChoose: [
+      'A full private loop from Agadir back to Agadir — the saffron country of Taliouine, the kasbah route, the Sahara at Erg Chebbi and the palm-lined Draa Valley.',
+      'Eight days give the desert night, the gorges and the Draa Valley their own proper time rather than a rushed pass-through.',
+      'Private vehicle and driver-guide throughout.',
+    ],
+    bestFor: 'Travellers flying in and out of Agadir who want the deep south — kasbahs, gorges, Sahara and the Draa Valley — as one unhurried circuit.',
+    guideLinks: ['marrakech-to-merzouga', 'camel-trekking', 'luxury-desert-camps', 'how-many-days', 'best-time-to-visit', 'what-to-pack'],
+  },
+  'casablanca-4-day': {
+    whyChoose: [
+      'A gentler pace than a three-day version of this route, with a full night in Asilah added before Chefchaouen.',
+      'Follows the Atlantic coast north from Casablanca before turning inland to the Blue City, imperial Meknès and Volubilis.',
+      'Private vehicle and driver-guide throughout — this route does not reach the Sahara.',
+    ],
+    bestFor: 'Travellers landing in Casablanca who want the northern coast and imperial cities at a relaxed pace rather than a compact three-day trip.',
+    guideLinks: ['how-many-days', 'best-time-to-visit', 'what-to-pack', 'marrakech-vs-fes'],
+  },
+  'casablanca-5-day': {
+    whyChoose: [
+      'Reaches the Sahara from Casablanca in one route, rather than treating the desert as a separate trip.',
+      'Combines imperial Fes and Meknès with the cedar forests of Ifrane and a night in the Erg Chebbi dunes.',
+      'Private vehicle and driver-guide throughout.',
+    ],
+    bestFor: 'Travellers flying into Casablanca who want the imperial cities and a real Sahara night in a single five-day private journey, finishing in Fes.',
+    guideLinks: ['marrakech-to-merzouga', 'camel-trekking', 'luxury-desert-camps', 'how-many-days', 'best-time-to-visit', 'what-to-pack'],
+  },
+  'casablanca-8-day': {
+    whyChoose: [
+      'The complete private loop from Casablanca: the Blue City, the imperial cities, the Sahara and Marrakech, returning to where you started.',
+      'Eight days let every leg breathe, including a full night in the Erg Chebbi dunes and the Todra and Dades gorges.',
+      'Private vehicle and driver-guide throughout, with official local guides in Fes and Marrakech.',
+    ],
+    bestFor: 'Travellers flying in and out of Casablanca who want to see the whole of northern and southern Morocco — imperial cities, Sahara and Marrakech — without changing arrival and departure cities.',
+    guideLinks: ['marrakech-to-merzouga', 'how-many-days', 'camel-trekking', 'luxury-desert-camps', 'things-to-do', 'best-time-to-visit', 'what-to-pack'],
+  },
 };
 
 /** Fallback guide links for tours without an authored entry. */

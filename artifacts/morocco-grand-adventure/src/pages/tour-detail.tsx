@@ -25,8 +25,9 @@ import { TOUR_DEPARTURE_CITY, getCityHub } from '@/data/tour-hierarchy';
 import { TourBreadcrumbs } from '../components/tours/TourBreadcrumbs';
 import { MERZOUGA_GUIDES, COMPARISONS, TRAVEL_INFO } from '@/data/seoHub';
 import { getLocalizedGuide } from '@/i18n/guides';
-import { tours as canonicalTours } from '@/data/content';
+import { tours as canonicalTours, destinations as canonicalDestinations } from '@/data/content';
 import { deriveTourExperiences } from '@/data/tour-experiences';
+import { deriveTourStartEnd } from '@/data/tour-quick-facts';
 import { IncludedExperiences } from '../components/tours/IncludedExperiences';
 import { TourInclusions } from '../components/tours/TourInclusions';
 import { TourInquiryForm } from '../components/tours/TourInquiryForm';
@@ -120,6 +121,26 @@ export default function TourDetail() {
   // Comprehensive inclusions & meal breakdown: canonical itinerary + localized copy.
   const inclusions = deriveTourInclusions(canonicalTour ?? tour, tour);
 
+  // Quick Facts: verified start/end (from the tour's own curated routeIds and
+  // its own itinerary text — see tour-quick-facts.ts) and a "where you'll
+  // sleep" summary reusing the same per-night stay data as the meals table
+  // below, so nothing here is derived twice or invented.
+  const startEnd = deriveTourStartEnd(canonicalTour ?? tour, canonicalDestinations);
+  const startName = startEnd ? destinationNames[startEnd.startId] : undefined;
+  const endName = startEnd?.endId ? destinationNames[startEnd.endId] : undefined;
+  const nightPlace = (row: { place: string; placeId?: string }): string => {
+    const dest = row.placeId ? destinationNames[row.placeId] : undefined;
+    if (dest && row.place && row.place.toLowerCase().includes(dest.toLowerCase())) return row.place;
+    return row.place || dest || '';
+  };
+  const sleepPlaces: string[] = [];
+  for (const row of inclusions.meals) {
+    const label = nightPlace(row);
+    if (label && sleepPlaces[sleepPlaces.length - 1] !== label) sleepPlaces.push(label);
+  }
+  const sleepSummary = sleepPlaces.length > 0 ? sleepPlaces.join(' · ') : undefined;
+  const hasQuickFacts = Boolean(startName || endName || sleepSummary);
+
   return (
     <Layout>
       {/* Schema.org structured data: Tour, FAQ, Breadcrumb */}
@@ -190,6 +211,48 @@ export default function TourDetail() {
           ]}
         />
       </div>
+
+      {/* Quick Facts — verified start/end + where you'll sleep, at a glance.
+          Duration already shows in the hero, so this focuses on what doesn't:
+          start/end (derived from the tour's own routeIds + itinerary text,
+          see tour-quick-facts.ts) and a one-line "where you'll sleep" summary
+          reusing the same per-night data as the meals table further down. */}
+      {hasQuickFacts && (
+        <section className="bg-background pt-10 md:pt-14">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <div className="bg-card border border-border rounded-3xl p-6 md:p-8">
+              <h2 className="font-serif text-xl md:text-2xl text-foreground mb-5">{t('jx_qf_heading')}</h2>
+              <dl className="grid grid-cols-2 gap-x-6 gap-y-5 md:grid-cols-4">
+                <div>
+                  <dt className="text-xs font-bold uppercase tracking-wider text-muted-foreground">{t('search_duration')}</dt>
+                  <dd className="mt-1.5 font-semibold text-foreground">{tour.duration}</dd>
+                </div>
+                {startName && (
+                  <div>
+                    <dt className="text-xs font-bold uppercase tracking-wider text-muted-foreground">{t('jx_qf_starts')}</dt>
+                    <dd className="mt-1.5 font-semibold text-foreground">{startName}</dd>
+                  </div>
+                )}
+                {endName && (
+                  <div>
+                    <dt className="text-xs font-bold uppercase tracking-wider text-muted-foreground">{t('jx_qf_ends')}</dt>
+                    <dd className="mt-1.5 font-semibold text-foreground">
+                      {endName}
+                      {startEnd?.isRoundTrip && <span className="text-muted-foreground font-normal"> ({t('jx_qf_round_trip')})</span>}
+                    </dd>
+                  </div>
+                )}
+                {sleepSummary && (
+                  <div className="col-span-2 md:col-span-1">
+                    <dt className="text-xs font-bold uppercase tracking-wider text-muted-foreground">{t('jx_grp_stay')}</dt>
+                    <dd className="mt-1.5 font-semibold text-foreground">{sleepSummary}</dd>
+                  </div>
+                )}
+              </dl>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Limited-time promotion */}
       {promoOn && (
