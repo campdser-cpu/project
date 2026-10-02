@@ -1681,7 +1681,7 @@ export const TRAVEL_INFO: HubPage[] = [
     ],
     tours: ['3-day-sahara-marrakech', 'marrakech-imlil-day-trip', 'marrakech-ourika-valley-day-trip'],
     destinations: ['imlil', 'ait-ben-haddou', 'ourika-valley'],
-    relatedGuides: ['morocco-travel-safety', 'moroccan-food-and-cuisine', 'atlas-mountains-guide', 'morocco-basics', 'sahara-desert-guide'],
+    relatedGuides: ['morocco-travel-safety', 'moroccan-food-and-cuisine', 'moroccan-souks-shopping-guide', 'atlas-mountains-guide', 'morocco-basics', 'sahara-desert-guide'],
     sources: ['britannica-morocco', 'unesco-ait-ben-haddou', 'onmt'],
   },
   {
@@ -1802,7 +1802,65 @@ export const TRAVEL_INFO: HubPage[] = [
     ],
     tours: ['3-day-sahara-marrakech', '7-day-imperial-cities-sahara-escape'],
     destinations: ['marrakech', 'fes'],
-    relatedGuides: ['morocco-basics', 'amazigh-berber-culture', 'morocco-travel-safety', 'sahara-desert-guide'],
+    relatedGuides: ['moroccan-souks-shopping-guide', 'morocco-basics', 'amazigh-berber-culture', 'morocco-travel-safety', 'sahara-desert-guide'],
+    sources: ['onmt', 'lonely-planet-morocco'],
+  },
+  {
+    kind: 'travel-info',
+    slug: 'moroccan-souks-shopping-guide',
+    title: 'Moroccan Souks — A Shopping and Bargaining Guide',
+    pageTitle: 'Moroccan Souks Guide — Shopping, Bargaining & What to Buy',
+    description: 'A practical guide to Morocco\'s souks — how Marrakech\'s and Fes\'s market quarters are laid out, how bargaining actually works, and what to buy (and from whom) for something that lasts.',
+    ogImage: '/images/library/marrakech-souk-aerial-view-mga-009.jpg',
+    heroImage: '/images/library/marrakech-souk-aerial-view-mga-009.jpg',
+    heroAlt: 'Aerial rooftop view over the colourful Marrakech souk, with Carpet Central Market visible',
+    intro: 'A souk is not one market but a maze of them — each trade in its own quarter, a layout that goes back centuries. This guide covers how Marrakech\'s and Fes\'s souks are actually organized, how bargaining really works, and what is genuinely worth buying.',
+    sections: [
+      {
+        heading: 'What a souk actually is',
+        paragraphs: [
+          'A souk is a trade quarter, not a single market — in a historic medina, each craft traditionally occupies its own alley or district: dyers together, leatherworkers together, metalworkers together. That organization is centuries old and still visible today, which is why wandering a souk can feel disorienting at first: you are moving through what was once a functioning guild system, not a shopping mall laid out for visitors.',
+          'It is also still a living commercial district for residents, not an attraction staged for tourists — the same stalls selling rugs to visitors also sell cooking pots and work clothes to neighbors.',
+        ],
+      },
+      {
+        heading: 'Marrakech\'s souks, section by section',
+        paragraphs: [
+          'Souk Semmarine, running north from Jemaa el-Fna, is the main artery — wide, busy, and the easiest to start from. Off it branch the specialized quarters: Souk el-Attarine for spices and perfume, Souk des Teinturiers (the dyers\' souk) recognizable by the skeins of dyed wool and silk thread hanging overhead, Souk Cherratine for leather goods, and Souk Haddadine for metalwork and the hammered lanterns seen in riads across the country.',
+          'None of this needs to be memorized before you go — a good local guide threads through it naturally, which is part of why we build a guided souk walk into our Marrakech days rather than leaving travelers to find it alone on a first visit.',
+        ],
+      },
+      {
+        heading: 'Fes: the tanneries and artisan quarters',
+        paragraphs: [
+          'Fes el-Bali\'s souks are built around the same guild logic, most famously at the Chouara Tannery, where hides are still dyed by hand in stone vats much as they have been for centuries — one of the oldest continuously working tanneries in the world. The surrounding streets carry on the same specialization: potters, metalworkers and weavers each in their own corner of the medina\'s roughly 9,000 alleys.',
+        ],
+      },
+      {
+        heading: 'Bargaining — how it actually works',
+        paragraphs: [
+          'Fixed prices are the exception, not the rule, in most souk stalls — the opening price is intentionally a starting point, not the real one, and a back-and-forth is expected and genuinely normal rather than awkward. There is no single correct formula; the goal is a price both sides are comfortable with, not "winning." Walking away calmly is a legitimate part of the process, not rude — and a price agreed with a smile holds up better than one extracted through pressure.',
+          'The same agree-before-you-commit principle covers taxis and informal guides too — our travel safety guide covers that side of things in more detail.',
+        ],
+      },
+      {
+        heading: 'What to actually buy, and from whom',
+        paragraphs: [
+          'Hand-woven rugs (zerbiya), leather goods, hammered lanterns, ceramics and spice blends like ras el hanout are the classics, and all of them vary enormously in quality — a cooperative or a workshop you can see working is a better bet than the most convenient stall near a tour bus stop, both for quality and for making sure the money reaches the people who actually made the thing. Argan oil cooperatives, common around Essaouira and the Ourika Valley, work the same way.',
+          'None of this is about avoiding souvenirs — it is about the same small shift that makes any of this travel better: knowing a little about what you are looking at before you buy it.',
+        ],
+      },
+    ],
+    faqs: [
+      { question: 'Do I have to bargain in Moroccan souks?', answer: 'In most souk stalls, yes — fixed prices are the exception. It is a normal, expected back-and-forth rather than a confrontation; the goal is a price both sides are happy with.' },
+      { question: 'What is the main souk street in Marrakech called?', answer: 'Souk Semmarine, running north from Jemaa el-Fna, is the main artery. Specialized quarters — spices, dyers, leather, metalwork — branch off it.' },
+      { question: 'What should I buy in a Moroccan souk?', answer: 'Hand-woven rugs, leather goods, hammered lanterns, ceramics and spice blends like ras el hanout are the classics. Buying from a cooperative or a visible workshop generally means better quality and ensures the money reaches the artisans themselves.' },
+      { question: 'Is it rude to bargain and then not buy?', answer: 'No — walking away without buying, calmly and politely, is a normal part of the process, not an insult. Vendors expect that not every negotiation ends in a sale.' },
+      { question: 'Are the souks overwhelming for a first visit?', answer: 'They can feel disorienting at first — it is a centuries-old guild layout, not a shopping mall. A local guide makes the first visit much easier to navigate, which is why we build a guided souk walk into our Marrakech itineraries.' },
+    ],
+    tours: ['7-day-imperial-cities-sahara-escape', 'family-morocco-adventure'],
+    destinations: ['marrakech', 'fes'],
+    relatedGuides: ['amazigh-berber-culture', 'moroccan-food-and-cuisine', 'morocco-travel-safety', 'morocco-basics'],
     sources: ['onmt', 'lonely-planet-morocco'],
   },
 ];
