@@ -1410,7 +1410,7 @@ export const TRAVEL_INFO: HubPage[] = [
     ],
     tours: ['3-day-sahara-marrakech', '7-day-imperial-cities-sahara-escape'],
     destinations: ['merzouga', 'essaouira', 'marrakech'],
-    relatedGuides: ['morocco-basics', 'what-to-pack-morocco', 'getting-around-morocco', 'best-time-to-visit', 'sahara-desert-guide'],
+    relatedGuides: ['morocco-travel-safety', 'morocco-basics', 'what-to-pack-morocco', 'getting-around-morocco', 'best-time-to-visit', 'sahara-desert-guide'],
     sources: ['onmt', 'lonely-planet-morocco'],
   },
   {
@@ -1622,7 +1622,7 @@ export const TRAVEL_INFO: HubPage[] = [
     ],
     tours: ['marrakech-imlil-day-trip', 'marrakech-ourika-valley-day-trip'],
     destinations: ['imlil', 'ourika-valley', 'ifrane'],
-    relatedGuides: ['amazigh-berber-culture', 'morocco-basics', 'best-time-to-visit-morocco', 'what-to-pack-morocco', 'marrakech-to-merzouga'],
+    relatedGuides: ['amazigh-berber-culture', 'morocco-travel-safety', 'morocco-basics', 'best-time-to-visit-morocco', 'what-to-pack-morocco', 'marrakech-to-merzouga'],
     sources: ['onmt', 'lonely-planet-morocco'],
   },
   {
@@ -1681,8 +1681,72 @@ export const TRAVEL_INFO: HubPage[] = [
     ],
     tours: ['3-day-sahara-marrakech', 'marrakech-imlil-day-trip', 'marrakech-ourika-valley-day-trip'],
     destinations: ['imlil', 'ait-ben-haddou', 'ourika-valley'],
-    relatedGuides: ['atlas-mountains-guide', 'morocco-basics', 'sahara-desert-guide'],
+    relatedGuides: ['morocco-travel-safety', 'atlas-mountains-guide', 'morocco-basics', 'sahara-desert-guide'],
     sources: ['britannica-morocco', 'unesco-ait-ben-haddou', 'onmt'],
+  },
+  {
+    kind: 'travel-info',
+    slug: 'morocco-travel-safety',
+    title: 'Morocco Travel Safety — A Practical, Honest Guide',
+    pageTitle: 'Is Morocco Safe? A Practical Morocco Travel Safety Guide',
+    description: 'An honest, practical Morocco safety guide — common scams and how to avoid them, solo and women travelers, the 2023 earthquake explained, heat safety in summer and August, and real emergency numbers.',
+    ogImage: '/images/personal/guide-guest-tea.webp',
+    heroImage: '/images/personal/guide-guest-tea.webp',
+    heroAlt: 'Mint tea shared with guests on a Morocco Grand Adventure journey',
+    intro: 'Morocco welcomes millions of travelers every year, and for the overwhelming majority the trip is safe and uneventful. This page is the honest version: the real, mostly minor risks worth knowing about, what we know about the 2023 earthquake and where it did and did not affect the places you will actually visit, and the practical numbers worth saving before you go.',
+    sections: [
+      {
+        heading: 'Is Morocco safe? The honest, short answer',
+        paragraphs: [
+          'Violent crime against tourists is rare in the cities, towns and routes that make up a typical Morocco itinerary. The realistic risks are petty and avoidable: overcharging, aggressive unofficial "guides" in medinas, and the usual pickpocket caution that applies in any busy tourist city. None of this is specific to Morocco — it is standard travel awareness.',
+          'Official government travel advisories (from your own country — the US State Department, UK FCDO and similar bodies all publish Morocco guidance) are the right place to check current conditions before you book and again shortly before you fly, since they are updated as circumstances change and we deliberately do not reproduce a snapshot of them here.',
+        ],
+      },
+      {
+        heading: 'The September 2023 earthquake — what travelers should know',
+        paragraphs: [
+          'On 8 September 2023, a magnitude-6.8 earthquake struck Al Haouz province in the High Atlas, about 70 km southwest of Marrakech. It was Morocco\'s deadliest earthquake in generations, and the damage was concentrated in remote mountain villages — Amizmiz and Tafeghaghte among the hardest hit — built from construction that could not withstand the shaking. Marrakech itself saw comparatively little damage beyond some historic walls and structures in the medina.',
+          'More than two years on, Marrakech, Fes, the Sahara routes and the main Atlas destinations travelers actually visit — including Imlil and the Ourika Valley — are fully open and operating normally; reconstruction work continues in some of the rural villages that were hardest hit, away from the main tourist routes. Morocco sits in a seismically active zone generally, which is worth knowing rather than worrying about — it is also why we ask our own guides to stay current on route conditions in the mountains.',
+        ],
+      },
+      {
+        heading: 'Common scams and how to avoid them',
+        paragraphs: [
+          'The most common friction points are an unofficial "guide" who attaches himself to you near a medina entrance, a shop that insists you were "just browsing, no obligation" before a hard sell, and a taxi or vendor price that was never agreed before the service started. All three share the same fix: agree a price or a plan before anything happens, and feel free to walk away from anyone who will not do that.',
+          'This is part of why we run private, fixed-price journeys with a licensed guide and driver arranged in advance — it removes the single biggest source of this friction before your trip even starts.',
+        ],
+      },
+      {
+        heading: 'Solo and women travelers',
+        paragraphs: [
+          'Solo travel, including for women, is common in Morocco\'s main tourist destinations, which are well used to international visitors. The practical, ordinary-sense precautions apply: loose, modest clothing reduces unwanted attention in a way that is genuinely useful rather than just advice for its own sake, and a private driver removes the need to navigate unfamiliar streets alone after dark, particularly in medina alleys that can be hard to find your way out of even in daylight.',
+        ],
+      },
+      {
+        heading: 'Heat and health — especially in summer and August',
+        paragraphs: [
+          'August is Morocco\'s hottest month in the interior and desert corridor — our best-time-to-visit guide covers the climate month by month, but the safety-specific version is simple: drink more water than feels necessary, avoid strenuous activity (camel treks, long walks, dune climbs) in the early afternoon, and know the signs of heat exhaustion — dizziness, nausea, stopping sweating — as a signal to get out of the sun immediately, not to push on.',
+          'Bottled water is the standard, easy choice while traveling. Food from busy stalls cooked fresh in front of you is generally the safest street-food bet, the same rule of thumb that applies in most of the world.',
+        ],
+      },
+      {
+        heading: 'Practical numbers worth saving',
+        paragraphs: [
+          'From any mobile phone in Morocco, even without a local SIM or credit, 112 reaches emergency services. The direct numbers are 19 for police, 15 for ambulance and fire, and 177 for the gendarmerie in rural areas. In practice, on one of our trips, your guide or driver is usually faster and more useful in an actual emergency than any phone call — but it is worth having the numbers saved regardless. Your embassy or consulate\'s contact details are worth saving too, before you travel.',
+        ],
+      },
+    ],
+    faqs: [
+      { question: 'Is Morocco safe for tourists?', answer: 'Yes, for the great majority of visitors. Violent crime against tourists is rare on the standard tourist circuit; the realistic risks are petty ones — overcharging, aggressive unofficial guides — rather than dangerous ones. Check your own government\'s current travel advisory before booking.' },
+      { question: 'Is Morocco safe for solo female travelers?', answer: 'Yes, in the main tourist destinations, which are well used to international visitors. Ordinary precautions apply: modest dress reduces unwanted attention, and a private driver avoids navigating unfamiliar streets alone after dark.' },
+      { question: 'Was the 2023 Morocco earthquake near tourist areas?', answer: 'The epicenter was in Al Haouz province in the High Atlas, about 70 km from Marrakech. The worst damage was in remote mountain villages, not Marrakech or the main tourist routes, which saw comparatively little damage and are fully open today.' },
+      { question: 'What is the emergency number in Morocco?', answer: '112 works from any mobile phone, even without a local SIM or credit. Direct numbers are 19 (police), 15 (ambulance/fire) and 177 (gendarmerie, rural areas).' },
+      { question: 'Is tap water safe to drink in Morocco?', answer: 'Most travelers stick to bottled water, which is cheap and widely available, rather than tap water. It is the easy, standard choice while traveling.' },
+    ],
+    tours: ['3-day-sahara-marrakech', 'marrakech-ourika-valley-day-trip'],
+    destinations: ['marrakech', 'ourika-valley', 'imlil'],
+    relatedGuides: ['morocco-basics', 'best-time-to-visit-morocco', 'atlas-mountains-guide', 'getting-around-morocco'],
+    sources: ['britannica-morocco-earthquake-2023', 'onmt', 'lonely-planet-morocco'],
   },
 ];
 export const ALL_HUB_PAGES: HubPage[] = [...MERZOUGA_GUIDES, ...COMPARISONS, ...TRAVEL_INFO];

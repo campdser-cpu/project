@@ -111,6 +111,15 @@ export const SOURCES: Record<string, Source> = {
     lastVerified: 'September 2026',
     topics: ['morocco-general', 'geography', 'government', 'demographics'],
   },
+  'britannica-morocco-earthquake-2023': {
+    id: 'britannica-morocco-earthquake-2023',
+    title: 'Morocco earthquake of 2023 — Britannica',
+    publisher: 'Encyclopædia Britannica',
+    url: 'https://www.britannica.com/event/Morocco-earthquake-of-2023',
+    sourceType: 'editorial',
+    lastVerified: 'September 2026',
+    topics: ['safety', 'morocco-general', 'atlas-mountains'],
+  },
 };
 
 /** Pick sources relevant to a topic string (for page citation blocks). */
