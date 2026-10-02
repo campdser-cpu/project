@@ -102,6 +102,15 @@ export const SOURCES: Record<string, Source> = {
     lastVerified: 'September 2026',
     topics: ['morocco-general', 'responsible-travel', 'culture'],
   },
+  'britannica-morocco': {
+    id: 'britannica-morocco',
+    title: 'Morocco — Britannica',
+    publisher: 'Encyclopædia Britannica',
+    url: 'https://www.britannica.com/place/Morocco',
+    sourceType: 'editorial',
+    lastVerified: 'September 2026',
+    topics: ['morocco-general', 'geography', 'government', 'demographics'],
+  },
 };
 
 /** Pick sources relevant to a topic string (for page citation blocks). */

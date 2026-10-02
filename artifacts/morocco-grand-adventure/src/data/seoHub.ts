@@ -1410,7 +1410,7 @@ export const TRAVEL_INFO: HubPage[] = [
     ],
     tours: ['3-day-sahara-marrakech', '7-day-imperial-cities-sahara-escape'],
     destinations: ['merzouga', 'essaouira', 'marrakech'],
-    relatedGuides: ['what-to-pack-morocco', 'getting-around-morocco', 'best-time-to-visit', 'sahara-desert-guide'],
+    relatedGuides: ['morocco-basics', 'what-to-pack-morocco', 'getting-around-morocco', 'best-time-to-visit', 'sahara-desert-guide'],
     sources: ['onmt', 'lonely-planet-morocco'],
   },
   {
@@ -1461,7 +1461,7 @@ export const TRAVEL_INFO: HubPage[] = [
     ],
     tours: ['3-day-sahara-marrakech', '4-day-marrakech-merzouga-sahara'],
     destinations: ['merzouga', 'marrakech'],
-    relatedGuides: ['best-time-to-visit-morocco', 'desert-camps', 'what-to-pack', 'sahara-desert-guide'],
+    relatedGuides: ['morocco-basics', 'best-time-to-visit-morocco', 'desert-camps', 'what-to-pack', 'sahara-desert-guide'],
     sources: ['onmt', 'lonely-planet-morocco'],
   },
   {
@@ -1505,8 +1505,67 @@ export const TRAVEL_INFO: HubPage[] = [
     ],
     tours: ['3-day-sahara-marrakech', '3-day-fes-merzouga-sahara', '5-day-great-south-morocco'],
     destinations: ['merzouga', 'ouarzazate', 'marrakech'],
-    relatedGuides: ['best-time-to-visit-morocco', 'how-to-get-there', 'marrakech-to-merzouga', 'fes-to-merzouga'],
+    relatedGuides: ['morocco-basics', 'best-time-to-visit-morocco', 'how-to-get-there', 'marrakech-to-merzouga', 'fes-to-merzouga'],
     sources: ['onmt', 'lonely-planet-morocco'],
+  },
+  {
+    kind: 'travel-info',
+    slug: 'morocco-basics',
+    title: 'Morocco Basics — Location, Language, Currency and Government',
+    pageTitle: 'Morocco Basics — Where It Is, Language, Currency & Government Explained',
+    description: 'The essential facts for a first-time visitor: where Morocco is, which languages are spoken, the currency and visa basics, and how the country is organized by region.',
+    ogImage: '/images/dest/marrakech.webp',
+    heroImage: '/images/dest/marrakech.webp',
+    heroAlt: 'Marrakech, Morocco\'s best-known city and a common starting point for a first visit',
+    intro: 'Before the itinerary, a few basics make the rest of the planning easier: where Morocco actually sits on the map, what is spoken there, what to pay with, and how the country breaks down into the regions you will see in every itinerary on this site.',
+    sections: [
+      {
+        heading: 'Where Morocco is',
+        paragraphs: [
+          'Morocco occupies the north-western corner of Africa, part of the Maghreb region alongside Algeria, Tunisia and Libya. It borders Algeria to the east, the Atlantic Ocean to the west, and the Mediterranean Sea to the north — at the Strait of Gibraltar, the coast of Spain is visible on a clear day, only about 14 km away at the narrowest point.',
+          'That position is why a Morocco trip can combine such different landscapes in one visit: Atlantic beaches, a Mediterranean-facing north, the High Atlas mountains, and the edge of the Sahara, all within a few hundred kilometres of each other.',
+        ],
+      },
+      {
+        heading: 'Language: more layered than most visitors expect',
+        paragraphs: [
+          'Arabic and Tamazight (Berber) are Morocco\'s two official languages — Tamazight was given official status in the 2011 constitution, alongside the Darija (Moroccan Arabic) most people speak day to day. French remains widely used in government, business, higher education and signage, a legacy of the protectorate era, and Spanish is still common in parts of the north near the old Spanish zone.',
+          'English is spoken increasingly in tourism, especially by guides and in hotels and riads, but it is not assumed everywhere — a few basic French or Darija phrases go a long way outside the main tourist circuits.',
+        ],
+      },
+      {
+        heading: 'Government and currency',
+        paragraphs: [
+          'Morocco is a constitutional monarchy. King Mohammed VI, who has reigned since 1999, is head of state; an elected parliament and prime minister handle day-to-day government under the 2011 constitution. The capital is Rabat — not Marrakech or Casablanca, which is the common guess. Casablanca is the largest city and the commercial and economic centre.',
+          'The currency is the Moroccan dirham (MAD). Cards are widely accepted in hotels, riads and city restaurants; cash is still the norm in medinas, souks, small cafés and rural areas, so carrying some dirhams is worth it everywhere outside the main tourist establishments.',
+        ],
+      },
+      {
+        heading: 'Morocco\'s regions, from a traveler\'s point of view',
+        paragraphs: [
+          'Every itinerary on this site moves between a handful of recurring regions, and knowing them makes any trip easier to picture. The Imperial Cities (Marrakech, Fes, Meknès, Rabat) hold the historic medinas and palaces; the Sahara Desert region around Merzouga and Erg Chebbi is the dune country most people picture when they imagine Morocco; the Atlas Mountains (including Imlil and the Ourika Valley) rise just outside Marrakech; the oases and valleys of the south (Dades, Todra, the Draa Valley) connect the mountains to the desert; and Northern Morocco (Chefchaouen, Tangier, Tetouan) and the Atlantic coast (Essaouira, Agadir, Taghazout) offer a cooler, slower pace.',
+          'Most first-time visitors combine two or three of these — a city, the Atlas or a valley route, and the Sahara — rather than trying to cover every region in one trip.',
+        ],
+      },
+      {
+        heading: 'Visa basics — check before you book',
+        paragraphs: [
+          'Most travelers from the EU, UK, US, Canada and Australia can enter Morocco visa-free for stays of up to 90 days; many other nationalities are covered too. Requirements are set by passport nationality and do change, so we deliberately do not list every country here — confirm your own requirement with the Moroccan consulate or embassy for your nationality before booking flights.',
+          'A passport valid for at least the length of your stay (ideally longer, as many borders prefer extra validity) is the other basic to check early.',
+        ],
+      },
+    ],
+    faqs: [
+      { question: 'Is Morocco in Africa?', answer: 'Yes — Morocco is in the north-western corner of Africa, part of the Maghreb region. It is separated from Spain by the Strait of Gibraltar, as little as about 14 km at the narrowest point.' },
+      { question: 'What is the capital of Morocco?', answer: 'Rabat is the capital. Casablanca is Morocco\'s largest city and economic centre, and Marrakech is its most visited — both common guesses, but neither is the capital.' },
+      { question: 'What language do they speak in Morocco?', answer: 'Arabic and Tamazight (Berber) are the official languages, with Darija (Moroccan Arabic) spoken day to day. French is widely used in business, government and education; Spanish is common in the north; English is growing in tourism.' },
+      { question: 'What currency does Morocco use?', answer: 'The Moroccan dirham (MAD). Cards are accepted in hotels and city restaurants; cash is the norm in medinas, souks and rural areas.' },
+      { question: 'Do I need a visa for Morocco?', answer: 'Many nationalities — including the EU, UK, US, Canada and Australia — can enter visa-free for up to 90 days, but requirements depend on your passport and can change. Confirm with the Moroccan consulate or embassy for your nationality before booking.' },
+    ],
+    tours: ['7-day-imperial-cities-sahara-escape', '3-day-sahara-marrakech'],
+    destinations: ['marrakech', 'merzouga', 'imlil', 'chefchaouen'],
+    relatedGuides: ['best-time-to-visit-morocco', 'what-to-pack-morocco', 'getting-around-morocco', 'sahara-desert-guide'],
+    sources: ['britannica-morocco', 'onmt'],
   },
 ];
 export const ALL_HUB_PAGES: HubPage[] = [...MERZOUGA_GUIDES, ...COMPARISONS, ...TRAVEL_INFO];
