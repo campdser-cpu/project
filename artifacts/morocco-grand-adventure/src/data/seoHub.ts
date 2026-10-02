@@ -1792,6 +1792,12 @@ export const TRAVEL_INFO: HubPage[] = [
           'Most itineraries naturally cover the range: a riad breakfast to start, a tagine or couscous lunch stop on the road, and — on a Sahara trip — a camp dinner of tagine and bread shared around the fire before the stargazing starts. Vegetarians eat well in Morocco: vegetable tagine, bread, salads and mezze spreads are available everywhere, though it is worth saying so clearly when a menu is not explicit.',
         ],
       },
+      {
+        heading: 'Alcohol in Morocco',
+        paragraphs: [
+          'Morocco is a Muslim-majority country, and alcohol sits alongside that rather than separate from it: it is legal to sell and serve, but mostly in licensed settings — hotel bars, tourist-oriented restaurants and some supermarkets in the larger cities — rather than in everyday neighborhood cafés or small-town restaurants, which usually do not serve it. Drinking in the street or being visibly drunk in public is not acceptable, and license-holding places sometimes stop serving during religious occasions. It is one more reason the mint tea ritual, not alcohol, is the drink most associated with Moroccan hospitality.',
+        ],
+      },
     ],
     faqs: [
       { question: 'What is the national dish of Morocco?', answer: 'There is no single official answer, but couscous — Morocco\'s traditional Friday dish — and tagine are the two most closely associated with the country, each eaten far more often than any other dish.' },
@@ -1799,6 +1805,7 @@ export const TRAVEL_INFO: HubPage[] = [
       { question: 'What is a tagine?', answer: 'Both the conical clay cooking pot and the slow-cooked stew made in it. The shape traps steam, keeping meat and vegetables tender over a long, gentle cook — common combinations include lamb with prunes and almonds, or chicken with preserved lemon and olives.' },
       { question: 'Can vegetarians eat well in Morocco?', answer: 'Yes — vegetable tagine, bread, salads and mezze spreads are widely available. It helps to say clearly that you are vegetarian, since meat appears by default in many dishes.' },
       { question: 'Is street food in Morocco safe to eat?', answer: 'Generally yes, with the usual common-sense rule: busy stalls cooking food fresh in front of you are the safer choice. Our Morocco travel safety guide covers food and water basics in more detail.' },
+      { question: 'Can you drink alcohol in Morocco?', answer: 'Yes, but mainly in licensed settings such as hotel bars, tourist-oriented restaurants and some supermarkets in larger cities — not in most everyday neighborhood cafés or small towns. Drinking in public or being visibly drunk is not acceptable.' },
     ],
     tours: ['3-day-sahara-marrakech', '7-day-imperial-cities-sahara-escape'],
     destinations: ['marrakech', 'fes'],
