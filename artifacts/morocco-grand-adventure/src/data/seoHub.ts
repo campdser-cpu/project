@@ -781,7 +781,7 @@ export const MERZOUGA_GUIDES: HubPage[] = [
     ],
     tours: ['3-day-sahara-marrakech', '4-day-marrakech-merzouga-sahara', 'marrakech-4-day', '2-day-zagora-desert-marrakech', '5-day-great-south-morocco', '7-day-imperial-cities-sahara-escape'],
     destinations: ['marrakech', 'ait-ben-haddou', 'ouarzazate', 'dades-valley', 'todra-gorge', 'merzouga', 'erg-chebbi'],
-    relatedGuides: ['how-many-days', 'camel-trekking', 'luxury-desert-camps', 'things-to-do', 'best-time-to-visit', 'what-to-pack', 'how-to-get-there', 'marrakech-vs-fes', 'sahara-desert-guide', 'erg-chebbi-sunrise-sunset'],
+    relatedGuides: ['atlas-mountains-guide', 'how-many-days', 'camel-trekking', 'luxury-desert-camps', 'things-to-do', 'best-time-to-visit', 'what-to-pack', 'how-to-get-there', 'marrakech-vs-fes', 'sahara-desert-guide', 'erg-chebbi-sunrise-sunset'],
     sources: ['onmt'],
     inlineImages: [
       { imageId: 'ancient-berber-kasbah-ruins-southern-morocco', after: 3 },
@@ -1564,8 +1564,66 @@ export const TRAVEL_INFO: HubPage[] = [
     ],
     tours: ['7-day-imperial-cities-sahara-escape', '3-day-sahara-marrakech'],
     destinations: ['marrakech', 'merzouga', 'imlil', 'chefchaouen'],
-    relatedGuides: ['best-time-to-visit-morocco', 'what-to-pack-morocco', 'getting-around-morocco', 'sahara-desert-guide'],
+    relatedGuides: ['atlas-mountains-guide', 'best-time-to-visit-morocco', 'what-to-pack-morocco', 'getting-around-morocco', 'sahara-desert-guide'],
     sources: ['britannica-morocco', 'onmt'],
+  },
+  {
+    kind: 'travel-info',
+    slug: 'atlas-mountains-guide',
+    title: 'The Atlas Mountains — Morocco\'s High Atlas Explained',
+    pageTitle: 'Atlas Mountains Morocco — High Atlas, Imlil, Toubkal & Ourika Guide',
+    description: 'The Atlas Mountains explained for travelers — High Atlas, Middle Atlas and Anti-Atlas, Toubkal and Imlil, the Ourika Valley, and how a mountain day fits into a Marrakech trip.',
+    ogImage: '/images/hero/atlas-pano.webp',
+    heroImage: '/images/hero/atlas-pano.webp',
+    heroAlt: 'Moroccan kasbah gateway on a desert road with the snow-capped High Atlas behind',
+    intro: 'Marrakech sits almost at the foot of the Atlas Mountains — on a clear day you can see snow on the peaks from the city itself. This guide covers what the range actually is, the two places most travelers visit (Imlil and the Ourika Valley), and how a mountain day fits into a Morocco itinerary.',
+    sections: [
+      {
+        heading: 'Three ranges, one name',
+        paragraphs: [
+          '"The Atlas" is really three connected ranges: the High Atlas (the tallest, running roughly from the Atlantic coast near Agadir to the Algerian border), the Middle Atlas (the cedar-forested range between Fes and the High Atlas, including Ifrane), and the Anti-Atlas (the lower, older range toward the south, near the edge of the Sahara). Together they stretch across Morocco, Algeria and Tunisia.',
+          'The High Atlas is home to Jebel Toubkal, at 4,167 m the highest peak in North Africa — and the main reason most travelers come to the range at all, whether to trek it or simply to see it from Marrakech.',
+        ],
+      },
+      {
+        heading: 'The High Atlas near Marrakech: Imlil and Toubkal',
+        paragraphs: [
+          'Imlil, about 90 minutes from Marrakech, is the trailhead for Toubkal and the easiest real taste of High Atlas life — walnut groves, mule tracks, Berber villages and views up the Mizane valley. Most visitors come for a day hike or the two-day Toubkal ascent rather than passing through.',
+          'Since 2019, Moroccan regulations require a licensed local guide for anyone trekking inside Toubkal National Park — a checkpoint on the route verifies it. It is a safety rule, not a formality: weather changes fast at altitude, and a local guide also means the walk supports the villages you pass through.',
+        ],
+      },
+      {
+        heading: 'Ourika Valley: the easy half-day mountain escape',
+        paragraphs: [
+          'The Ourika Valley is Marrakech\'s closest mountain escape, under an hour from the city — a green river valley of Berber villages, riverside restaurants and the Setti Fatma waterfalls, with argan oil and saffron cooperatives along the way. It needs no trekking experience and no extra days: a popular shape is mountains in the morning, back in the Marrakech medina by evening.',
+          'Of the two, Ourika is the easier, more scenic-drive-focused half day; Imlil is the one for travelers who actually want to walk in the Atlas, not just see it.',
+        ],
+      },
+      {
+        heading: 'The Middle Atlas: cedar forests and Ifrane',
+        paragraphs: [
+          'Further north, the Middle Atlas is a different landscape entirely — cedar forest rather than bare rock, centered on the alpine-style town of Ifrane, where wild Barbary macaques are a common sight. It is less a day-trip destination from Marrakech than a stop on the road between Fes and the Sahara; our Fes-to-Merzouga route guide covers it in context.',
+        ],
+      },
+      {
+        heading: 'Planning a mountain day',
+        paragraphs: [
+          'Layers matter more here than almost anywhere else in Morocco — valley floors can be warm while the peaks above hold snow well into spring, and the High Atlas passes occasionally see temporary closures after winter storms. Comfortable walking shoes are worth it even for the Ourika day, where paths to the falls are uneven underfoot.',
+          'Spring and autumn give the most reliable walking weather; winter adds snow on the higher trails (dramatic from a distance, serious underfoot without the right gear), and summer is noticeably cooler in the mountains than in Marrakech itself — a reason some travelers use a mountain day specifically to escape the city heat.',
+        ],
+      },
+    ],
+    faqs: [
+      { question: 'Can you see the Atlas Mountains from Marrakech?', answer: 'Yes — on a clear day, especially in winter and spring, the snow-capped High Atlas peaks are visible from the city itself, including Jebel Toubkal.' },
+      { question: 'What is the highest mountain in Morocco?', answer: 'Jebel Toubkal, at 4,167 m, in the High Atlas near Imlil. It is also the highest peak in North Africa.' },
+      { question: 'Do you need a guide to trek in the Atlas Mountains?', answer: 'Inside Toubkal National Park, yes — Moroccan regulation has required a licensed local guide since 2019, checked at a checkpoint on the route. Outside the national park, shorter valley walks like Ourika do not require one, though a local guide still adds real value.' },
+      { question: 'Imlil or Ourika Valley — which should I visit?', answer: 'Ourika is the easier half-day for a scenic valley drive, waterfalls and no walking experience required. Imlil is for travelers who want to actually walk in the High Atlas, from a short day hike up to the two-day Toubkal ascent.' },
+      { question: 'Is the Middle Atlas the same as the High Atlas?', answer: 'No — they are different ranges. The Middle Atlas (around Ifrane) is lower, forested with cedars, and sits between Fes and the High Atlas. The High Atlas (around Imlil and Toubkal) is the tallest range and the one closest to Marrakech.' },
+    ],
+    tours: ['marrakech-imlil-day-trip', 'marrakech-ourika-valley-day-trip'],
+    destinations: ['imlil', 'ourika-valley', 'ifrane'],
+    relatedGuides: ['morocco-basics', 'best-time-to-visit-morocco', 'what-to-pack-morocco', 'marrakech-to-merzouga'],
+    sources: ['onmt', 'lonely-planet-morocco'],
   },
 ];
 export const ALL_HUB_PAGES: HubPage[] = [...MERZOUGA_GUIDES, ...COMPARISONS, ...TRAVEL_INFO];
