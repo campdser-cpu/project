@@ -798,6 +798,8 @@ export type Tour = {
   faq?: TourFaq[];
   /** Short, verified practical facts (best time, packing, physical demands). No section renders when absent. */
   practicalInfo?: string[];
+  /** Short, factual "who this suits" statements — no demographic assumptions, no personas. No section renders when absent. */
+  suitableFor?: string[];
 };
 export const tourSlugAliases: Record<string, string> = {
   '3-days-marrakech-to-merzouga-desert-tour': '3-day-sahara-marrakech',
@@ -2904,6 +2906,271 @@ export const tours: Tour[] = [
     ],
     practicalInfo: [
       "This fourteen-day route is built from the same legs as the shorter tours joined together rather than compressed — two full nights at Erg Chebbi instead of one, and multi-night stops in Fes and Chefchaouen, so it isn't a different city every day.",
+    ],
+  },
+  // ── Day Trips (first batch — 2026, Product Expansion Audit) ──────────────────
+  // Private, single-day, no-overnight products. Each reuses the same Tour
+  // architecture and tour-detail rendering as every multi-day tour above —
+  // there is no separate Day Trip system. Facts are grounded only in the
+  // verified destination data in this file; prices are not yet confirmed, so
+  // every product here carries the standard quote-only sentinel rather than
+  // an invented figure.
+  {
+    id: "marrakech-ourika-valley-day-trip",
+    name: "Marrakech to Ourika Valley Day Trip",
+    duration: "1 Day",
+    category: "Day Trip · Quote Only",
+    highlights: [
+      "Green Atlas valley scenery, under an hour from Marrakech",
+      "Berber villages along the Ourika river",
+      "A guided walk to the Setti Fatma waterfalls",
+      "Riverside mint tea and an argan oil cooperative",
+    ],
+    price: "",
+    pricingTiers: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 },
+    quoteOnly: true,
+    image: "/images/dest/ourika-valley.webp",
+    description: "A private day trip from Marrakech into the Ourika Valley — the city's closest mountain escape, under an hour away. The day follows the valley road past Berber villages and riverside restaurants to the Setti Fatma waterfalls, with a stop at a local argan oil cooperative along the way. A private vehicle and driver take you there and back the same day — no overnight stay required.",
+    routeIds: ["marrakech", "ourika-valley"],
+    routeCaption: "Marrakech → Ourika Valley → Marrakech. A private day trip into the Atlas foothills, under an hour from the city.",
+    itineraryDays: [
+      {
+        day: 1,
+        title: "Marrakech → Ourika Valley → Marrakech",
+        desc: "A full day from Marrakech into the Ourika Valley and back, with a guided walk to the Setti Fatma waterfalls and a stop at a local argan oil cooperative.",
+        stops: ["Marrakech", "Ourika Valley", "Setti Fatma waterfalls", "Return to Marrakech"],
+        stopDetails: [
+          { title: "Depart Marrakech", time: "Morning", desc: "The drive south into the Ourika Valley, under an hour from the city." },
+          { title: "Ourika Valley", time: "Late Morning", desc: "Follow the valley road past Berber villages and riverside restaurants, with the High Atlas rising ahead." },
+          { title: "Setti Fatma & the waterfalls", time: "Midday", desc: "A guided walk toward the Setti Fatma waterfalls.", lunch: 'not_included' },
+          { title: "Argan oil cooperative", time: "Afternoon", desc: "A stop at a local argan oil cooperative, with time for mint tea on a riverside terrace." },
+          { title: "Return to Marrakech", time: "Late Afternoon", desc: "The drive back to Marrakech." },
+        ],
+      },
+    ],
+    included: [
+      "Private air-conditioned vehicle for the full day",
+      "Professional English-speaking driver",
+      "Fuel",
+      "Hotel pick-up and drop-off in Marrakech",
+    ],
+    excluded: [
+      "International flights",
+      "Lunch and drinks",
+      "Cooperative, monument or activity entrance fees",
+      "Tips and personal expenses",
+    ],
+    faq: [
+      { question: "Is this a private trip?", answer: "Yes — a private vehicle and driver for your group only, not a shared group tour." },
+      { question: "What time do we leave and return?", answer: "Departure and return times are arranged around your schedule when you book — send us your dates and we'll confirm timing." },
+      { question: "Is lunch included?", answer: "No — lunch isn't included, but the valley has riverside restaurants where you can stop." },
+      { question: "Can the itinerary be customized?", answer: "Yes — every MGA trip is private, so the pace and stops can be adjusted around your interests. Tell us what you'd like when you send your request." },
+      { question: "Can I book now and pay later?", answer: "Yes. Sending a request is free and commits you to nothing. We confirm your dates, itinerary and final price with you first; a 20% deposit then secures the booking, and the remaining 80% is paid on arrival in Morocco." },
+    ],
+    practicalInfo: [
+      "The drive from Marrakech into the Ourika Valley is under an hour each way.",
+      "Comfortable walking shoes are useful for the walk to the Setti Fatma waterfalls.",
+    ],
+    suitableFor: [
+      "Travelers looking for a nature-focused day outside Marrakech",
+      "Those who want mountain and valley scenery without an overnight stay",
+      "A relaxed day trip that pairs well with a Marrakech city stay",
+    ],
+    gallery: [
+      { src: "/images/dest/ourika-valley.webp", caption: "The green Ourika Valley below the Atlas." },
+    ],
+  },
+  {
+    id: "marrakech-ouzoud-waterfalls-day-trip",
+    name: "Marrakech to Ouzoud Waterfalls Day Trip",
+    duration: "1 Day",
+    category: "Day Trip · Quote Only",
+    highlights: [
+      "Morocco's best-known waterfalls, about 150 km from Marrakech",
+      "110-metre tiered cascades and riverside viewpoints",
+      "Barbary macaques in the olive groves above the falls",
+      "A full day away from the city",
+    ],
+    price: "",
+    pricingTiers: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 },
+    quoteOnly: true,
+    image: "/images/dest/ouzoud.webp",
+    description: "A private day trip from Marrakech to the Ouzoud Falls, Morocco's best-known waterfalls, about 150 km from the city. The 110-metre tiered cascades, riverside paths and viewpoints reward a full day away from Marrakech, and the olive groves above the falls are home to Barbary macaques. A private vehicle and driver take you there and back the same day.",
+    routeIds: ["marrakech", "ouzoud"],
+    routeCaption: "Marrakech → Ouzoud Falls → Marrakech. A private day trip to Morocco's best-known waterfalls, about 150 km from the city.",
+    itineraryDays: [
+      {
+        day: 1,
+        title: "Marrakech → Ouzoud Falls → Marrakech",
+        desc: "A full day from Marrakech to the Ouzoud Falls and back, with time at the falls' viewpoints and riverside paths.",
+        stops: ["Marrakech", "Ouzoud Falls", "Return to Marrakech"],
+        stopDetails: [
+          { title: "Depart Marrakech", time: "Morning", desc: "The drive north, about 150 km, toward the Ouzoud Falls." },
+          { title: "Arrival at Ouzoud", time: "Midday", desc: "Arrive at the 110-metre tiered cascades of the Ouzoud Falls." },
+          { title: "The falls and viewpoints", time: "Afternoon", desc: "Walk the riverside paths and viewpoints around the falls; the olive groves above are home to Barbary macaques.", lunch: 'not_included' },
+          { title: "Return to Marrakech", time: "Late Afternoon", desc: "The drive back to Marrakech." },
+        ],
+      },
+    ],
+    included: [
+      "Private air-conditioned vehicle for the full day",
+      "Professional English-speaking driver",
+      "Fuel",
+      "Hotel pick-up and drop-off in Marrakech",
+    ],
+    excluded: [
+      "International flights",
+      "Lunch and drinks",
+      "Boat rides, hammam or other optional local activities at Ouzoud (available locally, not included)",
+      "Tips and personal expenses",
+    ],
+    faq: [
+      { question: "Is this a private trip?", answer: "Yes — a private vehicle and driver for your group only, not a shared group tour." },
+      { question: "What time do we leave and return?", answer: "Departure and return times are arranged around your schedule when you book — send us your dates and we'll confirm timing." },
+      { question: "Is lunch included?", answer: "No — lunch isn't included, so you're free to stop along the way or near the falls." },
+      { question: "Can the itinerary be customized?", answer: "Yes — every MGA trip is private, so the pace and stops can be adjusted around your interests. Tell us what you'd like when you send your request." },
+      { question: "Can I book now and pay later?", answer: "Yes. Sending a request is free and commits you to nothing. We confirm your dates, itinerary and final price with you first; a 20% deposit then secures the booking, and the remaining 80% is paid on arrival in Morocco." },
+    ],
+    practicalInfo: [
+      "The drive from Marrakech to the Ouzoud Falls is about 150 km each way.",
+      "Comfortable shoes are useful for the riverside paths and viewpoints around the falls.",
+    ],
+    suitableFor: [
+      "Travelers who want to see Morocco's best-known waterfalls in a single day",
+      "Those who enjoy riverside walks and viewpoints",
+      "A nature-focused break from Marrakech's medina and souks",
+    ],
+    gallery: [
+      { src: "/images/dest/ouzoud.webp", caption: "The Ouzoud waterfalls in full flow." },
+    ],
+  },
+  {
+    id: "marrakech-imlil-day-trip",
+    name: "Marrakech to Imlil Day Trip",
+    duration: "1 Day",
+    category: "Day Trip · Quote Only",
+    highlights: [
+      "High Atlas mountain village, 90 minutes from Marrakech",
+      "Toubkal trailhead views and the Mizane valley",
+      "Walnut groves, mule tracks and Berber villages",
+      "A cooler mountain contrast to Marrakech",
+    ],
+    price: "",
+    pricingTiers: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 },
+    quoteOnly: true,
+    image: "/images/dest/imlil.webp",
+    description: "A private day trip from Marrakech into the High Atlas to Imlil, the trailhead village for Mount Toubkal, about 90 minutes from the city. The day moves at a walking pace through walnut groves, mule tracks and Berber villages in the Mizane valley, for travelers who want a mountain experience without changing hotels. A private vehicle and driver take you there and back the same day.",
+    routeIds: ["marrakech", "imlil"],
+    routeCaption: "Marrakech → Imlil → Marrakech. A private day trip into the High Atlas, about 90 minutes from the city.",
+    itineraryDays: [
+      {
+        day: 1,
+        title: "Marrakech → Imlil → Marrakech",
+        desc: "A full day from Marrakech into the High Atlas, with time to walk around Imlil and the Mizane valley before returning.",
+        stops: ["Marrakech", "Imlil", "Mizane Valley", "Return to Marrakech"],
+        stopDetails: [
+          { title: "Depart Marrakech", time: "Morning", desc: "The drive into the High Atlas to Imlil, about 90 minutes from Marrakech." },
+          { title: "Arrival in Imlil", time: "Midday", desc: "Arrive in the mountain village at the foot of Toubkal, North Africa's highest peak." },
+          { title: "Walking in the Mizane valley", time: "Afternoon", desc: "Time to walk through walnut groves and mule tracks around the Mizane valley, with views up toward Toubkal.", lunch: 'not_included' },
+          { title: "Return to Marrakech", time: "Late Afternoon", desc: "The drive back to Marrakech." },
+        ],
+      },
+    ],
+    included: [
+      "Private air-conditioned vehicle for the full day",
+      "Professional English-speaking driver",
+      "Fuel",
+      "Hotel pick-up and drop-off in Marrakech",
+    ],
+    excluded: [
+      "International flights",
+      "Lunch and drinks",
+      "Guided mountain trekking beyond the day's walk (available locally, not included)",
+      "Tips and personal expenses",
+    ],
+    faq: [
+      { question: "Is this a private trip?", answer: "Yes — a private vehicle and driver for your group only, not a shared group tour." },
+      { question: "What time do we leave and return?", answer: "Departure and return times are arranged around your schedule when you book — send us your dates and we'll confirm timing." },
+      { question: "Is lunch included?", answer: "No — lunch isn't included, so you're free to stop in the village." },
+      { question: "Can the itinerary be customized?", answer: "Yes — every MGA trip is private, so the pace and stops can be adjusted around your interests. Tell us what you'd like when you send your request." },
+      { question: "Can I book now and pay later?", answer: "Yes. Sending a request is free and commits you to nothing. We confirm your dates, itinerary and final price with you first; a 20% deposit then secures the booking, and the remaining 80% is paid on arrival in Morocco." },
+    ],
+    practicalInfo: [
+      "The drive from Marrakech to Imlil is about 90 minutes each way.",
+      "Comfortable walking shoes are useful for walking around Imlil.",
+      "Winter can bring snow to the High Atlas; spring and autumn are ideal for walking.",
+    ],
+    suitableFor: [
+      "Travelers who want a High Atlas mountain experience without changing hotels",
+      "Those interested in walking, or simply mountain air and views",
+      "A quieter, cooler contrast to Marrakech",
+    ],
+    gallery: [
+      { src: "/images/dest/imlil.webp", caption: "Imlil village in the High Atlas foothills." },
+    ],
+  },
+  {
+    id: "agadir-taghazout-day-trip",
+    name: "Agadir to Taghazout Day Trip",
+    duration: "1 Day",
+    category: "Day Trip · Quote Only",
+    highlights: [
+      "Atlantic surf village, 20 minutes from Agadir",
+      "Anchor Point's well-known surf break",
+      "A working fishing harbour and laid-back village atmosphere",
+      "A short, relaxed coastal escape from Agadir",
+    ],
+    price: "",
+    pricingTiers: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 },
+    quoteOnly: true,
+    image: "/images/dest/taghazout.webp",
+    description: "A private day trip from Agadir to Taghazout, the Atlantic surf village 20 minutes up the coast. Once a fishing village, Taghazout now mixes a working harbour with surf schools, yoga studios and seafront cafés — a relaxed coastal escape from Agadir for a day. A private vehicle and driver take you there and back the same day.",
+    routeIds: ["agadir", "taghazout"],
+    routeCaption: "Agadir → Taghazout → Agadir. A private day trip to the Atlantic surf coast, about 20 minutes from the city.",
+    itineraryDays: [
+      {
+        day: 1,
+        title: "Agadir → Taghazout → Agadir",
+        desc: "A relaxed day from Agadir to the surf village of Taghazout and back, with time by the harbour and beaches.",
+        stops: ["Agadir", "Taghazout", "Return to Agadir"],
+        stopDetails: [
+          { title: "Depart Agadir", time: "Morning", desc: "The short coastal drive to Taghazout, about 20 minutes from Agadir." },
+          { title: "Arrival in Taghazout", time: "Midday", desc: "Arrive in the former fishing village, now Morocco's best-known surf town." },
+          { title: "The village and the coast", time: "Afternoon", desc: "Time by the harbour and beaches, with the chance to watch surfers at Anchor Point.", lunch: 'not_included' },
+          { title: "Return to Agadir", time: "Late Afternoon", desc: "The drive back to Agadir." },
+        ],
+      },
+    ],
+    included: [
+      "Private air-conditioned vehicle for the full day",
+      "Professional English-speaking driver",
+      "Fuel",
+      "Hotel pick-up and drop-off in Agadir",
+    ],
+    excluded: [
+      "International flights",
+      "Lunch and drinks",
+      "Surfing or yoga lessons (available locally, not included)",
+      "Tips and personal expenses",
+    ],
+    faq: [
+      { question: "Is this a private trip?", answer: "Yes — a private vehicle and driver for your group only, not a shared group tour." },
+      { question: "What time do we leave and return?", answer: "Departure and return times are arranged around your schedule when you book — send us your dates and we'll confirm timing." },
+      { question: "Is lunch included?", answer: "No — lunch isn't included, but Taghazout has seafood grills and cafés by the harbour." },
+      { question: "Can the itinerary be customized?", answer: "Yes — every MGA trip is private, so the pace and stops can be adjusted around your interests. Tell us what you'd like when you send your request." },
+      { question: "Can I book now and pay later?", answer: "Yes. Sending a request is free and commits you to nothing. We confirm your dates, itinerary and final price with you first; a 20% deposit then secures the booking, and the remaining 80% is paid on arrival in Morocco." },
+    ],
+    practicalInfo: [
+      "The drive from Agadir to Taghazout is about 20 minutes each way.",
+      "Swimwear and sun protection are useful for a day by the coast.",
+    ],
+    suitableFor: [
+      "Travelers looking for an Atlantic coastal escape from Agadir",
+      "Those who enjoy watching surfers or spending time by the sea",
+      "A short, relaxed day away from the resort strip",
+    ],
+    gallery: [
+      { src: "/images/dest/taghazout.webp", caption: "Taghazout, surf village on the Atlantic." },
     ],
   },
 ];

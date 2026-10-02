@@ -34,6 +34,7 @@ import { TourInquiryForm } from '../components/tours/TourInquiryForm';
 import { deriveTourInclusions } from '@/data/tour-inclusions';
 import { HowBookingWorks } from '../components/tours/HowBookingWorks';
 import { TailorJourney } from '../components/tours/TailorJourney';
+import { DayTripFlow } from '../components/tours/DayTripFlow';
 
 /** Extract the leading number of days from a duration string like "3 Days / 2 Nights". */
 function parseDurationDays(duration: string): number {
@@ -139,7 +140,13 @@ export default function TourDetail() {
     if (label && sleepPlaces[sleepPlaces.length - 1] !== label) sleepPlaces.push(label);
   }
   const sleepSummary = sleepPlaces.length > 0 ? sleepPlaces.join(' · ') : undefined;
-  const hasQuickFacts = Boolean(startName || endName || sleepSummary);
+  // A Day Trip (duration "1 Day", one itinerary day) has no overnight by
+  // definition — say so plainly rather than silently omitting the row, so
+  // the fact that there's no accommodation to arrange reads as a stated fact,
+  // not a missing one.
+  const isDayTrip = itinerary.length === 1 && parseDurationDays(tour.duration) === 1;
+  const accommodationFact = sleepSummary ?? (isDayTrip ? t('jx_day_trip_no_overnight') : undefined);
+  const hasQuickFacts = Boolean(startName || endName || accommodationFact);
 
   return (
     <Layout>
@@ -242,10 +249,10 @@ export default function TourDetail() {
                     </dd>
                   </div>
                 )}
-                {sleepSummary && (
+                {accommodationFact && (
                   <div className="col-span-2 md:col-span-1">
                     <dt className="text-xs font-bold uppercase tracking-wider text-muted-foreground">{t('jx_grp_stay')}</dt>
-                    <dd className="mt-1.5 font-semibold text-foreground">{sleepSummary}</dd>
+                    <dd className="mt-1.5 font-semibold text-foreground">{accommodationFact}</dd>
                   </div>
                 )}
               </dl>
@@ -311,6 +318,22 @@ export default function TourDetail() {
               </div>
             </div>
 
+            {/* Who This Trip Is For — short, factual positioning statements.
+                Optional: only tours that define suitableFor render this. */}
+            {tour.suitableFor && tour.suitableFor.length > 0 && (
+              <div className="mb-16">
+                <h2 className="font-serif text-4xl text-foreground mb-6">{t('jx_suitable_for_heading')}</h2>
+                <ul className="space-y-3">
+                  {tour.suitableFor.map((line, i) => (
+                    <li key={i} className="flex items-start gap-3 text-muted-foreground">
+                      <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-1" aria-hidden="true" />
+                      <span>{line}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
             {/* Interactive Route Map */}
             {tour.routeIds && tour.routeIds.length > 1 && (
               <div className="mb-16">
@@ -346,8 +369,21 @@ export default function TourDetail() {
               </div>
             )}
 
-            {/* Daily Itinerary Timeline */}
-            {itinerary.length > 0 && (
+            {/* What Your Day Looks Like — Day Trip products only (one itinerary
+                day, duration "1 Day"): a chronological flow instead of the
+                multi-day zigzag timeline below, which assumes more than one day. */}
+            {isDayTrip && (
+              <DayTripFlow
+                day={itinerary[0]}
+                heading={t('jx_day_flow_heading')}
+                lunchIncludedLabel={t('tour_lunch_included')}
+                lunchNotIncludedLabel={t('tour_lunch_not_included')}
+                className="mb-16"
+              />
+            )}
+
+            {/* Daily Itinerary Timeline — multi-day tours only. */}
+            {!isDayTrip && itinerary.length > 0 && (
             <div className="mb-16">
               <h2 className="font-serif text-4xl text-foreground mb-10">{t('tour_itinerary')}</h2>
               <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-primary/30 before:to-transparent">
@@ -377,6 +413,21 @@ export default function TourDetail() {
                 ))}
               </div>
             </div>
+            )}
+
+            {/* Practical Information — only when this tour has verified facts to show. */}
+            {tour.practicalInfo && tour.practicalInfo.length > 0 && (
+              <div className="mb-16">
+                <h2 className="font-serif text-4xl text-foreground mb-6">{t('tour_practical_info')}</h2>
+                <ul className="grid sm:grid-cols-2 gap-y-4 gap-x-8">
+                  {tour.practicalInfo.map((line, i) => (
+                    <li key={i} className="flex items-start gap-3 text-muted-foreground">
+                      <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-1" aria-hidden="true" />
+                      <span>{line}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             )}
 
             {/* What you will experience — derived from this tour's own stops. */}

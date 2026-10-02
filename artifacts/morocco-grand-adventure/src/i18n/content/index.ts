@@ -115,6 +115,7 @@ export function localizeTour(tour: Tour, lang: Lang): Tour {
       question: pickText(f.question, o.faq?.[i]?.question),
       answer: pickText(f.answer, o.faq?.[i]?.answer),
     })),
+    suitableFor: tour.suitableFor ? pickArr(tour.suitableFor, o.suitableFor) : tour.suitableFor,
   };
 }
 

@@ -57,6 +57,10 @@ export const TOUR_DEPARTURE_CITY: Record<string, DepartureCity> = {
   'tangier-5-day': 'tangier',
   'marrakech-essaouira-2-day': 'marrakech',
   '14-day-grand-morocco-journey': 'marrakech',
+  'marrakech-ourika-valley-day-trip': 'marrakech',
+  'marrakech-ouzoud-waterfalls-day-trip': 'marrakech',
+  'marrakech-imlil-day-trip': 'marrakech',
+  'agadir-taghazout-day-trip': 'agadir',
 };
 
 // MGA_THREE_DAY_HIERARCHY_V1

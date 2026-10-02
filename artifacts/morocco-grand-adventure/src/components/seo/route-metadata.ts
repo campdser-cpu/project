@@ -68,6 +68,11 @@ const TOUR_META: Record<string, RouteMeta> = {
   'tangier-5-day': { title: '5-Day Tangier to Fes via Chefchaouen & the Rif', description: 'A one-way private route from Tangier through Tétouan, Chefchaouen, the Akchour valley and the Middle Atlas to Fes.', ogImage: '/images/dest/akchour.webp' },
   'marrakech-essaouira-2-day': { title: '2-Day Marrakech to Essaouira Atlantic Coast Tour', description: 'A private two-day escape from Marrakech to the Atlantic coast at Essaouira — UNESCO medina, ramparts and the harbour.', ogImage: '/images/catalog/essaouira-sqala-du-port-atlantic.webp' },
   '14-day-grand-morocco-journey': { title: '14-Day Grand Morocco Tour — Coast, Sahara, Imperial Cities & North', description: 'The complete private Morocco circuit: Marrakech, the Atlantic coast, the south, two nights at Erg Chebbi, Fes, Meknès, Chefchaouen and a finish in Casablanca.', ogImage: '/images/curated/panoramic-view-chefchaouen-rif-mountains.webp' },
+  // ── Day Trips (first batch — 2026, Product Expansion Audit) ──────────────────
+  'marrakech-ourika-valley-day-trip': { title: 'Marrakech to Ourika Valley Day Trip', description: 'A private day trip from Marrakech into the Ourika Valley — Berber villages, the Setti Fatma waterfalls and an argan oil cooperative, under an hour from the city.', ogImage: '/images/dest/ourika-valley.webp' },
+  'marrakech-ouzoud-waterfalls-day-trip': { title: 'Marrakech to Ouzoud Waterfalls Day Trip', description: "A private day trip from Marrakech to the Ouzoud Falls — Morocco's best-known waterfalls, about 150 km from the city, with riverside paths and Barbary macaques.", ogImage: '/images/dest/ouzoud.webp' },
+  'marrakech-imlil-day-trip': { title: 'Marrakech to Imlil Day Trip', description: 'A private day trip from Marrakech into the High Atlas to Imlil, the Toubkal trailhead village, about 90 minutes from the city.', ogImage: '/images/dest/imlil.webp' },
+  'agadir-taghazout-day-trip': { title: 'Agadir to Taghazout Day Trip', description: "A private day trip from Agadir to Taghazout, the Atlantic surf village 20 minutes up the coast — a working harbour, Anchor Point's surf break and seafront cafés.", ogImage: '/images/dest/taghazout.webp' },
 };
 const TOUR_ALIASES: Record<string,string> = {
   '3-days-marrakech-to-merzouga-desert-tour':'3-day-sahara-marrakech',

@@ -157,6 +157,10 @@ const TOUR_ROUTES = [
   'tangier-5-day',
   'marrakech-essaouira-2-day',
   '14-day-grand-morocco-journey',
+  'marrakech-ourika-valley-day-trip',
+  'marrakech-ouzoud-waterfalls-day-trip',
+  'marrakech-imlil-day-trip',
+  'agadir-taghazout-day-trip',
 ];
 
 // MGA_THREE_DAY_PRERENDER_V1
@@ -757,6 +761,26 @@ function buildTourDetailContent(id: string, lang: Lang): string {
     : '';
   const canonical = canonicalTours.find((x) => x.id === tour.id) ?? tour;
   const inclusionsHtml = tourInclusionsBlock(canonical, tour, lang);
+  const practicalInfoBlock = tour.practicalInfo && tour.practicalInfo.length > 0
+    ? h2(tr(lang, 'tour_practical_info')) + ul(tour.practicalInfo)
+    : '';
+  // Day Trip products (duration "1 Day", one itinerary day): a chronological
+  // "what your day looks like" block instead of the multi-day day-by-day list
+  // below — mirrors the client's DayTripFlow component exactly, same labels
+  // (never an invented clock time), same stop order.
+  const isDayTrip = itinerary.length === 1 && tourDurationDays(tour.duration) === 1;
+  const dayFlowBlock = isDayTrip
+    ? h2(tr(lang, 'jx_day_flow_heading')) + rawUl(
+        (itinerary[0].stopDetails ?? []).map((stop) => {
+          const timePart = stop.time ? `<strong>${escapeHtml(stop.time)}</strong> — ` : '';
+          const descPart = stop.desc ? `: ${escapeHtml(stop.desc)}` : '';
+          return `${timePart}${escapeHtml(stop.title)}${descPart}`;
+        }),
+      )
+    : '';
+  const suitableForBlock = tour.suitableFor && tour.suitableFor.length > 0
+    ? h2(tr(lang, 'jx_suitable_for_heading')) + ul(tour.suitableFor)
+    : '';
   // Quick Facts: mirrors the client's "at a glance" panel in tour-detail.tsx —
   // same verified start/end derivation (tour-quick-facts.ts) and the same
   // per-night "where you'll sleep" summary reused from the meals data below,
@@ -777,15 +801,19 @@ function buildTourDetailContent(id: string, lang: Lang): string {
     if (label && qfSleepPlaces[qfSleepPlaces.length - 1] !== label) qfSleepPlaces.push(label);
   }
   const qfSleepSummary = qfSleepPlaces.join(' · ');
-  const quickFactsBlock = (qfStartName || qfEndName || qfSleepSummary)
+  // A day trip has no overnight by definition — state that plainly (as the
+  // client's Quick Facts panel does) rather than silently omitting the
+  // accommodation row, so the crawlable HTML doesn't look like a data gap.
+  const qfAccommodation = qfSleepSummary || (isDayTrip ? tr(lang, 'jx_day_trip_no_overnight') : '');
+  const quickFactsBlock = (qfStartName || qfEndName || qfAccommodation)
     ? `\n    <h2>${escapeHtml(tr(lang, 'jx_qf_heading'))}</h2>\n    <dl class="prerendered-quick-facts">\n`
       + `      <dt>${escapeHtml(tr(lang, 'search_duration'))}</dt><dd>${escapeHtml(tour.duration)}</dd>\n`
       + (qfStartName ? `      <dt>${escapeHtml(tr(lang, 'jx_qf_starts'))}</dt><dd>${escapeHtml(qfStartName)}</dd>\n` : '')
       + (qfEndName ? `      <dt>${escapeHtml(tr(lang, 'jx_qf_ends'))}</dt><dd>${escapeHtml(qfEndName)}${startEnd?.isRoundTrip ? ` (${escapeHtml(tr(lang, 'jx_qf_round_trip'))})` : ''}</dd>\n` : '')
-      + (qfSleepSummary ? `      <dt>${escapeHtml(tr(lang, 'jx_grp_stay'))}</dt><dd>${escapeHtml(qfSleepSummary)}</dd>\n` : '')
+      + (qfAccommodation ? `      <dt>${escapeHtml(tr(lang, 'jx_grp_stay'))}</dt><dd>${escapeHtml(qfAccommodation)}</dd>\n` : '')
       + `    </dl>\n`
     : '';
-  return breadcrumb + h1(tour.name) + paragraph(tour.description ?? '') + paragraph(`${tr(lang, 'search_duration')}: ${tour.duration}`) + quickFactsBlock + h2(tr(lang, 'tour_why_love')) + ul(tour.highlights) + whyChooseBlock + (itinerary.length > 0 ? h2(tr(lang, 'tour_itinerary')) + ul(itinerary.map((d) => `${tr(lang, 'tour_day')} ${d.day}: ${d.title}`)) : '') + experiencesBlock + optionalBlock + inclusionsHtml + bookingStepsBlock(lang) + (faqs.length > 0 ? h2(tr(lang, 'nav_faq')) + faqBlock(faqs) : '') + (departHub ? h2(fmt(tr(lang, 'hub_related_title'), { city: tr(lang, `hub_${departHub.id}_name`) })) + paragraph(link(`${SITE_URL}/${lang}/tours/from-${departHub.slug}`, fmt(tr(lang, 'hub_related_browse'), { city: tr(lang, `hub_${departHub.id}_name`) }))) : '') + bestForBlock + guideLinksBlock + rawParagraph(link(`${SITE_URL}/${lang}/book`, tr(lang, 'book_form_cta'))) + buildTopicalLinksContent({ tourId: tour.id }, lang);
+  return breadcrumb + h1(tour.name) + paragraph(tour.description ?? '') + paragraph(`${tr(lang, 'search_duration')}: ${tour.duration}`) + quickFactsBlock + h2(tr(lang, 'tour_why_love')) + ul(tour.highlights) + suitableForBlock + whyChooseBlock + (isDayTrip ? dayFlowBlock : itinerary.length > 0 ? h2(tr(lang, 'tour_itinerary')) + ul(itinerary.map((d) => `${tr(lang, 'tour_day')} ${d.day}: ${d.title}`)) : '') + practicalInfoBlock + experiencesBlock + optionalBlock + inclusionsHtml + bookingStepsBlock(lang) + (faqs.length > 0 ? h2(tr(lang, 'nav_faq')) + faqBlock(faqs) : '') + (departHub ? h2(fmt(tr(lang, 'hub_related_title'), { city: tr(lang, `hub_${departHub.id}_name`) })) + paragraph(link(`${SITE_URL}/${lang}/tours/from-${departHub.slug}`, fmt(tr(lang, 'hub_related_browse'), { city: tr(lang, `hub_${departHub.id}_name`) }))) : '') + bestForBlock + guideLinksBlock + rawParagraph(link(`${SITE_URL}/${lang}/book`, tr(lang, 'book_form_cta'))) + buildTopicalLinksContent({ tourId: tour.id }, lang);
 }
 function buildDestinationsContent(lang: Lang): string {
   // Mirror the live /destinations page structure: localized H1 + intro, each

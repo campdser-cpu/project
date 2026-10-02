@@ -32,6 +32,8 @@ export type TourOverlay = {
    * overlay has nothing. zh, ja, ko and ar use this for the price FAQ.
    */
   faq?: ({ question?: string; answer?: string } | null)[];
+  /** Indexed against the English `suitableFor` array (Day Trip products). */
+  suitableFor?: (string | undefined)[];
 };
 
 /**

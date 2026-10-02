@@ -120,6 +120,10 @@ export const journeyGaps: Partial<Record<string, Record<string, string>>> = {
     jx_inq_sending: 'Sending…',
     jx_inq_sent_title: 'Inquiry sent',
     jx_inq_whatsapp: 'Chat on WhatsApp',
+    // ── Day Trip products ────────────────────────────────────────────────────
+    jx_day_flow_heading: 'What Your Day Looks Like',
+    jx_suitable_for_heading: 'Who This Trip Is For',
+    jx_day_trip_no_overnight: 'Day trip — no overnight stay',
   },
   fr: {
     jx_why_choose: 'Pourquoi choisir cet itinéraire',
@@ -220,6 +224,9 @@ export const journeyGaps: Partial<Record<string, Record<string, string>>> = {
     jx_inq_sending: 'Envoi…',
     jx_inq_sent_title: 'Demande envoyée',
     jx_inq_whatsapp: 'Discuter sur WhatsApp',
+    jx_day_flow_heading: 'À quoi ressemble votre journée',
+    jx_suitable_for_heading: 'Pour qui est ce voyage',
+    jx_day_trip_no_overnight: "Excursion d'une journée — sans nuitée",
   },
   es: {
     jx_why_choose: 'Por qué elegir este itinerario',
@@ -320,6 +327,9 @@ export const journeyGaps: Partial<Record<string, Record<string, string>>> = {
     jx_inq_sending: 'Enviando…',
     jx_inq_sent_title: 'Consulta enviada',
     jx_inq_whatsapp: 'Chatear por WhatsApp',
+    jx_day_flow_heading: 'Cómo es tu día',
+    jx_suitable_for_heading: 'Para quién es este viaje',
+    jx_day_trip_no_overnight: 'Excursión de un día — sin pernoctación',
   },
   it: {
     jx_why_choose: 'Perché scegliere questo itinerario',
@@ -420,6 +430,9 @@ export const journeyGaps: Partial<Record<string, Record<string, string>>> = {
     jx_inq_sending: 'Invio in corso…',
     jx_inq_sent_title: 'Richiesta inviata',
     jx_inq_whatsapp: 'Scrivici su WhatsApp',
+    jx_day_flow_heading: 'Come sarà la tua giornata',
+    jx_suitable_for_heading: 'Per chi è pensato questo viaggio',
+    jx_day_trip_no_overnight: 'Escursione di un giorno — senza pernottamento',
   },
   de: {
     jx_why_choose: 'Warum diese Route',
@@ -520,6 +533,9 @@ export const journeyGaps: Partial<Record<string, Record<string, string>>> = {
     jx_inq_sending: 'Wird gesendet…',
     jx_inq_sent_title: 'Anfrage gesendet',
     jx_inq_whatsapp: 'Auf WhatsApp schreiben',
+    jx_day_flow_heading: 'So könnte Ihr Tag aussehen',
+    jx_suitable_for_heading: 'Für wen diese Reise geeignet ist',
+    jx_day_trip_no_overnight: 'Tagesausflug — keine Übernachtung',
   },
   nl: {
     jx_why_choose: 'Waarom deze route kiezen',
@@ -620,6 +636,9 @@ export const journeyGaps: Partial<Record<string, Record<string, string>>> = {
     jx_inq_sending: 'Verzenden…',
     jx_inq_sent_title: 'Aanvraag verzonden',
     jx_inq_whatsapp: 'Chat via WhatsApp',
+    jx_day_flow_heading: 'Zo ziet uw dag eruit',
+    jx_suitable_for_heading: 'Voor wie deze reis geschikt is',
+    jx_day_trip_no_overnight: 'Dagtrip — geen overnachting',
   },
   pt: {
     jx_why_choose: 'Porquê escolher este itinerário',
@@ -720,6 +739,9 @@ export const journeyGaps: Partial<Record<string, Record<string, string>>> = {
     jx_inq_sending: 'A enviar…',
     jx_inq_sent_title: 'Pedido enviado',
     jx_inq_whatsapp: 'Conversar no WhatsApp',
+    jx_day_flow_heading: 'Como é o seu dia',
+    jx_suitable_for_heading: 'Para quem é esta viagem',
+    jx_day_trip_no_overnight: 'Excursão de um dia — sem pernoite',
   },
   zh: {
     jx_why_choose: '为什么选择这条线路',
@@ -820,6 +842,9 @@ export const journeyGaps: Partial<Record<string, Record<string, string>>> = {
     jx_inq_sending: '正在发送…',
     jx_inq_sent_title: '咨询已发送',
     jx_inq_whatsapp: '通过 WhatsApp 沟通',
+    jx_day_flow_heading: '您的一天行程',
+    jx_suitable_for_heading: '适合人群',
+    jx_day_trip_no_overnight: '一日游 — 无需过夜',
   },
   ja: {
     jx_why_choose: 'この行程を選ぶ理由',
@@ -920,6 +945,9 @@ export const journeyGaps: Partial<Record<string, Record<string, string>>> = {
     jx_inq_sending: '送信中…',
     jx_inq_sent_title: 'お問い合わせを送信しました',
     jx_inq_whatsapp: 'WhatsAppで問い合わせる',
+    jx_day_flow_heading: '1日の流れ',
+    jx_suitable_for_heading: 'こんな方におすすめ',
+    jx_day_trip_no_overnight: '日帰り旅行 — 宿泊なし',
   },
   ko: {
     jx_why_choose: '이 일정을 선택하는 이유',
@@ -1020,6 +1048,9 @@ export const journeyGaps: Partial<Record<string, Record<string, string>>> = {
     jx_inq_sending: '전송 중…',
     jx_inq_sent_title: '문의가 전송되었습니다',
     jx_inq_whatsapp: 'WhatsApp으로 상담하기',
+    jx_day_flow_heading: '하루 일정 살펴보기',
+    jx_suitable_for_heading: '이런 분들에게 추천합니다',
+    jx_day_trip_no_overnight: '당일 여행 — 숙박 없음',
   },
   ar: {
     jx_why_choose: 'لماذا تختار هذا البرنامج',
@@ -1120,5 +1151,8 @@ export const journeyGaps: Partial<Record<string, Record<string, string>>> = {
     jx_inq_sending: 'جارٍ الإرسال…',
     jx_inq_sent_title: 'تم إرسال الاستفسار',
     jx_inq_whatsapp: 'محادثة عبر واتساب',
+    jx_day_flow_heading: 'كيف يبدو يومك',
+    jx_suitable_for_heading: 'لمن تناسب هذه الرحلة',
+    jx_day_trip_no_overnight: 'رحلة يومية — بدون مبيت',
   },
 };

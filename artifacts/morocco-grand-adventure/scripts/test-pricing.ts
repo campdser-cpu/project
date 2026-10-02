@@ -376,12 +376,19 @@ const ANCHOR = '3-day-sahara-marrakech';
   );
 
   const { tours } = await import('../src/data/content');
-  assert.equal(tours.length, 27, 'the catalogue is 27 tours');
+  assert.equal(tours.length, 31, 'the catalogue is 31 tours');
 
   // Every tour in the catalogue is published except those explicitly pending
-  // a quote — today just the 14-day grand journey, whose fourteen-day scope
-  // has no priced-catalogue precedent and is deliberately not invented.
-  const PENDING: string[] = ['14-day-grand-morocco-journey'];
+  // a quote — the 14-day grand journey, whose fourteen-day scope has no
+  // priced-catalogue precedent, and the four Day Trip products (2026 Product
+  // Expansion batch), whose pricing has not yet been confirmed by the owner.
+  const PENDING: string[] = [
+    '14-day-grand-morocco-journey',
+    'marrakech-ourika-valley-day-trip',
+    'marrakech-ouzoud-waterfalls-day-trip',
+    'marrakech-imlil-day-trip',
+    'agadir-taghazout-day-trip',
+  ];
   const priced = tours.filter((t) => t.quoteOnly === false);
   assert.equal(priced.length, 26, 'all tours except the pending ones are published');
   assert.equal(tours.length - priced.length, PENDING.length, 'only the pending tours are quote-only');
