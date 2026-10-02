@@ -210,13 +210,19 @@ export default function TourDetail() {
         </div>
       </section>
 
-      {/* Back-up-the-tree breadcrumbs: Home → Tours → City → Tour */}
+      {/* Back-up-the-tree breadcrumbs: Home → Tours → City/Day Trips → Tour.
+          Day trips get a "Day Trips" crumb instead of the city hub — it is
+          the more specific, more relevant category for this product type,
+          and completes the Day Trips ↔ product linking (the city hub is
+          still reachable from the "More tours from {city}" link below). */}
       <div className="bg-black/50 backdrop-blur border-b border-white/10">
         <TourBreadcrumbs
           items={[
             { label: t('nav_tours'), href: '/tours' },
-            // The hub's canonical title is English; the crumb uses the localized label.
-            ...(departHub ? [{ label: t(`hub_${departHub.id}_title`), href: `/tours/from-${departHub.slug}` }] : []),
+            ...(isDayTrip
+              ? [{ label: t('nav_day_trips'), href: '/day-trips' }]
+              // The hub's canonical title is English; the crumb uses the localized label.
+              : departHub ? [{ label: t(`hub_${departHub.id}_title`), href: `/tours/from-${departHub.slug}` }] : []),
             { label: tour.name },
           ]}
         />
@@ -725,6 +731,17 @@ export default function TourDetail() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-12">
             <h2 className="font-serif text-4xl text-foreground">{t('tour_related')}</h2>
+            {/* Restores parity with the prerendered mirror, which already links
+                back to the departure-city hub — the live page computed
+                departHub but never rendered a link to it. */}
+            {departHub && (
+              <Link
+                href={`/tours/from-${departHub.slug}`}
+                className="mt-3 inline-flex items-center gap-1 text-primary font-semibold text-sm hover:gap-2 transition-all"
+              >
+                {t('hub_related_browse').replace('{city}', t(`hub_${departHub.id}_name`))} <ChevronRight className="w-4 h-4" aria-hidden="true" />
+              </Link>
+            )}
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {relatedTours.map(t_ => (
