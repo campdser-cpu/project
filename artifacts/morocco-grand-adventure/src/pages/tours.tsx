@@ -37,6 +37,21 @@ export default function Tours() {
     return qs ? `/tours?${qs}` : '/tours';
   }
 
+  // Counts respect the OTHER active filters (so picking a city then scanning
+  // duration counts shows what's really available from that city), but never
+  // the pill's own dimension — each pill shows "how many if I add/switch to
+  // this", a standard faceted-search convention, always a real tally over
+  // the canonical `tours` array, never invented.
+  const countFor = (dimension: 'city' | 'duration' | 'style', value: string): number =>
+    tours.filter((tour) => {
+      if (dimension !== 'city' && cityFilter && !tourMatchesCity(tour.id, cityFilter)) return false;
+      if (dimension !== 'duration' && durationFilter && !durationInBucket(tour.duration, durationFilter)) return false;
+      if (dimension !== 'style' && styleFilter && !tourMatchesInterest(tour, styleFilter)) return false;
+      if (dimension === 'city') return tourMatchesCity(tour.id, value);
+      if (dimension === 'duration') return durationInBucket(tour.duration, value);
+      return tourMatchesInterest(tour, value);
+    }).length;
+
   const durationOptions: Array<{ value: string; label: string }> = DURATION_BUCKETS.map((b) => ({
     value: b.value,
     label: t(`tours_dur_${b.value.replace('-', '_')}` as Parameters<typeof t>[0]),
@@ -155,7 +170,7 @@ export default function Tours() {
                 onClick={() => trackEvent('destination_filter_click', { filter: 'city', value: hub.id })}
                 className={pillClass(cityFilter === hub.id)}
               >
-                {t(`hub_${hub.id}_name`)}
+                {t(`hub_${hub.id}_name`)} <span className="opacity-60">({countFor('city', hub.id)})</span>
               </Link>
             ))}
           </div>
@@ -168,7 +183,7 @@ export default function Tours() {
                 onClick={() => trackEvent('duration_filter_click', { filter: 'duration', value: opt.value })}
                 className={pillClass(durationFilter === opt.value)}
               >
-                {opt.label}
+                {opt.label} <span className="opacity-60">({countFor('duration', opt.value)})</span>
               </Link>
             ))}
           </div>
@@ -181,7 +196,7 @@ export default function Tours() {
                 onClick={() => trackEvent('trip_finder_filter', { filter: 'interest', value: opt.value })}
                 className={pillClass(styleFilter === opt.value)}
               >
-                {opt.label}
+                {opt.label} <span className="opacity-60">({countFor('style', opt.value)})</span>
               </Link>
             ))}
           </div>
