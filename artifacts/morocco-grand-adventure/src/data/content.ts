@@ -149,10 +149,10 @@ export const destinations: Destination[] = [
     id: "casablanca",
     name: "Casablanca",
     category: "Imperial Cities",
-    shortDesc: "Morocco's cosmopolitan capital — Hassan II Mosque and art deco streets.",
+    shortDesc: "Morocco's largest city and economic capital — the Hassan II Mosque and French-era art deco streets.",
     image: "/images/dest/casablanca.webp",
     bestTime: "Year-round",
-    description: "Morocco's largest city blends French art deco architecture with Islamic grandeur. The Hassan II Mosque — the world's third largest — rises magnificently above the Atlantic Ocean. The Corniche, Rick's Café, and vibrant nightlife make it a compelling stop.",
+    description: "Casablanca is Morocco's largest city and its commercial and economic centre — not the political capital, which is Rabat, but the country's most cosmopolitan address. The Hassan II Mosque is the centrepiece: inaugurated in 1993 on a platform built out into the Atlantic, its 210-metre minaret is one of the tallest religious structures in the world, built over seven years by thousands of Moroccan master craftsmen. Away from the mosque, the Ville Nouvelle's art deco streets date from the French protectorate era of the 1920s and 1930s, when planners laid wide boulevards alongside the old medina. The Corniche waterfront, Rick's Café (inspired by the 1942 film, which was in fact shot entirely in Hollywood), and a fast-modernising skyline round out a city most travellers pass through rather than linger in — Casablanca works well as an arrival or departure point for a wider Morocco itinerary.",
     highlights: ["Hassan II Mosque", "Corniche", "Art Deco Architecture", "Morocco Mall", "La Sqala"],
     region: "Atlantic Coast",
     coords: { lat: 33.5731, lng: -7.5898 },
@@ -652,7 +652,7 @@ export const destinations: Destination[] = [
     shortDesc: "Gateway between Africa and Europe — Strait of Gibraltar, art, and intrigue.",
     image: "/images/dest/tangier.webp",
     bestTime: "Mar – Oct",
-    description: "Tangier — where the Mediterranean meets the Atlantic — has always been Morocco’s gateway: ferries from Spain arrive in under an hour, and the high-speed train reaches Casablanca in two hours. Beyond logistics, the city rewards explorers: the storied Kasbah and Petit Socco, the Caves of Hercules and Cap Spartel, and a fast-modernising corniche. Tangier suits travellers arriving from Europe, or anyone building a north-to-south route ending in the Sahara.",
+    description: "Tangier — where the Mediterranean meets the Atlantic — has always been Morocco's gateway: ferries from Spain arrive in under an hour, and the high-speed train reaches Casablanca in two hours. From 1923 to 1956 the city held a unique status as an internationally administered zone, governed jointly by foreign powers rather than by Morocco or Spain alone — the cosmopolitan, slightly bohemian reputation that drew writers and artists for decades traces back to those years. Beyond logistics and history, the city rewards explorers: the storied Kasbah and Petit Socco, the Caves of Hercules and Cap Spartel, and a fast-modernising corniche. Tangier suits travellers arriving from Europe, or anyone building a north-to-south route ending in the Sahara.",
     highlights: ["Kasbah Museum", "Cap Spartel", "Hércules Caves", "Café Hafa", "Petit Socco"],
     gallery: [
       {
