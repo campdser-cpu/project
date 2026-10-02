@@ -34,7 +34,7 @@ import { fileURLToPath } from 'node:url';
 
 import { destinations, contactInfo, reviews, type Review, type Tour, type Destination } from '../src/data/content';
 import { BLOG_ARTICLE_SECTIONS, BLOG_ARTICLE_CTA } from '../src/data/blog-article-sections';
-import { CITY_HUBS, TOUR_DEPARTURE_CITY, CITY_HUB_DURATIONS, tourIdsForCity, tourDurationDays } from '../src/data/tour-hierarchy';
+import { CITY_HUBS, TOUR_DEPARTURE_CITY, CITY_HUB_DURATIONS, tourIdsForCity, tourDurationDays, DAY_TRIP_PRODUCT_IDS } from '../src/data/tour-hierarchy';
 import { MERZOUGA_GUIDES, COMPARISONS, TRAVEL_INFO, type HubPage } from '../src/data/seoHub';
 import { localizedComparisonMeta } from '../src/data/comparison-meta-i18n';
 import { getLocalizedTourDepth } from '../src/i18n/content';
@@ -1288,6 +1288,14 @@ function buildExperienceContent(rest: string, lang: Lang): string {
     : '';
   // Official photo library: render the ACTUAL PDF-derived photographs on the gallery page
   const galleryLibPhotos = rest === '/gallery' ? publishableLibraryPhotos().map((p) => libraryPhotoFigure(p)).join('\n') : '';
+  // Day Trips: the real, bookable day-trip products, rendered first and
+  // clearly separate from the "more ideas" section below — mirrors
+  // <RealDayTripProducts> in src/pages/day-trips.tsx exactly (same 4 ids,
+  // same fields) so the crawlable HTML matches what a browser visitor sees.
+  const dayTripProducts = rest === '/day-trips' ? `
+    <h2>${escapeHtml(tr(lang, 'dt_products_title'))}</h2>
+    <p>${escapeHtml(tr(lang, 'dt_products_sub'))}</p>
+    ${DAY_TRIP_PRODUCT_IDS.map((id) => getLocalizedTour(id, lang)).filter((t): t is NonNullable<typeof t> => Boolean(t)).map((t) => h2Link(`${SITE_URL}/${lang}/tours/${t.id}`, t.name) + paragraph(`${tr(lang, 'search_duration')}: ${t.duration}`)).join('')}` : '';
   // Trip Builder: render a descriptive heading + WhatsApp CTA so the prerendered
   // page is crawlable and functional (the SPA hydrates the interactive form).
   const tripBuilderCta = rest === '/trip-builder' ? `
@@ -1448,7 +1456,7 @@ function buildExperienceContent(rest: string, lang: Lang): string {
     ${studentTourList.filter((s) => s.slug !== stProduct.slug).map((s) => `<p>${link(`${SITE_URL}/${lang}/student-tours/${s.slug}`, s.title)}</p>`).join('\n    ')}
     ${stProduct.related.map((r) => `<p>${link(`${SITE_URL}/${lang}${r.to}`, r.label)}</p>`).join('\n    ')}` : '';
 
-  return heading + intro + studentTours + studentTourDetail + ugPage + studentBacklink + desertMoments + galleryLibPhotos + tBlocks + dBlocks + tripBuilderCta + desertFaq;
+  return heading + intro + dayTripProducts + studentTours + studentTourDetail + ugPage + studentBacklink + desertMoments + galleryLibPhotos + tBlocks + dBlocks + tripBuilderCta + desertFaq;
 }
 
 // ── Data-driven hub / comparison pages (Merzouga guide + comparisons) ───────────

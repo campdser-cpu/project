@@ -290,3 +290,16 @@ export function tourMatchesInterest(tour: { name: string; category?: string; hig
 export function tourMatchesCity(tourId: string, city: string): boolean {
   return TOUR_DEPARTURE_CITY[tourId] === city;
 }
+
+/**
+ * The real, bookable day-trip products (src/data/content.ts, all duration
+ * "1 Day"). Single source of truth for both /day-trips (src/pages/day-trips.tsx)
+ * and its prerendered mirror (scripts/prerender.ts) — adding a future verified
+ * day trip here is enough on its own to make both surfaces show it.
+ */
+export const DAY_TRIP_PRODUCT_IDS = [
+  'marrakech-ourika-valley-day-trip',
+  'marrakech-ouzoud-waterfalls-day-trip',
+  'marrakech-imlil-day-trip',
+  'agadir-taghazout-day-trip',
+];

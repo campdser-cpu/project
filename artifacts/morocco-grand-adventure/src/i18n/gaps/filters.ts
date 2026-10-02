@@ -35,6 +35,9 @@ export const filtersGaps: Partial<Record<string, Record<string, string>>> = {
     tf_other_paths: "Vous cherchez autre chose ?",
     tf_food_link: "Guide de la cuisine marocaine",
     tf_student_link: "Voyages étudiants et groupes",
+    dt_products_eyebrow: "Prêt à réserver",
+    dt_products_title: "De vraies excursions, prêtes à réserver",
+    dt_products_sub: "Ces excursions sont de vrais produits avec un prix publié — consultez l'itinéraire complet et faites votre demande dès aujourd'hui.",
   },
   es: {
     tours_filter_all: "Todos",
@@ -65,6 +68,9 @@ export const filtersGaps: Partial<Record<string, Record<string, string>>> = {
     tf_other_paths: "¿Buscas otra cosa?",
     tf_food_link: "Guía de gastronomía marroquí",
     tf_student_link: "Viajes para estudiantes y grupos",
+    dt_products_eyebrow: "Listas para reservar",
+    dt_products_title: "Excursiones reales, listas para reservar",
+    dt_products_sub: "Estas excursiones son productos reales con un precio publicado — consulta el itinerario completo y solicita la tuya hoy mismo.",
   },
   it: {
     tours_filter_all: "Tutti",
@@ -95,6 +101,9 @@ export const filtersGaps: Partial<Record<string, Record<string, string>>> = {
     tf_other_paths: "Cerchi qualcos'altro?",
     tf_food_link: "Guida alla cucina marocchina",
     tf_student_link: "Viaggi per studenti e gruppi",
+    dt_products_eyebrow: "Pronte da prenotare",
+    dt_products_title: "Escursioni reali, pronte da prenotare",
+    dt_products_sub: "Queste escursioni sono prodotti reali con un prezzo pubblicato — consulta l'itinerario completo e richiedi la tua oggi stesso.",
   },
   de: {
     tours_filter_all: "Alle",
@@ -125,6 +134,9 @@ export const filtersGaps: Partial<Record<string, Record<string, string>>> = {
     tf_other_paths: "Suchen Sie etwas anderes?",
     tf_food_link: "Marokkanischer Küchenführer",
     tf_student_link: "Studenten- & Gruppenreisen",
+    dt_products_eyebrow: "Bereit zur Buchung",
+    dt_products_title: "Echte Tagesausflüge, bereit zur Buchung",
+    dt_products_sub: "Diese Tagesausflüge sind reale Produkte mit veröffentlichtem Preis — sehen Sie die vollständige Route und fragen Sie Ihren noch heute an.",
   },
   nl: {
     tours_filter_all: "Alle",
@@ -155,6 +167,9 @@ export const filtersGaps: Partial<Record<string, Record<string, string>>> = {
     tf_other_paths: "Op zoek naar iets anders?",
     tf_food_link: "Marokkaanse keukengids",
     tf_student_link: "Studenten- en groepsreizen",
+    dt_products_eyebrow: "Klaar om te boeken",
+    dt_products_title: "Echte dagtrips, klaar om te boeken",
+    dt_products_sub: "Deze dagtrips zijn echte producten met een gepubliceerde prijs — bekijk de volledige route en vraag uw dagtrip vandaag nog aan.",
   },
   pt: {
     tours_filter_all: "Todos",
@@ -185,6 +200,9 @@ export const filtersGaps: Partial<Record<string, Record<string, string>>> = {
     tf_other_paths: "Procura outra coisa?",
     tf_food_link: "Guia da gastronomia marroquina",
     tf_student_link: "Viagens para estudantes e grupos",
+    dt_products_eyebrow: "Prontas a reservar",
+    dt_products_title: "Excursões reais, prontas a reservar",
+    dt_products_sub: "Estas excursões são produtos reais com um preço publicado — veja o itinerário completo e peça a sua ainda hoje.",
   },
   zh: {
     tours_filter_all: "全部",
@@ -215,6 +233,9 @@ export const filtersGaps: Partial<Record<string, Record<string, string>>> = {
     tf_other_paths: "在寻找其他内容?",
     tf_food_link: "摩洛哥美食指南",
     tf_student_link: "学生与团体旅行",
+    dt_products_eyebrow: "可立即预订",
+    dt_products_title: "真实一日游，即可预订",
+    dt_products_sub: "这些一日游是真实产品，价格公开透明——查看完整行程，立即申请预订。",
   },
   ja: {
     tours_filter_all: "すべて",
@@ -245,6 +266,9 @@ export const filtersGaps: Partial<Record<string, Record<string, string>>> = {
     tf_other_paths: "他をお探しですか?",
     tf_food_link: "モロッコ料理ガイド",
     tf_student_link: "学生・団体旅行",
+    dt_products_eyebrow: "予約可能",
+    dt_products_title: "実在する日帰り旅行、今すぐ予約可能",
+    dt_products_sub: "これらの日帰り旅行は公開価格のある実在の商品です——詳しい旅程をご覧になり、今すぐお申し込みください。",
   },
   ko: {
     tours_filter_all: "전체",
@@ -275,6 +299,9 @@ export const filtersGaps: Partial<Record<string, Record<string, string>>> = {
     tf_other_paths: "다른 것을 찾고 계신가요?",
     tf_food_link: "모로코 음식 가이드",
     tf_student_link: "학생 및 단체 여행",
+    dt_products_eyebrow: "바로 예약 가능",
+    dt_products_title: "실제 당일 여행, 바로 예약 가능",
+    dt_products_sub: "이 당일 여행들은 공개된 가격이 있는 실제 상품입니다 — 전체 일정을 확인하고 지금 바로 신청하세요.",
   },
   ar: {
     tours_filter_all: "الكل",
@@ -305,5 +332,8 @@ export const filtersGaps: Partial<Record<string, Record<string, string>>> = {
     tf_other_paths: "تبحث عن شيء آخر؟",
     tf_food_link: "دليل المطبخ المغربي",
     tf_student_link: "رحلات الطلاب والمجموعات",
+    dt_products_eyebrow: "جاهزة للحجز",
+    dt_products_title: "رحلات يومية حقيقية، جاهزة للحجز",
+    dt_products_sub: "هذه الرحلات اليومية منتجات حقيقية بسعر معلن — اطّلع على البرنامج الكامل واطلب رحلتك اليوم.",
   },
 };

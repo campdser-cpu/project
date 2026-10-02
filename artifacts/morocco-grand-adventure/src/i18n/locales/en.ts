@@ -738,6 +738,9 @@ export default {
     dt_faq3_a: "The Ourika Valley is our most popular choice for a relaxing day trip, while the Sahara 3-day tour is perfect if you have more time.",
     dt_faq4_q: "Are day trips suitable for families?",
     dt_faq4_a: "Yes — all our day trips are private and can be adapted for children of all ages. We'll suggest stops that keep everyone engaged.",
+    dt_products_eyebrow: "Ready to Book",
+    dt_products_title: "Real Day Trips, Ready to Book",
+    dt_products_sub: "These day trips are real products with a published price — see the full itinerary and request yours today.",
     // ── Merzouga Guide page ──
     mg_hero_alt: "Golden dunes of Erg Chebbi at Merzouga with a camel caravan at sunset",
     mg_breadcrumb: "Merzouga Travel Guide",
