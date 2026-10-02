@@ -681,7 +681,7 @@ export default function TourDetail() {
                   rel="noreferrer"
                   className="w-full bg-[#25D366] text-[#0d2b1d] py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-[#128C7E] transition-all hover:-translate-y-1 shadow-lg shadow-[#25D366]/30 text-lg"
                 >
-                  <SiWhatsapp className="w-6 h-6" aria-hidden="true" /> {promoOn ? t('promo_cta') : t('price_quote_cta')}
+                  <SiWhatsapp className="w-6 h-6" aria-hidden="true" /> {promoOn ? t('promo_cta') : t(isDayTrip ? 'price_quote_cta_day' : 'price_quote_cta')}
                 </a>
 
                 <div className="relative flex py-2 items-center">
