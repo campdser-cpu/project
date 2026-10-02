@@ -228,3 +228,65 @@ export function durationHubPaths(city: DepartureCity): string[] {
 // ─────────────────────────────────────────────────────────────────────────────
 export const TOUR_CITY_ROUTE = /^\/tours\/from-([a-z0-9-]+)\/?$/i;
 export const TOUR_DURATION_ROUTE = /^\/tours\/from-([a-z0-9-]+)\/(\d+)-days\/?$/i;
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Shared Trip Finder / tour-discovery filter logic.
+//
+// Single source of truth for "/tours" (the filterable index) and "/trip-finder"
+// (the guided entry point) — both filter the SAME canonical `tours` array by
+// the SAME rules, so a traveller never sees a different result set depending
+// on which page they used to get there. Everything here is deterministic and
+// reads only real tour data (name/category/highlights); nothing is invented.
+// ─────────────────────────────────────────────────────────────────────────────
+
+/** Trip-length buckets used across /tours and /trip-finder (real inventory on both ends). */
+export const DURATION_BUCKETS = [
+  { value: '1', minDays: 1, maxDays: 1 },
+  { value: '2-3', minDays: 2, maxDays: 3 },
+  { value: '4-6', minDays: 4, maxDays: 6 },
+  { value: '7-10', minDays: 7, maxDays: 10 },
+  { value: '10plus', minDays: 11, maxDays: null },
+] as const;
+
+export type DurationBucket = (typeof DURATION_BUCKETS)[number]['value'];
+
+export function durationBucketDays(duration: string): number {
+  const match = duration.match(/^(\d+)/);
+  return match ? parseInt(match[1], 10) : 0;
+}
+
+export function durationInBucket(duration: string, bucket: string): boolean {
+  const days = durationBucketDays(duration);
+  const def = DURATION_BUCKETS.find((b) => b.value === bucket);
+  if (!def) return true;
+  return days >= def.minDays && (def.maxDays === null || days <= def.maxDays);
+}
+
+/**
+ * Interest tags mapped to real product differentiation only. "Food" and
+ * "Student / Group" are deliberately NOT included here: the canonical tours
+ * have no genuine food-focused product (one incidental mention, not a real
+ * category) and student travel is a separate product line entirely (see
+ * src/data/student-group-departures.ts) — both are offered as their own
+ * explore links in the Trip Finder UI instead of a fake filter match.
+ */
+export const INTEREST_TAGS = ['desert', 'mountains', 'imperial', 'coastal', 'culture', 'adventure'] as const;
+export type InterestTag = (typeof INTEREST_TAGS)[number];
+
+export function tourMatchesInterest(tour: { name: string; category?: string; highlights: string[] }, tag: string): boolean {
+  const lower = (tour.name + ' ' + (tour.category ?? '') + ' ' + tour.highlights.join(' ')).toLowerCase();
+  switch (tag) {
+    case 'desert': return lower.includes('desert') || lower.includes('sahara') || lower.includes('dune');
+    case 'imperial': return lower.includes('imperial') || lower.includes('marrakech') || lower.includes('fes') || lower.includes('meknes') || lower.includes('rabat') || lower.includes('casablanca');
+    case 'mountains': return lower.includes('mountain') || lower.includes('atlas') || lower.includes('valley') || lower.includes('gorge');
+    case 'coastal': return lower.includes('beach') || lower.includes('coast') || lower.includes('ocean') || lower.includes('surf') || lower.includes('essaouira') || lower.includes('agadir');
+    case 'culture': return lower.includes('cultural') || lower.includes('culture') || lower.includes('heritage') || lower.includes('medina') || lower.includes('palace') || lower.includes('museum') || lower.includes('kasbah');
+    case 'adventure': return lower.includes('adventure') || lower.includes('4x4') || lower.includes('quad') || lower.includes('trek') || lower.includes('off-road');
+    default: return true;
+  }
+}
+
+/** Real departure-city filter, grounded in TOUR_DEPARTURE_CITY (not a name guess). */
+export function tourMatchesCity(tourId: string, city: string): boolean {
+  return TOUR_DEPARTURE_CITY[tourId] === city;
+}

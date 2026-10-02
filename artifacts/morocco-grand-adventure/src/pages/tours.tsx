@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Layout } from '../components/layout/Layout';
 import { tours } from '@/data/content';
-import { CITY_HUBS, TOUR_DEPARTURE_CITY } from '@/data/tour-hierarchy';
+import { CITY_HUBS, DURATION_BUCKETS, INTEREST_TAGS, durationInBucket, tourMatchesInterest, tourMatchesCity } from '@/data/tour-hierarchy';
 import { getLocalizedTour } from '@/i18n/content';
 import { Link, useSearch } from 'wouter';
 import { motion } from 'framer-motion';
@@ -12,44 +12,7 @@ import { PromoBadge } from '../components/promo/PromoBadge';
 import { PriceTag } from '../components/promo/PriceTag';
 import { CinematicVideo } from '../components/ui/CinematicVideo';
 import { StructuredData, buildFaqSchema } from '../components/seo/StructuredData';
-
-function parseDurationDays(duration: string): number {
-  const match = duration.match(/^(\d+)/);
-  return match ? parseInt(match[1]) : 0;
-}
-
-function durationInRange(duration: string, range: string): boolean {
-  const days = parseDurationDays(duration);
-  switch (range) {
-    case '1-2': return days >= 1 && days <= 2;
-    case '3-4': return days >= 3 && days <= 4;
-    case '5-7': return days >= 5 && days <= 7;
-    case '8-14': return days >= 8 && days <= 14;
-    default: return true;
-  }
-}
-
-function tourMatchesStyle(tour: typeof tours[0], style: string): boolean {
-  const lower = (tour.name + ' ' + tour.category + ' ' + tour.highlights.join(' ')).toLowerCase();
-  switch (style) {
-    case 'desert': return lower.includes('desert') || lower.includes('sahara') || lower.includes('dune');
-    case 'imperial': return lower.includes('imperial') || lower.includes('marrakech') || lower.includes('fes') || lower.includes('meknes') || lower.includes('rabat') || lower.includes('casablanca');
-    case 'mountains': return lower.includes('mountain') || lower.includes('atlas') || lower.includes('valley') || lower.includes('gorge');
-    case 'coastal': return lower.includes('beach') || lower.includes('coast') || lower.includes('ocean') || lower.includes('surf') || lower.includes('essaouira') || lower.includes('agadir');
-    default: return true;
-  }
-}
-
-// Uses TOUR_DEPARTURE_CITY (tour-hierarchy.ts), the same authoritative
-// per-tour departure mapping the city hubs are built from — not a name
-// substring match. A name-based match silently dropped real departures
-// whose title doesn't mention the city (e.g. "Romantic Morocco Honeymoon"
-// and "Family Morocco Adventure" both depart Marrakech but never say so in
-// the name), which would have made a real tour vanish under its own
-// departure-city filter.
-function tourMatchesCity(tour: typeof tours[0], city: string): boolean {
-  return TOUR_DEPARTURE_CITY[tour.id] === city;
-}
+import { trackEvent } from '@/lib/analytics';
 
 export default function Tours() {
   const { t, lang } = useLanguage();
@@ -74,25 +37,21 @@ export default function Tours() {
     return qs ? `/tours?${qs}` : '/tours';
   }
 
-  const durationOptions: Array<{ value: string; label: string }> = [
-    { value: '1-2', label: t('tours_dur_1_2') },
-    { value: '3-4', label: t('tours_dur_3_4') },
-    { value: '5-7', label: t('tours_dur_5_7') },
-    { value: '8-14', label: t('tours_dur_8_14') },
-  ];
-  const styleOptions: Array<{ value: string; label: string }> = [
-    { value: 'desert', label: t('tours_style_desert') },
-    { value: 'imperial', label: t('tours_style_imperial') },
-    { value: 'mountains', label: t('tours_style_mountains') },
-    { value: 'coastal', label: t('tours_style_coastal') },
-  ];
+  const durationOptions: Array<{ value: string; label: string }> = DURATION_BUCKETS.map((b) => ({
+    value: b.value,
+    label: t(`tours_dur_${b.value.replace('-', '_')}` as Parameters<typeof t>[0]),
+  }));
+  const styleOptions: Array<{ value: string; label: string }> = INTEREST_TAGS.map((tag) => ({
+    value: tag,
+    label: t(`tours_style_${tag}` as Parameters<typeof t>[0]),
+  }));
   const pillClass = (active: boolean) =>
     `rounded-full border px-4 py-2 text-sm font-semibold transition-colors ${active ? 'bg-primary text-primary-foreground border-primary' : 'border-border hover:border-primary hover:text-primary'}`;
 
   const filteredTours = useMemo(() => tours.filter(tour => {
-    if (cityFilter && !tourMatchesCity(tour, cityFilter)) return false;
-    if (durationFilter && !durationInRange(tour.duration, durationFilter)) return false;
-    if (styleFilter && !tourMatchesStyle(tour, styleFilter)) return false;
+    if (cityFilter && !tourMatchesCity(tour.id, cityFilter)) return false;
+    if (durationFilter && !durationInBucket(tour.duration, durationFilter)) return false;
+    if (styleFilter && !tourMatchesInterest(tour, styleFilter)) return false;
     return true;
   }), [cityFilter, durationFilter, styleFilter]);
 
@@ -175,13 +134,27 @@ export default function Tours() {
 
       <section className="py-8 bg-card border-b border-border">
         <div className="container mx-auto px-4 max-w-6xl space-y-4">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 pb-2">
+            <p className="text-sm text-muted-foreground">{t('tf_sub')}</p>
+            <Link
+              href="/trip-finder"
+              className="inline-flex items-center gap-2 shrink-0 bg-primary/10 text-primary border border-primary/20 hover:bg-primary hover:text-primary-foreground px-5 py-2.5 rounded-full text-sm font-bold transition-colors"
+            >
+              {t('tf_badge')} <ChevronRight className="w-4 h-4" aria-hidden="true" />
+            </Link>
+          </div>
           <div className="flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-muted-foreground">
             <Filter className="w-4 h-4" aria-hidden="true" />
             <span>{t('hub_by_departure_city')}</span>
           </div>
           <div className="flex flex-wrap gap-2" role="group" aria-label={t('hub_by_departure_city')}>
             {CITY_HUBS.map((hub) => (
-              <Link key={hub.id} href={filterHref('city', hub.id)} className={pillClass(cityFilter === hub.id)}>
+              <Link
+                key={hub.id}
+                href={filterHref('city', hub.id)}
+                onClick={() => trackEvent('destination_filter_click', { filter: 'city', value: hub.id })}
+                className={pillClass(cityFilter === hub.id)}
+              >
                 {t(`hub_${hub.id}_name`)}
               </Link>
             ))}
@@ -189,7 +162,12 @@ export default function Tours() {
           <div className="text-sm font-bold uppercase tracking-wider text-muted-foreground pt-2">{t('tours_filter_duration')}</div>
           <div className="flex flex-wrap gap-2" role="group" aria-label={t('tours_filter_duration')}>
             {durationOptions.map((opt) => (
-              <Link key={opt.value} href={filterHref('duration', opt.value)} className={pillClass(durationFilter === opt.value)}>
+              <Link
+                key={opt.value}
+                href={filterHref('duration', opt.value)}
+                onClick={() => trackEvent('duration_filter_click', { filter: 'duration', value: opt.value })}
+                className={pillClass(durationFilter === opt.value)}
+              >
                 {opt.label}
               </Link>
             ))}
@@ -197,7 +175,12 @@ export default function Tours() {
           <div className="text-sm font-bold uppercase tracking-wider text-muted-foreground pt-2">{t('tours_filter_style')}</div>
           <div className="flex flex-wrap gap-2" role="group" aria-label={t('tours_filter_style')}>
             {styleOptions.map((opt) => (
-              <Link key={opt.value} href={filterHref('style', opt.value)} className={pillClass(styleFilter === opt.value)}>
+              <Link
+                key={opt.value}
+                href={filterHref('style', opt.value)}
+                onClick={() => trackEvent('trip_finder_filter', { filter: 'interest', value: opt.value })}
+                className={pillClass(styleFilter === opt.value)}
+              >
                 {opt.label}
               </Link>
             ))}
@@ -209,7 +192,7 @@ export default function Tours() {
 
       {!hasFilters && <section className="py-16 md:py-20 bg-card border-b border-border"><div className="container mx-auto px-4 max-w-5xl"><div className="text-center mb-8 md:mb-10"><span className="text-primary font-bold tracking-wider uppercase text-sm mb-3 block">{t('tours_experience')}</span><h2 className="font-serif text-3xl md:text-5xl text-foreground mb-4">{t('tours_experience')}</h2></div><CinematicVideo src="/videos/sahara-experience.mp4" poster="/images/personal/luxury-camp-dusk.webp" alt={t('tours_heading')} title={t('tours_experience')} subtitle={t('tours_sub')} /></div></section>}
 
-      <section className="py-24 bg-background"><div className="container mx-auto px-4 max-w-6xl"><PromoBanner variant="compact" className="mb-12" />{filteredTours.length === 0 ? <div className="text-center py-24"><p className="text-muted-foreground text-xl mb-6">{t('tours_no_match')}</p><Link href="/tours" className="bg-primary text-primary-foreground px-8 py-3 rounded-full font-bold">{t('tours_view_all')}</Link></div> : <div className="grid grid-cols-1 md:grid-cols-2 gap-10">{filteredTours.map((tourBase, index) => { const tour = getLocalizedTour(tourBase.id, lang) ?? tourBase; return <motion.div key={tour.id} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: index * 0.1 }} className="group flex flex-col bg-card rounded-2xl overflow-hidden border border-border hover:shadow-xl transition-all duration-300"><div className="h-64 relative overflow-hidden"><img src={tour.image} srcSet={`${tour.image.replace(/\.webp$/, '-480w.webp')} 480w, ${tour.image.replace(/\.webp$/, '-768w.webp')} 768w, ${tour.image} 1200w`} sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 40vw" alt={tour.name} width={1200} height={675} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" /><div className="absolute top-4 left-4 bg-background/90 backdrop-blur text-foreground text-xs font-bold px-3 py-1.5 rounded-full flex items-center gap-1.5"><Clock className="w-3.5 h-3.5" /> {tour.duration}</div><div className="absolute top-4 right-4"><PromoBadge /></div></div><div className="p-8 flex flex-col flex-grow"><h3 className="font-serif text-3xl text-foreground mb-4 group-hover:text-primary transition-colors">{tour.name}</h3><p className="text-muted-foreground mb-6 line-clamp-2">{t('tours_experience')} {tour.highlights.join(', ')} {t('tours_and_more')}</p><div className="flex items-center justify-between mt-auto pt-6 border-t border-border"><div><span className="text-xs text-muted-foreground uppercase tracking-wider block font-sans font-normal">{t('from')}</span><PriceTag price={tour.price} size="md" /></div><Link href={`/tours/${tour.id}`} className="bg-foreground text-background hover:bg-primary px-6 py-3 rounded-full text-sm font-bold flex items-center gap-2">{t('tours_view')} <ChevronRight className="w-4 h-4" /></Link></div></div></motion.div>; })}</div>}</div></section>
+      <section className="py-24 bg-background"><div className="container mx-auto px-4 max-w-6xl"><PromoBanner variant="compact" className="mb-12" />{filteredTours.length === 0 ? <div className="text-center py-24"><p className="text-muted-foreground text-xl mb-6">{t('tours_no_match')}</p><Link href="/tours" className="bg-primary text-primary-foreground px-8 py-3 rounded-full font-bold">{t('tours_view_all')}</Link></div> : <div className="grid grid-cols-1 md:grid-cols-2 gap-10">{filteredTours.map((tourBase, index) => { const tour = getLocalizedTour(tourBase.id, lang) ?? tourBase; return <motion.div key={tour.id} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: index * 0.1 }} className="group flex flex-col bg-card rounded-2xl overflow-hidden border border-border hover:shadow-xl transition-all duration-300"><div className="h-64 relative overflow-hidden"><img src={tour.image} srcSet={`${tour.image.replace(/\.webp$/, '-480w.webp')} 480w, ${tour.image.replace(/\.webp$/, '-768w.webp')} 768w, ${tour.image} 1200w`} sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 40vw" alt={tour.name} width={1200} height={675} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" /><div className="absolute top-4 left-4 bg-background/90 backdrop-blur text-foreground text-xs font-bold px-3 py-1.5 rounded-full flex items-center gap-1.5"><Clock className="w-3.5 h-3.5" /> {tour.duration}</div><div className="absolute top-4 right-4"><PromoBadge /></div></div><div className="p-8 flex flex-col flex-grow"><h3 className="font-serif text-3xl text-foreground mb-4 group-hover:text-primary transition-colors">{tour.name}</h3><p className="text-muted-foreground mb-6 line-clamp-2">{t('tours_experience')} {tour.highlights.join(', ')} {t('tours_and_more')}</p><div className="flex items-center justify-between mt-auto pt-6 border-t border-border"><div><span className="text-xs text-muted-foreground uppercase tracking-wider block font-sans font-normal">{t('from')}</span><PriceTag price={tour.price} size="md" /></div><Link href={`/tours/${tour.id}`} onClick={() => trackEvent('trip_finder_result_click', { tour_id: tour.id, has_filters: hasFilters })} className="bg-foreground text-background hover:bg-primary px-6 py-3 rounded-full text-sm font-bold flex items-center gap-2">{t('tours_view')} <ChevronRight className="w-4 h-4" /></Link></div></div></motion.div>; })}</div>}</div></section>
 
       {/* FAQ — same accordion pattern as tour-detail.tsx */}
       <section className="py-16 md:py-24 bg-card border-t border-border">

@@ -1236,6 +1236,7 @@ const EXPERIENCE_PAGE_ROUTES: Record<string, { tours: string[]; destinations: st
   '/merzouga-guide': { tours: ['3-day-sahara-marrakech', '7-day-imperial-cities-sahara-escape'], destinations: ['merzouga', 'erg-chebbi', 'zagora', 'todra-gorge'] },
   '/gallery': { tours: [], destinations: ['marrakech', 'chefchaouen', 'merzouga', 'fes'] },
   '/trip-builder': { tours: ['3-day-sahara-marrakech', '5-day-imperial-cities', '7-day-imperial-cities-sahara-escape', 'family-morocco-adventure', 'honeymoon-morocco'], destinations: ['marrakech', 'fes', 'merzouga', 'erg-chebbi', 'ait-ben-haddou'] },
+  '/trip-finder': { tours: ['marrakech-imlil-day-trip', '3-day-sahara-marrakech', '7-day-imperial-cities-sahara-escape', '14-day-grand-morocco-journey'], destinations: ['marrakech', 'fes', 'agadir', 'merzouga'] },
 };
 // Register the dedicated Student Tour product routes from the actual Student
 // Tours data, rather than a separately-maintained literal list — adding a new

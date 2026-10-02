@@ -2447,6 +2447,21 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/trip-builder" />
   </url>
   <url>
+    <loc>https://www.moroccograndadventure.com/ar/trip-finder</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/trip-finder" />
+  </url>
+  <url>
     <loc>https://www.moroccograndadventure.com/de</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr" />
@@ -4890,6 +4905,21 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/trip-builder" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/trip-builder" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/trip-builder" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/de/trip-finder</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/trip-finder" />
   </url>
   <url>
     <loc>https://www.moroccograndadventure.com/en</loc>
@@ -7337,6 +7367,21 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/trip-builder" />
   </url>
   <url>
+    <loc>https://www.moroccograndadventure.com/en/trip-finder</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/trip-finder" />
+  </url>
+  <url>
     <loc>https://www.moroccograndadventure.com/es</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr" />
@@ -9780,6 +9825,21 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/trip-builder" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/trip-builder" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/trip-builder" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/es/trip-finder</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/trip-finder" />
   </url>
   <url>
     <loc>https://www.moroccograndadventure.com/fr</loc>
@@ -12227,6 +12287,21 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/trip-builder" />
   </url>
   <url>
+    <loc>https://www.moroccograndadventure.com/fr/trip-finder</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/trip-finder" />
+  </url>
+  <url>
     <loc>https://www.moroccograndadventure.com/it</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr" />
@@ -14670,6 +14745,21 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/trip-builder" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/trip-builder" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/trip-builder" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/it/trip-finder</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/trip-finder" />
   </url>
   <url>
     <loc>https://www.moroccograndadventure.com/ja</loc>
@@ -17117,6 +17207,21 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/trip-builder" />
   </url>
   <url>
+    <loc>https://www.moroccograndadventure.com/ja/trip-finder</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/trip-finder" />
+  </url>
+  <url>
     <loc>https://www.moroccograndadventure.com/ko</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr" />
@@ -19560,6 +19665,21 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/trip-builder" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/trip-builder" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/trip-builder" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/ko/trip-finder</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/trip-finder" />
   </url>
   <url>
     <loc>https://www.moroccograndadventure.com/nl</loc>
@@ -22007,6 +22127,21 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/trip-builder" />
   </url>
   <url>
+    <loc>https://www.moroccograndadventure.com/nl/trip-finder</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/trip-finder" />
+  </url>
+  <url>
     <loc>https://www.moroccograndadventure.com/pt</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr" />
@@ -24452,6 +24587,21 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/trip-builder" />
   </url>
   <url>
+    <loc>https://www.moroccograndadventure.com/pt/trip-finder</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/trip-finder" />
+  </url>
+  <url>
     <loc>https://www.moroccograndadventure.com/zh</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr" />
@@ -26895,5 +27045,20 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/trip-builder" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/trip-builder" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/trip-builder" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/zh/trip-finder</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/trip-finder" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/trip-finder" />
   </url>
 </urlset>
