@@ -1564,7 +1564,7 @@ export const TRAVEL_INFO: HubPage[] = [
     ],
     tours: ['7-day-imperial-cities-sahara-escape', '3-day-sahara-marrakech'],
     destinations: ['marrakech', 'merzouga', 'imlil', 'chefchaouen'],
-    relatedGuides: ['atlas-mountains-guide', 'amazigh-berber-culture', 'best-time-to-visit-morocco', 'what-to-pack-morocco', 'getting-around-morocco', 'sahara-desert-guide'],
+    relatedGuides: ['atlas-mountains-guide', 'amazigh-berber-culture', 'moroccan-food-and-cuisine', 'best-time-to-visit-morocco', 'what-to-pack-morocco', 'getting-around-morocco', 'sahara-desert-guide'],
     sources: ['britannica-morocco', 'onmt'],
   },
   {
@@ -1681,7 +1681,7 @@ export const TRAVEL_INFO: HubPage[] = [
     ],
     tours: ['3-day-sahara-marrakech', 'marrakech-imlil-day-trip', 'marrakech-ourika-valley-day-trip'],
     destinations: ['imlil', 'ait-ben-haddou', 'ourika-valley'],
-    relatedGuides: ['morocco-travel-safety', 'atlas-mountains-guide', 'morocco-basics', 'sahara-desert-guide'],
+    relatedGuides: ['morocco-travel-safety', 'moroccan-food-and-cuisine', 'atlas-mountains-guide', 'morocco-basics', 'sahara-desert-guide'],
     sources: ['britannica-morocco', 'unesco-ait-ben-haddou', 'onmt'],
   },
   {
@@ -1745,8 +1745,65 @@ export const TRAVEL_INFO: HubPage[] = [
     ],
     tours: ['3-day-sahara-marrakech', 'marrakech-ourika-valley-day-trip'],
     destinations: ['marrakech', 'ourika-valley', 'imlil'],
-    relatedGuides: ['morocco-basics', 'best-time-to-visit-morocco', 'atlas-mountains-guide', 'getting-around-morocco'],
+    relatedGuides: ['morocco-basics', 'moroccan-food-and-cuisine', 'best-time-to-visit-morocco', 'atlas-mountains-guide', 'getting-around-morocco'],
     sources: ['britannica-morocco-earthquake-2023', 'onmt', 'lonely-planet-morocco'],
+  },
+  {
+    kind: 'travel-info',
+    slug: 'moroccan-food-and-cuisine',
+    title: 'Moroccan Food & Cuisine — A Traveler\'s Guide to What to Eat',
+    pageTitle: 'Moroccan Food Guide — Tagine, Couscous, Mint Tea & What to Eat',
+    description: 'A traveler\'s guide to Moroccan food — tagine and couscous explained, the mint tea ritual, street food and spices, sweets and Ramadan dishes, and how to eat well on a Morocco trip.',
+    ogImage: '/images/catalog/moroccan-mezze-couscous-tagine.webp',
+    heroImage: '/images/catalog/moroccan-mezze-couscous-tagine.webp',
+    heroAlt: 'Moroccan mezze spread with dips, couscous and tagine dishes on a wooden table',
+    intro: 'Moroccan food shows up everywhere on a trip — riad breakfasts, roadside lunch stops, a camp dinner under the stars — and it rewards knowing a little before you go. This is a short, practical guide to what you will actually eat and why it is prepared the way it is.',
+    sections: [
+      {
+        heading: 'Tagine and couscous — the two dishes everyone asks about',
+        paragraphs: [
+          'A tagine is both the conical clay pot and the slow-cooked stew made in it — the shape traps steam and keeps meat and vegetables tender over a long, gentle cook. Classic combinations lean sweet-and-savory: lamb with prunes and almonds, chicken with preserved lemon and olives, or a simple vegetable tagine that is naturally vegetarian. It is less a single recipe than a cooking method, which is why no two tagines taste quite the same.',
+          'Couscous — steamed semolina, not boiled — is traditionally Morocco\'s Friday dish: families gather after midday prayers around a communal platter, bread standing in for cutlery. Restaurants serve it any day of the week, but if you are ever invited to eat couscous with a Moroccan family, Friday is when it happens.',
+        ],
+      },
+      {
+        heading: 'Mint tea — more ritual than drink',
+        paragraphs: [
+          'Moroccan mint tea (atay) — green tea, fresh mint and a generous amount of sugar, poured from height to aerate it — is less a beverage than a hospitality ritual, offered in homes, riads and roadside stops alike. An old saying, quoted with small variations across Morocco, captures the idea: the first glass is as bitter as life, the second as strong as love, the third as gentle as death. All three usually come from the same pot, the flavor shifting slightly as the leaves steep longer with each pour.',
+          'Accept it the way it is offered — unhurried, often alongside conversation that matters more than the schedule. It is one of the more genuine small moments of a Morocco trip, not a performance for visitors.',
+        ],
+      },
+      {
+        heading: 'Breakfast, street food and spices',
+        paragraphs: [
+          'A riad breakfast typically includes msemen (a layered, pan-fried flatbread), bread, olive oil, honey or amlou, and a pot of coffee or tea — a quieter, slower start than the rest of the day. Street food leans toward grilled meats, msemen stalls and fresh orange juice stands in city squares; the same rule of thumb that applies everywhere else in the world holds here too — busy stalls cooking fresh in front of you are the safer bet (our travel safety guide covers food and water basics more broadly).',
+          'Spices are everywhere a trip touches a souk: ras el hanout (a complex house-blend spice mix, different from every vendor), saffron from the Taliouine region, cumin, and the olives and preserved lemons that appear in nearly every savory dish. A night spice market, lit by lamps and heavy with color, is one of the more photogenic stops on a city evening.',
+        ],
+      },
+      {
+        heading: 'Sweets, pastries and Ramadan food',
+        paragraphs: [
+          'Moroccan pastries lean on almonds, honey, sesame and orange-flower water — gazelle horns (kaab el ghazal) and sesame-honey chebakia are two of the most recognizable. Chebakia in particular is closely associated with Ramadan, when it is served alongside harira, a rich tomato, lentil and chickpea soup eaten at sunset to break the day\'s fast. Harira appears on menus year-round, but during Ramadan it takes center stage at nearly every table in the country.',
+        ],
+      },
+      {
+        heading: 'Eating well on a Morocco trip',
+        paragraphs: [
+          'Most itineraries naturally cover the range: a riad breakfast to start, a tagine or couscous lunch stop on the road, and — on a Sahara trip — a camp dinner of tagine and bread shared around the fire before the stargazing starts. Vegetarians eat well in Morocco: vegetable tagine, bread, salads and mezze spreads are available everywhere, though it is worth saying so clearly when a menu is not explicit.',
+        ],
+      },
+    ],
+    faqs: [
+      { question: 'What is the national dish of Morocco?', answer: 'There is no single official answer, but couscous — Morocco\'s traditional Friday dish — and tagine are the two most closely associated with the country, each eaten far more often than any other dish.' },
+      { question: 'Is Moroccan food spicy?', answer: 'Not in the chili-heat sense most travelers expect. Moroccan cooking is heavily spiced (cumin, ginger, cinnamon, saffron, ras el hanout) rather than hot — flavorful and aromatic more than fiery.' },
+      { question: 'What is a tagine?', answer: 'Both the conical clay cooking pot and the slow-cooked stew made in it. The shape traps steam, keeping meat and vegetables tender over a long, gentle cook — common combinations include lamb with prunes and almonds, or chicken with preserved lemon and olives.' },
+      { question: 'Can vegetarians eat well in Morocco?', answer: 'Yes — vegetable tagine, bread, salads and mezze spreads are widely available. It helps to say clearly that you are vegetarian, since meat appears by default in many dishes.' },
+      { question: 'Is street food in Morocco safe to eat?', answer: 'Generally yes, with the usual common-sense rule: busy stalls cooking food fresh in front of you are the safer choice. Our Morocco travel safety guide covers food and water basics in more detail.' },
+    ],
+    tours: ['3-day-sahara-marrakech', '7-day-imperial-cities-sahara-escape'],
+    destinations: ['marrakech', 'fes'],
+    relatedGuides: ['morocco-basics', 'amazigh-berber-culture', 'morocco-travel-safety', 'sahara-desert-guide'],
+    sources: ['onmt', 'lonely-planet-morocco'],
   },
 ];
 export const ALL_HUB_PAGES: HubPage[] = [...MERZOUGA_GUIDES, ...COMPARISONS, ...TRAVEL_INFO];
