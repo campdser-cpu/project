@@ -1564,7 +1564,7 @@ export const TRAVEL_INFO: HubPage[] = [
     ],
     tours: ['7-day-imperial-cities-sahara-escape', '3-day-sahara-marrakech'],
     destinations: ['marrakech', 'merzouga', 'imlil', 'chefchaouen'],
-    relatedGuides: ['atlas-mountains-guide', 'best-time-to-visit-morocco', 'what-to-pack-morocco', 'getting-around-morocco', 'sahara-desert-guide'],
+    relatedGuides: ['atlas-mountains-guide', 'amazigh-berber-culture', 'best-time-to-visit-morocco', 'what-to-pack-morocco', 'getting-around-morocco', 'sahara-desert-guide'],
     sources: ['britannica-morocco', 'onmt'],
   },
   {
@@ -1622,8 +1622,67 @@ export const TRAVEL_INFO: HubPage[] = [
     ],
     tours: ['marrakech-imlil-day-trip', 'marrakech-ourika-valley-day-trip'],
     destinations: ['imlil', 'ourika-valley', 'ifrane'],
-    relatedGuides: ['morocco-basics', 'best-time-to-visit-morocco', 'what-to-pack-morocco', 'marrakech-to-merzouga'],
+    relatedGuides: ['amazigh-berber-culture', 'morocco-basics', 'best-time-to-visit-morocco', 'what-to-pack-morocco', 'marrakech-to-merzouga'],
     sources: ['onmt', 'lonely-planet-morocco'],
+  },
+  {
+    kind: 'travel-info',
+    slug: 'amazigh-berber-culture',
+    title: 'Amazigh (Berber) Culture in Morocco — A Traveler\'s Introduction',
+    pageTitle: 'Amazigh (Berber) Culture in Morocco — A Traveler\'s Introduction',
+    description: 'An introduction to Amazigh (Berber) culture in Morocco for travelers — language, where communities live, kasbah architecture, crafts, music and how to visit respectfully.',
+    ogImage: '/images/library/dades-valley-village-atlas-morocco-mga-036.jpg',
+    heroImage: '/images/library/dades-valley-village-atlas-morocco-mga-036.jpg',
+    heroAlt: 'Panoramic view of a traditional village in Dades Valley with the Atlas Mountain backdrop',
+    intro: 'Much of what travelers come to Morocco to see — the kasbahs, the mountain villages, the rugs and pottery in the souks — is Amazigh culture, whether or not it is labeled as such. This is a short, respectful introduction: who the Amazigh are, where you will meet this culture on a trip, and how to visit without turning people\'s everyday lives into a photo opportunity.',
+    sections: [
+      {
+        heading: 'Amazigh, or Berber?',
+        paragraphs: [
+          'Amazigh (plural Imazighen) is how Morocco\'s indigenous communities refer to themselves; "Berber" is the term more familiar in English and still widely used by travelers and guidebooks, without any disrespect intended. Tamazight became an official language of Morocco alongside Arabic in the 2011 constitution, and is taught in some schools and used in media and signage today.',
+          'Amazigh communities and languages are concentrated in three main areas: Tashelhit in the Anti-Atlas and Souss region around Agadir, Central Atlas Tamazight in the Middle and High Atlas, and Tarifit in the Rif mountains of the north. The dialects differ but share a common root, and Standard Moroccan Amazigh — developed from all three — is what appears in official use nationally.',
+        ],
+      },
+      {
+        heading: 'Where you meet this culture on a trip',
+        paragraphs: [
+          'It is less a single stop than a thread through most Morocco itineraries. The mountain villages around Imlil and the Ourika Valley are Amazigh communities, not staged sets — walnut groves, mule tracks and guesthouses run by local families. The kasbahs and ksour of the Dades and Draa valleys, including the UNESCO-listed Aït Ben Haddou, were built by Amazigh communities and are still, in places, inhabited today. On the desert fringe near Merzouga, nomadic and semi-nomadic Amazigh families continue a way of life shaped by the Sahara\'s edge.',
+          'Market days (souks) in smaller towns are also genuinely Amazigh spaces — produce, wool, livestock and crafts traded much as they have been for generations, alongside the tourist-facing stalls in city medinas.',
+        ],
+      },
+      {
+        heading: 'Architecture: the kasbah and the ksar',
+        paragraphs: [
+          'The kasbah — a fortified earthen building with corner towers, built from pisé (rammed earth) and decorated with pressed geometric patterns — is an Amazigh architectural form, built for defense, family life and the practical demands of mountain and desert climates. A ksar (plural ksour) is a similar fortified village of multiple such buildings; Aït Ben Haddou is the most famous example and a UNESCO World Heritage Site.',
+          'The rust-red walls against green palm groves that appear in so many Morocco photographs — in the Dades Valley, the Draa Valley, around Skoura — are this same building tradition, still visible for real along the routes most Sahara itineraries already follow.',
+        ],
+      },
+      {
+        heading: 'Crafts: rugs, pottery and jewelry',
+        paragraphs: [
+          'Amazigh rugs (zerbiya) are traditionally hand-woven by women, using wool and natural dyes in geometric patterns that vary by region and by weaver — the patterns are not decorative alone; they carry meaning specific to the weaver\'s community. Pottery, often shaped by men on foot-powered wheels and hand-painted afterward, and silver jewelry with similar geometric motifs are the other crafts most visitors encounter in souks and cooperatives along the way.',
+          'Buying directly from a cooperative or a known workshop — rather than only from the most convenient tourist-facing stall — is one of the more concrete ways a trip supports the artisans who actually make these things.',
+        ],
+      },
+      {
+        heading: 'Music, hospitality and visiting respectfully',
+        paragraphs: [
+          'Ahwach, performed in the Atlas and Souss regions, is a collective circle dance and song performed at celebrations — men and women in concentric circles, singing in call-and-response over drums. Mint tea, poured from height into small glasses, is the hospitality ritual you will meet in nearly every home, guesthouse and roadside stop in Amazigh areas, and it is worth receiving the way it is offered: unhurried.',
+          'The honest approach we take with our own guests: ask before photographing someone, and remember that a village is somebody\'s home, not a performance staged for visitors. The richest version of this culture is also the one you cannot buy in a souk — a shared glass of tea, a question answered properly, time not rushed. A good local guide is what actually opens that door, which is why we build it into the itinerary rather than leaving it to chance.',
+        ],
+      },
+    ],
+    faqs: [
+      { question: 'What is the difference between Amazigh and Berber?', answer: 'They refer to the same communities. "Amazigh" (plural Imazighen) is the term used by the communities themselves; "Berber" is the more familiar English term, still used widely and without disrespect intended, including by many Amazigh people when speaking English.' },
+      { question: 'Is Tamazight an official language of Morocco?', answer: 'Yes — Tamazight became an official language alongside Arabic under the 2011 constitution, after being spoken for generations as the home language of Amazigh communities across the country.' },
+      { question: 'Where in Morocco do Amazigh communities live?', answer: 'Mainly three regions: the Rif mountains in the north (Tarifit), the Middle and High Atlas (Central Atlas Tamazight) — including Imlil and the Ourika Valley — and the Anti-Atlas and Souss region around Agadir (Tashelhit).' },
+      { question: 'Who built the kasbahs of southern Morocco?', answer: 'Amazigh communities, using pisé (rammed earth) construction suited to the region\'s climate. Aït Ben Haddou, a UNESCO World Heritage Site, is the best-known example, and the same building style continues through the Dades and Draa valleys.' },
+      { question: 'Can I visit an Amazigh village on a Morocco tour?', answer: 'Yes — villages around Imlil and the Ourika Valley, both an easy drive from Marrakech, are genuine Amazigh communities, not reconstructions. They are lived-in places, so a respectful visit (asking before photographing people, buying crafts from the people who make them) matters more than at a typical tourist sight.' },
+    ],
+    tours: ['3-day-sahara-marrakech', 'marrakech-imlil-day-trip', 'marrakech-ourika-valley-day-trip'],
+    destinations: ['imlil', 'ait-ben-haddou', 'ourika-valley'],
+    relatedGuides: ['atlas-mountains-guide', 'morocco-basics', 'sahara-desert-guide'],
+    sources: ['britannica-morocco', 'unesco-ait-ben-haddou', 'onmt'],
   },
 ];
 export const ALL_HUB_PAGES: HubPage[] = [...MERZOUGA_GUIDES, ...COMPARISONS, ...TRAVEL_INFO];
