@@ -3211,6 +3211,712 @@
           "answer": "Voor deze route is een vanafprijs per persoon gepubliceerd. Het exacte totaal hangt af van met hoeveel je reist — de prijs per persoon daalt naarmate de groep groeit — en van de gekozen accommodatie. We bevestigen het eindbedrag daarom met je reisdata voordat er iets betaald wordt. Je mag ons vooraf vragen de route aan te passen."
         }
       ]
+    },
+    "tangier-3-day": {
+      "name": "3 Dagen: Noord-Marokko — Tanger, Chefchaouen en Tetouan",
+      "duration": "3 Dagen / 2 Nachten",
+      "category": "Noord-Marokko Route",
+      "highlights": [
+        "De Kasbah van Tanger en uitzicht op de Straat van Gibraltar",
+        "De Andalusische medina van Tetouan, UNESCO-erfgoed",
+        "Chefchaouen, de blauwe stad",
+        "De Akchour-kloven en de Godsbrug",
+        "Een compacte rondrit terug naar Tanger"
+      ],
+      "description": "Een privérondreis van drie dagen door Noord-Marokko, met vertrek en aankomst in Tanger. De route voert naar de witgekalkte Andalusische medina van Tetouan, en daarna naar Chefchaouen voor twee nachten, met een dag in de Akchour-vallei voor de watervallen en de natuurlijke stenen boog die bekend is als de Godsbrug. Een ander Marokko dan de woestijnroutes: groene Rif-bergen, Spaans geïnspireerde architectuur en een langzamer, koeler tempo.",
+      "routeCaption": "Tanger → Tetouan → Chefchaouen → Akchour → Chefchaouen → Tanger. Een ronde route door de Rif en het noorden, terug naar uw aankomstpunt.",
+      "itineraryDays": [
+        {
+          "day": 1,
+          "title": "Tanger → Tetouan → Chefchaouen",
+          "desc": "Vertrek vanuit Tanger en rijd zuidwaarts naar Tetouan, waarvan de door UNESCO erkende medina werd gebouwd door vluchtelingen uit Granada — een van de best bewaarde Andalusische oude steden van Marokko. Ga verder naar de Rif-bergen tot Chefchaouen voor de eerste nacht tussen de blauwgeverfde steegjes.",
+          "stops": [
+            "Tanger",
+            "Tetouan (UNESCO-medina)",
+            "Rif-bergen",
+            "Overnachting: Chefchaouen (Ontbijt)"
+          ]
+        },
+        {
+          "day": 2,
+          "title": "Chefchaouen → Akchour-vallei → Chefchaouen",
+          "desc": "Een volledige dag in de Akchour-vallei, de wilde tegenhanger van Chefchaouen: turquoise rivierpoelen, beboste kloven en de keuze tussen een wandeling naar de kleine waterval of de grotere, langs de natuurlijke kalkstenen boog die bekend is als de Godsbrug. Terug naar Chefchaouen voor een tweede nacht in dezelfde medina.",
+          "stops": [
+            "Akchour-watervallen",
+            "Natuurlijke boog Godsbrug",
+            "Boswandelpad in de Rif",
+            "Overnachting: Chefchaouen (Ontbijt)"
+          ]
+        },
+        {
+          "day": 3,
+          "title": "Chefchaouen → Tanger",
+          "desc": "Een vrije ochtend om de medina van Chefchaouen te verkennen voordat u teruggaat naar Tanger. Afhankelijk van het tijdschema kan de route halt houden bij Kaap Spartel of de Grotten van Hercules, waar de Atlantische Oceaan de Middellandse Zee ontmoet, voordat de reis in Tanger eindigt.",
+          "stops": [
+            "Medina van Chefchaouen",
+            "Kaap Spartel (optionele stop)",
+            "Grotten van Hercules (optionele stop)",
+            "Einde: Tanger"
+          ]
+        }
+      ],
+      "included": [
+        "Privévoertuig met airconditioning voor de hele route",
+        "Professionele Engelssprekende chauffeur",
+        "Brandstof",
+        "Twee overnachtingen in Chefchaouen, volgens het gekozen pakket",
+        "Ophalen en terugbrengen naar het hotel in Tanger"
+      ],
+      "excluded": [
+        "Internationale vluchten",
+        "Maaltijden en dranken",
+        "Toegangsgelden voor monumenten en musea",
+        "Fooien en persoonlijke uitgaven"
+      ],
+      "faq": [
+        {
+          "question": "Verschilt deze route van de Sahara-reizen?",
+          "answer": "Ja. Deze rondrit blijft volledig in Noord-Marokko — de Rif-bergen, Chefchaouen en Tetouan — en gaat niet naar de Sahara. Als u ook de woestijn wilt, vraag ons dit te combineren met een langere reis, of bekijk de 5-daagse route van Tanger naar Fez."
+        },
+        {
+          "question": "Hoe moeilijk is de Akchour-wandeling?",
+          "answer": "Er zijn twee opties: een kortere wandeling naar de kleine waterval, geschikt voor de meeste fitnessniveaus, en een langere route naar de Godsbrug en de grote waterval, die meer klimmen over rotsen vereist. We bevestigen voor de dag zelf welke bij uw groep past."
+        },
+        {
+          "question": "Kan deze reis ergens anders dan Tanger beginnen?",
+          "answer": "Deze is ontworpen als een rondrit vanuit Tanger, omdat de meeste reizigers Noord-Marokko bereiken met de veerboot vanuit Spanje of met het vliegtuig naar Tanger. Een ophaalservice vanaf de luchthaven van Tetouan kan besproken worden als dat beter bij uw aankomst past."
+        },
+        {
+          "question": "Kan ik nu boeken en later betalen?",
+          "answer": "Ja. Een aanvraag versturen is gratis en verplicht u tot niets. We bevestigen eerst met u de data, de reisroute en de einprijs; een aanbetaling van 20% verzekert daarna de boeking, en de resterende 80% wordt betaald bij aankomst in Marokko."
+        }
+      ]
+    },
+    "tangier-5-day": {
+      "name": "5 Dagen van Tanger naar Fez via de Rif en Noord-Marokko",
+      "duration": "5 Dagen / 4 Nachten",
+      "category": "Noord-Marokko Route",
+      "highlights": [
+        "Vertrek vanuit Tanger, Straat van Gibraltar",
+        "De Andalusische medina van Tetouan",
+        "Twee nachten in Chefchaouen met een volledige dag in Akchour",
+        "Het cederwoud van de Midden-Atlas en Ifrane",
+        "Eindbestemming Fez"
+      ],
+      "description": "Een privéroute in één richting van Tanger naar Fez, die de Rif-bergen en de Midden-Atlas doorkruist in plaats van de zuidelijke woestijnweg. Twee nachten in Chefchaouen geven echte tijd voor de Akchour-vallei, waarna de route omhoog klimt door het cederwoud naar Ifrane voordat deze eindigt in de keizerlijke stad Fez — een introductie tot Marokko van noord naar zuid voor reizigers die per veerboot of vliegtuig in Tanger aankomen.",
+      "routeCaption": "Tanger → Tetouan → Chefchaouen → Akchour en de Rif → Midden-Atlas en Ifrane → Fez. Een privéroute in één richting van de noordkust naar de keizerlijke stad Fez.",
+      "itineraryDays": [
+        {
+          "day": 1,
+          "title": "Tanger → Tetouan → Chefchaouen",
+          "desc": "Vertrek vanuit Tanger naar Tetouan en de door UNESCO erkende Andalusische medina, en ga verder de Rif in naar Chefchaouen voor de eerste van twee nachten.",
+          "stops": [
+            "Tanger",
+            "Tetouan (UNESCO-medina)",
+            "Overnachting: Chefchaouen (Ontbijt)"
+          ]
+        },
+        {
+          "day": 2,
+          "title": "Akchour-vallei — watervallen en de Godsbrug",
+          "desc": "Een volledige dag in de Akchour-vallei: rivierpoelen, boswandelpaden en de natuurlijke stenen boog die bekend is als de Godsbrug. Terug naar hetzelfde verblijf in Chefchaouen voor de tweede nacht.",
+          "stops": [
+            "Akchour-watervallen",
+            "Natuurlijke boog Godsbrug",
+            "Overnachting: Chefchaouen (Ontbijt)"
+          ]
+        },
+        {
+          "day": 3,
+          "title": "Chefchaouen → Midden-Atlas → Ifrane",
+          "desc": "Verlaat de blauwe stad en klim naar de Midden-Atlas. De cederwouden rond Ifrane en Azrou herbergen wilde Berberapen, en de stad zelf — alpine architectuur gebouwd in de jaren 1930 — biedt een koel contrast met de kust en de Rif.",
+          "stops": [
+            "Medina van Chefchaouen",
+            "Midden-Atlas",
+            "Overnachting: Ifrane (Ontbijt)"
+          ]
+        },
+        {
+          "day": 4,
+          "title": "Ifrane → Fez",
+          "desc": "Een kortere rijdag naar Fez, de culturele en spirituele hoofdstad van Marokko. De middag en avond zijn vrij om u te settelen voor de begeleide dag die volgt.",
+          "stops": [
+            "Cederwoud van Ifrane",
+            "Overnachting: Fez (Ontbijt)"
+          ]
+        },
+        {
+          "day": 5,
+          "title": "Begeleide dag in Fez → einde van de reis",
+          "desc": "Een officiële lokale gids leidt u door de medina van Fez el-Bali — de poorten van het Koninklijk Paleis, de Chouara-leerlooierij, de Al Quaraouiyine-universiteit en de soeks. De reis eindigt met een transfer naar uw hotel in Fez of de luchthaven.",
+          "stops": [
+            "Medina van Fez el-Bali",
+            "Chouara-leerlooierij",
+            "Al Quaraouiyine-universiteit",
+            "Einde: Fez"
+          ]
+        }
+      ],
+      "included": [
+        "Privévoertuig met airconditioning voor de hele route",
+        "Professionele Engelssprekende chauffeur",
+        "Brandstof",
+        "Verblijf voor vier nachten, volgens het gekozen pakket",
+        "Officiële lokale gids voor de medina-dag in Fez",
+        "Ophalen bij het hotel in Tanger en afzetten in Fez"
+      ],
+      "excluded": [
+        "Internationale vluchten",
+        "Maaltijden en dranken",
+        "Toegangsgelden voor monumenten en musea",
+        "Fooien en persoonlijke uitgaven"
+      ],
+      "faq": [
+        {
+          "question": "Waarom van Tanger naar Fez reizen via het noorden in plaats van de woestijnroute?",
+          "answer": "Deze reisroute is opgebouwd rond de Rif en Noord-Marokko in plaats van de Sahara — Chefchaouen, Tetouan en Akchour, en daarna de cederwouden van de Midden-Atlas. Als u ook de Sahara wilt, sluiten onze woestijnroutes vanuit Fez precies aan waar deze eindigt."
+        },
+        {
+          "question": "Eindigt deze reis in Fez?",
+          "answer": "Ja, het is een privéroute in één richting die eindigt in Fez. De verdere reis — zuidwaarts naar Merzouga, of elders — kan als apart traject besproken worden zodra u daar bent."
+        },
+        {
+          "question": "Zijn twee nachten in Chefchaouen voldoende?",
+          "answer": "Ze geven een volledige dag voor Akchour zonder haast, plus de avond om de medina te verkennen — meer tijd dan één nacht zou toelaten. Groepen die meer tijd in het noorden willen, kunnen vragen naar verlenging."
+        },
+        {
+          "question": "Kan ik nu boeken en later betalen?",
+          "answer": "Ja. Een aanvraag versturen is gratis en verplicht u tot niets. We bevestigen eerst met u de data, de reisroute en de einprijs; een aanbetaling van 20% verzekert daarna de boeking, en de resterende 80% wordt betaald bij aankomst in Marokko."
+        }
+      ]
+    },
+    "marrakech-essaouira-2-day": {
+      "name": "2 Dagen: Van Marrakech naar Essaouira — Ontsnapping naar de Atlantische Kust",
+      "duration": "2 Dagen / 1 Nacht",
+      "category": "Kustontsnapping",
+      "highlights": [
+        "Privétransfer van drie uur naar de Atlantische kust",
+        "De medina van Essaouira, UNESCO-erfgoed",
+        "De Sqala du Port-vestingmuren en de visserhaven",
+        "Een echte tempowisseling ten opzichte van Marrakech",
+        "Heen en terug naar Marrakech"
+      ],
+      "description": "Een korte privé-ontsnapping van Marrakech naar Essaouira, de door de wind geteisterde Atlantische haven die het Marokkaanse Nationale Bureau voor Toerisme noemt als een van de klassieke kuststeden van het land. Drie uur van de Rode Stad verwisselt Essaouira soeks en hitte voor zeelucht, een door UNESCO erkende medina met steegjes met blauwe luiken, en de Sqala du Port-vestingmuren tegenover de golven. Een combinatie van kust en cultuur in plaats van een woestijnroute — de kortste manier om een echt andere kant van Marokko te zien vanuit Marrakech.",
+      "routeCaption": "Marrakech → Essaouira → Marrakech. Een korte privé-ontsnapping naar de Atlantische kust, drie uur van de Rode Stad.",
+      "itineraryDays": [
+        {
+          "day": 1,
+          "title": "Marrakech → Essaouira",
+          "desc": "Vertrek 's ochtends vanuit Marrakech voor de drie uur durende rit naar de kust. De middag is vrij om de medina, de Sqala du Port-vestingmuren en de visserhaven te verkennen, of simpelweg de Atlantische Oceaan te bekijken vanaf een terras bij de haven.",
+          "stops": [
+            "Marrakech",
+            "Medina van Essaouira",
+            "Sqala du Port",
+            "Overnachting: Essaouira (Ontbijt)"
+          ]
+        },
+        {
+          "day": 2,
+          "title": "Essaouira → Marrakech",
+          "desc": "Een vrije ochtend in Essaouira — de haven, het strand of de vestingmuren in het ochtendlicht — voordat u teruggaat naar Marrakech, met aankomst in de vroege middag.",
+          "stops": [
+            "Haven van Essaouira",
+            "Terugkeer naar Marrakech",
+            "Einde: Marrakech"
+          ]
+        }
+      ],
+      "included": [
+        "Privévoertuig met airconditioning voor de hele route",
+        "Professionele Engelssprekende chauffeur",
+        "Brandstof",
+        "Een nacht verblijf in Essaouira, volgens het gekozen pakket",
+        "Ophalen en terugbrengen naar het hotel in Marrakech"
+      ],
+      "excluded": [
+        "Internationale vluchten",
+        "Maaltijden en dranken",
+        "Kitesurf-, surf- of andere watersportlessen (lokaal beschikbaar, niet inbegrepen)",
+        "Toegangsgelden voor monumenten en musea",
+        "Fooien en persoonlijke uitgaven"
+      ],
+      "faq": [
+        {
+          "question": "Maakt deze reis deel uit van een Sahara-reisroute?",
+          "answer": "Nee — dit is uitsluitend een kustroute, zonder woestijntraject. Reizigers die zowel de kust als de Sahara in één reis willen, kunnen beter kijken naar onze 8-daagse reis Marrakech, Essaouira, Agadir en de Sahara."
+        },
+        {
+          "question": "Is één nacht in Essaouira voldoende?",
+          "answer": "Het is een echte maar compacte ontsnapping — voldoende voor de medina, de vestingmuren en de haven. Als u liever een volledige vrije dag aan de kust heeft, vraag ons dit te verlengen tot drie dagen."
+        },
+        {
+          "question": "Hoe lang duurt de rit?",
+          "answer": "Ongeveer drie uur in elke richting over geasfalteerde weg, met een mogelijke stop onderweg als u dat wilt."
+        },
+        {
+          "question": "Kan ik nu boeken en later betalen?",
+          "answer": "Ja. Een aanvraag versturen is gratis en verplicht u tot niets. We bevestigen eerst met u de data, de reisroute en de einprijs; een aanbetaling van 20% verzekert daarna de boeking, en de resterende 80% wordt betaald bij aankomst in Marokko."
+        }
+      ]
+    },
+    "14-day-grand-morocco-journey": {
+      "name": "14 Dagen: Groot Marokko — Keizerlijke Steden, Atlantische Kust, Sahara en het Noorden",
+      "duration": "14 Dagen / 13 Nachten",
+      "category": "Grote Reis",
+      "highlights": [
+        "Marrakech, de Atlantische kust, het zuiden, de Sahara, de keizerlijke steden en het noorden in één privéroute",
+        "Twee volledige nachten in Erg Chebbi, met een volledige woestijndag",
+        "Aït Ben Haddou, de Dadès-vallei en de Todra-kloof",
+        "Fez el-Bali met een officiële lokale gids",
+        "Chefchaouen en een afsluiting in Casablanca"
+      ],
+      "description": "De complete privérondreis door Marokko voor reizigers met twee weken de tijd: Marrakech, de Atlantische kust bij Essaouira en Agadir, de zuidelijke kasbahroute via Ouarzazate en Aït Ben Haddou, de Dadès- en Todra-valleien, twee volledige nachten bij de duinen van Erg Chebbi, de keizerlijke steden Fez en Meknes, de Rif-stad Chefchaouen, en een afsluiting in Casablanca. Veertien dagen zijn genoeg om de belangrijkste regio's van het land te bereizen zonder elke dag tot een transfer te maken — elk traject van deze route bestaat al als een van onze kortere reizen, samengevoegd tot één reis. Omdat een zo lange route enorm varieert per tempo, seizoen en gekozen verblijf, wordt deze individueel geoffreerd in plaats van tegen een vaste prijs per persoon verkocht.",
+      "routeCaption": "Marrakech → Essaouira → Agadir → Ouarzazate en Aït Ben Haddou → Dadès-vallei → Todra-kloof → Merzouga en Erg Chebbi → Ifrane → Fez en Meknes → Chefchaouen → Rabat → Casablanca.",
+      "itineraryDays": [
+        {
+          "day": 1,
+          "title": "Aankomst in Marrakech",
+          "desc": "Settel u en maak 's avonds een eerste, ongehaaste wandeling door de medina en de Jemaa el-Fna.",
+          "stops": [
+            "Overnachting: Marrakech (Ontbijt)"
+          ]
+        },
+        {
+          "day": 2,
+          "title": "Marrakech → Essaouira",
+          "desc": "Drie uur rijden naar de Atlantische kust. De middag is vrij voor de door UNESCO erkende medina van Essaouira en de Sqala du Port-vestingmuren.",
+          "stops": [
+            "Medina van Essaouira",
+            "Overnachting: Essaouira (Ontbijt)"
+          ]
+        },
+        {
+          "day": 3,
+          "title": "Essaouira → Agadir",
+          "desc": "Ga verder langs de kust naar Agadir, Marokko's speciaal gebouwde badplaats, met tijd voor de promenade of de Kasbah Oufella bij zonsondergang.",
+          "stops": [
+            "Strand van Agadir",
+            "Overnachting: Agadir (Ontbijt)"
+          ]
+        },
+        {
+          "day": 4,
+          "title": "Agadir → Ouarzazate",
+          "desc": "Ga landinwaarts naar Ouarzazate, poort tot de presahara, door het veranderende landschap van Zuid-Marokko.",
+          "stops": [
+            "Gebied Ouarzazate",
+            "Overnachting: Ouarzazate (Ontbijt)"
+          ]
+        },
+        {
+          "day": 5,
+          "title": "Ouarzazate → Aït Ben Haddou → Dadès-vallei",
+          "desc": "Bezoek de door UNESCO erkende ksar van Aït Ben Haddou voordat u verder gaat naar de Dadès-vallei voor de nacht.",
+          "stops": [
+            "Aït Ben Haddou (UNESCO)",
+            "Overnachting: Dadès-vallei (Diner en Ontbijt)"
+          ]
+        },
+        {
+          "day": 6,
+          "title": "Dadès-vallei → Todra-kloof → Merzouga",
+          "desc": "Rijd door de Todra-kloof voordat u Merzouga bereikt in de late namiddag voor een kameeltocht bij zonsondergang naar Erg Chebbi en de eerste nacht in het woestijnkamp.",
+          "stops": [
+            "Todra-kloof",
+            "Kameeltocht bij zonsondergang",
+            "Overnachting: woestijnkamp Erg Chebbi (Diner en Ontbijt)"
+          ]
+        },
+        {
+          "day": 7,
+          "title": "Een volledige dag in Erg Chebbi",
+          "desc": "Zonsopgang boven de duinen, en daarna een volledige dag rond Merzouga in plaats van een overhaast vertrek — tijd met de woestijngemeenschappen, en opnieuw de duinen in de koelere late namiddag. Tweede nacht in het kamp.",
+          "stops": [
+            "Zonsopgang boven de duinen",
+            "Merzouga",
+            "Overnachting: woestijnkamp Erg Chebbi (Diner en Ontbijt)"
+          ]
+        },
+        {
+          "day": 8,
+          "title": "Merzouga → Ziz-vallei → Ifrane → Fez",
+          "desc": "Ga noordwaarts door de palmoases van de Ziz-vallei en de cederwouden van de Midden-Atlas rond Ifrane, met aankomst in Fez in de avond.",
+          "stops": [
+            "Ziz-vallei",
+            "Ifrane",
+            "Overnachting: Fez (Ontbijt)"
+          ]
+        },
+        {
+          "day": 9,
+          "title": "Begeleide dag in Fez",
+          "desc": "Een officiële lokale gids leidt u door Fez el-Bali — de poorten van het Koninklijk Paleis, de Chouara-leerlooierij, de Al Quaraouiyine-universiteit en de soeks.",
+          "stops": [
+            "Medina van Fez el-Bali",
+            "Chouara-leerlooierij",
+            "Overnachting: Fez (Ontbijt)"
+          ]
+        },
+        {
+          "day": 10,
+          "title": "Fez → Meknes → Chefchaouen",
+          "desc": "Een stop in Meknes, een van de historische keizerlijke steden van Marokko, op weg naar het noorden, tot de blauwe steegjes van Chefchaouen.",
+          "stops": [
+            "Meknes",
+            "Overnachting: Chefchaouen (Ontbijt)"
+          ]
+        },
+        {
+          "day": 11,
+          "title": "Chefchaouen",
+          "desc": "Een volledige dag in en rond de blauwe stad — de medina, het plein Uta el-Hammam en het uitkijkpunt boven de stad — in een bewust langzamer tempo na negen dagen op de weg.",
+          "stops": [
+            "Medina van Chefchaouen",
+            "Overnachting: Chefchaouen (Ontbijt)"
+          ]
+        },
+        {
+          "day": 12,
+          "title": "Chefchaouen → Rabat",
+          "desc": "Ga zuidwaarts naar Rabat, de hoofdstad van Marokko, voor de Kasbah van de Oudaya's en de Hassantoren.",
+          "stops": [
+            "Rabat",
+            "Overnachting: Rabat (Ontbijt)"
+          ]
+        },
+        {
+          "day": 13,
+          "title": "Rabat → Casablanca",
+          "desc": "Een laatste korte rit naar Casablanca, met tijd voor de Hassan II-moskee aan de Atlantische Oceaan en de art-decostraten van het centrum.",
+          "stops": [
+            "Hassan II-moskee",
+            "Overnachting: Casablanca (Ontbijt)"
+          ]
+        },
+        {
+          "day": 14,
+          "title": "Vertrek vanuit Casablanca",
+          "desc": "Transfer naar de luchthaven van Casablanca, of voortzetting zoals afgesproken in uw bevestigde reisroute.",
+          "stops": [
+            "Einde: Casablanca"
+          ]
+        }
+      ],
+      "included": [
+        "Privévoertuig met airconditioning en chauffeur-gids voor de hele route, indien opgenomen in de bevestigde offerte",
+        "Verblijf voor 13 nachten, volgens het gekozen pakket, inclusief twee nachten in een woestijnkamp nabij Merzouga",
+        "Officiële lokale gids voor de medina-dag in Fez",
+        "De woestijnervaring bij Erg Chebbi — kameeltocht bij zonsondergang — indien opgenomen in de bevestigde reisroute",
+        "Ophalen en terugbrengen hotel en luchthaven"
+      ],
+      "excluded": [
+        "Internationale vluchten",
+        "Maaltijden en dranken",
+        "Toegangsgelden voor monumenten en musea",
+        "Optionele activiteiten zoals 4x4-excursies, quad of een luchtballonvlucht",
+        "Fooien en persoonlijke uitgaven",
+        "Alles wat niet in uw bevestigde offerte staat"
+      ],
+      "faq": [
+        {
+          "question": "Waarom is deze reis alleen op offerte terwijl de kortere reizen een gepubliceerde prijs hebben?",
+          "answer": "Een privéroute van veertien dagen varieert enorm per seizoen, tempo en gekozen verblijfsniveau, op een manier die één enkele richtprijs niet eerlijk kan weergeven. We bevestigen het werkelijke bedrag zodra we uw data, groepsgrootte en voorkeuren kennen."
+        },
+        {
+          "question": "Zijn veertien dagen te lang, of betekent dit te veel rijden?",
+          "answer": "Het is opgebouwd uit dezelfde trajecten als onze kortere reizen, samengevoegd in plaats van ingekort — twee volledige nachten bij de duinen in plaats van één, en meerdaagse stops in Fez en Chefchaouen, zodat het niet elke dag een andere stad is. Als twee weken meer is dan u wilt, vraag ons naar de 7- of 10-daagse versies van deze reis."
+        },
+        {
+          "question": "Kan de route worden ingekort of herschikt?",
+          "answer": "Ja. Deze reisroute is een startpunt — steden en regio's kunnen worden toegevoegd, verwijderd of herschikt zodra we weten wat voor u het belangrijkst is en hoeveel dagen u daadwerkelijk heeft."
+        },
+        {
+          "question": "Omvat het woestijngedeelte twee nachten?",
+          "answer": "Ja, deze reisroute geeft Merzouga een volledige dag in plaats van een bezoek bij zonsondergang gevolgd door vertrek — aankomst met kameeltocht op de eerste dag, en daarna een volledige dag rond Erg Chebbi voordat u verder gaat naar het noorden."
+        },
+        {
+          "question": "Kan ik nu boeken en later betalen?",
+          "answer": "Vraag eerst de reisroute aan. We bevestigen de route, wat inbegrepen is en de geldende betalingsvoorwaarden voordat er betaald wordt."
+        }
+      ]
+    },
+    "marrakech-ourika-valley-day-trip": {
+      "name": "Dagexcursie van Marrakech naar de Ourika-vallei",
+      "duration": "1 Dag",
+      "category": "Dagexcursie · Alleen op Offerte",
+      "highlights": [
+        "Groen landschap van de Atlas-vallei, op minder dan een uur van Marrakech",
+        "Berberdorpen langs de Ourika-rivier",
+        "Een begeleide wandeling naar de Setti Fatma-watervallen",
+        "Muntthee aan de rivier en een arganolie-coöperatie"
+      ],
+      "description": "Een privé dagexcursie vanuit Marrakech naar de Ourika-vallei — het dichtstbijzijnde bergontsnapping van de stad, op minder dan een uur. De dag volgt de valleiweg langs Berberdorpen en rivierrestaurants tot de Setti Fatma-watervallen, met een stop bij een lokale arganolie-coöperatie onderweg. Een privévoertuig met chauffeur brengt u dezelfde dag heen en terug — geen overnachting nodig.",
+      "routeCaption": "Marrakech → Ourika-vallei → Marrakech. Een privé dagexcursie naar de voorberg van de Atlas, op minder dan een uur van de stad.",
+      "itineraryDays": [
+        {
+          "day": 1,
+          "title": "Marrakech → Ourika-vallei → Marrakech",
+          "desc": "Een volledige dag vanuit Marrakech naar de Ourika-vallei en terug, met een begeleide wandeling naar de Setti Fatma-watervallen en een stop bij een lokale arganolie-coöperatie.",
+          "stops": [
+            "Marrakech",
+            "Ourika-vallei",
+            "Setti Fatma-watervallen",
+            "Terugkeer naar Marrakech"
+          ]
+        }
+      ],
+      "included": [
+        "Privévoertuig met airconditioning voor de hele dag",
+        "Professionele Engelssprekende chauffeur",
+        "Brandstof",
+        "Ophalen en terugbrengen naar het hotel in Marrakech"
+      ],
+      "excluded": [
+        "Internationale vluchten",
+        "Lunch en dranken",
+        "Toegangsgelden voor coöperatie, monumenten of activiteiten",
+        "Fooien en persoonlijke uitgaven"
+      ],
+      "faq": [
+        {
+          "question": "Is dit een privéreis?",
+          "answer": "Ja — een voertuig en chauffeur alleen voor uw groep, geen gedeelde groepsreis."
+        },
+        {
+          "question": "Hoe laat vertrekken en komen we terug?",
+          "answer": "Vertrek- en terugkeertijden worden georganiseerd rond uw schema bij het boeken — stuur ons uw data en we bevestigen de tijden."
+        },
+        {
+          "question": "Is de lunch inbegrepen?",
+          "answer": "Nee — de lunch is niet inbegrepen, maar de vallei heeft restaurants aan de rivier waar u kunt stoppen."
+        },
+        {
+          "question": "Kan de reisroute worden aangepast?",
+          "answer": "Ja — elke MGA-reis is privé, zodat het tempo en de stops kunnen worden aangepast aan uw interesses. Laat ons weten wat u wenst bij het versturen van uw aanvraag."
+        },
+        {
+          "question": "Kan ik nu boeken en later betalen?",
+          "answer": "Ja. Een aanvraag versturen is gratis en verplicht u tot niets. We bevestigen eerst met u de data, de reisroute en de einprijs; een aanbetaling van 20% verzekert daarna de boeking, en de resterende 80% wordt betaald bij aankomst in Marokko."
+        }
+      ],
+      "suitableFor": [
+        "Reizigers die op zoek zijn naar een natuurgerichte dag buiten Marrakech",
+        "Diegenen die berg- en valleilandschap willen zonder overnachting",
+        "Een ontspannen dagexcursie die goed past bij een stedelijk verblijf in Marrakech"
+      ],
+      "gallery": [
+        {
+          "caption": "De groene Ourika-vallei onder de Atlas."
+        }
+      ]
+    },
+    "marrakech-ouzoud-waterfalls-day-trip": {
+      "name": "Dagexcursie van Marrakech naar de Ouzoud-watervallen",
+      "duration": "1 Dag",
+      "category": "Dagexcursie · Alleen op Offerte",
+      "highlights": [
+        "De bekendste watervallen van Marokko, op ongeveer 150 km van Marrakech",
+        "110 meter hoge trapvormige watervallen en uitkijkpunten langs de rivier",
+        "Berberapen in de olijfboomgaarden boven de watervallen",
+        "Een volledige dag buiten de stad"
+      ],
+      "description": "Een privé dagexcursie vanuit Marrakech naar de Ouzoud-watervallen, de bekendste watervallen van Marokko, op ongeveer 150 km van de stad. De 110 meter hoge trapvormige watervallen, rivierpaden en uitkijkpunten zijn een volledige dag buiten Marrakech waard, en de olijfboomgaarden boven de watervallen zijn de thuisbasis van Berberapen. Een privévoertuig met chauffeur brengt u dezelfde dag heen en terug.",
+      "routeCaption": "Marrakech → Ouzoud-watervallen → Marrakech. Een privé dagexcursie naar de bekendste watervallen van Marokko, op ongeveer 150 km van de stad.",
+      "itineraryDays": [
+        {
+          "day": 1,
+          "title": "Marrakech → Ouzoud-watervallen → Marrakech",
+          "desc": "Een volledige dag vanuit Marrakech naar de Ouzoud-watervallen en terug, met tijd bij de uitkijkpunten en rivierpaden van de watervallen.",
+          "stops": [
+            "Marrakech",
+            "Ouzoud-watervallen",
+            "Terugkeer naar Marrakech"
+          ]
+        }
+      ],
+      "included": [
+        "Privévoertuig met airconditioning voor de hele dag",
+        "Professionele Engelssprekende chauffeur",
+        "Brandstof",
+        "Ophalen en terugbrengen naar het hotel in Marrakech"
+      ],
+      "excluded": [
+        "Internationale vluchten",
+        "Lunch en dranken",
+        "Bootjes, hammam of andere optionele lokale activiteiten bij Ouzoud (lokaal beschikbaar, niet inbegrepen)",
+        "Fooien en persoonlijke uitgaven"
+      ],
+      "faq": [
+        {
+          "question": "Is dit een privéreis?",
+          "answer": "Ja — een voertuig en chauffeur alleen voor uw groep, geen gedeelde groepsreis."
+        },
+        {
+          "question": "Hoe laat vertrekken en komen we terug?",
+          "answer": "Vertrek- en terugkeertijden worden georganiseerd rond uw schema bij het boeken — stuur ons uw data en we bevestigen de tijden."
+        },
+        {
+          "question": "Is de lunch inbegrepen?",
+          "answer": "Nee — de lunch is niet inbegrepen, zodat u vrij bent om onderweg of bij de watervallen te stoppen."
+        },
+        {
+          "question": "Kan de reisroute worden aangepast?",
+          "answer": "Ja — elke MGA-reis is privé, zodat het tempo en de stops kunnen worden aangepast aan uw interesses. Laat ons weten wat u wenst bij het versturen van uw aanvraag."
+        },
+        {
+          "question": "Kan ik nu boeken en later betalen?",
+          "answer": "Ja. Een aanvraag versturen is gratis en verplicht u tot niets. We bevestigen eerst met u de data, de reisroute en de einprijs; een aanbetaling van 20% verzekert daarna de boeking, en de resterende 80% wordt betaald bij aankomst in Marokko."
+        }
+      ],
+      "suitableFor": [
+        "Reizigers die de bekendste watervallen van Marokko op één dag willen zien",
+        "Diegenen die genieten van wandelingen en uitkijkpunten langs de rivier",
+        "Een natuurgerichte pauze ver van de medina en soeks van Marrakech"
+      ],
+      "gallery": [
+        {
+          "caption": "De Ouzoud-watervallen op volle kracht."
+        }
+      ]
+    },
+    "marrakech-imlil-day-trip": {
+      "name": "Dagexcursie van Marrakech naar Imlil",
+      "duration": "1 Dag",
+      "category": "Dagexcursie · Alleen op Offerte",
+      "highlights": [
+        "Bergdorp van de Hoge Atlas, op 90 minuten van Marrakech",
+        "Uitzicht op het vertrekpunt naar de Toubkal en de Mizane-vallei",
+        "Walnotenboomgaarden, muilezelpaden en Berberdorpen",
+        "Een koeler bergcontrast ten opzichte van Marrakech"
+      ],
+      "description": "Een privé dagexcursie vanuit Marrakech naar de Hoge Atlas, tot Imlil, het vertrekdorp voor de Toubkal-berg, op ongeveer 90 minuten van de stad. De dag verloopt in een rustig tempo door walnotenboomgaarden, muilezelpaden en Berberdorpen van de Mizane-vallei, voor reizigers die een bergervaring wensen zonder van hotel te wisselen. Een privévoertuig met chauffeur brengt u dezelfde dag heen en terug.",
+      "routeCaption": "Marrakech → Imlil → Marrakech. Een privé dagexcursie naar de Hoge Atlas, op ongeveer 90 minuten van de stad.",
+      "itineraryDays": [
+        {
+          "day": 1,
+          "title": "Marrakech → Imlil → Marrakech",
+          "desc": "Een volledige dag vanuit Marrakech naar de Hoge Atlas, met tijd om rond Imlil en de Mizane-vallei te wandelen voor de terugkeer.",
+          "stops": [
+            "Marrakech",
+            "Imlil",
+            "Mizane-vallei",
+            "Terugkeer naar Marrakech"
+          ]
+        }
+      ],
+      "included": [
+        "Privévoertuig met airconditioning voor de hele dag",
+        "Professionele Engelssprekende chauffeur",
+        "Brandstof",
+        "Ophalen en terugbrengen naar het hotel in Marrakech"
+      ],
+      "excluded": [
+        "Internationale vluchten",
+        "Lunch en dranken",
+        "Begeleide bergtrekking buiten de wandeling van de dag (lokaal beschikbaar, niet inbegrepen)",
+        "Fooien en persoonlijke uitgaven"
+      ],
+      "faq": [
+        {
+          "question": "Is dit een privéreis?",
+          "answer": "Ja — een voertuig en chauffeur alleen voor uw groep, geen gedeelde groepsreis."
+        },
+        {
+          "question": "Hoe laat vertrekken en komen we terug?",
+          "answer": "Vertrek- en terugkeertijden worden georganiseerd rond uw schema bij het boeken — stuur ons uw data en we bevestigen de tijden."
+        },
+        {
+          "question": "Is de lunch inbegrepen?",
+          "answer": "Nee — de lunch is niet inbegrepen, zodat u vrij bent om in het dorp te stoppen."
+        },
+        {
+          "question": "Kan de reisroute worden aangepast?",
+          "answer": "Ja — elke MGA-reis is privé, zodat het tempo en de stops kunnen worden aangepast aan uw interesses. Laat ons weten wat u wenst bij het versturen van uw aanvraag."
+        },
+        {
+          "question": "Kan ik nu boeken en later betalen?",
+          "answer": "Ja. Een aanvraag versturen is gratis en verplicht u tot niets. We bevestigen eerst met u de data, de reisroute en de einprijs; een aanbetaling van 20% verzekert daarna de boeking, en de resterende 80% wordt betaald bij aankomst in Marokko."
+        }
+      ],
+      "suitableFor": [
+        "Reizigers die een Hoge Atlas-ervaring willen zonder van hotel te wisselen",
+        "Diegenen die geïnteresseerd zijn in wandelen, of simpelweg berglucht en uitzichten",
+        "Een rustiger, koeler contrast ten opzichte van Marrakech"
+      ],
+      "gallery": [
+        {
+          "caption": "Het dorp Imlil aan de voet van de Hoge Atlas."
+        }
+      ]
+    },
+    "agadir-taghazout-day-trip": {
+      "name": "Dagexcursie van Agadir naar Taghazout",
+      "duration": "1 Dag",
+      "category": "Dagexcursie · Alleen op Offerte",
+      "highlights": [
+        "Atlantisch surfdorp, op 20 minuten van Agadir",
+        "De bekende golf van Anchor Point",
+        "Een actieve vissershaven en een ontspannen dorpssfeer",
+        "Een korte, ontspannen kustontsnapping vanuit Agadir"
+      ],
+      "description": "Een privé dagexcursie vanuit Agadir naar Taghazout, het Atlantische surfdorp 20 minuten langs de kust. Ooit een vissersdorp, combineert Taghazout nu een actieve haven met surfscholen, yogastudio's en cafés aan de zee — een ontspannen kustontsnapping vanuit Agadir voor een dag. Een privévoertuig met chauffeur brengt u dezelfde dag heen en terug.",
+      "routeCaption": "Agadir → Taghazout → Agadir. Een privé dagexcursie naar de Atlantische surfkust, op ongeveer 20 minuten van de stad.",
+      "itineraryDays": [
+        {
+          "day": 1,
+          "title": "Agadir → Taghazout → Agadir",
+          "desc": "Een ontspannen dag vanuit Agadir naar het surfdorp Taghazout en terug, met tijd bij de haven en de stranden.",
+          "stops": [
+            "Agadir",
+            "Taghazout",
+            "Terugkeer naar Agadir"
+          ]
+        }
+      ],
+      "included": [
+        "Privévoertuig met airconditioning voor de hele dag",
+        "Professionele Engelssprekende chauffeur",
+        "Brandstof",
+        "Ophalen en terugbrengen naar het hotel in Agadir"
+      ],
+      "excluded": [
+        "Internationale vluchten",
+        "Lunch en dranken",
+        "Surf- of yogalessen (lokaal beschikbaar, niet inbegrepen)",
+        "Fooien en persoonlijke uitgaven"
+      ],
+      "faq": [
+        {
+          "question": "Is dit een privéreis?",
+          "answer": "Ja — een voertuig en chauffeur alleen voor uw groep, geen gedeelde groepsreis."
+        },
+        {
+          "question": "Hoe laat vertrekken en komen we terug?",
+          "answer": "Vertrek- en terugkeertijden worden georganiseerd rond uw schema bij het boeken — stuur ons uw data en we bevestigen de tijden."
+        },
+        {
+          "question": "Is de lunch inbegrepen?",
+          "answer": "Nee — de lunch is niet inbegrepen, maar Taghazout heeft visgrillades en cafés nabij de haven."
+        },
+        {
+          "question": "Kan de reisroute worden aangepast?",
+          "answer": "Ja — elke MGA-reis is privé, zodat het tempo en de stops kunnen worden aangepast aan uw interesses. Laat ons weten wat u wenst bij het versturen van uw aanvraag."
+        },
+        {
+          "question": "Kan ik nu boeken en later betalen?",
+          "answer": "Ja. Een aanvraag versturen is gratis en verplicht u tot niets. We bevestigen eerst met u de data, de reisroute en de einprijs; een aanbetaling van 20% verzekert daarna de boeking, en de resterende 80% wordt betaald bij aankomst in Marokko."
+        }
+      ],
+      "suitableFor": [
+        "Reizigers die op zoek zijn naar een Atlantische kustontsnapping vanuit Agadir",
+        "Diegenen die graag surfers bekijken of tijd doorbrengen bij de zee",
+        "Een korte, ontspannen dag ver van het resortgebied"
+      ],
+      "gallery": [
+        {
+          "caption": "Taghazout, surfdorp aan de Atlantische Oceaan."
+        }
+      ]
     }
   },
   "blog": {
