@@ -3211,6 +3211,712 @@
           "answer": "Publicamos um preço inicial por pessoa para este percurso. O total exato depende de quantos viajam — o preço por pessoa desce à medida que o grupo cresce — e do alojamento escolhido, por isso confirmamos o valor final com as suas datas antes de qualquer pagamento. Pode pedir-nos para ajustar o itinerário antes."
         }
       ]
+    },
+    "tangier-3-day": {
+      "name": "3 Dias: Norte de Marrocos — Tânger, Chefchaouen e Tetuão",
+      "duration": "3 Dias / 2 Noites",
+      "category": "Rota do Norte de Marrocos",
+      "highlights": [
+        "A Kasbah de Tânger e vista sobre o Estreito de Gibraltar",
+        "A medina andaluza de Tetuão, Património da UNESCO",
+        "Chefchaouen, a cidade azul",
+        "As gargantas de Akchour e a Ponte de Deus",
+        "Um circuito compacto de regresso a Tânger"
+      ],
+      "description": "Um circuito privado de três dias pelo norte de Marrocos, com partida e regresso a Tânger. O percurso chega à medina andaluza encalada em branco de Tetuão, e depois a Chefchaouen durante duas noites, com um dia dedicado ao vale de Akchour pelas suas cascatas e o arco de pedra natural conhecido como Ponte de Deus. Um Marrocos diferente das rotas do deserto: montanhas verdes do Rife, arquitetura de inspiração espanhola e um ritmo mais lento e fresco.",
+      "routeCaption": "Tânger → Tetuão → Chefchaouen → Akchour → Chefchaouen → Tânger. Um circuito de ida e volta pelo Rife e pelo norte, de regresso ao seu ponto de chegada.",
+      "itineraryDays": [
+        {
+          "day": 1,
+          "title": "Tânger → Tetuão → Chefchaouen",
+          "desc": "Parta de Tânger e siga para sul até Tetuão, cuja medina classificada como Património da UNESCO foi construída por refugiados de Granada — uma das cidades antigas andaluzas mais bem preservadas de Marrocos. Continue até às montanhas do Rife, até Chefchaouen, para a primeira noite entre as suas ruas pintadas de azul.",
+          "stops": [
+            "Tânger",
+            "Tetuão (medina UNESCO)",
+            "Montanhas do Rife",
+            "Noite em: Chefchaouen (Pequeno-almoço)"
+          ]
+        },
+        {
+          "day": 2,
+          "title": "Chefchaouen → Vale de Akchour → Chefchaouen",
+          "desc": "Um dia inteiro no vale de Akchour, o contraponto selvagem de Chefchaouen: poças turquesa, gargantas arborizadas e a escolha entre uma caminhada até à pequena cascata ou até à maior, passando pelo arco natural em pedra calcária conhecido como Ponte de Deus. Regresso a Chefchaouen para uma segunda noite na mesma medina.",
+          "stops": [
+            "Cascatas de Akchour",
+            "Arco natural Ponte de Deus",
+            "Trilho florestal do Rife",
+            "Noite em: Chefchaouen (Pequeno-almoço)"
+          ]
+        },
+        {
+          "day": 3,
+          "title": "Chefchaouen → Tânger",
+          "desc": "Uma manhã livre para percorrer a medina de Chefchaouen antes do regresso a Tânger. Dependendo dos horários, o percurso pode fazer uma pausa no Cabo Espartel ou nas Grutas de Hércules, onde o Atlântico encontra o Mediterrâneo, antes do fim do circuito em Tânger.",
+          "stops": [
+            "Medina de Chefchaouen",
+            "Cabo Espartel (paragem opcional)",
+            "Grutas de Hércules (paragem opcional)",
+            "Fim: Tânger"
+          ]
+        }
+      ],
+      "included": [
+        "Veículo privado com ar condicionado durante todo o percurso",
+        "Motorista profissional falante de inglês",
+        "Combustível",
+        "Duas noites de alojamento em Chefchaouen, de acordo com o pacote escolhido",
+        "Recolha e regresso ao hotel em Tânger"
+      ],
+      "excluded": [
+        "Voos internacionais",
+        "Refeições e bebidas",
+        "Bilhetes de entrada em monumentos e museus",
+        "Gorjetas e despesas pessoais"
+      ],
+      "faq": [
+        {
+          "question": "Esta rota é diferente dos circuitos do Saara?",
+          "answer": "Sim. Este circuito permanece totalmente no norte de Marrocos — as montanhas do Rife, Chefchaouen e Tetuão — e não vai ao Saara. Se também desejar o deserto, peça-nos para combinar com um itinerário mais longo, ou veja o percurso de 5 dias de Tânger a Fez."
+        },
+        {
+          "question": "Qual é o grau de dificuldade do percurso de Akchour?",
+          "answer": "Há duas opções: um percurso mais curto até à pequena cascata, acessível à maioria dos níveis de forma física, e uma rota mais longa até à Ponte de Deus e à grande cascata, que implica mais escalada sobre rocha. Confirmamos qual se adapta ao seu grupo antes do próprio dia."
+        },
+        {
+          "question": "Este circuito pode começar noutro local que não Tânger?",
+          "answer": "Foi concebido como um circuito a partir de Tânger, já que a maioria dos viajantes chega ao norte de Marrocos de ferry a partir de Espanha ou de avião a Tânger. Pode discutir-se uma recolha no aeroporto de Tetuão se se adequar melhor à sua chegada."
+        },
+        {
+          "question": "Posso reservar agora e pagar depois?",
+          "answer": "Sim. Enviar um pedido é gratuito e não o compromete a nada. Confirmamos primeiro consigo as datas, o itinerário e o preço final; depois, um depósito de 20% garante a reserva e os restantes 80% são pagos à chegada a Marrocos."
+        }
+      ]
+    },
+    "tangier-5-day": {
+      "name": "5 Dias de Tânger a Fez via o Rife e o Norte de Marrocos",
+      "duration": "5 Dias / 4 Noites",
+      "category": "Rota do Norte de Marrocos",
+      "highlights": [
+        "Partida de Tânger, Estreito de Gibraltar",
+        "A medina andaluza de Tetuão",
+        "Duas noites em Chefchaouen com um dia completo em Akchour",
+        "A floresta de cedros do Atlas Médio e Ifrane",
+        "Chegada final a Fez"
+      ],
+      "description": "Um percurso privado de sentido único de Tânger a Fez, atravessando as montanhas do Rife e o Atlas Médio em vez da estrada do deserto a sul. Duas noites em Chefchaouen dão tempo real para o vale de Akchour, e depois o percurso sobe pela floresta de cedros até Ifrane antes de terminar na cidade imperial de Fez — uma introdução a Marrocos de norte a sul para viajantes que chegam de ferry ou avião a Tânger.",
+      "routeCaption": "Tânger → Tetuão → Chefchaouen → Akchour e o Rife → Atlas Médio e Ifrane → Fez. Um percurso privado de sentido único desde a costa norte até à cidade imperial de Fez.",
+      "itineraryDays": [
+        {
+          "day": 1,
+          "title": "Tânger → Tetuão → Chefchaouen",
+          "desc": "Parta de Tânger para Tetuão e a sua medina andaluza classificada como Património da UNESCO, e continue pelo Rife até Chefchaouen para a primeira das duas noites.",
+          "stops": [
+            "Tânger",
+            "Tetuão (medina UNESCO)",
+            "Noite em: Chefchaouen (Pequeno-almoço)"
+          ]
+        },
+        {
+          "day": 2,
+          "title": "Vale de Akchour — cascatas e a Ponte de Deus",
+          "desc": "Um dia inteiro no vale de Akchour: poças de rio, trilhos florestais e o arco de pedra natural conhecido como Ponte de Deus. Regresso ao mesmo alojamento em Chefchaouen para a segunda noite.",
+          "stops": [
+            "Cascatas de Akchour",
+            "Arco natural Ponte de Deus",
+            "Noite em: Chefchaouen (Pequeno-almoço)"
+          ]
+        },
+        {
+          "day": 3,
+          "title": "Chefchaouen → Atlas Médio → Ifrane",
+          "desc": "Deixe a cidade azul e suba até ao Atlas Médio. As florestas de cedros em torno de Ifrane e Azrou albergam macacos da Barbária selvagens, e a própria vila — arquitetura de estilo alpino construída nos anos 1930 — oferece um contraste fresco com a costa e o Rife.",
+          "stops": [
+            "Medina de Chefchaouen",
+            "Atlas Médio",
+            "Noite em: Ifrane (Pequeno-almoço)"
+          ]
+        },
+        {
+          "day": 4,
+          "title": "Ifrane → Fez",
+          "desc": "Um dia de viagem mais curto até Fez, capital cultural e espiritual de Marrocos. A tarde e a noite ficam livres para se instalar antes do dia guiado seguinte.",
+          "stops": [
+            "Floresta de cedros de Ifrane",
+            "Noite em: Fez (Pequeno-almoço)"
+          ]
+        },
+        {
+          "day": 5,
+          "title": "Dia guiado em Fez → fim do circuito",
+          "desc": "Um guia oficial local conduz pela medina de Fez el-Bali — os portões do Palácio Real, a Curtumaria Chouara, a Universidade Al Quaraouiyine e os souks. O circuito termina com transporte até ao seu hotel em Fez ou ao aeroporto.",
+          "stops": [
+            "Medina de Fez el-Bali",
+            "Curtumaria Chouara",
+            "Universidade Al Quaraouiyine",
+            "Fim: Fez"
+          ]
+        }
+      ],
+      "included": [
+        "Veículo privado com ar condicionado durante todo o percurso",
+        "Motorista profissional falante de inglês",
+        "Combustível",
+        "Alojamento durante quatro noites, de acordo com o pacote escolhido",
+        "Guia oficial local para o dia na medina de Fez",
+        "Recolha no hotel em Tânger e entrega em Fez"
+      ],
+      "excluded": [
+        "Voos internacionais",
+        "Refeições e bebidas",
+        "Bilhetes de entrada em monumentos e museus",
+        "Gorjetas e despesas pessoais"
+      ],
+      "faq": [
+        {
+          "question": "Porquê viajar de Tânger a Fez pelo norte em vez da rota do deserto?",
+          "answer": "Este itinerário é construído em torno do Rife e do norte de Marrocos em vez do Saara — Chefchaouen, Tetuão e Akchour, e depois as florestas de cedros do Atlas Médio. Se também desejar o Saara, as nossas rotas do deserto a partir de Fez continuam exatamente onde esta termina."
+        },
+        {
+          "question": "Este circuito termina em Fez?",
+          "answer": "Sim, é um percurso privado de sentido único que termina em Fez. A continuação da viagem — para sul, até Merzouga, ou para outro local — pode ser discutida como etapa separada uma vez lá."
+        },
+        {
+          "question": "Duas noites em Chefchaouen são suficientes?",
+          "answer": "Dão um dia inteiro para Akchour sem pressa, mais a noite para percorrer a medina — mais tempo do que uma única noite permitiria. Os grupos que queiram mais tempo no norte podem perguntar sobre prolongar a estadia."
+        },
+        {
+          "question": "Posso reservar agora e pagar depois?",
+          "answer": "Sim. Enviar um pedido é gratuito e não o compromete a nada. Confirmamos primeiro consigo as datas, o itinerário e o preço final; depois, um depósito de 20% garante a reserva e os restantes 80% são pagos à chegada a Marrocos."
+        }
+      ]
+    },
+    "marrakech-essaouira-2-day": {
+      "name": "2 Dias: De Marraquexe a Essaouira — Escapadela à Costa Atlântica",
+      "duration": "2 Dias / 1 Noite",
+      "category": "Escapadela Costeira",
+      "highlights": [
+        "Transporte privado de três horas até à costa atlântica",
+        "A medina de Essaouira, Património da UNESCO",
+        "As muralhas da Sqala du Port e o porto de pesca",
+        "Uma verdadeira mudança de ritmo em relação a Marraquexe",
+        "Ida e volta a Marraquexe"
+      ],
+      "description": "Uma breve escapadela privada de Marraquexe a Essaouira, o porto atlântico batido pelo vento que o Gabinete Nacional Marroquino de Turismo cita entre as cidades costeiras clássicas do país. A três horas da Cidade Vermelha, Essaouira troca os souks e o calor por ar marítimo, uma medina classificada como Património da UNESCO com ruas de persianas azuis, e as muralhas da Sqala du Port face à ondulação. Uma combinação de costa e cultura em vez de uma rota desértica — a forma mais curta de ver um lado genuinamente diferente de Marrocos a partir de Marraquexe.",
+      "routeCaption": "Marraquexe → Essaouira → Marraquexe. Uma breve escapadela privada à costa atlântica, a três horas da Cidade Vermelha.",
+      "itineraryDays": [
+        {
+          "day": 1,
+          "title": "Marraquexe → Essaouira",
+          "desc": "Parta de Marraquexe de manhã para as três horas de viagem até à costa. A tarde fica livre para percorrer a medina, as muralhas da Sqala du Port e o porto de pesca, ou simplesmente observar o Atlântico de um terraço junto ao porto.",
+          "stops": [
+            "Marraquexe",
+            "Medina de Essaouira",
+            "Sqala du Port",
+            "Noite em: Essaouira (Pequeno-almoço)"
+          ]
+        },
+        {
+          "day": 2,
+          "title": "Essaouira → Marraquexe",
+          "desc": "Uma manhã livre em Essaouira — o porto, a praia ou as muralhas na luz da manhã — antes do regresso a Marraquexe, com chegada no início da tarde.",
+          "stops": [
+            "Porto de Essaouira",
+            "Regresso a Marraquexe",
+            "Fim: Marraquexe"
+          ]
+        }
+      ],
+      "included": [
+        "Veículo privado com ar condicionado durante todo o percurso",
+        "Motorista profissional falante de inglês",
+        "Combustível",
+        "Uma noite de alojamento em Essaouira, de acordo com o pacote escolhido",
+        "Recolha e regresso ao hotel em Marraquexe"
+      ],
+      "excluded": [
+        "Voos internacionais",
+        "Refeições e bebidas",
+        "Aulas de kitesurf, surf ou outros desportos aquáticos (disponíveis localmente, não incluídas)",
+        "Bilhetes de entrada em monumentos e museus",
+        "Gorjetas e despesas pessoais"
+      ],
+      "faq": [
+        {
+          "question": "Este circuito faz parte de um itinerário pelo Saara?",
+          "answer": "Não — este é apenas um percurso costeiro, sem etapa no deserto. Os viajantes que desejem tanto a costa como o Saara numa só viagem devem considerar o nosso percurso de 8 dias por Marraquexe, Essaouira, Agadir e o Saara."
+        },
+        {
+          "question": "Uma noite em Essaouira é suficiente?",
+          "answer": "É uma escapadela genuína mas compacta — suficiente para a medina, as muralhas e o porto. Se preferir um dia inteiro livre na costa, peça-nos para prolongar a três dias."
+        },
+        {
+          "question": "Quanto tempo dura a viagem?",
+          "answer": "Cerca de três horas em cada sentido, por estrada asfaltada, com possibilidade de uma paragem pelo caminho, se desejar."
+        },
+        {
+          "question": "Posso reservar agora e pagar depois?",
+          "answer": "Sim. Enviar um pedido é gratuito e não o compromete a nada. Confirmamos primeiro consigo as datas, o itinerário e o preço final; depois, um depósito de 20% garante a reserva e os restantes 80% são pagos à chegada a Marrocos."
+        }
+      ]
+    },
+    "14-day-grand-morocco-journey": {
+      "name": "14 Dias: Grande Marrocos — Cidades Imperiais, Costa Atlântica, Saara e o Norte",
+      "duration": "14 Dias / 13 Noites",
+      "category": "Grande Viagem",
+      "highlights": [
+        "Marraquexe, a costa atlântica, o sul, o Saara, as cidades imperiais e o norte num único percurso privado",
+        "Duas noites completas em Erg Chebbi, incluindo um dia completo no deserto",
+        "Aït Ben Haddou, o vale do Dadès e as gargantas do Todra",
+        "Fez el-Bali com um guia oficial local",
+        "Chefchaouen e um final em Casablanca"
+      ],
+      "description": "O circuito privado completo de Marrocos para viajantes com duas semanas disponíveis: Marraquexe, a costa atlântica em Essaouira e Agadir, a estrada das kasbahs do sul via Ouarzazate e Aït Ben Haddou, os vales do Dadès e do Todra, duas noites completas nas dunas de Erg Chebbi, as cidades imperiais de Fez e Meknes, a cidade do Rife de Chefchaouen, e um final em Casablanca. Catorze dias são suficientes para percorrer as principais regiões do país sem transformar cada dia numa simples transferência — cada etapa deste percurso já existe como um dos nossos itinerários mais curtos, reunidos numa única viagem. Como um percurso tão longo varia enormemente segundo o ritmo, a estação e o alojamento escolhido, é orçamentado individualmente em vez de vendido a um preço fixo por pessoa.",
+      "routeCaption": "Marraquexe → Essaouira → Agadir → Ouarzazate e Aït Ben Haddou → Vale do Dadès → Gargantas do Todra → Merzouga e Erg Chebbi → Ifrane → Fez e Meknes → Chefchaouen → Rabat → Casablanca.",
+      "itineraryDays": [
+        {
+          "day": 1,
+          "title": "Chegada a Marraquexe",
+          "desc": "Instale-se e faça um primeiro passeio sem pressa pela medina e pela Jemaa el-Fna ao fim da tarde.",
+          "stops": [
+            "Noite em: Marraquexe (Pequeno-almoço)"
+          ]
+        },
+        {
+          "day": 2,
+          "title": "Marraquexe → Essaouira",
+          "desc": "Três horas de estrada até à costa atlântica. A tarde fica livre para a medina de Essaouira, Património da UNESCO, e as muralhas da Sqala du Port.",
+          "stops": [
+            "Medina de Essaouira",
+            "Noite em: Essaouira (Pequeno-almoço)"
+          ]
+        },
+        {
+          "day": 3,
+          "title": "Essaouira → Agadir",
+          "desc": "Continue pela costa até Agadir, a estância balnear construída de propósito de Marrocos, com tempo para o passeio marítimo ou a Kasbah Oufella ao pôr do sol.",
+          "stops": [
+            "Praia de Agadir",
+            "Noite em: Agadir (Pequeno-almoço)"
+          ]
+        },
+        {
+          "day": 4,
+          "title": "Agadir → Ouarzazate",
+          "desc": "Siga para o interior, até Ouarzazate, porta do pré-Saara, através da paisagem em constante mudança do sul de Marrocos.",
+          "stops": [
+            "Zona de Ouarzazate",
+            "Noite em: Ouarzazate (Pequeno-almoço)"
+          ]
+        },
+        {
+          "day": 5,
+          "title": "Ouarzazate → Aït Ben Haddou → Vale do Dadès",
+          "desc": "Visite o ksar de Aït Ben Haddou, Património da UNESCO, antes de continuar até ao vale do Dadès para a noite.",
+          "stops": [
+            "Aït Ben Haddou (UNESCO)",
+            "Noite em: Vale do Dadès (Jantar e Pequeno-almoço)"
+          ]
+        },
+        {
+          "day": 6,
+          "title": "Vale do Dadès → Gargantas do Todra → Merzouga",
+          "desc": "Atravesse as gargantas do Todra antes de chegar a Merzouga ao final da tarde para um passeio de camelo ao pôr do sol até Erg Chebbi e a primeira noite no acampamento do deserto.",
+          "stops": [
+            "Gargantas do Todra",
+            "Passeio de camelo ao pôr do sol",
+            "Noite em: acampamento do deserto de Erg Chebbi (Jantar e Pequeno-almoço)"
+          ]
+        },
+        {
+          "day": 7,
+          "title": "Um dia completo em Erg Chebbi",
+          "desc": "Nascer do sol sobre as dunas, e depois um dia completo em torno de Merzouga em vez de uma partida apressada — tempo com as comunidades do deserto, e novamente as dunas no fim da tarde, já mais fresco. Segunda noite no acampamento.",
+          "stops": [
+            "Nascer do sol sobre as dunas",
+            "Merzouga",
+            "Noite em: acampamento do deserto de Erg Chebbi (Jantar e Pequeno-almoço)"
+          ]
+        },
+        {
+          "day": 8,
+          "title": "Merzouga → Vale do Ziz → Ifrane → Fez",
+          "desc": "Siga para norte através dos oásis de palmeiras do vale do Ziz e das florestas de cedros do Atlas Médio em torno de Ifrane, com chegada a Fez ao final da tarde.",
+          "stops": [
+            "Vale do Ziz",
+            "Ifrane",
+            "Noite em: Fez (Pequeno-almoço)"
+          ]
+        },
+        {
+          "day": 9,
+          "title": "Dia guiado em Fez",
+          "desc": "Um guia oficial local conduz por Fez el-Bali — os portões do Palácio Real, a Curtumaria Chouara, a Universidade Al Quaraouiyine e os souks.",
+          "stops": [
+            "Medina de Fez el-Bali",
+            "Curtumaria Chouara",
+            "Noite em: Fez (Pequeno-almoço)"
+          ]
+        },
+        {
+          "day": 10,
+          "title": "Fez → Meknes → Chefchaouen",
+          "desc": "Uma paragem em Meknes, uma das históricas cidades imperiais de Marrocos, a caminho do norte, até às ruas azuis de Chefchaouen.",
+          "stops": [
+            "Meknes",
+            "Noite em: Chefchaouen (Pequeno-almoço)"
+          ]
+        },
+        {
+          "day": 11,
+          "title": "Chefchaouen",
+          "desc": "Um dia completo dentro e em torno da cidade azul — a medina, a praça Uta el-Hammam e o miradouro sobre a cidade — num ritmo deliberadamente mais lento depois de nove dias de estrada.",
+          "stops": [
+            "Medina de Chefchaouen",
+            "Noite em: Chefchaouen (Pequeno-almoço)"
+          ]
+        },
+        {
+          "day": 12,
+          "title": "Chefchaouen → Rabat",
+          "desc": "Siga para sul até Rabat, a capital de Marrocos, para a Kasbah dos Oudayas e a Torre Hassan.",
+          "stops": [
+            "Rabat",
+            "Noite em: Rabat (Pequeno-almoço)"
+          ]
+        },
+        {
+          "day": 13,
+          "title": "Rabat → Casablanca",
+          "desc": "Um último trajeto curto até Casablanca, com tempo para a Mesquita Hassan II junto ao Atlântico e as ruas art déco do centro da cidade.",
+          "stops": [
+            "Mesquita Hassan II",
+            "Noite em: Casablanca (Pequeno-almoço)"
+          ]
+        },
+        {
+          "day": 14,
+          "title": "Partida de Casablanca",
+          "desc": "Transporte até ao aeroporto de Casablanca, ou continuação conforme acordado no seu itinerário confirmado.",
+          "stops": [
+            "Fim: Casablanca"
+          ]
+        }
+      ],
+      "included": [
+        "Veículo privado com ar condicionado e motorista-guia durante todo o percurso, quando incluído no orçamento confirmado",
+        "Alojamento durante 13 noites, de acordo com o pacote escolhido, incluindo duas noites num acampamento do deserto perto de Merzouga",
+        "Guia oficial local para o dia na medina de Fez",
+        "A experiência do deserto em Erg Chebbi — passeio de camelo ao pôr do sol — quando incluída no itinerário confirmado",
+        "Recolha e entrega no hotel e no aeroporto"
+      ],
+      "excluded": [
+        "Voos internacionais",
+        "Refeições e bebidas",
+        "Bilhetes de entrada em monumentos e museus",
+        "Atividades opcionais como excursões de 4x4, quad ou um passeio de balão de ar quente",
+        "Gorjetas e despesas pessoais",
+        "Qualquer elemento não incluído no seu orçamento confirmado"
+      ],
+      "faq": [
+        {
+          "question": "Porque é que este circuito é apenas por orçamento quando os circuitos mais curtos têm um preço publicado?",
+          "answer": "Um percurso privado de catorze dias varia enormemente de acordo com a estação, o ritmo e o nível de alojamento escolhido, de uma forma que um único preço de referência não pode representar honestamente. Confirmamos o valor real depois de conhecermos as suas datas, o tamanho do grupo e as preferências."
+        },
+        {
+          "question": "Catorze dias são demasiado tempo, ou implicam demasiada condução?",
+          "answer": "É construído a partir das mesmas etapas dos nossos circuitos mais curtos, reunidas em vez de comprimidas — duas noites completas nas dunas em vez de uma, e paragens de várias noites em Fez e Chefchaouen, para que não seja uma cidade diferente todos os dias. Se duas semanas for mais do que deseja, pergunte-nos pelas versões de 7 ou 10 dias deste mesmo percurso."
+        },
+        {
+          "question": "O percurso pode ser abreviado ou reorganizado?",
+          "answer": "Sim. Este itinerário é um ponto de partida — cidades e regiões podem ser adicionadas, removidas ou reorganizadas depois de sabermos o que mais lhe importa e quantos dias tem realmente disponíveis."
+        },
+        {
+          "question": "A parte do deserto inclui duas noites?",
+          "answer": "Sim, este itinerário dá a Merzouga um dia completo em vez de uma visita ao pôr do sol seguida de partida — chegada com passeio de camelo no primeiro dia, e depois um dia completo em torno de Erg Chebbi antes de continuar para o norte."
+        },
+        {
+          "question": "Posso reservar agora e pagar depois?",
+          "answer": "Peça primeiro o itinerário. Confirmamos o percurso, o que está incluído e as condições de pagamento aplicáveis antes de qualquer pagamento."
+        }
+      ]
+    },
+    "marrakech-ourika-valley-day-trip": {
+      "name": "Excursão de Um Dia de Marraquexe ao Vale de Ourika",
+      "duration": "1 Dia",
+      "category": "Excursão de Um Dia · Apenas por Orçamento",
+      "highlights": [
+        "Paisagem verde do vale do Atlas, a menos de uma hora de Marraquexe",
+        "Aldeias berberes ao longo do rio Ourika",
+        "Uma caminhada guiada até às cascatas de Setti Fatma",
+        "Chá de menta junto ao rio e uma cooperativa de óleo de argan"
+      ],
+      "description": "Uma excursão privada de um dia a partir de Marraquexe ao vale de Ourika — a escapadela de montanha mais próxima da cidade, a menos de uma hora. O dia segue a estrada do vale, passando por aldeias berberes e restaurantes à beira-rio, até às cascatas de Setti Fatma, com uma paragem numa cooperativa local de óleo de argan pelo caminho. Um veículo privado com motorista leva-o e traz de volta no mesmo dia — sem necessidade de pernoitar.",
+      "routeCaption": "Marraquexe → Vale de Ourika → Marraquexe. Uma excursão privada de um dia aos contrafortes do Atlas, a menos de uma hora da cidade.",
+      "itineraryDays": [
+        {
+          "day": 1,
+          "title": "Marraquexe → Vale de Ourika → Marraquexe",
+          "desc": "Um dia completo a partir de Marraquexe ao vale de Ourika e de volta, com uma caminhada guiada até às cascatas de Setti Fatma e uma paragem numa cooperativa local de óleo de argan.",
+          "stops": [
+            "Marraquexe",
+            "Vale de Ourika",
+            "Cascatas de Setti Fatma",
+            "Regresso a Marraquexe"
+          ]
+        }
+      ],
+      "included": [
+        "Veículo privado com ar condicionado durante todo o dia",
+        "Motorista profissional falante de inglês",
+        "Combustível",
+        "Recolha e regresso ao hotel em Marraquexe"
+      ],
+      "excluded": [
+        "Voos internacionais",
+        "Almoço e bebidas",
+        "Bilhetes de entrada na cooperativa, monumentos ou atividades",
+        "Gorjetas e despesas pessoais"
+      ],
+      "faq": [
+        {
+          "question": "É uma viagem privada?",
+          "answer": "Sim — um veículo e motorista privados apenas para o seu grupo, não um circuito de grupo partilhado."
+        },
+        {
+          "question": "A que horas partimos e voltamos?",
+          "answer": "Os horários de partida e regresso são organizados de acordo com o seu plano no momento da reserva — envie-nos as suas datas e confirmaremos os horários."
+        },
+        {
+          "question": "O almoço está incluído?",
+          "answer": "Não — o almoço não está incluído, mas o vale tem restaurantes à beira-rio onde pode parar."
+        },
+        {
+          "question": "O itinerário pode ser personalizado?",
+          "answer": "Sim — todas as viagens MGA são privadas, pelo que o ritmo e as paragens podem ser ajustados aos seus interesses. Diga-nos o que deseja ao enviar o seu pedido."
+        },
+        {
+          "question": "Posso reservar agora e pagar depois?",
+          "answer": "Sim. Enviar um pedido é gratuito e não o compromete a nada. Confirmamos primeiro consigo as datas, o itinerário e o preço final; depois, um depósito de 20% garante a reserva e os restantes 80% são pagos à chegada a Marrocos."
+        }
+      ],
+      "suitableFor": [
+        "Viajantes que procuram um dia centrado na natureza fora de Marraquexe",
+        "Quem deseja paisagens de montanha e vale sem pernoitar",
+        "Uma excursão relaxada que combina bem com uma estadia urbana em Marraquexe"
+      ],
+      "gallery": [
+        {
+          "caption": "O verde vale de Ourika sob o Atlas."
+        }
+      ]
+    },
+    "marrakech-ouzoud-waterfalls-day-trip": {
+      "name": "Excursão de Um Dia de Marraquexe às Cascatas de Ouzoud",
+      "duration": "1 Dia",
+      "category": "Excursão de Um Dia · Apenas por Orçamento",
+      "highlights": [
+        "As cascatas mais conhecidas de Marrocos, a cerca de 150 km de Marraquexe",
+        "Cascatas em socalcos de 110 metros e miradouros à beira-rio",
+        "Macacos da Barbária nos olivais sobre as cascatas",
+        "Um dia completo fora da cidade"
+      ],
+      "description": "Uma excursão privada de um dia a partir de Marraquexe às cascatas de Ouzoud, as mais conhecidas de Marrocos, a cerca de 150 km da cidade. As cascatas em socalcos de 110 metros, os trilhos à beira-rio e os miradouros merecem um dia completo fora de Marraquexe, e os olivais sobre as cascatas são habitat de macacos da Barbária. Um veículo privado com motorista leva-o e traz de volta no mesmo dia.",
+      "routeCaption": "Marraquexe → Cascatas de Ouzoud → Marraquexe. Uma excursão privada de um dia às cascatas mais conhecidas de Marrocos, a cerca de 150 km da cidade.",
+      "itineraryDays": [
+        {
+          "day": 1,
+          "title": "Marraquexe → Cascatas de Ouzoud → Marraquexe",
+          "desc": "Um dia completo a partir de Marraquexe até às cascatas de Ouzoud e de volta, com tempo nos miradouros e trilhos à beira-rio das cascatas.",
+          "stops": [
+            "Marraquexe",
+            "Cascatas de Ouzoud",
+            "Regresso a Marraquexe"
+          ]
+        }
+      ],
+      "included": [
+        "Veículo privado com ar condicionado durante todo o dia",
+        "Motorista profissional falante de inglês",
+        "Combustível",
+        "Recolha e regresso ao hotel em Marraquexe"
+      ],
+      "excluded": [
+        "Voos internacionais",
+        "Almoço e bebidas",
+        "Passeios de barco, hammam ou outras atividades locais opcionais em Ouzoud (disponíveis localmente, não incluídas)",
+        "Gorjetas e despesas pessoais"
+      ],
+      "faq": [
+        {
+          "question": "É uma viagem privada?",
+          "answer": "Sim — um veículo e motorista privados apenas para o seu grupo, não um circuito de grupo partilhado."
+        },
+        {
+          "question": "A que horas partimos e voltamos?",
+          "answer": "Os horários de partida e regresso são organizados de acordo com o seu plano no momento da reserva — envie-nos as suas datas e confirmaremos os horários."
+        },
+        {
+          "question": "O almoço está incluído?",
+          "answer": "Não — o almoço não está incluído, por isso é livre de parar pelo caminho ou perto das cascatas."
+        },
+        {
+          "question": "O itinerário pode ser personalizado?",
+          "answer": "Sim — todas as viagens MGA são privadas, pelo que o ritmo e as paragens podem ser ajustados aos seus interesses. Diga-nos o que deseja ao enviar o seu pedido."
+        },
+        {
+          "question": "Posso reservar agora e pagar depois?",
+          "answer": "Sim. Enviar um pedido é gratuito e não o compromete a nada. Confirmamos primeiro consigo as datas, o itinerário e o preço final; depois, um depósito de 20% garante a reserva e os restantes 80% são pagos à chegada a Marrocos."
+        }
+      ],
+      "suitableFor": [
+        "Viajantes que querem ver as cascatas mais conhecidas de Marrocos num só dia",
+        "Quem gosta de passeios e miradouros à beira-rio",
+        "Uma pausa centrada na natureza longe da medina e dos souks de Marraquexe"
+      ],
+      "gallery": [
+        {
+          "caption": "As cascatas de Ouzoud em pleno caudal."
+        }
+      ]
+    },
+    "marrakech-imlil-day-trip": {
+      "name": "Excursão de Um Dia de Marraquexe a Imlil",
+      "duration": "1 Dia",
+      "category": "Excursão de Um Dia · Apenas por Orçamento",
+      "highlights": [
+        "Aldeia de montanha do Alto Atlas, a 90 minutos de Marraquexe",
+        "Vista sobre o ponto de partida para o Toubkal e o vale de Mizane",
+        "Nogueiras, trilhos de mulas e aldeias berberes",
+        "Um contraste de montanha mais fresco em relação a Marraquexe"
+      ],
+      "description": "Uma excursão privada de um dia a partir de Marraquexe até ao Alto Atlas, até Imlil, a aldeia de partida para o Monte Toubkal, a cerca de 90 minutos da cidade. O dia avança a um ritmo tranquilo por nogueiras, trilhos de mulas e aldeias berberes do vale de Mizane, para viajantes que desejam uma experiência de montanha sem mudar de hotel. Um veículo privado com motorista leva-o e traz de volta no mesmo dia.",
+      "routeCaption": "Marraquexe → Imlil → Marraquexe. Uma excursão privada de um dia ao Alto Atlas, a cerca de 90 minutos da cidade.",
+      "itineraryDays": [
+        {
+          "day": 1,
+          "title": "Marraquexe → Imlil → Marraquexe",
+          "desc": "Um dia completo a partir de Marraquexe até ao Alto Atlas, com tempo para caminhar em torno de Imlil e do vale de Mizane antes do regresso.",
+          "stops": [
+            "Marraquexe",
+            "Imlil",
+            "Vale de Mizane",
+            "Regresso a Marraquexe"
+          ]
+        }
+      ],
+      "included": [
+        "Veículo privado com ar condicionado durante todo o dia",
+        "Motorista profissional falante de inglês",
+        "Combustível",
+        "Recolha e regresso ao hotel em Marraquexe"
+      ],
+      "excluded": [
+        "Voos internacionais",
+        "Almoço e bebidas",
+        "Caminhada de montanha guiada além do passeio do dia (disponível localmente, não incluída)",
+        "Gorjetas e despesas pessoais"
+      ],
+      "faq": [
+        {
+          "question": "É uma viagem privada?",
+          "answer": "Sim — um veículo e motorista privados apenas para o seu grupo, não um circuito de grupo partilhado."
+        },
+        {
+          "question": "A que horas partimos e voltamos?",
+          "answer": "Os horários de partida e regresso são organizados de acordo com o seu plano no momento da reserva — envie-nos as suas datas e confirmaremos os horários."
+        },
+        {
+          "question": "O almoço está incluído?",
+          "answer": "Não — o almoço não está incluído, por isso é livre de parar na aldeia."
+        },
+        {
+          "question": "O itinerário pode ser personalizado?",
+          "answer": "Sim — todas as viagens MGA são privadas, pelo que o ritmo e as paragens podem ser ajustados aos seus interesses. Diga-nos o que deseja ao enviar o seu pedido."
+        },
+        {
+          "question": "Posso reservar agora e pagar depois?",
+          "answer": "Sim. Enviar um pedido é gratuito e não o compromete a nada. Confirmamos primeiro consigo as datas, o itinerário e o preço final; depois, um depósito de 20% garante a reserva e os restantes 80% são pagos à chegada a Marrocos."
+        }
+      ],
+      "suitableFor": [
+        "Viajantes que desejam uma experiência no Alto Atlas sem mudar de hotel",
+        "Quem se interessa por caminhadas, ou simplesmente por ar e vistas de montanha",
+        "Um contraste mais tranquilo e fresco em relação a Marraquexe"
+      ],
+      "gallery": [
+        {
+          "caption": "A aldeia de Imlil aos pés do Alto Atlas."
+        }
+      ]
+    },
+    "agadir-taghazout-day-trip": {
+      "name": "Excursão de Um Dia de Agadir a Taghazout",
+      "duration": "1 Dia",
+      "category": "Excursão de Um Dia · Apenas por Orçamento",
+      "highlights": [
+        "Aldeia de surf atlântica, a 20 minutos de Agadir",
+        "A conhecida onda de Anchor Point",
+        "Um porto de pesca ativo e uma atmosfera de aldeia descontraída",
+        "Uma escapadela costeira curta e relaxada a partir de Agadir"
+      ],
+      "description": "Uma excursão privada de um dia a partir de Agadir a Taghazout, a aldeia de surf atlântica a 20 minutos pela costa. Outrora uma aldeia de pescadores, Taghazout combina hoje um porto ativo com escolas de surf, estúdios de yoga e cafés junto ao mar — uma escapadela costeira relaxada a partir de Agadir por um dia. Um veículo privado com motorista leva-o e traz de volta no mesmo dia.",
+      "routeCaption": "Agadir → Taghazout → Agadir. Uma excursão privada de um dia à costa de surf atlântica, a cerca de 20 minutos da cidade.",
+      "itineraryDays": [
+        {
+          "day": 1,
+          "title": "Agadir → Taghazout → Agadir",
+          "desc": "Um dia relaxado a partir de Agadir até à aldeia de surf de Taghazout e de volta, com tempo junto ao porto e às praias.",
+          "stops": [
+            "Agadir",
+            "Taghazout",
+            "Regresso a Agadir"
+          ]
+        }
+      ],
+      "included": [
+        "Veículo privado com ar condicionado durante todo o dia",
+        "Motorista profissional falante de inglês",
+        "Combustível",
+        "Recolha e regresso ao hotel em Agadir"
+      ],
+      "excluded": [
+        "Voos internacionais",
+        "Almoço e bebidas",
+        "Aulas de surf ou yoga (disponíveis localmente, não incluídas)",
+        "Gorjetas e despesas pessoais"
+      ],
+      "faq": [
+        {
+          "question": "É uma viagem privada?",
+          "answer": "Sim — um veículo e motorista privados apenas para o seu grupo, não um circuito de grupo partilhado."
+        },
+        {
+          "question": "A que horas partimos e voltamos?",
+          "answer": "Os horários de partida e regresso são organizados de acordo com o seu plano no momento da reserva — envie-nos as suas datas e confirmaremos os horários."
+        },
+        {
+          "question": "O almoço está incluído?",
+          "answer": "Não — o almoço não está incluído, mas Taghazout tem grelhados de peixe e cafés junto ao porto."
+        },
+        {
+          "question": "O itinerário pode ser personalizado?",
+          "answer": "Sim — todas as viagens MGA são privadas, pelo que o ritmo e as paragens podem ser ajustados aos seus interesses. Diga-nos o que deseja ao enviar o seu pedido."
+        },
+        {
+          "question": "Posso reservar agora e pagar depois?",
+          "answer": "Sim. Enviar um pedido é gratuito e não o compromete a nada. Confirmamos primeiro consigo as datas, o itinerário e o preço final; depois, um depósito de 20% garante a reserva e os restantes 80% são pagos à chegada a Marrocos."
+        }
+      ],
+      "suitableFor": [
+        "Viajantes que procuram uma escapadela costeira atlântica a partir de Agadir",
+        "Quem gosta de observar surfistas ou passar tempo junto ao mar",
+        "Um dia curto e relaxado longe da zona de resorts"
+      ],
+      "gallery": [
+        {
+          "caption": "Taghazout, aldeia de surf no Atlântico."
+        }
+      ]
     }
   },
   "blog": {
