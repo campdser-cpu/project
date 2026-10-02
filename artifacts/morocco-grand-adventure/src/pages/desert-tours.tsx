@@ -95,6 +95,23 @@ export default function DesertTours() {
             <p className="text-muted-foreground leading-relaxed mb-6">
               {t('dt2_intro_p2')}
             </p>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              {(() => {
+                const [before, after] = t('jx_sahara_guide_cta').split('{link}');
+                return (
+                  <>
+                    {before}
+                    <Link
+                      href="/merzouga-guide/sahara-desert-guide"
+                      className="text-primary font-semibold underline decoration-dotted underline-offset-2 hover:text-primary/80"
+                    >
+                      {t('jx_sahara_guide_link')}
+                    </Link>
+                    {after}
+                  </>
+                );
+              })()}
+            </p>
           </div>
         </div>
       </section>

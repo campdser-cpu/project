@@ -132,6 +132,9 @@ export const journeyGaps: Partial<Record<string, Record<string, string>>> = {
     jx_day_flow_heading: 'What Your Day Looks Like',
     jx_suitable_for_heading: 'Who This Trip Is For',
     jx_day_trip_no_overnight: 'Day trip — no overnight stay',
+    // ── Sahara pillar cross-link ─────────────────────────────────────────────
+    jx_sahara_guide_cta: 'Planning a desert trip? Our complete {link} covers Erg Chebbi, camel treks, desert camps, and how Marrakech and Fes both reach the dunes.',
+    jx_sahara_guide_link: 'Sahara Desert Travel Guide',
   },
   fr: {
     jx_why_choose: 'Pourquoi choisir cet itinéraire',
@@ -243,6 +246,8 @@ export const journeyGaps: Partial<Record<string, Record<string, string>>> = {
     jx_day_flow_heading: 'À quoi ressemble votre journée',
     jx_suitable_for_heading: 'Pour qui est ce voyage',
     jx_day_trip_no_overnight: "Excursion d'une journée — sans nuitée",
+    jx_sahara_guide_cta: 'Vous planifiez un voyage dans le désert ? Notre {link} complet couvre l’Erg Chebbi, les treks à dos de chameau, les camps du désert, et comment Marrakech et Fès rejoignent toutes deux les dunes.',
+    jx_sahara_guide_link: 'Guide complet du désert du Sahara',
   },
   es: {
     jx_why_choose: 'Por qué elegir este itinerario',
@@ -354,6 +359,8 @@ export const journeyGaps: Partial<Record<string, Record<string, string>>> = {
     jx_day_flow_heading: 'Cómo es tu día',
     jx_suitable_for_heading: 'Para quién es este viaje',
     jx_day_trip_no_overnight: 'Excursión de un día — sin pernoctación',
+    jx_sahara_guide_cta: '¿Estás planeando un viaje al desierto? Nuestra {link} completa cubre Erg Chebbi, los treks en camello, los campamentos del desierto, y cómo tanto Marrakech como Fez llegan hasta las dunas.',
+    jx_sahara_guide_link: 'Guía completa del desierto del Sahara',
   },
   it: {
     jx_why_choose: 'Perché scegliere questo itinerario',
@@ -465,6 +472,8 @@ export const journeyGaps: Partial<Record<string, Record<string, string>>> = {
     jx_day_flow_heading: 'Come sarà la tua giornata',
     jx_suitable_for_heading: 'Per chi è pensato questo viaggio',
     jx_day_trip_no_overnight: 'Escursione di un giorno — senza pernottamento',
+    jx_sahara_guide_cta: 'Stai pianificando un viaggio nel deserto? La nostra {link} completa copre l’Erg Chebbi, i trekking in cammello, i campi nel deserto, e come sia Marrakech che Fes raggiungono le dune.',
+    jx_sahara_guide_link: 'Guida completa al deserto del Sahara',
   },
   de: {
     jx_why_choose: 'Warum diese Route',
@@ -576,6 +585,8 @@ export const journeyGaps: Partial<Record<string, Record<string, string>>> = {
     jx_day_flow_heading: 'So könnte Ihr Tag aussehen',
     jx_suitable_for_heading: 'Für wen diese Reise geeignet ist',
     jx_day_trip_no_overnight: 'Tagesausflug — keine Übernachtung',
+    jx_sahara_guide_cta: 'Planen Sie eine Wüstenreise? Unser vollständiger {link} behandelt Erg Chebbi, Kamelritte, Wüstencamps und wie Marrakesch und Fès beide die Dünen erreichen.',
+    jx_sahara_guide_link: 'Sahara-Wüsten-Reiseführer',
   },
   nl: {
     jx_why_choose: 'Waarom deze route kiezen',
@@ -687,6 +698,8 @@ export const journeyGaps: Partial<Record<string, Record<string, string>>> = {
     jx_day_flow_heading: 'Zo ziet uw dag eruit',
     jx_suitable_for_heading: 'Voor wie deze reis geschikt is',
     jx_day_trip_no_overnight: 'Dagtrip — geen overnachting',
+    jx_sahara_guide_cta: 'Plant u een woestijnreis? Onze volledige {link} behandelt Erg Chebbi, kameeltrektochten, woestijnkampen, en hoe Marrakech en Fez beide de duinen bereiken.',
+    jx_sahara_guide_link: 'Sahara-woestijngids',
   },
   pt: {
     jx_why_choose: 'Porquê escolher este itinerário',
@@ -798,6 +811,8 @@ export const journeyGaps: Partial<Record<string, Record<string, string>>> = {
     jx_day_flow_heading: 'Como é o seu dia',
     jx_suitable_for_heading: 'Para quem é esta viagem',
     jx_day_trip_no_overnight: 'Excursão de um dia — sem pernoite',
+    jx_sahara_guide_cta: 'Está a planear uma viagem ao deserto? O nosso {link} completo abrange Erg Chebbi, passeios de camelo, acampamentos no deserto, e como Marrakech e Fez chegam às dunas.',
+    jx_sahara_guide_link: 'Guia completo do deserto do Saara',
   },
   zh: {
     jx_why_choose: '为什么选择这条线路',
@@ -909,6 +924,8 @@ export const journeyGaps: Partial<Record<string, Record<string, string>>> = {
     jx_day_flow_heading: '您的一天行程',
     jx_suitable_for_heading: '适合人群',
     jx_day_trip_no_overnight: '一日游 — 无需过夜',
+    jx_sahara_guide_cta: '正在计划沙漠之旅吗?我们的完整{link}涵盖谢比沙丘、骆驼之旅、沙漠营地,以及马拉喀什和非斯如何前往沙丘。',
+    jx_sahara_guide_link: '撒哈拉沙漠旅行指南',
   },
   ja: {
     jx_why_choose: 'この行程を選ぶ理由',
@@ -1020,6 +1037,8 @@ export const journeyGaps: Partial<Record<string, Record<string, string>>> = {
     jx_day_flow_heading: '1日の流れ',
     jx_suitable_for_heading: 'こんな方におすすめ',
     jx_day_trip_no_overnight: '日帰り旅行 — 宿泊なし',
+    jx_sahara_guide_cta: '砂漠の旅を計画中ですか?完全版の{link}では、エルグ・シェビ、ラクダトレッキング、砂漠キャンプ、そしてマラケシュとフェズから砂丘へのアクセス方法をご紹介しています。',
+    jx_sahara_guide_link: 'サハラ砂漠旅行ガイド',
   },
   ko: {
     jx_why_choose: '이 일정을 선택하는 이유',
@@ -1131,6 +1150,8 @@ export const journeyGaps: Partial<Record<string, Record<string, string>>> = {
     jx_day_flow_heading: '하루 일정 살펴보기',
     jx_suitable_for_heading: '이런 분들에게 추천합니다',
     jx_day_trip_no_overnight: '당일 여행 — 숙박 없음',
+    jx_sahara_guide_cta: '사막 여행을 계획 중이신가요? 저희의 완벽한 {link}에서는 에르그 쉬비, 낙타 트레킹, 사막 캠프, 그리고 마라케시와 페스에서 사막까지 가는 방법을 모두 다룹니다.',
+    jx_sahara_guide_link: '사하라 사막 여행 가이드',
   },
   ar: {
     jx_why_choose: 'لماذا تختار هذا البرنامج',
@@ -1242,5 +1263,7 @@ export const journeyGaps: Partial<Record<string, Record<string, string>>> = {
     jx_day_flow_heading: 'كيف يبدو يومك',
     jx_suitable_for_heading: 'لمن تناسب هذه الرحلة',
     jx_day_trip_no_overnight: 'رحلة يومية — بدون مبيت',
+    jx_sahara_guide_cta: 'هل تخطط لرحلة إلى الصحراء؟ يغطي {link} الكامل الخاص بنا عرق الشبي، ورحلات الجمال، والمخيمات الصحراوية، وكيفية وصول كل من مراكش وفاس إلى الكثبان الرملية.',
+    jx_sahara_guide_link: 'دليل السفر إلى الصحراء الكبرى',
   },
 };
