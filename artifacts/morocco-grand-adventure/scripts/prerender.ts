@@ -34,7 +34,7 @@ import { fileURLToPath } from 'node:url';
 
 import { destinations, contactInfo, reviews, type Review, type Tour, type Destination } from '../src/data/content';
 import { BLOG_ARTICLE_SECTIONS, BLOG_ARTICLE_CTA } from '../src/data/blog-article-sections';
-import { CITY_HUBS, TOUR_DEPARTURE_CITY, CITY_HUB_DURATIONS, tourIdsForCity, tourDurationDays, DAY_TRIP_PRODUCT_IDS } from '../src/data/tour-hierarchy';
+import { CITY_HUBS, TOUR_DEPARTURE_CITY, CITY_HUB_DURATIONS, tourIdsForCity, tourDurationDays, DAY_TRIP_PRODUCT_IDS, FEATURED_TOUR_IDS } from '../src/data/tour-hierarchy';
 import { MERZOUGA_GUIDES, COMPARISONS, TRAVEL_INFO, type HubPage } from '../src/data/seoHub';
 import { localizedComparisonMeta } from '../src/data/comparison-meta-i18n';
 import { getLocalizedTourDepth } from '../src/i18n/content';
@@ -329,7 +329,10 @@ const OG_LOCALE: Record<string, string> = {
 // ── Content builders (pulled from the app's own data — no invented facts) ────
 function buildHomeContent(lang: Lang): string {
   const destNames = getLocalizedDestinations(lang).slice(0, 8).map((d) => `      <li>${link(`${SITE_URL}/${lang}/destinations/${d.id}`, d.name)}</li>`).join('\n');
-  const tourNames = getLocalizedTours(lang).map((t) => `      <li>${link(`${SITE_URL}/${lang}/tours/${t.id}`, t.name)}</li>`).join('\n');
+  // Mirrors the runtime homepage's curated "Featured Tours" (FEATURED_TOUR_IDS,
+  // src/data/tour-hierarchy.ts) — not the full 31-tour catalogue, which is
+  // what /tours and the departure-city hubs below already link to in full.
+  const tourNames = FEATURED_TOUR_IDS.map((id) => getLocalizedTour(id, lang)).filter((t): t is NonNullable<typeof t> => Boolean(t)).map((t) => `      <li>${link(`${SITE_URL}/${lang}/tours/${t.id}`, t.name)}</li>`).join('\n');
   // Departure-city tour hubs — mirrors the runtime homepage "Departure from"
   // city-selector + product grid, so crawlers see the same City → Tours
   // hierarchy users navigate, including each city's real tour count.
@@ -362,15 +365,18 @@ function buildHomeContent(lang: Lang): string {
   // re-renders the identical poster — by then it is cache-warm, so the LCP
   // candidate paints almost instantly.
   const lcpPoster = `<picture>\n      <source media="(min-width: 1024px)" type="image/webp" srcset="/images/hero/sahara-caravan-desktop-1280w.webp 1280w, /images/hero/sahara-caravan-desktop-1920w.webp 1920w" sizes="100vw" />\n      <img class="prerendered-lcp-poster" src="/images/hero/sahara-camel-riders-poster.webp" alt="" aria-hidden="true" width="720" height="1280" fetchpriority="high" />\n    </picture>\n`;
-  // Where to start: the same six doors the page shows, so the crawlable
-  // snapshot links into the list, the destinations, the guide and the basics.
+  // Where to start: the same eight primary paths the page shows, so the
+  // crawlable snapshot links into tours, the Trip Finder, destinations, day
+  // trips, the Sahara, custom trips, student travel and the travel guide.
   const discovery = [
-    { rest: '/things-to-do-in-morocco', label: 'ttd_footer_link' },
+    { rest: '/tours', label: 'nav_tours' },
+    { rest: '/trip-finder', label: 'tf_badge' },
     { rest: '/destinations', label: 'nav_destinations' },
-    { rest: '/merzouga-guide', label: 'footer_merzouga_guide' },
     { rest: '/day-trips', label: 'nav_day_trips' },
+    { rest: '/desert-tours', label: 'nav_sahara_desert_tours' },
+    { rest: '/trip-builder', label: 'nav_build_journey' },
+    { rest: '/student-tours', label: 'st_tours_label' },
     { rest: '/travel-info', label: 'dest_travel_info' },
-    { rest: '/gallery', label: 'nav_gallery' },
   ].map((d) => link(`${SITE_URL}/${lang}${d.rest}`, tr(lang, d.label)));
   const discoveryBlock = h2(tr(lang, 'home_start_title')) + paragraph(tr(lang, 'home_start_sub')) + ul(discovery);
   return lcpPoster + heroH1Block + paragraph(tr(lang, 'hero_subtext')) + discoveryBlock + h2(tr(lang, 'section_destinations') || 'Top Destinations') + `    <ul>\n${destNames}\n    </ul>\n` + h2(tr(lang, 'section_tours') || 'Featured Tours') + `    <ul>\n${tourNames}\n    </ul>\n` + hubBlock + h2(tr(lang, 'section_reviews') || 'Traveler Stories') + `<div class="prerendered-reviews-container">\n${reviewBlocks}\n    </div>\n`;

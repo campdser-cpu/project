@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect, lazy, Suspense } from 'react';
 import { motion, type Variants } from 'framer-motion';
-import { Link, useLocation } from 'wouter';
+import { Link } from 'wouter';
 import { Star, MapPin, CheckCircle2, ChevronRight, Calendar, Users, Globe, Instagram, Phone, Search, Route, Compass, FileText, ShieldCheck, ExternalLink, MessageCircle } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { Layout } from '../components/layout/Layout';
@@ -19,7 +19,7 @@ import { TripadvisorWidget } from '../components/ui/TripadvisorWidget';
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from '../components/ui/carousel';
 import { TourCard } from '../components/tours/TourCard';
 import { fmtTemplate } from '../components/tours/intl';
-import { CITY_HUBS, TOUR_DEPARTURE_CITY, type DepartureCity } from '@/data/tour-hierarchy';
+import { CITY_HUBS, TOUR_DEPARTURE_CITY, FEATURED_TOUR_IDS, type DepartureCity } from '@/data/tour-hierarchy';
 
 /** Lazy-load the Leaflet map so its ~150 kB chunk (+ OpenStreetMap tiles) is
  *  only fetched once the map approaches the viewport — the homepage stays
@@ -118,21 +118,26 @@ function fmtTrust(label: string, count?: number): string {
   return count == null ? label : label.split('{n}').join(String(count));
 }
 
-// Six doors into the site for a visitor who is still deciding. Labels reuse the
-// navigation vocabulary; the one-liners are authored per language.
+// Primary paths for a visitor who is still deciding "what kind of Morocco
+// trip am I looking for?" — every door is a real, already-built page; labels
+// reuse existing navigation vocabulary, one-liners are authored per language.
 const DISCOVERY = [
-  { href: '/things-to-do-in-morocco', label: 'ttd_footer_link', desc: 'home_start_ttd' },
+  { href: '/tours', label: 'nav_tours', desc: 'home_start_tours' },
+  { href: '/trip-finder', label: 'tf_badge', desc: 'home_start_finder' },
   { href: '/destinations', label: 'nav_destinations', desc: 'home_start_dest' },
-  { href: '/merzouga-guide', label: 'footer_merzouga_guide', desc: 'home_start_guide' },
   { href: '/day-trips', label: 'nav_day_trips', desc: 'home_start_day' },
+  { href: '/desert-tours', label: 'nav_sahara_desert_tours', desc: 'home_start_sahara' },
+  { href: '/trip-builder', label: 'nav_build_journey', desc: 'home_start_custom' },
+  { href: '/student-tours', label: 'st_tours_label', desc: 'home_start_student' },
   { href: '/travel-info', label: 'dest_travel_info', desc: 'home_start_info' },
-  { href: '/gallery', label: 'nav_gallery', desc: 'home_start_gallery' },
 ] as const;
 
 export default function Home() {
   const { t, lang } = useLanguage();
-  const [, setLocation] = useLocation();
   const tours = getLocalizedTours(lang);
+  const featuredTours = FEATURED_TOUR_IDS
+    .map((id) => tours.find((tour) => tour.id === id))
+    .filter((tour): tour is NonNullable<typeof tour> => Boolean(tour));
   const destinations = getLocalizedDestinations(lang);
   const igItems = [
   { src: "/images/personal/guests-sunset.webp", alt: t('home_ig_alt1') },
@@ -153,10 +158,6 @@ export default function Home() {
   }));
   const selectedDeparture = toursByCity.find((c) => c.hub.id === departCity) ?? toursByCity[0];
 
-  // Search State
-  const [searchCity, setSearchCity] = useState('');
-  const [searchDuration, setSearchDuration] = useState('');
-  const [searchStyle, setSearchStyle] = useState('');
   const [heroVideoReady, setHeroVideoReady] = useState(false);
 
     // The poster is the LCP background image and is preloaded in the document
@@ -226,16 +227,6 @@ export default function Home() {
   // Mobile: prefer the lightweight poster. The video only loads above the fold
   // on desktop; below a small breakpoint we never mount it unless the user
   // explicitly interacts (pointer/key), which the effect above already honors.
-  
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
-    const params = new URLSearchParams();
-    if (searchCity) params.set('city', searchCity);
-    if (searchDuration) params.set('duration', searchDuration);
-    if (searchStyle) params.set('style', searchStyle);
-    const query = params.toString();
-    setLocation(query ? `/tours?${query}` : '/tours');
-  };
 
   return (
     <Layout>
@@ -357,73 +348,32 @@ export default function Home() {
         </motion.button>
       </section>
 
-      {/* Tour Search Bar */}
-      <section className="relative z-20 -mt-16 container mx-auto px-4 max-w-6xl hidden lg:block">
-        <motion.div 
+      {/* Trip Finder CTA — replaces the old desktop-only (hidden below "lg")
+          select-based search bar, which left mobile visitors with no inline
+          discovery tool at all. Links to the guided /trip-finder page, which
+          works identically well on every screen size and shares its filter
+          logic with /tours, so there is only one discovery tool to maintain
+          rather than two that could silently drift apart. */}
+      <section className="relative z-20 -mt-10 md:-mt-16 container mx-auto px-4 max-w-4xl">
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="bg-background/80 backdrop-blur-xl border border-border shadow-2xl p-6 rounded-2xl"
+          className="bg-background/90 backdrop-blur-xl border border-border shadow-2xl p-5 md:p-7 rounded-2xl flex flex-col sm:flex-row items-center gap-4 sm:gap-6"
         >
-          <form onSubmit={handleSearch} className="flex items-center gap-4">
-            <div className="flex-1 border-r border-border pr-4">
-              <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider block mb-1">{t('search_starting_point')}</label>
-              <div className="flex items-center gap-2">
-                                <MapPin className="w-5 h-5 text-primary" aria-hidden="true" />
-                <select 
-                  value={searchCity} 
-                  onChange={(e) => setSearchCity(e.target.value)}
-                  className="w-full bg-transparent text-foreground font-medium focus:outline-none appearance-none cursor-pointer"
-                >
-                  <option value="">{t('search_any_city')}</option>
-                  <option value="marrakech">Marrakech</option>
-                  <option value="casablanca">Casablanca</option>
-                  <option value="tangier">Tangier</option>
-                  <option value="fes">Fes</option>
-                </select>
-              </div>
+          <div className="flex items-center gap-3 flex-1 text-center sm:text-left">
+            <Search className="hidden sm:block w-6 h-6 text-primary shrink-0" aria-hidden="true" />
+            <div>
+              <p className="font-serif text-lg md:text-xl text-foreground">{t('tf_heading')}</p>
+              <p className="text-sm text-muted-foreground">{t('tf_sub')}</p>
             </div>
-            
-            <div className="flex-1 border-r border-border px-4">
-              <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider block mb-1">{t('search_duration')}</label>
-              <div className="flex items-center gap-2">
-                <Calendar className="w-5 h-5 text-primary" />
-                <select 
-                  value={searchDuration} 
-                  onChange={(e) => setSearchDuration(e.target.value)}
-                  className="w-full bg-transparent text-foreground font-medium focus:outline-none appearance-none cursor-pointer"
-                >
-                  <option value="">{t('search_any_duration')}</option>
-                  <option value="1-2">1-2 {t('days')}</option>
-                  <option value="3-4">3-4 {t('days')}</option>
-                  <option value="5-7">5-7 {t('days')}</option>
-                  <option value="8-14">8-14 {t('days')}</option>
-                </select>
-              </div>
-            </div>
-
-            <div className="flex-1 px-4">
-              <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider block mb-1">{t('search_style')}</label>
-              <div className="flex items-center gap-2">
-                <Star className="w-5 h-5 text-primary" />
-                <select 
-                  value={searchStyle} 
-                  onChange={(e) => setSearchStyle(e.target.value)}
-                  className="w-full bg-transparent text-foreground font-medium focus:outline-none appearance-none cursor-pointer"
-                >
-                  <option value="">{t('search_any_style')}</option>
-                  <option value="desert">{t('search_style_desert')}</option>
-                  <option value="imperial">{t('search_style_imperial')}</option>
-                  <option value="mountains">{t('search_style_mountains')}</option>
-                  <option value="coastal">{t('search_style_coastal')}</option>
-                </select>
-              </div>
-            </div>
-
-            <button type="submit" className="bg-primary text-primary-foreground px-8 py-4 rounded-xl font-bold tracking-wide hover:bg-primary/90 transition-colors flex items-center gap-2 shrink-0 h-full">
-              <Search className="w-5 h-5" /> {t('search_find_tour')}
-            </button>
-          </form>
+          </div>
+          <Link
+            href="/trip-finder"
+            className="w-full sm:w-auto shrink-0 bg-primary text-primary-foreground px-7 py-3.5 rounded-full font-bold tracking-wide hover:bg-primary/90 transition-all hover:-translate-y-0.5 flex items-center justify-center gap-2"
+          >
+            {t('tf_badge')} <ChevronRight className="w-4 h-4" aria-hidden="true" />
+          </Link>
         </motion.div>
       </section>
 
@@ -649,7 +599,7 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10">
-            {tours.map((tour, index) => (
+            {featuredTours.map((tour, index) => (
               <motion.div 
                 key={tour.id}
                 initial={{ opacity: 0, y: 30 }}

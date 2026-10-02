@@ -303,3 +303,18 @@ export const DAY_TRIP_PRODUCT_IDS = [
   'marrakech-imlil-day-trip',
   'agadir-taghazout-day-trip',
 ];
+
+/**
+ * A curated cross-section for the homepage's "Featured Tours" — not the full
+ * catalogue (browsing all of it lives at /tours and the departure-city
+ * carousel). Single source of truth for src/pages/home.tsx and its
+ * prerendered mirror (scripts/prerender.ts).
+ */
+export const FEATURED_TOUR_IDS = [
+  '3-day-sahara-marrakech',
+  '7-day-imperial-cities-sahara-escape',
+  'marrakech-ourika-valley-day-trip',
+  'family-morocco-adventure',
+  'honeymoon-morocco',
+  '5-day-imperial-cities',
+];
