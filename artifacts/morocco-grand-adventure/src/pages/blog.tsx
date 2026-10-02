@@ -24,6 +24,8 @@ export default function Blog() {
       title={t('blog_title')}
       subtitle={t('blog_subtitle')}
       trustBadges={defaultTrustBadges()}
+      ctaText={t('tours_view_all')}
+      ctaLink="/tours"
     >
       {/* Blog grid */}
       <section className="py-16 md:py-24 bg-background">
