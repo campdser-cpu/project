@@ -19,7 +19,9 @@ import { catalogImage, imagesForDestination, DEST_FOOD_IMAGE, type CatalogImage 
 import { DESTINATION_SOURCES, SOURCES } from '@/data/sources';
 import LibraryPhotoGrid from '@/components/LibraryPhotoGrid';
 import { publishablePhotosForDestination } from '@/data/photoLibrary';
-import { destinationImageAlt } from '@/data/content';
+import { destinationImageAlt, tours as allTours } from '@/data/content';
+import { CITY_HUBS, DAY_TRIP_PRODUCT_IDS, TOUR_DEPARTURE_CITY, type DepartureCity } from '@/data/tour-hierarchy';
+import { trackEvent } from '@/lib/analytics';
 
 // Semantic catalog photo — responsive, lazy, with intrinsic dimensions (no CLS).
 function CatalogPhoto({ img, sizes, className }: { img: CatalogImage; sizes: string; className?: string }) {
@@ -35,6 +37,74 @@ function CatalogPhoto({ img, sizes, className }: { img: CatalogImage; sizes: str
       decoding="async"
       className={className}
     />
+  );
+}
+
+/**
+ * "Plan a trip from {city}" — real product-discovery links for a departure
+ * city, each one filtered to products that genuinely exist: real day trips
+ * (if the city has any), the city's own tour hub, and duration-filtered
+ * views of the same real inventory /tours already serves (src/data/
+ * tour-hierarchy.ts DURATION_BUCKETS) — no new indexable pages, same
+ * deterministic filters the Trip Finder and /tours already use.
+ */
+function DeparturePlanSection({ cityId, t }: { cityId: DepartureCity; t: (key: string) => string }) {
+  const hub = CITY_HUBS.find((h) => h.id === cityId);
+  if (!hub) return null;
+  const dayTripIds = DAY_TRIP_PRODUCT_IDS.filter((id) => TOUR_DEPARTURE_CITY[id] === cityId);
+  const dayTripCount = dayTripIds.length;
+  const cityTourCount = allTours.filter((tour) => TOUR_DEPARTURE_CITY[tour.id] === cityId).length;
+
+  const links: { href: string; label: string; onClick?: () => void }[] = [];
+  if (dayTripCount > 0) {
+    links.push({
+      href: `/tours?city=${cityId}&duration=1`,
+      label: `${t('nav_day_trips')} (${dayTripCount})`,
+      onClick: () => trackEvent('day_trip_click', { source_page: 'destination-detail', city: cityId }),
+    });
+  }
+  links.push({ href: `/tours?city=${cityId}&style=desert`, label: t('tours_style_desert') });
+  links.push({ href: `/tours?city=${cityId}&duration=2-3`, label: t('tours_dur_2_3') });
+  links.push({ href: `/tours?city=${cityId}&duration=4-6`, label: t('tours_dur_4_6') });
+
+  return (
+    <section className="py-16 bg-muted/40 border-t border-border">
+      <div className="container mx-auto px-4 max-w-6xl">
+        <div className="text-center mb-10">
+          <span className="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">{t('tf_badge')}</span>
+          <h2 className="font-serif text-3xl md:text-4xl text-foreground">
+            {t('hub_private_title').replace('{city}', t(`hub_${cityId}_name`))}
+          </h2>
+          <p className="text-muted-foreground mt-3 max-w-2xl mx-auto">{cityTourCount} {cityTourCount === 1 ? t('tours_tour') : t('tours_tours')}</p>
+        </div>
+        <div className="flex flex-wrap items-center justify-center gap-3 mb-6">
+          {links.map((l) => (
+            <Link
+              key={l.href}
+              href={l.href}
+              onClick={l.onClick}
+              className="rounded-full border border-border bg-background px-5 py-2.5 text-sm font-semibold text-foreground hover:border-primary hover:text-primary transition-colors"
+            >
+              {l.label}
+            </Link>
+          ))}
+        </div>
+        <div className="flex flex-wrap items-center justify-center gap-4">
+          <Link
+            href={`/tours/from-${hub.slug}`}
+            className="inline-flex items-center gap-2 bg-foreground text-background hover:bg-primary px-6 py-3 rounded-full text-sm font-bold transition-colors"
+          >
+            {t('tours_view_all')} <ChevronRight className="w-4 h-4" aria-hidden="true" />
+          </Link>
+          <Link
+            href="/trip-builder"
+            className="inline-flex items-center gap-2 border border-primary text-primary hover:bg-primary hover:text-primary-foreground px-6 py-3 rounded-full text-sm font-bold transition-colors"
+          >
+            {t('tf_custom_cta')}
+          </Link>
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -455,6 +525,13 @@ export default function DestinationDetail() {
           </div>
         </div>
       </section>
+
+      {/* Departure-city product discovery: only the 5 real departure cities
+          (src/data/tour-hierarchy.ts) get this — showing products that
+          genuinely depart from this destination, never invented ones. */}
+      {CITY_HUBS.some((hub) => hub.id === destination.id) && (
+        <DeparturePlanSection cityId={destination.id as DepartureCity} t={t} />
+      )}
 
       {/* Merzouga cluster: guide hub links (contextual internal links, English copy
           intentionally untranslated — matches English-first SEO hub pages) */}

@@ -925,11 +925,32 @@ function buildDestinationDetailContent(destId: string, lang: Lang): string {
           .map((p) => link(`${SITE_URL}/${lang}/merzouga-guide/${p.slug}`, p.title))
       )
     : '';
+  // Departure-city product discovery — mirrors <DeparturePlanSection> in
+  // src/pages/destination-detail.tsx exactly: only the 5 real departure
+  // cities, only links to real inventory (day trips if the city has any,
+  // the city's own tour hub, duration-filtered /tours views).
+  const hub = CITY_HUBS.find((h) => h.id === destId);
+  const departurePlanLinks = hub ? (() => {
+    const dayTripCount = DAY_TRIP_PRODUCT_IDS.filter((id) => TOUR_DEPARTURE_CITY[id] === destId).length;
+    const cityTourCount = canonicalTours.filter((t) => TOUR_DEPARTURE_CITY[t.id] === destId).length;
+    const items = [
+      ...(dayTripCount > 0 ? [link(`${SITE_URL}/${lang}/tours?city=${destId}&duration=1`, `${tr(lang, 'nav_day_trips')} (${dayTripCount})`)] : []),
+      link(`${SITE_URL}/${lang}/tours?city=${destId}&style=desert`, tr(lang, 'tours_style_desert')),
+      link(`${SITE_URL}/${lang}/tours?city=${destId}&duration=2-3`, tr(lang, 'tours_dur_2_3')),
+      link(`${SITE_URL}/${lang}/tours?city=${destId}&duration=4-6`, tr(lang, 'tours_dur_4_6')),
+      link(`${SITE_URL}/${lang}/tours/from-${hub.slug}`, tr(lang, 'tours_view_all')),
+      link(`${SITE_URL}/${lang}/trip-builder`, tr(lang, 'tf_custom_cta')),
+    ];
+    return h2(tr(lang, 'hub_private_title').replace('{city}', tr(lang, `hub_${destId}_name`)))
+      + paragraph(`${cityTourCount} ${cityTourCount === 1 ? tr(lang, 'tours_tour') : tr(lang, 'tours_tours')}`)
+      + rawUl(items);
+  })() : '';
   return h1(d.name) + paragraph(d.shortDesc) + paragraph(d.description) + h2(tr(lang, 'dest_about')) + ul(d.highlights)
     + (gallery ? h2(`${d.name} ${tr(lang, 'dest_pictures_title')}`) + gallery : '')
     + catalogBlock
     + foodBlock
     + rawParagraph(link(`${SITE_URL}/${lang}/things-to-do-in-morocco`, tr(lang, 'ttd_footer_link')))
+    + departurePlanLinks
     + merzougaGuideLinks
     + buildTopicalLinksContent({ destinationId: d.id }, lang);
 }
