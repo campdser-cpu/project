@@ -12,6 +12,11 @@ const RELATED_DESTINATION_IDS: Record<string, string[]> = {
   merzouga: ['erg-chebbi', 'dades-valley', 'todra-gorge'],
   'erg-chebbi': ['merzouga', 'dades-valley', 'ait-ben-haddou'],
   'todra-gorge': ['dades-valley', 'merzouga', 'ait-ben-haddou'],
+  // Southern desert-route destinations co-visited on the same itineraries
+  // (2-day-zagora-desert-marrakech, agadir-8-day, 5-day-great-south-morocco).
+  ouarzazate: ['ait-ben-haddou', 'dades-valley', 'merzouga'],
+  zagora: ['draa-valley', 'ouarzazate', 'ait-ben-haddou'],
+  'draa-valley': ['zagora', 'ouarzazate', 'ait-ben-haddou'],
 };
 
 const HUB_DESTINATION_IDS = [

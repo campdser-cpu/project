@@ -1487,6 +1487,21 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/agadir-8-day" />
   </url>
   <url>
+    <loc>https://www.moroccograndadventure.com/ar/tours/agadir-taghazout-day-trip</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/agadir-taghazout-day-trip" />
+  </url>
+  <url>
     <loc>https://www.moroccograndadventure.com/ar/tours/casablanca-3-day</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/casablanca-3-day" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/casablanca-3-day" />
@@ -2190,6 +2205,51 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/marrakech-essaouira-2-day" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/marrakech-essaouira-2-day" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/marrakech-essaouira-2-day" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/ar/tours/marrakech-imlil-day-trip</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/marrakech-imlil-day-trip" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/ar/tours/marrakech-ourika-valley-day-trip</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/marrakech-ourika-valley-day-trip" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/ar/tours/marrakech-ouzoud-waterfalls-day-trip</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/marrakech-ouzoud-waterfalls-day-trip" />
   </url>
   <url>
     <loc>https://www.moroccograndadventure.com/ar/tours/tangier-3-day</loc>
@@ -3782,6 +3842,21 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/agadir-8-day" />
   </url>
   <url>
+    <loc>https://www.moroccograndadventure.com/de/tours/agadir-taghazout-day-trip</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/agadir-taghazout-day-trip" />
+  </url>
+  <url>
     <loc>https://www.moroccograndadventure.com/de/tours/casablanca-3-day</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/casablanca-3-day" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/casablanca-3-day" />
@@ -4485,6 +4560,51 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/marrakech-essaouira-2-day" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/marrakech-essaouira-2-day" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/marrakech-essaouira-2-day" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/de/tours/marrakech-imlil-day-trip</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/marrakech-imlil-day-trip" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/de/tours/marrakech-ourika-valley-day-trip</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/marrakech-ourika-valley-day-trip" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/de/tours/marrakech-ouzoud-waterfalls-day-trip</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/marrakech-ouzoud-waterfalls-day-trip" />
   </url>
   <url>
     <loc>https://www.moroccograndadventure.com/de/tours/tangier-3-day</loc>
@@ -6077,6 +6197,21 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/agadir-8-day" />
   </url>
   <url>
+    <loc>https://www.moroccograndadventure.com/en/tours/agadir-taghazout-day-trip</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/agadir-taghazout-day-trip" />
+  </url>
+  <url>
     <loc>https://www.moroccograndadventure.com/en/tours/casablanca-3-day</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/casablanca-3-day" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/casablanca-3-day" />
@@ -6780,6 +6915,51 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/marrakech-essaouira-2-day" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/marrakech-essaouira-2-day" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/marrakech-essaouira-2-day" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/en/tours/marrakech-imlil-day-trip</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/marrakech-imlil-day-trip" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/en/tours/marrakech-ourika-valley-day-trip</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/marrakech-ourika-valley-day-trip" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/en/tours/marrakech-ouzoud-waterfalls-day-trip</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/marrakech-ouzoud-waterfalls-day-trip" />
   </url>
   <url>
     <loc>https://www.moroccograndadventure.com/en/tours/tangier-3-day</loc>
@@ -8372,6 +8552,21 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/agadir-8-day" />
   </url>
   <url>
+    <loc>https://www.moroccograndadventure.com/es/tours/agadir-taghazout-day-trip</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/agadir-taghazout-day-trip" />
+  </url>
+  <url>
     <loc>https://www.moroccograndadventure.com/es/tours/casablanca-3-day</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/casablanca-3-day" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/casablanca-3-day" />
@@ -9075,6 +9270,51 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/marrakech-essaouira-2-day" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/marrakech-essaouira-2-day" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/marrakech-essaouira-2-day" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/es/tours/marrakech-imlil-day-trip</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/marrakech-imlil-day-trip" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/es/tours/marrakech-ourika-valley-day-trip</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/marrakech-ourika-valley-day-trip" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/es/tours/marrakech-ouzoud-waterfalls-day-trip</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/marrakech-ouzoud-waterfalls-day-trip" />
   </url>
   <url>
     <loc>https://www.moroccograndadventure.com/es/tours/tangier-3-day</loc>
@@ -10667,6 +10907,21 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/agadir-8-day" />
   </url>
   <url>
+    <loc>https://www.moroccograndadventure.com/fr/tours/agadir-taghazout-day-trip</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/agadir-taghazout-day-trip" />
+  </url>
+  <url>
     <loc>https://www.moroccograndadventure.com/fr/tours/casablanca-3-day</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/casablanca-3-day" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/casablanca-3-day" />
@@ -11370,6 +11625,51 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/marrakech-essaouira-2-day" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/marrakech-essaouira-2-day" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/marrakech-essaouira-2-day" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/fr/tours/marrakech-imlil-day-trip</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/marrakech-imlil-day-trip" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/fr/tours/marrakech-ourika-valley-day-trip</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/marrakech-ourika-valley-day-trip" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/fr/tours/marrakech-ouzoud-waterfalls-day-trip</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/marrakech-ouzoud-waterfalls-day-trip" />
   </url>
   <url>
     <loc>https://www.moroccograndadventure.com/fr/tours/tangier-3-day</loc>
@@ -12962,6 +13262,21 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/agadir-8-day" />
   </url>
   <url>
+    <loc>https://www.moroccograndadventure.com/it/tours/agadir-taghazout-day-trip</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/agadir-taghazout-day-trip" />
+  </url>
+  <url>
     <loc>https://www.moroccograndadventure.com/it/tours/casablanca-3-day</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/casablanca-3-day" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/casablanca-3-day" />
@@ -13665,6 +13980,51 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/marrakech-essaouira-2-day" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/marrakech-essaouira-2-day" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/marrakech-essaouira-2-day" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/it/tours/marrakech-imlil-day-trip</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/marrakech-imlil-day-trip" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/it/tours/marrakech-ourika-valley-day-trip</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/marrakech-ourika-valley-day-trip" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/it/tours/marrakech-ouzoud-waterfalls-day-trip</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/marrakech-ouzoud-waterfalls-day-trip" />
   </url>
   <url>
     <loc>https://www.moroccograndadventure.com/it/tours/tangier-3-day</loc>
@@ -15257,6 +15617,21 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/agadir-8-day" />
   </url>
   <url>
+    <loc>https://www.moroccograndadventure.com/ja/tours/agadir-taghazout-day-trip</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/agadir-taghazout-day-trip" />
+  </url>
+  <url>
     <loc>https://www.moroccograndadventure.com/ja/tours/casablanca-3-day</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/casablanca-3-day" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/casablanca-3-day" />
@@ -15960,6 +16335,51 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/marrakech-essaouira-2-day" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/marrakech-essaouira-2-day" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/marrakech-essaouira-2-day" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/ja/tours/marrakech-imlil-day-trip</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/marrakech-imlil-day-trip" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/ja/tours/marrakech-ourika-valley-day-trip</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/marrakech-ourika-valley-day-trip" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/ja/tours/marrakech-ouzoud-waterfalls-day-trip</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/marrakech-ouzoud-waterfalls-day-trip" />
   </url>
   <url>
     <loc>https://www.moroccograndadventure.com/ja/tours/tangier-3-day</loc>
@@ -17552,6 +17972,21 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/agadir-8-day" />
   </url>
   <url>
+    <loc>https://www.moroccograndadventure.com/ko/tours/agadir-taghazout-day-trip</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/agadir-taghazout-day-trip" />
+  </url>
+  <url>
     <loc>https://www.moroccograndadventure.com/ko/tours/casablanca-3-day</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/casablanca-3-day" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/casablanca-3-day" />
@@ -18255,6 +18690,51 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/marrakech-essaouira-2-day" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/marrakech-essaouira-2-day" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/marrakech-essaouira-2-day" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/ko/tours/marrakech-imlil-day-trip</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/marrakech-imlil-day-trip" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/ko/tours/marrakech-ourika-valley-day-trip</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/marrakech-ourika-valley-day-trip" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/ko/tours/marrakech-ouzoud-waterfalls-day-trip</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/marrakech-ouzoud-waterfalls-day-trip" />
   </url>
   <url>
     <loc>https://www.moroccograndadventure.com/ko/tours/tangier-3-day</loc>
@@ -19847,6 +20327,21 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/agadir-8-day" />
   </url>
   <url>
+    <loc>https://www.moroccograndadventure.com/nl/tours/agadir-taghazout-day-trip</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/agadir-taghazout-day-trip" />
+  </url>
+  <url>
     <loc>https://www.moroccograndadventure.com/nl/tours/casablanca-3-day</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/casablanca-3-day" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/casablanca-3-day" />
@@ -20550,6 +21045,51 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/marrakech-essaouira-2-day" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/marrakech-essaouira-2-day" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/marrakech-essaouira-2-day" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/nl/tours/marrakech-imlil-day-trip</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/marrakech-imlil-day-trip" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/nl/tours/marrakech-ourika-valley-day-trip</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/marrakech-ourika-valley-day-trip" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/nl/tours/marrakech-ouzoud-waterfalls-day-trip</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/marrakech-ouzoud-waterfalls-day-trip" />
   </url>
   <url>
     <loc>https://www.moroccograndadventure.com/nl/tours/tangier-3-day</loc>
@@ -22142,6 +22682,21 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/agadir-8-day" />
   </url>
   <url>
+    <loc>https://www.moroccograndadventure.com/pt/tours/agadir-taghazout-day-trip</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/agadir-taghazout-day-trip" />
+  </url>
+  <url>
     <loc>https://www.moroccograndadventure.com/pt/tours/casablanca-3-day</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/casablanca-3-day" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/casablanca-3-day" />
@@ -22845,6 +23400,51 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/marrakech-essaouira-2-day" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/marrakech-essaouira-2-day" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/marrakech-essaouira-2-day" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/pt/tours/marrakech-imlil-day-trip</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/marrakech-imlil-day-trip" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/pt/tours/marrakech-ourika-valley-day-trip</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/marrakech-ourika-valley-day-trip" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/pt/tours/marrakech-ouzoud-waterfalls-day-trip</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/marrakech-ouzoud-waterfalls-day-trip" />
   </url>
   <url>
     <loc>https://www.moroccograndadventure.com/pt/tours/tangier-3-day</loc>
@@ -24437,6 +25037,21 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/agadir-8-day" />
   </url>
   <url>
+    <loc>https://www.moroccograndadventure.com/zh/tours/agadir-taghazout-day-trip</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/agadir-taghazout-day-trip" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/agadir-taghazout-day-trip" />
+  </url>
+  <url>
     <loc>https://www.moroccograndadventure.com/zh/tours/casablanca-3-day</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/casablanca-3-day" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/casablanca-3-day" />
@@ -25140,6 +25755,51 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/marrakech-essaouira-2-day" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/marrakech-essaouira-2-day" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/marrakech-essaouira-2-day" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/zh/tours/marrakech-imlil-day-trip</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/marrakech-imlil-day-trip" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/marrakech-imlil-day-trip" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/zh/tours/marrakech-ourika-valley-day-trip</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/marrakech-ourika-valley-day-trip" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/marrakech-ourika-valley-day-trip" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/zh/tours/marrakech-ouzoud-waterfalls-day-trip</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/tours/marrakech-ouzoud-waterfalls-day-trip" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/tours/marrakech-ouzoud-waterfalls-day-trip" />
   </url>
   <url>
     <loc>https://www.moroccograndadventure.com/zh/tours/tangier-3-day</loc>

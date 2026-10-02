@@ -71,7 +71,12 @@ export function WhatsAppButton({ tour, destination, article, message }: WhatsApp
   }
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex items-center group">
+    // Hidden below lg: on phones, StickyBookingCTA already surfaces a WhatsApp
+    // button in its bottom bar once the visitor scrolls. Showing both at once
+    // stacks a floating circle directly over that bar's own WhatsApp/Call
+    // buttons at the same bottom-6 offset — this avoids the overlap rather
+    // than duplicating the contact path on a screen with no room for both.
+    <div className="fixed bottom-6 right-6 z-50 hidden items-center group lg:flex">
       <div className="hidden md:block mr-4 bg-white text-foreground px-4 py-2 rounded-xl shadow-lg border border-border opacity-0 translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 pointer-events-none font-bold text-sm">
         {t('wa_book_now')}
       </div>

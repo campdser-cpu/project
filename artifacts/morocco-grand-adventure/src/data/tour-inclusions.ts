@@ -20,25 +20,28 @@
 // is why the three-day Marrakech journey shows its real camp and camel instead
 // of a generic template that claimed services it never listed.
 //
-// HEDGED WORDING IS NOT AN INCLUSION
+// HEDGED WORDING IS NOT AN INCLUSION — EXCEPT FOR MEALS, WHICH ARE POLICY
 // Several journeys are written quote-first ("private transport when included in
-// the confirmed quote", "breakfasts as confirmed", "camel experience when
-// specified"). Those lines are shown, but marked `confirmed`: agreed in the
-// written quote before payment, rather than promised here. The same applies to
-// an itinerary day whose own text hedges what it can provide.
+// the confirmed quote", "camel experience when specified"). Those lines are
+// shown, but marked `confirmed`: agreed in the written quote before payment,
+// rather than promised here. The same applies to an itinerary day whose own
+// text hedges what it can provide — for everything EXCEPT breakfast and
+// dinner (see below), which are confirmed MGA policy, not quote-dependent.
 //
-// MEALS ARE DERIVED NIGHT BY NIGHT
-// "Meals included" is not a fact this project can state. Each night is resolved
-// from that night's own itinerary text:
-//   · a marker on the night ("(Dinner & Breakfast)", "dinner under the open
-//     sky", "Dinner under the stars", "before breakfast") → included;
-//   · an unconditional tour-level statement ("Daily breakfast", "Breakfasts
-//     daily") → included for every night;
-//   · a hedged tour-level statement ("Breakfasts as confirmed") → confirmed;
-//   · otherwise → not included, and the traveller is told they are free to
-//     choose a local restaurant. A city night is never presented as
-//     half-board, and a desert camp dinner is never assumed unless the camp
-//     package states it.
+// MEALS ARE DERIVED NIGHT BY NIGHT FROM A CONFIRMED MGA POLICY
+// Breakfast and dinner are not left to the written quote: MGA's confirmed
+// operating policy is:
+//   · Breakfast is included for every overnight stay in the tour.
+//   · Dinner is included for every overnight stay EXCEPT a night in an
+//     Imperial City (`category: 'Imperial Cities'` — Marrakech, Fes, Meknès,
+//     Casablanca, Rabat), where dinner is not included (travellers choose
+//     their own restaurant in these cities).
+// Real per-night evidence in the itinerary's own text always takes priority
+// over the policy default — a marker on the night ("(Dinner & Breakfast)"),
+// an unconditional tour-level statement ("Daily breakfast"), or prose that
+// serves the meal at that specific stay. A tour whose own `excluded` list
+// names a meal explicitly overrides the policy default for that meal, tour-
+// wide (e.g. a tour that explicitly excludes dinner at its desert camp).
 // ─────────────────────────────────────────────────────────────────────────────
 import type { Tour } from '@/data/content';
 import { destinations } from '@/data/content';
@@ -94,8 +97,6 @@ const HEDGE =
   /\b(when included|when specified|as confirmed|as per the confirmed|per the confirmed|according to|if included|can include|where included|selected package|confirmed (itinerary|quote|package|plan|before payment|around your dates))\b/i;
 /** The same hedge, applied to a single itinerary day. */
 const DAY_HEDGE = /\b(if included|can include|when included|when specified|where included|according to)\b/i;
-/** Meal words used to notice a hedged meal statement ("meals are confirmed before payment"). */
-const MEAL_WORD = /\b(meal|meals|half.?board|breakfast|dinner)\b/i;
 
 /** Meal words, multilingual: the tour-level lists are localized by overlays. */
 const BREAKFAST_WORD =
@@ -260,9 +261,8 @@ function mealStateFor(
   dayText: string,
   nightText: string,
   meal: 'breakfast' | 'dinner',
-  hedgedMealsInText: boolean,
   daily: boolean,
-  hedgedTourLevel: boolean,
+  policyDefault: MealState,
 ): MealState {
   // Evidence for THIS night only: its own stop's marker ("(Dinner &
   // Breakfast)", "(Breakfast)"), or prose that serves the meal AT the stay
@@ -275,8 +275,12 @@ function mealStateFor(
     meal === 'breakfast' ? servesBreakfastAtStay(dayText, nightText) : servesDinnerAtStay(dayText, nightText);
   if (serves) return 'included';
   if (daily) return 'included';
-  if (hedgedMealsInText || hedgedTourLevel) return 'confirmed';
-  return 'unspecified';
+  // No night-specific textual evidence either way — fall back to the
+  // confirmed MGA policy default for this meal (see caller: breakfast is
+  // always included; dinner is included outside the Imperial Cities), unless
+  // the tour's own `excluded` list already turned that default into
+  // 'not_included' for this meal tour-wide.
+  return policyDefault;
 }
 
 
@@ -375,6 +379,7 @@ export function deriveTourInclusions(canonical: Tour, localized: Tour): TourIncl
   const ownIncluded = canonical.included ?? [];
   const ownExcluded = canonical.excluded ?? [];
   const ownIncludedText = ownIncluded.join(' | ').toLowerCase();
+  const ownExcludedText = ownExcluded.join(' | ').toLowerCase();
   const corpus = [
     canonical.description ?? '',
     ...(canonical.highlights ?? []),
@@ -388,11 +393,14 @@ export function deriveTourInclusions(canonical: Tour, localized: Tour): TourIncl
 
   // ── Meals, night by night ────────────────────────────────────────────────
   const breakfastEntry = ownIncluded.find((s) => BREAKFAST.test(s) && !DAILY_BREAKFAST.test(s));
-  const dinnerEntry = ownIncluded.find((s) => DINNER.test(s));
   const breakfastDaily = ownIncluded.some((s) => DAILY_BREAKFAST.test(s));
   const dinnerDaily = ownIncluded.some((s) => DAILY_DINNER.test(s));
-  const breakfastHedged = Boolean(breakfastEntry && HEDGE.test(breakfastEntry));
-  const dinnerHedged = Boolean(dinnerEntry && HEDGE.test(dinnerEntry));
+  // Confirmed MGA policy defaults (see file header): breakfast is included
+  // for every night unless this tour's own `excluded` list names it; dinner
+  // is included for every night unless this tour's own `excluded` list names
+  // it, applied per-night below against the night's own destination category.
+  const breakfastPolicyDefault: MealState = BREAKFAST.test(ownExcludedText) ? 'not_included' : 'included';
+  const dinnerPolicyExcluded = DINNER.test(ownExcludedText);
 
   const meals: MealRow[] = [];
   for (let night = 1; night <= nights; night += 1) {
@@ -415,7 +423,6 @@ export function deriveTourInclusions(canonical: Tour, localized: Tour): TourIncl
     const localizedNightStop = localizedStops[stopIndex] ?? nightStop;
     const nightText = `${nightStop} ${localizedNightStop}`;
     const dayText = `${day.title} ${day.desc} ${stops.join(' ')}`;
-    const hedgedMeals = (DAY_HEDGE.test(dayText) || HEDGE.test(dayText)) && MEAL_WORD.test(dayText);
     // The place shown for this night is the itinerary's own overnight stop
     // when it names one. Otherwise use the destination the day actually
     // arrives at, never the last activity stop ("Souks & pottery workshops").
@@ -424,14 +431,34 @@ export function deriveTourInclusions(canonical: Tour, localized: Tour): TourIncl
       OVERNIGHT_LOCALIZED.test((localizedStops[stopIndex] ?? '').trim()) ||
       CAMP.test((stops[stopIndex] ?? '').toLowerCase());
     const titleEnd = (day.title.split('→').pop() ?? day.title).trim();
+    // A camp night's own stop is often a generic label ("Desert camp") that
+    // names no destination on its own — fall back to the day's full stop
+    // list (which does name the actual place: "Merzouga", "Erg Chebbi") so
+    // the night still resolves a real destination id for category lookups
+    // and links, without changing the displayed place label itself. That
+    // whole-day fallback is deliberately scoped to camp nights only: an
+    // "Overnight: X" stop naming a real but unlisted place (e.g. Asilah, who
+    // has no destination page) must NOT fall back to the day's earlier
+    // waypoints — a city passed through hours before bed (e.g. "Rabat" on
+    // the way to Asilah) is not where the traveller actually sleeps, and
+    // wrongly resolving to it would misapply that city's own category.
+    const isCampLabel = CAMP.test((stops[stopIndex] ?? '').toLowerCase());
     const placeId = explicitStop
-      ? lastDestinationIn(stops[stopIndex] ?? '')
+      ? lastDestinationIn(stops[stopIndex] ?? '') ?? (isCampLabel ? lastDestinationIn(stops.join(' | ')) : undefined)
       : lastDestinationIn(titleEnd) ?? lastDestinationIn(stops[stopIndex] ?? '');
     const rawPlace = explicitStop
       ? localizedStops[stopIndex] ?? stops[stopIndex]
       : placeId
         ? destinations.find((d) => d.id === placeId)?.name
         : titleEnd;
+    // Confirmed MGA policy (file header): dinner is included for every night
+    // EXCEPT a night in an Imperial City (`category: 'Imperial Cities'`).
+    // A night whose destination cannot be resolved is treated as outside the
+    // Imperial Cities, matching the policy's own framing ("dinner included
+    // for stays outside the Imperial Cities").
+    const nightCategory = placeId ? destinations.find((d) => d.id === placeId)?.category : undefined;
+    const isImperialCityStay = nightCategory === 'Imperial Cities';
+    const dinnerPolicyDefault: MealState = dinnerPolicyExcluded ? 'not_included' : isImperialCityStay ? 'not_included' : 'included';
     meals.push({
       night,
       place: placeLabel(rawPlace) || placeLabel(localizedStops[stopIndex] ?? localizedStops[localizedStops.length - 1] ?? ''),
@@ -439,8 +466,8 @@ export function deriveTourInclusions(canonical: Tour, localized: Tour): TourIncl
       // The morning meal at a stay is served the NEXT morning: "Wake for
       // sunrise over the dunes and breakfast in Merzouga" belongs to the
       // night that ends at the stay, not to the day that starts there.
-      breakfast: mealStateFor(`${dayText} ${nextText}`, nightText, 'breakfast', hedgedMeals, breakfastDaily, breakfastHedged),
-      dinner: mealStateFor(dayText, nightText, 'dinner', hedgedMeals, dinnerDaily, dinnerHedged),
+      breakfast: mealStateFor(`${dayText} ${nextText}`, nightText, 'breakfast', breakfastDaily, breakfastPolicyDefault),
+      dinner: mealStateFor(dayText, nightText, 'dinner', dinnerDaily, dinnerPolicyDefault),
       camp: CAMP.test(stops.join(' ').toLowerCase()),
     });
   }

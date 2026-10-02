@@ -152,7 +152,9 @@ assert.equal(imperial!.nights, 6);
 assert.equal(imperial!.meals.length, 6, '3 Days/2 Nights style duration must never leak an extra meal night');
 assert.deepEqual(
   imperial!.meals.map((m) => m.dinner),
-  ['included', 'included', 'included', 'unspecified', 'unspecified', 'unspecified'],
+  // Owner-confirmed meal policy: dinner is included for every night except
+  // Imperial City nights (nights 4-5 Fes, night 6 Marrakech on this route).
+  ['included', 'included', 'included', 'not_included', 'not_included', 'not_included'],
 );
 assert.equal(imperial!.pricing.published, true);
 if (imperial!.pricing.published) assert.equal(imperial!.pricing.perPersonByPartySize!['2'], 805);
@@ -160,10 +162,6 @@ if (imperial!.pricing.published) assert.equal(imperial!.pricing.perPersonByParty
 const sahara3 = knowledge.tours.find((t) => t.id === '3-day-sahara-marrakech');
 assert.ok(sahara3);
 assert.equal(sahara3!.meals.length, 2, 'a 3-day/2-night tour must have exactly two meal nights, never three');
-// content.ts currently has no committed `excluded` list for this tour, so an
-// empty array here is the honest derived fact, not a generation bug — the
-// "must not be silently empty when the source has data" invariant is instead
-// guarded against a tour whose committed exclusions are non-empty:
-assert.ok(imperial!.notIncluded.length > 0, 'a tour with committed exclusions must never generate an empty list');
+assert.ok(sahara3!.notIncluded.length > 0, 'the flagship tour’s exclusions must be present, not silently empty');
 
 console.log(`Concierge regression: PASS (request handling + hardening invariants + knowledge integrity, ${knowledge.tours.length} tours)`);

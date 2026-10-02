@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-25T20:42:32.592Z",
+  "generatedAt": "2026-10-02T01:22:55.420Z",
   "contact": {
     "whatsapp": "https://wa.me/212699846818",
     "whatsappNumber": "+212 699 846 818",
@@ -7,6 +7,7 @@
     "instagram": "https://www.instagram.com/morocco_grand_adventure/",
     "email": "moroccograndadventure@gmail.com",
     "website": "https://www.moroccograndadventure.com",
+    "tripadvisor": "https://www.tripadvisor.com/Attraction_Review-g304017-d34678153-Reviews-Morocco_Grand_Adventure-Merzouga_Draa_Tafilalet.html",
     "paypal": "https://www.paypal.me/MohamedbouGhrara683",
     "ownerName": "Mohamed BouGhrara",
     "companyName": "Morocco Grand Adventure",
@@ -52,35 +53,44 @@
           "summary": "Wake for sunrise over the dunes, then begin the return journey to Marrakech. This is the longest road day, so the itinerary keeps the focus on a realistic return rather than promising a long list of rushed attractions. Travelers who want more time in Merzouga can extend the trip to four days or more."
         }
       ],
-      "transport": [],
+      "transport": [
+        "Private air-conditioned vehicle",
+        "Professional English-speaking driver",
+        "Fuel"
+      ],
       "accommodation": [
-        "Accommodation for 2 nights as shown in the itinerary",
-        "Night in the desert camp"
+        "2 nights' accommodation: 1 night in the Dades Valley area, 1 night at a desert camp near Merzouga",
+        "Hotel pick-up and drop-off in Marrakech"
       ],
       "desertExperiences": [
-        "Sunset camel trek at Erg Chebbi",
+        "Sunset camel trek into the Erg Chebbi dunes",
         "Desert sunrise over the dunes"
       ],
       "visitsAndLandscapes": [
-        "Visit Todra Gorge",
-        "Visit Dades Valley"
+        "Visit Todra Gorge"
       ],
       "guideAndServices": [],
       "meals": [
         {
           "night": 1,
           "place": "Dades Valley",
-          "breakfast": "unspecified",
-          "dinner": "unspecified"
+          "breakfast": "included",
+          "dinner": "included"
         },
         {
           "night": 2,
           "place": "Desert camp",
-          "breakfast": "unspecified",
+          "breakfast": "included",
           "dinner": "included"
         }
       ],
-      "notIncluded": [],
+      "notIncluded": [
+        "International flights",
+        "Lunches",
+        "Drinks",
+        "Monument and museum entrance fees",
+        "Tips and personal expenses"
+      ],
       "hasQuoteDependentItems": false,
       "pricing": {
         "published": true,
@@ -139,6 +149,12 @@
         "Merzouga and Erg Chebbi",
         "Private onward planning"
       ],
+      "bestFor": "Travellers based on the Atlantic coast — Agadir, Taghazout, Essaouira — who want the Sahara without first backtracking to Marrakech or Fes, and who are comfortable with a compact, quote-first itinerary rather than a fixed package.",
+      "whyChoose": [
+        "The direct road from the Atlantic coast to the Sahara: Agadir → southern Morocco → the Ouarzazate area → Merzouga.",
+        "Skips the busier Marrakech–Merzouga corridor for a quieter southern approach.",
+        "Private journey with your own driver-guide, route confirmed around your dates."
+      ],
       "itinerary": [
         {
           "day": 1,
@@ -177,14 +193,14 @@
         {
           "night": 1,
           "place": "Ouarzazate",
-          "breakfast": "unspecified",
-          "dinner": "unspecified"
+          "breakfast": "included",
+          "dinner": "included"
         },
         {
           "night": 2,
           "place": "Erg Chebbi",
-          "breakfast": "confirmed",
-          "dinner": "confirmed"
+          "breakfast": "included",
+          "dinner": "included"
         }
       ],
       "notIncluded": [
@@ -313,13 +329,13 @@
           "night": 3,
           "place": "Fes",
           "breakfast": "included",
-          "dinner": "unspecified"
+          "dinner": "not_included"
         },
         {
           "night": 4,
           "place": "Fes",
           "breakfast": "included",
-          "dinner": "unspecified"
+          "dinner": "not_included"
         }
       ],
       "notIncluded": [
@@ -474,19 +490,19 @@
           "night": 4,
           "place": "Fes",
           "breakfast": "included",
-          "dinner": "unspecified"
+          "dinner": "not_included"
         },
         {
           "night": 5,
           "place": "Fes",
           "breakfast": "included",
-          "dinner": "unspecified"
+          "dinner": "not_included"
         },
         {
           "night": 6,
           "place": "Marrakech",
           "breakfast": "included",
-          "dinner": "unspecified"
+          "dinner": "not_included"
         }
       ],
       "notIncluded": [
@@ -635,25 +651,25 @@
           "night": 1,
           "place": "Marrakech",
           "breakfast": "included",
-          "dinner": "unspecified"
+          "dinner": "not_included"
         },
         {
           "night": 2,
           "place": "Marrakech",
           "breakfast": "included",
-          "dinner": "unspecified"
+          "dinner": "not_included"
         },
         {
           "night": 3,
           "place": "Dades Valley",
           "breakfast": "included",
-          "dinner": "unspecified"
+          "dinner": "included"
         },
         {
           "night": 4,
           "place": "Merzouga Hotel",
           "breakfast": "included",
-          "dinner": "unspecified"
+          "dinner": "included"
         },
         {
           "night": 5,
@@ -665,25 +681,25 @@
           "night": 6,
           "place": "Merzouga Hotel",
           "breakfast": "included",
-          "dinner": "unspecified"
+          "dinner": "included"
         },
         {
           "night": 7,
           "place": "Fes",
           "breakfast": "included",
-          "dinner": "unspecified"
+          "dinner": "not_included"
         },
         {
           "night": 8,
           "place": "Fes",
           "breakfast": "included",
-          "dinner": "unspecified"
+          "dinner": "not_included"
         },
         {
           "night": 9,
           "place": "Marrakech",
           "breakfast": "included",
-          "dinner": "unspecified"
+          "dinner": "not_included"
         }
       ],
       "notIncluded": [
@@ -1004,49 +1020,49 @@
           "night": 1,
           "place": "Marrakech",
           "breakfast": "included",
-          "dinner": "unspecified"
+          "dinner": "not_included"
         },
         {
           "night": 2,
           "place": "Marrakech",
           "breakfast": "included",
-          "dinner": "unspecified"
+          "dinner": "not_included"
         },
         {
           "night": 3,
           "place": "Dades Valley",
           "breakfast": "included",
-          "dinner": "unspecified"
+          "dinner": "included"
         },
         {
           "night": 4,
           "place": "Dades Valley",
           "breakfast": "included",
-          "dinner": "unspecified"
+          "dinner": "included"
         },
         {
           "night": 5,
           "place": "Merzouga Hotel",
           "breakfast": "included",
-          "dinner": "unspecified"
+          "dinner": "included"
         },
         {
           "night": 6,
           "place": "Merzouga Hotel",
           "breakfast": "included",
-          "dinner": "unspecified"
+          "dinner": "included"
         },
         {
           "night": 7,
           "place": "Merzouga Hotel",
           "breakfast": "included",
-          "dinner": "unspecified"
+          "dinner": "included"
         },
         {
           "night": 8,
           "place": "Fes",
           "breakfast": "included",
-          "dinner": "unspecified"
+          "dinner": "not_included"
         }
       ],
       "notIncluded": [
@@ -1109,6 +1125,12 @@
         "Sunset camel trek in Erg Chebbi",
         "A night in a Sahara desert camp"
       ],
+      "bestFor": "Travellers based in Marrakech who want the classic Sahara route at a fuller pace than a three-day trip allows — the same corridor, one extra day of comfort.",
+      "whyChoose": [
+        "A round trip from Marrakech that reaches the Sahara without the longer southern detours — the High Atlas, Aït Ben Haddou, the Dades and Todra gorges and a night in the Erg Chebbi dunes.",
+        "Four days give the return drive real breathing room compared with a three-day version of the same corridor.",
+        "Private vehicle and driver-guide throughout, with the route confirmed around your dates."
+      ],
       "itinerary": [
         {
           "day": 1,
@@ -1152,20 +1174,20 @@
         {
           "night": 1,
           "place": "Dades Valley",
-          "breakfast": "confirmed",
-          "dinner": "confirmed"
+          "breakfast": "included",
+          "dinner": "included"
         },
         {
           "night": 2,
           "place": "Desert camp night",
-          "breakfast": "confirmed",
-          "dinner": "confirmed"
+          "breakfast": "included",
+          "dinner": "included"
         },
         {
           "night": 3,
           "place": "Ouarzazate area",
-          "breakfast": "confirmed",
-          "dinner": "confirmed"
+          "breakfast": "included",
+          "dinner": "included"
         }
       ],
       "notIncluded": [
@@ -1220,6 +1242,12 @@
         "The Roman ruins of Volubilis",
         "A guided day in the medina of Fes"
       ],
+      "bestFor": "Travellers flying into Casablanca who want Morocco's imperial cities and the Blue City covered properly before continuing on to Fes or elsewhere — this route does not reach the Sahara.",
+      "whyChoose": [
+        "A practical route for travellers landing in Casablanca who want the imperial north in one loop: Rabat, Chefchaouen, Meknès and Volubilis, finishing in Fes.",
+        "A full overnight in Chefchaouen rather than a rushed day stop.",
+        "Private vehicle and driver-guide, with a guided day in the Fes medina to finish."
+      ],
       "itinerary": [
         {
           "day": 1,
@@ -1254,14 +1282,14 @@
         {
           "night": 1,
           "place": "Chefchaouen",
-          "breakfast": "confirmed",
-          "dinner": "unspecified"
+          "breakfast": "included",
+          "dinner": "included"
         },
         {
           "night": 2,
           "place": "Fes",
-          "breakfast": "confirmed",
-          "dinner": "unspecified"
+          "breakfast": "included",
+          "dinner": "not_included"
         }
       ],
       "notIncluded": [
@@ -1316,6 +1344,12 @@
         "Imperial Meknès and the Roman ruins of Volubilis",
         "A guided day in Fes"
       ],
+      "bestFor": "Travellers landing in Casablanca who want the northern coast and imperial cities at a relaxed pace rather than a compact three-day trip.",
+      "whyChoose": [
+        "A gentler pace than a three-day version of this route, with a full night in Asilah added before Chefchaouen.",
+        "Follows the Atlantic coast north from Casablanca before turning inland to the Blue City, imperial Meknès and Volubilis.",
+        "Private vehicle and driver-guide throughout — this route does not reach the Sahara."
+      ],
       "itinerary": [
         {
           "day": 1,
@@ -1355,20 +1389,20 @@
         {
           "night": 1,
           "place": "Asilah",
-          "breakfast": "confirmed",
-          "dinner": "unspecified"
+          "breakfast": "included",
+          "dinner": "included"
         },
         {
           "night": 2,
           "place": "Chefchaouen",
-          "breakfast": "confirmed",
-          "dinner": "unspecified"
+          "breakfast": "included",
+          "dinner": "included"
         },
         {
           "night": 3,
           "place": "Fes",
-          "breakfast": "confirmed",
-          "dinner": "unspecified"
+          "breakfast": "included",
+          "dinner": "not_included"
         }
       ],
       "notIncluded": [
@@ -1423,6 +1457,12 @@
         "The Ziz Valley and Merzouga",
         "Sunset camel trek and desert-camp night in Erg Chebbi"
       ],
+      "bestFor": "Travellers flying into Casablanca who want the imperial cities and a real Sahara night in a single five-day private journey, finishing in Fes.",
+      "whyChoose": [
+        "Reaches the Sahara from Casablanca in one route, rather than treating the desert as a separate trip.",
+        "Combines imperial Fes and Meknès with the cedar forests of Ifrane and a night in the Erg Chebbi dunes.",
+        "Private vehicle and driver-guide throughout."
+      ],
       "itinerary": [
         {
           "day": 1,
@@ -1468,26 +1508,26 @@
         {
           "night": 1,
           "place": "Fes",
-          "breakfast": "confirmed",
-          "dinner": "confirmed"
+          "breakfast": "included",
+          "dinner": "not_included"
         },
         {
           "night": 2,
           "place": "Merzouga Hotel",
-          "breakfast": "confirmed",
-          "dinner": "confirmed"
+          "breakfast": "included",
+          "dinner": "included"
         },
         {
           "night": 3,
           "place": "Desert camp night",
-          "breakfast": "confirmed",
+          "breakfast": "included",
           "dinner": "included"
         },
         {
           "night": 4,
           "place": "Midelt area",
-          "breakfast": "confirmed",
-          "dinner": "confirmed"
+          "breakfast": "included",
+          "dinner": "included"
         }
       ],
       "notIncluded": [
@@ -1544,11 +1584,17 @@
         "Todra and Dades gorges and the kasbahs of Ouarzazate",
         "Marrakech's palaces and Jemaa el-Fnaa"
       ],
+      "bestFor": "Travellers flying in and out of Casablanca who want to see the whole of northern and southern Morocco — imperial cities, Sahara and Marrakech — without changing arrival and departure cities.",
+      "whyChoose": [
+        "The complete private loop from Casablanca: the Blue City, the imperial cities, the Sahara and Marrakech, returning to where you started.",
+        "Eight days let every leg breathe, including a full night in the Erg Chebbi dunes and the Todra and Dades gorges.",
+        "Private vehicle and driver-guide throughout, with official local guides in Fes and Marrakech."
+      ],
       "itinerary": [
         {
           "day": 1,
-          "title": "Casablanca → Rabat → Chefchaouen",
-          "summary": "See the Hassan II Mosque, then travel via Rabat's Atlantic kasbah and Hassan Tower to the blue-washed streets of Chefchaouen for the night."
+          "title": "Casablanca Airport → Rabat → Chefchaouen",
+          "summary": "Your driver meets you at Casablanca airport, then the route takes in the Hassan II Mosque before continuing via Rabat's Atlantic kasbah and Hassan Tower to the blue-washed streets of Chefchaouen for the night."
         },
         {
           "day": 2,
@@ -1582,14 +1628,15 @@
         },
         {
           "day": 8,
-          "title": "Marrakech morning → Casablanca",
-          "summary": "A final morning in Marrakech, then the return along the highway to Casablanca to complete the loop, or onward to the airport as arranged."
+          "title": "Marrakech morning → Casablanca Airport",
+          "summary": "A final morning in Marrakech, then the return along the highway to Casablanca, with drop-off at Casablanca airport to complete the loop."
         }
       ],
       "transport": [
         "Private air-conditioned vehicle",
         "Professional English-speaking driver",
-        "Fuel and tolls"
+        "Fuel and tolls",
+        "Airport pickup and drop-off in Casablanca"
       ],
       "accommodation": [
         "Selected riads, guesthouses and a desert camp per the confirmed itinerary (confirmed in the written quote, not guaranteed)"
@@ -1609,44 +1656,44 @@
         {
           "night": 1,
           "place": "Chefchaouen",
-          "breakfast": "confirmed",
-          "dinner": "confirmed"
+          "breakfast": "included",
+          "dinner": "included"
         },
         {
           "night": 2,
           "place": "Fes",
-          "breakfast": "confirmed",
-          "dinner": "confirmed"
+          "breakfast": "included",
+          "dinner": "not_included"
         },
         {
           "night": 3,
           "place": "Fes",
-          "breakfast": "confirmed",
-          "dinner": "confirmed"
+          "breakfast": "included",
+          "dinner": "not_included"
         },
         {
           "night": 4,
           "place": "Merzouga Hotel",
-          "breakfast": "confirmed",
-          "dinner": "confirmed"
+          "breakfast": "included",
+          "dinner": "included"
         },
         {
           "night": 5,
           "place": "Desert camp night",
-          "breakfast": "confirmed",
-          "dinner": "confirmed"
+          "breakfast": "included",
+          "dinner": "included"
         },
         {
           "night": 6,
           "place": "Dades Valley",
-          "breakfast": "confirmed",
-          "dinner": "confirmed"
+          "breakfast": "included",
+          "dinner": "included"
         },
         {
           "night": 7,
           "place": "Marrakech",
-          "breakfast": "confirmed",
-          "dinner": "confirmed"
+          "breakfast": "included",
+          "dinner": "not_included"
         }
       ],
       "notIncluded": [
@@ -1677,7 +1724,7 @@
         },
         {
           "question": "Where does the circuit start and end?",
-          "answer": "It begins and ends in Casablanca, making it convenient for travelers flying in and out of the city."
+          "answer": "It begins and ends in Casablanca, with airport pickup on day one and airport drop-off on the final day."
         },
         {
           "question": "Are the guided city days included?",
@@ -1700,6 +1747,12 @@
         "Merzouga and Erg Chebbi",
         "Sunset camel trek and desert-camp night",
         "Rissani souk and Erfoud fossils"
+      ],
+      "bestFor": "Travellers staying in or flying through Fes who want the Sahara as a there-and-back trip rather than a one-way crossing.",
+      "whyChoose": [
+        "A round trip from Fes into the Sahara without changing base — the cedar forests of Ifrane, the Ziz Valley oases and a night in the Erg Chebbi dunes.",
+        "Returns to Fes on day four, so onward travel from the same city is simple to plan.",
+        "Private vehicle and driver-guide throughout."
       ],
       "itinerary": [
         {
@@ -1741,20 +1794,20 @@
         {
           "night": 1,
           "place": "Merzouga Hotel",
-          "breakfast": "confirmed",
-          "dinner": "confirmed"
+          "breakfast": "included",
+          "dinner": "included"
         },
         {
           "night": 2,
           "place": "Desert camp night",
-          "breakfast": "confirmed",
+          "breakfast": "included",
           "dinner": "included"
         },
         {
           "night": 3,
           "place": "Midelt area",
-          "breakfast": "confirmed",
-          "dinner": "confirmed"
+          "breakfast": "included",
+          "dinner": "included"
         }
       ],
       "notIncluded": [
@@ -1809,6 +1862,12 @@
         "Todra Gorge and the Dades Valley",
         "Aït Ben Haddou and the High Atlas into Marrakech"
       ],
+      "bestFor": "Travellers moving between Fes and Marrakech who would rather take five unhurried days over this route than four fuller ones.",
+      "whyChoose": [
+        "A one-way private crossing from Fes to Marrakech, with an extra day over a four-day version of the same corridor to slow the pace.",
+        "The full southern sweep: Ifrane and the Middle Atlas, a night in the Erg Chebbi dunes, the Todra and Dades gorges and Aït Ben Haddou.",
+        "Ends with a free morning in Marrakech rather than a rushed arrival."
+      ],
       "itinerary": [
         {
           "day": 1,
@@ -1857,26 +1916,26 @@
         {
           "night": 1,
           "place": "Merzouga Hotel",
-          "breakfast": "confirmed",
-          "dinner": "confirmed"
+          "breakfast": "included",
+          "dinner": "included"
         },
         {
           "night": 2,
           "place": "Desert camp night",
-          "breakfast": "confirmed",
+          "breakfast": "included",
           "dinner": "included"
         },
         {
           "night": 3,
           "place": "Dades Valley",
-          "breakfast": "confirmed",
-          "dinner": "confirmed"
+          "breakfast": "included",
+          "dinner": "included"
         },
         {
           "night": 4,
           "place": "Marrakech",
-          "breakfast": "confirmed",
-          "dinner": "confirmed"
+          "breakfast": "included",
+          "dinner": "not_included"
         }
       ],
       "notIncluded": [
@@ -1931,6 +1990,12 @@
         "Merzouga, Erg Chebbi and a desert-camp night",
         "Todra Gorge, Dades Valley and Aït Ben Haddou",
         "Marrakech's palaces and souks"
+      ],
+      "bestFor": "Travellers with over a week who want Morocco's imperial north and the Sahara covered properly in one private journey, starting in Fes and finishing in Marrakech.",
+      "whyChoose": [
+        "Combines guided days in both Fes and Marrakech with the full desert corridor between them — Meknès, Volubilis, the Sahara at Erg Chebbi and the Dades and Todra gorges.",
+        "Eight days give the imperial cities and the desert crossing equal weight, rather than treating one as a detour from the other.",
+        "Private vehicle and driver-guide throughout, with official local guides in Fes and Marrakech."
       ],
       "itinerary": [
         {
@@ -1997,44 +2062,44 @@
         {
           "night": 1,
           "place": "Fes",
-          "breakfast": "confirmed",
-          "dinner": "confirmed"
+          "breakfast": "included",
+          "dinner": "not_included"
         },
         {
           "night": 2,
           "place": "Middle Atlas",
-          "breakfast": "confirmed",
-          "dinner": "confirmed"
+          "breakfast": "included",
+          "dinner": "included"
         },
         {
           "night": 3,
           "place": "Merzouga Hotel",
-          "breakfast": "confirmed",
-          "dinner": "confirmed"
+          "breakfast": "included",
+          "dinner": "included"
         },
         {
           "night": 4,
           "place": "Desert camp night",
-          "breakfast": "confirmed",
+          "breakfast": "included",
           "dinner": "included"
         },
         {
           "night": 5,
           "place": "Dades Valley",
-          "breakfast": "confirmed",
-          "dinner": "confirmed"
+          "breakfast": "included",
+          "dinner": "included"
         },
         {
           "night": 6,
           "place": "Marrakech",
-          "breakfast": "confirmed",
-          "dinner": "confirmed"
+          "breakfast": "included",
+          "dinner": "not_included"
         },
         {
           "night": 7,
           "place": "Marrakech",
-          "breakfast": "confirmed",
-          "dinner": "confirmed"
+          "breakfast": "included",
+          "dinner": "not_included"
         }
       ],
       "notIncluded": [
@@ -2089,6 +2154,12 @@
         "High Atlas Tizi n'Tichka crossing",
         "Two nights to explore Marrakech"
       ],
+      "bestFor": "Travellers based in Agadir who want the kasbah country and Aït Ben Haddou on the way to Marrakech, without committing to the longer desert route.",
+      "whyChoose": [
+        "A private route from the Atlantic coast to Marrakech through Taroudant's ramparts and the saffron terraces of Taliouine, rather than the busier direct road.",
+        "Two nights left in Marrakech at the end, with a full guided day in the city.",
+        "Private vehicle and driver-guide throughout — this route does not reach the Sahara."
+      ],
       "itinerary": [
         {
           "day": 1,
@@ -2128,20 +2199,20 @@
         {
           "night": 1,
           "place": "Ouarzazate",
-          "breakfast": "confirmed",
-          "dinner": "unspecified"
+          "breakfast": "included",
+          "dinner": "included"
         },
         {
           "night": 2,
           "place": "Marrakech",
-          "breakfast": "confirmed",
-          "dinner": "unspecified"
+          "breakfast": "included",
+          "dinner": "not_included"
         },
         {
           "night": 3,
           "place": "Marrakech",
-          "breakfast": "confirmed",
-          "dinner": "unspecified"
+          "breakfast": "included",
+          "dinner": "not_included"
         }
       ],
       "notIncluded": [
@@ -2196,6 +2267,12 @@
         "Sunset camel trek in Erg Chebbi",
         "High Atlas crossing into Marrakech"
       ],
+      "bestFor": "Travellers on the Atlantic coast who want a genuine Sahara night on their way to Marrakech, not just the kasbah country.",
+      "whyChoose": [
+        "The Agadir-to-Marrakech route with the Sahara added — Taroudant, Taliouine's saffron terraces, the Dades and Todra gorges and a night in the Erg Chebbi dunes.",
+        "One extra day over a four-day version of this route buys the desert night that shorter trip leaves out.",
+        "Private vehicle and driver-guide throughout."
+      ],
       "itinerary": [
         {
           "day": 1,
@@ -2244,26 +2321,26 @@
         {
           "night": 1,
           "place": "Ouarzazate",
-          "breakfast": "confirmed",
-          "dinner": "confirmed"
+          "breakfast": "included",
+          "dinner": "included"
         },
         {
           "night": 2,
           "place": "Dades Valley",
-          "breakfast": "confirmed",
-          "dinner": "confirmed"
+          "breakfast": "included",
+          "dinner": "included"
         },
         {
           "night": 3,
           "place": "Desert camp night",
-          "breakfast": "confirmed",
-          "dinner": "confirmed"
+          "breakfast": "included",
+          "dinner": "included"
         },
         {
           "night": 4,
           "place": "Ouarzazate area",
-          "breakfast": "confirmed",
-          "dinner": "confirmed"
+          "breakfast": "included",
+          "dinner": "included"
         }
       ],
       "notIncluded": [
@@ -2317,6 +2394,12 @@
         "Ouarzazate, gateway to the Atlas kasbah route",
         "Dades and Todra gorges",
         "Merzouga, Erg Chebbi and a desert-camp night"
+      ],
+      "bestFor": "Travellers flying in and out of Agadir who want the deep south — kasbahs, gorges, Sahara and the Draa Valley — as one unhurried circuit.",
+      "whyChoose": [
+        "A full private loop from Agadir back to Agadir — the saffron country of Taliouine, the kasbah route, the Sahara at Erg Chebbi and the palm-lined Draa Valley.",
+        "Eight days give the desert night, the gorges and the Draa Valley their own proper time rather than a rushed pass-through.",
+        "Private vehicle and driver-guide throughout."
       ],
       "itinerary": [
         {
@@ -2381,44 +2464,44 @@
         {
           "night": 1,
           "place": "Agadir",
-          "breakfast": "confirmed",
-          "dinner": "confirmed"
+          "breakfast": "included",
+          "dinner": "included"
         },
         {
           "night": 2,
           "place": "Ouarzazate",
-          "breakfast": "confirmed",
-          "dinner": "confirmed"
+          "breakfast": "included",
+          "dinner": "included"
         },
         {
           "night": 3,
           "place": "Dades Valley",
-          "breakfast": "confirmed",
-          "dinner": "confirmed"
+          "breakfast": "included",
+          "dinner": "included"
         },
         {
           "night": 4,
           "place": "Erg Chebbi desert camp",
-          "breakfast": "confirmed",
-          "dinner": "confirmed"
+          "breakfast": "included",
+          "dinner": "included"
         },
         {
           "night": 5,
           "place": "Draa Valley / Zagora",
-          "breakfast": "confirmed",
-          "dinner": "confirmed"
+          "breakfast": "included",
+          "dinner": "included"
         },
         {
           "night": 6,
           "place": "Ouarzazate",
-          "breakfast": "confirmed",
-          "dinner": "confirmed"
+          "breakfast": "included",
+          "dinner": "included"
         },
         {
           "night": 7,
           "place": "Marrakech",
-          "breakfast": "confirmed",
-          "dinner": "confirmed"
+          "breakfast": "included",
+          "dinner": "not_included"
         }
       ],
       "notIncluded": [
@@ -2497,13 +2580,11 @@
         "Fuel"
       ],
       "accommodation": [
-        "Accommodation according to the selected package (confirmed in the written quote, not guaranteed)",
-        "Hotel pick-up & drop-off",
-        "Night in the desert camp (confirmed in the written quote, not guaranteed)"
+        "1 night at a desert camp near Zagora",
+        "Hotel pick-up & drop-off"
       ],
       "desertExperiences": [
-        "Desert experience described in the confirmed itinerary (confirmed in the written quote, not guaranteed)",
-        "Desert sunset (confirmed in the written quote, not guaranteed)"
+        "Desert sunset"
       ],
       "visitsAndLandscapes": [],
       "guideAndServices": [],
@@ -2511,8 +2592,8 @@
         {
           "night": 1,
           "place": "Zagora",
-          "breakfast": "unspecified",
-          "dinner": "unspecified"
+          "breakfast": "included",
+          "dinner": "included"
         }
       ],
       "notIncluded": [
@@ -2524,7 +2605,7 @@
         "Tips & gratuities",
         "Personal expenses"
       ],
-      "hasQuoteDependentItems": true,
+      "hasQuoteDependentItems": false,
       "pricing": {
         "published": true,
         "currency": "EUR",
@@ -2617,38 +2698,35 @@
         "Fuel"
       ],
       "accommodation": [
-        "Accommodation according to selected package (confirmed in the written quote, not guaranteed)",
-        "Hotel pick-up & drop-off",
-        "Night in the desert camp (confirmed in the written quote, not guaranteed)"
+        "3 nights' accommodation: 1 night in the Dades Valley area, 2 nights in the Merzouga area including a desert camp night",
+        "Hotel pick-up & drop-off"
       ],
       "desertExperiences": [
-        "Desert experience according to confirmed itinerary (confirmed in the written quote, not guaranteed)",
-        "Camel experience when included in the confirmed package (confirmed in the written quote, not guaranteed)",
-        "Desert sunrise over the dunes (confirmed in the written quote, not guaranteed)"
+        "Sunset camel trek into the Erg Chebbi dunes",
+        "Desert sunrise over the dunes"
       ],
       "visitsAndLandscapes": [
-        "Visit Todra Gorge (confirmed in the written quote, not guaranteed)",
-        "Visit Dades Valley (confirmed in the written quote, not guaranteed)"
+        "Visit Todra Gorge"
       ],
       "guideAndServices": [],
       "meals": [
         {
           "night": 1,
           "place": "Dades Valley",
-          "breakfast": "unspecified",
-          "dinner": "unspecified"
+          "breakfast": "included",
+          "dinner": "included"
         },
         {
           "night": 2,
           "place": "Merzouga Hotel",
-          "breakfast": "unspecified",
-          "dinner": "unspecified"
+          "breakfast": "included",
+          "dinner": "included"
         },
         {
           "night": 3,
           "place": "Merzouga area",
           "breakfast": "included",
-          "dinner": "unspecified"
+          "dinner": "included"
         }
       ],
       "notIncluded": [
@@ -2660,7 +2738,7 @@
         "Tips & gratuities",
         "Personal expenses"
       ],
-      "hasQuoteDependentItems": true,
+      "hasQuoteDependentItems": false,
       "pricing": {
         "published": true,
         "currency": "EUR",
@@ -2728,7 +2806,7 @@
       "itinerary": [
         {
           "day": 1,
-          "title": "Marrakech → High Atlas → Aït Ben Haddou → Dades",
+          "title": "Marrakech → High Atlas → Aït Ben Haddou → Dades Valley",
           "summary": "Cross the High Atlas, visit Aït Ben Haddou and continue through Ouarzazate and the southern valleys to the Dades Valley for the first overnight stay."
         },
         {
@@ -2774,27 +2852,27 @@
       "meals": [
         {
           "night": 1,
-          "place": "Dades",
-          "breakfast": "unspecified",
-          "dinner": "unspecified"
+          "place": "Dades Valley",
+          "breakfast": "included",
+          "dinner": "included"
         },
         {
           "night": 2,
           "place": "Merzouga Hotel",
-          "breakfast": "unspecified",
-          "dinner": "unspecified"
+          "breakfast": "included",
+          "dinner": "included"
         },
         {
           "night": 3,
           "place": "Merzouga area",
-          "breakfast": "unspecified",
-          "dinner": "unspecified"
+          "breakfast": "included",
+          "dinner": "included"
         },
         {
           "night": 4,
           "place": "Ouarzazate",
-          "breakfast": "unspecified",
-          "dinner": "unspecified"
+          "breakfast": "included",
+          "dinner": "included"
         }
       ],
       "notIncluded": [
@@ -2909,14 +2987,14 @@
         {
           "night": 1,
           "place": "Ziz Valley",
-          "breakfast": "unspecified",
-          "dinner": "unspecified"
+          "breakfast": "included",
+          "dinner": "included"
         },
         {
           "night": 2,
           "place": "Erg Chebbi",
-          "breakfast": "unspecified",
-          "dinner": "unspecified"
+          "breakfast": "included",
+          "dinner": "included"
         }
       ],
       "notIncluded": [
@@ -3018,36 +3096,32 @@
         "Fuel"
       ],
       "accommodation": [
-        "Accommodation according to selected package (confirmed in the written quote, not guaranteed)",
+        "3 nights' accommodation: Merzouga/Erg Chebbi, Dades Valley, and the Aït Ben Haddou area",
         "Hotel pick-up and drop-off"
       ],
-      "desertExperiences": [
-        "Desert experience according to confirmed itinerary (confirmed in the written quote, not guaranteed)",
-        "Camel experience when specified (confirmed in the written quote, not guaranteed)"
-      ],
+      "desertExperiences": [],
       "visitsAndLandscapes": [
-        "Visit Todra Gorge (confirmed in the written quote, not guaranteed)",
-        "Visit Dades Valley (confirmed in the written quote, not guaranteed)"
+        "Visit Todra Gorge"
       ],
       "guideAndServices": [],
       "meals": [
         {
           "night": 1,
           "place": "Merzouga Hotel",
-          "breakfast": "unspecified",
-          "dinner": "unspecified"
+          "breakfast": "included",
+          "dinner": "included"
         },
         {
           "night": 2,
           "place": "Dades Valley",
-          "breakfast": "unspecified",
-          "dinner": "unspecified"
+          "breakfast": "included",
+          "dinner": "included"
         },
         {
           "night": 3,
           "place": "Aït Ben Haddou",
-          "breakfast": "unspecified",
-          "dinner": "unspecified"
+          "breakfast": "included",
+          "dinner": "included"
         }
       ],
       "notIncluded": [
@@ -3059,7 +3133,7 @@
         "Tips & gratuities",
         "Personal expenses"
       ],
-      "hasQuoteDependentItems": true,
+      "hasQuoteDependentItems": false,
       "pricing": {
         "published": true,
         "currency": "EUR",
@@ -3157,13 +3231,13 @@
           "night": 1,
           "place": "Chefchaouen",
           "breakfast": "included",
-          "dinner": "unspecified"
+          "dinner": "included"
         },
         {
           "night": 2,
           "place": "Chefchaouen",
           "breakfast": "included",
-          "dinner": "unspecified"
+          "dinner": "included"
         }
       ],
       "notIncluded": [
@@ -3274,25 +3348,25 @@
           "night": 1,
           "place": "Chefchaouen",
           "breakfast": "included",
-          "dinner": "unspecified"
+          "dinner": "included"
         },
         {
           "night": 2,
           "place": "Chefchaouen",
           "breakfast": "included",
-          "dinner": "unspecified"
+          "dinner": "included"
         },
         {
           "night": 3,
           "place": "Ifrane",
           "breakfast": "included",
-          "dinner": "unspecified"
+          "dinner": "included"
         },
         {
           "night": 4,
           "place": "Fes",
           "breakfast": "included",
-          "dinner": "unspecified"
+          "dinner": "not_included"
         }
       ],
       "notIncluded": [
@@ -3386,7 +3460,7 @@
           "night": 1,
           "place": "Essaouira",
           "breakfast": "included",
-          "dinner": "unspecified"
+          "dinner": "included"
         }
       ],
       "notIncluded": [
@@ -3547,25 +3621,25 @@
           "night": 1,
           "place": "Marrakech",
           "breakfast": "included",
-          "dinner": "unspecified"
+          "dinner": "not_included"
         },
         {
           "night": 2,
           "place": "Essaouira",
           "breakfast": "included",
-          "dinner": "unspecified"
+          "dinner": "included"
         },
         {
           "night": 3,
           "place": "Agadir",
           "breakfast": "included",
-          "dinner": "unspecified"
+          "dinner": "included"
         },
         {
           "night": 4,
           "place": "Ouarzazate",
           "breakfast": "included",
-          "dinner": "unspecified"
+          "dinner": "included"
         },
         {
           "night": 5,
@@ -3589,37 +3663,37 @@
           "night": 8,
           "place": "Fes",
           "breakfast": "included",
-          "dinner": "unspecified"
+          "dinner": "not_included"
         },
         {
           "night": 9,
           "place": "Fes",
           "breakfast": "included",
-          "dinner": "unspecified"
+          "dinner": "not_included"
         },
         {
           "night": 10,
           "place": "Chefchaouen",
           "breakfast": "included",
-          "dinner": "unspecified"
+          "dinner": "included"
         },
         {
           "night": 11,
           "place": "Chefchaouen",
           "breakfast": "included",
-          "dinner": "unspecified"
+          "dinner": "included"
         },
         {
           "night": 12,
           "place": "Rabat",
           "breakfast": "included",
-          "dinner": "unspecified"
+          "dinner": "not_included"
         },
         {
           "night": 13,
           "place": "Casablanca",
           "breakfast": "included",
-          "dinner": "unspecified"
+          "dinner": "not_included"
         }
       ],
       "notIncluded": [
@@ -3655,6 +3729,280 @@
         {
           "question": "Can I book now and pay later?",
           "answer": "Request the itinerary first. We confirm the route, inclusions and applicable payment terms before any payment is made."
+        }
+      ]
+    },
+    {
+      "id": "marrakech-ourika-valley-day-trip",
+      "name": "Marrakech to Ourika Valley Day Trip",
+      "category": "Day Trip · Quote Only",
+      "duration": "1 Day",
+      "nights": 0,
+      "startCity": "marrakech",
+      "route": "Marrakech → Ourika Valley → Marrakech. A private day trip into the Atlas foothills, under an hour from the city.",
+      "private": true,
+      "highlights": [
+        "Green Atlas valley scenery, under an hour from Marrakech",
+        "Berber villages along the Ourika river",
+        "A guided walk to the Setti Fatma waterfalls",
+        "Riverside mint tea and an argan oil cooperative"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Marrakech → Ourika Valley → Marrakech",
+          "summary": "A full day from Marrakech into the Ourika Valley and back, with a guided walk to the Setti Fatma waterfalls and a stop at a local argan oil cooperative."
+        }
+      ],
+      "transport": [
+        "Private air-conditioned vehicle for the full day",
+        "Professional English-speaking driver",
+        "Fuel"
+      ],
+      "accommodation": [
+        "Hotel pick-up and drop-off in Marrakech"
+      ],
+      "desertExperiences": [],
+      "visitsAndLandscapes": [],
+      "guideAndServices": [
+        "Guided visits named in the itinerary"
+      ],
+      "meals": [],
+      "notIncluded": [
+        "International flights",
+        "Lunch and drinks",
+        "Cooperative, monument or activity entrance fees",
+        "Tips and personal expenses"
+      ],
+      "hasQuoteDependentItems": false,
+      "pricing": {
+        "published": false,
+        "note": "No published starting price for this route; the total is confirmed with the traveler’s dates and party size before booking."
+      },
+      "faq": [
+        {
+          "question": "Is this a private trip?",
+          "answer": "Yes — a private vehicle and driver for your group only, not a shared group tour."
+        },
+        {
+          "question": "What time do we leave and return?",
+          "answer": "Departure and return times are arranged around your schedule when you book — send us your dates and we'll confirm timing."
+        },
+        {
+          "question": "Is lunch included?",
+          "answer": "No — lunch isn't included, but the valley has riverside restaurants where you can stop."
+        },
+        {
+          "question": "Can the itinerary be customized?",
+          "answer": "Yes — every MGA trip is private, so the pace and stops can be adjusted around your interests. Tell us what you'd like when you send your request."
+        },
+        {
+          "question": "Can I book now and pay later?",
+          "answer": "Yes. Sending a request is free and commits you to nothing. We confirm your dates, itinerary and final price with you first; a 20% deposit then secures the booking, and the remaining 80% is paid on arrival in Morocco."
+        }
+      ]
+    },
+    {
+      "id": "marrakech-ouzoud-waterfalls-day-trip",
+      "name": "Marrakech to Ouzoud Waterfalls Day Trip",
+      "category": "Day Trip · Quote Only",
+      "duration": "1 Day",
+      "nights": 0,
+      "startCity": "marrakech",
+      "route": "Marrakech → Ouzoud Falls → Marrakech. A private day trip to Morocco's best-known waterfalls, about 150 km from the city.",
+      "private": true,
+      "highlights": [
+        "Morocco's best-known waterfalls, about 150 km from Marrakech",
+        "110-metre tiered cascades and riverside viewpoints",
+        "Barbary macaques in the olive groves above the falls",
+        "A full day away from the city"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Marrakech → Ouzoud Falls → Marrakech",
+          "summary": "A full day from Marrakech to the Ouzoud Falls and back, with time at the falls' viewpoints and riverside paths."
+        }
+      ],
+      "transport": [
+        "Private air-conditioned vehicle for the full day",
+        "Professional English-speaking driver",
+        "Fuel"
+      ],
+      "accommodation": [
+        "Hotel pick-up and drop-off in Marrakech"
+      ],
+      "desertExperiences": [],
+      "visitsAndLandscapes": [],
+      "guideAndServices": [],
+      "meals": [],
+      "notIncluded": [
+        "International flights",
+        "Lunch and drinks",
+        "Boat rides, hammam or other optional local activities at Ouzoud (available locally, not included)",
+        "Tips and personal expenses"
+      ],
+      "hasQuoteDependentItems": false,
+      "pricing": {
+        "published": false,
+        "note": "No published starting price for this route; the total is confirmed with the traveler’s dates and party size before booking."
+      },
+      "faq": [
+        {
+          "question": "Is this a private trip?",
+          "answer": "Yes — a private vehicle and driver for your group only, not a shared group tour."
+        },
+        {
+          "question": "What time do we leave and return?",
+          "answer": "Departure and return times are arranged around your schedule when you book — send us your dates and we'll confirm timing."
+        },
+        {
+          "question": "Is lunch included?",
+          "answer": "No — lunch isn't included, so you're free to stop along the way or near the falls."
+        },
+        {
+          "question": "Can the itinerary be customized?",
+          "answer": "Yes — every MGA trip is private, so the pace and stops can be adjusted around your interests. Tell us what you'd like when you send your request."
+        },
+        {
+          "question": "Can I book now and pay later?",
+          "answer": "Yes. Sending a request is free and commits you to nothing. We confirm your dates, itinerary and final price with you first; a 20% deposit then secures the booking, and the remaining 80% is paid on arrival in Morocco."
+        }
+      ]
+    },
+    {
+      "id": "marrakech-imlil-day-trip",
+      "name": "Marrakech to Imlil Day Trip",
+      "category": "Day Trip · Quote Only",
+      "duration": "1 Day",
+      "nights": 0,
+      "startCity": "marrakech",
+      "route": "Marrakech → Imlil → Marrakech. A private day trip into the High Atlas, about 90 minutes from the city.",
+      "private": true,
+      "highlights": [
+        "High Atlas mountain village, 90 minutes from Marrakech",
+        "Toubkal trailhead views and the Mizane valley",
+        "Walnut groves, mule tracks and Berber villages",
+        "A cooler mountain contrast to Marrakech"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Marrakech → Imlil → Marrakech",
+          "summary": "A full day from Marrakech into the High Atlas, with time to walk around Imlil and the Mizane valley before returning."
+        }
+      ],
+      "transport": [
+        "Private air-conditioned vehicle for the full day",
+        "Professional English-speaking driver",
+        "Fuel"
+      ],
+      "accommodation": [
+        "Hotel pick-up and drop-off in Marrakech"
+      ],
+      "desertExperiences": [],
+      "visitsAndLandscapes": [],
+      "guideAndServices": [],
+      "meals": [],
+      "notIncluded": [
+        "International flights",
+        "Lunch and drinks",
+        "Guided mountain trekking beyond the day's walk (available locally, not included)",
+        "Tips and personal expenses"
+      ],
+      "hasQuoteDependentItems": false,
+      "pricing": {
+        "published": false,
+        "note": "No published starting price for this route; the total is confirmed with the traveler’s dates and party size before booking."
+      },
+      "faq": [
+        {
+          "question": "Is this a private trip?",
+          "answer": "Yes — a private vehicle and driver for your group only, not a shared group tour."
+        },
+        {
+          "question": "What time do we leave and return?",
+          "answer": "Departure and return times are arranged around your schedule when you book — send us your dates and we'll confirm timing."
+        },
+        {
+          "question": "Is lunch included?",
+          "answer": "No — lunch isn't included, so you're free to stop in the village."
+        },
+        {
+          "question": "Can the itinerary be customized?",
+          "answer": "Yes — every MGA trip is private, so the pace and stops can be adjusted around your interests. Tell us what you'd like when you send your request."
+        },
+        {
+          "question": "Can I book now and pay later?",
+          "answer": "Yes. Sending a request is free and commits you to nothing. We confirm your dates, itinerary and final price with you first; a 20% deposit then secures the booking, and the remaining 80% is paid on arrival in Morocco."
+        }
+      ]
+    },
+    {
+      "id": "agadir-taghazout-day-trip",
+      "name": "Agadir to Taghazout Day Trip",
+      "category": "Day Trip · Quote Only",
+      "duration": "1 Day",
+      "nights": 0,
+      "startCity": "agadir",
+      "route": "Agadir → Taghazout → Agadir. A private day trip to the Atlantic surf coast, about 20 minutes from the city.",
+      "private": true,
+      "highlights": [
+        "Atlantic surf village, 20 minutes from Agadir",
+        "Anchor Point's well-known surf break",
+        "A working fishing harbour and laid-back village atmosphere",
+        "A short, relaxed coastal escape from Agadir"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Agadir → Taghazout → Agadir",
+          "summary": "A relaxed day from Agadir to the surf village of Taghazout and back, with time by the harbour and beaches."
+        }
+      ],
+      "transport": [
+        "Private air-conditioned vehicle for the full day",
+        "Professional English-speaking driver",
+        "Fuel"
+      ],
+      "accommodation": [
+        "Hotel pick-up and drop-off in Agadir"
+      ],
+      "desertExperiences": [],
+      "visitsAndLandscapes": [],
+      "guideAndServices": [],
+      "meals": [],
+      "notIncluded": [
+        "International flights",
+        "Lunch and drinks",
+        "Surfing or yoga lessons (available locally, not included)",
+        "Tips and personal expenses"
+      ],
+      "hasQuoteDependentItems": false,
+      "pricing": {
+        "published": false,
+        "note": "No published starting price for this route; the total is confirmed with the traveler’s dates and party size before booking."
+      },
+      "faq": [
+        {
+          "question": "Is this a private trip?",
+          "answer": "Yes — a private vehicle and driver for your group only, not a shared group tour."
+        },
+        {
+          "question": "What time do we leave and return?",
+          "answer": "Departure and return times are arranged around your schedule when you book — send us your dates and we'll confirm timing."
+        },
+        {
+          "question": "Is lunch included?",
+          "answer": "No — lunch isn't included, but Taghazout has seafood grills and cafés by the harbour."
+        },
+        {
+          "question": "Can the itinerary be customized?",
+          "answer": "Yes — every MGA trip is private, so the pace and stops can be adjusted around your interests. Tell us what you'd like when you send your request."
+        },
+        {
+          "question": "Can I book now and pay later?",
+          "answer": "Yes. Sending a request is free and commits you to nothing. We confirm your dates, itinerary and final price with you first; a 20% deposit then secures the booking, and the remaining 80% is paid on arrival in Morocco."
         }
       ]
     }

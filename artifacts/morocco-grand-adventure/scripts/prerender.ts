@@ -59,6 +59,7 @@ import { getRouteMeta, getLocalizedRouteMeta, BLOG_META, HOME_META, FR_HOME_META
 import { getLocalizedGuide, guideImageAlt, guideCrumb } from '../src/i18n/guides';
 import { buildTourSchema, buildDestinationSchema, buildBlogPostSchema, buildReviewSchema, buildFaqSchema, buildBreadcrumb } from '../src/components/seo/StructuredData';
 import { getStudentTour, studentTours as studentTourList, studentTourSizes } from '../src/data/student-tours';
+import { departuresForTour, seatsAvailable, isFull } from '../src/data/student-group-departures';
 // Data-driven index list (1, 2, 3, ...) for the st_11_r{n}_* card-copy keys and
 // the hub's TouristTrip schema loop — derives its length from the actual
 // Student Tours data, so adding a tour only means authoring its st_11_r{n}_*
@@ -77,8 +78,20 @@ import { tours as canonicalTours } from '../src/data/content';
 import { deriveTourExperiences, type DerivedExperience } from '../src/data/tour-experiences';
 import { localizeExperience } from '../src/i18n/experiences';
 
-import { deriveTourInclusions, type InclusionItem, type MealRow } from '../src/data/tour-inclusions';
+import { deriveTourInclusions, type InclusionItem, type InclusionKind, type MealRow } from '../src/data/tour-inclusions';
 import { deriveTourStartEnd } from '../src/data/tour-quick-facts';
+
+/** Mirrors src/components/tours/TourInclusions.tsx's GROUP_ORDER/GROUP_KEY exactly. */
+const INC_GROUP_ORDER: InclusionKind[] = ['transport', 'stay', 'meal', 'experience', 'landscape', 'service', 'other'];
+const INC_GROUP_KEY: Record<InclusionKind, string> = {
+  transport: 'jx_inc_cat_transport',
+  stay: 'jx_inc_cat_stay',
+  meal: 'jx_inc_cat_meal',
+  experience: 'jx_inc_cat_experience',
+  landscape: 'jx_inc_cat_landscape',
+  service: 'jx_inc_cat_service',
+  other: 'jx_inc_cat_other',
+};
 
 // ── Constants ────────────────────────────────────────────────────────────────
 const BRAND = 'Morocco Grand Adventure';
@@ -317,12 +330,15 @@ const OG_LOCALE: Record<string, string> = {
 function buildHomeContent(lang: Lang): string {
   const destNames = getLocalizedDestinations(lang).slice(0, 8).map((d) => `      <li>${link(`${SITE_URL}/${lang}/destinations/${d.id}`, d.name)}</li>`).join('\n');
   const tourNames = getLocalizedTours(lang).map((t) => `      <li>${link(`${SITE_URL}/${lang}/tours/${t.id}`, t.name)}</li>`).join('\n');
-  // Departure-city tour hubs — mirrors the runtime homepage "Tours by Departure City"
-  // section so crawlers see the same City → Tours hierarchy users navigate.
-  const hubLinks = CITY_HUBS.map((hub) =>
-    `      <li>${link(`${SITE_URL}/${lang}/tours/from-${hub.slug}`, tr(lang, `hub_${hub.id}_title`))}</li>`,
-  ).join('\n');
-  const hubBlock = h2(tr(lang, 'section_city_hubs') || 'Tours by Departure City') + paragraph(tr(lang, 'section_city_hubs_sub') || 'Choose a starting city and explore the Sahara routes, imperial cities and coastal escapes we tailor for it.') + `    <ul class="prerendered-city-hubs">\n${hubLinks}\n    </ul>\n`;
+  // Departure-city tour hubs — mirrors the runtime homepage "Departure from"
+  // city-selector + product grid, so crawlers see the same City → Tours
+  // hierarchy users navigate, including each city's real tour count.
+  const hubLinks = CITY_HUBS.map((hub) => {
+    const count = tourIdsForCity(hub.id).length;
+    const label = count > 0 ? `${tr(lang, `hub_${hub.id}_title`)} (${fmt(tr(lang, 'home_depart_tour_count'), { n: count })})` : tr(lang, `hub_${hub.id}_title`);
+    return `      <li>${link(`${SITE_URL}/${lang}/tours/from-${hub.slug}`, label)}</li>`;
+  }).join('\n');
+  const hubBlock = h2(tr(lang, 'home_depart_heading') || 'Departure from') + paragraph(tr(lang, 'home_depart_sub') || 'Choose a starting city and explore the Sahara routes, imperial cities and coastal escapes we tailor for it.') + `    <ul class="prerendered-city-hubs">\n${hubLinks}\n    </ul>\n`;
   const reviewBlocks = reviews.map((r) => {
     const name = tr(lang, r.nameKey);
     const quote = tr(lang, r.quoteKey);
@@ -377,10 +393,44 @@ function buildToursContent(lang: Lang): string {
       return `      <li>${link(`${SITE_URL}/${lang}/tours/from-${hub.slug}`, tr(lang, `hub_${hub.id}_title`))}\n      <ul class="prerendered-duration-hubs">\n${durationLinks}\n      </ul>\n      </li>`;
     })
     .join('\n');
-  return h1(tr(lang, 'section_tours') || 'Our Tours')
+  // Was tr(lang, 'section_tours') ("Featured Tours") — a stale key left over
+  // from before this became its own builder, which meant the crawlable H1
+  // never matched what a real visitor sees on /tours (tours_heading). Using
+  // the same key the live page renders keeps the two in sync, per this
+  // file's own convention elsewhere (see the buildExperienceContent comment
+  // on the static/hydrated heading needing to match).
+  // Mirrors the contextual /desert-tours link added directly under the H1 on
+  // the live page — same intent, same target, same label (nav_sahara_desert_tours).
+  const desertToursLink = paragraph(link(`${SITE_URL}/${lang}/desert-tours`, tr(lang, 'nav_sahara_desert_tours')));
+  // Mirrors the live-page FAQ accordion (tours_faq_q1..4/a1..4) — same
+  // question/answer copy, same heading key (td_faq_title), same convention
+  // already used by the university-groups FAQ above.
+  const toursFaq = `\n    <h2>${escapeHtml(tr(lang, 'td_faq_title'))}</h2>\n`
+    + [1, 2, 3, 4].map((n) => `    <h3>${escapeHtml(tr(lang, `tours_faq_q${n}`))}</h3><p>${escapeHtml(tr(lang, `tours_faq_a${n}`))}</p>`).join('\n');
+  // Mirrors the live page's filter-pill bar (city/duration/style, wired to
+  // the same ?city=/?duration=/?style= contract the live page reads). robots.txt
+  // already disallows crawling those query variants, so this is purely for
+  // pre-hydration content parity, not a new indexable surface.
+  const filterCityLinks = CITY_HUBS
+    .map((hub) => `        <li>${link(`${SITE_URL}/${lang}/tours?city=${hub.id}`, tr(lang, `hub_${hub.id}_name`))}</li>`)
+    .join('\n');
+  const filterDurationLinks = (['1-2', '3-4', '5-7', '8-14'] as const)
+    .map((range) => `        <li>${link(`${SITE_URL}/${lang}/tours?duration=${range}`, tr(lang, `tours_dur_${range.replace('-', '_')}`))}</li>`)
+    .join('\n');
+  const filterStyleLinks = (['desert', 'imperial', 'mountains', 'coastal'] as const)
+    .map((style) => `        <li>${link(`${SITE_URL}/${lang}/tours?style=${style}`, tr(lang, `tours_style_${style}`))}</li>`)
+    .join('\n');
+  const filterBar = `    <h2>${escapeHtml(tr(lang, 'tours_filter_duration'))}</h2>\n    <ul class="prerendered-tour-filters">\n${filterDurationLinks}\n    </ul>\n`
+    + `    <h2>${escapeHtml(tr(lang, 'tours_filter_style'))}</h2>\n    <ul class="prerendered-tour-filters">\n${filterStyleLinks}\n    </ul>\n`;
+  return h1(tr(lang, 'tours_heading') || 'Our Tours')
+    + paragraph(tr(lang, 'tours_sub'))
+    + desertToursLink
     + h2(tr(lang, 'hub_by_departure_city'))
     + `    <ul class="prerendered-city-hubs">\n${cityLinks}\n    </ul>\n`
-    + blocks;
+    + `    <ul class="prerendered-tour-filters">\n${filterCityLinks}\n    </ul>\n`
+    + filterBar
+    + blocks
+    + toursFaq;
 }
 
 /**
@@ -476,12 +526,14 @@ function buildCityHubContent(slug: string, lang: Lang): string {
 
   return h1(tr(lang, `hub_${hub.id}_title`))
     + paragraph(tr(lang, `hub_${hub.id}_intro`))
+    // Product discovery first — the real tours for this city appear directly
+    // after the hero/intro, matching the live page's section order.
+    + toursSection
     + paragraph(tr(lang, `hub_${hub.id}_body`))
     + (hub.hasDurationDrive
         ? h2(fmt(tr(lang, 'hub_dur_crumb'), { days: 3, city: tr(lang, `hub_${hub.id}_name`) })) + rawParagraph(link(`${SITE_URL}/${lang}/tours/from-${hub.slug}/3-days`, fmt(tr(lang, 'hub_browse_3day'), { city: tr(lang, `hub_${hub.id}_name`) })))
         : '')
     + durationsSection
-    + toursSection
     + destinationsSection
     + h2(tr(lang, 'nav_build_journey')) + rawParagraph(link(`${SITE_URL}/${lang}/trip-builder`, tr(lang, 'nav_build_journey')));
 }
@@ -550,6 +602,10 @@ const RELATED_DESTINATION_IDS: Record<string, string[]> = {
   merzouga: ['erg-chebbi', 'dades-valley', 'todra-gorge'],
   'erg-chebbi': ['merzouga', 'dades-valley', 'ait-ben-haddou'],
   'todra-gorge': ['dades-valley', 'merzouga', 'ait-ben-haddou'],
+  // Mirrors src/components/seo/TopicalLinks.tsx exactly.
+  ouarzazate: ['ait-ben-haddou', 'dades-valley', 'merzouga'],
+  zagora: ['draa-valley', 'ouarzazate', 'ait-ben-haddou'],
+  'draa-valley': ['zagora', 'ouarzazate', 'ait-ben-haddou'],
 };
 
 // Sahara destinations additionally link to the desert-experience pages so the
@@ -674,44 +730,61 @@ function tourInclusionsBlock(canonical: Tour, localized: Tour, lang: Lang): stri
     return it.nights ? s.split('{n}').join(String(it.nights)) : s;
   };
   const fmt = (s: string, values: Record<string, string | number>) => Object.entries(values).reduce((out, [k, v]) => out.split(`{${k}}`).join(String(v)), s);
-  const incItems = inc.included.map((it) => {
+  const itemHtml = (it: InclusionItem) => {
     const status = it.status === 'confirmed' ? ` (${escapeHtml(tr(lang, 'jx_exp_confirmed'))})` : '';
     return `<strong>${escapeHtml(itemText(it))}</strong>${status}`;
-  });
+  };
+  const placeOf = (row: { place: string; placeId?: string }): string => {
+    const dest = (row.placeId && destMap[row.placeId]) || '';
+    return dest && row.place && row.place.toLowerCase().includes(dest.toLowerCase()) ? row.place : row.place || dest;
+  };
+  // Same place text as TourInclusions.tsx's `placeLink` — linked to that
+  // destination's own page when this site has one, plain text otherwise.
+  const placeHtml = (row: { place: string; placeId?: string }): string => {
+    const name = placeOf(row);
+    return row.placeId && name ? link(`/${lang}/destinations/${row.placeId}`, name) : escapeHtml(name);
+  };
+  /** Template text with a `{place}` token spliced with raw (already-safe) place HTML. */
+  const fmtPlaceHtml = (template: string, row: { place: string; placeId?: string }): string => {
+    const [before = '', after = ''] = template.split('{place}');
+    return `${escapeHtml(before)}${placeHtml(row)}${escapeHtml(after)}`;
+  };
+  // Grouped by commercial category — mirrors TourInclusions.tsx exactly, so the
+  // crawlable HTML matches what a browser visitor sees after hydration.
+  const groupedIncBlocks = INC_GROUP_ORDER.map((kind) => {
+    const items = inc.included.filter((it) => it.kind === kind).map(itemHtml);
+    return items.length ? h3(tr(lang, INC_GROUP_KEY[kind])) + rawUl(items) : '';
+  }).join('');
   const breakfastCount = inc.meals.filter((m) => m.breakfast === 'included').length;
-  if (breakfastCount > 0) {
-    incItems.push(`<strong>${escapeHtml(fmt(tr(lang, 'jx_inc_breakfasts_count'), { n: breakfastCount }))}</strong>`);
-  }
-  if (inc.dinnerSummary.count > 0) {
-    const lines = inc.dinnerSummary.nights.map((row) => {
-      const dest = (row.placeId && destMap[row.placeId]) || '';
-      const place = dest && row.place && row.place.toLowerCase().includes(dest.toLowerCase()) ? row.place : row.place || dest;
-      return escapeHtml(fmt(tr(lang, 'jx_inc_dinner_at'), { place }));
-    });
-    incItems.push(`<strong>${escapeHtml(fmt(tr(lang, 'jx_inc_dinners_count'), { n: inc.dinnerSummary.count }))}</strong> ${lines.map((x) => `<strong>${x}</strong>`).join(', ')}`);
-  }
+  const breakfastLine = breakfastCount > 0
+    ? rawParagraph(`<strong>${escapeHtml(fmt(tr(lang, 'jx_inc_breakfasts_count'), { n: breakfastCount }))}</strong>`)
+    : '';
+  const dinnerLine = inc.dinnerSummary.count > 0
+    ? (() => {
+        const lines = inc.dinnerSummary.nights.map((row) => `<strong>${fmtPlaceHtml(tr(lang, 'jx_inc_dinner_at'), row)}</strong>`);
+        return rawParagraph(`<strong>${escapeHtml(fmt(tr(lang, 'jx_inc_dinners_count'), { n: inc.dinnerSummary.count }))}</strong> ${lines.join(', ')}`);
+      })()
+    : '';
+  // Mirrors TourInclusions.tsx's "Meals included" summary heading unifying
+  // the breakfast/dinner counts above — same 1 new i18n key, same wording.
+  const mealsSummaryBlock = breakfastCount > 0 || inc.dinnerSummary.count > 0 ? h3(tr(lang, 'jx_inc_meals_summary_title')) + breakfastLine + dinnerLine : '';
   const excItems = [
     ...inc.notIncluded.map((it) => escapeHtml(itemText(it))),
-    ...inc.cityDinnersExcluded.map((group) => {
-      const dest = (group.placeId && destMap[group.placeId]) || '';
-      const place = dest && group.place && group.place.toLowerCase().includes(dest.toLowerCase()) ? group.place : group.place || dest;
-      return escapeHtml(fmt(tr(lang, 'jx_inc_dinner_in'), { place }));
-    }),
+    ...inc.cityDinnersExcluded.map((group) => fmtPlaceHtml(tr(lang, 'jx_inc_dinner_in'), group)),
   ];
   const mealItems = inc.meals.map((m) => {
-    const dest = (m.placeId && destMap[m.placeId]) || '';
-    const place = dest && m.place && m.place.toLowerCase().includes(dest.toLowerCase()) ? m.place : m.place || dest;
     const b = m.breakfast === 'included' ? tr(lang, 'jx_inc_meal_included') : m.breakfast === 'confirmed' ? tr(lang, 'jx_exp_confirmed') : m.breakfast === 'not_included' ? tr(lang, 'jx_inc_meal_not_included') : tr(lang, 'jx_inc_meal_unspecified');
     const d = m.dinner === 'included' ? tr(lang, 'jx_inc_meal_included') : m.dinner === 'confirmed' ? tr(lang, 'jx_exp_confirmed') : m.dinner === 'not_included' ? tr(lang, 'jx_inc_meal_not_included') : tr(lang, 'jx_inc_meal_unspecified');
-    return `${tr(lang, 'jx_inc_night').split('{n}').join(String(m.night))}: ${escapeHtml(place)} — ${escapeHtml(tr(lang, 'jx_inc_meal_breakfast'))}: ${escapeHtml(b)} | ${escapeHtml(tr(lang, 'jx_inc_meal_dinner'))}: ${escapeHtml(d)}`;
+    return `${escapeHtml(tr(lang, 'jx_inc_night').split('{n}').join(String(m.night)))}: ${placeHtml(m)} — ${escapeHtml(tr(lang, 'jx_inc_meal_breakfast'))}: ${escapeHtml(b)} | ${escapeHtml(tr(lang, 'jx_inc_meal_dinner'))}: ${escapeHtml(d)}`;
   });
   return (
     h2(tr(lang, 'tour_included')) +
     paragraph(tr(lang, 'jx_inc_lead')) +
     (inc.hasConfirmed ? paragraph(tr(lang, 'jx_inc_confirmed_note')) : '') +
-    rawUl(incItems) +
-    (mealItems.length ? h3(tr(lang, 'jx_inc_meals_title')) + paragraph(tr(lang, 'jx_inc_meals_lead')) + ul(mealItems) : '') +
-    (excItems.length ? h2(tr(lang, 'tour_not_included')) + ul(excItems) : '')
+    groupedIncBlocks +
+    mealsSummaryBlock +
+    (mealItems.length ? h3(tr(lang, 'jx_inc_meals_title')) + paragraph(tr(lang, 'jx_inc_meals_lead')) + rawUl(mealItems) : '') +
+    (excItems.length ? h2(tr(lang, 'tour_not_included')) + rawUl(excItems) : '')
   );
 }
 
@@ -751,7 +824,7 @@ function buildTourDetailContent(id: string, lang: Lang): string {
     .filter((p): p is NonNullable<typeof p> => Boolean(p))
     .map((p) => link(`${SITE_URL}/${lang}${hubPathFor(p)}`, getLocalizedGuide(p.slug, lang)?.title ?? p.title));
   const guideLinksBlock = guideLinkItems.length
-    ? h2(tr(lang, 'pwig_heading')) + ul(guideLinkItems) + paragraph(tr(lang, 'pwig_sub'))
+    ? h2(tr(lang, 'pwig_heading')) + rawUl(guideLinkItems) + paragraph(tr(lang, 'pwig_sub'))
     : '';
   const durationHubCrumb = departHub && hasDurationHub
     ? ` › ${link(`${SITE_URL}/${lang}/tours/from-${departHub.slug}/${tourDays}-days`, fmt(tr(lang, 'hub_dur_crumb'), { days: tourDays, city: tr(lang, `hub_${departHub.id}_name`) }))}`
@@ -846,7 +919,7 @@ function buildDestinationDetailContent(destId: string, lang: Lang): string {
   // Merzouga topical cluster: contextual links from the destination pages into
   // the Merzouga guide hubs (same block the runtime DestinationDetail renders).
   const merzougaGuideLinks = (destId === 'merzouga' || destId === 'erg-chebbi')
-    ? h2(tr(lang, 'dest_plan_experience')) + ul(
+    ? h2(tr(lang, 'dest_plan_experience')) + rawUl(
         MERZOUGA_GUIDES
           .filter((p) => ['things-to-do', 'camel-trekking', 'quad-biking', '4x4-desert-tour', 'luxury-desert-camps', 'best-time-to-visit'].includes(p.slug))
           .map((p) => link(`${SITE_URL}/${lang}/merzouga-guide/${p.slug}`, p.title))
@@ -955,7 +1028,7 @@ function buildThingsToDoContent(lang: Lang): string {
       const links: string[] = [];
       if (place) links.push(link(`${SITE_URL}/${lang}/destinations/${thing.destination}`, place.name));
       links.push(link(`${SITE_URL}/${lang}${thing.link}`, copy.links[thing.linkKey]));
-      out += ul(links.map((l) => l));
+      out += rawUl(links);
     }
   }
   const keepReading = [
@@ -964,7 +1037,7 @@ function buildThingsToDoContent(lang: Lang): string {
     { rest: '/blog', label: 'footer_travel_blog' },
     { rest: '/faq', label: 'footer_faq' },
   ].map((r) => link(`${SITE_URL}/${lang}${r.rest}`, tr(lang, r.label)));
-  out += ul(keepReading);
+  out += rawUl(keepReading);
   out += h2(copy.ctaTitle) + paragraph(copy.ctaText)
     + rawParagraph(link(`${SITE_URL}/${lang}/trip-builder`, copy.ctaButton))
     + rawParagraph(link(`${SITE_URL}/${lang}/tours`, tr(lang, 'nav_tours')));
@@ -1206,6 +1279,12 @@ function buildExperienceContent(rest: string, lang: Lang): string {
     ['/images/library/srcset/erg-chebbi-camel-trekking-sunset-morocco-mga-001-768w.webp', 'Berber guide leading a camel caravan across Erg Chebbi at dusk', tr(lang, 'dt2_moments_cap2'), 768, 512],
     ['/images/library/srcset/couple-sunset-erg-chebbi-morocco-mga-031-768w.webp', 'Silhouette of a couple watching sunset from an Erg Chebbi dune', tr(lang, 'dt2_moments_cap3'), 768, 512],
   ].map(([s, a, c, w, h]) => `      ${figureImg(s as string, a as string, c as string, { width: w as number, height: h as number })}`).join('\n')}\n    </div>\n` : '';
+  // Mirrors the live-page FAQ accordion added to src/pages/desert-tours.tsx
+  // (dt2_faq_q1..4/a1..4) — same heading key (td_faq_title) and convention
+  // already used for the Merzouga guide / student-tours FAQs elsewhere here.
+  const desertFaq = rest === '/desert-tours'
+    ? `\n    <h2>${escapeHtml(tr(lang, 'td_faq_title'))}</h2>\n` + [1, 2, 3, 4].map((n) => `    <h3>${escapeHtml(tr(lang, `dt2_faq_q${n}`))}</h3><p>${escapeHtml(tr(lang, `dt2_faq_a${n}`))}</p>`).join('\n')
+    : '';
   // Official photo library: render the ACTUAL PDF-derived photographs on the gallery page
   const galleryLibPhotos = rest === '/gallery' ? publishableLibraryPhotos().map((p) => libraryPhotoFigure(p)).join('\n') : '';
   // Trip Builder: render a descriptive heading + WhatsApp CTA so the prerendered
@@ -1349,11 +1428,26 @@ function buildExperienceContent(rest: string, lang: Lang): string {
     ${ul(stProduct.support)}
     <h2>Questions from group leaders</h2>
     ${stProduct.faqs.map((f) => `<h3>${escapeHtml(f.q)}</h3>${paragraph(f.a)}`).join('\n    ')}
+    ${(() => {
+      // Mirrors the client's "Upcoming Group Departures" section — real
+      // scheduled departures only, or the same honest empty state when none
+      // exist yet (see src/data/student-group-departures.ts).
+      const deps = departuresForTour(stProduct.slug);
+      const heading = h2(tr(lang, 'sgd_heading') || 'Upcoming Group Departures') + paragraph(tr(lang, 'sgd_intro') || '');
+      if (deps.length === 0) {
+        return heading + paragraph(tr(lang, 'sgd_empty_title') || '') + paragraph(tr(lang, 'sgd_empty_cta') || '');
+      }
+      return heading + deps.map((d) => {
+        const full = isFull(d);
+        const status = full ? (tr(lang, 'sgd_full') || 'Fully booked') : (tr(lang, 'sgd_seats_available') || '{n} seats available').replace('{n}', String(seatsAvailable(d)));
+        return paragraph(`${escapeHtml(d.startDate)} – ${escapeHtml(d.endDate)} · ${escapeHtml(d.departureCity)} · ${escapeHtml(status)}`);
+      }).join('');
+    })()}
     <p>${link(`${SITE_URL}/${lang}/student-tours`, tr(lang, 'st_tours_label'))}</p>
     ${studentTourList.filter((s) => s.slug !== stProduct.slug).map((s) => `<p>${link(`${SITE_URL}/${lang}/student-tours/${s.slug}`, s.title)}</p>`).join('\n    ')}
     ${stProduct.related.map((r) => `<p>${link(`${SITE_URL}/${lang}${r.to}`, r.label)}</p>`).join('\n    ')}` : '';
 
-  return heading + intro + studentTours + studentTourDetail + ugPage + studentBacklink + desertMoments + galleryLibPhotos + tBlocks + dBlocks + tripBuilderCta;
+  return heading + intro + studentTours + studentTourDetail + ugPage + studentBacklink + desertMoments + galleryLibPhotos + tBlocks + dBlocks + tripBuilderCta + desertFaq;
 }
 
 // ── Data-driven hub / comparison pages (Merzouga guide + comparisons) ───────────
@@ -1414,7 +1508,7 @@ function buildHubPageContent(page: HubPage, lang: Lang): string {
     const p = allHubs.find((q) => q.slug === s);
     return p ? link(`${SITE_URL}/${lang}${hubPathFor(p)}`, linkTitle(s)) : '';
   });
-  if (relatedGuideItems.length) out += h2(tr(lang, 'guide_keep_planning')) + ul(relatedGuideItems);
+  if (relatedGuideItems.length) out += h2(tr(lang, 'guide_keep_planning')) + rawUl(relatedGuideItems);
   const faqs = faqBlock(localized.faqs);
   if (faqs) out += h2(tr(lang, 'guide_faq_heading')) + faqs;
   const pageSources = (localized.sources ?? []).map((sid) => SOURCES[sid]).filter(Boolean);
@@ -1474,7 +1568,9 @@ function buildRoutes(lang: Lang): RouteEntry[] {
   const routes: RouteEntry[] = []; const rtl = lang === 'ar';
   const add = (rest: string, outFile: string, content: () => string, schemas: Record<string, unknown>[] = []) => { routes.push({ rest, outFile, content, meta: metaFor(rest, lang), lang, schemas, rtl }); };
   add('/', `${lang}/index.html`, () => buildHomeContent(lang), buildHomeSchemas(lang));
-  add('/tours', `${lang}/tours/index.html`, () => buildToursContent(lang));
+  add('/tours', `${lang}/tours/index.html`, () => buildToursContent(lang), [
+    buildFaqSchema([1, 2, 3, 4].map((n) => ({ question: tr(lang, `tours_faq_q${n}`), answer: tr(lang, `tours_faq_a${n}`) }))),
+  ]);
   add('/destinations', `${lang}/destinations/index.html`, () => buildDestinationsContent(lang));
   add('/about', `${lang}/about/index.html`, () => buildAboutContent(lang));
   add('/contact', `${lang}/contact/index.html`, () => buildContactContent(lang));
@@ -1571,6 +1667,13 @@ function buildRoutes(lang: Lang): RouteEntry[] {
               provider: { '@type': 'TravelAgency', '@id': `${SITE_URL}/#organization`, name: 'Morocco Grand Adventure' },
             })),
           ])
+        : rest === '/desert-tours'
+        // Mirrors the live-page FAQ accordion (dt2_faq_q1..4/a1..4) added to
+        // src/pages/desert-tours.tsx — desert-specific questions, distinct
+        // from the /tours FAQ above.
+        ? [buildFaqSchema([1, 2, 3, 4].map((n) => ({
+            question: tr(lang, `dt2_faq_q${n}`), answer: tr(lang, `dt2_faq_a${n}`),
+          }))) as unknown as Record<string, unknown>]
         : [];
       add(rest, `${lang}${rest}/index.html`, () => buildExperienceContent(rest, lang), schemas);
     }

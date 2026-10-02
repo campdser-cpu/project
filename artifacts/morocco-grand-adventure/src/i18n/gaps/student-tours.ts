@@ -349,6 +349,16 @@ const en: Record<string, string> = {
   st_tours_label: 'Student Tours',
   st_nav_sub: 'University & Educational Travel',
   st_tours_desc: 'Educational, cultural and adventure programmes for university and student groups.',
+
+  // Upcoming Group Departures
+  sgd_heading: 'Upcoming Group Departures',
+  sgd_intro: 'Scheduled student and university groups you can join directly, when one is running.',
+  sgd_seats_available: '{n} seats available',
+  sgd_full: 'Fully booked',
+  sgd_join: 'Join this group',
+  sgd_empty_title: 'No scheduled group departures are currently available for this tour.',
+  sgd_empty_cta: 'Contact us to request a student group departure, or to schedule one for your university or group.',
+  sgd_empty_whatsapp: 'Chat on WhatsApp',
 };
 
 const pt: Record<string, string> = {
@@ -662,6 +672,16 @@ const pt: Record<string, string> = {
   st_tours_label: 'Viagens para Estudantes',
   st_nav_sub: 'Viagens universitárias e educativas',
   st_tours_desc: 'Programas educativos, culturais e de aventura para grupos universitários e de estudantes.',
+
+  // Upcoming Group Departures
+  sgd_heading: 'Próximas Partidas em Grupo',
+  sgd_intro: 'Grupos de estudantes e universidades já agendados, que pode integrar diretamente, quando houver um a decorrer.',
+  sgd_seats_available: '{n} vagas disponíveis',
+  sgd_full: 'Totalmente reservado',
+  sgd_join: 'Juntar-se a este grupo',
+  sgd_empty_title: 'Não há partidas em grupo agendadas disponíveis para esta viagem no momento.',
+  sgd_empty_cta: 'Contacte-nos para solicitar uma partida em grupo para estudantes, ou para agendar uma para a sua universidade ou grupo.',
+  sgd_empty_whatsapp: 'Conversar no WhatsApp',
 };
 
 export const studentToursGaps: Record<string, Record<string, string>> = { en, pt };

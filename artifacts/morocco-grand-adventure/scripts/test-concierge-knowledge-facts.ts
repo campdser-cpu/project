@@ -44,10 +44,12 @@ fact('3-day Marrakech Sahara: how many meal nights?', () => {
 });
 
 fact('3-day Marrakech Sahara: what is excluded?', () => {
-  // content.ts currently has no `excluded` list for this tour — absence is
-  // never "not included" (see the 3-state model this whole layer enforces),
-  // so the honest derived fact is an empty list, not an invented one.
-  assert.deepEqual(sahara3.notIncluded, []);
+  assert.deepEqual(sahara3.notIncluded, [
+    'International flights',
+    'Lunches and drinks',
+    'Monument and museum entrance fees',
+    'Tips and personal expenses',
+  ]);
 });
 
 fact('3-day Fes Sahara: what is the route?', () => {
@@ -78,14 +80,20 @@ fact('7-day tour: how many meal nights?', () => {
   assert.equal(imperial7.nights, 6);
 });
 
-fact('7-day tour: which dinners are included vs. unspecified?', () => {
+fact('7-day tour: which dinners are included vs. not included?', () => {
+  // Owner-confirmed meal policy: dinner is included for every night except
+  // Imperial City nights. This route's nights 4-5 are Fes and night 6 is
+  // Marrakech — both Imperial Cities — so those dinners are not_included,
+  // never a silently-promoted "unspecified".
   assert.deepEqual(
     imperial7.meals.map((m) => m.dinner),
-    ['included', 'included', 'included', 'unspecified', 'unspecified', 'unspecified'],
+    ['included', 'included', 'included', 'not_included', 'not_included', 'not_included'],
   );
-  // None may ever be the raw string "not_included" — the whole point of the
-  // 3-state model is that absence is never silently promoted to exclusion.
-  assert.ok(imperial7.meals.every((m) => m.dinner !== 'not_included' && m.breakfast !== 'not_included'));
+  // Breakfast is included for every overnight under the same policy.
+  assert.deepEqual(
+    imperial7.meals.map((m) => m.breakfast),
+    ['included', 'included', 'included', 'included', 'included', 'included'],
+  );
 });
 
 fact('7-day tour: 2-person price?', () => {
@@ -129,13 +137,13 @@ fact('Are drinks included on the 7-day tour?', () => {
 });
 
 fact('Are entrance fees included?', () => {
-  // sahara3 has no committed `excluded` list in content.ts yet — asserted
-  // empty above; only imperial7 has this fact to check right now.
   assert.ok(imperial7.notIncluded.some((s) => /entrance fees/i.test(s)));
+  assert.ok(sahara3.notIncluded.some((s) => /entrance fees/i.test(s)));
 });
 
 fact('Are tips included?', () => {
   assert.ok(imperial7.notIncluded.some((s) => /tips/i.test(s)));
+  assert.ok(sahara3.notIncluded.some((s) => /tips/i.test(s)));
 });
 
 fact('What is the price for an unsupported/custom party size? (must be absent, never invented)', () => {

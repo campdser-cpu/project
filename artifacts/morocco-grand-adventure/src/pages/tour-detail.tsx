@@ -75,22 +75,13 @@ export default function TourDetail() {
     { src: '/images/dest/ait-ben-haddou.webp', caption: 'Aït Benhaddou ksar' },
   ];
 
-  const included = tour.included ?? [
-    t('tour_inc_vehicle'), t('tour_inc_guide'), t('tour_inc_riads'),
-    t('tour_inc_desert_camp'), t('tour_inc_camel'), t('tour_inc_meals'),
-  ];
-  const excluded = tour.excluded ?? [
-    t('tour_exc_flights'), t('tour_exc_lunches'), t('tour_exc_entrance'),
-    t('tour_exc_tips'), t('tour_exc_insurance'),
-  ];
-
   const faqs = tour.faq ?? getLocalizedFaq(lang).slice(0, 6);
 
   const allTours = getLocalizedTours(lang);
   // Relevant "recommendation" logic for related tours — never random.
   // 1) Same departure city  2) Route overlap  3) Same duration  4) Similar category/intent.
   const routeIdSet = new Set(tour.routeIds ?? []);
-  const relatedTours = allTours
+  const autoRelatedTours = allTours
     .filter(x => x.id !== tour.id)
     .map(candidate => {
       const sameCity = TOUR_DEPARTURE_CITY[candidate.id] === TOUR_DEPARTURE_CITY[tour.id];
@@ -101,8 +92,20 @@ export default function TourDetail() {
     })
     .filter(item => item.score > 0)
     .sort((a, b) => b.score - a.score)
-    .slice(0, 3)
     .map(item => item.tour);
+  // Explicit overrides (tourDepth.ts relatedTourIds) go first — verified,
+  // hand-picked same-corridor tours that the automatic same-city/overlap/
+  // duration scoring above can genuinely miss (e.g. a reverse-direction tour
+  // departing a different city). Falls back to the automatic ranking to fill
+  // any remaining slots, so every other tour's behavior is unchanged.
+  const explicitRelatedIds = getLocalizedTourDepth(tour.id, lang).relatedTourIds ?? [];
+  const explicitRelatedTours = explicitRelatedIds
+    .map(id => allTours.find(t => t.id === id))
+    .filter((t): t is NonNullable<typeof t> => Boolean(t));
+  const relatedTours = [
+    ...explicitRelatedTours,
+    ...autoRelatedTours.filter(t => !explicitRelatedIds.includes(t.id)),
+  ].slice(0, 3);
 
   // Destinations that appear along this tour's route, resolved to their
   // localized name for the "stops on this route" quick links below.
@@ -398,14 +401,51 @@ export default function TourDetail() {
                       <div className="font-bold text-primary text-xs mb-2 uppercase tracking-widest bg-primary/10 inline-block px-3 py-1 rounded-full">{t('tour_day')} {day.day}</div>
                       <h4 className="font-serif text-2xl text-foreground mb-4">{day.title}</h4>
                       <p className="text-muted-foreground text-base leading-relaxed">{day.desc}</p>
-                      {day.stops && day.stops.length > 0 && (
-                        <div className="flex flex-wrap gap-2 mt-5">
-                          {day.stops.map((s, si) => (
-                            <span key={si} className="inline-flex items-center gap-1.5 bg-muted border border-border text-foreground/80 text-xs font-medium px-3 py-1.5 rounded-full">
-                              <MapPin className="w-3 h-3 text-primary shrink-0" /> {s}
-                            </span>
+                      {day.stopDetails && day.stopDetails.length > 0 ? (
+                        <div className="mt-5 space-y-4 border-t border-border pt-5">
+                          {day.stopDetails.map((stop, si) => (
+                            <div key={si} className="flex gap-3">
+                              <div className="flex flex-col items-center pt-1 shrink-0">
+                                <MapPin className="w-4 h-4 text-primary" aria-hidden="true" />
+                              </div>
+                              <div className="min-w-0">
+                                <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
+                                  {stop.time && (
+                                    <span className="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-primary">
+                                      <Clock className="w-3.5 h-3.5" aria-hidden="true" /> {stop.time}
+                                    </span>
+                                  )}
+                                  <span className="font-semibold text-foreground">{stop.title}</span>
+                                </div>
+                                {stop.desc && (
+                                  <p className="text-muted-foreground text-sm leading-relaxed mt-1">{stop.desc}</p>
+                                )}
+                                {stop.lunch && (
+                                  <span
+                                    className={`inline-flex items-center gap-1.5 mt-2 rounded-full border px-2.5 py-0.5 text-xs font-medium ${
+                                      stop.lunch === 'included'
+                                        ? 'border-green-500/25 bg-green-500/10 text-green-700'
+                                        : 'border-border bg-muted text-foreground/70'
+                                    }`}
+                                  >
+                                    {stop.lunch === 'included' ? <Check className="w-3 h-3 shrink-0" /> : <X className="w-3 h-3 shrink-0" />}
+                                    {stop.lunch === 'included' ? t('tour_lunch_included') : t('tour_lunch_not_included')}
+                                  </span>
+                                )}
+                              </div>
+                            </div>
                           ))}
                         </div>
+                      ) : (
+                        day.stops && day.stops.length > 0 && (
+                          <div className="flex flex-wrap gap-2 mt-5">
+                            {day.stops.map((s, si) => (
+                              <span key={si} className="inline-flex items-center gap-1.5 bg-muted border border-border text-foreground/80 text-xs font-medium px-3 py-1.5 rounded-full">
+                                <MapPin className="w-3 h-3 text-primary shrink-0" /> {s}
+                              </span>
+                            ))}
+                          </div>
+                        )
                       )}
                     </div>
 

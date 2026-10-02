@@ -12,6 +12,8 @@ import {
 } from '@/data/student-tours';
 import { TourBreadcrumbs } from '../components/tours/TourBreadcrumbs';
 import { TourInquiryForm } from '../components/tours/TourInquiryForm';
+import { fmtTemplate } from '../components/tours/intl';
+import { departuresForTour, seatsAvailable, isFull } from '@/data/student-group-departures';
 import NotFound from './not-found';
 
 const IMG = '/images';
@@ -193,6 +195,9 @@ export default function StudentTourDetail() {
   )}`;
 
   const others = studentTours.filter((s) => s.slug !== tour.slug);
+  // Real scheduled departures only — empty until MGA confirms an actual
+  // group date and capacity (see src/data/student-group-departures.ts).
+  const departures = departuresForTour(tour.slug);
 
   // Illustrated days alternate sides so the itinerary has a rhythm instead of a
   // column of pictures; text-only days do not advance the alternation.
@@ -518,6 +523,69 @@ export default function StudentTourDetail() {
                 </details>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* UPCOMING GROUP DEPARTURES — real scheduled groups only; an honest
+            empty state (never an invented date, seat count or booking) when
+            none are currently scheduled. ------------------------------------ */}
+        <section className="bg-background py-16 md:py-24">
+          <div className="container mx-auto px-4">
+            <Eyebrow as="h2">{t('sgd_heading') || 'Upcoming Group Departures'}</Eyebrow>
+            <p className="max-w-2xl text-[15.5px] leading-relaxed" style={{ color: BODY }}>
+              {t('sgd_intro') || "Scheduled student and university groups you can join directly, when one is running."}
+            </p>
+            {departures.length > 0 ? (
+              <div className="mt-8 grid gap-6 md:grid-cols-2">
+                {departures.map((d) => {
+                  const full = isFull(d);
+                  const seats = seatsAvailable(d);
+                  const joinWa = `${contactInfo.whatsapp}?text=${encodeURIComponent(
+                    `Hello Morocco Grand Adventure, I'd like to join the ${tour.title} group departing ${d.startDate} to ${d.endDate}.`,
+                  )}`;
+                  return (
+                    <div key={d.id} className="border p-7" style={{ borderColor: RULE }}>
+                      <p className="text-[11px] font-semibold uppercase" style={{ letterSpacing: '0.18em', color: GOLD }}>
+                        {d.startDate} – {d.endDate}
+                      </p>
+                      <h3 className="mt-2 font-serif text-xl" style={{ color: INK }}>{tour.title}</h3>
+                      <p className="mt-2 text-[14px]" style={{ color: MUTED }}>{d.departureCity}</p>
+                      <div className="mt-5 flex flex-wrap items-center gap-3">
+                        <span
+                          className="inline-flex items-center gap-2 border px-3 py-1.5 text-[12px] font-semibold uppercase"
+                          style={full ? { borderColor: RULE, color: MUTED } : { borderColor: GOLD, color: INK }}
+                        >
+                          {full ? t('sgd_full') : fmtTemplate(t('sgd_seats_available'), { n: seats })}
+                        </span>
+                        {!full && (
+                          <a
+                            href={joinWa}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center justify-center bg-[#25D366] px-5 py-2.5 text-[13px] font-bold text-[#0d2b1d] transition hover:opacity-90"
+                          >
+                            {t('sgd_join')}
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            ) : (
+              <div className="mt-8 border border-dashed p-8 text-center" style={{ borderColor: RULE }}>
+                <p className="font-serif text-lg" style={{ color: INK }}>{t('sgd_empty_title')}</p>
+                <p className="mt-3 text-[15px] leading-relaxed" style={{ color: BODY }}>{t('sgd_empty_cta')}</p>
+                <a
+                  href={wa}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-6 inline-flex items-center justify-center bg-[#25D366] px-7 py-3.5 text-sm font-bold tracking-wide text-[#0d2b1d] transition hover:opacity-90"
+                >
+                  {t('sgd_empty_whatsapp')}
+                </a>
+              </div>
+            )}
           </div>
         </section>
 

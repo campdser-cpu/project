@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Layout } from '../components/layout/Layout';
 import { tours } from '@/data/content';
@@ -6,11 +6,12 @@ import { CITY_HUBS, TOUR_DEPARTURE_CITY } from '@/data/tour-hierarchy';
 import { getLocalizedTour } from '@/i18n/content';
 import { Link, useSearch } from 'wouter';
 import { motion } from 'framer-motion';
-import { Clock, ChevronRight, Filter } from 'lucide-react';
+import { Clock, ChevronRight, Filter, Plus, Minus } from 'lucide-react';
 import { PromoBanner } from '../components/promo/PromoBanner';
 import { PromoBadge } from '../components/promo/PromoBadge';
 import { PriceTag } from '../components/promo/PriceTag';
 import { CinematicVideo } from '../components/ui/CinematicVideo';
+import { StructuredData, buildFaqSchema } from '../components/seo/StructuredData';
 
 function parseDurationDays(duration: string): number {
   const match = duration.match(/^(\d+)/);
@@ -97,8 +98,16 @@ export default function Tours() {
 
   const hasFilters = Boolean(cityFilter || durationFilter || styleFilter);
 
+  // Real, factually-supported booking questions — private format, the actual
+  // 2-14 day range (content.ts), the actual CITY_HUBS departure cities, and
+  // the site's established WhatsApp-confirm-then-pay booking flow. Distinct
+  // from the desert-tours FAQ below to avoid two near-duplicate FAQ blocks.
+  const faqs = [1, 2, 3, 4].map((n) => ({ question: t(`tours_faq_q${n}`), answer: t(`tours_faq_a${n}`) }));
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
   return (
     <Layout>
+      <StructuredData id="tours-faq" data={buildFaqSchema(faqs)} />
       <section className="relative h-[50vh] w-full flex items-center justify-center pt-20">
         <div className="absolute inset-0 z-0">
           <img src="/images/library/srcset/camel-caravan-erg-chebbi-day-morocco-mga-024-1280w.webp" srcSet="/images/library/srcset/camel-caravan-erg-chebbi-day-morocco-mga-024-768w.webp 768w, /images/library/srcset/camel-caravan-erg-chebbi-day-morocco-mga-024-1280w.webp 1280w, /images/library/srcset/camel-caravan-erg-chebbi-day-morocco-mga-024-1920w.webp 1920w" sizes="100vw" width={1920} height={1187} alt="" aria-hidden="true" fetchPriority="high" decoding="async" className="w-full h-full object-cover" style={{ objectPosition: 'center 78%' }} />
@@ -108,6 +117,9 @@ export default function Tours() {
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <h1 className="font-serif text-5xl md:text-7xl text-white mb-6">{t('tours_heading')}</h1>
             <p className="text-white/80 text-lg md:text-xl font-light">{t('tours_sub')}</p>
+            <Link href="/desert-tours" className="mt-5 inline-flex items-center gap-1.5 text-white/90 text-sm font-semibold underline decoration-white/40 underline-offset-4 hover:text-primary hover:decoration-primary transition-colors">
+              {t('nav_sahara_desert_tours')} <ChevronRight className="w-3.5 h-3.5" aria-hidden="true" />
+            </Link>
           </motion.div>
         </div>
       </section>
@@ -198,6 +210,30 @@ export default function Tours() {
       {!hasFilters && <section className="py-16 md:py-20 bg-card border-b border-border"><div className="container mx-auto px-4 max-w-5xl"><div className="text-center mb-8 md:mb-10"><span className="text-primary font-bold tracking-wider uppercase text-sm mb-3 block">{t('tours_experience')}</span><h2 className="font-serif text-3xl md:text-5xl text-foreground mb-4">{t('tours_experience')}</h2></div><CinematicVideo src="/videos/sahara-experience.mp4" poster="/images/personal/luxury-camp-dusk.webp" alt={t('tours_heading')} title={t('tours_experience')} subtitle={t('tours_sub')} /></div></section>}
 
       <section className="py-24 bg-background"><div className="container mx-auto px-4 max-w-6xl"><PromoBanner variant="compact" className="mb-12" />{filteredTours.length === 0 ? <div className="text-center py-24"><p className="text-muted-foreground text-xl mb-6">{t('tours_no_match')}</p><Link href="/tours" className="bg-primary text-primary-foreground px-8 py-3 rounded-full font-bold">{t('tours_view_all')}</Link></div> : <div className="grid grid-cols-1 md:grid-cols-2 gap-10">{filteredTours.map((tourBase, index) => { const tour = getLocalizedTour(tourBase.id, lang) ?? tourBase; return <motion.div key={tour.id} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: index * 0.1 }} className="group flex flex-col bg-card rounded-2xl overflow-hidden border border-border hover:shadow-xl transition-all duration-300"><div className="h-64 relative overflow-hidden"><img src={tour.image} srcSet={`${tour.image.replace(/\.webp$/, '-480w.webp')} 480w, ${tour.image.replace(/\.webp$/, '-768w.webp')} 768w, ${tour.image} 1200w`} sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 40vw" alt={tour.name} width={1200} height={675} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" /><div className="absolute top-4 left-4 bg-background/90 backdrop-blur text-foreground text-xs font-bold px-3 py-1.5 rounded-full flex items-center gap-1.5"><Clock className="w-3.5 h-3.5" /> {tour.duration}</div><div className="absolute top-4 right-4"><PromoBadge /></div></div><div className="p-8 flex flex-col flex-grow"><h3 className="font-serif text-3xl text-foreground mb-4 group-hover:text-primary transition-colors">{tour.name}</h3><p className="text-muted-foreground mb-6 line-clamp-2">{t('tours_experience')} {tour.highlights.join(', ')} {t('tours_and_more')}</p><div className="flex items-center justify-between mt-auto pt-6 border-t border-border"><div><span className="text-xs text-muted-foreground uppercase tracking-wider block font-sans font-normal">{t('from')}</span><PriceTag price={tour.price} size="md" /></div><Link href={`/tours/${tour.id}`} className="bg-foreground text-background hover:bg-primary px-6 py-3 rounded-full text-sm font-bold flex items-center gap-2">{t('tours_view')} <ChevronRight className="w-4 h-4" /></Link></div></div></motion.div>; })}</div>}</div></section>
+
+      {/* FAQ — same accordion pattern as tour-detail.tsx */}
+      <section className="py-16 md:py-24 bg-card border-t border-border">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-8 text-center">{t('td_faq_title')}</h2>
+          <div className="space-y-3">
+            {faqs.map((f, i) => (
+              <div key={i} className="bg-background border border-border rounded-2xl overflow-hidden">
+                <button
+                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                  aria-expanded={openFaq === i}
+                  className="w-full flex items-center justify-between gap-4 p-5 text-left hover:bg-muted/50 transition-colors"
+                >
+                  <span className="font-bold text-foreground">{f.question}</span>
+                  <span className="shrink-0 text-primary">{openFaq === i ? <Minus className="w-5 h-5" aria-hidden="true" /> : <Plus className="w-5 h-5" aria-hidden="true" />}</span>
+                </button>
+                {openFaq === i && (
+                  <div className="px-5 pb-5 -mt-1 text-muted-foreground text-sm leading-relaxed">{f.answer}</div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </Layout>
   );
 }

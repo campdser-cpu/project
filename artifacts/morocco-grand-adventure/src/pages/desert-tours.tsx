@@ -1,6 +1,7 @@
-﻿import { motion } from 'framer-motion';
+﻿import { useState } from 'react';
+import { motion } from 'framer-motion';
 import { Link } from 'wouter';
-import { CheckCircle2, Star, MapPin, Clock, Users, ChevronRight } from 'lucide-react';
+import { CheckCircle2, Star, MapPin, Clock, Users, ChevronRight, Plus, Minus } from 'lucide-react';
 import { defaultTrustBadges } from '../components/ExperiencePage';
 import { getLocalizedTours } from '@/i18n/content';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -8,6 +9,7 @@ import { Layout } from '../components/layout/Layout';
 import { SiWhatsapp } from 'react-icons/si';
 import { contactInfo } from '@/data/content';
 import { CinematicVideo } from '../components/ui/CinematicVideo';
+import { StructuredData, buildFaqSchema } from '../components/seo/StructuredData';
 
 // Official photo-library photographs (src/data/photoLibrary.ts), one per caption.
 const LIB = '/images/library/srcset/';
@@ -27,8 +29,16 @@ export default function DesertTours() {
   );
   const trustBadges = defaultTrustBadges();
 
+  // Real, factually-supported desert-booking questions — private format, the
+  // real desert-route departure cities and duration range, and the confirmed
+  // camel-trek/desert-camp pattern already used elsewhere on this page.
+  // Distinct from the /tours FAQ to avoid duplicating the same Q&As.
+  const faqs = [1, 2, 3, 4].map((n) => ({ question: t(`dt2_faq_q${n}`), answer: t(`dt2_faq_a${n}`) }));
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
   return (
     <Layout>
+      <StructuredData id="desert-tours-faq" data={buildFaqSchema(faqs)} />
       {/* Hero */}
       <section className="relative h-[70vh] w-full flex items-center justify-center pt-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -213,6 +223,30 @@ export default function DesertTours() {
                 <h3 className="font-serif text-xl text-foreground mb-2">{item.title}</h3>
                 <p className="text-muted-foreground text-sm">{item.desc}</p>
               </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ — same accordion pattern as tour-detail.tsx */}
+      <section className="py-16 md:py-24 bg-card border-t border-border">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-8 text-center">{t('td_faq_title')}</h2>
+          <div className="space-y-3">
+            {faqs.map((f, i) => (
+              <div key={i} className="bg-background border border-border rounded-2xl overflow-hidden">
+                <button
+                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                  aria-expanded={openFaq === i}
+                  className="w-full flex items-center justify-between gap-4 p-5 text-left hover:bg-muted/50 transition-colors"
+                >
+                  <span className="font-bold text-foreground">{f.question}</span>
+                  <span className="shrink-0 text-primary">{openFaq === i ? <Minus className="w-5 h-5" aria-hidden="true" /> : <Plus className="w-5 h-5" aria-hidden="true" />}</span>
+                </button>
+                {openFaq === i && (
+                  <div className="px-5 pb-5 -mt-1 text-muted-foreground text-sm leading-relaxed">{f.answer}</div>
+                )}
+              </div>
             ))}
           </div>
         </div>

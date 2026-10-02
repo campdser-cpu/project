@@ -17,7 +17,20 @@
 // a phone instead of scrolling sideways.
 // ─────────────────────────────────────────────────────────────────────────────
 import { Check, Minus, X } from 'lucide-react';
-import type { InclusionItem, MealRow, MealState, TourInclusions as Inclusions } from '@/data/tour-inclusions';
+import { Link } from 'wouter';
+import type { InclusionItem, InclusionKind, MealRow, MealState, TourInclusions as Inclusions } from '@/data/tour-inclusions';
+
+/** Display order of the commercial categories; a category with no items is skipped. */
+const GROUP_ORDER: InclusionKind[] = ['transport', 'stay', 'meal', 'experience', 'landscape', 'service', 'other'];
+const GROUP_KEY: Record<InclusionKind, string> = {
+  transport: 'jx_inc_cat_transport',
+  stay: 'jx_inc_cat_stay',
+  meal: 'jx_inc_cat_meal',
+  experience: 'jx_inc_cat_experience',
+  landscape: 'jx_inc_cat_landscape',
+  service: 'jx_inc_cat_service',
+  other: 'jx_inc_cat_other',
+};
 
 type Props = {
   inclusions: Inclusions;
@@ -80,7 +93,24 @@ export function TourInclusions({ inclusions, destinationNames, t, className }: P
     if (dest && row.place && row.place.toLowerCase().includes(dest.toLowerCase())) return row.place;
     return row.place || dest || '';
   };
+  // Same place text, linked to that destination's own page when this site has
+  // one — a night the customer is already reading about ("Dades Valley",
+  // "Merzouga") is a natural, useful place to learn more, not a manufactured
+  // keyword link.
+  const placeLink = (row: MealRow) => {
+    const label = place(row);
+    if (!row.placeId || !label) return label;
+    return (
+      <Link href={`/destinations/${row.placeId}`} className="underline decoration-dotted underline-offset-2 hover:text-primary">
+        {label}
+      </Link>
+    );
+  };
   const breakfastCount = meals.filter((row) => row.breakfast === 'included').length;
+  const groups = GROUP_ORDER.map((kind) => ({
+    kind,
+    items: included.filter((item) => item.kind === kind),
+  })).filter((g) => g.items.length > 0);
 
   return (
     <section className={className ?? 'mb-16'} aria-labelledby="journey-inclusions">
@@ -96,46 +126,71 @@ export function TourInclusions({ inclusions, destinationNames, t, className }: P
 
       <div className="grid gap-8 lg:grid-cols-5">
         <div className="lg:col-span-3">
-          {included.length > 0 && (
-            <ul className="space-y-3">
-              {included.map((item) => (
-                <li key={item.id} className="flex items-start gap-3">
-                  <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-green-500/10">
-                    <Check className="h-4 w-4 text-green-600" aria-hidden="true" />
-                  </span>
-                  <span className="leading-relaxed text-foreground">
-                    {itemLabel(item, t)}
-                    {item.status === 'confirmed' && (
-                      <span className="ml-2 whitespace-nowrap rounded-full border border-primary/30 bg-primary/5 px-2 py-0.5 text-[11px] font-semibold text-foreground">
-                        {t('jx_exp_confirmed')}
-                      </span>
-                    )}
-                  </span>
-                </li>
+          {groups.length > 0 && (
+            <div className="mb-6 space-y-6">
+              {groups.map((g) => (
+                <div key={g.kind}>
+                  <h3 className="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-muted-foreground">
+                    {t(GROUP_KEY[g.kind])}
+                  </h3>
+                  <ul className="space-y-3">
+                    {g.items.map((item) => (
+                      <li key={item.id} className="flex items-start gap-3">
+                        <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-green-500/10">
+                          <Check className="h-4 w-4 text-green-600" aria-hidden="true" />
+                        </span>
+                        <span className="leading-relaxed text-foreground">
+                          {itemLabel(item, t)}
+                          {item.status === 'confirmed' && (
+                            <span className="ml-2 whitespace-nowrap rounded-full border border-primary/30 bg-primary/5 px-2 py-0.5 text-[11px] font-semibold text-foreground">
+                              {t('jx_exp_confirmed')}
+                            </span>
+                          )}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               ))}
-            </ul>
-          )}
-
-          {breakfastCount > 0 && (
-            <div className="mb-6 flex items-start gap-2 rounded-2xl border border-green-500/20 bg-green-500/5 p-4 text-sm font-semibold text-green-800">
-              <Check className="mt-0.5 h-4 w-4 shrink-0 text-green-600" aria-hidden="true" />
-              {t('jx_inc_breakfasts_count').split('{n}').join(String(breakfastCount))}
             </div>
           )}
 
-          {dinnerSummary.count > 0 && (
-            <div className="mb-6 space-y-2 rounded-2xl border border-green-500/20 bg-green-500/5 p-4">
-              <p className="text-sm font-semibold text-green-800">
-                {t('jx_inc_dinners_count').split('{n}').join(String(dinnerSummary.count))}
-              </p>
-              <ul className="space-y-2">
-                {dinnerSummary.nights.map((row) => (
-                  <li key={`included-dinner-${row.night}`} className="flex items-start gap-2 text-sm text-foreground">
+          {(breakfastCount > 0 || dinnerSummary.count > 0) && (
+            <div className="mb-6">
+              <h3 className="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-muted-foreground">
+                {t('jx_inc_meals_summary_title')}
+              </h3>
+              <div className="space-y-3">
+                {breakfastCount > 0 && (
+                  <div className="flex items-start gap-2 rounded-2xl border border-green-500/20 bg-green-500/5 p-4 text-sm font-semibold text-green-800">
                     <Check className="mt-0.5 h-4 w-4 shrink-0 text-green-600" aria-hidden="true" />
-                    {t('jx_inc_dinner_at').split('{place}').join(place({ place: row.place, placeId: row.placeId, night: row.night, breakfast: 'not_included', dinner: 'included', camp: false }))}
-                  </li>
-                ))}
-              </ul>
+                    {t('jx_inc_breakfasts_count').split('{n}').join(String(breakfastCount))}
+                  </div>
+                )}
+
+                {dinnerSummary.count > 0 && (
+                  <div className="space-y-2 rounded-2xl border border-green-500/20 bg-green-500/5 p-4">
+                    <p className="text-sm font-semibold text-green-800">
+                      {t('jx_inc_dinners_count').split('{n}').join(String(dinnerSummary.count))}
+                    </p>
+                    <ul className="space-y-2">
+                      {dinnerSummary.nights.map((row) => {
+                        const [before, after] = t('jx_inc_dinner_at').split('{place}');
+                        return (
+                          <li key={`included-dinner-${row.night}`} className="flex items-start gap-2 text-sm text-foreground">
+                            <Check className="mt-0.5 h-4 w-4 shrink-0 text-green-600" aria-hidden="true" />
+                            <span>
+                              {before}
+                              {placeLink({ place: row.place, placeId: row.placeId, night: row.night, breakfast: 'not_included', dinner: 'included', camp: false })}
+                              {after}
+                            </span>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </div>
+                )}
+              </div>
             </div>
           )}
 
@@ -150,7 +205,7 @@ export function TourInclusions({ inclusions, destinationNames, t, className }: P
                       <span className="block text-[11px] font-bold uppercase tracking-[0.18em] text-muted-foreground">
                         {t('jx_inc_night').split('{n}').join(String(row.night))}
                       </span>
-                      <span className="font-semibold text-foreground">{place(row)}</span>
+                      <span className="font-semibold text-foreground">{placeLink(row)}</span>
                     </div>
                     <div className="flex flex-wrap gap-2">
                       <MealChip label={t('jx_inc_meal_breakfast')} state={row.breakfast} t={t} />
@@ -179,12 +234,19 @@ export function TourInclusions({ inclusions, destinationNames, t, className }: P
                   {itemLabel(item, t)}
                 </li>
               ))}
-              {cityDinnersExcluded.map((group) => (
-                <li key={`excluded-dinner-${group.place}`} className="flex items-start gap-3 text-muted-foreground">
-                  <X className="mt-0.5 h-4 w-4 shrink-0 text-destructive/50" aria-hidden="true" />
-                  {t('jx_inc_dinner_in').split('{place}').join(place({ place: group.place, placeId: group.placeId, night: group.nights[0], breakfast: 'included', dinner: 'not_included', camp: false }))}
-                </li>
-              ))}
+              {cityDinnersExcluded.map((group) => {
+                const [before, after] = t('jx_inc_dinner_in').split('{place}');
+                return (
+                  <li key={`excluded-dinner-${group.place}`} className="flex items-start gap-3 text-muted-foreground">
+                    <X className="mt-0.5 h-4 w-4 shrink-0 text-destructive/50" aria-hidden="true" />
+                    <span>
+                      {before}
+                      {placeLink({ place: group.place, placeId: group.placeId, night: group.nights[0], breakfast: 'included', dinner: 'not_included', camp: false })}
+                      {after}
+                    </span>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </div>

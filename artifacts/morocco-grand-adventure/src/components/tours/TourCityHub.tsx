@@ -118,7 +118,39 @@ export function TourCityHub({ hub }: { hub: CityHub }) {
         <TourBreadcrumbs items={crumbs} />
       </div>
 
-      {/* Body + duration shortcut */}
+      {/* Available tours grouped by duration — product discovery comes first,
+          directly after the hero, before any longer destination copy. */}
+      {groups.length > 0 && (
+        <section className="py-16 bg-muted/40 border-b border-border">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-2">
+              {fmtTemplate(t('hub_private_title'), { city: cityName })}
+            </h2>
+            <p className="text-muted-foreground mb-12 max-w-2xl">
+              {fmtTemplate(t('hub_private_sub'), { city: cityName })}
+            </p>
+            <div className="space-y-14">
+              {groups.map((group) => (
+                <div key={group.label}>
+                  <h3 className="font-serif text-2xl text-foreground mb-6 flex items-center gap-3">
+                    <span className="bg-primary/15 text-primary font-bold text-sm px-3 py-1 rounded-full">
+                      {fmtTemplate(t('hub_group_days_badge'), { days: group.days })}
+                    </span>
+                    {t(durationLabelKey(group.days))}
+                  </h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {group.tours.map((tour) => (
+                      <TourCard key={tour.id} tour={tour} />
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Body + duration shortcut — context after the products, not before. */}
       <section className="py-16 md:py-20 bg-background">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-muted-foreground">
@@ -172,37 +204,6 @@ export function TourCityHub({ hub }: { hub: CityHub }) {
           </div>
         </div>
       </section>
-
-      {/* Available tours grouped by duration */}
-      {groups.length > 0 && (
-        <section className="py-16 bg-muted/40 border-y border-border">
-          <div className="container mx-auto px-4 max-w-6xl">
-            <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-2">
-              {fmtTemplate(t('hub_private_title'), { city: cityName })}
-            </h2>
-            <p className="text-muted-foreground mb-12 max-w-2xl">
-              {fmtTemplate(t('hub_private_sub'), { city: cityName })}
-            </p>
-            <div className="space-y-14">
-              {groups.map((group) => (
-                <div key={group.label}>
-                  <h3 className="font-serif text-2xl text-foreground mb-6 flex items-center gap-3">
-                    <span className="bg-primary/15 text-primary font-bold text-sm px-3 py-1 rounded-full">
-                      {fmtTemplate(t('hub_group_days_badge'), { days: group.days })}
-                    </span>
-                    {t(durationLabelKey(group.days))}
-                  </h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {group.tours.map((tour) => (
-                      <TourCard key={tour.id} tour={tour} />
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
 {/* Explore the region */}
       {destinations.length > 0 && (
         <section className="py-16 bg-background">

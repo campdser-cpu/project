@@ -9,10 +9,11 @@
 // departure-city assignment is derived from each tour's real name, description
 // and day-one itinerary (all start in the city listed).
 //
-// City hubs that currently have no canned tours (Casablanca, Fes, Agadir) still
-// carry genuinely useful, codebase-grounded destination content and direct
-// travellers to the private trip-builder / contact flow rather than fabricating
-// itineraries that are not supported by the shipped data.
+// Every one of the 5 departure cities now has at least one real tour (see
+// TOUR_DEPARTURE_CITY below) and a verified 3-day product, so hasDurationDrive
+// is true for all five. City hubs still carry genuinely useful,
+// codebase-grounded destination content and direct travellers to the private
+// trip-builder / contact flow for anything beyond the shipped itineraries.
 // ─────────────────────────────────────────────────────────────────────────────
 
 export type DepartureCity = 'marrakech' | 'casablanca' | 'fes' | 'agadir' | 'tangier';
@@ -131,7 +132,7 @@ export const CITY_HUBS: CityHub[] = [
     body:
       'Most visitors fly into Casablanca and continue south or north from here. The city itself rewards a short stay with the breathtaking Hassan II Mosque on the Atlantic and elegant art-deco streets. From Casablanca we can build a private route through the imperial cities, across the High Atlas to Aït Ben Haddou and the Dades Valley, and out to the Erg Chebbi dunes — or head north to the blue walls of Chefchaouen. Because every journey is private, we simply plan the route and pace around your arrival time and dates.',
     destinationIds: ['casablanca', 'marrakech', 'rabat', 'fes', 'chefchaouen', 'merzouga'],
-    hasDurationDrive: false,
+    hasDurationDrive: true,
   },
   {
     id: 'fes',
@@ -145,7 +146,7 @@ export const CITY_HUBS: CityHub[] = [
     body:
       'Home to the world’s oldest university and one of the largest living medieval medinas on Earth, Fes rewards at least a couple of days. From here you can visit Meknès, the Roman ruins of Volubilis and the blue city of Chefchaouen — or head south through the Ziz Valley to the dunes of Erg Chebbi. We’ll build a private Fes itinerary around you, pairing guided medina walks with comfortable, well-paced driving days.',
     destinationIds: ['fes', 'meknes', 'chefchaouen', 'ifrane', 'merzouga', 'erg-chebbi'],
-    hasDurationDrive: false,
+    hasDurationDrive: true,
   },
   {
     id: 'agadir',
@@ -159,7 +160,7 @@ export const CITY_HUBS: CityHub[] = [
     body:
       'With one of the sunniest climates in Morocco, Agadir pairs a long, sandy bay with easy access to the laid-back surf town of Taghazout and the walled souks of Taroudant. Heading inland, the road climbs through the Saffron Valley to Ouarzazate, the Dades and Todra gorges and the Erg Chebbi dunes. We can start a private itinerary in Agadir and shape the rest around how many days you have and where you want to finish.',
     destinationIds: ['agadir', 'taghazout', 'essaouira', 'marrakech', 'ait-ben-haddou', 'merzouga'],
-    hasDurationDrive: false,
+    hasDurationDrive: true,
   },
   {
     id: 'tangier',
@@ -173,7 +174,7 @@ export const CITY_HUBS: CityHub[] = [
     body:
       'From Tangier you can reach the UNESCO-listed Andalusian medina of Tétouan in under an hour, the blue-washed lanes of Chefchaouen, and the wild river gorges and waterfalls of the Akchour valley. Our private tours from Tangier range from a compact three-day loop through the north back to Tangier, to a one-way five-day route continuing south through the Middle Atlas cedar forests to the imperial city of Fes.',
     destinationIds: ['tangier', 'tetouan', 'chefchaouen', 'akchour'],
-    hasDurationDrive: false,
+    hasDurationDrive: true,
   },
 ];
 

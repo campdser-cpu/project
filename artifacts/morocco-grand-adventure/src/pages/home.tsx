@@ -16,6 +16,10 @@ import { hasPublishedPrice } from '@/lib/promo';
 import { CinematicVideo } from '../components/ui/CinematicVideo';
 import { ReviewCard } from '../components/ui/ReviewCard';
 import { TripadvisorWidget } from '../components/ui/TripadvisorWidget';
+import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from '../components/ui/carousel';
+import { TourCard } from '../components/tours/TourCard';
+import { fmtTemplate } from '../components/tours/intl';
+import { CITY_HUBS, TOUR_DEPARTURE_CITY, type DepartureCity } from '@/data/tour-hierarchy';
 
 /** Lazy-load the Leaflet map so its ~150 kB chunk (+ OpenStreetMap tiles) is
  *  only fetched once the map approaches the viewport — the homepage stays
@@ -139,12 +143,15 @@ export default function Home() {
 
   // Tours by departure city — bridges the homepage to the city tour hubs so a
   // visitor can start from "where does this tour begin?" and reach the Sahara.
-  const hubCards = [
-    { href: "/tours/from-marrakech", label: t('hub_marrakech_name'), image: "/images/catalog/jemaa-el-fna-night-marrakech.webp", alt: "Jemaa el-Fna square at night with the Koutoubia minaret beyond, Marrakech" },
-    { href: "/tours/from-fes", label: t('hub_fes_name'), image: "/images/curated/leather-tanning-vats-fes-medina.webp", alt: "Stone dye vats of the Chouara Tannery in the Fes medina, Morocco" },
-    { href: "/tours/from-casablanca", label: t('hub_casablanca_name'), image: "/images/curated/hassan-ii-mosque-interior-colonnades-casablanca.webp", alt: "Colonnaded interior of the Hassan II Mosque in Casablanca, Morocco" },
-    { href: "/tours/from-agadir", label: t('hub_agadir_name'), image: "/images/dest/agadir.webp", alt: "The beach and promenade of Agadir on Morocco's Atlantic coast" },
-  ];
+  // Data-driven from CITY_HUBS/TOUR_DEPARTURE_CITY (all 5 real departure
+  // cities, including Tangier) rather than a separately maintained list —
+  // tour counts are derived, never invented.
+  const [departCity, setDepartCity] = useState<DepartureCity>('marrakech');
+  const toursByCity = CITY_HUBS.map((hub) => ({
+    hub,
+    tours: tours.filter((tour) => TOUR_DEPARTURE_CITY[tour.id] === hub.id),
+  }));
+  const selectedDeparture = toursByCity.find((c) => c.hub.id === departCity) ?? toursByCity[0];
 
   // Search State
   const [searchCity, setSearchCity] = useState('');
@@ -697,47 +704,78 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Tours by Departure City — where does your journey begin? */}
-      <section className="py-16 md:py-24 bg-muted/40 border-y border-border [content-visibility:auto] [contain-intrinsic-size:auto_900px]">
+      {/* Tours by Departure City — where does your journey begin? Product
+          discovery first: pick a city, see its real tours update below,
+          without leaving the page. */}
+      <section className="py-16 md:py-24 bg-muted/40 border-y border-border [content-visibility:auto] [contain-intrinsic-size:auto_1100px]">
         <div className="container mx-auto px-4 max-w-6xl">
-          <div className="text-center mb-12 md:mb-16">
+          <div className="text-center mb-10 md:mb-12">
             <span className="text-primary-text font-bold tracking-wider uppercase text-sm mb-3 block">{t('section_tours_sub')}</span>
-            <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl text-foreground">{t('section_city_hubs')}</h2>
-            <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-base md:text-lg">{t('section_city_hubs_sub')}</p>
+            <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl text-foreground">{t('home_depart_heading')}</h2>
+            <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-base md:text-lg">{t('home_depart_sub')}</p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {hubCards.map((card) => (
-              <Link
-                key={card.href}
-                href={card.href}
-                className="group block bg-card rounded-2xl overflow-hidden border border-border shadow-sm hover:shadow-xl hover:border-primary/50 transition-all duration-500"
-              >
-                <div className="h-44 relative overflow-hidden">
-                  <img
-                  src={card.image}
-                  srcSet={`${card.image.replace(/\.webp$/, '-480w.webp')} 480w, ${card.image.replace(/\.webp$/, '-768w.webp')} 768w, ${card.image}`}
-                  sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 23vw"
-                  alt={card.alt}
-                  loading="lazy"
-                  decoding="async"
-                  width={933}
-                  height={1400}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                </div>
-                <div className="p-4 flex items-center justify-between">
-                  <span className="font-serif text-xl text-foreground">{card.label}</span>
-                  <ChevronRight className="w-5 h-5 text-primary group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-                </div>
-              </Link>
+          {/* City selector — swipeable/draggable on touch, arrow-key and
+              prev/next-button accessible on desktop. No autoplay, so it never
+              moves unless the visitor drags, swipes, clicks or presses a key. */}
+          <Carousel opts={{ align: 'start', dragFree: true }} className="mb-10 md:mb-12">
+            <CarouselContent>
+              {toursByCity.map(({ hub, tours: cityTours }) => (
+                <CarouselItem key={hub.id} className="basis-[42%] sm:basis-[30%] md:basis-1/5">
+                  <button
+                    type="button"
+                    onClick={() => setDepartCity(hub.id)}
+                    aria-pressed={departCity === hub.id}
+                    aria-label={t(`hub_${hub.id}_name`)}
+                    className={`group block w-full text-left rounded-2xl overflow-hidden border transition-all duration-300 ${
+                      departCity === hub.id
+                        ? 'border-primary shadow-lg ring-2 ring-primary/30'
+                        : 'border-border hover:border-primary/50'
+                    }`}
+                  >
+                    <div className="h-28 md:h-32 relative overflow-hidden">
+                      <img
+                        src={hub.heroImage}
+                        alt=""
+                        loading="lazy"
+                        decoding="async"
+                        width={400}
+                        height={300}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/55 to-transparent" />
+                    </div>
+                    <div className="p-3 bg-card">
+                      <span className="font-serif text-base md:text-lg text-foreground block truncate">
+                        {t(`hub_${hub.id}_name`)}
+                      </span>
+                      {cityTours.length > 0 && (
+                        <span className="text-xs text-muted-foreground">
+                          {fmtTemplate(t('home_depart_tour_count'), { n: cityTours.length })}
+                        </span>
+                      )}
+                    </div>
+                  </button>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="hidden md:flex" />
+            <CarouselNext className="hidden md:flex" />
+          </Carousel>
+
+          {/* Selected city's real tours — updates in place, no page reload. */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {selectedDeparture.tours.slice(0, 6).map((tour) => (
+              <TourCard key={tour.id} tour={tour} compact />
             ))}
           </div>
 
-          <div className="text-center mt-12 md:mt-14">
-            <Link href="/tours/from-marrakech" className="inline-flex items-center gap-2 border-b-2 border-primary text-foreground font-bold pb-1 hover:text-primary transition-colors">
-              {t('section_sahara_link')} <ChevronRight className="w-4 h-4" />
+          <div className="text-center mt-10 md:mt-14">
+            <Link
+              href={`/tours/from-${selectedDeparture.hub.slug}`}
+              className="inline-flex items-center gap-2 border-b-2 border-primary text-foreground font-bold pb-1 hover:text-primary transition-colors"
+            >
+              {fmtTemplate(t('home_depart_view_all'), { city: t(`hub_${selectedDeparture.hub.id}_name`) })} <ChevronRight className="w-4 h-4" />
             </Link>
           </div>
         </div>
