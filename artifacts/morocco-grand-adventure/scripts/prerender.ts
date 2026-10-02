@@ -1328,6 +1328,7 @@ function buildExperienceContent(rest: string, lang: Lang): string {
   const tripBuilderCta = rest === '/trip-builder' ? `
     <h2>${escapeHtml(tr(lang, 'nav_build_journey'))}</h2>
     <p>${escapeHtml(tr(lang, 'tb_sub'))}</p>
+    <p>${escapeHtml(tr(lang, 'tb_quote_note'))}</p>
     <p><a href="${contactInfo.whatsapp}?text=${encodeURIComponent(tr(lang, 'tb_sub'))}">${escapeHtml(tr(lang, 'nav_book_whatsapp'))}</a></p>` : '';
   // Contextual Student Tours backlink on the five most relevant hubs, so the
   // hub is not an orphan in the internal-link graph.

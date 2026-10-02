@@ -547,13 +547,21 @@ export default function TripBuilder() {
                             </div>
                           ))}
                         </div>
+
+                        {/* Reassurance before the commitment point — this copy
+                            already existed (tb_quote_note, fully translated
+                            across all 11 locales) but was never actually
+                            rendered anywhere in the page. */}
+                        <div className="mt-10 rounded-2xl bg-muted/50 border border-border p-5 text-sm text-muted-foreground text-center">
+                          {t('tb_quote_note')}
+                        </div>
                       </>
                     )}
                   </motion.div>
                 )}
               </AnimatePresence>
             </div>
-            
+
             {/* Footer Navigation */}
             <div className="bg-background/50 p-6 md:p-8 border-t border-border flex items-center justify-between">
               {step > 1 ? (
