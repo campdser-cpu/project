@@ -100,16 +100,17 @@ function Notes({ notes }: { notes: string[] }) {
 }
 
 function DayHeader({ d }: { d: StudentTourDay }) {
+  const { t } = useLanguage();
   return (
     <header className="flex items-start gap-4 md:gap-5">
       <div aria-hidden="true" className="w-11 shrink-0 text-center text-primary-text md:w-14">
-        <span className="block text-[10px] font-semibold uppercase" style={{ letterSpacing: '0.2em' }}>Day</span>
+        <span className="block text-[10px] font-semibold uppercase" style={{ letterSpacing: '0.2em' }}>{t('st_sd_day_label')}</span>
         <span className="mt-1 block font-serif text-[2.5rem] font-light leading-none md:text-5xl">
           {d.day.replace(/\D/g, '')}
         </span>
       </div>
       <h3 className="pt-1 font-serif text-[1.6rem] font-light leading-tight text-foreground text-balance md:pt-2 md:text-[2.1rem]">
-        <span className="sr-only">{d.day}: </span>
+        <span className="sr-only">{t('st_sd_day_label')} {d.day.replace(/\D/g, '')}: </span>
         {d.title}
       </h3>
     </header>

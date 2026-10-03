@@ -1454,7 +1454,7 @@ function buildExperienceContent(rest: string, lang: Lang): string {
     <h2>${escapeHtml(tr(lang, 'st_sd_why_h2'))}</h2>
     ${stProduct.whyStudents.map((p) => paragraph(p)).join('')}
     <h2>${escapeHtml(tr(lang, 'st_sd_itinerary_eyebrow'))}</h2>
-    ${stProduct.itinerary.map((d) => `${d.chapter ? `<h3>${escapeHtml(d.chapter)}</h3>` : ''}<h3>${escapeHtml(`${d.day} — ${d.title}`)}</h3>${d.body.map((p) => paragraph(p)).join('')}${stPrerenderDays.has(d.day) && d.images?.[0] ? stFigure(d.images[0], studentTourSizes.day(d.images)) : ''}${d.notes && d.notes.length ? ul(d.notes) : ''}`).join('\n    ')}
+    ${stProduct.itinerary.map((d) => `${d.chapter ? `<h3>${escapeHtml(d.chapter)}</h3>` : ''}<h3>${escapeHtml(`${tr(lang, 'st_sd_day_label')} ${d.day.replace(/\D/g, '')} — ${d.title}`)}</h3>${d.body.map((p) => paragraph(p)).join('')}${stPrerenderDays.has(d.day) && d.images?.[0] ? stFigure(d.images[0], studentTourSizes.day(d.images)) : ''}${d.notes && d.notes.length ? ul(d.notes) : ''}`).join('\n    ')}
     <h2>${escapeHtml(tr(lang, 'st_sd_experience_h2'))}</h2>
     ${ul(stProduct.experiences.map((e) => `${e.title} — ${e.body}`))}
     <h2>${escapeHtml(tr(lang, 'st_sd_learning_h2'))}</h2>
@@ -1668,7 +1668,7 @@ function buildRoutes(lang: Lang): RouteEntry[] {
             name: stp.title,
             description: stp.metaDescription,
             url: `${SITE_URL}/${lang}${rest}`,
-            touristType: 'University and student groups',
+            touristType: tr(lang, 'st_sd_touristtype'),
             provider: { '@id': `${SITE_URL}/#organization` },
             itinerary: {
               '@type': 'ItemList',
@@ -1676,7 +1676,7 @@ function buildRoutes(lang: Lang): RouteEntry[] {
               itemListElement: stp.itinerary.map((d, i) => ({
                 '@type': 'ListItem',
                 position: i + 1,
-                name: `${d.day} — ${d.title}`,
+                name: `${tr(lang, 'st_sd_day_label')} ${d.day.replace(/\D/g, '')} — ${d.title}`,
               })),
             },
           },
@@ -1699,7 +1699,7 @@ function buildRoutes(lang: Lang): RouteEntry[] {
               '@type': 'TouristTrip',
               name: `${tr(lang, `st_11_r${n}_days`)} ${tr(lang, `st_11_r${n}_unit`)} — ${tr(lang, `st_11_r${n}_title`)}`,
               description: `${tr(lang, `st_11_r${n}_route`)} · ${tr(lang, `st_11_r${n}_themes`)}`,
-              touristType: 'University and student groups',
+              touristType: tr(lang, 'st_sd_touristtype'),
               itinerary: {
                 '@type': 'ItemList',
                 itemListElement: tr(lang, `st_11_r${n}_route`).split('·').map((p, i) => ({
