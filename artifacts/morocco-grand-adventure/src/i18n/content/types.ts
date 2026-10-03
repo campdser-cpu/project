@@ -58,6 +58,38 @@ export type BlogPostOverlay = {
   sections?: { heading?: string; paragraphs?: (string | undefined)[] }[];
 };
 
+/** One itinerary day of a Student Tour product, matched by index. */
+export type StudentTourDayOverlay = {
+  title?: string;
+  chapter?: string;
+  body?: (string | undefined)[];
+  notes?: (string | undefined)[];
+};
+
+/** A Student Tour product (src/data/student-tours.ts), keyed by slug. */
+export type StudentTourOverlay = {
+  duration?: string;
+  title?: string;
+  cardSummary?: string;
+  heroLead?: string;
+  metaTitle?: string;
+  metaDescription?: string;
+  overview?: { start?: string; end?: string; regions?: string; style?: string; groups?: string };
+  whyStudents?: (string | undefined)[];
+  itinerary?: StudentTourDayOverlay[];
+  experiences?: { title?: string; body?: string }[];
+  learning?: { subject?: string; body?: string }[];
+  dayInTheJourney?: { label?: string; body?: string }[];
+  groupExperience?: (string | undefined)[];
+  included?: (string | undefined)[];
+  notIncluded?: (string | undefined)[];
+  practical?: { title?: string; body?: string }[];
+  support?: (string | undefined)[];
+  faqs?: { q?: string; a?: string }[];
+  keyPlaces?: (string | undefined)[];
+  related?: { label?: string }[];
+};
+
 export type ContentOverlay = {
   /** Display labels for the (canonical-English) destination category keys. */
   categories?: Record<string, string>;
@@ -71,4 +103,6 @@ export type ContentOverlay = {
   faq?: { question?: string; answer?: string }[];
   /** Blog posts keyed by slug. */
   blog?: Record<string, BlogPostOverlay>;
+  /** Student Tour products (src/data/student-tours.ts), keyed by slug. */
+  studentTours?: Record<string, StudentTourOverlay>;
 };

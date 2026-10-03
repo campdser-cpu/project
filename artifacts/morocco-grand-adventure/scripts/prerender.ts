@@ -53,6 +53,7 @@ import {
   getLocalizedDestinations,
   getLocalizedFaq,
   getLocalizedBlogSections,
+  getLocalizedStudentTour,
   blogPosts,
   type BlogPost,
 } from '../src/i18n/content';
@@ -1286,7 +1287,8 @@ function buildExperienceContent(rest: string, lang: Lang): string {
   // Student Tours authors a real editorial H1; every other experience hub
   // derives its H1 from the localized meta title. Keeping the static H1 equal to
   // the hydrated one avoids an SPA/prerender heading mismatch.
-  const stProduct = getStudentTour(rest.replace('/student-tours/', ''));
+  const rawStProduct = getStudentTour(rest.replace('/student-tours/', ''));
+  const stProduct = rawStProduct ? getLocalizedStudentTour(rawStProduct, lang) : rawStProduct;
   // The Merzouga guide hub emits its own full editorial body (H1 included).
   const isMerzougaHub = rest === '/merzouga-guide';
   const heading = isMerzougaHub
@@ -1406,10 +1408,11 @@ function buildExperienceContent(rest: string, lang: Lang): string {
     <p><a href="${contactInfo.whatsapp}?text=${encodeURIComponent(tr(lang, 'st_16_cta'))}">${escapeHtml(tr(lang, 'st_16_cta'))}</a></p>` : '';
 
   // Dedicated Student Tour product pages: the full itinerary is emitted as
-  // crawlable HTML so the route carries real content without JavaScript. The
-  // copy is authored in English only (src/data/student-tours.ts); every locale
-  // gets the same body until a translation batch is authored, which is the same
-  // honest fallback the rest of the Student Tours section already uses.
+  // crawlable HTML so the route carries real content without JavaScript.
+  // `stProduct` above is already run through getLocalizedStudentTour(), so this
+  // body reflects whichever locales have an authored overlay in
+  // src/i18n/content/generated/{lang}.json and falls back to English per-field
+  // for any locale (or any field) that doesn't have one yet.
   // Emits one authentic Student Tours photograph into the crawlable HTML.
   //
   // This MIRRORS src/pages/student-tour-detail.tsx <Photo> exactly — same
@@ -1439,32 +1442,32 @@ function buildExperienceContent(rest: string, lang: Lang): string {
   const studentTourDetail = stProduct ? `
     ${stFigure(stProduct.hero, studentTourSizes.hero, true)}
     <p>${escapeHtml(stProduct.heroLead)}</p>
-    <h2>Tour overview</h2>
+    <h2>${escapeHtml(tr(lang, 'td_overview'))}</h2>
     ${ul([
-      `Duration: ${stProduct.duration}`,
-      `Starts: ${stProduct.overview.start}`,
-      `Ends: ${stProduct.overview.end}`,
-      `Main regions: ${stProduct.overview.regions}`,
-      `Travel style: ${stProduct.overview.style}`,
-      stProduct.overview.groups,
+      `${tr(lang, 'st_sd_duration')}: ${stProduct.duration}`,
+      `${tr(lang, 'st_sd_starts')}: ${stProduct.overview.start}`,
+      `${tr(lang, 'st_sd_ends')}: ${stProduct.overview.end}`,
+      `${tr(lang, 'st_sd_regions')}: ${stProduct.overview.regions}`,
+      `${tr(lang, 'st_sd_style')}: ${stProduct.overview.style}`,
+      `${tr(lang, 'st_sd_fact_groups')}: ${stProduct.overview.groups}`,
     ])}
-    <h2>Why this works for students</h2>
+    <h2>${escapeHtml(tr(lang, 'st_sd_why_h2'))}</h2>
     ${stProduct.whyStudents.map((p) => paragraph(p)).join('')}
-    <h2>Itinerary</h2>
+    <h2>${escapeHtml(tr(lang, 'st_sd_itinerary_eyebrow'))}</h2>
     ${stProduct.itinerary.map((d) => `${d.chapter ? `<h3>${escapeHtml(d.chapter)}</h3>` : ''}<h3>${escapeHtml(`${d.day} — ${d.title}`)}</h3>${d.body.map((p) => paragraph(p)).join('')}${stPrerenderDays.has(d.day) && d.images?.[0] ? stFigure(d.images[0], studentTourSizes.day(d.images)) : ''}${d.notes && d.notes.length ? ul(d.notes) : ''}`).join('\n    ')}
-    <h2>What students will experience</h2>
+    <h2>${escapeHtml(tr(lang, 'st_sd_experience_h2'))}</h2>
     ${ul(stProduct.experiences.map((e) => `${e.title} — ${e.body}`))}
-    <h2>Learning through experience</h2>
+    <h2>${escapeHtml(tr(lang, 'st_sd_learning_h2'))}</h2>
     ${ul(stProduct.learning.map((l) => `${l.subject} — ${l.body}`))}
-    <h2>What is included</h2>
+    <h2>${escapeHtml(tr(lang, 'st_sd_included_h3'))}</h2>
     ${ul(stProduct.included)}
-    <h2>Not included</h2>
+    <h2>${escapeHtml(tr(lang, 'st_sd_notincluded_h3'))}</h2>
     ${ul(stProduct.notIncluded)}
-    <h2>Practical information</h2>
+    <h2>${escapeHtml(tr(lang, 'st_sd_practical_h2'))}</h2>
     ${stProduct.practical.map((p) => `<h3>${escapeHtml(p.title)}</h3>${paragraph(p.body)}`).join('\n    ')}
-    <h2>Group support and logistics</h2>
+    <h2>${escapeHtml(tr(lang, 'st_sd_support_h2'))}</h2>
     ${ul(stProduct.support)}
-    <h2>Questions from group leaders</h2>
+    <h2>${escapeHtml(tr(lang, 'st_sd_faq_h2'))}</h2>
     ${stProduct.faqs.map((f) => `<h3>${escapeHtml(f.q)}</h3>${paragraph(f.a)}`).join('\n    ')}
     ${(() => {
       // Mirrors the client's "Upcoming Group Departures" section — real
@@ -1482,7 +1485,7 @@ function buildExperienceContent(rest: string, lang: Lang): string {
       }).join('');
     })()}
     <p>${link(`${SITE_URL}/${lang}/student-tours`, tr(lang, 'st_tours_label'))}</p>
-    ${studentTourList.filter((s) => s.slug !== stProduct.slug).map((s) => `<p>${link(`${SITE_URL}/${lang}/student-tours/${s.slug}`, s.title)}</p>`).join('\n    ')}
+    ${studentTourList.filter((s) => s.slug !== stProduct.slug).map((s) => `<p>${link(`${SITE_URL}/${lang}/student-tours/${s.slug}`, getLocalizedStudentTour(s, lang).title)}</p>`).join('\n    ')}
     ${stProduct.related.map((r) => `<p>${link(`${SITE_URL}/${lang}${r.to}`, r.label)}</p>`).join('\n    ')}` : '';
 
   return heading + intro + dayTripProducts + studentTours + studentTourDetail + ugPage + studentBacklink + desertMoments + galleryLibPhotos + tBlocks + dBlocks + tripBuilderCta + desertFaq;
@@ -1647,7 +1650,8 @@ function buildRoutes(lang: Lang): RouteEntry[] {
       // Dedicated Student Tour products: Breadcrumb + FAQPage + a TouristTrip
       // whose itinerary mirrors the day-by-day on the page. No second
       // Organization node — the site-wide TravelAgency entity is referenced by @id.
-      const stp = getStudentTour(rest.replace('/student-tours/', ''));
+      const rawStp = getStudentTour(rest.replace('/student-tours/', ''));
+      const stp = rawStp ? getLocalizedStudentTour(rawStp, lang) : rawStp;
       if (stp) {
         const stpSchemas: Record<string, unknown>[] = [
           buildBreadcrumb([

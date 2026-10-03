@@ -21,6 +21,7 @@ import { Layout } from '../components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { contactInfo } from '@/data/content';
 import { studentTours } from '@/data/student-tours';
+import { getLocalizedStudentTour } from '@/i18n/content';
 
 const IMG = '/images/student-tours';
 
@@ -104,9 +105,9 @@ export default function StudentTours() {
   // private /tours/* catalogue — a visitor who lands here stays inside the
   // Student Tours ecosystem. <Link> resolves against the wouter base, so each
   // locale gets its own route.
-  const journeys = studentTours.map((s) => ({
+  const journeys = studentTours.map((s) => getLocalizedStudentTour(s, lang)).map((s) => ({
     days: s.duration.split(' ')[0],
-    unit: 'Days',
+    unit: t('st_sd_days_unit'),
     title: s.title,
     route: s.keyPlaces.join(' · '),
     themes: s.overview.regions,

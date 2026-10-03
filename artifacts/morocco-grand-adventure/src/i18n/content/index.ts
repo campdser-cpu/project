@@ -24,6 +24,7 @@ import type { Lang } from '@/i18n/index';
 import type { ContentOverlay } from './types';
 import { tourDepthFor, type TourDepth } from '@/data/tourDepth';
 import { BLOG_ARTICLE_SECTIONS, type BlogSection } from '@/data/blog-article-sections';
+import type { StudentTour } from '@/data/student-tours';
 
 // ── Locale overlay registry ─────────────────────────────────────────────────
 const overlayRegistry: Partial<Record<Lang, ContentOverlay>> = {};
@@ -328,4 +329,69 @@ export function getLocalizedBlogSections(slug: string, lang: Lang): BlogSection[
     heading: pickText(section.heading, overlay[i]?.heading),
     paragraphs: section.paragraphs.map((p, j) => pickText(p, overlay[i]?.paragraphs?.[j])),
   }));
+}
+
+/**
+ * Localize a Student Tour product (src/data/student-tours.ts), falling back
+ * field-by-field and item-by-item to the canonical English source — exactly
+ * the same merge pattern as localizeTour(). Images, slugs and internal `to`
+ * route paths are never touched; only visible prose is localized.
+ */
+export function getLocalizedStudentTour(tour: StudentTour, lang: Lang): StudentTour {
+  const o = getOverlay(lang)?.studentTours?.[tour.slug];
+  if (!o) return tour;
+  return {
+    ...tour,
+    duration: pickText(tour.duration, o.duration),
+    title: pickText(tour.title, o.title),
+    cardSummary: pickText(tour.cardSummary, o.cardSummary),
+    heroLead: pickText(tour.heroLead, o.heroLead),
+    metaTitle: pickText(tour.metaTitle, o.metaTitle),
+    metaDescription: pickText(tour.metaDescription, o.metaDescription),
+    overview: {
+      ...tour.overview,
+      start: pickText(tour.overview.start, o.overview?.start),
+      end: pickText(tour.overview.end, o.overview?.end),
+      regions: pickText(tour.overview.regions, o.overview?.regions),
+      style: pickText(tour.overview.style, o.overview?.style),
+      groups: pickText(tour.overview.groups, o.overview?.groups),
+    },
+    whyStudents: pickArr(tour.whyStudents, o.whyStudents),
+    itinerary: tour.itinerary.map((day, i) => ({
+      ...day,
+      title: pickText(day.title, o.itinerary?.[i]?.title),
+      chapter: day.chapter ? pickText(day.chapter, o.itinerary?.[i]?.chapter) : day.chapter,
+      body: pickArr(day.body, o.itinerary?.[i]?.body),
+      notes: day.notes ? pickArr(day.notes, o.itinerary?.[i]?.notes) : day.notes,
+    })),
+    experiences: tour.experiences.map((e, i) => ({
+      title: pickText(e.title, o.experiences?.[i]?.title),
+      body: pickText(e.body, o.experiences?.[i]?.body),
+    })),
+    learning: tour.learning.map((l, i) => ({
+      subject: pickText(l.subject, o.learning?.[i]?.subject),
+      body: pickText(l.body, o.learning?.[i]?.body),
+    })),
+    dayInTheJourney: tour.dayInTheJourney?.map((b, i) => ({
+      label: pickText(b.label, o.dayInTheJourney?.[i]?.label),
+      body: pickText(b.body, o.dayInTheJourney?.[i]?.body),
+    })),
+    groupExperience: pickArr(tour.groupExperience, o.groupExperience),
+    included: pickArr(tour.included, o.included),
+    notIncluded: pickArr(tour.notIncluded, o.notIncluded),
+    practical: tour.practical.map((p, i) => ({
+      title: pickText(p.title, o.practical?.[i]?.title),
+      body: pickText(p.body, o.practical?.[i]?.body),
+    })),
+    support: pickArr(tour.support, o.support),
+    faqs: tour.faqs.map((f, i) => ({
+      q: pickText(f.q, o.faqs?.[i]?.q),
+      a: pickText(f.a, o.faqs?.[i]?.a),
+    })),
+    keyPlaces: pickArr(tour.keyPlaces, o.keyPlaces),
+    related: tour.related.map((r, i) => ({
+      ...r,
+      label: pickText(r.label, o.related?.[i]?.label),
+    })),
+  };
 }

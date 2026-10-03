@@ -14,6 +14,7 @@ import { TourBreadcrumbs } from '../components/tours/TourBreadcrumbs';
 import { TourInquiryForm } from '../components/tours/TourInquiryForm';
 import { fmtTemplate } from '../components/tours/intl';
 import { departuresForTour, seatsAvailable, isFull } from '@/data/student-group-departures';
+import { getLocalizedStudentTour } from '@/i18n/content';
 import NotFound from './not-found';
 
 const IMG = '/images';
@@ -184,7 +185,8 @@ function PlainDay({ d }: { d: StudentTourDay }) {
 export default function StudentTourDetail() {
   const [, params] = useRoute('/student-tours/:slug');
   const { t, lang } = useLanguage();
-  const tour = params?.slug ? getStudentTour(params.slug) : undefined;
+  const rawTour = params?.slug ? getStudentTour(params.slug) : undefined;
+  const tour = rawTour ? getLocalizedStudentTour(rawTour, lang) : undefined;
 
   // Unknown slug under /student-tours/ falls through to the standard 404 rather
   // than rendering an empty product page.
@@ -194,7 +196,7 @@ export default function StudentTourDetail() {
     `Hello Morocco Grand Adventure, I'm a group leader interested in the ${tour.title}. I'd like to discuss dates, group size and how the itinerary could be adapted for our students.`,
   )}`;
 
-  const others = studentTours.filter((s) => s.slug !== tour.slug);
+  const others = studentTours.filter((s) => s.slug !== tour.slug).map((s) => getLocalizedStudentTour(s, lang));
   // Real scheduled departures only — empty until MGA confirms an actual
   // group date and capacity (see src/data/student-group-departures.ts).
   const departures = departuresForTour(tour.slug);
@@ -206,12 +208,12 @@ export default function StudentTourDetail() {
   let chapterCount = 0;
 
   const facts: { label: string; value: string; span: string }[] = [
-    { label: 'Duration', value: tour.duration, span: 'col-span-1' },
-    { label: 'Starts', value: tour.overview.start, span: 'col-span-1' },
-    { label: 'Ends', value: tour.overview.end, span: 'col-span-2 md:col-span-1' },
-    { label: 'Groups', value: tour.overview.groups, span: 'col-span-2 md:col-span-1' },
-    { label: 'Main regions', value: tour.overview.regions, span: 'col-span-2' },
-    { label: 'Travel style', value: tour.overview.style, span: 'col-span-2' },
+    { label: t('st_sd_duration'), value: tour.duration, span: 'col-span-1' },
+    { label: t('st_sd_starts'), value: tour.overview.start, span: 'col-span-1' },
+    { label: t('st_sd_ends'), value: tour.overview.end, span: 'col-span-2 md:col-span-1' },
+    { label: t('st_sd_fact_groups'), value: tour.overview.groups, span: 'col-span-2 md:col-span-1' },
+    { label: t('st_sd_regions'), value: tour.overview.regions, span: 'col-span-2' },
+    { label: t('st_sd_style'), value: tour.overview.style, span: 'col-span-2' },
   ];
 
   const expImg = tour.experiencesImage;
@@ -248,7 +250,7 @@ export default function StudentTourDetail() {
             <h1 className="mt-3 font-serif text-[2.3rem] font-light leading-[1.05] text-balance sm:text-5xl lg:text-[3.3rem] xl:text-6xl">
               {tour.title}
             </h1>
-            <ol aria-label="Route" className="mt-5 flex flex-wrap items-center gap-x-2 gap-y-1.5 text-[13px] text-white/85 sm:text-sm">
+            <ol aria-label={t('st_sd_route_aria')} className="mt-5 flex flex-wrap items-center gap-x-2 gap-y-1.5 text-[13px] text-white/85 sm:text-sm">
               {tour.keyPlaces.map((p, i) => (
                 <li key={p} className="flex items-center gap-2">
                   {i > 0 && <span aria-hidden="true" className="h-px w-3.5" style={{ background: GOLD }} />}
@@ -266,13 +268,13 @@ export default function StudentTourDetail() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center bg-[#25D366] px-7 py-3.5 text-sm font-bold tracking-wide text-[#0d2b1d] transition hover:opacity-90"
               >
-                Plan This Student Trip
+                {t('st_sd_plan_cta')}
               </a>
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center border border-white/40 px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-white hover:text-black"
               >
-                Talk to Morocco Grand Adventure
+                {t('st_sd_talk_cta')}
               </Link>
             </div>
           </div>
@@ -306,7 +308,7 @@ export default function StudentTourDetail() {
         <section className="py-16 md:py-24" style={{ background: SAND }}>
           <div className="container mx-auto grid gap-6 px-4 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-4">
-              <Eyebrow as="h2">Why this works for students</Eyebrow>
+              <Eyebrow as="h2">{t('st_sd_why_h2')}</Eyebrow>
             </div>
             <div className="lg:col-span-8">
               <p className="font-serif text-[1.4rem] font-light leading-[1.45] md:text-[1.85rem] md:leading-[1.4]" style={{ color: INK }}>
@@ -327,8 +329,8 @@ export default function StudentTourDetail() {
         <section className="bg-background py-16 md:py-28">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl">
-              <Eyebrow>The itinerary</Eyebrow>
-              <h2 className="font-serif text-3xl font-light text-foreground md:text-5xl">Day by day</h2>
+              <Eyebrow>{t('st_sd_itinerary_eyebrow')}</Eyebrow>
+              <h2 className="font-serif text-3xl font-light text-foreground md:text-5xl">{t('st_sd_itinerary_h2')}</h2>
             </div>
             <ol className="mt-12 space-y-16 md:mt-20 md:space-y-28">
               {tour.itinerary.map((d, i) => (
@@ -337,7 +339,7 @@ export default function StudentTourDetail() {
                     // Chapter breaks turn the long itinerary into movements.
                     <div className="mb-12 border-t pt-8 md:mb-20 md:pt-12" style={{ borderColor: GOLD }}>
                       <p className="text-[11px] font-semibold uppercase text-primary-text" style={{ letterSpacing: '0.2em' }}>
-                        Part {++chapterCount}
+                        {fmtTemplate(t('st_sd_part'), { n: ++chapterCount })}
                       </p>
                       <h3 className="mt-3 max-w-3xl font-serif text-[1.9rem] font-light leading-tight text-foreground text-balance md:text-5xl">
                         {d.chapter}
@@ -365,7 +367,7 @@ export default function StudentTourDetail() {
                 </figure>
               )}
               <div className={expImg ? 'lg:col-span-7' : ''}>
-                <Eyebrow as="h2">What students will experience</Eyebrow>
+                <Eyebrow as="h2">{t('st_sd_experience_h2')}</Eyebrow>
                 <ol
                   className={`border-t ${expImg ? '' : 'md:grid md:grid-cols-2 md:gap-x-12 xl:grid-cols-3'}`}
                   style={{ borderColor: RULE }}
@@ -391,7 +393,7 @@ export default function StudentTourDetail() {
         <section className="bg-background py-16 md:py-24">
           <div className="container mx-auto grid gap-6 px-4 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-4">
-              <Eyebrow as="h2">Learning through experience</Eyebrow>
+              <Eyebrow as="h2">{t('st_sd_learning_h2')}</Eyebrow>
             </div>
             <div className="border-t lg:col-span-8" style={{ borderColor: RULE }}>
               {tour.learning.map((l) => (
@@ -415,7 +417,7 @@ export default function StudentTourDetail() {
                   </figure>
                 )}
                 <div className={dayImg ? 'lg:col-span-6 lg:col-start-7' : ''}>
-                  <Eyebrow onDark as="h2">A day in the journey</Eyebrow>
+                  <Eyebrow onDark as="h2">{t('st_sd_day_journey_h2')}</Eyebrow>
                   <ol className={`mt-8 border-l border-white/15 pl-7 ${dayImg ? 'space-y-8' : 'space-y-8 md:grid md:grid-cols-4 md:gap-8 md:space-y-0'}`}>
                     {tour.dayInTheJourney.map((b) => (
                       <li key={b.label} className="relative">
@@ -436,7 +438,7 @@ export default function StudentTourDetail() {
           <div className="container mx-auto px-4">
             <div className={groupImg ? 'grid gap-10 lg:grid-cols-12 lg:items-center lg:gap-16' : 'max-w-4xl'}>
               <div className={groupImg ? 'lg:col-span-6' : ''}>
-                <Eyebrow as="h2">Traveling as a group</Eyebrow>
+                <Eyebrow as="h2">{t('st_sd_group_h2')}</Eyebrow>
                 <p className="font-serif text-[1.35rem] font-light leading-[1.45] md:text-[1.7rem]" style={{ color: INK }}>
                   {tour.groupExperience[0]}
                 </p>
@@ -458,10 +460,10 @@ export default function StudentTourDetail() {
         {/* PRACTICAL ------------------------------------------------------- */}
         <section className="py-16 md:py-24" style={{ background: SAND }}>
           <div className="container mx-auto px-4">
-            <Eyebrow as="h2">Practical information</Eyebrow>
+            <Eyebrow as="h2">{t('st_sd_practical_h2')}</Eyebrow>
             <div className="mt-4 grid gap-10 lg:grid-cols-12 lg:gap-16">
               <div className="bg-white p-7 md:p-9 lg:col-span-5 lg:self-start">
-                <h3 className="font-serif text-xl" style={{ color: INK }}>What is included</h3>
+                <h3 className="font-serif text-xl" style={{ color: INK }}>{t('st_sd_included_h3')}</h3>
                 <ul className="mt-4 space-y-2.5">
                   {tour.included.map((x) => (
                     <li key={x} className="flex gap-3 text-[15px] leading-relaxed" style={{ color: BODY }}>
@@ -470,7 +472,7 @@ export default function StudentTourDetail() {
                     </li>
                   ))}
                 </ul>
-                <h3 className="mt-8 border-t pt-7 font-serif text-xl" style={{ color: INK, borderColor: RULE }}>Not included</h3>
+                <h3 className="mt-8 border-t pt-7 font-serif text-xl" style={{ color: INK, borderColor: RULE }}>{t('st_sd_notincluded_h3')}</h3>
                 <ul className="mt-4 space-y-2">
                   {tour.notIncluded.map((x) => (
                     <li key={x} className="flex gap-3 text-[14.5px] leading-relaxed" style={{ color: MUTED }}>
@@ -496,7 +498,7 @@ export default function StudentTourDetail() {
         <section className="bg-background py-16 md:py-24">
           <div className="container mx-auto grid gap-6 px-4 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-4">
-              <Eyebrow as="h2">Group support and logistics</Eyebrow>
+              <Eyebrow as="h2">{t('st_sd_support_h2')}</Eyebrow>
             </div>
             <ul className="grid gap-x-10 gap-y-6 md:grid-cols-2 lg:col-span-8">
               {tour.support.map((s) => (
@@ -510,7 +512,7 @@ export default function StudentTourDetail() {
         <section className="py-16 md:py-24" style={{ background: SAND }}>
           <div className="container mx-auto grid gap-6 px-4 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-4">
-              <Eyebrow as="h2">Questions from group leaders</Eyebrow>
+              <Eyebrow as="h2">{t('st_sd_faq_h2')}</Eyebrow>
             </div>
             <div className="border-t lg:col-span-8" style={{ borderColor: RULE }}>
               {tour.faqs.map((f) => (
@@ -593,11 +595,10 @@ export default function StudentTourDetail() {
         <section className="py-16 md:py-24" style={{ background: INK }}>
           <div className="container mx-auto max-w-3xl px-4 text-center">
             <h2 className="font-serif text-3xl font-light text-white md:text-5xl">
-              Planning Morocco for your students?
+              {t('st_sd_cta_h2')}
             </h2>
             <p className="mt-6 leading-relaxed text-white/80">
-              Tell us where your group is traveling from, how many students are coming, and what you want them to
-              take away. We will shape the journey around that rather than sending you a fixed package.
+              {t('st_sd_cta_body')}
             </p>
             <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row sm:gap-4">
               <a
@@ -606,13 +607,13 @@ export default function StudentTourDetail() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center bg-[#25D366] px-8 py-4 text-sm font-bold tracking-wide text-[#0d2b1d] transition hover:opacity-90"
               >
-                Chat on WhatsApp
+                {t('exp_chat_whatsapp')}
               </a>
               <Link
                 href="/student-tours/university-groups"
                 className="inline-flex items-center justify-center border border-white/50 px-8 py-4 text-sm font-semibold text-white transition hover:bg-white hover:text-black"
               >
-                University group logistics
+                {t('st_sd_uni_logistics_cta')}
               </Link>
             </div>
             <div className="mx-auto mt-8 max-w-md rounded-2xl bg-white p-6 text-left shadow-xl">
@@ -624,7 +625,7 @@ export default function StudentTourDetail() {
         {/* OTHER STUDENT PROGRAMS + BACKLINK ------------------------------- */}
         <section className="bg-background py-16 md:py-24">
           <div className="container mx-auto px-4">
-            <Eyebrow as="h2">Other student programs</Eyebrow>
+            <Eyebrow as="h2">{t('st_sd_other_h2')}</Eyebrow>
             <div className="mt-4 grid gap-6 md:grid-cols-2">
               {others.map((o) => (
                 <Link
@@ -634,13 +635,13 @@ export default function StudentTourDetail() {
                 >
                   <div className="flex items-baseline gap-2">
                     <span className="text-4xl font-light text-foreground">{o.duration.split(' ')[0]}</span>
-                    <span className="text-[11px] uppercase" style={{ letterSpacing: '0.16em', color: MUTED }}>Days</span>
+                    <span className="text-[11px] uppercase" style={{ letterSpacing: '0.16em', color: MUTED }}>{t('st_sd_days_unit')}</span>
                   </div>
                   <h3 className="mt-4 font-serif text-xl text-foreground">{o.title}</h3>
                   <p className="mt-2 text-[13px]" style={{ color: MUTED }}>{o.keyPlaces.join(' · ')}</p>
                   <p className="mt-3 text-sm leading-relaxed" style={{ color: BODY }}>{o.cardSummary}</p>
                   <span className="mt-5 inline-block border-b-2 pb-0.5 text-sm font-semibold text-foreground" style={{ borderColor: GOLD }}>
-                    Explore Student Tour →
+                    {t('st_sd_explore_cta')} →
                   </span>
                 </Link>
               ))}
