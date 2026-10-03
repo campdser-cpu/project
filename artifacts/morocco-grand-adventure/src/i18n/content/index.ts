@@ -23,6 +23,7 @@ import {
 import type { Lang } from '@/i18n/index';
 import type { ContentOverlay } from './types';
 import { tourDepthFor, type TourDepth } from '@/data/tourDepth';
+import { BLOG_ARTICLE_SECTIONS, type BlogSection } from '@/data/blog-article-sections';
 
 // ── Locale overlay registry ─────────────────────────────────────────────────
 const overlayRegistry: Partial<Record<Lang, ContentOverlay>> = {};
@@ -310,4 +311,21 @@ export function getLocalizedBlogPost(slug: string, lang: Lang): BlogPost | undef
     canonicalTitle: pickText(base.canonicalTitle, overlay.canonicalTitle),
     canonicalExcerpt: pickText(base.canonicalExcerpt, overlay.canonicalExcerpt),
   };
+}
+
+/**
+ * Get the localized long-form body sections for a blog article, falling back
+ * to the canonical English prose (src/data/blog-article-sections.ts) for any
+ * missing section or paragraph. Never returns invented translations — a
+ * locale with no overlay simply reads the English original.
+ */
+export function getLocalizedBlogSections(slug: string, lang: Lang): BlogSection[] {
+  const base = BLOG_ARTICLE_SECTIONS[slug];
+  if (!base) return [];
+  const overlay = getOverlay(lang)?.blog?.[slug]?.sections;
+  if (!overlay) return base;
+  return base.map((section, i) => ({
+    heading: pickText(section.heading, overlay[i]?.heading),
+    paragraphs: section.paragraphs.map((p, j) => pickText(p, overlay[i]?.paragraphs?.[j])),
+  }));
 }

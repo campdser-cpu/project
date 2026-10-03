@@ -54,6 +54,8 @@ export type BlogPostOverlay = {
   alt?: string;
   canonicalTitle?: string;
   canonicalExcerpt?: string;
+  /** Localized long-form article body, matched by index against BLOG_ARTICLE_SECTIONS. */
+  sections?: { heading?: string; paragraphs?: (string | undefined)[] }[];
 };
 
 export type ContentOverlay = {

@@ -52,6 +52,7 @@ import {
   getLocalizedDestination,
   getLocalizedDestinations,
   getLocalizedFaq,
+  getLocalizedBlogSections,
   blogPosts,
   type BlogPost,
 } from '../src/i18n/content';
@@ -1234,8 +1235,8 @@ function buildBlogArticleContent(slug: string, lang: Lang): string {
  * links to the matching experience pages and tour — all real site routes.
  */
 function buildBlogArticleBody(slug: string, lang: Lang): string {
-  const sections = BLOG_ARTICLE_SECTIONS[slug];
-  if (!sections) return '';
+  if (!BLOG_ARTICLE_SECTIONS[slug]) return '';
+  const sections = getLocalizedBlogSections(slug, lang);
   const body = sections.map((s) => h2(s.heading) + s.paragraphs.map((p) => paragraph(p)).join('')).join('');
   const cta = BLOG_ARTICLE_CTA[slug];
   const ctaBlock = cta
