@@ -27,11 +27,11 @@ export const i18nGaps: Partial<Record<Lang, Record<string, string>>> = {
   // locales/en.ts (e.g. pwig_* on the Merzouga Guide hub). Without this entry,
   // t('en', 'pwig_heading') falls through registry.en → gap layer (undefined) →
   // literal key, leaking "pwig_heading" into /en/merzouga-guide.
-  // Student Tours body copy is authored for en + pt only; the other nine locales
-  // deliberately fall through to English until a dedicated localization batch.
+  // Student Tours body copy is authored for en + pt + es so far; the remaining
+  // locales deliberately fall through to English until translated in a later batch.
   en: { ...guideGaps.en, ...studentToursGaps.en, ...pricingGaps.en, ...discoveryGaps.en, ...trustGaps.en, ...journeyGaps.en },
   fr: { ...studentToursGaps.en, ...guideGaps.fr, ...chromeGaps.fr, ...fr, ...aboutGaps.fr, ...about2Gaps.fr, ...pricingGaps.fr, ...discoveryGaps.fr, ...trustGaps.fr, ...journeyGaps.fr, ...filtersGaps.fr },
-  es: { ...studentToursGaps.en, ...guideGaps.es, ...chromeGaps.es, ...es, ...aboutGaps.es, ...about2Gaps.es, ...pricingGaps.es, ...discoveryGaps.es, ...trustGaps.es, ...journeyGaps.es, ...filtersGaps.es, ...faqToursGaps.es },
+  es: { ...studentToursGaps.en, ...guideGaps.es, ...chromeGaps.es, ...es, ...aboutGaps.es, ...about2Gaps.es, ...studentToursGaps.es, ...pricingGaps.es, ...discoveryGaps.es, ...trustGaps.es, ...journeyGaps.es, ...filtersGaps.es, ...faqToursGaps.es },
   it: { ...studentToursGaps.en, ...guideGaps.it, ...chromeGaps.it, ...it, ...aboutGaps.it, ...about2Gaps.it, ...pricingGaps.it, ...discoveryGaps.it, ...trustGaps.it, ...journeyGaps.it, ...filtersGaps.it, ...faqToursGaps.it },
   de: { ...studentToursGaps.en, ...guideGaps.de, ...chromeGaps.de, ...de, ...aboutGaps.de, ...about2Gaps.de, ...pricingGaps.de, ...discoveryGaps.de, ...trustGaps.de, ...journeyGaps.de, ...filtersGaps.de, ...faqToursGaps.de },
   nl: { ...studentToursGaps.en, ...guideGaps.nl, ...chromeGaps.nl, ...nl, ...aboutGaps.nl, ...about2Gaps.nl, ...pricingGaps.nl, ...discoveryGaps.nl, ...trustGaps.nl, ...journeyGaps.nl, ...filtersGaps.nl, ...faqToursGaps.nl },
