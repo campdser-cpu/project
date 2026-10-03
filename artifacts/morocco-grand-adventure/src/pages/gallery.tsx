@@ -11,12 +11,14 @@ type GalleryItem = {
   src: string;
   categories: string[];
   caption: string;
+  captionKey: string;
 };
 
 type VideoItem = {
   src: string;
   poster: string;
   title: string;
+  titleKey: string;
   category: string;
   portrait?: boolean;
 };
@@ -26,65 +28,65 @@ type VideoItem = {
 // (or video) belongs to it, so the gallery scales without any layout changes.
 const IMAGES: GalleryItem[] = [
   // --- Desert & Sahara ---
-  { src: '/images/personal/sahara-dunes-golden.webp', categories: ['Desert', 'Landscapes', 'Authenticity'], caption: 'Golden dunes at sunrise over Erg Chebbi' },
-  { src: '/images/dest/merzouga.webp', categories: ['Desert'], caption: 'Merzouga — Erg Chebbi Dunes' },
-  { src: '/images/dest/erg-chebbi.webp', categories: ['Desert'], caption: 'The golden sands of Erg Chebbi' },
-  { src: '/images/dest/zagora.webp', categories: ['Desert'], caption: 'Zagora — gateway to the desert' },
-  { src: '/images/dest/draa-valley.webp', categories: ['Desert', 'Landscapes'], caption: 'The palm groves of the Draa Valley' },
-  { src: '/images/stock/stargazing-merzouga.webp', categories: ['Desert', 'Luxury Camp'], caption: 'Stargazing beneath the Milky Way' },
-  { src: '/images/curated/berber-guide-camels-sahara-desert-morocco.webp', categories: ['Desert'], caption: 'A desert guide resting with his camels on the dunes' },
+  { src: '/images/personal/sahara-dunes-golden.webp', categories: ['Desert', 'Landscapes', 'Authenticity'], caption: 'Golden dunes at sunrise over Erg Chebbi', captionKey: 'gallery_cap1' },
+  { src: '/images/dest/merzouga.webp', categories: ['Desert'], caption: 'Merzouga — Erg Chebbi Dunes', captionKey: 'gallery_cap2' },
+  { src: '/images/dest/erg-chebbi.webp', categories: ['Desert'], caption: 'The golden sands of Erg Chebbi', captionKey: 'gallery_cap3' },
+  { src: '/images/dest/zagora.webp', categories: ['Desert'], caption: 'Zagora — gateway to the desert', captionKey: 'gallery_cap4' },
+  { src: '/images/dest/draa-valley.webp', categories: ['Desert', 'Landscapes'], caption: 'The palm groves of the Draa Valley', captionKey: 'gallery_cap5' },
+  { src: '/images/stock/stargazing-merzouga.webp', categories: ['Desert', 'Luxury Camp'], caption: 'Stargazing beneath the Milky Way', captionKey: 'gallery_cap7' },
+  { src: '/images/curated/berber-guide-camels-sahara-desert-morocco.webp', categories: ['Desert'], caption: 'A desert guide resting with his camels on the dunes', captionKey: 'gallery_cap40' },
   // --- From the photo journal (authentic images from our Morocco journeys) ---
-  { src: '/images/pdf/img_0-optimized.webp', categories: ['Authenticity'], caption: 'Captured on the road with Morocco Grand Adventure' },
-  { src: '/images/pdf/img_1-optimized.webp', categories: ['Authenticity'], caption: 'A moment from one of our private journeys in Morocco' },
-  { src: '/images/pdf/img_2-optimized.webp', categories: ['Authenticity'], caption: 'From the Morocco Grand Adventure photo journal' },
-  { src: '/images/pdf/img_3-optimized.webp', categories: ['Authenticity'], caption: 'Photographed while travelling with our local guides' },
-  { src: '/images/pdf/img_4-optimized.webp', categories: ['Authenticity'], caption: 'Morocco, seen through the eyes of our travellers' },
+  { src: '/images/pdf/img_0-optimized.webp', categories: ['Authenticity'], caption: 'Captured on the road with Morocco Grand Adventure', captionKey: 'gallery_cap41' },
+  { src: '/images/pdf/img_1-optimized.webp', categories: ['Authenticity'], caption: 'A moment from one of our private journeys in Morocco', captionKey: 'gallery_cap42' },
+  { src: '/images/pdf/img_2-optimized.webp', categories: ['Authenticity'], caption: 'From the Morocco Grand Adventure photo journal', captionKey: 'gallery_cap43' },
+  { src: '/images/pdf/img_3-optimized.webp', categories: ['Authenticity'], caption: 'Photographed while travelling with our local guides', captionKey: 'gallery_cap44' },
+  { src: '/images/pdf/img_4-optimized.webp', categories: ['Authenticity'], caption: 'Morocco, seen through the eyes of our travellers', captionKey: 'gallery_cap45' },
   // --- Luxury Camp & Stays ---
-  { src: '/images/personal/luxury-camp-dusk.webp', categories: ['Luxury Camp', 'Desert', 'Authenticity'], caption: 'Our luxury desert camp at dusk' },
-  { src: '/images/riad/courtyard.webp', categories: ['Luxury Camp', 'Culture'], caption: 'A traditional riad courtyard' },
-  { src: '/images/riad/bedroom.webp', categories: ['Luxury Camp'], caption: 'A luxury riad suite' },
-  { src: '/images/riad/rooftop.webp', categories: ['Luxury Camp'], caption: 'Rooftop views over the medina' },
+  { src: '/images/personal/luxury-camp-dusk.webp', categories: ['Luxury Camp', 'Desert', 'Authenticity'], caption: 'Our luxury desert camp at dusk', captionKey: 'gallery_cap8' },
+  { src: '/images/riad/courtyard.webp', categories: ['Luxury Camp', 'Culture'], caption: 'A traditional riad courtyard', captionKey: 'gallery_cap9' },
+  { src: '/images/riad/bedroom.webp', categories: ['Luxury Camp'], caption: 'A luxury riad suite', captionKey: 'gallery_cap10' },
+  { src: '/images/riad/rooftop.webp', categories: ['Luxury Camp'], caption: 'Rooftop views over the medina', captionKey: 'gallery_cap11' },
   // --- Happy Travelers ---
-  { src: '/images/personal/guide-guest-tea.webp', categories: ['Happy Travelers', 'Culture', 'My Journey as a Guide', 'Authenticity'], caption: 'Sharing sweet mint tea with a guest in the dunes' },
-  { src: '/images/personal/group-atlas.webp', categories: ['Happy Travelers', 'Authenticity'], caption: 'Happy travelers in the Atlas' },
-  { src: '/images/personal/guests-sunset.webp', categories: ['Happy Travelers', 'Desert', 'Authenticity'], caption: 'A Sahara sunset with our guests' },
-  { src: '/images/personal/guests-van.webp', categories: ['Happy Travelers', 'Authenticity'], caption: 'On the road together' },
-  { src: '/images/personal/riad-tea.webp', categories: ['Happy Travelers', 'Culture', 'Authenticity'], caption: 'Sharing tea on the terrace' },
+  { src: '/images/personal/guide-guest-tea.webp', categories: ['Happy Travelers', 'Culture', 'My Journey as a Guide', 'Authenticity'], caption: 'Sharing sweet mint tea with a guest in the dunes', captionKey: 'gallery_cap12' },
+  { src: '/images/personal/group-atlas.webp', categories: ['Happy Travelers', 'Authenticity'], caption: 'Happy travelers in the Atlas', captionKey: 'gallery_cap13' },
+  { src: '/images/personal/guests-sunset.webp', categories: ['Happy Travelers', 'Desert', 'Authenticity'], caption: 'A Sahara sunset with our guests', captionKey: 'gallery_cap14' },
+  { src: '/images/personal/guests-van.webp', categories: ['Happy Travelers', 'Authenticity'], caption: 'On the road together', captionKey: 'gallery_cap15' },
+  { src: '/images/personal/riad-tea.webp', categories: ['Happy Travelers', 'Culture', 'Authenticity'], caption: 'Sharing tea on the terrace', captionKey: 'gallery_cap16' },
   // --- My Journey as a Guide ---
-  { src: '/images/personal/guide-portrait.webp', categories: ['My Journey as a Guide', 'Happy Travelers', 'Authenticity'], caption: 'Your local Berber guide' },
+  { src: '/images/personal/guide-portrait.webp', categories: ['My Journey as a Guide', 'Happy Travelers', 'Authenticity'], caption: 'Your local Berber guide', captionKey: 'gallery_cap17' },
   // --- Landscapes (cities, mountains, coast) ---
-  { src: '/images/dest/marrakech.webp', categories: ['Landscapes'], caption: 'Marrakech — the Red City' },
-  { src: '/images/dest/fes.webp', categories: ['Landscapes', 'Culture'], caption: 'Fes — the leather souk in the old medina' },
-  { src: '/images/dest/chefchaouen.webp', categories: ['Landscapes'], caption: 'Chefchaouen — the Blue Pearl' },
-  { src: '/images/dest/rabat.webp', categories: ['Landscapes'], caption: 'Rabat — Kasbah of the Udayas' },
-  { src: '/images/hero/medina-pano.webp', categories: ['Landscapes', 'Culture'], caption: 'The Marrakech souks from above' },
-  { src: '/images/hero/atlas-pano.webp', categories: ['Landscapes'], caption: 'A kasbah gateway on the road through the High Atlas' },
-  { src: '/images/dest/ait-ben-haddou.webp', categories: ['Landscapes', 'Culture'], caption: 'Aït Benhaddou — the ancient ksar' },
-  { src: '/images/dest/dades-valley.webp', categories: ['Landscapes'], caption: 'The winding Dades Valley road' },
-  { src: '/images/dest/todra-gorge.webp', categories: ['Landscapes'], caption: 'The towering Todra Gorge' },
-  { src: '/images/dest/imlil.webp', categories: ['Landscapes'], caption: 'Imlil — heart of the High Atlas' },
-  { src: '/images/dest/ourika-valley.webp', categories: ['Landscapes'], caption: 'The green Ourika Valley' },
-  { src: '/images/dest/essaouira.webp', categories: ['Landscapes'], caption: 'Essaouira — the windy harbour' },
-  { src: '/images/dest/legzira.webp', categories: ['Landscapes'], caption: 'The red arches of Legzira' },
-  { src: '/images/dest/taghazout.webp', categories: ['Landscapes'], caption: 'Taghazout — the surf village' },
-  { src: '/images/dest/agadir.webp', categories: ['Landscapes'], caption: 'The sweeping bay of Agadir' },
-  { src: '/images/dest/mirleft.webp', categories: ['Landscapes'], caption: 'The quiet cliffs of Mirleft' },
+  { src: '/images/dest/marrakech.webp', categories: ['Landscapes'], caption: 'Marrakech — the Red City', captionKey: 'gallery_cap18' },
+  { src: '/images/dest/fes.webp', categories: ['Landscapes', 'Culture'], caption: 'Fes — the leather souk in the old medina', captionKey: 'gallery_cap46' },
+  { src: '/images/dest/chefchaouen.webp', categories: ['Landscapes'], caption: 'Chefchaouen — the Blue Pearl', captionKey: 'gallery_cap20' },
+  { src: '/images/dest/rabat.webp', categories: ['Landscapes'], caption: 'Rabat — Kasbah of the Udayas', captionKey: 'gallery_cap22' },
+  { src: '/images/hero/medina-pano.webp', categories: ['Landscapes', 'Culture'], caption: 'The Marrakech souks from above', captionKey: 'gallery_cap47' },
+  { src: '/images/hero/atlas-pano.webp', categories: ['Landscapes'], caption: 'A kasbah gateway on the road through the High Atlas', captionKey: 'gallery_cap48' },
+  { src: '/images/dest/ait-ben-haddou.webp', categories: ['Landscapes', 'Culture'], caption: 'Aït Benhaddou — the ancient ksar', captionKey: 'gallery_cap25' },
+  { src: '/images/dest/dades-valley.webp', categories: ['Landscapes'], caption: 'The winding Dades Valley road', captionKey: 'gallery_cap26' },
+  { src: '/images/dest/todra-gorge.webp', categories: ['Landscapes'], caption: 'The towering Todra Gorge', captionKey: 'gallery_cap27' },
+  { src: '/images/dest/imlil.webp', categories: ['Landscapes'], caption: 'Imlil — heart of the High Atlas', captionKey: 'gallery_cap28' },
+  { src: '/images/dest/ourika-valley.webp', categories: ['Landscapes'], caption: 'The green Ourika Valley', captionKey: 'gallery_cap29' },
+  { src: '/images/dest/essaouira.webp', categories: ['Landscapes'], caption: 'Essaouira — the windy harbour', captionKey: 'gallery_cap30' },
+  { src: '/images/dest/legzira.webp', categories: ['Landscapes'], caption: 'The red arches of Legzira', captionKey: 'gallery_cap31' },
+  { src: '/images/dest/taghazout.webp', categories: ['Landscapes'], caption: 'Taghazout — the surf village', captionKey: 'gallery_cap32' },
+  { src: '/images/dest/agadir.webp', categories: ['Landscapes'], caption: 'The sweeping bay of Agadir', captionKey: 'gallery_cap33' },
+  { src: '/images/dest/mirleft.webp', categories: ['Landscapes'], caption: 'The quiet cliffs of Mirleft', captionKey: 'gallery_cap34' },
   // --- Culture & Food ---
-  { src: '/images/food/tea.webp', categories: ['Culture', 'Food'], caption: 'Sweet Moroccan mint tea' },
-  { src: '/images/food/tagine.webp', categories: ['Food'], caption: 'A slow-cooked traditional tagine' },
-  { src: '/images/food/couscous.webp', categories: ['Food'], caption: 'Friday couscous' },
-  { src: '/images/food/pastries.webp', categories: ['Food'], caption: 'Fresh Moroccan pastries' },
-  { src: '/images/food/streetfood.webp', categories: ['Food'], caption: 'Street food in the medina' },
+  { src: '/images/food/tea.webp', categories: ['Culture', 'Food'], caption: 'Sweet Moroccan mint tea', captionKey: 'gallery_cap35' },
+  { src: '/images/food/tagine.webp', categories: ['Food'], caption: 'A slow-cooked traditional tagine', captionKey: 'gallery_cap36' },
+  { src: '/images/food/couscous.webp', categories: ['Food'], caption: 'Friday couscous', captionKey: 'gallery_cap37' },
+  { src: '/images/food/pastries.webp', categories: ['Food'], caption: 'Fresh Moroccan pastries', captionKey: 'gallery_cap38' },
+  { src: '/images/food/streetfood.webp', categories: ['Food'], caption: 'Street food in the medina', captionKey: 'gallery_cap39' },
 ];
 
 const VIDEOS: VideoItem[] = [
-  { src: '/videos/dunes-camels.mp4', poster: '/images/personal/dunes-camels-poster.webp', title: 'Lost in the Dunes', category: 'Camel Trekking', portrait: true },
-  { src: '/videos/sahara-experience.mp4', poster: '/images/personal/luxury-camp-dusk.webp', title: 'Experience the Sahara', category: 'Desert' },
-  { src: '/videos/merzouga-campfire.mp4', poster: '/images/dest/merzouga.webp', title: 'Campfire Nights in Merzouga', category: 'Culture' },
-  { src: '/videos/hero.mp4', poster: '/images/hero/sahara-camel-riders-poster.webp', title: 'Morocco — A Cinematic Journey', category: 'Desert', portrait: true },
-  { src: '/videos/ait-benhaddou-kasbah-unesco-morocco.mp4', poster: '/images/dest/ait-ben-haddou.webp', title: 'Aït Ben Haddou at Golden Hour', category: 'Landscapes' },
-  { src: '/videos/chefchaouen-blue-city-morocco.mp4', poster: '/images/dest/chefchaouen.webp', title: 'The Blue Pearl', category: 'Landscapes' },
-  { src: '/videos/sahara-desert-camel-trek-atlas-mountains-morocco.mp4', poster: '/images/personal/dunes-camels-poster.webp', title: 'Camel Trek Across the Dunes', category: 'Camel Trekking' },
+  { src: '/videos/dunes-camels.mp4', poster: '/images/personal/dunes-camels-poster.webp', title: 'Lost in the Dunes', titleKey: 'gallery_vid1_title', category: 'Camel Trekking', portrait: true },
+  { src: '/videos/sahara-experience.mp4', poster: '/images/personal/luxury-camp-dusk.webp', title: 'Experience the Sahara', titleKey: 'gallery_vid2_title', category: 'Desert' },
+  { src: '/videos/merzouga-campfire.mp4', poster: '/images/dest/merzouga.webp', title: 'Campfire Nights in Merzouga', titleKey: 'gallery_vid3_title', category: 'Culture' },
+  { src: '/videos/hero.mp4', poster: '/images/hero/sahara-camel-riders-poster.webp', title: 'Morocco — A Cinematic Journey', titleKey: 'gallery_vid4_title', category: 'Desert', portrait: true },
+  { src: '/videos/ait-benhaddou-kasbah-unesco-morocco.mp4', poster: '/images/dest/ait-ben-haddou.webp', title: 'Aït Ben Haddou at Golden Hour', titleKey: 'gallery_vid5_title', category: 'Landscapes' },
+  { src: '/videos/chefchaouen-blue-city-morocco.mp4', poster: '/images/dest/chefchaouen.webp', title: 'The Blue Pearl', titleKey: 'gallery_vid6_title', category: 'Landscapes' },
+  { src: '/videos/sahara-desert-camel-trek-atlas-mountains-morocco.mp4', poster: '/images/personal/dunes-camels-poster.webp', title: 'Camel Trek Across the Dunes', titleKey: 'gallery_vid7_title', category: 'Camel Trekking' },
 ];
 
 // The curated order the owner requested. A category is only shown when it
@@ -208,7 +210,7 @@ export default function Gallery() {
                   >
                     <img
                       src={item.src}
-                      alt={item.caption}
+                      alt={t(item.captionKey)}
                       loading="lazy"
                       decoding="async"
                       className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
@@ -216,7 +218,7 @@ export default function Gallery() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <div className="absolute bottom-0 left-0 right-0 p-4 text-left translate-y-2 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
                       <span className="text-[10px] font-bold uppercase tracking-widest text-primary block mb-1">{item.categories[0]}</span>
-                      <span className="text-white font-serif text-lg leading-tight drop-shadow">{item.caption}</span>
+                      <span className="text-white font-serif text-lg leading-tight drop-shadow">{t(item.captionKey)}</span>
                     </div>
                   </motion.button>
                 ))}
@@ -257,11 +259,11 @@ export default function Gallery() {
                     playsInline
                     preload="none"
                     className={`w-full ${video.portrait ? 'aspect-[9/16]' : 'aspect-video'} object-cover`}
-                    aria-label={video.title}
+                    aria-label={t(video.titleKey)}
                   />
                   <div className="absolute top-4 left-4 pointer-events-none flex flex-col gap-2 items-start">
                     <span className="inline-flex items-center gap-1.5 bg-black/50 backdrop-blur text-white text-xs font-bold px-3 py-1.5 rounded-full">
-                      <Play className="w-3 h-3 fill-current" /> {video.title}
+                      <Play className="w-3 h-3 fill-current" /> {t(video.titleKey)}
                     </span>
                     <span className="inline-flex bg-primary/90 text-primary-foreground text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full">
                       {video.category}
@@ -299,7 +301,7 @@ export default function Gallery() {
           <motion.div
             role="dialog"
             aria-modal="true"
-            aria-label={activeItem.caption}
+            aria-label={t(activeItem.captionKey)}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -335,10 +337,10 @@ export default function Gallery() {
               className="max-w-5xl max-h-[85vh] flex flex-col items-center"
               onClick={(e) => e.stopPropagation()}
             >
-              <img src={activeItem.src} alt={activeItem.caption} className="max-w-full max-h-[78vh] object-contain rounded-lg shadow-2xl" />
+              <img src={activeItem.src} alt={t(activeItem.captionKey)} className="max-w-full max-h-[78vh] object-contain rounded-lg shadow-2xl" />
               <div className="text-center mt-4">
                 <span className="text-primary text-xs font-bold uppercase tracking-widest block mb-1">{activeItem.categories[0]}</span>
-                <span className="text-white font-serif text-xl">{activeItem.caption}</span>
+                <span className="text-white font-serif text-xl">{t(activeItem.captionKey)}</span>
               </div>
             </motion.div>
           </motion.div>
