@@ -4060,5 +4060,1001 @@
       ],
       "bestFor": "Quem tem pouco mais de uma semana e quer costa e deserto sem ter de escolher entre as duas coisas."
     }
+  },
+  "studentTours": {
+    "3-day-morocco-student-tour": {
+      "duration": "3 Dias",
+      "title": "Viagem de Estudantes de 3 Dias por Marrocos",
+      "cardSummary": "De Marraquexe às dunas de Erg Chebbi e de volta, pensada para grupos com pouco tempo e uma longa lista de coisas que querem ver.",
+      "heroLead": "Três dias bastam para atravessar o Alto Atlas, entrar numa casbá de terra batida que já serviu de cenário a centenas de filmagens, e dormir no Saara — desde que o roteiro seja planeado em torno das deslocações e não de um folheto.",
+      "metaTitle": "Viagem de Estudantes de 3 Dias por Marrocos | Marraquexe, Atlas e Saara",
+      "metaDescription": "Um roteiro estudantil de três dias desde Marraquexe, atravessando o Alto Atlas até Aït Ben Haddou e as dunas de Erg Chebbi em Merzouga. Para grupos universitários e de estudantes.",
+      "overview": {
+        "start": "Marraquexe",
+        "end": "Marraquexe",
+        "regions": "Alto Atlas · Vale de Ounila · Vale do Dades · Erg Chebbi / Merzouga",
+        "style": "Rota terrestre com uma noite no deserto",
+        "groups": "Organizado para grupos de estudantes e universitários — diga-nos os números para planearmos veículos, alojamento e a capacidade do acampamento no deserto em função do grupo."
+      },
+      "whyStudents": [
+        "Um programa curto obriga a escolhas honestas. Esta rota dedica o seu tempo à transição que os estudantes mais recordam — passar de uma cidade imperial cheia de gente, através de um desfiladeiro de montanha, até ao deserto aberto — em vez de acumular todas as paragens que o mapa permite.",
+        "Todo o itinerário está na estrada entre Marraquexe e Merzouga, por isso o grupo não recua nem perde meio dia num desvio. O próprio trajeto faz parte do conteúdo.",
+        "Adapta-se bem a um grupo com um calendário académico fixo: um fim de semana prolongado, uma pausa entre semestres, ou um complemento a uma estadia mais longa noutra parte do país."
+      ],
+      "itinerary": [
+        {
+          "title": "Saída de Marraquexe, pelo desfiladeiro",
+          "body": [
+            "O grupo sai de Marraquexe de manhã cedo, enquanto a cidade ainda está a enchê-se de carrinhas e scooters. Em menos de uma hora a estrada começa a subir, e a mudança é tão rápida que os estudantes notam-na pela janela — o terreno plano de palmeiras dá lugar a curvas apertadas, depois a rocha nua, depois a aldeias construídas em socalcos em encostas que parecem demasiado inclinadas para cultivar.",
+            "A rota atravessa o desfiladeiro de Tizi n'Tichka. Há paragens para sair, olhar para trás e ver o caminho percorrido, e tirar as fotografias que todos vão tirar. Do outro lado, a paisagem torna-se vermelha e seca, e a arquitetura muda com ela: telhados planos, terra batida, muros da mesma cor do solo em que se erguem.",
+            "À tarde o grupo chega a Aït Ben Haddou. É uma casbá — uma aldeia fortificada de edifícios de terra empilhados numa colina sobre um rio — e subir a pé por ela é a forma mais rápida de entender porque foi construída assim. Do topo, o vale lê-se como uma posição defensiva mais do que como uma vista. O grupo continua até ao Vale do Dades para pernoitar."
+          ],
+          "notes": [
+            "Desfiladeiro de Tizi n'Tichka",
+            "Casbá de Aït Ben Haddou",
+            "Noite na zona do Vale do Dades"
+          ]
+        },
+        {
+          "title": "Onde a linha verde acaba",
+          "body": [
+            "O segundo dia é aquele em que os estudantes deixam de pensar em Marrocos como um lugar único. A estrada segue vales onde uma fina linha verde de palmeiras acompanha a água, e tudo fora dessa linha é pedra. O contraste é evidente, e explica os padrões de povoamento melhor do que qualquer diagrama.",
+            "O grupo avança pelas zonas de Dades e Todra, onde a rocha se fecha e a estrada se estreita entre paredes de desfiladeiro. Há tempo para caminhar, para ouvir como o som se comporta entre as paredes rochosas, e para ver como as aldeias usam a água que por ali passa.",
+            "Depois as montanhas simplesmente acabam. O terreno nivela-se, a cor fica pálida, e lá à frente há uma linha baixa e alaranjada que a maioria confunde com uma nuvem até perceber que não se move. É Erg Chebbi, e ainda falta meia hora para chegar. O grupo sai para a areia antes de a luz se ir, e dorme num acampamento entre as dunas."
+          ],
+          "notes": [
+            "Zona dos desfiladeiros de Dades e Todra",
+            "Dunas de Erg Chebbi",
+            "Noite num acampamento no deserto"
+          ]
+        },
+        {
+          "title": "Primeira luz, depois para norte",
+          "body": [
+            "Ninguém precisa de ser convencido a levantar-se para isto. O sol aparece sobre a borda do erg e todo o campo de dunas muda de cor em cerca de dez minutos — laranja, depois dourado, depois um amarelo pálido uniforme quando já está bem alto. É também o momento mais frio de toda a viagem para o grupo, o que surpreende muitos.",
+            "Depois, a longa viagem para norte. Num programa de três dias, este dia é honesto sobre o que é: um dia de viagem, com toda a metade sul do país a passar para trás pela janela. O que o torna valioso é o reconhecimento — os estudantes identificam o desfiladeiro, a casbá e os vales de palmeiras que atravessaram dois dias antes, e entendem por fim como se encaixam.",
+            "Marraquexe chega ao final da tarde. A maioria dos grupos vai direto comer, e a maioria fala do deserto."
+          ],
+          "notes": [
+            "Amanhecer sobre Erg Chebbi",
+            "Travessia de volta do Atlas",
+            "Chegada a Marraquexe"
+          ]
+        }
+      ],
+      "experiences": [
+        {
+          "title": "Atravessar o Alto Atlas",
+          "body": "Uma estrada de montanha com um desnível real, percorrida com calma suficiente para parar e observar."
+        },
+        {
+          "title": "Aït Ben Haddou",
+          "body": "Uma casbá de terra percorrida desde o rio até ao celeiro no topo, com o vale a abrir-se por detrás."
+        },
+        {
+          "title": "Desfiladeiros e oásis",
+          "body": "Palmeirais, canais de irrigação e desfiladeiros de paredes rochosas nas zonas de Dades e Todra."
+        },
+        {
+          "title": "Erg Chebbi",
+          "body": "Grandes dunas alcançadas ao final da tarde, com tempo na areia antes do anoitecer."
+        },
+        {
+          "title": "Uma noite no deserto",
+          "body": "Jantar, música junto à fogueira quando a noite o permite, e um céu sem qualquer luz de cidade."
+        }
+      ],
+      "learning": [
+        {
+          "subject": "Geografia",
+          "body": "A rota é um único transecto contínuo: planície irrigada, desfiladeiro de montanha, planalto árido, garganta, erg. Os estudantes veem a sequência em vez de a lerem."
+        },
+        {
+          "subject": "Arquitetura",
+          "body": "A construção em terra entende-se melhor estando dentro dela — a espessura das paredes, as pequenas aberturas, os pátios com sombra, e porque o material corresponde ao solo."
+        },
+        {
+          "subject": "Água e povoamento",
+          "body": "A agricultura de oásis torna a relação entre o acesso à água e onde as pessoas vivem particularmente visível."
+        },
+        {
+          "subject": "Cultura amazigh",
+          "body": "Os vales que a rota atravessa são amazigh, e a língua, o artesanato e a vida quotidiana são diferentes do que o grupo viu em Marraquexe."
+        }
+      ],
+      "dayInTheJourney": [
+        {
+          "label": "Manhã",
+          "body": "Partida matinal, estrada de montanha, paragens para sair e olhar para trás, para o desfiladeiro."
+        },
+        {
+          "label": "Meio-dia",
+          "body": "Almoço no caminho, e depois a mudança da montanha para o terreno pré-saariano."
+        },
+        {
+          "label": "Final da tarde",
+          "body": "Aparecem as dunas. O grupo sai para a areia enquanto a luz ainda está baixa e quente."
+        },
+        {
+          "label": "Noite",
+          "body": "Jantar no acampamento, tempo junto à fogueira, e um longo olhar para o céu antes de alguém ir dormir."
+        }
+      ],
+      "groupExperience": [
+        "Três dias juntos num veículo fazem algo que uma sala de aula não consegue. Os estudantes falam com pessoas ao lado de quem normalmente não se sentariam, e pelo segundo dia o grupo já se reorganizou sozinho.",
+        "A noite no deserto é a parte de que a maioria dos grupos se recorda. Não há sinal para competir, o jantar é partilhado, e a conversa costuma prolongar-se muito mais do que planeado."
+      ],
+      "included": [
+        "Transporte privado para o grupo durante toda a rota, com condutor",
+        "Alojamento durante duas noites, incluindo uma noite num acampamento no deserto",
+        "Pequenos-almoços, e jantares nas noites em que o grupo está connosco",
+        "Um guia local a acompanhar o grupo",
+        "Experiência em camelo em Erg Chebbi, quando o grupo desejar"
+      ],
+      "notIncluded": [
+        "Voos internacionais e domésticos",
+        "Seguro de viagem",
+        "Almoços e bebidas, salvo acordo no programa final",
+        "Despesas pessoais, gorjetas e atividades opcionais",
+        "Entradas em locais não incluídos no itinerário confirmado"
+      ],
+      "practical": [
+        {
+          "title": "Alojamento",
+          "body": "Duas noites: uma na zona de vales, na ida, outra num acampamento no deserto próximo de Merzouga. Os quartos e tendas são partilhados conforme o grupo pedir; confirmamos a disposição antes da viagem."
+        },
+        {
+          "title": "Transporte",
+          "body": "Veículos privados dimensionados ao grupo. Os dias de condução são reais — esta rota percorre longas distâncias — e o horário é construído em torno disso em vez de o disfarçar."
+        },
+        {
+          "title": "Refeições e necessidades alimentares",
+          "body": "Opções vegetarianas, veganas, sem gluten e halal podem ser organizadas se o grupo nos avisar com antecedência. Envie a lista com os números e confirmaremos o que é viável em cada troço da rota."
+        },
+        {
+          "title": "O que levar",
+          "body": "Roupa em camadas. As noites no deserto são muito mais frias do que os dias, principalmente fora do verão. Calçado fechado para caminhar em rocha e areia, protecção solar, algo para cobrir a cabeça, e uma bateria portátil."
+        },
+        {
+          "title": "Clima",
+          "body": "A primavera e o outono são os mais confortáveis para esta rota. O verão é quente na zona pré-saariana, e as noites de inverno no deserto são frias — ambos são geríveis com a preparação certa e um ritmo diário ligeiramente ajustado."
+        }
+      ],
+      "support": [
+        "Um guia da Morocco Grand Adventure viaja com o grupo durante toda a rota, e é a mesma equipa que planeia e conduz a viagem.",
+        "Os responsáveis de grupo têm um contacto direto durante todo o programa, em vez de um centro de atendimento.",
+        "A nossa equipa está baseada em Merzouga, por isso a parte do deserto é gerida por pessoas que vivem onde o grupo dorme.",
+        "O ritmo, as paragens e o tempo livre podem ser ajustados durante a viagem, se o grupo precisar — diga ao guia e adaptamo-nos."
+      ],
+      "faqs": [
+        {
+          "q": "Três dias chegam mesmo para alcançar o Saara a partir de Marraquexe?",
+          "a": "Sim, e esta rota foi construída especificamente para isso. São três dias honestos com dois trajetos longos de condução. Se o grupo quiser mais tempo no terreno e menos tempo em deslocação, o programa de 4 dias é mais adequado."
+        },
+        {
+          "q": "O itinerário pode ser adaptado para o nosso grupo universitário?",
+          "a": "Sim. Diga-nos o foco académico, o tamanho do grupo e as datas, e ajustaremos as paragens, os horários e o equilíbrio entre viagem e tempo em cada local."
+        },
+        {
+          "q": "Com que tamanhos de grupo trabalham?",
+          "a": "Diga-nos quantos vão viajar e planeamos em função disso. Os veículos e a capacidade do acampamento no deserto são organizados com antecedência, por isso grupos maiores só precisam de mais tempo de aviso."
+        },
+        {
+          "q": "Podemos começar ou terminar noutro local que não Marraquexe?",
+          "a": "Muitas vezes sim. Uma versão de sentido único que termine noutra cidade altera o plano de condução, por isso envie-nos os seus pontos de chegada e partida e diremos como ficaria a rota."
+        },
+        {
+          "q": "Quanto tempo livre terão os estudantes?",
+          "a": "Este é o mais programado dos três programas, devido às distâncias. Há tempo livre no deserto e, quando os horários permitem, em Marraquexe no final. Se quiser mais, os programas mais longos incluem-no."
+        },
+        {
+          "q": "Como começa a planear um professor ou responsável de grupo?",
+          "a": "Contacte-nos com o tamanho do grupo, o país da instituição de origem, as datas aproximadas e o que quer que os estudantes levem da viagem. Responderemos com uma rota e os detalhes práticos."
+        }
+      ],
+      "keyPlaces": [
+        "Marraquexe",
+        "Tizi n'Tichka",
+        "Aït Ben Haddou",
+        "Dades e Todra",
+        "Erg Chebbi"
+      ],
+      "related": [
+        {
+          "label": "Aït Ben Haddou"
+        },
+        {
+          "label": "Erg Chebbi"
+        },
+        {
+          "label": "Guia de Merzouga"
+        }
+      ]
+    },
+    "4-day-morocco-student-tour": {
+      "duration": "4 Dias",
+      "title": "Viagem de Estudantes de 4 Dias por Marrocos",
+      "cardSummary": "A mesma grande travessia com um quarto dia adicionado onde mais importa — mais tempo no deserto e mais espaço para o grupo realmente parar e observar.",
+      "heroLead": "O quarto dia não é uma paragem extra. É o dia que transforma um trânsito rápido numa viagem que os estudantes conseguem assimilar — uma manhã completa no deserto, tempo nos vales de oásis, e uma noite que não é encurtada pela condução do dia seguinte.",
+      "metaTitle": "Viagem de Estudantes de 4 Dias por Marrocos | Atlas, Vales de Oásis e Saara",
+      "metaDescription": "Um roteiro estudantil de quatro dias desde Marraquexe até Aït Ben Haddou, os vales de Dades e Todra, e duas noites no deserto de Erg Chebbi. Para grupos universitários e de estudantes.",
+      "overview": {
+        "start": "Marraquexe",
+        "end": "Marraquexe",
+        "regions": "Alto Atlas · Vale de Ounila · Dades e Todra · Erg Chebbi / Merzouga",
+        "style": "Rota terrestre com mais tempo no deserto",
+        "groups": "Organizado para grupos de estudantes e universitários — diga-nos os números para planearmos veículos, alojamento e a capacidade do acampamento no deserto em função do grupo."
+      },
+      "whyStudents": [
+        "O dia extra é dedicado ao que mais beneficia os estudantes: o deserto. Em vez de chegar ao anoitecer e partir ao amanhecer, o grupo tem um dia completo em torno de Erg Chebbi — tempo para caminhar pelas dunas com calma, conhecer pessoas que ali vivem, e estar num lugar genuinamente diferente sem olhar para o relógio.",
+        "Também retira pressão à condução. Percorre-se a mesma rota, mas com mais paragens e menos trechos em que a resposta a \"podemos sair aqui?\" tem de ser não.",
+        "Para grupos que viajam uma longa distância para chegar a Marrocos, o quarto dia costuma ser a diferença entre uma viagem que os estudantes descrevem como apressada e uma de que falam em detalhe meses depois."
+      ],
+      "itinerary": [
+        {
+          "title": "A subida para fora da cidade",
+          "body": [
+            "Marraquexe esbate-se rapidamente. Dez minutos depois da última rotunda o terreno começa a inclinar-se, e a partir daí são curvas durante quase toda a manhã. Os estudantes que adormeceram à saída costumam despertar por volta do ponto em que as aldeias deixam de ser planas e começam a amontoar-se.",
+            "Este programa percorre o desfiladeiro com calma. Há paragens que um horário mais apertado saltaria — uma banca de nozes, um miradouro de onde se veem três aldeias ao mesmo tempo, o ponto onde a estrada finalmente atinge o topo e todo o lado sul se abre numa cor completamente diferente.",
+            "Aït Ben Haddou chega à tarde, já com a luz quente. Subir pela casbá demora cerca de vinte minutos se ninguém parar, o que não acontece com ninguém. O grupo dorme na zona de vales mais além, chegando a tempo de caminhar antes do jantar em vez de chegar no escuro."
+          ],
+          "notes": [
+            "Desfiladeiro de Tizi n'Tichka",
+            "Aït Ben Haddou",
+            "Noite na zona do Vale do Dades"
+          ]
+        },
+        {
+          "title": "Descendo os vales em direção à areia",
+          "body": [
+            "Uma manhã nos desfiladeiros. A rocha fecha-se, a estrada segue a água, e os palmeirais tornam a água visível de um modo que um mapa nunca consegue. Há tempo para entrar a pé num desfiladeiro em vez de o fotografar da berma da estrada.",
+            "Ao longo da tarde o grupo avança para sudeste e a paisagem abre-se. A linha verde dos vales afina, o horizonte afasta-se, e o terreno torna-se pálido e pedregoso.",
+            "Erg Chebbi aparece ao final do dia. O grupo sai para as dunas ao anoitecer e passa a noite num acampamento no deserto — jantar, fogueira, e um céu que faz as pessoas pararem de falar por um momento."
+          ],
+          "notes": [
+            "Dades e Todra",
+            "Chegada a Merzouga",
+            "Primeira noite no acampamento no deserto"
+          ]
+        },
+        {
+          "title": "Um dia que fica no mesmo lugar",
+          "body": [
+            "Este é o dia que o programa de três dias não tem. O grupo levanta-se para o nascer do sol e depois tem o dia todo em torno de Erg Chebbi, em vez de voltar a entrar num veículo.",
+            "Como o dia é usado depende do grupo. Pode incluir tempo com pessoas que vivem no deserto em vez de apenas o visitarem, ver como um acampamento nómada é de facto montado e deslocado, e a questão prática da água, da sombra e do gado num lugar com muito pouco das duas primeiras coisas. Onde o grupo quiser mais atividade, as dunas também permitem tempo de 4x4 ou buggy na areia.",
+            "Ao final da tarde é hora de voltar às dunas — a luz é melhor e o calor já passou. A segunda noite é no acampamento, e como ninguém conduz de manhã, a noite dura o tempo que o grupo quiser."
+          ],
+          "notes": [
+            "Amanhecer sobre as dunas",
+            "Tempo com comunidades do deserto",
+            "4x4 ou buggy opcional na areia",
+            "Segunda noite no acampamento"
+          ]
+        },
+        {
+          "title": "O caminho de volta, ao contrário",
+          "body": [
+            "O grupo sai de Merzouga depois do pequeno-almoço e regressa a Marraquexe. Percorrer a rota em sentido inverso é mais interessante do que parece — os estudantes reconhecem as transições que perderam na ida, e as montanhas surgem como surpresa em vez de ponto de partida.",
+            "Há paragens pelo caminho, e almoço na rota. O grupo chega a Marraquexe ao final da tarde."
+          ],
+          "notes": [
+            "Travessia de regresso",
+            "Chegada a Marraquexe"
+          ]
+        }
+      ],
+      "experiences": [
+        {
+          "title": "Duas noites no Saara",
+          "body": "Tempo suficiente para que o deserto deixe de ser uma paragem fotográfica e passe a ser um lugar."
+        },
+        {
+          "title": "Aït Ben Haddou",
+          "body": "Tempo para subir com calma, em vez de fotografar da ponte e seguir caminho."
+        },
+        {
+          "title": "Desfiladeiros e palmeirais",
+          "body": "Dades e Todra, com tempo para caminhar em vez de apenas passar de carro."
+        },
+        {
+          "title": "Conhecer comunidades do deserto",
+          "body": "Tempo com pessoas que vivem no deserto, no seu terreno e nos seus próprios termos."
+        },
+        {
+          "title": "Dunas a pé e de camelo",
+          "body": "Erg Chebbi de manhã cedo e ao final da tarde, quando vale a pena estar lá."
+        },
+        {
+          "title": "Atividades na areia",
+          "body": "Tempo de 4x4 e buggy nas dunas para grupos que queiram uma tarde mais ativa."
+        }
+      ],
+      "learning": [
+        {
+          "subject": "Geografia",
+          "body": "Um transecto completo desde a planície irrigada até ao erg, com um dia inteiro na ponta árida em vez de um simples vislumbre."
+        },
+        {
+          "subject": "Adaptação humana",
+          "body": "Como as pessoas realmente vivem num lugar com quase nenhuma água — abrigo, deslocação, pastoreio e o horário diário que o calor impõe."
+        },
+        {
+          "subject": "Arquitetura",
+          "body": "Construção em terra à escala da aldeia e da casbá, e a diferença entre uma estrutura pensada para defesa e uma pensada para sombra."
+        },
+        {
+          "subject": "Cultura e língua amazigh",
+          "body": "Contacto diário através dos vales e do deserto, onde a língua e o artesanato amazigh são algo comum, não uma representação."
+        },
+        {
+          "subject": "Ambiente",
+          "body": "Aridez, irrigação de oásis e sistemas de dunas, tudo dentro de uma única viagem curta."
+        }
+      ],
+      "dayInTheJourney": [
+        {
+          "label": "Manhã",
+          "body": "Nascer do sol nas dunas, e depois pequeno-almoço no acampamento com o dia ainda fresco."
+        },
+        {
+          "label": "Meio-dia",
+          "body": "Fora do sol. É quando a vida no deserto abranda, e o ritmo do grupo faz o mesmo."
+        },
+        {
+          "label": "Final da tarde",
+          "body": "De volta à areia — a caminhar, de camelo, ou numa sessão ativa nas dunas."
+        },
+        {
+          "label": "Noite",
+          "body": "Jantar no acampamento, música quando a noite o permite, e nenhuma razão para terminar mais cedo."
+        }
+      ],
+      "groupExperience": [
+        "Com duas noites no mesmo lugar, o grupo assenta. Os estudantes deixam de gerir a logística na cabeça e começam a prestar atenção a onde estão.",
+        "O dia completo no deserto é normalmente onde surgem as melhores conversas da viagem — em parte porque há tempo, e em parte porque não há mais nada a competir por ele.",
+        "As refeições partilhadas fazem grande parte do trabalho. Comer juntos duas vezes por dia durante quatro dias muda a forma como um grupo fala no final."
+      ],
+      "included": [
+        "Transporte privado para o grupo durante toda a rota, com condutor",
+        "Três noites de alojamento, incluindo duas noites num acampamento no deserto",
+        "Pequenos-almoços, e jantares nas noites em que o grupo está connosco",
+        "Um guia local a acompanhar o grupo",
+        "Experiência em camelo em Erg Chebbi",
+        "Tempo com comunidades do deserto conforme acordado no programa final"
+      ],
+      "notIncluded": [
+        "Voos internacionais e domésticos",
+        "Seguro de viagem",
+        "Almoços e bebidas, salvo acordo no programa final",
+        "Sessões de 4x4 ou buggy, salvo inclusão no itinerário confirmado",
+        "Despesas pessoais, gorjetas e atividades opcionais"
+      ],
+      "practical": [
+        {
+          "title": "Alojamento",
+          "body": "Três noites: uma na zona de vales, duas num acampamento no deserto próximo de Merzouga. Os arranjos de partilha são definidos com o responsável do grupo antes da viagem."
+        },
+        {
+          "title": "Transporte",
+          "body": "Veículos privados dimensionados ao grupo. Dois dos quatro dias são dias de condução; o dia intermédio não tem praticamente nenhuma, que é precisamente o objetivo do formato."
+        },
+        {
+          "title": "Refeições e necessidades alimentares",
+          "body": "Opções vegetarianas, veganas, sem gluten e halal podem ser organizadas com aviso prévio. Envie a lista completa com os números e confirmaremos por local."
+        },
+        {
+          "title": "O que levar",
+          "body": "Roupa em camadas para as noites frias do deserto, calçado fechado, protecção solar, algo para cobrir a cabeça, uma bateria portátil, e um saco pequeno para a noite de acampamento, para a bagagem principal poder ficar no veículo."
+        },
+        {
+          "title": "Nível de atividade",
+          "body": "Caminhar em areia e rocha irregular, ao ritmo que o grupo definir. Nada no itinerário padrão exige condição física técnica, e a parte do camelo é opcional para quem preferir caminhar."
+        }
+      ],
+      "support": [
+        "Um guia da Morocco Grand Adventure viaja com o grupo em todo o percurso, e a parte do deserto é gerida pela nossa própria equipa em Merzouga.",
+        "Os responsáveis de grupo têm uma linha direta connosco durante todo o programa.",
+        "Como operamos nós próprios o acampamento no deserto, as alterações de horário no dia do deserto podem normalmente ser feitas no próprio dia.",
+        "Planeamos a rota em função das prioridades indicadas pelo grupo, e dizemos claramente quando algo não é realista no tempo disponível."
+      ],
+      "faqs": [
+        {
+          "q": "O que acrescenta realmente o quarto dia?",
+          "a": "Um dia completo no deserto sem condução. No programa de 3 dias o grupo chega às dunas ao anoitecer e parte depois do amanhecer. Aqui têm um dia inteiro em torno de Erg Chebbi."
+        },
+        {
+          "q": "A viagem pode centrar-se numa área académica específica?",
+          "a": "Sim. Diga-nos o departamento ou a disciplina e ajustaremos o peso das paragens em conformidade — geografia e ambiente, arquitetura e património, ou cultura e língua são todos fáceis de destacar nesta rota."
+        },
+        {
+          "q": "Podem ser organizadas necessidades alimentares específicas?",
+          "a": "Sim, com aviso prévio. Vegetariano, vegano, sem gluten e halal são todos viáveis; envie a lista com os números quando confirmar o grupo."
+        },
+        {
+          "q": "Podemos trocar o tempo de 4x4 e buggy por outra coisa?",
+          "a": "Sim. Alguns grupos substituem-no por mais tempo a pé, mais tempo com anfitriões locais, ou uma tarde mais calma. É o vosso programa."
+        },
+        {
+          "q": "Com que tamanhos de grupo trabalham?",
+          "a": "Diga-nos quantos vão viajar e planeamos em função disso. Grupos maiores precisam de mais tempo de aviso porque os veículos e a capacidade do acampamento no deserto são organizados com antecedência."
+        },
+        {
+          "q": "Como começamos a planear?",
+          "a": "Envie o tamanho do grupo, o país, as datas aproximadas e o que quer que os estudantes levem da viagem. Responderemos com uma rota e a logística por detrás dela."
+        }
+      ],
+      "keyPlaces": [
+        "Marraquexe",
+        "Aït Ben Haddou",
+        "Dades e Todra",
+        "Merzouga",
+        "Erg Chebbi"
+      ],
+      "related": [
+        {
+          "label": "Erg Chebbi"
+        },
+        {
+          "label": "Passeios de Camelo"
+        },
+        {
+          "label": "Guia de Merzouga"
+        }
+      ]
+    },
+    "5-day-morocco-student-tour": {
+      "duration": "5 Dias",
+      "title": "Viagem de Estudantes de 5 Dias por Marrocos",
+      "cardSummary": "A mesma travessia do Atlas ao Saara do programa de 4 Dias, com um dia completo em Marraquexe à partida, em vez de sair da cidade na primeira manhã.",
+      "heroLead": "Um dia em Marraquexe antes da estrada para sul muda o que o deserto significa quando o grupo finalmente lá chega — o contraste entre a medina apinhada e o erg aberto é o objetivo, não um acaso do calendário.",
+      "metaTitle": "Viagem de Estudantes de 5 Dias por Marrocos | Marraquexe, Saara e Merzouga",
+      "metaDescription": "Um roteiro estudantil de cinco dias desde Marraquexe, atravessando o Alto Atlas até Aït Ben Haddou e duas noites no deserto de Erg Chebbi, em Merzouga. Para grupos universitários e de estudantes.",
+      "overview": {
+        "start": "Marraquexe",
+        "end": "Marraquexe",
+        "regions": "Marraquexe · Alto Atlas · Vale de Ounila · Dades e Todra · Erg Chebbi / Merzouga",
+        "style": "Um dia de cidade seguido de uma rota terrestre com duas noites no deserto",
+        "groups": "Organizado para grupos de estudantes e universitários — diga-nos os números para planearmos veículos, alojamento e a capacidade do acampamento no deserto em função do grupo."
+      },
+      "whyStudents": [
+        "Tanto o programa de 3 como o de 4 dias saem de Marraquexe na primeira manhã, o que significa que o grupo nunca chega a passar tempo na cidade onde aterrou. Este programa corrige isso: um dia completo na medina primeiro, para que a travessia para o Atlas e o deserto mais além se sinta como uma verdadeira mudança de país e não apenas mais uma paragem.",
+        "A parte do deserto da rota não muda em relação ao programa de 4 dias — as mesmas duas noites em Erg Chebbi, incluindo o dia completo sem condução — porque essa estrutura já funciona. O dia extra é dedicado a Marraquexe, não a prolongar as partes que já estavam certas.",
+        "Adapta-se bem a um grupo que queira a experiência completa do circuito sul — cidade, montanhas, vales, dunas — sem ir tão para norte como o itinerário de 10 Dias."
+      ],
+      "itinerary": [
+        {
+          "title": "A aterrar na Cidade Vermelha",
+          "body": [
+            "O grupo chega e instala-se em Marraquexe, e o dia organiza-se em torno da cidade em vez de em torno de a deixar. A medina é o grande protagonista — uma cidade murada, densa e em funcionamento, onde o próprio traçado das ruas já é a lição, com souks organizados por ofício e ateliers onde as coisas ainda são fabricadas, não apenas vendidas.",
+            "Há tempo nos monumentos históricos e jardins da cidade, que dão ao grupo um lugar tranquilo para falar do que acabaram de percorrer antes de o ritmo mudar no dia seguinte.",
+            "Ao fim da tarde, Jemaa el-Fna — ruidosa, apinhada e genuinamente diferente de tudo o que a maioria dos estudantes já viveu. Vale a pena entrar com um plano de onde se encontrar."
+          ],
+          "notes": [
+            "Chegada a Marraquexe",
+            "Medina e souks por ofício",
+            "Jemaa el-Fna ao fim da tarde"
+          ]
+        },
+        {
+          "title": "Saída de Marraquexe, pelo desfiladeiro",
+          "body": [
+            "Depois de um dia dentro das muralhas, a mudança na estrada de saída é mais intensa. A rota sobe ao Alto Atlas pelo desfiladeiro de Tizi n'Tichka, com paragens para sair e olhar para trás, para o caminho percorrido. Do outro lado, a paisagem torna-se vermelha e seca, e a arquitetura muda com ela: telhados planos, terra batida, muros da mesma cor do solo em que se erguem.",
+            "À tarde o grupo chega a Aït Ben Haddou, uma casbá — uma aldeia fortificada de edifícios de terra empilhados numa colina sobre um rio. Subir a pé por ela é a forma mais rápida de entender porque foi construída assim; do topo, o vale lê-se como uma posição defensiva mais do que como uma vista.",
+            "O grupo continua até ao Vale do Dades para a primeira noite fora de Marraquexe."
+          ],
+          "notes": [
+            "Desfiladeiro de Tizi n'Tichka",
+            "Casbá de Aït Ben Haddou",
+            "Noite na zona do Vale do Dades"
+          ]
+        },
+        {
+          "title": "Onde a linha verde acaba",
+          "body": [
+            "A estrada segue vales onde uma fina linha verde de palmeiras acompanha a água, e tudo fora dessa linha é pedra — um contraste que explica os padrões de povoamento melhor do que qualquer diagrama. O grupo avança pelas zonas de Dades e Todra, onde a rocha se fecha e a estrada se estreita entre paredes de desfiladeiro, com tempo para caminhar e ouvir como o som se comporta entre as paredes rochosas.",
+            "Depois as montanhas simplesmente acabam. O terreno nivela-se, a cor fica pálida, e lá à frente há uma linha baixa e alaranjada que a maioria confunde com uma nuvem até perceber que não se move. É Erg Chebbi.",
+            "O grupo sai para a areia antes de a luz se ir, anda de camelo até às dunas ao anoitecer, e dorme num acampamento entre elas — a primeira de duas noites no deserto."
+          ],
+          "notes": [
+            "Zona dos desfiladeiros de Dades e Todra",
+            "Passeio de camelo ao anoitecer em Erg Chebbi",
+            "Primeira noite num acampamento no deserto"
+          ]
+        },
+        {
+          "title": "Um dia que fica no mesmo lugar",
+          "body": [
+            "O grupo levanta-se para o nascer do sol sobre as dunas e depois tem o dia todo em torno de Erg Chebbi, em vez de voltar a entrar num veículo. Como o dia é usado depende do grupo: pode incluir tempo com pessoas que vivem no deserto em vez de apenas o visitarem, e ver como um acampamento nómada é de facto montado e deslocado. Onde o grupo quiser mais atividade, as dunas também permitem tempo de 4x4 ou buggy na areia.",
+            "Ao final da tarde é hora de voltar às dunas, quando a luz é melhor e o calor já passou. A segunda noite é no acampamento, e como ninguém conduz de manhã, a noite dura o tempo que o grupo quiser."
+          ],
+          "notes": [
+            "Amanhecer sobre as dunas",
+            "Tempo com comunidades do deserto",
+            "4x4 ou buggy opcional na areia",
+            "Segunda noite no acampamento"
+          ]
+        },
+        {
+          "title": "O caminho de volta",
+          "body": [
+            "O grupo sai de Merzouga depois do pequeno-almoço e regressa a Marraquexe, percorrendo a rota ao contrário. Os estudantes reconhecem as transições que perderam na ida — o desfiladeiro, a casbá, os vales de palmeiras — e as montanhas surgem como surpresa em vez de ponto de partida.",
+            "Há paragens pelo caminho, e o grupo chega a Marraquexe ao final da tarde, cinco dias depois de uma cidade que já parece pertencer a outra viagem."
+          ],
+          "notes": [
+            "Travessia de regresso do Atlas",
+            "Chegada a Marraquexe"
+          ]
+        }
+      ],
+      "experiences": [
+        {
+          "title": "Um dia a sério em Marraquexe",
+          "body": "A medina, souks organizados por ofício, e Jemaa el-Fna ao fim da tarde — não apenas uma passagem rápida a caminho de outro lugar."
+        },
+        {
+          "title": "Atravessar o Alto Atlas",
+          "body": "Uma estrada de montanha com um desnível real, percorrida com calma suficiente para parar e observar."
+        },
+        {
+          "title": "Aït Ben Haddou",
+          "body": "Uma casbá de terra percorrida desde o rio até ao celeiro no topo, com o vale a abrir-se por detrás."
+        },
+        {
+          "title": "Desfiladeiros e oásis",
+          "body": "Palmeirais, canais de irrigação e desfiladeiros de paredes rochosas nas zonas de Dades e Todra."
+        },
+        {
+          "title": "Duas noites no Saara",
+          "body": "Um passeio de camelo ao anoitecer até Erg Chebbi seguido de um dia completo sem condução, para que o deserto deixe de ser uma paragem fotográfica e passe a ser um lugar."
+        },
+        {
+          "title": "Conhecer comunidades do deserto",
+          "body": "Tempo com pessoas que vivem no deserto, no seu terreno e nos seus próprios termos."
+        }
+      ],
+      "learning": [
+        {
+          "subject": "Vida urbana e comércio",
+          "body": "Uma economia de medina em funcionamento vista ao nível da rua — ofícios agrupados por corporação, ateliers onde ainda se fabricam produtos, e um traçado de ruas anterior a qualquer urbanismo planeado."
+        },
+        {
+          "subject": "Geografia",
+          "body": "A rota para sul é um único transecto contínuo: planície irrigada, desfiladeiro de montanha, planalto árido, garganta, erg. Os estudantes veem a sequência em vez de a lerem."
+        },
+        {
+          "subject": "Arquitetura",
+          "body": "A construção em terra entende-se melhor estando dentro dela — a espessura das paredes, as pequenas aberturas, os pátios com sombra, e porque o material corresponde ao solo."
+        },
+        {
+          "subject": "Água e povoamento",
+          "body": "A agricultura de oásis torna a relação entre o acesso à água e onde as pessoas vivem particularmente visível."
+        },
+        {
+          "subject": "Cultura amazigh",
+          "body": "Os vales e o deserto que a rota atravessa são amazigh, e a língua, o artesanato e a vida quotidiana são diferentes do que o grupo viu em Marraquexe."
+        }
+      ],
+      "dayInTheJourney": [
+        {
+          "label": "Manhã",
+          "body": "Nascer do sol nas dunas, e depois pequeno-almoço no acampamento com o dia ainda fresco."
+        },
+        {
+          "label": "Meio-dia",
+          "body": "Fora do sol. É quando a vida no deserto abranda, e o ritmo do grupo faz o mesmo."
+        },
+        {
+          "label": "Final da tarde",
+          "body": "De volta à areia — a caminhar, de camelo, ou numa sessão ativa nas dunas."
+        },
+        {
+          "label": "Noite",
+          "body": "Jantar no acampamento, música quando a noite o permite, e nenhuma razão para terminar mais cedo."
+        }
+      ],
+      "groupExperience": [
+        "Um dia em Marraquexe antes de a viagem por estrada começar dá ao grupo um ponto de referência comum — o ruído e a densidade da medina — para medir o deserto mais tarde. Quando chegam às dunas, o contraste faz o seu trabalho a sério.",
+        "Com duas noites no mesmo acampamento no deserto, o grupo assenta. Os estudantes deixam de gerir a logística na cabeça e começam a prestar atenção a onde estão.",
+        "As refeições partilhadas fazem grande parte do trabalho. Comer juntos duas vezes por dia durante cinco dias muda a forma como um grupo fala no final."
+      ],
+      "included": [
+        "Transporte privado para o grupo durante toda a rota, com condutor",
+        "Alojamento durante quatro noites, incluindo duas noites num acampamento no deserto",
+        "Pequenos-almoços, e jantares nas noites em que o grupo está connosco",
+        "Um guia local a acompanhar o grupo",
+        "Experiência em camelo em Erg Chebbi",
+        "Tempo com comunidades do deserto conforme acordado no programa final"
+      ],
+      "notIncluded": [
+        "Voos internacionais e domésticos",
+        "Seguro de viagem",
+        "Almoços e bebidas, salvo acordo no programa final",
+        "Sessões de 4x4 ou buggy, salvo inclusão no itinerário confirmado",
+        "Despesas pessoais, gorjetas e atividades opcionais",
+        "Entradas em locais não incluídos no itinerário confirmado"
+      ],
+      "practical": [
+        {
+          "title": "Alojamento",
+          "body": "Quatro noites: uma em Marraquexe, uma na zona de vales na ida, e duas num acampamento no deserto próximo de Merzouga. Os arranjos de partilha são definidos com o responsável do grupo antes da viagem."
+        },
+        {
+          "title": "Transporte",
+          "body": "Veículos privados dimensionados ao grupo. Dois dos cinco dias são dias de condução considerável; o dia do deserto no meio não tem praticamente nenhuma, que é precisamente o objetivo do formato."
+        },
+        {
+          "title": "Refeições e necessidades alimentares",
+          "body": "Opções vegetarianas, veganas, sem gluten e halal podem ser organizadas se o grupo nos avisar com antecedência. Envie a lista com os números e confirmaremos o que é viável em cada troço da rota."
+        },
+        {
+          "title": "O que levar",
+          "body": "Roupa em camadas para as noites frias do deserto, calçado confortável para a medina e para caminhar em areia e rocha, protecção solar, algo para cobrir a cabeça, e uma bateria portátil."
+        },
+        {
+          "title": "Clima",
+          "body": "A primavera e o outono são os mais confortáveis para esta rota. O verão é quente em Marraquexe e na zona pré-saariana, e as noites de inverno no deserto são frias — ambos são geríveis com a preparação certa e um ritmo diário ligeiramente ajustado."
+        }
+      ],
+      "support": [
+        "Um guia da Morocco Grand Adventure viaja com o grupo durante toda a rota, e é a mesma equipa que planeia e conduz a viagem.",
+        "Os responsáveis de grupo têm um contacto direto durante todo o programa, em vez de um centro de atendimento.",
+        "A nossa equipa está baseada em Merzouga, por isso a parte do deserto é gerida por pessoas que vivem onde o grupo dorme.",
+        "O ritmo, as paragens e o tempo livre podem ser ajustados durante a viagem, se o grupo precisar — diga ao guia e adaptamo-nos."
+      ],
+      "faqs": [
+        {
+          "q": "O que acrescenta o dia extra em relação ao programa de 4 Dias?",
+          "a": "Um dia completo em Marraquexe antes de o grupo deixar a cidade, em vez de partir na primeira manhã. A parte do deserto da rota — duas noites em Erg Chebbi, incluindo o dia livre completo — é igual ao programa de 4 Dias."
+        },
+        {
+          "q": "Cinco dias chegam para conhecer bem Marraquexe?",
+          "a": "É suficiente para uma primeira impressão a sério — a medina, os souks e Jemaa el-Fna — em vez de um trânsito apressado. Grupos que queiram mais tempo na cidade e menos condução no geral devem perguntar sobre alargar o programa."
+        },
+        {
+          "q": "O itinerário pode ser adaptado para o nosso grupo universitário?",
+          "a": "Sim. Diga-nos o foco académico, o tamanho do grupo e as datas, e ajustaremos as paragens, os horários e o equilíbrio entre viagem e tempo em cada local."
+        },
+        {
+          "q": "Com que tamanhos de grupo trabalham?",
+          "a": "Diga-nos quantos vão viajar e planeamos em função disso. Os veículos, o alojamento e a capacidade do acampamento no deserto são organizados com antecedência, por isso grupos maiores só precisam de mais tempo de aviso."
+        },
+        {
+          "q": "Podem ser organizadas necessidades alimentares específicas?",
+          "a": "Sim, com aviso prévio. Vegetariano, vegano, sem gluten e halal são todos viáveis; envie a lista com os números quando confirmar o grupo."
+        },
+        {
+          "q": "Como começa a planear um professor ou responsável de grupo?",
+          "a": "Contacte-nos com o tamanho do grupo, o país da instituição de origem, as datas aproximadas e o que quer que os estudantes levem da viagem. Responderemos com uma rota e os detalhes práticos."
+        }
+      ],
+      "keyPlaces": [
+        "Marraquexe",
+        "Tizi n'Tichka",
+        "Aït Ben Haddou",
+        "Dades e Todra",
+        "Erg Chebbi"
+      ],
+      "related": [
+        {
+          "label": "Marraquexe"
+        },
+        {
+          "label": "Aït Ben Haddou"
+        },
+        {
+          "label": "Erg Chebbi"
+        },
+        {
+          "label": "Guia de Merzouga"
+        }
+      ]
+    },
+    "10-day-morocco-student-tour": {
+      "duration": "10 Dias",
+      "title": "Viagem de Estudantes de 10 Dias por Marrocos",
+      "cardSummary": "De norte a sul por todo o país — cidades imperiais, o Rif, o Atlas e o Saara — com tempo suficiente em cada um para entender como são diferentes entre si.",
+      "heroLead": "Dez dias bastam para deixar de generalizar sobre Marrocos. O grupo vê um sítio de época romana, uma cidade universitária medieval, uma vila azul de montanha e um erg, e no final já ninguém os descreve com as mesmas palavras.",
+      "metaTitle": "Viagem de Estudantes de 10 Dias por Marrocos | Cidades Imperiais, Rif e Saara",
+      "metaDescription": "Um roteiro estudantil de dez dias que liga Marraquexe, Aït Ben Haddou, o Saara de Erg Chebbi, Fez e Chefchaouen. Para grupos universitários e de estudantes.",
+      "overview": {
+        "start": "Marraquexe ou Casablanca",
+        "end": "Marraquexe ou Fez, dependendo dos voos do grupo",
+        "regions": "Costa atlântica · Cidades imperiais · Rif · Atlas Médio e Alto Atlas · Saara",
+        "style": "Viagem terrestre por todo o país com várias estadias de várias noites",
+        "groups": "Organizado para grupos de estudantes e universitários — diga-nos os números para planearmos veículos, alojamento e a capacidade do acampamento no deserto em função do grupo."
+      },
+      "whyStudents": [
+        "As viagens curtas ensinam uma versão de Marrocos. Dez dias ensinam as diferenças que existem dentro dele — que Fez e Marraquexe não são intercambiáveis, que o norte é verde e o sul não, e que as herança amazigh, árabe, andaluza e francesa se combinam em proporções diferentes de cidade para cidade.",
+        "A duração permite estadias de várias noites. Os estudantes desfazem as malas, orientam-se, e podem voltar a um lugar uma segunda vez com uma pergunta que não tinham na primeira visita.",
+        "Adapta-se a um módulo completo de estudos no estrangeiro ou a um programa conduzido por docentes em que a viagem é o próprio curso, não um complemento a ele."
+      ],
+      "itinerary": [
+        {
+          "chapter": "O sul começa em Marraquexe",
+          "title": "Chegada, e fazer muito pouco",
+          "body": [
+            "O grupo chega e instala-se. Dependendo dos voos, isto é em Marraquexe ou em Casablanca. A primeira noite é deliberadamente tranquila — um passeio, uma refeição em conjunto, e uma conversa prática sobre a rota, o ritmo e o que esperar.",
+            "Os estudantes que nunca viajaram fora do seu próprio país são quem mais beneficia de uma primeira noite tranquila. Ninguém absorve bem uma medina com três horas de sono."
+          ],
+          "notes": [
+            "Chegada",
+            "Passeio de orientação e jantar de grupo"
+          ]
+        },
+        {
+          "title": "Marraquexe ao nível da rua",
+          "body": [
+            "Um dia completo em Marraquexe. A medina é o grande protagonista — uma cidade murada, densa e em funcionamento, onde o próprio traçado das ruas já é a lição. O grupo percorre souks organizados por ofício, passando por ateliers onde as coisas ainda são fabricadas, não apenas vendidas.",
+            "Há tempo nos monumentos históricos e jardins pelos quais a cidade é conhecida, que dão ao grupo um lugar tranquilo para realmente falar do que acabaram de percorrer.",
+            "Ao fim da tarde, Jemaa el-Fna. É ruidosa, apinhada e genuinamente diferente de tudo o que a maioria dos estudantes já viveu, e vale a pena entrar com um plano de onde se encontrar."
+          ],
+          "notes": [
+            "Medina e souks",
+            "Monumentos históricos e jardins",
+            "Jemaa el-Fna ao fim da tarde"
+          ]
+        },
+        {
+          "chapter": "Sobre as montanhas, até ao deserto",
+          "title": "O desfiladeiro, e o território vermelho mais além",
+          "body": [
+            "Dois dias em Marraquexe fazem o outro lado das montanhas impactar com mais força. A cidade é ruidosa e fechada; quatro horas depois o grupo está a olhar para cem quilómetros de nada, num vermelho que não aparece em nenhuma parte do norte do país.",
+            "Aït Ben Haddou é a primeira coisa nesta viagem construída inteiramente a partir do terreno em que se ergue. Depois da arquitetura de azulejos, talhas e materiais importados de Marraquexe, uma aldeia feita da própria colina por detrás dela é um contraste útil — e é aquela de que os estudantes costumam voltar a falar uma semana depois em Fez.",
+            "O grupo dorme na zona de vales mais além da casbá. A partir daqui a rota deixa de ser sobre cidades por algum tempo."
+          ],
+          "notes": [
+            "Tizi n'Tichka",
+            "Aït Ben Haddou",
+            "Noite nos vales"
+          ]
+        },
+        {
+          "title": "Seguindo a água para sul",
+          "body": [
+            "Através da zona de Dades e Todra, onde os palmeirais traçam o curso da água e a rocha nua se encarrega de tudo o resto. Há tempo para entrar a pé num desfiladeiro e ver como as aldeias usam o que por ali passa.",
+            "Ao final da tarde as montanhas ficam atrás e Erg Chebbi está à frente. A noite é num acampamento no deserto."
+          ],
+          "notes": [
+            "Dades e Todra",
+            "Chegada a Erg Chebbi",
+            "Noite no acampamento no deserto"
+          ]
+        },
+        {
+          "title": "Um dia que pertence ao deserto",
+          "body": [
+            "Nascer do sol, e depois um dia no deserto em vez de uma viagem para saír dele. É aqui que o grupo conhece pessoas que vivem no deserto, vê como funciona um acampamento nómada, e passa as horas mais frescas nas dunas.",
+            "Os grupos que queiram uma tarde ativa podem fazer uma sessão de 4x4 ou buggy na areia. Os que preferirem algo mais calmo podem tê-lo em alternativa.",
+            "Segunda noite no acampamento, sem saída matinal cedo que encurte a noite."
+          ],
+          "notes": [
+            "Amanhecer sobre as dunas",
+            "Comunidades do deserto",
+            "Atividades opcionais na areia",
+            "Segunda noite no acampamento"
+          ]
+        },
+        {
+          "chapter": "A longa viragem para norte",
+          "title": "Para norte, até à terra dos cedros",
+          "body": [
+            "Um longo dia de viagem, e genuinamente interessante. A rota avança para norte e a paisagem muda mais do que os estudantes esperam — o território pré-saariano dá lugar a um planalto elevado, depois a uma floresta de cedros e a um ar mais fresco.",
+            "É a demonstração mais clara de toda a viagem de que Marrocos não tem um único clima. O grupo pernoita a caminho do norte."
+          ],
+          "notes": [
+            "Atlas Médio",
+            "Floresta de cedros",
+            "Noite em viagem"
+          ]
+        },
+        {
+          "title": "Dentro de Fez el-Bali",
+          "body": [
+            "Fez el-Bali é a razão pela qual esta viagem dura dez dias e não seis. É uma das maiores áreas urbanas sem carros que existem, e não se revela rapidamente. O grupo entra com um guia local, porque é a única forma sensata de o fazer.",
+            "O dia percorre a economia artesanal da cidade velha — as curtumarias, o trabalho do metal, a tecelagem — e a sua história académica, incluindo o bairro universitário. Os estudantes a quem Marraquexe pareceu avassaladora costumam achar Fez mais antiga, mais densa e mais calma de um modo com que conseguem lidar."
+          ],
+          "notes": [
+            "Medina de Fez el-Bali",
+            "Curtumarias e ateliers artesanais",
+            "Bairro universitário histórico"
+          ]
+        },
+        {
+          "chapter": "Terra romana e o Rif",
+          "title": "Mosaicos numa colina",
+          "body": [
+            "Ao norte de Fez o grupo chega a uma camada de história muito diferente: ruínas de época romana em terreno agrícola aberto, com mosaicos ainda no lugar e uma malha de ruas legível ao nível do solo. Ver um sítio clássico no norte de África muda muito do que os estudantes assumem sobre o mundo romano.",
+            "Perto dali, uma vila de colina com um carácter completamente diferente — encalada, empilhada e de significado religioso — antes de a estrada continuar para norte, em direção ao Rif."
+          ],
+          "notes": [
+            "Sítio arqueológico romano",
+            "Vila de colina",
+            "Entrada nas montanhas do Rif"
+          ]
+        },
+        {
+          "title": "Uma vila que se vê toda",
+          "body": [
+            "Chefchaouen é pequena, inclinada e azul, e é o único lugar deste itinerário onde o grupo consegue ver toda a vila a partir do alto em dez minutos de caminhada. Depois de uma semana entre grandes cidades e deserto aberto, a escala é um alívio.",
+            "Há tempo na medina, tempo para subir até ao miradouro, e tempo genuinamente livre — algo que, depois de oito dias em movimento, vale a pena programar de propósito."
+          ],
+          "notes": [
+            "Medina de Chefchaouen",
+            "Subida ao miradouro",
+            "Tempo livre"
+          ]
+        },
+        {
+          "title": "A última manhã",
+          "body": [
+            "Uma última manhã, e depois transporte para o aeroporto de partida. Quando os voos permitem, incluímos uma última paragem no caminho em vez de ir diretamente para o terminal.",
+            "A maioria dos grupos passa este trajeto a discutir qual foi a melhor parte, o que é uma boa medida de se dez dias foi a duração certa."
+          ],
+          "notes": [
+            "Transporte para o aeroporto de partida"
+          ]
+        }
+      ],
+      "experiences": [
+        {
+          "title": "Duas grandes medinas",
+          "body": "Marraquexe e Fez, uma depois da outra, suficientemente afastadas no itinerário para serem bem comparadas."
+        },
+        {
+          "title": "A Roma do norte de África",
+          "body": "Um sítio clássico com mosaicos in situ, em terreno agrícola e não atrás de vidro."
+        },
+        {
+          "title": "O Rif e Chefchaouen",
+          "body": "Montanhas verdes e uma pequena vila azul — a parte de Marrocos que as viagens curtas quase nunca alcançam."
+        },
+        {
+          "title": "Travessia do Alto Atlas",
+          "body": "Um verdadeiro desfiladeiro de montanha com a paisagem a mudar de ambos os lados."
+        },
+        {
+          "title": "Duas noites em Erg Chebbi",
+          "body": "Um dia completo no deserto, não apenas um nascer do sol e partida."
+        },
+        {
+          "title": "Comunidades do deserto",
+          "body": "Tempo com pessoas que vivem no Saara, incluindo como um acampamento nómada é montado e deslocado."
+        },
+        {
+          "title": "Economias artesanais",
+          "body": "Curtumarias, trabalho do metal e tecelagem vistos como ofícios em funcionamento, não como demonstrações."
+        }
+      ],
+      "learning": [
+        {
+          "subject": "História",
+          "body": "Camadas romana, islâmica medieval, andaluza e colonial encontradas nos lugares onde aconteceram, não numa sequência de diapositivos."
+        },
+        {
+          "subject": "Geografia urbana",
+          "body": "Duas medinas de épocas e densidades diferentes, além de uma pequena vila de montanha, tornam o traçado das ruas e o crescimento urbano diretamente comparáveis."
+        },
+        {
+          "subject": "Geografia física",
+          "body": "Planície atlântica, Alto Atlas, zona pré-saariana, erg, floresta de cedros do Atlas Médio e o Rif — a maioria das zonas climáticas de Marrocos numa única rota."
+        },
+        {
+          "subject": "Antropologia e língua",
+          "body": "A influência árabe, amazigh, francesa e espanhola distribui-se de forma desigual pelo país, e a rota torna esse padrão evidente."
+        },
+        {
+          "subject": "Economia e artesanato",
+          "body": "Produção tradicional em Fez e Marraquexe, agricultura de oásis no sul, e pastoreio no deserto."
+        },
+        {
+          "subject": "Ambiente",
+          "body": "Escassez de água, irrigação, desertificação e floresta, tudo encontrado no terreno dentro dos mesmos dez dias."
+        }
+      ],
+      "groupExperience": [
+        "Dez dias são suficientes para que um grupo se torne um grupo. O mapa social da primeira noite raramente é o mesmo que se vê no final.",
+        "As estadias de várias noites importam mais do que os estudantes esperam. Acordar no mesmo lugar uma segunda vez muda a forma como se olha para ele.",
+        "Os dias do deserto e o dia em Chefchaouen costumam ser os dois de que o grupo mais fala — um pela escala, outro pelo ritmo."
+      ],
+      "included": [
+        "Transporte privado para o grupo durante toda a rota, com condutor",
+        "Nove noites de alojamento, incluindo duas noites num acampamento no deserto",
+        "Pequenos-almoços, e jantares nas noites em que o grupo está connosco",
+        "Um guia local a acompanhar o grupo durante toda a viagem",
+        "Guias locais nas principais medinas",
+        "Experiência em camelo em Erg Chebbi",
+        "Transferes de aeroporto na chegada e na partida"
+      ],
+      "notIncluded": [
+        "Voos internacionais e domésticos",
+        "Seguro de viagem",
+        "Almoços e bebidas, salvo acordo no programa final",
+        "Entradas em locais não incluídos no itinerário confirmado",
+        "Atividades opcionais e despesas pessoais"
+      ],
+      "practical": [
+        {
+          "title": "Alojamento",
+          "body": "Nove noites, combinando alojamento urbano nas estadias mais longas com alojamento na zona de vales e duas noites num acampamento no deserto. As estadias de várias noites são usadas sempre que a rota o permite."
+        },
+        {
+          "title": "Transporte",
+          "body": "Veículos privados para toda a rota. Marrocos é um país extenso e dois dos dez dias implicam trajetos consideráveis; o itinerário é construído para que esses dias tenham algo para ver e não sejam puro trânsito."
+        },
+        {
+          "title": "Refeições e necessidades alimentares",
+          "body": "Opções vegetarianas, veganas, sem gluten e halal podem ser organizadas com aviso prévio em toda a rota. Envie a lista com os números quando o grupo estiver confirmado."
+        },
+        {
+          "title": "Tempo livre",
+          "body": "Incluído deliberadamente, especialmente em Chefchaouen e no deserto. Dez dias com programação contínua não funcionam para um grupo de estudantes, e não planeamos assim."
+        },
+        {
+          "title": "O que levar",
+          "body": "Roupa em camadas para uma amplitude térmica realmente grande — noites frias no deserto, manhãs frescas no Atlas Médio e tardes quentes no sul. Calçado fechado para caminhar, protecção solar, algo para cobrir a cabeça, uma bateria portátil, e uma mochila de dia."
+        },
+        {
+          "title": "Clima",
+          "body": "A primavera e o outono são os mais adequados para esta rota porque atravessa várias zonas climáticas. O verão é quente no sul; o inverno é frio em altitude e de noite no deserto. Ambos são geríveis com horários ajustados."
+        }
+      ],
+      "support": [
+        "Um guia da Morocco Grand Adventure viaja com o grupo durante os dez dias completos, com guias locais nas principais medinas.",
+        "A parte do deserto é gerida pela nossa própria equipa em Merzouga.",
+        "Os responsáveis de grupo têm um contacto direto durante todo o programa.",
+        "Numa rota tão longa, contamos ajustar ao longo do percurso. O ritmo, o tempo livre e a duração das paragens podem mudar durante a viagem, se o grupo precisar."
+      ],
+      "faqs": [
+        {
+          "q": "Pode funcionar como um curso conduzido por docentes em vez de uma viagem turística?",
+          "a": "É exatamente para isso que serve a duração. Diga-nos a disciplina, os resultados de aprendizagem e as visitas de que precisa, e construiremos a rota em torno delas em vez de as adicionar a um itinerário fixo."
+        },
+        {
+          "q": "A viagem pode começar e terminar em cidades diferentes?",
+          "a": "Sim, e numa rota de dez dias isso muitas vezes faz sentido — por exemplo, chegar a uma cidade e partir de outra, para que o grupo não tenha de repetir o caminho. Envie-nos as suas condicionantes de voo."
+        },
+        {
+          "q": "Podemos ajustar quais as cidades incluídas?",
+          "a": "Sim. O eixo norte-sul é o que faz a rota funcionar, mas as paragens individuais podem ser trocadas, alargadas ou retiradas, segundo as vossas prioridades e datas."
+        },
+        {
+          "q": "Quanto da viagem é em condução?",
+          "a": "É um país grande e há dois dias de viagem consideráveis. Dizemos onde caem quando enviamos a rota, para que não haja surpresas."
+        },
+        {
+          "q": "Com que tamanhos de grupo trabalham?",
+          "a": "Diga-nos quantos vão viajar e planeamos em função disso. Para um programa de dez dias com estadias urbanas de várias noites, mais tempo de aviso significa melhores opções de alojamento."
+        },
+        {
+          "q": "Podem ser organizadas necessidades alimentares em toda a rota?",
+          "a": "Sim, com aviso prévio. A variedade de locais é precisamente a razão por que pedimos a lista com antecedência e não à chegada."
+        },
+        {
+          "q": "Como começa a conversa um coordenador de estudos no estrangeiro?",
+          "a": "Contacte-nos com o país da instituição, o tamanho do grupo, as datas previstas, o foco académico e quaisquer condicionantes fixas. Responderemos com uma rota, a logística e os pontos sobre os quais teríamos alguma objeção."
+        }
+      ],
+      "keyPlaces": [
+        "Marraquexe",
+        "Aït Ben Haddou",
+        "Erg Chebbi",
+        "Fez",
+        "Chefchaouen"
+      ],
+      "related": [
+        {
+          "label": "Marraquexe"
+        },
+        {
+          "label": "Fez"
+        },
+        {
+          "label": "Chefchaouen"
+        },
+        {
+          "label": "Erg Chebbi"
+        }
+      ]
+    }
   }
 }
