@@ -27,7 +27,7 @@ export default function Destinations() {
         <div className="absolute inset-0 z-0">
           <img
             src="/images/hero/atlas-pano.webp"
-            alt="Morocco Destinations"
+            alt={t('destinations_hero_alt')}
             width={1600}
             height={900}
             fetchPriority="high"

@@ -63,7 +63,7 @@ export function Navbar() {
     <nav className={navClass} aria-label={t('nav_tours')}>
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
-          <Link href="/" aria-label="Morocco Grand Adventure — Home" className="shrink-0"><Logo variant={solid ? 'dark' : 'light'} className={logoSize} decorative /></Link>
+          <Link href="/" aria-label={t('nav_logo_home_aria')} className="shrink-0"><Logo variant={solid ? 'dark' : 'light'} className={logoSize} decorative /></Link>
 
           <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
             <Link href="/" className={linkClass}>{t('nav_home')}</Link>
@@ -125,7 +125,7 @@ export function Navbar() {
             <Link href="/contact" className={linkClass}>{t('nav_contact')}</Link>
 
             <div className="relative" ref={langRef}>
-              <button onClick={() => setLangOpen(v => !v)} aria-label={`Change language. Current: ${currentLang.nativeLabel}`} aria-expanded={langOpen} aria-haspopup="listbox" className={`flex items-center gap-1.5 text-sm font-medium ${solid ? 'text-foreground hover:text-primary' : 'text-white hover:text-accent'}`}>
+              <button onClick={() => setLangOpen(v => !v)} aria-label={fmtTemplate(t('nav_lang_switch_aria'), { lang: currentLang.nativeLabel })} aria-expanded={langOpen} aria-haspopup="listbox" className={`flex items-center gap-1.5 text-sm font-medium ${solid ? 'text-foreground hover:text-primary' : 'text-white hover:text-accent'}`}>
                 <Globe className="w-4 h-4" aria-hidden="true" /> {currentLang.flag} {currentLang.code.toUpperCase()} <ChevronDown className="w-3.5 h-3.5" aria-hidden="true" />
               </button>
               <AnimatePresence>{langOpen && <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 8 }} className="absolute right-0 top-full mt-3 w-44 bg-background border border-border rounded-xl shadow-xl overflow-hidden z-50">

@@ -142,15 +142,15 @@ export default function PremiumAboutSection() {
             <p className="text-muted-foreground max-w-2xl mb-8">{t('abt_cars_p')}</p>
             <div className="grid sm:grid-cols-3 gap-4 md:gap-6">
               <figure className="rounded-3xl overflow-hidden border border-border">
-                <img src="/images/personal/guests-van.webp" srcSet="/images/personal/guests-van-480w.webp 480w, /images/personal/guests-van-768w.webp 768w, /images/personal/guests-van.webp 1024w" sizes="(max-width: 640px) 100vw, 33vw" alt="Guests loading luggage into a Morocco Grand Adventure private minivan before a desert tour" loading="lazy" decoding="async" width={1024} height={683} className="w-full h-48 md:h-56 object-cover" />
+                <img src="/images/personal/guests-van.webp" srcSet="/images/personal/guests-van-480w.webp 480w, /images/personal/guests-van-768w.webp 768w, /images/personal/guests-van.webp 1024w" sizes="(max-width: 640px) 100vw, 33vw" alt={t('abt_photo_van_alt')} loading="lazy" decoding="async" width={1024} height={683} className="w-full h-48 md:h-56 object-cover" />
                 <figcaption className="p-4 text-sm text-muted-foreground">{t('abt_cars_van')}</figcaption>
               </figure>
               <figure className="rounded-3xl overflow-hidden border border-border">
-                <img src="/images/personal/group-atlas.webp" srcSet="/images/personal/group-atlas-480w.webp 480w, /images/personal/group-atlas-768w.webp 768w, /images/personal/group-atlas.webp 1024w" sizes="(max-width: 640px) 100vw, 33vw" alt="Travel group posing together on a private Morocco Grand Adventure trip in the Atlas Mountains" loading="lazy" decoding="async" width={1024} height={683} className="w-full h-48 md:h-56 object-cover" />
+                <img src="/images/personal/group-atlas.webp" srcSet="/images/personal/group-atlas-480w.webp 480w, /images/personal/group-atlas-768w.webp 768w, /images/personal/group-atlas.webp 1024w" sizes="(max-width: 640px) 100vw, 33vw" alt={t('abt_photo_group_alt')} loading="lazy" decoding="async" width={1024} height={683} className="w-full h-48 md:h-56 object-cover" />
                 <figcaption className="p-4 text-sm text-muted-foreground">{t('abt_cars_group')}</figcaption>
               </figure>
               <figure className="rounded-3xl overflow-hidden border border-border">
-                <img src="/images/personal/guests-sunset.webp" srcSet="/images/personal/guests-sunset-480w.webp 480w, /images/personal/guests-sunset-768w.webp 768w, /images/personal/guests-sunset.webp 1024w" sizes="(max-width: 640px) 100vw, 33vw" alt="Guests enjoying sunset in the Sahara dunes during a private Morocco Grand Adventure tour" loading="lazy" decoding="async" width={1024} height={683} className="w-full h-48 md:h-56 object-cover" />
+                <img src="/images/personal/guests-sunset.webp" srcSet="/images/personal/guests-sunset-480w.webp 480w, /images/personal/guests-sunset-768w.webp 768w, /images/personal/guests-sunset.webp 1024w" sizes="(max-width: 640px) 100vw, 33vw" alt={t('abt_photo_sunset_alt')} loading="lazy" decoding="async" width={1024} height={683} className="w-full h-48 md:h-56 object-cover" />
                 <figcaption className="p-4 text-sm text-muted-foreground">{t('abt_cars_sunset')}</figcaption>
               </figure>
             </div>
