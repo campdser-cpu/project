@@ -110,7 +110,7 @@ function DayHeader({ d }: { d: StudentTourDay }) {
         </span>
       </div>
       <h3 className="pt-1 font-serif text-[1.6rem] font-light leading-tight text-foreground text-balance md:pt-2 md:text-[2.1rem]">
-        <span className="sr-only">{t('st_sd_day_label')} {d.day.replace(/\D/g, '')}: </span>
+        <span className="sr-only">{fmtTemplate(t('st_sd_day_n'), { n: d.day.replace(/\D/g, '') })}: </span>
         {d.title}
       </h3>
     </header>

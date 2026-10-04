@@ -1455,7 +1455,7 @@ function buildExperienceContent(rest: string, lang: Lang): string {
     <h2>${escapeHtml(tr(lang, 'st_sd_why_h2'))}</h2>
     ${stProduct.whyStudents.map((p) => paragraph(p)).join('')}
     <h2>${escapeHtml(tr(lang, 'st_sd_itinerary_eyebrow'))}</h2>
-    ${stProduct.itinerary.map((d) => `${d.chapter ? `<h3>${escapeHtml(d.chapter)}</h3>` : ''}<h3>${escapeHtml(`${tr(lang, 'st_sd_day_label')} ${d.day.replace(/\D/g, '')} — ${d.title}`)}</h3>${d.body.map((p) => paragraph(p)).join('')}${stPrerenderDays.has(d.day) && d.images?.[0] ? stFigure(d.images[0], studentTourSizes.day(d.images)) : ''}${d.notes && d.notes.length ? ul(d.notes) : ''}`).join('\n    ')}
+    ${stProduct.itinerary.map((d) => `${d.chapter ? `<h3>${escapeHtml(d.chapter)}</h3>` : ''}<h3>${escapeHtml(`${fmt(tr(lang, 'st_sd_day_n'), { n: d.day.replace(/\D/g, '') })} — ${d.title}`)}</h3>${d.body.map((p) => paragraph(p)).join('')}${stPrerenderDays.has(d.day) && d.images?.[0] ? stFigure(d.images[0], studentTourSizes.day(d.images)) : ''}${d.notes && d.notes.length ? ul(d.notes) : ''}`).join('\n    ')}
     <h2>${escapeHtml(tr(lang, 'st_sd_experience_h2'))}</h2>
     ${ul(stProduct.experiences.map((e) => `${e.title} — ${e.body}`))}
     <h2>${escapeHtml(tr(lang, 'st_sd_learning_h2'))}</h2>
@@ -1677,7 +1677,7 @@ function buildRoutes(lang: Lang): RouteEntry[] {
               itemListElement: stp.itinerary.map((d, i) => ({
                 '@type': 'ListItem',
                 position: i + 1,
-                name: `${tr(lang, 'st_sd_day_label')} ${d.day.replace(/\D/g, '')} — ${d.title}`,
+                name: `${fmt(tr(lang, 'st_sd_day_n'), { n: d.day.replace(/\D/g, '') })} — ${d.title}`,
               })),
             },
           },
