@@ -80,9 +80,11 @@ export default function BlogPost() {
     .map((id) => getLocalizedDestinations(lang).find((d) => d.id === id))
     .filter((d): d is NonNullable<typeof d> => Boolean(d));
 
-  const sameCategory = blogPosts
+  const postIndex = blogPosts.findIndex((p) => p.slug === post.slug) + 1;
+  const localizedPosts = blogPosts.map((p) => getLocalizedBlogPost(p.slug, lang) ?? p);
+  const sameCategory = localizedPosts
     .filter((p) => p.slug !== post.slug && p.category === post.category)
-    .concat(blogPosts.filter((p) => p.slug !== post.slug && p.category !== post.category))
+    .concat(localizedPosts.filter((p) => p.slug !== post.slug && p.category !== post.category))
     .slice(0, 5);
 
   return (
@@ -135,14 +137,14 @@ export default function BlogPost() {
             >
               <div className="mb-6">
                 <span className="text-primary font-bold uppercase tracking-wider text-xs mb-2 block">
-                  {post.category}
+                  {t(`blog_post_${postIndex}_cat`)}
                 </span>
                 <h1 className="font-serif text-3xl md:text-5xl text-foreground mb-4">
                   {post.title}
                 </h1>
                 <div className="flex items-center gap-3 text-muted-foreground text-sm">
-                  <span>{post.date}</span>
-                  <span>{post.readTime}</span>
+                  <span>{t(`blog_post_${postIndex}_date`)}</span>
+                  <span>{t(`blog_post_${postIndex}_read`)}</span>
                 </div>
               </div>
 
@@ -259,7 +261,7 @@ export default function BlogPost() {
                       </div>
                       <div className="p-3">
                         <span className="text-primary font-bold uppercase tracking-wider text-xs mb-1 block">
-                          {related.category}
+                          {t(`blog_post_${blogPosts.findIndex((p) => p.slug === related.slug) + 1}_cat`)}
                         </span>
                         <h3 className="font-serif text-lg text-foreground mb-1">{related.title}</h3>
                         <p className="text-xs text-muted-foreground line-clamp-2">{related.excerpt}</p>
