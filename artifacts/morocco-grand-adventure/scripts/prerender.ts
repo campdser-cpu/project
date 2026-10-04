@@ -1533,8 +1533,8 @@ function buildHubPageContent(page: HubPage, lang: Lang): string {
     }
   }
   if (page.comparisonRows && page.comparisonRows.length) {
-    out += h2('At a glance');
-    let table = `    <table class="comparison-table">\n      <thead><tr><th>Feature</th><th>Option A</th><th>Option B</th></tr></thead>\n      <tbody>\n`;
+    out += h2(tr(lang, 'seohub_at_a_glance'));
+    let table = `    <table class="comparison-table">\n      <thead><tr><th>${escapeHtml(tr(lang, 'seohub_feature'))}</th><th>${escapeHtml(tr(lang, 'seohub_option_a'))}</th><th>${escapeHtml(tr(lang, 'seohub_option_b'))}</th></tr></thead>\n      <tbody>\n`;
     for (const [label, a, b] of page.comparisonRows) {
       table += `        <tr><td>${escapeHtml(label)}</td><td>${escapeHtml(a)}</td><td>${escapeHtml(b)}</td></tr>\n`;
     }
@@ -1741,7 +1741,7 @@ function buildRoutes(lang: Lang): RouteEntry[] {
     add(rest, `${lang}${rest}/index.html`, () => buildHubPageContent(page, lang), [
       buildBreadcrumb([
         { name: tr(lang, 'nav_home'), path: '/' },
-        { name: 'Tour comparisons', path: '/' },
+        { name: tr(lang, 'seohub_comparisons_breadcrumb'), path: '/' },
         { name: localizedComparisonMeta(page.slug, lang)?.title ?? page.title, path: rest },
       ], lang) as unknown as Record<string, unknown>,
       page.faqs.length ? (buildFaqSchema(page.faqs) as unknown as Record<string, unknown>) : null,
@@ -1752,7 +1752,7 @@ function buildRoutes(lang: Lang): RouteEntry[] {
     add(rest, `${lang}${rest}/index.html`, () => buildHubPageContent(page, lang), [
       buildBreadcrumb([
         { name: tr(lang, 'nav_home'), path: '/' },
-        { name: 'Travel information', path: '/travel-info' },
+        { name: tr(lang, 'seohub_travel_info_breadcrumb'), path: '/travel-info' },
         { name: page.title, path: rest },
       ], lang) as unknown as Record<string, unknown>,
       page.faqs.length ? (buildFaqSchema(page.faqs) as unknown as Record<string, unknown>) : null,
@@ -1767,13 +1767,13 @@ function buildRoutes(lang: Lang): RouteEntry[] {
       const imgHtml = img ? `      <img src="${img.src}" alt="${escapeHtml(img.alt)}" width="${img.width}" height="${img.height}" loading="lazy" decoding="async">\n` : '';
       return `    <li>\n${imgHtml}      <h2><a href="${SITE_URL}/${lang}/travel-info/${p.slug}">${escapeHtml(p.title)}</a></h2>\n      <p>${escapeHtml(p.description)}</p>\n    </li>`;
     }).join('\n');
-    return h1('Morocco Travel Information')
-      + rawParagraph('Practical guides from a local team — when to go, what to pack and how to get around, written from real experience on the road.')
+    return h1(tr(lang, 'travel_info_hub_title'))
+      + rawParagraph(tr(lang, 'travel_info_hub_sub'))
       + `    <ul class="travel-info-list">\n${items}\n    </ul>\n`;
   }, [
     buildBreadcrumb([
       { name: tr(lang, 'nav_home'), path: '/' },
-      { name: 'Travel information', path: '/travel-info' },
+      { name: tr(lang, 'seohub_travel_info_breadcrumb'), path: '/travel-info' },
     ], lang) as unknown as Record<string, unknown>,
   ]);
   // truth in CITY_HUB_DURATIONS). Routes whose city has no canned tour of that

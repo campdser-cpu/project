@@ -11,7 +11,7 @@ export default function TravelInfo() {
   const { t, lang } = useLanguage();
   const crumbs = [
     { name: t('nav_home'), path: '/' },
-    { name: 'Travel information', path: '' },
+    { name: t('seohub_travel_info_breadcrumb'), path: '' },
   ];
   return (
     <Layout>
@@ -34,11 +34,10 @@ export default function TravelInfo() {
               Morocco Grand Adventure
             </span>
             <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl text-white mb-6 leading-tight drop-shadow-2xl">
-              Morocco Travel Information
+              {t('travel_info_hub_title')}
             </h1>
             <p className="text-white/80 text-lg md:text-xl font-light max-w-2xl mx-auto">
-              Practical guides from a local team — when to go, what to pack and how to
-              get around, written from real experience on the road.
+              {t('travel_info_hub_sub')}
             </p>
           </div>
         </section>
@@ -68,7 +67,7 @@ export default function TravelInfo() {
                   </h2>
                   <p className="text-muted-foreground text-sm mt-2 line-clamp-2">{p.description}</p>
                   <span className="inline-flex items-center text-primary text-sm font-semibold mt-3">
-                    Read the guide
+                    {t('travel_info_hub_cta')}
                     <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
                   </span>
                 </div>

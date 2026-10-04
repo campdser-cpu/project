@@ -72,8 +72,8 @@ export function SeoHubPage({ page }: { page: HubPage }) {
     page.kind === 'merzouga'
       ? { name: guideCrumb(lang, page.slug, t('mg_breadcrumb')), path: '/merzouga-guide' }
       : page.kind === 'comparison'
-        ? { name: 'Tour comparisons', path: '/' }
-        : { name: 'Travel information', path: '/travel-info' },
+        ? { name: t('seohub_comparisons_breadcrumb'), path: '/' }
+        : { name: t('seohub_travel_info_breadcrumb'), path: '/travel-info' },
     { name: page.title, path: '' },
   ];
 
@@ -179,15 +179,15 @@ export function SeoHubPage({ page }: { page: HubPage }) {
           <section className="py-16 md:py-24 bg-muted border-t border-border">
             <div className="container mx-auto px-4 max-w-4xl">
               <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-8 text-center">
-                At a glance
+                {t('seohub_at_a_glance')}
               </h2>
               <div className="overflow-x-auto rounded-2xl border border-border bg-background">
                 <table className="w-full border-collapse text-sm">
                   <thead className="bg-muted">
                     <tr>
-                      <th className="text-left p-4 font-semibold">Feature</th>
-                      <th className="text-left p-4 font-semibold">Option A</th>
-                      <th className="text-left p-4 font-semibold">Option B</th>
+                      <th className="text-left p-4 font-semibold">{t('seohub_feature')}</th>
+                      <th className="text-left p-4 font-semibold">{t('seohub_option_a')}</th>
+                      <th className="text-left p-4 font-semibold">{t('seohub_option_b')}</th>
                     </tr>
                   </thead>
                   <tbody>
