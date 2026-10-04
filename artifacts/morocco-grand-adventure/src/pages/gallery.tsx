@@ -104,6 +104,23 @@ const CATEGORY_ORDER = [
   'Authenticity',
 ];
 
+// Category strings double as internal filter identifiers (matched against
+// IMAGES/VIDEOS data above), so they stay in English — this maps each one to
+// its translated display label instead.
+const CATEGORY_LABEL_KEYS: Record<string, string> = {
+  All: 'gallery_cat_all',
+  Desert: 'gallery_cat_desert',
+  'Luxury Camp': 'gallery_cat_luxury_camp',
+  'Camel Trekking': 'gallery_cat_camel_trekking',
+  'Quad Adventure': 'gallery_cat_quad',
+  'Happy Travelers': 'gallery_cat_happy_travelers',
+  Landscapes: 'gallery_cat_landscapes',
+  Culture: 'gallery_cat_culture',
+  Food: 'gallery_cat_food',
+  'My Journey as a Guide': 'gallery_cat_guide_journey',
+  Authenticity: 'gallery_cat_authenticity',
+};
+
 const usedCategories = new Set<string>();
 IMAGES.forEach((i) => i.categories.forEach((c) => usedCategories.add(c)));
 VIDEOS.forEach((v) => usedCategories.add(v.category));
@@ -163,7 +180,7 @@ export default function Gallery() {
             <span className="text-primary font-bold tracking-[0.25em] uppercase text-xs md:text-sm mb-5 block">{t('gallery_eyebrow')}</span>
             <h1 className="font-serif text-5xl md:text-7xl text-white mb-6 drop-shadow-xl">{t('gallery_title')}</h1>
             <p className="text-white/85 text-lg md:text-xl font-light leading-relaxed">
-              Real photographs and films from our journeys — the desert, the camps, the people, and the moments that make Morocco unforgettable.
+              {t('gallery_hero_sub')}
             </p>
           </motion.div>
         </div>
@@ -184,7 +201,7 @@ export default function Gallery() {
                     : 'bg-card text-muted-foreground border border-border hover:border-primary/50 hover:text-foreground'
                 }`}
               >
-                {cat}
+                {t(CATEGORY_LABEL_KEYS[cat] ?? cat)}
               </button>
             ))}
           </div>
@@ -217,7 +234,7 @@ export default function Gallery() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <div className="absolute bottom-0 left-0 right-0 p-4 text-left translate-y-2 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-primary block mb-1">{item.categories[0]}</span>
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-primary block mb-1">{t(CATEGORY_LABEL_KEYS[item.categories[0]] ?? item.categories[0])}</span>
                       <span className="text-white font-serif text-lg leading-tight drop-shadow">{t(item.captionKey)}</span>
                     </div>
                   </motion.button>
@@ -266,7 +283,7 @@ export default function Gallery() {
                       <Play className="w-3 h-3 fill-current" /> {t(video.titleKey)}
                     </span>
                     <span className="inline-flex bg-primary/90 text-primary-foreground text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full">
-                      {video.category}
+                      {t(CATEGORY_LABEL_KEYS[video.category] ?? video.category)}
                     </span>
                   </div>
                 </div>
@@ -282,7 +299,7 @@ export default function Gallery() {
           <Instagram className="w-10 h-10 text-primary mx-auto mb-5" />
           <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-4">{t('gallery_follow')}</h2>
           <p className="text-muted-foreground mb-8">
-            See the latest photos and stories from the road on Instagram — new memories added after every journey.
+            {t('gallery_insta_sub')}
           </p>
           <a
             href={contactInfo.instagram}
@@ -310,21 +327,21 @@ export default function Gallery() {
           >
             <button
               onClick={closeLightbox}
-              aria-label="Close"
+              aria-label={t('gallery_lightbox_close')}
               className="absolute top-5 right-5 text-white/80 hover:text-white transition-colors z-10"
             >
               <X className="w-8 h-8" />
             </button>
             <button
               onClick={(e) => { e.stopPropagation(); showPrev(); }}
-              aria-label="Previous"
+              aria-label={t('gallery_lightbox_prev')}
               className="absolute left-3 md:left-8 top-1/2 -translate-y-1/2 text-white/70 hover:text-white transition-colors z-10 bg-white/10 hover:bg-white/20 rounded-full p-2"
             >
               <ChevronLeft className="w-7 h-7" />
             </button>
             <button
               onClick={(e) => { e.stopPropagation(); showNext(); }}
-              aria-label="Next"
+              aria-label={t('gallery_lightbox_next')}
               className="absolute right-3 md:right-8 top-1/2 -translate-y-1/2 text-white/70 hover:text-white transition-colors z-10 bg-white/10 hover:bg-white/20 rounded-full p-2"
             >
               <ChevronRight className="w-7 h-7" />
@@ -339,7 +356,7 @@ export default function Gallery() {
             >
               <img src={activeItem.src} alt={t(activeItem.captionKey)} className="max-w-full max-h-[78vh] object-contain rounded-lg shadow-2xl" />
               <div className="text-center mt-4">
-                <span className="text-primary text-xs font-bold uppercase tracking-widest block mb-1">{activeItem.categories[0]}</span>
+                <span className="text-primary text-xs font-bold uppercase tracking-widest block mb-1">{t(CATEGORY_LABEL_KEYS[activeItem.categories[0]] ?? activeItem.categories[0])}</span>
                 <span className="text-white font-serif text-xl">{t(activeItem.captionKey)}</span>
               </div>
             </motion.div>
