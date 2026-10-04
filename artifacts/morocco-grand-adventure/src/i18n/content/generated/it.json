@@ -3969,7 +3969,24 @@
             "In un tour privato in Marocco, la notte al campo si inserisce in un itinerario più lungo — per esempio un tour di tre giorni nel Sahara da Marrakech o un grande viaggio di sette giorni tra le città imperiali ed Erg Chebbi — così che il campo, il trekking e il trasferimento facciano parte di un unico piano continuo, e non di un'escursione isolata."
           ]
         }
-      ]
+      ],
+      "cta": {
+        "text": "Pronti a passare una notte tra le dune? Scoprite i nostri tour nel deserto del Sahara, le esperienze di campo di lusso e le escursioni in cammello, oppure iniziate con un itinerario classico:",
+        "links": [
+          {
+            "label": "Tour nel Deserto del Sahara"
+          },
+          {
+            "label": "Campo di Lusso nel Deserto"
+          },
+          {
+            "label": "Escursioni in Cammello"
+          },
+          {
+            "label": "Tour di 3 Giorni nel Sahara da Marrakech"
+          }
+        ]
+      }
     },
     "best-time-to-visit-morocco-sahara": {
       "title": "Il periodo migliore per visitare il Sahara: guida completa mese per mese",
@@ -4015,7 +4032,21 @@
             "Il Ramadan si sposta secondo il calendario lunare, quindi cade in un mese diverso ogni anno. I tour funzionano normalmente durante tutto il periodo, anche se meno caffè in città restano aperti durante le ore diurne. I campi nel deserto mantengono il loro programma serale abituale — cena, musica, il fuoco — dopo il tramonto."
           ]
         }
-      ]
+      ],
+      "cta": {
+        "text": "Per la guida completa mese per mese, o per pianificare un viaggio nella stagione giusta, scoprite le nostre guide e i tour del Sahara:",
+        "links": [
+          {
+            "label": "Guida Completa di Merzouga Mese per Mese"
+          },
+          {
+            "label": "Tour nel Deserto del Sahara"
+          },
+          {
+            "label": "Tour di 3 Giorni nel Sahara da Marrakech"
+          }
+        ]
+      }
     },
     "camel-trekking-etiquette-morocco": {
       "title": "Trekking su cammello in Marocco: cosa aspettarsi e come prepararsi",
@@ -4062,7 +4093,21 @@
             "Il trekking al tramonto è la scelta classica: luce calda, lunghe ombre sulle dune e un ingresso diretto nel programma serale del campo. Il giro di ritorno all'alba del mattino successivo è più tranquillo e fresco, spesso la parte più fotogenica di tutto il soggiorno. La maggior parte dei soggiorni con pernottamento al campo include entrambi come prassi."
           ]
         }
-      ]
+      ],
+      "cta": {
+        "text": "Pronti a provarlo di persona? Leggete la nostra guida completa alle escursioni in cammello o scoprite i tour nel Sahara che includono un'escursione al tramonto e una notte in campo:",
+        "links": [
+          {
+            "label": "Guida Completa alle Escursioni in Cammello"
+          },
+          {
+            "label": "Escursioni in Cammello"
+          },
+          {
+            "label": "Tour di 3 Giorni nel Sahara da Marrakech"
+          }
+        ]
+      }
     },
     "marrakech-to-merzouga-roadtrip": {
       "title": "Da Marrakech a Merzouga: l'itinerario definitivo del road trip nel Sahara",
@@ -4108,7 +4153,21 @@
             "Quattro giorni cambiano il carattere del viaggio — il ritorno non è più una maratona, e c'è spazio per una vera mezza giornata intorno a Merzouga prima di tornare indietro. Se le vostre date lo permettono, questa è la versione che la maggior parte dei viaggiatori finisce per preferire."
           ]
         }
-      ]
+      ],
+      "cta": {
+        "text": "Scoprite la guida completa dell'itinerario, oppure scegliete il programma più adatto alle vostre date:",
+        "links": [
+          {
+            "label": "Guida Completa dell'Itinerario Marrakech–Merzouga"
+          },
+          {
+            "label": "Tour di 3 Giorni nel Sahara da Marrakech"
+          },
+          {
+            "label": "Tour di 4 Giorni da Marrakech a Merzouga"
+          }
+        ]
+      }
     },
     "morocco-packing-list-desert": {
       "title": "La lista di bagaglio perfetta per i tour nel deserto in Marocco (2026)",
@@ -4147,7 +4206,21 @@
             "Valigie pesanti, gioielli di valore e qualsiasi cosa dipenda da una presa elettrica durante il trekking stesso — sarete lontani dal veicolo per la notte al campo, quindi una torcia frontale e un power bank sono la scelta più sicura. Limitate ciò che portate sul cammello a una sola borsa leggera per la notte."
           ]
         }
-      ]
+      ],
+      "cta": {
+        "text": "Per la lista completa voce per voce, o per iniziare a pianificare il vostro viaggio nel Sahara:",
+        "links": [
+          {
+            "label": "Lista Completa del Bagaglio per Merzouga"
+          },
+          {
+            "label": "Tour nel Deserto del Sahara"
+          },
+          {
+            "label": "Tour di 3 Giorni nel Sahara da Marrakech"
+          }
+        ]
+      }
     },
     "fes-chefchaouen-blue-city-guide": {
       "title": "Da Fes a Chefchaouen: alla scoperta della Perla Blu del Marocco",
@@ -4186,7 +4259,21 @@
             "Chefchaouen si trova sulla rotta settentrionale tra Tangeri, Fes e la costa, quindi si abbina naturalmente a un viaggio nelle città imperiali piuttosto che a un percorso nel deserto. Diversi dei nostri itinerari privati collegano già le due città — l'itinerario di 5 giorni nelle Città Imperiali visita Fes prima di continuare verso Chefchaouen, e i nostri percorsi in partenza da Casablanca possono includere una notte a Chefchaouen come parte di un più lungo anello settentrionale."
           ]
         }
-      ]
+      ],
+      "cta": {
+        "text": "Scoprite Fes e Chefchaouen più a fondo, oppure consultate gli itinerari privati che le collegano:",
+        "links": [
+          {
+            "label": "Guida alla Destinazione Fes"
+          },
+          {
+            "label": "Guida alla Destinazione Chefchaouen"
+          },
+          {
+            "label": "Tour di 5 Giorni tra Città Imperiali e Deserto"
+          }
+        ]
+      }
     }
   },
   "tourDepth": {

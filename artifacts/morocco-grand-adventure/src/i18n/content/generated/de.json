@@ -4059,42 +4059,355 @@
       "excerpt": "Von privaten Zelten mit eigenem Bad bis zum Gourmet-Dinner unter der Milchstraße – alles Wichtige über Luxus-Glamping in der Sahara.",
       "alt": "Luxuriöses Wüstencamp mit privaten Zelten bei Sonnenuntergang nahe Merzouga, Marokko",
       "canonicalTitle": "Luxus-Wüstencamps in Merzouga — Guide zum Sahara-Glamping",
-      "canonicalExcerpt": "Von privaten Zelten mit eigenem Bad bis zum Gourmet-Dinner unter der Milchstraße – das Wichtigste über Luxus-Glamping in der Sahara bei Merzouga."
+      "canonicalExcerpt": "Von privaten Zelten mit eigenem Bad bis zum Gourmet-Dinner unter der Milchstraße – das Wichtigste über Luxus-Glamping in der Sahara bei Merzouga.",
+      "sections": [
+        {
+          "heading": "Was ist ein Luxus-Wüstencamp in Merzouga?",
+          "paragraphs": [
+            "Ein Luxus-Wüstencamp in Merzouga ist ein dauerhaftes oder halbfestes Lager zwischen den Dünen des Erg Chebbi, gebaut für Reisende, die die Sahara erleben möchten, ohne auf Komfort zu verzichten. Statt eines einfachen Biwaks schlafen Sie in einem privaten Zelt mit einem echten Bett, warmer Bettwäsche und, in den gehobenen Camps, einem eigenen Bad.",
+            "Die Camps reichen von kleinen, boutique-artigen Luxuszelten bis zu größeren Familienanlagen, und die meisten sind so gestaltet, dass die Stille der Wüste — nicht die Einrichtung — im Mittelpunkt steht. Strom ist meist abends verfügbar, und das Speisezelt wird nach Einbruch der Dunkelheit zum sozialen Herz des Camps."
+          ]
+        },
+        {
+          "heading": "Wo die Camps liegen: die Dünen von Erg Chebbi",
+          "paragraphs": [
+            "Merzouga ist eine kleine Stadt am Rand des Erg Chebbi, einem der beiden großen Sandmeere Marokkos. Der Erg erstreckt sich über etwa 22 km Länge und 5 km Breite, mit Dünen, die deutlich über 100 Meter hoch werden und im Tagesverlauf die Farbe von Orange über Gold bis Purpurrot wechseln.",
+            "Luxuscamps liegen inmitten dieser Dünen, eine kurze Kamel- oder 4x4-Fahrt vom Dorf entfernt. Das ist der praktische Zusammenhang, den Reisende kennen sollten: Merzouga erreicht man auf der Straße, und das Camp-Erlebnis beginnt dort, wo der Asphalt endet."
+          ]
+        },
+        {
+          "heading": "Was eine Nacht in der Sahara beinhaltet",
+          "paragraphs": [
+            "Ein typischer Aufenthalt in einem Luxuscamp beginnt am späten Nachmittag, sodass man rechtzeitig zum Sonnenuntergang an den Dünen eintrifft. Das Abendessen ist meist ein mehrgängiges marokkanisches Menü im Speisezelt, und viele Camps beschließen den Abend am Lagerfeuer mit Berbertrommeln und Musik unter dem Sternenhimmel.",
+            "Die Morgenstunden gehören der stillsten Zeit der Wüste: Sonnenaufgang über den Dünen, Frühstück im Camp, und anschließend die Rückkehr nach Merzouga per Kamel oder 4x4. Sternenbeobachtung braucht keine Planung — der Nachthimmel der Sahara zählt zu den dunkelsten, die man je sehen wird."
+          ]
+        },
+        {
+          "heading": "Kameltouren, 4x4-Transfers und die Anreise",
+          "paragraphs": [
+            "Der klassische Weg ist eine Kameltour bei Sonnenuntergang vom Rand von Merzouga bis zum Camp, geführt von lokalen Kameltreibern. Wer nicht reiten möchte, oder mit kleinen Kindern oder eingeschränkter Mobilität unterwegs ist, kann die meisten Camps auch per 4x4 erreichen.",
+            "Kameltrekking ist einfacher, als es aussieht — die Kamele gehen langsam und gleichmäßig, und die Führer übernehmen die Kontrolle über die Tiere. Nehmen Sie einen Schal mit oder kaufen Sie einen in Merzouga, um Gesicht vor Sand und Sonne zu schützen."
+          ]
+        },
+        {
+          "heading": "Die beste Jahreszeit für einen Aufenthalt im Wüstencamp",
+          "paragraphs": [
+            "Die angenehmsten Monate für einen Campaufenthalt in Merzouga liegen zwischen Oktober und April, wenn die Tagestemperaturen angenehm und die Nächte kühl, aber gut erträglich sind. Sommernächte sind milder als die glühend heißen Tage, aber die Mittagshitze kann extrem sein.",
+            "Unabhängig von der Jahreszeit sollte man Kleidung in Schichten mitnehmen: Eine Wüstennacht kann nach Sonnenuntergang stark abkühlen, selbst nach einem warmen Tag. Eine leichte Jacke, geschlossene Schuhe und Sonnenschutz decken die meisten Bedürfnisse ab."
+          ]
+        },
+        {
+          "heading": "Wie man das richtige Camp in Merzouga auswählt",
+          "paragraphs": [
+            "Bewerten Sie Camps nach dem, was den Abend tatsächlich ausmacht: Zeltgröße und Bettwäsche, ob Bäder privat und direkt angeschlossen sind, die Qualität des Abendessens, die Entfernung des Camps zum Dorf, und ob die Musikabende authentisch oder aufgesetzt wirken.",
+            "Bei einer privaten Marokko-Rundreise ist die Camp-Nacht Teil einer längeren Route — zum Beispiel einer dreitägigen Sahara-Tour ab Marrakesch oder einer großen siebentägigen Reise durch die Kaiserstädte und den Erg Chebbi —, sodass Camp, Kameltour und Fahrt zu einem stimmigen Gesamtplan werden statt zu einem einmaligen Ausflug."
+          ]
+        }
+      ],
+      "cta": {
+        "text": "Bereit für eine Nacht zwischen den Dünen? Entdecken Sie unsere Sahara-Wüstentouren, Luxuscamp-Erlebnisse und Kameltouren, oder starten Sie mit einer klassischen Route:",
+        "links": [
+          {
+            "label": "Sahara-Wüstentouren"
+          },
+          {
+            "label": "Luxus-Wüstencamp"
+          },
+          {
+            "label": "Kameltouren"
+          },
+          {
+            "label": "3-Tage-Sahara-Tour ab Marrakesch"
+          }
+        ]
+      }
     },
     "best-time-to-visit-morocco-sahara": {
       "title": "Die beste Zeit für die Sahara: der komplette Monats-für-Monats-Guide",
       "excerpt": "Wann solltest du deine Merzouga-Wüstenreise planen? Unsere lokalen Experten erklären Temperaturen, Besucherzahlen und Bedingungen Monat für Monat.",
       "alt": "Dünen des Erg Chebbi zur goldenen Stunde nahe Merzouga, Marokko",
       "canonicalTitle": "Beste Reisezeit für die Sahara — Monat für Monat",
-      "canonicalExcerpt": "Wann planst du deine Merzouga-Wüstenreise? Unsere lokalen Experten erklären Temperaturen, Besucherzahlen und Bedingungen Monat für Monat."
+      "canonicalExcerpt": "Wann planst du deine Merzouga-Wüstenreise? Unsere lokalen Experten erklären Temperaturen, Besucherzahlen und Bedingungen Monat für Monat.",
+      "sections": [
+        {
+          "heading": "Die kurze Antwort",
+          "paragraphs": [
+            "Grob von Oktober bis April ist die angenehmste Zeit für die Sahara rund um Merzouga — warme bis milde Tage und kühle Nächte. Der Sommer (Juni bis August) bringt extreme Tageshitze, die das Laufen über Dünen und Kameltrekking unangenehm macht; der Winter (Dezember bis Februar) bietet milde, klare Tage, aber wirklich kalte Wüstennächte.",
+            "Es gibt nicht den einen „besten\" Monat, sondern vielmehr einen Kompromiss zwischen Andrang und Komfort: Oktober und April treffen genau den Punkt zwischen warmen Tagen und erträglichen Nächten — genau deshalb sind sie auch die am stärksten besuchten Monate."
+          ]
+        },
+        {
+          "heading": "Warum die Wüste am selben Tag heiß und kalt ist",
+          "paragraphs": [
+            "Sand kann fast keine Wärme speichern, deshalb kühlt er schnell ab, sobald die Sonne untergeht. Deshalb kann ein Sahara-Tag innerhalb weniger Stunden von einem heißen Nachmittag zu einem wirklich kalten Abend wechseln — der wichtigste Planungsfaktor dafür, was man anziehen und wann man eine Tour unternehmen sollte."
+          ]
+        },
+        {
+          "heading": "Frühling und Herbst: die einfachsten Monate",
+          "paragraphs": [
+            "März bis Mai und September bis November sind die Übergangsjahreszeiten, die die meisten lokalen Führer zuerst empfehlen. Die Tage wärmen sich schnell auf, ohne extrem zu werden, die Nächte bleiben kühl statt kalt, und Kameltrekking funktioniert fast zu jeder Tageszeit gut. Für diese Monate sollte man im Voraus buchen — europäische und nordamerikanische Reisende bevorzugen sie aus denselben Gründen."
+          ]
+        },
+        {
+          "heading": "Kann man die Sahara im Sommer besuchen?",
+          "paragraphs": [
+            "Das geht, aber die Tagestemperaturen auf den Dünen übersteigen regelmäßig 40 °C, und die meisten Aktivitäten — Trekking, 4x4-Fahrten — verlagern sich auf den frühen Morgen oder den Sonnenuntergang, um die größte Hitze zu vermeiden. Der Sommer ist nur sinnvoll, wenn die Reisedaten feststehen oder man die Wüste gezielt in ihrer extremsten Form erleben möchte, und selbst dann sollte man mit an die Hitze angepassten Zeitplänen rechnen."
+          ]
+        },
+        {
+          "heading": "Und der Winter?",
+          "paragraphs": [
+            "Dezember bis Februar bietet den klarsten Himmel des Jahres — ausgezeichnet für Sternbeobachtung — und milde, gut begehbare Tage. Der Haken sind die Nächte: Die Temperaturen auf offenem Sand können sich dem Gefrierpunkt nähern, daher ist ein Camp mit echter Heizung oder dicken Decken, und ein Reisender mit einer wirklich warmen Schicht im Gepäck, im Winter wichtiger als in jeder anderen Jahreszeit."
+          ]
+        },
+        {
+          "heading": "Verändert der Ramadan etwas?",
+          "paragraphs": [
+            "Der Ramadan folgt dem Mondkalender und fällt daher jedes Jahr in einen anderen Monat. Touren laufen währenddessen normal weiter, auch wenn tagsüber weniger Cafés in den Städten geöffnet haben. Wüstencamps behalten ihr übliches Abendprogramm — Abendessen, Musik, Lagerfeuer — nach Sonnenuntergang bei."
+          ]
+        }
+      ],
+      "cta": {
+        "text": "Für die vollständige Übersicht Monat für Monat, oder um eine Reise zur richtigen Jahreszeit zu planen, entdecken Sie unsere Sahara-Guides und -Touren:",
+        "links": [
+          {
+            "label": "Vollständiger Merzouga-Guide Monat für Monat"
+          },
+          {
+            "label": "Sahara-Wüstentouren"
+          },
+          {
+            "label": "3-Tage-Sahara-Tour ab Marrakesch"
+          }
+        ]
+      }
     },
     "camel-trekking-etiquette-morocco": {
       "title": "Kameltrekking in Marokko: was dich erwartet und wie du dich vorbereitest",
       "excerpt": "Alles für Erst-Reiter: Was anziehen, wie aufsteigen, was mitnehmen – und die Traditionen hinter dieser jahrhundertealten Saharareise.",
       "alt": "Kamele ziehen bei Sonnenuntergang über goldene Dünen während einer Wüstentour",
       "canonicalTitle": "Kameltrekking in Marokko — Vorbereitung und Ablauf",
-      "canonicalExcerpt": "Alles für Erst-Reiter: Was anziehen, wie aufsteigen, was mitnehmen – und die Traditionen hinter dieser jahrhundertealten Saharareise."
+      "canonicalExcerpt": "Alles für Erst-Reiter: Was anziehen, wie aufsteigen, was mitnehmen – und die Traditionen hinter dieser jahrhundertealten Saharareise.",
+      "sections": [
+        {
+          "heading": "Was bei einer Kameltour tatsächlich passiert",
+          "paragraphs": [
+            "Die meisten Touren in den Erg Chebbi starten etwa eine Stunde vor Sonnenuntergang, überqueren offenes Geröll, bevor sie den ersten Dünenkamm erklimmen, während sich das Licht orange färbt. Der Ritt vom Dünenrand bis zu einem Wüstencamp dauert üblicherweise 50 bis 70 Minuten pro Strecke, in einem langsamen, gleichmäßigen Tempo mit Fotostopps.",
+            "Man reitet auf einem Dromedar — einem einhöckrigen Kamel — das von einem lokalen Berber-Kameltreiber aus der Region Merzouga zu Fuß geführt wird, der sich während der ganzen Zeit um das Tier kümmert. Erstbesucher sind meist überrascht, wie entspannt sich das anfühlt."
+          ]
+        },
+        {
+          "heading": "Auf- und Absteigen: Was Anfänger wissen sollten",
+          "paragraphs": [
+            "Das Kamel kniet sich hin, damit Sie auf- und absteigen können — lehnen Sie sich zurück, wenn es sich zuerst mit den Hinterbeinen erhebt, und wieder nach vorn, wenn es sich auf die Vorderbeine stellt, da die Bewegung ausgeprägter ist als beim Aufsteigen auf ein Pferd. Während der Fahrt hält man sich am vorderen Teil des Sattels fest, statt die Beine fest anzuspannen; der Gang ist ein sanftes Schaukeln von einer Seite zur anderen, kein Stoßen.",
+            "Gesteuert wird nicht selbst — der Kameltreiber führt das Tier an einem Seil, und die Kamele laufen meist in einer Reihe, Nase an Schwanz. Es gibt nichts weiter zu tun, als bequem zu sitzen und die Fahrt zu genießen."
+          ]
+        },
+        {
+          "heading": "Ist es sicher für Kinder oder ängstliche Reiter?",
+          "paragraphs": [
+            "Kinder reiten in der Regel zusammen mit einem Erwachsenen oder auf einem kürzer geführten Kamel, und ängstliche Reiter können das einfach ansprechen — Kameltreiber sind an Erstbesucher gewöhnt und gehen auf Wunsch langsamer oder bleiben näher am eigenen Tier. Wer nicht reiten kann oder möchte, kann das Camp meist stattdessen per 4x4 erreichen; fragen Sie bei der Buchung danach."
+          ]
+        },
+        {
+          "heading": "Was man für die Tour anziehen sollte",
+          "paragraphs": [
+            "Lockere, luftige Schichten funktionieren am besten — der Aufstieg zum Dünencamp erfolgt in warmem Tageslicht, aber die Temperatur fällt nach Sonnenuntergang schnell. Geschlossene Schuhe lassen sich leichter besteigen als Sandalen, und ein Schal oder Kopftuch (auch lokal in Merzouga gekauft ist völlig in Ordnung) schützt das Gesicht vor aufgewirbeltem Sand."
+          ]
+        },
+        {
+          "heading": "Respekt vor Kameltreibern und Tieren",
+          "paragraphs": [
+            "Die Kameltreiber sind lokale Berberführer, deren Familien seit Generationen auf diesem Dünenabschnitt arbeiten — richten Sie sich bei Tempo und Fotostopps nach ihnen, und fragen Sie, bevor Sie ein Tier füttern oder berühren, das nicht Ihr eigenes ist. Ein Trinkgeld für den Kameltreiber am Ende der Tour ist üblich und wird geschätzt, aber niemals verlangt."
+          ]
+        },
+        {
+          "heading": "Sonnenuntergang oder Sonnenaufgang — was sollten Sie wählen?",
+          "paragraphs": [
+            "Die Tour bei Sonnenuntergang ist die klassische Wahl: warmes Licht, lange Schatten auf den Dünen, und ein direkter Übergang in das Abendprogramm im Camp. Der Ausritt am nächsten Morgen zum Sonnenaufgang ist ruhiger und kühler, oft der fotogenste Teil des gesamten Aufenthalts. Die meisten Übernachtungen im Camp beinhalten ganz selbstverständlich beides."
+          ]
+        }
+      ],
+      "cta": {
+        "text": "Bereit, es selbst auszuprobieren? Lesen Sie unseren vollständigen Kameltrekking-Guide oder entdecken Sie die Sahara-Touren mit Sonnenuntergangstour und Camp-Nacht:",
+        "links": [
+          {
+            "label": "Vollständiger Kameltrekking-Guide"
+          },
+          {
+            "label": "Kameltouren"
+          },
+          {
+            "label": "3-Tage-Sahara-Tour ab Marrakesch"
+          }
+        ]
+      }
     },
     "marrakech-to-merzouga-roadtrip": {
       "title": "Von Marrakesch nach Merzouga: die ultimative Sahara-Roadtrip-Route",
       "excerpt": "Überquere den Hohen Atlas, erkunde Aït Ben Haddou, schlängle dich durch das Dades-Tal und erreiche die goldenen Dünen des Erg Chebbi – der komplette Routen-Guide.",
       "alt": "Der Ksar Aït Ben Haddou bei Sonnenuntergang, UNESCO-Welterbe an der Route von Marrakesch nach Merzouga",
       "canonicalTitle": "Marrakesch nach Merzouga — die Sahara-Roadtrip-Route",
-      "canonicalExcerpt": "Über den Hohen Atlas, vorbei an Aït Ben Haddou und durch das Dades-Tal bis zu den goldenen Dünen des Erg Chebbi – der komplette Routen-Guide."
+      "canonicalExcerpt": "Über den Hohen Atlas, vorbei an Aït Ben Haddou und durch das Dades-Tal bis zu den goldenen Dünen des Erg Chebbi – der komplette Routen-Guide.",
+      "sections": [
+        {
+          "heading": "Die Route in einem Absatz",
+          "paragraphs": [
+            "Marrakesch und Merzouga sind über einen einzigen praktischen Korridor verbunden: südlich über den Pass Tizi n'Tichka im Hohen Atlas, hinunter nach Aït Ben Haddou und Ouarzazate, östlich durch das Dadès-Tal, vorbei an der Todra-Schlucht und der Region Rissani/Tafilalet, weiter bis nach Merzouga am Fuß der Dünen des Erg Chebbi. Es ist eine echte Überlandreise — die Straße ist Teil des Erlebnisses, nicht nur ein Transfer zwischen zwei Punkten."
+          ]
+        },
+        {
+          "heading": "Die Überquerung des Hohen Atlas",
+          "paragraphs": [
+            "Von Marrakesch aus steigt die Straße schnell in den Hohen Atlas über den Pass Tizi n'Tichka, mit terrassenförmig angelegten Berberdörfern an den Hängen und Aussichtspunkten, die einen Stopp wert sind. Das ist das erste Zeichen dafür, dass sich die Landschaft — und das Klima — vollständig verändern wird."
+          ]
+        },
+        {
+          "heading": "Aït Ben Haddou: der erste Höhepunkt der Reise",
+          "paragraphs": [
+            "Auf der anderen Seite des Passes liegt Aït Ben Haddou, ein UNESCO-Welterbe-Ksar aus Lehmbauten und eine der eindrucksvollsten Sehenswürdigkeiten Südmarokkos — der Moment, in dem die Route unverkennbar in die Vor-Sahara übergeht. Ouarzazate, kurz dahinter, ist Marokkos Filmstudio-Hauptstadt und dient meist als Mittagsstopp statt als Übernachtungsort."
+          ]
+        },
+        {
+          "heading": "Das Dadès-Tal und die Todra-Schlucht",
+          "paragraphs": [
+            "Die Straße führt weiter durch das Dadès-Tal — Kasbahs, Rosenanbau-Dörfer und kurvenreiche Bergstraßen — ein natürlicher Ort, um die Reise mit einer Übernachtung zu unterbrechen. Die Todra-Schlucht mit ihren hoch aufragenden Felswänden und dem begehbaren Canyonboden folgt am nächsten Tag auf dem Weg nach Merzouga."
+          ]
+        },
+        {
+          "heading": "Ankunft in Merzouga: der Wüstentag",
+          "paragraphs": [
+            "Der letzte Abschnitt führt durch Rissani und das Tafilalet, das historische Herz der marokkanischen Wüsten-Handelsrouten, bevor Merzouga selbst erreicht wird. Von hier aus folgt der Tag einem klassischen Muster: Treffen mit dem Kamelteam am Dünenrand am Nachmittag, Trekking in den Erg Chebbi zum Sonnenuntergang, und eine Nacht im Wüstencamp zwischen den Dünen vor der Rückkehr am nächsten Morgen zum Sonnenaufgang."
+          ]
+        },
+        {
+          "heading": "3 Tage oder 4? Das richtige Tempo wählen",
+          "paragraphs": [
+            "Drei Tage sind das kürzeste Format, das wir für wirklich praktikabel halten: Tag eins über den Atlas bis zur Dadès-Region, Tag zwei durch die Todra-Schlucht bis zu den Dünen für die Sonnenuntergangstour und die Camp-Nacht, Tag drei die Rückkehr nach Marrakesch. Das funktioniert, aber der Zeitplan ist wirklich eng.",
+            "Vier Tage verändern den Charakter der Reise — die Rückfahrt wird kein Marathon mehr, und es bleibt Raum für einen richtigen halben Tag rund um Merzouga, bevor es zurückgeht. Wenn die Reisedaten es erlauben, ist das die Version, die die meisten Reisenden am Ende bevorzugen."
+          ]
+        }
+      ],
+      "cta": {
+        "text": "Entdecken Sie den vollständigen Routen-Guide, oder wählen Sie das Programm, das zu Ihren Reisedaten passt:",
+        "links": [
+          {
+            "label": "Vollständiger Routen-Guide Marrakesch–Merzouga"
+          },
+          {
+            "label": "3-Tage-Sahara-Tour ab Marrakesch"
+          },
+          {
+            "label": "4-Tage-Tour von Marrakesch nach Merzouga"
+          }
+        ]
+      }
     },
     "morocco-packing-list-desert": {
       "title": "Die perfekte Packliste für Wüstentouren in Marokko (2026)",
       "excerpt": "Was du für die Sahara einpacken solltest – von atmungsaktiven Schichten und Sonnenschutz bis zu den kleinen Luxusmomenten, die eine Wüstennacht unvergesslich machen.",
       "alt": "Wüstenpanorama mit fernen Dünen und klarem Himmel – die ideale Orientierung fürs Packen in Marokko",
       "canonicalTitle": "Packliste Marokko-Wüste — was in die Sahara mitmuss",
-      "canonicalExcerpt": "Was du für die Sahara einpacken solltest – atmungsaktive Schichten, Sonnenschutz und alles, was eine Wüstennacht unvergesslich macht."
+      "canonicalExcerpt": "Was du für die Sahara einpacken solltest – atmungsaktive Schichten, Sonnenschutz und alles, was eine Wüstennacht unvergesslich macht.",
+      "sections": [
+        {
+          "heading": "Für zwei Klimazonen an einem Tag packen",
+          "paragraphs": [
+            "Ein Sahara-Tagesausflug oder eine Camp-Nacht umfasst heiße Sonne auf den Dünen und einen kühlen — manchmal kalten — Wüstenabend, oft innerhalb derselben wenigen Stunden. Die untenstehende Packliste ist genau auf diesen Wechsel ausgerichtet, nicht auf eine allgemeine Liste für warme Länder."
+          ]
+        },
+        {
+          "heading": "Kleidung: die Schichten-Regel",
+          "paragraphs": [
+            "Ein atmungsaktives Oberteil und eine lockere Hose bewältigen die Tageshitze; ein warmer Fleece-Pullover oder eine leichte Daunenschicht ist das nützlichste Einzelstück, sobald die Sonne untergeht, besonders von Oktober bis März, wenn die Wüstennächte deutlich unter das Tageskomfort-Niveau fallen. Packen Sie einen Sonnenhut für den Tag und eine wärmere Mütze für den Abend ein."
+          ]
+        },
+        {
+          "heading": "Schuhe und Sonnenschutz",
+          "paragraphs": [
+            "Geschlossene, bequeme Schuhe sind auf heißem Sand und beim Erklimmen von Dünen besser als Sandalen — ein Paar mit vernünftigem Grip hilft auf losen Hängen. Eine Sonnenbrille (eng anliegende Modelle halten aufgewirbelten Staub besser ab) und Sonnenschutz mit LSF 30+ sind wichtig, auch wenn die Luft kühl wirkt."
+          ]
+        },
+        {
+          "heading": "Was für die Kameltour und die Camp-Nacht mitgenommen werden sollte",
+          "paragraphs": [
+            "Nur eine kleine Tasche begleitet Sie auf der Kameltour — das Hauptgepäck bleibt meist beim Fahrzeug. Eine Stirnlampe oder kleine Taschenlampe ist wirklich nützlich, da die Camps nach Mitternacht die Lichter ausschalten, und eine aufgeladene Powerbank zählt mehr als jede zusätzliche Kameraausrüstung."
+          ]
+        },
+        {
+          "heading": "Was NICHT eingepackt werden sollte",
+          "paragraphs": [
+            "Schwere Koffer, wertvoller Schmuck und alles, was während der Tour selbst auf eine Steckdose angewiesen ist — Sie sind während der Camp-Nacht fernab vom Fahrzeug, daher sind Stirnlampe und Powerbank die sicherere Wahl. Beschränken Sie das, was aufs Kamel kommt, auf eine leichte Übernachtungstasche."
+          ]
+        }
+      ],
+      "cta": {
+        "text": "Für die vollständige Packliste im Detail, oder um Ihre Sahara-Reise zu planen:",
+        "links": [
+          {
+            "label": "Vollständige Packliste für Merzouga"
+          },
+          {
+            "label": "Sahara-Wüstentouren"
+          },
+          {
+            "label": "3-Tage-Sahara-Tour ab Marrakesch"
+          }
+        ]
+      }
     },
     "fes-chefchaouen-blue-city-guide": {
       "title": "Von Fes nach Chefchaouen: Marokkos Blaue Perle entdecken",
       "excerpt": "Die Reise vom kulturellen Herzen Marokkos zur berühmten blauen Medina – was du sehen kannst, wo du übernachtest und wie du das Beste daraus machst.",
       "alt": "Blau getünchte Häuser und Gassen in der Medina von Chefchaouen, Marokko",
       "canonicalTitle": "Von Fes nach Chefchaouen — Marokkos Blaue Perle",
-      "canonicalExcerpt": "Die Reise vom kulturellen Herzen Marokkos zur berühmten blauen Medina – was du sehen kannst, wo du übernachtest und was sich lohnt."
+      "canonicalExcerpt": "Die Reise vom kulturellen Herzen Marokkos zur berühmten blauen Medina – was du sehen kannst, wo du übernachtest und was sich lohnt.",
+      "sections": [
+        {
+          "heading": "Warum Reisende Fès mit Chefchaouen kombinieren",
+          "paragraphs": [
+            "Fès ist Marokkos kulturelle und spirituelle Hauptstadt — Heimat der Al-Qarawiyyin, der weltweit ältesten durchgehend betriebenen Universität, und der Fès el-Bali, einer der größten noch lebenden mittelalterlichen Medinas der Welt. Chefchaouen, eine blau getünchte Bergstadt im Rif, bietet einen ganz anderen Rhythmus: langsamer, kühler und für das Umherstreifen statt für Sightseeing nach Checkliste gemacht. Beide passen natürlich in dieselbe Nordmarokko-Route statt in eine Sahara-fokussierte Reise."
+          ]
+        },
+        {
+          "heading": "Ein ganzer Tag in Fès el-Bali",
+          "paragraphs": [
+            "Die tausenden Gassen von Fès el-Bali laden wirklich dazu ein, sich zu verlaufen — deshalb lohnt sich ein lokaler Führer hier besonders. Die Färbebottiche der Chouara-Gerberei, die geschnitzten Zedernholz-Arbeiten der Medersa Bou Inania, und das monumentale Tor Bab Bou Jeloud sind die Ankerpunkte, um die herum die meisten Routen gebaut werden."
+          ]
+        },
+        {
+          "heading": "Was man in der blauen Medina von Chefchaouen sehen sollte",
+          "paragraphs": [
+            "Der Reiz liegt in der gesamten Medina, nicht in einem einzelnen Monument — jede Gasse und jedes Treppenhaus in Blautönen gestrichen, von Puderblau bis Indigo. Der Platz Uta el-Hammam ist das natürliche Zentrum für ein Mittagessen auf der Dachterrasse, und der Aufstieg zum Aussichtspunkt der Spanischen Moschee bei Sonnenuntergang ist der klassische Weg, die blaue Stadt von oben zu sehen."
+          ]
+        },
+        {
+          "heading": "Jenseits der blauen Gassen: Akchour",
+          "paragraphs": [
+            "Für Reisende mit einem zusätzlichen halben oder ganzen Tag bietet das Akchour-Tal außerhalb von Chefchaouen Flussbecken, bewaldete Schluchten und eine Wanderung zur natürlichen Steinbrücke, bekannt als Gottes Brücke — ein kühlerer, wilderer Kontrast zur Medina."
+          ]
+        },
+        {
+          "heading": "Wie das in eine private Marokko-Reise passt",
+          "paragraphs": [
+            "Chefchaouen liegt auf der nördlichen Route zwischen Tanger, Fès und der Küste, weshalb es sich natürlich mit Reisen zu den Kaiserstädten statt mit einer Wüstenroute kombinieren lässt. Mehrere unserer privaten Routen verbinden die beiden Orte bereits — die 5-tägige Kaiserstädte-Route besucht Fès, bevor sie weiter nach Chefchaouen führt, und unsere ab Casablanca startenden Routen können eine Nacht in Chefchaouen im Rahmen einer längeren Nordschleife einschließen."
+          ]
+        }
+      ],
+      "cta": {
+        "text": "Entdecken Sie Fès und Chefchaouen genauer, oder sehen Sie sich die privaten Routen an, die beide verbinden:",
+        "links": [
+          {
+            "label": "Reiseführer Fès"
+          },
+          {
+            "label": "Reiseführer Chefchaouen"
+          },
+          {
+            "label": "5-Tage-Tour durch Kaiserstädte und Wüste"
+          }
+        ]
+      }
     }
   },
   "tourDepth": {

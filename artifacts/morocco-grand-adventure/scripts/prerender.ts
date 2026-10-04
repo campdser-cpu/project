@@ -33,7 +33,7 @@ import * as path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { destinations, contactInfo, reviews, type Review, type Tour, type Destination } from '../src/data/content';
-import { BLOG_ARTICLE_SECTIONS, BLOG_ARTICLE_CTA } from '../src/data/blog-article-sections';
+import { BLOG_ARTICLE_SECTIONS } from '../src/data/blog-article-sections';
 import { CITY_HUBS, TOUR_DEPARTURE_CITY, CITY_HUB_DURATIONS, tourIdsForCity, tourDurationDays, DAY_TRIP_PRODUCT_IDS, FEATURED_TOUR_IDS } from '../src/data/tour-hierarchy';
 import { MERZOUGA_GUIDES, COMPARISONS, TRAVEL_INFO, type HubPage } from '../src/data/seoHub';
 import { localizedComparisonMeta } from '../src/data/comparison-meta-i18n';
@@ -53,6 +53,7 @@ import {
   getLocalizedDestinations,
   getLocalizedFaq,
   getLocalizedBlogSections,
+  getLocalizedBlogCta,
   getLocalizedStudentTour,
   blogPosts,
   type BlogPost,
@@ -1239,7 +1240,7 @@ function buildBlogArticleBody(slug: string, lang: Lang): string {
   if (!BLOG_ARTICLE_SECTIONS[slug]) return '';
   const sections = getLocalizedBlogSections(slug, lang);
   const body = sections.map((s) => h2(s.heading) + s.paragraphs.map((p) => paragraph(p)).join('')).join('');
-  const cta = BLOG_ARTICLE_CTA[slug];
+  const cta = getLocalizedBlogCta(slug, lang);
   const ctaBlock = cta
     ? paragraph(cta.text) + `<div class="topical-link-list">${cta.links.map((l) => ` ${link(`${SITE_URL}/${lang}${l.to}`, l.label)}`).join('')}</div>\n`
     : '';

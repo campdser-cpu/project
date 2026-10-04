@@ -23,7 +23,7 @@ import {
 import type { Lang } from '@/i18n/index';
 import type { ContentOverlay } from './types';
 import { tourDepthFor, type TourDepth } from '@/data/tourDepth';
-import { BLOG_ARTICLE_SECTIONS, type BlogSection } from '@/data/blog-article-sections';
+import { BLOG_ARTICLE_SECTIONS, BLOG_ARTICLE_CTA, type BlogSection, type BlogCta } from '@/data/blog-article-sections';
 import type { StudentTour } from '@/data/student-tours';
 
 // ── Locale overlay registry ─────────────────────────────────────────────────
@@ -329,6 +329,25 @@ export function getLocalizedBlogSections(slug: string, lang: Lang): BlogSection[
     heading: pickText(section.heading, overlay[i]?.heading),
     paragraphs: section.paragraphs.map((p, j) => pickText(p, overlay[i]?.paragraphs?.[j])),
   }));
+}
+
+/**
+ * Get the localized contextual CTA for a blog article, falling back to the
+ * canonical English text/labels (src/data/blog-article-sections.ts) for any
+ * missing field. Link `to` targets are never touched, only the visible text.
+ */
+export function getLocalizedBlogCta(slug: string, lang: Lang): BlogCta | undefined {
+  const base = BLOG_ARTICLE_CTA[slug];
+  if (!base) return undefined;
+  const overlay = getOverlay(lang)?.blog?.[slug]?.cta;
+  if (!overlay) return base;
+  return {
+    text: pickText(base.text, overlay.text),
+    links: base.links.map((l, i) => ({
+      ...l,
+      label: pickText(l.label, overlay.links?.[i]?.label),
+    })),
+  };
 }
 
 /**

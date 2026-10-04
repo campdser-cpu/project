@@ -13,11 +13,11 @@ import {
 import {
   getLocalizedBlogPost,
   getLocalizedBlogSections,
+  getLocalizedBlogCta,
   getLocalizedTours,
   getLocalizedDestinations,
   blogPosts,
 } from '@/i18n/content';
-import { BLOG_ARTICLE_CTA } from '@/data/blog-article-sections';
 import { destinationImageAlt } from '@/data/content';
 import { StructuredData, buildBlogPostSchema } from '@/components/seo/StructuredData';
 import { BLOG_META } from '@/components/seo/route-metadata';
@@ -72,7 +72,7 @@ export default function BlogPost() {
 
   const relations = ARTICLE_RELATIONS[post.slug] ?? { tours: [], destinations: [] };
   const sections = getLocalizedBlogSections(post.slug, lang);
-  const cta = BLOG_ARTICLE_CTA[post.slug];
+  const cta = getLocalizedBlogCta(post.slug, lang);
   const relatedTours = relations.tours
     .map((id) => getLocalizedTours(lang).find((t) => t.id === id))
     .filter((t): t is NonNullable<typeof t> => Boolean(t));

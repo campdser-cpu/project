@@ -56,6 +56,8 @@ export type BlogPostOverlay = {
   canonicalExcerpt?: string;
   /** Localized long-form article body, matched by index against BLOG_ARTICLE_SECTIONS. */
   sections?: { heading?: string; paragraphs?: (string | undefined)[] }[];
+  /** Localized contextual CTA, matched by index against BLOG_ARTICLE_CTA[slug].links. */
+  cta?: { text?: string; links?: { label?: string }[] };
 };
 
 /** One itinerary day of a Student Tour product, matched by index. */
