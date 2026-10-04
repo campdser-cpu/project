@@ -4,7 +4,8 @@ import { Layout } from '../components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { contactInfo, destinations, destinationImageAlt } from '@/data/content';
 import { trackEvent } from '@/lib/analytics';
-import { categoryLabel } from '@/i18n/content';
+import { categoryLabel, getLocalizedDestinations } from '@/i18n/content';
+import { fmtTemplate } from '@/components/tours/intl';
 import {
   MapPin,
   Calendar,
@@ -19,7 +20,10 @@ import {
 
 type Budget = '<$300' | '$300-600' | '$600-1000' | '>$1000';
 
-const CITIES = ['Casablanca', 'Marrakech', 'Tangier', 'Fes', 'Agadir'];
+// Internal ids matching destinations[].id / CITY_HUBS — stable for coordinate
+// lookups, analytics and routing regardless of locale. Display label comes
+// from the existing hub_{id}_name translation via cityLabel() below.
+const CITY_IDS = ['casablanca', 'marrakech', 'tangier', 'fes', 'agadir'];
 
 const INTERESTS_DATA = [
   { id: 'sahara', key: 'tb_interest_sahara' as const, icon: '🏜️' },
@@ -61,15 +65,9 @@ const getDistance = (lat1: number, lon1: number, lat2: number, lon2: number) => 
   return R * c * 1.3; // roughly 1.3x for driving via roads
 };
 
-const getCityCoords = (city: string) => {
-  const c = destinations.find(d => d.name === city);
-  if (c) return c.coords;
-  if (city === 'Casablanca') return { lat: 33.5731, lng: -7.5898 };
-  if (city === 'Marrakech') return { lat: 31.6295, lng: -7.9811 };
-  if (city === 'Tangier') return { lat: 35.7595, lng: -5.8340 };
-  if (city === 'Fes') return { lat: 34.0181, lng: -5.0078 };
-  if (city === 'Agadir') return { lat: 30.4278, lng: -9.5981 };
-  return { lat: 33.5731, lng: -7.5898 };
+const getCityCoords = (cityId: string) => {
+  const c = destinations.find(d => d.id === cityId);
+  return c ? c.coords : { lat: 33.5731, lng: -7.5898 };
 };
 
 const stepVariants: Variants = {
@@ -81,9 +79,12 @@ const stepVariants: Variants = {
 export default function TripBuilder() {
   const { t, lang } = useLanguage();
   
+  const cityLabel = (id: string) => t(`hub_${id}_name` as Parameters<typeof t>[0]);
+  const localizedDestinations = useMemo(() => getLocalizedDestinations(lang), [lang]);
+
   const [step, setStep] = useState(1);
-  const [arrival, setArrival] = useState(CITIES[0]);
-  const [departure, setDeparture] = useState(CITIES[1]);
+  const [arrival, setArrival] = useState(CITY_IDS[0]);
+  const [departure, setDeparture] = useState(CITY_IDS[1]);
   const [days, setDays] = useState(7);
   const [travelers, setTravelers] = useState(2);
   const [budget, setBudget] = useState<Budget>('$300-600');
@@ -112,7 +113,7 @@ export default function TripBuilder() {
   const itineraryData = useMemo(() => {
     if (selectedDestinations.length === 0) return { itinerary: [], totalDistance: 0, nights: [] };
     
-    const selectedList = destinations.filter(d => selectedDestinations.includes(d.id));
+    const selectedList = localizedDestinations.filter(d => selectedDestinations.includes(d.id));
     let currentLoc = getCityCoords(arrival);
     let remaining = [...selectedList];
     const route = [];
@@ -161,7 +162,7 @@ export default function TripBuilder() {
           itinerary.push({
             day: currentDay,
             title: currentDay === 1 ? `${t('tb_itinerary_arrival')} ${dest.name}` : `${t('tb_itinerary_journey')} ${dest.name}`,
-            description: `Travel to ${dest.name}. ${dest.shortDesc}`,
+            description: fmtTemplate(t('tb_desc_travel_to'), { name: dest.name, desc: dest.shortDesc }),
             distance: Math.round(dist),
             dest,
             stay: dest.name
@@ -171,7 +172,7 @@ export default function TripBuilder() {
           itinerary.push({
             day: currentDay,
             title: `${t('tb_itinerary_exploring')} ${dest.name}`,
-            description: `Discover the highlights of ${dest.name}, including ${dest.highlights.join(', ')}.`,
+            description: fmtTemplate(t('tb_desc_discover'), { name: dest.name, highlights: dest.highlights.join(', ') }),
             distance: 0,
             dest,
             stay: dest.name
@@ -190,8 +191,8 @@ export default function TripBuilder() {
     if (days > 1) {
       itinerary.push({
         day: currentDay,
-        title: `${t('tb_itinerary_departure')} ${departure}`,
-        description: `Travel to ${departure} for your onward journey.`,
+        title: `${t('tb_itinerary_departure')} ${cityLabel(departure)}`,
+        description: fmtTemplate(t('tb_desc_onward'), { city: cityLabel(departure) }),
         distance: Math.round(distToDep),
         dest: null,
         stay: null
@@ -199,7 +200,7 @@ export default function TripBuilder() {
     }
 
     return { itinerary, totalDistance, nights: [...new Set(nights)] };
-  }, [arrival, departure, days, selectedDestinations]);
+  }, [arrival, departure, days, selectedDestinations, localizedDestinations, t]);
 
   const whatsappLink = useMemo(() => {
     const interestLabels = selectedInterests
@@ -208,7 +209,7 @@ export default function TripBuilder() {
         return item ? t(item.key) : id;
       })
       .filter(Boolean);
-    const destNames = selectedDestinations.map(id => destinations.find(d=>d.id===id)?.name).filter(Boolean);
+    const destNames = selectedDestinations.map(id => localizedDestinations.find(d=>d.id===id)?.name).filter(Boolean);
 
     // Multi-line message built with real newlines, then URL-encoded as a whole
     // (manual %0A + raw interpolation breaks on values containing & or #).
@@ -216,7 +217,7 @@ export default function TripBuilder() {
       '*New Bespoke Journey Request*',
       '',
       '*Basics:*',
-      `- Route: ${arrival} to ${departure}`,
+      `- Route: ${cityLabel(arrival)} to ${cityLabel(departure)}`,
       `- Duration: ${days} days`,
       `- Travelers: ${travelers}`,
       `- Budget: ${budget}`,
@@ -233,7 +234,7 @@ export default function TripBuilder() {
       lines.push('', `Total driving distance: ~${itineraryData.totalDistance} km`);
     }
     return `${contactInfo.whatsapp}?text=${encodeURIComponent(lines.join('\n'))}`;
-  }, [t, arrival, departure, days, travelers, budget, selectedInterests, selectedDestinations, itineraryData]);
+  }, [t, arrival, departure, days, travelers, budget, selectedInterests, selectedDestinations, itineraryData, localizedDestinations]);
 
   return (
     <Layout>
@@ -305,7 +306,7 @@ export default function TripBuilder() {
                           <div className="relative group">
                             <MapPin className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-primary group-hover:scale-110 transition-transform" />
                             <select value={arrival} onChange={e => setArrival(e.target.value)} className="w-full bg-background border border-border hover:border-primary/50 rounded-2xl py-4 pl-14 pr-6 text-foreground font-medium appearance-none focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all cursor-pointer shadow-sm">
-                              {CITIES.map(c => <option key={c} value={c}>{c}</option>)}
+                              {CITY_IDS.map(id => <option key={id} value={id}>{cityLabel(id)}</option>)}
                             </select>
                             <div className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-muted-foreground">
                               <ChevronRight className="w-4 h-4 rotate-90" />
@@ -317,7 +318,7 @@ export default function TripBuilder() {
                           <div className="relative group">
                             <MapPin className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-primary group-hover:scale-110 transition-transform" />
                             <select value={departure} onChange={e => setDeparture(e.target.value)} className="w-full bg-background border border-border hover:border-primary/50 rounded-2xl py-4 pl-14 pr-6 text-foreground font-medium appearance-none focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all cursor-pointer shadow-sm">
-                              {CITIES.map(c => <option key={c} value={c}>{c}</option>)}
+                              {CITY_IDS.map(id => <option key={id} value={id}>{cityLabel(id)}</option>)}
                             </select>
                             <div className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-muted-foreground">
                               <ChevronRight className="w-4 h-4 rotate-90" />
@@ -452,7 +453,7 @@ export default function TripBuilder() {
                     </div>
                     
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-h-[60vh] overflow-y-auto pr-2 pb-4 scrollbar-thin scrollbar-thumb-primary/20 scrollbar-track-transparent">
-                      {destinations.map(dest => {
+                      {localizedDestinations.map(dest => {
                         const isSelected = selectedDestinations.includes(dest.id);
                         return (
                           <button
