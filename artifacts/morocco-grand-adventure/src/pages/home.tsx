@@ -744,7 +744,7 @@ export default function Home() {
           <CinematicVideo
             src="/videos/sahara-experience.mp4"
             poster="/images/personal/luxury-camp-dusk.webp"
-            alt="Cinematic film of the Sahara desert experience near Merzouga"
+            alt={t('home_exp_video_alt')}
             autoPlay={false}
             aspectClass="aspect-video"
             className="max-w-5xl mx-auto"
@@ -764,7 +764,7 @@ export default function Home() {
             srcSet="/images/personal/luxury-camp-dusk-480w.webp 480w, /images/personal/luxury-camp-dusk-768w.webp 768w, /images/personal/luxury-camp-dusk.webp 1200w"
             sizes="100vw"
             width={1200}
-            height={1200} alt="Luxury Desert Camp" loading="lazy" decoding="async" className="w-full h-full object-cover" />
+            height={1200} alt={t('home_luxury_camp_alt')} loading="lazy" decoding="async" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/40" />
         </div>
         <div className="relative z-10 container mx-auto px-4 flex justify-center md:justify-end">

@@ -304,7 +304,7 @@ export default function DestinationDetail() {
                   <CinematicVideo
                     src="/videos/merzouga-campfire.mp4"
                     poster="/images/dest/merzouga.webp"
-                    alt="Evening campfire scene in the Sahara Desert near Merzouga, Morocco"
+                    alt={t('dd_merzouga_campfire_alt')}
                     title={t('dest_merzouga_caption')}
                     aspectClass="aspect-video"
                   />
@@ -315,17 +315,17 @@ export default function DestinationDetail() {
               {destination.id === 'ait-ben-haddou' && (
                 <div className="mb-16">
                   <h3 className="font-serif text-3xl text-foreground mb-3 flex items-center gap-3">
-                    🏰 Aït Ben Haddou in Motion
+                    🏰 {t('dd_abh_heading')}
                   </h3>
                   <p className="text-muted-foreground mb-6 leading-relaxed">
-                    Watch the UNESCO-listed ksar glow at golden hour — red-earth towers, Amazigh artisans, and centuries of history carved in clay.
+                    {t('dd_abh_sub')}
                   </p>
                   <CinematicVideo
                     src="/videos/ait-benhaddou-kasbah-unesco-morocco.mp4"
                     poster="/images/dest/ait-ben-haddou.webp"
-                    alt="Aït Ben Haddou UNESCO kasbah at sunset with local Amazigh artisans, Morocco"
-                    title="Aït Ben Haddou"
-                    subtitle="A living UNESCO kasbah where Amazigh artisans still shape clay by hand."
+                    alt={t('dd_abh_video_alt')}
+                    title={t('dd_abh_video_title')}
+                    subtitle={t('dd_abh_video_subtitle')}
                   />
                 </div>
               )}
@@ -334,17 +334,17 @@ export default function DestinationDetail() {
               {destination.id === 'chefchaouen' && (
                 <div className="mb-16">
                   <h3 className="font-serif text-3xl text-foreground mb-3 flex items-center gap-3">
-                    💙 Chefchaouen — The Blue Pearl
+                    💙 {t('dd_chef_heading')}
                   </h3>
                   <p className="text-muted-foreground mb-6 leading-relaxed">
-                    Wander the blue-painted streets and stairways of Morocco's most photogenic town, nestled in the Rif Mountains.
+                    {t('dd_chef_sub')}
                   </p>
                   <CinematicVideo
                     src="/videos/chefchaouen-blue-city-morocco.mp4"
                     poster="/images/dest/chefchaouen.webp"
-                    alt="Blue-painted streets and stairways of Chefchaouen, Morocco's Blue Pearl"
-                    title="Chefchaouen"
-                    subtitle="The Blue Pearl — what are you waiting for to discover this dreamlike town?"
+                    alt={t('dd_chef_video_alt')}
+                    title={t('dd_chef_video_title')}
+                    subtitle={t('dd_chef_video_subtitle')}
                   />
                 </div>
               )}
@@ -353,10 +353,10 @@ export default function DestinationDetail() {
               {destination.id === 'merzouga' && (
                 <div className="mb-16">
                   <h3 className="font-serif text-3xl text-foreground mb-3 flex items-center gap-3">
-                    ✨ The Dunes, Day &amp; Night
+                    ✨ {t('dd_dunes_day_night')}
                   </h3>
                   <p className="text-muted-foreground mb-6 leading-relaxed">
-                    From golden light rolling across Erg Chebbi at sunrise to a sky ablaze with stars after dark — this is why travelers never forget a night in Merzouga.
+                    {t('dd_dunes_sub')}
                   </p>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="relative rounded-3xl overflow-hidden shadow-xl border border-border group">
@@ -364,7 +364,7 @@ export default function DestinationDetail() {
                         src="/images/personal/sahara-dunes-golden.webp"
   width={960}
   height={1200}
-                        alt="Golden sand dunes of Erg Chebbi at sunrise near Merzouga"
+                        alt={t('dd_sunrise')}
                         loading="lazy"
                         decoding="async"
                         className="w-full h-72 md:h-96 object-cover transition-transform duration-700 group-hover:scale-105"
@@ -377,7 +377,7 @@ export default function DestinationDetail() {
                         src="/images/stock/stargazing-merzouga.webp"
   width={801}
   height={1200}
-                        alt="The Milky Way over the Sahara Desert at night near Merzouga"
+                        alt={t('dd_stargazing')}
                         loading="lazy"
                         decoding="async"
                         className="w-full h-72 md:h-96 object-cover transition-transform duration-700 group-hover:scale-105"

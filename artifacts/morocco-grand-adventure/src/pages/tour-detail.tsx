@@ -2,6 +2,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { useRoute, Link } from 'wouter';
 import { Layout } from '../components/layout/Layout';
 import { getLocalizedTour, getLocalizedTours, getLocalizedFaq, getLocalizedDestinations, getLocalizedTourDepth } from '@/i18n/content';
+import { fmtTemplate } from '../components/tours/intl';
 import { lazy, Suspense } from 'react';
 import { LazyMount } from '../components/perf/LazyMount';
 
@@ -283,8 +284,8 @@ export default function TourDetail() {
       {tour.videoUrl && (
         <section className="bg-foreground py-16 md:py-20">
           <div className="container mx-auto px-4 max-w-5xl text-center">
-            <span className="text-primary font-bold tracking-[0.2em] uppercase text-xs md:text-sm mb-3 block">Watch the Journey</span>
-            <h2 className="font-serif text-3xl md:text-5xl text-background mb-8">A Cinematic Preview</h2>
+            <span className="text-primary font-bold tracking-[0.2em] uppercase text-xs md:text-sm mb-3 block">{t('td_watch_journey')}</span>
+            <h2 className="font-serif text-3xl md:text-5xl text-background mb-8">{t('td_cinematic')}</h2>
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10">
               <video
                 src={tour.videoUrl}
@@ -293,7 +294,7 @@ export default function TourDetail() {
                 playsInline
                 preload="none"
                 className="w-full aspect-video object-cover bg-black"
-                aria-label={`${tour.name} preview video`}
+                aria-label={fmtTemplate(t('td_preview_video_aria'), { name: tour.name })}
               />
             </div>
           </div>
@@ -309,7 +310,7 @@ export default function TourDetail() {
             {/* Overview */}
             {tour.description && (
               <div className="mb-12">
-                <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-5">Tour Overview</h2>
+                <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-5">{t('td_overview')}</h2>
                 <p className="text-muted-foreground text-lg leading-relaxed">{tour.description}</p>
               </div>
             )}
@@ -588,7 +589,7 @@ export default function TourDetail() {
 
             {/* FAQ */}
             <div className="mb-16">
-              <h2 className="font-serif text-4xl text-foreground mb-8">Frequently Asked Questions</h2>
+              <h2 className="font-serif text-4xl text-foreground mb-8">{t('td_faq_title')}</h2>
               <div className="space-y-3">
                 {faqs.map((f, i) => (
                   <div key={i} className="bg-card border border-border rounded-2xl overflow-hidden">
@@ -662,7 +663,7 @@ export default function TourDetail() {
                     <button
                       onClick={() => setTravelers(Math.max(1, travelers - 1))}
                       className="w-10 h-10 rounded-lg bg-muted text-foreground flex items-center justify-center hover:bg-primary/20 transition-colors"
-                      aria-label="Decrease travelers"
+                      aria-label={t('td_decrease')}
                     >
                       -
                     </button>
@@ -670,7 +671,7 @@ export default function TourDetail() {
                     <button
                       onClick={() => setTravelers(travelers + 1)}
                       className="w-10 h-10 rounded-lg bg-muted text-foreground flex items-center justify-center hover:bg-primary/20 transition-colors"
-                      aria-label="Increase travelers"
+                      aria-label={t('td_increase')}
                     >
                       +
                     </button>
@@ -692,7 +693,7 @@ export default function TourDetail() {
 
                 <div className="relative flex py-2 items-center">
                   <div className="flex-grow border-t border-border"></div>
-                  <span className="shrink-0 mx-4 text-muted-foreground text-xs uppercase tracking-widest">or</span>
+                  <span className="shrink-0 mx-4 text-muted-foreground text-xs uppercase tracking-widest">{t('td_or')}</span>
                   <div className="flex-grow border-t border-border"></div>
                 </div>
 
