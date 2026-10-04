@@ -12,7 +12,7 @@ const MoroccoMap = lazy(() =>
 );
 import NotFound from './not-found';
 import { motion } from 'framer-motion';
-import { Clock, Users, CheckCircle2, Check, X, Star, CalendarDays, ChevronRight, MapPin, Plus, Minus, Route } from 'lucide-react';
+import { Clock, Users, CheckCircle2, Check, X, Star, CalendarDays, ChevronRight, MapPin, Plus, Minus, Route, Mail } from 'lucide-react';
 import { SiWhatsapp } from 'react-icons/si';
 import { FcGoogle } from 'react-icons/fc';
 import { useState } from 'react';
@@ -26,7 +26,7 @@ import { TOUR_DEPARTURE_CITY, getCityHub } from '@/data/tour-hierarchy';
 import { TourBreadcrumbs } from '../components/tours/TourBreadcrumbs';
 import { MERZOUGA_GUIDES, COMPARISONS, TRAVEL_INFO } from '@/data/seoHub';
 import { getLocalizedGuide } from '@/i18n/guides';
-import { tours as canonicalTours, destinations as canonicalDestinations } from '@/data/content';
+import { tours as canonicalTours, destinations as canonicalDestinations, contactInfo } from '@/data/content';
 import { deriveTourExperiences } from '@/data/tour-experiences';
 import { deriveTourStartEnd } from '@/data/tour-quick-facts';
 import { IncludedExperiences } from '../components/tours/IncludedExperiences';
@@ -672,16 +672,25 @@ export default function TourDetail() {
               </div>
 
               <div className="space-y-4 mb-6">
-                <a
-                  href={promoOn
-                    ? waPromoLink(`${t('promo_wa_message')}\n\n${tour.name} · ${travelers}p${date ? ` · ${date}` : ''}`)
-                    : waPromoLink(`New Tour Booking Request\n\nTour: ${tour.name}\nTravelers: ${travelers}${date ? `\nTravel dates: ${date}` : ''}`)}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="w-full bg-[#25D366] text-[#0d2b1d] py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-[#128C7E] transition-all hover:-translate-y-1 shadow-lg shadow-[#25D366]/30 text-lg"
-                >
-                  <SiWhatsapp className="w-6 h-6" aria-hidden="true" /> {promoOn ? t('promo_cta') : t(isDayTrip ? 'price_quote_cta_day' : 'price_quote_cta')}
-                </a>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <a
+                    href={promoOn
+                      ? waPromoLink(`${t('promo_wa_message')}\n\n${tour.name} · ${travelers}p${date ? ` · ${date}` : ''}`)
+                      : waPromoLink(`New Tour Booking Request\n\nTour: ${tour.name}\nTravelers: ${travelers}${date ? `\nTravel dates: ${date}` : ''}`)}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex-1 bg-[#25D366] text-[#0d2b1d] py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-[#128C7E] transition-all hover:-translate-y-1 shadow-lg shadow-[#25D366]/30 text-lg"
+                  >
+                    <SiWhatsapp className="w-6 h-6" aria-hidden="true" /> {promoOn ? t('promo_cta') : t(isDayTrip ? 'price_quote_cta_day' : 'price_quote_cta')}
+                  </a>
+
+                  <a
+                    href={`mailto:${contactInfo.email}?subject=${encodeURIComponent(fmtTemplate(t('email_quote_subject'), { tour: tour.name }))}&body=${encodeURIComponent(fmtTemplate(t('email_quote_body'), { tour: tour.name }))}`}
+                    className="flex-1 bg-background border-2 border-foreground text-foreground py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-foreground hover:text-background transition-all text-lg"
+                  >
+                    <Mail className="w-6 h-6" aria-hidden="true" /> {t('price_quote_cta_email')}
+                  </a>
+                </div>
 
                 <div className="relative flex py-2 items-center">
                   <div className="flex-grow border-t border-border"></div>
