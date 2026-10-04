@@ -196,15 +196,7 @@ export default function TourDetail() {
               <span className="flex items-center gap-2"><Clock className="w-5 h-5 text-primary" /> {tour.duration}</span>
               <span className="flex items-center gap-2"><Users className="w-5 h-5 text-primary" /> {t('tour_private')}</span>
               <span className="flex items-baseline gap-2 md:pl-6 md:border-l border-white/20">
-                {isQuoteOnly ? (
-                  <span className="text-sm font-semibold text-white">{t('price_tailored')}</span>
-                ) : (
-                  <>
-                    <span className="text-sm font-sans font-normal text-white/80">{t('from')}</span>
-                    <PriceTag price={tour.price} size="md" tone="onDark" />
-                    <span className="text-sm font-sans font-normal text-white/70">{t('book_per_person')}</span>
-                  </>
-                )}
+                <span className="text-sm font-semibold text-white">{t('price_tailored')}</span>
               </span>
             </div>
           </motion.div>

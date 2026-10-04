@@ -31,9 +31,13 @@ export function isPromoActive(now: number = Date.now()): boolean {
   return PROMO_ENABLED && now <= PROMO_DEADLINE.getTime();
 }
 
-/** True when a tour carries a real published price rather than the quote sentinel. */
-export function hasPublishedPrice(price: number | string): boolean {
-  return typeof price === 'number' ? Number.isFinite(price) && price > 0 : /\d/.test(price);
+/**
+ * Public numeric prices have been removed site-wide in favor of a
+ * personalized-quote message (see PriceTag) — every tour now shows the
+ * tailored-quote text instead of a headline figure, regardless of price data.
+ */
+export function hasPublishedPrice(_price: number | string): boolean {
+  return false;
 }
 
 /** Discounted price (rounded), from a number or numeric string like "450". */

@@ -27,7 +27,6 @@
 //   /en/blog                → dist/en/blog/index.html
 //   /en/tours/:id           → dist/en/tours/<id>.html  (6 major tour routes)
 // ─────────────────────────────────────────────────────────────────────────────
-import { fromParty } from '../src/data/pricing/ladder';
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -512,7 +511,7 @@ function buildCityHubContent(slug: string, lang: Lang): string {
   for (const t of cityTours) {
     tourBlocks += h2(t.name)
       + paragraph(t.description ?? '')
-      + paragraph(`${tr(lang, 'search_duration')}: ${t.duration} · ${t.quoteOnly ? tr(lang, 'price_tailored') : `${tr(lang, 'from')} €${t.price} / ${tr(lang, 'px_per_person')} — ${tr(lang, 'px_from_basis').replace('{n}', String(fromParty(t.id) ?? 2))}`}`)
+      + paragraph(`${tr(lang, 'search_duration')}: ${t.duration} · ${tr(lang, 'price_tailored')}`)
       + '<ul>' + t.highlights.map((x) => `      <li>${link(`${SITE_URL}/${lang}/tours/${t.id}`, x)}</li>`).join('\n') + '    </ul>'
       + rawParagraph(link(`${SITE_URL}/${lang}/tours/${t.id}`, tr(lang, 'tours_view') + ' ' + escapeHtml(t.name)));
   }
@@ -566,7 +565,7 @@ function buildDurationHubContent(slug: string, days: number, lang: Lang): string
   for (const t of matching) {
     tourBlocks += h2(t.name)
       + paragraph(t.description ?? '')
-      + paragraph(`${t.quoteOnly ? tr(lang, 'price_tailored') : `${tr(lang, 'from')} €${t.price} / ${tr(lang, 'px_per_person')} — ${tr(lang, 'px_from_basis').replace('{n}', String(fromParty(t.id) ?? 2))}`} · ${t.duration}`)
+      + paragraph(`${tr(lang, 'price_tailored')} · ${t.duration}`)
       + rawParagraph(link(`${SITE_URL}/${lang}/tours/${t.id}`, tr(lang, 'tours_view') + ' ' + escapeHtml(t.name)));
   }
 

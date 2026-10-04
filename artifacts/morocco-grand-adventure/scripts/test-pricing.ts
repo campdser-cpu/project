@@ -539,13 +539,13 @@ const ANCHOR = '3-day-sahara-marrakech';
   }
 }
 
-// ── 7. REGRESSION — no discount messaging anywhere ───────────────────────────
+// ── 7. REGRESSION — no public prices, no discount messaging anywhere ────────
 //
-// The tours now carry published premium private prices. A "Save 10%" badge next
-// to a price that is not discounted would be a claim the booking never honours,
-// and a struck-through "original" nobody was ever charged would be a fake. The
-// promotion is therefore off at its single gate, and PriceTag has no discount
-// path left at all. This pins both shut.
+// Public numeric prices were removed site-wide in favor of a personalized-quote
+// message (see PriceTag / hasPublishedPrice): no tour may show a price, so a
+// "Save 10%" badge or a struck-through "original" can never appear either. The
+// promotion is off at its single gate, and PriceTag has no discount path left
+// at all. This pins all three shut.
 
 {
   const { isPromoActive, hasPublishedPrice, PROMO_ENABLED } = await import('../src/lib/promo');
@@ -556,15 +556,15 @@ const ANCHOR = '3-day-sahara-marrakech';
   // Even with the deadline far in the future, the master switch wins.
   assert.equal(isPromoActive(new Date('2026-01-01').getTime()), false, 'the switch beats the deadline');
 
-  // Every tour publishes a price except the pending quote-only ones, and none
-  // of the priced tours may show a discount.
+  // No tour publishes a visible price: every tour shows the personalized-quote
+  // message instead.
   const withPrice = tours.filter((t) => hasPublishedPrice(t.price));
-  assert.equal(withPrice.length, 26, 'all tours except the pending ones publish a price');
+  assert.equal(withPrice.length, 0, 'no tour may publish a visible price');
 
-  // Sanity-check the gate itself, so this cannot pass because hasPublishedPrice
-  // is broken and returns false for everything.
-  assert.equal(hasPublishedPrice('450'), true);
-  assert.equal(hasPublishedPrice(450), true);
+  // Sanity-check the gate itself: it must return false unconditionally now,
+  // not only for the quote sentinel.
+  assert.equal(hasPublishedPrice('450'), false);
+  assert.equal(hasPublishedPrice(450), false);
   assert.equal(hasPublishedPrice('Request a quote'), false);
 
   // Structural: PriceTag must NOT discount. The published prices are the
