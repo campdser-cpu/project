@@ -905,6 +905,8 @@ export default {
     home_exp_sub: "Press play and step into the golden dunes of Merzouga — the silence, the light, and the magic of a night beneath a sky full of stars.",
     home_exp_video_alt: "Cinematic film of the Sahara desert experience near Merzouga",
     home_luxury_camp_alt: "Luxury Desert Camp",
+    home_dest_explore_aria: "Explore {name}",
+    home_tour_card_alt: "{name} — {duration} private Morocco tour",
     home_rev1_name: "Sarah Jenkins",
     home_rev1_quote: "The 7-day desert tour exceeded all expectations. Our guide Hassan was incredibly knowledgeable. Sleeping under the stars in Merzouga is an experience I will never forget.",
     home_rev1_tour: "7-Day Imperial Cities & Sahara Escape",

@@ -559,7 +559,7 @@ export default function Home() {
           >
             {destinations.slice(0, 6).map((dest) => (
               <motion.div key={dest.id} variants={fadeInUp} className="group relative h-72 md:h-[420px] rounded-3xl overflow-hidden cursor-pointer shadow-sm hover:shadow-xl hover:shadow-primary/20 transition-all duration-500 border border-transparent hover:border-primary/50">
-                <Link href={`/destinations/${dest.id}`} className="absolute inset-0 z-10" aria-label={`Explore ${dest.name}`} />
+                <Link href={`/destinations/${dest.id}`} className="absolute inset-0 z-10" aria-label={fmtTemplate(t('home_dest_explore_aria'), { name: dest.name })} />
                 <img src={dest.image} alt={destinationImageAlt(dest, `${dest.name} — ${dest.shortDesc}`, t('dest_alt_unverified'))} loading="lazy" decoding="async" width={800} height={600} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
                 <div className="absolute bottom-0 left-0 p-5 md:p-6 z-20 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
@@ -609,7 +609,7 @@ export default function Home() {
                 className="group flex flex-col md:flex-row bg-card rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 border border-border hover:border-primary/50"
               >
                 <div className="md:w-2/5 h-56 md:h-auto relative overflow-hidden">
-                  <img src={tour.image} alt={`${tour.name} — ${tour.duration} private Morocco tour`} width={1200} height={800} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <img src={tour.image} alt={fmtTemplate(t('home_tour_card_alt'), { name: tour.name, duration: tour.duration })} width={1200} height={800} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                   <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors" />
                   <div className="absolute top-3 left-3 md:top-4 md:left-4 bg-background/90 backdrop-blur text-foreground text-xs font-bold px-3 py-1.5 rounded-full shadow-sm border border-border">
                     {tour.duration}
