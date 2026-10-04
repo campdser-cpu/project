@@ -10,6 +10,8 @@
  */
 import { useEffect } from 'react';
 import { contactInfo } from '@/data/content';
+import { t as translate, type Lang } from '@/i18n';
+import { getLocalizedRouteMeta } from '@/components/seo/route-metadata';
 
 const SCRIPT_ID_PREFIX = 'structured-data-';
 const DATA_ATTR = 'data-structured-data';
@@ -70,7 +72,7 @@ export function buildAboutPageSchema(guides: { name: string; role: string; image
     '@id': `${aboutUrl}#webpage`,
     url: aboutUrl,
     inLanguage: l,
-    name: 'About Us — Meet Your Local Berber Guides',
+    name: getLocalizedRouteMeta('/about', l as Lang).title,
     isPartOf: { '@id': ORGANIZATION_ID },
     mainEntity: { '@id': ORGANIZATION_ID },
   });
@@ -90,8 +92,8 @@ export function buildAboutPageSchema(guides: { name: string; role: string; image
   schemas.push(
     buildBreadcrumb(
       [
-        { name: 'Home', path: '/' },
-        { name: 'About', path: '/about' },
+        { name: tr(lang, 'nav_home'), path: '/' },
+        { name: tr(lang, 'nav_about'), path: '/about' },
       ],
       lang,
     ),
@@ -118,6 +120,13 @@ function normalizeLang(lang?: string): string {
     zh: 'zh', ja: 'ja', ko: 'ko', ar: 'ar',
   };
   return (lang && BCP47[lang]) || lang || 'en';
+}
+
+/** Localized schema-text lookup — the breadcrumb/entity names below are read
+ *  by search engines per-locale, so they use the same t() registry as the
+ *  visible page rather than a hardcoded English string. */
+function tr(lang: string | undefined, key: string): string {
+  return translate(normalizeLang(lang) as Lang, key);
 }
 
 /** Build a BreadcrumbList from an ordered list of {name, path} entries (language-aware URLs). */
@@ -203,7 +212,13 @@ export function buildTourSchema(
       name: `Day ${d.day}: ${d.title}`,
       description: d.desc,
     })),
-    touristType: ['Luxury Travelers', 'Adventure Seekers', 'Culture Enthusiasts', 'Couples', 'Families'],
+    touristType: [
+      tr(lang, 'schema_tourist_luxury'),
+      tr(lang, 'schema_tourist_adventure'),
+      tr(lang, 'schema_tourist_culture'),
+      tr(lang, 'schema_tourist_couples'),
+      tr(lang, 'schema_tourist_families'),
+    ],
   });
 
   // FAQ schema if FAQs are available.
@@ -226,8 +241,8 @@ export function buildTourSchema(
   schemas.push(
     buildBreadcrumb(
       [
-        { name: 'Home', path: '/' },
-        { name: 'Tours', path: '/tours' },
+        { name: tr(lang, 'nav_home'), path: '/' },
+        { name: tr(lang, 'nav_tours'), path: '/tours' },
         { name: tour.name, path: `/tours/${tour.id}` },
       ],
       lang,
@@ -294,8 +309,8 @@ export function buildDestinationSchema(dest: {
   schemas.push(
     buildBreadcrumb(
       [
-        { name: 'Home', path: '/' },
-        { name: 'Destinations', path: '/destinations' },
+        { name: tr(lang, 'nav_home'), path: '/' },
+        { name: tr(lang, 'nav_destinations'), path: '/destinations' },
         { name: dest.name, path: `/destinations/${dest.id}` },
       ],
       lang,
@@ -407,7 +422,7 @@ export function buildBlogPostSchema(
     buildBreadcrumb(
       [
         { name: BRAND, path: '/' },
-        { name: 'Blog', path: '/blog' },
+        { name: tr(lang, 'nav_blog'), path: '/blog' },
         { name: post.title, path: `/blog/${post.slug}` },
       ],
       lang,
