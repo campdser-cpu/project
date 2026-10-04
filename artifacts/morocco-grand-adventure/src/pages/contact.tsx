@@ -36,13 +36,13 @@ export default function Contact() {
     const phoneRe = /^[+()\-\s\d]{7,20}$/;
 
     if (!emailRe.test(email)) {
-      setServerError('Please enter a valid email address.');
+      setServerError(t('contact_err_invalid_email'));
       setIsError(true);
       setIsSubmitting(false);
       return;
     }
     if (phone && !phoneRe.test(phone)) {
-      setServerError('Please enter a valid phone number (digits, +, -, spaces).');
+      setServerError(t('contact_err_invalid_phone'));
       setIsError(true);
       setIsSubmitting(false);
       return;
@@ -71,8 +71,8 @@ export default function Contact() {
 
       if (!res.ok) {
         setWaFallback(waMsg);
-        const err = await res.json().catch(() => ({ error: 'Something went wrong. Please try WhatsApp instead.' }));
-        setServerError(err.error || 'Something went wrong. Please try WhatsApp instead.');
+        const err = await res.json().catch(() => ({ error: t('contact_err_generic') }));
+        setServerError(err.error || t('contact_err_generic'));
         setIsError(true);
       } else {
         setIsSent(true);
@@ -80,7 +80,7 @@ export default function Contact() {
     } catch (err) {
       // API not reachable — fall back to the official WhatsApp channel.
       setWaFallback(waMsg);
-      setServerError('We couldn’t reach our server just now. You can also send your inquiry directly on WhatsApp below.');
+      setServerError(t('contact_err_unreachable'));
       setIsError(true);
     } finally {
       setIsSubmitting(false);
@@ -136,14 +136,14 @@ export default function Contact() {
                   </div>
 
                   <div className="pt-8 mt-8 border-t border-border">
-                    <p className="text-sm font-bold text-foreground uppercase tracking-wider mb-4">Find Us on Google Maps</p>
+                    <p className="text-sm font-bold text-foreground uppercase tracking-wider mb-4">{t('contact_maps_heading')}</p>
                     <p className="text-sm text-muted-foreground mb-4">
-                      View our verified Morocco Grand Adventure location on Google Maps.
+                      {t('contact_maps_sub')}
                     </p>
                     <div className="flex items-center gap-2 mb-6">
-                      <a href="https://www.google.com/maps/search/?api=1&query=Morocco%20Grand%20Adventure%20Merzouga" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-primary hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary" aria-label="View Morocco Grand Adventure on Google Maps">
+                      <a href="https://www.google.com/maps/search/?api=1&query=Morocco%20Grand%20Adventure%20Merzouga" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-primary hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary" aria-label={t('contact_maps_aria')}>
                         <MapPin className="w-5 h-5" aria-hidden="true" />
-                        <span>View on Google Maps</span>
+                        <span>{t('contact_maps_cta')}</span>
                       </a>
                     </div>
                     <div className="mb-6">
@@ -152,18 +152,18 @@ export default function Contact() {
                       </p>
                     </div>
                     <div>
-                      <p className="text-sm font-bold text-foreground uppercase tracking-wider mb-4">Official Social Profiles</p>
+                      <p className="text-sm font-bold text-foreground uppercase tracking-wider mb-4">{t('contact_social_heading')}</p>
                       <div className="flex gap-3">
-                        <a href="https://www.instagram.com/morocco_grand_adventure/" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground transition-all" aria-label="Follow Morocco Grand Adventure on Instagram">
+                        <a href="https://www.instagram.com/morocco_grand_adventure/" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground transition-all" aria-label={t('social_follow_instagram_aria')}>
                           <SiInstagram className="w-5 h-5" aria-hidden="true" />
                         </a>
-                        <a href="https://youtube.com/@moroccograndadventure" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground transition-all" aria-label="Subscribe to Morocco Grand Adventure on YouTube">
+                        <a href="https://youtube.com/@moroccograndadventure" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground transition-all" aria-label={t('social_subscribe_youtube_aria')}>
                           <SiYoutube className="w-5 h-5" aria-hidden="true" />
                         </a>
-                        <a href="https://www.tiktok.com/@morocco.grand.adv" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground transition-all" aria-label="Follow Morocco Grand Adventure on TikTok">
+                        <a href="https://www.tiktok.com/@morocco.grand.adv" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground transition-all" aria-label={t('social_follow_tiktok_aria')}>
                           <SiTiktok className="w-5 h-5" aria-hidden="true" />
                         </a>
-                        <a href="https://www.facebook.com/share/1DFzDX72P3/" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground transition-all" aria-label="Like Morocco Grand Adventure on Facebook">
+                        <a href="https://www.facebook.com/share/1DFzDX72P3/" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground transition-all" aria-label={t('social_like_facebook_aria')}>
                           <SiFacebook className="w-5 h-5" aria-hidden="true" />
                         </a>
                       </div>
@@ -193,7 +193,7 @@ export default function Contact() {
                         rel="noreferrer"
                         className="inline-flex items-center gap-2 bg-[#25D366] text-[#0d2b1d] px-4 py-2 rounded-lg font-bold hover:opacity-90 transition-opacity"
                       >
-                        <SiWhatsapp className="w-4 h-4" aria-hidden="true" /> Send inquiry on WhatsApp
+                        <SiWhatsapp className="w-4 h-4" aria-hidden="true" /> {t('contact_wa_send_inquiry')}
                       </a>
                     )}
                   </div>
@@ -223,33 +223,33 @@ export default function Contact() {
 
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label htmlFor="travelDates" className="text-sm font-bold text-foreground">Travel Dates</label>
-                      <input type="text" id="travelDates" name="travelDates" placeholder="e.g. March 15–25" className="w-full bg-background border border-border rounded-xl px-4 py-3 text-foreground focus:ring-2 focus:ring-primary focus:border-primary outline-none" />
+                      <label htmlFor="travelDates" className="text-sm font-bold text-foreground">{t('contact_travel_dates')}</label>
+                      <input type="text" id="travelDates" name="travelDates" placeholder={t('contact_ph_travel_dates')} className="w-full bg-background border border-border rounded-xl px-4 py-3 text-foreground focus:ring-2 focus:ring-primary focus:border-primary outline-none" />
                     </div>
                     <div className="space-y-2">
-                      <label htmlFor="travelers" className="text-sm font-bold text-foreground">Number of Travelers</label>
-                      <input type="number" id="travelers" name="travelers" min="1" placeholder="e.g. 2" className="w-full bg-background border border-border rounded-xl px-4 py-3 text-foreground focus:ring-2 focus:ring-primary focus:border-primary outline-none" />
+                      <label htmlFor="travelers" className="text-sm font-bold text-foreground">{t('contact_num_travelers')}</label>
+                      <input type="number" id="travelers" name="travelers" min="1" placeholder={t('contact_ph_num_travelers')} className="w-full bg-background border border-border rounded-xl px-4 py-3 text-foreground focus:ring-2 focus:ring-primary focus:border-primary outline-none" />
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <label htmlFor="destinations" className="text-sm font-bold text-foreground">Preferred Destinations</label>
-                    <input type="text" id="destinations" name="destinations" placeholder="e.g. Sahara, Merzouga, Marrakech" className="w-full bg-background border border-border rounded-xl px-4 py-3 text-foreground focus:ring-2 focus:ring-primary focus:border-primary outline-none" />
+                    <label htmlFor="destinations" className="text-sm font-bold text-foreground">{t('contact_pref_destinations')}</label>
+                    <input type="text" id="destinations" name="destinations" placeholder={t('contact_ph_pref_destinations')} className="w-full bg-background border border-border rounded-xl px-4 py-3 text-foreground focus:ring-2 focus:ring-primary focus:border-primary outline-none" />
                   </div>
 
                   <div className="space-y-2">
-                    <label htmlFor="tourInterest" className="text-sm font-bold text-foreground">Interested Tour / Activity</label>
-                    <input type="text" id="tourInterest" name="tourInterest" placeholder="e.g. Camel trekking, 4x4 tour" className="w-full bg-background border border-border rounded-xl px-4 py-3 text-foreground focus:ring-2 focus:ring-primary focus:border-primary outline-none" />
+                    <label htmlFor="tourInterest" className="text-sm font-bold text-foreground">{t('contact_tour_interest')}</label>
+                    <input type="text" id="tourInterest" name="tourInterest" placeholder={t('contact_ph_tour_interest')} className="w-full bg-background border border-border rounded-xl px-4 py-3 text-foreground focus:ring-2 focus:ring-primary focus:border-primary outline-none" />
                   </div>
 
                   <div className="space-y-2">
-                    <label htmlFor="accommodation" className="text-sm font-bold text-foreground">Accommodation Preference</label>
+                    <label htmlFor="accommodation" className="text-sm font-bold text-foreground">{t('contact_accommodation')}</label>
                     <select id="accommodation" name="accommodation" className="w-full bg-background border border-border rounded-xl px-4 py-3 text-foreground focus:ring-2 focus:ring-primary focus:border-primary outline-none">
-                      <option value="">No preference</option>
-                      <option value="luxury">Luxury hotel / riad</option>
-                      <option value="midrange">Mid-range hotel / riad</option>
-                      <option value="desert-camp">Desert camp</option>
-                      <option value="mixed">Mix of styles</option>
+                      <option value="">{t('contact_accom_none')}</option>
+                      <option value="luxury">{t('contact_accom_luxury')}</option>
+                      <option value="midrange">{t('contact_accom_midrange')}</option>
+                      <option value="desert-camp">{t('contact_accom_camp')}</option>
+                      <option value="mixed">{t('contact_accom_mixed')}</option>
                     </select>
                   </div>
 
@@ -264,7 +264,7 @@ export default function Contact() {
                   </div>
 
                   <button type="submit" disabled={isSubmitting} className="w-full bg-foreground text-background py-4 rounded-xl font-bold tracking-wide hover:bg-primary hover:text-primary-foreground transition-all text-lg mt-4 shadow-lg hover:shadow-primary/20 disabled:opacity-60 disabled:cursor-not-allowed">
-                    {isSubmitting ? 'Sending...' : t('contact_send_btn')}
+                    {isSubmitting ? t('contact_sending') : t('contact_send_btn')}
                   </button>
                 </div>
               </form>
