@@ -31,11 +31,10 @@ import { deriveTourExperiences } from '@/data/tour-experiences';
 import { deriveTourStartEnd } from '@/data/tour-quick-facts';
 import { IncludedExperiences } from '../components/tours/IncludedExperiences';
 import { TourInclusions } from '../components/tours/TourInclusions';
-import { TourInquiryForm } from '../components/tours/TourInquiryForm';
 import { deriveTourInclusions } from '@/data/tour-inclusions';
 import { HowBookingWorks } from '../components/tours/HowBookingWorks';
-import { TailorJourney } from '../components/tours/TailorJourney';
 import { DayTripFlow } from '../components/tours/DayTripFlow';
+import { roomArrangements, findArrangement, arrangementLabel, arrangementLabelEn } from '@/data/pricing/rooms';
 
 /** Extract the leading number of days from a duration string like "3 Days / 2 Nights". */
 function parseDurationDays(duration: string): number {
@@ -43,11 +42,26 @@ function parseDurationDays(duration: string): number {
   return match ? parseInt(match[1], 10) : 0;
 }
 
+const MIN_DAYS = 1;
+const MAX_DAYS = 30;
+
 export default function TourDetail() {
   const { t, lang } = useLanguage();
   const [match, params] = useRoute('/tours/:id');
-  const [travelers, setTravelers] = useState(2);
+  const [travelers, setTravelers] = useState(1);
   const [date, setDate] = useState('');
+  // Starts from the tour's own duration (falling back to 4 when it cannot be
+  // parsed) — the same default the booking box has always used.
+  const [days, setDays] = useState(() => {
+    const initial = params?.id ? getLocalizedTour(params.id, lang) : undefined;
+    const d = initial ? parseDurationDays(initial.duration) : 4;
+    return Math.min(MAX_DAYS, Math.max(MIN_DAYS, d || 4));
+  });
+  // Only the arrangement's id is held: resolving it against the current party
+  // size each render means changing the traveler count never leaves a stale
+  // arrangement selected — one that no longer fits simply falls back to the
+  // deferred "let us confirm" option.
+  const [roomId, setRoomId] = useState('defer');
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   if (!match || !params?.id) return <NotFound />;
@@ -69,6 +83,11 @@ export default function TourDetail() {
   // real duration, so a tour can never display an itinerary for a different length.
   const isQuoteOnly = tour.quoteOnly === true;
   const itinerary = tour.itineraryDays ?? [];
+
+  // Room arrangement choices for the booking box, generated from the current
+  // party size (see roomId's state comment above).
+  const roomChoices = roomArrangements(travelers);
+  const roomArrangement = findArrangement(travelers, roomId);
 
   const galleryImages = tour.gallery ?? [
     { src: '/images/dest/merzouga.webp', caption: 'Sahara dunes at Merzouga' },
@@ -488,16 +507,6 @@ export default function TourDetail() {
 
             <HowBookingWorks t={t} className="mb-10" />
 
-            <TailorJourney
-              t={t}
-              tripName={tour.name}
-              tourId={tour.id}
-              lang={lang}
-              bookHref={`/${lang}/book`}
-              defaultDays={parseDurationDays(tour.duration)}
-              className="mb-16"
-            />
-
             {/* Tour depth: why choose / best for / plan with our guides.
                 English-authored copy (English-first phase) — same source the
                 prerendered HTML uses, so crawler and client content match. */}
@@ -669,6 +678,34 @@ export default function TourDetail() {
                     </button>
                   </div>
                 </div>
+
+                <div className="space-y-2">
+                  <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider block" htmlFor="tour-days">{t('jx_f_days')}</label>
+                  <input
+                    id="tour-days"
+                    type="number"
+                    inputMode="numeric"
+                    min={MIN_DAYS}
+                    max={MAX_DAYS}
+                    value={days}
+                    onChange={(e) => setDays(Math.max(MIN_DAYS, Math.min(MAX_DAYS, Number(e.target.value) || MIN_DAYS)))}
+                    className="w-full bg-background border border-border rounded-xl px-4 py-4 text-foreground focus:ring-2 focus:ring-primary focus:border-primary outline-none"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider block" htmlFor="tour-rooms">{t('px_rooms')}</label>
+                  <select
+                    id="tour-rooms"
+                    value={roomArrangement.id}
+                    onChange={(e) => setRoomId(e.target.value)}
+                    className="w-full bg-background border border-border rounded-xl px-4 py-4 text-foreground focus:ring-2 focus:ring-primary focus:border-primary outline-none"
+                  >
+                    {roomChoices.map((a) => (
+                      <option key={a.id} value={a.id}>{arrangementLabel(a, t)}</option>
+                    ))}
+                  </select>
+                </div>
               </div>
 
               <div className="space-y-4 mb-6">
@@ -676,7 +713,7 @@ export default function TourDetail() {
                   <a
                     href={promoOn
                       ? waPromoLink(`${t('promo_wa_message')}\n\n${tour.name} · ${travelers}p${date ? ` · ${date}` : ''}`)
-                      : waPromoLink(`New Tour Booking Request\n\nTour: ${tour.name}\nTravelers: ${travelers}${date ? `\nTravel dates: ${date}` : ''}`)}
+                      : waPromoLink(`New Tour Booking Request\n\nTour: ${tour.name}\nTravelers: ${travelers}\nDays: ${days}\nRoom arrangement: ${arrangementLabelEn(roomArrangement)}${date ? `\nTravel dates: ${date}` : ''}`)}
                     target="_blank"
                     rel="noreferrer"
                     className="flex-1 bg-[#25D366] text-[#0d2b1d] py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-[#128C7E] transition-all hover:-translate-y-1 shadow-lg shadow-[#25D366]/30 text-lg"
@@ -685,34 +722,12 @@ export default function TourDetail() {
                   </a>
 
                   <a
-                    href={`mailto:${contactInfo.email}?subject=${encodeURIComponent(fmtTemplate(t('email_quote_subject'), { tour: tour.name }))}&body=${encodeURIComponent(fmtTemplate(t('email_quote_body'), { tour: tour.name }))}`}
+                    href={`mailto:${contactInfo.email}?subject=${encodeURIComponent(fmtTemplate(t('email_quote_subject'), { tour: tour.name }))}&body=${encodeURIComponent(fmtTemplate(t('email_quote_body'), { tour: tour.name, date: date || t('email_quote_flexible_date'), travelers: String(travelers), days: String(days), rooms: arrangementLabel(roomArrangement, t) }))}`}
                     className="flex-1 bg-background border-2 border-foreground text-foreground py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-foreground hover:text-background transition-all text-lg"
                   >
                     <Mail className="w-6 h-6" aria-hidden="true" /> {t('price_quote_cta_email')}
                   </a>
                 </div>
-
-                <div className="relative flex py-2 items-center">
-                  <div className="flex-grow border-t border-border"></div>
-                  <span className="shrink-0 mx-4 text-muted-foreground text-xs uppercase tracking-widest">{t('td_or')}</span>
-                  <div className="flex-grow border-t border-border"></div>
-                </div>
-
-                <TourInquiryForm
-                  tourName={tour.name}
-                  lang={lang}
-                  travelDate={date}
-                  travelers={travelers}
-                  t={t}
-                />
-
-                <Link href={`/book?tour=${encodeURIComponent(tour.name)}`} className="block w-full bg-foreground text-background text-center py-4 rounded-xl font-bold hover:bg-primary hover:text-primary-foreground transition-colors text-lg">
-                  {t('book_form_cta')}
-                </Link>
-
-                <Link href="/contact" className="block w-full bg-background border-2 border-foreground text-foreground text-center py-4 rounded-xl font-bold hover:bg-foreground hover:text-background transition-colors text-lg">
-                  {t('book_customize')}
-                </Link>
               </div>
 
               <p className="text-[11px] leading-relaxed text-muted-foreground mb-6">{t('book_quote_note')}</p>
