@@ -32,7 +32,7 @@ import * as path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { destinations, contactInfo, reviews, type Review, type Tour, type Destination } from '../src/data/content';
-import { BLOG_ARTICLE_SECTIONS } from '../src/data/blog-article-sections';
+import { BLOG_ARTICLE_SECTIONS, type BlogSection } from '../src/data/blog-article-sections';
 import { CITY_HUBS, TOUR_DEPARTURE_CITY, CITY_HUB_DURATIONS, tourIdsForCity, tourDurationDays, DAY_TRIP_PRODUCT_IDS, FEATURED_TOUR_IDS } from '../src/data/tour-hierarchy';
 import { MERZOUGA_GUIDES, COMPARISONS, TRAVEL_INFO, type HubPage } from '../src/data/seoHub';
 import { localizedComparisonMeta } from '../src/data/comparison-meta-i18n';
@@ -1081,6 +1081,9 @@ const BLOG_SLUG_INDEX: Record<string, number> = {
   'marrakech-to-merzouga-roadtrip': 4,
   'morocco-packing-list-desert': 5,
   'fes-chefchaouen-blue-city-guide': 6,
+  'marrakech-to-merzouga-3-day-sahara-tour': 7,
+  'fes-to-merzouga-sahara-desert-tour': 8,
+  'marrakech-ouarzazate-merzouga-great-south-morocco': 9,
 };
 function buildBlogContent(lang: Lang): string {
   // Localized titles/excerpts/categories come from the same blog_post_N_* keys the
@@ -1105,6 +1108,9 @@ const ARTICLE_RELATIONS: Record<string, { tours: string[]; destinations: string[
   'marrakech-to-merzouga-roadtrip': { tours: ['3-day-sahara-marrakech', '8-day-marrakech-essaouira-agadir-sahara'], destinations: ['marrakech', 'ait-ben-haddou', 'dades-valley', 'merzouga'] },
   'morocco-packing-list-desert': { tours: ['3-day-sahara-marrakech', '7-day-imperial-cities-sahara-escape'], destinations: ['merzouga', 'erg-chebbi'] },
   'fes-chefchaouen-blue-city-guide': { tours: ['5-day-imperial-cities'], destinations: ['fes', 'chefchaouen'] },
+  'marrakech-to-merzouga-3-day-sahara-tour': { tours: ['3-day-sahara-marrakech', '4-day-marrakech-merzouga-sahara'], destinations: ['ait-ben-haddou', 'dades-valley', 'todra-gorge', 'merzouga'] },
+  'fes-to-merzouga-sahara-desert-tour': { tours: ['3-day-fes-merzouga-sahara', '4-day-fes-marrakech-via-merzouga'], destinations: ['fes', 'ifrane', 'merzouga'] },
+  'marrakech-ouarzazate-merzouga-great-south-morocco': { tours: ['5-day-great-south-morocco', '3-day-sahara-marrakech'], destinations: ['ait-ben-haddou', 'draa-valley', 'nkob', 'merzouga'] },
 };
 
 function link(url: string, text: string): string { return `<a href="${url}">${escapeHtml(text)}</a>`; }
@@ -1218,6 +1224,9 @@ function buildBlogArticleContent(slug: string, lang: Lang): string {
     'marrakech-to-merzouga-roadtrip': { title: 'Marrakech to Merzouga: The Ultimate Sahara Road Trip Itinerary', excerpt: "Cross the High Atlas, explore Aït Ben Haddou, wind through the Dades Valley, and arrive at the golden dunes of Erg Chebbi — the complete route guide.", date: 'May 2026', read: '10 min read', cat: 'Road Trips', image: '/images/dest/ait-ben-haddou.webp' },
     'morocco-packing-list-desert': { title: 'The Perfect Morocco Packing List for Desert Tours (2026)', excerpt: "What to pack for the Sahara — from breathable layers and sun protection to the little luxuries that make a desert night unforgettable.", date: 'April 2026', read: '5 min read', cat: 'Packing', image: '/images/personal/guests-sunset-trimmed.webp' },
     'fes-chefchaouen-blue-city-guide': { title: "Fes to Chefchaouen: Exploring Morocco's Blue Pearl", excerpt: "The journey from Morocco's cultural heart to the Instagram-famous blue medina — what to see, where to stay, and how to make the most of it.", date: 'March 2026', read: '9 min read', cat: 'Imperial Cities', image: '/images/dest/chefchaouen.webp' },
+    'marrakech-to-merzouga-3-day-sahara-tour': { title: 'Marrakech to Merzouga: What the 3-Day Sahara Tour Is Actually Like', excerpt: "The High Atlas, Aït Ben Haddou, the Dades and Todra valleys, then a night in the Erg Chebbi dunes — what three days on Morocco's classic Sahara route really involves, and who it suits.", date: 'September 2026', read: '5 min read', cat: 'Sahara Desert', image: '/images/curated/ait-ben-haddou-footbridge-ounila-river.webp' },
+    'fes-to-merzouga-sahara-desert-tour': { title: 'Fes to Merzouga: The Sahara Tour Through the Middle Atlas', excerpt: "Cedar forests, Ifrane's alpine streets and the Ziz Valley — how the Fes to Merzouga route offers a shorter, different way into the Sahara than the classic Marrakech crossing.", date: 'September 2026', read: '4 min read', cat: 'Sahara Desert', image: '/images/dest/fes.webp' },
+    'marrakech-ouarzazate-merzouga-great-south-morocco': { title: 'Marrakech to Ouarzazate and Merzouga: Exploring the Great South', excerpt: "Ouarzazate, the Dades and Todra valleys, a slower Sahara day at Merzouga, then a quiet return through the Draa Valley and Nkob — the fuller version of Morocco's Sahara route.", date: 'September 2026', read: '4 min read', cat: 'Sahara Desert', image: '/images/dest/ouarzazate.webp' },
   };
   const post = posts[slug];
   if (!post) return h1('Blog Post Not Found') + paragraph('This blog post could not be found.');
@@ -1240,7 +1249,10 @@ function buildBlogArticleContent(slug: string, lang: Lang): string {
 function buildBlogArticleBody(slug: string, lang: Lang): string {
   if (!BLOG_ARTICLE_SECTIONS[slug]) return '';
   const sections = getLocalizedBlogSections(slug, lang);
-  const body = sections.map((s) => h2(s.heading) + s.paragraphs.map((p) => paragraph(p)).join('')).join('');
+  const sectionImage = (s: BlogSection) => s.image
+    ? `<img src="${s.image.src}" alt="${escapeHtml(s.image.alt)}" loading="lazy" decoding="async" class="w-full h-48 md:h-64 object-cover mb-4 rounded-md" />\n`
+    : '';
+  const body = sections.map((s) => h2(s.heading) + sectionImage(s) + s.paragraphs.map((p) => paragraph(p)).join('')).join('');
   const cta = getLocalizedBlogCta(slug, lang);
   const ctaBlock = cta
     ? paragraph(cta.text) + `<div class="topical-link-list">${cta.links.map((l) => ` ${link(`${SITE_URL}/${lang}${l.to}`, l.label)}`).join('')}</div>\n`

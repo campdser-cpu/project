@@ -57,6 +57,18 @@ const ARTICLE_RELATIONS: Record<
     tours: ['5-day-imperial-cities'],
     destinations: ['fes', 'chefchaouen'],
   },
+  'marrakech-to-merzouga-3-day-sahara-tour': {
+    tours: ['3-day-sahara-marrakech', '4-day-marrakech-merzouga-sahara'],
+    destinations: ['ait-ben-haddou', 'dades-valley', 'todra-gorge', 'merzouga'],
+  },
+  'fes-to-merzouga-sahara-desert-tour': {
+    tours: ['3-day-fes-merzouga-sahara', '4-day-fes-marrakech-via-merzouga'],
+    destinations: ['fes', 'ifrane', 'merzouga'],
+  },
+  'marrakech-ouarzazate-merzouga-great-south-morocco': {
+    tours: ['5-day-great-south-morocco', '3-day-sahara-marrakech'],
+    destinations: ['ait-ben-haddou', 'draa-valley', 'nkob', 'merzouga'],
+  },
 };
 
 export default function BlogPost() {
@@ -161,6 +173,15 @@ export default function BlogPost() {
                 {sections.map((section) => (
                   <div key={section.heading}>
                     <h2 className="font-serif text-2xl text-foreground mt-10 mb-4">{section.heading}</h2>
+                    {section.image && (
+                      <img
+                        src={section.image.src}
+                        alt={section.image.alt}
+                        loading="lazy"
+                        decoding="async"
+                        className="w-full h-48 md:h-64 object-cover mb-4 rounded-md"
+                      />
+                    )}
                     {section.paragraphs.map((p, i) => (
                       <p key={i} className="leading-relaxed text-muted-foreground mb-4">{p}</p>
                     ))}

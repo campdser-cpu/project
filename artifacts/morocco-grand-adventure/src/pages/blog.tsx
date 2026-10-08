@@ -13,6 +13,9 @@ export default function Blog() {
     { slug: "marrakech-to-merzouga-roadtrip", title: t('blog_post_4_title'), excerpt: t('blog_post_4_excerpt'), image: "/images/dest/ait-ben-haddou.webp", date: t('blog_post_4_date'), readTime: t('blog_post_4_read'), category: t('blog_post_4_cat') },
     { slug: "morocco-packing-list-desert", title: t('blog_post_5_title'), excerpt: t('blog_post_5_excerpt'), image: "/images/personal/guests-sunset-trimmed.webp", date: t('blog_post_5_date'), readTime: t('blog_post_5_read'), category: t('blog_post_5_cat') },
     { slug: "fes-chefchaouen-blue-city-guide", title: t('blog_post_6_title'), excerpt: t('blog_post_6_excerpt'), image: "/images/dest/chefchaouen.webp", date: t('blog_post_6_date'), readTime: t('blog_post_6_read'), category: t('blog_post_6_cat') },
+    { slug: "marrakech-to-merzouga-3-day-sahara-tour", title: t('blog_post_7_title'), excerpt: t('blog_post_7_excerpt'), image: "/images/curated/ait-ben-haddou-footbridge-ounila-river.webp", date: t('blog_post_7_date'), readTime: t('blog_post_7_read'), category: t('blog_post_7_cat') },
+    { slug: "fes-to-merzouga-sahara-desert-tour", title: t('blog_post_8_title'), excerpt: t('blog_post_8_excerpt'), image: "/images/dest/fes.webp", date: t('blog_post_8_date'), readTime: t('blog_post_8_read'), category: t('blog_post_8_cat') },
+    { slug: "marrakech-ouarzazate-merzouga-great-south-morocco", title: t('blog_post_9_title'), excerpt: t('blog_post_9_excerpt'), image: "/images/dest/ouarzazate.webp", date: t('blog_post_9_date'), readTime: t('blog_post_9_read'), category: t('blog_post_9_cat') },
   ];
 
   return (

@@ -293,6 +293,42 @@ export const blogPosts: BlogPost[] = [
     canonicalExcerpt: 'The journey from Morocco cultural heart to the famous blue medina — what to see, where to stay, and how to make the most of it.',
     alt: 'Blue-washed buildings and alleyways of Chefchaouen medina, Morocco',
   },
+  {
+    slug: 'marrakech-to-merzouga-3-day-sahara-tour',
+    title: 'Marrakech to Merzouga: What the 3-Day Sahara Tour Is Actually Like',
+    excerpt: "The High Atlas, Aït Ben Haddou, the Dades and Todra valleys, then a night in the Erg Chebbi dunes — what three days on Morocco's classic Sahara route really involves, and who it suits.",
+    image: '/images/curated/ait-ben-haddou-footbridge-ounila-river.webp',
+    date: 'September 2026',
+    readTime: '5 min read',
+    category: 'Sahara Desert',
+    canonicalTitle: 'Marrakech to Merzouga — What the 3-Day Sahara Tour Is Actually Like',
+    canonicalExcerpt: "The High Atlas, Aït Ben Haddou, the Dades and Todra valleys, then a night in the Erg Chebbi dunes — what three days on Morocco's classic Sahara route really involves, and who it suits.",
+    alt: 'Footbridge over the Ounila river at Aït Ben Haddou, the first major stop on the Marrakech to Merzouga route',
+  },
+  {
+    slug: 'fes-to-merzouga-sahara-desert-tour',
+    title: 'Fes to Merzouga: The Sahara Tour Through the Middle Atlas',
+    excerpt: "Cedar forests, Ifrane's alpine streets and the Ziz Valley — how the Fes to Merzouga route offers a shorter, different way into the Sahara than the classic Marrakech crossing.",
+    image: '/images/dest/fes.webp',
+    date: 'September 2026',
+    readTime: '4 min read',
+    category: 'Sahara Desert',
+    canonicalTitle: 'Fes to Merzouga — The Sahara Tour Through the Middle Atlas',
+    canonicalExcerpt: "Cedar forests, Ifrane's alpine streets and the Ziz Valley — how the Fes to Merzouga route offers a shorter, different way into the Sahara than the classic Marrakech crossing.",
+    alt: 'Fes medina, the departure point for the Sahara route to Merzouga',
+  },
+  {
+    slug: 'marrakech-ouarzazate-merzouga-great-south-morocco',
+    title: 'Marrakech to Ouarzazate and Merzouga: Exploring the Great South',
+    excerpt: "Ouarzazate, the Dades and Todra valleys, a slower Sahara day at Merzouga, then a quiet return through the Draa Valley and Nkob — the fuller version of Morocco's Sahara route.",
+    image: '/images/dest/ouarzazate.webp',
+    date: 'September 2026',
+    readTime: '4 min read',
+    category: 'Sahara Desert',
+    canonicalTitle: 'Marrakech to Ouarzazate and Merzouga — Exploring the Great South',
+    canonicalExcerpt: "Ouarzazate, the Dades and Todra valleys, a slower Sahara day at Merzouga, then a quiet return through the Draa Valley and Nkob — the fuller version of Morocco's Sahara route.",
+    alt: "Ouarzazate, gateway to Morocco's Great South and former film-industry hub",
+  },
 ];
 
 /**
@@ -328,6 +364,8 @@ export function getLocalizedBlogSections(slug: string, lang: Lang): BlogSection[
   return base.map((section, i) => ({
     heading: pickText(section.heading, overlay[i]?.heading),
     paragraphs: section.paragraphs.map((p, j) => pickText(p, overlay[i]?.paragraphs?.[j])),
+    // Images are real site assets, never localized/invented — carried over as-is.
+    image: section.image,
   }));
 }
 

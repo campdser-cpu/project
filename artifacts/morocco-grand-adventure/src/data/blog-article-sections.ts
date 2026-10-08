@@ -11,7 +11,12 @@
  * Berber music evenings, camel trekking, 4x4 drives, and the Oct–Apr best
  * season carried by the destination data.
  */
-export type BlogSection = { heading: string; paragraphs: string[] };
+export type BlogSection = {
+  heading: string;
+  paragraphs: string[];
+  /** Optional real site image for this section — never localized, never invented. */
+  image?: { src: string; alt: string };
+};
 
 export const BLOG_ARTICLE_SECTIONS: Record<string, BlogSection[]> = {
   'merzouga-luxury-desert-camp-guide': [
@@ -245,6 +250,133 @@ export const BLOG_ARTICLE_SECTIONS: Record<string, BlogSection[]> = {
       ],
     },
   ],
+  'marrakech-to-merzouga-3-day-sahara-tour': [
+    {
+      heading: "Why This Is Morocco's Classic Sahara Route",
+      paragraphs: [
+        "Ask any Morocco guide which route defines a Sahara trip and most will name the same one: Marrakech to Merzouga. It isn't the only way into the desert, but it's the most complete — one road that climbs a mountain range, drops into kasbah country, runs the length of two valleys, and ends at the base of Morocco's tallest dunes. The 3-day version is the shortest format that still covers all of it, which is also why it's the most frequently booked Sahara tour from Marrakech.",
+        "What makes the route work isn't any single landmark — it's the sequence. Each day changes the scenery completely, so the desert at the end doesn't feel like an add-on; it feels like the payoff the whole drive was building toward. It suits first-time visitors to Morocco especially well, since in three days you see mountains, kasbah country and the Sahara without needing a second trip to cover the basics.",
+      ],
+    },
+    {
+      heading: 'Day One: Leaving the Red City Behind',
+      paragraphs: [
+        "The tour leaves Marrakech in the morning and climbs straight into the High Atlas on the Tizi n'Tichka Pass, the highest road pass in North Africa. Villages here are built into the slopes rather than beside them, and the switchback views back toward Marrakech are worth the first photo stop of the trip.",
+        "On the far side of the pass, the landscape changes again at Aït Ben Haddou — a UNESCO World Heritage earthen ksar and, by most accounts, the best-preserved fortified village in southern Morocco. Climb to the hilltop granary above the ksar; the walk takes about twenty minutes and the view over the Ounila valley is the real reason to stop here rather than just photograph the walls from the road. From there the road continues through Ouarzazate — known internationally as a film-industry hub, with its studios and kasbahs usually seen as a brief stop rather than a destination on this particular format — before the first night in the Dades Valley.",
+      ],
+    },
+    {
+      heading: 'The Middle Stretch: Dades and Todra',
+      paragraphs: [
+        "The second day runs through two very different landscapes back to back. The Dades Valley is kasbah country — mudbrick villages, terraced fields and a valley road known for its switchbacks — while the Todra Gorge, a little further east, narrows into a canyon with rock walls that rise for hundreds of metres on either side. Both are brief stops on a 3-day itinerary rather than full days in themselves, but they mark the point where southern Morocco stops looking like the Atlas foothills and starts looking like the edge of the Sahara.",
+        "Todra in particular rewards getting out of the vehicle rather than photographing it from the road — the canyon floor stays in shade for much of the day even when the clifftops are blazing, and the short walk along the riverbed gives a sense of scale no photo quite captures.",
+      ],
+      image: { src: '/images/curated/todra-gorge-river-canyon-high-atlas.webp', alt: 'The Todra Gorge canyon walls between the Dades Valley and Merzouga' },
+    },
+    {
+      heading: 'Arriving in the Dunes: What the Second Night Feels Like',
+      paragraphs: [
+        "By late afternoon on day two, the tour reaches Merzouga and the Erg Chebbi dunes — Morocco's tallest, and the reason most people book this route in the first place. From here the day follows the pattern every Sahara tour from Marrakech shares: a camel trek into the dunes timed for sunset, dinner at a desert camp, and a night under a sky with none of the light pollution a city gives you. If you haven't ridden a camel before, or want to know what to wear and how a trek actually works, our camel trekking guide covers that in more depth than fits here.",
+        "What stands out on this particular route isn't the camp itself — it's the contrast. You spend two full days watching the landscape change through a vehicle window, then step onto sand for the first time right as the light turns gold. Guests consistently say that shift, more than any single stop along the way, is what they remember.",
+        "The third day starts with sunrise over the dunes before the long return drive to Marrakech — the longest single day of driving on the route, which is worth knowing in advance rather than discovering at hour six.",
+      ],
+      image: { src: '/images/curated/berber-guide-camel-sahara-desert-merzouga.webp', alt: 'A Berber guide leading a camel across the Erg Chebbi dunes near Merzouga' },
+    },
+    {
+      heading: 'Is Three Days Really Enough?',
+      paragraphs: [
+        "Honestly — it's tight. Three days is the shortest format that makes this route work, not the most comfortable one. You get the full sequence: the pass, Aït Ben Haddou, the valleys, one proper night in the dunes. What you don't get is slack — spare time to linger at a viewpoint, swap a stop for a rest, or add a second desert night without changing the whole plan.",
+        "The 3-day format suits a fixed, tight schedule more than an open one: travelers on a set return flight who still want the complete route rather than a shortened version. It's less suited to families with young children or anyone who finds long car days genuinely draining — for those groups, the 4-day version (or the 5-day Great South route, which covers similar ground at a noticeably gentler pace) is usually the better fit.",
+        "A private driver-guide also changes what three days can realistically cover, compared with doing the same route in a rental car or shared minibus — stops are timed around light and crowds rather than a fixed schedule, and the pace adjusts if someone in your group wants longer at the gorge or less time on the road that day. That flexibility is most of what you're actually paying for on a route this tightly packed.",
+      ],
+    },
+  ],
+
+  'fes-to-merzouga-sahara-desert-tour': [
+    {
+      heading: 'A Different Door Into the Sahara',
+      paragraphs: [
+        "Most Sahara tours in Morocco start in Marrakech, but Fes offers a genuinely different way in — and, by road, a shorter one. The drive from Fes to Merzouga via the Middle Atlas and the Ziz Valley is the most direct Sahara approach from any of Morocco's major cities, which is why travelers already in Fes, or wanting to see northern Morocco before the desert, choose this route instead of backtracking through Marrakech.",
+        "It's also a different kind of landscape story. Where the Marrakech route crosses one mountain range and several desert valleys, the Fes route moves through cedar forest, mountain plateau and a long river valley before the dunes appear — a more gradual, layered descent into the Sahara than a single dramatic pass. It's a natural fit for travelers who are already building a northern Morocco itinerary — Fes itself, or a stop in Chefchaouen beforehand — and want the desert added on rather than planned as a separate trip through Marrakech.",
+      ],
+    },
+    {
+      heading: 'Through the Middle Atlas: Ifrane and the Cedar Forest',
+      paragraphs: [
+        "The first stretch out of Fes climbs into the Middle Atlas to Ifrane, a town travelers are rarely prepared for — sloped slate roofs and pine forest give it a distinctly alpine feel, a look that dates back to the French-built town of the 1930s. The cedar forests around nearby Azrou are home to wild Barbary macaques, and a short stop here is a quick reminder of how much Morocco's landscapes shift in a single day — mountain forest in the morning, desert by the following afternoon.",
+        "In winter the same stretch can carry snow on the roadside near Ifrane and the Mischliffen slopes, which surprises travelers who pictured only desert for a Morocco trip — one more reason this route feels like two countries in one drive rather than a single climate the whole way.",
+      ],
+      image: { src: '/images/dest/ifrane.webp', alt: "Ifrane's alpine-style architecture and cedar forest in the Middle Atlas" },
+    },
+    {
+      heading: 'The Ziz Valley: Where the Desert Begins',
+      paragraphs: [
+        "South of Midelt, the road follows the Ziz Valley, where a ribbon of palm groves and villages runs along the river through an increasingly dry, open landscape. This is the stretch where the mountains finally give way to the pre-Sahara — the vegetation thins, the colors shift to ochre and rust, and the towns start to look built for heat rather than altitude. The valley floor itself stays green for a surprisingly long stretch, a reminder that this whole corridor exists because of the river rather than in spite of the desert around it.",
+        "By the time the road reaches Erfoud and Rissani, the historic market town at the edge of the Tafilalt, you're unmistakably in desert country. Rissani's weekly market is one of the region's oldest trading points and still draws villages from across the area — if the tour's timing lines up with a market day, it's a worthwhile stop before the final approach to Merzouga.",
+      ],
+    },
+    {
+      heading: 'Reaching Erg Chebbi',
+      paragraphs: [
+        "The dunes appear at the end of the second day's drive, and from here the route folds into the same desert experience every Merzouga tour shares: a camel transfer into Erg Chebbi timed for sunset, dinner at a desert camp, and a night in the dunes. If camel trekking is new to you, our dedicated guide covers mounting, pacing and what to wear in more depth than fits into a route overview.",
+        "What's worth noting about arriving this way, from the north, is the contrast — you've spent a day and a half watching forest and farmland give way to open valley, so the dunes themselves land harder than they might after a shorter southern approach.",
+        "Sunrise the next morning is the quieter counterpart to the previous evening's trek — fewer camps are up and moving, and the light on the dune crests tends to last longer before the heat of the day sets in.",
+      ],
+      image: { src: '/images/dest/erg-chebbi.webp', alt: 'The dunes of Erg Chebbi near Merzouga at the end of the Fes to Merzouga route' },
+    },
+    {
+      heading: 'Three Days, Compact and Focused — Who Is This Route For?',
+      paragraphs: [
+        "This is a deliberately tight itinerary — a compact overland route with substantial driving on both days, built for travelers who want the Sahara added onto a Fes-based trip rather than a slow, multi-stop southern circuit. It suits a fixed schedule well: fly into Fes, see the medina, head south for the desert, then either return north or continue toward Marrakech, since the route doesn't lock you into a fixed return.",
+        "If you'd rather link the dunes with Todra Gorge, Dades Valley and Aït Ben Haddou on the way to Marrakech instead of backtracking to Fes, the 4-day Fes-to-Marrakech route covers that ground — worth considering if a one-way journey across the whole country appeals more than an out-and-back trip. And if Chefchaouen's blue medina is part of your northern plans, it pairs naturally with Fes before you head south, rather than being a separate trip of its own.",
+      ],
+    },
+  ],
+
+  'marrakech-ouarzazate-merzouga-great-south-morocco': [
+    {
+      heading: "What 'The Great South' Actually Means",
+      paragraphs: [
+        "Morocco Grand Adventure borrowed the name for this itinerary from the region itself — the string of valleys, kasbah towns and desert country that run south and east of the High Atlas, beyond what most 3-day Sahara tours have time to cover. It follows the same corridor used by the quicker desert routes, but the 5-day format builds in more time there instead of pushing straight through to Merzouga and back.",
+        "If you've already read about the classic 3-day Marrakech-to-Merzouga route, think of this as its slower, more complete cousin: the same opening days, then a genuinely different return. It tends to suit travelers who have already spent a few days in Marrakech itself and are looking for the fuller southern Morocco trip rather than the fastest way to see a dune.",
+      ],
+    },
+    {
+      heading: 'Ouarzazate and the Kasbah Road',
+      paragraphs: [
+        "The route follows the same opening as the shorter Sahara tours — the Tizi n'Tichka Pass, then Aït Ben Haddou — before reaching Ouarzazate, known locally and internationally as Morocco's film capital. Lawrence of Arabia, Gladiator and Game of Thrones have all used its studios and surrounding desert light, and the Taourirt Kasbah in town is worth the half-hour it takes to see. On a 5-day itinerary, Ouarzazate gets treated as what it actually is — a waypoint with its own things worth seeing — rather than a lunch stop on the way to somewhere else.",
+        "The Atlas Film Studios sit just outside town and, light schedules allowing, make an easy add-on to the kasbah visit — a reminder of why this stretch of desert light drew filmmakers here in the first place, long before it became a tour route.",
+      ],
+    },
+    {
+      heading: 'Dades and Todra, at a Slower Pace',
+      paragraphs: [
+        "The route continues through the Dades Valley and Todra Gorge much as the 3-day version does — the kasbah country, the switchback road, the canyon walls — but with an overnight built around the Dades Valley rather than a brief pass-through. The difference here is pacing rather than destination; travelers who want the fuller description of this stretch will find it in our guide to the 3-day Marrakech–Merzouga tour.",
+        "That extra time matters most at Todra, where a short walk into the canyon floor — rather than a photo stop from the roadside — is the difference between seeing the gorge and actually feeling the scale of its rock walls.",
+      ],
+    },
+    {
+      heading: 'Merzouga and a Slower Sahara Day',
+      paragraphs: [
+        "Where the 3-day tour reaches Merzouga for a single overnight, the 5-day route holds a full day around Erg Chebbi — room for dune viewpoints beyond the standard camel-trek corridor, a visit to Rissani and its historic market, and time around the small communities that live at the edge of the erg. Khamlia, a small village south of Merzouga known for its Gnawa music evenings, is sometimes included on this slower day when timing allows — a cultural stop that a 3-day schedule rarely has room for. It's still the same desert experience at its core, a sunset camel trek and a night at camp, but without the next morning's long drive hanging over it.",
+      ],
+      image: { src: '/images/dest/merzouga.webp', alt: "Merzouga at the edge of Erg Chebbi, Morocco's Sahara gateway" },
+    },
+    {
+      heading: 'The Return Less Traveled: Draa Valley and Nkob',
+      paragraphs: [
+        "This is where the Great South route genuinely diverges from a standard Sahara tour. Instead of retracing the Dades road back to Marrakech, the route heads west from Merzouga through Alnif and Nkob — a remote village known locally as the village of kasbahs, tucked into the foothills of the Jbel Saghro — before joining the Draa Valley, Morocco's longest river valley and its greatest stretch of continuous palm oasis.",
+        "The Draa road runs past ancient ksour and working palm groves for well over a hundred kilometres before rejoining the route toward Ouarzazate and back over the Atlas to Marrakech. Few 3-day itineraries touch this stretch at all — it's a quieter, more agricultural landscape than the dune country, and for travelers who want to see rural, working southern Morocco rather than only its landmark stops, it's the most distinctive part of the trip.",
+      ],
+      image: { src: '/images/catalog/draa-valley-oasis-palm-grove.webp', alt: "Palm groves along the Draa Valley on the return leg of the Great South route" },
+    },
+    {
+      heading: 'Why Five Days Instead of Three',
+      paragraphs: [
+        "The honest comparison: the 3-day tour covers the essential Sahara route efficiently and suits a tight schedule. The 5-day Great South adds a slower Sahara day, a genuinely different return corridor through the Draa Valley and Nkob, and noticeably less time spent purely in transit each day. If your main goal is simply to reach the dunes and back within a short window, three days does the job. If you have the extra two days and want southern Morocco to feel like a region you explored rather than a road you drove, this is the version worth choosing — and as a private itinerary, the exact balance between kasbah time, desert time and valley time can still be adjusted around what your group actually wants to see.",
+      ],
+    },
+  ],
 };
 
 /** Contextual CTA for articles that have a body. Rendered with links by each consumer. */
@@ -298,6 +430,30 @@ export const BLOG_ARTICLE_CTA: Record<string, BlogCta> = {
       { to: '/destinations/fes', label: 'Fes Destination Guide' },
       { to: '/destinations/chefchaouen', label: 'Chefchaouen Destination Guide' },
       { to: '/tours/5-day-imperial-cities', label: '5-Day Imperial Cities & Desert Tour' },
+    ],
+  },
+  'marrakech-to-merzouga-3-day-sahara-tour': {
+    text: 'Planning this route? Explore the private 3-day Marrakech to Merzouga tour and request a personalized quote, or compare it with the 4-day version if you would rather take it slower:',
+    links: [
+      { to: '/tours/3-day-sahara-marrakech', label: '3-Day Marrakech to Merzouga Sahara Tour' },
+      { to: '/tours/4-day-marrakech-merzouga-sahara', label: '4-Day Marrakech to Merzouga Tour' },
+      { to: '/merzouga-guide/marrakech-to-merzouga', label: 'Full Marrakech–Merzouga Route Guide' },
+    ],
+  },
+  'fes-to-merzouga-sahara-desert-tour': {
+    text: 'Planning this route? Explore the private Fes to Merzouga tour and request a personalized quote, or see the one-way version to Marrakech if you would rather finish the trip in the south:',
+    links: [
+      { to: '/tours/3-day-fes-merzouga-sahara', label: 'Fes to Merzouga Sahara Tour' },
+      { to: '/tours/4-day-fes-marrakech-via-merzouga', label: '4-Day Fes to Marrakech via Merzouga' },
+      { to: '/merzouga-guide/fes-to-merzouga', label: 'Full Fes–Merzouga Route Guide' },
+    ],
+  },
+  'marrakech-ouarzazate-merzouga-great-south-morocco': {
+    text: 'Planning this route? Explore the private 5-day Great South Morocco tour and request a personalized quote, or compare it with the shorter 3-day Marrakech to Merzouga route:',
+    links: [
+      { to: '/tours/5-day-great-south-morocco', label: '5-Day Great South Morocco Tour' },
+      { to: '/tours/3-day-sahara-marrakech', label: '3-Day Marrakech to Merzouga Sahara Tour' },
+      { to: '/destinations/draa-valley', label: 'Draa Valley Destination Guide' },
     ],
   },
 };
