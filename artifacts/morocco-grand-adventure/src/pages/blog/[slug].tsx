@@ -16,13 +16,32 @@ import {
   getLocalizedBlogCta,
   getLocalizedTours,
   getLocalizedDestinations,
+  getRelatedBlogPosts,
   blogPosts,
 } from '@/i18n/content';
 import { destinationImageAlt } from '@/data/content';
+import { parseParagraph } from '@/data/blog-article-sections';
 import { StructuredData, buildBlogPostSchema } from '@/components/seo/StructuredData';
 import { BLOG_META } from '@/components/seo/route-metadata';
 import NotFound from '../not-found';
 import { motion } from 'framer-motion';
+
+/**
+ * Render a paragraph that may contain a `[label](/path)` inline link (see
+ * BlogSection.paragraphs) as real text + a real <Link>, localized the same
+ * way every other internal link on the page is.
+ */
+function renderParagraph(text: string) {
+  return parseParagraph(text).map((part, i) =>
+    part.type === 'link' ? (
+      <Link key={i} href={part.href} className="text-primary underline underline-offset-2 hover:no-underline">
+        {part.label}
+      </Link>
+    ) : (
+      <span key={i}>{part.value}</span>
+    ),
+  );
+}
 
 /**
  * Related-content map: for each blog slug, the real tours and destinations
@@ -93,11 +112,7 @@ export default function BlogPost() {
     .filter((d): d is NonNullable<typeof d> => Boolean(d));
 
   const postIndex = blogPosts.findIndex((p) => p.slug === post.slug) + 1;
-  const localizedPosts = blogPosts.map((p) => getLocalizedBlogPost(p.slug, lang) ?? p);
-  const sameCategory = localizedPosts
-    .filter((p) => p.slug !== post.slug && p.category === post.category)
-    .concat(localizedPosts.filter((p) => p.slug !== post.slug && p.category !== post.category))
-    .slice(0, 5);
+  const sameCategory = getRelatedBlogPosts(post.slug, lang);
 
   return (
     <Layout>
@@ -183,7 +198,7 @@ export default function BlogPost() {
                       />
                     )}
                     {section.paragraphs.map((p, i) => (
-                      <p key={i} className="leading-relaxed text-muted-foreground mb-4">{p}</p>
+                      <p key={i} className="leading-relaxed text-muted-foreground mb-4">{renderParagraph(p)}</p>
                     ))}
                   </div>
                 ))}

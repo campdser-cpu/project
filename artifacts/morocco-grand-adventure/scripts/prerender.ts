@@ -32,7 +32,7 @@ import * as path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { destinations, contactInfo, reviews, type Review, type Tour, type Destination } from '../src/data/content';
-import { BLOG_ARTICLE_SECTIONS, type BlogSection } from '../src/data/blog-article-sections';
+import { BLOG_ARTICLE_SECTIONS, type BlogSection, parseParagraph } from '../src/data/blog-article-sections';
 import { CITY_HUBS, TOUR_DEPARTURE_CITY, CITY_HUB_DURATIONS, tourIdsForCity, tourDurationDays, DAY_TRIP_PRODUCT_IDS, FEATURED_TOUR_IDS } from '../src/data/tour-hierarchy';
 import { MERZOUGA_GUIDES, COMPARISONS, TRAVEL_INFO, type HubPage } from '../src/data/seoHub';
 import { localizedComparisonMeta } from '../src/data/comparison-meta-i18n';
@@ -53,6 +53,7 @@ import {
   getLocalizedFaq,
   getLocalizedBlogSections,
   getLocalizedBlogCta,
+  getRelatedBlogPosts,
   getLocalizedStudentTour,
   blogPosts,
   type BlogPost,
@@ -1212,7 +1213,9 @@ function buildBlogDestinationsBlock(slug: string, lang: Lang): string {
   return h2(tr(lang, 'related_destinations')) + `<ul>\n${items.join('\n')}\n    </ul>\n`;
 }
 function buildBlogRelatedArticles(slug: string, lang: Lang): string {
-  const others = blogPosts.filter((p) => p.slug !== slug).slice(0, 4);
+  // Same category-first selection as the runtime page (src/pages/blog/[slug].tsx),
+  // via the shared getRelatedBlogPosts — keeps prerendered and hydrated output aligned.
+  const others = getRelatedBlogPosts(slug, lang);
   const items = others.map((p) => `      <li>${link(`${SITE_URL}/${lang}/blog/${p.slug}`, blogPostField(p.slug, 'title', lang, p.title))}</li>`).join('\n');
   return h2(tr(lang, 'related_articles')) + `<ul>\n${items}\n    </ul>\n`;
 }
@@ -1246,13 +1249,23 @@ function buildBlogArticleContent(slug: string, lang: Lang): string {
  * sections keep their existing excerpt-only layout. The closing CTA paragraph
  * links to the matching experience pages and tour — all real site routes.
  */
+/** Render a paragraph that may contain a `[label](/path)` inline link (see
+ *  BlogSection.paragraphs) as safe, already-escaped HTML — the same syntax
+ *  and the same parser the runtime page uses, so prerendered and hydrated
+ *  output match exactly. */
+function paragraphHtml(text: string, lang: Lang): string {
+  const html = parseParagraph(text)
+    .map((part) => (part.type === 'link' ? link(`${SITE_URL}/${lang}${part.href}`, part.label) : escapeHtml(part.value)))
+    .join('');
+  return rawParagraph(html);
+}
 function buildBlogArticleBody(slug: string, lang: Lang): string {
   if (!BLOG_ARTICLE_SECTIONS[slug]) return '';
   const sections = getLocalizedBlogSections(slug, lang);
   const sectionImage = (s: BlogSection) => s.image
     ? `<img src="${s.image.src}" alt="${escapeHtml(s.image.alt)}" loading="lazy" decoding="async" class="w-full h-48 md:h-64 object-cover mb-4 rounded-md" />\n`
     : '';
-  const body = sections.map((s) => h2(s.heading) + sectionImage(s) + s.paragraphs.map((p) => paragraph(p)).join('')).join('');
+  const body = sections.map((s) => h2(s.heading) + sectionImage(s) + s.paragraphs.map((p) => paragraphHtml(p, lang)).join('')).join('');
   const cta = getLocalizedBlogCta(slug, lang);
   const ctaBlock = cta
     ? paragraph(cta.text) + `<div class="topical-link-list">${cta.links.map((l) => ` ${link(`${SITE_URL}/${lang}${l.to}`, l.label)}`).join('')}</div>\n`

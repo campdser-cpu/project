@@ -10,13 +10,56 @@
  * location at the Erg Chebbi dunes near Merzouga, en-suite private tents,
  * Berber music evenings, camel trekking, 4x4 drives, and the Oct–Apr best
  * season carried by the destination data.
+ *
+ * Content rule — a supporting article must earn its existence: it must not
+ * simply reproduce a conclusion already answered by its matching tour's FAQ,
+ * that tour's `practicalInfo`, or an existing guide/blog article covering the
+ * same route. Before authoring a new article here, check (1) its search
+ * intent, (2) what the matching tour page already answers, (3) what an
+ * existing guide or blog article already answers, and (4) the genuinely new
+ * information — pacing, prioritization, landscape texture, who it suits —
+ * the new article will add on top of that. If the honest answer to (4) is
+ * "nothing," the article is not ready to write.
  */
 export type BlogSection = {
   heading: string;
+  /**
+   * Plain prose, one entry per paragraph. A paragraph may embed a single
+   * internal link using `[label](/path)` (the only inline markup supported —
+   * deliberately not a general rich-text format). `/path` must be a real,
+   * existing site route; both the runtime page and the prerenderer parse the
+   * same syntax via `parseParagraph` below, so a plain paragraph with no
+   * `[...](...)` renders exactly as before.
+   */
   paragraphs: string[];
   /** Optional real site image for this section — never localized, never invented. */
   image?: { src: string; alt: string };
 };
+
+/** One piece of a parsed paragraph: plain text, or a `[label](/path)` link. */
+export type ParagraphPart = { type: 'text'; value: string } | { type: 'link'; label: string; href: string };
+
+// Matches [label](/internal/path) — the href must start with "/" so this can
+// only ever produce an internal, same-origin link, never an external one.
+const INLINE_LINK_RE = /\[([^\]]+)\]\((\/[^\s)]+)\)/g;
+
+/**
+ * Split a paragraph string into plain-text and link parts. Shared by the
+ * React page (which renders real `<Link>` elements) and the prerenderer
+ * (which renders real `<a>` tags) so both sides stay in sync from one parse.
+ */
+export function parseParagraph(text: string): ParagraphPart[] {
+  const parts: ParagraphPart[] = [];
+  let last = 0;
+  for (const m of text.matchAll(INLINE_LINK_RE)) {
+    const idx = m.index ?? 0;
+    if (idx > last) parts.push({ type: 'text', value: text.slice(last, idx) });
+    parts.push({ type: 'link', label: m[1], href: m[2] });
+    last = idx + m[0].length;
+  }
+  if (last < text.length) parts.push({ type: 'text', value: text.slice(last) });
+  return parts;
+}
 
 export const BLOG_ARTICLE_SECTIONS: Record<string, BlogSection[]> = {
   'merzouga-luxury-desert-camp-guide': [
@@ -276,18 +319,19 @@ export const BLOG_ARTICLE_SECTIONS: Record<string, BlogSection[]> = {
     {
       heading: 'Arriving in the Dunes: What the Second Night Feels Like',
       paragraphs: [
-        "By late afternoon on day two, the tour reaches Merzouga and the Erg Chebbi dunes — Morocco's tallest, and the reason most people book this route in the first place. From here the day follows the pattern every Sahara tour from Marrakech shares: a camel trek into the dunes timed for sunset, dinner at a desert camp, and a night under a sky with none of the light pollution a city gives you. If you haven't ridden a camel before, or want to know what to wear and how a trek actually works, our camel trekking guide covers that in more depth than fits here.",
+        "By late afternoon on day two, the tour reaches Merzouga and the Erg Chebbi dunes — Morocco's tallest, and the reason most people book this route in the first place. From here the day follows the pattern every Sahara tour from Marrakech shares: a camel trek into the dunes timed for sunset, dinner at a desert camp, and a night under a sky with none of the light pollution a city gives you. If you haven't ridden a camel before, or want to know what to wear and how a trek actually works, [our camel trekking guide](/merzouga-guide/camel-trekking) covers that in more depth than fits here.",
         "What stands out on this particular route isn't the camp itself — it's the contrast. You spend two full days watching the landscape change through a vehicle window, then step onto sand for the first time right as the light turns gold. Guests consistently say that shift, more than any single stop along the way, is what they remember.",
         "The third day starts with sunrise over the dunes before the long return drive to Marrakech — the longest single day of driving on the route, which is worth knowing in advance rather than discovering at hour six.",
       ],
       image: { src: '/images/curated/berber-guide-camel-sahara-desert-merzouga.webp', alt: 'A Berber guide leading a camel across the Erg Chebbi dunes near Merzouga' },
     },
     {
-      heading: 'Is Three Days Really Enough?',
+      heading: 'What the Pace Actually Feels Like',
       paragraphs: [
-        "Honestly — it's tight. Three days is the shortest format that makes this route work, not the most comfortable one. You get the full sequence: the pass, Aït Ben Haddou, the valleys, one proper night in the dunes. What you don't get is slack — spare time to linger at a viewpoint, swap a stop for a rest, or add a second desert night without changing the whole plan.",
-        "The 3-day format suits a fixed, tight schedule more than an open one: travelers on a set return flight who still want the complete route rather than a shortened version. It's less suited to families with young children or anyone who finds long car days genuinely draining — for those groups, the 4-day version (or the 5-day Great South route, which covers similar ground at a noticeably gentler pace) is usually the better fit.",
-        "A private driver-guide also changes what three days can realistically cover, compared with doing the same route in a rental car or shared minibus — stops are timed around light and crowds rather than a fixed schedule, and the pace adjusts if someone in your group wants longer at the gorge or less time on the road that day. That flexibility is most of what you're actually paying for on a route this tightly packed.",
+        "The three days aren't evenly weighted, and knowing the shape in advance changes how you experience it. Day one is mostly transit with one real stop — the Atlas crossing and Aït Ben Haddou — so the energy of the day goes into that single stretch rather than several equal ones. Day two is the fullest day: Todra Gorge, the run to Merzouga and the sunset camel trek all land within a few hours of each other, which is where the trip actually feels busy. Day three is the opposite — a quiet sunrise, then a long, mostly uninterrupted drive back with nothing scheduled beyond the return itself.",
+        "If something has to give within this pace, protect the desert night rather than any one roadside stop. Aït Ben Haddou and Todra already have their moment earlier in this guide; the rest of the driving is genuinely scenery rather than a series of attractions each asking for separate time, so there's little lost by treating it that way.",
+        "This shape tends to suit travelers fitting Morocco into a longer trip with fixed dates on either side — a stop on a wider itinerary rather than the only thing on the calendar. If Morocco is the whole trip and your dates are flexible, the extra time on the [4-day version](/tours/4-day-marrakech-merzouga-sahara) or the [5-day Great South route](/tours/5-day-great-south-morocco) buys you exactly what this pace doesn't have: room to slow down at the stops that already stood out on day one and two, instead of moving past them on schedule.",
+        "A private driver-guide also changes what the pace can realistically include, compared with a rental car or shared minibus — stops are timed around light and crowds rather than a fixed schedule, so the rhythm above adjusts a little around your own group rather than being fixed in advance.",
       ],
     },
   ],
@@ -296,8 +340,8 @@ export const BLOG_ARTICLE_SECTIONS: Record<string, BlogSection[]> = {
     {
       heading: 'A Different Door Into the Sahara',
       paragraphs: [
-        "Most Sahara tours in Morocco start in Marrakech, but Fes offers a genuinely different way in — and, by road, a shorter one. The drive from Fes to Merzouga via the Middle Atlas and the Ziz Valley is the most direct Sahara approach from any of Morocco's major cities, which is why travelers already in Fes, or wanting to see northern Morocco before the desert, choose this route instead of backtracking through Marrakech.",
-        "It's also a different kind of landscape story. Where the Marrakech route crosses one mountain range and several desert valleys, the Fes route moves through cedar forest, mountain plateau and a long river valley before the dunes appear — a more gradual, layered descent into the Sahara than a single dramatic pass. It's a natural fit for travelers who are already building a northern Morocco itinerary — Fes itself, or a stop in Chefchaouen beforehand — and want the desert added on rather than planned as a separate trip through Marrakech.",
+        "Travelers who reach the Sahara from Fes notice something the Marrakech route doesn't offer: the desert doesn't arrive after one dramatic mountain crossing, it arrives in stages, with no single iconic stop anchoring the drive the way Aït Ben Haddou anchors the Marrakech route. The drama here is cumulative rather than a postcard moment — which changes what the drive feels like more than it changes how long it takes.",
+        "That shape makes it a natural fit for travelers who are already building a northern Morocco itinerary — Fes itself, or a stop in Chefchaouen beforehand — and want the desert folded into that trip rather than treated as a separate journey through Marrakech. Because the route doesn't pass the well-known southern landmarks, it rewards travelers who are drawn to the landscape change itself and the desert at the end of it, not to a checklist of famous stops along the way.",
       ],
     },
     {
@@ -312,23 +356,23 @@ export const BLOG_ARTICLE_SECTIONS: Record<string, BlogSection[]> = {
       heading: 'The Ziz Valley: Where the Desert Begins',
       paragraphs: [
         "South of Midelt, the road follows the Ziz Valley, where a ribbon of palm groves and villages runs along the river through an increasingly dry, open landscape. This is the stretch where the mountains finally give way to the pre-Sahara — the vegetation thins, the colors shift to ochre and rust, and the towns start to look built for heat rather than altitude. The valley floor itself stays green for a surprisingly long stretch, a reminder that this whole corridor exists because of the river rather than in spite of the desert around it.",
-        "By the time the road reaches Erfoud and Rissani, the historic market town at the edge of the Tafilalt, you're unmistakably in desert country. Rissani's weekly market is one of the region's oldest trading points and still draws villages from across the area — if the tour's timing lines up with a market day, it's a worthwhile stop before the final approach to Merzouga.",
+        "By the time the road reaches Erfoud and Rissani, the historic market town at the edge of the Tafilalt, you're unmistakably in desert country. Rissani's historic weekly market still draws villages from across the area — if the tour's timing lines up with a market day, it's a worthwhile stop before the final approach to Merzouga.",
       ],
     },
     {
       heading: 'Reaching Erg Chebbi',
       paragraphs: [
-        "The dunes appear at the end of the second day's drive, and from here the route folds into the same desert experience every Merzouga tour shares: a camel transfer into Erg Chebbi timed for sunset, dinner at a desert camp, and a night in the dunes. If camel trekking is new to you, our dedicated guide covers mounting, pacing and what to wear in more depth than fits into a route overview.",
+        "The dunes appear at the end of the second day's drive, and from here the route folds into the same desert experience every Merzouga tour shares: a camel transfer into Erg Chebbi timed for sunset, dinner at a desert camp, and a night in the dunes. If camel trekking is new to you, [our dedicated guide](/merzouga-guide/camel-trekking) covers mounting, pacing and what to wear in more depth than fits into a route overview.",
         "What's worth noting about arriving this way, from the north, is the contrast — you've spent a day and a half watching forest and farmland give way to open valley, so the dunes themselves land harder than they might after a shorter southern approach.",
         "Sunrise the next morning is the quieter counterpart to the previous evening's trek — fewer camps are up and moving, and the light on the dune crests tends to last longer before the heat of the day sets in.",
       ],
       image: { src: '/images/dest/erg-chebbi.webp', alt: 'The dunes of Erg Chebbi near Merzouga at the end of the Fes to Merzouga route' },
     },
     {
-      heading: 'Three Days, Compact and Focused — Who Is This Route For?',
+      heading: 'Who Benefits From Approaching This Way',
       paragraphs: [
-        "This is a deliberately tight itinerary — a compact overland route with substantial driving on both days, built for travelers who want the Sahara added onto a Fes-based trip rather than a slow, multi-stop southern circuit. It suits a fixed schedule well: fly into Fes, see the medina, head south for the desert, then either return north or continue toward Marrakech, since the route doesn't lock you into a fixed return.",
-        "If you'd rather link the dunes with Todra Gorge, Dades Valley and Aït Ben Haddou on the way to Marrakech instead of backtracking to Fes, the 4-day Fes-to-Marrakech route covers that ground — worth considering if a one-way journey across the whole country appeals more than an out-and-back trip. And if Chefchaouen's blue medina is part of your northern plans, it pairs naturally with Fes before you head south, rather than being a separate trip of its own.",
+        "This direction suits travelers whose Morocco trip starts in the north rather than Marrakech — arriving into Fes, or combining the desert with Chefchaouen and the Rif beforehand — more than it suits anyone comparing routes purely on distance. Expect two full driving days with the landscape doing most of the work rather than a string of scheduled stops; the reward is in what passes outside the window as much as in where the vehicle parks.",
+        "It also suits travelers who don't need the route to double as a greatest-hits tour of southern Morocco. Aït Ben Haddou, the Dades Valley and Todra Gorge aren't on this itinerary — if seeing them matters as much as reaching the dunes, [the 4-day Fes to Marrakech route](/tours/4-day-fes-marrakech-via-merzouga) adds them on the way south instead of backtracking to Fes, trading the northern approach for a one-way journey across the whole country.",
       ],
     },
   ],
@@ -344,7 +388,7 @@ export const BLOG_ARTICLE_SECTIONS: Record<string, BlogSection[]> = {
     {
       heading: 'Ouarzazate and the Kasbah Road',
       paragraphs: [
-        "The route follows the same opening as the shorter Sahara tours — the Tizi n'Tichka Pass, then Aït Ben Haddou — before reaching Ouarzazate, known locally and internationally as Morocco's film capital. Lawrence of Arabia, Gladiator and Game of Thrones have all used its studios and surrounding desert light, and the Taourirt Kasbah in town is worth the half-hour it takes to see. On a 5-day itinerary, Ouarzazate gets treated as what it actually is — a waypoint with its own things worth seeing — rather than a lunch stop on the way to somewhere else.",
+        "The route follows the same opening as the shorter Sahara tours — the Tizi n'Tichka Pass, then Aït Ben Haddou — before reaching Ouarzazate, known locally and internationally as Morocco's film capital. Lawrence of Arabia, Gladiator and Game of Thrones have all used its studios and surrounding desert light, and the Taourirt Kasbah in town is worth a stop in its own right. On a 5-day itinerary, Ouarzazate gets treated as what it actually is — a waypoint with its own things worth seeing — rather than a lunch stop on the way to somewhere else.",
         "The Atlas Film Studios sit just outside town and, light schedules allowing, make an easy add-on to the kasbah visit — a reminder of why this stretch of desert light drew filmmakers here in the first place, long before it became a tour route.",
       ],
     },

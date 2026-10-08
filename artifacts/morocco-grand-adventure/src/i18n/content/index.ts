@@ -389,6 +389,24 @@ export function getLocalizedBlogCta(slug: string, lang: Lang): BlogCta | undefin
 }
 
 /**
+ * Other articles genuinely related to `slug`: same-category posts first (in
+ * catalog order), then other posts, excluding the article itself and never
+ * repeating one, capped at `limit`. This is the single source of truth for
+ * "Related Articles" — both the runtime blog page and the static prerenderer
+ * call this function, so a browser visitor and a crawler always see the same
+ * recommendations (previously the prerenderer used its own unrelated
+ * "first 4 posts" rule, which could omit a closely related article and never
+ * surfaced new posts added after it).
+ */
+export function getRelatedBlogPosts(slug: string, lang: Lang, limit = 5): BlogPost[] {
+  const current = blogPosts.find((p) => p.slug === slug);
+  const localizedPosts = blogPosts.map((p) => getLocalizedBlogPost(p.slug, lang) ?? p);
+  const sameCategory = localizedPosts.filter((p) => p.slug !== slug && p.category === current?.category);
+  const other = localizedPosts.filter((p) => p.slug !== slug && p.category !== current?.category);
+  return [...sameCategory, ...other].slice(0, limit);
+}
+
+/**
  * Localize a Student Tour product (src/data/student-tours.ts), falling back
  * field-by-field and item-by-item to the canonical English source — exactly
  * the same merge pattern as localizeTour(). Images, slugs and internal `to`
