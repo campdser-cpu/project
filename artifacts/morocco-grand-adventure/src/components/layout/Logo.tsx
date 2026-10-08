@@ -25,15 +25,15 @@ export function Logo({ className = '', decorative = false }: LogoProps) {
   // Default prominence for the navbar; callers (Navbar, Footer) may pass
   // explicit heights. The Navbar swaps between a large top-of-page state and
   // a compact scrolled state, so height is transitioned here: width stays
-  // `auto` and follows the image's natural (square) aspect ratio.
-  const sizeClasses = className.includes('h-') ? className : 'h-10 sm:h-12 md:h-14';
+  // `auto` and follows the image's natural aspect ratio.
+  const sizeClasses = className.includes('h-') ? className : 'h-[46px] sm:h-[55px] md:h-16';
 
   return (
     <img
       src="/logo-official.png"
       alt={decorative ? '' : 'Morocco Grand Adventure'}
-      width={600}
-      height={600}
+      width={1230}
+      height={957}
       className={`w-auto transition-[height] duration-300 ease-out ${sizeClasses}`}
     />
   );

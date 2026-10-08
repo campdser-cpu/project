@@ -52,7 +52,7 @@ export function Navbar() {
   // Logo presence: large and premium at the top of the page, compact once the
   // navbar goes solid. Driven by the existing `solid` scroll state — no extra
   // scroll listener — and animated by a CSS height transition on <Logo>.
-  const logoSize = solid ? 'h-10 sm:h-11 md:h-12 xl:h-14' : 'h-14 sm:h-16 xl:h-20';
+  const logoSize = solid ? 'h-[46px] sm:h-[51px] md:h-[55px] xl:h-16' : 'h-16 sm:h-[74px] xl:h-[92px]';
   const navClass = `fixed w-full z-50 transition-all duration-300 ${solid ? 'bg-background/95 backdrop-blur-md shadow-sm py-2' : 'bg-transparent py-3 sm:py-4'}`;
   const linkClass = `text-sm font-medium tracking-wide transition-colors ${solid ? 'text-foreground hover:text-primary' : 'text-white hover:text-accent'}`;
   const cityLabel = (id: string) => t(`hub_${id}_name`);
