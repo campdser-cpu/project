@@ -313,10 +313,10 @@ export default function TourDetail() {
       )}
 
       <section className="py-16 bg-background">
-        <div className="container mx-auto px-4 flex flex-col lg:flex-row gap-12 relative max-w-7xl">
+        <div className="container mx-auto px-4 relative max-w-4xl">
 
           {/* Main Content */}
-          <div className="lg:w-2/3">
+          <div>
 
             {/* Overview */}
             {tour.description && (
@@ -488,133 +488,11 @@ export default function TourDetail() {
               </div>
             )}
 
-            {/* What you will experience — derived from this tour's own stops. */}
-            <IncludedExperiences
-              included={experiences.included}
-              optional={experiences.optional}
-              lang={lang}
-              t={t}
-              destinationNames={destinationNames}
-            />
-
-            {/* What's Included / Not Included & Meals night by night */}
-            <TourInclusions
-              inclusions={inclusions}
-              destinationNames={destinationNames}
-              t={t}
-              className="mb-16"
-            />
-
-            <HowBookingWorks t={t} className="mb-10" />
-
-            {/* Tour depth: why choose / best for / plan with our guides.
-                English-authored copy (English-first phase) — same source the
-                prerendered HTML uses, so crawler and client content match. */}
-            {(() => {
-              const depth = getLocalizedTourDepth(tour.id, lang);
-              if (!depth.whyChoose.length && !depth.bestFor && !depth.guideLinks.length) return null;
-              const allHubs = [...MERZOUGA_GUIDES, ...COMPARISONS, ...TRAVEL_INFO];
-              const guidePages = depth.guideLinks
-                .map((slug) => allHubs.find((q) => q.slug === slug))
-                .filter((p): p is NonNullable<typeof p> => Boolean(p));
-              // Base-relative: these go to wouter's <Link>, and the router is
-              // mounted with base={`${RAW_BASE}/${lang}`} (App.tsx). Including
-              // the locale here made wouter emit /fr/fr/merzouga-guide/… — a
-              // path with no prerendered file and no rewrite, i.e. a 404.
-              const hubHref = (slug: string) => {
-                const p = guidePages.find((q) => q.slug === slug);
-                if (!p) return '#';
-                if (p.kind === 'comparison') return `/comparisons/${p.slug}`;
-                if (p.kind === 'travel-info') return `/travel-info/${p.slug}`;
-                return `/merzouga-guide/${p.slug}`;
-              };
-              return (
-                <div className="mb-16 space-y-8">
-                  {depth.whyChoose.length > 0 && (
-                    <div>
-                      <h2 className="font-serif text-4xl text-foreground mb-6">{t('jx_why_choose')}</h2>
-                      <ul className="space-y-3">
-                        {depth.whyChoose.map((w, i) => (
-                          <li key={i} className="flex items-start gap-3 text-muted-foreground">
-                            <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-1" /> {w}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-                  {depth.bestFor && (
-                    <div>
-                      <h2 className="font-serif text-4xl text-foreground mb-6">{t('jx_best_for')}</h2>
-                      <p className="text-muted-foreground leading-relaxed">{depth.bestFor}</p>
-                    </div>
-                  )}
-                  {guidePages.length > 0 && (
-                    <div className="bg-muted/50 border border-border rounded-3xl p-8">
-                      <h2 className="font-serif text-3xl text-foreground mb-3">{t('pwig_heading')}</h2>
-                      <p className="text-muted-foreground text-sm mb-6">{t('pwig_sub')}</p>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                        {guidePages.map((p) => (
-                          <Link key={p.slug} href={hubHref(p.slug)} className="group block bg-background rounded-2xl border border-border p-5 hover:border-primary/50 hover:shadow transition-all">
-                            {/* Localized guide title, matching the prerendered
-                                markup; falls back to the canonical English title
-                                for a locale with no overlay for that guide. */}
-                            <h3 className="font-serif text-lg text-foreground group-hover:text-primary transition-colors">{getLocalizedGuide(p.slug, lang)?.title ?? p.title}</h3>
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                </div>
-              );
-            })()}
-
-            {/* Luxury Gallery */}
-            <div className="mb-16">
-              <h2 className="font-serif text-4xl text-foreground mb-8">{t('tour_gallery')}</h2>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                {galleryImages.map((g, i) => (
-                  <div key={i} className="group relative overflow-hidden rounded-2xl border border-border">
-                    <img
-                      src={g.src}
-                      alt={g.caption}
-                      loading="lazy"
-                      decoding="async"
-                      className="w-full h-40 md:h-52 object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <span className="absolute bottom-3 left-3 right-3 text-white text-xs font-semibold drop-shadow opacity-0 group-hover:opacity-100 transition-opacity">{g.caption}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* FAQ */}
-            <div className="mb-16">
-              <h2 className="font-serif text-4xl text-foreground mb-8">{t('td_faq_title')}</h2>
-              <div className="space-y-3">
-                {faqs.map((f, i) => (
-                  <div key={i} className="bg-card border border-border rounded-2xl overflow-hidden">
-                    <button
-                      onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                      aria-expanded={openFaq === i}
-                      className="w-full flex items-center justify-between gap-4 p-5 text-left hover:bg-muted/50 transition-colors"
-                    >
-                      <span className="font-bold text-foreground">{f.question}</span>
-                      <span className="shrink-0 text-primary">{openFaq === i ? <Minus className="w-5 h-5" /> : <Plus className="w-5 h-5" />}</span>
-                    </button>
-                    {openFaq === i && (
-                      <div className="px-5 pb-5 -mt-1 text-muted-foreground text-sm leading-relaxed">{f.answer}</div>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-          </div>
-
-          {/* Sticky Booking Panel */}
-          <div className="lg:w-1/3">
-            <div className="sticky top-28 bg-card border border-border rounded-3xl p-8 shadow-2xl">
+            {/* Book now, pay later — placed right after the tour explanation/
+                itinerary content and before Included/Not Included/FAQ, so a
+                traveler who has just finished reading the journey sees the
+                booking box immediately, on both desktop and mobile. */}
+            <div className="bg-card border border-border rounded-3xl p-8 shadow-2xl mb-16">
 
               <h3 className="font-serif text-2xl text-foreground mb-2">{t('book_quote_title')}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed mb-5">{t('book_quote_lead')}</p>
@@ -738,6 +616,129 @@ export default function TourDetail() {
                 <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-primary shrink-0" /> {t('book_fact_terms')}</li>
               </ul>
             </div>
+
+            {/* What you will experience — derived from this tour's own stops. */}
+            <IncludedExperiences
+              included={experiences.included}
+              optional={experiences.optional}
+              lang={lang}
+              t={t}
+              destinationNames={destinationNames}
+            />
+
+            {/* What's Included / Not Included & Meals night by night */}
+            <TourInclusions
+              inclusions={inclusions}
+              destinationNames={destinationNames}
+              t={t}
+              className="mb-16"
+            />
+
+            <HowBookingWorks t={t} className="mb-10" />
+
+            {/* Tour depth: why choose / best for / plan with our guides.
+                English-authored copy (English-first phase) — same source the
+                prerendered HTML uses, so crawler and client content match. */}
+            {(() => {
+              const depth = getLocalizedTourDepth(tour.id, lang);
+              if (!depth.whyChoose.length && !depth.bestFor && !depth.guideLinks.length) return null;
+              const allHubs = [...MERZOUGA_GUIDES, ...COMPARISONS, ...TRAVEL_INFO];
+              const guidePages = depth.guideLinks
+                .map((slug) => allHubs.find((q) => q.slug === slug))
+                .filter((p): p is NonNullable<typeof p> => Boolean(p));
+              // Base-relative: these go to wouter's <Link>, and the router is
+              // mounted with base={`${RAW_BASE}/${lang}`} (App.tsx). Including
+              // the locale here made wouter emit /fr/fr/merzouga-guide/… — a
+              // path with no prerendered file and no rewrite, i.e. a 404.
+              const hubHref = (slug: string) => {
+                const p = guidePages.find((q) => q.slug === slug);
+                if (!p) return '#';
+                if (p.kind === 'comparison') return `/comparisons/${p.slug}`;
+                if (p.kind === 'travel-info') return `/travel-info/${p.slug}`;
+                return `/merzouga-guide/${p.slug}`;
+              };
+              return (
+                <div className="mb-16 space-y-8">
+                  {depth.whyChoose.length > 0 && (
+                    <div>
+                      <h2 className="font-serif text-4xl text-foreground mb-6">{t('jx_why_choose')}</h2>
+                      <ul className="space-y-3">
+                        {depth.whyChoose.map((w, i) => (
+                          <li key={i} className="flex items-start gap-3 text-muted-foreground">
+                            <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-1" /> {w}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  {depth.bestFor && (
+                    <div>
+                      <h2 className="font-serif text-4xl text-foreground mb-6">{t('jx_best_for')}</h2>
+                      <p className="text-muted-foreground leading-relaxed">{depth.bestFor}</p>
+                    </div>
+                  )}
+                  {guidePages.length > 0 && (
+                    <div className="bg-muted/50 border border-border rounded-3xl p-8">
+                      <h2 className="font-serif text-3xl text-foreground mb-3">{t('pwig_heading')}</h2>
+                      <p className="text-muted-foreground text-sm mb-6">{t('pwig_sub')}</p>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        {guidePages.map((p) => (
+                          <Link key={p.slug} href={hubHref(p.slug)} className="group block bg-background rounded-2xl border border-border p-5 hover:border-primary/50 hover:shadow transition-all">
+                            {/* Localized guide title, matching the prerendered
+                                markup; falls back to the canonical English title
+                                for a locale with no overlay for that guide. */}
+                            <h3 className="font-serif text-lg text-foreground group-hover:text-primary transition-colors">{getLocalizedGuide(p.slug, lang)?.title ?? p.title}</h3>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              );
+            })()}
+
+            {/* Luxury Gallery */}
+            <div className="mb-16">
+              <h2 className="font-serif text-4xl text-foreground mb-8">{t('tour_gallery')}</h2>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                {galleryImages.map((g, i) => (
+                  <div key={i} className="group relative overflow-hidden rounded-2xl border border-border">
+                    <img
+                      src={g.src}
+                      alt={g.caption}
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-40 md:h-52 object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <span className="absolute bottom-3 left-3 right-3 text-white text-xs font-semibold drop-shadow opacity-0 group-hover:opacity-100 transition-opacity">{g.caption}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* FAQ */}
+            <div className="mb-16">
+              <h2 className="font-serif text-4xl text-foreground mb-8">{t('td_faq_title')}</h2>
+              <div className="space-y-3">
+                {faqs.map((f, i) => (
+                  <div key={i} className="bg-card border border-border rounded-2xl overflow-hidden">
+                    <button
+                      onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                      aria-expanded={openFaq === i}
+                      className="w-full flex items-center justify-between gap-4 p-5 text-left hover:bg-muted/50 transition-colors"
+                    >
+                      <span className="font-bold text-foreground">{f.question}</span>
+                      <span className="shrink-0 text-primary">{openFaq === i ? <Minus className="w-5 h-5" /> : <Plus className="w-5 h-5" />}</span>
+                    </button>
+                    {openFaq === i && (
+                      <div className="px-5 pb-5 -mt-1 text-muted-foreground text-sm leading-relaxed">{f.answer}</div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+
           </div>
 
         </div>
