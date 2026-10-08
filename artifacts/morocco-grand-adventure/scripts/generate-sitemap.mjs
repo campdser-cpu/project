@@ -34,6 +34,14 @@ const LEGACY_REDIRECT_PATHS = new Set([
   '/zh/梅尔祖卡指南',
   '/ko/메르주가가이드',
 ]);
+// /book is prerendered for every locale, but vercel.json permanently redirects
+// every /{lang}/book URL to /{lang}/trip-builder before it is ever served - so
+// it must never enter the sitemap either (it would be a submitted URL that
+// always redirects instead of returning 200).
+function isUnreachableBookPath(pathname) {
+  const lang = pathname.split('/')[1];
+  return langs.includes(lang) && restFor(pathname, lang) === '/book';
+}
 function block(pathname) {
   const lang = pathname.split('/')[1];
   const rest = restFor(pathname, lang);
@@ -42,7 +50,7 @@ function block(pathname) {
 }
 
 if (!fs.existsSync(dist)) throw new Error('dist directory missing');
-const paths = [...new Set(walk(dist).map(urlFor).filter((p) => langs.includes(p.split('/')[1]) && !LEGACY_REDIRECT_PATHS.has(p)))].sort();
+const paths = [...new Set(walk(dist).map(urlFor).filter((p) => langs.includes(p.split('/')[1]) && !LEGACY_REDIRECT_PATHS.has(p) && !isUnreachableBookPath(p)))].sort();
 const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n  <!-- Generated only from prerendered, localized HTML pages. -->\n${paths.map(block).join('\n')}\n</urlset>\n`;
 for (const target of [path.join(root, 'public', 'sitemap.xml'), path.join(dist, 'sitemap.xml')]) {
   fs.writeFileSync(target, xml, 'utf8');

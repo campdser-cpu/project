@@ -1163,9 +1163,11 @@ function buildFooterContent(lang: Lang, rest: string): string {
   const destinationItems = getLocalizedDestinations(lang)
     .map((d) => `      <li>${link(`${SITE_URL}/${lang}/destinations/${d.id}`, d.name)}</li>`)
     .join('\n');
-  // Plan-your-trip group: the booking request, the itinerary builder and contact.
+  // Plan-your-trip group: the itinerary builder, Things To Do, and contact.
+  // (The quote CTA and the itinerary builder both lead to /trip-builder —
+  // production permanently redirects /book there, see vercel.json.)
   const planItems = [
-    { rest: '/book', label: tr(lang, 'book_quote_title') },
+    { rest: '/trip-builder', label: tr(lang, 'book_quote_title') },
     { rest: '/things-to-do-in-morocco', label: tr(lang, 'ttd_footer_link') },
     { rest: '/trip-builder', label: tr(lang, 'nav_build_journey') },
     { rest: '/contact', label: tr(lang, 'nav_contact') },

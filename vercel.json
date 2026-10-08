@@ -48,62 +48,62 @@
     {
       "source": "/book",
       "destination": "/en/trip-builder",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/en/book",
       "destination": "/en/trip-builder",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/fr/book",
       "destination": "/fr/trip-builder",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/es/book",
       "destination": "/es/trip-builder",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/it/book",
       "destination": "/it/trip-builder",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/de/book",
       "destination": "/de/trip-builder",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/nl/book",
       "destination": "/nl/trip-builder",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/pt/book",
       "destination": "/pt/trip-builder",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/zh/book",
       "destination": "/zh/trip-builder",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/ja/book",
       "destination": "/ja/trip-builder",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/ko/book",
       "destination": "/ko/trip-builder",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/ar/book",
       "destination": "/ar/trip-builder",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/:lang/tours/from-marrakech/2",

@@ -102,14 +102,14 @@ const HOME_TRUST_CARDS: TrustCard[] = [
 
 // Trust signals. Each one is verifiable: the first two are counted from
 // src/data/content.ts, the third is the business address in contactInfo, the
-// fourth is what /book and the tour panels do, and the last links to the Google
-// listing the reviews in src/data/verifiedReviews.ts were transcribed from.
+// fourth is what /trip-builder and the tour panels do, and the last links to
+// the Google listing the reviews in src/data/verifiedReviews.ts were transcribed from.
 type TrustSignal = { key: string; count?: number; icon: LucideIcon; href: string; external?: boolean };
 const TRUST_SIGNALS: TrustSignal[] = [
   { key: 'trust_destinations', count: destinations.length, icon: MapPin, href: '/destinations' },
   { key: 'trust_itineraries', count: tours.length, icon: Route, href: '/tours' },
   { key: 'trust_based', icon: Compass, href: '/about' },
-  { key: 'trust_quote', icon: FileText, href: '/book' },
+  { key: 'trust_quote', icon: FileText, href: '/trip-builder' },
   { key: 'trust_reviews', icon: Star, href: verifiedGoogleReviews[0]?.sourceUrl ?? 'https://www.google.com/maps/search/?api=1&query=Morocco%20Grand%20Adventure%20Merzouga', external: true },
 ];
 
