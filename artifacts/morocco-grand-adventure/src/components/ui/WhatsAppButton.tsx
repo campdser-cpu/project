@@ -4,7 +4,7 @@ import { contactInfo } from '@/data/content';
 import { useLocation } from 'wouter';
 import { useLanguage } from '@/contexts/LanguageContext';
 
-type WhatsAppButtonContext = {
+export type WhatsAppButtonContext = {
   tour?: {
     name: string;
     slug?: string;
@@ -52,23 +52,31 @@ export function defaultMessageForRoute(path: string): string {
   return base('I’m interested in your Morocco tours.');
 }
 
+/**
+ * Shared by WhatsAppButton and StickyBookingCTA so both the desktop floating
+ * button and the mobile sticky bar say the same thing for the same page —
+ * priority: explicit message → tour/destination/article context → generic
+ * route-derived default. Keeping this in one place means a tour/destination
+ * page is never "contextual on desktop, generic on mobile" by accident.
+ */
+export function contextualWhatsAppMessage(path: string, ctx?: WhatsAppButtonContext): string {
+  if (ctx?.message) return ctx.message;
+  if (ctx?.tour?.name) {
+    return `Hello Morocco Grand Adventure, I'm interested in ${ctx.tour.name}. I'd like to travel around available dates for my group. Could you please send me the available options and details?`;
+  }
+  if (ctx?.destination?.name) {
+    return `Hello Morocco Grand Adventure, I'm interested in a ${ctx.destination.name} desert trip. I'd like to travel around available dates for my group. Could you please send me the available options and details?`;
+  }
+  if (ctx?.article?.title) {
+    return `Hello Morocco Grand Adventure, I'm interested in "${ctx.article.title}". I'd like to travel around available dates for my group. Could you please send me the available options and details?`;
+  }
+  return defaultMessageForRoute(path);
+}
+
 export function WhatsAppButton({ tour, destination, article, message }: WhatsAppButtonContext = {}) {
   const { t } = useLanguage();
   const [location] = useLocation();
-
-  // Priority: explicit message → per-page props → route-derived default.
-  let whatsappMessage = message;
-  if (!whatsappMessage) {
-    if (tour?.name) {
-      whatsappMessage = `Hello Morocco Grand Adventure, I'm interested in ${tour.name}. I'd like to travel around available dates for my group. Could you please send me the available options and details?`;
-    } else if (destination?.name) {
-      whatsappMessage = `Hello Morocco Grand Adventure, I'm interested in a ${destination.name} desert trip. I'd like to travel around available dates for my group. Could you please send me the available options and details?`;
-    } else if (article?.title) {
-      whatsappMessage = `Hello Morocco Grand Adventure, I'm interested in "${article.title}". I'd like to travel around available dates for my group. Could you please send me the available options and details?`;
-    } else {
-      whatsappMessage = defaultMessageForRoute(location);
-    }
-  }
+  const whatsappMessage = contextualWhatsAppMessage(location, { tour, destination, article, message });
 
   return (
     // Hidden below lg: on phones, StickyBookingCTA already surfaces a WhatsApp

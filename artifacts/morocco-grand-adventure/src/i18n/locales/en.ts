@@ -245,6 +245,7 @@ export default {
     dest_explore: "Explore",
     dest_about: "About",
     dest_best_time: "Best Time",
+    dest_best_time_guide_cta: "See the full best-time-to-visit guide",
     dest_local_food: "Taste of",
     dest_culinary: "Culinary Highlights",
     dest_luxury_stays: "Luxury Stays",

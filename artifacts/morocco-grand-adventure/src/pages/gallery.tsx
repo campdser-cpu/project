@@ -9,6 +9,11 @@ import { publishableLibraryPhotos } from '@/data/photoLibrary';
 
 type GalleryItem = {
   src: string;
+  /** Real intrinsic pixel dimensions (read from the actual file via `sharp`,
+   *  never guessed) — reserves the correct masonry-column space before the
+   *  image loads, avoiding layout shift. */
+  width: number;
+  height: number;
   categories: string[];
   caption: string;
   captionKey: string;
@@ -26,57 +31,62 @@ type VideoItem = {
 // Every image is tagged with one or more categories. New photos added here are
 // grouped automatically — a category filter only appears when at least one image
 // (or video) belongs to it, so the gallery scales without any layout changes.
+// width/height on every entry are real intrinsic dimensions read from the
+// actual files via `sharp` (scripts already use it elsewhere in this repo,
+// see build-experience-thumbs.mjs) — never guessed. They let the masonry
+// grid reserve each image's real space before it loads, avoiding layout
+// shift, while `columns-*` still lays the grid out from these same ratios.
 const IMAGES: GalleryItem[] = [
   // --- Desert & Sahara ---
-  { src: '/images/personal/sahara-dunes-golden.webp', categories: ['Desert', 'Landscapes', 'Authenticity'], caption: 'Golden dunes at sunrise over Erg Chebbi', captionKey: 'gallery_cap1' },
-  { src: '/images/dest/merzouga.webp', categories: ['Desert'], caption: 'Merzouga — Erg Chebbi Dunes', captionKey: 'gallery_cap2' },
-  { src: '/images/dest/erg-chebbi.webp', categories: ['Desert'], caption: 'The golden sands of Erg Chebbi', captionKey: 'gallery_cap3' },
-  { src: '/images/dest/zagora.webp', categories: ['Desert'], caption: 'Zagora — gateway to the desert', captionKey: 'gallery_cap4' },
-  { src: '/images/dest/draa-valley.webp', categories: ['Desert', 'Landscapes'], caption: 'The palm groves of the Draa Valley', captionKey: 'gallery_cap5' },
-  { src: '/images/stock/stargazing-merzouga.webp', categories: ['Desert', 'Luxury Camp'], caption: 'Stargazing beneath the Milky Way', captionKey: 'gallery_cap7' },
-  { src: '/images/curated/berber-guide-camels-sahara-desert-morocco.webp', categories: ['Desert'], caption: 'A desert guide resting with his camels on the dunes', captionKey: 'gallery_cap40' },
+  { src: '/images/personal/sahara-dunes-golden.webp', width: 960, height: 1200, categories: ['Desert', 'Landscapes', 'Authenticity'], caption: 'Golden dunes at sunrise over Erg Chebbi', captionKey: 'gallery_cap1' },
+  { src: '/images/dest/merzouga.webp', width: 1600, height: 1067, categories: ['Desert'], caption: 'Merzouga — Erg Chebbi Dunes', captionKey: 'gallery_cap2' },
+  { src: '/images/dest/erg-chebbi.webp', width: 1024, height: 683, categories: ['Desert'], caption: 'The golden sands of Erg Chebbi', captionKey: 'gallery_cap3' },
+  { src: '/images/dest/zagora.webp', width: 800, height: 500, categories: ['Desert'], caption: 'Zagora — gateway to the desert', captionKey: 'gallery_cap4' },
+  { src: '/images/dest/draa-valley.webp', width: 612, height: 406, categories: ['Desert', 'Landscapes'], caption: 'The palm groves of the Draa Valley', captionKey: 'gallery_cap5' },
+  { src: '/images/stock/stargazing-merzouga.webp', width: 801, height: 1200, categories: ['Desert', 'Luxury Camp'], caption: 'Stargazing beneath the Milky Way', captionKey: 'gallery_cap7' },
+  { src: '/images/curated/berber-guide-camels-sahara-desert-morocco.webp', width: 900, height: 1200, categories: ['Desert'], caption: 'A desert guide resting with his camels on the dunes', captionKey: 'gallery_cap40' },
   // --- From the photo journal (authentic images from our Morocco journeys) ---
-  { src: '/images/pdf/img_0-optimized.webp', categories: ['Authenticity'], caption: 'Captured on the road with Morocco Grand Adventure', captionKey: 'gallery_cap41' },
-  { src: '/images/pdf/img_1-optimized.webp', categories: ['Authenticity'], caption: 'A moment from one of our private journeys in Morocco', captionKey: 'gallery_cap42' },
-  { src: '/images/pdf/img_2-optimized.webp', categories: ['Authenticity'], caption: 'From the Morocco Grand Adventure photo journal', captionKey: 'gallery_cap43' },
-  { src: '/images/pdf/img_3-optimized.webp', categories: ['Authenticity'], caption: 'Photographed while travelling with our local guides', captionKey: 'gallery_cap44' },
-  { src: '/images/pdf/img_4-optimized.webp', categories: ['Authenticity'], caption: 'Morocco, seen through the eyes of our travellers', captionKey: 'gallery_cap45' },
+  { src: '/images/pdf/img_0-optimized.webp', width: 1200, height: 956, categories: ['Authenticity'], caption: 'Captured on the road with Morocco Grand Adventure', captionKey: 'gallery_cap41' },
+  { src: '/images/pdf/img_1-optimized.webp', width: 800, height: 1200, categories: ['Authenticity'], caption: 'A moment from one of our private journeys in Morocco', captionKey: 'gallery_cap42' },
+  { src: '/images/pdf/img_2-optimized.webp', width: 800, height: 1200, categories: ['Authenticity'], caption: 'From the Morocco Grand Adventure photo journal', captionKey: 'gallery_cap43' },
+  { src: '/images/pdf/img_3-optimized.webp', width: 800, height: 1200, categories: ['Authenticity'], caption: 'Photographed while travelling with our local guides', captionKey: 'gallery_cap44' },
+  { src: '/images/pdf/img_4-optimized.webp', width: 800, height: 1200, categories: ['Authenticity'], caption: 'Morocco, seen through the eyes of our travellers', captionKey: 'gallery_cap45' },
   // --- Luxury Camp & Stays ---
-  { src: '/images/personal/luxury-camp-dusk.webp', categories: ['Luxury Camp', 'Desert', 'Authenticity'], caption: 'Our luxury desert camp at dusk', captionKey: 'gallery_cap8' },
-  { src: '/images/riad/courtyard.webp', categories: ['Luxury Camp', 'Culture'], caption: 'A traditional riad courtyard', captionKey: 'gallery_cap9' },
-  { src: '/images/riad/bedroom.webp', categories: ['Luxury Camp'], caption: 'A luxury riad suite', captionKey: 'gallery_cap10' },
-  { src: '/images/riad/rooftop.webp', categories: ['Luxury Camp'], caption: 'Rooftop views over the medina', captionKey: 'gallery_cap11' },
+  { src: '/images/personal/luxury-camp-dusk.webp', width: 1200, height: 1200, categories: ['Luxury Camp', 'Desert', 'Authenticity'], caption: 'Our luxury desert camp at dusk', captionKey: 'gallery_cap8' },
+  { src: '/images/riad/courtyard.webp', width: 800, height: 1198, categories: ['Luxury Camp', 'Culture'], caption: 'A traditional riad courtyard', captionKey: 'gallery_cap9' },
+  { src: '/images/riad/bedroom.webp', width: 1200, height: 801, categories: ['Luxury Camp'], caption: 'A luxury riad suite', captionKey: 'gallery_cap10' },
+  { src: '/images/riad/rooftop.webp', width: 1200, height: 801, categories: ['Luxury Camp'], caption: 'Rooftop views over the medina', captionKey: 'gallery_cap11' },
   // --- Happy Travelers ---
-  { src: '/images/personal/guide-guest-tea.webp', categories: ['Happy Travelers', 'Culture', 'My Journey as a Guide', 'Authenticity'], caption: 'Sharing sweet mint tea with a guest in the dunes', captionKey: 'gallery_cap12' },
-  { src: '/images/personal/group-atlas.webp', categories: ['Happy Travelers', 'Authenticity'], caption: 'Happy travelers in the Atlas', captionKey: 'gallery_cap13' },
-  { src: '/images/personal/guests-sunset.webp', categories: ['Happy Travelers', 'Desert', 'Authenticity'], caption: 'A Sahara sunset with our guests', captionKey: 'gallery_cap14' },
-  { src: '/images/personal/guests-van.webp', categories: ['Happy Travelers', 'Authenticity'], caption: 'On the road together', captionKey: 'gallery_cap15' },
-  { src: '/images/personal/riad-tea.webp', categories: ['Happy Travelers', 'Culture', 'Authenticity'], caption: 'Sharing tea on the terrace', captionKey: 'gallery_cap16' },
+  { src: '/images/personal/guide-guest-tea.webp', width: 1200, height: 901, categories: ['Happy Travelers', 'Culture', 'My Journey as a Guide', 'Authenticity'], caption: 'Sharing sweet mint tea with a guest in the dunes', captionKey: 'gallery_cap12' },
+  { src: '/images/personal/group-atlas.webp', width: 1200, height: 900, categories: ['Happy Travelers', 'Authenticity'], caption: 'Happy travelers in the Atlas', captionKey: 'gallery_cap13' },
+  { src: '/images/personal/guests-sunset.webp', width: 675, height: 1200, categories: ['Happy Travelers', 'Desert', 'Authenticity'], caption: 'A Sahara sunset with our guests', captionKey: 'gallery_cap14' },
+  { src: '/images/personal/guests-van.webp', width: 900, height: 1200, categories: ['Happy Travelers', 'Authenticity'], caption: 'On the road together', captionKey: 'gallery_cap15' },
+  { src: '/images/personal/riad-tea.webp', width: 800, height: 1200, categories: ['Happy Travelers', 'Culture', 'Authenticity'], caption: 'Sharing tea on the terrace', captionKey: 'gallery_cap16' },
   // --- My Journey as a Guide ---
-  { src: '/images/personal/guide-portrait.webp', categories: ['My Journey as a Guide', 'Happy Travelers', 'Authenticity'], caption: 'Your local Berber guide', captionKey: 'gallery_cap17' },
+  { src: '/images/personal/guide-portrait.webp', width: 900, height: 1200, categories: ['My Journey as a Guide', 'Happy Travelers', 'Authenticity'], caption: 'Your local Berber guide', captionKey: 'gallery_cap17' },
   // --- Landscapes (cities, mountains, coast) ---
-  { src: '/images/dest/marrakech.webp', categories: ['Landscapes'], caption: 'Marrakech — the Red City', captionKey: 'gallery_cap18' },
-  { src: '/images/dest/fes.webp', categories: ['Landscapes', 'Culture'], caption: 'Fes — the leather souk in the old medina', captionKey: 'gallery_cap46' },
-  { src: '/images/dest/chefchaouen.webp', categories: ['Landscapes'], caption: 'Chefchaouen — the Blue Pearl', captionKey: 'gallery_cap20' },
-  { src: '/images/dest/rabat.webp', categories: ['Landscapes'], caption: 'Rabat — Kasbah of the Udayas', captionKey: 'gallery_cap22' },
-  { src: '/images/hero/medina-pano.webp', categories: ['Landscapes', 'Culture'], caption: 'The Marrakech souks from above', captionKey: 'gallery_cap47' },
-  { src: '/images/hero/atlas-pano.webp', categories: ['Landscapes'], caption: 'A kasbah gateway on the road through the High Atlas', captionKey: 'gallery_cap48' },
-  { src: '/images/dest/ait-ben-haddou.webp', categories: ['Landscapes', 'Culture'], caption: 'Aït Benhaddou — the ancient ksar', captionKey: 'gallery_cap25' },
-  { src: '/images/dest/dades-valley.webp', categories: ['Landscapes'], caption: 'The winding Dades Valley road', captionKey: 'gallery_cap26' },
-  { src: '/images/dest/todra-gorge.webp', categories: ['Landscapes'], caption: 'The towering Todra Gorge', captionKey: 'gallery_cap27' },
-  { src: '/images/dest/imlil.webp', categories: ['Landscapes'], caption: 'Imlil — heart of the High Atlas', captionKey: 'gallery_cap28' },
-  { src: '/images/dest/ourika-valley.webp', categories: ['Landscapes'], caption: 'The green Ourika Valley', captionKey: 'gallery_cap29' },
-  { src: '/images/dest/essaouira.webp', categories: ['Landscapes'], caption: 'Essaouira — the windy harbour', captionKey: 'gallery_cap30' },
-  { src: '/images/dest/legzira.webp', categories: ['Landscapes'], caption: 'The red arches of Legzira', captionKey: 'gallery_cap31' },
-  { src: '/images/dest/taghazout.webp', categories: ['Landscapes'], caption: 'Taghazout — the surf village', captionKey: 'gallery_cap32' },
-  { src: '/images/dest/agadir.webp', categories: ['Landscapes'], caption: 'The sweeping bay of Agadir', captionKey: 'gallery_cap33' },
-  { src: '/images/dest/mirleft.webp', categories: ['Landscapes'], caption: 'The quiet cliffs of Mirleft', captionKey: 'gallery_cap34' },
+  { src: '/images/dest/marrakech.webp', width: 612, height: 406, categories: ['Landscapes'], caption: 'Marrakech — the Red City', captionKey: 'gallery_cap18' },
+  { src: '/images/dest/fes.webp', width: 1600, height: 1067, categories: ['Landscapes', 'Culture'], caption: 'Fes — the leather souk in the old medina', captionKey: 'gallery_cap46' },
+  { src: '/images/dest/chefchaouen.webp', width: 1050, height: 1400, categories: ['Landscapes'], caption: 'Chefchaouen — the Blue Pearl', captionKey: 'gallery_cap20' },
+  { src: '/images/dest/rabat.webp', width: 1200, height: 932, categories: ['Landscapes'], caption: 'Rabat — Kasbah of the Udayas', captionKey: 'gallery_cap22' },
+  { src: '/images/hero/medina-pano.webp', width: 900, height: 1350, categories: ['Landscapes', 'Culture'], caption: 'The Marrakech souks from above', captionKey: 'gallery_cap47' },
+  { src: '/images/hero/atlas-pano.webp', width: 1400, height: 776, categories: ['Landscapes'], caption: 'A kasbah gateway on the road through the High Atlas', captionKey: 'gallery_cap48' },
+  { src: '/images/dest/ait-ben-haddou.webp', width: 933, height: 1400, categories: ['Landscapes', 'Culture'], caption: 'Aït Benhaddou — the ancient ksar', captionKey: 'gallery_cap25' },
+  { src: '/images/dest/dades-valley.webp', width: 612, height: 408, categories: ['Landscapes'], caption: 'The winding Dades Valley road', captionKey: 'gallery_cap26' },
+  { src: '/images/dest/todra-gorge.webp', width: 931, height: 1400, categories: ['Landscapes'], caption: 'The towering Todra Gorge', captionKey: 'gallery_cap27' },
+  { src: '/images/dest/imlil.webp', width: 1200, height: 641, categories: ['Landscapes'], caption: 'Imlil — heart of the High Atlas', captionKey: 'gallery_cap28' },
+  { src: '/images/dest/ourika-valley.webp', width: 1200, height: 896, categories: ['Landscapes'], caption: 'The green Ourika Valley', captionKey: 'gallery_cap29' },
+  { src: '/images/dest/essaouira.webp', width: 1200, height: 568, categories: ['Landscapes'], caption: 'Essaouira — the windy harbour', captionKey: 'gallery_cap30' },
+  { src: '/images/dest/legzira.webp', width: 675, height: 900, categories: ['Landscapes'], caption: 'The red arches of Legzira', captionKey: 'gallery_cap31' },
+  { src: '/images/dest/taghazout.webp', width: 940, height: 560, categories: ['Landscapes'], caption: 'Taghazout — the surf village', captionKey: 'gallery_cap32' },
+  { src: '/images/dest/agadir.webp', width: 612, height: 408, categories: ['Landscapes'], caption: 'The sweeping bay of Agadir', captionKey: 'gallery_cap33' },
+  { src: '/images/dest/mirleft.webp', width: 1200, height: 800, categories: ['Landscapes'], caption: 'The quiet cliffs of Mirleft', captionKey: 'gallery_cap34' },
   // --- Culture & Food ---
-  { src: '/images/food/tea.webp', categories: ['Culture', 'Food'], caption: 'Sweet Moroccan mint tea', captionKey: 'gallery_cap35' },
-  { src: '/images/food/tagine.webp', categories: ['Food'], caption: 'A slow-cooked traditional tagine', captionKey: 'gallery_cap36' },
-  { src: '/images/food/couscous.webp', categories: ['Food'], caption: 'Friday couscous', captionKey: 'gallery_cap37' },
-  { src: '/images/food/pastries.webp', categories: ['Food'], caption: 'Fresh Moroccan pastries', captionKey: 'gallery_cap38' },
-  { src: '/images/food/streetfood.webp', categories: ['Food'], caption: 'Street food in the medina', captionKey: 'gallery_cap39' },
+  { src: '/images/food/tea.webp', width: 1000, height: 1000, categories: ['Culture', 'Food'], caption: 'Sweet Moroccan mint tea', captionKey: 'gallery_cap35' },
+  { src: '/images/food/tagine.webp', width: 675, height: 1200, categories: ['Food'], caption: 'A slow-cooked traditional tagine', captionKey: 'gallery_cap36' },
+  { src: '/images/food/couscous.webp', width: 800, height: 449, categories: ['Food'], caption: 'Friday couscous', captionKey: 'gallery_cap37' },
+  { src: '/images/food/pastries.webp', width: 794, height: 530, categories: ['Food'], caption: 'Fresh Moroccan pastries', captionKey: 'gallery_cap38' },
+  { src: '/images/food/streetfood.webp', width: 1200, height: 753, categories: ['Food'], caption: 'Street food in the medina', captionKey: 'gallery_cap39' },
 ];
 
 const VIDEOS: VideoItem[] = [
@@ -228,6 +238,8 @@ export default function Gallery() {
                     <img
                       src={item.src}
                       alt={t(item.captionKey)}
+                      width={item.width}
+                      height={item.height}
                       loading="lazy"
                       decoding="async"
                       className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"

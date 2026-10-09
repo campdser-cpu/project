@@ -105,6 +105,7 @@ export default {
     dest_explore: "Verkennen",
     dest_about: "Over",
     dest_best_time: "Beste tijd",
+    dest_best_time_guide_cta: "Bekijk de volledige beste-reistijd-gids",
     dest_local_food: "Smaken van",
     dest_culinary: "Culinaire hoogtepunten",
     dest_luxury_stays: "Luxe verblijven",

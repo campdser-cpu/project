@@ -2,13 +2,14 @@ import { ReactNode, useEffect, useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Navbar } from './Navbar';
 import { Footer } from './Footer';
-import { WhatsAppButton } from '../ui/WhatsAppButton';
+import { WhatsAppButton, type WhatsAppButtonContext } from '../ui/WhatsAppButton';
 import { ScrollToTop } from '../ui/ScrollToTop';
 import { ConciergeChat } from '../ui/ConciergeChat';
 import { StickyBookingCTA } from '../ui/StickyBookingCTA';
 import { trackEvent } from '@/lib/analytics';
 import { TopicalLinks } from '../seo/TopicalLinks';
 import { useLocation } from 'wouter';
+import { getLocalizedTours, getLocalizedDestinations } from '@/i18n/content';
 
 interface LayoutProps {
   children: ReactNode;
@@ -41,6 +42,23 @@ export function Layout({ children }: LayoutProps) {
   const tourMatch = location.match(/^\/tours\/([^/?#]+)$/);
   const isDestinationsHub = location === '/destinations' || location === '/destinations/';
   const isTripBuilder = location === '/trip-builder' || location === '/trip-builder/';
+
+  // The current tour/destination's real name, so the persistent WhatsApp
+  // widgets (floating button + mobile sticky bar) say the specific tour or
+  // place rather than a generic line — same lookup TopicalLinks above
+  // already does for the same route, just resolving a name instead of
+  // rendering links.
+  const whatsAppContext: WhatsAppButtonContext | undefined = tourMatch
+    ? (() => {
+        const tour = getLocalizedTours(lang).find((t) => t.id === tourMatch[1]);
+        return tour ? { tour: { name: tour.name, slug: tour.id } } : undefined;
+      })()
+    : destinationMatch
+    ? (() => {
+        const destination = getLocalizedDestinations(lang).find((d) => d.id === destinationMatch[1]);
+        return destination ? { destination: { name: destination.name } } : undefined;
+      })()
+    : undefined;
 
   useEffect(() => {
     const pathname = window.location.pathname;
@@ -125,10 +143,10 @@ export function Layout({ children }: LayoutProps) {
       {isDestinationsHub && <TopicalLinks context="destinations-hub" />}
       {isTripBuilder && <TopicalLinks context="trip-builder" />}
       <Footer />
-      {idle && <WhatsAppButton />}
+      {idle && <WhatsAppButton tour={whatsAppContext?.tour} destination={whatsAppContext?.destination} />}
       {idle && <ConciergeChat />}
       <ScrollToTop />
-      {idle && <StickyBookingCTA />}
+      {idle && <StickyBookingCTA context={whatsAppContext} />}
     </div>
   );
 }

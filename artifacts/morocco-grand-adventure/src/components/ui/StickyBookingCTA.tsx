@@ -5,13 +5,13 @@ import { Phone, Calendar } from 'lucide-react';
 import { contactInfo } from '@/data/content';
 import { SiWhatsapp } from 'react-icons/si';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { defaultMessageForRoute } from './WhatsAppButton';
+import { contextualWhatsAppMessage, type WhatsAppButtonContext } from './WhatsAppButton';
 
 const BOOK_LABELS: Record<string, string> = {
   en: 'Book Now — Pay Later', fr: 'Réserver — Payer plus tard', es: 'Reserva — Paga después', it: 'Prenota — Paga dopo', de: 'Jetzt buchen — später zahlen', nl: 'Boek nu — betaal later', pt: 'Reserve — pague depois', zh: '立即预订 — 稍后付款', ja: '今すぐ予約 — 後払い', ko: '지금 예약 — 나중에 결제', ar: 'احجز الآن — ادفع لاحقًا',
 };
 
-export function StickyBookingCTA() {
+export function StickyBookingCTA({ context }: { context?: WhatsAppButtonContext } = {}) {
   const [visible, setVisible] = useState(false);
   const [location] = useLocation();
   const { t, lang } = useLanguage();
@@ -29,10 +29,11 @@ export function StickyBookingCTA() {
   // This is the primary WhatsApp CTA on mobile — the floating WhatsAppButton
   // hides below lg specifically to defer to this bar. It was previously a
   // bare link with no message at all, so a tap opened an empty chat with no
-  // context on the busiest device for this site. Reuses the same route-aware
-  // message builder as the desktop button so mobile and desktop travelers
-  // land in an equally well-primed conversation.
-  const whatsappHref = `${contactInfo.whatsapp}?text=${encodeURIComponent(defaultMessageForRoute(location))}`;
+  // context on the busiest device for this site. Reuses the same
+  // tour/destination-aware message builder as the desktop button (via the
+  // optional `context` prop Layout.tsx supplies) so mobile and desktop
+  // travelers land in an equally well-primed, equally specific conversation.
+  const whatsappHref = `${contactInfo.whatsapp}?text=${encodeURIComponent(contextualWhatsAppMessage(location, context))}`;
 
   return (
     <AnimatePresence>

@@ -105,6 +105,7 @@ export default {
     dest_explore: "Explorar",
     dest_about: "Sobre",
     dest_best_time: "Melhor época",
+    dest_best_time_guide_cta: "Veja o guia completo da melhor época",
     dest_local_food: "Sabores de",
     dest_culinary: "Destaques culinários",
     dest_luxury_stays: "Hospedagens de luxo",

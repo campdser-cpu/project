@@ -13,7 +13,7 @@
 // never a value echoed back from the API response.
 // ─────────────────────────────────────────────────────────────────────────────
 import { useState, useRef, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { Link } from 'wouter';
 import { MessageSquare, X, Send, User, Bot, ArrowRight } from 'lucide-react';
 import { SiWhatsapp } from 'react-icons/si';
@@ -38,6 +38,7 @@ type Message = {
 
 export function ConciergeChat() {
   const { t, lang } = useLanguage();
+  const prefersReducedMotion = useReducedMotion();
 
   const QUICK_REPLIES = [t('ai_quick_plan'), t('ai_quick_sahara'), t('ai_quick_honeymoon'), t('ai_quick_family')];
 
@@ -211,7 +212,7 @@ export function ConciergeChat() {
                       <motion.span
                         key={i}
                         className="w-2 h-2 bg-muted-foreground/50 rounded-full"
-                        animate={{ y: [0, -4, 0] }}
+                        animate={prefersReducedMotion ? { opacity: [1, 0.4, 1] } : { y: [0, -4, 0] }}
                         transition={{ duration: 0.6, repeat: Infinity, delay: i * 0.15 }}
                       />
                     ))}

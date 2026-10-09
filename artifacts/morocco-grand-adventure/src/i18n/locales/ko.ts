@@ -105,6 +105,7 @@ export default {
     dest_explore: "탐색하기",
     dest_about: "소개",
     dest_best_time: "최적 방문 시기",
+    dest_best_time_guide_cta: "최적 방문 시기 전체 가이드 보기",
     dest_local_food: "맛보기",
     dest_culinary: "음식 하이라이트",
     dest_luxury_stays: "럭셔리 숙박",

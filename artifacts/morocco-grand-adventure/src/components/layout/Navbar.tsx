@@ -69,7 +69,7 @@ export function Navbar() {
             <Link href="/" className={linkClass}>{t('nav_home')}</Link>
             <div className="relative" onMouseEnter={() => setDestOpen(true)} onMouseLeave={() => setDestOpen(false)}>
               <Link href="/destinations" className={`${linkClass} flex items-center gap-1`}>{t('nav_destinations')} <ChevronDown className="w-4 h-4" aria-hidden="true" /></Link>
-              <AnimatePresence>{destOpen && <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 8 }} className="absolute top-full -left-4 w-64 pt-4"><div className="bg-background shadow-xl rounded-xl border border-border overflow-hidden">
+              <AnimatePresence>{destOpen && <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 8 }} className="absolute top-full -left-4 rtl:left-auto rtl:-right-4 w-64 pt-4"><div className="bg-background shadow-xl rounded-xl border border-border overflow-hidden">
                 {destinations.slice(0, 8).map((dest) => <Link key={dest.id} href={`/destinations/${dest.id}`} className="block px-4 py-3 text-sm text-foreground hover:bg-muted hover:text-primary">{dest.name}</Link>)}
                 <Link href="/destinations" className="block border-t border-border px-4 py-3 text-sm font-medium text-primary hover:bg-muted">{t('nav_all_destinations')}</Link>
               </div></motion.div>}</AnimatePresence>
@@ -77,7 +77,7 @@ export function Navbar() {
 
             <div className="relative" onMouseEnter={() => setToursOpen(true)} onMouseLeave={() => setToursOpen(false)}>
               <Link href="/tours" className={`${linkClass} flex items-center gap-1`}>{t('nav_tours')} <ChevronDown className="w-4 h-4" aria-hidden="true" /></Link>
-              <AnimatePresence>{toursOpen && <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 8 }} className="absolute top-full -left-4 w-[22rem] pt-4">
+              <AnimatePresence>{toursOpen && <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 8 }} className="absolute top-full -left-4 rtl:left-auto rtl:-right-4 w-[22rem] pt-4">
                 <div className="bg-background shadow-xl rounded-xl border border-border overflow-hidden">
                   <Link href="/tours" className="block px-4 py-3 text-sm font-bold text-foreground hover:bg-muted hover:text-primary">{t('tours_heading')}</Link>
                   {CITY_HUBS.map((hub) => {
@@ -113,7 +113,7 @@ export function Navbar() {
 
             <div className="relative" onMouseEnter={() => setExpOpen(true)} onMouseLeave={() => setExpOpen(false)}>
               <Link href="/desert-tours" className={`${linkClass} flex items-center gap-1`}>{t('nav_experiences')} <ChevronDown className="w-4 h-4" aria-hidden="true" /></Link>
-              <AnimatePresence>{expOpen && <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 8 }} className="absolute top-full -left-4 w-64 pt-4"><div className="bg-background shadow-xl rounded-xl border border-border overflow-hidden">
+              <AnimatePresence>{expOpen && <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 8 }} className="absolute top-full -left-4 rtl:left-auto rtl:-right-4 w-64 pt-4"><div className="bg-background shadow-xl rounded-xl border border-border overflow-hidden">
                 {[['/desert-tours','nav_sahara_desert_tours'],['/luxury-camp','nav_luxury_desert_camp'],['/camel-trekking','nav_camel_trekking'],['/4x4-tours','nav_4x4_desert_tours'],['/day-trips','nav_day_trips']].map(([href,key]) => <Link key={href} href={href} className="block px-4 py-3 text-sm text-foreground hover:bg-muted hover:text-primary">{t(key)}</Link>)}
                 <Link href="/blog" className="block border-t border-border px-4 py-3 text-sm font-medium text-primary hover:bg-muted">{t('nav_travel_blog')}</Link>
               </div></motion.div>}</AnimatePresence>
@@ -128,15 +128,15 @@ export function Navbar() {
               <button onClick={() => setLangOpen(v => !v)} aria-label={fmtTemplate(t('nav_lang_switch_aria'), { lang: currentLang.nativeLabel })} aria-expanded={langOpen} aria-haspopup="listbox" className={`flex items-center gap-1.5 text-sm font-medium ${solid ? 'text-foreground hover:text-primary' : 'text-white hover:text-accent'}`}>
                 <Globe className="w-4 h-4" aria-hidden="true" /> {currentLang.flag} {currentLang.code.toUpperCase()} <ChevronDown className="w-3.5 h-3.5" aria-hidden="true" />
               </button>
-              <AnimatePresence>{langOpen && <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 8 }} className="absolute right-0 top-full mt-3 w-44 bg-background border border-border rounded-xl shadow-xl overflow-hidden z-50">
-                {languages.map(l => <a key={l.code} href={langHref(l.code, rest)} hrefLang={l.code} onClick={(e) => { e.preventDefault(); setLang(l.code); setLangOpen(false); }} className={`w-full flex items-center gap-2.5 px-4 py-2.5 text-sm hover:bg-muted ${lang === l.code ? 'text-primary font-bold' : 'text-foreground'}`}><span>{l.flag}</span><span>{l.nativeLabel}</span>{lang === l.code && <span className="ml-auto">✓</span>}</a>)}
+              <AnimatePresence>{langOpen && <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 8 }} className="absolute right-0 rtl:right-auto rtl:left-0 top-full mt-3 w-44 bg-background border border-border rounded-xl shadow-xl overflow-hidden z-50">
+                {languages.map(l => <a key={l.code} href={langHref(l.code, rest)} hrefLang={l.code} onClick={(e) => { e.preventDefault(); setLang(l.code); setLangOpen(false); }} className={`w-full flex items-center gap-2.5 px-4 py-2.5 text-sm hover:bg-muted ${lang === l.code ? 'text-primary font-bold' : 'text-foreground'}`}><span>{l.flag}</span><span>{l.nativeLabel}</span>{lang === l.code && <span className="ml-auto rtl:ml-0 rtl:mr-auto">✓</span>}</a>)}
               </motion.div>}</AnimatePresence>
             </div>
 
             <a href={contactInfo.whatsapp} target="_blank" rel="noreferrer" className="bg-primary text-primary-foreground px-5 xl:px-6 py-2.5 rounded-full text-sm font-bold tracking-wide hover:bg-primary/90 transition-all whitespace-nowrap">{t('nav_book_whatsapp')}</a>
           </div>
 
-          <button className="lg:hidden p-3 min-w-[44px] min-h-[44px] flex items-center justify-center -mr-2" aria-label={mobileOpen ? t('nav_close_menu') : t('nav_open_menu')} aria-expanded={mobileOpen} onClick={() => setMobileOpen(v => !v)}>
+          <button className="lg:hidden p-3 min-w-[44px] min-h-[44px] flex items-center justify-center -mr-2 rtl:mr-0 rtl:-ml-2" aria-label={mobileOpen ? t('nav_close_menu') : t('nav_open_menu')} aria-expanded={mobileOpen} onClick={() => setMobileOpen(v => !v)}>
             {mobileOpen ? <X className="w-6 h-6 text-foreground" aria-hidden="true" /> : <Menu className={`w-6 h-6 ${solid ? 'text-foreground' : 'text-white'}`} aria-hidden="true" />}
           </button>
         </div>
@@ -145,15 +145,15 @@ export function Navbar() {
       <AnimatePresence>{mobileOpen && <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }} className="lg:hidden bg-background border-t border-border overflow-hidden"><div className="flex flex-col px-4 py-6 space-y-4 max-h-[calc(100vh-80px)] overflow-y-auto">
         <Link href="/" className="text-lg font-medium text-foreground">{t('nav_home')}</Link>
         <Link href="/destinations" className="text-lg font-medium text-foreground">{t('nav_destinations')}</Link>
-        <div className="pl-4 border-l-2 border-primary/20 space-y-3 py-2">{destinations.slice(0, 6).map(dest => <Link key={dest.id} href={`/destinations/${dest.id}`} className="block text-muted-foreground">{dest.name}</Link>)}</div>
+        <div className="pl-4 rtl:pl-0 rtl:pr-4 border-l-2 rtl:border-l-0 rtl:border-r-2 border-primary/20 space-y-3 py-2">{destinations.slice(0, 6).map(dest => <Link key={dest.id} href={`/destinations/${dest.id}`} className="block text-muted-foreground">{dest.name}</Link>)}</div>
         <Link href="/tours" className="text-lg font-medium text-foreground">{t('nav_tours')}</Link>
-        <div className="pl-4 border-l-2 border-primary/20 space-y-3 py-2">
+        <div className="pl-4 rtl:pl-0 rtl:pr-4 border-l-2 rtl:border-l-0 rtl:border-r-2 border-primary/20 space-y-3 py-2">
           <Link href="/tours" className="block font-semibold text-foreground">{t('tours_heading')}</Link>
           <Link href="/student-tours" className="block">
             <span className="block font-semibold text-foreground">{t('st_tours_label')}</span>
             <span className="block text-xs text-muted-foreground">{t('st_nav_sub')}</span>
           </Link>
-          {CITY_HUBS.map(hub => <div key={hub.id} className="space-y-1"><Link href={`/tours/from-${hub.slug}`} className="block text-foreground font-medium">{cityTitle(hub.id)}</Link><div className="pl-3 flex flex-wrap gap-x-3 gap-y-1">{(CITY_HUB_DURATIONS[hub.id] ?? []).slice(0, 4).map(days => <Link key={days} href={`/tours/from-${hub.slug}/${days}-days`} className="text-sm text-muted-foreground hover:text-primary">{fmtTemplate(t('hub_group_days_badge'), { days })}</Link>)}</div></div>)}
+          {CITY_HUBS.map(hub => <div key={hub.id} className="space-y-1"><Link href={`/tours/from-${hub.slug}`} className="block text-foreground font-medium">{cityTitle(hub.id)}</Link><div className="pl-3 rtl:pl-0 rtl:pr-3 flex flex-wrap gap-x-3 gap-y-1">{(CITY_HUB_DURATIONS[hub.id] ?? []).slice(0, 4).map(days => <Link key={days} href={`/tours/from-${hub.slug}/${days}-days`} className="text-sm text-muted-foreground hover:text-primary">{fmtTemplate(t('hub_group_days_badge'), { days })}</Link>)}</div></div>)}
           <Link href="/tours/from-marrakech/3-days" className="block text-primary font-semibold">{threeDayLabel('marrakech')}</Link>
           <Link href="/marrakech-tours" className="block text-muted-foreground">{t('mk_breadcrumb')}</Link>
           <Link href="/fes-tours" className="block text-muted-foreground">{t('mt_breadcrumb')}</Link>
@@ -168,7 +168,7 @@ export function Navbar() {
         <Link href="/about" className="text-lg font-medium text-foreground">{t('nav_about')}</Link>
         <Link href="/contact" className="text-lg font-medium text-foreground">{t('nav_contact')}</Link>
         <a href={contactInfo.whatsapp} target="_blank" rel="noreferrer" className="bg-primary text-primary-foreground px-6 py-3 rounded-full text-center font-bold mt-4">{t('nav_book_whatsapp')}</a>
-        <div className="pt-5 mt-2 border-t border-border"><div className="flex items-center gap-2 mb-3 text-sm font-semibold text-muted-foreground"><Globe className="w-4 h-4" /><span>{currentLang.flag} {currentLang.nativeLabel}</span></div><div className="grid grid-cols-2 sm:grid-cols-3 gap-2">{languages.map(l => <a key={l.code} href={langHref(l.code, rest)} hrefLang={l.code} onClick={(e) => { e.preventDefault(); setLang(l.code); setMobileOpen(false); }} className={`flex items-center gap-2 px-3 py-2.5 rounded-lg border text-sm ${lang === l.code ? 'border-primary bg-primary/5 text-primary font-bold' : 'border-border text-foreground hover:bg-muted'}`}><span>{l.flag}</span><span className="truncate">{l.nativeLabel}</span>{lang === l.code && <span className="ml-auto">✓</span>}</a>)}</div></div>
+        <div className="pt-5 mt-2 border-t border-border"><div className="flex items-center gap-2 mb-3 text-sm font-semibold text-muted-foreground"><Globe className="w-4 h-4" /><span>{currentLang.flag} {currentLang.nativeLabel}</span></div><div className="grid grid-cols-2 sm:grid-cols-3 gap-2">{languages.map(l => <a key={l.code} href={langHref(l.code, rest)} hrefLang={l.code} onClick={(e) => { e.preventDefault(); setLang(l.code); setMobileOpen(false); }} className={`flex items-center gap-2 px-3 py-2.5 rounded-lg border text-sm ${lang === l.code ? 'border-primary bg-primary/5 text-primary font-bold' : 'border-border text-foreground hover:bg-muted'}`}><span>{l.flag}</span><span className="truncate">{l.nativeLabel}</span>{lang === l.code && <span className="ml-auto rtl:ml-0 rtl:mr-auto">✓</span>}</a>)}</div></div>
       </div></motion.div>}</AnimatePresence>
     </nav>
   );

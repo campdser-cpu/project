@@ -105,6 +105,7 @@ export default {
     dest_explore: "探索",
     dest_about: "关于",
     dest_best_time: "最佳游览时间",
+    dest_best_time_guide_cta: "查看完整的最佳旅行时间指南",
     dest_local_food: "品味",
     dest_culinary: "美食亮点",
     dest_luxury_stays: "豪华住宿",

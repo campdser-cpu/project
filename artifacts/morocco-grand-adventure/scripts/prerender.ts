@@ -944,6 +944,14 @@ function buildDestinationDetailContent(destId: string, lang: Lang): string {
   const foodBlock = food
     ? h2(`${tr(lang, 'dest_local_food')} ${d.name}`) + catalogFigure(food, '(max-width: 768px) 100vw, 50vw')
     : '';
+  // Mirrors the runtime page's "Tours {name}" grid — only tours whose real
+  // route (Tour.routeIds) actually passes through this destination, never a
+  // generic/unrelated list. Omitted entirely when no tour genuinely visits
+  // this destination, same as the runtime page.
+  const relevantTours = getLocalizedTours(lang).filter((tr_) => tr_.routeIds?.includes(destId));
+  const toursBlock = relevantTours.length
+    ? h2(`${tr(lang, 'dest_tours')} ${d.name}`) + rawUl(relevantTours.map((t) => link(`${SITE_URL}/${lang}/tours/${t.id}`, t.name)))
+    : '';
   // Merzouga topical cluster: contextual links from the destination pages into
   // the Merzouga guide hubs (same block the runtime DestinationDetail renders).
   const merzougaGuideLinks = (destId === 'merzouga' || destId === 'erg-chebbi')
@@ -977,6 +985,7 @@ function buildDestinationDetailContent(destId: string, lang: Lang): string {
     + (gallery ? h2(`${d.name} ${tr(lang, 'dest_pictures_title')}`) + gallery : '')
     + catalogBlock
     + foodBlock
+    + toursBlock
     + rawParagraph(link(`${SITE_URL}/${lang}/things-to-do-in-morocco`, tr(lang, 'ttd_footer_link')))
     + departurePlanLinks
     + merzougaGuideLinks

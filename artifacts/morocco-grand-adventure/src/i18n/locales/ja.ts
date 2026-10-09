@@ -105,6 +105,7 @@ export default {
     dest_explore: "探索する",
     dest_about: "について",
     dest_best_time: "最適な時期",
+    dest_best_time_guide_cta: "最適な時期の完全ガイドを見る",
     dest_local_food: "の味覚",
     dest_culinary: "グルメハイライト",
     dest_luxury_stays: "ラグジュアリー宿泊",

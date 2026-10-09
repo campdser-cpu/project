@@ -40,10 +40,10 @@ export function TourCard({ tour, compact = false }: TourCardProps) {
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-        <div className="absolute top-3 left-3 inline-flex items-center gap-1.5 bg-background/90 backdrop-blur text-foreground text-xs font-bold px-3 py-1.5 rounded-full">
+        <div className="absolute top-3 left-3 rtl:left-auto rtl:right-3 inline-flex items-center gap-1.5 bg-background/90 backdrop-blur text-foreground text-xs font-bold px-3 py-1.5 rounded-full">
           <Clock className="w-3.5 h-3.5" aria-hidden="true" /> {tour.duration}
         </div>
-        <div className="absolute top-3 right-3">
+        <div className="absolute top-3 right-3 rtl:right-auto rtl:left-3">
           <PromoBadge compact />
         </div>
       </div>
@@ -85,7 +85,7 @@ export function TourCard({ tour, compact = false }: TourCardProps) {
             )}
           </div>
           <span className="text-primary font-bold flex items-center gap-1 group-hover:gap-2 transition-all text-sm">
-            {t('tours_view')} <ChevronRight className="w-4 h-4" aria-hidden="true" />
+            {t('tours_view')} <ChevronRight className="w-4 h-4 rtl:rotate-180" aria-hidden="true" />
           </span>
         </div>
       </div>

@@ -4,7 +4,7 @@ import { getLocalizedDestination, getLocalizedDestinations, getLocalizedTours, c
 import NotFound from './not-found';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { motion } from 'framer-motion';
-import { ChevronRight, Calendar, Star, Sun, CloudSun, MapPin, UtensilsCrossed, BedDouble, Camera } from 'lucide-react';
+import { ChevronRight, Calendar, Star, MapPin, UtensilsCrossed, Camera } from 'lucide-react';
 import { Link } from 'wouter';
 import { StructuredData, buildDestinationSchema } from '../components/seo/StructuredData';
 import { CinematicVideo } from '../components/ui/CinematicVideo';
@@ -108,17 +108,38 @@ function DeparturePlanSection({ cityId, t }: { cityId: DepartureCity; t: (key: s
   );
 }
 
+/** Great-circle distance in km between two real GPS points (haversine). */
+function distanceKm(a: { lat: number; lng: number }, b: { lat: number; lng: number }): number {
+  const R = 6371;
+  const toRad = (deg: number) => (deg * Math.PI) / 180;
+  const dLat = toRad(b.lat - a.lat);
+  const dLng = toRad(b.lng - a.lng);
+  const sinLat = Math.sin(dLat / 2);
+  const sinLng = Math.sin(dLng / 2);
+  const h = sinLat * sinLat + Math.cos(toRad(a.lat)) * Math.cos(toRad(b.lat)) * sinLng * sinLng;
+  return 2 * R * Math.asin(Math.sqrt(h));
+}
+
 export default function DestinationDetail() {
   const { t, lang } = useLanguage();
   const [match, params] = useRoute('/destinations/:id');
-  
+
   if (!match || !params?.id) return <NotFound />;
-  
+
   const destination = getLocalizedDestination(params.id, lang);
-  
+
   if (!destination) return <NotFound />;
 
-  const nearbyDestinations = getLocalizedDestinations(lang).filter(d => d.id !== destination.id).slice(0, 3);
+  // Genuinely nearby — sorted by real GPS distance (src/data/content.ts
+  // coords), not by array order. Never presents a far-away place as "nearby".
+  const nearbyDestinations = getLocalizedDestinations(lang)
+    .filter((d) => d.id !== destination.id)
+    .sort((a, b) => distanceKm(destination.coords, a.coords) - distanceKm(destination.coords, b.coords))
+    .slice(0, 3);
+
+  // Tours whose real route actually passes through this destination
+  // (Tour.routeIds, src/data/content.ts) — never a generic/unrelated list.
+  const relevantTours = getLocalizedTours(lang).filter((tour) => tour.routeIds?.includes(destination.id));
 
   return (
     <Layout>
@@ -166,8 +187,6 @@ export default function DestinationDetail() {
               <h2 className="font-serif text-4xl text-foreground mb-6">{t('dest_about')} {destination.name}</h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-12">
                 {destination.description}
-                <br /><br />
-                {t('dest_about_text')}
               </p>
               
               {/* Curated photo gallery (Image-SEO pack) — only rendered when
@@ -389,30 +408,6 @@ export default function DestinationDetail() {
                 </div>
               )}
 
-              {/* NEW: Hotels & Riads Section */}
-              <div className="mb-12">
-                <h3 className="font-serif text-3xl text-foreground mb-6 flex items-center gap-3">
-                  <BedDouble className="w-8 h-8 text-primary" /> {t('dest_luxury_stays')}
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {[1, 2].map((num) => (
-                    <div key={num} className="bg-card border border-border rounded-2xl overflow-hidden shadow-sm group hover:shadow-xl transition-all duration-300 hover:border-primary/40">
-                      <div className="h-48 overflow-hidden relative">
-                        <img src={`/images/riad/${num === 1 ? 'courtyard' : 'bedroom'}.webp`} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt={t('dest_riad_alt')} width={800} height={600} loading="lazy" decoding="async" onError={(e) => { (e.target as HTMLImageElement).src = '/images/riad/rooftop.webp'; }} />
-                        <div className="absolute top-3 right-3 bg-background/90 backdrop-blur px-2 py-1 rounded text-xs font-bold text-foreground flex items-center gap-1">
-                          <Star className="w-3 h-3 text-primary fill-current" /> 5.0
-                        </div>
-                      </div>
-                      <div className="p-5">
-                        <h4 className="font-serif text-xl mb-1 text-foreground group-hover:text-primary transition-colors">{t('dest_riad_name')}</h4>
-                        <p className="text-sm text-muted-foreground mb-3">{t('dest_riad_sub')} {destination.name}.</p>
-                        <span className="text-xs font-bold uppercase tracking-wider text-primary">{t('dest_riad_price')}</span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
             </div>
             
             {/* Sidebar */}
@@ -437,32 +432,12 @@ export default function DestinationDetail() {
                     </div>
                   </li>
                 </ul>
-              </div>
-
-              {/* NEW: Weather Widget */}
-              <div className="bg-gradient-to-br from-primary/20 to-secondary/10 border border-primary/20 p-8 rounded-3xl shadow-lg">
-                <h3 className="font-serif text-xl text-foreground mb-6 flex items-center gap-2">
-                  {t('dest_climate')} <Sun className="w-5 h-5 text-secondary" />
-                </h3>
-                <div className="flex items-end gap-4 mb-8">
-                  <span className="font-sans text-6xl font-bold tracking-tighter text-foreground">24°</span>
-                  <span className="text-xl text-muted-foreground font-medium mb-1">C</span>
-                  <span className="text-sm text-muted-foreground ml-auto mb-2 text-right">{t('dest_weather_clear')}</span>
-                </div>
-                <div className="grid grid-cols-4 gap-2 text-center border-t border-border/50 pt-4">
-                  {[
-                    { d: 'Mon', t: '24°', i: Sun },
-                    { d: 'Tue', t: '25°', i: Sun },
-                    { d: 'Wed', t: '22°', i: CloudSun },
-                    { d: 'Thu', t: '23°', i: Sun }
-                  ].map(day => (
-                    <div key={day.d} className="flex flex-col items-center">
-                      <span className="text-xs text-muted-foreground mb-2">{day.d}</span>
-                      <day.i className="w-5 h-5 text-secondary mb-2" />
-                      <span className="text-sm font-bold">{day.t}</span>
-                    </div>
-                  ))}
-                </div>
+                <Link
+                  href="/travel-info/best-time-to-visit-morocco"
+                  className="mt-6 inline-flex items-center gap-1 text-primary-text font-bold text-sm hover:gap-2 transition-all"
+                >
+                  {t('dest_best_time_guide_cta')} <ChevronRight className="w-4 h-4" aria-hidden="true" />
+                </Link>
               </div>
 
               {/* Interactive Map */}
@@ -493,7 +468,9 @@ export default function DestinationDetail() {
         </div>
       </section>
 
-      {/* Relevant Tours */}
+      {/* Relevant Tours — only shown when real tours actually route through
+          this destination (see relevantTours above); never a generic/wrong list. */}
+      {relevantTours.length > 0 && (
       <section className="py-24 bg-card border-t border-border">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="flex justify-between items-end mb-12">
@@ -505,9 +482,9 @@ export default function DestinationDetail() {
               {t('explore_tours')} <ChevronRight className="w-4 h-4" />
             </Link>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {getLocalizedTours(lang).slice(0, 3).map(tour => (
+            {relevantTours.slice(0, 3).map(tour => (
               <Link key={tour.id} href={`/tours/${tour.id}`} className="group block bg-background rounded-2xl overflow-hidden border border-border shadow-sm hover:shadow-xl hover:border-primary/50 transition-all duration-500">
                 <div className="h-56 relative overflow-hidden">
                   <img src={tour.image} srcSet={`${tour.image.replace(/\.webp$/, '-480w.webp')} 480w, ${tour.image.replace(/\.webp$/, '-768w.webp')} 768w, ${tour.image} 1200w`} sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" alt={tour.name} width={1200} height={675} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
@@ -525,6 +502,7 @@ export default function DestinationDetail() {
           </div>
         </div>
       </section>
+      )}
 
       {/* Departure-city product discovery: only the 5 real departure cities
           (src/data/tour-hierarchy.ts) get this — showing products that
