@@ -557,10 +557,11 @@
         {
           "day": 1,
           "title": "Marrakesch → Hoher Atlas → Aït Ben Haddou → Dades-Tal",
-          "desc": "Verlassen Sie Marrakesch am Morgen und überqueren Sie den Hohen Atlas in Richtung des Südens Marokkos. Halt am historischen Lehmkasbah-Ksar Aït Ben Haddou, dem UNESCO-Welterbe, dann weiter durch Ouarzazate und die wechselnden Landschaften des Dades-Tals zur ersten Nacht.",
+          "desc": "Verlassen Sie Marrakesch am Morgen und steigen Sie in den Hohen Atlas hinauf, über den Tizi-n'Tichka-Pass — mit über 2.260 Metern der höchste Straßenpass Nordafrikas und die Trennlinie zwischen dem grünen Norden und der Vor-Sahara im Süden. Die Straße windet sich an Berberdörfern und terrassierten Hängen vorbei, bevor sie hinab nach Aït Ben Haddou führt, dem am besten erhaltenen befestigten Ksar Südmarokkos und UNESCO-Welterbestätte: Seine aufgetürmten Lehmziegeltürme haben auf der Leinwand Jerusalem, Tibet und das alte Ägypten dargestellt, doch der eigentliche Reiz liegt darin, durch die erhöhten Gassen zwischen ihnen zu spazieren und zum obersten Speicher hinaufzusteigen, um den Blick über das Ounila-Tal zu genießen. Von dort geht es weiter nach Ouarzazate, Marokkos Zentrum der Filmindustrie, und ins Dades-Tal — das Tal der Tausend Kasbahs —, wo die Straße die berühmten Serpentinen oberhalb von Boulmane Dades hinaufführt, bevor die erste Übernachtung ansteht.",
           "stops": [
             "Marrakesch",
             "Hohes Atlasgebirge",
+            "Tizi-n'Tichka-Pass",
             "Aït Ben Haddou (UNESCO)",
             "Ouarzazate",
             "Dades-Tal"
@@ -569,7 +570,7 @@
         {
           "day": 2,
           "title": "Dades-Tal → Todra-Schlucht → Rissani → Merzouga",
-          "desc": "Fahren Sie ostwärts durch die Vor-Sahara, mit Zeit für die Todra-Schlucht, bevor es Richtung Rissani und Merzouga geht. Am späten Nachmittag hinein in die Dünen des Erg Chebbi zum Kamelritt rund um den Sonnenuntergang, dann das Camp-Erlebnis und Abendessen unter freiem Himmel.",
+          "desc": "Der zweite Tag führt tiefer in die Vor-Sahara. Kurz nach dem Verlassen des Dades-Tals erreicht die Straße die Todra-Schlucht, Marokkos große Schlucht — 300 Meter hohe Kalksteinwände, die sich zu einem Korridor von kaum 10 Metern Breite verengen, durchzogen vom Fluss Todra und beschattet von Palmengärten. Nach einem Halt am Flussufer führt die Route weiter ostwärts durch die Palmenhaine des Tafilalet nach Rissani, die historische Marktstadt am Rande der Sahara, bevor der Asphalt schließlich den Dünen von Merzouga weicht. Die Dünen des Erg Chebbi erreichen etwa 150 Meter — die höchsten freistehenden Dünen Marokkos — und hier beginnt der Höhepunkt der Reise: eine von einem Berber-Guide geführte Kamelkarawane durch den Sand, während sich das Licht von Gold zu Purpurrot verfärbt, gefolgt von einem Abendessen und einer Wüstencamp-Nacht unter einem der klarsten Himmel Nordafrikas.",
           "stops": [
             "Dades-Tal",
             "Todra-Schlucht",
@@ -583,7 +584,7 @@
         {
           "day": 3,
           "title": "Merzouga → Ostmarokko → Mittlerer Atlas → Marrakesch",
-          "desc": "Aufstehen zum Sonnenaufgang über den Dünen, dann beginnt die Rückreise nach Marrakesch. Das ist der längste Fahrtag, daher konzentriert sich der Reiseverlauf auf die realistische Rückfahrt statt auf eine lange Liste gehetzter Attraktionen. Wer mehr Zeit in Merzouga möchte, verlängert die Reise auf vier Tage oder mehr.",
+          "desc": "Der Morgen in den Dünen beginnt früh — es bleibt Zeit, das wechselnde Licht über dem Erg Chebbi zu beobachten, bevor das Camp abgebaut wird und die Rückreise beginnt. Dies ist der längste Fahrtag der Reise, daher setzt der Reiseverlauf bewusst auf Ehrlichkeit statt auf Versprechen: eine lange, aber landschaftlich reizvolle Fahrt zurück durch den Tafilalet, vorbei an den Palmenoasen des Ziz-Tals und über den Mittleren und Hohen Atlas, anstatt eine überhastete Liste zusätzlicher Stopps zu versprechen, die der Zeitplan nicht wirklich hergibt. Reisende, die mehr Zeit in den Dünen oder ein langsameres Tempo durch die am ersten Tag durchquerten Täler wünschen, können dieselbe Route auf vier Tage oder länger verlängern — die Dünen, die Schlucht und die Kasbah bleiben dieselben, nur die Zeit, die Sie mit jeder von ihnen verbringen, ändert sich.",
           "stops": [
             "Sonnenaufgang in Merzouga",
             "Gebiet Rissani / Tafilalet",

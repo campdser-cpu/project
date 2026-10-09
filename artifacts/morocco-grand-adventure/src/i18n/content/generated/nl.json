@@ -555,10 +555,11 @@
       "itineraryDays": [
         {
           "title": "Marrakech → Hoge Atlas → Aït Ben Haddou → Dadesvallei",
-          "desc": "U verlaat Marrakech in de ochtend en steekt de Hoge Atlas over richting het zuiden van Marokko. Onderweg stopt u bij Aït Ben Haddou, de historische ksar van leem die op de UNESCO-werelderfgoedlijst staat. Daarna rijdt u verder via Ouarzazate en door de steeds veranderende landschappen van de Dadesvallei, waar u de eerste nacht doorbrengt.",
+          "desc": "U verlaat Marrakech in de ochtend en klimt de Hoge Atlas in via de Tizi n'Tichka-pas — met ruim 2.260 meter de hoogste verkeerspas van Noord-Afrika en de scheidslijn tussen het groene noorden en de pre-Sahara in het zuiden. De weg slingert langs Berberdorpen en terrasvormige hellingen voordat hij afdaalt naar Aït Ben Haddou, de best bewaarde versterkte ksar van Zuid-Marokko en UNESCO-werelderfgoed: de opgestapelde leemtorens hebben op het scherm Jeruzalem, Tibet en het oude Egypte uitgebeeld, maar de echte charme zit in het wandelen door de verhoogde steegjes ertussen en de klim naar de bovenste graanschuur voor het uitzicht over de Ounila-vallei. Vandaar gaat het verder naar Ouarzazate, het centrum van Marokko's filmindustrie, en naar de Dadesvallei — de Vallei van de Duizend Kasbahs — waar de weg de beroemde haarspeldbochten boven Boulmane Dades beklimt voordat de eerste overnachting volgt.",
           "stops": [
             "Marrakech",
             "Hoge Atlasgebergte",
+            "Tizi n'Tichka-pas",
             "Aït Ben Haddou (UNESCO)",
             "Ouarzazate",
             "Dadesvallei"
@@ -566,7 +567,7 @@
         },
         {
           "title": "Dadesvallei → Todra-kloof → Rissani → Merzouga",
-          "desc": "U reist verder oostwaarts door de pre-Sahara, met tijd voor de Todra-kloof voordat u doorrijdt richting Rissani en Merzouga. In de late namiddag gaat u de duinen van Erg Chebbi in voor de kameeltocht rond zonsondergang, gevolgd door de overnachting in het woestijnkamp en een diner onder de open hemel.",
+          "desc": "De tweede dag voert dieper de pre-Sahara in. Kort na het verlaten van de Dadesvallei bereikt de weg de Todra-kloof, Marokko's grote canyon — 300 meter hoge kalkstenen wanden die vernauwen tot een corridor van amper 10 meter breed, uitgesleten door de Todra-rivier en overschaduwd door palmtuinen. Na een stop aan de rivier loopt de route verder oostwaarts door de palmbossen van de Tafilalet naar Rissani, de historische marktstad aan de rand van de Sahara, voordat het asfalt eindelijk plaatsmaakt voor de duinen van Merzouga. De duinen van Erg Chebbi reiken tot zo'n 150 meter — de hoogste op zichzelf staande duinen van Marokko — en hier begint het hoogtepunt van de reis: een kameelkaravaan onder leiding van een Berbergids door het zand terwijl het licht van goud naar karmozijn verkleurt, gevolgd door een diner en een woestijnkampnacht onder een van de helderste hemels van Noord-Afrika.",
           "stops": [
             "Dadesvallei",
             "Todra-kloof",
@@ -579,7 +580,7 @@
         },
         {
           "title": "Merzouga → Oost-Marokko → Midden-Atlas → Marrakech",
-          "desc": "U staat op voor de zonsopgang boven de duinen en begint daarna aan de terugreis naar Marrakech. Dit is de langste rijdag van de reis; het programma richt zich daarom op een realistische terugkeer in plaats van op een lange lijst gehaaste bezienswaardigheden. Wie meer tijd in Merzouga wil doorbrengen, kan de reis uitbreiden naar vier dagen of langer.",
+          "desc": "De ochtend in de duinen begint vroeg — er is tijd om het veranderende licht boven Erg Chebbi te bekijken voordat het kamp wordt opgebroken en de terugreis begint. Dit is de langste rijdag van de reis, dus het programma houdt het bewust eerlijk: een lange maar schilderachtige rit terug door de Tafilalet, langs de palmoases van de Ziz-vallei en over de Midden- en Hoge Atlas, in plaats van een gehaaste lijst extra stops te beloven die het schema eigenlijk niet aankan. Reizigers die meer tijd in de duinen willen, of een rustiger tempo door de op dag één doorkruiste valleien, kunnen dezelfde route verlengen tot vier dagen of meer — de duinen, de kloof en de kasbah veranderen niet, alleen hoeveel tijd u met elk ervan doorbrengt.",
           "stops": [
             "Zonsopgang in Merzouga",
             "Rissani / Tafilalet-regio",

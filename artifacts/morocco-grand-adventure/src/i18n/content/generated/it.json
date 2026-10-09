@@ -555,10 +555,11 @@
       "itineraryDays": [
         {
           "title": "Marrakech → Alto Atlante → Aït Ben Haddou → Valle del Dades",
-          "desc": "Si lascia Marrakech al mattino e si attraversa l’Alto Atlante verso il Marocco meridionale. Sosta ad Aït Ben Haddou, lo storico ksar in terra cruda patrimonio UNESCO, poi si prosegue attraverso Ouarzazate e i paesaggi in continuo mutamento della valle del Dades per la prima notte.",
+          "desc": "Si lascia Marrakech al mattino e si sale verso l'Alto Atlante attraversando il valico del Tizi n'Tichka — a oltre 2.260 metri, il valico stradale più alto del Nord Africa e la linea di confine tra il verde nord e il pre-Sahara meridionale. La strada si snoda tra villaggi berberi e versanti terrazzati prima di scendere verso Aït Ben Haddou, il ksar fortificato meglio conservato del Marocco meridionale e patrimonio UNESCO: le sue torri in terra cruda hanno interpretato sullo schermo Gerusalemme, il Tibet e l'antico Egitto, ma il vero piacere è camminare nei vicoli rialzati tra di esse e salire fino al granaio in cima per ammirare la vista sulla valle dell'Ounila. Da lì si prosegue verso Ouarzazate, il centro dell'industria cinematografica del Marocco, e verso la valle del Dades — la Valle delle Mille Kasbah — dove la strada risale i famosi tornanti sopra Boulmane Dades prima della prima tappa per la notte.",
           "stops": [
             "Marrakech",
-            "Montagne dell’Alto Atlante",
+            "Montagne dell'Alto Atlante",
+            "Valico del Tizi n'Tichka",
             "Aït Ben Haddou (UNESCO)",
             "Ouarzazate",
             "Valle del Dades"
@@ -566,7 +567,7 @@
         },
         {
           "title": "Valle del Dades → Gole del Todra → Rissani → Merzouga",
-          "desc": "Si continua verso est attraverso il pre-Sahara, con tempo per le gole del Todra prima di dirigersi verso Rissani e Merzouga. Nel tardo pomeriggio si entra nelle dune di Erg Chebbi per il trekking in cammello al tramonto, poi si vive l’esperienza del campo nel deserto e la cena a cielo aperto.",
+          "desc": "Il secondo giorno si addentra più a fondo nel pre-Sahara. Poco dopo aver lasciato la valle del Dades, la strada entra nelle gole del Todra, il grande canyon del Marocco — pareti calcaree di 300 metri che si restringono in un corridoio largo appena 10 metri, scavato dal fiume Todra e ombreggiato da palmeti. Dopo una sosta lungo il fiume, l'itinerario prosegue verso est attraverso i palmeti del Tafilalet fino a Rissani, la storica città-mercato ai margini del Sahara, prima che l'asfalto lasci finalmente spazio alle dune di Merzouga. Le dune dell'Erg Chebbi raggiungono circa 150 metri — le dune isolate più alte del Marocco — ed è qui che inizia il momento clou del viaggio: una carovana di cammelli guidata da una guida berbera attraverso la sabbia mentre la luce vira dall'oro al cremisi, seguita dalla cena e da una notte in campo nel deserto sotto uno dei cieli più tersi del Nord Africa.",
           "stops": [
             "Valle del Dades",
             "Gole del Todra",
@@ -579,7 +580,7 @@
         },
         {
           "title": "Merzouga → Marocco orientale → Medio Atlante → Marrakech",
-          "desc": "Si parte all’alba sulle dune e si inizia il rientro a Marrakech. È la giornata di strada più lunga, quindi l’itinerario mantiene il focus su un rientro realistico invece di promettere una lunga lista di attrazioni corse in fretta. Chi desidera più tempo a Merzouga può prolungare il viaggio a quattro giorni o più.",
+          "desc": "Il mattino tra le dune inizia presto — c'è tempo per osservare la luce cambiare sull'Erg Chebbi prima che il campo venga smontato e inizi il viaggio di ritorno. È la giornata di strada più lunga del viaggio, quindi l'itinerario mantiene deliberatamente un approccio onesto: un tragitto lungo ma panoramico attraverso il Tafilalet, costeggiando le oasi di palme della valle dello Ziz e attraversando il Medio e l'Alto Atlante, invece di promettere un elenco affrettato di tappe extra che il programma non può davvero sostenere. I viaggiatori che desiderano più tempo tra le dune, o un ritmo più lento attraverso le valli attraversate il primo giorno, possono prolungare lo stesso itinerario a quattro giorni o più — le dune, le gole e la kasbah non cambiano, cambia solo quanto tempo si trascorre con ciascuna di esse.",
           "stops": [
             "Alba a Merzouga",
             "Zona di Rissani / Tafilalet",

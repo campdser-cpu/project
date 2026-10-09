@@ -555,10 +555,11 @@
       "itineraryDays": [
         {
           "title": "Marrakech → Alto Atlas → Aït Ben Haddou → Vale do Dades",
-          "desc": "Parta de Marrakech de manhã e atravesse o Alto Atlas em direção ao sul de Marrocos. Faça uma paragem em Aït Ben Haddou, o histórico ksar de terra classificado como Património Mundial da UNESCO, e siga depois por Ouarzazate e pelas paisagens em constante mudança do Vale do Dades, onde passará a primeira noite.",
+          "desc": "Parta de Marrakech de manhã e suba ao Alto Atlas atravessando o Passo de Tizi n'Tichka — a mais de 2.260 metros, o mais alto passo rodoviário do Norte de África e a linha divisória entre o norte verdejante e o pré-Saara a sul. A estrada serpenteia entre aldeias berberes e encostas em socalcos antes de descer para Aït Ben Haddou, o ksar fortificado mais bem preservado do sul de Marrocos e Património Mundial da UNESCO: as suas torres de adobe empilhadas já representaram no ecrã Jerusalém, o Tibete e o antigo Egito, mas o verdadeiro encanto está em caminhar pelos becos elevados entre elas e subir até ao celeiro no topo para admirar a vista sobre o vale do Ounila. Dali segue-se para Ouarzazate, o centro da indústria cinematográfica de Marrocos, e para o Vale do Dades — o Vale das Mil Kasbahs — onde a estrada sobe as famosas curvas sinuosas acima de Boulmane Dades antes da primeira paragem para pernoitar.",
           "stops": [
             "Marrakech",
             "Cordilheira do Alto Atlas",
+            "Passo de Tizi n'Tichka",
             "Aït Ben Haddou (UNESCO)",
             "Ouarzazate",
             "Vale do Dades"
@@ -566,7 +567,7 @@
         },
         {
           "title": "Vale do Dades → Garganta de Todra → Rissani → Merzouga",
-          "desc": "Prossiga para leste pelo pré-Saara, com tempo para conhecer a Garganta de Todra antes de seguir rumo a Rissani e Merzouga. Ao final da tarde, entre nas dunas de Erg Chebbi para o passeio de camelo ao pôr do sol e desfrute depois da experiência do acampamento no deserto, com jantar sob o céu aberto.",
+          "desc": "O segundo dia avança mais fundo pelo pré-Saara. Pouco depois de deixar o Vale do Dades, a estrada entra na Garganta de Todra, o grande canhão de Marrocos — paredes de calcário de 300 metros que se estreitam até um corredor com pouco mais de 10 metros de largura, talhado pelo rio Todra e sombreado por palmeirais. Após uma paragem junto ao rio, o percurso continua para leste pelos palmeirais do Tafilalet até Rissani, a histórica vila-mercado à beira do Saara, antes de o alcatrão finalmente dar lugar às dunas de Merzouga. As dunas de Erg Chebbi atingem cerca de 150 metros — as dunas isoladas mais altas de Marrocos — e é aqui que começa o ponto alto da viagem: uma caravana de camelos guiada por um guia berbere pela areia enquanto a luz passa do dourado ao carmim, seguida de jantar e de uma noite de acampamento no deserto sob um dos céus mais límpidos do Norte de África.",
           "stops": [
             "Vale do Dades",
             "Garganta de Todra",
@@ -579,7 +580,7 @@
         },
         {
           "title": "Merzouga → Leste de Marrocos → Médio Atlas → Marrakech",
-          "desc": "Acorde para o nascer do sol sobre as dunas e inicie depois a viagem de regresso a Marrakech. Este é o dia de estrada mais longo, pelo que o itinerário privilegia um regresso realista em vez de prometer uma longa lista de visitas apressadas. Quem pretender mais tempo em Merzouga pode prolongar a viagem para quatro dias ou mais.",
+          "desc": "A manhã nas dunas começa cedo — há tempo para ver a luz mudar sobre Erg Chebbi antes de o acampamento ser desmontado e começar a viagem de regresso. É o dia de estrada mais longo da viagem, por isso o itinerário mantém deliberadamente uma abordagem honesta: um trajeto longo mas pitoresco de regresso pelo Tafilalet, junto aos oásis de palmeiras do vale do Ziz e atravessando o Médio e o Alto Atlas, em vez de prometer uma lista apressada de paragens extra que o horário não consegue realmente sustentar. Os viajantes que queiram mais tempo nas dunas, ou um ritmo mais lento pelos vales percorridos no primeiro dia, podem prolongar esta mesma rota para quatro dias ou mais — as dunas, a garganta e a kasbah não mudam, muda apenas quanto tempo passa com cada uma delas.",
           "stops": [
             "Nascer do sol em Merzouga",
             "Região de Rissani / Tafilalet",
