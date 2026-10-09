@@ -617,6 +617,11 @@ export default {
     blog_post_9_date: "September 2026",
     blog_post_9_read: "4 min read",
     blog_post_9_cat: "Sahara Desert",
+    blog_post_10_title: "10 Mistakes First-Time Visitors Make in Morocco (and How to Avoid Them)",
+    blog_post_10_excerpt: "From taxi fares to souk bargaining and medina directions — the small, practical mistakes that catch first-time visitors off guard in Morocco, and how to avoid every one of them.",
+    blog_post_10_date: "October 2026",
+    blog_post_10_read: "7 min read",
+    blog_post_10_cat: "Travel Planning",
     // ── Luxury Camp page ──
     lc_hero_alt: "Luxury desert camp at dusk near Merzouga with lanterns glowing",
     lc_breadcrumb: "Luxury Desert Camp",

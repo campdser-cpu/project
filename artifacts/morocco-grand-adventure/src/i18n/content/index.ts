@@ -329,6 +329,18 @@ export const blogPosts: BlogPost[] = [
     canonicalExcerpt: "Ouarzazate, the Dades and Todra valleys, a slower Sahara day at Merzouga, then a quiet return through the Draa Valley and Nkob — the fuller version of Morocco's Sahara route.",
     alt: "Ouarzazate, gateway to Morocco's Great South and former film-industry hub",
   },
+  {
+    slug: 'morocco-first-time-visitor-mistakes',
+    title: '10 Mistakes First-Time Visitors Make in Morocco (and How to Avoid Them)',
+    excerpt: 'From taxi fares to souk bargaining and medina directions — the small, practical mistakes that catch first-time visitors off guard in Morocco, and how to avoid every one of them.',
+    image: '/images/personal/marrakech-souk-minaret.webp',
+    date: 'October 2026',
+    readTime: '7 min read',
+    category: 'Travel Planning',
+    canonicalTitle: '10 Mistakes First-Time Visitors Make in Morocco',
+    canonicalExcerpt: 'From taxi fares to souk bargaining and medina directions — the small, practical mistakes that catch first-time visitors off guard in Morocco, and how to avoid every one of them.',
+    alt: 'A narrow souk alley in Marrakech lined with market stalls, leading toward a minaret',
+  },
 ];
 
 /**

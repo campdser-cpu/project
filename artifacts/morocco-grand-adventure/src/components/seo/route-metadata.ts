@@ -217,6 +217,7 @@ export const BLOG_META: Record<string,RouteMeta> = {
   'marrakech-to-merzouga-3-day-sahara-tour':{title:'Marrakech to Merzouga — What the 3-Day Sahara Tour Is Like',description:'The High Atlas, Aït Ben Haddou, the Dades and Todra valleys, then a night in the Erg Chebbi dunes — what the 3-day Marrakech to Merzouga tour is actually like.',ogImage:'/images/curated/ait-ben-haddou-footbridge-ounila-river.webp'},
   'fes-to-merzouga-sahara-desert-tour':{title:'Fes to Merzouga — The Sahara Tour Through the Middle Atlas',description:'Cedar forests, Ifrane and the Ziz Valley — how the Fes to Merzouga route offers a shorter, different way into the Sahara than the Marrakech crossing.',ogImage:'/images/dest/fes.jpg'},
   'marrakech-ouarzazate-merzouga-great-south-morocco':{title:'Marrakech, Ouarzazate & Merzouga — Morocco’s Great South',description:'Ouarzazate, the Dades and Todra valleys, a slower Sahara day, then a return through the Draa Valley and Nkob — the fuller 5-day version of Morocco’s Sahara route.',ogImage:'/images/dest/ouarzazate.jpg'},
+  'morocco-first-time-visitor-mistakes':{title:'10 Mistakes First-Time Visitors Make in Morocco',description:'The practical mistakes that catch first-time visitors out in Morocco — taxi fares, souk bargaining, medina directions, dress and more — and how to avoid each one.',ogImage:'/images/personal/marrakech-souk-minaret.jpg'},
 };
 
 // MGA_MISSING_TOURS_V1

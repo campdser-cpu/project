@@ -88,6 +88,10 @@ const ARTICLE_RELATIONS: Record<
     tours: ['5-day-great-south-morocco', '3-day-sahara-marrakech'],
     destinations: ['ait-ben-haddou', 'draa-valley', 'nkob', 'merzouga'],
   },
+  'morocco-first-time-visitor-mistakes': {
+    tours: ['3-day-sahara-marrakech'],
+    destinations: ['marrakech', 'merzouga'],
+  },
 };
 
 export default function BlogPost() {

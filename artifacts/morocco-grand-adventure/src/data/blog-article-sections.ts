@@ -421,6 +421,80 @@ export const BLOG_ARTICLE_SECTIONS: Record<string, BlogSection[]> = {
       ],
     },
   ],
+
+  'morocco-first-time-visitor-mistakes': [
+    {
+      heading: 'Not Agreeing on a Taxi Fare Before You Get In',
+      paragraphs: [
+        "Petit taxis in Moroccan cities often run without a working meter, or the meter stays conveniently \"broken\" once a tourist gets in. The fix is simple: ask the approximate fare, or agree on a price, before the car moves — not after you arrive. Locals do this as a matter of course; it isn't rude, it's normal.",
+        "If a driver won't agree on a number upfront, it's easier to wait for the next taxi than to argue over the price at your destination. For a fuller picture of taxis, trains and inter-city transport, see our [guide to getting around Morocco](/travel-info/getting-around-morocco).",
+      ],
+    },
+    {
+      heading: 'Expecting Fixed Prices in the Souks',
+      paragraphs: [
+        "Prices in Marrakech's and Fes's souks are a starting point for negotiation, not a fixed number — this applies to rugs, lanterns, leather goods and most handicrafts, though not to fixed-price shops or modern stores. Visitors who pay the first number offered, or who feel too awkward to negotiate at all, routinely pay well above what a Moroccan shopper would.",
+        "Bargaining is a normal, expected part of the exchange rather than a confrontation — a smile and a counter-offer go further than silence. Our [souks and shopping guide](/travel-info/moroccan-souks-shopping-guide) walks through how the back-and-forth actually works.",
+      ],
+      image: { src: '/images/personal/marrakech-souk-textiles.webp', alt: 'A Marrakech medina alley lined with textiles and handicraft stalls' },
+    },
+    {
+      heading: 'Underestimating How Long Journeys Between Cities Take',
+      paragraphs: [
+        "Morocco looks compact on a map, but mountain passes, single-lane roads and desert distances mean journeys take longer than the straight-line distance suggests. A route that looks like a two-hour drive on paper can comfortably take four or five once the High Atlas is involved.",
+        "Build slack into the itinerary rather than stacking back-to-back stops on the same day — our [Marrakech to Merzouga road trip guide](/blog/marrakech-to-merzouga-roadtrip) shows how the classic desert route is usually paced over several days rather than driven in one push.",
+      ],
+    },
+    {
+      heading: 'Packing Only for Daytime Heat, Not Desert and Mountain Nights',
+      paragraphs: [
+        "Morocco's daytime heat — especially in summer — leads many first-time visitors to pack only light clothing. But desert and mountain nights drop sharply once the sun sets, even after a hot day, and a sudden cold evening in the Sahara or the Atlas catches people out every season.",
+        "A warm layer, closed shoes and a scarf cover most of what catches people off guard. See our [Morocco packing guide](/travel-info/what-to-pack-morocco) or the more detailed [desert packing list](/blog/morocco-packing-list-desert) for a full breakdown.",
+      ],
+    },
+    {
+      heading: 'Dressing in a Way That Draws Unwanted Attention',
+      paragraphs: [
+        "Morocco is more relaxed about dress than visitors sometimes expect, especially in Marrakech and coastal cities, but shoulders and knees covered is still the more comfortable choice in medinas, smaller towns and rural areas, for any gender. It isn't about strict rules — it's about blending in rather than standing out.",
+        "Modest, breathable layers also happen to be the most practical option in the heat, so there's rarely a real trade-off between comfort and dressing sensibly.",
+      ],
+    },
+    {
+      heading: "Not Saving Your Riad's Exact Directions Before You Arrive",
+      paragraphs: [
+        "Most riads sit inside a medina's narrow alleys, which have no street address a taxi or GPS can simply drive to. Arriving late in the evening without a saved phone number, a pickup arranged, or at least a description of the nearest landmark turns a tired first night into unnecessary stress.",
+        "Save your riad's contact number and exact arrival instructions in your phone before you travel, not after you land.",
+      ],
+    },
+    {
+      heading: 'Treating Every Offer of Help as a Scam',
+      paragraphs: [
+        "Guidebooks warn so heavily about unofficial guides and street hustlers that some first-time visitors end up refusing every friendly interaction, which can come across as rude and makes the trip more guarded than it needs to be. Most people who say hello in the medina are simply being friendly.",
+        "A polite, firm \"no, thank you\" handles unwanted offers without hostility. Our [Morocco travel safety guide](/travel-info/morocco-travel-safety) and [Marrakech safety guide](/travel-info/marrakech-safety-guide) cover what's actually worth watching for, and what isn't.",
+      ],
+    },
+    {
+      heading: 'Photographing People Without Asking',
+      paragraphs: [
+        "A striking doorway or a market stall is fair game, but photographing a person — especially in smaller towns — without asking first is a common first-time misstep. Some people are happy to be photographed; others clearly aren't, and it isn't always obvious which from a distance.",
+        "A quick gesture or a smiling \"may I?\" before raising the camera is a small habit that avoids an awkward moment. Our [guide to Amazigh and Berber culture](/travel-info/amazigh-berber-culture) has more on the traditions behind what you'll see.",
+      ],
+    },
+    {
+      heading: 'Not Checking Opening Hours Around Friday',
+      paragraphs: [
+        "Friday is the main day of communal prayer, and in smaller towns some shops and restaurants close or pause around midday as a result — a detail that rarely shows up in opening-hours listings. It's far less noticeable in Marrakech or Casablanca than in a small Atlas or desert town.",
+        "It's rarely a problem once you know to expect it — our [Morocco basics guide](/travel-info/morocco-basics) covers this alongside the other everyday practicalities worth knowing before you go.",
+      ],
+    },
+    {
+      heading: 'Assuming Tap Water Is Fine Everywhere',
+      paragraphs: [
+        "Tap water in Morocco's main cities is treated, but most visitors' stomachs aren't used to the local mineral content, and the safer default is bottled or filtered water throughout the trip, including for brushing teeth in smaller towns.",
+        "It's a minor habit, not a reason to worry — bottled water is sold everywhere. Our [guide to Moroccan food and cuisine](/travel-info/moroccan-food-and-cuisine) covers more of what to expect at the table.",
+      ],
+    },
+  ],
 };
 
 /** Contextual CTA for articles that have a body. Rendered with links by each consumer. */
@@ -498,6 +572,15 @@ export const BLOG_ARTICLE_CTA: Record<string, BlogCta> = {
       { to: '/tours/5-day-great-south-morocco', label: '5-Day Great South Morocco Tour' },
       { to: '/tours/3-day-sahara-marrakech', label: '3-Day Marrakech to Merzouga Sahara Tour' },
       { to: '/destinations/draa-valley', label: 'Draa Valley Destination Guide' },
+    ],
+  },
+  'morocco-first-time-visitor-mistakes': {
+    text: 'Want the fuller picture before you go? Our practical Morocco travel guides cover each of these in more depth, or start planning your own route:',
+    links: [
+      { to: '/travel-info/moroccan-souks-shopping-guide', label: 'Souks & Bargaining Guide' },
+      { to: '/travel-info/getting-around-morocco', label: 'Getting Around Morocco' },
+      { to: '/travel-info/morocco-travel-safety', label: 'Morocco Travel Safety' },
+      { to: '/trip-builder', label: 'Plan Your Trip' },
     ],
   },
 };

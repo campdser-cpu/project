@@ -16,6 +16,7 @@ export default function Blog() {
     { slug: "marrakech-to-merzouga-3-day-sahara-tour", title: t('blog_post_7_title'), excerpt: t('blog_post_7_excerpt'), image: "/images/curated/ait-ben-haddou-footbridge-ounila-river.webp", date: t('blog_post_7_date'), readTime: t('blog_post_7_read'), category: t('blog_post_7_cat') },
     { slug: "fes-to-merzouga-sahara-desert-tour", title: t('blog_post_8_title'), excerpt: t('blog_post_8_excerpt'), image: "/images/dest/fes.webp", date: t('blog_post_8_date'), readTime: t('blog_post_8_read'), category: t('blog_post_8_cat') },
     { slug: "marrakech-ouarzazate-merzouga-great-south-morocco", title: t('blog_post_9_title'), excerpt: t('blog_post_9_excerpt'), image: "/images/dest/ouarzazate.webp", date: t('blog_post_9_date'), readTime: t('blog_post_9_read'), category: t('blog_post_9_cat') },
+    { slug: "morocco-first-time-visitor-mistakes", title: t('blog_post_10_title'), excerpt: t('blog_post_10_excerpt'), image: "/images/personal/marrakech-souk-minaret.webp", date: t('blog_post_10_date'), readTime: t('blog_post_10_read'), category: t('blog_post_10_cat') },
   ];
 
   return (
