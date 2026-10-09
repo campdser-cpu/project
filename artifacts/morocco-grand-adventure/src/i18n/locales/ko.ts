@@ -42,6 +42,13 @@ export default {
     section_destinations_sub: "어디로 갈까요",
     section_tours: "추천 투어",
     section_tours_sub: "엄선된 여행 일정",
+    home_sahara_heading: "인기 사하라 사막 여정",
+    home_sahara_sub: "마라케시 또는 페즈에서 사막까지",
+    home_daytrips_heading: "데이 투어 & 체험",
+    home_daytrips_sub: "짧지만 변함없이 프라이빗한 여정",
+    home_faq_heading: "예약 전 자주 묻는 질문",
+    home_faq_sub: "알아두면 좋은 정보",
+    home_map_eyebrow: "지도에서 보기",
 
     section_city_hubs: "출발지별 투어",
 

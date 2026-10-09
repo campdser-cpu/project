@@ -7,7 +7,7 @@ import { Layout } from '../components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { contactInfo, reviews as reviewData, destinationImageAlt, destinations, tours } from '@/data/content';
 import { verifiedGoogleReviews } from '@/data/verifiedReviews';
-import { getLocalizedTours, getLocalizedDestinations, categoryLabel } from '@/i18n/content';
+import { getLocalizedTours, getLocalizedDestinations, getLocalizedFaq, categoryLabel } from '@/i18n/content';
 import { SiWhatsapp, SiGoogle, SiTripadvisor } from 'react-icons/si';
 import { PromoBanner } from '../components/promo/PromoBanner';
 import { PromoBadge } from '../components/promo/PromoBadge';
@@ -18,8 +18,11 @@ import { ReviewCard } from '../components/ui/ReviewCard';
 import { TripadvisorWidget } from '../components/ui/TripadvisorWidget';
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from '../components/ui/carousel';
 import { TourCard } from '../components/tours/TourCard';
+import { HowBookingWorks } from '../components/tours/HowBookingWorks';
+import { defaultMessageForRoute } from '../components/ui/WhatsAppButton';
 import { fmtTemplate } from '../components/tours/intl';
-import { CITY_HUBS, TOUR_DEPARTURE_CITY, FEATURED_TOUR_IDS, type DepartureCity } from '@/data/tour-hierarchy';
+import { trackEvent } from '@/lib/analytics';
+import { CITY_HUBS, TOUR_DEPARTURE_CITY, FEATURED_TOUR_IDS, SAHARA_CROSSING_TOUR_IDS, DAY_TRIP_PRODUCT_IDS, type DepartureCity } from '@/data/tour-hierarchy';
 
 /** Lazy-load the Leaflet map so its ~150 kB chunk (+ OpenStreetMap tiles) is
  *  only fetched once the map approaches the viewport — the homepage stays
@@ -97,7 +100,7 @@ const HOME_TRUST_CARDS: TrustCard[] = [
   { titleKey: 'home_trust_card2_title', descKey: 'home_trust_card2_desc', icon: MapPin, href: '/about', kind: 'internal' },
   { titleKey: 'home_trust_card3_title', descKey: 'home_trust_card3_desc', icon: Users, href: '/about', kind: 'internal' },
   { titleKey: 'home_trust_card4_title', descKey: 'home_trust_card4_desc', icon: Star, href: '#reviews', kind: 'hash' },
-  { titleKey: 'home_trust_card5_title', descKey: 'home_trust_card5_desc', icon: MessageCircle, href: contactInfo.whatsapp, kind: 'external' },
+  { titleKey: 'home_trust_card5_title', descKey: 'home_trust_card5_desc', icon: MessageCircle, href: `${contactInfo.whatsapp}?text=${encodeURIComponent(defaultMessageForRoute('/'))}`, kind: 'external' },
 ];
 
 // Trust signals. Each one is verifiable: the first two are counted from
@@ -121,6 +124,9 @@ function fmtTrust(label: string, count?: number): string {
 // Primary paths for a visitor who is still deciding "what kind of Morocco
 // trip am I looking for?" — every door is a real, already-built page; labels
 // reuse existing navigation vocabulary, one-liners are authored per language.
+// Positioned near the end of the page as secondary "more ways to explore"
+// navigation — the sections above it now answer this question more
+// concretely (Featured Tours, Sahara Itineraries, Departure City, Day Trips).
 const DISCOVERY = [
   { href: '/tours', label: 'nav_tours', desc: 'home_start_tours' },
   { href: '/trip-finder', label: 'tf_badge', desc: 'home_start_finder' },
@@ -132,17 +138,40 @@ const DISCOVERY = [
   { href: '/travel-info', label: 'dest_travel_info', desc: 'home_start_info' },
 ] as const;
 
+// Fixed positions in the canonical English faqData order (src/data/content.ts)
+// — picked by index, not by matching translated question text, so a
+// locale's translated wording can never change which questions show up here.
+// If faqData's own order ever changes, update these indices to match:
+//   0 best time to visit · 2 is Morocco safe · 4 private vs group tours ·
+//   6 how can I pay · 8 what's included in desert tours · 1 visa requirements
+const HOME_FAQ_INDICES = [0, 2, 4, 6, 8, 1];
+
 export default function Home() {
   const { t, lang } = useLanguage();
   const tours = getLocalizedTours(lang);
   const featuredTours = FEATURED_TOUR_IDS
     .map((id) => tours.find((tour) => tour.id === id))
     .filter((tour): tour is NonNullable<typeof tour> => Boolean(tour));
+  // Deliberately excludes any tour already shown in Featured Tours above
+  // (see the SAHARA_CROSSING_TOUR_IDS comment in tour-hierarchy.ts), so this
+  // section and Featured Tours never repeat the same card.
+  const saharaTours = SAHARA_CROSSING_TOUR_IDS
+    .map((id) => tours.find((tour) => tour.id === id))
+    .filter((tour): tour is NonNullable<typeof tour> => Boolean(tour));
+  // The four real, bookable day-trip products — previously only visible on
+  // /day-trips itself.
+  const dayTripTours = DAY_TRIP_PRODUCT_IDS
+    .map((id) => tours.find((tour) => tour.id === id))
+    .filter((tour): tour is NonNullable<typeof tour> => Boolean(tour));
   const destinations = getLocalizedDestinations(lang);
+  const allFaqs = getLocalizedFaq(lang);
+  const homeFaqs = HOME_FAQ_INDICES
+    .map((i) => allFaqs[i])
+    .filter((f): f is NonNullable<typeof f> => Boolean(f));
   const igItems = [
   { src: "/images/personal/guests-sunset.webp", alt: t('home_ig_alt1') },
   { src: "/images/personal/group-atlas.webp", alt: t('home_ig_alt2') },
-  { src: "/images/personal/luxury-camp-dusk.webp", alt: t('home_ig_alt3') },
+  { src: "/images/personal/sahara-dunes-golden.webp", alt: t('home_ig_alt3') },
   { src: "/images/personal/guests-van.webp", alt: t('home_ig_alt4') },
   ];
 
@@ -377,218 +406,8 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Student Tours teaser — poster image only, never the hero video, so the
-          homepage keeps its weight. Full cinematic experience lives on /student-tours. */}
-      <section className="bg-background border-b border-border [content-visibility:auto] [contain-intrinsic-size:auto_420px]">
-        <div className="container mx-auto px-4 py-14 md:py-20 grid md:grid-cols-2 gap-8 md:gap-14 items-center">
-          <div className="aspect-[16/9] overflow-hidden order-2 md:order-1">
-            <picture>
-              {/* `sizes` must describe the real box, not the viewport: this image
-                  lives in a `container px-4` grid that is 1 column below md and
-                  2 columns (gap-14) above it, so it is never 100vw/50vw. The old
-                  values overstated the width and pushed the browser onto a larger
-                  candidate than the ~397px it actually paints on mobile. */}
-              <source type="image/webp"
-                sizes="(max-width: 767px) calc(100vw - 2rem), (max-width: 1279px) calc((100vw - 5.5rem) / 2), 596px"
-                srcSet="/images/student-tours/student-group-atlas-flag-480w.webp 480w, /images/student-tours/student-group-atlas-flag-704w.webp 704w, /images/student-tours/student-group-atlas-flag-768w.webp 768w, /images/student-tours/student-group-atlas-flag-1280w.webp 1280w" />
-              <img src="/images/student-tours/student-group-atlas-flag.jpg"
-                alt={t('st_16_alt')} width={1600} height={863} loading="lazy" decoding="async"
-                className="w-full h-full object-cover" />
-            </picture>
-          </div>
-          <div className="order-1 md:order-2">
-            {/* The hard-coded brand gold (#C9A84C) measured 2.16:1 against the
-                light background at this 12px size. `text-primary-text` is the
-                same hue at AA-compliant lightness (4.69:1). */}
-            <span className="text-[12px] font-semibold uppercase block mb-4 text-primary-text" style={{ letterSpacing: '0.2em' }}>
-              {t('st_home_eyebrow')}
-            </span>
-            <h2 className="font-serif text-2xl md:text-4xl text-foreground font-light leading-tight">{t('st_home_h2')}</h2>
-            <p className="mt-4 text-muted-foreground leading-relaxed">{t('st_home_body')}</p>
-            <Link href="/student-tours"
-              className="inline-flex items-center gap-2 mt-7 px-7 py-3.5 bg-foreground text-background text-sm font-semibold hover:bg-primary transition">
-              {t('st_home_cta')} <ChevronRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* What we can actually show: counts from our own data, where we are,
-          how booking works, and the reviews themselves. No awards, ratings or
-          traveller counts are claimed — nothing in this project evidences them. */}
-      <section className="bg-background py-8 md:py-10 border-b border-border z-10 relative [content-visibility:auto] [contain-intrinsic-size:auto_120px]">
-        <div className="container mx-auto px-4">
-          <ul className="grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-3 lg:flex lg:flex-wrap lg:justify-center lg:gap-14">
-            {TRUST_SIGNALS.map((signal) => {
-              const label = fmtTrust(t(signal.key), signal.count);
-              const inner = (
-                <>
-                  <signal.icon className="w-6 h-6 md:w-7 md:h-7 text-primary shrink-0" aria-hidden="true" />
-                  <span className="text-xs md:text-sm font-semibold text-foreground text-center leading-snug">{label}</span>
-                </>
-              );
-              return (
-                <li key={signal.key} className="flex flex-col items-center gap-2">
-                  {signal.external ? (
-                    <a href={signal.href} target="_blank" rel="noreferrer" className="flex flex-col items-center gap-2 hover:text-primary transition-colors">{inner}</a>
-                  ) : (
-                    <Link href={signal.href} className="flex flex-col items-center gap-2 hover:text-primary transition-colors">{inner}</Link>
-                  )}
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-      </section>
-
       {/* Limited-time 2026 promotion */}
       <PromoBanner />
-
-      {/* Where to start — the discovery band */}
-      <section className="py-16 md:py-24 bg-background border-y border-border">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="max-w-2xl mb-10 md:mb-14">
-            <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-4">{t('home_start_title')}</h2>
-            <p className="text-muted-foreground leading-relaxed">{t('home_start_sub')}</p>
-          </div>
-          <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {DISCOVERY.map((door) => (
-              <li key={door.href}>
-                <Link
-                  href={door.href}
-                  className="group flex h-full flex-col gap-2 rounded-2xl border border-border bg-card p-6 transition-all hover:border-primary/50 hover:shadow-lg"
-                >
-                  <span className="flex items-center gap-2 font-serif text-xl text-foreground group-hover:text-primary transition-colors">
-                    {t(door.label)}
-                    <ChevronRight className="w-4 h-4 text-primary shrink-0 transition-transform group-hover:translate-x-1" aria-hidden="true" />
-                  </span>
-                  <span className="text-sm text-muted-foreground leading-relaxed">{t(door.desc)}</span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* Book With Confidence — trust/value row. Replaces the former six-photo
-          "Signature Morocco" decorative grid (no links, all six images reused
-          elsewhere on the site — see the HOME_TRUST_CARDS comment above) with
-          five evidence-based reasons to trust and book: every claim traces to
-          existing, already-published content (Why Choose Us / About page
-          stats / the real trip-builder, WhatsApp and reviews architecture),
-          not invented years, counts, awards or certifications. */}
-      <section className="py-16 md:py-24 bg-card border-y border-border [content-visibility:auto] [contain-intrinsic-size:auto_700px]">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12 md:mb-14">
-            <span className="text-primary-text font-bold tracking-wider uppercase text-sm mb-3 block">
-              {t('home_trust_kicker')}
-            </span>
-            <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-4">
-              {t('home_trust_title')}
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-base md:text-lg">
-              {t('home_trust_sub')}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-6">
-            {HOME_TRUST_CARDS.map((card, index) => {
-              const inner = (
-                <>
-                  <div className="bg-primary/10 p-3 rounded-full text-primary shrink-0 w-fit">
-                    <card.icon className="w-5 h-5 md:w-6 md:h-6" aria-hidden="true" />
-                  </div>
-                  <h3 className="font-bold text-foreground text-base md:text-lg mt-4 mb-2 flex items-center gap-1.5 group-hover:text-primary transition-colors">
-                    {t(card.titleKey)}
-                    <ChevronRight className="w-4 h-4 text-primary shrink-0 transition-transform group-hover:translate-x-1" aria-hidden="true" />
-                  </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{t(card.descKey)}</p>
-                  {card.titleKey === 'home_trust_card4_title' && (
-                    <div className="flex items-center gap-3 mt-4 text-muted-foreground">
-                      <SiGoogle className="w-4 h-4" aria-hidden="true" />
-                      <SiTripadvisor className="w-4 h-4" aria-hidden="true" />
-                    </div>
-                  )}
-                </>
-              );
-              const cardClass =
-                'group flex h-full flex-col rounded-3xl border border-border bg-background p-6 md:p-7 transition-all duration-300 hover:shadow-lg hover:border-primary/30';
-              return (
-                <motion.div
-                  key={card.titleKey}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.08 }}
-                >
-                  {card.kind === 'internal' ? (
-                    <Link href={card.href} className={cardClass}>{inner}</Link>
-                  ) : (
-                    <a
-                      href={card.href}
-                      target={card.kind === 'external' ? '_blank' : undefined}
-                      rel={card.kind === 'external' ? 'noopener noreferrer' : undefined}
-                      className={cardClass}
-                    >
-                      {inner}
-                    </a>
-                  )}
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Top Destinations */}
-      <section className="py-16 md:py-24 bg-background [content-visibility:auto] [contain-intrinsic-size:auto_900px]">
-        <div className="container mx-auto px-4">
-          <div className="flex justify-between items-end mb-12 md:mb-16">
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
-              <span className="text-primary-text font-bold tracking-wider uppercase text-sm mb-3 block">{t('section_destinations_sub')}</span>
-              <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl text-foreground">{t('section_destinations')}</h2>
-            </motion.div>
-            <Link href="/destinations" className="hidden md:flex items-center gap-2 text-foreground font-semibold hover:text-primary transition-colors">
-              {t('view_all')} <ChevronRight className="w-4 h-4" />
-            </Link>
-          </div>
-
-          <motion.div 
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6"
-            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}
-          >
-            {destinations.slice(0, 6).map((dest) => (
-              <motion.div key={dest.id} variants={fadeInUp} className="group relative h-72 md:h-[420px] rounded-3xl overflow-hidden cursor-pointer shadow-sm hover:shadow-xl hover:shadow-primary/20 transition-all duration-500 border border-transparent hover:border-primary/50">
-                <Link href={`/destinations/${dest.id}`} className="absolute inset-0 z-10" aria-label={fmtTemplate(t('home_dest_explore_aria'), { name: dest.name })} />
-                <img src={dest.image} alt={destinationImageAlt(dest, `${dest.name} — ${dest.shortDesc}`, t('dest_alt_unverified'))} loading="lazy" decoding="async" width={800} height={600} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
-                <div className="absolute bottom-0 left-0 p-5 md:p-6 z-20 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                  <span className="text-primary-text text-xs font-bold tracking-wider uppercase mb-2 block drop-shadow-md">{categoryLabel(dest.category, lang)}</span>
-                  <h3 className="font-serif text-xl md:text-2xl mb-1 drop-shadow-md">{dest.name}</h3>
-                  <div className="flex items-center gap-1 text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 mt-2 text-primary">
-                    {t('explore')} <ChevronRight className="w-3 h-3" />
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Interactive Morocco Map — real Leaflet + OpenStreetMap */}
-      <section className="py-16 md:py-24 bg-card border-y border-border [content-visibility:auto] [contain-intrinsic-size:auto_800px]">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12 md:mb-16">
-            <span className="text-primary-text font-bold tracking-wider uppercase text-sm mb-3 block">{t('section_destinations_sub')}</span>
-            <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl text-foreground mb-4">{t('section_map')}</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-base md:text-lg">{t('section_map_sub')}</p>
-          </div>
-
-          <div className="max-w-5xl mx-auto">
-            <MapSection />
-          </div>
-        </div>
-      </section>
 
       {/* Featured Tours */}
       <section className="py-16 md:py-24 bg-background [content-visibility:auto] [contain-intrinsic-size:auto_1600px]">
@@ -600,7 +419,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10">
             {featuredTours.map((tour, index) => (
-              <motion.div 
+              <motion.div
                 key={tour.id}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -645,10 +464,62 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
-          
+
           <div className="text-center mt-12 md:mt-16">
             <Link href="/tours" className="inline-flex items-center gap-2 border-b-2 border-primary text-foreground font-bold pb-1 hover:text-primary transition-colors">
               {t('explore_tours')} <ChevronRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Popular Sahara Itineraries — the Marrakech-vs-Fes route choice, shown
+          as real bookable products. Deliberately excludes any tour already
+          shown in Featured Tours above (see SAHARA_CROSSING_TOUR_IDS in
+          tour-hierarchy.ts) so the two sections never repeat a card. */}
+      <section className="py-16 md:py-24 bg-muted/40 border-y border-border [content-visibility:auto] [contain-intrinsic-size:auto_900px]">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12 md:mb-16">
+            <span className="text-primary-text font-bold tracking-wider uppercase text-sm mb-3 block">{t('home_sahara_sub')}</span>
+            <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl text-foreground">{t('home_sahara_heading')}</h2>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {saharaTours.map((tour) => (
+              <TourCard key={tour.id} tour={tour} />
+            ))}
+          </div>
+
+          <div className="text-center mt-12 md:mt-16">
+            <Link href="/desert-tours" className="inline-flex items-center gap-2 border-b-2 border-primary text-foreground font-bold pb-1 hover:text-primary transition-colors">
+              {t('nav_sahara_desert_tours')} <ChevronRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Experience the Sahara — Cinematic Video. Placed right after the
+          itinerary cards above to reinforce the Sahara theme visually. */}
+      <section className="relative py-20 md:py-32 lg:py-40 bg-card border-y border-border overflow-hidden [content-visibility:auto] [contain-intrinsic-size:auto_800px]">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-10 md:mb-12">
+            <span className="text-primary-text font-bold tracking-wider uppercase text-sm mb-3 block">{t('home_exp_sahara')}</span>
+            <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl text-foreground mb-4">{t('home_exp_title')}</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto text-base md:text-lg">
+              {t('home_exp_sub')}
+            </p>
+          </div>
+          <CinematicVideo
+            src="/videos/sahara-experience.mp4"
+            poster="/images/personal/luxury-camp-dusk.webp"
+            alt={t('home_exp_video_alt')}
+            autoPlay={false}
+            aspectClass="aspect-video"
+            className="max-w-5xl mx-auto"
+          />
+          <div className="text-center mt-8 md:mt-10">
+            <Link href="/tours" className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 md:px-8 py-3.5 md:py-4 rounded-full font-bold tracking-wide hover:bg-primary/90 transition-all hover:-translate-y-1 shadow-lg">
+              {t('hero_cta_tours')} <ChevronRight className="w-5 h-5" />
             </Link>
           </div>
         </div>
@@ -731,28 +602,111 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Experience the Sahara — Cinematic Video */}
-      <section className="relative py-20 md:py-32 lg:py-40 bg-card border-y border-border overflow-hidden [content-visibility:auto] [contain-intrinsic-size:auto_800px]">
+      {/* Day Trips & Experiences — all four real day-trip products, shown as
+          compact TourCards. Previously only visible on /day-trips itself. */}
+      <section className="py-16 md:py-24 bg-background [content-visibility:auto] [contain-intrinsic-size:auto_700px]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-10 md:mb-12">
-            <span className="text-primary-text font-bold tracking-wider uppercase text-sm mb-3 block">{t('home_exp_sahara')}</span>
-            <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl text-foreground mb-4">{t('home_exp_title')}</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-base md:text-lg">
-              {t('home_exp_sub')}
-            </p>
+            <span className="text-primary-text font-bold tracking-wider uppercase text-sm mb-3 block">{t('home_daytrips_sub')}</span>
+            <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl text-foreground">{t('home_daytrips_heading')}</h2>
           </div>
-          <CinematicVideo
-            src="/videos/sahara-experience.mp4"
-            poster="/images/personal/luxury-camp-dusk.webp"
-            alt={t('home_exp_video_alt')}
-            autoPlay={false}
-            aspectClass="aspect-video"
-            className="max-w-5xl mx-auto"
-          />
-          <div className="text-center mt-8 md:mt-10">
-            <Link href="/tours" className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 md:px-8 py-3.5 md:py-4 rounded-full font-bold tracking-wide hover:bg-primary/90 transition-all hover:-translate-y-1 shadow-lg">
-              {t('hero_cta_tours')} <ChevronRight className="w-5 h-5" />
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {dayTripTours.map((tour) => (
+              <TourCard key={tour.id} tour={tour} compact />
+            ))}
+          </div>
+
+          <div className="text-center mt-10 md:mt-14">
+            <Link href="/day-trips" className="inline-flex items-center gap-2 border-b-2 border-primary text-foreground font-bold pb-1 hover:text-primary transition-colors">
+              {t('nav_day_trips')} <ChevronRight className="w-4 h-4" />
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Student Tours teaser — poster image only, never the hero video, so the
+          homepage keeps its weight. Full cinematic experience lives on /student-tours. */}
+      <section className="bg-background border-b border-border [content-visibility:auto] [contain-intrinsic-size:auto_420px]">
+        <div className="container mx-auto px-4 py-14 md:py-20 grid md:grid-cols-2 gap-8 md:gap-14 items-center">
+          <div className="aspect-[16/9] overflow-hidden order-2 md:order-1">
+            <picture>
+              {/* `sizes` must describe the real box, not the viewport: this image
+                  lives in a `container px-4` grid that is 1 column below md and
+                  2 columns (gap-14) above it, so it is never 100vw/50vw. The old
+                  values overstated the width and pushed the browser onto a larger
+                  candidate than the ~397px it actually paints on mobile. */}
+              <source type="image/webp"
+                sizes="(max-width: 767px) calc(100vw - 2rem), (max-width: 1279px) calc((100vw - 5.5rem) / 2), 596px"
+                srcSet="/images/student-tours/student-group-atlas-flag-480w.webp 480w, /images/student-tours/student-group-atlas-flag-704w.webp 704w, /images/student-tours/student-group-atlas-flag-768w.webp 768w, /images/student-tours/student-group-atlas-flag-1280w.webp 1280w" />
+              <img src="/images/student-tours/student-group-atlas-flag.jpg"
+                alt={t('st_16_alt')} width={1600} height={863} loading="lazy" decoding="async"
+                className="w-full h-full object-cover" />
+            </picture>
+          </div>
+          <div className="order-1 md:order-2">
+            {/* The hard-coded brand gold (#C9A84C) measured 2.16:1 against the
+                light background at this 12px size. `text-primary-text` is the
+                same hue at AA-compliant lightness (4.69:1). */}
+            <span className="text-[12px] font-semibold uppercase block mb-4 text-primary-text" style={{ letterSpacing: '0.2em' }}>
+              {t('st_home_eyebrow')}
+            </span>
+            <h2 className="font-serif text-2xl md:text-4xl text-foreground font-light leading-tight">{t('st_home_h2')}</h2>
+            <p className="mt-4 text-muted-foreground leading-relaxed">{t('st_home_body')}</p>
+            <Link href="/student-tours"
+              className="inline-flex items-center gap-2 mt-7 px-7 py-3.5 bg-foreground text-background text-sm font-semibold hover:bg-primary transition">
+              {t('st_home_cta')} <ChevronRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Top Destinations */}
+      <section className="py-16 md:py-24 bg-background [content-visibility:auto] [contain-intrinsic-size:auto_900px]">
+        <div className="container mx-auto px-4">
+          <div className="flex justify-between items-end mb-12 md:mb-16">
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
+              <span className="text-primary-text font-bold tracking-wider uppercase text-sm mb-3 block">{t('section_destinations_sub')}</span>
+              <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl text-foreground">{t('section_destinations')}</h2>
+            </motion.div>
+            <Link href="/destinations" className="hidden md:flex items-center gap-2 text-foreground font-semibold hover:text-primary transition-colors">
+              {t('view_all')} <ChevronRight className="w-4 h-4" />
+            </Link>
+          </div>
+
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6"
+            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}
+          >
+            {destinations.slice(0, 6).map((dest) => (
+              <motion.div key={dest.id} variants={fadeInUp} className="group relative h-72 md:h-[420px] rounded-3xl overflow-hidden cursor-pointer shadow-sm hover:shadow-xl hover:shadow-primary/20 transition-all duration-500 border border-transparent hover:border-primary/50">
+                <Link href={`/destinations/${dest.id}`} className="absolute inset-0 z-10" aria-label={fmtTemplate(t('home_dest_explore_aria'), { name: dest.name })} />
+                <img src={dest.image} alt={destinationImageAlt(dest, `${dest.name} — ${dest.shortDesc}`, t('dest_alt_unverified'))} loading="lazy" decoding="async" width={800} height={600} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
+                <div className="absolute bottom-0 left-0 p-5 md:p-6 z-20 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                  <span className="text-primary-text text-xs font-bold tracking-wider uppercase mb-2 block drop-shadow-md">{categoryLabel(dest.category, lang)}</span>
+                  <h3 className="font-serif text-xl md:text-2xl mb-1 drop-shadow-md">{dest.name}</h3>
+                  <div className="flex items-center gap-1 text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 mt-2 text-primary">
+                    {t('explore')} <ChevronRight className="w-3 h-3" />
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Interactive Morocco Map — real Leaflet + OpenStreetMap */}
+      <section className="py-16 md:py-24 bg-card border-y border-border [content-visibility:auto] [contain-intrinsic-size:auto_800px]">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12 md:mb-16">
+            <span className="text-primary-text font-bold tracking-wider uppercase text-sm mb-3 block">{t('home_map_eyebrow')}</span>
+            <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl text-foreground mb-4">{t('section_map')}</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto text-base md:text-lg">{t('section_map_sub')}</p>
+          </div>
+
+          <div className="max-w-5xl mx-auto">
+            <MapSection />
           </div>
         </div>
       </section>
@@ -768,7 +722,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-black/40" />
         </div>
         <div className="relative z-10 container mx-auto px-4 flex justify-center md:justify-end">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -838,7 +792,7 @@ export default function Home() {
               { t: t('why_pricing'), i: ShieldCheck },
               { t: t('why_support'), i: Phone }
             ].map((feature, i) => (
-              <motion.div 
+              <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -854,6 +808,104 @@ export default function Home() {
                 </div>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* What we can actually show: counts from our own data, where we are,
+          how booking works, and the reviews themselves. No awards, ratings or
+          traveller counts are claimed — nothing in this project evidences them. */}
+      <section className="bg-background py-8 md:py-10 border-b border-border z-10 relative [content-visibility:auto] [contain-intrinsic-size:auto_120px]">
+        <div className="container mx-auto px-4">
+          <ul className="grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-3 lg:flex lg:flex-wrap lg:justify-center lg:gap-14">
+            {TRUST_SIGNALS.map((signal) => {
+              const label = fmtTrust(t(signal.key), signal.count);
+              const inner = (
+                <>
+                  <signal.icon className="w-6 h-6 md:w-7 md:h-7 text-primary shrink-0" aria-hidden="true" />
+                  <span className="text-xs md:text-sm font-semibold text-foreground text-center leading-snug">{label}</span>
+                </>
+              );
+              return (
+                <li key={signal.key} className="flex flex-col items-center gap-2">
+                  {signal.external ? (
+                    <a href={signal.href} target="_blank" rel="noreferrer" className="flex flex-col items-center gap-2 hover:text-primary transition-colors">{inner}</a>
+                  ) : (
+                    <Link href={signal.href} className="flex flex-col items-center gap-2 hover:text-primary transition-colors">{inner}</Link>
+                  )}
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </section>
+
+      {/* Book With Confidence — trust/value row. Replaces the former six-photo
+          "Signature Morocco" decorative grid (no links, all six images reused
+          elsewhere on the site — see the HOME_TRUST_CARDS comment above) with
+          five evidence-based reasons to trust and book: every claim traces to
+          existing, already-published content (Why Choose Us / About page
+          stats / the real trip-builder, WhatsApp and reviews architecture),
+          not invented years, counts, awards or certifications. */}
+      <section className="py-16 md:py-24 bg-card border-y border-border [content-visibility:auto] [contain-intrinsic-size:auto_700px]">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12 md:mb-14">
+            <span className="text-primary-text font-bold tracking-wider uppercase text-sm mb-3 block">
+              {t('home_trust_kicker')}
+            </span>
+            <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-4">
+              {t('home_trust_title')}
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto text-base md:text-lg">
+              {t('home_trust_sub')}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-6">
+            {HOME_TRUST_CARDS.map((card, index) => {
+              const inner = (
+                <>
+                  <div className="bg-primary/10 p-3 rounded-full text-primary shrink-0 w-fit">
+                    <card.icon className="w-5 h-5 md:w-6 md:h-6" aria-hidden="true" />
+                  </div>
+                  <h3 className="font-bold text-foreground text-base md:text-lg mt-4 mb-2 flex items-center gap-1.5 group-hover:text-primary transition-colors">
+                    {t(card.titleKey)}
+                    <ChevronRight className="w-4 h-4 text-primary shrink-0 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{t(card.descKey)}</p>
+                  {card.titleKey === 'home_trust_card4_title' && (
+                    <div className="flex items-center gap-3 mt-4 text-muted-foreground">
+                      <SiGoogle className="w-4 h-4" aria-hidden="true" />
+                      <SiTripadvisor className="w-4 h-4" aria-hidden="true" />
+                    </div>
+                  )}
+                </>
+              );
+              const cardClass =
+                'group flex h-full flex-col rounded-3xl border border-border bg-background p-6 md:p-7 transition-all duration-300 hover:shadow-lg hover:border-primary/30';
+              return (
+                <motion.div
+                  key={card.titleKey}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.08 }}
+                >
+                  {card.kind === 'internal' ? (
+                    <Link href={card.href} className={cardClass}>{inner}</Link>
+                  ) : (
+                    <a
+                      href={card.href}
+                      target={card.kind === 'external' ? '_blank' : undefined}
+                      rel={card.kind === 'external' ? 'noopener noreferrer' : undefined}
+                      className={cardClass}
+                    >
+                      {inner}
+                    </a>
+                  )}
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -915,7 +967,49 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Plan Your Journey — Elegant CTA */}
+      {/* How Booking Works — same component used on /book and tour-detail, so
+          the payment sequence shown here can never drift from the FAQ/book page. */}
+      <section className="py-16 md:py-24 bg-muted/40 border-b border-border [content-visibility:auto] [contain-intrinsic-size:auto_500px]">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <HowBookingWorks t={t} />
+        </div>
+      </section>
+
+      {/* FAQ — a real six-question subset of the full /faq page, picked by
+          fixed index into the canonical English faqData order (see
+          HOME_FAQ_INDICES above), not by matching translated question text. */}
+      {homeFaqs.length > 0 && (
+        <section className="py-16 md:py-24 bg-background">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <div className="text-center mb-12">
+              <span className="text-primary-text font-bold tracking-wider uppercase text-sm mb-3 block">{t('home_faq_sub')}</span>
+              <h2 className="font-serif text-3xl md:text-5xl text-foreground">{t('home_faq_heading')}</h2>
+            </div>
+            <div className="space-y-4">
+              {homeFaqs.map((faq, i) => (
+                <details key={i} className="group bg-card border border-border rounded-2xl p-6 open:shadow-lg transition-all">
+                  <summary
+                    onClick={() => trackEvent('faq_open', { page: 'home', question: faq.question })}
+                    className="flex items-center justify-between cursor-pointer font-semibold text-foreground text-lg"
+                  >
+                    {faq.question}
+                    <ChevronRight className="w-5 h-5 text-primary group-open:rotate-90 transition-transform shrink-0 ml-4" />
+                  </summary>
+                  <p className="mt-4 text-muted-foreground leading-relaxed">{faq.answer}</p>
+                </details>
+              ))}
+            </div>
+            <div className="text-center mt-10">
+              <Link href="/faq" className="inline-flex items-center gap-2 border-b-2 border-primary text-foreground font-bold pb-1 hover:text-primary transition-colors">
+                {t('view_all')} <ChevronRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Plan Your Journey — Elegant CTA. Two explicit paths to contact us:
+          the trip builder, or a direct WhatsApp message. */}
       <section id="planner" className="py-20 md:py-32 lg:py-40 bg-muted border-b border-border [content-visibility:auto] [contain-intrinsic-size:auto_400px]">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="bg-background rounded-3xl p-6 md:p-16 shadow-xl border border-border relative overflow-hidden text-center">
@@ -923,11 +1017,50 @@ export default function Home() {
             <div className="relative z-10">
               <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl text-foreground mb-4">{t('section_planner')}</h2>
               <p className="text-muted-foreground mb-8 md:mb-10 max-w-xl mx-auto text-base md:text-lg">{t('section_planner_sub')}</p>
-              <Link href="/trip-builder" className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 md:px-10 py-3.5 md:py-4 rounded-full font-bold tracking-wide hover:bg-primary/90 transition-all hover:shadow-[0_8px_30px_rgba(201,168,76,0.4)] hover:-translate-y-1">
-                {t('section_planner_cta')} <ChevronRight className="w-5 h-5" />
-              </Link>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+                <Link href="/trip-builder" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-6 md:px-10 py-3.5 md:py-4 rounded-full font-bold tracking-wide hover:bg-primary/90 transition-all hover:shadow-[0_8px_30px_rgba(201,168,76,0.4)] hover:-translate-y-1">
+                  {t('section_planner_cta')} <ChevronRight className="w-5 h-5" />
+                </Link>
+                <a
+                  href={`${contactInfo.whatsapp}?text=${encodeURIComponent(defaultMessageForRoute('/'))}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-background border border-border text-foreground px-6 md:px-10 py-3.5 md:py-4 rounded-full font-bold tracking-wide hover:border-primary/50 hover:text-primary transition-all hover:-translate-y-1"
+                >
+                  <SiWhatsapp className="w-5 h-5" aria-hidden="true" /> {t('contact_whatsapp_label')}
+                </a>
+              </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Where to start — the discovery band. Secondary "more ways to
+          explore" navigation: the sections above already answer "what tour
+          is right for me" more concretely, so this now serves visitors who
+          have scrolled the whole page and still want more browsing options. */}
+      <section className="py-16 md:py-24 bg-background border-y border-border">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="max-w-2xl mb-10 md:mb-14">
+            <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-4">{t('home_start_title')}</h2>
+            <p className="text-muted-foreground leading-relaxed">{t('home_start_sub')}</p>
+          </div>
+          <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {DISCOVERY.map((door) => (
+              <li key={door.href}>
+                <Link
+                  href={door.href}
+                  className="group flex h-full flex-col gap-2 rounded-2xl border border-border bg-card p-6 transition-all hover:border-primary/50 hover:shadow-lg"
+                >
+                  <span className="flex items-center gap-2 font-serif text-xl text-foreground group-hover:text-primary transition-colors">
+                    {t(door.label)}
+                    <ChevronRight className="w-4 h-4 text-primary shrink-0 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                  </span>
+                  <span className="text-sm text-muted-foreground leading-relaxed">{t(door.desc)}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
@@ -936,7 +1069,7 @@ export default function Home() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl text-foreground mb-4">{t('section_instagram')}</h2>
           <a href="https://www.instagram.com/morocco_grand_adventure/" target="_blank" rel="noreferrer" className="text-primary font-bold hover:underline mb-8 md:mb-12 inline-block">@morocco_grand_adventure</a>
-          
+
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
             {igItems.map((item, num) => (
               <div key={num} className="aspect-square relative group overflow-hidden rounded-xl border border-border">

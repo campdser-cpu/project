@@ -42,6 +42,13 @@ export default {
     section_destinations_sub: "Où aller",
     section_tours: "Circuits en vedette",
     section_tours_sub: "Itinéraires sur mesure",
+    home_sahara_heading: "Itinéraires Sahariens Populaires",
+    home_sahara_sub: "De Marrakech ou Fès aux Dunes",
+    home_daytrips_heading: "Excursions d'une Journée et Expériences",
+    home_daytrips_sub: "Aventures Courtes, Toujours Privées",
+    home_faq_heading: "Questions Avant de Réserver",
+    home_faq_sub: "Bon à Savoir",
+    home_map_eyebrow: "Voyez-le sur la Carte",
 
     section_city_hubs: "Circuits par ville de départ",
 
@@ -771,7 +778,7 @@ home_rev6_quote: "De la médina animée de Fès au calme des montagnes de l'Atla
 home_rev6_tour: "Circuit 7 jours : villes impériales et Sahara",
 home_ig_alt1: "Voyageurs de Morocco Grand Adventure admirant un coucher de soleil saharien",
 home_ig_alt2: "Groupe en tour dans les montagnes de l'Atlas, Maroc",
-home_ig_alt3: "Campement de luxe au crépuscule près de Merzouga",
+home_ig_alt3: "Dunes dorées du Sahara au lever du soleil sur Erg Chebbi",
 home_ig_alt4: "Voyageurs de Morocco Grand Adventure avec leur minibus de tour",
 about_meet_guide: "Rencontrez votre guide local",
 about_guide_heading: "Un ami au Maroc, pas seulement un guide",

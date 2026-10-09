@@ -42,6 +42,13 @@ export default {
     section_destinations_sub: "Wohin reisen",
     section_tours: "Ausgewählte Touren",
     section_tours_sub: "Kuratierte Reiserouten",
+    home_sahara_heading: "Beliebte Sahara-Reiserouten",
+    home_sahara_sub: "Von Marrakesch oder Fès zu den Dünen",
+    home_daytrips_heading: "Tagesausflüge & Erlebnisse",
+    home_daytrips_sub: "Kürzere Abenteuer, Trotzdem Privat",
+    home_faq_heading: "Fragen vor der Buchung",
+    home_faq_sub: "Gut zu Wissen",
+    home_map_eyebrow: "Auf der Karte Ansehen",
 
     section_city_hubs: "Rundreisen nach Abfahrtsort",
 
@@ -771,7 +778,7 @@ home_rev6_quote: "Von der pulsierenden Medina von Fes bis zur Ruhe des Atlasgebi
 home_rev6_tour: "7 Tage: Königsstädte & Sahara",
 home_ig_alt1: "Gäste von Morocco Grand Adventure beim Sahara-Sonnenuntergang",
 home_ig_alt2: "Tourgruppe im Atlasgebirge, Marokko",
-home_ig_alt3: "Luxus-Wüstencamp in der Dämmerung bei Merzouga",
+home_ig_alt3: "Goldene Sahara-Dünen bei Sonnenaufgang über Erg Chebbi",
 home_ig_alt4: "Gäste von Morocco Grand Adventure mit ihrem Tourbus",
 about_meet_guide: "Triff deinen lokalen Guide",
 about_guide_heading: "Ein Freund in Marokko, nicht nur ein Guide",

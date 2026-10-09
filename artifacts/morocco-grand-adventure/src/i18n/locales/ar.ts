@@ -42,6 +42,13 @@ export default {
     section_destinations_sub: "إلى أين تذهب",
     section_tours: "جولات مميزة",
     section_tours_sub: "مسارات سياحية منتقاة",
+    home_sahara_heading: "مسارات الصحراء الأكثر طلبًا",
+    home_sahara_sub: "من مراكش أو فاس إلى الكثبان",
+    home_daytrips_heading: "رحلات يومية وتجارب مميزة",
+    home_daytrips_sub: "مغامرات أقصر، لكنها خاصة دائمًا",
+    home_faq_heading: "أسئلة قبل الحجز",
+    home_faq_sub: "معلومات مفيدة",
+    home_map_eyebrow: "شاهدها على الخريطة",
 
     section_city_hubs: "جولات حسب مدينة الانطلاق",
 

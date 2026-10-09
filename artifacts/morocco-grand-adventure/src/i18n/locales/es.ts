@@ -42,6 +42,13 @@ export default {
     section_destinations_sub: "Dónde ir",
     section_tours: "Tours destacados",
     section_tours_sub: "Itinerarios seleccionados",
+    home_sahara_heading: "Itinerarios Populares al Sahara",
+    home_sahara_sub: "Desde Marrakech o Fez hasta las Dunas",
+    home_daytrips_heading: "Excursiones de un Día y Experiencias",
+    home_daytrips_sub: "Aventuras Más Cortas, Siempre Privadas",
+    home_faq_heading: "Preguntas Antes de Reservar",
+    home_faq_sub: "Bueno Saber",
+    home_map_eyebrow: "Véalo en el Mapa",
 
     section_city_hubs: "Tours por ciudad de salida",
 
@@ -771,7 +778,7 @@ home_rev6_quote: "Desde la bulliciosa medina de Fez hasta la calma de las monta�
 home_rev6_tour: "Tour de 7 días: Ciudades Imperiales y Sahara",
 home_ig_alt1: "Viajeros de Morocco Grand Adventure contemplando un atardecer en el Sahara",
 home_ig_alt2: "Grupo de tour en las montañas del Atlas, Marruecos",
-home_ig_alt3: "Campamento de lujo al anochecer cerca de Merzouga",
+home_ig_alt3: "Dunas doradas del Sahara al amanecer sobre Erg Chebbi",
 home_ig_alt4: "Viajeros de Morocco Grand Adventure con su furgoneta de tour",
 about_meet_guide: "Conoce a tu guía local",
 about_guide_heading: "Un amigo en Marruecos, no solo un guía",

@@ -309,12 +309,28 @@ export const DAY_TRIP_PRODUCT_IDS = [
  * catalogue (browsing all of it lives at /tours and the departure-city
  * carousel). Single source of truth for src/pages/home.tsx and its
  * prerendered mirror (scripts/prerender.ts).
+ *
+ * The homepage's dedicated "Day Trips" section already shows all four real
+ * day-trip products (DAY_TRIP_PRODUCT_IDS above), so no single day trip is
+ * duplicated into this list — it stays focused on multi-day journeys.
  */
 export const FEATURED_TOUR_IDS = [
   '3-day-sahara-marrakech',
   '7-day-imperial-cities-sahara-escape',
-  'marrakech-ourika-valley-day-trip',
   'family-morocco-adventure',
   'honeymoon-morocco',
   '5-day-imperial-cities',
+];
+
+/**
+ * The Marrakech/Fes Sahara-crossing routes for the homepage's "Popular Sahara
+ * Itineraries" section — deliberately excludes '3-day-sahara-marrakech',
+ * which is already shown in FEATURED_TOUR_IDS above, so the two sections
+ * never repeat the same card. Single source of truth for src/pages/home.tsx
+ * and its prerendered mirror (scripts/prerender.ts).
+ */
+export const SAHARA_CROSSING_TOUR_IDS = [
+  '4-day-marrakech-merzouga-sahara',
+  '3-day-fes-merzouga-sahara',
+  '4-day-fes-marrakech-via-merzouga',
 ];

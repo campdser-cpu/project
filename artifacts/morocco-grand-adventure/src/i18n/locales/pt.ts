@@ -42,6 +42,13 @@ export default {
     section_destinations_sub: "Para onde ir",
     section_tours: "Tours em destaque",
     section_tours_sub: "Roteiros selecionados",
+    home_sahara_heading: "Itinerários Populares no Saara",
+    home_sahara_sub: "De Marraquexe ou Fez até as Dunas",
+    home_daytrips_heading: "Excursões de Um Dia e Experiências",
+    home_daytrips_sub: "Aventuras Mais Curtas, Sempre Privadas",
+    home_faq_heading: "Perguntas Antes de Reservar",
+    home_faq_sub: "Bom Saber",
+    home_map_eyebrow: "Veja no Mapa",
 
     section_city_hubs: "Passeios por cidade de partida",
 

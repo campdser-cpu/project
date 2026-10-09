@@ -42,6 +42,13 @@ export default {
     section_destinations_sub: "Dove andare",
     section_tours: "Tour in evidenza",
     section_tours_sub: "Itinerari curati",
+    home_sahara_heading: "Itinerari Popolari nel Sahara",
+    home_sahara_sub: "Da Marrakech o Fes alle Dune",
+    home_daytrips_heading: "Escursioni di un Giorno ed Esperienze",
+    home_daytrips_sub: "Avventure Più Brevi, Sempre Private",
+    home_faq_heading: "Domande Prima di Prenotare",
+    home_faq_sub: "Da Sapere",
+    home_map_eyebrow: "Guardalo sulla Mappa",
 
     section_city_hubs: "Tour per città di partenza",
 
@@ -771,7 +778,7 @@ home_rev6_quote: "Dalla medina vivace di Fes alla quiete dell'Atlante, i contras
 home_rev6_tour: "Tour di 7 giorni: Città Imperiali e Sahara",
 home_ig_alt1: "Viaggiatori di Morocco Grand Adventure che guardano un tramonto nel Sahara",
 home_ig_alt2: "Gruppo in tour nelle montagne dell'Atlante, Marocco",
-home_ig_alt3: "Campo di lusso al tramonto vicino Merzouga",
+home_ig_alt3: "Dune dorate del Sahara all'alba su Erg Chebbi",
 home_ig_alt4: "Viaggiatori di Morocco Grand Adventure con il loro van di tour",
 about_meet_guide: "Conosci la tua guida locale",
 about_guide_heading: "Un amico in Marocco, non solo una guida",

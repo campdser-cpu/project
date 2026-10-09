@@ -42,6 +42,13 @@ export default {
     section_destinations_sub: "Waar naartoe",
     section_tours: "Uitgelichte reizen",
     section_tours_sub: "Samengestelde reisroutes",
+    home_sahara_heading: "Populaire Sahara-Reisroutes",
+    home_sahara_sub: "Van Marrakech of Fez naar de Duinen",
+    home_daytrips_heading: "Dagtochten & Ervaringen",
+    home_daytrips_sub: "Kortere Avonturen, Nog Steeds Privé",
+    home_faq_heading: "Vragen Voor het Boeken",
+    home_faq_sub: "Goed om te Weten",
+    home_map_eyebrow: "Bekijk het op de Kaart",
 
     section_city_hubs: "Rondreizen per vertrekstad",
 

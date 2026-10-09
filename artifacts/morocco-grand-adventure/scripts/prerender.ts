@@ -33,7 +33,7 @@ import { fileURLToPath } from 'node:url';
 
 import { destinations, contactInfo, reviews, type Review, type Tour, type Destination } from '../src/data/content';
 import { BLOG_ARTICLE_SECTIONS, type BlogSection, parseParagraph } from '../src/data/blog-article-sections';
-import { CITY_HUBS, TOUR_DEPARTURE_CITY, CITY_HUB_DURATIONS, tourIdsForCity, tourDurationDays, DAY_TRIP_PRODUCT_IDS, FEATURED_TOUR_IDS } from '../src/data/tour-hierarchy';
+import { CITY_HUBS, TOUR_DEPARTURE_CITY, CITY_HUB_DURATIONS, tourIdsForCity, tourDurationDays, DAY_TRIP_PRODUCT_IDS, FEATURED_TOUR_IDS, SAHARA_CROSSING_TOUR_IDS } from '../src/data/tour-hierarchy';
 import { MERZOUGA_GUIDES, COMPARISONS, TRAVEL_INFO, type HubPage } from '../src/data/seoHub';
 import { localizedComparisonMeta } from '../src/data/comparison-meta-i18n';
 import { getLocalizedTourDepth } from '../src/i18n/content';
@@ -345,6 +345,25 @@ function buildHomeContent(lang: Lang): string {
     return `      <li>${link(`${SITE_URL}/${lang}/tours/from-${hub.slug}`, label)}</li>`;
   }).join('\n');
   const hubBlock = h2(tr(lang, 'home_depart_heading') || 'Departure from') + paragraph(tr(lang, 'home_depart_sub') || 'Choose a starting city and explore the Sahara routes, imperial cities and coastal escapes we tailor for it.') + `    <ul class="prerendered-city-hubs">\n${hubLinks}\n    </ul>\n`;
+  // Mirrors the runtime homepage's "Popular Sahara Itineraries" section
+  // (SAHARA_CROSSING_TOUR_IDS, src/data/tour-hierarchy.ts) — deliberately
+  // excludes any tour already in FEATURED_TOUR_IDS above, same as the
+  // runtime page, so no link is duplicated within this one prerendered page.
+  const saharaNames = SAHARA_CROSSING_TOUR_IDS.map((id) => getLocalizedTour(id, lang)).filter((t): t is NonNullable<typeof t> => Boolean(t)).map((t) => `      <li>${link(`${SITE_URL}/${lang}/tours/${t.id}`, t.name)}</li>`).join('\n');
+  const saharaBlock = h2(tr(lang, 'home_sahara_heading')) + `    <ul>\n${saharaNames}\n    </ul>\n`;
+  // Mirrors the runtime homepage's "Day Trips & Experiences" section
+  // (DAY_TRIP_PRODUCT_IDS) — the same four real day-trip products shown on
+  // /day-trips itself.
+  const dayTripNames = DAY_TRIP_PRODUCT_IDS.map((id) => getLocalizedTour(id, lang)).filter((t): t is NonNullable<typeof t> => Boolean(t)).map((t) => `      <li>${link(`${SITE_URL}/${lang}/tours/${t.id}`, t.name)}</li>`).join('\n');
+  const dayTripBlock = h2(tr(lang, 'home_daytrips_heading')) + `    <ul>\n${dayTripNames}\n    </ul>\n`;
+  // Mirrors the runtime homepage's "How Booking Works" section
+  // (HowBookingWorks component) — same jx_hbw_* keys, so wording can never
+  // drift between the live page and this crawlable snapshot.
+  const bookingStepsBlock = h2(tr(lang, 'jx_hbw_title')) + [1, 2, 3, 4].map((n) => `    <h3>${escapeHtml(tr(lang, `jx_hbw_${n}_t`))}</h3><p>${escapeHtml(tr(lang, `jx_hbw_${n}_d`))}</p>`).join('\n');
+  // Mirrors the runtime homepage's FAQ section — the same fixed-index subset
+  // of getLocalizedFaq(lang) as HOME_FAQ_INDICES in src/pages/home.tsx.
+  const homeFaqs = [0, 2, 4, 6, 8, 1].map((i) => getLocalizedFaq(lang)[i]).filter((f): f is NonNullable<typeof f> => Boolean(f));
+  const homeFaqBlock = h2(tr(lang, 'home_faq_heading')) + faqBlock(homeFaqs);
   const reviewBlocks = reviews.map((r) => {
     const name = tr(lang, r.nameKey);
     const quote = tr(lang, r.quoteKey);
@@ -382,7 +401,7 @@ function buildHomeContent(lang: Lang): string {
     { rest: '/travel-info', label: 'dest_travel_info' },
   ].map((d) => link(`${SITE_URL}/${lang}${d.rest}`, tr(lang, d.label)));
   const discoveryBlock = h2(tr(lang, 'home_start_title')) + paragraph(tr(lang, 'home_start_sub')) + ul(discovery);
-  return lcpPoster + heroH1Block + paragraph(tr(lang, 'hero_subtext')) + discoveryBlock + h2(tr(lang, 'section_destinations') || 'Top Destinations') + `    <ul>\n${destNames}\n    </ul>\n` + h2(tr(lang, 'section_tours') || 'Featured Tours') + `    <ul>\n${tourNames}\n    </ul>\n` + hubBlock + h2(tr(lang, 'section_reviews') || 'Traveler Stories') + `<div class="prerendered-reviews-container">\n${reviewBlocks}\n    </div>\n`;
+  return lcpPoster + heroH1Block + paragraph(tr(lang, 'hero_subtext')) + discoveryBlock + h2(tr(lang, 'section_destinations') || 'Top Destinations') + `    <ul>\n${destNames}\n    </ul>\n` + h2(tr(lang, 'section_tours') || 'Featured Tours') + `    <ul>\n${tourNames}\n    </ul>\n` + saharaBlock + hubBlock + dayTripBlock + bookingStepsBlock + homeFaqBlock + h2(tr(lang, 'section_reviews') || 'Traveler Stories') + `<div class="prerendered-reviews-container">\n${reviewBlocks}\n    </div>\n`;
 }
 function buildHomeSchemas(lang: Lang): Record<string, unknown>[] {
   const reviewData = reviews.map((r) => ({ name: tr(lang, r.nameKey), text: tr(lang, r.quoteKey), rating: r.rating }));

@@ -42,6 +42,13 @@ export default {
     section_destinations_sub: "どこへ行く",
     section_tours: "注目のツアー",
     section_tours_sub: "厳選されたルート",
+    home_sahara_heading: "人気のサハラ砂漠ルート",
+    home_sahara_sub: "マラケシュまたはフェズから砂丘へ",
+    home_daytrips_heading: "日帰り旅行とアクティビティ",
+    home_daytrips_sub: "短い旅も、プライベート仕立てで",
+    home_faq_heading: "ご予約前によくある質問",
+    home_faq_sub: "知っておきたいこと",
+    home_map_eyebrow: "地図で見る",
 
     section_city_hubs: "出発地からツアーを探す",
 

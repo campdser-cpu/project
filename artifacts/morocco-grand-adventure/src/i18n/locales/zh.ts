@@ -42,6 +42,13 @@ export default {
     section_destinations_sub: "去哪里",
     section_tours: "精选旅游线路",
     section_tours_sub: "精心策划的行程",
+    home_sahara_heading: "热门撒哈拉行程",
+    home_sahara_sub: "从马拉喀什或非斯前往沙丘",
+    home_daytrips_heading: "一日游与特色体验",
+    home_daytrips_sub: "更短的行程，依然私人定制",
+    home_faq_heading: "预订前常见问题",
+    home_faq_sub: "实用信息",
+    home_map_eyebrow: "在地图上查看",
 
     section_city_hubs: "按出发城市浏览行程",
 
