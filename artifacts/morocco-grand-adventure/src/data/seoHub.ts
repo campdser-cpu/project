@@ -795,9 +795,9 @@ export const MERZOUGA_GUIDES: HubPage[] = [
     description: "Fes to Merzouga route guide — Ifrane, the Middle Atlas cedar forests, Midelt, the Ziz Valley and Erg Chebbi, with realistic itinerary planning for a Fes Sahara trip.",
     ogImage: '/images/dest/ifrane.webp',
     heroImage: '/images/dest/ifrane.webp',
-    heroWidth: 1200,
-    heroHeight: 900,
-    heroAlt: 'Forested mountain slopes above wide, open valleys under a clear sky',
+    heroWidth: 1000,
+    heroHeight: 1777,
+    heroAlt: 'Alpine-style red-roofed buildings in Ifrane, in the Middle Atlas',
     intro: 'Fes is the natural Sahara gateway for travellers coming from Morocco\'s north. The route south to Merzouga climbs into the Middle Atlas, passes through Ifrane and cedar forest, crosses the high plateau country around Midelt, then descends the Ziz Valley — one long palm oasis — to Erfoud, Rissani and the Erg Chebbi dunes. It is the shortest of Morocco\'s great desert roads, and a spectacular one.',
     sections: [
       { heading: 'Route overview: why Fes works as a desert gateway', paragraphs: [

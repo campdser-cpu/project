@@ -137,8 +137,9 @@ export const destinations: Destination[] = [
     category: "Imperial Cities",
     shortDesc: "The forgotten imperial city — grand gates and Roman ruins nearby.",
     image: "/images/dest/meknes.webp",
-    // No verified Meknès photograph yet — a decorative pattern stands in.
-    imageDecorative: true,
+    // Verified Meknès photograph (zellige-tiled archway and staircase,
+    // Pexels, explicitly geotagged "Meknes, Fès-Meknès, Maroc" by the
+    // platform) — replaces the earlier decorative placeholder.
     bestTime: "Mar – May, Sep – Nov",
     description: "Meknès is the quietest of the four imperial cities — and for many travellers the most rewarding. Sultan Moulay Ismail made it his 17th-century capital and left monumental works: the Bab Mansour gate, the vast Heri es-Souani granaries, and his own mausoleum. The medina is calmer than Fes or Marrakech, and Volubilis — the remarkably preserved Roman city among olive groves 30 km away — pairs naturally with a visit. Come for half a day from Fes, or stay a night and see the gates glow at dusk.",
     highlights: ["Bab Mansour Gate", "Mausoleum of Moulay Ismail", "Volubilis Roman Ruins", "Heri es-Souani", "Medina"],
@@ -534,9 +535,9 @@ export const destinations: Destination[] = [
     category: "Mountains",
     shortDesc: "Morocco's Switzerland — pine forests and wild Barbary macaques.",
     image: "/images/dest/ifrane.webp",
-    // The photograph shows oak woodland above farmland; nothing in it
-    // identifies Ifrane, and no verified Ifrane photograph exists.
-    imageUnverified: true,
+    // Verified Ifrane photograph (alpine-style red-roofed buildings, Pexels,
+    // explicitly geotagged "Ifrane, Fez-Meknès, Morocco" by the platform) —
+    // replaces the earlier unverified oak-woodland stand-in.
     bestTime: "Apr – Oct (summer), Dec – Feb (snow)",
     description: "Ifrane surprises first-time visitors: an alpine-style town of slate roofs and cedar forests in the Middle Atlas, nicknamed Little Switzerland, built by the French in the 1930s. Travellers on Fes–Merzouga routes pass through for the stone lion statue and nearby Michlifen slopes in winter; in summer the town is a cool escape. The cedar woods around Azrou shelter Barbary macaques and good birdwatching.",
     highlights: ["Cedar Forest of Azrou", "Barbary Macaques", "Ifrane National Park", "Skiing at Mischliffen", "Lake Aaoua"],
