@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { useRoute, Link } from 'wouter';
 import { Layout } from '../components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -13,9 +14,27 @@ import {
 import { TourBreadcrumbs } from '../components/tours/TourBreadcrumbs';
 import { TourInquiryForm } from '../components/tours/TourInquiryForm';
 import { fmtTemplate } from '../components/tours/intl';
-import { departuresForTour, seatsAvailable, isFull } from '@/data/student-group-departures';
+import {
+  departuresForTour,
+  seatsAvailable,
+  departureDisplayStatus,
+  isJoinable,
+  type DepartureDisplayStatus,
+} from '@/data/student-group-departures';
 import { getLocalizedStudentTour } from '@/i18n/content';
+import { JoinStudentTour } from '../components/student-tours/JoinStudentTour';
+import { trackEvent } from '@/lib/analytics';
+import { StructuredData, buildFaqSchema, buildBreadcrumb } from '../components/seo/StructuredData';
 import NotFound from './not-found';
+
+const STATUS_KEY: Record<DepartureDisplayStatus, string> = {
+  request: 'st_dc_status_request',
+  available: 'st_dc_status_available',
+  'almost-full': 'st_dc_status_almost_full',
+  full: 'st_dc_status_full',
+  'sold-out': 'st_dc_status_sold_out',
+  closed: 'st_dc_status_closed',
+};
 
 const IMG = '/images';
 const GOLD = '#C9A84C';
@@ -188,6 +207,12 @@ export default function StudentTourDetail() {
   const { t, lang } = useLanguage();
   const rawTour = params?.slug ? getStudentTour(params.slug) : undefined;
   const tour = rawTour ? getLocalizedStudentTour(rawTour, lang) : undefined;
+  const [joinOpen, setJoinOpen] = useState(false);
+  const [joinDepartureId, setJoinDepartureId] = useState<string | undefined>(undefined);
+
+  useEffect(() => {
+    if (tour) trackEvent('student_tour_view', { tour_slug: tour.slug, page: 'student-tour-detail' });
+  }, [tour?.slug]);
 
   // Unknown slug under /student-tours/ falls through to the standard 404 rather
   // than rendering an empty product page.
@@ -541,8 +566,9 @@ export default function StudentTourDetail() {
             {departures.length > 0 ? (
               <div className="mt-8 grid gap-6 md:grid-cols-2">
                 {departures.map((d) => {
-                  const full = isFull(d);
+                  const status = departureDisplayStatus(d);
                   const seats = seatsAvailable(d);
+                  const joinable = isJoinable(d);
                   const joinWa = `${contactInfo.whatsapp}?text=${encodeURIComponent(
                     `Hello Morocco Grand Adventure, I'd like to join the ${tour.title} group departing ${d.startDate} to ${d.endDate}.`,
                   )}`;
@@ -553,24 +579,47 @@ export default function StudentTourDetail() {
                       </p>
                       <h3 className="mt-2 font-serif text-xl" style={{ color: INK }}>{tour.title}</h3>
                       <p className="mt-2 text-[14px]" style={{ color: MUTED }}>{d.departureCity}</p>
+                      {d.pricePerPerson && (
+                        <p className="mt-3 font-serif text-2xl font-bold" style={{ color: INK }}>
+                          {new Intl.NumberFormat(lang, { style: 'currency', currency: d.currency ?? 'EUR', maximumFractionDigits: 0 }).format(d.pricePerPerson)}
+                          <span className="ml-1.5 text-xs font-sans font-normal" style={{ color: MUTED }}>{t('st_dc_per_person')}</span>
+                        </p>
+                      )}
                       <div className="mt-5 flex flex-wrap items-center gap-3">
                         <span
                           className="inline-flex items-center gap-2 border px-3 py-1.5 text-[12px] font-semibold uppercase"
-                          style={full ? { borderColor: RULE, color: MUTED } : { borderColor: GOLD, color: INK }}
+                          style={joinable ? { borderColor: GOLD, color: INK } : { borderColor: RULE, color: MUTED }}
                         >
-                          {full ? t('sgd_full') : fmtTemplate(t('sgd_seats_available'), { n: seats })}
+                          {t(STATUS_KEY[status])}
                         </span>
-                        {!full && (
+                        {(status === 'available' || status === 'almost-full') && (
+                          <span className="text-[12px]" style={{ color: MUTED }}>{seats} {t('st_jn_seats_left')}</span>
+                        )}
+                      </div>
+                      {status === 'request' && (
+                        <p className="mt-2 text-[12px] leading-relaxed" style={{ color: MUTED }}>{t('st_dc_request_note')}</p>
+                      )}
+                      {joinable && (
+                        <div className="mt-5 flex flex-wrap gap-3">
+                          <button
+                            type="button"
+                            onClick={() => { trackEvent('join_now_click', { tour_slug: tour.slug, departure_id: d.id, source: 'detail_page' }); setJoinDepartureId(d.id); setJoinOpen(true); }}
+                            className="inline-flex items-center justify-center px-5 py-2.5 text-[13px] font-bold tracking-wide text-white transition hover:opacity-90"
+                            style={{ background: INK }}
+                          >
+                            {t('st_dc_join_now')}
+                          </button>
                           <a
                             href={joinWa}
                             target="_blank"
                             rel="noopener noreferrer"
+                            onClick={() => trackEvent('whatsapp_student_click', { tour_slug: tour.slug, placement: 'departure_card' })}
                             className="inline-flex items-center justify-center bg-[#25D366] px-5 py-2.5 text-[13px] font-bold text-[#0d2b1d] transition hover:opacity-90"
                           >
                             {t('sgd_join')}
                           </a>
-                        )}
-                      </div>
+                        </div>
+                      )}
                     </div>
                   );
                 })}
@@ -583,6 +632,7 @@ export default function StudentTourDetail() {
                   href={wa}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackEvent('whatsapp_student_click', { tour_slug: tour.slug, placement: 'departures_empty' })}
                   className="mt-6 inline-flex items-center justify-center bg-[#25D366] px-7 py-3.5 text-sm font-bold tracking-wide text-[#0d2b1d] transition hover:opacity-90"
                 >
                   {t('sgd_empty_whatsapp')}
@@ -660,6 +710,32 @@ export default function StudentTourDetail() {
           </div>
         </section>
       </div>
+
+      <StructuredData
+        id="student-tour-faq"
+        data={[
+          buildFaqSchema(tour.faqs.map((f) => ({ question: f.q, answer: f.a }))),
+          buildBreadcrumb(
+            [
+              { name: t('nav_home') || 'Home', path: '/' },
+              { name: t('st_tours_label') || 'Student Tours', path: '/student-tours' },
+              { name: tour.title, path: `/student-tours/${tour.slug}` },
+            ],
+            lang,
+          ),
+        ]}
+      />
+
+      <JoinStudentTour
+        open={joinOpen}
+        onOpenChange={setJoinOpen}
+        tourSlug={tour.slug}
+        tourTitle={tour.title}
+        departures={departures}
+        initialDepartureId={joinDepartureId}
+        lang={lang}
+        t={t}
+      />
     </Layout>
   );
 }

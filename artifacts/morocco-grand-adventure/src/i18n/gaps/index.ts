@@ -20,6 +20,7 @@ import { studentToursGaps } from './student-tours';
 import { journeyGaps } from './journey';
 import { filtersGaps } from './filters';
 import { faqToursGaps } from './faq-tours';
+import { studentBookingGaps } from './student-booking';
 import type { Lang } from '../index';
 
 export const i18nGaps: Partial<Record<Lang, Record<string, string>>> = {
@@ -33,15 +34,15 @@ export const i18nGaps: Partial<Record<Lang, Record<string, string>>> = {
   // The shorter st_sd_* detail-page UI keys, however, are authored for every
   // locale (see student-tours.ts) — each line below spreads its own
   // studentToursGaps.<lang> on top of the English base so those resolve.
-  en: { ...guideGaps.en, ...studentToursGaps.en, ...pricingGaps.en, ...discoveryGaps.en, ...trustGaps.en, ...journeyGaps.en },
-  fr: { ...studentToursGaps.en, ...studentToursGaps.fr, ...guideGaps.fr, ...chromeGaps.fr, ...fr, ...aboutGaps.fr, ...about2Gaps.fr, ...pricingGaps.fr, ...discoveryGaps.fr, ...trustGaps.fr, ...journeyGaps.fr, ...filtersGaps.fr },
-  es: { ...studentToursGaps.en, ...guideGaps.es, ...chromeGaps.es, ...es, ...aboutGaps.es, ...about2Gaps.es, ...studentToursGaps.es, ...pricingGaps.es, ...discoveryGaps.es, ...trustGaps.es, ...journeyGaps.es, ...filtersGaps.es, ...faqToursGaps.es },
-  it: { ...studentToursGaps.en, ...studentToursGaps.it, ...guideGaps.it, ...chromeGaps.it, ...it, ...aboutGaps.it, ...about2Gaps.it, ...pricingGaps.it, ...discoveryGaps.it, ...trustGaps.it, ...journeyGaps.it, ...filtersGaps.it, ...faqToursGaps.it },
-  de: { ...studentToursGaps.en, ...studentToursGaps.de, ...guideGaps.de, ...chromeGaps.de, ...de, ...aboutGaps.de, ...about2Gaps.de, ...pricingGaps.de, ...discoveryGaps.de, ...trustGaps.de, ...journeyGaps.de, ...filtersGaps.de, ...faqToursGaps.de },
-  nl: { ...studentToursGaps.en, ...studentToursGaps.nl, ...guideGaps.nl, ...chromeGaps.nl, ...nl, ...aboutGaps.nl, ...about2Gaps.nl, ...pricingGaps.nl, ...discoveryGaps.nl, ...trustGaps.nl, ...journeyGaps.nl, ...filtersGaps.nl, ...faqToursGaps.nl },
-  pt: { ...studentToursGaps.en, ...guideGaps.pt, ...chromeGaps.pt, ...pt, ...aboutGaps.pt, ...about2Gaps.pt, ...studentToursGaps.pt, ...pricingGaps.pt, ...discoveryGaps.pt, ...trustGaps.pt, ...journeyGaps.pt, ...filtersGaps.pt },
-  zh: { ...studentToursGaps.en, ...studentToursGaps.zh, ...guideGaps.zh, ...chromeGaps.zh, ...zh, ...aboutGaps.zh, ...about2Gaps.zh, ...pricingGaps.zh, ...discoveryGaps.zh, ...trustGaps.zh, ...journeyGaps.zh, ...filtersGaps.zh },
-  ja: { ...studentToursGaps.en, ...studentToursGaps.ja, ...guideGaps.ja, ...chromeGaps.ja, ...ja, ...aboutGaps.ja, ...about2Gaps.ja, ...pricingGaps.ja, ...discoveryGaps.ja, ...trustGaps.ja, ...journeyGaps.ja, ...filtersGaps.ja },
-  ko: { ...studentToursGaps.en, ...studentToursGaps.ko, ...guideGaps.ko, ...chromeGaps.ko, ...ko, ...aboutGaps.ko, ...about2Gaps.ko, ...pricingGaps.ko, ...discoveryGaps.ko, ...trustGaps.ko, ...journeyGaps.ko, ...filtersGaps.ko },
-  ar: { ...studentToursGaps.en, ...studentToursGaps.ar, ...guideGaps.ar, ...chromeGaps.ar, ...ar, ...aboutGaps.ar, ...about2Gaps.ar, ...pricingGaps.ar, ...discoveryGaps.ar, ...trustGaps.ar, ...journeyGaps.ar, ...filtersGaps.ar },
+  en: { ...guideGaps.en, ...studentToursGaps.en, ...pricingGaps.en, ...discoveryGaps.en, ...trustGaps.en, ...journeyGaps.en, ...studentBookingGaps.en },
+  fr: { ...studentToursGaps.en, ...studentToursGaps.fr, ...guideGaps.fr, ...chromeGaps.fr, ...fr, ...aboutGaps.fr, ...about2Gaps.fr, ...pricingGaps.fr, ...discoveryGaps.fr, ...trustGaps.fr, ...journeyGaps.fr, ...filtersGaps.fr, ...studentBookingGaps.en, ...studentBookingGaps.fr },
+  es: { ...studentToursGaps.en, ...guideGaps.es, ...chromeGaps.es, ...es, ...aboutGaps.es, ...about2Gaps.es, ...studentToursGaps.es, ...pricingGaps.es, ...discoveryGaps.es, ...trustGaps.es, ...journeyGaps.es, ...filtersGaps.es, ...faqToursGaps.es, ...studentBookingGaps.en, ...studentBookingGaps.es },
+  it: { ...studentToursGaps.en, ...studentToursGaps.it, ...guideGaps.it, ...chromeGaps.it, ...it, ...aboutGaps.it, ...about2Gaps.it, ...pricingGaps.it, ...discoveryGaps.it, ...trustGaps.it, ...journeyGaps.it, ...filtersGaps.it, ...faqToursGaps.it, ...studentBookingGaps.en, ...studentBookingGaps.it },
+  de: { ...studentToursGaps.en, ...studentToursGaps.de, ...guideGaps.de, ...chromeGaps.de, ...de, ...aboutGaps.de, ...about2Gaps.de, ...pricingGaps.de, ...discoveryGaps.de, ...trustGaps.de, ...journeyGaps.de, ...filtersGaps.de, ...faqToursGaps.de, ...studentBookingGaps.en, ...studentBookingGaps.de },
+  nl: { ...studentToursGaps.en, ...studentToursGaps.nl, ...guideGaps.nl, ...chromeGaps.nl, ...nl, ...aboutGaps.nl, ...about2Gaps.nl, ...pricingGaps.nl, ...discoveryGaps.nl, ...trustGaps.nl, ...journeyGaps.nl, ...filtersGaps.nl, ...faqToursGaps.nl, ...studentBookingGaps.en, ...studentBookingGaps.nl },
+  pt: { ...studentToursGaps.en, ...guideGaps.pt, ...chromeGaps.pt, ...pt, ...aboutGaps.pt, ...about2Gaps.pt, ...studentToursGaps.pt, ...pricingGaps.pt, ...discoveryGaps.pt, ...trustGaps.pt, ...journeyGaps.pt, ...filtersGaps.pt, ...studentBookingGaps.en, ...studentBookingGaps.pt },
+  zh: { ...studentToursGaps.en, ...studentToursGaps.zh, ...guideGaps.zh, ...chromeGaps.zh, ...zh, ...aboutGaps.zh, ...about2Gaps.zh, ...pricingGaps.zh, ...discoveryGaps.zh, ...trustGaps.zh, ...journeyGaps.zh, ...filtersGaps.zh, ...studentBookingGaps.en, ...studentBookingGaps.zh },
+  ja: { ...studentToursGaps.en, ...studentToursGaps.ja, ...guideGaps.ja, ...chromeGaps.ja, ...ja, ...aboutGaps.ja, ...about2Gaps.ja, ...pricingGaps.ja, ...discoveryGaps.ja, ...trustGaps.ja, ...journeyGaps.ja, ...filtersGaps.ja, ...studentBookingGaps.en, ...studentBookingGaps.ja },
+  ko: { ...studentToursGaps.en, ...studentToursGaps.ko, ...guideGaps.ko, ...chromeGaps.ko, ...ko, ...aboutGaps.ko, ...about2Gaps.ko, ...pricingGaps.ko, ...discoveryGaps.ko, ...trustGaps.ko, ...journeyGaps.ko, ...filtersGaps.ko, ...studentBookingGaps.en, ...studentBookingGaps.ko },
+  ar: { ...studentToursGaps.en, ...studentToursGaps.ar, ...guideGaps.ar, ...chromeGaps.ar, ...ar, ...aboutGaps.ar, ...about2Gaps.ar, ...pricingGaps.ar, ...discoveryGaps.ar, ...trustGaps.ar, ...journeyGaps.ar, ...filtersGaps.ar, ...studentBookingGaps.en, ...studentBookingGaps.ar },
 };

@@ -16,12 +16,17 @@
 // says "group" (MGA flag proves an MGA group, not university status); the rest
 // are described as locations/scenes.
 // ─────────────────────────────────────────────────────────────────────────────
+import { useEffect, useState } from 'react';
 import { Link } from 'wouter';
 import { Layout } from '../components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { contactInfo } from '@/data/content';
 import { studentTours } from '@/data/student-tours';
 import { getLocalizedStudentTour } from '@/i18n/content';
+import { upcomingDepartures } from '@/data/student-group-departures';
+import { DepartureCalendar } from '../components/student-tours/DepartureCalendar';
+import { JoinStudentTour } from '../components/student-tours/JoinStudentTour';
+import { trackEvent } from '@/lib/analytics';
 
 const IMG = '/images/student-tours';
 
@@ -105,7 +110,15 @@ export default function StudentTours() {
   // private /tours/* catalogue — a visitor who lands here stays inside the
   // Student Tours ecosystem. <Link> resolves against the wouter base, so each
   // locale gets its own route.
-  const journeys = studentTours.map((s) => getLocalizedStudentTour(s, lang)).map((s) => ({
+  const localizedTours = studentTours.map((s) => getLocalizedStudentTour(s, lang));
+
+  useEffect(() => { trackEvent('student_tour_view', { page: 'student-tours-hub' }); }, []);
+
+  const [joinState, setJoinState] = useState<{ tourSlug: string; tourTitle: string; departureId?: string } | null>(null);
+  const todayIso = new Date().toISOString().slice(0, 10);
+  const departures = upcomingDepartures(todayIso);
+
+  const journeys = localizedTours.map((s) => ({
     days: s.duration.split(' ')[0],
     unit: t('st_sd_days_unit'),
     title: s.title,
@@ -174,17 +187,41 @@ export default function StudentTours() {
               <p className="text-white/70 text-[13px] md:text-sm mt-1.5 leading-snug max-w-[30rem]">{t('st_groupsize_large')}</p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 mt-8">
-              <a href={wa} target="_blank" rel="noopener noreferrer"
+              <a href="#departures"
                 className="inline-flex items-center justify-center px-8 py-4 bg-white text-black text-sm font-semibold tracking-wide hover:opacity-90 transition">
-                {t('st_cta1')}
+                {t('st_hero_cta_departures')}
               </a>
-              <a href="#programme-experiences"
+              <a href={wa} target="_blank" rel="noopener noreferrer"
+                onClick={() => trackEvent('whatsapp_student_click', { placement: 'hero' })}
                 className="inline-flex items-center justify-center px-8 py-4 border border-white/70 text-white text-sm font-semibold tracking-wide hover:bg-white hover:text-black transition">
-                {t('st_cta2')}
+                {t('st_hero_cta_whatsapp')}
               </a>
             </div>
             <p className="mt-10 text-[11px] tracking-[0.2em] text-white/70 uppercase">{t('st_cue')}</p>
           </div>
+        </div>
+      </section>
+
+      {/* 01B — UPCOMING DEPARTURES ----------------------------------------
+          The departure calendar — filterable by duration, built entirely
+          from src/data/student-group-departures.ts (currently empty, since
+          no real group departure has been scheduled yet; see that file for
+          how to add one). Placed directly under the hero so it is the first
+          thing a visitor who scrolls past the fold sees. */}
+      <section id="departures" className="bg-background py-16 md:py-24">
+        <div className="container mx-auto px-4">
+          <Eyebrow>{t('st_dc_eyebrow')}</Eyebrow>
+          <h2 className="font-serif text-3xl md:text-5xl font-light text-foreground max-w-2xl">{t('st_dc_heading')}</h2>
+          <DepartureCalendar
+            departures={departures}
+            tours={localizedTours}
+            lang={lang}
+            t={t}
+            onJoinNow={(tourSlug, departureId) => {
+              const tour = localizedTours.find((tr) => tr.slug === tourSlug);
+              setJoinState({ tourSlug, tourTitle: tour?.title ?? tourSlug, departureId });
+            }}
+          />
         </div>
       </section>
 
@@ -614,6 +651,19 @@ export default function StudentTours() {
           <p className="sr-only">{lang}</p>
         </div>
       </section>
+
+      {joinState && (
+        <JoinStudentTour
+          open={Boolean(joinState)}
+          onOpenChange={(isOpen) => { if (!isOpen) setJoinState(null); }}
+          tourSlug={joinState.tourSlug}
+          tourTitle={joinState.tourTitle}
+          departures={departures.filter((d) => d.tourSlug === joinState.tourSlug)}
+          initialDepartureId={joinState.departureId}
+          lang={lang}
+          t={t}
+        />
+      )}
     </Layout>
   );
 }

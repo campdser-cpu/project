@@ -5,6 +5,8 @@ import { getLocalizedTour, getLocalizedTours, getLocalizedFaq, getLocalizedDesti
 import { fmtTemplate } from '../components/tours/intl';
 import { lazy, Suspense } from 'react';
 import { LazyMount } from '../components/perf/LazyMount';
+import { TailorJourney } from '../components/tours/TailorJourney';
+import { langHref } from '@/lib/i18n-routing';
 
 /** Map is below the fold — mount (and download its ~150 kB vendor chunk) only when scrolled near. */
 const MoroccoMap = lazy(() =>
@@ -12,21 +14,19 @@ const MoroccoMap = lazy(() =>
 );
 import NotFound from './not-found';
 import { motion } from 'framer-motion';
-import { Clock, Users, CheckCircle2, Check, X, Star, CalendarDays, ChevronRight, MapPin, Plus, Minus, Route, Mail } from 'lucide-react';
-import { SiWhatsapp } from 'react-icons/si';
+import { Clock, Users, CheckCircle2, Check, X, Star, ChevronRight, MapPin, Plus, Minus, Route } from 'lucide-react';
 import { FcGoogle } from 'react-icons/fc';
 import { useState } from 'react';
 import { PromoBadge } from '../components/promo/PromoBadge';
 import { PriceTag } from '../components/promo/PriceTag';
 import { PromoBanner } from '../components/promo/PromoBanner';
-import { waPromoLink } from '@/lib/promo';
 import { usePromoActive } from '../components/promo/PromoProvider';
 import { StructuredData, buildTourSchema, buildReviewSchema, buildFaqSchema } from '../components/seo/StructuredData';
 import { TOUR_DEPARTURE_CITY, getCityHub } from '@/data/tour-hierarchy';
 import { TourBreadcrumbs } from '../components/tours/TourBreadcrumbs';
 import { MERZOUGA_GUIDES, COMPARISONS, TRAVEL_INFO } from '@/data/seoHub';
 import { getLocalizedGuide } from '@/i18n/guides';
-import { tours as canonicalTours, destinations as canonicalDestinations, contactInfo } from '@/data/content';
+import { tours as canonicalTours, destinations as canonicalDestinations } from '@/data/content';
 import { deriveTourExperiences } from '@/data/tour-experiences';
 import { deriveTourStartEnd } from '@/data/tour-quick-facts';
 import { IncludedExperiences } from '../components/tours/IncludedExperiences';
@@ -34,7 +34,6 @@ import { TourInclusions } from '../components/tours/TourInclusions';
 import { deriveTourInclusions } from '@/data/tour-inclusions';
 import { HowBookingWorks } from '../components/tours/HowBookingWorks';
 import { DayTripFlow } from '../components/tours/DayTripFlow';
-import { roomArrangements, findArrangement, arrangementLabel, arrangementLabelEn } from '@/data/pricing/rooms';
 
 /** Extract the leading number of days from a duration string like "3 Days / 2 Nights". */
 function parseDurationDays(duration: string): number {
@@ -42,26 +41,9 @@ function parseDurationDays(duration: string): number {
   return match ? parseInt(match[1], 10) : 0;
 }
 
-const MIN_DAYS = 1;
-const MAX_DAYS = 30;
-
 export default function TourDetail() {
   const { t, lang } = useLanguage();
   const [match, params] = useRoute('/tours/:id');
-  const [travelers, setTravelers] = useState(1);
-  const [date, setDate] = useState('');
-  // Starts from the tour's own duration (falling back to 4 when it cannot be
-  // parsed) — the same default the booking box has always used.
-  const [days, setDays] = useState(() => {
-    const initial = params?.id ? getLocalizedTour(params.id, lang) : undefined;
-    const d = initial ? parseDurationDays(initial.duration) : 4;
-    return Math.min(MAX_DAYS, Math.max(MIN_DAYS, d || 4));
-  });
-  // Only the arrangement's id is held: resolving it against the current party
-  // size each render means changing the traveler count never leaves a stale
-  // arrangement selected — one that no longer fits simply falls back to the
-  // deferred "let us confirm" option.
-  const [roomId, setRoomId] = useState('defer');
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   if (!match || !params?.id) return <NotFound />;
@@ -74,20 +56,15 @@ export default function TourDetail() {
   const departCity = TOUR_DEPARTURE_CITY[tour.id];
   const departHub = departCity ? getCityHub(departCity) : undefined;
 
-  // Every private journey is quoted on the dates and the group, so this page
-  // never computes a total: the panel collects dates and party size and the
-  // team replies with the real figure.
+  // The booking panel (TailorJourney) shows a real total for tours on the
+  // published price ladder (src/data/pricing/ladder.ts) and falls back to the
+  // quote flow — never an invented figure — for everything else.
   const promoOn = usePromoActive();
 
   // Day-by-day itinerary — rendered only when the tour defines one matching its
   // real duration, so a tour can never display an itinerary for a different length.
   const isQuoteOnly = tour.quoteOnly === true;
   const itinerary = tour.itineraryDays ?? [];
-
-  // Room arrangement choices for the booking box, generated from the current
-  // party size (see roomId's state comment above).
-  const roomChoices = roomArrangements(travelers);
-  const roomArrangement = findArrangement(travelers, roomId);
 
   const galleryImages = tour.gallery ?? [
     { src: '/images/dest/merzouga.webp', caption: 'Sahara dunes at Merzouga' },
@@ -500,13 +477,12 @@ export default function TourDetail() {
             {/* Book now, pay later — placed right after the tour explanation/
                 itinerary content and before Included/Not Included/FAQ, so a
                 traveler who has just finished reading the journey sees the
-                booking box immediately, on both desktop and mobile. */}
-            <div className="bg-card border border-border rounded-3xl p-8 shadow-2xl mb-16">
-
-              <h3 className="font-serif text-2xl text-foreground mb-2">{t('book_quote_title')}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed mb-5">{t('book_quote_lead')}</p>
-              {/* MGA_THREE_DAY_ENRICHED_V1 */}
-
+                booking box immediately, on both desktop and mobile.
+                TailorJourney shows a real live total (src/data/pricing/ladder.ts)
+                as the traveler adjusts the party size, plus style/comfort/camp/
+                pace preferences and room arrangement — the customization a
+                booking panel should offer, not just a date field and a button. */}
+            <div className="mb-16">
               {promoOn && (
                 <div className="mb-5 rounded-2xl border border-primary/25 bg-primary/5 p-4">
                   <div className="flex flex-wrap items-center justify-between gap-2">
@@ -517,109 +493,16 @@ export default function TourDetail() {
                 </div>
               )}
 
-              <p className="font-serif text-2xl text-foreground font-bold mb-5">{t('price_tailored')}</p>
+              <TailorJourney
+                t={t}
+                tripName={tour.name}
+                tourId={tour.id}
+                lang={lang}
+                bookHref={langHref(lang, '/book')}
+                defaultDays={parseDurationDays(tour.duration) || 4}
+              />
 
-              {/* The three steps that actually happen — no payment is taken here. */}
-              <ol className="mb-6 space-y-3">
-                {[t('book_step1'), t('book_step2'), t('book_step3')].map((step, i) => (
-                  <li key={step} className="flex gap-3 text-sm text-muted-foreground">
-                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/15 text-xs font-bold text-primary-text">{i + 1}</span>
-                    <span className="leading-relaxed">{step}</span>
-                  </li>
-                ))}
-              </ol>
-
-              {/* Booking Controls */}
-              <div className="space-y-5 mb-6">
-                <div className="space-y-2">
-                  <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider" htmlFor="tour-date">{t('book_select_date')}</label>
-                  <div className="relative">
-                    <CalendarDays className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-primary" aria-hidden="true" />
-                    <input
-                      id="tour-date"
-                      type="date"
-                      value={date}
-                      onChange={(e) => setDate(e.target.value)}
-                      className="w-full bg-background border border-border rounded-xl pl-12 pr-4 py-4 text-foreground focus:ring-2 focus:ring-primary focus:border-primary outline-none"
-                    />
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider block">{t('book_travelers')}</span>
-                  <div className="flex items-center justify-between bg-background border border-border rounded-xl p-2">
-                    <button
-                      onClick={() => setTravelers(Math.max(1, travelers - 1))}
-                      className="w-10 h-10 rounded-lg bg-muted text-foreground flex items-center justify-center hover:bg-primary/20 transition-colors"
-                      aria-label={t('td_decrease')}
-                    >
-                      -
-                    </button>
-                    <span className="font-bold text-lg">{travelers}</span>
-                    <button
-                      onClick={() => setTravelers(travelers + 1)}
-                      className="w-10 h-10 rounded-lg bg-muted text-foreground flex items-center justify-center hover:bg-primary/20 transition-colors"
-                      aria-label={t('td_increase')}
-                    >
-                      +
-                    </button>
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider block" htmlFor="tour-days">{t('jx_f_days')}</label>
-                  <input
-                    id="tour-days"
-                    type="number"
-                    inputMode="numeric"
-                    min={MIN_DAYS}
-                    max={MAX_DAYS}
-                    value={days}
-                    onChange={(e) => setDays(Math.max(MIN_DAYS, Math.min(MAX_DAYS, Number(e.target.value) || MIN_DAYS)))}
-                    className="w-full bg-background border border-border rounded-xl px-4 py-4 text-foreground focus:ring-2 focus:ring-primary focus:border-primary outline-none"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider block" htmlFor="tour-rooms">{t('px_rooms')}</label>
-                  <select
-                    id="tour-rooms"
-                    value={roomArrangement.id}
-                    onChange={(e) => setRoomId(e.target.value)}
-                    className="w-full bg-background border border-border rounded-xl px-4 py-4 text-foreground focus:ring-2 focus:ring-primary focus:border-primary outline-none"
-                  >
-                    {roomChoices.map((a) => (
-                      <option key={a.id} value={a.id}>{arrangementLabel(a, t)}</option>
-                    ))}
-                  </select>
-                </div>
-              </div>
-
-              <div className="space-y-4 mb-6">
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <a
-                    href={promoOn
-                      ? waPromoLink(`${t('promo_wa_message')}\n\n${tour.name} · ${travelers}p${date ? ` · ${date}` : ''}`)
-                      : waPromoLink(`New Tour Booking Request\n\nTour: ${tour.name}\nTravelers: ${travelers}\nDays: ${days}\nRoom arrangement: ${arrangementLabelEn(roomArrangement)}${date ? `\nTravel dates: ${date}` : ''}`)}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex-1 bg-[#25D366] text-[#0d2b1d] py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-[#128C7E] transition-all hover:-translate-y-1 shadow-lg shadow-[#25D366]/30 text-lg"
-                  >
-                    <SiWhatsapp className="w-6 h-6" aria-hidden="true" /> {promoOn ? t('promo_cta') : t(isDayTrip ? 'price_quote_cta_day' : 'price_quote_cta')}
-                  </a>
-
-                  <a
-                    href={`mailto:${contactInfo.email}?subject=${encodeURIComponent(fmtTemplate(t('email_quote_subject'), { tour: tour.name }))}&body=${encodeURIComponent(fmtTemplate(t('email_quote_body'), { tour: tour.name, date: date || t('email_quote_flexible_date'), travelers: String(travelers), days: String(days), rooms: arrangementLabel(roomArrangement, t) }))}`}
-                    className="flex-1 bg-background border-2 border-foreground text-foreground py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-foreground hover:text-background transition-all text-lg"
-                  >
-                    <Mail className="w-6 h-6" aria-hidden="true" /> {t('price_quote_cta_email')}
-                  </a>
-                </div>
-              </div>
-
-              <p className="text-[11px] leading-relaxed text-muted-foreground mb-6">{t('book_quote_note')}</p>
-
-              <ul className="text-sm text-muted-foreground space-y-3 pt-6 border-t border-border">
+              <ul className="mt-6 text-sm text-muted-foreground space-y-3 pt-6 border-t border-border">
                 <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-primary shrink-0" /> {t('book_fact_private')}</li>
                 <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-primary shrink-0" /> {t('book_fact_quote')}</li>
                 <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-primary shrink-0" /> {t('book_fact_terms')}</li>

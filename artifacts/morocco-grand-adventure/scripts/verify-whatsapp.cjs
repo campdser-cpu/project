@@ -82,13 +82,20 @@ for (const token of ['Route:', 'Duration:', 'Travelers:', 'Budget:', 'Interests:
   chk(tb.includes(token), 'trip-builder builds field: ' + token);
 }
 
-// 4. Tour detail "Book This Tour" must carry the exact tour + selected details.
+// 4. Tour detail's booking panel (TailorJourney) must carry the exact tour +
+// selected details. The inline booking box was replaced by the shared
+// TailorJourney component (src/components/tours/TailorJourney.tsx), which
+// builds its own contextual summary — checked directly here instead of
+// string-matching tour-detail.tsx's now-removed inline template.
 const td = readSrc('pages/tour-detail.tsx');
-chk(td.includes("New Tour Booking Request"), 'tour-detail builds New Tour Booking Request');
-chk(td.includes('Tour: ${tour.name}'), 'tour-detail message names the exact tour');
-chk(td.includes('Travelers: ${travelers}'), 'tour-detail message carries traveler count');
-chk(td.includes('Travel dates: ${date}'), 'tour-detail message carries selected date');
-chk(/waPromoLink\(/.test(td), 'tour-detail routes through shared waPromoLink builder');
+chk(td.includes('<TailorJourney'), 'tour-detail renders the TailorJourney booking panel');
+chk(td.includes('tourId={tour.id}'), 'tour-detail passes the real tour id to TailorJourney');
+
+const tj = readSrc('components/tours/TailorJourney.tsx');
+chk(tj.includes('\${contactInfo.whatsapp}?text='), 'TailorJourney appends ?text= to the base deep link');
+chk(tj.includes('Trip: ${tripName}'), 'TailorJourney message names the exact tour');
+chk(tj.includes('Travellers: ${travellers}'), 'TailorJourney message carries traveler count');
+chk(tj.includes('Dates: ${date'), 'TailorJourney message carries selected date');
 
 // 5. Contact form fallback, group quote, quote-only all keep a ?text= context.
 const ct = readSrc('pages/contact.tsx');

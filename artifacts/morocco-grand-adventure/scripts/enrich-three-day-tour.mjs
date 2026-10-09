@@ -5,13 +5,7 @@ import { fileURLToPath } from 'node:url';
 const here = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(here, '..');
 const contentPath = path.join(root, 'src/data/content.ts');
-const detailPath = path.join(root, 'src/pages/tour-detail.tsx');
 const marker = 'MGA_THREE_DAY_ENRICHED_V1';
-
-function replaceOnce(source, pattern, replacement, label) {
-  if (!pattern.test(source)) throw new Error(`[3-day-enrichment] Could not find ${label}`);
-  return source.replace(pattern, replacement);
-}
 
 // The three-day tour's data lives in src/data/content.ts and is the approved,
 // published pricing. This script used to REBUILD that block from a hard-coded
@@ -32,12 +26,16 @@ if (!content.includes(marker)) {
   );
 }
 
-let detail = fs.readFileSync(detailPath, 'utf8');
-if (!detail.includes(marker)) {
-  detail = replaceOnce(detail, /  const itinerary = tour\.itineraryDays \?\? \[\];/, `  const isThreeDaySahara = tour.id === '3-day-sahara-marrakech';\n  const itinerary = tour.itineraryDays ?? [];`, 'tour itinerary declaration');
-  detail = replaceOnce(detail, /              <h3 className="font-serif text-2xl text-foreground mb-4">\{t\('book_now'\)\}<\/h3>/, `              <h3 className="font-serif text-2xl text-foreground mb-4">{isThreeDaySahara ? 'Book Now · Pay Later' : t('book_now')}</h3>\n              {isThreeDaySahara && (\n                <div className="mb-5 rounded-2xl border border-primary/25 bg-primary/5 p-4">\n                  <p className="font-semibold text-foreground text-sm">Confirm the trip before you pay.</p>\n                  <p className="mt-1 text-xs leading-relaxed text-muted-foreground">Send us your dates and group size first. We confirm the itinerary and payment terms with you before you make a payment.</p>\n                </div>\n              )}\n              {/* MGA_THREE_DAY_ENRICHED_V1 */}`, 'booking heading');
-  fs.writeFileSync(detailPath, detail, 'utf8');
-}
+// The detail-page injection that used to run here (adding an
+// isThreeDaySahara-only "Book Now · Pay Later" heading and a "confirm before
+// you pay" callout to tour-detail.tsx's booking box) targeted a `t('book_now')`
+// heading that no longer exists: the booking box was manually replaced by the
+// shared TailorJourney component (src/components/tours/TailorJourney.tsx),
+// which shows the same "confirm before you pay" trust signals — and a real
+// live price from the published ladder — for every tour, not just this one.
+// Re-adding a tour-specific callout here would be a step backwards from that
+// universal treatment, so this injection must never run again. The marker
+// constant above still gates the content.ts price-ladder check, which stays.
 
 // fix-three-day-city-enrichment.mjs and enrich-three-day-cities.mjs are
 // deliberately NOT imported. Both belonged to a one-time bootstrap that
