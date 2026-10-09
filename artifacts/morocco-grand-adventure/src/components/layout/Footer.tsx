@@ -22,7 +22,7 @@ export function Footer() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 mb-12 sm:mb-16">
           <div className="space-y-6">
-            <Logo variant="light" className="h-[55px] sm:h-16 md:h-[74px]" />
+            <Logo variant="light" className="h-16 sm:h-[72px] md:h-[82px]" />
             <p className="text-white/70 text-sm leading-relaxed">{t('footer_tagline')}</p>
             <div className="flex items-center gap-2">
               <a href="https://www.instagram.com/morocco_grand_adventure/" target="_blank" rel="noreferrer" aria-label={t('social_follow_instagram_aria')} className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"><Instagram className="w-5 h-5" aria-hidden="true" /></a>

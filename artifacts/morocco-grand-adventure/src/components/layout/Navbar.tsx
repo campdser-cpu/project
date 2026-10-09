@@ -52,7 +52,13 @@ export function Navbar() {
   // Logo presence: large and premium at the top of the page, compact once the
   // navbar goes solid. Driven by the existing `solid` scroll state — no extra
   // scroll listener — and animated by a CSS height transition on <Logo>.
-  const logoSize = solid ? 'h-[46px] sm:h-[51px] md:h-[55px] xl:h-16' : 'h-16 sm:h-[74px] xl:h-[92px]';
+  // Sized up from the previous h-[46px]/h-16 steps: the brand wordmark inside
+  // the official artwork sits in the lower third of the image, so a modest,
+  // proportional height increase (heavier on mobile, where it was least
+  // legible) is the only lever available without redrawing or cropping the
+  // asset itself. Width is never set explicitly — Logo.tsx keeps it `w-auto`
+  // against the image's real 1230x957 aspect ratio, so this cannot distort it.
+  const logoSize = solid ? 'h-14 sm:h-[60px] md:h-16 xl:h-[72px]' : 'h-20 sm:h-[86px] xl:h-[100px]';
   const navClass = `fixed w-full z-50 transition-all duration-300 ${solid ? 'bg-background/95 backdrop-blur-md shadow-sm py-2' : 'bg-transparent py-3 sm:py-4'}`;
   const linkClass = `text-sm font-medium tracking-wide transition-colors ${solid ? 'text-foreground hover:text-primary' : 'text-white hover:text-accent'}`;
   const cityLabel = (id: string) => t(`hub_${id}_name`);
