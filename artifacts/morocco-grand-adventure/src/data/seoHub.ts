@@ -1969,6 +1969,111 @@ export const TRAVEL_INFO: HubPage[] = [
       { imageId: 'sahara-dune-trekking-merzouga', after: 6 },
     ],
   },
+  {
+    kind: 'travel-info',
+    slug: 'marrakech-safety-guide',
+    title: 'Is Marrakech Safe? A Practical Marrakech Travel Safety Guide',
+    pageTitle: 'Is Marrakech Safe? A Practical Marrakech Travel Safety Guide',
+    description: 'Is Marrakech safe? An honest, practical guide to Medina navigation, Jemaa el-Fna, common scams, taxis, solo travelers and what to know before your trip.',
+    ogImage: '/images/library/jemaa-el-fna-day-marrakech-mga-018.jpg',
+    heroImage: '/images/library/jemaa-el-fna-day-marrakech-mga-018.jpg',
+    heroAlt: 'Jemaa el-Fna square in Marrakech by day, busy with visitors, vendors and market stalls',
+    intro: "Marrakech is one of the most visited cities in Morocco, and the honest answer to 'is it safe' is: manageable, not risk-free and not a reason to worry either. This guide covers the specific things that actually trip travelers up in Marrakech — the medina's maze-like streets, Jemaa el-Fna's crowds, common scams, taxis and night-time habits — rather than repeating general Morocco-wide safety advice.",
+    sections: [
+      {
+        heading: 'Is Marrakech safe? The honest answer',
+        paragraphs: [
+          "Marrakech is a manageable, well-touristed city, and the overwhelming majority of visits happen without any real incident. That said, 'completely safe' or 'one of the safest cities in the world' would overstate it — Marrakech is a busy, dense tourist destination like many others, and it comes with the ordinary friction of one.",
+          'The realistic concerns for a visitor are petty theft, scams and overcharging, aggressive touting, confusing medina navigation, and traffic — not violent crime. Treat it the way you would treat any unfamiliar, crowded city: a bit of orientation and a few agreed-before-not-after habits remove most of the friction.',
+        ],
+      },
+      {
+        heading: 'Getting around the Marrakech medina',
+        paragraphs: [
+          'The medina is a genuine maze — narrow, largely unsigned alleys with no grid logic, built centuries before cars or GPS. Losing your sense of direction here is completely normal, even for travelers who are good with maps elsewhere, and it is not itself a sign anything is wrong.',
+          "The one recurring friction point is someone offering to walk you to your riad, a square, or a shop 'for free' and then asking for payment at the end. The simplest habit is to decline unsolicited offers of directions or an escort politely and keep walking — genuine help rarely needs to be volunteered that insistently. Saving your riad's exact name and location offline, not just a general 'near the square', makes the rare real wrong turn much easier to resolve.",
+        ],
+      },
+      {
+        heading: "Jemaa el-Fna and Marrakech's busy areas",
+        paragraphs: [
+          "Jemaa el-Fna is Marrakech's main square and, especially from late afternoon into the evening, one of its busiest and most watched spaces — crowds, food stalls, musicians and performers. Petty-theft risk in a crowd like this is the same as in any busy public space anywhere: keep bags zipped and in front of you, and keep phones and cameras in hand rather than in a loose pocket.",
+          "The square's performers — snake charmers, henna artists, photo opportunities with animals — are a normal part of its character, but posing for a photo or accepting a henna design is often treated as a paid service after the fact, not before. Agree, or decline, before anything starts, and you avoid the square's most common friction.",
+        ],
+      },
+      {
+        heading: 'Common Marrakech scams and tourist friction',
+        paragraphs: [
+          'The patterns below are common enough to be worth knowing, but they describe a minority of interactions, not how most vendors, guides or drivers in Marrakech behave — most transactions are completely straightforward.',
+        ],
+        bullets: [
+          "Unsolicited directions or an unofficial 'guide' who attaches himself to you near a medina entrance and expects payment later",
+          'A quoted price that changes, or a vendor who insists you misunderstood the original number',
+          'Henna, photo-with-animal or similar offers presented as free that turn out to have a cost attached afterward',
+          'A taxi that does not start the meter, or quotes a flat fare well above the ordinary local rate',
+          'Persistent touting outside shops or restaurants, sometimes from people claiming a personal connection to get you inside',
+          "A shop insisting a browse obligates you to buy, or steering you toward a 'cousin's' stall for a commission",
+        ],
+      },
+      {
+        heading: 'Is Marrakech safe at night?',
+        paragraphs: [
+          'Yes, with the same logic that applies in most cities: busy generally means safer. Jemaa el-Fna and the main souk arteries around it stay lit, populated and lively well into the evening, and walking through them at night is routine for both tourists and Marrakchis.',
+          "The medina's smaller side alleys are a different story after dark — they empty out and lose their lighting quickly once the main square's crowd thins. The practical approach is not to avoid going out at night, but to stick to the busier, better-lit routes after dark, or take a short taxi directly to your riad's nearest accessible entrance rather than threading through quiet backstreets alone.",
+        ],
+      },
+      {
+        heading: 'Taxis and getting around the city',
+        paragraphs: [
+          "Marrakech's petit taxis — the small, beige ones licensed for the city — are metered, but it is common for drivers not to start the meter for a tourist fare unless asked. Agreeing a price, or explicitly asking for the meter, before the car moves avoids almost every taxi misunderstanding travelers run into, not after you have arrived.",
+          'Ride-hailing apps and a hotel- or riad-arranged taxi remove this friction entirely if negotiating is not how you want to start a ride. For the wider city-to-city picture — trains, buses, intercity transport — our guide to getting around Morocco covers that in full.',
+        ],
+      },
+      {
+        heading: 'Solo travelers, women and families',
+        paragraphs: [
+          "Solo travel, including for women, is common in Marrakech's main tourist areas, which are well used to international visitors travelling alone. The ordinary precautions apply: loose, modest clothing reduces unwanted attention, agreeing a price before any service removes the most common friction, and a private driver avoids the need to navigate unfamiliar alleys alone after dark. Our Morocco travel safety guide covers solo and women's travel at the country level in more detail.",
+          'Families generally find Marrakech straightforward: riads and hotels are used to children, and the medina\'s crowds and traffic are the main things worth actively managing with younger kids. A private driver or guide for day trips removes the navigation stress that matters most when you are also minding a group.',
+        ],
+      },
+      {
+        heading: 'Choosing and arriving at your riad or hotel',
+        paragraphs: [
+          "Most riads sit inside the medina's alleys, which means there is no street address a taxi can simply drive to. Arrange exact arrival instructions — ideally a pickup — with your riad before you travel, especially for a late flight, since finding an unmarked door in the dark on your first night is friction worth avoiding rather than discovering.",
+          "Standard precautions apply wherever you stay: use the room safe for your passport and valuables, and save your riad or hotel's phone number and exact address in your phone before you need them, not after. No particular part of Marrakech needs to be avoided outright — this is ordinary preparation, not a warning about any specific neighborhood.",
+        ],
+      },
+      {
+        heading: 'If something goes wrong',
+        paragraphs: [
+          'For the rare real problem — lost documents, a medical issue, feeling genuinely unsafe — your riad host, guide or driver is usually the fastest and most useful resource in Marrakech, more so than navigating an unfamiliar system alone. Our Morocco travel safety guide has the full picture: emergency numbers and country-level advice that applies here too, without repeating it all on this page.',
+        ],
+      },
+      {
+        heading: 'Exploring Marrakech with a guide vs on your own',
+        paragraphs: [
+          "Plenty of travelers explore Marrakech's medina and main sights independently without any issue — this page is meant to make that easier, not to talk you out of it. Where a local guide or driver tends to earn its keep is on the days that add real navigation complexity: a day trip into the Atlas, a multi-city itinerary, or the start of a Sahara route, where someone who already knows the roads and the routine removes a lot of the friction described above in one step.",
+          'If that sounds useful, our Marrakech-based Sahara tours and Atlas day trips are built around exactly that, and the trip builder can shape one around your own dates and interests.',
+        ],
+      },
+    ],
+    faqs: [
+      { question: 'Is Marrakech safe for tourists?', answer: "Yes, in the sense that millions of tourists visit without serious incident — but 'completely safe' would be an overstatement for any big city. The realistic concerns in Marrakech are petty rather than dangerous: overcharging, unofficial guides, confusing medina alleys and the occasional pushy tout, not violent crime. Normal city-travel precautions are enough for the great majority of visits." },
+      { question: 'Is Marrakech safe at night?', answer: 'Jemaa el-Fna and the main souk streets stay lively and well-populated well into the evening, which is generally the safer pattern — busy means watched. The side alleys of the medina empty out and lose their lighting much faster, so the practical approach is to stick to busier routes after dark or take a short taxi back to your riad rather than navigating quiet backstreets alone.' },
+      { question: 'Is the Marrakech Medina safe?', answer: "Yes, though it takes a bit of getting used to — the medina is a dense maze with no grid logic, and losing your orientation is extremely common, not a sign anything is wrong. The real friction is usually someone offering to 'help' you find your way for an unrequested fee. Saving your riad's exact location offline, and knowing its actual name rather than just 'the blue door', is more useful than any single safety tip." },
+      { question: 'Is Marrakech safe for solo travelers?', answer: "Yes — solo travel, including for women, is common in Marrakech's main tourist areas. The useful precautions are ordinary ones: modest dress reduces unwanted attention, agreeing a price before any service avoids the most common friction, and a private driver removes the need to navigate medina alleys alone after dark. Our Morocco travel safety guide covers solo and women's travel more broadly." },
+      { question: 'Are taxis in Marrakech safe?', answer: 'Yes, with one habit worth having: petit taxis are metered, but drivers do not always start the meter for tourist fares, so agree a price or insist on the meter before you get in, not after. Ride-hailing apps and hotel-arranged taxis remove this friction entirely if you would rather not negotiate.' },
+      { question: 'What are the most common scams in Marrakech?', answer: "Unofficial 'guides' who attach themselves to you near the medina gates, vendors who quote one price and then claim you misheard, henna or photo-with-animal offers that turn out not to be free, and taxis that 'forget' to use the meter. None of these are dangerous — they rely on you not knowing the local norm, and all are avoidable by agreeing terms before anything happens." },
+    ],
+    tours: ['3-day-sahara-marrakech', 'marrakech-4-day', 'marrakech-imlil-day-trip'],
+    destinations: ['marrakech', 'imlil', 'ourika-valley'],
+    relatedGuides: ['morocco-travel-safety', 'morocco-airports-guide', 'getting-around-morocco', 'marrakech-vs-fes'],
+    sources: ['onmt'],
+    inlineImages: [
+      { imageId: 'moroccan-night-spice-herb-market', after: 2 },
+      { imageId: 'jemaa-el-fna-night-marrakech', after: 4 },
+    ],
+  },
 ];
 export const ALL_HUB_PAGES: HubPage[] = [...MERZOUGA_GUIDES, ...COMPARISONS, ...TRAVEL_INFO];
 export function hubPageBySlug(slug: string, kind: HubKind): HubPage | undefined {
