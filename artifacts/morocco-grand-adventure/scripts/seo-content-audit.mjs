@@ -54,7 +54,12 @@ for (const file of files) {
   const html = fs.readFileSync(file, 'utf8');
   const url = urlFor(file);
   const title = text(html, /<title[^>]*>([\s\S]*?)<\/title>/i);
-  const description = text(html, /<meta[^>]+name=["']description["'][^>]+content=["']([^"']*)["'][^>]*>/i);
+  // content is always double-quoted by the prerender pipeline (confirmed in
+  // scripts/prerender.ts) — matching only "..." (not the old ["']...["']
+  // pair) avoids truncating at a legitimate apostrophe inside the text,
+  // e.g. "L'ancienne Mazagan...", which previously cut the match short at
+  // "L" and produced false "duplicate description" warnings.
+  const description = text(html, /<meta[^>]+name=["']description["'][^>]+content="([^"]*)"[^>]*>/i);
   const h1s = [...html.matchAll(/<h1\b[^>]*>([\s\S]*?)<\/h1>/gi)];
   checked++;
 
