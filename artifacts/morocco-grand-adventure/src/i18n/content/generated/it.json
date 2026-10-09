@@ -654,15 +654,30 @@
       ],
       "gallery": [
         {
-          "caption": "Dune dorate del Sahara e un campo nel deserto di lusso sulla rotta per Merzouga"
+          "caption": "Vista dal tetto sul ksar di Aït Ben Haddou"
+        },
+        {
+          "caption": "Palmeti e kasbah dell'oasi di Skoura"
+        },
+        {
+          "caption": "Trekking in cammello al tramonto nell'Erg Chebbi"
+        },
+        {
+          "caption": "Edifici in stile alpino dai tetti rossi a Ifrane"
+        },
+        {
+          "caption": "Vicolo del souk nella medina di Fes"
+        },
+        {
+          "caption": "Vicoli blu della medina di Chefchaouen"
         }
       ],
       "itineraryDays": [
         {
           "title": "Marrakech → Alto Atlante → Aït Ben Haddou → Valle del Dades",
-          "desc": "Si parte da Marrakech al mattino e si attraversa l’Alto Atlante dal valico del Tizi n’Tichka, il valico stradale più alto del Nord Africa. Sosta al villaggio fortificato di Aït Ben Haddou, patrimonio UNESCO, poi si prosegue attraverso Ouarzazate e l’oasi di Skoura fino alla scenografica valle del Dades, con pernottamento in un kasbah-hotel o in un riad.",
+          "desc": "Si parte da Marrakech al mattino e si sale verso l'Alto Atlante attraversando il valico del Tizi n'Tichka, il valico stradale più alto del Nord Africa. La strada scende verso Aït Ben Haddou, il ksar fortificato patrimonio UNESCO le cui torri in terra cruda hanno interpretato sullo schermo Gerusalemme, il Tibet e l'antico Egitto; si sale fino al granaio in cima per ammirare la vista sulla valle dell'Ounila prima di proseguire verso Ouarzazate, il centro dell'industria cinematografica del Marocco. Da lì l'itinerario attraversa Skoura, una palmeto millenaria sulla Via delle Mille Kasbah e sede della splendidamente restaurata Kasbah Amridil, prima della salita finale verso la scenografica valle del Dades — la Valle delle Mille Kasbah — con pernottamento in un kasbah-hotel o in un riad.",
           "stops": [
-            "Montagne dell’Alto Atlante",
+            "Montagne dell'Alto Atlante",
             "Valico del Tizi n'Tichka",
             "Aït Ben Haddou (UNESCO)",
             "Ouarzazate",
@@ -672,7 +687,7 @@
         },
         {
           "title": "Valle del Dades → Gole del Todra → Merzouga (Erg Chebbi)",
-          "desc": "Si ammira la tortuosa valle del Dades prima di raggiungere le imponenti gole del Todra. Si prosegue attraverso villaggi berberi e palmeti fino a Merzouga, all’orlo del Sahara, dove in sella ai cammelli si attraversano al tramonto le dune dorate di Erg Chebbi fino a un campo nel deserto di lusso — con cena, musica berbera dal vivo e un cielo pieno di stelle.",
+          "desc": "Si ammira la tortuosa valle del Dades e i suoi celebri tornanti prima di raggiungere le gole del Todra, il grande canyon del Marocco — pareti calcaree di 300 metri che si restringono in un corridoio largo appena 10 metri, scavato dal fiume Todra. Si prosegue attraverso villaggi berberi e palmeti del Tafilalet fino a Merzouga, all'orlo del Sahara, dove le dune dell'Erg Chebbi raggiungono circa 150 metri, le dune isolate più alte del paese. Una carovana di cammelli guidata da una guida berbera attraversa la sabbia mentre la luce vira dall'oro al cremisi, fino a un campo nel deserto di lusso — con cena, musica berbera dal vivo e un cielo pieno di stelle.",
           "stops": [
             "Valle del Dades",
             "Gole del Todra",
@@ -684,7 +699,7 @@
         },
         {
           "title": "Merzouga → Valle dello Ziz → Midelt → Fes",
-          "desc": "Ci si sveglia per l’alba sulle dune prima di colazione a Merzouga. Si prosegue verso nord attraverso gli infiniti palmeti della valle dello Ziz, con sosta a Midelt per il pranzo, poi si superano le foreste di cedri del Medio Atlante e la città di montagna di Ifrane prima di arrivare alla città imperiale di Fes.",
+          "desc": "Ci si sveglia per l'alba sulle dune prima di colazione a Merzouga, poi si prosegue verso nord attraverso gli infiniti palmeti della valle dello Ziz, con sosta a Midelt per il pranzo. La strada sale attraverso le foreste di cedri del Medio Atlante, popolate da bertucce, prima di raggiungere Ifrane, la cittadina di montagna in stile alpino del Marocco, con i suoi chalet dai tetti rossi e le fresche colline di pini, per poi proseguire verso la città imperiale di Fes — capitale spirituale e culturale del Marocco, e la porta del deserto più pratica tra tutte le grandi città.",
           "stops": [
             "Alba su Erg Chebbi",
             "Valle dello Ziz",
@@ -696,7 +711,7 @@
         },
         {
           "title": "Visita guidata di Fes",
-          "desc": "Si scopre una delle città vive più antiche del mondo con una guida locale ufficiale. Si esplorano le porte del Palazzo Reale e la labirintica medina medievale di Fes el-Bali, che ospita l’Università al Quaraouiyine, la celebre conceria Chouara e vivaci souk e botteghe artigiane. La serata è libera per gustare Fes con i vostri tempi.",
+          "desc": "Si scopre una delle città vive più antiche del mondo con una guida locale ufficiale. I circa 9.000 vicoli di Fes el-Bali formano la più grande area urbana priva di auto al mondo, e qui una guida locale è meno una comodità che una necessità. Si esplorano le porte del Palazzo Reale, per poi inoltrarsi nella medina fino a Al-Qarawiyyin, l'università in funzione continua più antica al mondo, il cedro intagliato della medersa Bou Inania, e le vasche di tintura a cielo aperto della concia di Chouara, ancora lavorate a mano come da secoli. Vivaci souk e botteghe artigiane riempiono le ore tra una tappa e l'altra, e la serata è libera per gustare Fes con i propri tempi.",
           "stops": [
             "Porte del Palazzo Reale",
             "Medina di Fes el-Bali",
@@ -707,7 +722,7 @@
         },
         {
           "title": "Fes → Meknès → Volubilis → Chefchaouen",
-          "desc": "Si raggiunge la città imperiale di Meknès per ammirare la monumentale porta Bab Mansour e il Mausoleo di Moulay Ismail, poi si passeggia tra i ruderi romani di Volubilis, notevolmente conservati. Si prosegue fino alla celebre Città Blu di Chefchaouen, dove pomeriggio e sera sono liberi per esplorare le fotogeniche viuzze della medina tinte di azzurro.",
+          "desc": "Si raggiunge Meknès, la più tranquilla delle quattro città imperiali del Marocco, dove il sultano Moulay Ismail costruì nel XVII secolo una capitale dalle dimensioni monumentali: la porta Bab Mansour, i vasti granai di Heri es-Souani e il suo stesso mausoleo. Da lì è un breve tragitto fino a Volubilis, una città romana straordinariamente conservata tra uliveti, prima che la strada prosegua verso nord fino a Chefchaouen — una medina interamente dipinta in tonalità di blu, dal pastello all'indaco, incastonata tra le montagne del Rif. Pomeriggio e sera sono liberi per passeggiare tra i vicoli blu e salire al belvedere della Moschea Spagnola per il tramonto sulla città.",
           "stops": [
             "Porta Bab Mansour",
             "Mausoleo di Moulay Ismail",

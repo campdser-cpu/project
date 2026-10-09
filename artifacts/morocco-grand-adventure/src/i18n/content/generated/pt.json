@@ -802,7 +802,7 @@
       "itineraryDays": [
         {
           "title": "Marrakech → Alto Atlas → Aït Ben Haddou → Vale do Dades",
-          "desc": "Parta de Marrakech de manhã e atravesse o Alto Atlas pelo Passo de Tizi n'Tichka, o mais alto passo rodoviário do Norte de África. Faça uma paragem na aldeia fortificada de Aït Ben Haddou, classificada pela UNESCO, e siga depois por Ouarzazate e pelo Oásis de Skoura até ao imponente Vale do Dades, onde pernoitará num hotel-kasbah ou riad.",
+          "desc": "Parta de Marrakech de manhã e suba ao Alto Atlas atravessando o Passo de Tizi n'Tichka, o mais alto passo rodoviário do Norte de África. A estrada desce para Aït Ben Haddou, o ksar fortificado Património Mundial da UNESCO cujas torres de adobe empilhadas já representaram no ecrã Jerusalém, o Tibete e o antigo Egito; suba até ao celeiro no topo para admirar a vista sobre o vale do Ounila antes de seguir para Ouarzazate, o centro da indústria cinematográfica de Marrocos. Dali o percurso atravessa Skoura, um palmeiral milenar na Rota das Mil Kasbahs e lar da magnificamente restaurada Kasbah Amridil, antes da subida final até ao imponente Vale do Dades — o Vale das Mil Kasbahs — onde pernoitará num hotel-kasbah ou riad.",
           "stops": [
             "Cordilheira do Alto Atlas",
             "Passo de Tizi n'Tichka",
@@ -814,7 +814,7 @@
         },
         {
           "title": "Vale do Dades → Garganta de Todra → Merzouga (Erg Chebbi)",
-          "desc": "Admire o sinuoso Vale do Dades antes de seguir até à imponente Garganta de Todra. Prossiga por aldeias berberes e oásis de palmeiras até Merzouga, à beira do Saara, onde percorrerá de camelo as dunas douradas de Erg Chebbi ao pôr do sol, rumo a um acampamento de luxo no deserto — com jantar, música berbere ao vivo e céus estrelados incluídos.",
+          "desc": "Admire o sinuoso Vale do Dades e as suas famosas curvas antes de chegar à Garganta de Todra, o grande canhão de Marrocos — paredes de calcário de 300 metros que se estreitam até um corredor com pouco mais de 10 metros de largura, talhado pelo rio Todra. Continue por aldeias berberes e palmeirais do Tafilalet até Merzouga, à beira do Saara, onde as dunas de Erg Chebbi atingem cerca de 150 metros, as dunas isoladas mais altas do país. Uma caravana de camelos guiada por um guia berbere leva-o pela areia enquanto a luz passa do dourado ao carmim, até um acampamento de luxo no deserto — com jantar, música berbere ao vivo e céus estrelados incluídos.",
           "stops": [
             "Vale do Dades",
             "Garganta de Todra",
@@ -826,7 +826,7 @@
         },
         {
           "title": "Merzouga → Vale do Ziz → Midelt → Fes",
-          "desc": "Acorde para o nascer do sol sobre as dunas antes do pequeno-almoço em Merzouga. Siga para norte pelos infindáveis oásis de palmeiras do Vale do Ziz, com paragem em Midelt para almoçar, atravessando depois as florestas de cedros do Médio Atlas e a vila de montanha de Ifrane antes de chegar à cidade imperial de Fes.",
+          "desc": "Acorde para o nascer do sol sobre as dunas antes do pequeno-almoço em Merzouga, e siga depois para norte pelos infindáveis oásis de palmeiras do Vale do Ziz, com paragem em Midelt para almoçar. A estrada sobe pelas florestas de cedros do Médio Atlas, habitadas por macacos-de-berbéria, antes de chegar a Ifrane, a vila de montanha de estilo alpino de Marrocos, com os seus chalés de telhados vermelhos e colinas frescas cobertas de pinheiros, e segue depois para a cidade imperial de Fes — a capital espiritual e cultural de Marrocos, e a porta de entrada para o deserto mais prática de qualquer grande cidade.",
           "stops": [
             "Nascer do sol sobre Erg Chebbi",
             "Vale do Ziz",
@@ -838,7 +838,7 @@
         },
         {
           "title": "Visita guiada a Fes",
-          "desc": "Descubra uma das cidades vivas mais antigas do mundo com um guia local oficial. Explore as portas do Palácio Real e a labiríntica medina medieval de Fes el-Bali, onde se encontram a Universidade de Al Quaraouiyine, os célebres Curtumes de Chouara e souks e oficinas de artesãos cheios de animação. A noite fica livre para saborear Fes ao seu próprio ritmo.",
+          "desc": "Descubra uma das cidades vivas mais antigas do mundo com um guia local oficial. As cerca de 9.000 vielas de Fes el-Bali formam a maior área urbana sem carros do mundo, e aqui um guia local é menos uma comodidade do que uma necessidade. Explore as portas do Palácio Real e depois avance pela medina até Al-Qarawiyyin, a universidade em funcionamento contínuo mais antiga do mundo, a madeira de cedro esculpida da medersa Bou Inania, e os tanques de tingimento ao ar livre dos Curtumes de Chouara, ainda trabalhados à mão como há séculos. Souks animados e oficinas de artesãos preenchem as horas entre visitas, e a sua tarde fica livre para saborear Fes ao seu próprio ritmo.",
           "stops": [
             "Portas do Palácio Real",
             "Medina de Fes el-Bali",
@@ -849,7 +849,7 @@
         },
         {
           "title": "Fes → Meknès → Volubilis → Chefchaouen",
-          "desc": "Viaje até à cidade imperial de Meknès para admirar a monumental porta de Bab Mansour e o Mausoléu de Moulay Ismail, percorrendo depois as ruínas romanas de Volubilis, notavelmente preservadas. Siga em seguida para a célebre Cidade Azul de Chefchaouen, onde a tarde e a noite ficam livres para explorar as fotogénicas ruas caiadas de azul da medina.",
+          "desc": "Viaje até Meknès, a mais tranquila das quatro cidades imperiais de Marrocos, onde o sultão Moulay Ismail construiu no século XVII uma capital à escala monumental: a porta de Bab Mansour, os vastos celeiros de Heri es-Souani e o seu próprio mausoléu. Dali é um curto trajeto até Volubilis, uma cidade romana notavelmente preservada em meio a olivais, antes de a estrada seguir para norte até Chefchaouen — uma medina inteiramente pintada em tons de azul, do pastel ao anil, encaixada nas Montanhas do Rife. A tarde e a noite ficam livres para percorrer as ruas azuis e subir ao miradouro da Mesquita Espanhola para ver o pôr do sol sobre a cidade.",
           "stops": [
             "Porta de Bab Mansour",
             "Mausoléu de Moulay Ismail",
@@ -861,7 +861,22 @@
       ],
       "gallery": [
         {
-          "caption": "Dunas douradas do Saara e um acampamento de luxo no deserto, a caminho de Merzouga"
+          "caption": "Vista de um terraço sobre o ksar de Aït Ben Haddou"
+        },
+        {
+          "caption": "Palmeirais e kasbahs do oásis de Skoura"
+        },
+        {
+          "caption": "Passeio de camelo ao pôr do sol em Erg Chebbi"
+        },
+        {
+          "caption": "Edifícios de estilo alpino com telhados vermelhos em Ifrane"
+        },
+        {
+          "caption": "Viela do souk na medina de Fes"
+        },
+        {
+          "caption": "Ruas azuis da medina de Chefchaouen"
         }
       ],
       "faq": [

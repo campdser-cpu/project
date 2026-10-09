@@ -640,7 +640,7 @@
         {
           "day": 1,
           "title": "Marrakesch → Hoher Atlas → Aït Ben Haddou → Dades-Tal",
-          "desc": "Abfahrt ab Marrakesch am Morgen und Überquerung des Hohen Atlas über den Tizi-n'Tichka-Pass, den höchsten Straßenpass Nordafrikas. Halt am UNESCO-gelisteten befestigten Dorf Aït Ben Haddou, dann weiter durch Ouarzazate und die Oase Skoura in das markante Dades-Tal zur Übernachtung in einem Kasbah-Hotel oder Riad.",
+          "desc": "Abfahrt ab Marrakesch am Morgen und Aufstieg in den Hohen Atlas über den Tizi-n'Tichka-Pass, den höchsten Straßenpass Nordafrikas. Die Straße führt hinab nach Aït Ben Haddou, dem UNESCO-gelisteten befestigten Ksar, dessen aufgetürmte Lehmziegeltürme auf der Leinwand Jerusalem, Tibet und das alte Ägypten dargestellt haben; steigen Sie zum obersten Speicher hinauf, um den Blick über das Ounila-Tal zu genießen, bevor es weiter nach Ouarzazate geht, Marokkos Zentrum der Filmindustrie. Von dort führt die Route durch Skoura, eine tausendjährige Palmenoase an der Straße der Tausend Kasbahs und Heimat der wunderschön restaurierten Kasbah Amridil, vor dem letzten Anstieg in das markante Dades-Tal — das Tal der Tausend Kasbahs — zur Übernachtung in einem Kasbah-Hotel oder Riad.",
           "stops": [
             "Hohes Atlasgebirge",
             "Tizi-n'Tichka-Pass",
@@ -653,7 +653,7 @@
         {
           "day": 2,
           "title": "Dades-Tal → Todra-Schlucht → Merzouga (Erg Chebbi)",
-          "desc": "Bewundern Sie das gewundene Dades-Tal, bevor Sie zur hoch aufragenden Todra-Schlucht fahren. Weiter durch Berberdörfer und Palmenoasen nach Merzouga am Rand der Sahara, wo Sie bei Sonnenuntergang auf Kamelen über die goldenen Dünen des Erg Chebbi zu einem Luxus-Wüstencamp reiten – mit Abendessen, live Berbermusik und sternenübersätem Himmel.",
+          "desc": "Bewundern Sie das gewundene Dades-Tal und seine berühmten Serpentinen, bevor Sie die Todra-Schlucht erreichen, Marokkos große Schlucht — 300 Meter hohe Kalksteinwände, die sich zu einem Korridor von kaum 10 Metern Breite verengen, durchzogen vom Fluss Todra. Weiter durch Berberdörfer und Palmenhaine des Tafilalet nach Merzouga am Rand der Sahara, wo die Dünen des Erg Chebbi etwa 150 Meter erreichen, die höchsten freistehenden Dünen des Landes. Eine von einem Berber-Guide geführte Kamelkarawane trägt Sie durch den Sand, während sich das Licht von Gold zu Purpurrot verfärbt, zu einem Luxus-Wüstencamp — mit Abendessen, live Berbermusik und sternenübersätem Himmel.",
           "stops": [
             "Dades-Tal",
             "Todra-Schlucht",
@@ -666,7 +666,7 @@
         {
           "day": 3,
           "title": "Merzouga → Ziz-Tal → Midelt → Fes",
-          "desc": "Aufstehen zum Sonnenaufgang über den Dünen vor dem Frühstück in Merzouga. Nördlich durch die endlosen Palmenoasen des Ziz-Tals, Mittagsstopp in Midelt, dann an den Zedernwäldern des Mittleren Atlas und der Bergstadt Ifrane vorbei in die Kaiserstadt Fes.",
+          "desc": "Aufstehen zum Sonnenaufgang über den Dünen vor dem Frühstück in Merzouga, dann nordwärts durch die endlosen Palmenoasen des Ziz-Tals, mit einem Mittagsstopp in Midelt. Die Straße steigt durch die Zedernwälder des Mittleren Atlas, Heimat von Berberaffen, bevor sie Ifrane erreicht, Marokkos alpin anmutende Bergstadt mit rotgedeckten Chalets und kühlen, kiefernbewachsenen Hügeln, und führt weiter in die Kaiserstadt Fes — Marokkos spirituelle und kulturelle Hauptstadt und das bequemste Tor zur Wüste unter allen großen Städten.",
           "stops": [
             "Sonnenaufgang über dem Erg Chebbi",
             "Ziz-Tal",
@@ -679,7 +679,7 @@
         {
           "day": 4,
           "title": "Geführte Tour durch Fes",
-          "desc": "Entdecken Sie eine der ältesten lebendigen Städte der Welt mit offiziellem lokalem Stadtführer. Erkunden Sie die Tore des Königspalasts und die labyrinthartige mittelalterliche Medina Fes el-Bali – Heimat der Al-Qarawiyyin-Universität, der berühmten Gerberei Chouara und belebter Souks und Kunsthandwerkswerkstätten. Der Abend steht Ihnen frei, um Fes in Ihrem eigenen Tempo zu genießen.",
+          "desc": "Entdecken Sie eine der ältesten lebendigen Städte der Welt mit einem offiziellen lokalen Guide. Die rund 9.000 Gassen von Fes el-Bali bilden das größte autofreie Stadtgebiet der Welt, und ein lokaler Guide ist hier weniger Komfort als Notwendigkeit. Erkunden Sie die Tore des Königspalasts und schlängeln Sie sich dann durch die Medina zur Al-Qarawiyyin-Universität, der ältesten durchgehend betriebenen Universität der Welt, zum geschnitzten Zedernholz der Bou-Inania-Medersa und zu den Freiluft-Färbebecken der Gerberei Chouara, die noch immer von Hand bearbeitet werden wie seit Jahrhunderten. Belebte Souks und Handwerkswerkstätten füllen die Stunden dazwischen, und der Abend steht Ihnen frei, um Fes in Ihrem eigenen Tempo zu genießen.",
           "stops": [
             "Tore des Königspalasts",
             "Medina Fes el-Bali",
@@ -691,7 +691,7 @@
         {
           "day": 5,
           "title": "Fes → Meknès → Volubilis → Chefchaouen",
-          "desc": "Fahrt in die Kaiserstadt Meknès zum monumentalen Bab-Mansour-Tor und dem Mausoleum von Moulay Ismail, dann ein Spaziergang durch die bemerkenswert erhaltenen römischen Ruinen von Volubilis. Weiter in die berühmte Blaue Stadt Chefchaouen, wo Nachmittag und Abend frei sind, um die fotogenen blaugewaschenen Gassen der Medina zu erkunden.",
+          "desc": "Fahrt nach Meknès, der ruhigsten der vier Kaiserstädte Marokkos, wo Sultan Moulay Ismail im 17. Jahrhundert eine Hauptstadt von monumentalem Ausmaß errichtete: das Bab-Mansour-Tor, die weitläufigen Speicher von Heri es-Souani und sein eigenes Mausoleum. Von dort ist es nur eine kurze Fahrt nach Volubilis, einer bemerkenswert gut erhaltenen römischen Stadt inmitten von Olivenhainen, bevor die Straße weiter nordwärts nach Chefchaouen führt — eine ganz in Blautönen getauchte Medina, von Puderblau bis Indigo, eingebettet in das Rifgebirge. Nachmittag und Abend stehen frei, um durch die blauen Gassen zu spazieren und zum Aussichtspunkt der Spanischen Moschee hinaufzusteigen, um den Sonnenuntergang über der Stadt zu erleben.",
           "stops": [
             "Bab-Mansour-Tor",
             "Mausoleum von Moulay Ismail",
@@ -724,7 +724,22 @@
       ],
       "gallery": [
         {
-          "caption": "Goldene Saharadünen und ein Luxus-Wüstencamp auf der Route nach Merzouga"
+          "caption": "Dachblick auf den Ksar Aït Ben Haddou"
+        },
+        {
+          "caption": "Palmenhaine und Kasbahs der Oase Skoura"
+        },
+        {
+          "caption": "Kamelritt bei Sonnenuntergang im Erg Chebbi"
+        },
+        {
+          "caption": "Alpin anmutende Gebäude mit roten Dächern in Ifrane"
+        },
+        {
+          "caption": "Souk-Gasse in der Medina von Fes"
+        },
+        {
+          "caption": "Blaue Gassen der Medina von Chefchaouen"
         }
       ],
       "faq": [

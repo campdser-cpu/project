@@ -655,7 +655,7 @@
       "itineraryDays": [
         {
           "title": "Marrakech → Haut Atlas → Aït Ben Haddou → Vallée de Dades",
-          "desc": "Partez de Marrakech le matin et franchissez le Haut Atlas par le col du Tizi n'Tichka, le plus haut col routier d'Afrique du Nord. Arrêtez-vous au village fortifié classé à l'UNESCO d'Aït Ben Haddou, puis poursuivez à travers Ouarzazate et l'oasis de Skoura jusqu'à la spectaculaire vallée de Dades pour une nuit dans un hôtel-kasbah ou un riad.",
+          "desc": "Partez de Marrakech le matin et montez vers le Haut Atlas en franchissant le col du Tizi n'Tichka, le plus haut col routier d'Afrique du Nord. La route redescend vers Aït Ben Haddou, le ksar fortifié classé à l'UNESCO dont les tours de pisé empilées ont incarné à l'écran Jérusalem, le Tibet et l'Égypte ancienne ; grimpez jusqu'au grenier perché pour admirer la vue sur la vallée de l'Ounila avant de poursuivre vers Ouarzazate, le centre marocain de l'industrie cinématographique. De là, l'itinéraire traverse Skoura, une palmeraie millénaire sur la route des Mille Kasbahs et berceau de la kasbah Amridil magnifiquement restaurée, avant la dernière montée vers la spectaculaire vallée de Dades — la vallée des Mille Kasbahs — pour une nuit dans un hôtel-kasbah ou un riad.",
           "stops": [
             "Montagnes du Haut Atlas",
             "Col du Tizi n'Tichka",
@@ -667,7 +667,7 @@
         },
         {
           "title": "Vallée de Dades → Gorges du Todra → Merzouga (Erg Chebbi)",
-          "desc": "Admirez la sinueuse vallée de Dades avant de rejoindre les vertigineuses gorges du Todra. Poursuivez à travers villages berbères et oasis de palmiers jusqu'à Merzouga, aux portes du Sahara, où vous chevauchez des dromadaires sur les dunes dorées d'Erg Chebbi au coucher du soleil jusqu'à un camp de luxe dans le désert : dîner, musique berbère en direct et ciel étoilé inclus.",
+          "desc": "Admirez la sinueuse vallée de Dades et ses célèbres lacets avant de rejoindre les gorges du Todra, le grand canyon du Maroc — des parois calcaires de 300 mètres se resserrant en un corridor large d'à peine 10 mètres, creusé par la rivière Todra. Poursuivez à travers villages berbères et palmeraies du Tafilalet jusqu'à Merzouga, aux portes du Sahara, où les dunes d'Erg Chebbi atteignent environ 150 mètres, les plus hautes dunes isolées du pays. Une caravane de dromadaires menée par un guide berbère vous emmène à travers le sable tandis que la lumière passe de l'or au pourpre, jusqu'à un camp de luxe dans le désert : dîner, musique berbère en direct et ciel étoilé inclus.",
           "stops": [
             "Vallée de Dades",
             "Gorges du Todra",
@@ -679,7 +679,7 @@
         },
         {
           "title": "Merzouga → Vallée de l'oued Ziz → Midelt → Fès",
-          "desc": "Réveillez-vous pour le lever du soleil sur les dunes avant le petit-déjeuner à Merzouga. Partez vers le nord à travers les interminables oasis de palmiers de la vallée de l'oued Ziz, avec un arrêt à Midelt pour le déjeuner, puis passez les forêts de cèdres du Moyen Atlas et la ville de montagne d'Ifrane avant d'arriver dans la ville impériale de Fès.",
+          "desc": "Réveillez-vous pour le lever du soleil sur les dunes avant le petit-déjeuner à Merzouga, puis partez vers le nord à travers les interminables oasis de palmiers de la vallée de l'oued Ziz, avec un arrêt à Midelt pour le déjeuner. La route grimpe à travers les forêts de cèdres du Moyen Atlas, peuplées de magots, avant d'atteindre Ifrane, la ville de montagne au style alpin du Maroc, avec ses chalets aux toits rouges et ses collines fraîches couvertes de pins, puis se poursuit vers la ville impériale de Fès — capitale spirituelle et culturelle du Maroc, et la porte d'entrée du désert la plus pratique de toutes les grandes villes.",
           "stops": [
             "Lever du soleil sur Erg Chebbi",
             "Vallée de l'oued Ziz",
@@ -691,7 +691,7 @@
         },
         {
           "title": "Journée guidée à Fès",
-          "desc": "Une journée guidée complète dans la plus ancienne ville impériale du Maroc, autour de Fès el-Bali : palais royal, université Al Quaraouiyine, tanneries et souks artisanaux.",
+          "desc": "Découvrez l'une des plus anciennes villes vivantes du monde avec un guide local officiel. Les quelque 9 000 ruelles de Fès el-Bali forment la plus grande zone urbaine sans voitures au monde, et un guide local y est moins un confort qu'une nécessité. Explorez les portes du Palais Royal, puis serpentez dans la médina jusqu'à l'université Al-Qaraouiyine, la plus ancienne université encore en activité au monde, les cèdres sculptés de la médersa Bou Inania, et les bassins de teinture à ciel ouvert de la tannerie Chouara, toujours travaillés à la main comme depuis des siècles. Souks animés et ateliers d'artisans occupent les heures entre les visites, et votre soirée est libre pour savourer Fès à votre rythme.",
           "stops": [
             "Portes du palais royal",
             "Médina de Fès el-Bali",
@@ -701,8 +701,8 @@
           ]
         },
         {
-          "title": "Fès → Moyen Atlas → Merzouga → retour",
-          "desc": "Partez vers le sud à travers Ifrane et les forêts de cèdres du Moyen Atlas, suivez la vallée de l'oued Ziz jusqu'à Merzouga pour un trekking en dromadaire au coucher du soleil et une nuit en camp à Erg Chebbi, puis commencez le retour vers le nord.",
+          "title": "Fès → Meknès → Volubilis → Chefchaouen",
+          "desc": "Direction Meknès, la plus paisible des quatre villes impériales du Maroc, où le sultan Moulay Ismaïl bâtit au XVIIe siècle une capitale à l'échelle monumentale : la porte Bab Mansour, les vastes greniers de Heri es-Souani et son propre mausolée. De là, une courte route mène à Volubilis, une cité romaine remarquablement préservée au milieu des oliveraies, avant que la route ne continue vers le nord jusqu'à Chefchaouen — une médina tout entière peinte de bleu, du poudré à l'indigo, nichée dans les montagnes du Rif. L'après-midi et la soirée sont libres pour arpenter les ruelles bleues et grimper jusqu'au belvédère de la Mosquée espagnole pour admirer le coucher du soleil sur la ville.",
           "stops": [
             "Ifrane et la forêt de cèdres",
             "Vallée de l'oued Ziz",
@@ -714,7 +714,22 @@
       ],
       "gallery": [
         {
-          "caption": "Fès — la ville impériale médiévale"
+          "caption": "Vue depuis un toit sur le ksar d'Aït Ben Haddou"
+        },
+        {
+          "caption": "Palmeraie et kasbahs de l'oasis de Skoura"
+        },
+        {
+          "caption": "Trekking en dromadaire au coucher du soleil dans l'Erg Chebbi"
+        },
+        {
+          "caption": "Bâtiments de style alpin aux toits rouges à Ifrane"
+        },
+        {
+          "caption": "Ruelle du souk dans la médina de Fès"
+        },
+        {
+          "caption": "Ruelles bleues de la médina de Chefchaouen"
         }
       ],
       "faq": [
