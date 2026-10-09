@@ -418,6 +418,15 @@ export default function TourDetail() {
                     <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-card border border-border p-8 rounded-3xl shadow-sm hover:shadow-md transition-shadow">
                       <div className="font-bold text-primary text-xs mb-2 uppercase tracking-widest bg-primary/10 inline-block px-3 py-1 rounded-full">{t('tour_day')} {day.day}</div>
                       <h4 className="font-serif text-2xl text-foreground mb-4">{day.title}</h4>
+                      {day.image && (
+                        <img
+                          src={day.image.src}
+                          alt={day.image.alt}
+                          loading="lazy"
+                          decoding="async"
+                          className="w-full h-48 md:h-56 object-cover rounded-2xl mb-4"
+                        />
+                      )}
                       <p className="text-muted-foreground text-base leading-relaxed">{day.desc}</p>
                       {day.stopDetails && day.stopDetails.length > 0 ? (
                         <div className="mt-5 space-y-4 border-t border-border pt-5">

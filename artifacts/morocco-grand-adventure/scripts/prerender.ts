@@ -879,9 +879,39 @@ function buildTourDetailContent(id: string, lang: Lang): string {
         }),
       )
     : '';
+  // Multi-day itinerary: mirrors the client's day-by-day timeline exactly —
+  // the real per-day narrative (`desc`), the real day photo when one exists
+  // (`image`), and the real stop-by-stop breakdown (`stopDetails`, falling
+  // back to the plain `stops` list) — not just a day-title bullet. Previously
+  // this block only rendered "Day N: <title>", so the actual itinerary prose
+  // was invisible to crawlers even though it was fully visible to users.
+  const multiDayItineraryBlock = !isDayTrip && itinerary.length > 0
+    ? h2(tr(lang, 'tour_itinerary')) + itinerary.map((d) => {
+        const dayHeading = `    <h3>${escapeHtml(tr(lang, 'tour_day'))} ${d.day}: ${escapeHtml(d.title)}</h3>\n`;
+        const dayImage = d.image ? figureImg(d.image.src, d.image.alt, d.title) : '';
+        const dayDesc = paragraph(d.desc);
+        const stopsList = d.stopDetails && d.stopDetails.length > 0
+          ? rawUl(d.stopDetails.map((s) => {
+              const timePart = s.time ? `<strong>${escapeHtml(s.time)}</strong> — ` : '';
+              const descPart = s.desc ? `: ${escapeHtml(s.desc)}` : '';
+              return `${timePart}${escapeHtml(s.title)}${descPart}`;
+            }))
+          : (d.stops && d.stops.length > 0 ? ul(d.stops) : '');
+        return dayHeading + dayImage + dayDesc + stopsList;
+      }).join('')
+    : '';
   const suitableForBlock = tour.suitableFor && tour.suitableFor.length > 0
     ? h2(tr(lang, 'jx_suitable_for_heading')) + ul(tour.suitableFor)
     : '';
+  // Photo gallery: mirrors the client's fallback (tour-detail.tsx) so a tour
+  // without an authored `gallery` still shows the same three generic shots
+  // crawlers would otherwise never see, since this section was not prerendered at all before.
+  const galleryImages = tour.gallery && tour.gallery.length > 0 ? tour.gallery : [
+    { src: '/images/dest/merzouga.webp', caption: 'Sahara dunes at Merzouga' },
+    { src: '/images/dest/erg-chebbi.webp', caption: 'Golden sands of Erg Chebbi' },
+    { src: '/images/dest/ait-ben-haddou.webp', caption: 'Aït Benhaddou ksar' },
+  ];
+  const galleryBlock = h2(tr(lang, 'tour_gallery')) + galleryImages.map((g) => figureImg(g.src, g.caption, g.caption)).join('');
   // Quick Facts: mirrors the client's "at a glance" panel in tour-detail.tsx —
   // same verified start/end derivation (tour-quick-facts.ts) and the same
   // per-night "where you'll sleep" summary reused from the meals data below,
@@ -914,7 +944,7 @@ function buildTourDetailContent(id: string, lang: Lang): string {
       + (qfAccommodation ? `      <dt>${escapeHtml(tr(lang, 'jx_grp_stay'))}</dt><dd>${escapeHtml(qfAccommodation)}</dd>\n` : '')
       + `    </dl>\n`
     : '';
-  return breadcrumb + h1(tour.name) + paragraph(tour.description ?? '') + paragraph(`${tr(lang, 'search_duration')}: ${tour.duration}`) + quickFactsBlock + h2(tr(lang, 'tour_why_love')) + ul(tour.highlights) + suitableForBlock + whyChooseBlock + (isDayTrip ? dayFlowBlock : itinerary.length > 0 ? h2(tr(lang, 'tour_itinerary')) + ul(itinerary.map((d) => `${tr(lang, 'tour_day')} ${d.day}: ${d.title}`)) : '') + practicalInfoBlock + experiencesBlock + optionalBlock + inclusionsHtml + bookingStepsBlock(lang) + (faqs.length > 0 ? h2(tr(lang, 'nav_faq')) + faqBlock(faqs) : '') + (departHub ? h2(fmt(tr(lang, 'hub_related_title'), { city: tr(lang, `hub_${departHub.id}_name`) })) + paragraph(link(`${SITE_URL}/${lang}/tours/from-${departHub.slug}`, fmt(tr(lang, 'hub_related_browse'), { city: tr(lang, `hub_${departHub.id}_name`) }))) : '') + bestForBlock + guideLinksBlock + rawParagraph(link(`${SITE_URL}/${lang}/book`, tr(lang, 'book_form_cta'))) + buildTopicalLinksContent({ tourId: tour.id }, lang);
+  return breadcrumb + h1(tour.name) + paragraph(tour.description ?? '') + paragraph(`${tr(lang, 'search_duration')}: ${tour.duration}`) + quickFactsBlock + h2(tr(lang, 'tour_why_love')) + ul(tour.highlights) + suitableForBlock + whyChooseBlock + (isDayTrip ? dayFlowBlock : multiDayItineraryBlock) + practicalInfoBlock + experiencesBlock + optionalBlock + inclusionsHtml + bookingStepsBlock(lang) + galleryBlock + (faqs.length > 0 ? h2(tr(lang, 'nav_faq')) + faqBlock(faqs) : '') + (departHub ? h2(fmt(tr(lang, 'hub_related_title'), { city: tr(lang, `hub_${departHub.id}_name`) })) + paragraph(link(`${SITE_URL}/${lang}/tours/from-${departHub.slug}`, fmt(tr(lang, 'hub_related_browse'), { city: tr(lang, `hub_${departHub.id}_name`) }))) : '') + bestForBlock + guideLinksBlock + rawParagraph(link(`${SITE_URL}/${lang}/book`, tr(lang, 'book_form_cta'))) + buildTopicalLinksContent({ tourId: tour.id }, lang);
 }
 function buildDestinationsContent(lang: Lang): string {
   // Mirror the live /destinations page structure: localized H1 + intro, each

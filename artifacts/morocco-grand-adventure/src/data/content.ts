@@ -770,6 +770,8 @@ export type ItineraryDay = {
   stops: string[];
   /** Real stop-by-stop breakdown, when verified detail exists beyond `desc`/`stops`. */
   stopDetails?: ItineraryStop[];
+  /** Real photo for this day, when a verified one exists (src.photoLibrary or a real site asset). Never a generic stock placeholder. */
+  image?: { src: string; alt: string };
 };
 export type TourFaq = { question: string; answer: string };
 export type TourGalleryImage = { src: string; caption: string };
@@ -867,25 +869,41 @@ export const tours: Tour[] = [
     routeIds: ["marrakech", "ait-ben-haddou", "ouarzazate", "dades-valley", "todra-gorge", "merzouga", "erg-chebbi"],
     routeCaption: "Marrakech → High Atlas → Aït Ben Haddou → Dades Valley → Todra Gorge → Merzouga & Erg Chebbi → Marrakech. The road is part of the experience, not just a transfer.",
     itineraryDays: [
-      { day: 1, title: "Marrakech → High Atlas → Aït Ben Haddou → Dades Valley", desc: "Leave Marrakech in the morning and cross the High Atlas toward southern Morocco. Stop at Aït Ben Haddou, the historic earthen ksar and UNESCO World Heritage property, then continue through Ouarzazate and the changing landscapes of the Dades Valley for the first night.", stops: ["Marrakech", "High Atlas Mountains", "Aït Ben Haddou (UNESCO)", "Ouarzazate", "Dades Valley"],
+      { day: 1, title: "Marrakech → High Atlas → Aït Ben Haddou → Dades Valley",
+        desc: "Leave Marrakech in the morning and climb into the High Atlas, crossing the Tizi n'Tichka Pass — at over 2,260 metres, the highest road pass in North Africa and the dividing line between the green north and the pre-Sahara south. The road winds past Berber villages and terraced slopes before dropping toward Aït Ben Haddou, the best-preserved fortified ksar in southern Morocco and a UNESCO World Heritage Site: its stacked mud-brick towers have stood in for Jerusalem, Tibet and ancient Egypt on screen, but the real draw is walking the raised alleys between them and climbing to the hilltop granary for the view over the Ounila valley. From there it's on to Ouarzazate, Morocco's film-industry hub, and into the Dades Valley — the Valley of a Thousand Kasbahs — where the road climbs the famous switchbacks above Boulmane Dades before the first night's stop.",
+        stops: ["Marrakech", "High Atlas Mountains", "Tizi n'Tichka Pass", "Aït Ben Haddou (UNESCO)", "Ouarzazate", "Dades Valley"],
+        image: { src: '/images/library/kasbah-gateway-high-atlas-road-morocco-mga-016.jpg', alt: "Moroccan kasbah gateway on a desert road with snow-capped High Atlas behind" },
         stopDetails: [
-          { title: "Depart Marrakech", time: "Morning", desc: "Cross the High Atlas toward southern Morocco." },
-          { title: "Aït Ben Haddou (UNESCO)", desc: "Stop at the historic earthen ksar and UNESCO World Heritage property." },
-          { title: "Ouarzazate", desc: "Continue through Ouarzazate." },
-          { title: "Dades Valley", desc: "Arrive in the changing landscapes of the Dades Valley for the first night." },
+          { title: "Depart Marrakech", time: "Morning", desc: "Climb into the High Atlas and cross the Tizi n'Tichka Pass — at over 2,260 metres, the highest road pass in North Africa." },
+          { title: "Aït Ben Haddou (UNESCO)", desc: "Walk the raised alleys of Morocco's best-preserved ksar and climb to the hilltop granary for the view over the Ounila valley." },
+          { title: "Ouarzazate", desc: "Pass through Morocco's film-industry hub, barely 30 minutes from Aït Ben Haddou." },
+          { title: "Dades Valley", desc: "Arrive via the famous switchbacks above Boulmane Dades, in the Valley of a Thousand Kasbahs, for the first night." },
         ] },
-      { day: 2, title: "Dades Valley → Todra Gorge → Rissani → Merzouga", desc: "Continue east through the pre-Sahara, with time for Todra Gorge before heading toward Rissani and Merzouga. In the late afternoon, enter the Erg Chebbi dunes for the camel trek around sunset, then enjoy the desert camp experience and dinner under the open sky.", stops: ["Dades Valley", "Todra Gorge", "Rissani area", "Merzouga", "Erg Chebbi", "Sunset camel trek", "Desert camp"],
+      { day: 2, title: "Dades Valley → Todra Gorge → Rissani → Merzouga",
+        desc: "The second day threads deeper into the pre-Sahara. Soon after leaving the Dades Valley, the road enters the Todra Gorge, Morocco's great canyon — 300-metre limestone walls narrowing to a corridor barely 10 metres wide, cut by the Todra river and shaded by palm gardens. After a riverside stop, the route continues east through the Tafilalet palm groves toward Rissani, the historic market town at the edge of the Sahara, before the tarmac finally gives way to the dunes of Merzouga. Erg Chebbi's dunes climb to about 150 metres — the tallest free-standing dunes in Morocco — and this is where the trip's centerpiece begins: a camel caravan led by a Berber guide out across the sand as the light turns from gold to crimson, followed by dinner and a desert-camp night under some of the clearest skies in North Africa.",
+        stops: ["Dades Valley", "Todra Gorge", "Rissani area", "Merzouga", "Erg Chebbi", "Sunset camel trek", "Desert camp"],
+        image: { src: '/images/library/erg-chebbi-camel-trekking-sunset-morocco-mga-001.jpg', alt: "Berber guide leading a camel caravan across Erg Chebbi at dusk" },
         stopDetails: [
-          { title: "Todra Gorge", desc: "Continue east through the pre-Sahara, with time for Todra Gorge." },
-          { title: "Rissani area → Merzouga", desc: "Head toward Rissani and Merzouga." },
-          { title: "Erg Chebbi dunes", time: "Late afternoon", desc: "Enter the Erg Chebbi dunes." },
-          { title: "Sunset camel trek & desert camp", time: "Around sunset", desc: "Camel trek around sunset, then the desert camp experience and dinner under the open sky." },
+          { title: "Todra Gorge", desc: "Walk the floor of Morocco's great canyon — 300-metre limestone walls narrowing to a corridor barely 10 metres wide." },
+          { title: "Rissani area → Merzouga", desc: "Continue through the Tafilalet palm groves and the historic market town of Rissani toward Merzouga." },
+          { title: "Erg Chebbi dunes", time: "Late afternoon", desc: "Reach dunes that climb to about 150 metres, the tallest free-standing dunes in Morocco." },
+          { title: "Sunset camel trek & desert camp", time: "Around sunset", desc: "A Berber-led camel caravan into the dunes as the light turns from gold to crimson, then dinner and a night at the desert camp." },
         ] },
-      { day: 3, title: "Merzouga → Eastern Morocco → Middle Atlas → Marrakech", desc: "Wake for sunrise over the dunes, then begin the return journey to Marrakech. This is the longest road day, so the itinerary keeps the focus on a realistic return rather than promising a long list of rushed attractions. Travelers who want more time in Merzouga can extend the trip to four days or more.", stops: ["Merzouga sunrise", "Rissani / Tafilalet area", "Ziz Valley area", "Middle Atlas", "Marrakech"],
+      { day: 3, title: "Merzouga → Eastern Morocco → Middle Atlas → Marrakech",
+        desc: "Morning in the dunes comes early — there's time to watch the light change over Erg Chebbi before the camp packs up and the return journey begins. This is the longest road day of the trip, so the itinerary deliberately keeps the focus honest: a long but scenic drive back through the Tafilalet, past the Ziz Valley's palm oases and over the Middle and High Atlas, rather than promising a rushed list of extra stops the schedule can't really support. Travelers who want more time in the dunes, or a slower pace through the valleys crossed on day one, can extend this same route to four days or longer — the dunes, the gorge and the kasbah don't change, only how much time you get with each of them.",
+        stops: ["Merzouga sunrise", "Rissani / Tafilalet area", "Ziz Valley area", "Middle Atlas", "Marrakech"],
+        image: { src: '/images/library/erg-chebbi-dune-sea-morocco-mga-028.jpg', alt: "Tourist in a colourful Moroccan djellaba facing the Erg Chebbi dune sea near Merzouga" },
         stopDetails: [
-          { title: "Sunrise over the dunes", desc: "Wake for sunrise over the dunes at Merzouga." },
-          { title: "Return journey to Marrakech", desc: "The longest road day of the trip, via the Rissani/Tafilalet area, the Ziz Valley and the Middle Atlas." },
+          { title: "Sunrise over the dunes", desc: "Watch the light change over Erg Chebbi before the camp packs up." },
+          { title: "Return journey to Marrakech", desc: "The longest road day of the trip, via the Tafilalet, the Ziz Valley's palm oases and the Middle and High Atlas." },
         ] },
+    ],
+    gallery: [
+      { src: '/images/library/kasbah-gateway-high-atlas-road-morocco-mga-016.jpg', caption: 'Crossing the High Atlas on the road to the south' },
+      { src: '/images/library/ait-ben-haddou-rooftop-view-morocco-mga-037.jpg', caption: 'Rooftop view over the Aït Ben Haddou ksar' },
+      { src: '/images/curated/todra-gorge-river-canyon-high-atlas.webp', caption: 'The Todra Gorge canyon walls' },
+      { src: '/images/library/erg-chebbi-camel-trekking-sunset-morocco-mga-001.jpg', caption: 'Sunset camel trek into Erg Chebbi' },
+      { src: '/images/library/luxury-desert-camp-entrance-erg-chebbi-mga-005.jpg', caption: 'Desert camp at Erg Chebbi' },
     ],
     included: [
       "Private air-conditioned vehicle",
