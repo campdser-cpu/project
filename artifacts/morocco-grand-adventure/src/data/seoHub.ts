@@ -1870,6 +1870,105 @@ export const TRAVEL_INFO: HubPage[] = [
     relatedGuides: ['amazigh-berber-culture', 'moroccan-food-and-cuisine', 'morocco-travel-safety', 'morocco-basics'],
     sources: ['onmt', 'lonely-planet-morocco'],
   },
+  {
+    kind: 'travel-info',
+    slug: 'morocco-airports-guide',
+    title: 'Which Morocco Airport Should You Fly Into?',
+    pageTitle: 'Which Morocco Airport Should You Fly Into? — Travel Guide',
+    description: 'Marrakech, Casablanca, Fes, Tangier or Agadir — which Morocco airport to fly into for the Sahara, the Atlas, the imperial cities or northern Morocco, and why it matters.',
+    ogImage: '/images/library/jemaa-el-fna-day-marrakech-mga-018.jpg',
+    heroImage: '/images/library/jemaa-el-fna-day-marrakech-mga-018.jpg',
+    heroSrcSet: '/images/library/srcset/jemaa-el-fna-day-marrakech-mga-018-480w.webp 480w, /images/library/srcset/jemaa-el-fna-day-marrakech-mga-018-768w.webp 768w, /images/library/srcset/jemaa-el-fna-day-marrakech-mga-018-1280w.webp 1280w, /images/library/srcset/jemaa-el-fna-day-marrakech-mga-018-1920w.webp 1920w',
+    heroWidth: 1920,
+    heroHeight: 1280,
+    heroAlt: 'Jemaa el-Fna square in Marrakech, the arrival point for most Morocco Grand Adventure travelers',
+    intro: 'There is no single best airport for Morocco — the right one depends on where you actually want to go. Marrakech, Casablanca, Fes, Tangier and Agadir each open onto a different part of the country, and choosing the one that matches your itinerary can save a full day of backtracking you never needed to do.',
+    sections: [
+      {
+        heading: 'Quick comparison',
+        paragraphs: [
+          "Before the detail, here is the short version. Each airport suits a different shape of trip:",
+        ],
+        bullets: [
+          'Marrakech — the airport most Morocco Grand Adventure travelers fly into. Best if your trip centers on Marrakech, the Atlas Mountains, Aït Ben Haddou or the classic southern routes to the Sahara.',
+          "Casablanca — Morocco's largest city and commercial centre. Makes sense when it's simply where your flight lands, or when a wider loop through the imperial cities matters more than starting in Marrakech.",
+          'Fes — a strong choice for travelers prioritizing Fes itself, the Middle Atlas, and the more direct northern road to the Sahara.',
+          'Tangier — the natural choice for northern Morocco: Chefchaouen, Tétouan and the Rif, and for travelers arriving by ferry from Spain or continuing south from Europe.',
+          'Agadir — useful when the Atlantic coast is part of the plan, or for a trip combining beach time with a southern desert route.',
+        ],
+      },
+      {
+        heading: 'Marrakech Airport',
+        paragraphs: [
+          "Marrakech Menara Airport sits a short distance from the city itself, which is part of why it's the most straightforward option on this list: you land, and the Red City's medina, souks and riads are right there. It's also the natural starting point for the High Atlas — Imlil and the Ourika Valley are both day trips from Marrakech — and for the classic southern road toward Aït Ben Haddou, Ouarzazate and the Sahara.",
+          "If your trip is built around Marrakech, the Atlas, or a Sahara route that runs south over the Tizi n'Tichka Pass, this is almost always the right airport to search first.",
+        ],
+      },
+      {
+        heading: 'Casablanca Airport',
+        paragraphs: [
+          "Choose Casablanca deliberately when your trip is shaped as a loop through the imperial cities rather than centred on Marrakech and the south: landing at Mohammed V International puts Rabat, Meknès and Fes all ahead of you in one direction, with nothing behind you to double back for. It's also the practical choice whenever Casablanca is simply where your flight lands — in which case the real question isn't whether to avoid it, but which direction to take out of it.",
+          "From Casablanca, two shapes work well: continue toward Marrakech to pick up the classic southern Sahara routes, or head north and east through Rabat, Meknès and Fes for an imperial-cities itinerary that reaches the desert without ever touching Marrakech.",
+        ],
+      },
+      {
+        heading: 'Fes Airport',
+        paragraphs: [
+          "Fes–Saïss Airport puts you directly in Morocco's cultural heart, with the Middle Atlas and the Ziz Valley forming a more direct road to the Sahara than the Marrakech crossing. If Fes el-Bali's medina, the Chouara Tannery and Al Qaraouiyine University are on your list regardless, flying here instead of into Marrakech removes a backtrack.",
+          'It also suits travelers building a one-way itinerary — Fes to Merzouga to Marrakech, for example — more naturally than starting and ending in the same city would.',
+        ],
+      },
+      {
+        heading: 'Tangier Airport',
+        paragraphs: [
+          "Tangier is the airport for northern Morocco specifically — Chefchaouen's blue medina, Tétouan, and the Rif Mountains sit close by, and the city itself is a short ferry crossing from Spain for travelers arriving overland from Europe. It makes little sense as an entry point if the Sahara is your only goal; it makes a great deal of sense if northern Morocco is part of the trip at all.",
+        ],
+      },
+      {
+        heading: 'Agadir Airport',
+        paragraphs: [
+          "Agadir suits travelers who want the Atlantic coast in the itinerary — the city's beaches and promenade, with Taghazout's surf village and Essaouira both reachable along the same coast — and who are willing to fly or drive toward Marrakech to pick up a Sahara route from there. It's a genuinely different kind of starting point: beach-first rather than medina-first.",
+        ],
+      },
+      {
+        heading: 'Which airport is best for a Sahara trip?',
+        paragraphs: [
+          "If the Sahara is the main reason for the trip, the airport decision isn't really about picking the 'better' route — both Marrakech and Fes are genuine, well-used gateways to Merzouga. It comes down to which city the rest of your trip is already built around. If Marrakech, the Atlas, or a round-trip back to where you started fits your plans, fly into Marrakech. If Fes itself matters to you, or you're building a one-way itinerary that finishes somewhere other than where it began, fly into Fes instead.",
+          "Casablanca and Agadir both work for a Sahara trip too, just with an extra step: from Casablanca, most routes continue through Marrakech or Fes; from Agadir, the usual pattern is to head toward Marrakech first. If you want the detailed route-by-route comparison between the Marrakech and Fes roads to Merzouga, our Marrakech vs Fes guide covers that; for the actual road distances and driving times once you've chosen a direction, our How to Get to Merzouga guide has the detail — both linked below.",
+        ],
+      },
+      {
+        heading: 'Which airport should you choose for your itinerary?',
+        paragraphs: [
+          'A few real shapes this takes, matched to routes we actually run:',
+        ],
+        bullets: [
+          'Marrakech + Sahara — fly into Marrakech, take the classic 3-day or 4-day route to Merzouga and back.',
+          'Fes + Sahara — fly into Fes, take the more direct northern route to Merzouga.',
+          'Marrakech + Fes + Sahara — fly into one, out of the other, on a route like the 5-day Imperial Cities & Desert journey that links Marrakech, the Sahara, Fes, Meknès and Chefchaouen without retracing any road.',
+          'Casablanca + Imperial Cities + Sahara — fly into Casablanca and continue on a route built for exactly that start point, reaching Fes and the desert without backtracking to Marrakech.',
+          'Northern Morocco — fly into Tangier for a Chefchaouen- and Rif-focused trip, with the option to continue toward Fes.',
+          'Agadir + Sahara — fly into Agadir for the Atlantic coast, then pick up a private route toward Marrakech and the dunes.',
+        ],
+      },
+    ],
+    faqs: [
+      { question: 'Which airport is best for a first trip to Morocco?', answer: 'Most first-time travelers fly into Marrakech or Fes, since both put you close to the sights most itineraries are built around. Casablanca is also a common and perfectly practical entry point, especially on a wider, country-spanning trip.' },
+      { question: 'Which Morocco airport is best for the Sahara?', answer: "Marrakech and Fes are the two practical choices. Marrakech makes sense when the wider itinerary is centred on Marrakech or the south; Fes makes sense when Fes is part of the itinerary, or the trip follows a different one-way route. Our Marrakech vs Fes guide covers the detailed route comparison, and our How to Get to Merzouga guide covers the practical overland details." },
+      { question: 'Is Marrakech or Fes better for starting a Sahara trip?', answer: "It depends on your itinerary rather than which is 'better': choose Marrakech if the rest of your trip is built around Marrakech, the Atlas, or a round-trip back to your starting point; choose Fes if Fes itself is part of your plans, or you're routing one-way to a different finish city. Our Marrakech vs Fes guide compares the two roads in detail." },
+      { question: 'Should I fly into Casablanca or Marrakech?', answer: "If your trip is centered on Marrakech and the south, fly into Marrakech directly. If Casablanca is simply where the best flight lands, or your itinerary is built as a wider loop through the imperial cities, Casablanca works fine as a starting point." },
+      { question: 'Which airport should I use for northern Morocco?', answer: 'Tangier. It sits closest to Chefchaouen, Tétouan and the Rif, and is also the easiest airport for travelers connecting from a ferry crossing from Spain.' },
+      { question: 'Can I fly into one airport and out of another?', answer: "Yes — several of our private routes are one-way by design, such as Fes to Marrakech via the Sahara, specifically so you don't have to fly in and out of the same city." },
+    ],
+    tours: ['3-day-sahara-marrakech', '3-day-fes-merzouga-sahara', '5-day-imperial-cities', 'casablanca-5-day', 'tangier-3-day', '3-day-sahara-agadir'],
+    destinations: ['marrakech', 'casablanca', 'fes', 'tangier', 'agadir', 'merzouga'],
+    relatedGuides: ['how-to-get-there', 'getting-around-morocco', 'morocco-basics', 'marrakech-vs-fes'],
+    sources: ['onmt'],
+    inlineImages: [
+      { imageId: 'hassan-ii-mosque-casablanca', after: 2 },
+      { imageId: 'sahara-dune-trekking-merzouga', after: 6 },
+    ],
+  },
 ];
 export const ALL_HUB_PAGES: HubPage[] = [...MERZOUGA_GUIDES, ...COMPARISONS, ...TRAVEL_INFO];
 export function hubPageBySlug(slug: string, kind: HubKind): HubPage | undefined {
