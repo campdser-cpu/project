@@ -11,7 +11,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { contactInfo, destinationImageAlt } from '@/data/content';
 import { getLocalizedTour, getLocalizedTours, getLocalizedDestination, getLocalizedDestinations } from '@/i18n/content';
 import { getLocalizedGuide, guideOverlayExists, guideImageAlt, guideCrumb } from '@/i18n/guides';
-import { StructuredData, buildBreadcrumb, buildFaqSchema } from '@/components/seo/StructuredData';
+import { StructuredData, buildBreadcrumb, buildFaqSchema, buildImageObjectSchema } from '@/components/seo/StructuredData';
 import { MERZOUGA_GUIDES, COMPARISONS, TRAVEL_INFO, ALL_HUB_PAGES, type HubPage } from '@/data/seoHub';
 import { localizedComparisonMeta } from '@/data/comparison-meta-i18n';
 import { catalogImage } from '@/data/imageCatalog';
@@ -104,6 +104,18 @@ export function SeoHubPage({ page }: { page: HubPage }) {
   return (
     <Layout>
       <StructuredData id="breadcrumb" data={buildBreadcrumb(crumbs, lang)} />
+      {/* width/height omitted unless this entry declares its own real,
+          verified dimensions — the 1920x1080 used elsewhere as a layout
+          fallback is not necessarily this photo's true size. */}
+      <StructuredData
+        id="hero-image"
+        data={buildImageObjectSchema({
+          url: page.heroImage,
+          width: page.heroWidth,
+          height: page.heroHeight,
+          caption: page.heroAlt,
+        })}
+      />
       {page.faqs.length > 0 && (
         <StructuredData
           id="faq"
@@ -387,6 +399,12 @@ export function SeoHubPage({ page }: { page: HubPage }) {
                 <SiWhatsapp className="w-5 h-5" aria-hidden="true" /> {t('guide_cta_whatsapp')}
               </a>
             </div>
+            <Link
+              href="/desert-tours"
+              className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-foreground/70 underline decoration-foreground/30 underline-offset-4 hover:text-primary hover:decoration-primary transition-colors"
+            >
+              {t('guide_cta_desert_tours')} <ChevronRight className="w-3.5 h-3.5" aria-hidden="true" />
+            </Link>
           </div>
         </section>
       </article>

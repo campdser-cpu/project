@@ -9,7 +9,7 @@ import { Layout } from '../components/layout/Layout';
 import { SiWhatsapp } from 'react-icons/si';
 import { contactInfo } from '@/data/content';
 import { CinematicVideo } from '../components/ui/CinematicVideo';
-import { StructuredData, buildFaqSchema } from '../components/seo/StructuredData';
+import { StructuredData, buildFaqSchema, buildImageObjectSchema } from '../components/seo/StructuredData';
 
 // Official photo-library photographs (src/data/photoLibrary.ts), one per caption.
 const LIB = '/images/library/srcset/';
@@ -39,12 +39,23 @@ export default function DesertTours() {
   return (
     <Layout>
       <StructuredData id="desert-tours-faq" data={buildFaqSchema(faqs)} />
+      <StructuredData
+        id="desert-tours-hero-image"
+        data={buildImageObjectSchema({
+          url: '/images/dest/merzouga.webp',
+          width: 1600,
+          height: 1067,
+          caption: t('dt2_hero_alt'),
+        })}
+      />
       {/* Hero */}
       <section className="relative h-[70vh] w-full flex items-center justify-center pt-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <motion.img
             src="/images/dest/merzouga.webp"
             alt={t('dt2_hero_alt')}
+            width={1600}
+            height={1067}
             initial={{ scale: 1.15 }}
             animate={{ scale: 1 }}
             transition={{ duration: 1.6, ease: 'easeOut' }}

@@ -60,7 +60,7 @@ import {
 } from '../src/i18n/content';
 import { getRouteMeta, getLocalizedRouteMeta, BLOG_META, HOME_META, FR_HOME_META, ogImageAlt, withBrandSuffix, type RouteMeta } from '../src/components/seo/route-metadata';
 import { getLocalizedGuide, guideImageAlt, guideCrumb } from '../src/i18n/guides';
-import { buildTourSchema, buildDestinationSchema, buildBlogPostSchema, buildReviewSchema, buildFaqSchema, buildBreadcrumb } from '../src/components/seo/StructuredData';
+import { buildTourSchema, buildDestinationSchema, buildBlogPostSchema, buildReviewSchema, buildFaqSchema, buildBreadcrumb, buildImageObjectSchema } from '../src/components/seo/StructuredData';
 import { getStudentTour, studentTours as studentTourList, studentTourSizes } from '../src/data/student-tours';
 import { departuresForTour, seatsAvailable, isFull } from '../src/data/student-group-departures';
 // Data-driven index list (1, 2, 3, ...) for the st_11_r{n}_* card-copy keys and
@@ -430,6 +430,10 @@ function buildToursContent(lang: Lang): string {
   // Mirrors the contextual /desert-tours link added directly under the H1 on
   // the live page — same intent, same target, same label (nav_sahara_desert_tours).
   const desertToursLink = paragraph(link(`${SITE_URL}/${lang}/desert-tours`, tr(lang, 'nav_sahara_desert_tours')));
+  // Mirrors the second hero link added directly under the H1 on the live page,
+  // next to desertToursLink — same "build a custom trip" key already used by
+  // the merzouga-guide CTA (guide_cta_build), so no new translation key needed.
+  const tripBuilderLink = paragraph(link(`${SITE_URL}/${lang}/trip-builder`, tr(lang, 'guide_cta_build')));
   // Mirrors the live-page FAQ accordion (tours_faq_q1..4/a1..4) — same
   // question/answer copy, same heading key (td_faq_title), same convention
   // already used by the university-groups FAQ above.
@@ -453,6 +457,7 @@ function buildToursContent(lang: Lang): string {
   return h1(tr(lang, 'tours_heading') || 'Our Tours')
     + paragraph(tr(lang, 'tours_sub'))
     + desertToursLink
+    + tripBuilderLink
     + h2(tr(lang, 'hub_by_departure_city'))
     + `    <ul class="prerendered-city-hubs">\n${cityLinks}\n    </ul>\n`
     + `    <ul class="prerendered-tour-filters">\n${filterCityLinks}\n    </ul>\n`
@@ -1649,6 +1654,7 @@ function buildHubPageContent(page: HubPage, lang: Lang): string {
   }
   out += h2(tr(lang, 'guide_cta_heading'));
   out += rawParagraph(`${escapeHtml(tr(lang, 'guide_cta_sub'))} <a href="${SITE_URL}/${lang}/trip-builder">${escapeHtml(tr(lang, 'guide_cta_build'))}</a> · <a href="${contactInfo.whatsapp}">${escapeHtml(tr(lang, 'guide_cta_whatsapp'))}</a>.`);
+  out += rawParagraph(`<a href="${SITE_URL}/${lang}/desert-tours">${escapeHtml(tr(lang, 'guide_cta_desert_tours'))}</a>`);
   return out;
 }
 
@@ -1794,19 +1800,49 @@ function buildRoutes(lang: Lang): RouteEntry[] {
               },
               provider: { '@type': 'TravelAgency', '@id': `${SITE_URL}/#organization`, name: 'Morocco Grand Adventure' },
             })),
+            // Mirrors the <StructuredData id="student-tours-hero-image"> added
+            // to src/pages/student-tours.tsx — same real photo + dimensions.
+            buildImageObjectSchema({
+              url: '/images/student-tours/student-tours-hero-poster.jpg',
+              width: 1600,
+              height: 900,
+              caption: tr(lang, 'st_hero_alt'),
+            }) as unknown as Record<string, unknown>,
           ])
         : rest === '/desert-tours'
         // Mirrors the live-page FAQ accordion (dt2_faq_q1..4/a1..4) added to
         // src/pages/desert-tours.tsx — desert-specific questions, distinct
         // from the /tours FAQ above.
-        ? [buildFaqSchema([1, 2, 3, 4].map((n) => ({
-            question: tr(lang, `dt2_faq_q${n}`), answer: tr(lang, `dt2_faq_a${n}`),
-          }))) as unknown as Record<string, unknown>]
+        ? [
+            buildFaqSchema([1, 2, 3, 4].map((n) => ({
+              question: tr(lang, `dt2_faq_q${n}`), answer: tr(lang, `dt2_faq_a${n}`),
+            }))) as unknown as Record<string, unknown>,
+            // Mirrors the <StructuredData id="desert-tours-hero-image"> added
+            // to src/pages/desert-tours.tsx — same real photo + dimensions.
+            buildImageObjectSchema({
+              url: '/images/dest/merzouga.webp',
+              width: 1600,
+              height: 1067,
+              caption: tr(lang, 'dt2_hero_alt'),
+            }) as unknown as Record<string, unknown>,
+          ]
         : [];
       add(rest, `${lang}${rest}/index.html`, () => buildExperienceContent(rest, lang), schemas);
     }
   // Merzouga authority sub-pages + comparison pages (hub copy localized via
   // guide overlays; comparisons/travel-info stay canonical English).
+  // Real hero ImageObject for every guide/comparison/travel-info page, mirroring
+  // the <StructuredData id="hero-image"> added in SeoHubPage.tsx — same real
+  // photo, same caption. width/height are passed through only when this entry
+  // declares its own real dimensions; the 1920x1080 used elsewhere purely as a
+  // layout fallback is not necessarily this photo's true size, so it is never
+  // used here (buildImageObjectSchema omits width/height rather than guessing).
+  const heroImageSchema = (p: HubPage) => buildImageObjectSchema({
+    url: p.heroImage,
+    width: p.heroWidth,
+    height: p.heroHeight,
+    caption: p.heroAlt,
+  }) as unknown as Record<string, unknown>;
   for (const page of MERZOUGA_GUIDES) {
     const rest = `/merzouga-guide/${page.slug}`;
     add(rest, `${lang}${rest}/index.html`, () => buildHubPageContent(page, lang), (() => {
@@ -1818,6 +1854,7 @@ function buildRoutes(lang: Lang): RouteEntry[] {
           { name: localized.title, path: rest },
         ], lang) as unknown as Record<string, unknown>,
         buildFaqSchema(localized.faqs) as unknown as Record<string, unknown>,
+        heroImageSchema(localized),
       ];
     })());
   }
@@ -1830,6 +1867,7 @@ function buildRoutes(lang: Lang): RouteEntry[] {
         { name: localizedComparisonMeta(page.slug, lang)?.title ?? page.title, path: rest },
       ], lang) as unknown as Record<string, unknown>,
       page.faqs.length ? (buildFaqSchema(page.faqs) as unknown as Record<string, unknown>) : null,
+      heroImageSchema(page),
     ].filter(Boolean) as Record<string, unknown>[]);
   }
   for (const page of TRAVEL_INFO) {
@@ -1841,6 +1879,7 @@ function buildRoutes(lang: Lang): RouteEntry[] {
         { name: page.title, path: rest },
       ], lang) as unknown as Record<string, unknown>,
       page.faqs.length ? (buildFaqSchema(page.faqs) as unknown as Record<string, unknown>) : null,
+      heroImageSchema(page),
     ].filter(Boolean) as Record<string, unknown>[]);
   }
   add('/travel-info', `${lang}/travel-info/index.html`, () => {

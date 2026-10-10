@@ -275,8 +275,25 @@ export function buildDestinationSchema(dest: {
     '@id': `${url}#attraction`,
     name: dest.name,
     description: dest.description,
-    // Only a photograph we can stand behind is offered as this place's image.
-    ...(dest.imageDecorative || dest.imageUnverified ? {} : { image: `${SITE_URL}${dest.image}` }),
+    // Only a photograph we can stand behind is offered as this place's image —
+    // as a real ImageObject (not a bare URL) so Google Images gets a real
+    // caption. No width/height here: destination photos have real, varied
+    // native dimensions (measured examples range from 612x448 to 933x1400
+    // portrait) and the page's <img width=1200 height=675> is a fixed layout
+    // box, not each photo's true size — asserting a single fixed dimension
+    // for every destination would be inaccurate for most of them. width/height
+    // are optional on schema.org's ImageObject, so they're simply omitted
+    // rather than guessed.
+    ...(dest.imageDecorative || dest.imageUnverified
+      ? {}
+      : {
+          image: {
+            '@type': 'ImageObject',
+            url: `${SITE_URL}${dest.image}`,
+            contentUrl: `${SITE_URL}${dest.image}`,
+            caption: dest.name,
+          },
+        }),
     url,
     geo: {
       '@type': 'GeoCoordinates',
@@ -318,6 +335,33 @@ export function buildDestinationSchema(dest: {
   );
 
   return schemas;
+}
+
+/**
+ * Build a standalone ImageObject schema for a page's real hero photograph.
+ * Only call this with a genuine, already-published site photo. `caption`
+ * should be the same real alt/description text already used on the visible
+ * page, not new copy written just for schema. `width`/`height` are optional
+ * on schema.org's ImageObject and are included here ONLY when the caller has
+ * the image's real, verified pixel dimensions (e.g. measured directly from
+ * the file) — pass neither rather than a guessed or generic fallback value;
+ * omitting them is correct, a wrong number is not.
+ */
+export function buildImageObjectSchema(image: {
+  url: string;
+  width?: number;
+  height?: number;
+  caption: string;
+}): JsonLd {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ImageObject',
+    url: `${SITE_URL}${image.url}`,
+    contentUrl: `${SITE_URL}${image.url}`,
+    ...(image.width ? { width: image.width } : {}),
+    ...(image.height ? { height: image.height } : {}),
+    caption: image.caption,
+  };
 }
 
 /** Build a FAQPage schema from an array of {question, answer}. */

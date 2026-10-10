@@ -27,6 +27,7 @@ import { upcomingDepartures } from '@/data/student-group-departures';
 import { DepartureCalendar } from '../components/student-tours/DepartureCalendar';
 import { JoinStudentTour } from '../components/student-tours/JoinStudentTour';
 import { trackEvent } from '@/lib/analytics';
+import { StructuredData, buildImageObjectSchema } from '@/components/seo/StructuredData';
 
 const IMG = '/images/student-tours';
 
@@ -160,6 +161,15 @@ export default function StudentTours() {
           min-height, never a fixed height: on a phone the copy is taller than
           the viewport allows, and a fixed box pushed the eyebrow up under the
           navbar logo. The top padding keeps it clear of the fixed header. */}
+      <StructuredData
+        id="student-tours-hero-image"
+        data={buildImageObjectSchema({
+          url: `${IMG}/student-tours-hero-poster.jpg`,
+          width: 1600,
+          height: 900,
+          caption: t('st_hero_alt'),
+        })}
+      />
       <section
         className="relative min-h-[max(600px,88svh)] pt-28 md:pt-32 md:min-h-[100vh] md:max-h-[900px] flex items-end overflow-hidden bg-black"
       >

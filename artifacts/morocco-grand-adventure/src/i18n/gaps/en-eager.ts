@@ -20,6 +20,7 @@ import { trustGaps } from './trust';
 import { journeyGaps } from './journey';
 import { studentBookingGaps } from './student-booking';
 import { contactChoiceGaps } from './contact-choice';
+import { guideCtaGaps } from './guide-cta';
 
 /** English gap completions: keys authored in the gap layer, absent from locales/en.ts. */
 export const enGaps: Record<string, string> = {
@@ -31,4 +32,5 @@ export const enGaps: Record<string, string> = {
   ...journeyGaps.en,
   ...studentBookingGaps.en,
   ...contactChoiceGaps.en,
+  ...guideCtaGaps.en,
 };

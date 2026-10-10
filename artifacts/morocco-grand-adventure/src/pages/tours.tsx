@@ -91,9 +91,14 @@ export default function Tours() {
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <h1 className="font-serif text-5xl md:text-7xl text-white mb-6">{t('tours_heading')}</h1>
             <p className="text-white/80 text-lg md:text-xl font-light">{t('tours_sub')}</p>
-            <Link href="/desert-tours" className="mt-5 inline-flex items-center gap-1.5 text-white/90 text-sm font-semibold underline decoration-white/40 underline-offset-4 hover:text-primary hover:decoration-primary transition-colors">
-              {t('nav_sahara_desert_tours')} <ChevronRight className="w-3.5 h-3.5" aria-hidden="true" />
-            </Link>
+            <div className="mt-5 flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
+              <Link href="/desert-tours" className="inline-flex items-center gap-1.5 text-white/90 text-sm font-semibold underline decoration-white/40 underline-offset-4 hover:text-primary hover:decoration-primary transition-colors">
+                {t('nav_sahara_desert_tours')} <ChevronRight className="w-3.5 h-3.5" aria-hidden="true" />
+              </Link>
+              <Link href="/trip-builder" className="inline-flex items-center gap-1.5 text-white/90 text-sm font-semibold underline decoration-white/40 underline-offset-4 hover:text-primary hover:decoration-primary transition-colors">
+                {t('guide_cta_build')} <ChevronRight className="w-3.5 h-3.5" aria-hidden="true" />
+              </Link>
+            </div>
           </motion.div>
         </div>
       </section>
