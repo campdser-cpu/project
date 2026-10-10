@@ -22,6 +22,7 @@ import { PriceTag } from '../components/promo/PriceTag';
 import { PromoBanner } from '../components/promo/PromoBanner';
 import { usePromoActive } from '../components/promo/PromoProvider';
 import { StructuredData, buildTourSchema, buildReviewSchema, buildFaqSchema } from '../components/seo/StructuredData';
+import { ShareButton } from '../components/ui/ShareButton';
 import { TOUR_DEPARTURE_CITY, getCityHub } from '@/data/tour-hierarchy';
 import { TourBreadcrumbs } from '../components/tours/TourBreadcrumbs';
 import { MERZOUGA_GUIDES, COMPARISONS, TRAVEL_INFO } from '@/data/seoHub';
@@ -188,12 +189,15 @@ export default function TourDetail() {
             <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl text-white mb-6 leading-tight drop-shadow-xl">
               {tour.name}
             </h1>
-            <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-white/90 font-medium bg-black/25 backdrop-blur-sm w-max max-w-full px-6 py-3 rounded-full border border-white/10">
-              <span className="flex items-center gap-2"><Clock className="w-5 h-5 text-primary" /> {tour.duration}</span>
-              <span className="flex items-center gap-2"><Users className="w-5 h-5 text-primary" /> {t('tour_private')}</span>
-              <span className="flex items-baseline gap-2 md:pl-6 md:border-l border-white/20">
-                <span className="text-sm font-semibold text-white">{t('price_tailored')}</span>
-              </span>
+            <div className="flex flex-wrap items-center gap-3">
+              <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-white/90 font-medium bg-black/25 backdrop-blur-sm w-max max-w-full px-6 py-3 rounded-full border border-white/10">
+                <span className="flex items-center gap-2"><Clock className="w-5 h-5 text-primary" /> {tour.duration}</span>
+                <span className="flex items-center gap-2"><Users className="w-5 h-5 text-primary" /> {t('tour_private')}</span>
+                <span className="flex items-baseline gap-2 md:pl-6 md:border-l border-white/20">
+                  <span className="text-sm font-semibold text-white">{t('price_tailored')}</span>
+                </span>
+              </div>
+              <ShareButton title={tour.name} path={`/tours/${tour.id}`} tone="dark" size="md" />
             </div>
           </motion.div>
         </div>

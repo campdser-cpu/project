@@ -5,6 +5,7 @@ import { PriceTag } from '../promo/PriceTag';
 import { hasPublishedPrice } from '@/lib/promo';
 import { fromParty } from '@/data/pricing/ladder';
 import { PromoBadge } from '../promo/PromoBadge';
+import { ShareButton } from '../ui/ShareButton';
 import type { Tour } from '@/data/content';
 
 type TourCardProps = {
@@ -46,6 +47,13 @@ export function TourCard({ tour, compact = false }: TourCardProps) {
         <div className="absolute top-3 right-3 rtl:right-auto rtl:left-3">
           <PromoBadge compact />
         </div>
+        <ShareButton
+          title={tour.name}
+          path={`/tours/${tour.id}`}
+          tone="light"
+          size="sm"
+          className="absolute bottom-3 right-3 rtl:right-auto rtl:left-3 z-10"
+        />
       </div>
 
       <div className={`${compact ? 'p-5' : 'p-7'} flex flex-col`}>

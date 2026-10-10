@@ -6,6 +6,7 @@ import { destinationImageAlt } from '@/data/content';
 import { Link } from 'wouter';
 import { MapPin, ChevronRight } from 'lucide-react';
 import { PriceTag } from '../components/promo/PriceTag';
+import { ShareButton } from '../components/ui/ShareButton';
 
 const PRIORITY_TOUR_IDS = [
   '3-day-sahara-marrakech',
@@ -54,33 +55,44 @@ export default function Destinations() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group flex flex-col bg-card rounded-2xl overflow-hidden border border-border hover:shadow-xl transition-all duration-300"
               >
-                <div className="h-64 relative overflow-hidden">
-                  <img
-                    src={dest.image}
-                    alt={destinationImageAlt(dest, dest.name, t('dest_alt_unverified'))}
-                    width={900}
-                    height={600}
-                    loading={index < 3 ? 'eager' : 'lazy'}
-                    decoding="async"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute top-4 left-4 bg-background/90 backdrop-blur text-foreground text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
-                    {categoryLabel(dest.category, lang)}
+                <Link
+                  href={`/destinations/${dest.id}`}
+                  className="group flex flex-col h-full bg-card rounded-2xl overflow-hidden border border-border hover:shadow-xl transition-all duration-300"
+                >
+                  <div className="h-64 relative overflow-hidden">
+                    <img
+                      src={dest.image}
+                      alt={destinationImageAlt(dest, dest.name, t('dest_alt_unverified'))}
+                      width={900}
+                      height={600}
+                      loading={index < 3 ? 'eager' : 'lazy'}
+                      decoding="async"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute top-4 left-4 bg-background/90 backdrop-blur text-foreground text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
+                      {categoryLabel(dest.category, lang)}
+                    </div>
+                    <ShareButton
+                      title={dest.name}
+                      path={`/destinations/${dest.id}`}
+                      tone="light"
+                      size="sm"
+                      className="absolute top-4 right-4 rtl:right-auto rtl:left-4 z-10"
+                    />
                   </div>
-                </div>
-                <div className="p-8 flex flex-col flex-grow">
-                  <h2 className="font-serif text-3xl text-foreground mb-3">{dest.name}</h2>
-                  <p className="text-muted-foreground mb-6 flex-grow leading-relaxed">{dest.shortDesc}</p>
-                  <div className="flex items-center gap-2 text-sm text-foreground font-medium mb-6">
-                    <MapPin className="w-4 h-4 text-primary" />
-                    {t('dest_best_time')} <span className="text-muted-foreground">{dest.bestTime}</span>
+                  <div className="p-8 flex flex-col flex-grow">
+                    <h2 className="font-serif text-3xl text-foreground mb-3">{dest.name}</h2>
+                    <p className="text-muted-foreground mb-6 flex-grow leading-relaxed">{dest.shortDesc}</p>
+                    <div className="flex items-center gap-2 text-sm text-foreground font-medium mb-6">
+                      <MapPin className="w-4 h-4 text-primary" />
+                      {t('dest_best_time')} <span className="text-muted-foreground">{dest.bestTime}</span>
+                    </div>
+                    <span className="mt-auto block text-center bg-muted text-foreground group-hover:bg-primary group-hover:text-primary-foreground py-3 rounded-xl font-bold transition-colors">
+                      {t('dest_explore')} {dest.name}
+                    </span>
                   </div>
-                  <Link href={`/destinations/${dest.id}`} className="mt-auto block text-center bg-muted text-foreground hover:bg-primary hover:text-primary-foreground py-3 rounded-xl font-bold transition-colors">
-                    {t('dest_explore')} {dest.name}
-                  </Link>
-                </div>
+                </Link>
               </motion.div>
             ))}
           </div>

@@ -23,6 +23,7 @@ import {
 } from '@/data/student-group-departures';
 import { getLocalizedStudentTour } from '@/i18n/content';
 import { JoinStudentTour } from '../components/student-tours/JoinStudentTour';
+import { ShareButton } from '../components/ui/ShareButton';
 import { trackEvent } from '@/lib/analytics';
 import { StructuredData, buildFaqSchema, buildBreadcrumb } from '../components/seo/StructuredData';
 import NotFound from './not-found';
@@ -270,9 +271,12 @@ export default function StudentTourDetail() {
             <div aria-hidden="true" className="absolute inset-y-0 left-0 hidden w-24 lg:block" style={{ background: `linear-gradient(to right, ${INK}, rgba(16,16,16,0))` }} />
           </div>
           <div className="relative flex flex-col justify-end px-4 pb-11 pt-3 sm:px-8 lg:order-1 lg:pb-16 lg:pl-12 lg:pr-10 lg:pt-36 xl:pl-[max(3rem,calc((100vw-1280px)/2+1rem))] 2xl:pl-[max(3rem,calc((100vw-1536px)/2+1rem))]">
-            <p className="text-[11px] font-semibold uppercase sm:text-[12px]" style={{ letterSpacing: '0.22em', color: GOLD }}>
-              {t('st_tours_label') || 'Student Tours'} · {tour.duration}
-            </p>
+            <div className="flex items-center justify-between gap-3">
+              <p className="text-[11px] font-semibold uppercase sm:text-[12px]" style={{ letterSpacing: '0.22em', color: GOLD }}>
+                {t('st_tours_label') || 'Student Tours'} · {tour.duration}
+              </p>
+              <ShareButton title={tour.title} path={`/student-tours/${tour.slug}`} tone="dark" size="sm" />
+            </div>
             <h1 className="mt-3 font-serif text-[2.3rem] font-light leading-[1.05] text-balance sm:text-5xl lg:text-[3.3rem] xl:text-6xl">
               {tour.title}
             </h1>

@@ -10,6 +10,7 @@ import { SiWhatsapp } from 'react-icons/si';
 import { contactInfo } from '@/data/content';
 import { CinematicVideo } from '../components/ui/CinematicVideo';
 import { StructuredData, buildFaqSchema, buildImageObjectSchema } from '../components/seo/StructuredData';
+import { ShareButton } from '../components/ui/ShareButton';
 
 // Official photo-library photographs (src/data/photoLibrary.ts), one per caption.
 const LIB = '/images/library/srcset/';
@@ -192,28 +193,39 @@ export default function DesertTours() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="group bg-background rounded-3xl overflow-hidden border border-border hover:shadow-xl hover:border-primary/30 transition-all duration-300"
               >
-                <div className="h-56 overflow-hidden">
-                  <img src={tour.image} alt={tour.name} width={1200} height={675} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center gap-2 text-xs font-bold text-primary mb-3">
-                    <Clock className="w-4 h-4" /> {tour.duration}
+                <Link
+                  href={`/tours/${tour.id}`}
+                  className="group block bg-background rounded-3xl overflow-hidden border border-border hover:shadow-xl hover:border-primary/30 transition-all duration-300"
+                >
+                  <div className="h-56 relative overflow-hidden">
+                    <img src={tour.image} alt={tour.name} width={1200} height={675} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <ShareButton
+                      title={tour.name}
+                      path={`/tours/${tour.id}`}
+                      tone="light"
+                      size="sm"
+                      className="absolute top-3 right-3 rtl:right-auto rtl:left-3 z-10"
+                    />
                   </div>
-                  <h3 className="font-serif text-xl text-foreground mb-3 group-hover:text-primary transition-colors">{tour.name}</h3>
-                  <ul className="space-y-2 mb-4">
-                    {tour.highlights.slice(0, 3).map((h, j) => (
-                      <li key={j} className="flex items-start gap-2 text-sm text-muted-foreground">
-                        <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                        <span>{h}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Link href={`/tours/${tour.id}`} className="inline-flex items-center gap-1 text-primary font-bold text-sm hover:underline">
-                    {t('dt2_view_details')} <ChevronRight className="w-4 h-4" />
-                  </Link>
-                </div>
+                  <div className="p-6">
+                    <div className="flex items-center gap-2 text-xs font-bold text-primary mb-3">
+                      <Clock className="w-4 h-4" /> {tour.duration}
+                    </div>
+                    <h3 className="font-serif text-xl text-foreground mb-3 group-hover:text-primary transition-colors">{tour.name}</h3>
+                    <ul className="space-y-2 mb-4">
+                      {tour.highlights.slice(0, 3).map((h, j) => (
+                        <li key={j} className="flex items-start gap-2 text-sm text-muted-foreground">
+                          <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                          <span>{h}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <span className="inline-flex items-center gap-1 text-primary font-bold text-sm group-hover:underline">
+                      {t('dt2_view_details')} <ChevronRight className="w-4 h-4" />
+                    </span>
+                  </div>
+                </Link>
               </motion.div>
             ))}
           </div>

@@ -8,6 +8,7 @@ import { ChevronRight, Calendar, Star, MapPin, UtensilsCrossed, Camera } from 'l
 import { Link } from 'wouter';
 import { StructuredData, buildDestinationSchema } from '../components/seo/StructuredData';
 import { CinematicVideo } from '../components/ui/CinematicVideo';
+import { ShareButton } from '../components/ui/ShareButton';
 import { lazy, Suspense } from 'react';
 import { LazyMount } from '../components/perf/LazyMount';
 
@@ -161,7 +162,15 @@ export default function DestinationDetail() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/50 mix-blend-multiply" />
         </div>
-        
+
+        <ShareButton
+          title={destination.name}
+          path={`/destinations/${destination.id}`}
+          tone="dark"
+          size="md"
+          className="absolute top-24 right-6 rtl:right-auto rtl:left-6 z-10"
+        />
+
         <div className="relative z-10 container mx-auto px-4 text-center mt-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
