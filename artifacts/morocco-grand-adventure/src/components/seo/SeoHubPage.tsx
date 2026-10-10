@@ -87,8 +87,12 @@ export function SeoHubPage({ page }: { page: HubPage }) {
       <figure key={imageId} className="my-10">
         <img
           src={img.src}
-          srcSet={`${img.src.replace('.webp', '-480w.webp')} 480w, ${img.src.replace('.webp', '-768w.webp')} 768w, ${img.src} ${img.width}w`}
-          sizes="(max-width: 768px) 100vw, 768px"
+          {...(img.hasResponsiveVariants
+            ? {
+                srcSet: `${img.src.replace('.webp', '-480w.webp')} 480w, ${img.src.replace('.webp', '-768w.webp')} 768w, ${img.src} ${img.width}w`,
+                sizes: '(max-width: 768px) 100vw, 768px',
+              }
+            : {})}
           alt={guideImageAlt(lang, page.slug, imageId, img.alt)}
           width={img.width}
           height={img.height}

@@ -602,6 +602,7 @@ export default function TourDetail() {
                     <img
                       src={g.src}
                       alt={g.caption}
+                      {...(g.width && g.height ? { width: g.width, height: g.height } : {})}
                       loading="lazy"
                       decoding="async"
                       className="w-full h-40 md:h-52 object-cover transition-transform duration-700 group-hover:scale-105"

@@ -916,7 +916,7 @@ function buildTourDetailContent(id: string, lang: Lang): string {
     { src: '/images/dest/erg-chebbi.webp', caption: 'Golden sands of Erg Chebbi' },
     { src: '/images/dest/ait-ben-haddou.webp', caption: 'Aït Benhaddou ksar' },
   ];
-  const galleryBlock = h2(tr(lang, 'tour_gallery')) + galleryImages.map((g) => figureImg(g.src, g.caption, g.caption)).join('');
+  const galleryBlock = h2(tr(lang, 'tour_gallery')) + galleryImages.map((g) => figureImg(g.src, g.caption, g.caption, g.width && g.height ? { width: g.width, height: g.height } : undefined)).join('');
   // Quick Facts: mirrors the client's "at a glance" panel in tour-detail.tsx —
   // same verified start/end derivation (tour-quick-facts.ts) and the same
   // per-night "where you'll sleep" summary reused from the meals data below,
@@ -967,7 +967,7 @@ function buildDestinationsContent(lang: Lang): string {
 function buildDestinationDetailContent(destId: string, lang: Lang): string {
   const d = getLocalizedDestination(destId, lang);
   if (!d) return h1('Not Found') + paragraph('This destination could not be found.');
-  const gallery = (d.gallery ?? []).map((p) => figureImg(p.src, p.alt, p.caption)).join('\n');
+  const gallery = (d.gallery ?? []).map((p) => figureImg(p.src, p.alt, p.caption, p.width && p.height ? { width: p.width, height: p.height } : undefined)).join('\n');
   // Mirror the runtime destination page: every catalog photo reinforced for this
   // destination under a "through our lens" heading, followed by the culinary food
   // photograph. No cap so every mapped catalog image is discoverable.
@@ -1327,7 +1327,7 @@ function buildBlogArticleBody(slug: string, lang: Lang): string {
   if (!BLOG_ARTICLE_SECTIONS[slug]) return '';
   const sections = getLocalizedBlogSections(slug, lang);
   const sectionImage = (s: BlogSection) => s.image
-    ? `<img src="${s.image.src}" alt="${escapeHtml(s.image.alt)}" loading="lazy" decoding="async" class="w-full h-48 md:h-64 object-cover mb-4 rounded-md" />\n`
+    ? `<img src="${s.image.src}" alt="${escapeHtml(s.image.alt)}"${s.image.width && s.image.height ? ` width="${s.image.width}" height="${s.image.height}"` : ''} loading="lazy" decoding="async" class="w-full h-48 md:h-64 object-cover mb-4 rounded-md" />\n`
     : '';
   const body = sections.map((s) => h2(s.heading) + sectionImage(s) + s.paragraphs.map((p) => paragraphHtml(p, lang)).join('')).join('');
   const cta = getLocalizedBlogCta(slug, lang);
@@ -1618,7 +1618,10 @@ function buildHubPageContent(page: HubPage, lang: Lang): string {
     if (imgId) {
       const img = catalogImage(imgId);
       if (img) {
-        out += `    <figure>\n      <img src="${img.src}" srcset="${img.src.replace('.webp', '-480w.webp')} 480w, ${img.src.replace('.webp', '-768w.webp')} 768w, ${img.src} ${img.width}w" sizes="(max-width: 768px) 100vw, 768px" alt="${escapeHtml(imageAltFor(page.slug, imgId, lang, img.alt))}" width="${img.width}" height="${img.height}" loading="lazy" decoding="async">\n      <figcaption>${escapeHtml(img.caption)}</figcaption>\n    </figure>\n`;
+        const srcsetAttrs = img.hasResponsiveVariants
+          ? ` srcset="${img.src.replace('.webp', '-480w.webp')} 480w, ${img.src.replace('.webp', '-768w.webp')} 768w, ${img.src} ${img.width}w" sizes="(max-width: 768px) 100vw, 768px"`
+          : '';
+        out += `    <figure>\n      <img src="${img.src}"${srcsetAttrs} alt="${escapeHtml(imageAltFor(page.slug, imgId, lang, img.alt))}" width="${img.width}" height="${img.height}" loading="lazy" decoding="async">\n      <figcaption>${escapeHtml(img.caption)}</figcaption>\n    </figure>\n`;
       }
     }
   }

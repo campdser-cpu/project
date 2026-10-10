@@ -211,6 +211,7 @@ export default function DestinationDetail() {
                         <img
                           src={photo.src}
                           alt={photo.alt}
+                          {...(photo.width && photo.height ? { width: photo.width, height: photo.height } : {})}
                           loading="lazy"
                           decoding="async"
                           className="w-full h-72 md:h-96 object-cover"

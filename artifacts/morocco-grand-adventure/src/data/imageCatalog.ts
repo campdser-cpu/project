@@ -22,6 +22,14 @@ export type CatalogImage = {
   category: 'desert' | 'heritage' | 'city' | 'coast' | 'food' | 'culture';
   /** destination ids these images reinforce (src/data/content.ts) */
   destinations: string[];
+  /**
+   * True only when real `<name>-480w.webp` and `<name>-768w.webp` sibling
+   * files genuinely exist on disk next to `src` (verified against
+   * public/images/catalog, not assumed from the file extension). Omit or
+   * leave false for anything else — renderers then emit a plain `src` with
+   * no `srcset` rather than labelling one file as several widths.
+   */
+  hasResponsiveVariants?: boolean;
 };
 
 export const IMAGE_CATALOG: Record<string, CatalogImage> = {
@@ -31,6 +39,7 @@ export const IMAGE_CATALOG: Record<string, CatalogImage> = {
     alt: 'Crowds and food stalls filling Jemaa el-Fna square in Marrakech at night, the Koutoubia minaret beyond',
     caption: 'Jemaa el-Fna at night — food stalls, music and crowds.',
     category: 'city', destinations: ['marrakech'],
+    hasResponsiveVariants: true,
   },
   'menara-gardens-pavilion-marrakech': {
     src: '/images/catalog/menara-gardens-pavilion-marrakech.webp', file: 'menara-gardens-pavilion-marrakech.webp',
@@ -38,6 +47,7 @@ export const IMAGE_CATALOG: Record<string, CatalogImage> = {
     alt: 'The green-tiled Menara pavilion reflected in its basin with the Atlas behind, Marrakech',
     caption: 'The Menara pavilion and its reflecting pool, with the Atlas beyond.',
     category: 'heritage', destinations: ['marrakech'],
+    hasResponsiveVariants: true,
   },
   'tbourida-fantasia-marrakech': {
     src: '/images/catalog/tbourida-fantasia-marrakech.webp', file: 'tbourida-fantasia-marrakech.webp',
@@ -45,6 +55,7 @@ export const IMAGE_CATALOG: Record<string, CatalogImage> = {
     alt: 'Tbourida rider in ceremonial dress on horseback with a raised musket, spectators and a minaret behind',
     caption: 'Tbourida — a ceremonial horseman with his musket.',
     category: 'culture', destinations: [],
+    hasResponsiveVariants: true,
   },
   'moroccan-palace-ceiling-muqarnas': {
     src: '/images/catalog/moroccan-palace-ceiling-muqarnas.webp', file: 'moroccan-palace-ceiling-muqarnas.webp',
@@ -52,6 +63,7 @@ export const IMAGE_CATALOG: Record<string, CatalogImage> = {
     alt: 'Intricately carved muqarnas cedar ceiling of a Moroccan palace',
     caption: 'A muqarnas cedar ceiling — zellij and carved plaster around it.',
     category: 'heritage', destinations: ['marrakech', 'fes'],
+    hasResponsiveVariants: true,
   },
   'moroccan-night-spice-herb-market': {
     src: '/images/catalog/moroccan-night-spice-herb-market.webp', file: 'moroccan-night-spice-herb-market.webp',
@@ -59,6 +71,7 @@ export const IMAGE_CATALOG: Record<string, CatalogImage> = {
     alt: 'Spice and herb stall lit by warm lamps in a Moroccan market at night',
     caption: 'A spice and herb stall under the lamps of a night market.',
     category: 'food', destinations: ['marrakech'],
+    hasResponsiveVariants: true,
   },
   'moroccan-riad-breakfast': {
     src: '/images/catalog/moroccan-riad-breakfast.webp', file: 'moroccan-riad-breakfast.webp',
@@ -66,6 +79,7 @@ export const IMAGE_CATALOG: Record<string, CatalogImage> = {
     alt: 'Riad breakfast table with msemen flatbread, hand-painted ceramic tagine servers and coffee',
     caption: 'A riad breakfast — msemen and painted ceramic tagine servers.',
     category: 'food', destinations: ['marrakech', 'fes'],
+    hasResponsiveVariants: true,
   },
   'moroccan-fine-dining-riad': {
     src: '/images/catalog/moroccan-fine-dining-riad.webp', file: 'moroccan-fine-dining-riad.webp',
@@ -73,6 +87,7 @@ export const IMAGE_CATALOG: Record<string, CatalogImage> = {
     alt: 'Waiter in a green djellaba and red tarbouche presenting a full spread of Moroccan dishes on a round riad table',
     caption: 'Fine Moroccan dining — a full spread served in a riad.',
     category: 'food', destinations: ['marrakech'],
+    hasResponsiveVariants: true,
   },
   'moroccan-mint-tea-riad': {
     src: '/images/catalog/moroccan-mint-tea-riad.webp', file: 'moroccan-mint-tea-riad.webp',
@@ -80,6 +95,7 @@ export const IMAGE_CATALOG: Record<string, CatalogImage> = {
     alt: 'Guests sharing a glass of mint tea across a richly laid riad dining table',
     caption: 'Sharing mint tea — the ritual of Moroccan hospitality.',
     category: 'food', destinations: ['marrakech'],
+    hasResponsiveVariants: true,
   },
   'moroccan-pastries-sweets': {
     src: '/images/catalog/moroccan-pastries-sweets.webp', file: 'moroccan-pastries-sweets.webp',
@@ -87,6 +103,7 @@ export const IMAGE_CATALOG: Record<string, CatalogImage> = {
     alt: 'Woman holding a gift box of assorted Moroccan pastries — almond, coconut and sesame sweets',
     caption: 'A gift box of Moroccan pastries — almond, coconut and honey.',
     category: 'food', destinations: ['marrakech', 'fes'],
+    hasResponsiveVariants: true,
   },
   'olive-preserved-lemon-market-stall': {
     src: '/images/catalog/olive-preserved-lemon-market-stall.webp', file: 'olive-preserved-lemon-market-stall.webp',
@@ -94,6 +111,7 @@ export const IMAGE_CATALOG: Record<string, CatalogImage> = {
     alt: 'Baskets of olives and preserved lemons on a Moroccan market stall',
     caption: 'Olives and preserved lemons — staples of the Moroccan larder.',
     category: 'food', destinations: ['marrakech'],
+    hasResponsiveVariants: true,
   },
   'moroccan-vegetable-tagine': {
     src: '/images/catalog/moroccan-vegetable-tagine.webp', file: 'moroccan-vegetable-tagine.webp',
@@ -101,6 +119,7 @@ export const IMAGE_CATALOG: Record<string, CatalogImage> = {
     alt: 'Vegetable tagine steaming in its conical clay pot',
     caption: 'A vegetable tagine, cooked slowly in its conical pot.',
     category: 'food', destinations: ['marrakech'],
+    hasResponsiveVariants: true,
   },
   'moroccan-mezze-couscous-tagine': {
     src: '/images/catalog/moroccan-mezze-couscous-tagine.webp', file: 'moroccan-mezze-couscous-tagine.webp',
@@ -108,6 +127,7 @@ export const IMAGE_CATALOG: Record<string, CatalogImage> = {
     alt: 'Moroccan mezze spread with dips, couscous and tagine dishes on a wooden table',
     caption: 'A mezze spread with couscous and tagine.',
     category: 'food', destinations: ['marrakech'],
+    hasResponsiveVariants: true,
   },
   'moroccan-tagine-salads-clay-bowls': {
     src: '/images/catalog/moroccan-tagine-salads-clay-bowls.webp', file: 'moroccan-tagine-salads-clay-bowls.webp',
@@ -115,6 +135,7 @@ export const IMAGE_CATALOG: Record<string, CatalogImage> = {
     alt: 'Tagine and cooked salads served in small clay bowls on a Moroccan table',
     caption: 'Cooked salads and tagine served in clay bowls.',
     category: 'food', destinations: ['marrakech'],
+    hasResponsiveVariants: true,
   },
   'hassan-ii-mosque-casablanca': {
     src: '/images/catalog/hassan-ii-mosque-casablanca.webp', file: 'hassan-ii-mosque-casablanca.webp',
@@ -122,6 +143,7 @@ export const IMAGE_CATALOG: Record<string, CatalogImage> = {
     alt: 'The Hassan II Mosque rising above the ocean front in Casablanca',
     caption: 'Hassan II Mosque, built partly over the Atlantic in Casablanca.',
     category: 'city', destinations: ['casablanca'],
+    hasResponsiveVariants: true,
   },
   'hassan-ii-mosque-doorway-casablanca': {
     src: '/images/catalog/hassan-ii-mosque-doorway-casablanca.webp', file: 'hassan-ii-mosque-doorway-casablanca.webp',
@@ -129,6 +151,7 @@ export const IMAGE_CATALOG: Record<string, CatalogImage> = {
     alt: 'Ornate pointed-arch doorway of the Hassan II Mosque in Casablanca — carved marble arabesques, geometric metalwork doors and zellige tilework',
     caption: 'Carved doorway detail, Hassan II Mosque.',
     category: 'heritage', destinations: ['casablanca'],
+    hasResponsiveVariants: true,
   },
   'chefchaouen-blue-city-rif': {
     src: '/images/catalog/chefchaouen-blue-city-rif.webp', file: 'chefchaouen-blue-city-rif.webp',
@@ -136,6 +159,7 @@ export const IMAGE_CATALOG: Record<string, CatalogImage> = {
     alt: 'The blue-washed medina of Chefchaouen cascading down the hillside in the Rif Mountains',
     caption: 'The blue medina of Chefchaouen cascading down the hillside in the Rif Mountains.',
     category: 'city', destinations: ['chefchaouen'],
+    hasResponsiveVariants: true,
   },
   'essaouira-sqala-du-port-atlantic': {
     src: '/images/catalog/essaouira-sqala-du-port-atlantic.webp', file: 'essaouira-sqala-du-port-atlantic.webp',
@@ -143,6 +167,7 @@ export const IMAGE_CATALOG: Record<string, CatalogImage> = {
     alt: 'Stone Sqala du Port ramparts and cannons facing the Atlantic in Essaouira',
     caption: "The Sqala du Port, watching over Essaouira's Atlantic harbour.",
     category: 'coast', destinations: ['essaouira'],
+    hasResponsiveVariants: true,
   },
   'draa-valley-oasis-palm-grove': {
     src: '/images/catalog/draa-valley-oasis-palm-grove.webp', file: 'draa-valley-oasis-palm-grove.webp',
@@ -150,6 +175,7 @@ export const IMAGE_CATALOG: Record<string, CatalogImage> = {
     alt: 'Dense palm grove of the Draa Valley oasis stretching toward the mountains',
     caption: 'Palm groves of the Draa Valley oasis.',
     category: 'heritage', destinations: ['draa-valley', 'zagora'],
+    hasResponsiveVariants: true,
   },
   'ancient-berber-kasbah-ruins-southern-morocco': {
     src: '/images/catalog/ancient-berber-kasbah-ruins-southern-morocco.webp', file: 'ancient-berber-kasbah-ruins-southern-morocco.webp',
@@ -157,6 +183,7 @@ export const IMAGE_CATALOG: Record<string, CatalogImage> = {
     alt: 'Weathered mud-brick towers of an ancient Berber kasbah in southern Morocco',
     caption: 'Ruins of an old Berber kasbah along the Route of the Kasbahs.',
     category: 'heritage', destinations: ['ouarzazate', 'skoura', 'draa-valley'],
+    hasResponsiveVariants: true,
   },
   'moroccan-cliff-dwellings-rock-cut': {
     src: '/images/catalog/moroccan-cliff-dwellings-rock-cut.webp', file: 'moroccan-cliff-dwellings-rock-cut.webp',
@@ -164,6 +191,7 @@ export const IMAGE_CATALOG: Record<string, CatalogImage> = {
     alt: 'Historic dwellings built into a rocky cliff face in southern Morocco',
     caption: 'Dwellings carved into the rock, sheltered by the cliff face.',
     category: 'heritage', destinations: ['nkob'],
+    hasResponsiveVariants: true,
   },
   'berber-camel-guide-sahara-merzouga': {
     src: '/images/catalog/berber-camel-guide-sahara-merzouga.webp', file: 'berber-camel-guide-sahara-merzouga.webp',
@@ -171,6 +199,7 @@ export const IMAGE_CATALOG: Record<string, CatalogImage> = {
     alt: 'Berber camel guide in a blue djellaba leading a camel across the Sahara sand near Merzouga',
     caption: 'A local cameleer leads his camel across the sand near Merzouga.',
     category: 'desert', destinations: ['merzouga', 'erg-chebbi'],
+    hasResponsiveVariants: true,
   },
   'sahara-dune-trekking-merzouga': {
     src: '/images/catalog/sahara-dune-trekking-merzouga.webp', file: 'sahara-dune-trekking-merzouga.webp',
@@ -178,6 +207,7 @@ export const IMAGE_CATALOG: Record<string, CatalogImage> = {
     alt: 'Trekkers climbing the crest of a tall Sahara dune near Merzouga',
     caption: 'Climbing a dune crest on foot near Merzouga.',
     category: 'desert', destinations: ['merzouga', 'erg-chebbi'],
+    hasResponsiveVariants: true,
   },
   'luxury-desert-camp-sunset-merzouga': {
     src: '/images/catalog/luxury-desert-camp-sunset-merzouga.webp', file: 'luxury-desert-camp-sunset-merzouga.webp',
@@ -185,6 +215,7 @@ export const IMAGE_CATALOG: Record<string, CatalogImage> = {
     alt: 'Luxury desert camp tents glowing at sunset among the dunes of Merzouga',
     caption: 'A luxury camp glowing at sunset in the Erg Chebbi dunes.',
     category: 'desert', destinations: ['merzouga', 'erg-chebbi'],
+    hasResponsiveVariants: true,
   },
   'sahara-bivouac-stars-merzouga': {
     src: '/images/catalog/sahara-bivouac-stars-merzouga.webp', file: 'sahara-bivouac-stars-merzouga.webp',
@@ -192,6 +223,7 @@ export const IMAGE_CATALOG: Record<string, CatalogImage> = {
     alt: 'Saharan bivouac lounge with lanterns, carpets and a thatched canopy at dusk near Merzouga',
     caption: 'A lantern-lit bivouac in the Erg Chebbi sands at dusk.',
     category: 'desert', destinations: ['merzouga', 'erg-chebbi'],
+    hasResponsiveVariants: true,
   },
   'berber-child-baby-goat-village': {
     src: '/images/catalog/berber-child-baby-goat-village.webp', file: 'berber-child-baby-goat-village.webp',
@@ -199,6 +231,7 @@ export const IMAGE_CATALOG: Record<string, CatalogImage> = {
     alt: 'Berber child holding a baby goat outside a village house in southern Morocco',
     caption: 'Village life in southern Morocco — a child with a baby goat.',
     category: 'culture', destinations: ['merzouga', 'draa-valley'],
+    hasResponsiveVariants: true,
   },
   'amazigh-woman-berber-jewellery': {
     src: '/images/catalog/amazigh-woman-berber-jewellery.webp', file: 'amazigh-woman-berber-jewellery.webp',
@@ -206,6 +239,7 @@ export const IMAGE_CATALOG: Record<string, CatalogImage> = {
     alt: 'Amazigh woman wearing traditional amber and coral bead necklaces with silver jewellery and a striped headscarf',
     caption: 'Traditional Amazigh dress — amber and coral bead jewellery.',
     category: 'culture', destinations: ['merzouga'],
+    hasResponsiveVariants: true,
   },
   'amazigh-music-ceremony': {
     src: '/images/catalog/amazigh-music-ceremony.webp', file: 'amazigh-music-ceremony.webp',
@@ -213,6 +247,38 @@ export const IMAGE_CATALOG: Record<string, CatalogImage> = {
     alt: 'Amazigh musicians in white djellabas playing bendir drums at an outdoor ceremony',
     caption: 'Amazigh musicians at an outdoor celebration.',
     category: 'culture', destinations: ['merzouga'],
+    hasResponsiveVariants: true,
+  },
+  // Reuse real, already-approved library photos (src/data/photoLibrary.ts
+  // MGA-028/001/029) for the erg-chebbi guide's `inlineImages` only — same
+  // file, alt and intrinsic dimensions as the library record. `destinations`
+  // is deliberately empty: a non-empty list would also auto-surface these on
+  // the matching /destinations/* page's curated grid via imagesForDestination(),
+  // which is outside this batch's approved scope. `hasResponsiveVariants` is
+  // deliberately omitted: these point at /images/library/*.jpg master files,
+  // which have no `-480w`/`-768w` siblings in that folder (their real
+  // derivatives live separately under /images/library/srcset/, a different
+  // naming convention this manifest does not model) — so no srcset is emitted.
+  'erg-chebbi-dune-sea-view': {
+    src: '/images/library/erg-chebbi-dune-sea-morocco-mga-028.jpg', file: '1000206081.jpg',
+    width: 1920, height: 1299,
+    alt: 'Tourist in a colourful Moroccan djellaba facing the Erg Chebbi dune sea near Merzouga',
+    caption: "The Erg Chebbi dune sea — Morocco's tallest free-standing dunes.",
+    category: 'desert', destinations: [],
+  },
+  'erg-chebbi-camel-caravan-sunset': {
+    src: '/images/library/erg-chebbi-camel-trekking-sunset-morocco-mga-001.jpg', file: '1000206114.jpg',
+    width: 1920, height: 1280,
+    alt: 'Berber guide leading a camel caravan across Erg Chebbi at dusk',
+    caption: 'A sunset camel trek along the Erg Chebbi dune ridges.',
+    category: 'desert', destinations: [],
+  },
+  'erg-chebbi-dunes-golden-hour': {
+    src: '/images/library/erg-chebbi-dunes-golden-hour-morocco-mga-029.jpg', file: '1000206091.jpg',
+    width: 1707, height: 2560,
+    alt: 'Woman in a teal dress on rippled Erg Chebbi dunes at golden hour',
+    caption: 'Golden hour on the Erg Chebbi dunes.',
+    category: 'desert', destinations: [],
   },
 };
 

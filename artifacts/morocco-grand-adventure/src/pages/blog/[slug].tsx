@@ -196,6 +196,9 @@ export default function BlogPost() {
                       <img
                         src={section.image.src}
                         alt={section.image.alt}
+                        {...(section.image.width && section.image.height
+                          ? { width: section.image.width, height: section.image.height }
+                          : {})}
                         loading="lazy"
                         decoding="async"
                         className="w-full h-48 md:h-64 object-cover mb-4 rounded-md"

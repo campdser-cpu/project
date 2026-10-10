@@ -33,7 +33,13 @@ export type BlogSection = {
    */
   paragraphs: string[];
   /** Optional real site image for this section — never localized, never invented. */
-  image?: { src: string; alt: string };
+  image?: {
+    src: string;
+    alt: string;
+    /** Real, measured intrinsic size of the file — omit rather than guess. */
+    width?: number;
+    height?: number;
+  };
 };
 
 /** One piece of a parsed paragraph: plain text, or a `[label](/path)` link. */
@@ -76,6 +82,12 @@ export const BLOG_ARTICLE_SECTIONS: Record<string, BlogSection[]> = {
         'Merzouga is a small town on the edge of Erg Chebbi, one of Morocco\'s two great sand seas. The erg stretches roughly 22km long and 5km wide, with dunes that rise well over 100 metres and change colour from orange to gold to crimson as the light shifts through the day.',
         'Luxury camps are positioned in and around these dunes, a short camel or 4x4 ride from the village. That is the practical relationship travellers should know: you reach Merzouga by road, and the camp experience begins where the tarmac ends.',
       ],
+      image: {
+        src: '/images/library/date-palm-desert-camp-erg-chebbi-morocco-mga-034.jpg',
+        alt: 'Solitary date palm with a desert camp and oasis in the background at Erg Chebbi',
+        width: 1707,
+        height: 2560,
+      },
     },
     {
       heading: 'What a Night in the Sahara Includes',
@@ -83,6 +95,12 @@ export const BLOG_ARTICLE_SECTIONS: Record<string, BlogSection[]> = {
         'A typical luxury camp stay starts in the late afternoon, when you arrive at the dunes in time for sunset. Dinner is usually a multi-course Moroccan meal served in the dining tent, and many camps finish the evening around a fire with Berber drumming and music under the stars.',
         'Mornings are for the desert\'s quietest hour: sunrise over the dunes, breakfast at the camp, and then your return to Merzouga by camel or 4x4. Stargazing needs no planning — the Sahara\'s night sky is one of the darkest you will ever see.',
       ],
+      image: {
+        src: '/images/library/luxury-desert-camp-entrance-erg-chebbi-mga-005.jpg',
+        alt: 'Tourist walking on a Moroccan rug lined with lanterns toward Erg Chebbi — luxury camp entrance',
+        width: 1707,
+        height: 2560,
+      },
     },
     {
       heading: 'Camel Treks, 4x4 Transfers and How You Arrive',

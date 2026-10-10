@@ -19,7 +19,7 @@ picture alone: where the source is unknown, it says unknown.
 | `curated/` | 24 | Two owner-supplied packs — see §2 | **Not documented** — see §2 |
 | `personal/` | 9 | Named as the team's own photographs (guests, guides, fleet, camp) | Presented as the company's own. Not separately evidenced in the repo |
 | `student-tours/` | 40+ | Student tour photo library (commit `c929540`), plus the hub hero — see §4 | Team-supplied. The hub hero's origin is **unknown** — see §4 |
-| `stock/` | 1 (`stargazing-merzouga`) | Folder name says stock | Licence **unknown** — flagged |
+| `stock/` | 2 (`stargazing-merzouga`, `draa-valley-oasis-kasbah-village`) | `stargazing-merzouga`: folder name says stock, licence **unknown** — flagged. `draa-valley-oasis-kasbah-village`: Pexels, fully documented — see §5 | Mixed — see per-file notes |
 | `pdf/` | 5 (`img_0…4-optimized`) | "Photo journal" images extracted from an owner-supplied PDF | Presented as the company's own journey photos. Licence not documented |
 | `dest/`, `hero/`, `food/`, `riad/`, `about/`, `logo/`, `og/`, `tours/` | various | Built or rebuilt from the sources above (see `scripts/image-integrity-2026-09.mjs`, `scripts/build-tour-card-images.mjs`) | Inherits the source asset's status |
 
@@ -107,3 +107,41 @@ videos stay out unless the owner confirms ownership or permission.
    library. It is no longer presented as a verified photograph of Ifrane.
 7. **Meknès** — no Meknès or Volubilis photograph exists in any library or pack.
    The destination keeps a decorative pattern until a real photograph is supplied.
+
+---
+
+## 5. `stock/draa-valley-oasis-kasbah-village.webp` — fully documented addition
+
+Added because the Draa Valley destination page's only gallery photo was the
+exact same file as its hero image — no official library or catalog photo is
+tagged for the Draa Valley specifically (`MGA-036`/`MGA-040` are the nearby
+but distinct Dades Valley, and using them here would mislabel the location).
+
+- **Source**: Pexels (`pexels.com`), a free-licence stock photography site.
+- **Photo page**: `https://www.pexels.com/photo/scenic-view-of-draa-valley-in-morocco-29638614/`
+- **Photographer**: Moussa Idrissi.
+- **Pexels photo ID**: 29638614.
+- **Downloaded from**: Pexels' own public image CDN
+  (`https://images.pexels.com/photos/29638614/pexels-photo-29638614.jpeg`),
+  not hotlinked — the file was downloaded and is served locally from this
+  repository.
+- **Verification**: the downloaded file is 3008×2000px, matching the
+  dimensions shown on the photo page exactly — confirmed to be the same
+  image, not a different crop or a mismatched file.
+- **Subject match confirmed by viewing the photograph**: a dense date-palm
+  oasis filling a valley floor, earthen/kasbah-style mud-brick buildings in
+  the foreground, and a bare desert mountain range behind — consistent with
+  the real, verified description of the Draa Valley already on the site
+  (palm-grove corridor, kasbah villages, desert mountains). No specific
+  village, kasbah name, or GPS location is claimed — only what the photograph
+  itself shows.
+- **Licence**: Pexels License — free for commercial use, no attribution
+  required, editing permitted. The only restriction is not implying
+  endorsement by identifiable people or brands; this photograph has no
+  identifiable people in it, so that restriction does not apply.
+- **Processing**: resized (width capped at 1920px, aspect ratio preserved
+  exactly — no crop, no distortion) and re-encoded to WebP (quality 76,
+  effort 6, matching this project's own `sharp` conversion settings in
+  `scripts/build-tour-card-images.mjs`) using the project's existing `sharp`
+  dependency. Final file: 1920×1277px, ~152KB.
+- **Accessed**: 10 October 2026.

@@ -446,6 +446,13 @@ export const MERZOUGA_GUIDES: HubPage[] = [
     destinations: ['merzouga', 'erg-chebbi'],
     relatedGuides: ['camel-trekking', 'desert-camps', 'best-time-to-visit', 'things-to-do', '4x4-desert-tour', 'quad-biking', 'sahara-desert-guide', 'erg-chebbi-sunrise-sunset'],
     sources: ['onmt-merzouga-region'],
+    // Real, already-approved photos placed next to the section they actually
+    // illustrate (src/data/imageCatalog.ts) — not grouped at the bottom.
+    inlineImages: [
+      { imageId: 'erg-chebbi-dune-sea-view', after: 0 },       // after "What Erg Chebbi is"
+      { imageId: 'erg-chebbi-camel-caravan-sunset', after: 2 }, // after "What to actually do on the dunes"
+      { imageId: 'erg-chebbi-dunes-golden-hour', after: 4 },    // after "Sunrise and sunset on the dunes"
+    ],
   },
   {
     kind: 'merzouga',

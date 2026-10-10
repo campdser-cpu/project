@@ -45,7 +45,14 @@ export type Destination = {
    */
   gallery?: DestinationGalleryImage[];
 };
-export type DestinationGalleryImage = { src: string; alt: string; caption: string };
+export type DestinationGalleryImage = {
+  src: string;
+  alt: string;
+  caption: string;
+  /** Real, measured intrinsic size of the file — omit rather than guess. */
+  width?: number;
+  height?: number;
+};
 /**
  * Alt text for a destination's main image: empty for a decorative placeholder,
  * a description of what is visible when the location is unverified, and the
@@ -311,6 +318,20 @@ export const destinations: Destination[] = [
         alt: "Footbridge over the Ounila river between the new village and the old ksar of Aït Ben Haddou, seen from above",
         caption: "The footbridge over the Ounila river — the way into the old ksar.",
       },
+      {
+        src: "/images/library/ait-ben-haddou-ounila-river-reflection-morocco-mga-035.jpg",
+        alt: "Ait Ben Haddou ksar reflected in the Ounila river",
+        caption: "The ksar's earthen towers reflected in the Ounila river.",
+        width: 1920,
+        height: 2117,
+      },
+      {
+        src: "/images/library/ait-ben-haddou-rooftop-view-morocco-mga-037.jpg",
+        alt: "Tourist in a striped robe overlooking the ancient Ait Ben Haddou ksar from a rooftop",
+        caption: "The view over the ksar from the hilltop granary.",
+        width: 1707,
+        height: 2560,
+      },
     ],
   },
   {
@@ -427,6 +448,13 @@ export const destinations: Destination[] = [
         src: "/images/dest/draa-valley.webp",
         alt: "Palm-filled Draa Valley with kasbah villages, Morocco",
         caption: "Kasbah villages along the palm-filled Draa Valley."
+      },
+      {
+        src: "/images/stock/draa-valley-oasis-kasbah-village.webp",
+        alt: "Dense palm oasis and an earthen kasbah village beneath a bare desert mountain in the Draa Valley, Morocco",
+        caption: "The valley floor — dense palm groves and kasbah walls below the surrounding desert mountains.",
+        width: 1920,
+        height: 1277,
       },
     ],
     region: "Southern Morocco",
@@ -774,7 +802,13 @@ export type ItineraryDay = {
   image?: { src: string; alt: string };
 };
 export type TourFaq = { question: string; answer: string };
-export type TourGalleryImage = { src: string; caption: string };
+export type TourGalleryImage = {
+  src: string;
+  caption: string;
+  /** Real, measured intrinsic size of the file — omit rather than guess. */
+  width?: number;
+  height?: number;
+};
 export type Tour = {
   id: string;
   name: string;
@@ -2613,6 +2647,8 @@ export const tours: Tour[] = [
     ],
     excluded: ["International flights", "Lunches", "Drinks", "Entrance fees", "Optional activities", "Tips & gratuities", "Personal expenses"],
     gallery: [
+      { src: "/images/library/kasbah-gateway-high-atlas-road-morocco-mga-016.jpg", caption: "Crossing the High Atlas on the road south", width: 1920, height: 1064 },
+      { src: "/images/library/ait-ben-haddou-rooftop-view-morocco-mga-037.jpg", caption: "Aït Ben Haddou — the UNESCO ksar, day one's main stop", width: 1707, height: 2560 },
       { src: "/images/dest/dades-valley.webp", caption: "Dades Valley on the road to Merzouga" },
       { src: "/images/dest/todra-gorge.webp", caption: "Todra Gorge in the eastern High Atlas" },
       { src: "/images/dest/merzouga.webp", caption: "Merzouga at the edge of Erg Chebbi" },
