@@ -21,7 +21,7 @@
 // rings are visible; nothing depends on hover; no animation.
 // ─────────────────────────────────────────────────────────────────────────────
 import { useId, useMemo, useState } from 'react';
-import { CalendarDays, ChevronDown, Users } from 'lucide-react';
+import { CalendarDays, ChevronDown, Mail, Users } from 'lucide-react';
 import { SiWhatsapp } from 'react-icons/si';
 import { contactInfo } from '@/data/content';
 import type { AccommodationTier, CampTier } from '@/data/pricing/rates';
@@ -33,6 +33,8 @@ import {
 } from '@/data/pricing/rooms';
 import { LADDER_MAX, getLadder, ladderPrice } from '@/data/pricing/ladder';
 import { formatMoney } from '@/lib/pricing';
+import { buildMailtoHref } from '@/lib/inquiryChannels';
+import { trackEvent } from '@/lib/analytics';
 
 type Props = {
   t: (key: string) => string;
@@ -219,14 +221,18 @@ export function TailorJourney({
   }, [tripName, date, travellers, days, style, comfort, arrangement, camp, pace, price, notes]);
 
   const whatsappHref = `${contactInfo.whatsapp}?text=${encodeURIComponent(summary)}`;
-  const formHref = `${bookHref}?${new URLSearchParams({
-    tour: tripName,
-    date,
-    travelers: String(travellers),
-    days: String(days),
-    rooms: arrangementLabelEn(arrangement),
-    notes: summary,
-  }).toString()}`;
+  // No email field is collected in this widget (kept deliberately minimal —
+  // see the file header), so a real POST /api/inquiry submission isn't
+  // possible here without the sender's own address. A mailto: link is the
+  // honest mechanism instead: it opens the visitor's own mail app, addressed
+  // to the business, with the full summary pre-filled — their own email
+  // client already knows their "from" address. It prepares the email; the
+  // visitor still presses send themselves (see ContactChoiceButtons' header
+  // comment for the same distinction made explicit elsewhere on the site).
+  const emailHref = buildMailtoHref(
+    `New Tour Inquiry — Morocco Grand Adventure${tripName ? `: ${tripName}` : ''}`,
+    summary,
+  );
 
   const field = 'w-full rounded-xl border border-border bg-background px-4 py-3.5 text-base text-foreground outline-none transition-colors focus:border-primary focus:ring-2 focus:ring-primary/20';
   const legend = LEGEND;
@@ -413,23 +419,28 @@ export function TailorJourney({
         </div>
       </div>
 
-      <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+      <p className="mt-6 text-sm font-semibold text-foreground">{t('cc_choose_heading')}</p>
+      <div className="mt-3 flex flex-col gap-3 sm:flex-row">
         <a
           href={whatsappHref}
           target="_blank"
           rel="noreferrer"
+          onClick={() => trackEvent('whatsapp_click', { source_page: 'tailor-journey', tour: tripName || undefined })}
           className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl bg-[#25D366] px-6 py-4 text-lg font-bold text-[#0d2b1d] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
         >
           <SiWhatsapp className="h-6 w-6" aria-hidden="true" />
-          {t('jx_tailor_send')}
+          {t('cc_whatsapp_btn')}
         </a>
         <a
-          href={formHref}
-          className="inline-flex flex-1 items-center justify-center rounded-xl border-2 border-foreground px-6 py-4 text-lg font-bold text-foreground transition-colors hover:bg-foreground hover:text-background focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+          href={emailHref}
+          onClick={() => trackEvent('email_inquiry_click', { source_page: 'tailor-journey', tour: tripName || undefined, method: 'mailto' })}
+          className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl border-2 border-foreground px-6 py-4 text-lg font-bold text-foreground transition-colors hover:bg-foreground hover:text-background focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
         >
-          {t('book_form_cta')}
+          <Mail className="h-6 w-6" aria-hidden="true" />
+          {t('cc_email_btn')}
         </a>
       </div>
+      <p className="mt-2 text-xs text-muted-foreground">{t('cc_email_mailto_note')}</p>
       <p className="mt-3 text-sm text-muted-foreground">{t('jx_tailor_free')}</p>
     </section>
   );

@@ -4,8 +4,10 @@ import { Layout } from '../components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { contactInfo, destinations, destinationImageAlt } from '@/data/content';
 import { trackEvent } from '@/lib/analytics';
+import { buildMailtoHref } from '@/lib/inquiryChannels';
 import { categoryLabel, getLocalizedDestinations } from '@/i18n/content';
 import { fmtTemplate } from '@/components/tours/intl';
+import { SiWhatsapp } from 'react-icons/si';
 import {
   MapPin,
   Calendar,
@@ -15,7 +17,7 @@ import {
   CheckCircle2,
   Car,
   Info,
-  Send
+  Mail
 } from 'lucide-react';
 
 type Budget = '<$300' | '$300-600' | '$600-1000' | '>$1000';
@@ -202,7 +204,10 @@ export default function TripBuilder() {
     return { itinerary, totalDistance, nights: [...new Set(nights)] };
   }, [arrival, departure, days, selectedDestinations, localizedDestinations, t]);
 
-  const whatsappLink = useMemo(() => {
+  // Shared content for both channels — WhatsApp wraps section headers in
+  // *bold* (its own markdown); email uses the same lines without it, since
+  // plain-text email clients render literal asterisks rather than bold.
+  const summaryLines = useMemo((): { whatsapp: string[]; plain: string[] } => {
     const interestLabels = selectedInterests
       .map(id => {
         const item = INTERESTS_DATA.find(i => i.id === id);
@@ -211,30 +216,45 @@ export default function TripBuilder() {
       .filter(Boolean);
     const destNames = selectedDestinations.map(id => localizedDestinations.find(d=>d.id===id)?.name).filter(Boolean);
 
-    // Multi-line message built with real newlines, then URL-encoded as a whole
-    // (manual %0A + raw interpolation breaks on values containing & or #).
-    const lines = [
-      '*New Bespoke Journey Request*',
-      '',
-      '*Basics:*',
-      `- Route: ${cityLabel(arrival)} to ${cityLabel(departure)}`,
-      `- Duration: ${days} days`,
-      `- Travelers: ${travelers}`,
-      `- Budget: ${budget}`,
-      `- Interests: ${interestLabels.length ? interestLabels.join(', ') : '—'}`,
-      '',
-      '*Destinations:*',
-      destNames.length ? destNames.join(', ') : '—',
-    ];
-    if (itineraryData.itinerary.length > 0) {
-      lines.push('', '*Day-by-day itinerary:*');
-      for (const d of itineraryData.itinerary) {
-        lines.push(`Day ${d.day}: ${d.title}${d.distance > 0 ? ` — ${d.distance} km drive` : ''}`);
+    const build = (bold: (s: string) => string) => {
+      const lines = [
+        bold('New Bespoke Journey Request'),
+        '',
+        bold('Basics:'),
+        `- Route: ${cityLabel(arrival)} to ${cityLabel(departure)}`,
+        `- Duration: ${days} days`,
+        `- Travelers: ${travelers}`,
+        `- Budget: ${budget}`,
+        `- Interests: ${interestLabels.length ? interestLabels.join(', ') : '—'}`,
+        '',
+        bold('Destinations:'),
+        destNames.length ? destNames.join(', ') : '—',
+      ];
+      if (itineraryData.itinerary.length > 0) {
+        lines.push('', bold('Day-by-day itinerary:'));
+        for (const d of itineraryData.itinerary) {
+          lines.push(`Day ${d.day}: ${d.title}${d.distance > 0 ? ` — ${d.distance} km drive` : ''}`);
+        }
+        lines.push('', `Total driving distance: ~${itineraryData.totalDistance} km`);
       }
-      lines.push('', `Total driving distance: ~${itineraryData.totalDistance} km`);
-    }
-    return `${contactInfo.whatsapp}?text=${encodeURIComponent(lines.join('\n'))}`;
+      return lines;
+    };
+    return { whatsapp: build((s) => `*${s}*`), plain: build((s) => s) };
   }, [t, arrival, departure, days, travelers, budget, selectedInterests, selectedDestinations, itineraryData, localizedDestinations]);
+
+  const whatsappLink = useMemo(() => {
+    // Multi-line message built with real newlines, then URL-encoded as a
+    // whole (manual %0A + raw interpolation breaks on values containing & or #).
+    return `${contactInfo.whatsapp}?text=${encodeURIComponent(summaryLines.whatsapp.join('\n'))}`;
+  }, [summaryLines]);
+
+  const emailLink = useMemo(
+    () => buildMailtoHref(
+      `New Bespoke Journey Request — Morocco Grand Adventure`,
+      summaryLines.plain.join('\n'),
+    ),
+    [summaryLines],
+  );
 
   return (
     <Layout>
@@ -584,25 +604,46 @@ export default function TripBuilder() {
                   {t('next')} <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
               ) : (
-                <a 
-                  href={whatsappLink}
-                  target="_blank"
-                  rel="noreferrer"
-                  onClick={() => trackEvent('submit_inquiry', {
-                    form_id: 'trip-builder',
-                    source_page: 'trip-builder',
-                    journey_route: `${arrival} to ${departure}`,
-                    duration_days: days,
-                    travelers,
-                    budget,
-                    destinations: selectedDestinations.join(', '),
-                    interests: selectedInterests.join(', '),
-                    language: lang,
-                  })}
-                  className={`flex items-center gap-3 bg-primary text-primary-foreground px-8 py-4 rounded-full font-bold text-lg transition-all shadow-lg hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(201,168,76,0.4)] group ${selectedDestinations.length < 2 ? 'opacity-50 cursor-not-allowed pointer-events-none' : ''}`}
-                >
-                  {t('tb_request')} <Send className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                </a>
+                <div className="flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
+                  <a
+                    href={whatsappLink}
+                    target="_blank"
+                    rel="noreferrer"
+                    onClick={() => trackEvent('submit_inquiry', {
+                      form_id: 'trip-builder',
+                      source_page: 'trip-builder',
+                      journey_route: `${arrival} to ${departure}`,
+                      duration_days: days,
+                      travelers,
+                      budget,
+                      destinations: selectedDestinations.join(', '),
+                      interests: selectedInterests.join(', '),
+                      language: lang,
+                      method: 'whatsapp',
+                    })}
+                    className={`flex items-center justify-center gap-3 bg-primary text-primary-foreground px-8 py-4 rounded-full font-bold text-lg transition-all shadow-lg hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(201,168,76,0.4)] group ${selectedDestinations.length < 2 ? 'opacity-50 cursor-not-allowed pointer-events-none' : ''}`}
+                  >
+                    <SiWhatsapp className="w-5 h-5" aria-hidden="true" /> {t('cc_whatsapp_btn')}
+                  </a>
+                  <a
+                    href={emailLink}
+                    onClick={() => trackEvent('submit_inquiry', {
+                      form_id: 'trip-builder',
+                      source_page: 'trip-builder',
+                      journey_route: `${arrival} to ${departure}`,
+                      duration_days: days,
+                      travelers,
+                      budget,
+                      destinations: selectedDestinations.join(', '),
+                      interests: selectedInterests.join(', '),
+                      language: lang,
+                      method: 'email_mailto',
+                    })}
+                    className={`flex items-center justify-center gap-3 border-2 border-foreground text-foreground px-8 py-4 rounded-full font-bold text-lg transition-all hover:bg-foreground hover:text-background group ${selectedDestinations.length < 2 ? 'opacity-50 cursor-not-allowed pointer-events-none' : ''}`}
+                  >
+                    <Mail className="w-5 h-5" aria-hidden="true" /> {t('cc_email_btn')}
+                  </a>
+                </div>
               )}
             </div>
           </div>

@@ -7,13 +7,14 @@
 // a summary with the real price/deposit (or an honest "price to be confirmed"
 // when the departure has none), then submit.
 //
-// No backend call: submitting opens WhatsApp directly with the full structured
-// request (tour, departure id, dates, travelers, contact details, price/deposit
-// breakdown) pre-filled, using the site's existing WhatsApp number
-// (src/data/content.ts — never a new/invented one). This keeps the flow working
-// with zero server-side configuration. No payment is taken here; the deposit
-// figure shown is informational, matching the "Book Now, Pay Later" promise
-// made everywhere else on the site.
+// At the summary step, the customer explicitly chooses how this reaches the
+// business — WhatsApp (always a deep link, pre-filled, using the site's real
+// number from src/data/content.ts — never a new/invented one) or Email (a
+// real POST /api/inquiry submission, the same backend src/pages/book.tsx and
+// TourInquiryForm.tsx already use, with a mailto: fallback if that call
+// fails). See src/components/ui/ContactChoiceButtons.tsx. No payment is taken
+// here either way; the deposit figure shown is informational, matching the
+// "Book Now, Pay Later" promise made everywhere else on the site.
 // ─────────────────────────────────────────────────────────────────────────────
 import { useEffect, useId, useMemo, useState } from 'react';
 import { CheckCircle2, ChevronLeft } from 'lucide-react';
@@ -27,6 +28,8 @@ import {
 } from '@/components/ui/dialog';
 import { contactInfo } from '@/data/content';
 import { trackEvent } from '@/lib/analytics';
+import { ContactChoiceButtons } from '@/components/ui/ContactChoiceButtons';
+import type { InquiryPayload } from '@/lib/inquiryChannels';
 import {
   type StudentGroupDeparture,
   seatsAvailable,
@@ -137,11 +140,32 @@ export function JoinStudentTour({ open, onOpenChange, tourSlug, tourTitle, depar
     [`Hi Morocco Grand Adventure! I'd like to join: ${tourTitle}`, ...whatsappSummaryLines.slice(1)].join('\n'),
   )}`;
 
-  /** Opens WhatsApp with the full structured request, then shows the confirmation step. */
-  function submit() {
-    trackEvent('booking_submitted', { tour_slug: tourSlug, departure_id: departureId, travelers });
-    window.open(whatsappHref, '_blank', 'noopener,noreferrer');
+  const emailSubject = `New Student Tour Booking Request — ${tourTitle}`;
+  const emailBody = whatsappSummaryLines.join('\n');
+  const emailPayload: InquiryPayload = useMemo(() => {
+    const parts = fullName.trim().split(/\s+/);
+    return {
+      firstName: parts[0] ?? '',
+      lastName: parts.slice(1).join(' '),
+      email: email.trim(),
+      phone: whatsappNumber.trim(),
+      travelDates: departure ? `${departure.startDate} to ${departure.endDate}` : '',
+      travelers: String(travelers),
+      destinations: '',
+      tourInterest: tourTitle,
+      accommodation: '',
+      message: emailBody,
+    };
+  }, [fullName, email, whatsappNumber, departure, travelers, tourTitle, emailBody]);
+
+  function handleWhatsapp() {
+    trackEvent('booking_submitted', { tour_slug: tourSlug, departure_id: departureId, travelers, method: 'whatsapp' });
     setStep('done');
+  }
+
+  function handleEmailResult(method: 'api' | 'mailto', success: boolean) {
+    trackEvent('booking_submitted', { tour_slug: tourSlug, departure_id: departureId, travelers, method: `email_${method}`, success });
+    if (method === 'api' && success) setStep('done');
   }
 
   const steps: Step[] = joinable.length > 1 ? ['departure', 'travelers', 'details', 'summary'] : ['travelers', 'details', 'summary'];
@@ -293,13 +317,16 @@ export function JoinStudentTour({ open, onOpenChange, tourSlug, tourTitle, depar
             {!breakdown && (
               <p className="mt-3 text-xs text-muted-foreground">{t('st_jn_price_on_request')}</p>
             )}
-            <button
-              type="button"
-              onClick={submit}
-              className="mt-5 flex w-full items-center justify-center gap-2 rounded-xl bg-[#25D366] py-3.5 font-bold text-[#0d2b1d] hover:bg-[#128C7E]"
-            >
-              <SiWhatsapp className="h-5 w-5" aria-hidden="true" /> {t('st_jn_submit')}
-            </button>
+            <ContactChoiceButtons
+              t={t}
+              className="mt-5"
+              whatsappHref={whatsappHref}
+              onWhatsapp={handleWhatsapp}
+              emailPayload={emailPayload}
+              emailSubject={emailSubject}
+              emailBody={emailBody}
+              onEmailResult={handleEmailResult}
+            />
           </div>
         )}
 

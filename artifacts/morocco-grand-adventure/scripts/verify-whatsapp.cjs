@@ -77,7 +77,11 @@ if (msgLinkRefs === 0) chk(true, 'no wa.me/message anywhere in src/ or index.htm
 const tb = readSrc('pages/trip-builder.tsx');
 chk(tb.includes('contactInfo.whatsapp'), 'trip-builder uses contactInfo.whatsapp');
 chk(tb.includes('\${contactInfo.whatsapp}?text='), 'trip-builder appends ?text= to base');
-chk(tb.includes('*New Bespoke Journey Request*'), 'trip-builder carries bespoke journey message');
+// The title line is now built via a shared bold()-wrapping helper (so the
+// same content also feeds a plain-text email version) rather than appearing
+// as a literal string — check the real construction instead.
+chk(tb.includes("'New Bespoke Journey Request'") && tb.includes('`*${s}*`'), 'trip-builder carries bespoke journey message');
+chk(tb.includes('buildMailtoHref') && tb.includes('summaryLines.plain'), 'trip-builder also offers an email (mailto) channel with the same content');
 for (const token of ['Route:', 'Duration:', 'Travelers:', 'Budget:', 'Interests:', 'Destinations:']) {
   chk(tb.includes(token), 'trip-builder builds field: ' + token);
 }
@@ -96,6 +100,22 @@ chk(tj.includes('\${contactInfo.whatsapp}?text='), 'TailorJourney appends ?text=
 chk(tj.includes('Trip: ${tripName}'), 'TailorJourney message names the exact tour');
 chk(tj.includes('Travellers: ${travellers}'), 'TailorJourney message carries traveler count');
 chk(tj.includes('Dates: ${date'), 'TailorJourney message carries selected date');
+chk(tj.includes('buildMailtoHref') && tj.includes('summary'), 'TailorJourney also offers an email (mailto) channel with the same summary');
+
+// 4b. Student Tours Join Now flow must offer both channels and carry the
+// departure id, dates, traveler count and price/deposit breakdown in both.
+const jst = readSrc('components/student-tours/JoinStudentTour.tsx');
+chk(jst.includes('ContactChoiceButtons'), 'JoinStudentTour renders the shared WhatsApp/Email choice');
+chk(jst.includes('Departure ID: ${departureId'), 'JoinStudentTour message carries the departure id');
+chk(jst.includes('Travelers: ${travelers}'), 'JoinStudentTour message carries traveler count');
+chk(jst.includes('Deposit (${depositPercent}%)'), 'JoinStudentTour message carries the deposit breakdown');
+chk(jst.includes('submitInquiryEmail') || jst.includes('emailPayload'), 'JoinStudentTour wires a real email submission payload');
+
+// 4c. The shared ContactChoiceButtons component must never claim success
+// without a confirmed backend result, and must offer a mailto: fallback.
+const ccb = readSrc('components/ui/ContactChoiceButtons.tsx');
+chk(ccb.includes("result.success") && ccb.includes("setStatus('success')"), "ContactChoiceButtons only shows 'sent' after a real success result");
+chk(ccb.includes('buildMailtoHref'), 'ContactChoiceButtons offers a mailto: fallback on failure');
 
 // 5. Contact form fallback, group quote, quote-only all keep a ?text= context.
 const ct = readSrc('pages/contact.tsx');
