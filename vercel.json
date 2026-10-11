@@ -317,7 +317,7 @@
     },
     {
       "source": "/:lang/tours/fes-3-day",
-      "destination": "/:lang/tours/3-day-sahara-fes",
+      "destination": "/:lang/tours/3-day-fes-merzouga-sahara",
       "permanent": true
     },
     {

@@ -31,8 +31,7 @@ import {
   findArrangement,
   roomArrangements,
 } from '@/data/pricing/rooms';
-import { LADDER_MAX, getLadder, ladderPrice } from '@/data/pricing/ladder';
-import { formatMoney } from '@/lib/pricing';
+import { ladderPrice } from '@/data/pricing/ladder';
 import { buildMailtoHref } from '@/lib/inquiryChannels';
 import { trackEvent } from '@/lib/analytics';
 
@@ -182,23 +181,22 @@ export function TailorJourney({
     [arrangements],
   );
 
-  // Price, or the reason there isn't one. Today every tour is quote-only: the
-  // rate card is unconfigured and no tour is costed, so this is always null and
-  // the panel below renders the tailored-quote line instead of a figure.
-  // The published price for this party, straight from the ladder. Undefined for
-  // a tour that has no published price, and for a party outside what the ladder
-  // covers — both fall through to the quote line rather than to a guess.
-  const ladder = tourId ? getLadder(tourId) : undefined;
+  // Computed internally for quotation purposes only — the current business
+  // policy is quote-based, so this figure is never shown to the visitor and
+  // never sent in the pre-filled WhatsApp/email message (see the render block
+  // and `summary` below, both of which intentionally never reference it for
+  // display). `ladder.ts` itself is untouched: the data and the maths that
+  // would support a future quotation workflow stay intact, only the public
+  // presentation is disabled.
   const price = useMemo(
     () => (tourId ? ladderPrice(tourId, travellers) ?? null : null),
     [tourId, travellers],
   );
-  /** A priced tour, but this party is too large for the published ladder. */
-  const overLadder = Boolean(ladder) && travellers > (ladder?.maxTravelers ?? LADDER_MAX);
 
   // Operator-facing summary. Preferences the traveller left blank are omitted
-  // rather than sent as a guess. The estimate is included only when one exists —
-  // never a placeholder, and never the internal cost breakdown.
+  // rather than sent as a guess. Never includes a price: current policy is
+  // quote-only, so the figure computed above (if any) is for internal use,
+  // not for the message the visitor sends.
   const summary = useMemo(() => {
     const lines = [
       tripName ? `Trip: ${tripName}` : 'Trip: to be discussed',
@@ -211,14 +209,9 @@ export function TailorJourney({
     lines.push(`Room arrangement: ${arrangementLabelEn(arrangement)}`);
     if (camp) lines.push(`Desert camp: ${camp}`);
     if (pace) lines.push(`Pace: ${pace}`);
-    if (price) {
-      // The published selling price only. No cost, no margin, no breakdown.
-      lines.push(`Price per person: €${price.perPerson}`);
-      lines.push(`Total: €${price.total}`);
-    }
     if (notes.trim()) lines.push(`Notes: ${notes.trim()}`);
     return lines.join('\n');
-  }, [tripName, date, travellers, days, style, comfort, arrangement, camp, pace, price, notes]);
+  }, [tripName, date, travellers, days, style, comfort, arrangement, camp, pace, notes]);
 
   const whatsappHref = `${contactInfo.whatsapp}?text=${encodeURIComponent(summary)}`;
   // No email field is collected in this widget (kept deliberately minimal —
@@ -366,10 +359,11 @@ export function TailorJourney({
         </div>
       </div>
 
-      {/* What the traveller has chosen, and what it costs — or, while no tour is
-          costed, the plain statement that the figure comes from us. There is no
-          placeholder amount, no "€0" and no "from" label here: an unpriced
-          journey shows the quote line, which is what actually happens. */}
+      {/* What the traveller has chosen, and the plain statement that pricing
+          comes from a personal quote — current policy. There is no placeholder
+          amount, no "€0" and no "from" label here: every journey shows the
+          quote line below, regardless of whether a figure is computed
+          internally for quotation purposes. */}
       <div className="mt-8 rounded-2xl border border-border bg-background p-5 md:p-6">
         <h3 className="mb-3 text-sm font-bold uppercase tracking-wide text-muted-foreground">
           {t('px_summary')}
@@ -384,38 +378,13 @@ export function TailorJourney({
         </dl>
 
         <div className="mt-5 border-t border-border pt-5">
-          {price ? (
-            <>
-              {/* Per person first, then the total: the traveller compares the
-                  per-head figure, and the total answers "so what do we pay?". */}
-              <p className="font-serif text-4xl font-bold text-foreground">
-                {formatMoney(price.perPerson, price.currency, lang)}{' '}
-                <span className="text-base font-sans font-normal text-muted-foreground">
-                  {t('px_per_person')}
-                </span>
-              </p>
-              <p className="mt-1 text-lg font-semibold text-foreground">
-                {formatMoney(price.total, price.currency, lang)}{' '}
-                <span className="text-base font-normal text-muted-foreground">
-                  {t('px_total')}
-                </span>
-              </p>
-              <p className="mt-3 text-sm text-muted-foreground">{t('px_price_note')}</p>
-            </>
-          ) : overLadder ? (
-            <>
-              {/* A priced tour, but a party bigger than the published ladder.
-                  We say so and hand over to the quote flow rather than
-                  extrapolating a seventh, eighth or fortieth traveller. */}
-              <p className="font-serif text-2xl text-foreground">{t('px_price_pending')}</p>
-              <p className="mt-2 text-sm text-muted-foreground">{t('px_quote_above')}</p>
-            </>
-          ) : (
-            <>
-              <p className="font-serif text-2xl text-foreground">{t('px_price_pending')}</p>
-              <p className="mt-2 text-sm text-muted-foreground">{t('px_price_pending_note')}</p>
-            </>
-          )}
+          {/* Current policy: quote-based, no public numeric price. A figure
+              may be computed above (`price`, from ladder.ts) for internal
+              quotation use, but it is deliberately never rendered here —
+              every party size and every tour shows the same honest "we'll
+              confirm a written quote" message instead of a number. */}
+          <p className="font-serif text-2xl text-foreground">{t('px_price_pending')}</p>
+          <p className="mt-2 text-sm text-muted-foreground">{t('px_price_pending_note')}</p>
         </div>
       </div>
 

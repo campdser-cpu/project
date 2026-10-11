@@ -398,7 +398,7 @@ export const MERZOUGA_GUIDES: HubPage[] = [
       {
         heading: 'What Erg Chebbi is',
         paragraphs: [
-          'Erg Chebbi is a dry, active sand sea roughly 28 km long and 9 km wide at its broadest point, just west of Merzouga. Its dunes climb to about 150 m at the highest crest — the tallest free-standing dunes in Morocco. The name means “the place of the sand” and the whole system is fed by wind blowing across a gravel plain that spreads out from the village.',
+          'Erg Chebbi is a dry, active sand sea roughly 28 km long and 5–7 km wide at its broadest point, just west of Merzouga. Its dunes climb to about 150 m at the highest crest — the tallest free-standing dunes in Morocco. The name means “the place of the sand” and the whole system is fed by wind blowing across a gravel plain that spreads out from the village.',
           'Unlike the small dunes around many Sahara gateways, the Erg Chebbi crests are large enough to walk and climb, and they are accessible without a 4x4 from the main valley road — which is why most Morocco Sahara tours end up here.',
         ],
       },
@@ -437,7 +437,7 @@ export const MERZOUGA_GUIDES: HubPage[] = [
       },
     ],
     faqs: [
-      { question: 'How high are the Erg Chebbi dunes?', answer: 'The dunes reach about 150 m at their highest crests — the tallest in Morocco. The field is roughly 28 km long and up to 9 km wide.' },
+      { question: 'How high are the Erg Chebbi dunes?', answer: 'The dunes reach about 150 m at their highest crests — the tallest in Morocco. The field is roughly 28 km long and up to 7 km wide.' },
       { question: 'Is Erg Chebbi the Sahara desert?', answer: 'Erg Chebbi is a large dune field inside the Sahara, the part visitors experience from Merzouga. The Sahara itself is continent-wide; Erg Chebbi is its most accessible corner in Morocco.' },
       { question: 'Can you visit Erg Chebbi independently?', answer: 'Yes. The dunes are public land. Most people reach them on foot, by shared taxi or on a short camel trek from Merzouga village.' },
       { question: 'When is the best light for photos at Erg Chebbi?', answer: 'Sunrise and sunset. The dunes turn gold and then orange as the sun rises or sets, and the long shadows give the crests strong shape.' },

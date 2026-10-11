@@ -9,6 +9,7 @@ import { getLocalizedDestinations } from '@/i18n/content';
 import { useLanguage, languages } from '@/contexts/LanguageContext';
 import { parseLangPath, langHref } from '@/lib/i18n-routing';
 import { fmtTemplate } from '../tours/intl';
+import { contextualWhatsAppMessage } from '../ui/WhatsAppButton';
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -21,6 +22,11 @@ export function Navbar() {
   const [location] = useLocation();
   const { lang, setLang, t } = useLanguage();
   const { rest } = parseLangPath(location);
+  // Same route-aware message builder StickyBookingCTA and the floating
+  // WhatsAppButton already use, so the nav bar's "Book via WhatsApp" opens a
+  // page-relevant chat instead of a blank one — it previously carried no
+  // ?text= at all, unlike every other WhatsApp CTA on the site.
+  const navWhatsappHref = `${contactInfo.whatsapp}?text=${encodeURIComponent(contextualWhatsAppMessage(location))}`;
   const currentLang = languages.find((l) => l.code === lang) ?? languages[0];
   const destinations = getLocalizedDestinations(lang);
 
@@ -139,7 +145,7 @@ export function Navbar() {
               </motion.div>}</AnimatePresence>
             </div>
 
-            <a href={contactInfo.whatsapp} target="_blank" rel="noreferrer" className="bg-primary text-primary-foreground px-5 xl:px-6 py-2.5 rounded-full text-sm font-bold tracking-wide hover:bg-primary/90 transition-all whitespace-nowrap">{t('nav_book_whatsapp')}</a>
+            <a href={navWhatsappHref} target="_blank" rel="noreferrer" className="bg-primary text-primary-foreground px-5 xl:px-6 py-2.5 rounded-full text-sm font-bold tracking-wide hover:bg-primary/90 transition-all whitespace-nowrap">{t('nav_book_whatsapp')}</a>
           </div>
 
           <button className="lg:hidden p-3 min-w-[44px] min-h-[44px] flex items-center justify-center -mr-2 rtl:mr-0 rtl:-ml-2" aria-label={mobileOpen ? t('nav_close_menu') : t('nav_open_menu')} aria-expanded={mobileOpen} onClick={() => setMobileOpen(v => !v)}>
@@ -173,7 +179,7 @@ export function Navbar() {
         <Link href="/trip-builder" className="text-lg font-medium text-foreground">{t('nav_build_journey')}</Link>
         <Link href="/about" className="text-lg font-medium text-foreground">{t('nav_about')}</Link>
         <Link href="/contact" className="text-lg font-medium text-foreground">{t('nav_contact')}</Link>
-        <a href={contactInfo.whatsapp} target="_blank" rel="noreferrer" className="bg-primary text-primary-foreground px-6 py-3 rounded-full text-center font-bold mt-4">{t('nav_book_whatsapp')}</a>
+        <a href={navWhatsappHref} target="_blank" rel="noreferrer" className="bg-primary text-primary-foreground px-6 py-3 rounded-full text-center font-bold mt-4">{t('nav_book_whatsapp')}</a>
         <div className="pt-5 mt-2 border-t border-border"><div className="flex items-center gap-2 mb-3 text-sm font-semibold text-muted-foreground"><Globe className="w-4 h-4" /><span>{currentLang.flag} {currentLang.nativeLabel}</span></div><div className="grid grid-cols-2 sm:grid-cols-3 gap-2">{languages.map(l => <a key={l.code} href={langHref(l.code, rest)} hrefLang={l.code} onClick={(e) => { e.preventDefault(); setLang(l.code); setMobileOpen(false); }} className={`flex items-center gap-2 px-3 py-2.5 rounded-lg border text-sm ${lang === l.code ? 'border-primary bg-primary/5 text-primary font-bold' : 'border-border text-foreground hover:bg-muted'}`}><span>{l.flag}</span><span className="truncate">{l.nativeLabel}</span>{lang === l.code && <span className="ml-auto rtl:ml-0 rtl:mr-auto">✓</span>}</a>)}</div></div>
       </div></motion.div>}</AnimatePresence>
     </nav>

@@ -257,7 +257,7 @@ export const destinations: Destination[] = [
     shortDesc: "Morocco's most iconic sand sea — soaring dunes at sunrise.",
     image: "/images/dest/erg-chebbi.webp",
     bestTime: "Oct – Apr",
-    description: "Erg Chebbi is one of Morocco's two great ergs — large seas of sand dunes. Stretching roughly 28km long and up to 9km wide, its dunes climb to about 150 metres — the tallest free-standing dunes in the country — and change colour from orange to gold to crimson with the shifting light. Ride a camel at sunset, drive the crests by 4x4, or simply walk up from Merzouga for a sunrise with the sand to yourself; however you meet it, a night between these dunes is among the world's great travel experiences.",
+    description: "Erg Chebbi is one of Morocco's two great ergs — large seas of sand dunes. Stretching roughly 28km long and up to 7km wide, its dunes climb to about 150 metres — the tallest free-standing dunes in the country — and change colour from orange to gold to crimson with the shifting light. Ride a camel at sunset, drive the crests by 4x4, or simply walk up from Merzouga for a sunrise with the sand to yourself; however you meet it, a night between these dunes is among the world's great travel experiences.",
     highlights: ["Sunrise Camel Trek", "Dune Boarding", "Berber Music Evenings", "4x4 Desert Drive", "Luxury Camp Dinner", "Stargazing", "Quad Biking", "Gnawa Music in Khamlia"],
     region: "Sahara Desert",
     coords: { lat: 31.1556, lng: -3.9739 },
@@ -972,7 +972,7 @@ export const tours: Tour[] = [
     id: "3-day-sahara-agadir", name: "3-Day Private Sahara Route from Agadir", duration: "3 Days / 2 Nights", category: "Private · Quote Only", quoteOnly: false,
     highlights: ["Agadir Atlantic coast", "Southern Morocco landscapes", "Ouarzazate / pre-Sahara", "Merzouga and Erg Chebbi", "Private onward planning"],
     price: "425", pricingTiers: { 1: 600, 2: 425, 3: 410, 4: 395, 5: 380 }, image: "/images/catalog/luxury-desert-camp-sunset-merzouga.webp",
-    description: "A private three-day Sahara planning route starting in Agadir. The Moroccan National Tourist Office confirms Agadir as a gateway toward the Sahara and documents the southern Morocco connection toward the desert. A starting price per person is published for this route; the exact total depends on your party size and the accommodation you choose, and is confirmed around your dates before booking.",
+    description: "A private three-day Sahara planning route starting in Agadir. The Moroccan National Tourist Office confirms Agadir as a gateway toward the Sahara and documents the southern Morocco connection toward the desert. A personalised price is quoted for this route rather than published in advance; the exact total depends on your party size and the accommodation you choose, and is confirmed around your dates before booking.",
     routeIds: ["agadir", "ouarzazate", "merzouga", "erg-chebbi"], routeCaption: "Agadir → southern Morocco / Ouarzazate area → Merzouga & Erg Chebbi. Exact road stops, nights and final destination are confirmed in the private quote.",
     itineraryDays: [
       { day: 1, title: "Agadir → Southern Morocco → Ouarzazate area", desc: "Head inland from Agadir through southern Morocco. The day is designed around the practical road journey rather than a fabricated checklist of fixed stops.", stops: ["Agadir", "Southern Morocco", "Ouarzazate area"] },
@@ -982,7 +982,7 @@ export const tours: Tour[] = [
     included: ["Private itinerary planning", "Route confirmed around your dates", "Private transport when included in the confirmed quote", "Desert experience when included in the confirmed itinerary"],
     excluded: ["International flights", "Anything not explicitly included in the confirmed quote", "Personal expenses and gratuities unless agreed"],
     faq: [
-      { question: "Is this a fixed-price Agadir Sahara tour?", answer: "A starting price per person is published for this route. Your exact total depends on how many of you travel — the per-person price comes down as the group grows — and on the accommodation you choose, so we confirm the final figure with your dates before any payment. You are welcome to ask us to adjust the itinerary first." },
+      { question: "Is this a fixed-price Agadir Sahara tour?", answer: "We provide a personalised quote for this route rather than a fixed published price. Your total depends on how many of you travel, your preferred accommodation and the exact itinerary, so we confirm the final figure with your dates before any payment. You are welcome to ask us to adjust the itinerary first." },
       { question: "Does Agadir lead toward the Sahara?", answer: "Yes. The Moroccan National Tourist Office identifies Agadir as one of the gateways toward the Sahara. The exact three-day routing depends on travel dates and where you need to finish." },
       { question: "Can the itinerary be one-way?", answer: "The onward destination can be discussed in the private quote. We avoid publishing a fixed return schedule until it is confirmed." },
       { question: "Can I book now and pay later?", answer: "Request the itinerary first. We confirm the route, inclusions and applicable payment terms before any payment is made." }
@@ -1828,7 +1828,7 @@ export const tours: Tour[] = [
   image: "/images/tours/guided-walk-todra-gorge.webp",
   routeIds: ["marrakech", "ait-ben-haddou", "ouarzazate", "dades-valley", "todra-gorge", "merzouga", "erg-chebbi"],
   routeCaption: "Marrakech → High Atlas → Aït Ben Haddou → Dades & Todra → Merzouga & Erg Chebbi → return to Marrakech.",
-  description: "A private four-day loop from Marrakech to the Sahara and back. You climb the High Atlas, explore Aït Ben Haddou and the Ouarzazate kasbahs, thread the Dades and Todra gorges and spend a night by camel in Erg Chebbi before returning across the mountains. A starting price per person is published for this route; the exact total depends on your party size and the accommodation you choose, and is confirmed around your dates before booking.",
+  description: "A private four-day loop from Marrakech to the Sahara and back. You climb the High Atlas, explore Aït Ben Haddou and the Ouarzazate kasbahs, thread the Dades and Todra gorges and spend a night by camel in Erg Chebbi before returning across the mountains. A personalised price is quoted for this route rather than published in advance; the exact total depends on your party size and the accommodation you choose, and is confirmed around your dates before booking.",
   itineraryDays: [
     { day: 1, title: "Marrakech → High Atlas → Aït Ben Haddou → Dades Valley", desc: "Cross the Tizi n'Tichka pass over the High Atlas with sweeping views, visit the famous ksar of Aït Ben Haddou, stop at Ouarzazate and Skoura, and finish the day in the dramatic Dades Valley.", stops: ["Tizi n'Tichka", "Aït Ben Haddou", "Ouarzazate", "Overnight: Dades Valley"],
       stopDetails: [
@@ -1865,7 +1865,7 @@ export const tours: Tour[] = [
   ],
   excluded: ["International flights", "Lunches and drinks", "Entrance fees", "Tips and personal expenses"],
   faq: [
-    { question: "Is this tour priced publicly?", answer: "A starting price per person is published for this route. Your exact total depends on how many of you travel — the per-person price comes down as the group grows — and on the accommodation you choose, so we confirm the final figure with your dates before any payment. You are welcome to ask us to adjust the itinerary first." },
+    { question: "Is this tour priced publicly?", answer: "We provide a personalised quote for this route rather than a fixed published price. Your total depends on how many of you travel, your preferred accommodation and the exact itinerary, so we confirm the final figure with your dates before any payment. You are welcome to ask us to adjust the itinerary first." },
     { question: "Where does the tour end?", answer: "It is a loop designed to return to Marrakech on day four, though a one-way finish elsewhere can be arranged." },
     { question: "Is the desert camp included?", answer: "Yes, a sunset camel trek and a night at an Erg Chebbi desert camp are part of the proposed itinerary and confirmed before booking." },
   ],
@@ -1888,7 +1888,7 @@ export const tours: Tour[] = [
   image: "/images/curated/hassan-tower-mohammed-v-mausoleum-rabat.webp",
   routeIds: ["casablanca", "rabat", "meknes", "chefchaouen", "fes"],
   routeCaption: "Casablanca → Rabat → Chefchaouen → Meknès & Volubilis → Fes. A northern imperial sweep ending in Fes.",
-  description: "A private route linking Casablanca, Morocco's economic capital, with Fes via the administrative capital of Rabat, the blue town of Chefchaouen, imperial Meknès and the Roman ruins of Volubilis. A starting price per person is published for this route; the exact total depends on your party size and the accommodation you choose, and is confirmed around your dates before booking.",
+  description: "A private route linking Casablanca, Morocco's economic capital, with Fes via the administrative capital of Rabat, the blue town of Chefchaouen, imperial Meknès and the Roman ruins of Volubilis. A personalised price is quoted for this route rather than published in advance; the exact total depends on your party size and the accommodation you choose, and is confirmed around your dates before booking.",
   itineraryDays: [
     { day: 1, title: "Casablanca → Rabat → Chefchaouen", desc: "Take in the Hassan II Mosque and the Corniche in Casablanca, then drive north via Rabat, whose Atlantic kasbah and Hassan Tower merit a stop, before reaching the blue town of Chefchaouen for the night.", stops: ["Hassan II Mosque", "Rabat's Udayas Kasbah", "Hassan Tower", "Overnight: Chefchaouen"],
       stopDetails: [
@@ -1919,7 +1919,7 @@ export const tours: Tour[] = [
   ],
   excluded: ["International flights", "Lunches and drinks", "Entrance fees", "Tips and personal expenses"],
   faq: [
-    { question: "Is this a fixed-price Casablanca tour?", answer: "A starting price per person is published for this route. Your exact total depends on how many of you travel — the per-person price comes down as the group grows — and on the accommodation you choose, so we confirm the final figure with your dates before any payment. You are welcome to ask us to adjust the itinerary first." },
+    { question: "Is this a fixed-price Casablanca tour?", answer: "We provide a personalised quote for this route rather than a fixed published price. Your total depends on how many of you travel, your preferred accommodation and the exact itinerary, so we confirm the final figure with your dates before any payment. You are welcome to ask us to adjust the itinerary first." },
     { question: "Where does the tour end?", answer: "It is designed to end in Fes, though we can arrange a return to Casablanca or an onward transfer." },
     { question: "Does the tour visit Chefchaouen?", answer: "Yes, the Blue City is the night stop on day one, so you have an evening and a morning there." },
   ],
@@ -1942,7 +1942,7 @@ export const tours: Tour[] = [
   image: "/images/curated/hassan-ii-mosque-ornate-bronze-door-casablanca.webp",
   routeIds: ["casablanca", "rabat", "chefchaouen", "meknes", "fes"],
   routeCaption: "Casablanca → Rabat → Asilah → Chefchaouen → Meknès & Volubilis → Fes.",
-  description: "A relaxed private route from Casablanca to Fes along Morocco's Atlantic and northern highlights, with a gentler pace than a shorter circuit. It follows the coast past Rabat to the walled medina of Asilah, turns inland to the Blue City of Chefchaouen, and continues through imperial Meknès and the Roman site of Volubilis to finish in Fes. The itinerary is confirmed around your dates on a basis. A starting price per person is published for this route; the exact total depends on your party size and the accommodation you choose, and is confirmed around your dates before booking.",
+  description: "A relaxed private route from Casablanca to Fes along Morocco's Atlantic and northern highlights, with a gentler pace than a shorter circuit. It follows the coast past Rabat to the walled medina of Asilah, turns inland to the Blue City of Chefchaouen, and continues through imperial Meknès and the Roman site of Volubilis to finish in Fes. The itinerary is confirmed around your dates on a basis. A personalised price is quoted for this route rather than published in advance; the exact total depends on your party size and the accommodation you choose, and is confirmed around your dates before booking.",
   itineraryDays: [
     { day: 1, title: "Casablanca → Rabat → Asilah", desc: "Admire the Hassan II Mosque and Casablanca's seafront, stop in Rabat for the Udayas Kasbah and Hassan Tower, then continue up the coast to the whitewashed medina of Asilah for the night.", stops: ["Hassan II Mosque", "Rabat", "Asilah", "Overnight: Asilah"],
       stopDetails: [
@@ -1978,7 +1978,7 @@ export const tours: Tour[] = [
   ],
   excluded: ["International flights", "Lunches and drinks", "Entrance fees", "Tips and personal expenses"],
   faq: [
-    { question: "Is this a fixed-price tour?", answer: "A starting price per person is published for this route. Your exact total depends on how many of you travel — the per-person price comes down as the group grows — and on the accommodation you choose, so we confirm the final figure with your dates before any payment. You are welcome to ask us to adjust the itinerary first." },
+    { question: "Is this a fixed-price tour?", answer: "We provide a personalised quote for this route rather than a fixed published price. Your total depends on how many of you travel, your preferred accommodation and the exact itinerary, so we confirm the final figure with your dates before any payment. You are welcome to ask us to adjust the itinerary first." },
     { question: "Does the tour reach the Sahara?", answer: "No, this route focuses on the Atlantic coast and the imperial cities. Ask about our desert tours if you wish to continue south." },
     { question: "What is the final city?", answer: "The tour is designed to end in Fes, with a return to Casablanca or onward travel arranged on request." },
   ],
@@ -2004,7 +2004,7 @@ export const tours: Tour[] = [
   image: "/images/tours/camel-trek-sunset-erg-chebbi.webp",
   routeIds: ["casablanca", "fes", "ifrane", "merzouga", "erg-chebbi", "meknes"],
   routeCaption: "Casablanca → Fes → Meknès & Volubilis → Middle Atlas → Merzouga & Erg Chebbi → Fes.",
-  description: "A private route from Casablanca east to Fes and then south into the Sahara, with a night in the dunes at Erg Chebbi before returning to Fes. It pairs the imperial cities and the Roman site of Volubilis with the cedar forests of the Middle Atlas, the palm-filled Ziz Valley and a sunset camel trek in Merzouga. Offered on a basis with details confirmed around your dates. A starting price per person is published for this route; the exact total depends on your party size and the accommodation you choose, and is confirmed around your dates before booking.",
+  description: "A private route from Casablanca east to Fes and then south into the Sahara, with a night in the dunes at Erg Chebbi before returning to Fes. It pairs the imperial cities and the Roman site of Volubilis with the cedar forests of the Middle Atlas, the palm-filled Ziz Valley and a sunset camel trek in Merzouga. Offered on a basis with details confirmed around your dates. A personalised price is quoted for this route rather than published in advance; the exact total depends on your party size and the accommodation you choose, and is confirmed around your dates before booking.",
   itineraryDays: [
     { day: 1, title: "Casablanca → Meknès → Volubilis → Fes", desc: "Leave Casablanca after the Hassan II Mosque, visit imperial Meknès and the Roman ruins of Volubilis, and arrive in Fes for the night.", stops: ["Hassan II Mosque", "Meknès", "Volubilis", "Overnight: Fes"],
       stopDetails: [
@@ -2045,7 +2045,7 @@ export const tours: Tour[] = [
   ],
   excluded: ["International flights", "Lunches and drinks", "Entrance fees", "Tips and personal expenses"],
   faq: [
-    { question: "Is this a fixed-price Casablanca tour?", answer: "A starting price per person is published for this route. Your exact total depends on how many of you travel — the per-person price comes down as the group grows — and on the accommodation you choose, so we confirm the final figure with your dates before any payment. You are welcome to ask us to adjust the itinerary first." },
+    { question: "Is this a fixed-price Casablanca tour?", answer: "We provide a personalised quote for this route rather than a fixed published price. Your total depends on how many of you travel, your preferred accommodation and the exact itinerary, so we confirm the final figure with your dates before any payment. You are welcome to ask us to adjust the itinerary first." },
     { question: "Where does the route finish?", answer: "It is designed to end in Fes on day five, though a return to Casablanca can be arranged." },
     { question: "Is the desert night included?", answer: "Yes, a sunset camel trek and a night in an Erg Chebbi desert camp are part of the proposed itinerary." },
   ],
@@ -2070,7 +2070,7 @@ export const tours: Tour[] = [
   image: "/images/curated/hassan-ii-mosque-exterior-arches-golden-hour-casablanca.webp",
   routeIds: ["casablanca", "rabat", "chefchaouen", "fes", "ifrane", "merzouga", "erg-chebbi", "todra-gorge", "dades-valley", "ait-ben-haddou", "marrakech"],
   routeCaption: "Casablanca → Rabat → Chefchaouen → Fes → Middle Atlas → Merzouga → Dades & Todra → Marrakech → Casablanca. A complete loop of northern and southern Morocco.",
-  description: "A private eight-day loop beginning and ending in Casablanca that takes in the imperial cities, the Blue City, the Sahara and the Red City. Highlights include Rabat, Chefchaouen, a guided day in Fes, a night in the dunes at Erg Chebbi, the Todra and Dades gorges, the Aït Ben Haddou ksar and the bustle of Marrakech. This grand itinerary is offered on a basis, with every night and inclusion confirmed around your dates. A starting price per person is published for this route; the exact total depends on your party size and the accommodation you choose, and is confirmed around your dates before booking.",
+  description: "A private eight-day loop beginning and ending in Casablanca that takes in the imperial cities, the Blue City, the Sahara and the Red City. Highlights include Rabat, Chefchaouen, a guided day in Fes, a night in the dunes at Erg Chebbi, the Todra and Dades gorges, the Aït Ben Haddou ksar and the bustle of Marrakech. This grand itinerary is offered on a basis, with every night and inclusion confirmed around your dates. A personalised price is quoted for this route rather than published in advance; the exact total depends on your party size and the accommodation you choose, and is confirmed around your dates before booking.",
   itineraryDays: [
     { day: 1, title: "Casablanca Airport → Rabat → Chefchaouen", desc: "Your driver meets you at Casablanca airport, then the route takes in the Hassan II Mosque before continuing via Rabat's Atlantic kasbah and Hassan Tower to the blue-washed streets of Chefchaouen for the night.", stops: ["Airport pickup", "Hassan II Mosque", "Rabat", "Chefchaouen", "Overnight: Chefchaouen"],
       stopDetails: [
@@ -2132,7 +2132,7 @@ export const tours: Tour[] = [
   ],
   excluded: ["International flights", "Lunches and drinks", "Entrance fees", "Tips and personal expenses"],
   faq: [
-    { question: "Is this a fixed-price tour?", answer: "A starting price per person is published for this route. Your exact total depends on how many of you travel — the per-person price comes down as the group grows — and on the accommodation you choose, so we confirm the final figure with your dates before any payment. You are welcome to ask us to adjust the itinerary first." },
+    { question: "Is this a fixed-price tour?", answer: "We provide a personalised quote for this route rather than a fixed published price. Your total depends on how many of you travel, your preferred accommodation and the exact itinerary, so we confirm the final figure with your dates before any payment. You are welcome to ask us to adjust the itinerary first." },
     { question: "Where does the circuit start and end?", answer: "It begins and ends in Casablanca, with airport pickup on day one and airport drop-off on the final day." },
     { question: "Are the guided city days included?", answer: "Yes, official local guides for the Fes and Marrakech cultural days are part of the proposed itinerary." },
   ],
@@ -2158,7 +2158,7 @@ export const tours: Tour[] = [
   image: "/images/curated/tannery-workers-dyeing-pits-fes.webp",
   routeIds: ["fes", "ifrane", "merzouga", "erg-chebbi"],
   routeCaption: "Fes → Ifrane → Middle Atlas → Ziz Valley → Merzouga & Erg Chebbi → return to Fes.",
-  description: "A private round trip from Fes to the Sahara and back over four days. The road south crosses the cedar forests and mountain town of Ifrane, descends the palm-filled Ziz Valley, and reaches Merzouga and the great dunes of Erg Chebbi for a sunset camel trek and a night in the desert before returning to Fes. A starting price per person is published for this route; the exact total depends on your party size and the accommodation you choose, and is confirmed around your dates before booking.",
+  description: "A private round trip from Fes to the Sahara and back over four days. The road south crosses the cedar forests and mountain town of Ifrane, descends the palm-filled Ziz Valley, and reaches Merzouga and the great dunes of Erg Chebbi for a sunset camel trek and a night in the desert before returning to Fes. A personalised price is quoted for this route rather than published in advance; the exact total depends on your party size and the accommodation you choose, and is confirmed around your dates before booking.",
   itineraryDays: [
     { day: 1, title: "Fes → Ifrane → Middle Atlas → Midelt → Ziz Valley → Merzouga", desc: "Head south through Ifrane and the cedar country of the Middle Atlas, pause in Midelt, follow the Ziz Valley's oases, and arrive at Merzouga for the night.", stops: ["Ifrane", "Cedar forest", "Midelt", "Ziz Valley", "Overnight: Merzouga"],
       stopDetails: [
@@ -2193,7 +2193,7 @@ export const tours: Tour[] = [
   ],
   excluded: ["International flights", "Lunches and drinks", "Entrance fees", "Tips and personal expenses"],
   faq: [
-    { question: "Is this a fixed-price Fes tour?", answer: "A starting price per person is published for this route. Your exact total depends on how many of you travel — the per-person price comes down as the group grows — and on the accommodation you choose, so we confirm the final figure with your dates before any payment. You are welcome to ask us to adjust the itinerary first." },
+    { question: "Is this a fixed-price Fes tour?", answer: "We provide a personalised quote for this route rather than a fixed published price. Your total depends on how many of you travel, your preferred accommodation and the exact itinerary, so we confirm the final figure with your dates before any payment. You are welcome to ask us to adjust the itinerary first." },
     { question: "Is Fes connected to the Merzouga route?", answer: "Yes. The Moroccan National Tourist Office presents Fes as a gateway to the Sahara and documents the Fes-Errachidia-Midelt-Merzouga connection." },
     { question: "Does the trip return to Fes?", answer: "The standard route is a round trip ending back in Fes, but a one-way finish can be arranged in your quote." },
   ],
@@ -2216,7 +2216,7 @@ export const tours: Tour[] = [
   image: "/images/dest/dades-valley.webp",
   routeIds: ["fes", "ifrane", "merzouga", "erg-chebbi", "todra-gorge", "dades-valley", "ait-ben-haddou", "marrakech"],
   routeCaption: "Fes → Ifrane → Middle Atlas → Merzouga → Todra & Dades → Aït Ben Haddou → Marrakech. A one-way route from Fes to the Red City.",
-  description: "A private one-way journey that links Fes and Marrakech across the very best of the south. It drops through the cedar-fringed Middle Atlas to the dunes of Erg Chebbi for a night in the desert, then traces the Todra and Dades gorges and crosses the High Atlas past Aït Ben Haddou to finish in Marrakech. Offered on a basis, with details confirmed around your dates. A starting price per person is published for this route; the exact total depends on your party size and the accommodation you choose, and is confirmed around your dates before booking.",
+  description: "A private one-way journey that links Fes and Marrakech across the very best of the south. It drops through the cedar-fringed Middle Atlas to the dunes of Erg Chebbi for a night in the desert, then traces the Todra and Dades gorges and crosses the High Atlas past Aït Ben Haddou to finish in Marrakech. Offered on a basis, with details confirmed around your dates. A personalised price is quoted for this route rather than published in advance; the exact total depends on your party size and the accommodation you choose, and is confirmed around your dates before booking.",
   itineraryDays: [
     { day: 1, title: "Fes → Ifrane → Middle Atlas → Ziz Valley → Merzouga", desc: "Travel south through Ifrane and the cedar forests of the Middle Atlas, follow the oases of the Ziz Valley, and arrive in Merzouga for the night.", stops: ["Ifrane", "Middle Atlas cedar forest", "Ziz Valley", "Overnight: Merzouga"],
       stopDetails: [
@@ -2256,7 +2256,7 @@ export const tours: Tour[] = [
   ],
   excluded: ["International flights", "Lunches and drinks", "Entrance fees", "Tips and personal expenses"],
   faq: [
-    { question: "Is this a fixed-price tour?", answer: "A starting price per person is published for this route. Your exact total depends on how many of you travel — the per-person price comes down as the group grows — and on the accommodation you choose, so we confirm the final figure with your dates before any payment. You are welcome to ask us to adjust the itinerary first." },
+    { question: "Is this a fixed-price tour?", answer: "We provide a personalised quote for this route rather than a fixed published price. Your total depends on how many of you travel, your preferred accommodation and the exact itinerary, so we confirm the final figure with your dates before any payment. You are welcome to ask us to adjust the itinerary first." },
     { question: "Where does the route finish?", answer: "It is designed to end in Marrakech, which suits travelers flying out of the city; other arrangements can be made." },
     { question: "Is the desert night included?", answer: "Yes, a sunset camel trek and a night in an Erg Chebbi camp are part of the proposed itinerary." },
   ],
@@ -2283,7 +2283,7 @@ export const tours: Tour[] = [
   image: "/images/curated/leather-tanning-vats-fes-medina.webp",
   routeIds: ["fes", "meknes", "ifrane", "merzouga", "erg-chebbi", "todra-gorge", "dades-valley", "ait-ben-haddou", "marrakech"],
   routeCaption: "Fes → Meknès & Volubilis → Middle Atlas → Merzouga → Todra & Dades → Aït Ben Haddou → Marrakech. A grand eight-day sweep across imperial and desert Morocco.",
-  description: "A private eight-day journey that begins in the imperial city of Fes, takes in Meknès, Volubilis and the cedar forests of the Middle Atlas, spends a night in the dunes at Erg Chebbi, threads the Todra and Dades gorges, and crosses the High Atlas to finish in Marrakech. Offered as a itinerary, with every night and inclusion confirmed around your dates. A starting price per person is published for this route; the exact total depends on your party size and the accommodation you choose, and is confirmed around your dates before booking.",
+  description: "A private eight-day journey that begins in the imperial city of Fes, takes in Meknès, Volubilis and the cedar forests of the Middle Atlas, spends a night in the dunes at Erg Chebbi, threads the Todra and Dades gorges, and crosses the High Atlas to finish in Marrakech. Offered as a itinerary, with every night and inclusion confirmed around your dates. A personalised price is quoted for this route rather than published in advance; the exact total depends on your party size and the accommodation you choose, and is confirmed around your dates before booking.",
   itineraryDays: [
     { day: 1, title: "Guided Fes — medina, tanneries and souks", desc: "A guided day in Fes: the royal gates, the medina of Fes el-Bali around Al Quaraouiyine University, the Chouara tannery and the crafts of the old souks.", stops: ["Fes el-Bali", "Al Quaraouiyine University", "Chouara Tannery", "Royal Palace gates"],
       stopDetails: [
@@ -2340,7 +2340,7 @@ export const tours: Tour[] = [
   ],
   excluded: ["International flights", "Lunches and drinks", "Entrance fees", "Tips and personal expenses"],
   faq: [
-    { question: "Is this a fixed-price Fes tour?", answer: "A starting price per person is published for this route. Your exact total depends on how many of you travel — the per-person price comes down as the group grows — and on the accommodation you choose, so we confirm the final figure with your dates before any payment. You are welcome to ask us to adjust the itinerary first." },
+    { question: "Is this a fixed-price Fes tour?", answer: "We provide a personalised quote for this route rather than a fixed published price. Your total depends on how many of you travel, your preferred accommodation and the exact itinerary, so we confirm the final figure with your dates before any payment. You are welcome to ask us to adjust the itinerary first." },
     { question: "Where does the tour end?", answer: "It is designed to end in Marrakech, though a return to Fes or a different finish can be arranged." },
     { question: "Are the guided city days included?", answer: "Yes, official local guides for the Fes and Marrakech cultural days are part of the proposed itinerary." },
   ],
@@ -2363,7 +2363,7 @@ export const tours: Tour[] = [
   image: "/images/tours/ait-ben-haddou-rooftop-view.webp",
   routeIds: ["agadir", "ouarzazate", "ait-ben-haddou", "marrakech"],
   routeCaption: "Agadir → Taroudant → Ouarzazate → Aït Ben Haddou → Marrakech.",
-  description: "A private route linking coastal Agadir with Marrakech across the Anti-Atlas and High Atlas. It passes the walled souks of Taroudant, the saffron fields of Taliouine, the kasbah country of Ouarzazate and the famous ksar of Aït Ben Haddou, with two nights left to enjoy Marrakech. Offered on a basis, with details confirmed around your dates. A starting price per person is published for this route; the exact total depends on your party size and the accommodation you choose, and is confirmed around your dates before booking.",
+  description: "A private route linking coastal Agadir with Marrakech across the Anti-Atlas and High Atlas. It passes the walled souks of Taroudant, the saffron fields of Taliouine, the kasbah country of Ouarzazate and the famous ksar of Aït Ben Haddou, with two nights left to enjoy Marrakech. Offered on a basis, with details confirmed around your dates. A personalised price is quoted for this route rather than published in advance; the exact total depends on your party size and the accommodation you choose, and is confirmed around your dates before booking.",
   itineraryDays: [
     { day: 1, title: "Agadir → Taroudant → Taliouine → Ouarzazate", desc: "Depart Agadir through the Souss plains to Taroudant's ramparts and crafts market, climb the saffron terraces of Taliouine and cross the Anti-Atlas to Ouarzazate for the night.", stops: ["Taroudant", "Taliouine", "Anti-Atlas", "Overnight: Ouarzazate"],
       stopDetails: [
@@ -2392,7 +2392,7 @@ export const tours: Tour[] = [
   ],
   excluded: ["International flights", "Lunches and drinks", "Entrance fees", "Tips and personal expenses"],
   faq: [
-    { question: "Is this a fixed-price tour?", answer: "A starting price per person is published for this route. Your exact total depends on how many of you travel — the per-person price comes down as the group grows — and on the accommodation you choose, so we confirm the final figure with your dates before any payment. You are welcome to ask us to adjust the itinerary first." },
+    { question: "Is this a fixed-price tour?", answer: "We provide a personalised quote for this route rather than a fixed published price. Your total depends on how many of you travel, your preferred accommodation and the exact itinerary, so we confirm the final figure with your dates before any payment. You are welcome to ask us to adjust the itinerary first." },
     { question: "Does the tour reach the Sahara?", answer: "This itinerary focuses on Taroudant, Ouarzazate, Aït Ben Haddou and Marrakech. Ask about extending toward the Merzouga dunes." },
     { question: "Can I start in Marrakech and finish in Agadir?", answer: "Yes, the direction is easy to reverse and we will shape it around your flights." },
   ],
@@ -2418,7 +2418,7 @@ export const tours: Tour[] = [
   image: "/images/catalog/berber-camel-guide-sahara-merzouga.webp",
   routeIds: ["agadir", "ouarzazate", "ait-ben-haddou", "dades-valley", "todra-gorge", "merzouga", "marrakech"],
   routeCaption: "Agadir → Taroudant → Ouarzazate → Aït Ben Haddou → Dades & Todra → Merzouga → Marrakech.",
-  description: "A private one-way route from the Agadir coast to Marrakech across the kasbah country and the Sahara. It crosses Taroudant and the saffron terraces of Taliouine, explores Ouarzazate and Aït Ben Haddou, threads the Dades and Todra gorges, and spends a sunset with a camel trek and a desert-camp night at Erg Chebbi before finishing in Marrakech. Offered on a basis, with details confirmed around your dates. A starting price per person is published for this route; the exact total depends on your party size and the accommodation you choose, and is confirmed around your dates before booking.",
+  description: "A private one-way route from the Agadir coast to Marrakech across the kasbah country and the Sahara. It crosses Taroudant and the saffron terraces of Taliouine, explores Ouarzazate and Aït Ben Haddou, threads the Dades and Todra gorges, and spends a sunset with a camel trek and a desert-camp night at Erg Chebbi before finishing in Marrakech. Offered on a basis, with details confirmed around your dates. A personalised price is quoted for this route rather than published in advance; the exact total depends on your party size and the accommodation you choose, and is confirmed around your dates before booking.",
   itineraryDays: [
     { day: 1, title: "Agadir → Taroudant → Taliouine → Ouarzazate", desc: "Head inland through the Souss plains, stop at the walled souk city of Taroudant and the saffron fields of Taliouine, then cross the Anti-Atlas to Ouarzazate for the night.", stops: ["Taroudant", "Taliouine", "Anti-Atlas", "Overnight: Ouarzazate"],
       stopDetails: [
@@ -2459,7 +2459,7 @@ export const tours: Tour[] = [
   ],
   excluded: ["International flights", "Lunches and drinks", "Entrance fees", "Tips and personal expenses"],
   faq: [
-    { question: "Is this tour priced publicly?", answer: "A starting price per person is published for this route. Your exact total depends on how many of you travel — the per-person price comes down as the group grows — and on the accommodation you choose, so we confirm the final figure with your dates before any payment. You are welcome to ask us to adjust the itinerary first." },
+    { question: "Is this tour priced publicly?", answer: "We provide a personalised quote for this route rather than a fixed published price. Your total depends on how many of you travel, your preferred accommodation and the exact itinerary, so we confirm the final figure with your dates before any payment. You are welcome to ask us to adjust the itinerary first." },
     { question: "Where does the route finish?", answer: "It is designed to end in Marrakech; a return to Agadir can be arranged in your quote." },
     { question: "Is the desert camp guaranteed?", answer: "A sunset camel trek and a night at an Erg Chebbi camp are in the proposed itinerary and confirmed before booking." },
   ],
@@ -2482,7 +2482,7 @@ export const tours: Tour[] = [
   image: "/images/dest/agadir.webp",
   routeIds: ["agadir", "ouarzazate", "ait-ben-haddou", "dades-valley", "todra-gorge", "merzouga", "draa-valley", "zagora"],
   routeCaption: "Agadir → Taroudant → Ouarzazate → Aït Ben Haddou → Dades & Todra → Merzouga → Draa Valley → back to Agadir.",
-  description: "A private circuit that loops the whole of southern Morocco from the Atlantic coast back to Agadir. You travel inland past the walled souk city of Taroudant and the saffron terraces of Taliouine, cross the film-set kasbah landscapes around Ouarzazate, thread the Dades and Todra gorges, spend a night in the dunes at Erg Chebbi and return through the palm-shaded Draa Valley. The exact nights, accommodation and daily pace are confirmed around your dates before booking, so nothing is invented in advance. A starting price per person is published for this route; the exact total depends on your party size and the accommodation you choose, and is confirmed around your dates before booking.",
+  description: "A private circuit that loops the whole of southern Morocco from the Atlantic coast back to Agadir. You travel inland past the walled souk city of Taroudant and the saffron terraces of Taliouine, cross the film-set kasbah landscapes around Ouarzazate, thread the Dades and Todra gorges, spend a night in the dunes at Erg Chebbi and return through the palm-shaded Draa Valley. The exact nights, accommodation and daily pace are confirmed around your dates before booking, so nothing is invented in advance. A personalised price is quoted for this route rather than published in advance; the exact total depends on your party size and the accommodation you choose, and is confirmed around your dates before booking.",
   itineraryDays: [
     { day: 1, title: "Agadir, coast, kasbah and promenade", desc: "Start on the Atlantic with a relaxed orientation of Agadir: the beachfront promenade, the hilltop kasbah viewpoint and the lively souk, keeping the day light so you absorb the sea air before heading inland.", stops: ["Agadir beach", "Kasbah viewpoint", "Agadir souk"],
       stopDetails: [
@@ -2544,7 +2544,7 @@ export const tours: Tour[] = [
     "Tips and personal expenses",
   ],
   faq: [
-    { question: "Is this a fixed-price tour from Agadir?", answer: "A starting price per person is published for this route. Your exact total depends on how many of you travel — the per-person price comes down as the group grows — and on the accommodation you choose, so we confirm the final figure with your dates before any payment. You are welcome to ask us to adjust the itinerary first." },
+    { question: "Is this a fixed-price tour from Agadir?", answer: "We provide a personalised quote for this route rather than a fixed published price. Your total depends on how many of you travel, your preferred accommodation and the exact itinerary, so we confirm the final figure with your dates before any payment. You are welcome to ask us to adjust the itinerary first." },
     { question: "Where does the circuit start and end?", answer: "It is designed as a loop beginning and ending in Agadir, reaching Marrakech midway. A one-way finish (for example in Marrakech) can be arranged in your private quote." },
     { question: "Is the desert night included?", answer: "Yes, a sunset camel trek and a night in a desert camp at Erg Chebbi are part of the proposed route and will be confirmed in writing before booking." },
   ],
@@ -2596,7 +2596,7 @@ export const tours: Tour[] = [
       { question: "Is the desert camp included?", answer: "The confirmed package specifies the accommodation and desert experience included for your dates. We do not assume a particular camp or upgrade before booking." },
       { question: "Can I extend the trip?", answer: "Yes. If two days feels too compressed, ask us to build a longer private route through the Draa Valley or onward to Merzouga." },
       { question: "Are lunches included?", answer: "Lunches are not included unless they are specifically stated in the confirmed itinerary." },
-      { question: "How is the price confirmed?", answer: "A starting price per person is published for this route. Your exact total depends on how many of you travel — the per-person price comes down as the group grows — and on the accommodation you choose, so we confirm the final figure with your dates before any payment. You are welcome to ask us to adjust the itinerary first." },
+      { question: "How is the price confirmed?", answer: "We provide a personalised quote for this route rather than a fixed published price. Your total depends on how many of you travel, your preferred accommodation and the exact itinerary, so we confirm the final figure with your dates before any payment. You are welcome to ask us to adjust the itinerary first." },
     ],
     practicalInfo: [
       "Zagora is a different desert region from Erg Chebbi near Merzouga — choose this shorter route for the Draa Valley and Zagora, or a Merzouga itinerary when the Erg Chebbi dunes are the priority.",
@@ -2660,7 +2660,7 @@ export const tours: Tour[] = [
       { question: "Is accommodation included?", answer: "Accommodation is selected according to the chosen package and confirmed availability. Exact properties are not promised before booking." },
       { question: "Can the route be customized?", answer: "Yes. This is a private itinerary and can be adjusted around your preferred pace, interests and finish point." },
       { question: "Is the return to Marrakech long?", answer: "Yes. Merzouga is a long drive from Marrakech. The four-day format adds time in the desert but the final return remains a substantial road day." },
-      { question: "How is the price confirmed?", answer: "A starting price per person is published for this route. Your exact total depends on how many of you travel — the per-person price comes down as the group grows — and on the accommodation you choose, so we confirm the final figure with your dates before any payment. You are welcome to ask us to adjust the itinerary first." },
+      { question: "How is the price confirmed?", answer: "We provide a personalised quote for this route rather than a fixed published price. Your total depends on how many of you travel, your preferred accommodation and the exact itinerary, so we confirm the final figure with your dates before any payment. You are welcome to ask us to adjust the itinerary first." },
     ],
     practicalInfo: [
       "Merzouga is a long drive from Marrakech — the four-day format adds time in the desert, but the final return to Marrakech remains a substantial road day.",
@@ -2721,7 +2721,7 @@ export const tours: Tour[] = [
       { question: "Is this private?", answer: "Yes. It is structured as a private journey for your party." },
       { question: "Can we spend more time in the Sahara?", answer: "Yes. The route can be adjusted, and a longer Merzouga format may suit you better if desert time is the priority." },
       { question: "Are meals included?", answer: "Meals depend on the confirmed accommodation package. The final itinerary will state which breakfasts and dinners are included." },
-      { question: "How is the price confirmed?", answer: "A starting price per person is published for this route. Your exact total depends on how many of you travel — the per-person price comes down as the group grows — and on the accommodation you choose, so we confirm the final figure with your dates before any payment. You are welcome to ask us to adjust the itinerary first." },
+      { question: "How is the price confirmed?", answer: "We provide a personalised quote for this route rather than a fixed published price. Your total depends on how many of you travel, your preferred accommodation and the exact itinerary, so we confirm the final figure with your dates before any payment. You are welcome to ask us to adjust the itinerary first." },
     ],
   },
   {
@@ -2759,7 +2759,7 @@ export const tours: Tour[] = [
       { question: "Where do we sleep?", answer: "Accommodation is selected according to the chosen package and availability, with the desert night confirmed before booking." },
       { question: "Can we finish somewhere other than Fes?", answer: "Yes. As a private journey, the finish point can be discussed when you request your quote." },
       { question: "Are lunches included?", answer: "Not unless explicitly included in the confirmed itinerary." },
-      { question: "How is the price confirmed?", answer: "A starting price per person is published for this route. Your exact total depends on how many of you travel — the per-person price comes down as the group grows — and on the accommodation you choose, so we confirm the final figure with your dates before any payment. You are welcome to ask us to adjust the itinerary first." },
+      { question: "How is the price confirmed?", answer: "We provide a personalised quote for this route rather than a fixed published price. Your total depends on how many of you travel, your preferred accommodation and the exact itinerary, so we confirm the final figure with your dates before any payment. You are welcome to ask us to adjust the itinerary first." },
     ],
     practicalInfo: [
       "This is a compact overland itinerary with substantial driving — if you want a slower Sahara experience, ask for a longer version.",
@@ -2823,7 +2823,7 @@ export const tours: Tour[] = [
       { question: "Why is the route four days?", answer: "Four days gives the one-way journey enough room for the Middle Atlas, Sahara and southern valleys without trying to force the entire route into a single rushed transfer." },
       { question: "Can we add nights?", answer: "Yes. Additional nights or a slower itinerary can be discussed as part of the private trip plan." },
       { question: "Are entrance fees included?", answer: "Monument and museum entrance fees are excluded unless specifically stated in the confirmed itinerary." },
-      { question: "How is the price confirmed?", answer: "A starting price per person is published for this route. Your exact total depends on how many of you travel — the per-person price comes down as the group grows — and on the accommodation you choose, so we confirm the final figure with your dates before any payment. You are welcome to ask us to adjust the itinerary first." },
+      { question: "How is the price confirmed?", answer: "We provide a personalised quote for this route rather than a fixed published price. Your total depends on how many of you travel, your preferred accommodation and the exact itinerary, so we confirm the final figure with your dates before any payment. You are welcome to ask us to adjust the itinerary first." },
     ],
     practicalInfo: [
       "Four days gives this one-way journey enough room for the Middle Atlas, Sahara and southern valleys, rather than forcing the entire route into a single rushed transfer.",
@@ -3003,7 +3003,7 @@ export const tours: Tour[] = [
     included: ["Private air-conditioned vehicle and driver-guide for the full route, when included in the confirmed quote", "Accommodation for 13 nights, according to the selected package, including two nights at a desert camp near Merzouga", "Official local guide for the Fes medina day", "The desert experience at Erg Chebbi — sunset camel trek — when included in the confirmed itinerary", "Hotel and airport pick-up and drop-off"],
     excluded: ["International flights", "Lunches and drinks", "Monument and museum entrance fees", "Optional activities such as 4x4 excursions, quad biking or a hot air balloon flight", "Tips and personal expenses", "Anything not written into your confirmed quote"],
     faq: [
-      { question: "Why is this tour quote-only when the shorter tours have a published price?", answer: "A fourteen-day private route varies a great deal by season, pace and the accommodation standard you choose, in a way a single headline price can't represent honestly. We confirm the real figure once we know your dates, party size and preferences." },
+      { question: "Why is this tour quote-only rather than a fixed price?", answer: "A fourteen-day private route varies a great deal by season, pace and the accommodation standard you choose, in a way a single headline price can't represent honestly. We confirm the real figure once we know your dates, party size and preferences." },
       { question: "Is fourteen days too long, or too much driving?", answer: "It's built from the same legs as our shorter tours, joined together rather than compressed — two full nights at the dunes instead of one, and multi-night stops in Fes and Chefchaouen so it isn't a different city every day. If two weeks is more than you want, ask us about the 7-day or 10-day versions of this same route." },
       { question: "Can the route be shortened or reordered?", answer: "Yes. This itinerary is a starting point — cities and regions can be added, dropped or reordered once we know what matters most to you and how many days you actually have." },
       { question: "Does the desert portion include two nights?", answer: "Yes, this itinerary gives Merzouga a full day rather than a sunset-and-leave visit — arrival with a camel trek on day one, then a complete day around Erg Chebbi before continuing north." },

@@ -10,6 +10,7 @@
  */
 import { useEffect } from 'react';
 import { contactInfo } from '@/data/content';
+import { hasPublishedPrice } from '@/lib/promo';
 import { t as translate, type Lang } from '@/i18n';
 import { getLocalizedRouteMeta } from '@/components/seo/route-metadata';
 
@@ -31,6 +32,7 @@ export const ORGANIZATION_SAME_AS: string[] = [
   'https://www.tiktok.com/@morocco.grand.adv',
   'https://www.facebook.com/share/1DFzDX72P3/',
   contactInfo.whatsapp,
+  contactInfo.tripadvisor,
 ];
 
 type JsonLd = Record<string, unknown>;
@@ -185,9 +187,13 @@ export function buildTourSchema(
       name: BRAND,
       url: SITE_URL,
     },
-    // Offer.price must be a number. Tours whose pricing is not a fixed number
-    // ("Request a quote") must not emit an Offer with a non-numeric price.
-    ...(isNumericPrice(tour.price)
+    // Offer.price must be a number, AND the price must actually be published
+    // on the visible page (hasPublishedPrice — currently false site-wide, see
+    // src/lib/promo.ts). Tours whose pricing is not a fixed number ("Request
+    // a quote"), or whose price the page itself no longer shows, must not
+    // emit an Offer — Google's own structured-data guidance is explicit that
+    // markup must not describe information the visitor is not shown.
+    ...(isNumericPrice(tour.price) && hasPublishedPrice(tour.price)
       ? {
           offers: {
             '@type': 'Offer',
@@ -305,16 +311,28 @@ export function buildDestinationSchema(dest: {
       addressRegion: dest.region,
       addressCountry: 'MA',
     },
-    touristType: dest.highlights,
     // `bestTimeToVisit` is NOT a schema.org property (404 on schema.org) and
     // `inLanguage` is not valid on Place types — both caused schema.org
     // validation errors on every destination page. The best-time data is
     // preserved truthfully via the Place-valid `additionalProperty` instead.
+    //
+    // `touristType` previously held `dest.highlights` here, but schema.org
+    // defines touristType as "attraction suitable for type(s) of tourist"
+    // (an audience, e.g. "children" or "visitors from a particular country")
+    // — not a list of on-site activities or features. Highlights are real,
+    // accurate content, just filed under the wrong property; moved to a
+    // second `additionalProperty` entry instead of being dropped or forced
+    // into a property whose own definition they don't match.
     additionalProperty: [
       {
         '@type': 'PropertyValue',
         name: 'Best time to visit',
         value: dest.bestTime,
+      },
+      {
+        '@type': 'PropertyValue',
+        name: 'Highlights',
+        value: dest.highlights.join(', '),
       },
     ],
     containedInPlace: {

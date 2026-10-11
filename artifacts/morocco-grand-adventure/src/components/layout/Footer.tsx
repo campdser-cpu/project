@@ -1,21 +1,27 @@
 import { Logo } from './Logo';
-import { Link } from 'wouter';
+import { Link, useLocation } from 'wouter';
 import { Instagram, Mail, MapPin, Phone } from 'lucide-react';
 import { contactInfo } from '@/data/content';
 import { CITY_HUBS } from '@/data/tour-hierarchy';
 import { getLocalizedDestinations, getLocalizedTours } from '@/i18n/content';
 import { SiWhatsapp, SiYoutube, SiTiktok, SiFacebook, SiTripadvisor } from 'react-icons/si';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { contextualWhatsAppMessage } from '../ui/WhatsAppButton';
 
 const AUTHORITY_DESTINATION_IDS = ['marrakech', 'fes', 'ait-ben-haddou', 'dades-valley', 'merzouga', 'erg-chebbi'];
 const AUTHORITY_TOUR_IDS = ['3-day-sahara-marrakech', '5-day-imperial-cities', '7-day-imperial-cities-sahara-escape'];
 
 export function Footer() {
   const { t, lang } = useLanguage();
+  const [location] = useLocation();
   const destinations = getLocalizedDestinations(lang);
   const authorityDestinations = AUTHORITY_DESTINATION_IDS.map(id => destinations.find(d => d.id === id)).filter(Boolean);
   const tours = getLocalizedTours(lang);
   const authorityTours = AUTHORITY_TOUR_IDS.map(id => tours.find(tour => tour.id === id)).filter(Boolean);
+  // Same route-aware message builder used by StickyBookingCTA, WhatsAppButton
+  // and now the nav bar — the footer's WhatsApp link previously carried no
+  // ?text= at all, opening a blank chat unlike every other WhatsApp CTA.
+  const footerWhatsappHref = `${contactInfo.whatsapp}?text=${encodeURIComponent(contextualWhatsAppMessage(location))}`;
 
   return (
     <footer className="bg-[#102a1e] text-white pt-16 sm:pt-20 pb-10">
@@ -79,7 +85,7 @@ export function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-white/70"><MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" aria-hidden="true" /><span>{t('footer_address')}<br/><a href="https://www.google.com/maps/search/?api=1&query=Morocco%20Grand%20Adventure%20Merzouga" target="_blank" rel="noreferrer" className="text-primary hover:underline text-xs mt-1 inline-block">{t('footer_view_google_maps')}</a></span></li>
               <li className="flex items-center gap-3 text-white/70"><Phone className="w-5 h-5 text-primary shrink-0" aria-hidden="true" /><a href={`tel:${contactInfo.phone}`} className="hover:text-primary transition-colors break-all">{contactInfo.phone}</a></li>
-              <li className="flex items-center gap-3 text-white/70"><SiWhatsapp className="w-5 h-5 text-primary shrink-0" aria-hidden="true" /><a href={contactInfo.whatsapp} target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">{t('footer_whatsapp')}</a></li>
+              <li className="flex items-center gap-3 text-white/70"><SiWhatsapp className="w-5 h-5 text-primary shrink-0" aria-hidden="true" /><a href={footerWhatsappHref} target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">{t('footer_whatsapp')}</a></li>
               <li className="flex items-center gap-3 text-white/70"><Mail className="w-5 h-5 text-primary shrink-0" aria-hidden="true" /><a href={`mailto:${contactInfo.email}`} className="hover:text-primary transition-colors break-all">{contactInfo.email}</a></li>
             </ul>
           </div>
