@@ -24,11 +24,17 @@ type CinematicVideoProps = {
 /**
  * CinematicVideo — a lazy, muted, autoplaying video card used across the site.
  *
- * - The <video> element is NOT mounted until the component scrolls into view
- *   (IntersectionObserver), so below-the-fold videos never download eagerly.
- * - `preload="metadata"` keeps bandwidth low for secondary videos.
- * - `muted + autoPlay + loop + playsInline` delivers a premium silent-film feel.
- * - A poster image with a subtle gradient + play glyph is shown until playback.
+ * - The <video> element is always in the DOM (src/poster visible to a crawler
+ *   from first render) — only *playback* is deferred until the component
+ *   scrolls into view. Google's own JS SEO guidance states Googlebot "does
+ *   not interact with your page" (no scrolling), so a previous version that
+ *   only mounted <video> on IntersectionObserver left every instance of this
+ *   component absent from Googlebot's rendered DOM. `preload="none"` is what
+ *   actually keeps bandwidth low now — no bytes fetch until playback starts.
+ * - `muted + loop + playsInline` delivers a premium silent-film feel once
+ *   playback begins; autoplay is triggered imperatively (see effect below)
+ *   rather than via the native attribute, so preload="none" isn't raced by
+ *   the browser's own autoplay-driven prefetch.
  */
 export function CinematicVideo({
   src,
@@ -41,6 +47,7 @@ export function CinematicVideo({
   className = '',
 }: CinematicVideoProps) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const [inView, setInView] = useState(false);
   const [playing, setPlaying] = useState(false);
 
@@ -70,6 +77,11 @@ export function CinematicVideo({
     return () => observer.disconnect();
   }, [inView]);
 
+  useEffect(() => {
+    if (!inView || !autoPlay || gentleMode) return;
+    videoRef.current?.play().catch(() => {});
+  }, [inView, autoPlay, gentleMode]);
+
   return (
     <motion.div
       ref={containerRef}
@@ -79,29 +91,19 @@ export function CinematicVideo({
       transition={{ duration: 0.8, ease: 'easeOut' }}
       className={`relative rounded-3xl overflow-hidden shadow-2xl border border-border bg-black ${className}`}
     >
-      {inView ? (
-        <video
-          src={src}
-          poster={poster}
-          muted
-          autoPlay={autoPlay && !gentleMode}
-          loop={autoPlay && !gentleMode}
-          playsInline
-          preload={gentleMode ? 'none' : 'metadata'}
-          controls
-          onPlaying={() => setPlaying(true)}
-          aria-label={alt}
-          className={`w-full ${aspectClass} object-cover bg-black`}
-        />
-      ) : (
-        <img
-          src={poster}
-          alt=""
-          loading="lazy"
-          decoding="async"
-          className={`w-full ${aspectClass} object-cover bg-muted`}
-        />
-      )}
+      <video
+        ref={videoRef}
+        src={src}
+        poster={poster}
+        muted
+        loop={autoPlay && !gentleMode}
+        playsInline
+        preload="none"
+        controls
+        onPlaying={() => setPlaying(true)}
+        aria-label={alt}
+        className={`w-full ${aspectClass} object-cover bg-black`}
+      />
 
       {/* Gradient overlay for text legibility */}
       <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/70 via-transparent to-black/10" />

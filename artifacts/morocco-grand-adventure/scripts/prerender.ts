@@ -43,6 +43,7 @@ import { BOOK_COPY } from '../src/data/book-copy';
 import { THINGS_COPY } from '../src/data/things-to-do/all';
 import { THINGS, type GroupKey } from '../src/data/things-to-do/types';
 import { publishablePhotosForContexts, publishableLibraryPhotos, photoSrcSet, type PhotoAsset } from '../src/data/photoLibrary';
+import { GALLERY_VIDEOS } from '../src/data/galleryVideos';
 import { languages, t as translate } from '../src/i18n/index';
 import type { Lang } from '../src/i18n/index';
 import {
@@ -290,6 +291,29 @@ function figureImg(src: string, alt: string, caption: string, size?: { width: nu
   return `    <figure>\n      <img src="${src}" alt="${escapeHtml(alt)}"${dims} loading="lazy" decoding="async" class="w-full h-72 md:h-96 object-cover" />\n      <figcaption>${escapeHtml(caption)}</figcaption>\n    </figure>\n`;
 }
 /**
+ * Crawlable <video> block. Mirrors the real client markup (CinematicVideo.tsx,
+ * and the direct <video> elements in tour-detail.tsx / gallery.tsx): same
+ * src, same poster, same preload="none" (no bytes fetched by a crawler or a
+ * real visitor until playback starts), controls present. Only ever called
+ * with an already-shipped file under /videos/ — never a placeholder.
+ */
+function videoBlock(src: string, poster: string, alt: string, caption?: string): string {
+  const cap = caption ? `\n      <figcaption>${escapeHtml(caption)}</figcaption>` : '';
+  return `    <figure>\n      <video src="${src}" poster="${poster}" controls muted playsinline preload="none" aria-label="${escapeHtml(alt)}" class="w-full aspect-video object-cover"></video>${cap}\n    </figure>\n`;
+}
+/**
+ * Destination-page videos. Mirrors the 3 hardcoded <CinematicVideo> blocks in
+ * src/pages/destination-detail.tsx (destination.id === 'merzouga' /
+ * 'ait-ben-haddou' / 'chefchaouen') — not data-driven on the Destination type
+ * there, so mirrored here the same way. If a destination video is added or
+ * changed in React, update this map too.
+ */
+const DESTINATION_VIDEOS: Record<string, { src: string; poster: string; altKey: string; titleKey: string }> = {
+  'merzouga': { src: '/videos/merzouga-campfire.mp4', poster: '/images/dest/merzouga.webp', altKey: 'dd_merzouga_campfire_alt', titleKey: 'dest_merzouga_caption' },
+  'ait-ben-haddou': { src: '/videos/ait-benhaddou-kasbah-unesco-morocco.mp4', poster: '/images/dest/ait-ben-haddou.webp', altKey: 'dd_abh_video_alt', titleKey: 'dd_abh_video_title' },
+  'chefchaouen': { src: '/videos/chefchaouen-blue-city-morocco.mp4', poster: '/images/dest/chefchaouen.webp', altKey: 'dd_chef_video_alt', titleKey: 'dd_chef_video_title' },
+};
+/**
  * Responsive catalog figure — mirrors the runtime CatalogPhoto / Local Food <img>
  * exactly (same srcset, sizes, intrinsic dimensions, lazy loading) so the
  * prerendered destination content carries the same image + alt + caption and
@@ -401,7 +425,10 @@ function buildHomeContent(lang: Lang): string {
     { rest: '/travel-info', label: 'dest_travel_info' },
   ].map((d) => link(`${SITE_URL}/${lang}${d.rest}`, tr(lang, d.label)));
   const discoveryBlock = h2(tr(lang, 'home_start_title')) + paragraph(tr(lang, 'home_start_sub')) + ul(discovery);
-  return lcpPoster + heroH1Block + paragraph(tr(lang, 'hero_subtext')) + discoveryBlock + h2(tr(lang, 'section_destinations') || 'Top Destinations') + `    <ul>\n${destNames}\n    </ul>\n` + h2(tr(lang, 'section_tours') || 'Featured Tours') + `    <ul>\n${tourNames}\n    </ul>\n` + saharaBlock + hubBlock + dayTripBlock + bookingStepsBlock + homeFaqBlock + h2(tr(lang, 'section_reviews') || 'Traveler Stories') + `<div class="prerendered-reviews-container">\n${reviewBlocks}\n    </div>\n`;
+  // Mirrors the runtime homepage's "Experience the Sahara" CinematicVideo
+  // section (src/pages/home.tsx) — same video file, same i18n keys.
+  const expVideoBlock = h2(tr(lang, 'home_exp_title')) + paragraph(tr(lang, 'home_exp_sub')) + videoBlock('/videos/sahara-experience.mp4', '/images/personal/luxury-camp-dusk.webp', tr(lang, 'home_exp_video_alt'));
+  return lcpPoster + heroH1Block + paragraph(tr(lang, 'hero_subtext')) + discoveryBlock + h2(tr(lang, 'section_destinations') || 'Top Destinations') + `    <ul>\n${destNames}\n    </ul>\n` + h2(tr(lang, 'section_tours') || 'Featured Tours') + `    <ul>\n${tourNames}\n    </ul>\n` + saharaBlock + hubBlock + dayTripBlock + expVideoBlock + bookingStepsBlock + homeFaqBlock + h2(tr(lang, 'section_reviews') || 'Traveler Stories') + `<div class="prerendered-reviews-container">\n${reviewBlocks}\n    </div>\n`;
 }
 function buildHomeSchemas(lang: Lang): Record<string, unknown>[] {
   const reviewData = reviews.map((r) => ({ name: tr(lang, r.nameKey), text: tr(lang, r.quoteKey), rating: r.rating }));
@@ -434,6 +461,10 @@ function buildToursContent(lang: Lang): string {
   // next to desertToursLink — same "build a custom trip" key already used by
   // the merzouga-guide CTA (guide_cta_build), so no new translation key needed.
   const tripBuilderLink = paragraph(link(`${SITE_URL}/${lang}/trip-builder`, tr(lang, 'guide_cta_build')));
+  // Mirrors the live /tours page's CinematicVideo section (src/pages/tours.tsx,
+  // rendered when no filter is active — the default, canonical view this
+  // static page represents) — same video file, same i18n keys.
+  const toursVideoBlock = h2(tr(lang, 'tours_experience')) + paragraph(tr(lang, 'tours_sub')) + videoBlock('/videos/sahara-experience.mp4', '/images/personal/luxury-camp-dusk.webp', tr(lang, 'tours_heading'));
   // Mirrors the live-page FAQ accordion (tours_faq_q1..4/a1..4) — same
   // question/answer copy, same heading key (td_faq_title), same convention
   // already used by the university-groups FAQ above.
@@ -462,6 +493,7 @@ function buildToursContent(lang: Lang): string {
     + `    <ul class="prerendered-city-hubs">\n${cityLinks}\n    </ul>\n`
     + `    <ul class="prerendered-tour-filters">\n${filterCityLinks}\n    </ul>\n`
     + filterBar
+    + toursVideoBlock
     + blocks
     + toursFaq;
 }
@@ -917,6 +949,12 @@ function buildTourDetailContent(id: string, lang: Lang): string {
     { src: '/images/dest/ait-ben-haddou.webp', caption: 'Aït Benhaddou ksar' },
   ];
   const galleryBlock = h2(tr(lang, 'tour_gallery')) + galleryImages.map((g) => figureImg(g.src, g.caption, g.caption, g.width && g.height ? { width: g.width, height: g.height } : undefined)).join('');
+  // Mirrors the live tour-detail page's "Cinematic Video" section
+  // (src/pages/tour-detail.tsx) — only emitted for the handful of tours that
+  // genuinely have a videoUrl set in src/data/content.ts, same as the client.
+  const videoSection = tour.videoUrl
+    ? h2(tr(lang, 'td_cinematic')) + videoBlock(tour.videoUrl, tour.videoPoster ?? '', fmt(tr(lang, 'td_preview_video_aria'), { name: tour.name }))
+    : '';
   // Quick Facts: mirrors the client's "at a glance" panel in tour-detail.tsx —
   // same verified start/end derivation (tour-quick-facts.ts) and the same
   // per-night "where you'll sleep" summary reused from the meals data below,
@@ -949,7 +987,7 @@ function buildTourDetailContent(id: string, lang: Lang): string {
       + (qfAccommodation ? `      <dt>${escapeHtml(tr(lang, 'jx_grp_stay'))}</dt><dd>${escapeHtml(qfAccommodation)}</dd>\n` : '')
       + `    </dl>\n`
     : '';
-  return breadcrumb + h1(tour.name) + paragraph(tour.description ?? '') + paragraph(`${tr(lang, 'search_duration')}: ${tour.duration}`) + quickFactsBlock + h2(tr(lang, 'tour_why_love')) + ul(tour.highlights) + suitableForBlock + whyChooseBlock + (isDayTrip ? dayFlowBlock : multiDayItineraryBlock) + practicalInfoBlock + experiencesBlock + optionalBlock + inclusionsHtml + bookingStepsBlock(lang) + galleryBlock + (faqs.length > 0 ? h2(tr(lang, 'nav_faq')) + faqBlock(faqs) : '') + (departHub ? h2(fmt(tr(lang, 'hub_related_title'), { city: tr(lang, `hub_${departHub.id}_name`) })) + paragraph(link(`${SITE_URL}/${lang}/tours/from-${departHub.slug}`, fmt(tr(lang, 'hub_related_browse'), { city: tr(lang, `hub_${departHub.id}_name`) }))) : '') + bestForBlock + guideLinksBlock + rawParagraph(link(`${SITE_URL}/${lang}/book`, tr(lang, 'book_form_cta'))) + buildTopicalLinksContent({ tourId: tour.id }, lang);
+  return breadcrumb + h1(tour.name) + paragraph(tour.description ?? '') + paragraph(`${tr(lang, 'search_duration')}: ${tour.duration}`) + quickFactsBlock + h2(tr(lang, 'tour_why_love')) + ul(tour.highlights) + suitableForBlock + whyChooseBlock + (isDayTrip ? dayFlowBlock : multiDayItineraryBlock) + practicalInfoBlock + experiencesBlock + optionalBlock + inclusionsHtml + bookingStepsBlock(lang) + galleryBlock + videoSection + (faqs.length > 0 ? h2(tr(lang, 'nav_faq')) + faqBlock(faqs) : '') + (departHub ? h2(fmt(tr(lang, 'hub_related_title'), { city: tr(lang, `hub_${departHub.id}_name`) })) + paragraph(link(`${SITE_URL}/${lang}/tours/from-${departHub.slug}`, fmt(tr(lang, 'hub_related_browse'), { city: tr(lang, `hub_${departHub.id}_name`) }))) : '') + bestForBlock + guideLinksBlock + rawParagraph(link(`${SITE_URL}/${lang}/book`, tr(lang, 'book_form_cta'))) + buildTopicalLinksContent({ tourId: tour.id }, lang);
 }
 function buildDestinationsContent(lang: Lang): string {
   // Mirror the live /destinations page structure: localized H1 + intro, each
@@ -968,6 +1006,10 @@ function buildDestinationDetailContent(destId: string, lang: Lang): string {
   const d = getLocalizedDestination(destId, lang);
   if (!d) return h1('Not Found') + paragraph('This destination could not be found.');
   const gallery = (d.gallery ?? []).map((p) => figureImg(p.src, p.alt, p.caption, p.width && p.height ? { width: p.width, height: p.height } : undefined)).join('\n');
+  // Mirrors the live destination page's CinematicVideo section for the 3
+  // destinations that have one (see DESTINATION_VIDEOS above).
+  const destVideo = DESTINATION_VIDEOS[destId];
+  const videoBlockHtml = destVideo ? videoBlock(destVideo.src, destVideo.poster, tr(lang, destVideo.altKey), tr(lang, destVideo.titleKey)) : '';
   // Mirror the runtime destination page: every catalog photo reinforced for this
   // destination under a "through our lens" heading, followed by the culinary food
   // photograph. No cap so every mapped catalog image is discoverable.
@@ -1018,6 +1060,7 @@ function buildDestinationDetailContent(destId: string, lang: Lang): string {
   })() : '';
   return h1(d.name) + paragraph(d.shortDesc) + paragraph(d.description) + h2(tr(lang, 'dest_about')) + ul(d.highlights)
     + (gallery ? h2(`${d.name} ${tr(lang, 'dest_pictures_title')}`) + gallery : '')
+    + videoBlockHtml
     + catalogBlock
     + foodBlock
     + toursBlock
@@ -1407,6 +1450,17 @@ function buildExperienceContent(rest: string, lang: Lang): string {
   const desertFaq = rest === '/desert-tours'
     ? `\n    <h2>${escapeHtml(tr(lang, 'td_faq_title'))}</h2>\n` + [1, 2, 3, 4].map((n) => `    <h3>${escapeHtml(tr(lang, `dt2_faq_q${n}`))}</h3><p>${escapeHtml(tr(lang, `dt2_faq_a${n}`))}</p>`).join('\n')
     : '';
+  // Mirrors the live /desert-tours page's CinematicVideo section
+  // (src/pages/desert-tours.tsx) — same video file, same i18n keys.
+  const desertVideoBlock = rest === '/desert-tours'
+    ? h2(tr(lang, 'desert_camel_heading')) + paragraph(tr(lang, 'desert_camel_sub')) + videoBlock('/videos/sahara-desert-camel-trek-atlas-mountains-morocco.mp4', '/images/personal/dunes-camels-poster.webp', tr(lang, 'desert_camel_alt'))
+    : '';
+  // Mirrors the live /gallery page's video grid (src/pages/gallery.tsx) —
+  // same GALLERY_VIDEOS single source of truth (src/data/galleryVideos.ts),
+  // so this list can never drift from what a visitor actually sees.
+  const galleryVideosBlock = rest === '/gallery'
+    ? h2(tr(lang, 'gallery_films_heading')) + GALLERY_VIDEOS.map((v) => videoBlock(v.src, v.poster, tr(lang, v.titleKey))).join('\n')
+    : '';
   // Official photo library: render the ACTUAL PDF-derived photographs on the gallery page
   const galleryLibPhotos = rest === '/gallery' ? publishableLibraryPhotos().map((p) => libraryPhotoFigure(p)).join('\n') : '';
   // Day Trips: the real, bookable day-trip products, rendered first and
@@ -1579,7 +1633,7 @@ function buildExperienceContent(rest: string, lang: Lang): string {
     ${studentTourList.filter((s) => s.slug !== stProduct.slug).map((s) => `<p>${link(`${SITE_URL}/${lang}/student-tours/${s.slug}`, getLocalizedStudentTour(s, lang).title)}</p>`).join('\n    ')}
     ${stProduct.related.map((r) => `<p>${link(`${SITE_URL}/${lang}${r.to}`, r.label)}</p>`).join('\n    ')}` : '';
 
-  return heading + intro + dayTripProducts + studentTours + studentTourDetail + ugPage + studentBacklink + desertMoments + galleryLibPhotos + tBlocks + dBlocks + tripBuilderCta + desertFaq;
+  return heading + intro + dayTripProducts + studentTours + studentTourDetail + ugPage + studentBacklink + desertMoments + desertVideoBlock + galleryLibPhotos + galleryVideosBlock + tBlocks + dBlocks + tripBuilderCta + desertFaq;
 }
 
 // ── Data-driven hub / comparison pages (Merzouga guide + comparisons) ───────────
