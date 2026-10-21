@@ -178,6 +178,12 @@ const TOUR_ROUTES = [
   'marrakech-ouzoud-waterfalls-day-trip',
   'marrakech-imlil-day-trip',
   'agadir-taghazout-day-trip',
+  '3-day-ouarzazate-merzouga-fes',
+  '3-day-ouarzazate-merzouga-marrakech',
+  '2-day-ouarzazate-merzouga-sahara',
+  '3-day-errachidia-merzouga-marrakech',
+  '3-day-errachidia-merzouga-fes',
+  '2-day-errachidia-merzouga',
 ];
 
 // MGA_THREE_DAY_PRERENDER_V1
@@ -286,9 +292,15 @@ function faqBlock(faqs: { question: string; answer: string }[]): string {
 }
 // Curated-image figure used by destination galleries and experience pages.
 // Alt text is natural/descriptive (never keyword-stuffed) per the Image-SEO pack.
-function figureImg(src: string, alt: string, caption: string, size?: { width: number; height: number }): string {
+function figureImg(src: string, alt: string, caption: string, size?: { width: number; height: number }, credit?: { label: string; sourceUrl: string; license: string; licenseUrl: string }): string {
   const dims = size ? ` width="${size.width}" height="${size.height}"` : '';
-  return `    <figure>\n      <img src="${src}" alt="${escapeHtml(alt)}"${dims} loading="lazy" decoding="async" class="w-full h-72 md:h-96 object-cover" />\n      <figcaption>${escapeHtml(caption)}</figcaption>\n    </figure>\n`;
+  // CC BY-SA requires credit to actually be shown, not merely recorded —
+  // rendered here too (not just client-side) so it's present without JS.
+  // `credit.label` is pre-localized by the caller (which has `lang` in scope).
+  const creditHtml = credit
+    ? `\n      <p class="prerendered-photo-credit"><a href="${credit.sourceUrl}">${escapeHtml(credit.label)}</a> · <a href="${credit.licenseUrl}">${escapeHtml(credit.license)}</a></p>`
+    : '';
+  return `    <figure>\n      <img src="${src}" alt="${escapeHtml(alt)}"${dims} loading="lazy" decoding="async" class="w-full h-72 md:h-96 object-cover" />\n      <figcaption>${escapeHtml(caption)}</figcaption>${creditHtml}\n    </figure>\n`;
 }
 /**
  * Crawlable <video> block. Mirrors the real client markup (CinematicVideo.tsx,
@@ -948,7 +960,11 @@ function buildTourDetailContent(id: string, lang: Lang): string {
     { src: '/images/dest/erg-chebbi.webp', caption: 'Golden sands of Erg Chebbi' },
     { src: '/images/dest/ait-ben-haddou.webp', caption: 'Aït Benhaddou ksar' },
   ];
-  const galleryBlock = h2(tr(lang, 'tour_gallery')) + galleryImages.map((g) => figureImg(g.src, g.caption, g.caption, g.width && g.height ? { width: g.width, height: g.height } : undefined)).join('');
+  const galleryBlock = h2(tr(lang, 'tour_gallery')) + galleryImages.map((g) => figureImg(
+    g.src, g.caption, g.caption,
+    g.width && g.height ? { width: g.width, height: g.height } : undefined,
+    g.credit ? { label: fmt(tr(lang, 'photo_credit'), { name: g.credit.photographer }), sourceUrl: g.credit.sourceUrl, license: g.credit.license, licenseUrl: g.credit.licenseUrl } : undefined,
+  )).join('');
   // Mirrors the live tour-detail page's "Cinematic Video" section
   // (src/pages/tour-detail.tsx) — only emitted for the handful of tours that
   // genuinely have a videoUrl set in src/data/content.ts, same as the client.

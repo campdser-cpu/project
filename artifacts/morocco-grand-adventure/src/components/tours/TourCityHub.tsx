@@ -82,6 +82,18 @@ export function TourCityHub({ hub }: { hub: CityHub }) {
             }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/40" />
+          {hub.heroCredit && (
+            // Always visible — CC BY-SA requires credit to actually be shown.
+            <span className="absolute bottom-3 right-3 z-10 flex items-center gap-1 bg-black/45 text-white/90 text-[11px] leading-tight px-2 py-1 rounded-md backdrop-blur-sm">
+              <a href={hub.heroCredit.sourceUrl} target="_blank" rel="noreferrer noopener" className="hover:underline">
+                {fmtTemplate(t('photo_credit'), { name: hub.heroCredit.photographer })}
+              </a>
+              <span aria-hidden="true">·</span>
+              <a href={hub.heroCredit.licenseUrl} target="_blank" rel="noreferrer noopener" className="hover:underline">
+                {hub.heroCredit.license}
+              </a>
+            </span>
+          )}
         </div>
 
         <div className="relative z-10 container mx-auto px-4 pb-14">

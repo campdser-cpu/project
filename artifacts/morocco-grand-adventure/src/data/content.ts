@@ -802,12 +802,26 @@ export type ItineraryDay = {
   image?: { src: string; alt: string };
 };
 export type TourFaq = { question: string; answer: string };
+/**
+ * Attribution for a licensed third-party photograph (e.g. Wikimedia Commons).
+ * Only present on images that require it — omitted entirely for the site's
+ * own/already-cleared photography. `sourceUrl` points at the original file's
+ * description page (verifiable provenance); `licenseUrl` at the license deed.
+ */
+export type ImageCredit = {
+  photographer: string;
+  source: string;
+  sourceUrl: string;
+  license: string;
+  licenseUrl: string;
+};
 export type TourGalleryImage = {
   src: string;
   caption: string;
   /** Real, measured intrinsic size of the file — omit rather than guess. */
   width?: number;
   height?: number;
+  credit?: ImageCredit;
 };
 export type Tour = {
   id: string;
@@ -3276,6 +3290,253 @@ export const tours: Tour[] = [
     ],
     gallery: [
       { src: "/images/dest/taghazout.webp", caption: "Taghazout, surf village on the Atlantic." },
+    ],
+  },
+  {
+    id: "3-day-ouarzazate-merzouga-fes",
+    name: "3-Day Ouarzazate to Fes via the Sahara",
+    duration: "3 Days / 2 Nights",
+    category: "Sahara Crossing · Quote Only",
+    highlights: ["Dades Valley and Todra Gorge", "Two nights at a Merzouga desert camp", "Sunset and sunrise camel trek at Erg Chebbi", "Rissani market and Erfoud on the return", "Ziz Valley and the Middle Atlas cedar forest", "One-way route ending in Fes"],
+    price: "", pricingTiers: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 }, quoteOnly: true,
+    image: "/images/dest/dades-valley.webp",
+    description: "A private one-way crossing from the film-set town of Ouarzazate to the Sahara and on to Fes. The road east follows the Dades Valley and the Todra Gorge before reaching Merzouga for two nights at a desert camp, then returns north through Rissani, Erfoud and the Ziz Valley to the Middle Atlas cedar forest and imperial Fes. A personalised price is quoted for this route rather than published in advance; the exact total depends on your party size and the accommodation you choose, and is confirmed around your dates before booking.",
+    routeIds: ["ouarzazate", "dades-valley", "todra-gorge", "merzouga", "erg-chebbi", "ifrane", "fes"],
+    routeCaption: "Ouarzazate → Dades Valley → Todra Gorge → Merzouga & Erg Chebbi → Rissani & Erfoud → Ziz Valley → Ifrane → Fes.",
+    itineraryDays: [
+      { day: 1, title: "Ouarzazate → Dades Valley → Todra Gorge → Merzouga", desc: "Leave Ouarzazate and drive east along the Dades Valley, known locally as the Road of a Thousand Kasbahs, with a stop to see the valley's folded rock formations. Continue through the Todra Gorge, where 300-metre limestone walls narrow over the riverbed, before the final stretch to Merzouga. In the late afternoon a camel leads you into the dunes of Erg Chebbi for sunset and the first night at a desert camp.", stops: ["Ouarzazate", "Dades Valley", "Todra Gorge", "Merzouga", "Overnight: Desert camp, Erg Chebbi"] },
+      { day: 2, title: "Merzouga and Erg Chebbi, at your own pace", desc: "A full day around Merzouga with no further driving. Options on request include a sunrise walk onto the dunes, a visit to Khamlia village to hear Gnaoua music, or simply time at the camp to rest before a second night under the stars.", stops: ["Erg Chebbi dunes", "Khamlia village (optional)", "Overnight: Desert camp, Erg Chebbi"] },
+      { day: 3, title: "Sunrise → Rissani → Erfoud → Ziz Valley → Ifrane → Fes", desc: "Rise before dawn for a last look at the dunes, then start the drive north. The route passes Rissani's old market town and Erfoud, known for its fossil workshops, before following the palm-lined Ziz Valley — a route the Moroccan National Tourist Office documents as the main road toward Fes. The road climbs into the Middle Atlas cedar forest around Ifrane, home to Barbary macaques, before the final descent into Fes. This is a long driving day; the exact arrival time depends on stops made along the way.", stops: ["Rissani", "Erfoud", "Ziz Valley", "Ifrane cedar forest", "Fes"] },
+    ],
+    included: ["Private air-conditioned vehicle and driver-guide for the full route, when included in the confirmed quote", "Two nights at a Merzouga desert camp, according to the selected package", "Sunset and sunrise camel trek at Erg Chebbi", "Hotel and airport pick-up and drop-off"],
+    excluded: ["International flights", "Lunches and drinks", "Entrance fees not listed as included", "Tips and personal expenses", "Anything not written into your confirmed quote"],
+    faq: [
+      { question: "How long is the drive each day?", answer: "Day one from Ouarzazate to Merzouga is around 6 hours of driving via the Dades Valley and Todra Gorge, with stops. Day three to Fes is the longest driving day, around 7 hours via the Ziz Valley and the Middle Atlas — we build in rest stops rather than rushing." },
+      { question: "Why two nights in Merzouga instead of one?", answer: "A second night means a full day around Erg Chebbi without being on the road, and both a sunset and a sunrise over the dunes rather than just one." },
+      { question: "What is the desert camp like?", answer: "Accommodation is selected according to the confirmed package and availability — we'll describe the exact camp and confirm amenities with your quote rather than assume a standard here." },
+      { question: "Can this tour start from Marrakech or another city instead?", answer: "This itinerary is built around an Ouarzazate start. If you're arriving via Marrakech, Fes or another city, ask us about our other Sahara routes or a custom journey that includes the transfer to Ouarzazate." },
+      { question: "Is this a private tour?", answer: "Yes. It is structured as a private journey for your party, with the route and pace confirmed around your dates." },
+    ],
+    practicalInfo: [
+      "This is a one-way route — flights or onward travel should be arranged from Fes, not Ouarzazate.",
+      "Desert nights are cold outside the warmer months; warm layers are worth packing even in spring and autumn.",
+      "The Ziz Valley and Ifrane sections add real scenic variety to the return leg compared with retracing the outbound road.",
+    ],
+    suitableFor: [
+      "Travelers starting in Ouarzazate who want to continue north rather than loop back",
+      "Those who want two nights in the desert rather than a single overnight stop",
+      "Travelers interested in the Rissani–Erfoud–Ziz Valley corridor, not just the dunes",
+    ],
+    gallery: [
+      { src: "/images/dest/dades-valley.webp", caption: "The Dades Valley, known locally as the Road of a Thousand Kasbahs." },
+      { src: "/images/dest/todra-gorge.webp", caption: "The Todra Gorge's 300-metre limestone walls." },
+      { src: "/images/library/erg-chebbi-camel-trekking-sunset-morocco-mga-001.jpg", caption: "A Berber guide leading a camel caravan across Erg Chebbi at dusk." },
+      { src: "/images/dest/rissani.webp", caption: "The ornate gateway into Rissani's old market town.", width: 1600, height: 989, credit: { photographer: "Bjørn Christian Tørrissen", source: "Wikimedia Commons", sourceUrl: "https://commons.wikimedia.org/wiki/File:Rissani_City_Gate_2011.jpg", license: "CC BY-SA 3.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/" } },
+      { src: "/images/dest/erfoud.webp", caption: "Traditional earthen Berber architecture near Erfoud.", width: 1152, height: 679, credit: { photographer: "Anderson sady", source: "Wikimedia Commons", sourceUrl: "https://commons.wikimedia.org/wiki/File:Berber_architecture_south_of_the_town_of_Erfoud,_Morocco.jpg", license: "CC BY-SA 3.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/" } },
+      { src: "/images/dest/ziz-valley.webp", caption: "The palm-filled Ziz Valley, cut into the desert plateau.", width: 1600, height: 874, credit: { photographer: "Melissa Minucci", source: "Wikimedia Commons", sourceUrl: "https://commons.wikimedia.org/wiki/File:Ziz_Valley_in_the_desert_of_Morocco.jpg", license: "CC BY-SA 4.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/" } },
+      { src: "/images/dest/ifrane.webp", caption: "Ifrane, in the cedar forests of the Middle Atlas." },
+    ],
+  },
+  {
+    id: "3-day-ouarzazate-merzouga-marrakech",
+    name: "3-Day Ouarzazate to Marrakech via the Sahara",
+    duration: "3 Days / 2 Nights",
+    category: "Sahara Crossing · Quote Only",
+    highlights: ["Dades Valley and Todra Gorge", "Two nights at a Merzouga desert camp", "Sunset and sunrise camel trek at Erg Chebbi", "Aït Ben Haddou on the return", "Tizi n'Tichka pass through the High Atlas", "Loop finishing in Marrakech"],
+    price: "", pricingTiers: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 }, quoteOnly: true,
+    image: "/images/dest/merzouga.webp",
+    description: "A private loop from Ouarzazate to the Sahara and on to Marrakech. The outbound road follows the Dades Valley and Todra Gorge to Merzouga for two nights at a desert camp, then the return crosses back through Ouarzazate, the UNESCO kasbah of Aït Ben Haddou and the Tizi n'Tichka pass over the High Atlas to finish in Marrakech. A personalised price is quoted for this route rather than published in advance; the exact total depends on your party size and the accommodation you choose, and is confirmed around your dates before booking.",
+    routeIds: ["ouarzazate", "dades-valley", "todra-gorge", "merzouga", "erg-chebbi", "ait-ben-haddou", "marrakech"],
+    routeCaption: "Ouarzazate → Dades Valley → Todra Gorge → Merzouga & Erg Chebbi → Ouarzazate → Aït Ben Haddou → Tizi n'Tichka → Marrakech.",
+    itineraryDays: [
+      { day: 1, title: "Ouarzazate → Dades Valley → Todra Gorge → Merzouga", desc: "Leave Ouarzazate heading east along the Dades Valley, stopping to see its folded kasbah-dotted landscape, then continue through the narrow limestone walls of the Todra Gorge. Arrive in Merzouga in the late afternoon for a camel ride into the dunes of Erg Chebbi at sunset and the first night at a desert camp.", stops: ["Ouarzazate", "Dades Valley", "Todra Gorge", "Merzouga", "Overnight: Desert camp, Erg Chebbi"] },
+      { day: 2, title: "Merzouga and Erg Chebbi, at your own pace", desc: "A full day based in Merzouga with no further driving. Options on request include a sunrise dune walk, a visit to the Gnaoua-music village of Khamlia, or simply resting at the camp before a second night under the stars.", stops: ["Erg Chebbi dunes", "Khamlia village (optional)", "Overnight: Desert camp, Erg Chebbi"] },
+      { day: 3, title: "Sunrise → Ouarzazate → Aït Ben Haddou → Tizi n'Tichka → Marrakech", desc: "An early start for a final look at the dunes, then the return drive west back through Ouarzazate. Stop at Aït Ben Haddou, the UNESCO-listed fortified ksar used in numerous film and television productions, before crossing the High Atlas over the Tizi n'Tichka pass — Morocco's highest paved mountain road — and descending into Marrakech. This is a long driving day; the exact arrival time depends on stops made en route.", stops: ["Ouarzazate", "Aït Ben Haddou", "Tizi n'Tichka pass", "Marrakech"] },
+    ],
+    included: ["Private air-conditioned vehicle and driver-guide for the full route, when included in the confirmed quote", "Two nights at a Merzouga desert camp, according to the selected package", "Sunset and sunrise camel trek at Erg Chebbi", "Hotel and airport pick-up and drop-off"],
+    excluded: ["International flights", "Lunches and drinks", "Entrance fees not listed as included", "Tips and personal expenses", "Anything not written into your confirmed quote"],
+    faq: [
+      { question: "How long is the drive each day?", answer: "Day one from Ouarzazate to Merzouga is around 6 hours via the Dades Valley and Todra Gorge. Day three back to Marrakech is the longest day, around 7–8 hours via Ouarzazate, Aït Ben Haddou and the Tizi n'Tichka pass, with stops along the way." },
+      { question: "Is Aït Ben Haddou really worth the stop?", answer: "Yes — it's one of Morocco's most recognisable UNESCO sites and sits directly on this return route, so visiting it adds very little extra driving." },
+      { question: "Why two nights in Merzouga instead of one?", answer: "A second night gives you a full day around Erg Chebbi without travel, plus both a sunset and a sunrise over the dunes." },
+      { question: "Can we start this tour from Marrakech instead of Ouarzazate?", answer: "This specific itinerary is built around an Ouarzazate start. If you'd rather begin and end in Marrakech, ask us about our Marrakech-departure Sahara tours." },
+      { question: "Is this a private tour?", answer: "Yes. It is structured as a private journey for your party, with the route and pace confirmed around your dates." },
+    ],
+    practicalInfo: [
+      "This is a loop route, so it suits travelers flying in and out of Marrakech.",
+      "The Tizi n'Tichka pass can be cold and occasionally affected by winter weather — warm layers are worth packing outside summer.",
+      "Desert nights are cold outside the warmer months even when days are hot.",
+    ],
+    suitableFor: [
+      "Travelers starting in Ouarzazate who plan to fly out of Marrakech",
+      "Those who want two nights in the desert rather than a single overnight stop",
+      "Travelers who want Aït Ben Haddou and the High Atlas crossing included on the return",
+    ],
+    gallery: [
+      { src: "/images/dest/dades-valley.webp", caption: "The Dades Valley on the road east from Ouarzazate." },
+      { src: "/images/dest/todra-gorge.webp", caption: "The Todra Gorge's limestone walls." },
+      { src: "/images/dest/merzouga.webp", caption: "The dunes of Erg Chebbi near Merzouga." },
+      { src: "/images/tours/ait-ben-haddou-ounila-reflection.webp", caption: "Aït Ben Haddou, the UNESCO-listed fortified ksar." },
+    ],
+  },
+  {
+    id: "2-day-ouarzazate-merzouga-sahara",
+    name: "2-Day Ouarzazate to Merzouga Desert Express",
+    duration: "2 Days / 1 Night",
+    category: "Sahara Crossing · Quote Only",
+    highlights: ["Dades Valley and Todra Gorge en route", "One night at a Merzouga desert camp", "Sunset camel trek into Erg Chebbi", "Sunrise over the dunes", "Round trip returning to Ouarzazate", "A compact option for limited time"],
+    price: "", pricingTiers: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 }, quoteOnly: true,
+    image: "/images/dest/erg-chebbi.webp",
+    description: "A compact private round trip from Ouarzazate into the Sahara for travelers with limited time. The drive east follows the Dades Valley and Todra Gorge to Merzouga for a sunset camel trek, one night at a desert camp, and a sunrise over Erg Chebbi before returning to Ouarzazate the same route. A personalised price is quoted for this route rather than published in advance; the exact total depends on your party size and the accommodation you choose, and is confirmed around your dates before booking.",
+    routeIds: ["ouarzazate", "dades-valley", "todra-gorge", "merzouga", "erg-chebbi"],
+    routeCaption: "Ouarzazate → Dades Valley → Todra Gorge → Merzouga & Erg Chebbi → return to Ouarzazate.",
+    itineraryDays: [
+      { day: 1, title: "Ouarzazate → Dades Valley → Todra Gorge → Merzouga", desc: "An early departure from Ouarzazate along the Dades Valley, with a brief stop to see its kasbah-studded landscape, then on through the Todra Gorge. The drive continues to Merzouga, arriving in time for a camel ride into the dunes of Erg Chebbi at sunset and a night at a desert camp.", stops: ["Ouarzazate", "Dades Valley", "Todra Gorge", "Merzouga", "Overnight: Desert camp, Erg Chebbi"] },
+      { day: 2, title: "Sunrise over Erg Chebbi → return to Ouarzazate", desc: "Wake before dawn to watch the sunrise over the dunes, then return to camp for breakfast before the drive back to Ouarzazate along the same route.", stops: ["Erg Chebbi sunrise", "Todra Gorge", "Dades Valley", "Ouarzazate"] },
+    ],
+    included: ["Private air-conditioned vehicle and driver-guide for the full route, when included in the confirmed quote", "One night at a Merzouga desert camp, according to the selected package", "Sunset camel trek into Erg Chebbi", "Hotel pick-up and drop-off in Ouarzazate"],
+    excluded: ["International flights", "Lunches and drinks", "Entrance fees not listed as included", "Tips and personal expenses", "Anything not written into your confirmed quote"],
+    faq: [
+      { question: "Is two days really enough to see the Sahara?", answer: "It's enough for a genuine night in the dunes with a sunset and sunrise camel trek, though it means two fairly long driving days either side. If you have a third day available, our 3-day Ouarzazate itineraries give you a full day in Merzouga without travel." },
+      { question: "How long is the drive each way?", answer: "Around 6 hours of driving each way between Ouarzazate and Merzouga via the Dades Valley and Todra Gorge, with stops." },
+      { question: "Can this tour end somewhere other than Ouarzazate?", answer: "This specific itinerary is a round trip back to Ouarzazate to keep the schedule realistic in two days. For a one-way finish in Fes or Marrakech, see our 3-day Ouarzazate itineraries instead." },
+      { question: "Is this a private tour?", answer: "Yes, a private vehicle and driver for your party, with pace and timing confirmed around your dates." },
+    ],
+    practicalInfo: [
+      "This is the shortest realistic way to add a genuine Sahara night to an Ouarzazate-based trip — expect two substantial driving days.",
+      "Desert nights are cold outside the warmer months; pack warm layers even in spring and autumn.",
+    ],
+    suitableFor: [
+      "Travelers based in or near Ouarzazate with only two days to spare",
+      "Those who want one real night in the dunes without committing to a longer route",
+      "Travelers who will continue their trip from Ouarzazate afterward",
+    ],
+    gallery: [
+      { src: "/images/dest/erg-chebbi.webp", caption: "Erg Chebbi's dunes near Merzouga." },
+      { src: "/images/dest/todra-gorge.webp", caption: "The Todra Gorge, en route between Ouarzazate and Merzouga." },
+      { src: "/images/catalog/luxury-desert-camp-sunset-merzouga.webp", caption: "A desert camp at sunset near Merzouga." },
+    ],
+  },
+  {
+    id: "3-day-errachidia-merzouga-marrakech",
+    name: "3-Day Errachidia to Marrakech via the Sahara",
+    duration: "3 Days / 2 Nights",
+    category: "Sahara Crossing · Quote Only",
+    highlights: ["Short transfer from Errachidia to Merzouga", "Two nights at a Merzouga desert camp", "Sunset and sunrise camel trek at Erg Chebbi", "Aït Ben Haddou and Ouarzazate on the return", "Tizi n'Tichka pass through the High Atlas", "One-way route ending in Marrakech"],
+    price: "", pricingTiers: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 }, quoteOnly: true,
+    image: "/images/dest/merzouga.webp",
+    description: "A private one-way route from Errachidia to the Sahara and on to Marrakech. Errachidia sits close to Merzouga, so the first day is a short transfer rather than a long drive, leaving two full nights at a desert camp. The return crosses back through Ouarzazate, the UNESCO kasbah of Aït Ben Haddou and the Tizi n'Tichka pass to finish in Marrakech. A personalised price is quoted for this route rather than published in advance; the exact total depends on your party size and the accommodation you choose, and is confirmed around your dates before booking.",
+    routeIds: ["merzouga", "erg-chebbi", "ouarzazate", "ait-ben-haddou", "marrakech"],
+    routeCaption: "Errachidia → Merzouga & Erg Chebbi → Ouarzazate → Aït Ben Haddou → Tizi n'Tichka → Marrakech.",
+    itineraryDays: [
+      { day: 1, title: "Errachidia → Merzouga", desc: "A short private transfer from Errachidia to Merzouga — the Moroccan National Tourist Office documents this stretch as part of the Errachidia–Midelt–Merzouga corridor. With most of the day free, there's time to settle in before a camel ride into the dunes of Erg Chebbi for sunset and the first night at a desert camp.", stops: ["Errachidia", "Merzouga", "Overnight: Desert camp, Erg Chebbi"] },
+      { day: 2, title: "Merzouga and Erg Chebbi, at your own pace", desc: "A full day around Merzouga with no further driving. Options on request include a sunrise dune walk, a visit to Khamlia village for Gnaoua music, or resting at the camp before a second night under the stars.", stops: ["Erg Chebbi dunes", "Khamlia village (optional)", "Overnight: Desert camp, Erg Chebbi"] },
+      { day: 3, title: "Sunrise → Ouarzazate → Aït Ben Haddou → Tizi n'Tichka → Marrakech", desc: "An early start for a last look at the dunes, then the long drive west through Ouarzazate. Stop at Aït Ben Haddou, the UNESCO-listed fortified ksar, before crossing the High Atlas over the Tizi n'Tichka pass and descending into Marrakech. This is the longest driving day of the trip; the exact arrival time depends on stops made en route.", stops: ["Ouarzazate", "Aït Ben Haddou", "Tizi n'Tichka pass", "Marrakech"] },
+    ],
+    included: ["Private air-conditioned vehicle and driver-guide for the full route, when included in the confirmed quote", "Two nights at a Merzouga desert camp, according to the selected package", "Sunset and sunrise camel trek at Erg Chebbi", "Hotel and airport pick-up and drop-off"],
+    excluded: ["International flights", "Lunches and drinks", "Entrance fees not listed as included", "Tips and personal expenses", "Anything not written into your confirmed quote"],
+    faq: [
+      { question: "How far is Errachidia from Merzouga?", answer: "It's a short transfer, roughly 1.5–2 hours of driving — much shorter than starting from Marrakech or Fes, which is why day one leaves time to rest before the evening camel trek." },
+      { question: "How long is the final day's drive to Marrakech?", answer: "It's the longest day of the trip, around 8–9 hours via Ouarzazate, Aït Ben Haddou and the Tizi n'Tichka pass, with stops along the way rather than driven straight through." },
+      { question: "Why two nights in Merzouga instead of one?", answer: "Since the transfer from Errachidia is short, a second night gives you a full free day around Erg Chebbi rather than spending most of the trip in the vehicle." },
+      { question: "Is this a private tour?", answer: "Yes. It is structured as a private journey for your party, with the route and pace confirmed around your dates." },
+      { question: "Can this tour start from Marrakech instead?", answer: "This itinerary is built around an Errachidia start. If you're beginning your trip in Marrakech, ask us about our Marrakech-departure Sahara tours instead." },
+    ],
+    practicalInfo: [
+      "This is a one-way route — onward travel or flights should be arranged from Marrakech, not Errachidia.",
+      "Because the outbound transfer is short, this route suits travelers who are already in the Errachidia area rather than passing through.",
+      "Desert nights are cold outside the warmer months; warm layers are worth packing even in spring and autumn.",
+    ],
+    suitableFor: [
+      "Travelers already near Errachidia who want to continue on to Marrakech",
+      "Those who want two nights in the desert rather than a single overnight stop",
+      "Travelers who want Aït Ben Haddou and the High Atlas crossing included on the return",
+    ],
+    gallery: [
+      { src: "/images/dest/merzouga.webp", caption: "Merzouga, a short transfer from Errachidia." },
+      { src: "/images/library/erg-chebbi-dune-sea-morocco-mga-028.jpg", caption: "The dune sea of Erg Chebbi." },
+      { src: "/images/tours/ait-ben-haddou-ounila-reflection.webp", caption: "Aït Ben Haddou, visited on the return to Marrakech." },
+    ],
+  },
+  {
+    id: "3-day-errachidia-merzouga-fes",
+    name: "3-Day Errachidia to Fes via the Sahara",
+    duration: "3 Days / 2 Nights",
+    category: "Sahara Crossing · Quote Only",
+    highlights: ["Short transfer from Errachidia to Merzouga", "Two nights at a Merzouga desert camp", "Sunset and sunrise camel trek at Erg Chebbi", "Rissani market and Erfoud on the return", "Ziz Valley and the Middle Atlas cedar forest", "One-way route ending in Fes"],
+    price: "", pricingTiers: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 }, quoteOnly: true,
+    image: "/images/dest/erg-chebbi.webp",
+    description: "A private one-way route from Errachidia to the Sahara and on to Fes. The short transfer to Merzouga leaves two full nights at a desert camp, and the return follows the Ziz Valley north through Rissani, Erfoud and the Middle Atlas cedar forest — the corridor the Moroccan National Tourist Office documents as the main road between Fes and Merzouga — to imperial Fes. A personalised price is quoted for this route rather than published in advance; the exact total depends on your party size and the accommodation you choose, and is confirmed around your dates before booking.",
+    routeIds: ["merzouga", "erg-chebbi", "ifrane", "fes"],
+    routeCaption: "Errachidia → Merzouga & Erg Chebbi → Rissani & Erfoud → Ziz Valley → Ifrane → Fes.",
+    itineraryDays: [
+      { day: 1, title: "Errachidia → Merzouga", desc: "A short private transfer from Errachidia to Merzouga, part of the route the Moroccan National Tourist Office documents as the Errachidia–Midelt–Merzouga corridor. With the afternoon free, settle in before a camel ride into the dunes of Erg Chebbi for sunset and the first night at a desert camp.", stops: ["Errachidia", "Merzouga", "Overnight: Desert camp, Erg Chebbi"] },
+      { day: 2, title: "Merzouga and Erg Chebbi, at your own pace", desc: "A full day around Merzouga with no further driving. Options on request include a sunrise dune walk, a visit to Khamlia village for Gnaoua music, or resting at the camp before a second night under the stars.", stops: ["Erg Chebbi dunes", "Khamlia village (optional)", "Overnight: Desert camp, Erg Chebbi"] },
+      { day: 3, title: "Sunrise → Rissani → Erfoud → Ziz Valley → Ifrane → Fes", desc: "Rise before dawn for a final look at the dunes, then head north. The route passes Rissani's old market town and Erfoud, known for its fossil workshops, before following the palm-lined Ziz Valley toward the Middle Atlas. The road climbs into the cedar forest around Ifrane, home to Barbary macaques, before the final descent into Fes.", stops: ["Rissani", "Erfoud", "Ziz Valley", "Ifrane cedar forest", "Fes"] },
+    ],
+    included: ["Private air-conditioned vehicle and driver-guide for the full route, when included in the confirmed quote", "Two nights at a Merzouga desert camp, according to the selected package", "Sunset and sunrise camel trek at Erg Chebbi", "Hotel and airport pick-up and drop-off"],
+    excluded: ["International flights", "Lunches and drinks", "Entrance fees not listed as included", "Tips and personal expenses", "Anything not written into your confirmed quote"],
+    faq: [
+      { question: "How far is Errachidia from Merzouga?", answer: "A short transfer, roughly 1.5–2 hours of driving, which is why there's time to rest before the evening camel trek on day one." },
+      { question: "How long is the drive to Fes on the last day?", answer: "Around 5–6 hours via Rissani, Erfoud, the Ziz Valley and the Middle Atlas cedar forest, with stops along the way." },
+      { question: "Why two nights in Merzouga instead of one?", answer: "Since the transfer in is short, a second night gives you a full free day around Erg Chebbi instead of most of the trip being spent driving." },
+      { question: "What's at Rissani and Erfoud?", answer: "Rissani has one of the region's oldest market towns; Erfoud is known for its fossil workshops, a reminder that this part of the Sahara was once a seabed." },
+      { question: "Is this a private tour?", answer: "Yes. It is structured as a private journey for your party, with the route and pace confirmed around your dates." },
+    ],
+    practicalInfo: [
+      "This is a one-way route — onward travel or flights should be arranged from Fes, not Errachidia.",
+      "The Ziz Valley and Ifrane sections add genuine scenic variety compared with retracing the outbound road.",
+      "Desert nights are cold outside the warmer months; warm layers are worth packing even in spring and autumn.",
+    ],
+    suitableFor: [
+      "Travelers already near Errachidia who want to continue on to Fes",
+      "Those who want two nights in the desert rather than a single overnight stop",
+      "Travelers interested in the Rissani–Erfoud–Ziz Valley corridor, not just the dunes",
+    ],
+    gallery: [
+      { src: "/images/dest/erg-chebbi.webp", caption: "Erg Chebbi's dunes near Merzouga." },
+      { src: "/images/library/erg-chebbi-camel-trekking-sunset-morocco-mga-001.jpg", caption: "A camel caravan crossing Erg Chebbi at dusk." },
+      { src: "/images/dest/rissani.webp", caption: "The ornate gateway into Rissani's old market town.", width: 1600, height: 989, credit: { photographer: "Bjørn Christian Tørrissen", source: "Wikimedia Commons", sourceUrl: "https://commons.wikimedia.org/wiki/File:Rissani_City_Gate_2011.jpg", license: "CC BY-SA 3.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/" } },
+      { src: "/images/dest/erfoud.webp", caption: "Traditional earthen Berber architecture near Erfoud.", width: 1152, height: 679, credit: { photographer: "Anderson sady", source: "Wikimedia Commons", sourceUrl: "https://commons.wikimedia.org/wiki/File:Berber_architecture_south_of_the_town_of_Erfoud,_Morocco.jpg", license: "CC BY-SA 3.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/" } },
+      { src: "/images/dest/ziz-valley.webp", caption: "The palm-filled Ziz Valley, cut into the desert plateau.", width: 1600, height: 874, credit: { photographer: "Melissa Minucci", source: "Wikimedia Commons", sourceUrl: "https://commons.wikimedia.org/wiki/File:Ziz_Valley_in_the_desert_of_Morocco.jpg", license: "CC BY-SA 4.0", licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/" } },
+      { src: "/images/dest/ifrane.webp", caption: "Ifrane, in the cedar forests of the Middle Atlas, en route to Fes." },
+    ],
+  },
+  {
+    id: "2-day-errachidia-merzouga",
+    name: "2-Day Errachidia to Merzouga Desert Tour",
+    duration: "2 Days / 1 Night",
+    category: "Sahara Crossing · Quote Only",
+    highlights: ["Short transfer from Errachidia to Merzouga", "One night at a Merzouga desert camp", "Sunset camel trek into Erg Chebbi", "Sunrise over the dunes", "Round trip returning to Errachidia", "A realistic option for a single night in the Sahara"],
+    price: "", pricingTiers: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 }, quoteOnly: true,
+    image: "/images/catalog/luxury-desert-camp-sunset-merzouga.webp",
+    description: "A private round trip from Errachidia to Merzouga for travelers who want a genuine Sahara night without a long detour. Because Errachidia sits close to Merzouga, the transfer each way is short, leaving real time for a sunset camel trek, one night at a desert camp, and a sunrise over Erg Chebbi before returning to Errachidia. A personalised price is quoted for this route rather than published in advance; the exact total depends on your party size and the accommodation you choose, and is confirmed around your dates before booking.",
+    routeIds: ["merzouga", "erg-chebbi"],
+    routeCaption: "Errachidia → Merzouga & Erg Chebbi → return to Errachidia.",
+    itineraryDays: [
+      { day: 1, title: "Errachidia → Merzouga", desc: "A short private transfer from Errachidia to Merzouga, documented by the Moroccan National Tourist Office as part of the Errachidia–Midelt–Merzouga corridor. Arrive with time to spare before a camel ride into the dunes of Erg Chebbi for sunset and a night at a desert camp.", stops: ["Errachidia", "Merzouga", "Overnight: Desert camp, Erg Chebbi"] },
+      { day: 2, title: "Sunrise over Erg Chebbi → return to Errachidia", desc: "Wake before dawn for the sunrise over the dunes, then return to camp for breakfast before the short drive back to Errachidia.", stops: ["Erg Chebbi sunrise", "Merzouga", "Errachidia"] },
+    ],
+    included: ["Private air-conditioned vehicle and driver-guide for the full route, when included in the confirmed quote", "One night at a Merzouga desert camp, according to the selected package", "Sunset camel trek into Erg Chebbi", "Hotel pick-up and drop-off in Errachidia"],
+    excluded: ["International flights", "Lunches and drinks", "Entrance fees not listed as included", "Tips and personal expenses", "Anything not written into your confirmed quote"],
+    faq: [
+      { question: "Is a two-day trip from Errachidia worth it?", answer: "Because the transfer each way is short, around 1.5–2 hours, this is one of the most realistic ways to fit a genuine Sahara night into a short schedule — you aren't spending most of the trip driving." },
+      { question: "How long is the drive each way?", answer: "Roughly 1.5–2 hours of driving between Errachidia and Merzouga, each way." },
+      { question: "Can this tour end somewhere other than Errachidia?", answer: "This specific itinerary is a round trip back to Errachidia. For a one-way finish in Marrakech or Fes, see our 3-day Errachidia itineraries instead." },
+      { question: "Is this a private tour?", answer: "Yes, a private vehicle and driver for your party, with timing confirmed around your dates." },
+    ],
+    practicalInfo: [
+      "The short transfer distance makes this one of our more flexible Sahara options for a tight schedule.",
+      "Desert nights are cold outside the warmer months; warm layers are worth packing even in spring and autumn.",
+    ],
+    suitableFor: [
+      "Travelers based in or near Errachidia with limited time",
+      "Those who want one genuine night in the dunes without a long detour",
+      "Travelers who will continue their trip from Errachidia afterward",
+    ],
+    gallery: [
+      { src: "/images/catalog/luxury-desert-camp-sunset-merzouga.webp", caption: "A desert camp at sunset near Merzouga." },
+      { src: "/images/dest/merzouga.webp", caption: "Merzouga, a short transfer from Errachidia." },
     ],
   },
 ];

@@ -4067,6 +4067,566 @@
           "caption": "Taghazout, Surferdorf am Atlantik."
         }
       ]
+    },
+    "3-day-ouarzazate-merzouga-fes": {
+      "name": "3 Tage von Ouarzazate nach Fès durch die Sahara",
+      "duration": "3 Tage / 2 Nächte",
+      "category": "Sahara-Durchquerung · Nur auf Anfrage",
+      "highlights": [
+        "Dadès-Tal und Todra-Schlucht",
+        "Zwei Nächte im Wüstencamp bei Merzouga",
+        "Kamelritt bei Sonnenuntergang und Sonnenaufgang in Erg Chebbi",
+        "Markt von Rissani und Erfoud auf der Rückfahrt",
+        "Ziz-Tal und Zedernwald des Mittleren Atlas",
+        "Einwegroute mit Ziel Fès"
+      ],
+      "description": "Eine private Einwegfahrt von der Filmstadt Ouarzazate durch die Sahara bis nach Fès. Die Strecke nach Osten führt durch das Dadès-Tal und die Todra-Schlucht, bevor sie Merzouga für zwei Nächte im Wüstencamp erreicht; die Rückfahrt verläuft nach Norden über Rissani, Erfoud und das Ziz-Tal bis zum Zedernwald des Mittleren Atlas und in die Kaiserstadt Fès. Für diese Route wird ein persönliches Angebot erstellt, statt im Voraus einen festen Preis zu veröffentlichen; der genaue Betrag hängt von der Teilnehmerzahl und der gewählten Unterkunft ab und wird vor der Buchung gemeinsam mit Ihren Reisedaten bestätigt.",
+      "routeCaption": "Ouarzazate → Dadès-Tal → Todra-Schlucht → Merzouga und Erg Chebbi → Rissani und Erfoud → Ziz-Tal → Ifrane → Fès.",
+      "itineraryDays": [
+        {
+          "title": "Ouarzazate → Dadès-Tal → Todra-Schlucht → Merzouga",
+          "desc": "Abfahrt von Ouarzazate nach Osten entlang des Dadès-Tals, das örtlich als Straße der Tausend Kasbahs bekannt ist, mit einem Stopp zur Besichtigung seiner gefalteten Felsformationen. Weiter durch die Todra-Schlucht, wo 300 Meter hohe Kalksteinwände das Flussbett einengen, bevor die letzte Etappe nach Merzouga folgt. Am späten Nachmittag führt Sie ein Kamel in die Dünen von Erg Chebbi zum Sonnenuntergang und zur ersten Nacht im Wüstencamp.",
+          "stops": [
+            "Ouarzazate",
+            "Dadès-Tal",
+            "Todra-Schlucht",
+            "Merzouga",
+            "Übernachtung: Wüstencamp, Erg Chebbi"
+          ]
+        },
+        {
+          "title": "Merzouga und Erg Chebbi, in Ihrem eigenen Tempo",
+          "desc": "Ein voller Tag rund um Merzouga ohne weitere Fahrten. Auf Wunsch möglich: ein Spaziergang bei Sonnenaufgang auf den Dünen, ein Besuch im Dorf Khamlia mit Gnaoua-Musik, oder einfach Ruhe im Camp vor einer zweiten Nacht unter den Sternen.",
+          "stops": [
+            "Dünen von Erg Chebbi",
+            "Dorf Khamlia (optional)",
+            "Übernachtung: Wüstencamp, Erg Chebbi"
+          ]
+        },
+        {
+          "title": "Sonnenaufgang → Rissani → Erfoud → Ziz-Tal → Ifrane → Fès",
+          "desc": "Früher Aufbruch vor Sonnenaufgang für einen letzten Blick auf die Dünen, dann geht es nach Norden. Die Route führt durch die Altstadt von Rissani und Erfoud, bekannt für seine Fossilienwerkstätten, bevor sie dem von Palmen gesäumten Ziz-Tal folgt — einem Korridor, den das marokkanische Fremdenverkehrsamt als Hauptroute nach Fès dokumentiert. Die Straße steigt in den Zedernwald des Mittleren Atlas rund um Ifrane an, Heimat der Berberaffen, bevor es endgültig hinab nach Fès geht. Es ist ein langer Fahrtag; die genaue Ankunftszeit hängt von den unterwegs gemachten Stopps ab.",
+          "stops": [
+            "Rissani",
+            "Erfoud",
+            "Ziz-Tal",
+            "Zedernwald von Ifrane",
+            "Fès"
+          ]
+        }
+      ],
+      "included": [
+        "Privates klimatisiertes Fahrzeug mit Fahrer-Guide für die gesamte Route, gemäß bestätigtem Angebot",
+        "Zwei Nächte in einem Wüstencamp bei Merzouga, je nach gewähltem Paket",
+        "Kamelritt bei Sonnenuntergang und Sonnenaufgang in Erg Chebbi",
+        "Abholung und Rücktransfer zum Hotel oder Flughafen"
+      ],
+      "excluded": [
+        "Internationale Flüge",
+        "Mittagessen und Getränke",
+        "Nicht als inbegriffen aufgeführte Eintrittsgelder",
+        "Trinkgelder und persönliche Ausgaben",
+        "Alles, was nicht in Ihrem bestätigten Angebot aufgeführt ist"
+      ],
+      "faq": [
+        {
+          "question": "Wie lange dauert die Fahrt an den einzelnen Tagen?",
+          "answer": "Der erste Tag von Ouarzazate nach Merzouga dauert mit Stopps etwa 6 Stunden über das Dadès-Tal und die Todra-Schlucht. Der dritte Tag nach Fès ist mit etwa 7 Stunden über das Ziz-Tal und den Mittleren Atlas der längste — wir planen Pausen ein, statt durchzufahren."
+        },
+        {
+          "question": "Warum zwei Nächte in Merzouga statt einer?",
+          "answer": "Eine zweite Nacht ermöglicht einen vollen Tag rund um Erg Chebbi ohne Fahrt sowie sowohl einen Sonnenuntergang als auch einen Sonnenaufgang über den Dünen statt nur einen."
+        },
+        {
+          "question": "Wie ist das Wüstencamp ausgestattet?",
+          "answer": "Die Unterkunft wird je nach bestätigtem Paket und Verfügbarkeit ausgewählt — wir beschreiben das genaue Camp und bestätigen die Ausstattung mit Ihrem Angebot, anstatt hier von einem Standard auszugehen."
+        },
+        {
+          "question": "Kann diese Tour in Marrakesch oder einer anderen Stadt beginnen?",
+          "answer": "Diese Route ist auf eine Abfahrt in Ouarzazate ausgelegt. Wenn Sie über Marrakesch, Fès oder eine andere Stadt anreisen, fragen Sie uns nach unseren anderen Sahara-Routen oder einer individuellen Reise mit Transfer nach Ouarzazate."
+        },
+        {
+          "question": "Wie wird der Preis bestätigt?",
+          "answer": "Für diese Route erstellen wir ein persönliches Angebot, anstatt im Voraus einen festen Preis zu veröffentlichen. Der Gesamtpreis hängt von der Anzahl der Reisenden, der gewählten Unterkunft und dem genauen Reiseverlauf ab. Wir bestätigen den endgültigen Betrag daher gemeinsam mit Ihren Reisedaten vor jeder Zahlung. Gerne passen wir die Route vorab auf Wunsch an."
+        }
+      ],
+      "suitableFor": [
+        "Reisende, die in Ouarzazate starten und lieber weiter nach Norden reisen als zurückzukehren",
+        "Alle, die zwei Nächte statt nur einen Zwischenstopp in der Wüste möchten",
+        "Reisende, die sich für den Korridor Rissani–Erfoud–Ziz-Tal interessieren, nicht nur für die Dünen"
+      ],
+      "gallery": [
+        {
+          "caption": "Das Dadès-Tal, bekannt als Straße der Tausend Kasbahs."
+        },
+        {
+          "caption": "Die 300 Meter hohen Kalksteinwände der Todra-Schlucht."
+        },
+        {
+          "caption": "Ein Berberführer leitet eine Kamelkarawane bei Dämmerung durch Erg Chebbi."
+        },
+        {
+          "caption": "Ifrane in den Zedernwäldern des Mittleren Atlas."
+        }
+      ]
+    },
+    "3-day-ouarzazate-merzouga-marrakech": {
+      "name": "3 Tage von Ouarzazate nach Marrakesch durch die Sahara",
+      "duration": "3 Tage / 2 Nächte",
+      "category": "Sahara-Durchquerung · Nur auf Anfrage",
+      "highlights": [
+        "Dadès-Tal und Todra-Schlucht",
+        "Zwei Nächte im Wüstencamp bei Merzouga",
+        "Kamelritt bei Sonnenuntergang und Sonnenaufgang in Erg Chebbi",
+        "Aït Ben Haddou auf der Rückfahrt",
+        "Tizi-n-Tichka-Pass im Hohen Atlas",
+        "Rundreise mit Ziel Marrakesch"
+      ],
+      "description": "Eine private Rundreise von Ouarzazate durch die Sahara und zurück nach Marrakesch. Die Hinfahrt führt durch das Dadès-Tal und die Todra-Schlucht bis Merzouga für zwei Nächte im Wüstencamp; die Rückfahrt führt erneut durch Ouarzazate, zur UNESCO-Kasbah Aït Ben Haddou und über den Tizi-n-Tichka-Pass im Hohen Atlas bis nach Marrakesch. Für diese Route wird ein persönliches Angebot erstellt, statt im Voraus einen festen Preis zu veröffentlichen; der genaue Betrag hängt von der Teilnehmerzahl und der gewählten Unterkunft ab und wird vor der Buchung gemeinsam mit Ihren Reisedaten bestätigt.",
+      "routeCaption": "Ouarzazate → Dadès-Tal → Todra-Schlucht → Merzouga und Erg Chebbi → Ouarzazate → Aït Ben Haddou → Tizi n'Tichka → Marrakesch.",
+      "itineraryDays": [
+        {
+          "title": "Ouarzazate → Dadès-Tal → Todra-Schlucht → Merzouga",
+          "desc": "Abfahrt von Ouarzazate nach Osten entlang des Dadès-Tals mit Stopp zur Besichtigung der von Kasbahs geprägten Landschaft, dann weiter durch die engen Wände der Todra-Schlucht. Ankunft in Merzouga am späten Nachmittag für einen Kamelritt in die Dünen von Erg Chebbi bei Sonnenuntergang und die erste Nacht im Wüstencamp.",
+          "stops": [
+            "Ouarzazate",
+            "Dadès-Tal",
+            "Todra-Schlucht",
+            "Merzouga",
+            "Übernachtung: Wüstencamp, Erg Chebbi"
+          ]
+        },
+        {
+          "title": "Merzouga und Erg Chebbi, in Ihrem eigenen Tempo",
+          "desc": "Ein voller Tag rund um Merzouga ohne weitere Fahrten. Auf Wunsch möglich: ein Spaziergang bei Sonnenaufgang auf den Dünen, ein Besuch im Dorf Khamlia mit Gnaoua-Musik, oder einfach Ruhe im Camp vor einer zweiten Nacht unter den Sternen.",
+          "stops": [
+            "Dünen von Erg Chebbi",
+            "Dorf Khamlia (optional)",
+            "Übernachtung: Wüstencamp, Erg Chebbi"
+          ]
+        },
+        {
+          "title": "Sonnenaufgang → Ouarzazate → Aït Ben Haddou → Tizi n'Tichka → Marrakesch",
+          "desc": "Früher Aufbruch für einen letzten Blick auf die Dünen, dann die Rückfahrt nach Westen erneut über Ouarzazate. Stopp bei Aït Ben Haddou, der befestigten UNESCO-Ksar, die in zahlreichen Film- und Fernsehproduktionen zu sehen war, bevor der Hohe Atlas über den Tizi-n-Tichka-Pass überquert wird — die höchste asphaltierte Gebirgsstraße Marokkos — und es hinab nach Marrakesch geht. Es ist ein langer Fahrtag; die genaue Ankunftszeit hängt von den unterwegs gemachten Stopps ab.",
+          "stops": [
+            "Ouarzazate",
+            "Aït Ben Haddou",
+            "Tizi-n-Tichka-Pass",
+            "Marrakesch"
+          ]
+        }
+      ],
+      "included": [
+        "Privates klimatisiertes Fahrzeug mit Fahrer-Guide für die gesamte Route, gemäß bestätigtem Angebot",
+        "Zwei Nächte in einem Wüstencamp bei Merzouga, je nach gewähltem Paket",
+        "Kamelritt bei Sonnenuntergang und Sonnenaufgang in Erg Chebbi",
+        "Abholung und Rücktransfer zum Hotel oder Flughafen"
+      ],
+      "excluded": [
+        "Internationale Flüge",
+        "Mittagessen und Getränke",
+        "Nicht als inbegriffen aufgeführte Eintrittsgelder",
+        "Trinkgelder und persönliche Ausgaben",
+        "Alles, was nicht in Ihrem bestätigten Angebot aufgeführt ist"
+      ],
+      "faq": [
+        {
+          "question": "Wie lange dauert die Fahrt an den einzelnen Tagen?",
+          "answer": "Der erste Tag von Ouarzazate nach Merzouga dauert etwa 6 Stunden über das Dadès-Tal und die Todra-Schlucht. Der dritte Tag zurück nach Marrakesch ist mit 7 bis 8 Stunden über Ouarzazate, Aït Ben Haddou und den Tizi-n-Tichka-Pass der längste, mit Stopps unterwegs."
+        },
+        {
+          "question": "Lohnt sich der Stopp bei Aït Ben Haddou wirklich?",
+          "answer": "Ja — es ist eine der bekanntesten UNESCO-Stätten Marokkos und liegt direkt auf dieser Rückroute, sodass der Besuch nur sehr wenig zusätzliche Fahrzeit erfordert."
+        },
+        {
+          "question": "Warum zwei Nächte in Merzouga statt einer?",
+          "answer": "Eine zweite Nacht bietet einen vollen Tag rund um Erg Chebbi ohne Fahrt sowie einen Sonnenuntergang UND einen Sonnenaufgang über den Dünen."
+        },
+        {
+          "question": "Können wir diese Tour in Marrakesch statt in Ouarzazate beginnen?",
+          "answer": "Diese konkrete Route ist auf eine Abfahrt in Ouarzazate ausgelegt. Wenn Sie lieber in Marrakesch starten und enden möchten, fragen Sie uns nach unseren Sahara-Touren ab Marrakesch."
+        },
+        {
+          "question": "Wie wird der Preis bestätigt?",
+          "answer": "Für diese Route erstellen wir ein persönliches Angebot, anstatt im Voraus einen festen Preis zu veröffentlichen. Der Gesamtpreis hängt von der Anzahl der Reisenden, der gewählten Unterkunft und dem genauen Reiseverlauf ab. Wir bestätigen den endgültigen Betrag daher gemeinsam mit Ihren Reisedaten vor jeder Zahlung. Gerne passen wir die Route vorab auf Wunsch an."
+        }
+      ],
+      "suitableFor": [
+        "Reisende, die in Ouarzazate starten und von Marrakesch aus abreisen",
+        "Alle, die zwei Nächte statt nur einen Zwischenstopp in der Wüste möchten",
+        "Reisende, die Aït Ben Haddou und die Überquerung des Hohen Atlas auf der Rückfahrt einschließen möchten"
+      ],
+      "gallery": [
+        {
+          "caption": "Das Dadès-Tal auf der Strecke nach Osten von Ouarzazate."
+        },
+        {
+          "caption": "Die Wände der Todra-Schlucht."
+        },
+        {
+          "caption": "Die Dünen von Erg Chebbi bei Merzouga."
+        },
+        {
+          "caption": "Aït Ben Haddou, die befestigte UNESCO-Ksar."
+        }
+      ]
+    },
+    "2-day-ouarzazate-merzouga-sahara": {
+      "name": "2 Tage von Ouarzazate nach Merzouga — Wüsten-Express",
+      "duration": "2 Tage / 1 Nacht",
+      "category": "Sahara-Durchquerung · Nur auf Anfrage",
+      "highlights": [
+        "Dadès-Tal und Todra-Schlucht unterwegs",
+        "Eine Nacht im Wüstencamp bei Merzouga",
+        "Kamelritt bei Sonnenuntergang in Erg Chebbi",
+        "Sonnenaufgang über den Dünen",
+        "Rundreise zurück nach Ouarzazate",
+        "Eine kompakte Option bei begrenzter Zeit"
+      ],
+      "description": "Eine kompakte private Rundreise von Ouarzazate in die Sahara für Reisende mit begrenzter Zeit. Die Strecke nach Osten führt durch das Dadès-Tal und die Todra-Schlucht nach Merzouga für einen Kamelritt bei Sonnenuntergang, eine Nacht im Wüstencamp und einen Sonnenaufgang über Erg Chebbi, bevor es auf derselben Route zurück nach Ouarzazate geht. Für diese Route wird ein persönliches Angebot erstellt, statt im Voraus einen festen Preis zu veröffentlichen; der genaue Betrag hängt von der Teilnehmerzahl und der gewählten Unterkunft ab und wird vor der Buchung gemeinsam mit Ihren Reisedaten bestätigt.",
+      "routeCaption": "Ouarzazate → Dadès-Tal → Todra-Schlucht → Merzouga und Erg Chebbi → zurück nach Ouarzazate.",
+      "itineraryDays": [
+        {
+          "title": "Ouarzazate → Dadès-Tal → Todra-Schlucht → Merzouga",
+          "desc": "Früher Aufbruch in Ouarzazate entlang des Dadès-Tals mit kurzem Stopp zur Besichtigung der von Kasbahs geprägten Landschaft, dann weiter durch die Todra-Schlucht. Die Fahrt geht weiter nach Merzouga mit Ankunft rechtzeitig für einen Kamelritt in die Dünen von Erg Chebbi bei Sonnenuntergang und eine Nacht im Wüstencamp.",
+          "stops": [
+            "Ouarzazate",
+            "Dadès-Tal",
+            "Todra-Schlucht",
+            "Merzouga",
+            "Übernachtung: Wüstencamp, Erg Chebbi"
+          ]
+        },
+        {
+          "title": "Sonnenaufgang über Erg Chebbi → Rückfahrt nach Ouarzazate",
+          "desc": "Aufstehen vor Sonnenaufgang, um ihn über den Dünen zu erleben, dann zurück zum Camp zum Frühstück vor der Rückfahrt nach Ouarzazate auf derselben Route.",
+          "stops": [
+            "Sonnenaufgang in Erg Chebbi",
+            "Todra-Schlucht",
+            "Dadès-Tal",
+            "Ouarzazate"
+          ]
+        }
+      ],
+      "included": [
+        "Privates klimatisiertes Fahrzeug mit Fahrer-Guide für die gesamte Route, gemäß bestätigtem Angebot",
+        "Eine Nacht in einem Wüstencamp bei Merzouga, je nach gewähltem Paket",
+        "Kamelritt bei Sonnenuntergang in Erg Chebbi",
+        "Abholung und Rücktransfer zum Hotel in Ouarzazate"
+      ],
+      "excluded": [
+        "Internationale Flüge",
+        "Mittagessen und Getränke",
+        "Nicht als inbegriffen aufgeführte Eintrittsgelder",
+        "Trinkgelder und persönliche Ausgaben",
+        "Alles, was nicht in Ihrem bestätigten Angebot aufgeführt ist"
+      ],
+      "faq": [
+        {
+          "question": "Reichen zwei Tage wirklich aus, um die Sahara zu sehen?",
+          "answer": "Sie reichen für eine echte Nacht in den Dünen mit Kamelritt bei Sonnenuntergang und -aufgang, bedeuten aber zwei recht lange Fahrtage. Wenn Sie einen dritten Tag Zeit haben, bieten unsere 3-Tages-Routen ab Ouarzazate einen vollen Tag in Merzouga ohne Fahrt."
+        },
+        {
+          "question": "Wie lange dauert die Fahrt in jede Richtung?",
+          "answer": "Etwa 6 Stunden Fahrzeit in jede Richtung zwischen Ouarzazate und Merzouga über das Dadès-Tal und die Todra-Schlucht, mit Stopps."
+        },
+        {
+          "question": "Kann diese Tour woanders als in Ouarzazate enden?",
+          "answer": "Diese konkrete Route ist eine Rundreise zurück nach Ouarzazate, um einen realistischen Zeitplan in zwei Tagen zu gewährleisten. Für ein Ziel in Fès oder Marrakesch sehen Sie sich bitte unsere 3-Tages-Routen ab Ouarzazate an."
+        },
+        {
+          "question": "Wie wird der Preis bestätigt?",
+          "answer": "Für diese Route erstellen wir ein persönliches Angebot, anstatt im Voraus einen festen Preis zu veröffentlichen. Der Gesamtpreis hängt von der Anzahl der Reisenden, der gewählten Unterkunft und dem genauen Reiseverlauf ab. Wir bestätigen den endgültigen Betrag daher gemeinsam mit Ihren Reisedaten vor jeder Zahlung. Gerne passen wir die Route vorab auf Wunsch an."
+        }
+      ],
+      "suitableFor": [
+        "Reisende mit Standort in oder nahe Ouarzazate mit nur zwei verfügbaren Tagen",
+        "Alle, die eine echte Nacht in den Dünen möchten, ohne sich auf eine längere Route festzulegen",
+        "Reisende, die ihre Reise anschließend von Ouarzazate aus fortsetzen"
+      ],
+      "gallery": [
+        {
+          "caption": "Die Dünen von Erg Chebbi bei Merzouga."
+        },
+        {
+          "caption": "Die Todra-Schlucht, unterwegs zwischen Ouarzazate und Merzouga."
+        },
+        {
+          "caption": "Ein Wüstencamp bei Sonnenuntergang nahe Merzouga."
+        }
+      ]
+    },
+    "3-day-errachidia-merzouga-marrakech": {
+      "name": "3 Tage von Errachidia nach Marrakesch durch die Sahara",
+      "duration": "3 Tage / 2 Nächte",
+      "category": "Sahara-Durchquerung · Nur auf Anfrage",
+      "highlights": [
+        "Kurzer Transfer von Errachidia nach Merzouga",
+        "Zwei Nächte im Wüstencamp bei Merzouga",
+        "Kamelritt bei Sonnenuntergang und Sonnenaufgang in Erg Chebbi",
+        "Aït Ben Haddou und Ouarzazate auf der Rückfahrt",
+        "Tizi-n-Tichka-Pass im Hohen Atlas",
+        "Einwegroute mit Ziel Marrakesch"
+      ],
+      "description": "Eine private Einwegroute von Errachidia durch die Sahara bis nach Marrakesch. Errachidia liegt nahe bei Merzouga, sodass der erste Tag ein kurzer Transfer statt einer langen Fahrt ist — das lässt zwei volle Nächte im Wüstencamp. Die Rückfahrt führt über Ouarzazate, die UNESCO-Kasbah Aït Ben Haddou und den Tizi-n-Tichka-Pass bis nach Marrakesch. Für diese Route wird ein persönliches Angebot erstellt, statt im Voraus einen festen Preis zu veröffentlichen; der genaue Betrag hängt von der Teilnehmerzahl und der gewählten Unterkunft ab und wird vor der Buchung gemeinsam mit Ihren Reisedaten bestätigt.",
+      "routeCaption": "Errachidia → Merzouga und Erg Chebbi → Ouarzazate → Aït Ben Haddou → Tizi n'Tichka → Marrakesch.",
+      "itineraryDays": [
+        {
+          "title": "Errachidia → Merzouga",
+          "desc": "Ein kurzer privater Transfer von Errachidia nach Merzouga — das marokkanische Fremdenverkehrsamt dokumentiert diesen Abschnitt als Teil des Korridors Errachidia–Midelt–Merzouga. Da der Großteil des Tages frei bleibt, bleibt Zeit zum Ankommen vor einem Kamelritt in die Dünen von Erg Chebbi bei Sonnenuntergang und der ersten Nacht im Wüstencamp.",
+          "stops": [
+            "Errachidia",
+            "Merzouga",
+            "Übernachtung: Wüstencamp, Erg Chebbi"
+          ]
+        },
+        {
+          "title": "Merzouga und Erg Chebbi, in Ihrem eigenen Tempo",
+          "desc": "Ein voller Tag rund um Merzouga ohne weitere Fahrten. Auf Wunsch möglich: ein Spaziergang bei Sonnenaufgang auf den Dünen, ein Besuch im Dorf Khamlia mit Gnaoua-Musik, oder Ruhe im Camp vor einer zweiten Nacht unter den Sternen.",
+          "stops": [
+            "Dünen von Erg Chebbi",
+            "Dorf Khamlia (optional)",
+            "Übernachtung: Wüstencamp, Erg Chebbi"
+          ]
+        },
+        {
+          "title": "Sonnenaufgang → Ouarzazate → Aït Ben Haddou → Tizi n'Tichka → Marrakesch",
+          "desc": "Früher Aufbruch für einen letzten Blick auf die Dünen, dann die lange Fahrt nach Westen über Ouarzazate. Stopp bei Aït Ben Haddou, der befestigten UNESCO-Ksar, bevor der Hohe Atlas über den Tizi-n-Tichka-Pass überquert wird und es hinab nach Marrakesch geht. Es ist der längste Fahrtag der Reise; die genaue Ankunftszeit hängt von den unterwegs gemachten Stopps ab.",
+          "stops": [
+            "Ouarzazate",
+            "Aït Ben Haddou",
+            "Tizi-n-Tichka-Pass",
+            "Marrakesch"
+          ]
+        }
+      ],
+      "included": [
+        "Privates klimatisiertes Fahrzeug mit Fahrer-Guide für die gesamte Route, gemäß bestätigtem Angebot",
+        "Zwei Nächte in einem Wüstencamp bei Merzouga, je nach gewähltem Paket",
+        "Kamelritt bei Sonnenuntergang und Sonnenaufgang in Erg Chebbi",
+        "Abholung und Rücktransfer zum Hotel oder Flughafen"
+      ],
+      "excluded": [
+        "Internationale Flüge",
+        "Mittagessen und Getränke",
+        "Nicht als inbegriffen aufgeführte Eintrittsgelder",
+        "Trinkgelder und persönliche Ausgaben",
+        "Alles, was nicht in Ihrem bestätigten Angebot aufgeführt ist"
+      ],
+      "faq": [
+        {
+          "question": "Ist Errachidia weit von Merzouga entfernt?",
+          "answer": "Es ist ein kurzer Transfer von etwa 1,5 bis 2 Stunden — deutlich kürzer als eine Abfahrt von Marrakesch oder Fès, weshalb am ersten Tag Zeit bleibt, sich vor dem abendlichen Kamelritt auszuruhen."
+        },
+        {
+          "question": "Wie lange dauert die Fahrt am letzten Tag nach Marrakesch?",
+          "answer": "Es ist der längste Tag der Reise, etwa 8 bis 9 Stunden über Ouarzazate, Aït Ben Haddou und den Tizi-n-Tichka-Pass, mit Stopps unterwegs statt einer Fahrt ohne Pausen."
+        },
+        {
+          "question": "Warum zwei Nächte in Merzouga statt einer?",
+          "answer": "Da der Transfer von Errachidia kurz ist, bietet eine zweite Nacht einen vollen freien Tag rund um Erg Chebbi, statt den Großteil der Reise im Fahrzeug zu verbringen."
+        },
+        {
+          "question": "Wie wird der Preis bestätigt?",
+          "answer": "Für diese Route erstellen wir ein persönliches Angebot, anstatt im Voraus einen festen Preis zu veröffentlichen. Der Gesamtpreis hängt von der Anzahl der Reisenden, der gewählten Unterkunft und dem genauen Reiseverlauf ab. Wir bestätigen den endgültigen Betrag daher gemeinsam mit Ihren Reisedaten vor jeder Zahlung. Gerne passen wir die Route vorab auf Wunsch an."
+        },
+        {
+          "question": "Kann diese Tour stattdessen in Marrakesch beginnen?",
+          "answer": "Diese Route ist auf eine Abfahrt in Errachidia ausgelegt. Wenn Sie Ihre Reise in Marrakesch beginnen, fragen Sie uns nach unseren Sahara-Touren ab Marrakesch."
+        }
+      ],
+      "suitableFor": [
+        "Reisende, die sich bereits in der Nähe von Errachidia befinden und weiter nach Marrakesch möchten",
+        "Alle, die zwei Nächte statt nur einen Zwischenstopp in der Wüste möchten",
+        "Reisende, die Aït Ben Haddou und die Überquerung des Hohen Atlas auf der Rückfahrt einschließen möchten"
+      ],
+      "gallery": [
+        {
+          "caption": "Merzouga, nur ein kurzer Transfer von Errachidia entfernt."
+        },
+        {
+          "caption": "Das Dünenmeer von Erg Chebbi."
+        },
+        {
+          "caption": "Aït Ben Haddou, besucht auf dem Weg nach Marrakesch."
+        }
+      ]
+    },
+    "3-day-errachidia-merzouga-fes": {
+      "name": "3 Tage von Errachidia nach Fès durch die Sahara",
+      "duration": "3 Tage / 2 Nächte",
+      "category": "Sahara-Durchquerung · Nur auf Anfrage",
+      "highlights": [
+        "Kurzer Transfer von Errachidia nach Merzouga",
+        "Zwei Nächte im Wüstencamp bei Merzouga",
+        "Kamelritt bei Sonnenuntergang und Sonnenaufgang in Erg Chebbi",
+        "Markt von Rissani und Erfoud auf der Rückfahrt",
+        "Ziz-Tal und Zedernwald des Mittleren Atlas",
+        "Einwegroute mit Ziel Fès"
+      ],
+      "description": "Eine private Einwegroute von Errachidia durch die Sahara bis nach Fès. Der kurze Transfer nach Merzouga lässt zwei volle Nächte im Wüstencamp, und die Rückfahrt folgt dem Ziz-Tal nach Norden über Rissani, Erfoud und den Zedernwald des Mittleren Atlas — den Korridor, den das marokkanische Fremdenverkehrsamt als Hauptroute zwischen Fès und Merzouga dokumentiert — bis in die Kaiserstadt Fès. Für diese Route wird ein persönliches Angebot erstellt, statt im Voraus einen festen Preis zu veröffentlichen; der genaue Betrag hängt von der Teilnehmerzahl und der gewählten Unterkunft ab und wird vor der Buchung gemeinsam mit Ihren Reisedaten bestätigt.",
+      "routeCaption": "Errachidia → Merzouga und Erg Chebbi → Rissani und Erfoud → Ziz-Tal → Ifrane → Fès.",
+      "itineraryDays": [
+        {
+          "title": "Errachidia → Merzouga",
+          "desc": "Ein kurzer privater Transfer von Errachidia nach Merzouga, Teil des Korridors, den das marokkanische Fremdenverkehrsamt als Errachidia–Midelt–Merzouga dokumentiert. Bei freiem Nachmittag bleibt Zeit zum Ankommen vor einem Kamelritt in die Dünen von Erg Chebbi bei Sonnenuntergang und der ersten Nacht im Wüstencamp.",
+          "stops": [
+            "Errachidia",
+            "Merzouga",
+            "Übernachtung: Wüstencamp, Erg Chebbi"
+          ]
+        },
+        {
+          "title": "Merzouga und Erg Chebbi, in Ihrem eigenen Tempo",
+          "desc": "Ein voller Tag rund um Merzouga ohne weitere Fahrten. Auf Wunsch möglich: ein Spaziergang bei Sonnenaufgang auf den Dünen, ein Besuch im Dorf Khamlia mit Gnaoua-Musik, oder Ruhe im Camp vor einer zweiten Nacht unter den Sternen.",
+          "stops": [
+            "Dünen von Erg Chebbi",
+            "Dorf Khamlia (optional)",
+            "Übernachtung: Wüstencamp, Erg Chebbi"
+          ]
+        },
+        {
+          "title": "Sonnenaufgang → Rissani → Erfoud → Ziz-Tal → Ifrane → Fès",
+          "desc": "Früher Aufbruch vor Sonnenaufgang für einen letzten Blick auf die Dünen, dann geht es nach Norden. Die Route führt durch die Altstadt von Rissani und Erfoud, bekannt für seine Fossilienwerkstätten, bevor sie dem von Palmen gesäumten Ziz-Tal zum Mittleren Atlas folgt. Die Straße steigt in den Zedernwald rund um Ifrane an, Heimat der Berberaffen, bevor es endgültig hinab nach Fès geht.",
+          "stops": [
+            "Rissani",
+            "Erfoud",
+            "Ziz-Tal",
+            "Zedernwald von Ifrane",
+            "Fès"
+          ]
+        }
+      ],
+      "included": [
+        "Privates klimatisiertes Fahrzeug mit Fahrer-Guide für die gesamte Route, gemäß bestätigtem Angebot",
+        "Zwei Nächte in einem Wüstencamp bei Merzouga, je nach gewähltem Paket",
+        "Kamelritt bei Sonnenuntergang und Sonnenaufgang in Erg Chebbi",
+        "Abholung und Rücktransfer zum Hotel oder Flughafen"
+      ],
+      "excluded": [
+        "Internationale Flüge",
+        "Mittagessen und Getränke",
+        "Nicht als inbegriffen aufgeführte Eintrittsgelder",
+        "Trinkgelder und persönliche Ausgaben",
+        "Alles, was nicht in Ihrem bestätigten Angebot aufgeführt ist"
+      ],
+      "faq": [
+        {
+          "question": "Ist Errachidia weit von Merzouga entfernt?",
+          "answer": "Ein kurzer Transfer von etwa 1,5 bis 2 Stunden, der am ersten Tag Zeit zum Ausruhen vor dem abendlichen Kamelritt lässt."
+        },
+        {
+          "question": "Wie lange dauert die Fahrt nach Fès am letzten Tag?",
+          "answer": "Etwa 5 bis 6 Stunden über Rissani, Erfoud, das Ziz-Tal und den Zedernwald des Mittleren Atlas, mit Stopps unterwegs."
+        },
+        {
+          "question": "Warum zwei Nächte in Merzouga statt einer?",
+          "answer": "Da der Hintransfer kurz ist, bietet eine zweite Nacht einen vollen freien Tag rund um Erg Chebbi, statt den Großteil der Reise im Fahrzeug zu verbringen."
+        },
+        {
+          "question": "Was gibt es in Rissani und Erfoud zu sehen?",
+          "answer": "Rissani besitzt einen der ältesten Märkte der Region; Erfoud ist bekannt für seine Fossilienwerkstätten — ein Hinweis darauf, dass dieser Teil der Sahara einst Meeresboden war."
+        },
+        {
+          "question": "Wie wird der Preis bestätigt?",
+          "answer": "Für diese Route erstellen wir ein persönliches Angebot, anstatt im Voraus einen festen Preis zu veröffentlichen. Der Gesamtpreis hängt von der Anzahl der Reisenden, der gewählten Unterkunft und dem genauen Reiseverlauf ab. Wir bestätigen den endgültigen Betrag daher gemeinsam mit Ihren Reisedaten vor jeder Zahlung. Gerne passen wir die Route vorab auf Wunsch an."
+        }
+      ],
+      "suitableFor": [
+        "Reisende, die sich bereits in der Nähe von Errachidia befinden und weiter nach Fès möchten",
+        "Alle, die zwei Nächte statt nur einen Zwischenstopp in der Wüste möchten",
+        "Reisende, die sich für den Korridor Rissani–Erfoud–Ziz-Tal interessieren, nicht nur für die Dünen"
+      ],
+      "gallery": [
+        {
+          "caption": "Die Dünen von Erg Chebbi bei Merzouga."
+        },
+        {
+          "caption": "Eine Kamelkarawane durchquert Erg Chebbi in der Dämmerung."
+        },
+        {
+          "caption": "Ifrane in den Zedernwäldern des Mittleren Atlas, auf dem Weg nach Fès."
+        }
+      ]
+    },
+    "2-day-errachidia-merzouga": {
+      "name": "2 Tage von Errachidia nach Merzouga — Wüstentour",
+      "duration": "2 Tage / 1 Nacht",
+      "category": "Sahara-Durchquerung · Nur auf Anfrage",
+      "highlights": [
+        "Kurzer Transfer von Errachidia nach Merzouga",
+        "Eine Nacht im Wüstencamp bei Merzouga",
+        "Kamelritt bei Sonnenuntergang in Erg Chebbi",
+        "Sonnenaufgang über den Dünen",
+        "Rundreise zurück nach Errachidia",
+        "Eine realistische Option für eine einzelne Wüstennacht"
+      ],
+      "description": "Eine private Rundreise von Errachidia nach Merzouga für Reisende, die eine echte Sahara-Nacht ohne großen Umweg erleben möchten. Da Errachidia nahe bei Merzouga liegt, ist der Transfer in jede Richtung kurz — das lässt echte Zeit für einen Kamelritt bei Sonnenuntergang, eine Nacht im Wüstencamp und einen Sonnenaufgang über Erg Chebbi, bevor es zurück nach Errachidia geht. Für diese Route wird ein persönliches Angebot erstellt, statt im Voraus einen festen Preis zu veröffentlichen; der genaue Betrag hängt von der Teilnehmerzahl und der gewählten Unterkunft ab und wird vor der Buchung gemeinsam mit Ihren Reisedaten bestätigt.",
+      "routeCaption": "Errachidia → Merzouga und Erg Chebbi → zurück nach Errachidia.",
+      "itineraryDays": [
+        {
+          "title": "Errachidia → Merzouga",
+          "desc": "Ein kurzer privater Transfer von Errachidia nach Merzouga, vom marokkanischen Fremdenverkehrsamt als Teil des Korridors Errachidia–Midelt–Merzouga dokumentiert. Ankunft mit ausreichend Zeit vor einem Kamelritt in die Dünen von Erg Chebbi bei Sonnenuntergang und einer Nacht im Wüstencamp.",
+          "stops": [
+            "Errachidia",
+            "Merzouga",
+            "Übernachtung: Wüstencamp, Erg Chebbi"
+          ]
+        },
+        {
+          "title": "Sonnenaufgang über Erg Chebbi → Rückfahrt nach Errachidia",
+          "desc": "Aufstehen vor Sonnenaufgang, um ihn über den Dünen zu erleben, dann zurück zum Camp zum Frühstück vor der kurzen Rückfahrt nach Errachidia.",
+          "stops": [
+            "Sonnenaufgang in Erg Chebbi",
+            "Merzouga",
+            "Errachidia"
+          ]
+        }
+      ],
+      "included": [
+        "Privates klimatisiertes Fahrzeug mit Fahrer-Guide für die gesamte Route, gemäß bestätigtem Angebot",
+        "Eine Nacht in einem Wüstencamp bei Merzouga, je nach gewähltem Paket",
+        "Kamelritt bei Sonnenuntergang in Erg Chebbi",
+        "Abholung und Rücktransfer zum Hotel in Errachidia"
+      ],
+      "excluded": [
+        "Internationale Flüge",
+        "Mittagessen und Getränke",
+        "Nicht als inbegriffen aufgeführte Eintrittsgelder",
+        "Trinkgelder und persönliche Ausgaben",
+        "Alles, was nicht in Ihrem bestätigten Angebot aufgeführt ist"
+      ],
+      "faq": [
+        {
+          "question": "Lohnt sich eine zweitägige Reise ab Errachidia?",
+          "answer": "Da der Transfer in jede Richtung kurz ist, etwa 1,5 bis 2 Stunden, ist dies eine der realistischsten Möglichkeiten, eine echte Sahara-Nacht in einen engen Zeitplan einzubauen — Sie verbringen nicht den Großteil der Reise auf der Straße."
+        },
+        {
+          "question": "Wie lange dauert die Fahrt in jede Richtung?",
+          "answer": "Etwa 1,5 bis 2 Stunden Fahrzeit zwischen Errachidia und Merzouga, in jede Richtung."
+        },
+        {
+          "question": "Kann diese Tour woanders als in Errachidia enden?",
+          "answer": "Diese konkrete Route ist eine Rundreise zurück nach Errachidia. Für ein Ziel in Marrakesch oder Fès sehen Sie sich bitte unsere 3-Tages-Routen ab Errachidia an."
+        },
+        {
+          "question": "Wie wird der Preis bestätigt?",
+          "answer": "Für diese Route erstellen wir ein persönliches Angebot, anstatt im Voraus einen festen Preis zu veröffentlichen. Der Gesamtpreis hängt von der Anzahl der Reisenden, der gewählten Unterkunft und dem genauen Reiseverlauf ab. Wir bestätigen den endgültigen Betrag daher gemeinsam mit Ihren Reisedaten vor jeder Zahlung. Gerne passen wir die Route vorab auf Wunsch an."
+        }
+      ],
+      "suitableFor": [
+        "Reisende mit Standort in oder nahe Errachidia mit begrenzter Zeit",
+        "Alle, die eine echte Nacht in den Dünen möchten, ohne einen großen Umweg zu machen",
+        "Reisende, die ihre Reise anschließend von Errachidia aus fortsetzen"
+      ],
+      "gallery": [
+        {
+          "caption": "Ein Wüstencamp bei Sonnenuntergang nahe Merzouga."
+        },
+        {
+          "caption": "Merzouga, nur ein kurzer Transfer von Errachidia entfernt."
+        }
+      ]
     }
   },
   "blog": {

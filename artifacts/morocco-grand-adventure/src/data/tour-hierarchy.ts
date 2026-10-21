@@ -16,7 +16,9 @@
 // trip-builder / contact flow for anything beyond the shipped itineraries.
 // ─────────────────────────────────────────────────────────────────────────────
 
-export type DepartureCity = 'marrakech' | 'casablanca' | 'fes' | 'agadir' | 'tangier';
+import type { ImageCredit } from './content';
+
+export type DepartureCity = 'marrakech' | 'casablanca' | 'fes' | 'agadir' | 'tangier' | 'ouarzazate' | 'errachidia';
 
 export const DEPARTURE_CITIES: DepartureCity[] = [
   'marrakech',
@@ -24,6 +26,8 @@ export const DEPARTURE_CITIES: DepartureCity[] = [
   'fes',
   'agadir',
   'tangier',
+  'ouarzazate',
+  'errachidia',
 ];
 
 /**
@@ -62,6 +66,12 @@ export const TOUR_DEPARTURE_CITY: Record<string, DepartureCity> = {
   'marrakech-ouzoud-waterfalls-day-trip': 'marrakech',
   'marrakech-imlil-day-trip': 'marrakech',
   'agadir-taghazout-day-trip': 'agadir',
+  '3-day-ouarzazate-merzouga-fes': 'ouarzazate',
+  '3-day-ouarzazate-merzouga-marrakech': 'ouarzazate',
+  '2-day-ouarzazate-merzouga-sahara': 'ouarzazate',
+  '3-day-errachidia-merzouga-marrakech': 'errachidia',
+  '3-day-errachidia-merzouga-fes': 'errachidia',
+  '2-day-errachidia-merzouga': 'errachidia',
 };
 
 // MGA_THREE_DAY_HIERARCHY_V1
@@ -103,6 +113,8 @@ export type CityHub = {
   destinationIds: string[];
   /** Whether a dedicated /tours/from-<slug>/<duration> hub has enough content to exist. */
   hasDurationDrive: boolean;
+  /** Attribution for `heroImage`, when it's a licensed third-party photograph requiring credit. */
+  heroCredit?: ImageCredit;
 };
 
 export const CITY_HUBS: CityHub[] = [
@@ -176,6 +188,35 @@ export const CITY_HUBS: CityHub[] = [
     destinationIds: ['tangier', 'tetouan', 'chefchaouen', 'akchour'],
     hasDurationDrive: true,
   },
+  {
+    id: 'ouarzazate',
+    slug: 'ouarzazate',
+    name: 'Ouarzazate',
+    heroImage: '/images/dest/ouarzazate.webp',
+    heroAlt: 'Kasbah architecture under a wide desert sky in Ouarzazate, Morocco',
+    title: 'Tours from Ouarzazate',
+    intro:
+      'Ouarzazate is the practical gateway between the High Atlas and the Sahara — close enough to Aït Ben Haddou for a half-day visit, and the jumping-off point for the Dades Valley, Todra Gorge and the dunes of Merzouga.',
+    body:
+      'Starting a private tour in Ouarzazate means you reach the Sahara faster than from Marrakech or Fes — the road east runs through the Dades Valley and Todra Gorge to Merzouga in around six hours of driving. From here we can route you onward to Fes via the Ziz Valley and the Middle Atlas cedar forest, loop back to Marrakech via Aït Ben Haddou and the Tizi n’Tichka pass, or keep a short round trip back to Ouarzazate itself if your schedule is tight. Every route is private, so the pace and stops are built around your dates.',
+    destinationIds: ['ouarzazate', 'dades-valley', 'todra-gorge', 'merzouga', 'erg-chebbi', 'ait-ben-haddou'],
+    hasDurationDrive: true,
+  },
+  {
+    id: 'errachidia',
+    slug: 'errachidia',
+    name: 'Errachidia',
+    heroImage: '/images/dest/errachidia.webp',
+    heroAlt: 'A view across the town of Errachidia, Morocco, with the surrounding plateau behind it',
+    title: 'Tours from Errachidia',
+    intro:
+      'Errachidia sits on the Fes–Errachidia–Midelt–Merzouga corridor documented by the Moroccan National Tourist Office, and is one of the closest real towns to the Erg Chebbi dunes — a transfer of around 1.5–2 hours rather than a full day of driving.',
+    body:
+      'Because Merzouga is so close, a private tour from Errachidia leaves more time in the dunes than routes starting further away. We can keep it simple with a short round trip back to Errachidia, or continue onward — west through Ouarzazate and Aït Ben Haddou to Marrakech, or north through Rissani, Erfoud and the Ziz Valley to Fes. Every itinerary is private and built around your travel dates.',
+    destinationIds: ['merzouga', 'erg-chebbi', 'ouarzazate', 'ait-ben-haddou'],
+    hasDurationDrive: true,
+    heroCredit: { photographer: 'Ilya Davydov', source: 'Wikimedia Commons', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Errachidia_north_view.jpg', license: 'CC BY-SA 4.0', licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/' },
+  },
 ];
 
 export function getCityHub(slug: string): CityHub | undefined {
@@ -201,6 +242,8 @@ export const CITY_HUB_DURATIONS: Record<DepartureCity, number[]> = {
   fes: [3, 4, 5, 6, 7, 8],
   agadir: [3, 4, 5, 6, 7, 8],
   tangier: [3, 4, 5],
+  ouarzazate: [2, 3],
+  errachidia: [2, 3],
 };
 
 /** Canonical URL path for a city+duration hub, e.g. /tours/from-marrakech/3-days. */

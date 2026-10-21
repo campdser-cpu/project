@@ -376,18 +376,26 @@ const ANCHOR = '3-day-sahara-marrakech';
   );
 
   const { tours } = await import('../src/data/content');
-  assert.equal(tours.length, 31, 'the catalogue is 31 tours');
+  assert.equal(tours.length, 37, 'the catalogue is 37 tours');
 
   // Every tour in the catalogue is published except those explicitly pending
   // a quote — the 14-day grand journey, whose fourteen-day scope has no
-  // priced-catalogue precedent, and the four Day Trip products (2026 Product
-  // Expansion batch), whose pricing has not yet been confirmed by the owner.
+  // priced-catalogue precedent, the four Day Trip products (2026 Product
+  // Expansion batch), and the six Ouarzazate/Errachidia Sahara-crossing tours
+  // (2026 Ouarzazate/Errachidia expansion), none of whose pricing has been
+  // confirmed by the owner.
   const PENDING: string[] = [
     '14-day-grand-morocco-journey',
     'marrakech-ourika-valley-day-trip',
     'marrakech-ouzoud-waterfalls-day-trip',
     'marrakech-imlil-day-trip',
     'agadir-taghazout-day-trip',
+    '3-day-ouarzazate-merzouga-fes',
+    '3-day-ouarzazate-merzouga-marrakech',
+    '2-day-ouarzazate-merzouga-sahara',
+    '3-day-errachidia-merzouga-marrakech',
+    '3-day-errachidia-merzouga-fes',
+    '2-day-errachidia-merzouga',
   ];
   const priced = tours.filter((t) => t.quoteOnly === false);
   assert.equal(priced.length, 26, 'all tours except the pending ones are published');

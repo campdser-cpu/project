@@ -609,6 +609,19 @@ export default function TourDetail() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                     <span className="absolute bottom-3 left-3 right-3 text-white text-xs font-semibold drop-shadow opacity-0 group-hover:opacity-100 transition-opacity">{g.caption}</span>
+                    {g.credit && (
+                      // Always visible (not hover-gated) — CC BY-SA requires credit
+                      // to actually be shown, not hidden behind a hover state.
+                      <span className="absolute bottom-1.5 right-1.5 flex items-center gap-1 bg-black/55 text-white text-[10px] leading-tight px-1.5 py-0.5 rounded-md backdrop-blur-sm">
+                        <a href={g.credit.sourceUrl} target="_blank" rel="noreferrer noopener" className="hover:underline">
+                          {fmtTemplate(t('photo_credit'), { name: g.credit.photographer })}
+                        </a>
+                        <span aria-hidden="true">·</span>
+                        <a href={g.credit.licenseUrl} target="_blank" rel="noreferrer noopener" className="hover:underline">
+                          {g.credit.license}
+                        </a>
+                      </span>
+                    )}
                   </div>
                 ))}
               </div>

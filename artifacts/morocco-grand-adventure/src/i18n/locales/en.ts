@@ -1077,6 +1077,7 @@ export default {
     td_decrease: "Decrease travelers",
     td_increase: "Increase travelers",
     td_preview_video_aria: "{name} preview video",
+    photo_credit: "Photo: {name}",
     td_rev1_name: "Michael T.",
     td_rev1_country: "United Kingdom",
     td_rev1_text: "Incredible from start to finish. The camel trek at sunset and the luxury camp were once-in-a-lifetime, and our driver was superb throughout.",
@@ -1272,6 +1273,22 @@ export default {
   hub_tangier_body:
     "From Tangier you can reach the UNESCO-listed Andalusian medina of Tétouan in under an hour, the blue-washed lanes of Chefchaouen, and the wild river gorges and waterfalls of the Akchour valley. Our private tours from Tangier range from a compact three-day loop through the north back to Tangier, to a one-way five-day route continuing south through the Middle Atlas cedar forests to the imperial city of Fes.",
   hub_tangier_hero_alt: "The old town and harbour of Tangier on the Strait of Gibraltar, Morocco",
+
+  hub_ouarzazate_name: "Ouarzazate",
+  hub_ouarzazate_title: "Tours from Ouarzazate",
+  hub_ouarzazate_intro:
+    "Ouarzazate is the practical gateway between the High Atlas and the Sahara — close enough to Aït Ben Haddou for a half-day visit, and the jumping-off point for the Dades Valley, Todra Gorge and the dunes of Merzouga.",
+  hub_ouarzazate_body:
+    "Starting a private tour in Ouarzazate means you reach the Sahara faster than from Marrakech or Fes — the road east runs through the Dades Valley and Todra Gorge to Merzouga in around six hours of driving. From here we can route you onward to Fes via the Ziz Valley and the Middle Atlas cedar forest, loop back to Marrakech via Aït Ben Haddou and the Tizi n'Tichka pass, or keep a short round trip back to Ouarzazate itself if your schedule is tight. Every route is private, so the pace and stops are built around your dates.",
+  hub_ouarzazate_hero_alt: "Kasbah architecture under a wide desert sky in Ouarzazate, Morocco",
+
+  hub_errachidia_name: "Errachidia",
+  hub_errachidia_title: "Tours from Errachidia",
+  hub_errachidia_intro:
+    "Errachidia sits on the Fes–Errachidia–Midelt–Merzouga corridor documented by the Moroccan National Tourist Office, and is one of the closest real towns to the Erg Chebbi dunes — a transfer of around 1.5–2 hours rather than a full day of driving.",
+  hub_errachidia_body:
+    "Because Merzouga is so close, a private tour from Errachidia leaves more time in the dunes than routes starting further away. We can keep it simple with a short round trip back to Errachidia, or continue onward — west through Ouarzazate and Aït Ben Haddou to Marrakech, or north through Rissani, Erfoud and the Ziz Valley to Fes. Every itinerary is private and built around your travel dates.",
+  hub_errachidia_hero_alt: "A view across the town of Errachidia, Morocco, with the surrounding plateau behind it",
 
   hub_short_on_time: "Short on time?",
   hub_short_on_time_sub: "See our {city} routes grouped by duration, including the classic 3-day layout.",

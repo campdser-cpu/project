@@ -39,7 +39,7 @@ export const discoveryGaps: Partial<Record<string, Record<string, string>>> = {
   fr: {
     dest_through_lens: 'vu par nous',
     dest_plan_experience: 'Préparez votre expérience du désert',
-    hub_dur_meta_title: "Circuits de {days} jours au départ de {city} — itinéraires privés au Maroc",
+    hub_dur_meta_title: "{days} jours depuis {city} — circuit privé au Maroc",
     hub_dur_meta_desc: "Circuits privés de {days} jours au Maroc au départ de {city} : le Sahara, les villes impériales et l’Atlas. Choisissez votre rythme et préparez un départ sur mesure.",
     home_start_title: 'Vous ne savez pas par où commencer ?',
     home_start_sub: 'Huit portes d’entrée au Maroc : les circuits, les lieux, et ce qu’il faut savoir avant de réserver.',
@@ -63,7 +63,7 @@ export const discoveryGaps: Partial<Record<string, Record<string, string>>> = {
   es: {
     dest_through_lens: 'con nuestra mirada',
     dest_plan_experience: 'Planifica tu experiencia en el desierto',
-    hub_dur_meta_title: "Circuitos de {days} días desde {city} — itinerarios privados por Marruecos",
+    hub_dur_meta_title: "{days} días desde {city} — tour privado en Marruecos",
     hub_dur_meta_desc: "Circuitos privados de {days} días por Marruecos desde {city}: el Sáhara, las ciudades imperiales y el Atlas. Elige tu ritmo y planifica una salida a medida.",
     home_start_title: '¿No sabes por dónde empezar?',
     home_start_sub: 'Ocho puertas de entrada a Marruecos: los circuitos, los lugares y qué saber antes de reservar.',
@@ -159,7 +159,7 @@ export const discoveryGaps: Partial<Record<string, Record<string, string>>> = {
   pt: {
     dest_through_lens: 'pelo nosso olhar',
     dest_plan_experience: 'Planeie a sua experiência no deserto',
-    hub_dur_meta_title: "Circuitos de {days} dias a partir de {city} — itinerários privados em Marrocos",
+    hub_dur_meta_title: "{days} dias desde {city} — tour privado em Marrocos",
     hub_dur_meta_desc: "Circuitos privados de {days} dias em Marrocos a partir de {city}: o Sara, as cidades imperiais e o Atlas. Escolha o seu ritmo e planeie uma partida à medida.",
     home_start_title: 'Não sabe por onde começar?',
     home_start_sub: 'Oito portas de entrada em Marrocos: os circuitos, os lugares, e o que saber antes de reservar.',
