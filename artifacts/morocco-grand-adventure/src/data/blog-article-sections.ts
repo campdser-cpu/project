@@ -561,11 +561,12 @@ export const BLOG_ARTICLE_CTA: Record<string, BlogCta> = {
     ],
   },
   'fes-chefchaouen-blue-city-guide': {
-    text: 'Explore Fes and Chefchaouen in more depth, or see the private itineraries that connect them:',
+    text: 'Explore Fes and Chefchaouen in more depth, or see the private itineraries that connect them — the 5-day Imperial Cities route, or the 7-day version if you also want a full Sahara day at Erg Chebbi:',
     links: [
       { to: '/destinations/fes', label: 'Fes Destination Guide' },
       { to: '/destinations/chefchaouen', label: 'Chefchaouen Destination Guide' },
       { to: '/tours/5-day-imperial-cities', label: '5-Day Imperial Cities & Desert Tour' },
+      { to: '/tours/7-day-imperial-cities-sahara-escape', label: '7-Day Imperial Cities & Sahara Escape' },
     ],
   },
   'marrakech-to-merzouga-3-day-sahara-tour': {

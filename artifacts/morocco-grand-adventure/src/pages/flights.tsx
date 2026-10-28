@@ -323,6 +323,11 @@ export default function Flights() {
           <div className="text-center mb-12">
             <h2 className="font-serif text-3xl md:text-5xl text-foreground mb-4">{t('fl_directory_heading')}</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">{t('fl_directory_sub')}</p>
+            <p className="mt-3">
+              <Link href="/travel-info/morocco-airports-guide" className="text-sm font-bold text-foreground hover:text-primary">
+                {t('fl_directory_airport_guide_link')}
+              </Link>
+            </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {AIRPORTS.map((a) => {

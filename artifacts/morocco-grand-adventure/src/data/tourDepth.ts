@@ -41,7 +41,9 @@ export const TOUR_DEPTH: Record<string, TourDepth> = {
       'A private journey throughout — your own vehicle and driver-guide, with the desert night built around a sunset camel trek into Erg Chebbi.',
     ],
     bestFor: 'First-time Sahara visitors from Marrakech who want the classic southern route and one night between the dunes, and who accept two full driving days for it. If you can spare a fourth day, the 4-day version buys you a real Merzouga desert day.',
-    guideLinks: MARRAKECH_CORE,
+    // Route itself crosses the High Atlas (Tizi n'Tichka) and ends at Erg
+    // Chebbi — both already named in this tour's own description/FAQ above.
+    guideLinks: [...MARRAKECH_CORE, 'erg-chebbi', 'atlas-mountains-guide'],
   },
   '4-day-marrakech-merzouga-sahara': {
     whyChoose: [
@@ -50,7 +52,8 @@ export const TOUR_DEPTH: Record<string, TourDepth> = {
       'Private vehicle and driver-guide throughout, with stops shaped around your party.',
     ],
     bestFor: 'Travellers who want the southern route without rushing: couples and families who would rather enjoy Aït Ben Haddou, the gorges and a full Merzouga day than endure back-to-back long drives.',
-    guideLinks: MARRAKECH_CORE,
+    // Same High Atlas crossing + Erg Chebbi night as the 3-day version above.
+    guideLinks: [...MARRAKECH_CORE, 'erg-chebbi', 'atlas-mountains-guide'],
     // Same corridor as the Fes one-way crossing (6 of 8 routeIds shared:
     // ait-ben-haddou, dades-valley, todra-gorge, merzouga, erg-chebbi,
     // marrakech) — a traveller comparing "round trip from Marrakech" against
@@ -94,7 +97,10 @@ export const TOUR_DEPTH: Record<string, TourDepth> = {
       'Private vehicle and driver-guide throughout.',
     ],
     bestFor: 'Travellers starting and finishing in Fes who want the dunes plus the Atlas landscapes between — a compact loop that avoids the longer southern road.',
-    guideLinks: FES_CORE,
+    // Crosses the Middle Atlas (Ifrane/cedar forest), not the High Atlas, so
+    // no atlas-mountains-guide link here — only the Erg Chebbi night this
+    // route's own description and FAQ already name.
+    guideLinks: [...FES_CORE, 'erg-chebbi'],
   },
   '4-day-fes-marrakech-via-merzouga': {
     whyChoose: [
@@ -156,7 +162,9 @@ export const TOUR_DEPTH: Record<string, TourDepth> = {
       'Private vehicle and driver-guide throughout.',
     ],
     bestFor: 'First-time visitors to Morocco with a week to spend who want the medinas and the dunes in a single, well-paced route.',
-    guideLinks: ['marrakech-to-merzouga', 'how-many-days', 'camel-trekking', 'luxury-desert-camps', 'things-to-do', 'best-time-to-visit', 'what-to-pack'],
+    // High Atlas crossing (Tizi n'Tichka) and the Erg Chebbi desert day are
+    // both named in this tour's own highlights/description above.
+    guideLinks: ['marrakech-to-merzouga', 'how-many-days', 'camel-trekking', 'luxury-desert-camps', 'things-to-do', 'best-time-to-visit', 'what-to-pack', 'erg-chebbi', 'atlas-mountains-guide'],
   },
   'casablanca-3-day': {
     whyChoose: [
@@ -174,7 +182,9 @@ export const TOUR_DEPTH: Record<string, TourDepth> = {
       'Private vehicle and driver-guide throughout.',
     ],
     bestFor: 'Culture-first travellers. Adding the Sahara? Ask us about the 7-day Imperial Cities & Sahara Escape, which extends this route to the dunes.',
-    guideLinks: ['how-many-days', 'camel-trekking', 'best-time-to-visit', 'what-to-pack'],
+    // Route highlights above already name the Atlas crossing, the Erg Chebbi
+    // night and the luxury desert camp (this tour's own description).
+    guideLinks: ['how-many-days', 'camel-trekking', 'best-time-to-visit', 'what-to-pack', 'erg-chebbi', 'atlas-mountains-guide', 'luxury-desert-camps'],
   },
   'honeymoon-morocco': {
     whyChoose: [

@@ -1387,6 +1387,7 @@ footer_route_highlights: "Morocco Route Highlights",
 
   fl_directory_heading: "Moroccan Airport Directory",
   fl_directory_sub: "Fourteen airports, verified against public route reporting — not every one has frequent scheduled service, and we say so plainly below.",
+  fl_directory_airport_guide_link: "Not sure which one fits your trip? Read our full Morocco airport guide →",
   fl_directory_search_flights: "Search flights to {city}",
   fl_directory_explore_tours: "Explore tours from {city}",
   fl_directory_footnote: "Airport names, codes and route notes were checked against Royal Air Maroc's own route pages and recent network-expansion reporting as of October 28, 2026. Schedules change — always confirm current flights directly with the airline.",

@@ -1155,6 +1155,7 @@ function buildFlightsContent(lang: Lang): string {
     + paragraph(tr(lang, 'fl_trust_message'))
     + h2(tr(lang, 'fl_directory_heading'))
     + paragraph(tr(lang, 'fl_directory_sub'))
+    + rawParagraph(link(`${SITE_URL}/${lang}/travel-info/morocco-airports-guide`, tr(lang, 'fl_directory_airport_guide_link')))
     + `    <ul>\n${airportItems.map((item) => `      <li>${item}</li>`).join('\n')}\n    </ul>\n`
     + paragraph(tr(lang, 'fl_directory_footnote'))
     + h2(tr(lang, 'fl_domestic_heading'))
