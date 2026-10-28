@@ -1384,6 +1384,10 @@ const BLOG_POST_INDEX: Record<string, number> = {
   'marrakech-to-merzouga-roadtrip': 4,
   'morocco-packing-list-desert': 5,
   'fes-chefchaouen-blue-city-guide': 6,
+  'marrakech-to-merzouga-3-day-sahara-tour': 7,
+  'fes-to-merzouga-sahara-desert-tour': 8,
+  'marrakech-ouarzazate-merzouga-great-south-morocco': 9,
+  'morocco-first-time-visitor-mistakes': 10,
 };
 
 export function getLocalizedRouteMeta(rest: string, lang: Lang = 'en'): RouteMeta {

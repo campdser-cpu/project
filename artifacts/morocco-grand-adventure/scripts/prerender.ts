@@ -1207,6 +1207,7 @@ const BLOG_SLUG_INDEX: Record<string, number> = {
   'marrakech-to-merzouga-3-day-sahara-tour': 7,
   'fes-to-merzouga-sahara-desert-tour': 8,
   'marrakech-ouarzazate-merzouga-great-south-morocco': 9,
+  'morocco-first-time-visitor-mistakes': 10,
 };
 function buildBlogContent(lang: Lang): string {
   // Localized titles/excerpts/categories come from the same blog_post_N_* keys the
@@ -1903,7 +1904,12 @@ function buildRoutes(lang: Lang): RouteEntry[] {
       add(rest, `${lang}${rest}/index.html`, () => buildExperienceContent(rest, lang), schemas);
     }
   // Merzouga authority sub-pages + comparison pages (hub copy localized via
-  // guide overlays; comparisons/travel-info stay canonical English).
+  // guide overlays; comparisons are fully localized per-locale. Travel-info
+  // guides (src/data/seoHub.ts TRAVEL_INFO) are the one remaining category
+  // still serving canonical English body copy at every locale URL — see the
+  // T-priority-2 investigation notes: x-default already points at /en/, but
+  // full translation vs. canonical consolidation is an open, evidence-gated
+  // decision, not yet made).
   // Real hero ImageObject for every guide/comparison/travel-info page, mirroring
   // the <StructuredData id="hero-image"> added in SeoHubPage.tsx — same real
   // photo, same caption. width/height are passed through only when this entry

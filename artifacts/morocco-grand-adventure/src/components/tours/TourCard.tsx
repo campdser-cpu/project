@@ -23,7 +23,6 @@ export function TourCard({ tour, compact = false }: TourCardProps) {
     <Link
       href={`/tours/${tour.id}`}
       className="group block bg-card rounded-2xl overflow-hidden border border-border shadow-sm hover:shadow-xl hover:border-primary/50 transition-all duration-500 h-full"
-      aria-label={tour.name}
     >
       <div className={`${compact ? 'h-48' : 'h-60'} relative overflow-hidden`}>
         <img
@@ -92,7 +91,7 @@ export function TourCard({ tour, compact = false }: TourCardProps) {
               </span>
             )}
           </div>
-          <span className="text-primary font-bold flex items-center gap-1 group-hover:gap-2 transition-all text-sm">
+          <span className="text-primary-text font-bold flex items-center gap-1 group-hover:gap-2 transition-all text-sm">
             {t('tours_view')} <ChevronRight className="w-4 h-4 rtl:rotate-180" aria-hidden="true" />
           </span>
         </div>

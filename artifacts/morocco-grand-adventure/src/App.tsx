@@ -10,7 +10,7 @@ import { LocalizedHead } from './components/seo/LocalizedHead';
 import { RAW_BASE, parseLangPath, preferredLang, langHref, canonicalizeRoute } from './lib/i18n-routing';
 import { TOUR_CITY_ROUTE, TOUR_DURATION_ROUTE } from './data/tour-hierarchy';
 
-import Home from './pages/home';
+const Home = lazy(() => import('./pages/home'));
 const Destinations = lazy(() => import('./pages/destinations'));
 const DestinationDetail = lazy(() => import('./pages/destination-detail'));
 const Tours = lazy(() => import('./pages/tours'));

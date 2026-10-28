@@ -731,11 +731,30 @@ export function isLocaleLoaded(lang: Lang): boolean {
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Gap-layer registry (same lazy strategy as the locale dictionaries).
-// The aggregate in `./gaps` statically pulls all eleven languages (~377 KB of
-// source, about2.ts alone ~117 KB). English is seeded eagerly because the
-// homepage and navbar render gap-only keys; the rest is fetched with the locale.
+// `./gaps` (gaps/index.ts) statically pulls all eleven languages from ~15
+// hand-authored source files (~377 KB of source, about2.ts alone ~117 KB) —
+// that aggregate is for BUILD-TIME tooling only (see src/i18n/locales/index.ts).
+// The browser instead fetches `./gaps/generated/<lang>.ts`, a per-locale
+// artifact pre-split from that same aggregate by `scripts/generate-gap-bundles.mjs`
+// (re-run it after editing any gaps/*.ts source), so a French session's chunk
+// contains only French strings instead of all ten non-English locales combined.
+// English is seeded eagerly because the homepage and navbar render gap-only keys.
 // ─────────────────────────────────────────────────────────────────────────────
 const gapsRegistry: Partial<Record<Lang, Record<string, string>>> = { en: enGaps };
+
+const GAPS_LOADERS: Record<Lang, () => Promise<{ default: Record<string, string> }>> = {
+  en: () => Promise.resolve({ default: enGaps }),
+  fr: () => import('./gaps/generated/fr'),
+  es: () => import('./gaps/generated/es'),
+  it: () => import('./gaps/generated/it'),
+  de: () => import('./gaps/generated/de'),
+  nl: () => import('./gaps/generated/nl'),
+  pt: () => import('./gaps/generated/pt'),
+  zh: () => import('./gaps/generated/zh'),
+  ja: () => import('./gaps/generated/ja'),
+  ko: () => import('./gaps/generated/ko'),
+  ar: () => import('./gaps/generated/ar'),
+};
 
 /** Register a locale's gap completions (used by the lazy loader and build tooling). */
 export function registerGaps(lang: Lang, data: Record<string, string>): void {
@@ -756,17 +775,11 @@ export async function loadLocale(lang: Lang): Promise<void> {
 
   const [dict, gaps] = await Promise.all([
     needsDict ? LOADERS[lang]!() : Promise.resolve(null),
-    needsGaps ? import('./gaps') : Promise.resolve(null),
+    needsGaps ? GAPS_LOADERS[lang]() : Promise.resolve(null),
   ]);
 
   if (dict) registerTranslations(lang, dict.default);
-  if (gaps) {
-    // The aggregate chunk carries every locale, so register them all once it
-    // has been paid for rather than refetching on a later language switch.
-    for (const [code, data] of Object.entries(gaps.i18nGaps)) {
-      if (data) registerGaps(code as Lang, data);
-    }
-  }
+  if (gaps) registerGaps(lang, gaps.default);
 }
 
 /**

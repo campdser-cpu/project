@@ -483,6 +483,46 @@ blog_post_6_excerpt: "Die Reise vom kulturellen Herzen Marokkos zur berühmten b
 blog_post_6_date: "März 2026",
 blog_post_6_read: "9 Min. Lesezeit",
 blog_post_6_cat: "Königsstädte",
+
+blog_post_7_title: "Marrakesch nach Merzouga: Wie die 3-tägige Sahara-Tour wirklich ist",
+
+blog_post_7_excerpt: "Der Hohe Atlas, Aït Ben Haddou, die Täler von Dades und Todra, dann eine Nacht in den Dünen von Erg Chebbi — was drei Tage auf Marokkos klassischer Sahara-Route wirklich bedeuten und für wen sie geeignet sind.",
+
+blog_post_7_date: "September 2026",
+
+blog_post_7_read: "5 Min. Lesezeit",
+
+blog_post_7_cat: "Sahara-Wüste",
+
+blog_post_8_title: "Von Fès nach Merzouga: Die Sahara-Tour durch den Mittleren Atlas",
+
+blog_post_8_excerpt: "Zedernwälder, die alpinen Straßen von Ifrane und das Ziz-Tal — wie die Route von Fès nach Merzouga einen kürzeren, anderen Zugang zur Sahara bietet als die klassische Überquerung ab Marrakesch.",
+
+blog_post_8_date: "September 2026",
+
+blog_post_8_read: "4 Min. Lesezeit",
+
+blog_post_8_cat: "Sahara-Wüste",
+
+blog_post_9_title: "Von Marrakesch über Ouarzazate nach Merzouga: Der Große Süden",
+
+blog_post_9_excerpt: "Ouarzazate, die Täler von Dades und Todra, ein ruhigerer Sahara-Tag in Merzouga, dann eine stille Rückfahrt durch das Draa-Tal und Nkob — die ausführlichere Version Marokkos Sahara-Route.",
+
+blog_post_9_date: "September 2026",
+
+blog_post_9_read: "4 Min. Lesezeit",
+
+blog_post_9_cat: "Sahara-Wüste",
+
+blog_post_10_title: "10 Fehler, die Erstbesucher in Marokko machen (und wie man sie vermeidet)",
+
+blog_post_10_excerpt: "Von Taxitarifen über das Handeln auf Souks bis zur Orientierung in der Medina — die kleinen, praktischen Fehler, die Erstbesucher in Marokko überraschen, und wie man jeden einzelnen vermeidet.",
+
+blog_post_10_date: "Oktober 2026",
+
+blog_post_10_read: "7 Min. Lesezeit",
+
+blog_post_10_cat: "Reiseplanung",
 lc_hero_alt: "Luxus-Wüstencamp in der Dämmerung bei Merzouga mit leuchtenden Laternen",
 lc_breadcrumb: "Luxus-Wüstencamp",
 lc_title: "Luxus-Wüstencamp",

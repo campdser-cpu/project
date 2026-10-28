@@ -615,6 +615,38 @@
           "question": "Les vols sont-ils inclus ?",
           "answer": "Les vols internationaux ne font pas partie du prix de ce circuit. Aucun mois ne garantit le billet le moins cher pour tous les voyageurs, car les tarifs dépendent de votre pays de départ, de la compagnie aérienne et des dates. Une fois vos dates choisies, nous pouvons vous aider à réfléchir au plan d'arrivée et de départ le plus pratique."
         }
+      ],
+      "included": [
+        "Véhicule privé climatisé",
+        "Chauffeur professionnel parlant anglais",
+        "Carburant",
+        "2 nuits d'hébergement : 1 nuit dans la région de la vallée de Dades, 1 nuit dans un camp du désert près de Merzouga",
+        "Trekking en dromadaire au coucher du soleil dans les dunes d'Erg Chebbi",
+        "Prise en charge et dépose à l'hôtel à Marrakech"
+      ],
+      "excluded": [
+        "Vols internationaux",
+        "Déjeuners",
+        "Boissons",
+        "Frais d'entrée aux monuments et musées",
+        "Pourboires et dépenses personnelles"
+      ],
+      "gallery": [
+        {
+          "caption": "Traversée du Haut Atlas sur la route vers le sud"
+        },
+        {
+          "caption": "Vue depuis le toit sur le ksar d'Aït Ben Haddou"
+        },
+        {
+          "caption": "Les parois du canyon des gorges du Todra"
+        },
+        {
+          "caption": "Trekking en dromadaire au coucher du soleil dans Erg Chebbi"
+        },
+        {
+          "caption": "Camp dans le désert à Erg Chebbi"
+        }
       ]
     },
     "5-day-imperial-cities": {
@@ -1832,7 +1864,8 @@
         "Riad, maisons d'hôtes et un camp dans le désert sélectionnés selon l'itinéraire confirmé",
         "Petits-déjeuners et dîners selon l'itinéraire confirmé",
         "Trekking en dromadaire au coucher du soleil et nuit en camp dans le désert à Erg Chebbi",
-        "Guides locaux officiels à Fès et Marrakech"
+        "Guides locaux officiels à Fès et Marrakech",
+        "Guide local officiel à Fès et à Marrakech"
       ],
       "excluded": [
         "Vols internationaux",
@@ -1848,7 +1881,8 @@
             "Mosquée Hassan II",
             "Rabat",
             "Chefchaouen",
-            "Nuit à Chefchaouen"
+            "Nuit à Chefchaouen",
+            "Nuit sur place : Chefchaouen"
           ]
         },
         {
@@ -1916,7 +1950,8 @@
           "stops": [
             "Marrakech",
             "Route côtière",
-            "Fin : Casablanca"
+            "Fin : Casablanca",
+            "Dépose à l'aéroport"
           ]
         }
       ],
@@ -2847,6 +2882,12 @@
         "Dépenses personnelles"
       ],
       "gallery": [
+        {
+          "caption": "Traversée du Haut Atlas sur la route vers le sud"
+        },
+        {
+          "caption": "Aït Ben Haddou — le ksar classé à l'UNESCO, étape principale du premier jour"
+        },
         {
           "caption": "La vallée de Dades sur la route de Merzouga"
         },
@@ -4868,6 +4909,34 @@
           }
         ]
       }
+    },
+    "marrakech-to-merzouga-3-day-sahara-tour": {
+      "title": "Marrakech-Merzouga : à quoi ressemble vraiment le circuit de 3 jours dans le Sahara",
+      "excerpt": "Le Haut Atlas, Aït Ben Haddou, les vallées du Dadès et du Todra, puis une nuit dans les dunes de l'Erg Chebbi — ce que trois jours sur l'itinéraire classique du Sahara marocain impliquent réellement, et à qui ce circuit convient.",
+      "alt": "Passerelle sur l'oued Ounila à Aït Ben Haddou, première étape majeure de l'itinéraire Marrakech-Merzouga",
+      "canonicalTitle": "Marrakech à Merzouga — à quoi ressemble vraiment le circuit de 3 jours dans le Sahara",
+      "canonicalExcerpt": "Le Haut Atlas, Aït Ben Haddou, les vallées du Dadès et du Todra, puis une nuit dans les dunes de l'Erg Chebbi — ce que trois jours sur l'itinéraire classique du Sahara marocain impliquent réellement, et à qui ce circuit convient."
+    },
+    "fes-to-merzouga-sahara-desert-tour": {
+      "title": "De Fès à Merzouga : le circuit saharien par le Moyen Atlas",
+      "excerpt": "Forêts de cèdres, rues alpines d'Ifrane et vallée du Ziz — comment l'itinéraire de Fès à Merzouga offre un accès au Sahara plus court et différent de la traversée classique depuis Marrakech.",
+      "alt": "La médina de Fès, point de départ de l'itinéraire saharien vers Merzouga",
+      "canonicalTitle": "Fès à Merzouga — le circuit saharien par le Moyen Atlas",
+      "canonicalExcerpt": "Forêts de cèdres, rues alpines d'Ifrane et vallée du Ziz — comment l'itinéraire de Fès à Merzouga offre un accès au Sahara plus court et différent de la traversée classique depuis Marrakech."
+    },
+    "marrakech-ouarzazate-merzouga-great-south-morocco": {
+      "title": "De Marrakech à Ouarzazate et Merzouga : à la découverte du Grand Sud",
+      "excerpt": "Ouarzazate, les vallées du Dadès et du Todra, une journée saharienne plus posée à Merzouga, puis un retour tranquille par la vallée du Draa et Nkob — la version la plus complète de l'itinéraire saharien marocain.",
+      "alt": "Ouarzazate, porte d'entrée du Grand Sud marocain et ancien haut lieu du cinéma",
+      "canonicalTitle": "Marrakech à Ouarzazate et Merzouga — à la découverte du Grand Sud",
+      "canonicalExcerpt": "Ouarzazate, les vallées du Dadès et du Todra, une journée saharienne plus posée à Merzouga, puis un retour tranquille par la vallée du Draa et Nkob — la version la plus complète de l'itinéraire saharien marocain."
+    },
+    "morocco-first-time-visitor-mistakes": {
+      "title": "10 erreurs que commettent les visiteurs au Maroc pour la première fois (et comment les éviter)",
+      "excerpt": "Des tarifs de taxi à la négociation dans les souks, en passant par les directions dans la médina — les petites erreurs pratiques qui surprennent les visiteurs au Maroc pour la première fois, et comment les éviter toutes.",
+      "alt": "Une ruelle étroite d'un souk à Marrakech bordée d'étals, menant vers un minaret",
+      "canonicalTitle": "10 erreurs que commettent les visiteurs au Maroc pour la première fois",
+      "canonicalExcerpt": "Des tarifs de taxi à la négociation dans les souks, en passant par les directions dans la médina — les petites erreurs pratiques qui surprennent les visiteurs au Maroc pour la première fois, et comment les éviter toutes."
     }
   },
   "tourDepth": {

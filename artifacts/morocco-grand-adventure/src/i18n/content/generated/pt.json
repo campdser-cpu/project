@@ -615,6 +615,38 @@
           "question": "Os voos estão incluídos?",
           "answer": "Os voos internacionais não fazem parte do preço desta viagem. Não existe um único mês que garanta as tarifas aéreas mais baratas para todos os viajantes, porque os preços dependem do país de partida, da companhia aérea e das datas. Depois de escolhidas as datas da viagem, podemos ajudá-lo a definir o plano de chegada e partida mais prático."
         }
+      ],
+      "included": [
+        "Veículo privado com ar-condicionado",
+        "Motorista profissional de língua inglesa",
+        "Combustível",
+        "2 noites de alojamento: 1 noite na zona do vale do Dades, 1 noite num acampamento no deserto perto de Merzouga",
+        "Passeio de camelo ao pôr do sol pelas dunas de Erg Chebbi",
+        "Recolha e regresso ao hotel em Marraquexe"
+      ],
+      "excluded": [
+        "Voos internacionais",
+        "Almoços",
+        "Bebidas",
+        "Entradas em monumentos e museus",
+        "Gorjetas e despesas pessoais"
+      ],
+      "gallery": [
+        {
+          "caption": "Atravessando o Alto Atlas na estrada para o sul"
+        },
+        {
+          "caption": "Vista do terraço sobre o ksar de Aït Ben Haddou"
+        },
+        {
+          "caption": "As paredes do canhão das gargantas do Todra"
+        },
+        {
+          "caption": "Passeio de camelo ao pôr do sol em Erg Chebbi"
+        },
+        {
+          "caption": "Acampamento no deserto em Erg Chebbi"
+        }
       ]
     },
     "3-day-sahara-fes": {
@@ -1979,7 +2011,8 @@
         "Riads, casas de hóspedes e um acampamento no deserto selecionados, conforme o itinerário confirmado",
         "Pequenos-almoços e jantares conforme confirmado",
         "Passeio de camelo ao pôr do sol e noite em acampamento no deserto, em Erg Chebbi",
-        "Guia local oficial em Fes e em Marrakech"
+        "Guia local oficial em Fes e em Marrakech",
+        "Guia local oficial em Fez e Marraquexe"
       ],
       "excluded": [
         "Voos internacionais",
@@ -1995,7 +2028,8 @@
             "Mesquita Hassan II",
             "Rabat",
             "Chefchaouen",
-            "Pernoita: Chefchaouen"
+            "Pernoita: Chefchaouen",
+            "Pernoita em: Chefchaouen"
           ]
         },
         {
@@ -2063,7 +2097,8 @@
           "stops": [
             "Marrakech",
             "Estrada costeira",
-            "Fim: Casablanca"
+            "Fim: Casablanca",
+            "Transporte para o aeroporto"
           ]
         }
       ],
@@ -2847,6 +2882,12 @@
         }
       ],
       "gallery": [
+        {
+          "caption": "Atravessando o Alto Atlas na estrada para o sul"
+        },
+        {
+          "caption": "Aït Ben Haddou — o ksar classificado pela UNESCO, a principal parada do primeiro dia"
+        },
         {
           "caption": "O Vale do Dades, na estrada para Merzouga"
         },
@@ -4032,6 +4073,15 @@
           "caption": "Um guia berbere conduz uma caravana de camelos por Erg Chebbi ao anoitecer."
         },
         {
+          "caption": "O portão ornamentado da antiga cidade-mercado de Rissani."
+        },
+        {
+          "caption": "Arquitetura tradicional berbere em terra, perto de Erfoud."
+        },
+        {
+          "caption": "O vale do Ziz, repleto de palmeiras, talhado no planalto desértico."
+        },
+        {
           "caption": "Ifrane, nas florestas de cedros do Atlas Médio."
         }
       ]
@@ -4411,6 +4461,15 @@
           "caption": "Uma caravana de camelos atravessa Erg Chebbi ao anoitecer."
         },
         {
+          "caption": "O portão ornamentado da antiga cidade-mercado de Rissani."
+        },
+        {
+          "caption": "Arquitetura tradicional berbere em terra, perto de Erfoud."
+        },
+        {
+          "caption": "O vale do Ziz, repleto de palmeiras, talhado no planalto desértico."
+        },
+        {
           "caption": "Ifrane, nas florestas de cedros do Atlas Médio, a caminho de Fez."
         }
       ]
@@ -4537,6 +4596,34 @@
       "alt": "Edifícios e ruelas caiados de azul na medina de Chefchaouen, Marrocos",
       "canonicalTitle": "De Fes a Chefchaouen — Descobrir a Cidade Azul de Marrocos",
       "canonicalExcerpt": "A viagem do coração cultural de Marrocos até à famosa medina azul — o que ver, onde ficar e como tirar o máximo partido da visita."
+    },
+    "marrakech-to-merzouga-3-day-sahara-tour": {
+      "title": "Marrakech a Merzouga: como é realmente o circuito de 3 dias pelo Saara",
+      "excerpt": "O Alto Atlas, Aït Ben Haddou, os vales do Dades e do Todra, e depois uma noite nas dunas de Erg Chebbi — o que três dias na rota clássica do Saara marroquino realmente envolvem, e para quem é indicado.",
+      "alt": "Ponte pedonal sobre o rio Ounila em Aït Ben Haddou, a primeira grande paragem da rota Marrakech-Merzouga",
+      "canonicalTitle": "Marrakech a Merzouga — como é realmente o circuito de 3 dias pelo Saara",
+      "canonicalExcerpt": "O Alto Atlas, Aït Ben Haddou, os vales do Dades e do Todra, e depois uma noite nas dunas de Erg Chebbi — o que três dias na rota clássica do Saara marroquino realmente envolvem, e para quem é indicado."
+    },
+    "fes-to-merzouga-sahara-desert-tour": {
+      "title": "De Fez a Merzouga: o circuito do Saara pelo Atlas Médio",
+      "excerpt": "Florestas de cedros, as ruas alpinas de Ifrane e o vale do Ziz — como a rota de Fez a Merzouga oferece um acesso ao Saara mais curto e diferente da travessia clássica a partir de Marrakech.",
+      "alt": "A medina de Fez, ponto de partida da rota do Saara até Merzouga",
+      "canonicalTitle": "Fez a Merzouga — o circuito do Saara pelo Atlas Médio",
+      "canonicalExcerpt": "Florestas de cedros, as ruas alpinas de Ifrane e o vale do Ziz — como a rota de Fez a Merzouga oferece um acesso ao Saara mais curto e diferente da travessia clássica a partir de Marrakech."
+    },
+    "marrakech-ouarzazate-merzouga-great-south-morocco": {
+      "title": "De Marrakech a Ouarzazate e Merzouga: explorando o Grande Sul",
+      "excerpt": "Ouarzazate, os vales do Dades e do Todra, um dia saariano mais tranquilo em Merzouga, e depois um regresso calmo pelo vale do Draa e Nkob: a versão mais completa da rota do Saara marroquino.",
+      "alt": "Ouarzazate, porta de entrada para o Grande Sul marroquino e antigo polo da indústria cinematográfica",
+      "canonicalTitle": "Marrakech a Ouarzazate e Merzouga — explorando o Grande Sul",
+      "canonicalExcerpt": "Ouarzazate, os vales do Dades e do Todra, um dia saariano mais tranquilo em Merzouga, e depois um regresso calmo pelo vale do Draa e Nkob: a versão mais completa da rota do Saara marroquino."
+    },
+    "morocco-first-time-visitor-mistakes": {
+      "title": "10 erros que os visitantes de primeira viagem cometem em Marrocos (e como evitá-los)",
+      "excerpt": "Das tarifas de táxi à negociação nos souks e à orientação na medina — os pequenos erros práticos que surpreendem quem visita Marrocos pela primeira vez, e como evitá-los todos.",
+      "alt": "Um beco estreito de um souk em Marraquexe ladeado por bancas de mercado, conduzindo a um minarete",
+      "canonicalTitle": "10 erros que os visitantes de primeira viagem cometem em Marrocos",
+      "canonicalExcerpt": "Das tarifas de táxi à negociação nos souks e à orientação na medina — os pequenos erros práticos que surpreendem quem visita Marrocos pela primeira vez, e como evitá-los todos."
     }
   },
   "tourDepth": {

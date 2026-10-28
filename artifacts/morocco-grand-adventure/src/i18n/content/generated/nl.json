@@ -615,6 +615,38 @@
           "question": "Zijn vluchten inbegrepen?",
           "answer": "Internationale vluchten vallen buiten de tourprijs. Er is geen enkele maand die voor iedere reiziger de goedkoopste ticketprijs garandeert, omdat de prijzen afhangen van uw vertrekland, luchtvaartmaatschappij en reisdata. Zodra uw reisdata vaststaan, denken wij graag met u mee over het meest praktische aankomst- en vertrekplan."
         }
+      ],
+      "included": [
+        "Privé airconditioned voertuig",
+        "Professionele Engelssprekende chauffeur",
+        "Brandstof",
+        "2 nachten accommodatie: 1 nacht in het gebied van de Dades-vallei, 1 nacht in een woestijnkamp bij Merzouga",
+        "Kameeltrekking bij zonsondergang de duinen van Erg Chebbi in",
+        "Ophalen en terugbrengen naar het hotel in Marrakech"
+      ],
+      "excluded": [
+        "Internationale vluchten",
+        "Lunches",
+        "Drankjes",
+        "Entreekosten voor monumenten en musea",
+        "Fooien en persoonlijke uitgaven"
+      ],
+      "gallery": [
+        {
+          "caption": "De Hoge Atlas oversteken op de weg naar het zuiden"
+        },
+        {
+          "caption": "Uitzicht vanaf het dak over de ksar van Aït Ben Haddou"
+        },
+        {
+          "caption": "De canyonwanden van de Todra-kloof"
+        },
+        {
+          "caption": "Kameeltrekking bij zonsondergang in Erg Chebbi"
+        },
+        {
+          "caption": "Woestijnkamp bij Erg Chebbi"
+        }
       ]
     },
     "3-day-sahara-fes": {
@@ -1980,6 +2012,7 @@
             "Hassan II-moskee",
             "Rabat",
             "Chefchaouen",
+            "Overnachting: Chefchaouen",
             "Overnachting: Chefchaouen"
           ]
         },
@@ -2048,7 +2081,8 @@
           "stops": [
             "Marrakech",
             "Kustweg",
-            "Einde: Casablanca"
+            "Einde: Casablanca",
+            "Transfer naar de luchthaven"
           ]
         }
       ],
@@ -2059,7 +2093,8 @@
         "Geselecteerde riads, gastenverblijven en een woestijnkamp volgens het bevestigde reisschema",
         "Ontbijt en diner zoals bevestigd",
         "Kameeltocht bij zonsondergang en een nacht in het woestijnkamp bij Erg Chebbi",
-        "Officiële lokale gids in Fes en Marrakech"
+        "Officiële lokale gids in Fes en Marrakech",
+        "Officiële lokale gids in Fez en Marrakech"
       ],
       "excluded": [
         "Internationale vluchten",
@@ -2847,6 +2882,12 @@
         "Persoonlijke uitgaven"
       ],
       "gallery": [
+        {
+          "caption": "De Hoge Atlas oversteken op de weg naar het zuiden"
+        },
+        {
+          "caption": "Aït Ben Haddou — de UNESCO-ksar, de belangrijkste stop van dag één"
+        },
         {
           "caption": "De Dadesvallei op de weg naar Merzouga"
         },
@@ -4032,6 +4073,15 @@
           "caption": "Een Berbergids leidt een kameelkaravaan door Erg Chebbi bij schemering."
         },
         {
+          "caption": "De sierlijke poort naar de oude marktstad Rissani."
+        },
+        {
+          "caption": "Traditionele Berberarchitectuur van aarde bij Erfoud."
+        },
+        {
+          "caption": "De met palmen gevulde Ziz-vallei, uitgesneden in het woestijnplateau."
+        },
+        {
           "caption": "Ifrane, in de cederbossen van het Midden-Atlasgebergte."
         }
       ]
@@ -4409,6 +4459,15 @@
         },
         {
           "caption": "Een kameelkaravaan steekt Erg Chebbi over bij schemering."
+        },
+        {
+          "caption": "De sierlijke poort naar de oude marktstad Rissani."
+        },
+        {
+          "caption": "Traditionele Berberarchitectuur van aarde bij Erfoud."
+        },
+        {
+          "caption": "De met palmen gevulde Ziz-vallei, uitgesneden in het woestijnplateau."
         },
         {
           "caption": "Ifrane, in de cederbossen van het Midden-Atlasgebergte, op weg naar Fez."
@@ -4850,6 +4909,34 @@
           }
         ]
       }
+    },
+    "marrakech-to-merzouga-3-day-sahara-tour": {
+      "title": "Marrakech naar Merzouga: hoe de 3-daagse Sahara-tour er echt uitziet",
+      "excerpt": "De Hoge Atlas, Aït Ben Haddou, de Dades- en Todra-vallei, en dan een nacht in de duinen van Erg Chebbi — wat drie dagen op Marokko's klassieke Sahara-route écht inhouden, en voor wie dit geschikt is.",
+      "alt": "Voetgangersbrug over de Ounila-rivier bij Aït Ben Haddou, de eerste grote stop op de route van Marrakech naar Merzouga",
+      "canonicalTitle": "Marrakech naar Merzouga — hoe de 3-daagse Sahara-tour er echt uitziet",
+      "canonicalExcerpt": "De Hoge Atlas, Aït Ben Haddou, de Dades- en Todra-vallei, en dan een nacht in de duinen van Erg Chebbi — wat drie dagen op Marokko's klassieke Sahara-route écht inhouden, en voor wie dit geschikt is."
+    },
+    "fes-to-merzouga-sahara-desert-tour": {
+      "title": "Van Fez naar Merzouga: de Sahara-tour door het Middenatlasgebergte",
+      "excerpt": "Cederbossen, de alpenstraatjes van Ifrane en de Ziz-vallei — hoe de route van Fez naar Merzouga een kortere, andere ingang tot de Sahara biedt dan de klassieke oversteek vanuit Marrakech.",
+      "alt": "De medina van Fez, vertrekpunt van de Sahara-route naar Merzouga",
+      "canonicalTitle": "Fez naar Merzouga — de Sahara-tour door het Middenatlasgebergte",
+      "canonicalExcerpt": "Cederbossen, de alpenstraatjes van Ifrane en de Ziz-vallei — hoe de route van Fez naar Merzouga een kortere, andere ingang tot de Sahara biedt dan de klassieke oversteek vanuit Marrakech."
+    },
+    "marrakech-ouarzazate-merzouga-great-south-morocco": {
+      "title": "Van Marrakech via Ouarzazate naar Merzouga: op ontdekking in het Grote Zuiden",
+      "excerpt": "Ouarzazate, de Dades- en Todra-vallei, een rustigere Sahara-dag in Merzouga, en dan een kalme terugweg via de Draa-vallei en Nkob — de uitgebreidere versie van Marokko's Sahara-route.",
+      "alt": "Ouarzazate, de poort naar het Grote Zuiden van Marokko en voormalig centrum van de filmindustrie",
+      "canonicalTitle": "Marrakech via Ouarzazate naar Merzouga — op ontdekking in het Grote Zuiden",
+      "canonicalExcerpt": "Ouarzazate, de Dades- en Todra-vallei, een rustigere Sahara-dag in Merzouga, en dan een kalme terugweg via de Draa-vallei en Nkob — de uitgebreidere versie van Marokko's Sahara-route."
+    },
+    "morocco-first-time-visitor-mistakes": {
+      "title": "10 fouten die eerste-keer-bezoekers in Marokko maken (en hoe je ze vermijdt)",
+      "excerpt": "Van taxitarieven tot onderhandelen op de souks en de weg vinden in de medina — de kleine, praktische fouten die eerste-keer-bezoekers in Marokko overvallen, en hoe je ze allemaal vermijdt.",
+      "alt": "Een smal souk-steegje in Marrakech met marktstalletjes, dat naar een minaret leidt",
+      "canonicalTitle": "10 fouten die eerste-keer-bezoekers in Marokko maken",
+      "canonicalExcerpt": "Van taxitarieven tot onderhandelen op de souks en de weg vinden in de medina — de kleine, praktische fouten die eerste-keer-bezoekers in Marokko overvallen, en hoe je ze allemaal vermijdt."
     }
   },
   "tourDepth": {

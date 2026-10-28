@@ -483,6 +483,46 @@ blog_post_6_excerpt: "Il viaggio dal cuore culturale del Marocco alla celebre me
 blog_post_6_date: "Marzo 2026",
 blog_post_6_read: "9 min di lettura",
 blog_post_6_cat: "Città imperiali",
+
+blog_post_7_title: "Da Marrakech a Merzouga: come è davvero il tour di 3 giorni nel Sahara",
+
+blog_post_7_excerpt: "L'Alto Atlante, Aït Ben Haddou, le valli del Dades e del Todra, poi una notte tra le dune dell'Erg Chebbi: cosa comportano davvero tre giorni sul classico itinerario sahariano del Marocco, e a chi è adatto.",
+
+blog_post_7_date: "Settembre 2026",
+
+blog_post_7_read: "5 min di lettura",
+
+blog_post_7_cat: "Deserto del Sahara",
+
+blog_post_8_title: "Da Fes a Merzouga: il tour nel Sahara attraverso il Medio Atlante",
+
+blog_post_8_excerpt: "Foreste di cedri, le vie alpine di Ifrane e la valle dello Ziz: come l'itinerario da Fes a Merzouga offra un accesso al Sahara più breve e diverso rispetto alla classica traversata da Marrakech.",
+
+blog_post_8_date: "Settembre 2026",
+
+blog_post_8_read: "4 min di lettura",
+
+blog_post_8_cat: "Deserto del Sahara",
+
+blog_post_9_title: "Da Marrakech a Ouarzazate e Merzouga: alla scoperta del Grande Sud",
+
+blog_post_9_excerpt: "Ouarzazate, le valli del Dades e del Todra, una giornata nel Sahara più rilassata a Merzouga, poi un ritorno tranquillo attraverso la valle del Draa e Nkob: la versione più completa dell'itinerario sahariano marocchino.",
+
+blog_post_9_date: "Settembre 2026",
+
+blog_post_9_read: "4 min di lettura",
+
+blog_post_9_cat: "Deserto del Sahara",
+
+blog_post_10_title: "10 errori che chi visita il Marocco per la prima volta commette (e come evitarli)",
+
+blog_post_10_excerpt: "Dalle tariffe dei taxi alla contrattazione nei souk fino a orientarsi nella medina: i piccoli errori pratici che colgono di sorpresa chi visita il Marocco per la prima volta, e come evitarli tutti.",
+
+blog_post_10_date: "Ottobre 2026",
+
+blog_post_10_read: "7 min di lettura",
+
+blog_post_10_cat: "Pianificazione di viaggio",
 lc_hero_alt: "Campo di lusso al tramonto vicino Merzouga con lanterne illuminate",
 lc_breadcrumb: "Campo di Lusso",
 lc_title: "Campo di Lusso nel Deserto",

@@ -12,6 +12,8 @@
     "test:deterministic": "tsx scripts/verify-ui-keys.ts && tsx scripts/test-pricing.ts && tsx scripts/test-inquiry.ts && tsx scripts/test-photo-library.ts && tsx scripts/test-catalog-srcset.ts && node scripts/verify-whatsapp.cjs",
     "route:audit": "tsx scripts/route-audit.ts",
     "i18n:audit": "tsx scripts/i18n-audit.ts",
+    "hreflang:audit": "tsx scripts/hreflang-audit.ts",
+    "gaps:generate": "tsx scripts/generate-gap-bundles.mjs",
     "audit:production": "node scripts/audit-production-routes.mjs",
     "audit:regression": "node scripts/regression-audit.cjs",
     "photo-library:verify": "tsx scripts/verify-photo-library.mjs",

@@ -375,6 +375,46 @@ export default {
   blog_post_6_date: "Mars 2026",
   blog_post_6_read: "9 min de lecture",
   blog_post_6_cat: "Villes impériales",
+
+  blog_post_7_title: "Marrakech-Merzouga : à quoi ressemble vraiment le circuit de 3 jours dans le Sahara",
+
+  blog_post_7_excerpt: "Le Haut Atlas, Aït Ben Haddou, les vallées du Dadès et du Todra, puis une nuit dans les dunes de l'Erg Chebbi — ce que trois jours sur l'itinéraire classique du Sahara marocain impliquent réellement, et à qui ce circuit convient.",
+
+  blog_post_7_date: "Septembre 2026",
+
+  blog_post_7_read: "5 min de lecture",
+
+  blog_post_7_cat: "Désert du Sahara",
+
+  blog_post_8_title: "De Fès à Merzouga : le circuit saharien par le Moyen Atlas",
+
+  blog_post_8_excerpt: "Forêts de cèdres, rues alpines d'Ifrane et vallée du Ziz — comment l'itinéraire de Fès à Merzouga offre un accès au Sahara plus court et différent de la traversée classique depuis Marrakech.",
+
+  blog_post_8_date: "Septembre 2026",
+
+  blog_post_8_read: "4 min de lecture",
+
+  blog_post_8_cat: "Désert du Sahara",
+
+  blog_post_9_title: "De Marrakech à Ouarzazate et Merzouga : à la découverte du Grand Sud",
+
+  blog_post_9_excerpt: "Ouarzazate, les vallées du Dadès et du Todra, une journée saharienne plus posée à Merzouga, puis un retour tranquille par la vallée du Draa et Nkob — la version la plus complète de l'itinéraire saharien marocain.",
+
+  blog_post_9_date: "Septembre 2026",
+
+  blog_post_9_read: "4 min de lecture",
+
+  blog_post_9_cat: "Désert du Sahara",
+
+  blog_post_10_title: "10 erreurs que commettent les visiteurs au Maroc pour la première fois (et comment les éviter)",
+
+  blog_post_10_excerpt: "Des tarifs de taxi à la négociation dans les souks, en passant par les directions dans la médina — les petites erreurs pratiques qui surprennent les visiteurs au Maroc pour la première fois, et comment les éviter toutes.",
+
+  blog_post_10_date: "Octobre 2026",
+
+  blog_post_10_read: "7 min de lecture",
+
+  blog_post_10_cat: "Planification de voyage",
   ct_breadcrumb: "Randonnées à dos de chameau",
   ct_title: "Randonnées à dos de chameau à Merzouga",
   ct_subtitle: "Parcourez les dunes dorées d'Erg Chebbi au coucher du soleil avec des guides berbères experts. Des expériences à dos de chameau dans le Sahara, authentiques, privées et inoubliables.",

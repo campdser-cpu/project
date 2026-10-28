@@ -483,6 +483,46 @@ blog_post_6_excerpt: "El trayecto desde el corazón cultural de Marruecos hasta 
 blog_post_6_date: "Marzo de 2026",
 blog_post_6_read: "9 min de lectura",
 blog_post_6_cat: "Ciudades imperiales",
+
+blog_post_7_title: "Marrakech a Merzouga: cómo es realmente el circuito de 3 días por el Sáhara",
+
+blog_post_7_excerpt: "El Alto Atlas, Aït Ben Haddou, los valles del Dades y el Todra, y una noche en las dunas de Erg Chebbi: lo que realmente implican tres días en la ruta clásica del Sáhara marroquí, y a quién le conviene.",
+
+blog_post_7_date: "Septiembre de 2026",
+
+blog_post_7_read: "5 min de lectura",
+
+blog_post_7_cat: "Desierto del Sahara",
+
+blog_post_8_title: "De Fez a Merzouga: la ruta del Sáhara a través del Atlas Medio",
+
+blog_post_8_excerpt: "Bosques de cedros, las calles alpinas de Ifrane y el valle del Ziz: cómo la ruta de Fez a Merzouga ofrece un acceso al Sáhara más corto y distinto que el clásico cruce desde Marrakech.",
+
+blog_post_8_date: "Septiembre de 2026",
+
+blog_post_8_read: "4 min de lectura",
+
+blog_post_8_cat: "Desierto del Sahara",
+
+blog_post_9_title: "De Marrakech a Ouarzazate y Merzouga: explorando el Gran Sur",
+
+blog_post_9_excerpt: "Ouarzazate, los valles del Dades y el Todra, un día sahariano más pausado en Merzouga, y un regreso tranquilo por el valle del Draa y Nkob: la versión más completa de la ruta sahariana marroquí.",
+
+blog_post_9_date: "Septiembre de 2026",
+
+blog_post_9_read: "4 min de lectura",
+
+blog_post_9_cat: "Desierto del Sahara",
+
+blog_post_10_title: "10 errores que cometen los viajeros que visitan Marruecos por primera vez (y cómo evitarlos)",
+
+blog_post_10_excerpt: "Desde las tarifas de taxi hasta negociar en los zocos y orientarse en la medina: los pequeños errores prácticos que sorprenden a quienes visitan Marruecos por primera vez, y cómo evitarlos todos.",
+
+blog_post_10_date: "Octubre de 2026",
+
+blog_post_10_read: "7 min de lectura",
+
+blog_post_10_cat: "Planificación de viajes",
 lc_hero_alt: "Campamento de lujo al anochecer cerca de Merzouga con farolillos encendidos",
 lc_breadcrumb: "Campamento de Lujo",
 lc_title: "Campamento de Lujo en el Desierto",

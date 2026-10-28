@@ -619,6 +619,38 @@
           "question": "Sind Flüge enthalten?",
           "answer": "Internationale Flüge sind nicht Teil des Tourpreises. Es gibt keinen einzelnen Monat, der für jeden Reisenden den günstigsten Flug garantiert, da die Preise von Abreiseland, Airline und Terminen abhängen. Sobald Ihre Reisetermine feststehen, helfen wir Ihnen bei der praktischsten An- und Abreise."
         }
+      ],
+      "included": [
+        "Privates klimatisiertes Fahrzeug",
+        "Professioneller englischsprachiger Fahrer",
+        "Kraftstoff",
+        "2 Übernachtungen: 1 Nacht im Gebiet des Dades-Tals, 1 Nacht in einem Wüstencamp bei Merzouga",
+        "Kameltrekking bei Sonnenuntergang in die Dünen von Erg Chebbi",
+        "Hotelabholung und -rückbringung in Marrakesch"
+      ],
+      "excluded": [
+        "Internationale Flüge",
+        "Mittagessen",
+        "Getränke",
+        "Eintrittsgebühren für Denkmäler und Museen",
+        "Trinkgelder und persönliche Ausgaben"
+      ],
+      "gallery": [
+        {
+          "caption": "Überquerung des Hohen Atlas auf der Straße in den Süden"
+        },
+        {
+          "caption": "Blick vom Dach auf die Ksar von Aït Ben Haddou"
+        },
+        {
+          "caption": "Die Canyonwände der Todra-Schlucht"
+        },
+        {
+          "caption": "Kameltrekking bei Sonnenuntergang in Erg Chebbi"
+        },
+        {
+          "caption": "Wüstencamp in Erg Chebbi"
+        }
       ]
     },
     "5-day-imperial-cities": {
@@ -1885,7 +1917,8 @@
             "Hassan-II.-Moschee",
             "Rabat",
             "Chefchaouen",
-            "Übernachtung: Chefchaouen"
+            "Übernachtung: Chefchaouen",
+            "Übernachtung in: Chefchaouen"
           ]
         },
         {
@@ -1960,7 +1993,8 @@
           "stops": [
             "Marrakesch",
             "Küstenstraße",
-            "Ende: Casablanca"
+            "Ende: Casablanca",
+            "Transfer zum Flughafen"
           ]
         }
       ],
@@ -1971,7 +2005,8 @@
         "Ausgewählte Riads, Gästehäuser und ein Wüstencamp gemäß bestätigtem Reiseverlauf",
         "Frühstück und Abendessen gemäß Bestätigung",
         "Kamelritt bei Sonnenuntergang und Nacht im Wüstencamp im Erg Chebbi",
-        "Offizieller lokaler Stadtführer in Fès und Marrakesch"
+        "Offizieller lokaler Stadtführer in Fès und Marrakesch",
+        "Offizieller lokaler Guide in Fès und Marrakesch"
       ],
       "excluded": [
         "Internationale Flüge",
@@ -3063,6 +3098,12 @@
         "Persönliche Ausgaben"
       ],
       "gallery": [
+        {
+          "caption": "Überquerung des Hohen Atlas auf der Straße nach Süden"
+        },
+        {
+          "caption": "Aït Ben Haddou — die UNESCO-Ksar, der Hauptstopp des ersten Tages"
+        },
         {
           "caption": "Dades-Tal auf der Straße nach Merzouga"
         },
@@ -4166,6 +4207,15 @@
           "caption": "Ein Berberführer leitet eine Kamelkarawane bei Dämmerung durch Erg Chebbi."
         },
         {
+          "caption": "Das kunstvolle Tor zur alten Marktstadt Rissani."
+        },
+        {
+          "caption": "Traditionelle Lehmarchitektur der Berber bei Erfoud."
+        },
+        {
+          "caption": "Das palmenreiche Ziz-Tal, eingeschnitten in das Wüstenplateau."
+        },
+        {
           "caption": "Ifrane in den Zedernwäldern des Mittleren Atlas."
         }
       ]
@@ -4543,6 +4593,15 @@
         },
         {
           "caption": "Eine Kamelkarawane durchquert Erg Chebbi in der Dämmerung."
+        },
+        {
+          "caption": "Das kunstvolle Tor zur alten Marktstadt Rissani."
+        },
+        {
+          "caption": "Traditionelle Lehmarchitektur der Berber bei Erfoud."
+        },
+        {
+          "caption": "Das palmenreiche Ziz-Tal, eingeschnitten in das Wüstenplateau."
         },
         {
           "caption": "Ifrane in den Zedernwäldern des Mittleren Atlas, auf dem Weg nach Fès."
@@ -4984,6 +5043,34 @@
           }
         ]
       }
+    },
+    "marrakech-to-merzouga-3-day-sahara-tour": {
+      "title": "Marrakesch nach Merzouga: Wie die 3-tägige Sahara-Tour wirklich ist",
+      "excerpt": "Der Hohe Atlas, Aït Ben Haddou, die Täler von Dades und Todra, dann eine Nacht in den Dünen von Erg Chebbi — was drei Tage auf Marokkos klassischer Sahara-Route wirklich bedeuten und für wen sie geeignet sind.",
+      "alt": "Fußgängerbrücke über den Fluss Ounila in Aït Ben Haddou, der erste große Stopp auf der Route von Marrakesch nach Merzouga",
+      "canonicalTitle": "Marrakesch nach Merzouga — Wie die 3-tägige Sahara-Tour wirklich ist",
+      "canonicalExcerpt": "Der Hohe Atlas, Aït Ben Haddou, die Täler von Dades und Todra, dann eine Nacht in den Dünen von Erg Chebbi — was drei Tage auf Marokkos klassischer Sahara-Route wirklich bedeuten und für wen sie geeignet sind."
+    },
+    "fes-to-merzouga-sahara-desert-tour": {
+      "title": "Von Fès nach Merzouga: Die Sahara-Tour durch den Mittleren Atlas",
+      "excerpt": "Zedernwälder, die alpinen Straßen von Ifrane und das Ziz-Tal — wie die Route von Fès nach Merzouga einen kürzeren, anderen Zugang zur Sahara bietet als die klassische Überquerung ab Marrakesch.",
+      "alt": "Die Medina von Fès, Ausgangspunkt der Sahara-Route nach Merzouga",
+      "canonicalTitle": "Fès nach Merzouga — Die Sahara-Tour durch den Mittleren Atlas",
+      "canonicalExcerpt": "Zedernwälder, die alpinen Straßen von Ifrane und das Ziz-Tal — wie die Route von Fès nach Merzouga einen kürzeren, anderen Zugang zur Sahara bietet als die klassische Überquerung ab Marrakesch."
+    },
+    "marrakech-ouarzazate-merzouga-great-south-morocco": {
+      "title": "Von Marrakesch über Ouarzazate nach Merzouga: Der Große Süden",
+      "excerpt": "Ouarzazate, die Täler von Dades und Todra, ein ruhigerer Sahara-Tag in Merzouga, dann eine stille Rückfahrt durch das Draa-Tal und Nkob — die ausführlichere Version Marokkos Sahara-Route.",
+      "alt": "Ouarzazate, Tor zum marokkanischen Großen Süden und früheres Zentrum der Filmindustrie",
+      "canonicalTitle": "Marrakesch über Ouarzazate nach Merzouga — Der Große Süden",
+      "canonicalExcerpt": "Ouarzazate, die Täler von Dades und Todra, ein ruhigerer Sahara-Tag in Merzouga, dann eine stille Rückfahrt durch das Draa-Tal und Nkob — die ausführlichere Version Marokkos Sahara-Route."
+    },
+    "morocco-first-time-visitor-mistakes": {
+      "title": "10 Fehler, die Erstbesucher in Marokko machen (und wie man sie vermeidet)",
+      "excerpt": "Von Taxitarifen über das Handeln auf Souks bis zur Orientierung in der Medina — die kleinen, praktischen Fehler, die Erstbesucher in Marokko überraschen, und wie man jeden einzelnen vermeidet.",
+      "alt": "Eine enge Souk-Gasse in Marrakesch, gesäumt von Marktständen, die zu einem Minarett führt",
+      "canonicalTitle": "10 Fehler, die Erstbesucher in Marokko machen",
+      "canonicalExcerpt": "Von Taxitarifen über das Handeln auf Souks bis zur Orientierung in der Medina — die kleinen, praktischen Fehler, die Erstbesucher in Marokko überraschen, und wie man jeden einzelnen vermeidet."
     }
   },
   "tourDepth": {

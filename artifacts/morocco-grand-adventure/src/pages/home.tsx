@@ -547,7 +547,6 @@ export default function Home() {
                     type="button"
                     onClick={() => setDepartCity(hub.id)}
                     aria-pressed={departCity === hub.id}
-                    aria-label={t(`hub_${hub.id}_name`)}
                     className={`group block w-full text-left rounded-2xl overflow-hidden border transition-all duration-300 ${
                       departCity === hub.id
                         ? 'border-primary shadow-lg ring-2 ring-primary/30'
@@ -960,7 +959,7 @@ export default function Home() {
             href={contactInfo.tripadvisor}
             target="_blank"
             rel="noopener noreferrer nofollow"
-            className="inline-flex items-center gap-2 text-primary font-bold hover:underline"
+            className="inline-flex items-center gap-2 text-primary-text font-bold hover:underline"
           >
             {t('tripadvisor_read_reviews')} <ExternalLink className="w-4 h-4" aria-hidden="true" />
           </a>
@@ -1068,7 +1067,7 @@ export default function Home() {
       <section className="py-16 md:py-24 bg-background [content-visibility:auto] [contain-intrinsic-size:auto_800px]">
         <div className="container mx-auto px-4 text-center">
           <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl text-foreground mb-4">{t('section_instagram')}</h2>
-          <a href="https://www.instagram.com/morocco_grand_adventure/" target="_blank" rel="noreferrer" className="text-primary font-bold hover:underline mb-8 md:mb-12 inline-block">@morocco_grand_adventure</a>
+          <a href="https://www.instagram.com/morocco_grand_adventure/" target="_blank" rel="noreferrer" className="text-primary-text font-bold hover:underline mb-8 md:mb-12 inline-block">@morocco_grand_adventure</a>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
             {igItems.map((item, num) => (

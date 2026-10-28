@@ -1,15 +1,19 @@
-import { ReactNode, useEffect, useState } from 'react';
+import { ReactNode, useEffect, useState, lazy, Suspense } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Navbar } from './Navbar';
 import { Footer } from './Footer';
 import { WhatsAppButton, type WhatsAppButtonContext } from '../ui/WhatsAppButton';
 import { ScrollToTop } from '../ui/ScrollToTop';
-import { ConciergeChat } from '../ui/ConciergeChat';
 import { StickyBookingCTA } from '../ui/StickyBookingCTA';
 import { trackEvent } from '@/lib/analytics';
 import { TopicalLinks } from '../seo/TopicalLinks';
 import { useLocation } from 'wouter';
 import { getLocalizedTours, getLocalizedDestinations } from '@/i18n/content';
+
+// Lazy: ConciergeChat only ever renders after `idle` turns true (see below),
+// so there is no reason its chat UI, API-call logic and tour-id validation
+// should ship in the critical-path bundle that loads on every page.
+const ConciergeChat = lazy(() => import('../ui/ConciergeChat').then((m) => ({ default: m.ConciergeChat })));
 
 interface LayoutProps {
   children: ReactNode;
@@ -144,7 +148,7 @@ export function Layout({ children }: LayoutProps) {
       {isTripBuilder && <TopicalLinks context="trip-builder" />}
       <Footer />
       {idle && <WhatsAppButton tour={whatsAppContext?.tour} destination={whatsAppContext?.destination} />}
-      {idle && <ConciergeChat />}
+      {idle && <Suspense fallback={null}><ConciergeChat /></Suspense>}
       <ScrollToTop />
       {idle && <StickyBookingCTA context={whatsAppContext} />}
     </div>
