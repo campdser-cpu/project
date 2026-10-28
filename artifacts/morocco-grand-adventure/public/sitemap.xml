@@ -1254,6 +1254,21 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/fes-tours" />
   </url>
   <url>
+    <loc>https://www.moroccograndadventure.com/ar/flights</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/flights" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/flights" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/flights" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/flights" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/flights" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/flights" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/flights" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/flights" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/flights" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/flights" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/flights" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/flights" />
+  </url>
+  <url>
     <loc>https://www.moroccograndadventure.com/ar/gallery</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/gallery" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/gallery" />
@@ -5110,6 +5125,21 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/fes-tours" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/fes-tours" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/fes-tours" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/de/flights</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/flights" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/flights" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/flights" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/flights" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/flights" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/flights" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/flights" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/flights" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/flights" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/flights" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/flights" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/flights" />
   </url>
   <url>
     <loc>https://www.moroccograndadventure.com/de/gallery</loc>
@@ -8970,6 +9000,21 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/fes-tours" />
   </url>
   <url>
+    <loc>https://www.moroccograndadventure.com/en/flights</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/flights" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/flights" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/flights" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/flights" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/flights" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/flights" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/flights" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/flights" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/flights" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/flights" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/flights" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/flights" />
+  </url>
+  <url>
     <loc>https://www.moroccograndadventure.com/en/gallery</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/gallery" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/gallery" />
@@ -12826,6 +12871,21 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/fes-tours" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/fes-tours" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/fes-tours" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/es/flights</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/flights" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/flights" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/flights" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/flights" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/flights" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/flights" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/flights" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/flights" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/flights" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/flights" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/flights" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/flights" />
   </url>
   <url>
     <loc>https://www.moroccograndadventure.com/es/gallery</loc>
@@ -16686,6 +16746,21 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/fes-tours" />
   </url>
   <url>
+    <loc>https://www.moroccograndadventure.com/fr/flights</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/flights" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/flights" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/flights" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/flights" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/flights" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/flights" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/flights" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/flights" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/flights" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/flights" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/flights" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/flights" />
+  </url>
+  <url>
     <loc>https://www.moroccograndadventure.com/fr/gallery</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/gallery" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/gallery" />
@@ -20542,6 +20617,21 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/fes-tours" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/fes-tours" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/fes-tours" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/it/flights</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/flights" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/flights" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/flights" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/flights" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/flights" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/flights" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/flights" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/flights" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/flights" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/flights" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/flights" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/flights" />
   </url>
   <url>
     <loc>https://www.moroccograndadventure.com/it/gallery</loc>
@@ -24402,6 +24492,21 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/fes-tours" />
   </url>
   <url>
+    <loc>https://www.moroccograndadventure.com/ja/flights</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/flights" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/flights" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/flights" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/flights" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/flights" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/flights" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/flights" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/flights" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/flights" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/flights" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/flights" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/flights" />
+  </url>
+  <url>
     <loc>https://www.moroccograndadventure.com/ja/gallery</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/gallery" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/gallery" />
@@ -28258,6 +28363,21 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/fes-tours" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/fes-tours" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/fes-tours" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/ko/flights</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/flights" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/flights" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/flights" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/flights" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/flights" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/flights" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/flights" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/flights" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/flights" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/flights" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/flights" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/flights" />
   </url>
   <url>
     <loc>https://www.moroccograndadventure.com/ko/gallery</loc>
@@ -32118,6 +32238,21 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/fes-tours" />
   </url>
   <url>
+    <loc>https://www.moroccograndadventure.com/nl/flights</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/flights" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/flights" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/flights" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/flights" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/flights" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/flights" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/flights" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/flights" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/flights" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/flights" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/flights" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/flights" />
+  </url>
+  <url>
     <loc>https://www.moroccograndadventure.com/nl/gallery</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/gallery" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/gallery" />
@@ -35976,6 +36111,21 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/fes-tours" />
   </url>
   <url>
+    <loc>https://www.moroccograndadventure.com/pt/flights</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/flights" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/flights" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/flights" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/flights" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/flights" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/flights" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/flights" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/flights" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/flights" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/flights" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/flights" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/flights" />
+  </url>
+  <url>
     <loc>https://www.moroccograndadventure.com/pt/gallery</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/gallery" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/gallery" />
@@ -39832,6 +39982,21 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/fes-tours" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/fes-tours" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/fes-tours" />
+  </url>
+  <url>
+    <loc>https://www.moroccograndadventure.com/zh/flights</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.moroccograndadventure.com/en/flights" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.moroccograndadventure.com/fr/flights" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.moroccograndadventure.com/es/flights" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.moroccograndadventure.com/it/flights" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.moroccograndadventure.com/de/flights" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.moroccograndadventure.com/nl/flights" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.moroccograndadventure.com/pt/flights" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.moroccograndadventure.com/zh/flights" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.moroccograndadventure.com/ja/flights" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.moroccograndadventure.com/ko/flights" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.moroccograndadventure.com/ar/flights" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.moroccograndadventure.com/en/flights" />
   </url>
   <url>
     <loc>https://www.moroccograndadventure.com/zh/gallery</loc>

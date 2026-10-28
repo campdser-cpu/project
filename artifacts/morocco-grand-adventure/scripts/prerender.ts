@@ -34,6 +34,8 @@ import { fileURLToPath } from 'node:url';
 import { destinations, contactInfo, reviews, type Review, type Tour, type Destination } from '../src/data/content';
 import { BLOG_ARTICLE_SECTIONS, type BlogSection, parseParagraph } from '../src/data/blog-article-sections';
 import { CITY_HUBS, TOUR_DEPARTURE_CITY, CITY_HUB_DURATIONS, tourIdsForCity, tourDurationDays, DAY_TRIP_PRODUCT_IDS, FEATURED_TOUR_IDS, SAHARA_CROSSING_TOUR_IDS } from '../src/data/tour-hierarchy';
+import { AIRPORTS, DOMESTIC_ROUTE_FACTS, airportByIata } from '../src/data/airports';
+import { googleFlightsToCityUrl } from '../src/lib/flights/links';
 import { MERZOUGA_GUIDES, COMPARISONS, TRAVEL_INFO, type HubPage } from '../src/data/seoHub';
 import { localizedComparisonMeta } from '../src/data/comparison-meta-i18n';
 import { getLocalizedTourDepth } from '../src/i18n/content';
@@ -1123,6 +1125,50 @@ function buildAboutContent(lang: Lang): string {
     + paragraph(tr(lang, 'abt_promise_p'))
     + paragraph(tr(lang, 'abt_promise_line'));
 }
+/**
+ * /flights — the flight-discovery page. The live React page has an
+ * interactive search form (no-JS crawlers can't use it, so it isn't
+ * reproduced here); this snapshot carries the same hero/trust copy, the
+ * same verified airport directory and domestic-route facts from
+ * src/data/airports.ts, and the same real external links, so a crawler
+ * sees genuinely the same claims the live page makes — never invented
+ * flight data.
+ */
+function buildFlightsContent(lang: Lang): string {
+  const airportItems = AIRPORTS.map((a) => {
+    const hub = a.cityHubId ? CITY_HUBS.find((h) => h.id === a.cityHubId) : undefined;
+    const exploreToursLabel = tr(lang, 'fl_directory_explore_tours').replace('{city}', a.city);
+    const searchFlightsLabel = tr(lang, 'fl_directory_search_flights').replace('{city}', a.city);
+    const hubLink = hub ? ` — ${link(`${SITE_URL}/${lang}/tours/from-${hub.slug}`, exploreToursLabel)}` : '';
+    return `${escapeHtml(`${a.name} (${a.iata}) — ${a.city}, ${a.region}. ${a.summary} ${a.reaches}`)} — ${link(googleFlightsToCityUrl(a.city), searchFlightsLabel)}${hubLink}`;
+  });
+  const routeItems = DOMESTIC_ROUTE_FACTS.map((r) => {
+    const from = airportByIata(r.from);
+    const to = airportByIata(r.to);
+    if (!from || !to) return '';
+    const statusKey = r.status === 'reported-scheduled' ? 'fl_route_status_scheduled' : r.status === 'limited-or-seasonal' ? 'fl_route_status_limited' : 'fl_route_status_none';
+    const statusLabel = tr(lang, statusKey);
+    return `${from.city} ↔ ${to.city}: ${statusLabel} — ${r.note}`;
+  }).filter((s): s is string => Boolean(s));
+  return h1(tr(lang, 'fl_hero_title'))
+    + paragraph(tr(lang, 'fl_hero_sub'))
+    + paragraph(tr(lang, 'fl_trust_message'))
+    + h2(tr(lang, 'fl_directory_heading'))
+    + paragraph(tr(lang, 'fl_directory_sub'))
+    + `    <ul>\n${airportItems.map((item) => `      <li>${item}</li>`).join('\n')}\n    </ul>\n`
+    + paragraph(tr(lang, 'fl_directory_footnote'))
+    + h2(tr(lang, 'fl_domestic_heading'))
+    + paragraph(tr(lang, 'fl_domestic_sub'))
+    + `    <ul>\n${routeItems.map((item) => `      <li>${escapeHtml(item)}</li>`).join('\n')}\n    </ul>\n`
+    + paragraph(tr(lang, 'fl_domestic_footnote'))
+    + h2(tr(lang, 'fl_budget_heading'))
+    + paragraph(tr(lang, 'fl_budget_sub'))
+    + h2(tr(lang, 'fl_faq_title'))
+    + [1, 2, 3, 4, 5, 6, 7].map((n) => h3(tr(lang, `fl_faq_q${n}`)) + paragraph(tr(lang, `fl_faq_a${n}`))).join('')
+    + rawParagraph(link(contactInfo.whatsapp, `${tr(lang, 'fl_cta_whatsapp')} — ${contactInfo.whatsappNumber}`))
+    + rawParagraph(link(`${SITE_URL}/${lang}/trip-builder`, tr(lang, 'fl_cta_tripbuilder')))
+    + rawParagraph(link(`${SITE_URL}/${lang}/desert-tours`, tr(lang, 'fl_cta_sahara')));
+}
 function buildContactContent(lang: Lang): string {
   const li = (s: string): string => `      <li>${s}</li>`;
   const contactItems = [
@@ -1789,6 +1835,15 @@ function buildRoutes(lang: Lang): RouteEntry[] {
     ], lang) as Record<string, unknown>,
   ]);
   add('/faq', `${lang}/faq/index.html`, () => buildFaqContent(lang));
+  add('/flights', `${lang}/flights/index.html`, () => buildFlightsContent(lang), [
+    buildBreadcrumb([
+      { name: tr(lang, 'nav_home'), path: '/' },
+      { name: tr(lang, 'fl_hero_title'), path: '/flights' },
+    ], lang) as Record<string, unknown>,
+    buildFaqSchema([1, 2, 3, 4, 5, 6, 7].map((n) => ({
+      question: tr(lang, `fl_faq_q${n}`), answer: tr(lang, `fl_faq_a${n}`),
+    }))) as unknown as Record<string, unknown>,
+  ]);
   add('/blog', `${lang}/blog/index.html`, () => buildBlogContent(lang));
   for (const post of blogPosts) {
     const meta = BLOG_META[post.slug];

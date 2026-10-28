@@ -118,6 +118,7 @@ export function Navbar() {
                     <Link href="/agadir-tours" className="block px-4 py-3 text-sm text-foreground hover:bg-muted hover:text-primary">{t('ag_breadcrumb')}</Link>
                     <Link href="/casablanca-tours" className="block px-4 py-3 text-sm text-foreground hover:bg-muted hover:text-primary">{t('ca_breadcrumb')}</Link>
                     <Link href="/desert-tours" className="block px-4 py-3 text-sm font-medium text-primary hover:bg-muted">{t('nav_sahara_desert_tours')}</Link>
+                    <Link href="/flights" className="block px-4 py-3 text-sm font-medium text-primary hover:bg-muted">{t('fl_nav_link')}</Link>
                   </div>
                 </div>
               </motion.div>}</AnimatePresence>
@@ -172,6 +173,7 @@ export function Navbar() {
           <Link href="/agadir-tours" className="block text-muted-foreground">{t('ag_breadcrumb')}</Link>
           <Link href="/casablanca-tours" className="block text-muted-foreground">{t('ca_breadcrumb')}</Link>
           <Link href="/desert-tours" className="block text-primary font-semibold">{t('nav_sahara_desert_tours')}</Link>
+          <Link href="/flights" className="block text-primary font-semibold">{t('fl_nav_link')}</Link>
         </div>
         <Link href="/gallery" className="text-lg font-medium text-foreground">{t('nav_gallery')}</Link>
         <Link href="/blog" className="text-lg font-medium text-foreground">{t('nav_blog')}</Link>
