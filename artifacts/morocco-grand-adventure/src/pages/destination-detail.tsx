@@ -332,7 +332,7 @@ export default function DestinationDetail() {
                   </p>
                   <CinematicVideo
                     src="/videos/merzouga-campfire.mp4"
-                    poster="/images/dest/merzouga.webp"
+                    poster="/images/dest/merzouga-768w.webp"
                     alt={t('dd_merzouga_campfire_alt')}
                     title={t('dest_merzouga_caption')}
                     aspectClass="aspect-video"
@@ -351,7 +351,7 @@ export default function DestinationDetail() {
                   </p>
                   <CinematicVideo
                     src="/videos/ait-benhaddou-kasbah-unesco-morocco.mp4"
-                    poster="/images/dest/ait-ben-haddou.webp"
+                    poster="/images/dest/ait-ben-haddou-768w.webp"
                     alt={t('dd_abh_video_alt')}
                     title={t('dd_abh_video_title')}
                     subtitle={t('dd_abh_video_subtitle')}
@@ -370,7 +370,7 @@ export default function DestinationDetail() {
                   </p>
                   <CinematicVideo
                     src="/videos/chefchaouen-blue-city-morocco.mp4"
-                    poster="/images/dest/chefchaouen.webp"
+                    poster="/images/dest/chefchaouen-768w.webp"
                     alt={t('dd_chef_video_alt')}
                     title={t('dd_chef_video_title')}
                     subtitle={t('dd_chef_video_subtitle')}

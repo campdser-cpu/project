@@ -2,18 +2,24 @@ import { ReactNode, useEffect, useState, lazy, Suspense } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Navbar } from './Navbar';
 import { Footer } from './Footer';
+// WhatsAppButton is imported eagerly (not lazy) deliberately: Footer and
+// Navbar — both already part of the critical path — import
+// `contextualWhatsAppMessage` from the same module, so lazy-loading it here
+// would not actually remove its bytes from the eager bundle, only add
+// Suspense indirection for no benefit.
 import { WhatsAppButton, type WhatsAppButtonContext } from '../ui/WhatsAppButton';
 import { ScrollToTop } from '../ui/ScrollToTop';
-import { StickyBookingCTA } from '../ui/StickyBookingCTA';
 import { trackEvent } from '@/lib/analytics';
 import { TopicalLinks } from '../seo/TopicalLinks';
 import { useLocation } from 'wouter';
 import { getLocalizedTours, getLocalizedDestinations } from '@/i18n/content';
 
-// Lazy: ConciergeChat only ever renders after `idle` turns true (see below),
-// so there is no reason its chat UI, API-call logic and tour-id validation
-// should ship in the critical-path bundle that loads on every page.
+// Lazy: ConciergeChat and StickyBookingCTA only ever render after `idle`
+// turns true (see below), and — unlike WhatsAppButton — neither is imported
+// anywhere else in the eager critical path, so deferring them here actually
+// removes their UI/icon/logic bytes from the bundle every page pays for.
 const ConciergeChat = lazy(() => import('../ui/ConciergeChat').then((m) => ({ default: m.ConciergeChat })));
+const StickyBookingCTA = lazy(() => import('../ui/StickyBookingCTA').then((m) => ({ default: m.StickyBookingCTA })));
 
 interface LayoutProps {
   children: ReactNode;
@@ -150,7 +156,7 @@ export function Layout({ children }: LayoutProps) {
       {idle && <WhatsAppButton tour={whatsAppContext?.tour} destination={whatsAppContext?.destination} />}
       {idle && <Suspense fallback={null}><ConciergeChat /></Suspense>}
       <ScrollToTop />
-      {idle && <StickyBookingCTA context={whatsAppContext} />}
+      {idle && <Suspense fallback={null}><StickyBookingCTA context={whatsAppContext} /></Suspense>}
     </div>
   );
 }

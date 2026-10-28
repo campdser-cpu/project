@@ -486,7 +486,17 @@ export default function TripBuilder() {
                             }`}
                           >
                             <div className="h-48 md:h-56 relative">
-                              <img src={dest.image} alt={destinationImageAlt(dest, dest.name, t('dest_alt_unverified'))} width={800} height={600} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                              <img
+                                src={dest.image}
+                                srcSet={`${dest.image.replace(/\.webp$/, '-480w.webp')} 480w, ${dest.image.replace(/\.webp$/, '-768w.webp')} 768w, ${dest.image} 1200w`}
+                                sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
+                                alt={destinationImageAlt(dest, dest.name, t('dest_alt_unverified'))}
+                                width={800}
+                                height={600}
+                                loading="lazy"
+                                decoding="async"
+                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                              />
                               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
                               
                               {isSelected && (

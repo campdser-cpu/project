@@ -163,7 +163,12 @@ export default function TourDetail() {
         <div className="absolute inset-0 z-0 overflow-hidden">
           <motion.img
             src={tour.image}
+            srcSet={`${tour.image.replace(/\.webp$/, '-480w.webp')} 480w, ${tour.image.replace(/\.webp$/, '-768w.webp')} 768w, ${tour.image} 1200w`}
+            sizes="100vw"
             alt={tour.name}
+            width={1600}
+            height={900}
+            fetchPriority="high"
             initial={{ scale: 1.15 }}
             animate={{ scale: 1 }}
             transition={{ duration: 1.6, ease: 'easeOut' }}

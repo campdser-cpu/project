@@ -18,8 +18,16 @@ type LogoProps = {
 };
 
 /**
- * Official Morocco Grand Adventure logo (/logo-official.png) — the brand's
- * official artwork, used as-is: not redrawn, recoloured or vectorized.
+ * Official Morocco Grand Adventure logo — the brand's official artwork, used
+ * as-is: not redrawn, recoloured or vectorized. The header renders a 260w
+ * WebP derivative (public/logo-official-260w.webp, ~23 KiB) instead of the
+ * full 1230x957 source PNG (~406 KiB): the logo never displays taller than
+ * 64px in this component, so 260w already covers ~3x device-pixel-ratio at
+ * its largest rendered size. The original full-resolution PNG is untouched
+ * on disk — it remains the canonical asset referenced by the Organization/
+ * TravelAgency structured data in StructuredData.tsx and index.html, which
+ * is metadata only (never downloaded as part of page render) and is
+ * deliberately left at full resolution per Google's logo guidance.
  */
 export function Logo({ className = '', decorative = false }: LogoProps) {
   // Default prominence for the navbar; callers (Navbar, Footer) may pass
@@ -30,10 +38,10 @@ export function Logo({ className = '', decorative = false }: LogoProps) {
 
   return (
     <img
-      src="/logo-official.png"
+      src="/logo-official-260w.webp"
       alt={decorative ? '' : 'Morocco Grand Adventure'}
-      width={1230}
-      height={957}
+      width={260}
+      height={202}
       className={`w-auto transition-[height] duration-300 ease-out ${sizeClasses}`}
     />
   );

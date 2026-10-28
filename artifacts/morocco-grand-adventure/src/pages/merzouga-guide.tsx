@@ -421,7 +421,7 @@ export default function MerzougaGuide() {
                 <Link key={tour.id} href={`/tours/${tour.id}`} className="group grid overflow-hidden bg-white sm:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]">
                   <img
                     src={tour.image}
-                    srcSet={tour.image.includes('/curated/') ? `${tour.image.replace('.webp', '-480w.webp')} 480w, ${tour.image.replace('.webp', '-768w.webp')} 768w` : undefined}
+                    srcSet={`${tour.image.replace('.webp', '-480w.webp')} 480w, ${tour.image.replace('.webp', '-768w.webp')} 768w`}
                     sizes="(min-width: 768px) 280px, 100vw"
                     // Decorative: the tour name is the card title right beside it.
                     alt=""

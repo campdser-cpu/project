@@ -199,7 +199,16 @@ export default function DesertTours() {
                   className="group block bg-background rounded-3xl overflow-hidden border border-border hover:shadow-xl hover:border-primary/30 transition-all duration-300"
                 >
                   <div className="h-56 relative overflow-hidden">
-                    <img src={tour.image} alt={tour.name} width={1200} height={675} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <img
+                      src={tour.image}
+                      srcSet={`${tour.image.replace(/\.webp$/, '-480w.webp')} 480w, ${tour.image.replace(/\.webp$/, '-768w.webp')} 768w, ${tour.image} 1200w`}
+                      sizes="(max-width: 767px) 100vw, 50vw"
+                      alt={tour.name}
+                      width={1200}
+                      height={675}
+                      loading="lazy"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
                     <ShareButton
                       title={tour.name}
                       path={`/tours/${tour.id}`}

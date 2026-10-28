@@ -241,6 +241,8 @@ export function SeoHubPage({ page }: { page: HubPage }) {
                     >
                       <img
                         src={tour.image}
+                        srcSet={`${tour.image.replace(/\.webp$/, '-480w.webp')} 480w, ${tour.image.replace(/\.webp$/, '-768w.webp')} 768w, ${tour.image} 1200w`}
+                        sizes="(max-width: 767px) 100vw, 33vw"
                         alt={tour.name}
                         width={900}
                         height={600}

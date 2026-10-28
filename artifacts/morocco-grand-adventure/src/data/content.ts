@@ -1318,7 +1318,7 @@ export const tours: Tour[] = [
     routeIds: ["marrakech", "ait-ben-haddou", "ouarzazate", "dades-valley", "todra-gorge", "merzouga", "erg-chebbi", "fes"],
     routeCaption: "A romantic grand loop — from the riads and gardens of Marrakech, across the High Atlas to the kasbah of Aït Ben Haddou and the Dades and Todra gorges, then the golden dunes of Erg Chebbi at Merzouga, north to the imperial city of Fes, and back to Marrakech. Tap any numbered stop to explore it.",
     videoUrl: "/videos/sahara-experience.mp4",
-    videoPoster: "/images/personal/luxury-camp-dusk.webp",
+    videoPoster: "/images/personal/luxury-camp-dusk-768w.webp",
     itineraryDays: [
       {
         day: 1,
@@ -1511,7 +1511,7 @@ export const tours: Tour[] = [
     description:
       "The ultimate grand loop of southern Morocco — from the palaces and souks of Marrakech to the windswept Atlantic port of Essaouira, down the surf coast through Taghazout and Agadir, then inland across saffron country to the UNESCO kasbah of Aït Ben Haddou, the dramatic Todra and Dades gorges, and finally the towering golden dunes of Erg Chebbi. Eight days of private travel, handpicked luxury riads and hotels, a night in a premium desert camp, and a camel trek beneath the Sahara stars.",
     videoUrl: "/videos/sahara-experience.mp4",
-    videoPoster: "/images/personal/luxury-camp-dusk.webp",
+    videoPoster: "/images/personal/luxury-camp-dusk-768w.webp",
     routeIds: ["marrakech", "essaouira", "taghazout", "agadir", "ouarzazate", "ait-ben-haddou", "dades-valley", "todra-gorge", "merzouga"],
     routeCaption: "Follow the grand loop — from Marrakech out to the Atlantic coast, then across the High Atlas to the dunes of the Sahara, and back. Tap any numbered stop to explore it.",
     itineraryDays: [

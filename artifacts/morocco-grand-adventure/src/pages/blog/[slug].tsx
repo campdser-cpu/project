@@ -27,6 +27,21 @@ import NotFound from '../not-found';
 import { motion } from 'framer-motion';
 
 /**
+ * Blog post / section images that don't have a complete `-480w`+`-768w`
+ * pair generated yet (verified against public/images/ on disk: the first
+ * two have neither variant, the third has only `-480w`) — serving a srcSet
+ * that points at a non-existent file is a bug this project has shipped
+ * before, so this is an explicit, checked exclusion rather than an
+ * assumption.
+ */
+const NO_RESPONSIVE_VARIANTS = new Set([
+  '/images/personal/dunes-camels-poster.webp',
+  '/images/personal/marrakech-souk-minaret.webp',
+  '/images/personal/guests-sunset-trimmed.webp',
+  '/images/personal/marrakech-souk-textiles.webp',
+]);
+
+/**
  * Render a paragraph that may contain a `[label](/path)` inline link (see
  * BlogSection.paragraphs) as real text + a real <Link>, localized the same
  * way every other internal link on the page is.
@@ -181,7 +196,15 @@ export default function BlogPost() {
 
               <img
                 src={post.image}
+                {...(post.image.endsWith('.webp') && !NO_RESPONSIVE_VARIANTS.has(post.image)
+                  ? {
+                      srcSet: `${post.image.replace(/\.webp$/, '-480w.webp')} 480w, ${post.image.replace(/\.webp$/, '-768w.webp')} 768w, ${post.image} 1200w`,
+                      sizes: '(max-width: 767px) 100vw, 650px',
+                    }
+                  : {})}
                 alt={post.alt || post.title}
+                width={1200}
+                height={800}
                 loading="lazy"
                 decoding="async"
                 className="w-full h-48 md:h-64 object-cover mb-8 rounded-md"
@@ -195,6 +218,13 @@ export default function BlogPost() {
                     {section.image && (
                       <img
                         src={section.image.src}
+                        {...(section.image.src.endsWith('.webp') &&
+                        !NO_RESPONSIVE_VARIANTS.has(section.image.src)
+                          ? {
+                              srcSet: `${section.image.src.replace(/\.webp$/, '-480w.webp')} 480w, ${section.image.src.replace(/\.webp$/, '-768w.webp')} 768w, ${section.image.src} 1200w`,
+                              sizes: '(max-width: 767px) 100vw, 650px',
+                            }
+                          : {})}
                         alt={section.image.alt}
                         {...(section.image.width && section.image.height
                           ? { width: section.image.width, height: section.image.height }
@@ -240,7 +270,11 @@ export default function BlogPost() {
                         <div className="h-40 overflow-hidden">
                           <img
                             src={tour.image}
+                            srcSet={`${tour.image.replace(/\.webp$/, '-480w.webp')} 480w, ${tour.image.replace(/\.webp$/, '-768w.webp')} 768w, ${tour.image} 1200w`}
+                            sizes="(max-width: 639px) 100vw, 50vw"
                             alt={tour.name}
+                            width={900}
+                            height={600}
                             loading="lazy"
                             decoding="async"
                             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
@@ -270,7 +304,11 @@ export default function BlogPost() {
                         <div className="h-28 overflow-hidden rounded-md mb-3">
                           <img
                             src={dest.image}
+                            srcSet={`${dest.image.replace(/\.webp$/, '-480w.webp')} 480w, ${dest.image.replace(/\.webp$/, '-768w.webp')} 768w, ${dest.image} 1200w`}
+                            sizes="(max-width: 767px) 50vw, 33vw"
                             alt={destinationImageAlt(dest, dest.name, t('dest_alt_unverified'))}
+                            width={800}
+                            height={600}
                             loading="lazy"
                             decoding="async"
                             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"

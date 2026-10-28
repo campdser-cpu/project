@@ -63,6 +63,8 @@ export default function Destinations() {
                   <div className="h-64 relative overflow-hidden">
                     <img
                       src={dest.image}
+                      srcSet={`${dest.image.replace(/\.webp$/, '-480w.webp')} 480w, ${dest.image.replace(/\.webp$/, '-768w.webp')} 768w, ${dest.image} 1200w`}
+                      sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw"
                       alt={destinationImageAlt(dest, dest.name, t('dest_alt_unverified'))}
                       width={900}
                       height={600}
@@ -109,7 +111,17 @@ export default function Destinations() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {priorityTours.map(tour => tour && (
                 <Link key={tour.id} href={`/tours/${tour.id}`} className="group block bg-background rounded-2xl overflow-hidden border border-border hover:border-primary/50 hover:shadow-xl transition-all">
-                  <img src={tour.image} alt={tour.name} width={900} height={600} loading="lazy" decoding="async" className="w-full h-52 object-cover" />
+                  <img
+                    src={tour.image}
+                    srcSet={`${tour.image.replace(/\.webp$/, '-480w.webp')} 480w, ${tour.image.replace(/\.webp$/, '-768w.webp')} 768w, ${tour.image} 1200w`}
+                    sizes="(max-width: 767px) 100vw, 33vw"
+                    alt={tour.name}
+                    width={900}
+                    height={600}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-52 object-cover"
+                  />
                   <div className="p-6">
                     <span className="text-xs font-bold text-primary tracking-wider uppercase block mb-2">{tour.duration}</span>
                     <h3 className="font-serif text-2xl text-foreground mb-4 group-hover:text-primary transition-colors">{tour.name}</h3>
