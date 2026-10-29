@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { contactInfo } from '@/data/content';
+import { contactInfo } from '@/data/contactInfo';
 
 // ── Limited-time 2026 promotion ──────────────────────────────────────────────
 // Single source of truth for the site-wide "2026 Special Offer – Save 10%".

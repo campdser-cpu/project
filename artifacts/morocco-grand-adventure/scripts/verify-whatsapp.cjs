@@ -41,10 +41,13 @@ function walk(dir, out) {
 }
 
 // 1. Base link must be a wa.me/<number> deep link (not a message link).
-const content = readSrc('data/content.ts');
+// contactInfo moved out of data/content.ts into its own module (performance
+// fix: always-eager components no longer need to pull in content.ts's ~300 KB
+// of tours/destinations/FAQ data just for this constant) — read it from there.
+const content = readSrc('data/contactInfo.ts');
 const waMatch = content.match(/whatsapp:\s*"([^"]+)"/);
 const numMatch = content.match(/whatsappNumber:\s*"([^"]+)"/);
-chk(!!waMatch && !!numMatch, 'content.ts has whatsapp + whatsappNumber');
+chk(!!waMatch && !!numMatch, 'contactInfo.ts has whatsapp + whatsappNumber');
 
 if (waMatch && numMatch) {
   const wa = waMatch[1];

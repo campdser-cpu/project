@@ -3,7 +3,7 @@ import { Link, useLocation } from 'wouter';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronDown, Globe } from 'lucide-react';
 import { Logo } from './Logo';
-import { contactInfo } from '@/data/content';
+import { contactInfo } from '@/data/contactInfo';
 import { CITY_HUBS, CITY_HUB_DURATIONS } from '@/data/tour-hierarchy';
 import { getLocalizedDestinations } from '@/i18n/content';
 import { useLanguage, languages } from '@/contexts/LanguageContext';
@@ -65,6 +65,12 @@ export function Navbar() {
   // asset itself. Width is never set explicitly — Logo.tsx keeps it `w-auto`
   // against the image's real 1230x957 aspect ratio, so this cannot distort it.
   const logoSize = solid ? 'h-14 sm:h-[60px] md:h-16 xl:h-[72px]' : 'h-20 sm:h-[86px] xl:h-[100px]';
+  // Real rendered width at each breakpoint (logoSize height x the logo's own
+  // 1230:957 aspect ratio) — matched exactly so the browser's srcset/sizes
+  // math picks the right file for the actual slot, not an assumed one.
+  const logoSizes = solid
+    ? '(min-width: 1280px) 93px, (min-width: 768px) 82px, (min-width: 640px) 77px, 72px'
+    : '(min-width: 1280px) 129px, (min-width: 640px) 111px, 103px';
   const navClass = `fixed w-full z-50 transition-all duration-300 ${solid ? 'bg-background/95 backdrop-blur-md shadow-sm py-2' : 'bg-transparent py-3 sm:py-4'}`;
   const linkClass = `text-sm font-medium tracking-wide transition-colors ${solid ? 'text-foreground hover:text-primary' : 'text-white hover:text-accent'}`;
   const cityLabel = (id: string) => t(`hub_${id}_name`);
@@ -75,7 +81,7 @@ export function Navbar() {
     <nav className={navClass} aria-label={t('nav_tours')}>
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
-          <Link href="/" aria-label={t('nav_logo_home_aria')} className="shrink-0"><Logo variant={solid ? 'dark' : 'light'} className={logoSize} decorative /></Link>
+          <Link href="/" aria-label={t('nav_logo_home_aria')} className="shrink-0"><Logo variant={solid ? 'dark' : 'light'} className={logoSize} sizes={logoSizes} decorative /></Link>
 
           <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
             <Link href="/" className={linkClass}>{t('nav_home')}</Link>

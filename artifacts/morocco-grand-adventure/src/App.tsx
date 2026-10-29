@@ -6,10 +6,20 @@ import { usePathname, navigate } from 'wouter/use-browser-location';
 import { AnimatePresence, motion } from 'framer-motion';
 import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
 import { PromoProvider } from './components/promo/PromoProvider';
-import { LocalizedHead } from './components/seo/LocalizedHead';
 import { RAW_BASE, parseLangPath, preferredLang, langHref, canonicalizeRoute } from './lib/i18n-routing';
 import { TOUR_CITY_ROUTE, TOUR_DURATION_ROUTE } from './data/tour-hierarchy';
 
+// Lazy: LocalizedHead renders nothing (returns null) and only updates
+// <title>/meta/hreflang tags in a useEffect — the prerendered HTML already
+// carries the correct tags for the first paint, so this component's work can
+// safely start after the main thread is free. Statically importing it pulled
+// its whole dependency chain (route-metadata.ts -> content.ts, @/i18n/guides
+// -> seoHub.ts, @/i18n/content -> tourDepth.ts + blog-article-sections.ts —
+// confirmed by their strings appearing in dist/assets/index-*.js) into the
+// main bundle that must parse before the hero H1 can paint, on every page.
+const LocalizedHead = lazy(() =>
+  import('./components/seo/LocalizedHead').then((m) => ({ default: m.LocalizedHead })),
+);
 const Home = lazy(() => import('./pages/home'));
 const Destinations = lazy(() => import('./pages/destinations'));
 const DestinationDetail = lazy(() => import('./pages/destination-detail'));
@@ -86,6 +96,6 @@ function App() {
   const { lang, rest } = parseLangPath(pathname);
   useEffect(() => { if (!lang) navigate(langHref(preferredLang(), rest, window.location.search, window.location.hash), { replace: true }); }, [lang, rest]);
   if (!lang) return <PageLoader />;
-  return <LanguageProvider lang={lang}><LocalizedHead /><PromoProvider><TooltipProvider><WouterRouter base={`${RAW_BASE}/${lang}`}><AnimatedRouter /></WouterRouter><Toaster /></TooltipProvider></PromoProvider></LanguageProvider>;
+  return <LanguageProvider lang={lang}><Suspense fallback={null}><LocalizedHead /></Suspense><PromoProvider><TooltipProvider><WouterRouter base={`${RAW_BASE}/${lang}`}><AnimatedRouter /></WouterRouter><Toaster /></TooltipProvider></PromoProvider></LanguageProvider>;
 }
 export default App;

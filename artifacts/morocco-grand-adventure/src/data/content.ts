@@ -2,19 +2,11 @@
 // Morocco Grand Adventure — Central Data
 // Owner: Mohamed BouGhrara
 // ─────────────────────────────────────────────────────────────────────────────
-export const contactInfo = {
-  whatsapp: "https://wa.me/212699846818",
-  whatsappNumber: "+212 699 846 818",
-  phone: "+212 699 846 818",
-  instagram: "https://www.instagram.com/morocco_grand_adventure/",
-  email: "moroccograndadventure@gmail.com",
-  website: "https://www.moroccograndadventure.com",
-  tripadvisor: "https://www.tripadvisor.com/Attraction_Review-g304017-d34678153-Reviews-Morocco_Grand_Adventure-Merzouga_Draa_Tafilalet.html",
-  paypal: "https://www.paypal.me/MohamedbouGhrara683",
-  ownerName: "Mohamed BouGhrara",
-  companyName: "Morocco Grand Adventure",
-  address: "Merzouga, Errachidia Province, Morocco",
-};
+// Moved to its own module (performance fix, see that file's header comment)
+// so always-eager components importing only this constant no longer pull in
+// this entire file's ~300 KB of tours/destinations/FAQ data. Re-exported here
+// so every existing `from '@/data/content'` import keeps working unchanged.
+export { contactInfo } from './contactInfo';
 export type Destination = {
   id: string;
   name: string;

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { SiWhatsapp } from 'react-icons/si';
-import { contactInfo } from '@/data/content';
+import { contactInfo } from '@/data/contactInfo';
 import { useLocation } from 'wouter';
 import { useLanguage } from '@/contexts/LanguageContext';
 
