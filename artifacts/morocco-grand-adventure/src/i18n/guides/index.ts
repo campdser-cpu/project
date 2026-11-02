@@ -14,7 +14,7 @@
 // loaded simply falls back to English — resolving instantly with no blank state.
 // ─────────────────────────────────────────────────────────────────────────────
 import type { Lang } from '@/i18n/index';
-import { MERZOUGA_GUIDES, type HubPage } from '@/data/seoHub';
+import { ALL_HUB_PAGES, type HubPage } from '@/data/seoHub';
 import type { GuideOverlay } from './types';
 
 export type { GuideOverlay };
@@ -100,9 +100,16 @@ export function guideCrumb(lang: Lang, slug: string, fallback: string): string {
  * overlay exists. Structural fields (kind, slug, ogImage, heroImage, tours,
  * destinations, relatedGuides, comparisonRows, sources, inlineImages) are
  * never localized — only display strings.
+ *
+ * Searches across all hub-page kinds (Merzouga guides, comparisons, travel-info
+ * guides) via ALL_HUB_PAGES — slugs are verified unique across all three
+ * collections (src/data/seoHub.ts), so there is no ambiguity in the lookup.
+ * Comparison pages have no authored overlays today, so this resolves to their
+ * canonical English page unchanged; their H1 is localized separately via
+ * localizedComparisonMeta, which this function does not touch.
  */
 export function getLocalizedGuide(slug: string, lang: Lang): HubPage | undefined {
-  const base = MERZOUGA_GUIDES.find((p) => p.slug === slug);
+  const base = ALL_HUB_PAGES.find((p) => p.slug === slug);
   if (!base) return undefined;
   const o = getGuideOverlay(lang, slug);
   if (!o) return base;

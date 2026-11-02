@@ -1,7 +1,7 @@
 {
   "camel-trekking": {
     "title": "Méharées à Merzouga — Guide pratique",
-    "pageTitle": "Méharées à Merzouga — Balades à dos de dromadaire au Sahara (Erg Chebbi)",
+    "pageTitle": "Méharées à Merzouga — Balades à dos de dromadaire au Sahara",
     "description": "Tout savoir avant de partir à dos de dromadaire dans les dunes de l'Erg Chebbi près de Merzouga — quand partir, quoi porter, quoi emporter et comment se déroule une nuit dans le désert.",
     "heroAlt": "Caravane de dromadaires traversant les dunes de l’Erg Chebbi en plein jour, près de Merzouga",
     "intro": "Une balade à dos de dromadaire dans les dunes de l'Erg Chebbi est le cœur de toute visite de Merzouga. Voici comment cela se passe réellement, combien de temps cela dure et comment vous préparer pour que votre méharée au coucher du soleil soit un moment détendu, et non précipité.",
@@ -439,7 +439,7 @@
   },
   "what-to-pack": {
     "title": "Que mettre dans sa valise pour Merzouga — Liste pour le désert",
-    "pageTitle": "Que mettre dans sa valise pour Merzouga — Liste de bagage pour le Sahara",
+    "pageTitle": "Que mettre pour Merzouga — Liste de bagage pour le Sahara",
     "description": "Une liste de bagage pratique pour Merzouga et l'Erg Chebbi — vêtements en couches, protection solaire, chaussures, appareil photo et nécessaires pour passer une nuit dans le désert.",
     "heroAlt": "Des marcheurs en chèche et vêtements amples à manches longues traversant une dune près de Merzouga",
     "intro": "Préparez-vous pour deux climats en une journée : le soleil brûlant sur les dunes et une nuit désertique fraîche, parfois froide. Voici une liste réaliste, sans clichés touristiques.",
@@ -1223,6 +1223,276 @@
     "chrome": {
       "crumb": "Lever et coucher de soleil",
       "imageAlts": {}
+    }
+  },
+  "atlas-mountains-guide": {
+    "title": "Les montagnes de l'Atlas — le Haut Atlas marocain expliqué",
+    "intro": "Marrakech se trouve presque au pied des montagnes de l'Atlas — par temps clair, on aperçoit la neige sur les sommets depuis la ville elle-même. Ce guide explique ce qu'est réellement la chaîne, les deux endroits que visitent la plupart des voyageurs (Imlil et la vallée de l'Ourika), et comment une journée en montagne s'intègre à un circuit au Maroc.",
+    "sections": [
+      {
+        "heading": "Trois chaînes, un seul nom",
+        "paragraphs": [
+          "« L'Atlas » désigne en réalité trois chaînes reliées entre elles : le Haut Atlas (la plus haute, qui s'étend à peu près depuis la côte atlantique près d'Agadir jusqu'à la frontière algérienne), le Moyen Atlas (la chaîne couverte de forêts de cèdres entre Fès et le Haut Atlas, qui inclut Ifrane), et l'Anti-Atlas (la chaîne plus basse et plus ancienne, vers le sud, en bordure du Sahara). Ensemble, elles traversent le Maroc, l'Algérie et la Tunisie.",
+          "Le Haut Atlas abrite le Jebel Toubkal, qui culmine à 4 167 m — le plus haut sommet d'Afrique du Nord — et c'est la principale raison pour laquelle la plupart des voyageurs viennent dans cette chaîne, qu'ils souhaitent la gravir ou simplement l'admirer depuis Marrakech."
+        ]
+      },
+      {
+        "heading": "Le Haut Atlas près de Marrakech : Imlil et le Toubkal",
+        "paragraphs": [
+          "Imlil, à environ 90 minutes de Marrakech, est le point de départ pour le Toubkal et le moyen le plus simple de goûter réellement à la vie du Haut Atlas — vergers de noyers, pistes à mulets, villages berbères et vues sur la vallée du Mizane. La plupart des visiteurs viennent pour une randonnée d'une journée ou l'ascension du Toubkal en deux jours, plutôt que pour un simple passage.",
+          "Depuis 2019, la réglementation marocaine impose un guide local agréé à toute personne souhaitant randonner dans le parc national du Toubkal — un poste de contrôle sur l'itinéraire le vérifie. Ce n'est pas une simple formalité mais une règle de sécurité : le temps change vite en altitude, et avoir un guide local signifie aussi que la randonnée profite directement aux villages traversés."
+        ]
+      },
+      {
+        "heading": "La vallée de l'Ourika : l'échappée montagnarde facile d'une demi-journée",
+        "paragraphs": [
+          "La vallée de l'Ourika est l'échappée montagnarde la plus proche de Marrakech, à moins d'une heure de la ville — une vallée verdoyante parsemée de villages berbères, de restaurants au bord de la rivière et des cascades de Setti Fatma, avec des coopératives d'huile d'argan et de safran sur le chemin. Elle ne demande aucune expérience de randonnée ni de jour supplémentaire : une formule appréciée consiste à passer la matinée en montagne et à être de retour dans la médina de Marrakech le soir.",
+          "Entre les deux, l'Ourika est la demi-journée la plus facile, davantage centrée sur une route panoramique ; Imlil est faite pour les voyageurs qui veulent vraiment marcher dans l'Atlas, pas seulement le contempler."
+        ]
+      },
+      {
+        "heading": "Le Moyen Atlas : forêts de cèdres et Ifrane",
+        "paragraphs": [
+          "Plus au nord, le Moyen Atlas offre un paysage totalement différent — forêt de cèdres plutôt que roche nue — centré sur la ville de style alpin d'Ifrane, où l'on aperçoit couramment des magots de Barbarie à l'état sauvage. C'est moins une destination d'excursion d'une journée depuis Marrakech qu'une étape sur la route entre Fès et le Sahara ; notre guide d'itinéraire de Fès à Merzouga en parle dans ce contexte."
+        ]
+      },
+      {
+        "heading": "Préparer une journée en montagne",
+        "paragraphs": [
+          "Les superpositions de vêtements comptent ici plus que presque nulle part ailleurs au Maroc — le fond des vallées peut être chaud tandis que les sommets conservent de la neige jusque bien avant dans le printemps, et les cols du Haut Atlas connaissent parfois des fermetures temporaires après les tempêtes hivernales. Des chaussures de marche confortables valent la peine même pour la journée à l'Ourika, où les sentiers menant aux cascades sont accidentés.",
+          "Le printemps et l'automne offrent les conditions de marche les plus fiables ; l'hiver ajoute de la neige sur les sentiers les plus hauts (spectaculaire de loin, sérieux à parcourir sans le bon équipement), et l'été est nettement plus frais en montagne qu'à Marrakech même — une raison pour laquelle certains voyageurs choisissent justement une journée en montagne pour échapper à la chaleur de la ville."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Peut-on voir les montagnes de l'Atlas depuis Marrakech ?",
+        "answer": "Oui — par temps clair, surtout en hiver et au printemps, les sommets enneigés du Haut Atlas sont visibles depuis la ville elle-même, y compris le Jebel Toubkal."
+      },
+      {
+        "question": "Quelle est la plus haute montagne du Maroc ?",
+        "answer": "Le Jebel Toubkal, à 4 167 m, dans le Haut Atlas près d'Imlil. C'est aussi le plus haut sommet d'Afrique du Nord."
+      },
+      {
+        "question": "A-t-on besoin d'un guide pour randonner dans les montagnes de l'Atlas ?",
+        "answer": "À l'intérieur du parc national du Toubkal, oui — la réglementation marocaine impose un guide local agréé depuis 2019, vérifié à un poste de contrôle sur l'itinéraire. En dehors du parc national, les randonnées plus courtes en vallée comme celle de l'Ourika ne l'exigent pas, même si un guide local reste une réelle valeur ajoutée."
+      },
+      {
+        "question": "Imlil ou la vallée de l'Ourika — laquelle visiter ?",
+        "answer": "L'Ourika est la demi-journée la plus facile pour une route panoramique, des cascades et aucune expérience de marche requise. Imlil est pour les voyageurs qui veulent vraiment marcher dans le Haut Atlas, d'une courte randonnée d'une journée jusqu'à l'ascension du Toubkal en deux jours."
+      },
+      {
+        "question": "Le Moyen Atlas est-il la même chose que le Haut Atlas ?",
+        "answer": "Non — ce sont des chaînes différentes. Le Moyen Atlas (autour d'Ifrane) est plus bas, couvert de forêts de cèdres, et se situe entre Fès et le Haut Atlas. Le Haut Atlas (autour d'Imlil et du Toubkal) est la chaîne la plus haute et la plus proche de Marrakech."
+      }
+    ]
+  },
+  "amazigh-berber-culture": {
+    "title": "Culture amazighe (berbère) au Maroc — une introduction pour les voyageurs",
+    "intro": "Une grande partie de ce que les voyageurs viennent voir au Maroc — les kasbahs, les villages de montagne, les tapis et la poterie dans les souks — relève de la culture amazighe, qu'elle soit désignée comme telle ou non. Voici une courte introduction, respectueuse : qui sont les Amazighs, où vous rencontrerez cette culture pendant un voyage, et comment la découvrir sans transformer le quotidien des habitants en simple attraction photo.",
+    "sections": [
+      {
+        "heading": "Amazigh ou berbère ?",
+        "paragraphs": [
+          "Amazigh (pluriel Imazighen) est le nom que se donnent les communautés autochtones du Maroc ; « berbère » est le terme plus familier en français et en anglais, encore largement utilisé par les voyageurs et les guides touristiques, sans intention irrespectueuse. Le tamazight est devenu langue officielle du Maroc aux côtés de l'arabe dans la Constitution de 2011, et il est aujourd'hui enseigné dans certaines écoles et utilisé dans les médias et la signalétique.",
+          "Les communautés et langues amazighes sont concentrées dans trois grandes régions : le tachelhit dans l'Anti-Atlas et la région du Souss autour d'Agadir, le tamazight de l'Atlas central dans le Moyen et le Haut Atlas, et le tarifit dans les montagnes du Rif au nord. Les dialectes diffèrent mais partagent une racine commune, et le tamazight marocain standard — élaboré à partir des trois — est celui employé officiellement à l'échelle nationale."
+        ]
+      },
+      {
+        "heading": "Où rencontrer cette culture pendant un voyage",
+        "paragraphs": [
+          "Ce n'est pas une étape unique mais un fil conducteur qui traverse la plupart des itinéraires au Maroc. Les villages de montagne autour d'Imlil et de la vallée de l'Ourika sont des communautés amazighes, pas des décors reconstitués — vergers de noyers, pistes à mulets et maisons d'hôtes tenues par des familles locales. Les kasbahs et ksour des vallées du Dadès et du Drâa, dont le site classé à l'UNESCO d'Aït Ben Haddou, ont été construits par des communautés amazighes et restent, par endroits, habités aujourd'hui. En lisière du désert près de Merzouga, des familles amazighes nomades et semi-nomades perpétuent un mode de vie façonné par les marges du Sahara.",
+          "Les jours de marché (souks) dans les petites villes sont eux aussi des espaces authentiquement amazighs — produits, laine, bétail et artisanat s'y échangent à peu près comme depuis des générations, aux côtés des étals plus touristiques des médinas urbaines."
+        ]
+      },
+      {
+        "heading": "Architecture : la kasbah et le ksar",
+        "paragraphs": [
+          "La kasbah — bâtiment fortifié en terre, à tours d'angle, construit en pisé (terre damée) et orné de motifs géométriques pressés — est une forme architecturale amazighe, conçue pour la défense, la vie familiale et les exigences pratiques des climats de montagne et de désert. Un ksar (pluriel ksour) est un village fortifié similaire regroupant plusieurs de ces bâtiments ; Aït Ben Haddou en est l'exemple le plus célèbre, classé au patrimoine mondial de l'UNESCO.",
+          "Les murs ocre rouge se détachant sur des palmeraies vertes, que l'on retrouve sur tant de photographies du Maroc — dans la vallée du Dadès, la vallée du Drâa, autour de Skoura — relèvent de cette même tradition constructive, toujours visible aujourd'hui le long des routes que suivent déjà la plupart des itinéraires sahariens."
+        ]
+      },
+      {
+        "heading": "Artisanat : tapis, poterie et bijoux",
+        "paragraphs": [
+          "Les tapis amazighs (zerbiya) sont traditionnellement tissés à la main par des femmes, en laine et teintures naturelles, selon des motifs géométriques qui varient selon la région et la tisseuse — ces motifs ne sont pas purement décoratifs ; ils portent un sens propre à la communauté de la tisseuse. La poterie, souvent façonnée par des hommes au tour à pied puis peinte à la main, et la bijouterie en argent aux motifs géométriques similaires, sont les autres artisanats que la plupart des visiteurs rencontrent dans les souks et coopératives en chemin.",
+          "Acheter directement auprès d'une coopérative ou d'un atelier connu — plutôt que seulement à l'étal touristique le plus accessible — est l'un des moyens les plus concrets pour un voyage de soutenir réellement les artisans qui fabriquent ces objets."
+        ]
+      },
+      {
+        "heading": "Musique, hospitalité et visite respectueuse",
+        "paragraphs": [
+          "L'ahwach, pratiqué dans les régions de l'Atlas et du Souss, est une danse et un chant collectifs en cercle exécutés lors des célébrations — hommes et femmes en cercles concentriques, chantant en call-and-response au son des percussions. Le thé à la menthe, versé de haut dans de petits verres, est le rituel d'hospitalité que vous rencontrerez dans presque toutes les maisons, maisons d'hôtes et haltes en bord de route des régions amazighes ; il mérite d'être reçu comme il est offert : sans précipitation.",
+          "L'approche honnête que nous adoptons avec nos propres voyageurs : demander la permission avant de photographier quelqu'un, et se rappeler qu'un village est le foyer de quelqu'un, non un spectacle organisé pour les visiteurs. La version la plus riche de cette culture est aussi celle qui ne s'achète pas dans un souk — un verre de thé partagé, une question à laquelle on répond vraiment, du temps qui n'est pas précipité. Un bon guide local est ce qui ouvre réellement cette porte, c'est pourquoi nous l'intégrons à l'itinéraire plutôt que de le laisser au hasard."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Quelle est la différence entre Amazigh et berbère ?",
+        "answer": "Ils désignent les mêmes communautés. « Amazigh » (pluriel Imazighen) est le terme employé par les communautés elles-mêmes ; « berbère » est le terme plus familier en français et en anglais, encore largement utilisé et sans intention irrespectueuse, y compris par de nombreux Amazighs eux-mêmes lorsqu'ils s'expriment dans ces langues."
+      },
+      {
+        "question": "Le tamazight est-il une langue officielle du Maroc ?",
+        "answer": "Oui — le tamazight est devenu langue officielle aux côtés de l'arabe dans la Constitution de 2011, après avoir été pendant des générations la langue parlée au foyer par les communautés amazighes du pays."
+      },
+      {
+        "question": "Où vivent les communautés amazighes au Maroc ?",
+        "answer": "Principalement dans trois régions : les montagnes du Rif au nord (tarifit), le Moyen et le Haut Atlas (tamazight de l'Atlas central) — dont Imlil et la vallée de l'Ourika — et la région de l'Anti-Atlas et du Souss autour d'Agadir (tachelhit)."
+      },
+      {
+        "question": "Qui a construit les kasbahs du sud marocain ?",
+        "answer": "Des communautés amazighes, selon la technique du pisé (terre damée), adaptée au climat de la région. Aït Ben Haddou, site classé au patrimoine mondial de l'UNESCO, en est l'exemple le plus connu, et ce même style constructif se poursuit à travers les vallées du Dadès et du Drâa."
+      },
+      {
+        "question": "Peut-on visiter un village amazigh lors d'un voyage au Maroc ?",
+        "answer": "Oui — les villages autour d'Imlil et de la vallée de l'Ourika, tous deux facilement accessibles depuis Marrakech, sont de véritables communautés amazighes, non des reconstitutions. Ce sont des lieux habités, où une visite respectueuse (demander avant de photographier des personnes, acheter l'artisanat directement auprès de ceux qui le fabriquent) importe davantage que dans un site touristique classique."
+      }
+    ],
+    "chrome": {
+      "imageAlts": {
+        "ait-ben-haddou-ksar-palm-oasis": "Le ksar fortifié d'Aït Ben Haddou s'élevant au-dessus d'une palmeraie, avec les contreforts de l'Atlas en arrière-plan",
+        "earthen-ksar-village-palm-oasis": "Un village traditionnel en terre crue au bord d'une palmeraie, avec des collines désertiques en arrière-plan"
+      }
+    }
+  },
+  "moroccan-food-and-cuisine": {
+    "title": "La cuisine marocaine — le guide du voyageur pour savoir quoi manger",
+    "intro": "La cuisine marocaine est présente à chaque étape d'un voyage — petits-déjeuners au riad, haltes déjeuner en bord de route, dîner sous les étoiles au bivouac — et quelques repères avant de partir changent vraiment l'expérience. Voici un guide court et pratique sur ce que vous mangerez réellement, et pourquoi c'est préparé ainsi.",
+    "sections": [
+      {
+        "heading": "Le tajine et le couscous — les deux plats sur toutes les lèvres",
+        "paragraphs": [
+          "Le tajine désigne à la fois le plat conique en terre cuite et le ragoût mijoté qu'on y prépare — sa forme emprisonne la vapeur et attendrit viande et légumes lors d'une cuisson longue et douce. Les associations classiques jouent sur le sucré-salé : agneau aux pruneaux et aux amandes, poulet au citron confit et aux olives, ou un simple tajine de légumes, naturellement végétarien. C'est moins une recette unique qu'une méthode de cuisson, ce qui explique qu'aucun tajine n'a tout à fait le même goût.",
+          "Le couscous — de la semoule cuite à la vapeur, jamais bouillie — est traditionnellement le plat du vendredi au Maroc : les familles se réunissent après la prière de midi autour d'un plat commun, le pain faisant office de couverts. Les restaurants en servent tous les jours de la semaine, mais si l'on vous invite un jour à partager un couscous en famille marocaine, ce sera un vendredi."
+        ]
+      },
+      {
+        "heading": "Le thé à la menthe — davantage un rituel qu'une boisson",
+        "paragraphs": [
+          "Le thé à la menthe marocain (atay) — thé vert, menthe fraîche et une bonne quantité de sucre, versé de haut pour l'aérer — tient moins de la boisson que du rituel d'hospitalité, offert aussi bien dans les foyers que dans les riads ou lors d'un arrêt en chemin. Un vieux dicton, répété avec de légères variantes selon les régions, résume l'idée : le premier verre est amer comme la vie, le second fort comme l'amour, le troisième doux comme la mort. Les trois proviennent en général de la même théière, la saveur évoluant légèrement à mesure que les feuilles infusent plus longtemps à chaque service.",
+          "Acceptez-le tel qu'il est offert — sans précipitation, souvent accompagné d'une conversation qui compte plus que l'horaire. C'est l'un des moments les plus authentiques d'un voyage au Maroc, non une mise en scène pour les visiteurs."
+        ]
+      },
+      {
+        "heading": "Petit-déjeuner, street food et épices",
+        "paragraphs": [
+          "Un petit-déjeuner au riad comprend généralement le msemen (une galette feuilletée cuite à la poêle), du pain, de l'huile d'olive, du miel ou de l'amlou, et une théière ou une cafetière — un début de journée plus calme et plus lent que le reste. La street food penche vers les grillades, les stands de msemen et les étals de jus d'orange frais sur les places des villes ; la même règle de bon sens qui s'applique partout ailleurs dans le monde vaut ici aussi — les étals fréquentés qui cuisinent devant vous sont le choix le plus sûr (notre guide de sécurité au Maroc couvre plus largement la nourriture et l'eau).",
+          "Les épices sont omniprésentes dès qu'un voyage traverse un souk : le ras el hanout (un mélange d'épices complexe, différent chez chaque marchand), le safran de la région de Taliouine, le cumin, ainsi que les olives et les citrons confits présents dans presque tous les plats salés. Un marché aux épices nocturne, éclairé de lampes et chargé de couleurs, compte parmi les étapes les plus photogéniques d'une soirée en ville."
+        ]
+      },
+      {
+        "heading": "Douceurs, pâtisseries et plats du ramadan",
+        "paragraphs": [
+          "Les pâtisseries marocaines misent sur les amandes, le miel, le sésame et l'eau de fleur d'oranger — les cornes de gazelle (kaab el ghazal) et les chebakias au sésame et au miel comptent parmi les plus reconnaissables. La chebakia est particulièrement associée au ramadan, où elle est servie avec la harira, une soupe riche à la tomate, aux lentilles et aux pois chiches, consommée au coucher du soleil pour rompre le jeûne. La harira figure toute l'année sur les menus, mais pendant le ramadan, elle trône sur presque toutes les tables du pays."
+        ]
+      },
+      {
+        "heading": "Bien manger pendant un voyage au Maroc",
+        "paragraphs": [
+          "La plupart des itinéraires couvrent naturellement cet éventail : un petit-déjeuner au riad pour commencer, une halte déjeuner autour d'un tajine ou d'un couscous sur la route, et — lors d'un séjour dans le Sahara — un dîner de bivouac, tajine et pain partagés autour du feu avant l'observation des étoiles. Les végétariens mangent bien au Maroc : tajine de légumes, pain, salades et mezzés sont disponibles partout, même s'il vaut mieux le préciser clairement lorsque le menu ne l'indique pas."
+        ]
+      },
+      {
+        "heading": "L'alcool au Maroc",
+        "paragraphs": [
+          "Le Maroc est un pays à majorité musulmane, et l'alcool y trouve sa place plutôt qu'il n'en est exclu : sa vente et son service sont légaux, mais surtout dans des établissements agréés — bars d'hôtels, restaurants orientés vers les touristes et certains supermarchés des grandes villes — plutôt que dans les cafés de quartier ou les restaurants de petites villes, qui n'en servent généralement pas. Boire dans la rue ou être visiblement ivre en public n'est pas acceptable, et les établissements agréés cessent parfois d'en servir lors d'occasions religieuses. C'est une raison de plus pour laquelle le rituel du thé à la menthe, et non l'alcool, reste la boisson la plus associée à l'hospitalité marocaine."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Quel est le plat national du Maroc ?",
+        "answer": "Il n'existe pas de réponse officielle unique, mais le couscous — plat traditionnel du vendredi au Maroc — et le tajine sont les deux plats les plus associés au pays, chacun consommé bien plus souvent que tout autre."
+      },
+      {
+        "question": "La cuisine marocaine est-elle épicée ?",
+        "answer": "Pas au sens piquant que la plupart des voyageurs imaginent. La cuisine marocaine est fortement épicée (cumin, gingembre, cannelle, safran, ras el hanout) plutôt que forte en piment — savoureuse et parfumée davantage que brûlante."
+      },
+      {
+        "question": "Qu'est-ce qu'un tajine ?",
+        "answer": "À la fois le plat conique en terre cuite et le ragoût mijoté qu'on y prépare. Sa forme emprisonne la vapeur et attendrit viande et légumes lors d'une cuisson longue et douce — parmi les associations courantes, l'agneau aux pruneaux et aux amandes, ou le poulet au citron confit et aux olives."
+      },
+      {
+        "question": "Les végétariens peuvent-ils bien manger au Maroc ?",
+        "answer": "Oui — le tajine de légumes, le pain, les salades et les mezzés sont largement disponibles. Il est utile de préciser clairement que vous êtes végétarien, car la viande figure par défaut dans de nombreux plats."
+      },
+      {
+        "question": "La street food est-elle sûre au Maroc ?",
+        "answer": "Généralement oui, avec la règle de bon sens habituelle : les étals fréquentés qui cuisinent devant vous sont le choix le plus sûr. Notre guide de sécurité au Maroc détaille davantage la nourriture et l'eau."
+      },
+      {
+        "question": "Peut-on boire de l'alcool au Maroc ?",
+        "answer": "Oui, mais surtout dans des établissements agréés comme les bars d'hôtels, les restaurants orientés vers les touristes et certains supermarchés des grandes villes — pas dans la plupart des cafés de quartier ou des petites villes. Boire en public ou être visiblement ivre n'est pas acceptable."
+      }
+    ]
+  },
+  "moroccan-souks-shopping-guide": {
+    "title": "Les souks marocains — guide du shopping et de la négociation",
+    "intro": "Un souk n'est pas un marché unique mais un dédale de marchés — chaque corps de métier dans son propre quartier, une organisation vieille de plusieurs siècles. Ce guide explique comment les souks de Marrakech et de Fès sont réellement organisés, comment la négociation fonctionne vraiment, et ce qui vaut vraiment la peine d'être acheté.",
+    "sections": [
+      {
+        "heading": "Ce qu'est réellement un souk",
+        "paragraphs": [
+          "Un souk est un quartier commerçant, pas un marché unique — dans une médina historique, chaque métier occupe traditionnellement sa propre ruelle ou son propre quartier : teinturiers ensemble, maroquiniers ensemble, ferronniers ensemble. Cette organisation remonte à plusieurs siècles et reste visible aujourd'hui, ce qui explique pourquoi flâner dans un souk peut d'abord sembler déroutant : vous traversez ce qui fut autrefois un système corporatif en activité, pas un centre commercial conçu pour les visiteurs.",
+          "C'est aussi toujours un quartier commerçant bien vivant pour les habitants, pas une attraction mise en scène pour les touristes — les mêmes étals qui vendent des tapis aux visiteurs vendent aussi des marmites et des vêtements de travail aux voisins."
+        ]
+      },
+      {
+        "heading": "Les souks de Marrakech, quartier par quartier",
+        "paragraphs": [
+          "Le souk Semmarine, qui part vers le nord depuis Jemaa el-Fna, est l'artère principale — large, animée, et la plus simple pour commencer. Les quartiers spécialisés s'en détachent : le souk El-Attarine pour les épices et les parfums, le souk des Teinturiers reconnaissable aux écheveaux de laine et de fil de soie teints suspendus au-dessus des têtes, le souk Cherratine pour le cuir, et le souk Haddadine pour le travail du métal et les lanternes martelées que l'on retrouve dans les riads de tout le pays.",
+          "Rien de tout cela n'a besoin d'être mémorisé avant de partir — un bon guide local s'y retrouve naturellement, ce qui explique en partie pourquoi nous intégrons une balade guidée dans les souks à nos journées à Marrakech, plutôt que de laisser les voyageurs s'y repérer seuls lors d'une première visite."
+        ]
+      },
+      {
+        "heading": "Fès : les tanneries et les quartiers d'artisans",
+        "paragraphs": [
+          "Les souks de Fès el-Bali reposent sur la même logique corporative, le plus connu étant la tannerie Chouara, où les peaux sont encore teintes à la main dans des cuves de pierre, pratiquement comme elles l'ont toujours été — l'une des plus anciennes tanneries en activité continue au monde. Les rues alentour perpétuent la même spécialisation : potiers, ferronniers et tisserands, chacun dans son coin de ce réseau dense et labyrinthique de ruelles étroites qui compose la médina — souvent citée comme l'une des plus grandes zones urbaines sans voitures au monde, bien qu'aucun décompte officiel unique de ses ruelles n'existe."
+        ]
+      },
+      {
+        "heading": "La négociation — comment ça marche vraiment",
+        "paragraphs": [
+          "Les prix fixes sont l'exception, pas la règle, dans la plupart des étals des souks — le prix annoncé est volontairement un point de départ, pas le prix réel, et un échange est attendu et parfaitement normal, pas gênant. Il n'existe pas de formule unique ; l'objectif est un prix avec lequel les deux parties se sentent à l'aise, pas de « gagner ». S'éloigner calmement fait partie intégrante et légitime du processus, ce n'est pas impoli — et un prix accepté dans la bonne humeur tient mieux qu'un prix arraché sous pression.",
+          "Le même principe — s'entendre avant de s'engager — s'applique aussi aux taxis et aux guides non officiels ; notre guide de sécurité au Maroc traite ce sujet plus en détail."
+        ]
+      },
+      {
+        "heading": "Que faut-il vraiment acheter, et chez qui",
+        "paragraphs": [
+          "Les tapis tissés à la main (zerbiya), les articles en cuir, les lanternes martelées, la céramique et les mélanges d'épices comme le ras el hanout sont les classiques, et leur qualité varie énormément — une coopérative ou un atelier où l'on peut voir le travail se faire est un meilleur choix qu'un étal pratique près d'un arrêt de bus touristique, à la fois pour la qualité et pour s'assurer que l'argent revient bien à ceux qui ont réellement fabriqué l'objet. Les coopératives d'huile d'argan, courantes autour d'Essaouira et de la vallée de l'Ourika, fonctionnent de la même façon.",
+          "Il ne s'agit pas d'éviter les souvenirs — il s'agit du même petit changement qui améliore n'importe quel voyage : en savoir un peu plus sur ce que l'on regarde avant de l'acheter."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Faut-il négocier dans les souks marocains ?",
+        "answer": "Dans la plupart des étals des souks, oui — les prix fixes sont l'exception. C'est un échange normal et attendu, pas une confrontation ; l'objectif est un prix qui convient aux deux parties."
+      },
+      {
+        "question": "Comment s'appelle la principale rue des souks à Marrakech ?",
+        "answer": "Le souk Semmarine, qui part vers le nord depuis Jemaa el-Fna, est l'artère principale. Les quartiers spécialisés — épices, teinturiers, cuir, métal — s'en détachent."
+      },
+      {
+        "question": "Qu'acheter dans un souk marocain ?",
+        "answer": "Les tapis tissés à la main, les articles en cuir, les lanternes martelées, la céramique et les mélanges d'épices comme le ras el hanout sont les classiques. Acheter auprès d'une coopérative ou d'un atelier visible garantit généralement une meilleure qualité et assure que l'argent revient aux artisans eux-mêmes."
+      },
+      {
+        "question": "Est-il impoli de négocier puis de ne pas acheter ?",
+        "answer": "Non — s'éloigner sans acheter, calmement et poliment, fait partie normale du processus, ce n'est pas une insulte. Les vendeurs savent que toutes les négociations ne se concluent pas par une vente."
+      },
+      {
+        "question": "Les souks sont-ils déroutants pour une première visite ?",
+        "answer": "Ils peuvent sembler déroutants au début — c'est une organisation corporative vieille de plusieurs siècles, pas un centre commercial. Un guide local rend la première visite bien plus facile à aborder, ce qui explique pourquoi nous intégrons une balade guidée dans les souks à nos circuits à Marrakech."
+      }
+    ],
+    "chrome": {
+      "imageAlts": {
+        "marrakech-souk-spice-stall": "Tas coniques d'épices colorées moulues dans des seaux en métal, sur un étal du souk de Marrakech",
+        "fes-medina-rug-display": "Tapis marocains tissés à la main suspendus dans une échoppe traditionnelle carrelée de la médina de Fès"
+      }
     }
   }
 }

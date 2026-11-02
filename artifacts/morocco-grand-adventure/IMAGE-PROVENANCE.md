@@ -117,6 +117,37 @@ exact same file as its hero image — no official library or catalog photo is
 tagged for the Draa Valley specifically (`MGA-036`/`MGA-040` are the nearby
 but distinct Dades Valley, and using them here would mislabel the location).
 
+---
+
+## 6. `stock/ait-ben-haddou-ksar-palm-oasis-morocco.webp` and `stock/earthen-ksar-village-palm-oasis-morocco.webp` — fully documented additions
+
+Added for the Amazigh Culture guide (`/travel-info/amazigh-berber-culture`),
+which previously had no inline photographs illustrating its Architecture
+section (the kasbah/ksar building tradition) or its "where you meet this
+culture" section (lived-in Amazigh villages). The existing hero image for
+this page (`library/dades-valley-village-atlas-morocco-mga-036.jpg`, an
+owner-supplied library photo) was kept unchanged — it is already authentic
+and relevant, and was not replaced.
+
+Both files were sourced from Pexels, downloaded directly from
+`images.pexels.com` (the official CDN), visually inspected before use (not
+just metadata-checked), and converted to WebP at the same ~1920px-wide,
+no-responsive-variant convention already used for `draa-valley-oasis-kasbah-village.webp`
+above. Both are published under the Pexels licence (free for commercial use).
+A third candidate (a Moroccan market pottery photo, Pexels photo ID 34529131)
+was reviewed and **not used** — it is a real photo but shows no element that
+specifically identifies it as Morocco or as Amazigh craftwork, and would have
+been a weak, potentially misleading match for the guide's crafts section.
+
+| File | Pexels photo page | Photographer | Photo ID | Subject verified |
+|---|---|---|---|---|
+| `ait-ben-haddou-ksar-palm-oasis-morocco.webp` | https://www.pexels.com/photo/the-ksar-ait-ben-haddou-in-ait-ben-haddou-morocco-6771187/ | Tom D'Arby | 6771187 | Yes — visually confirmed as the Aït Ben Haddou ksar (landscape view, palm oasis, riverbed, mountains behind), matching the guide's explicit mention of this UNESCO site |
+| `earthen-ksar-village-palm-oasis-morocco.webp` | https://www.pexels.com/photo/ancient-desert-village-in-atlas-mountains-30405044/ | Othmane Ettalbi (Casablanca-based) | 30405044 | Yes — visually confirmed as a real earthen ksar-style village in a palm oasis against desert hills; the photographer's page names the country as Morocco but gives no more precise location, so the image is used as a general illustration of this building tradition (as the guide text itself describes it — Dades/Draa-valley-style scenery), not as a claim about one named place |
+
+Used in `src/data/seoHub.ts`'s `amazigh-berber-culture` entry via
+`inlineImages`; alt text is localized per language in each
+`src/i18n/guides/generated/{lang}.json` overlay's `chrome.imageAlts`.
+
 - **Source**: Pexels (`pexels.com`), a free-licence stock photography site.
 - **Photo page**: `https://www.pexels.com/photo/scenic-view-of-draa-valley-in-morocco-29638614/`
 - **Photographer**: Moussa Idrissi.
@@ -145,3 +176,37 @@ but distinct Dades Valley, and using them here would mislabel the location).
   `scripts/build-tour-card-images.mjs`) using the project's existing `sharp`
   dependency. Final file: 1920×1277px, ~152KB.
 - **Accessed**: 10 October 2026.
+
+---
+
+## 7. `stock/marrakech-souk-spice-stall-morocco.webp` and `stock/fes-medina-rug-display-morocco.webp` — fully documented additions
+
+Added for the Moroccan Souks & Shopping guide (`/travel-info/moroccan-souks-shopping-guide`),
+which previously had no inline photographs illustrating the Marrakech souks
+section (which names Souk el-Attarine for spices) or the "what to actually
+buy" section (which leads with hand-woven rugs). The existing hero image for
+this page (`library/marrakech-souk-aerial-view-mga-009.jpg`, an owner-supplied
+library photo) was kept unchanged — it is already authentic and relevant, and
+was not replaced.
+
+Both files were sourced from Pexels, downloaded directly from
+`images.pexels.com` (the official CDN), visually inspected before use (not
+just metadata-checked), and converted to WebP using the project's existing
+`sharp` dependency, matching the established convention for this page's
+other recent additions (§6).
+
+| File | Pexels photo page | Photographer | Photo ID | Subject verified |
+|---|---|---|---|---|
+| `marrakech-souk-spice-stall-morocco.webp` | https://www.pexels.com/photo/stall-with-various-oriental-spices-in-local-bazaar-6441186/ | Piotr Arnoldes | 6441186 | Yes — visually confirmed as cone-shaped piles of colorful ground spices in metal buckets at an outdoor market stall, with a busy souk street blurred behind; the Pexels page's own location tag is "Marrakesh, Morocco," matching the guide's Marrakech souks section |
+| `fes-medina-rug-display-morocco.webp` | https://www.pexels.com/photo/vibrant-moroccan-rug-display-in-fes-medina-28582588/ | Moussa Idrissi (also credited for the Draa Valley photo above) | 28582588 | Yes — visually confirmed as dozens of hand-woven Moroccan rugs hanging in a tiled, arched traditional interior; the Pexels page's own location data is "Fès, Fès-Meknès, Maroc," matching the guide's Fes section and its emphasis on rugs as the top item to buy |
+
+Both are published under the Pexels licence (free for commercial use, no
+attribution required). Downloaded-file dimensions were checked against each
+photo page's listed dimensions before use to confirm the correct file, not a
+mismatched crop.
+
+Used in `src/data/seoHub.ts`'s `moroccan-souks-shopping-guide` entry via
+`inlineImages`; alt text is localized per language in each
+`src/i18n/guides/generated/{lang}.json` overlay's `chrome.imageAlts`.
+
+**Accessed**: 2 November 2026.

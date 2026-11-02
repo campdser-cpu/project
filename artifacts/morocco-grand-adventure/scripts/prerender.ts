@@ -1718,12 +1718,16 @@ function imageAltFor(slug: string, imageId: string, lang: Lang, fallback: string
 }
 
 function buildHubPageContent(page: HubPage, lang: Lang): string {
-  const localized = page.kind === 'merzouga' ? (getLocalizedGuide(page.slug, lang) ?? page) : page;
+  // Merzouga guides and travel-info guides both carry authored overlay content
+  // (src/i18n/guides/generated/*.json) and are fully localized here. Comparison
+  // pages intentionally keep canonical English body copy — only their H1 is
+  // authored per locale, via localizedComparisonMeta below — so they are
+  // deliberately excluded from this call, not merely omitted by oversight.
+  const localized = page.kind === 'merzouga' || page.kind === 'travel-info' ? (getLocalizedGuide(page.slug, lang) ?? page) : page;
   // Comparison pages: authored localized H1 (title) per locale; body copy stays
   // canonical English. Mirrors the runtime SeoHubPage behavior.
   const compMeta = page.kind === 'comparison' ? localizedComparisonMeta(page.slug, lang) : undefined;
-  const linkTitle = (s: string) =>
-    page.kind === 'merzouga' ? (getLocalizedGuide(s, lang)?.title ?? allHubsTitle(s)) : allHubsTitle(s);
+  const linkTitle = (s: string) => getLocalizedGuide(s, lang)?.title ?? allHubsTitle(s);
   let out = h1(compMeta?.title ?? localized.title) + paragraph(localized.intro);
   const figureAfter = new Map<number, string>();
   (localized.inlineImages ?? []).forEach((ii) => figureAfter.set(ii.after, ii.imageId));
@@ -1959,13 +1963,11 @@ function buildRoutes(lang: Lang): RouteEntry[] {
         : [];
       add(rest, `${lang}${rest}/index.html`, () => buildExperienceContent(rest, lang), schemas);
     }
-  // Merzouga authority sub-pages + comparison pages (hub copy localized via
-  // guide overlays; comparisons are fully localized per-locale. Travel-info
-  // guides (src/data/seoHub.ts TRAVEL_INFO) are the one remaining category
-  // still serving canonical English body copy at every locale URL — see the
-  // T-priority-2 investigation notes: x-default already points at /en/, but
-  // full translation vs. canonical consolidation is an open, evidence-gated
-  // decision, not yet made).
+  // Merzouga guide pages, comparison pages, and travel-info pages. Merzouga
+  // and travel-info hub copy is localized via authored guide overlays
+  // (src/i18n/guides/generated/*.json, merged by getLocalizedGuide — see
+  // src/i18n/guides/index.ts); comparisons intentionally keep canonical
+  // English body copy and localize only their H1, via localizedComparisonMeta.
   // Real hero ImageObject for every guide/comparison/travel-info page, mirroring
   // the <StructuredData id="hero-image"> added in SeoHubPage.tsx — same real
   // photo, same caption. width/height are passed through only when this entry
@@ -2007,15 +2009,18 @@ function buildRoutes(lang: Lang): RouteEntry[] {
   }
   for (const page of TRAVEL_INFO) {
     const rest = `/travel-info/${page.slug}`;
-    add(rest, `${lang}${rest}/index.html`, () => buildHubPageContent(page, lang), [
-      buildBreadcrumb([
-        { name: tr(lang, 'nav_home'), path: '/' },
-        { name: tr(lang, 'seohub_travel_info_breadcrumb'), path: '/travel-info' },
-        { name: page.title, path: rest },
-      ], lang) as unknown as Record<string, unknown>,
-      page.faqs.length ? (buildFaqSchema(page.faqs) as unknown as Record<string, unknown>) : null,
-      heroImageSchema(page),
-    ].filter(Boolean) as Record<string, unknown>[]);
+    add(rest, `${lang}${rest}/index.html`, () => buildHubPageContent(page, lang), (() => {
+      const localized = getLocalizedGuide(page.slug, lang) ?? page;
+      return [
+        buildBreadcrumb([
+          { name: tr(lang, 'nav_home'), path: '/' },
+          { name: tr(lang, 'seohub_travel_info_breadcrumb'), path: '/travel-info' },
+          { name: localized.title, path: rest },
+        ], lang) as unknown as Record<string, unknown>,
+        localized.faqs.length ? (buildFaqSchema(localized.faqs) as unknown as Record<string, unknown>) : null,
+        heroImageSchema(localized),
+      ].filter(Boolean) as Record<string, unknown>[];
+    })());
   }
   add('/travel-info', `${lang}/travel-info/index.html`, () => {
     const items = TRAVEL_INFO.map((p) => {

@@ -280,6 +280,36 @@ export const IMAGE_CATALOG: Record<string, CatalogImage> = {
     caption: 'Golden hour on the Erg Chebbi dunes.',
     category: 'desert', destinations: [],
   },
+  // Pexels additions for the Amazigh Culture guide — see IMAGE-PROVENANCE.md §6.
+  'ait-ben-haddou-ksar-palm-oasis': {
+    src: '/images/stock/ait-ben-haddou-ksar-palm-oasis-morocco.webp', file: 'ait-ben-haddou-ksar-palm-oasis-morocco.webp',
+    width: 1920, height: 1179,
+    alt: 'The fortified ksar of Aït Ben Haddou rising above a palm grove, with the Atlas foothills behind',
+    caption: 'Aït Ben Haddou — a UNESCO-listed ksar built in the Amazigh pisé tradition.',
+    category: 'heritage', destinations: ['ait-ben-haddou'],
+  },
+  'earthen-ksar-village-palm-oasis': {
+    src: '/images/stock/earthen-ksar-village-palm-oasis-morocco.webp', file: 'earthen-ksar-village-palm-oasis-morocco.webp',
+    width: 1440, height: 1920,
+    alt: 'A traditional earthen village beside a palm oasis, with desert hills behind',
+    caption: 'An Amazigh village built in the same earthen tradition seen across the Dades and Draa valleys.',
+    category: 'culture', destinations: [],
+  },
+  // Pexels additions for the Moroccan Souks & Shopping guide — see IMAGE-PROVENANCE.md §7.
+  'marrakech-souk-spice-stall': {
+    src: '/images/stock/marrakech-souk-spice-stall-morocco.webp', file: 'marrakech-souk-spice-stall-morocco.webp',
+    width: 1920, height: 1275,
+    alt: 'Cone-shaped piles of colorful ground spices in metal buckets at a Marrakech souk stall',
+    caption: 'A spice stall in the Marrakech souks, near Souk el-Attarine.',
+    category: 'culture', destinations: ['marrakech'],
+  },
+  'fes-medina-rug-display': {
+    src: '/images/stock/fes-medina-rug-display-morocco.webp', file: 'fes-medina-rug-display-morocco.webp',
+    width: 1600, height: 1063,
+    alt: 'Hand-woven Moroccan rugs hanging in a traditional tiled shop interior in the Fes medina',
+    caption: 'Hand-woven rugs on display in a Fes medina shop.',
+    category: 'culture', destinations: ['fes'],
+  },
 };
 
 /** Stable list, catalog order. */

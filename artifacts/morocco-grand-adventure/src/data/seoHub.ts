@@ -1690,6 +1690,12 @@ export const TRAVEL_INFO: HubPage[] = [
     destinations: ['imlil', 'ait-ben-haddou', 'ourika-valley'],
     relatedGuides: ['morocco-travel-safety', 'moroccan-food-and-cuisine', 'moroccan-souks-shopping-guide', 'atlas-mountains-guide', 'morocco-basics', 'sahara-desert-guide'],
     sources: ['britannica-morocco', 'unesco-ait-ben-haddou', 'onmt'],
+    // Real photographs sourced from Pexels — see IMAGE-PROVENANCE.md §6 for
+    // photographer credit, licence and verification notes.
+    inlineImages: [
+      { imageId: 'earthen-ksar-village-palm-oasis', after: 1 },  // after "Where you meet this culture on a trip"
+      { imageId: 'ait-ben-haddou-ksar-palm-oasis', after: 2 },   // after "Architecture: the kasbah and the ksar"
+    ],
   },
   {
     kind: 'travel-info',
@@ -1847,7 +1853,7 @@ export const TRAVEL_INFO: HubPage[] = [
       {
         heading: 'Fes: the tanneries and artisan quarters',
         paragraphs: [
-          'Fes el-Bali\'s souks are built around the same guild logic, most famously at the Chouara Tannery, where hides are still dyed by hand in stone vats much as they have been for centuries — one of the oldest continuously working tanneries in the world. The surrounding streets carry on the same specialization: potters, metalworkers and weavers each in their own corner of the medina\'s roughly 9,000 alleys.',
+          'Fes el-Bali\'s souks are built around the same guild logic, most famously at the Chouara Tannery, where hides are still dyed by hand in stone vats much as they have been for centuries — one of the oldest continuously working tanneries in the world. The surrounding streets carry on the same specialization: potters, metalworkers and weavers each in their own corner of the medina\'s dense, maze-like network of narrow lanes — often cited as one of the largest car-free urban areas anywhere, though no single official count of its alleys exists.',
         ],
       },
       {
@@ -1876,6 +1882,12 @@ export const TRAVEL_INFO: HubPage[] = [
     destinations: ['marrakech', 'fes'],
     relatedGuides: ['amazigh-berber-culture', 'moroccan-food-and-cuisine', 'morocco-travel-safety', 'morocco-basics'],
     sources: ['onmt', 'lonely-planet-morocco'],
+    // Real photographs sourced from Pexels — see IMAGE-PROVENANCE.md §7 for
+    // photographer credit, licence and verification notes.
+    inlineImages: [
+      { imageId: 'marrakech-souk-spice-stall', after: 1 },  // after "Marrakech's souks, section by section"
+      { imageId: 'fes-medina-rug-display', after: 4 },      // after "What to actually buy, and from whom"
+    ],
   },
   {
     kind: 'travel-info',

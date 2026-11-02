@@ -1224,5 +1224,275 @@
       "crumb": "Zonsopkomst en zonsondergang",
       "imageAlts": {}
     }
+  },
+  "atlas-mountains-guide": {
+    "title": "Het Atlasgebergte — de Marokkaanse Hoge Atlas uitgelegd",
+    "intro": "Marrakech ligt vrijwel aan de voet van het Atlasgebergte — op een heldere dag is de sneeuw op de toppen al vanuit de stad zelf te zien. Deze gids legt uit wat het gebergte eigenlijk is, de twee plekken die de meeste reizigers bezoeken (Imlil en de Ourika-vallei), en hoe een bergdag past in een reis door Marokko.",
+    "sections": [
+      {
+        "heading": "Drie gebergten, één naam",
+        "paragraphs": [
+          "'De Atlas' bestaat eigenlijk uit drie verbonden gebergten: de Hoge Atlas (de hoogste, die ongeveer van de Atlantische kust bij Agadir tot de Algerijnse grens loopt), de Midden-Atlas (het met cederbossen bedekte gebergte tussen Fes en de Hoge Atlas, waaronder Ifrane) en de Anti-Atlas (het lagere, oudere gebergte verder naar het zuiden, aan de rand van de Sahara). Samen strekken ze zich uit over Marokko, Algerije en Tunesië.",
+          "In de Hoge Atlas ligt de Jebel Toubkal, met 4.167 meter de hoogste piek van Noord-Afrika — en de belangrijkste reden waarom de meeste reizigers naar dit gebergte komen, of ze hem nu willen beklimmen of gewoon vanuit Marrakech willen zien."
+        ]
+      },
+      {
+        "heading": "De Hoge Atlas bij Marrakech: Imlil en de Toubkal",
+        "paragraphs": [
+          "Imlil, ongeveer 90 minuten van Marrakech, is het startpunt voor de Toubkal en de makkelijkste manier om echt iets van het leven in de Hoge Atlas te proeven — walnotenboomgaarden, muildierpaden, Berberdorpen en uitzicht over de Mizane-vallei. De meeste bezoekers komen voor een dagwandeling of de tweedaagse beklimming van de Toubkal, niet om er zomaar doorheen te reizen.",
+          "Sinds 2019 vereist de Marokkaanse regelgeving een erkende lokale gids voor iedereen die in het Toubkal-nationaalpark wil trekken — een controlepost op de route toetst dit. Het is geen formaliteit maar een veiligheidsregel: het weer verandert snel op grote hoogte, en een lokale gids betekent ook dat de wandeling de dorpen onderweg direct ten goede komt."
+        ]
+      },
+      {
+        "heading": "De Ourika-vallei: het makkelijke halve-dag-uitstapje naar de bergen",
+        "paragraphs": [
+          "De Ourika-vallei is het dichtstbijzijnde berguitstapje vanuit Marrakech, op minder dan een uur van de stad — een groene riviervallei met Berberdorpen, restaurants aan de rivier en de watervallen van Setti Fatma, met arganolie- en saffraancoöperaties langs de weg. Er is geen wandelervaring of extra dagen voor nodig: een populaire indeling is de ochtend in de bergen en 's avonds terug in de medina van Marrakech.",
+          "Van de twee is Ourika het makkelijkere halve dagje, meer gericht op een panoramische rit; Imlil is voor reizigers die echt in de Atlas willen wandelen, niet alleen willen zien."
+        ]
+      },
+      {
+        "heading": "De Midden-Atlas: cederbossen en Ifrane",
+        "paragraphs": [
+          "Verder naar het noorden is de Midden-Atlas een heel ander landschap — cederbos in plaats van kale rotsen — met als middelpunt het alpien aandoende Ifrane, waar wilde berberaapjes een gewoon gezicht zijn. Het is minder een dagtripbestemming vanuit Marrakech dan een tussenstop op de weg tussen Fes en de Sahara; onze routegids van Fes naar Merzouga behandelt het in die context."
+        ]
+      },
+      {
+        "heading": "Een bergdag plannen",
+        "paragraphs": [
+          "Kledinglagen zijn hier belangrijker dan bijna nergens anders in Marokko — de vallei kan warm zijn terwijl de toppen erboven tot ver in de lente sneeuw vasthouden, en de passen van de Hoge Atlas krijgen soms tijdelijke afsluitingen na winterstormen. Comfortabel wandelschoeisel is zelfs de moeite waard voor de Ourika-dag, waar de paden naar de watervallen onregelmatig zijn.",
+          "Lente en herfst bieden het meest betrouwbare wandelweer; de winter brengt sneeuw op de hogere paden (indrukwekkend van een afstand, serieus om te belopen zonder de juiste uitrusting), en de zomer is in de bergen merkbaar koeler dan in Marrakech zelf — een reden waarom sommige reizigers juist een bergdag gebruiken om de stadshitte te ontvluchten."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Kun je het Atlasgebergte vanuit Marrakech zien?",
+        "answer": "Ja — op een heldere dag, vooral in de winter en de lente, zijn de besneeuwde toppen van de Hoge Atlas te zien vanuit de stad zelf, inclusief de Jebel Toubkal."
+      },
+      {
+        "question": "Wat is de hoogste berg van Marokko?",
+        "answer": "De Jebel Toubkal, met 4.167 meter, in de Hoge Atlas bij Imlil. Het is ook de hoogste piek van Noord-Afrika."
+      },
+      {
+        "question": "Heb je een gids nodig om in het Atlasgebergte te trekken?",
+        "answer": "Binnen het Toubkal-nationaalpark wel — de Marokkaanse regelgeving vereist sinds 2019 een erkende lokale gids, gecontroleerd bij een controlepost op de route. Buiten het nationaalpark is dit niet verplicht voor kortere valleiwandelingen zoals in Ourika, al blijft een lokale gids wel degelijk waarde toevoegen."
+      },
+      {
+        "question": "Imlil of de Ourika-vallei — wat kies je?",
+        "answer": "Ourika is het makkelijkere halve dagje voor een panoramische rit, watervallen en geen wandelervaring nodig. Imlil is voor reizigers die echt in de Hoge Atlas willen wandelen, van een korte dagwandeling tot de tweedaagse beklimming van de Toubkal."
+      },
+      {
+        "question": "Is de Midden-Atlas hetzelfde als de Hoge Atlas?",
+        "answer": "Nee — het zijn verschillende gebergten. De Midden-Atlas (rond Ifrane) is lager, bebost met cederbomen, en ligt tussen Fes en de Hoge Atlas. De Hoge Atlas (rond Imlil en de Toubkal) is het hoogste gebergte en het dichtst bij Marrakech."
+      }
+    ]
+  },
+  "amazigh-berber-culture": {
+    "title": "Amazigh- (Berber-) cultuur in Marokko — een inleiding voor reizigers",
+    "intro": "Veel van wat reizigers naar Marokko komen zien — de kasbahs, de bergdorpen, de tapijten en het aardewerk in de soeks — is Amazigh-cultuur, of die nu zo wordt genoemd of niet. Dit is een korte, respectvolle inleiding: wie de Amazigh zijn, waar u deze cultuur tijdens een reis tegenkomt, en hoe u die bezoekt zonder het dagelijks leven van mensen tot een fotomoment te maken.",
+    "sections": [
+      {
+        "heading": "Amazigh of Berber?",
+        "paragraphs": [
+          "Amazigh (meervoud Imazighen) is hoe de inheemse gemeenschappen van Marokko zichzelf noemen; 'Berber' is de in het Nederlands en Engels bekendere term, nog altijd veel gebruikt door reizigers en reisgidsen, zonder dat dit oneerbiedig bedoeld is. Tamazight werd in de Grondwet van 2011 naast het Arabisch een officiële taal van Marokko, en wordt tegenwoordig op sommige scholen onderwezen en gebruikt in media en bewegwijzering.",
+          "Amazigh-gemeenschappen en -talen zijn geconcentreerd in drie hoofdgebieden: Tachelhit in de Anti-Atlas en de Souss-regio rond Agadir, Centraal-Atlas-Tamazight in de Midden- en Hoge Atlas, en Tarifit in het Rifgebergte in het noorden. De dialecten verschillen maar delen een gemeenschappelijke wortel, en het standaard Marokkaans Tamazight — ontwikkeld uit alle drie — is wat landelijk officieel wordt gebruikt."
+        ]
+      },
+      {
+        "heading": "Waar u deze cultuur tijdens een reis tegenkomt",
+        "paragraphs": [
+          "Het is minder één enkele stop dan een rode draad door de meeste Marokko-reizen. De bergdorpen rond Imlil en de Ourika-vallei zijn Amazigh-gemeenschappen, geen nagebouwde decors — walnotenboomgaarden, muildierpaden en gastenhuizen die door lokale families worden gerund. De kasbahs en ksour van de Dades- en Draa-valleien, waaronder het door UNESCO erkende Aït Ben Haddou, zijn gebouwd door Amazigh-gemeenschappen en zijn op sommige plekken nog altijd bewoond. Aan de woestijnrand bij Merzouga zetten nomadische en semi-nomadische Amazigh-families een manier van leven voort die gevormd is door de rand van de Sahara.",
+          "Marktdagen (soeks) in kleinere steden zijn ook echte Amazigh-plekken — producten, wol, vee en ambachten worden er verhandeld zoals al generaties lang, naast de meer toeristische kraampjes in de medina's van de steden."
+        ]
+      },
+      {
+        "heading": "Architectuur: de kasbah en de ksar",
+        "paragraphs": [
+          "De kasbah — een versterkt leembouwwerk met hoektorens, opgetrokken uit pisé (gestampte aarde) en versierd met geperste geometrische patronen — is een Amazigh-architectuurvorm, gebouwd voor verdediging, gezinsleven en de praktische eisen van berg- en woestijnklimaten. Een ksar (meervoud ksour) is een vergelijkbaar versterkt dorp van meerdere van dit soort gebouwen; Aït Ben Haddou is het beroemdste voorbeeld en een UNESCO-werelderfgoedlocatie.",
+          "De roodbruine muren tegen groene palmbossen die op zoveel Marokko-foto's voorkomen — in de Dades-vallei, de Draa-vallei, rond Skoura — horen bij dezelfde bouwtraditie, nog altijd in het echt te zien langs de routes die de meeste Sahara-reizen toch al volgen."
+        ]
+      },
+      {
+        "heading": "Ambachten: tapijten, aardewerk en sieraden",
+        "paragraphs": [
+          "Amazigh-tapijten (zerbiya) worden van oudsher met de hand geweven door vrouwen, met wol en natuurlijke verfstoffen, in geometrische patronen die per regio en per weefster verschillen — de patronen zijn niet alleen decoratief; ze dragen een betekenis die eigen is aan de gemeenschap van de weefster. Aardewerk, vaak door mannen op een traptrommel gevormd en daarna met de hand beschilderd, en zilveren sieraden met vergelijkbare geometrische motieven zijn de andere ambachten die de meeste bezoekers onderweg in soeks en coöperaties tegenkomen.",
+          "Rechtstreeks kopen bij een coöperatie of een bekende werkplaats — in plaats van alleen bij het meest voor de hand liggende toeristenkraampje — is een van de concretere manieren waarop een reis de ambachtslieden steunt die deze dingen daadwerkelijk maken."
+        ]
+      },
+      {
+        "heading": "Muziek, gastvrijheid en respectvol bezoeken",
+        "paragraphs": [
+          "Ahwach, uitgevoerd in de Atlas- en Souss-regio's, is een gezamenlijke kringdans met zang die bij feesten wordt opgevoerd — mannen en vrouwen in concentrische kringen, zingend in call-and-response boven trommels. Muntthee, van hoogte in kleine glaasjes geschonken, is het gastvrijheidsritueel dat u in bijna elk huis, gastenhuis en wegrestaurant in Amazigh-gebieden tegenkomt, en het is de moeite waard om het te ontvangen zoals het wordt aangeboden: zonder haast.",
+          "De eerlijke aanpak die wij bij onze eigen gasten hanteren: vraag toestemming voordat u iemand fotografeert, en bedenk dat een dorp iemands thuis is, geen voorstelling die voor bezoekers is opgezet. De rijkste versie van deze cultuur is ook degene die u niet in een soek kunt kopen — een gedeeld glas thee, een vraag die echt wordt beantwoord, tijd die niet wordt opgejaagd. Een goede lokale gids is wat die deur daadwerkelijk opent, daarom bouwen we die in in het reisschema in plaats van het aan het toeval over te laten."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Wat is het verschil tussen Amazigh en Berber?",
+        "answer": "Ze verwijzen naar dezelfde gemeenschappen. 'Amazigh' (meervoud Imazighen) is de term die de gemeenschappen zelf gebruiken; 'Berber' is de in het Nederlands en Engels bekendere term, nog altijd veel gebruikt en zonder oneerbiedige bedoeling, ook door veel Amazigh zelf wanneer zij deze talen spreken."
+      },
+      {
+        "question": "Is Tamazight een officiële taal van Marokko?",
+        "answer": "Ja — Tamazight werd in de Grondwet van 2011 naast het Arabisch een officiële taal, nadat het generaties lang de thuistaal was van Amazigh-gemeenschappen in het hele land."
+      },
+      {
+        "question": "Waar in Marokko wonen Amazigh-gemeenschappen?",
+        "answer": "Vooral in drie regio's: het Rifgebergte in het noorden (Tarifit), de Midden- en Hoge Atlas (Centraal-Atlas-Tamazight) — waaronder Imlil en de Ourika-vallei — en de Anti-Atlas- en Souss-regio rond Agadir (Tachelhit)."
+      },
+      {
+        "question": "Wie bouwde de kasbahs van Zuid-Marokko?",
+        "answer": "Amazigh-gemeenschappen, met de pisé-techniek (gestampte aarde) die past bij het klimaat van de regio. Aït Ben Haddou, een UNESCO-werelderfgoedlocatie, is het bekendste voorbeeld, en dezelfde bouwstijl zet zich voort door de Dades- en Draa-valleien."
+      },
+      {
+        "question": "Kan ik een Amazigh-dorp bezoeken tijdens een Marokko-reis?",
+        "answer": "Ja — de dorpen rond Imlil en de Ourika-vallei, beide gemakkelijk bereikbaar vanuit Marrakech, zijn echte Amazigh-gemeenschappen, geen nabootsingen. Het zijn bewoonde plekken, dus een respectvol bezoek (toestemming vragen voordat u mensen fotografeert, ambachten rechtstreeks kopen bij de makers) telt hier zwaarder dan bij een gewone toeristische bezienswaardigheid."
+      }
+    ],
+    "chrome": {
+      "imageAlts": {
+        "ait-ben-haddou-ksar-palm-oasis": "De versterkte ksar van Aït Ben Haddou rijst op boven een palmbos, met de uitlopers van de Atlas op de achtergrond",
+        "earthen-ksar-village-palm-oasis": "Een traditioneel leemdorp naast een palmbos, met woestijnheuvels op de achtergrond"
+      }
+    }
+  },
+  "moroccan-food-and-cuisine": {
+    "title": "De Marokkaanse keuken — een reisgids over wat u kunt eten",
+    "intro": "Marokkaans eten duikt overal in een reis op — ontbijt in het riad, lunchstops onderweg, een diner onder de sterren bij het kamp — en het loont om er vooraf wat over te weten. Dit is een korte, praktische gids over wat u werkelijk zult eten en waarom het zo wordt bereid.",
+    "sections": [
+      {
+        "heading": "Tajine en couscous — de twee gerechten waar iedereen naar vraagt",
+        "paragraphs": [
+          "Een tajine is zowel de kegelvormige aardewerken pot als de langzaam gestoofde schotel die erin wordt bereid — de vorm houdt stoom vast en houdt vlees en groenten zacht tijdens een lange, zachte bereiding. Klassieke combinaties neigen naar zoet-hartig: lam met pruimen en amandelen, kip met ingemaakte citroen en olijven, of een eenvoudige groentetajine die van nature vegetarisch is. Het is minder één vast recept dan een bereidingswijze, waardoor geen twee tajines precies hetzelfde smaken.",
+          "Couscous — gestoomde griesmeel, nooit gekookt — is van oudsher Marokko's vrijdaggerecht: families komen na het middaggebed samen rond één gedeelde schaal, met brood in plaats van bestek. Restaurants serveren het elke dag van de week, maar als u ooit wordt uitgenodigd om couscous bij een Marokkaans gezin te eten, gebeurt dat op vrijdag."
+        ]
+      },
+      {
+        "heading": "Muntthee — meer ritueel dan drankje",
+        "paragraphs": [
+          "Marokkaanse muntthee (atay) — groene thee, verse munt en een royale hoeveelheid suiker, van hoogte ingeschonken om hem te beluchten — is minder een drankje dan een gastvrijheidsritueel, aangeboden in woningen, riads en bij stops onderweg. Een oud gezegde, met kleine variaties overal in Marokko herhaald, vat het idee samen: het eerste glas is bitter als het leven, het tweede sterk als de liefde, het derde zacht als de dood. Alle drie komen doorgaans uit dezelfde pot, waarbij de smaak bij elke schenkbeurt licht verandert naarmate de blaadjes langer trekken.",
+          "Neem het aan zoals het wordt aangeboden — zonder haast, vaak samen met een gesprek dat belangrijker is dan het tijdschema. Het is een van de meest oprechte kleine momenten van een reis door Marokko, geen opvoering voor bezoekers."
+        ]
+      },
+      {
+        "heading": "Ontbijt, straatvoedsel en specerijen",
+        "paragraphs": [
+          "Een ontbijt in het riad bestaat doorgaans uit msemen (een gelaagd, in de pan gebakken plat brood), brood, olijfolie, honing of amlou, en een pot thee of koffie — een rustigere, langzamere start dan de rest van de dag. Straatvoedsel neigt naar gegrild vlees, msemen-kraampjes en kraampjes met vers geperst sinaasappelsap op stadspleinen; dezelfde vuistregel die overal ter wereld geldt, geldt ook hier — drukke kraampjes die vers voor uw ogen koken, zijn de veiligere keuze (onze veiligheidsgids voor Marokko behandelt eten en water uitgebreider).",
+          "Specerijen zijn overal te vinden zodra een reis een soek aandoet: ras el hanout (een complexe kruidenmix die bij elke verkoper anders is), saffraan uit de regio Taliouine, komijn, en de olijven en ingemaakte citroenen die in bijna elk hartig gerecht terugkeren. Een nachtelijke kruidenmarkt, verlicht door lampen en vol kleur, is een van de meest fotogenieke haltes op een avond in de stad."
+        ]
+      },
+      {
+        "heading": "Zoetigheden, gebak en ramadangerechten",
+        "paragraphs": [
+          "Marokkaans gebak leunt op amandelen, honing, sesam en oranjebloesemwater — gazellenhoorntjes (kaab el ghazal) en sesam-honing chebakia behoren tot de bekendste. Vooral chebakia wordt sterk geassocieerd met de ramadan, wanneer het wordt geserveerd bij harira, een stevige soep van tomaat, linzen en kikkererwten die bij zonsondergang wordt gegeten om de vasten te breken. Harira staat het hele jaar door op menu's, maar tijdens de ramadan krijgt het een centrale plaats aan vrijwel elke tafel in het land."
+        ]
+      },
+      {
+        "heading": "Goed eten tijdens een reis door Marokko",
+        "paragraphs": [
+          "De meeste reisroutes dekken deze hele breedte vanzelf af: een ontbijt in het riad om te beginnen, een lunchstop met tajine of couscous onderweg, en — tijdens een Sahara-reis — een kampdiner met tajine en brood, gedeeld rond het vuur voordat het sterrenkijken begint. Vegetariërs eten goed in Marokko: groentetajine, brood, salades en mezze zijn overal verkrijgbaar, al is het verstandig dit duidelijk aan te geven wanneer een menu het niet expliciet vermeldt."
+        ]
+      },
+      {
+        "heading": "Alcohol in Marokko",
+        "paragraphs": [
+          "Marokko is een overwegend islamitisch land, en alcohol bestaat daar eerder naast dan los van: de verkoop en schenking ervan zijn legaal, maar vooral in vergunninghoudende gelegenheden — hotelbars, op toeristen gerichte restaurants en sommige supermarkten in de grotere steden — en niet in gewone buurtcafés of restaurants in kleinere plaatsen, die doorgaans geen alcohol schenken. Op straat drinken of zichtbaar dronken zijn in het openbaar is niet acceptabel, en vergunninghoudende gelegenheden stoppen soms tijdelijk met schenken tijdens religieuze gelegenheden. Het is nog een reden waarom het muntthee-ritueel, en niet alcohol, het drankje is dat het meest met Marokkaanse gastvrijheid wordt geassocieerd."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Wat is het nationale gerecht van Marokko?",
+        "answer": "Er is geen enkel officieel antwoord, maar couscous — Marokko's traditionele vrijdaggerecht — en tajine zijn de twee gerechten die het sterkst met het land worden geassocieerd, elk veel vaker gegeten dan welk ander gerecht dan ook."
+      },
+      {
+        "question": "Is Marokkaans eten pittig?",
+        "answer": "Niet in de chilihete zin die veel reizigers verwachten. De Marokkaanse keuken is rijk op smaak gekruid (komijn, gember, kaneel, saffraan, ras el hanout) in plaats van heet — smaakvol en geurig eerder dan vurig."
+      },
+      {
+        "question": "Wat is een tajine?",
+        "answer": "Zowel de kegelvormige aardewerken pot als de langzaam gestoofde schotel die erin wordt bereid. De vorm houdt stoom vast en houdt vlees en groenten zacht tijdens een lange, zachte bereiding — gangbare combinaties zijn lam met pruimen en amandelen, of kip met ingemaakte citroen en olijven."
+      },
+      {
+        "question": "Kunnen vegetariërs goed eten in Marokko?",
+        "answer": "Ja — groentetajine, brood, salades en mezze zijn ruim verkrijgbaar. Het helpt duidelijk aan te geven dat u vegetariër bent, aangezien vlees standaard in veel gerechten voorkomt."
+      },
+      {
+        "question": "Is straatvoedsel in Marokko veilig om te eten?",
+        "answer": "Over het algemeen wel, met de gebruikelijke vuistregel: drukke kraampjes die vers voor uw ogen koken, zijn de veiligere keuze. Onze veiligheidsgids voor Marokko behandelt eten en water uitgebreider."
+      },
+      {
+        "question": "Kun je in Marokko alcohol drinken?",
+        "answer": "Ja, maar vooral in vergunninghoudende gelegenheden zoals hotelbars, op toeristen gerichte restaurants en sommige supermarkten in grotere steden — niet in de meeste gewone buurtcafés of kleinere plaatsen. In het openbaar drinken of zichtbaar dronken zijn, is niet acceptabel."
+      }
+    ]
+  },
+  "moroccan-souks-shopping-guide": {
+    "title": "Marokkaanse soeks — gids voor winkelen en onderhandelen",
+    "intro": "Een soek is niet één markt, maar een doolhof van markten — elk ambacht in zijn eigen wijk, een indeling die eeuwen teruggaat. Deze gids legt uit hoe de soeks van Marrakech en Fez werkelijk zijn georganiseerd, hoe onderhandelen echt werkt en wat echt de moeite waard is om te kopen.",
+    "sections": [
+      {
+        "heading": "Wat een soek eigenlijk is",
+        "paragraphs": [
+          "Een soek is een handelswijk, geen enkele markt — in een historische medina heeft elk ambacht traditioneel zijn eigen steegje of district: verfmakers bij elkaar, leerbewerkers bij elkaar, smeden bij elkaar. Die indeling is eeuwenoud en nog steeds zichtbaar, wat verklaart waarom ronddwalen door een soek in het begin verwarrend kan aanvoelen: u beweegt zich door wat ooit een functionerend gildesysteem was, geen winkelcentrum dat voor bezoekers is aangelegd.",
+          "Het is ook nog altijd een levendige handelswijk voor bewoners, geen in scène gezette attractie voor toeristen — dezelfde kraampjes die tapijten aan bezoekers verkopen, verkopen ook kookpotten en werkkleding aan buren."
+        ]
+      },
+      {
+        "heading": "De soeks van Marrakech, wijk voor wijk",
+        "paragraphs": [
+          "Soek Semmarine, die noordwaarts loopt vanaf Jemaa el-Fna, is de hoofdader — breed, druk en het makkelijkst om mee te beginnen. Daarvandaan vertakken zich de gespecialiseerde wijken: Soek el-Attarine voor specerijen en parfum, Soek des Teinturiers (de verfmakerssoek), herkenbaar aan de gekleurde strengen wol en zijde die erboven hangen, Soek Cherratine voor lederwaren, en Soek Haddadine voor metaalbewerking en de gehamerde lantaarns die in riads door het hele land te zien zijn.",
+          "Niets hiervan hoeft u vooraf te onthouden — een goede lokale gids beweegt zich hier moeiteloos doorheen, wat mede verklaart waarom we een begeleide soekwandeling inbouwen in onze Marrakech-dagen, in plaats van reizigers het bij een eerste bezoek alleen te laten uitzoeken."
+        ]
+      },
+      {
+        "heading": "Fez: de leerlooierijen en ambachtswijken",
+        "paragraphs": [
+          "De soeks van Fez el-Bali zijn opgebouwd rond dezelfde gildelogica, het bekendst bij de Chouara-leerlooierij, waar huiden nog altijd met de hand worden geverfd in stenen kuipen, vrijwel zoals eeuwenlang gebeurde — een van de oudste nog altijd werkende leerlooierijen ter wereld. De omliggende straten zetten dezelfde specialisatie voort: pottenbakkers, smeden en wevers, elk in hun eigen hoekje van het dichte, doolhofachtige netwerk van smalle steegjes dat de medina vormt — vaak genoemd als een van de grootste autovrije stadsgebieden ter wereld, al bestaat er geen enkele officiële telling van de steegjes."
+        ]
+      },
+      {
+        "heading": "Onderhandelen — hoe het echt werkt",
+        "paragraphs": [
+          "Vaste prijzen zijn de uitzondering, niet de regel, bij de meeste kraampjes in de soeks — de geopende prijs is bewust een startpunt, niet de werkelijke prijs, en een beetje heen-en-weer wordt verwacht en is heel normaal, niet ongemakkelijk. Er bestaat geen enkele juiste formule; het doel is een prijs waar beide partijen zich prettig bij voelen, niet \"winnen\". Rustig weglopen is een legitiem onderdeel van het proces, geen onbeleefdheid — en een prijs die met een glimlach is overeengekomen, houdt beter stand dan een die onder druk is afgedwongen.",
+          "Hetzelfde principe — eerst afspreken, dan pas toezeggen — geldt ook voor taxi's en informele gidsen; onze veiligheidsgids voor Marokko behandelt dat onderwerp uitgebreider."
+        ]
+      },
+      {
+        "heading": "Wat u echt zou moeten kopen, en bij wie",
+        "paragraphs": [
+          "Handgeweven tapijten (zerbiya), lederwaren, gehamerde lantaarns, keramiek en kruidenmengsels zoals ras el hanout zijn de klassiekers, en ze lopen allemaal enorm uiteen in kwaliteit — een coöperatie of een werkplaats waar u het werk kunt zien, is een betere keuze dan het handigste kraampje bij een tourbushalte, zowel voor de kwaliteit als om zeker te weten dat het geld terechtkomt bij wie het daadwerkelijk heeft gemaakt. Arganolie-coöperaties, veelvoorkomend rond Essaouira en de Ourikavallei, werken op dezelfde manier.",
+          "Dit alles gaat niet over het vermijden van souvenirs — het gaat om dezelfde kleine verschuiving die elke reis beter maakt: een beetje weten over wat u bekijkt voordat u het koopt."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Moet ik onderhandelen in Marokkaanse soeks?",
+        "answer": "Bij de meeste kraampjes in de soeks wel — vaste prijzen zijn de uitzondering. Het is een normaal, verwacht heen-en-weer, geen confrontatie; het doel is een prijs waar beide partijen tevreden mee zijn."
+      },
+      {
+        "question": "Hoe heet de belangrijkste soekstraat in Marrakech?",
+        "answer": "Soek Semmarine, die noordwaarts loopt vanaf Jemaa el-Fna, is de hoofdader. De gespecialiseerde wijken — specerijen, verfmakers, leer, metaal — vertakken zich daarvandaan."
+      },
+      {
+        "question": "Wat moet ik kopen in een Marokkaanse soek?",
+        "answer": "Handgeweven tapijten, lederwaren, gehamerde lantaarns, keramiek en kruidenmengsels zoals ras el hanout zijn de klassiekers. Kopen bij een coöperatie of een zichtbare werkplaats betekent doorgaans betere kwaliteit en zorgt ervoor dat het geld bij de ambachtslieden zelf terechtkomt."
+      },
+      {
+        "question": "Is het onbeleefd om te onderhandelen en dan niets te kopen?",
+        "answer": "Nee — rustig en beleefd weglopen zonder te kopen, is een normaal onderdeel van het proces, geen belediging. Verkopers weten dat niet elke onderhandeling eindigt in een verkoop."
+      },
+      {
+        "question": "Zijn de soeks overweldigend bij een eerste bezoek?",
+        "answer": "Ze kunnen in het begin verwarrend aanvoelen — het is een eeuwenoude gildeopzet, geen winkelcentrum. Een lokale gids maakt het eerste bezoek veel makkelijker te doorlopen, wat verklaart waarom we een begeleide soekwandeling inbouwen in onze Marrakech-reizen."
+      }
+    ],
+    "chrome": {
+      "imageAlts": {
+        "marrakech-souk-spice-stall": "Kegelvormige hopen kleurrijke gemalen specerijen in metalen emmers op een kraampje in de soek van Marrakech",
+        "fes-medina-rug-display": "Handgeweven Marokkaanse tapijten hangend in een traditioneel betegeld winkelinterieur in de medina van Fez"
+      }
+    }
   }
 }

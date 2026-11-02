@@ -10,9 +10,9 @@ import { Layout } from '@/components/layout/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { contactInfo, destinationImageAlt } from '@/data/content';
 import { getLocalizedTour, getLocalizedTours, getLocalizedDestination, getLocalizedDestinations } from '@/i18n/content';
-import { getLocalizedGuide, guideOverlayExists, guideImageAlt, guideCrumb } from '@/i18n/guides';
+import { getLocalizedGuide, guideImageAlt, guideCrumb } from '@/i18n/guides';
 import { StructuredData, buildBreadcrumb, buildFaqSchema, buildImageObjectSchema } from '@/components/seo/StructuredData';
-import { MERZOUGA_GUIDES, COMPARISONS, TRAVEL_INFO, ALL_HUB_PAGES, type HubPage } from '@/data/seoHub';
+import { COMPARISONS, ALL_HUB_PAGES, type HubPage } from '@/data/seoHub';
 import { localizedComparisonMeta } from '@/data/comparison-meta-i18n';
 import { catalogImage } from '@/data/imageCatalog';
 import { SOURCES } from '@/data/sources';
@@ -49,7 +49,8 @@ export function ComparisonPage() {
 
 export function TravelInfoTopic() {
   const { slug } = useParams();
-  const page = TRAVEL_INFO.find((p) => p.slug === slug);
+  const { lang } = useLanguage();
+  const page = getLocalizedGuide(slug ?? '', lang);
   if (!page) return <NotFound />;
   return <SeoHubPage page={page} />;
 }
@@ -59,12 +60,7 @@ export function SeoHubPage({ page }: { page: HubPage }) {
     const { lang, t } = useLanguage();
   const tours = getLocalizedTours(lang);
   const destinations = getLocalizedDestinations(lang);
-  const guideTitle = (s: string) => {
-    const over = page.kind === 'merzouga' && guideOverlayExists(lang, s)
-      ? getLocalizedGuide(s, lang)
-      : undefined;
-    return over?.title ?? ALL_HUB_PAGES.find((p) => p.slug === s)?.title ?? s;
-  };
+  const guideTitle = (s: string) => getLocalizedGuide(s, lang)?.title ?? ALL_HUB_PAGES.find((p) => p.slug === s)?.title ?? s;
   const bySlug = (s: string) => ALL_HUB_PAGES.find((p) => p.slug === s);
 
   const crumbs = [
