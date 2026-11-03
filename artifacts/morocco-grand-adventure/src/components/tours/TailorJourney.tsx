@@ -34,6 +34,7 @@ import {
 import { ladderPrice } from '@/data/pricing/ladder';
 import { buildMailtoHref } from '@/lib/inquiryChannels';
 import { trackEvent } from '@/lib/analytics';
+import { useNumberField } from '@/hooks/use-number-field';
 
 type Props = {
   t: (key: string) => string;
@@ -174,6 +175,9 @@ export function TailorJourney({
   // deferred option.
   const [roomId, setRoomId] = useState('defer');
 
+  const travellersField = useNumberField(travellers, setTravellers, 1, 50);
+  const daysField = useNumberField(days, setDays, MIN_DAYS, MAX_DAYS);
+
   const arrangements = useMemo(() => roomArrangements(travellers), [travellers]);
   const arrangement = useMemo(() => findArrangement(travellers, roomId), [travellers, roomId]);
   const roomChoices: Choice[] = useMemo(
@@ -275,8 +279,9 @@ export function TailorJourney({
               inputMode="numeric"
               min={1}
               max={50}
-              value={travellers}
-              onChange={(e) => setTravellers(Math.max(1, Math.min(50, Number(e.target.value) || 1)))}
+              value={travellersField.value}
+              onChange={(e) => travellersField.onChange(e.target.value)}
+              onBlur={travellersField.onBlur}
               className={`${field} pl-12`}
             />
           </div>
@@ -291,10 +296,9 @@ export function TailorJourney({
             inputMode="numeric"
             min={MIN_DAYS}
             max={MAX_DAYS}
-            value={days}
-            onChange={(e) =>
-              setDays(Math.max(MIN_DAYS, Math.min(MAX_DAYS, Number(e.target.value) || MIN_DAYS)))
-            }
+            value={daysField.value}
+            onChange={(e) => daysField.onChange(e.target.value)}
+            onBlur={daysField.onBlur}
             aria-describedby={`${uid}-days-hint`}
             className={field}
           />

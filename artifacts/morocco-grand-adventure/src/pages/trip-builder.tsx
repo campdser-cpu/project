@@ -8,6 +8,7 @@ import { buildMailtoHref } from '@/lib/inquiryChannels';
 import { categoryLabel, getLocalizedDestinations } from '@/i18n/content';
 import { fmtTemplate } from '@/components/tours/intl';
 import { SiWhatsapp } from 'react-icons/si';
+import { useNumberField } from '@/hooks/use-number-field';
 import {
   MapPin,
   Calendar,
@@ -88,6 +89,7 @@ export default function TripBuilder() {
   const [arrival, setArrival] = useState(CITY_IDS[0]);
   const [departure, setDeparture] = useState(CITY_IDS[1]);
   const [days, setDays] = useState(7);
+  const daysField = useNumberField(days, setDays, 1, 30);
   const [travelers, setTravelers] = useState(2);
   const [budget, setBudget] = useState<Budget>('$300-600');
   
@@ -376,9 +378,10 @@ export default function TripBuilder() {
                               inputMode="numeric"
                               min={1}
                               max={30}
-                              value={days}
+                              value={daysField.value}
                               aria-label={t('tb_duration_label')}
-                              onChange={e => setDays(clampDays(e.target.value))}
+                              onChange={e => daysField.onChange(e.target.value)}
+                              onBlur={daysField.onBlur}
                               className="w-20 shrink-0 rounded-xl border border-border bg-background px-3 py-2 text-center text-base font-bold text-foreground outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
                             />
                           </div>

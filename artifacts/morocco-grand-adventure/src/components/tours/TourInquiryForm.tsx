@@ -19,6 +19,7 @@ import { CheckCircle2, Mail } from 'lucide-react';
 import { SiWhatsapp } from 'react-icons/si';
 import { BOOK_COPY } from '@/data/book-copy';
 import { waPromoLink } from '@/lib/promo';
+import { useNumberField } from '@/hooks/use-number-field';
 
 /** Same resolution order as the contact page: an env override, else same-origin /api. */
 const API_BASE = (typeof import.meta !== 'undefined' && import.meta.env.VITE_API_URL) || '/api';
@@ -52,6 +53,8 @@ export function TourInquiryForm({ tourName, lang, travelDate = '', travelers: pa
   // The booking panel's date and party size stay the source of truth.
   useEffect(() => setDate(travelDate), [travelDate]);
   useEffect(() => setTravelers(party), [party]);
+
+  const travelersField = useNumberField(travelers, setTravelers, 1, 50);
 
   const summary = [
     `${t('jx_inq_tour_label')}: ${tourName}`,
@@ -174,10 +177,12 @@ export function TourInquiryForm({ tourName, lang, travelDate = '', travelers: pa
                   </span>
                   <input
                     type="number"
+                    inputMode="numeric"
                     min={1}
                     max={50}
-                    value={travelers}
-                    onChange={(e) => setTravelers(Math.max(1, Math.min(50, Number(e.target.value) || 1)))}
+                    value={travelersField.value}
+                    onChange={(e) => travelersField.onChange(e.target.value)}
+                    onBlur={travelersField.onBlur}
                     className={inputClass}
                   />
                 </label>

@@ -8,6 +8,7 @@ import { contactInfo } from '@/data/content';
 import { CITY_HUBS } from '@/data/tour-hierarchy';
 import { AIRPORTS, airportByIata, findRouteFact, resolveAirport, type Airport, type RouteStatus } from '@/data/airports';
 import { googleFlightsUrl, googleFlightsToCityUrl, royalAirMarocRouteUrl, ROYAL_AIR_MAROC_HOME, type TripType } from '@/lib/flights/links';
+import { useNumberField } from '@/hooks/use-number-field';
 import { ArrowLeftRight, ExternalLink, Minus, Plus, Plane, MapPin } from 'lucide-react';
 
 function RouteStatusBadge({ status }: { status: RouteStatus }) {
@@ -439,13 +440,22 @@ function BudgetPlanner() {
   const accomFoodTotal = accomFoodPerNight * nights;
   const total = flightsTotal + transportTotal + activitiesTotal + accomFoodTotal;
 
-  const fields: { id: string; label: string; value: number; set: (n: number) => void }[] = [
-    { id: 'flight', label: t('fl_budget_flight_pp'), value: flightPerTraveler, set: setFlightPerTraveler },
-    { id: 'travelers', label: t('fl_budget_travelers'), value: travelers, set: setTravelers },
-    { id: 'nights', label: t('fl_budget_nights'), value: nights, set: setNights },
-    { id: 'transport', label: t('fl_budget_transport'), value: transportPerDay, set: setTransportPerDay },
-    { id: 'activities', label: t('fl_budget_activities'), value: activitiesTotal, set: setActivitiesTotal },
-    { id: 'accomfood', label: t('fl_budget_accom_food'), value: accomFoodPerNight, set: setAccomFoodPerNight },
+  // One useNumberField call per field, at the top level — hooks can't be
+  // called from inside the fields.map() below.
+  const flightField = useNumberField(flightPerTraveler, setFlightPerTraveler, 0);
+  const travelersField = useNumberField(travelers, setTravelers, 0);
+  const nightsField = useNumberField(nights, setNights, 0);
+  const transportField = useNumberField(transportPerDay, setTransportPerDay, 0);
+  const activitiesField = useNumberField(activitiesTotal, setActivitiesTotal, 0);
+  const accomFoodField = useNumberField(accomFoodPerNight, setAccomFoodPerNight, 0);
+
+  const fields: { id: string; label: string; field: ReturnType<typeof useNumberField> }[] = [
+    { id: 'flight', label: t('fl_budget_flight_pp'), field: flightField },
+    { id: 'travelers', label: t('fl_budget_travelers'), field: travelersField },
+    { id: 'nights', label: t('fl_budget_nights'), field: nightsField },
+    { id: 'transport', label: t('fl_budget_transport'), field: transportField },
+    { id: 'activities', label: t('fl_budget_activities'), field: activitiesField },
+    { id: 'accomfood', label: t('fl_budget_accom_food'), field: accomFoodField },
   ];
 
   return (
@@ -463,9 +473,11 @@ function BudgetPlanner() {
                 <input
                   id={`budget-${f.id}`}
                   type="number"
+                  inputMode="numeric"
                   min={0}
-                  value={f.value}
-                  onChange={(e) => f.set(Math.max(0, Number(e.target.value) || 0))}
+                  value={f.field.value}
+                  onChange={(e) => f.field.onChange(e.target.value)}
+                  onBlur={f.field.onBlur}
                   className="w-full h-12 px-4 rounded-xl border border-border bg-background focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary"
                 />
               </div>

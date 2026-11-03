@@ -6,6 +6,7 @@ import { contactInfo } from '@/data/content';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { BOOK_COPY } from '@/data/book-copy';
 import { HowBookingWorks } from '../components/tours/HowBookingWorks';
+import { useNumberField } from '@/hooks/use-number-field';
 
 
 export default function Book() {
@@ -24,6 +25,7 @@ export default function Book() {
   const [phone, setPhone] = useState('');
   const [date, setDate] = useState(params.get('date') || '');
   const [travelers, setTravelers] = useState(initialTravelers);
+  const travelersField = useNumberField(travelers, setTravelers, 1, 50);
   const [trip, setTrip] = useState(initialTrip);
   const [rooms] = useState(initialRooms);
   const [message, setMessage] = useState(params.get('notes') || '');
@@ -84,7 +86,7 @@ export default function Book() {
           <Field label={c.email} required><input type="email" value={email} onChange={e=>setEmail(e.target.value)} required autoComplete="email" className={inputClass} /></Field>
           <Field label={c.phone}><input value={phone} onChange={e=>setPhone(e.target.value)} autoComplete="tel" className={inputClass} /></Field>
           <Field label={c.date}><div className="relative"><CalendarDays className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-primary"/><input type="date" min={new Date().toISOString().slice(0,10)} value={date} onChange={e=>setDate(e.target.value)} className={`${inputClass} pl-12`} /></div></Field>
-          <Field label={c.travelers}><div className="relative"><Users className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-primary"/><input type="number" min={1} max={50} value={travelers} onChange={e=>setTravelers(Math.max(1, Math.min(50, Number(e.target.value))))} className={`${inputClass} pl-12`} /></div></Field>
+          <Field label={c.travelers}><div className="relative"><Users className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-primary"/><input type="number" inputMode="numeric" min={1} max={50} value={travelersField.value} onChange={e=>travelersField.onChange(e.target.value)} onBlur={travelersField.onBlur} className={`${inputClass} pl-12`} /></div></Field>
           <Field label={c.trip}><input value={trip} onChange={e=>setTrip(e.target.value)} placeholder={c.tripPlaceholder} className={inputClass}/></Field>
         </div>
         <Field label={c.message}><textarea value={message} onChange={e=>setMessage(e.target.value)} rows={5} placeholder={c.messagePlaceholder} className={`${inputClass} resize-y`} /></Field>
