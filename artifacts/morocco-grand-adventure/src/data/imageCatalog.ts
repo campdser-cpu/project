@@ -310,6 +310,14 @@ export const IMAGE_CATALOG: Record<string, CatalogImage> = {
     caption: 'Hand-woven rugs on display in a Fes medina shop.',
     category: 'culture', destinations: ['fes'],
   },
+  // Pexels addition for the Morocco Airports guide — see IMAGE-PROVENANCE.md §8.
+  'casablanca-tram-city-street': {
+    src: '/images/stock/casablanca-tram-city-street-morocco.webp', file: 'casablanca-tram-city-street-morocco.webp',
+    width: 1400, height: 1664,
+    alt: 'A tram passing through a street of French-colonial-era buildings in central Casablanca',
+    caption: 'Getting around Casablanca after landing — the city tram on a central street.',
+    category: 'city', destinations: ['casablanca'],
+  },
 };
 
 /** Stable list, catalog order. */

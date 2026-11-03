@@ -210,3 +210,45 @@ Used in `src/data/seoHub.ts`'s `moroccan-souks-shopping-guide` entry via
 `src/i18n/guides/generated/{lang}.json` overlay's `chrome.imageAlts`.
 
 **Accessed**: 2 November 2026.
+
+---
+
+## 8. `stock/casablanca-tram-city-street-morocco.webp` — fully documented addition, and a documented non-addition
+
+Added for the Morocco Airports guide (`/travel-info/morocco-airports-guide`),
+to illustrate arriving in Casablanca and getting around the city afterward —
+previously the page had no inline photographs at all relating to the actual
+arrival/transport experience the page is about, only destination-landscape
+imagery (the Hassan II Mosque, Sahara dunes).
+
+A real, deliberate search was made for genuinely Morocco-specific airport
+**terminal** photography (arrivals halls, check-in areas, runway/exterior
+shots) on Pexels, matching this stage's brief. None was found — Pexels has
+no meaningful collection of Moroccan airport-interior photography at the
+time of this search (only generic international airport stock, or Royal Air
+Maroc aircraft photographed in Istanbul, which would have been geographically
+misleading to use). A second candidate — a close-up of a car's steering
+wheel/dashboard, metadata-tagged to the Marrakech-Safi region — was reviewed
+and **not used**: despite the correct location tag, the photograph itself
+shows nothing (no scenery, signage, or identifiable detail) that a viewer
+could recognize as Morocco, the same standard applied to reject a candidate
+for the Amazigh guide in §6. Rather than force a weak second image, only the
+one image that passed this test was added.
+
+| File | Pexels photo page | Photographer | Photo ID | Subject verified |
+|---|---|---|---|---|
+| `casablanca-tram-city-street-morocco.webp` | https://www.pexels.com/photo/tram-on-street-in-casablanca-morocco-29763195/ | Rahib Oussama | 29763195 | Yes — visually confirmed as Casablanca's tram passing French-colonial-era buildings with a palm tree visible; the Pexels page's own location data is "Casablanca, Casablanca-Settat, Morocco," and the architecture is itself recognizably central Casablanca |
+
+Published under the Pexels licence (free for commercial use, no attribution
+required). Downloaded from the official `images.pexels.com` CDN at full
+resolution (1920×2926px), then cropped to trim excess empty sky at the top
+(resulting in a more usable ~5:6 frame centered on the tram and street-level
+architecture — the crop removes no subject matter, only blank sky) and
+re-encoded to WebP (quality 80) using the project's existing `sharp`
+dependency. Final file: 1400×1664px, ~430KB.
+
+Used in `src/data/seoHub.ts`'s `morocco-airports-guide` entry via
+`inlineImages`; alt text is localized per language in each
+`src/i18n/guides/generated/{lang}.json` overlay's `chrome.imageAlts`.
+
+**Accessed**: 2 November 2026.

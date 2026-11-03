@@ -1494,5 +1494,122 @@
         "fes-medina-rug-display": "Handgeweven Marokkaanse tapijten hangend in een traditioneel betegeld winkelinterieur in de medina van Fez"
       }
     }
+  },
+  "morocco-airports-guide": {
+    "title": "Welke luchthaven kiest u voor Marokko?",
+    "intro": "Er is geen enkele beste luchthaven voor Marokko — de juiste keuze hangt af van waar u daadwerkelijk naartoe wilt. Marrakech, Casablanca, Fez, Tanger en Agadir geven elk toegang tot een ander deel van het land, en de luchthaven kiezen die bij uw route past, kan u een hele dag onnodig heen-en-weer rijden besparen.",
+    "sections": [
+      {
+        "heading": "Snelle vergelijking",
+        "paragraphs": [
+          "Voor de details hier de korte versie. Elke luchthaven past bij een ander soort reis:"
+        ],
+        "bullets": [
+          "Marrakech (RAK) — de luchthaven waar de meeste reizigers van Morocco Grand Adventure aankomen. Het beste als uw reis draait om Marrakech, het Atlasgebergte, Aït Ben Haddou of de klassieke zuidelijke routes naar de Sahara.",
+          "Casablanca (CMN) — Marokko's grootste stad en economisch centrum. Logisch wanneer het simpelweg is waar uw vlucht landt, of wanneer een bredere rondreis langs de keizerlijke steden belangrijker is dan starten in Marrakech.",
+          "Fez (FEZ) — een sterke keuze voor reizigers die prioriteit geven aan Fez zelf, de Midden-Atlas, en de meer directe noordelijke weg naar de Sahara.",
+          "Tanger (TNG) — de voor de hand liggende keuze voor Noord-Marokko: Chefchaouen, Tetouan en de Rif, en voor reizigers die per veerboot uit Spanje aankomen of vanuit Europa verder zuidwaarts reizen.",
+          "Agadir (AGA) — nuttig wanneer de Atlantische kust deel uitmaakt van het plan, of voor een reis die strandtijd combineert met een zuidelijke woestijnroute."
+        ]
+      },
+      {
+        "heading": "Luchthaven van Marrakech (RAK)",
+        "paragraphs": [
+          "Luchthaven Marrakech-Menara (IATA-code: RAK) ligt op korte afstand van de stad zelf, wat mede verklaart waarom dit de meest eenvoudige optie op deze lijst is: u landt, en de medina, de soeks en de riads van de Rode Stad liggen vlakbij. Het is ook het natuurlijke startpunt voor de Hoge Atlas — Imlil en de Ourikavallei zijn beide dagtochten vanuit Marrakech — en voor de klassieke zuidelijke weg naar Aït Ben Haddou, Ouarzazate en de Sahara.",
+          "Als uw reis is opgebouwd rond Marrakech, de Atlas, of een Sahara-route die zuidwaarts over de Tizi n'Tichka-pas loopt, is dit vrijwel altijd de juiste luchthaven om eerst te zoeken.",
+          "Direct buiten de terminal bevindt zich een officiële, vooraf betaalde taxistandplaats, met tarieven die vastliggen per bestemming en tijdstip van de dag en op een bord bij de standplaats staan vermeld — spreek het tarief af (of vraag om een bon met meterstand) voordat de auto vertrekt. Vermelde tarieven en nachttoeslagen veranderen van tijd tot tijd, dus beschouw elk vooraf gelezen bedrag als een richtlijn in plaats van een vaste prijs."
+        ]
+      },
+      {
+        "heading": "Luchthaven van Casablanca (CMN)",
+        "paragraphs": [
+          "Kies bewust voor Casablanca wanneer uw reis is opgezet als een rondreis langs de keizerlijke steden in plaats van gericht op Marrakech en het zuiden: landen op Mohammed V International (IATA-code: CMN) brengt Rabat, Meknes en Fez allemaal in één richting vóór u, zonder iets achter u waarop u zou moeten terugkomen. Het is ook de praktische keuze wanneer Casablanca simpelweg is waar uw vlucht landt — in dat geval is de echte vraag niet of u het moet vermijden, maar welke richting u eruit op gaat. Luchthaven Rabat-Salé (RBA), kleiner en vlakbij, bedient dezelfde rondreis langs de keizerlijke steden en is soms de goedkopere optie ernaartoe.",
+          "Vanuit Casablanca werken twee vormen goed: doorreizen naar Marrakech om de klassieke zuidelijke Sahara-routes op te pikken, of noordoostwaarts via Rabat, Meknes en Fez voor een route langs de keizerlijke steden die de woestijn bereikt zonder ooit Marrakech aan te doen.",
+          "Casablanca is ook de enige luchthaven op deze lijst met een directe treinverbinding: een ONCF-station bevindt zich binnen Terminal 1, met diensten die overdag rijden naar Casa-Voyageurs en van daaruit verder over het hele nationale netwerk richting Rabat, Fez en Marrakech — echt nuttig als u verder reist zonder ingecheckte bagage die u bij een huurbalie moet ophalen. Dienstregelingen en tarieven worden door ONCF vastgesteld en veranderen, dus raadpleeg oncf.ma voor de actuele dienstregeling in plaats van te vertrouwen op een getal dat hier staat."
+        ]
+      },
+      {
+        "heading": "Luchthaven van Fez (FEZ)",
+        "paragraphs": [
+          "Luchthaven Fez-Saïss (IATA-code: FEZ) brengt u rechtstreeks naar het culturele hart van Marokko, waarbij de Midden-Atlas en de Ziz-vallei een meer directe weg naar de Sahara vormen dan de oversteek via Marrakech. Als de medina van Fez el-Bali, de Chouara-leerlooierij en de Al-Qarawiyyin-universiteit toch al op uw lijst staan, bespaart landen hier in plaats van in Marrakech u een omweg.",
+          "Het is ook geschikter voor reizigers die een enkele-reisroute plannen — bijvoorbeeld van Fez via Merzouga naar Marrakech — dan voor een reis die begint en eindigt in dezelfde stad."
+        ]
+      },
+      {
+        "heading": "Luchthaven van Tanger (TNG)",
+        "paragraphs": [
+          "Luchthaven Tanger-Ibn Battouta (IATA-code: TNG) is specifiek de luchthaven voor Noord-Marokko — de blauwe medina van Chefchaouen, Tetouan en het Rifgebergte liggen dichtbij, en de stad zelf ligt op een korte veerbootoversteek van Spanje voor reizigers die over land uit Europa aankomen. Als entreepunt heeft het weinig zin als de Sahara uw enige doel is; het heeft veel zin als Noord-Marokko ook maar deel uitmaakt van de reis."
+        ]
+      },
+      {
+        "heading": "Luchthaven van Agadir (AGA)",
+        "paragraphs": [
+          "Luchthaven Agadir-Al Massira (IATA-code: AGA) is geschikt voor reizigers die de Atlantische kust in de route willen opnemen — de stranden en promenade van de stad, met het surfdorpje Taghazout en Essaouira beide bereikbaar langs dezelfde kust — en bereid zijn naar Marrakech te vliegen of te rijden om daarvandaan een Sahara-route op te pikken. Het is een echt ander soort startpunt: eerst strand in plaats van eerst medina."
+        ]
+      },
+      {
+        "heading": "Welke luchthaven is het beste voor een Sahara-reis?",
+        "paragraphs": [
+          "Als de Sahara de hoofdreden voor de reis is, draait de luchthavenbeslissing niet echt om het kiezen van de „betere” route — Marrakech en Fez zijn beide echte, veelgebruikte poorten naar Merzouga. Het komt neer op rond welke stad de rest van uw reis al is opgebouwd. Als Marrakech, de Atlas, of een rondreis terug naar uw startpunt bij uw plannen past, vlieg dan naar Marrakech. Als Fez zelf voor u belangrijk is, of u bouwt een enkele-reisroute die ergens anders eindigt dan waar hij begon, vlieg dan in plaats daarvan naar Fez.",
+          "Casablanca en Agadir werken ook voor een Sahara-reis, met slechts één extra stap: vanuit Casablanca lopen de meeste routes verder via Marrakech of Fez; vanuit Agadir is het gebruikelijke patroon eerst richting Marrakech te gaan. Wilt u de gedetailleerde, route-voor-route vergelijking tussen de wegen van Marrakech en Fez naar Merzouga, dan behandelt onze gids Marrakech of Fez dat; voor de daadwerkelijke afstanden en reistijden over de weg zodra u een richting heeft gekozen, heeft onze gids Hoe u naar Merzouga reist de details — beide hieronder gelinkt."
+        ]
+      },
+      {
+        "heading": "Dichter bij de Sahara: Ouarzazate en Errachidia",
+        "paragraphs": [
+          "Twee kleine regionale luchthavens, Ouarzazate (IATA-code: OZZ) en Errachidia-Moulay Ali Cherif (IATA-code: ERH), liggen geografisch dichter bij Merzouga en de duinen van Erg Chebbi dan welke luchthaven hierboven dan ook — goed om te weten, ook al is geen van beide een realistische eerste keuze voor de meeste internationale reizigers. Ouarzazate ontvangt af en toe, vooral seizoensgebonden vluchten, vooral vanuit Europa, maar de beschikbaarheid varieert van maand tot maand in plaats van een vaste dagelijkse dienstregeling te volgen; de meeste reizigers bereiken het gebied rond Ouarzazate nog altijd over de weg vanuit Marrakech, een rit van ongeveer 3 tot 4 uur. Errachidia ligt in de Tafilalet-oases, nog dichter bij de duinen, maar geplande vluchten daarheen zijn beperkt en onregelmatig.",
+          "In de praktijk is dit de reden waarom onze eigen routes reizigers naar Marrakech of Fez laten vliegen en het laatste stuk naar Merzouga afleggen via een privétransfer over de weg, als onderdeel van een meerdaagse route, in plaats van via een van deze regionale luchthavens — het is de betrouwbaardere optie, niet alleen onze standaardkeuze. Onze gids Hoe u naar Merzouga reist beschrijft de afstanden en reistijden over de weg in detail."
+        ]
+      },
+      {
+        "heading": "Welke luchthaven kiest u op basis van uw reisroute?",
+        "paragraphs": [
+          "Een paar echte vormen die dit aanneemt, passend bij routes die wij daadwerkelijk aanbieden:"
+        ],
+        "bullets": [
+          "Marrakech + Sahara — vlieg naar Marrakech, maak de klassieke 3- of 4-daagse route naar Merzouga en terug.",
+          "Fez + Sahara — vlieg naar Fez, maak de meer directe noordelijke route naar Merzouga.",
+          "Marrakech + Fez + Sahara — vlieg in bij de ene, vertrek bij de andere, op een route zoals de 5-daagse reis Keizerlijke Steden & Woestijn, die Marrakech, de Sahara, Fez, Meknes en Chefchaouen verbindt zonder enige weg te herhalen.",
+          "Casablanca + Keizerlijke Steden + Sahara — vlieg naar Casablanca en ga verder op een route die precies voor dat startpunt is ontworpen, en bereik Fez en de woestijn zonder terug te keren naar Marrakech.",
+          "Noord-Marokko — vlieg naar Tanger voor een reis gericht op Chefchaouen en de Rif, met de optie om door te reizen naar Fez.",
+          "Agadir + Sahara — vlieg naar Agadir voor de Atlantische kust, pak dan een privéroute naar Marrakech en de duinen."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Welke luchthaven is het beste voor een eerste reis naar Marokko?",
+        "answer": "De meeste eerste-keer-reizigers vliegen naar Marrakech of Fez, omdat beide u dicht bij de bezienswaardigheden brengen waar de meeste reisroutes rond zijn opgebouwd. Casablanca is ook een gangbaar en prima praktisch instappunt, vooral bij een bredere reis door het hele land."
+      },
+      {
+        "question": "Welke Marokkaanse luchthaven is het beste voor de Sahara?",
+        "answer": "Marrakech en Fez zijn de twee praktische keuzes. Marrakech is logisch wanneer de bredere reisroute zich richt op Marrakech of het zuiden; Fez is logisch wanneer Fez deel uitmaakt van de route, of de reis een andere enkele-reisroute volgt. Onze gids Marrakech of Fez behandelt de gedetailleerde routevergelijking, en onze gids Hoe u naar Merzouga reist behandelt de praktische details over land."
+      },
+      {
+        "question": "Is Marrakech of Fez beter om een Sahara-reis te beginnen?",
+        "answer": "Dat hangt meer af van uw reisroute dan van wat „beter” is: kies Marrakech als de rest van uw reis is opgebouwd rond Marrakech, de Atlas, of een rondreis terug naar uw startpunt; kies Fez als Fez zelf deel uitmaakt van uw plannen, of u een enkele-reisroute volgt naar een andere eindbestemming. Onze gids Marrakech of Fez vergelijkt de twee routes in detail."
+      },
+      {
+        "question": "Moet ik naar Casablanca of Marrakech vliegen?",
+        "answer": "Als uw reis zich richt op Marrakech en het zuiden, vlieg dan rechtstreeks naar Marrakech. Als Casablanca simpelweg is waar de beste vlucht landt, of uw route is opgezet als een bredere rondreis langs de keizerlijke steden, werkt Casablanca prima als startpunt."
+      },
+      {
+        "question": "Welke luchthaven moet ik gebruiken voor Noord-Marokko?",
+        "answer": "Tanger. Deze ligt het dichtst bij Chefchaouen, Tetouan en de Rif, en is ook de makkelijkste luchthaven voor reizigers die aansluiten op een veerbootoversteek vanuit Spanje."
+      },
+      {
+        "question": "Kan ik op de ene luchthaven aankomen en van een andere vertrekken?",
+        "answer": "Ja — verschillende van onze privéroutes zijn bewust als enkele reis opgezet, zoals van Fez naar Marrakech via de Sahara, juist zodat u niet in en uit dezelfde stad hoeft te vliegen."
+      },
+      {
+        "question": "Wat is de dichtstbijzijnde luchthaven bij Merzouga en de Sahara?",
+        "answer": "Errachidia en Ouarzazate liggen op de kaart het dichtstbij, maar beide hebben een beperkte, onregelmatige vluchtdienstregeling in plaats van een betrouwbare dagelijkse dienst. De meeste reizigers vliegen in plaats daarvan naar Marrakech of Fez en leggen het laatste stuk naar Merzouga over de weg af — een goed gevestigde route die wij zelf aanbieden, en een betrouwbaardere optie dan wachten op een seizoensgebonden regionale vlucht."
+      }
+    ],
+    "chrome": {
+      "imageAlts": {
+        "casablanca-tram-city-street": "Een tram die door een straat met gebouwen in Franse koloniale stijl in het centrum van Casablanca rijdt"
+      }
+    }
   }
 }

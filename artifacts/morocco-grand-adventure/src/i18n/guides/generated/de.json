@@ -1494,5 +1494,122 @@
         "fes-medina-rug-display": "Handgewebte marokkanische Teppiche, aufgehängt in einem traditionell gefliesten Ladeninneren in der Medina von Fes"
       }
     }
+  },
+  "morocco-airports-guide": {
+    "title": "Welchen Flughafen sollten Sie für Marokko wählen?",
+    "intro": "Es gibt nicht den einen besten Flughafen für Marokko — die richtige Wahl hängt davon ab, wohin Sie tatsächlich wollen. Marrakesch, Casablanca, Fès, Tanger und Agadir erschließen jeweils einen anderen Teil des Landes, und die Wahl des Flughafens, der zu Ihrer Reiseroute passt, kann Ihnen einen ganzen Tag unnötigen Rückwegs ersparen.",
+    "sections": [
+      {
+        "heading": "Kurzvergleich",
+        "paragraphs": [
+          "Vor den Details hier die Kurzversion. Jeder Flughafen passt zu einer anderen Art von Reise:"
+        ],
+        "bullets": [
+          "Marrakesch (RAK) — der Flughafen, über den die meisten Morocco-Grand-Adventure-Reisenden einreisen. Am besten, wenn sich Ihre Reise um Marrakesch, das Atlasgebirge, Aït Ben Haddou oder die klassischen südlichen Routen zur Sahara dreht.",
+          "Casablanca (CMN) — Marokkos größte Stadt und Wirtschaftszentrum. Sinnvoll, wenn hier einfach Ihr Flug landet, oder wenn eine größere Rundreise durch die Königsstädte wichtiger ist als der Start in Marrakesch.",
+          "Fès (FEZ) — eine starke Wahl für alle, denen Fès selbst, der Mittlere Atlas und die direktere nördliche Route zur Sahara wichtig sind.",
+          "Tanger (TNG) — die natürliche Wahl für Nordmarokko: Chefchaouen, Tétouan und das Rif-Gebirge, sowie für Reisende, die per Fähre aus Spanien ankommen oder von Europa aus weiter südwärts reisen.",
+          "Agadir (AGA) — nützlich, wenn die Atlantikküste Teil des Plans ist, oder für eine Reise, die Strandzeit mit einer südlichen Wüstenroute verbindet."
+        ]
+      },
+      {
+        "heading": "Flughafen Marrakesch (RAK)",
+        "paragraphs": [
+          "Der Flughafen Marrakesch-Menara (IATA-Code: RAK) liegt nur kurz von der Stadt selbst entfernt — ein Grund, warum er die unkomplizierteste Option auf dieser Liste ist: Sie landen, und die Medina, die Souks und die Riads der Roten Stadt sind direkt da. Er ist auch der natürliche Ausgangspunkt für den Hohen Atlas — Imlil und das Ourika-Tal sind beide Tagesausflüge von Marrakesch aus — sowie für die klassische südliche Route über Aït Ben Haddou und Ouarzazate zur Sahara.",
+          "Wenn Ihre Reise um Marrakesch, den Atlas, oder eine Sahara-Route herum aufgebaut ist, die südlich über den Tizi-n'Tichka-Pass führt, ist dies fast immer der richtige Flughafen, nach dem Sie zuerst suchen sollten.",
+          "Direkt vor dem Terminal befindet sich ein offizieller, vorausbezahlter Taxistand mit nach Ziel und Tageszeit festgelegten Preisen, die auf einer Tafel am Stand ausgehängt sind — vereinbaren Sie den Preis (oder verlangen Sie eine Quittung mit Taxameter), bevor das Auto losfährt. Ausgehängte Preise und Nachtzuschläge ändern sich gelegentlich, betrachten Sie also jede im Voraus gelesene Zahl eher als Orientierung denn als festen Preis."
+        ]
+      },
+      {
+        "heading": "Flughafen Casablanca (CMN)",
+        "paragraphs": [
+          "Wählen Sie Casablanca gezielt, wenn Ihre Reise als Rundreise durch die Königsstädte angelegt ist statt auf Marrakesch und den Süden ausgerichtet zu sein: Die Landung in Mohammed V International (IATA-Code: CMN) bringt Rabat, Meknès und Fès alle in einer Richtung vor Sie, ohne dass hinter Ihnen etwas liegt, zu dem Sie zurückkehren müssten. Es ist auch die praktische Wahl, wann immer Casablanca einfach der Ort ist, an dem Ihr Flug landet — in diesem Fall lautet die eigentliche Frage nicht, ob man es vermeiden sollte, sondern in welche Richtung man von dort aus weiterreist. Der Flughafen Rabat-Salé (RBA), kleiner und in der Nähe gelegen, bedient dieselbe Königsstädte-Rundreise und ist gelegentlich die preisgünstigere Option dafür.",
+          "Von Casablanca aus funktionieren zwei Varianten gut: weiter nach Marrakesch, um die klassischen südlichen Sahara-Routen aufzunehmen, oder nach Norden und Osten über Rabat, Meknès und Fès für eine Königsstädte-Route, die die Wüste erreicht, ohne jemals Marrakesch zu berühren.",
+          "Casablanca ist zudem der einzige Flughafen auf dieser Liste mit direkter Bahnanbindung: Ein ONCF-Bahnhof befindet sich innerhalb von Terminal 1, mit Verbindungen, die tagsüber nach Casa-Voyageurs und von dort weiter über das gesamte nationale Netz Richtung Rabat, Fès und Marrakesch fahren — wirklich nützlich, wenn Sie ohne aufgegebenes Gepäck weiterreisen, das an einem Mietwagenschalter abgeholt werden müsste. Fahrpläne und Preise werden von der ONCF festgelegt und ändern sich, prüfen Sie daher den aktuellen Fahrplan auf oncf.ma, statt sich auf eine hier genannte Zahl zu verlassen."
+        ]
+      },
+      {
+        "heading": "Flughafen Fès (FEZ)",
+        "paragraphs": [
+          "Der Flughafen Fès-Saïss (IATA-Code: FEZ) bringt Sie direkt ins kulturelle Herz Marokkos, wobei der Mittlere Atlas und das Ziz-Tal eine direktere Route zur Sahara bilden als die Überquerung über Marrakesch. Wenn die Medina von Fès el-Bali, die Chouara-Gerberei und die Al-Qarawiyyin-Universität ohnehin auf Ihrer Liste stehen, erspart Ihnen die Landung hier statt in Marrakesch einen Umweg.",
+          "Er eignet sich auch besser für Reisende, die eine einseitige Route planen — zum Beispiel von Fès über Merzouga nach Marrakesch — als für eine Reise, die in derselben Stadt beginnt und endet."
+        ]
+      },
+      {
+        "heading": "Flughafen Tanger (TNG)",
+        "paragraphs": [
+          "Der Flughafen Tanger-Ibn Battuta (IATA-Code: TNG) ist der Flughafen speziell für Nordmarokko — die blaue Medina von Chefchaouen, Tétouan und das Rif-Gebirge liegen in der Nähe, und die Stadt selbst ist für Reisende, die auf dem Landweg aus Europa anreisen, nur eine kurze Fährüberfahrt von Spanien entfernt. Als Einstiegspunkt ergibt er wenig Sinn, wenn die Sahara Ihr einziges Ziel ist; er ergibt sehr viel Sinn, wenn Nordmarokko überhaupt Teil der Reise ist."
+        ]
+      },
+      {
+        "heading": "Flughafen Agadir (AGA)",
+        "paragraphs": [
+          "Der Flughafen Agadir-Al Massira (IATA-Code: AGA) eignet sich für Reisende, die die Atlantikküste in die Route einbeziehen möchten — die Strände und die Promenade der Stadt, mit dem Surferdorf Taghazout und Essaouira, beide entlang derselben Küste erreichbar — und bereit sind, nach Marrakesch zu fliegen oder zu fahren, um von dort eine Sahara-Route aufzunehmen. Es ist ein wirklich anderer Ausgangspunkt: zuerst Strand statt zuerst Medina."
+        ]
+      },
+      {
+        "heading": "Welcher Flughafen eignet sich am besten für eine Sahara-Reise?",
+        "paragraphs": [
+          "Wenn die Sahara der Hauptgrund der Reise ist, geht es bei der Flughafenentscheidung nicht wirklich darum, die „bessere“ Route zu wählen — Marrakesch und Fès sind beide echte, gut genutzte Tore nach Merzouga. Es kommt darauf an, um welche Stadt der Rest Ihrer Reise bereits aufgebaut ist. Wenn Marrakesch, der Atlas, oder eine Rundreise zurück zu Ihrem Ausgangspunkt zu Ihren Plänen passt, fliegen Sie nach Marrakesch. Wenn Ihnen Fès selbst wichtig ist, oder Sie eine einseitige Route planen, die anderswo endet als sie begann, fliegen Sie stattdessen nach Fès.",
+          "Auch Casablanca und Agadir funktionieren für eine Sahara-Reise, nur mit einem zusätzlichen Schritt: Von Casablanca aus führen die meisten Routen weiter über Marrakesch oder Fès; von Agadir aus ist das übliche Muster, zunächst nach Marrakesch zu fahren. Wenn Sie den detaillierten Routenvergleich zwischen den Wegen von Marrakesch und Fès nach Merzouga wünschen, behandelt das unser Ratgeber Marrakesch oder Fès; für die tatsächlichen Straßenentfernungen und Fahrzeiten, sobald Sie sich für eine Richtung entschieden haben, hat unser Ratgeber Anreise nach Merzouga die Details — beide unten verlinkt."
+        ]
+      },
+      {
+        "heading": "Näher an der Sahara: Ouarzazate und Errachidia",
+        "paragraphs": [
+          "Zwei kleine Regionalflughäfen, Ouarzazate (IATA-Code: OZZ) und Errachidia–Moulay Ali Cherif (IATA-Code: ERH), liegen geografisch näher an Merzouga und den Dünen von Erg Chebbi als jeder der oben genannten Flughäfen — wissenswert, auch wenn keiner von beiden für die meisten internationalen Reisenden eine realistische erste Wahl ist. Ouarzazate wird gelegentlich, meist saisonal, vor allem aus Europa angeflogen, doch das Angebot schwankt von Monat zu Monat, statt einem festen täglichen Fahrplan zu folgen; die meisten Reisenden erreichen die Gegend um Ouarzazate weiterhin auf dem Landweg von Marrakesch aus, eine Fahrt von etwa 3-4 Stunden. Errachidia liegt in den Oasen des Tafilalet, noch näher an den Dünen, doch planmäßige Flüge dorthin sind begrenzt und unregelmäßig.",
+          "In der Praxis lassen wir deshalb unsere eigenen Reisenden nach Marrakesch oder Fès fliegen und das letzte Stück nach Merzouga im Rahmen einer mehrtägigen Route per privatem Straßentransfer zurücklegen, statt über einen dieser Regionalflughäfen zu routen — das ist die zuverlässigere Option, nicht nur unsere Standardwahl. Unser Ratgeber Anreise nach Merzouga beschreibt die Straßenentfernungen und Fahrzeiten im Detail."
+        ]
+      },
+      {
+        "heading": "Welchen Flughafen sollten Sie für Ihre Reiseroute wählen?",
+        "paragraphs": [
+          "Ein paar reale Varianten, passend zu Routen, die wir tatsächlich anbieten:"
+        ],
+        "bullets": [
+          "Marrakesch + Sahara — nach Marrakesch fliegen, die klassische 3- oder 4-tägige Route nach Merzouga und zurück nehmen.",
+          "Fès + Sahara — nach Fès fliegen, die direktere nördliche Route nach Merzouga nehmen.",
+          "Marrakesch + Fès + Sahara — in einer Stadt einreisen, aus der anderen ausreisen, auf einer Route wie der 5-tägigen Reise Königsstädte & Wüste, die Marrakesch, die Sahara, Fès, Meknès und Chefchaouen verbindet, ohne eine Strecke zu wiederholen.",
+          "Casablanca + Königsstädte + Sahara — nach Casablanca fliegen und auf einer Route weiterreisen, die genau für diesen Ausgangspunkt konzipiert ist und Fès sowie die Wüste erreicht, ohne nach Marrakesch zurückzukehren.",
+          "Nordmarokko — nach Tanger fliegen für eine Reise mit Schwerpunkt Chefchaouen und Rif, mit der Option, weiter nach Fès zu reisen.",
+          "Agadir + Sahara — nach Agadir fliegen für die Atlantikküste, dann eine private Route nach Marrakesch und zu den Dünen nehmen."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Welcher Flughafen ist der beste für eine erste Marokkoreise?",
+        "answer": "Die meisten Erstreisenden fliegen nach Marrakesch oder Fès, da beide Städte in der Nähe der Sehenswürdigkeiten liegen, um die die meisten Reiserouten herum aufgebaut sind. Casablanca ist ebenfalls ein gängiger und durchaus praktischer Einstiegspunkt, besonders bei einer größeren, länderübergreifenden Reise."
+      },
+      {
+        "question": "Welcher marokkanische Flughafen ist der beste für die Sahara?",
+        "answer": "Marrakesch und Fès sind die beiden praktischen Optionen. Marrakesch ist sinnvoll, wenn sich die Gesamtroute auf Marrakesch oder den Süden konzentriert; Fès ist sinnvoll, wenn Fès Teil der Route ist oder die Reise einer anderen einseitigen Route folgt. Unser Ratgeber Marrakesch oder Fès behandelt den detaillierten Routenvergleich, und unser Ratgeber Anreise nach Merzouga behandelt die praktischen Details der Landstrecke."
+      },
+      {
+        "question": "Ist Marrakesch oder Fès besser als Startpunkt für eine Sahara-Reise?",
+        "answer": "Das hängt eher von Ihrer Reiseroute ab als davon, was „besser“ ist: Wählen Sie Marrakesch, wenn der Rest Ihrer Reise um Marrakesch, den Atlas, oder eine Rundreise zurück zu Ihrem Ausgangspunkt herum aufgebaut ist; wählen Sie Fès, wenn Fès selbst Teil Ihrer Pläne ist, oder Sie eine einseitige Route zu einer anderen Zielstadt planen. Unser Ratgeber Marrakesch oder Fès vergleicht die beiden Routen im Detail."
+      },
+      {
+        "question": "Sollte ich nach Casablanca oder Marrakesch fliegen?",
+        "answer": "Wenn sich Ihre Reise auf Marrakesch und den Süden konzentriert, fliegen Sie direkt nach Marrakesch. Wenn Casablanca einfach dort ist, wo der beste Flug landet, oder Ihre Route als größere Rundreise durch die Königsstädte angelegt ist, funktioniert Casablanca gut als Ausgangspunkt."
+      },
+      {
+        "question": "Welchen Flughafen sollte ich für Nordmarokko nutzen?",
+        "answer": "Tanger. Er liegt am nächsten an Chefchaouen, Tétouan und dem Rif, und ist zudem der einfachste Flughafen für Reisende mit Anschluss an eine Fährüberfahrt aus Spanien."
+      },
+      {
+        "question": "Kann ich an einem Flughafen einreisen und an einem anderen ausreisen?",
+        "answer": "Ja — mehrere unserer privaten Routen sind bewusst als Einwegreise angelegt, etwa von Fès nach Marrakesch über die Sahara, genau damit Sie nicht in derselben Stadt ein- und ausreisen müssen."
+      },
+      {
+        "question": "Welcher Flughafen liegt am nächsten an Merzouga und der Sahara?",
+        "answer": "Errachidia und Ouarzazate liegen auf der Karte am nächsten, haben aber beide ein begrenztes, unregelmäßiges Flugangebot statt eines zuverlässigen täglichen Dienstes. Die meisten Reisenden fliegen stattdessen nach Marrakesch oder Fès und legen das letzte Stück nach Merzouga auf dem Landweg zurück — eine gut etablierte Route, die wir selbst anbieten, und eine zuverlässigere Option, als auf einen saisonalen Regionalflug zu warten."
+      }
+    ],
+    "chrome": {
+      "imageAlts": {
+        "casablanca-tram-city-street": "Eine Straßenbahn fährt durch eine Straße mit Gebäuden im französisch-kolonialen Stil im Zentrum von Casablanca"
+      }
+    }
   }
 }

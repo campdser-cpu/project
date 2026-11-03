@@ -1494,5 +1494,122 @@
         "fes-medina-rug-display": "Alfombras marroquíes tejidas a mano colgadas en el interior alicatado de una tienda tradicional de la medina de Fez"
       }
     }
+  },
+  "morocco-airports-guide": {
+    "title": "¿Qué aeropuerto elegir para volar a Marruecos?",
+    "intro": "No existe un único mejor aeropuerto para Marruecos — la elección correcta depende de adónde quieras ir realmente. Marrakech, Casablanca, Fez, Tánger y Agadir dan acceso cada uno a una parte distinta del país, y elegir el que coincide con tu itinerario puede ahorrarte un día entero de trayecto de vuelta que nunca hacía falta hacer.",
+    "sections": [
+      {
+        "heading": "Comparativa rápida",
+        "paragraphs": [
+          "Antes de entrar en detalle, aquí va la versión corta. Cada aeropuerto conviene a un tipo de viaje distinto:"
+        ],
+        "bullets": [
+          "Marrakech (RAK) — el aeropuerto por el que llega la mayoría de viajeros de Morocco Grand Adventure. Ideal si tu viaje gira en torno a Marrakech, las montañas del Atlas, Aït Ben Haddou o las rutas clásicas del sur hacia el Sáhara.",
+          "Casablanca (CMN) — la ciudad más grande de Marruecos y su centro comercial. Tiene sentido cuando es simplemente donde aterriza tu vuelo, o cuando un recorrido más amplio por las ciudades imperiales importa más que empezar en Marrakech.",
+          "Fez (FEZ) — una gran opción para quienes priorizan Fez en sí, el Atlas Medio, y la ruta norte más directa hacia el Sáhara.",
+          "Tánger (TNG) — la opción natural para el norte de Marruecos: Chaouen, Tetuán y el Rif, y para viajeros que llegan en ferry desde España o que continúan hacia el sur desde Europa.",
+          "Agadir (AGA) — útil cuando la costa atlántica forma parte del plan, o para un viaje que combine playa con una ruta hacia el desierto del sur."
+        ]
+      },
+      {
+        "heading": "Aeropuerto de Marrakech (RAK)",
+        "paragraphs": [
+          "El Aeropuerto de Marrakech-Menara (código IATA: RAK) está a poca distancia de la propia ciudad, lo que explica en parte por qué es la opción más sencilla de esta lista: aterrizas, y la medina, los zocos y los riads de la Ciudad Roja están ahí mismo. También es el punto de partida natural para el Alto Atlas — Imlil y el valle del Ourika son ambos excursiones de un día desde Marrakech — y para la ruta clásica del sur hacia Aït Ben Haddou, Ouarzazate y el Sáhara.",
+          "Si tu viaje gira en torno a Marrakech, al Atlas, o a una ruta hacia el Sáhara que cruza al sur por el puerto de Tizi n'Tichka, este es casi siempre el aeropuerto que conviene buscar primero.",
+          "Justo a la salida de la terminal hay una parada oficial de taxis con tarifas prepagadas, con precios fijados según destino y hora del día, expuestos en un panel en la parada — acuerda la tarifa (o pide un recibo con taxímetro) antes de que el coche arranque. Las tarifas publicadas y los recargos nocturnos cambian de vez en cuando, así que trata cualquier cifra que leas de antemano como una orientación y no como un precio cerrado."
+        ]
+      },
+      {
+        "heading": "Aeropuerto de Casablanca (CMN)",
+        "paragraphs": [
+          "Elige Casablanca deliberadamente cuando tu viaje esté planteado como un recorrido por las ciudades imperiales en lugar de centrarse en Marrakech y el sur: aterrizar en Mohammed V International (código IATA: CMN) sitúa Rabat, Mequinez y Fez todos por delante en una misma dirección, sin nada detrás a lo que volver. También es la opción práctica siempre que Casablanca sea simplemente donde aterriza tu vuelo — en cuyo caso la pregunta real no es si evitarla, sino qué dirección tomar al salir de ella. El aeropuerto de Rabat-Salé (RBA), más pequeño y cercano, cubre el mismo recorrido por las ciudades imperiales y en ocasiones resulta la opción con mejor precio.",
+          "Desde Casablanca, dos planteamientos funcionan bien: continuar hacia Marrakech para enlazar con las rutas clásicas del sur hacia el Sáhara, o dirigirse al norte y al este a través de Rabat, Mequinez y Fez para un itinerario de ciudades imperiales que llega al desierto sin pasar nunca por Marrakech.",
+          "Casablanca es además el único aeropuerto de esta lista con conexión directa en tren: hay una estación de la ONCF dentro de la Terminal 1, con servicios durante todo el día hacia Casa-Voyageurs y, desde allí, hacia el resto de la red nacional en dirección a Rabat, Fez y Marrakech — genuinamente útil si sigues viaje sin equipaje facturado que recoger en un mostrador de alquiler. Los horarios y las tarifas los fija la ONCF y cambian, así que consulta oncf.ma para el horario actual en vez de fiarte de una cifra escrita aquí."
+        ]
+      },
+      {
+        "heading": "Aeropuerto de Fez (FEZ)",
+        "paragraphs": [
+          "El Aeropuerto de Fez-Saïss (código IATA: FEZ) te sitúa directamente en el corazón cultural de Marruecos, con el Atlas Medio y el valle del Ziz formando una ruta más directa hacia el Sáhara que el cruce por Marrakech. Si la medina de Fez el-Bali, la curtiduría Chouara y la Universidad Al-Qarawiyyin están en tu lista de todos modos, aterrizar aquí en lugar de en Marrakech te evita un rodeo.",
+          "También conviene mejor a quienes planean un itinerario de ida sin vuelta — por ejemplo, de Fez a Merzouga y luego a Marrakech — que empezar y terminar en la misma ciudad."
+        ]
+      },
+      {
+        "heading": "Aeropuerto de Tánger (TNG)",
+        "paragraphs": [
+          "El Aeropuerto de Tánger-Ibn Battuta (código IATA: TNG) es el aeropuerto específico para el norte de Marruecos — la medina azul de Chaouen, Tetuán y las montañas del Rif quedan cerca, y la propia ciudad está a un corto trayecto en ferry desde España para viajeros que llegan por tierra desde Europa. Tiene poco sentido como punto de entrada si el Sáhara es tu único objetivo; tiene mucho sentido si el norte de Marruecos forma parte del viaje, aunque sea en parte."
+        ]
+      },
+      {
+        "heading": "Aeropuerto de Agadir (AGA)",
+        "paragraphs": [
+          "El Aeropuerto de Agadir-Al Massira (código IATA: AGA) conviene a quienes quieren incluir la costa atlántica en el itinerario — las playas y el paseo marítimo de la ciudad, con el pueblo surfero de Taghazout y Esauira, ambos accesibles por la misma costa — y están dispuestos a volar o conducir hacia Marrakech para enlazar con una ruta al desierto desde allí. Es un punto de partida genuinamente distinto: primero playa, en vez de primero medina."
+        ]
+      },
+      {
+        "heading": "¿Qué aeropuerto es mejor para un viaje al Sáhara?",
+        "paragraphs": [
+          "Si el Sáhara es el motivo principal del viaje, la decisión del aeropuerto no consiste realmente en elegir la ruta «mejor» — Marrakech y Fez son ambas puertas de entrada genuinas y muy utilizadas hacia Merzouga. Todo depende de en torno a qué ciudad ya está construido el resto de tu viaje. Si Marrakech, el Atlas, o un circuito de ida y vuelta a tu punto de partida encaja con tus planes, vuela a Marrakech. Si Fez en sí te importa, o estás construyendo un itinerario de ida sin vuelta que termina en otro lugar distinto de donde empezó, vuela a Fez en su lugar.",
+          "Casablanca y Agadir también funcionan para un viaje al Sáhara, solo con un paso adicional: desde Casablanca, la mayoría de rutas continúan por Marrakech o Fez; desde Agadir, el patrón habitual es dirigirse primero hacia Marrakech. Si quieres la comparación detallada, ruta por ruta, entre los caminos de Marrakech y Fez hacia Merzouga, nuestra guía Marrakech o Fez lo cubre; para las distancias reales por carretera y los tiempos de trayecto una vez elegida la dirección, nuestra guía Cómo llegar a Merzouga tiene el detalle — ambas enlazadas más abajo."
+        ]
+      },
+      {
+        "heading": "Más cerca del Sáhara: Ouarzazate y Errachidia",
+        "paragraphs": [
+          "Dos pequeños aeropuertos regionales, Ouarzazate (código IATA: OZZ) y Errachidia-Moulay Ali Cherif (código IATA: ERH), están geográficamente más cerca de Merzouga y de las dunas de Erg Chebbi que cualquiera de los aeropuertos anteriores — algo que vale la pena conocer, aunque ninguno de los dos sea una primera opción realista para la mayoría de viajeros internacionales. Ouarzazate recibe vuelos ocasionales, sobre todo estacionales, principalmente desde Europa, pero la disponibilidad varía de un mes a otro en lugar de seguir un horario diario fijo; la mayoría de los viajeros siguen llegando a la zona de Ouarzazate por carretera desde Marrakech, un trayecto de unas 3-4 horas. Errachidia está en los oasis de Tafilalet, aún más cerca de las dunas, pero los vuelos programados allí son limitados e irregulares.",
+          "En la práctica, por eso nuestras propias rutas hacen volar a los viajeros hasta Marrakech o Fez y cubren el último tramo hasta Merzouga mediante un traslado privado por carretera como parte de un itinerario de varios días, en lugar de pasar por cualquiera de estos aeropuertos regionales — es la opción más fiable, no solo la que usamos por defecto. Nuestra guía Cómo llegar a Merzouga detalla las distancias por carretera y los tiempos de trayecto."
+        ]
+      },
+      {
+        "heading": "¿Qué aeropuerto elegir según tu itinerario?",
+        "paragraphs": [
+          "Algunas configuraciones reales, según las rutas que realmente operamos:"
+        ],
+        "bullets": [
+          "Marrakech + Sáhara — vuela a Marrakech, haz la ruta clásica de 3 o 4 días a Merzouga y vuelta.",
+          "Fez + Sáhara — vuela a Fez, haz la ruta norte más directa a Merzouga.",
+          "Marrakech + Fez + Sáhara — vuela a uno, sal por el otro, en una ruta como el viaje de 5 días Ciudades Imperiales y Desierto, que enlaza Marrakech, el Sáhara, Fez, Mequinez y Chaouen sin repetir ningún tramo de carretera.",
+          "Casablanca + Ciudades Imperiales + Sáhara — vuela a Casablanca y continúa con una ruta diseñada exactamente para ese punto de partida, llegando a Fez y al desierto sin volver atrás hacia Marrakech.",
+          "Norte de Marruecos — vuela a Tánger para un viaje centrado en Chaouen y el Rif, con la opción de continuar hacia Fez.",
+          "Agadir + Sáhara — vuela a Agadir para la costa atlántica, y luego toma una ruta privada hacia Marrakech y las dunas."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "¿Qué aeropuerto es mejor para un primer viaje a Marruecos?",
+        "answer": "La mayoría de quienes viajan a Marruecos por primera vez vuelan a Marrakech o a Fez, ya que ambas ciudades te sitúan cerca de los lugares en torno a los que se construyen la mayoría de itinerarios. Casablanca también es un punto de entrada habitual y perfectamente práctico, sobre todo en un viaje más amplio por todo el país."
+      },
+      {
+        "question": "¿Qué aeropuerto marroquí es mejor para el Sáhara?",
+        "answer": "Marrakech y Fez son las dos opciones prácticas. Marrakech tiene sentido cuando el itinerario general se centra en Marrakech o el sur; Fez tiene sentido cuando Fez forma parte del itinerario, o el viaje sigue otra ruta de ida sin vuelta. Nuestra guía Marrakech o Fez cubre la comparación detallada de rutas, y nuestra guía Cómo llegar a Merzouga cubre los detalles prácticos del trayecto por tierra."
+      },
+      {
+        "question": "¿Marrakech o Fez, cuál es mejor para empezar un viaje al Sáhara?",
+        "answer": "Depende de tu itinerario más que de cuál es «mejor»: elige Marrakech si el resto de tu viaje está construido en torno a Marrakech, al Atlas, o a un circuito de ida y vuelta a tu punto de partida; elige Fez si Fez en sí forma parte de tus planes, o si vas con un itinerario de ida sin vuelta hacia otra ciudad de llegada. Nuestra guía Marrakech o Fez compara las dos rutas en detalle."
+      },
+      {
+        "question": "¿Debería volar a Casablanca o a Marrakech?",
+        "answer": "Si tu viaje se centra en Marrakech y el sur, vuela directamente a Marrakech. Si Casablanca es simplemente donde aterriza el mejor vuelo, o tu itinerario está planteado como un recorrido más amplio por las ciudades imperiales, Casablanca funciona bien como punto de partida."
+      },
+      {
+        "question": "¿Qué aeropuerto debería usar para el norte de Marruecos?",
+        "answer": "Tánger. Es el que queda más cerca de Chaouen, Tetuán y el Rif, y también el aeropuerto más cómodo para quienes enlazan con un cruce en ferry desde España."
+      },
+      {
+        "question": "¿Puedo volar a un aeropuerto y salir por otro?",
+        "answer": "Sí — varias de nuestras rutas privadas están diseñadas como trayecto de ida sin vuelta, como la de Fez a Marrakech vía el Sáhara, precisamente para que no tengas que entrar y salir por la misma ciudad."
+      },
+      {
+        "question": "¿Cuál es el aeropuerto más cercano a Merzouga y al Sáhara?",
+        "answer": "Errachidia y Ouarzazate son los más cercanos sobre el mapa, pero ambos tienen horarios de vuelo limitados e irregulares, no un servicio diario fiable. La mayoría de los viajeros vuela a Marrakech o Fez en su lugar y cubre el último tramo hasta Merzouga por carretera — una ruta bien establecida que operamos nosotros mismos, y una opción más fiable que esperar un vuelo regional estacional."
+      }
+    ],
+    "chrome": {
+      "imageAlts": {
+        "casablanca-tram-city-street": "Un tranvía circulando por una calle con edificios de estilo colonial francés en el centro de Casablanca"
+      }
+    }
   }
 }
