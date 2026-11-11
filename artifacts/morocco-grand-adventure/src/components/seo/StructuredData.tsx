@@ -398,18 +398,28 @@ export function buildFaqSchema(faqs: { question: string; answer: string }[]): Js
   };
 }
 
-/** Build a Review schema array from review objects. */
+/**
+ * Review + AggregateRating for an entity (the Organization, matched by @id to
+ * the static TravelAgency block in index.html so Google merges them into the
+ * same node), per Google's review-snippet shape: `review[]` and
+ * `aggregateRating` directly on the reviewed entity, not a separate ItemList.
+ * ratingValue is the real average of the ratings passed in — never a fixed
+ * or invented number. Call this only with reviews actually rendered on the
+ * page (e.g. the verified Google reviews shown on /about), so the markup
+ * matches visible, verified content.
+ */
 export function buildReviewSchema(
   reviews: { name: string; text: string; rating: number }[],
-  itemName: string,
-  itemUrl: string,
+  entity: { id: string; type: string; name: string },
 ): JsonLd {
+  const avg = reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length;
   return {
     '@context': 'https://schema.org',
-    '@type': 'ItemList',
-    itemListElement: reviews.map((r, i) => ({
+    '@type': entity.type,
+    '@id': entity.id,
+    name: entity.name,
+    review: reviews.map((r) => ({
       '@type': 'Review',
-      position: i + 1,
       author: { '@type': 'Person', name: r.name },
       reviewBody: r.text,
       reviewRating: {
@@ -417,12 +427,13 @@ export function buildReviewSchema(
         ratingValue: r.rating,
         bestRating: 5,
       },
-      itemReviewed: {
-        '@type': 'TouristTrip',
-        name: itemName,
-        url: itemUrl,
-      },
     })),
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: Math.round(avg * 10) / 10,
+      reviewCount: reviews.length,
+      bestRating: 5,
+    },
   };
 }
 

@@ -414,6 +414,7 @@ export function TailorJourney({
         </a>
       </div>
       <p className="mt-2 text-xs text-muted-foreground">{t('cc_email_mailto_note')}</p>
+      <p className="mt-2 text-xs text-muted-foreground">{t('jx_response_time')}</p>
       <p className="mt-3 text-sm text-muted-foreground">{t('jx_tailor_free')}</p>
     </section>
   );

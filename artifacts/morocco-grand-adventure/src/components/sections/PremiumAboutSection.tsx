@@ -4,6 +4,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { verifiedGoogleReviews } from '@/data/verifiedReviews';
 import LibraryPhotoGrid from '@/components/LibraryPhotoGrid';
 import { publishablePhotosForContexts } from '@/data/photoLibrary';
+import { StructuredData, buildReviewSchema } from '@/components/seo/StructuredData';
 
 /** Editorial About page — 10 sections, fully i18n via abt_* keys. */
 const DUNE_PHOTO = {
@@ -297,6 +298,15 @@ export default function PremiumAboutSection() {
                   </figure>
                 ))}
               </div>
+              {/* Matches exactly the reviews rendered above — same names,
+                  text and ratings, nothing added. */}
+              <StructuredData
+                id="verified-reviews"
+                data={buildReviewSchema(
+                  trustReviews.map((r) => ({ name: r.name, text: r.text, rating: r.rating })),
+                  { id: 'https://www.moroccograndadventure.com/#organization', type: 'TravelAgency', name: 'Morocco Grand Adventure' },
+                )}
+              />
             </aside>
           )}
           <div className="text-center">

@@ -1,0 +1,18 @@
+﻿intent,competitor,competitor_url,language,mga_existing_url,mga_status,gap_type,commercial_value,seo_value,topical_value,cannibalization_risk,recommendation
+Marrakech to Merzouga desert tour,Moroccan Tour,moroccan-tour.com,en,/tours/4-day-marrakech-merzouga-sahara,exists (4d/3d/2d),EXISTING_BUT_WEAK,HIGH,HIGH,HIGH,MEDIUM,Ensure canonical Marrakech→Merzouga tour; add 2-day Marrakech–Merzouga option to match competitor
+Errachidia to Merzouga,Moroccan Tour,moroccan-tour.com,en,/tours/from-errachidia,MISSING,MISSING,HIGH,HIGH,HIGH,LOW,Evaluate Errachidia departure hub
+Ouarzazate to Sahara,Moroccan Tour,moroccan-tour.com,en,/tours/from-ouarzazate,MISSING,MISSING,MEDIUM,MEDIUM,HIGH,LOW,Evaluate Ouarzazate departure hub (Route of 1000 Kasbahs)
+Marrakech day trips (Essaouira/Ouzoud/Ourika/Ait Ben Haddou),Moroccan Tour,moroccan-tour.com,en,/day-trips,partial (build-your-day-trip),PARTIAL,HIGH,MEDIUM,MEDIUM,LOW,Consider dedicated day-trip landing pages if existing /build-your-day-trip not enough
+Fes day trips (Ifrane/Volubilis/Chefchaouen),Moroccan Tour,moroccan-tour.com,en,/tours/from-fes,MISSING,MISSING,MEDIUM,MEDIUM,MEDIUM,LOW,Consider Fes day-trip hub if justified
+Casablanca multi-day tours (3-8d),Moroccan Tour,moroccan-tour.com,en,/tours/casablanca-3-day,exists,EXISTING_BUT_WEAK,MEDIUM,MEDIUM,LOW,MEDIUM,Complete non-IT locales for casablanca tours (currently 0 FR/ES/DE/... overlays)
+Luxury desert camp,Moroccan Journeys,moroccanjourneys.com,en,/luxury-camp,exists,EXISTING_BUT_WEAK,HIGH,MEDIUM,HIGH,LOW,Localize luxury camp landing across locales; strengthen luxury content depth
+Merzouga/Sahara from Erfoud-Errachidia,Saha Tours,sahatours.net/es,es,/destinations/merzouga,exists,EXISTING_BUT_WEAK,MEDIUM,MEDIUM,HIGH,MEDIUM,Spanish native coverage strong; ensure ES overlays complete (currently 6/24 tours ES)
+Spain-market desert tour (Spanish),Saha Tours,sahatours.net/es,es,/es,partial,LOCALIZATION_GAP,HIGH,HIGH,HIGH,MEDIUM,Complete Spanish tour localization; native phrasing
+Individual/custom Morocco tour (German),Dein-Marokko,dein-marokko.de,de,/trip-builder,exists,EXISTING_BUT_WEAK,HIGH,MEDIUM,MEDIUM,LOW,Complete German localization (6/24); native idiom
+Sahara / Atlas trekking adventure (German),Dein-Marokko,dein-marokko.de,de,/camel-trekking,partial,PARTIAL,MEDIUM,MEDIUM,MEDIUM,LOW,Localize Merzouga guides to DE; link to camel/desert tours
+Errachidia-Midelt-Merzouga region authority,Visit Morocco,visitmorocco.com,multi,/destinations/merzouga,exists,CONTENT_DEPTH_GAP,LOW,HIGH,HIGH,LOW,Mirror official region cluster vocabulary in Merzouga destination/guides (do not copy text)
+Ouarzazate-Zagora-Tinghir region,Visit Morocco,visitmorocco.com,multi,/destinations/ouarzazate,exists,CONTENT_DEPTH_GAP,LOW,HIGH,HIGH,LOW,Strengthen Ouarzazate/Zagora/Tinghir entity coverage
+Desert break / bivouac vocabulary,Visit Morocco,visitmorocco.com,multi,/guides/desert-camps,partial,CONTENT_DEPTH_GAP,LOW,MEDIUM,HIGH,LOW,Adopt official desert break/bivouac framing in camp guides
+Erg Chigaga camp / alternative dune,Moroccan Journeys,moroccanjourneys.com/chinese-home/,en,/guides/erg-chebbi-vs-erg-chigaga,exists,EXISTING_BUT_WEAK,LOW,MEDIUM,HIGH,LOW,Erg Chigaga distinctive; enrich comparison + desert camp guides
+Nomadic/Luxury/Private desert camp experiences,Moroccan Journeys,moroccanjourneys.com,en,/luxury-camp,partial,PARTIAL,MEDIUM,MEDIUM,MEDIUM,LOW,Strengthen luxury/private camp landing depth
+Chinese-market desert tour (native content),Moroccan Journeys,moroccanjourneys.com/chinese-home/,zh,/zh,partial (zh skin over EN names),LOCALIZATION_GAP,HIGH,MEDIUM,MEDIUM,LOW,Opportunity: MGA genuine zh tour overlays would out-compete MJ chinese-home English-in-Chinese

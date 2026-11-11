@@ -2,8 +2,8 @@
 // Student Tours / University Travel — standalone experience page.
 //
 // NOT a 25th canonical tour: this is a dedicated landing experience that lives
-// alongside the 24 tour products. Copy comes from src/i18n/gaps/student-tours.ts
-// (en + pt authored; other locales fall through to English by design).
+// alongside the 24 tour products. Copy comes from src/i18n/gaps/student-tours.ts,
+// which carries its own hand-authored block for all 11 languages.
 //
 // The hub hero poster predates the supplied library (commit 852d578) and its
 // origin is not documented: it carries no mark and is not a frame of the

@@ -175,7 +175,7 @@ export default function Contact() {
 
             {/* Contact Form */}
             <div>
-              <form className="bg-card border border-border p-10 rounded-3xl" onSubmit={handleSubmit}>
+              <form id="contact-form" className="bg-card border border-border p-10 rounded-3xl" onSubmit={handleSubmit}>
                 <h3 className="font-serif text-3xl text-foreground mb-8">{t('contact_send')}</h3>
                 
                 {isSent && (

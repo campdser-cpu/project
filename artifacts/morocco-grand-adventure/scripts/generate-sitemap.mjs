@@ -1,11 +1,84 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { execFileSync } from 'node:child_process';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const dist = path.join(root, 'dist');
 const site = 'https://www.moroccograndadventure.com';
 const langs = ['en','fr','es','it','de','nl','pt','zh','ja','ko','ar'];
+
+// ── lastmod ──────────────────────────────────────────────────────────────────
+// A real, verifiable signal only: the git commit date of the actual source
+// file(s) whose content drives that page. Never a fabricated or "now" date.
+// Granularity is per page-KIND (e.g. every /tours/:id page points at
+// content.ts), not a unique date invented per URL — that file genuinely is
+// the last thing that changed that page's content, and git's commit date for
+// it is real history, so this stays honest even though it is coarse.
+const gitDateCache = new Map();
+function gitLastMod(relFile) {
+  if (gitDateCache.has(relFile)) return gitDateCache.get(relFile);
+  let iso = null;
+  try {
+    const out = execFileSync('git', ['log', '-1', '--format=%cI', '--', relFile], { cwd: root, encoding: 'utf8' }).trim();
+    if (out) iso = out.slice(0, 10); // YYYY-MM-DD (W3C date, no fabricated time-of-day)
+  } catch {
+    iso = null; // no git history for this file (e.g. untracked) — omit lastmod rather than guess
+  }
+  gitDateCache.set(relFile, iso);
+  return iso;
+}
+function latestLastMod(relFiles) {
+  const dates = relFiles.map(gitLastMod).filter(Boolean);
+  if (!dates.length) return null;
+  return dates.reduce((a, b) => (a > b ? a : b));
+}
+// Ordered rules, most specific first; first match on the de-localized `rest`
+// path wins. Static single-page routes map to their own page component;
+// content-driven routes map to the data file that actually holds their text.
+const LASTMOD_RULES = [
+  [/^$/, ['src/pages/home.tsx']],
+  [/^\/tours\/from-[^/]+\/[^/]+$/, ['src/pages/tours/from-city-duration.tsx', 'src/data/tour-hierarchy.ts']],
+  [/^\/tours\/from-[^/]+$/, ['src/pages/tours/from-city.tsx', 'src/data/tour-hierarchy.ts']],
+  [/^\/tours\/[^/]+$/, ['src/data/content.ts']],
+  [/^\/tours$/, ['src/pages/tours.tsx']],
+  [/^\/destinations\/[^/]+$/, ['src/data/content.ts']],
+  [/^\/destinations$/, ['src/pages/destinations.tsx']],
+  [/^\/merzouga-guide\/[^/]+$/, ['src/data/seoHub.ts']],
+  [/^\/merzouga-guide$/, ['src/pages/merzouga-guide.tsx']],
+  [/^\/comparisons\/[^/]+$/, ['src/data/seoHub.ts']],
+  [/^\/travel-info\/[^/]+$/, ['src/data/seoHub.ts']],
+  [/^\/travel-info$/, ['src/pages/travel-info.tsx']],
+  [/^\/blog\/[^/]+$/, ['src/data/blog-article-sections.ts', 'src/i18n/content/index.ts']],
+  [/^\/blog$/, ['src/pages/blog.tsx']],
+  [/^\/student-tours\/university-groups$/, ['src/pages/student-tours-university-groups.tsx']],
+  [/^\/student-tours\/[^/]+$/, ['src/pages/student-tour-detail.tsx', 'src/data/student-tours.ts']],
+  [/^\/student-tours$/, ['src/pages/student-tours.tsx']],
+  [/^\/about$/, ['src/pages/about.tsx']],
+  [/^\/contact$/, ['src/pages/contact.tsx']],
+  [/^\/gallery$/, ['src/pages/gallery.tsx']],
+  [/^\/faq$/, ['src/pages/faq.tsx']],
+  [/^\/things-to-do-in-morocco$/, ['src/pages/things-to-do.tsx']],
+  [/^\/trip-builder$/, ['src/pages/trip-builder.tsx']],
+  [/^\/trip-finder$/, ['src/pages/trip-finder.tsx']],
+  [/^\/build-your-day-trip$/, ['src/pages/build-your-day-trip.tsx']],
+  [/^\/desert-tours$/, ['src/pages/desert-tours.tsx']],
+  [/^\/flights$/, ['src/pages/flights.tsx']],
+  [/^\/luxury-camp$/, ['src/pages/luxury-camp.tsx']],
+  [/^\/camel-trekking$/, ['src/pages/camel-trekking.tsx']],
+  [/^\/4x4-tours$/, ['src/pages/4x4-tours.tsx']],
+  [/^\/marrakech-tours$/, ['src/pages/marrakech-tours.tsx']],
+  [/^\/fes-tours$/, ['src/pages/fes-tours.tsx']],
+  [/^\/agadir-tours$/, ['src/pages/agadir-tours.tsx']],
+  [/^\/casablanca-tours$/, ['src/pages/casablanca-tours.tsx']],
+  [/^\/day-trips$/, ['src/pages/day-trips.tsx']],
+];
+function lastModFor(rest) {
+  for (const [re, files] of LASTMOD_RULES) if (re.test(rest)) return latestLastMod(files);
+  // Fallback for anything not matched above (e.g. legacy aliases): the shared
+  // per-locale metadata file is still a real, truthful "last touched" signal.
+  return latestLastMod(['src/components/seo/route-metadata.ts']);
+}
 
 function walk(dir, out = []) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -70,7 +143,9 @@ function block(pathname, images) {
   const lang = pathname.split('/')[1];
   const rest = restFor(pathname, lang);
   const alternates = langs.map((l) => `    <xhtml:link rel="alternate" hreflang="${l}" href="${site}/${l}${rest}" />`).join('\n');
-  return `  <url>\n    <loc>${site}${pathname}</loc>\n${alternates}\n    <xhtml:link rel="alternate" hreflang="x-default" href="${site}/en${rest}" />${imageBlock(images)}\n  </url>`;
+  const lastmod = lastModFor(rest);
+  const lastmodTag = lastmod ? `\n    <lastmod>${lastmod}</lastmod>` : '';
+  return `  <url>\n    <loc>${site}${pathname}</loc>${lastmodTag}\n${alternates}\n    <xhtml:link rel="alternate" hreflang="x-default" href="${site}/en${rest}" />${imageBlock(images)}\n  </url>`;
 }
 
 if (!fs.existsSync(dist)) throw new Error('dist directory missing');

@@ -15,13 +15,13 @@ const MoroccoMap = lazy(() =>
 import NotFound from './not-found';
 import { motion } from 'framer-motion';
 import { Clock, Users, CheckCircle2, Check, X, Star, ChevronRight, MapPin, Plus, Minus, Route } from 'lucide-react';
-import { FcGoogle } from 'react-icons/fc';
+import { SiGoogle } from 'react-icons/si';
 import { useState } from 'react';
 import { PromoBadge } from '../components/promo/PromoBadge';
 import { PriceTag } from '../components/promo/PriceTag';
 import { PromoBanner } from '../components/promo/PromoBanner';
 import { usePromoActive } from '../components/promo/PromoProvider';
-import { StructuredData, buildTourSchema, buildReviewSchema, buildFaqSchema } from '../components/seo/StructuredData';
+import { StructuredData, buildTourSchema, buildFaqSchema } from '../components/seo/StructuredData';
 import { ShareButton } from '../components/ui/ShareButton';
 import { TOUR_DEPARTURE_CITY, getCityHub } from '@/data/tour-hierarchy';
 import { TourBreadcrumbs } from '../components/tours/TourBreadcrumbs';
@@ -35,6 +35,8 @@ import { TourInclusions } from '../components/tours/TourInclusions';
 import { deriveTourInclusions } from '@/data/tour-inclusions';
 import { HowBookingWorks } from '../components/tours/HowBookingWorks';
 import { DayTripFlow } from '../components/tours/DayTripFlow';
+import { ReviewCard } from '../components/ui/ReviewCard';
+import { verifiedGoogleReviews } from '@/data/verifiedReviews';
 
 /** Extract the leading number of days from a duration string like "3 Days / 2 Nights". */
 function parseDurationDays(duration: string): number {
@@ -165,7 +167,7 @@ export default function TourDetail() {
             src={tour.image}
             srcSet={`${tour.image.replace(/\.webp$/, '-480w.webp')} 480w, ${tour.image.replace(/\.webp$/, '-768w.webp')} 768w, ${tour.image} 1200w`}
             sizes="100vw"
-            alt={tour.name}
+            alt={tour.highlights?.[0] ? `${tour.name} — ${tour.highlights[0]}` : tour.name}
             width={1600}
             height={900}
             fetchPriority="high"
@@ -536,6 +538,50 @@ export default function TourDetail() {
             />
 
             <HowBookingWorks t={t} className="mb-10" />
+
+            {/* Traveler reviews — two of the same real, verified Google reviews
+                (src/data/verifiedReviews.ts) already shown on the homepage and
+                About page, reused here via the existing ReviewCard component
+                so a visitor who is about to send a booking request sees proof
+                the trip actually delivers. Deliberately NOT emitting a Review/
+                AggregateRating schema here: that JSON-LD already exists once,
+                correctly, on /about (matched by @id to the Organization node
+                in index.html) — repeating it on every tour page would create
+                duplicate structured data for the same entity. */}
+            <div className="mb-16">
+              <span className="text-xs font-bold text-primary tracking-wider uppercase mb-2 block">{t('section_reviews_sub')}</span>
+              <h2 className="font-serif text-4xl text-foreground mb-6">{t('section_reviews')}</h2>
+              {/* Section 10, Phase 2.2.4: same live-computed, verified rating
+                  summary as /tours (Phase 2.2.3) — identical source data and
+                  calculation, reused here for consistency across pages and so
+                  a visitor sees it right before the booking panel above. No
+                  second/independent figure, no new structured data. */}
+              <a
+                href={verifiedGoogleReviews[0]?.sourceUrl}
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+                aria-label={`${(verifiedGoogleReviews.reduce((sum, r) => sum + r.rating, 0) / verifiedGoogleReviews.length).toFixed(1)} ${fmtTemplate(t('tours_google_rating_summary'), { count: verifiedGoogleReviews.length })} — ${t('review_read_google')}`}
+                className="mb-6 flex w-fit flex-wrap items-center justify-center gap-2.5 rounded-full border border-border/80 bg-background px-5 py-3 shadow-sm transition-all hover:border-primary/40 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+              >
+                <SiGoogle className="h-4 w-4 text-foreground/70" aria-hidden="true" />
+                <span className="flex items-center gap-0.5" aria-hidden="true">
+                  {Array.from({ length: 5 }, (_, s) => (
+                    <Star key={s} className="h-4 w-4 fill-current text-primary" />
+                  ))}
+                </span>
+                <span className="text-sm font-bold text-foreground">
+                  {(verifiedGoogleReviews.reduce((sum, r) => sum + r.rating, 0) / verifiedGoogleReviews.length).toFixed(1)}
+                </span>
+                <span className="text-sm text-muted-foreground">
+                  {fmtTemplate(t('tours_google_rating_summary'), { count: verifiedGoogleReviews.length })}
+                </span>
+              </a>
+              <div className="grid sm:grid-cols-2 gap-5">
+                {[0, 4].map((i) => (
+                  <ReviewCard key={verifiedGoogleReviews[i].id} index={i} />
+                ))}
+              </div>
+            </div>
 
             {/* Tour depth: why choose / best for / plan with our guides.
                 English-authored copy (English-first phase) — same source the

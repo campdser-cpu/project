@@ -6,7 +6,7 @@ import { CITY_HUBS, DURATION_BUCKETS, INTEREST_TAGS, durationInBucket, tourMatch
 import { getLocalizedTour } from '@/i18n/content';
 import { Link, useSearch } from 'wouter';
 import { motion } from 'framer-motion';
-import { Clock, ChevronRight, Filter, Plus, Minus } from 'lucide-react';
+import { Clock, ChevronRight, Filter, Plus, Minus, Star } from 'lucide-react';
 import { PromoBanner } from '../components/promo/PromoBanner';
 import { PromoBadge } from '../components/promo/PromoBadge';
 import { PriceTag } from '../components/promo/PriceTag';
@@ -15,7 +15,10 @@ import { StructuredData, buildFaqSchema } from '../components/seo/StructuredData
 import { trackEvent } from '@/lib/analytics';
 import { contactInfo } from '@/data/content';
 import { defaultMessageForRoute } from '../components/ui/WhatsAppButton';
-import { SiWhatsapp } from 'react-icons/si';
+import { SiWhatsapp, SiGoogle } from 'react-icons/si';
+import { ReviewCard } from '../components/ui/ReviewCard';
+import { verifiedGoogleReviews } from '@/data/verifiedReviews';
+import { fmtTemplate } from '../components/tours/intl';
 
 export default function Tours() {
   const { t, lang } = useLanguage();
@@ -216,6 +219,55 @@ export default function Tours() {
       {!hasFilters && <section className="py-16 md:py-20 bg-card border-b border-border"><div className="container mx-auto px-4 max-w-5xl"><div className="text-center mb-8 md:mb-10"><span className="text-primary font-bold tracking-wider uppercase text-sm mb-3 block">{t('tours_experience')}</span><h2 className="font-serif text-3xl md:text-5xl text-foreground mb-4">{t('tours_experience')}</h2></div><CinematicVideo src="/videos/sahara-experience.mp4" poster="/images/personal/luxury-camp-dusk-768w.webp" alt={t('tours_heading')} title={t('tours_experience')} subtitle={t('tours_sub')} /></div></section>}
 
       <section className="py-24 bg-background"><div className="container mx-auto px-4 max-w-6xl"><PromoBanner variant="compact" className="mb-12" />{filteredTours.length === 0 ? <div className="max-w-2xl mx-auto py-20 text-center"><p className="text-muted-foreground text-xl mb-6">{t('tours_no_match')}</p><Link href="/tours" onClick={() => trackEvent('tours_no_match_reset', { source_page: 'tours' })} className="inline-block bg-primary text-primary-foreground px-8 py-3 rounded-full font-bold mb-10">{t('tours_view_all')}</Link><div className="bg-muted/40 border border-border rounded-3xl p-8"><h3 className="font-serif text-2xl text-foreground mb-2">{t('tf_custom_heading')}</h3><p className="text-muted-foreground mb-6">{t('tf_custom_body')}</p><div className="flex flex-col sm:flex-row items-center justify-center gap-3"><Link href="/trip-builder" onClick={() => trackEvent('tours_no_match_custom_click', { source_page: 'tours' })} className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-foreground text-background hover:bg-primary px-7 py-3.5 rounded-full font-bold transition-colors">{t('tf_custom_cta')} <ChevronRight className="w-4 h-4" aria-hidden="true" /></Link><a href={`${contactInfo.whatsapp}?text=${encodeURIComponent(defaultMessageForRoute('/tours'))}`} target="_blank" rel="noreferrer" onClick={() => trackEvent('whatsapp_click', { source_page: 'tours', placement: 'no_match' })} className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-background border border-border text-foreground px-7 py-3.5 rounded-full font-bold hover:border-primary/50 hover:text-primary transition-colors"><SiWhatsapp className="w-4 h-4" aria-hidden="true" /> {t('contact_whatsapp_label')}</a></div></div></div> : <div className="grid grid-cols-1 md:grid-cols-2 gap-10">{filteredTours.map((tourBase, index) => { const tour = getLocalizedTour(tourBase.id, lang) ?? tourBase; return <motion.div key={tour.id} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: index * 0.1 }} className="group flex flex-col bg-card rounded-2xl overflow-hidden border border-border hover:shadow-xl transition-all duration-300"><div className="h-64 relative overflow-hidden"><img src={tour.image} srcSet={`${tour.image.replace(/\.webp$/, '-480w.webp')} 480w, ${tour.image.replace(/\.webp$/, '-768w.webp')} 768w, ${tour.image} 1200w`} sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 40vw" alt={tour.name} width={1200} height={675} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" /><div className="absolute top-4 left-4 bg-background/90 backdrop-blur text-foreground text-xs font-bold px-3 py-1.5 rounded-full flex items-center gap-1.5"><Clock className="w-3.5 h-3.5" /> {tour.duration}</div><div className="absolute top-4 right-4"><PromoBadge /></div></div><div className="p-8 flex flex-col flex-grow"><h3 className="font-serif text-3xl text-foreground mb-4 group-hover:text-primary transition-colors">{tour.name}</h3><p className="text-muted-foreground mb-6 line-clamp-2">{t('tours_experience')} {tour.highlights.join(', ')} {t('tours_and_more')}</p><div className="flex items-center justify-between mt-auto pt-6 border-t border-border"><div><PriceTag price={tour.price} size="md" /></div><Link href={`/tours/${tour.id}`} onClick={() => trackEvent('trip_finder_result_click', { tour_id: tour.id, has_filters: hasFilters })} className="bg-foreground text-background hover:bg-primary px-6 py-3 rounded-full text-sm font-bold flex items-center gap-2">{t('tours_view')} <ChevronRight className="w-4 h-4" /></Link></div></div></motion.div>; })}</div>}</div></section>
+
+      {/* Traveler reviews — the same real, verified Google reviews already
+          shown on the homepage, About page and individual tour pages, reused
+          here via the existing ReviewCard component. Placed after the tour
+          grid (so it never interrupts discovery/filtering) and before the
+          FAQ, as a general trust section — not attached to any single tour
+          card, so it never implies these reviews are about one specific
+          tour. No new Review/AggregateRating schema: that already exists
+          once, correctly, on /about, tied to the same Organization entity;
+          repeating it here would duplicate structured data. */}
+      <section className="py-16 md:py-24 bg-card border-t border-border">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="text-center mb-10">
+            <span className="text-primary font-bold tracking-wider uppercase text-sm mb-3 block">{t('section_reviews_sub')}</span>
+            <h2 className="font-serif text-3xl md:text-5xl text-foreground">{t('section_reviews')}</h2>
+          </div>
+          {/* Section 10, Phase 2.2.3: a compact, honest rating summary computed
+              live from the same verifiedGoogleReviews dataset the two cards
+              below are drawn from (never a separate or hardcoded figure, so it
+              can't drift out of sync with the real data). Links to the same
+              real Google Maps source URL already used on every review card —
+              no new or invented URL. No new structured data: AggregateRating
+              JSON-LD already exists once, correctly, on /about. */}
+          <a
+            href={verifiedGoogleReviews[0]?.sourceUrl}
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+            aria-label={`${(verifiedGoogleReviews.reduce((sum, r) => sum + r.rating, 0) / verifiedGoogleReviews.length).toFixed(1)} ${fmtTemplate(t('tours_google_rating_summary'), { count: verifiedGoogleReviews.length })} — ${t('review_read_google')}`}
+            className="mx-auto mb-10 flex w-fit flex-wrap items-center justify-center gap-2.5 rounded-full border border-border/80 bg-background px-5 py-3 shadow-sm transition-all hover:border-primary/40 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+          >
+            <SiGoogle className="h-4 w-4 text-foreground/70" aria-hidden="true" />
+            <span className="flex items-center gap-0.5" aria-hidden="true">
+              {Array.from({ length: 5 }, (_, s) => (
+                <Star key={s} className="h-4 w-4 fill-current text-primary" />
+              ))}
+            </span>
+            <span className="text-sm font-bold text-foreground">
+              {(verifiedGoogleReviews.reduce((sum, r) => sum + r.rating, 0) / verifiedGoogleReviews.length).toFixed(1)}
+            </span>
+            <span className="text-sm text-muted-foreground">
+              {fmtTemplate(t('tours_google_rating_summary'), { count: verifiedGoogleReviews.length })}
+            </span>
+          </a>
+          <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <ReviewCard index={0} />
+            <ReviewCard index={4} />
+          </div>
+        </div>
+      </section>
 
       {/* FAQ — same accordion pattern as tour-detail.tsx */}
       <section className="py-16 md:py-24 bg-card border-t border-border">

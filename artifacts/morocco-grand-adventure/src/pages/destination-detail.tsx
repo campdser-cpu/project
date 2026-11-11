@@ -296,7 +296,12 @@ export default function DestinationDetail() {
                           />
                         );
                       }
-                      return <img src={`/images/food/${['tagine','couscous','streetfood','pastries','tea'][destination.id.length % 5]}.webp`} alt={`Traditional food in ${destination.name}`} width={800} height={600} loading="lazy" decoding="async" className="w-full h-full object-cover" onError={(e) => { (e.target as HTMLImageElement).src = '/images/food/tagine.webp'; }} />;
+                      // These 5 files are generic Moroccan-food category shots, not
+                      // photographed at this specific destination — the alt text
+                      // names the dish itself rather than claiming a location the
+                      // photo doesn't actually show.
+                      const dishAlt = ['Moroccan tagine', 'Moroccan couscous', 'Moroccan street food', 'Moroccan pastries', 'Moroccan mint tea'][destination.id.length % 5];
+                      return <img src={`/images/food/${['tagine','couscous','streetfood','pastries','tea'][destination.id.length % 5]}.webp`} alt={dishAlt} width={800} height={600} loading="lazy" decoding="async" className="w-full h-full object-cover" onError={(e) => { (e.target as HTMLImageElement).src = '/images/food/tagine.webp'; }} />;
                     })()}
                   </div>
                   <div className="md:w-1/2 p-8 flex flex-col justify-center">
@@ -483,12 +488,12 @@ export default function DestinationDetail() {
       {relevantTours.length > 0 && (
       <section className="py-24 bg-card border-t border-border">
         <div className="container mx-auto px-4 max-w-6xl">
-          <div className="flex justify-between items-end mb-12">
+          <div className="flex flex-col gap-4 mb-12 md:flex-row md:items-end md:justify-between">
             <div>
               <span className="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">{t('section_tours_sub')}</span>
               <h2 className="font-serif text-4xl text-foreground">{t('dest_tours')} {destination.name}</h2>
             </div>
-            <Link href="/tours" className="hidden md:flex items-center gap-2 text-foreground font-semibold hover:text-primary transition-colors">
+            <Link href="/tours" className="flex items-center gap-2 text-foreground font-semibold hover:text-primary transition-colors">
               {t('explore_tours')} <ChevronRight className="w-4 h-4" />
             </Link>
           </div>

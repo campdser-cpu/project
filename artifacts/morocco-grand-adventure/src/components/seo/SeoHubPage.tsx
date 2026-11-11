@@ -25,6 +25,20 @@ function pagePath(page: HubPage): string {
   return `/travel-info/${page.slug}`;
 }
 
+// Section 10, Phase 1.4 (+ Phase 2.2.1): the Merzouga guide topics that have a
+// direct, 1:1 commercial experience page (not every guide does) — scoped to
+// exactly these slugs so this never appears as a generic addition on every
+// hub page.
+const TOPIC_COMMERCIAL_LINK: Partial<Record<string, { path: string; labelKey: string }>> = {
+  'camel-trekking': { path: '/camel-trekking', labelKey: 'guide_cta_camel_trekking' },
+  '4x4-desert-tour': { path: '/4x4-tours', labelKey: 'guide_cta_4x4_tours' },
+  'desert-camps': { path: '/luxury-camp', labelKey: 'guide_cta_desert_camps' },
+  // Section 10, Phase 2.2.1: this guide is specifically about the luxury tier
+  // (not the general desert-camps comparison above), so it gets its own,
+  // topically-precise label key rather than reusing guide_cta_desert_camps.
+  'luxury-desert-camps': { path: '/luxury-camp', labelKey: 'guide_cta_luxury_camps' },
+};
+
 // ── Public thin route components ─────────────────────────────────────────────
 export default function MerzougaGuideTopic() {
   const { slug } = useParams();
@@ -184,6 +198,22 @@ export function SeoHubPage({ page }: { page: HubPage }) {
               {figureAfter.has(i) && renderCatalogFigure(figureAfter.get(i)!)}
               </div>
             ))}
+            {/* Section 10, Phase 1.4: one contextual link from this specific
+                guide topic to its matching commercial experience page — only
+                for the three topics that have a direct counterpart, and only
+                added here because no equivalent link already existed (the
+                universal footer CTA below links to /trip-builder, WhatsApp
+                and the general /desert-tours hub, never to this exact topic). */}
+            {TOPIC_COMMERCIAL_LINK[page.slug] && (
+              <p className="-mt-6">
+                <Link
+                  href={TOPIC_COMMERCIAL_LINK[page.slug]!.path}
+                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-foreground/70 underline decoration-foreground/30 underline-offset-4 hover:text-primary hover:decoration-primary transition-colors"
+                >
+                  {t(TOPIC_COMMERCIAL_LINK[page.slug]!.labelKey)} <ChevronRight className="w-3.5 h-3.5" aria-hidden="true" />
+                </Link>
+              </p>
+            )}
           </div>
         </section>
                 {/* Comparison table for comparison pages */}

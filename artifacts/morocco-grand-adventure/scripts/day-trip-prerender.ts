@@ -1,5 +1,6 @@
 import * as fs from 'node:fs';
 import * as path from 'node:path';
+import { withBrandSuffix } from '../src/components/seo/route-metadata';
 
 const SITE_URL = 'https://www.moroccograndadventure.com';
 const LANGS = ['en','fr','es','it','de','nl','pt','zh','ja','ko','ar'];
@@ -25,13 +26,19 @@ for(const lang of LANGS){
   if(!fs.existsSync(src)) throw new Error(`[day-trip-prerender] Missing ${src}. The normal prerender must generate /day-trips first.`);
   const out=path.join(ROOT,lang,'build-your-day-trip','index.html');
   let html=fs.readFileSync(src,'utf8'); const c=copy[lang] ?? copy.en; const url=`${SITE_URL}/${lang}/build-your-day-trip`;
-  html=html.replace(/<title>[\s\S]*?<\/title>/,`<title>${esc(c.title)} — Morocco Grand Adventure</title>`);
+  // withBrandSuffix (same helper every other route uses) skips the suffix
+  // when the title already names Morocco/the brand or is already long enough
+  // — the previous unconditional "<title> — Morocco Grand Adventure" append
+  // double-stated Morocco and pushed EN (78 chars) and AR (72 chars) over the
+  // 70-char budget every other route already respects.
+  const fullTitle = withBrandSuffix(c.title);
+  html=html.replace(/<title>[\s\S]*?<\/title>/,`<title>${esc(fullTitle)}</title>`);
   html=html.replace(/(<meta name="description" content=")[^"]*("\s*\/?>)/,`$1${esc(c.description)}$2`);
   html=html.replace(/(<link rel="canonical" href=")[^"]*("\s*\/?>)/,`$1${url}$2`);
   html=html.replace(/(<meta property="og:url" content=")[^"]*("\s*\/?>)/,`$1${url}$2`);
-  html=html.replace(/(<meta property="og:title" content=")[^"]*("\s*\/?>)/,`$1${esc(c.title)} — Morocco Grand Adventure$2`);
+  html=html.replace(/(<meta property="og:title" content=")[^"]*("\s*\/?>)/,`$1${esc(fullTitle)}$2`);
   html=html.replace(/(<meta property="og:description" content=")[^"]*("\s*\/?>)/,`$1${esc(c.description)}$2`);
-  html=html.replace(/(<meta name="twitter:title" content=")[^"]*("\s*\/?>)/,`$1${esc(c.title)} — Morocco Grand Adventure$2`);
+  html=html.replace(/(<meta name="twitter:title" content=")[^"]*("\s*\/?>)/,`$1${esc(fullTitle)}$2`);
   html=html.replace(/(<meta name="twitter:description" content=")[^"]*("\s*\/?>)/,`$1${esc(c.description)}$2`);
   html=html.replace(/(<link rel="alternate" hreflang="([^"]+)" href=")[^"]*("\s*\/?>)/g,(_m,_a,alternateLang,_b)=>`${_a}${SITE_URL}/${alternateLang === 'x-default' ? 'en' : alternateLang}/build-your-day-trip${_b}`);
   html=html.replace(/<div id="root">[\s\S]*?<\/div>/,`<div id="root"><main><h1>${esc(c.h1)}</h1><p>${esc(c.sub)}</p><p>${esc(c.description)}</p><h2>${esc(c.h2)}</h2><p>${esc(c.h2sub)}</p></main></div>`);

@@ -126,7 +126,7 @@ export function TourInquiryForm({ tourName, lang, travelDate = '', travelers: pa
               </a>
             </div>
           ) : (
-            <form onSubmit={submit} className="space-y-4" dir={lang === 'ar' ? 'rtl' : undefined}>
+            <form id="tour-inquiry-form" onSubmit={submit} className="space-y-4" dir={lang === 'ar' ? 'rtl' : undefined}>
               <p className="text-xs leading-relaxed text-muted-foreground">{t('jx_inq_note')}</p>
 
               <div className="rounded-xl border border-border bg-background px-4 py-3">

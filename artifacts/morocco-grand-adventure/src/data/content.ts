@@ -1,6 +1,6 @@
 ﻿// ─────────────────────────────────────────────────────────────────────────────
 // Morocco Grand Adventure — Central Data
-// Owner: Mohamed BouGhrara
+// Owner: Mohamed Boughrara
 // ─────────────────────────────────────────────────────────────────────────────
 // Moved to its own module (performance fix, see that file's header comment)
 // so always-eager components importing only this constant no longer pull in

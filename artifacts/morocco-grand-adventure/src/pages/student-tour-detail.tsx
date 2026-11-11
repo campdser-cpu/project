@@ -26,6 +26,7 @@ import { JoinStudentTour } from '../components/student-tours/JoinStudentTour';
 import { ShareButton } from '../components/ui/ShareButton';
 import { trackEvent } from '@/lib/analytics';
 import { StructuredData, buildFaqSchema, buildBreadcrumb } from '../components/seo/StructuredData';
+import { ReviewCard } from '../components/ui/ReviewCard';
 import NotFound from './not-found';
 
 const STATUS_KEY: Record<DepartureDisplayStatus, string> = {
@@ -535,6 +536,29 @@ export default function StudentTourDetail() {
                 <li key={s} className="border-l-2 pl-5 text-[15.5px] leading-relaxed" style={{ borderColor: GOLD, color: BODY }}>{s}</li>
               ))}
             </ul>
+          </div>
+        </section>
+
+        {/* TRAVELER REVIEWS — the same real, verified Google reviews already
+            shown on the homepage, About page and private tour pages, reused
+            here via the existing ReviewCard component. The explanatory line
+            is deliberate: these are general Morocco Grand Adventure reviews,
+            not student-specific testimonials, and the copy says so plainly
+            rather than letting the page's context imply otherwise. No new
+            Review/AggregateRating schema here — that already exists once,
+            correctly, on /about, tied to the same Organization entity. */}
+        <section className="bg-background py-16 md:py-24">
+          <div className="container mx-auto grid gap-6 px-4 lg:grid-cols-12 lg:gap-16">
+            <div className="lg:col-span-4">
+              <Eyebrow as="h2">{t('section_reviews')}</Eyebrow>
+            </div>
+            <div className="lg:col-span-8">
+              <p className="text-[15px] leading-relaxed" style={{ color: MUTED }}>{t('st_reviews_note')}</p>
+              <div className="mt-8 grid gap-5 sm:grid-cols-2">
+                <ReviewCard index={0} />
+                <ReviewCard index={4} />
+              </div>
+            </div>
           </div>
         </section>
 

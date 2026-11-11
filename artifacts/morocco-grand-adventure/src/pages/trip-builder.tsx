@@ -18,10 +18,24 @@ import {
   CheckCircle2,
   Car,
   Info,
-  Mail
+  Mail,
+  Home,
+  User,
+  Phone,
+  Globe
 } from 'lucide-react';
 
 type Budget = '<$300' | '$300-600' | '$600-1000' | '>$1000';
+type Accommodation = 'standard' | 'comfort' | 'luxury';
+
+// A short, fixed list rather than a full country picker: these are the
+// business's named priority markets plus the next most common ones, kept as
+// a native <select> (no new picker library). "Other" covers every market
+// not listed rather than forcing a guess.
+const COUNTRY_OPTIONS = [
+  'United States', 'United Kingdom', 'Italy', 'Spain', 'Netherlands',
+  'Germany', 'France', 'Canada', 'Australia',
+] as const;
 
 // Internal ids matching destinations[].id / CITY_HUBS — stable for coordinate
 // lookups, analytics and routing regardless of locale. Display label comes
@@ -50,6 +64,57 @@ const BUDGET_KEYS: { value: Budget; labelKey: string; descKey: string }[] = [
   { value: '$600-1000', labelKey: 'tb_budget_luxury', descKey: 'tb_budget_luxury_desc' },
   { value: '>$1000', labelKey: 'tb_budget_ultra', descKey: 'tb_budget_ultra_desc' },
 ];
+
+// Section 10, Phase 2.1 — Trip Builder currency display.
+//
+// Reference rates used ONLY to pre-compute the rounded, approximate GBP/EUR
+// range text below — never a live rate, never shown with false precision.
+// Set 2026-11-10: 1 USD ≈ £0.80, 1 USD ≈ €0.95. These are deliberately
+// round, conservative, manually-set figures, not a market quote; review
+// periodically (e.g. every 6 months) since they will drift from real rates
+// over time — an accepted tradeoff of not calling a live FX API.
+//
+// The underlying `Budget` identifiers above are NEVER changed by any of
+// this: for USD the display text is simply `value` itself (already exactly
+// today's text), and GBP/EUR only ever affect what is rendered/sent in the
+// human-readable message, never the `budget` analytics parameter or the
+// itinerary/estimate logic (neither of which reads currency at all).
+type DisplayCurrency = 'USD' | 'GBP' | 'EUR';
+const EUR_LOCALES = ['de', 'nl', 'it', 'es'] as const;
+const GBP_RANGE_KEY: Record<Budget, string> = {
+  '<$300': 'tb_budget_budget_range_gbp',
+  '$300-600': 'tb_budget_comfort_range_gbp',
+  '$600-1000': 'tb_budget_luxury_range_gbp',
+  '>$1000': 'tb_budget_ultra_range_gbp',
+};
+const EUR_RANGE_KEY: Record<Budget, string> = {
+  '<$300': 'tb_budget_budget_range_eur',
+  '$300-600': 'tb_budget_comfort_range_eur',
+  '$600-1000': 'tb_budget_luxury_range_eur',
+  '>$1000': 'tb_budget_ultra_range_eur',
+};
+function budgetRangeText(value: Budget, currency: DisplayCurrency, t: (key: string) => string): string {
+  if (currency === 'USD') return value;
+  if (currency === 'GBP') return t(GBP_RANGE_KEY[value]);
+  return t(EUR_RANGE_KEY[value]);
+}
+
+const ACCOMMODATION_KEYS: { value: Accommodation; labelKey: string; descKey: string }[] = [
+  { value: 'standard', labelKey: 'tb_accommodation_standard', descKey: 'tb_accommodation_standard_desc' },
+  { value: 'comfort', labelKey: 'tb_accommodation_comfort', descKey: 'tb_accommodation_comfort_desc' },
+  { value: 'luxury', labelKey: 'tb_accommodation_luxury', descKey: 'tb_accommodation_luxury_desc' },
+];
+
+/** Localized month names generated from the runtime's own Intl data rather
+ * than 12 new translation keys per language — always correct, zero
+ * translation-maintenance burden. */
+function monthOptions(lang: string): { value: string; label: string }[] {
+  const fmt = new Intl.DateTimeFormat(lang, { month: 'long' });
+  return Array.from({ length: 12 }, (_, i) => {
+    const label = fmt.format(new Date(2000, i, 1));
+    return { value: String(i + 1).padStart(2, '0'), label: label.charAt(0).toUpperCase() + label.slice(1) };
+  });
+}
 
 /** Trip length the request flow supports: one day to a full month. */
 const clampDays = (raw: string): number => {
@@ -92,12 +157,51 @@ export default function TripBuilder() {
   const daysField = useNumberField(days, setDays, 1, 30);
   const [travelers, setTravelers] = useState(2);
   const [budget, setBudget] = useState<Budget>('$300-600');
-  
+  // EN visitors can toggle USD/GBP; the choice only matters while lang==='en'.
+  // DE/NL/IT/ES always resolve to EUR below, with no selector; every other
+  // locale always resolves to USD, i.e. exactly today's behavior, unchanged.
+  const [currencyChoice, setCurrencyChoice] = useState<'USD' | 'GBP'>('USD');
+  const currency: DisplayCurrency = lang === 'en'
+    ? currencyChoice
+    : (EUR_LOCALES as readonly string[]).includes(lang) ? 'EUR' : 'USD';
+  const [accommodation, setAccommodation] = useState<Accommodation>('comfort');
+  const [exactDate, setExactDate] = useState('');
+  const [approxMonth, setApproxMonth] = useState('');
+  const months = useMemo(() => monthOptions(lang), [lang]);
+
   const [selectedInterests, setSelectedInterests] = useState<string[]>([]);
   const [selectedDestinations, setSelectedDestinations] = useState<string[]>([]);
 
+  const [contactName, setContactName] = useState('');
+  const [contactEmail, setContactEmail] = useState('');
+  const [contactCountry, setContactCountry] = useState('');
+  const [contactPhone, setContactPhone] = useState('');
+  // Section 10, Phase 2.2.4: tracks which external app (WhatsApp/email) the
+  // visitor opened from step 6 — never set to mean "sent", since a wa.me/
+  // mailto link hands off to an external app this site has no way to confirm
+  // was actually used to send anything. Purely for the "opened, now go send
+  // it" acknowledgment; does not gate or alter the links/validation below.
+  const [openedInquiryVia, setOpenedInquiryVia] = useState<'whatsapp' | 'email' | null>(null);
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [step]);
+
+  // Fires exactly once per mount — captures a genuine start regardless of
+  // entry path (an internal link, a bookmark, or an organic landing directly
+  // on /trip-builder), unlike the existing `start_booking` event in
+  // Layout.tsx, which only fires when a visitor clicks an internal link
+  // *to* this page and therefore misses direct/organic arrivals.
+  useEffect(() => {
+    trackEvent('trip_builder_start', { language: lang });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Per-step funnel, so step-level drop-off is visible. Step number only —
+  // never any of the trip/contact details collected on later steps.
+  useEffect(() => {
+    trackEvent('trip_builder_step', { step, language: lang });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [step]);
 
   const toggleInterest = (id: string) => {
@@ -217,6 +321,24 @@ export default function TripBuilder() {
       })
       .filter(Boolean);
     const destNames = selectedDestinations.map(id => localizedDestinations.find(d=>d.id===id)?.name).filter(Boolean);
+    const accommodationLabel = ACCOMMODATION_KEYS.find(a => a.value === accommodation)?.labelKey;
+    const monthLabel = approxMonth ? months.find(m => m.value === approxMonth)?.label : '';
+    const dateLine = exactDate ? exactDate : (monthLabel ? monthLabel : t('tb_dates_month_flexible'));
+    // When a non-USD display currency is active, the message states the
+    // internal tier name AND the approximate converted range AND the
+    // currency, explicitly marked indicative — never silently swapping the
+    // internal `budget` identifier (used for analytics below) for a
+    // converted figure. When currency is USD (the default everywhere except
+    // an EN visitor who toggled to GBP, or a DE/NL/IT/ES visitor), this is
+    // byte-for-byte the same line the message has always sent.
+    const budgetTierLabel = BUDGET_KEYS.find(b => b.value === budget)?.labelKey;
+    const budgetLine = currency === 'USD'
+      ? `- Budget: ${budget}`
+      : `- Budget: ${fmtTemplate(t('tb_budget_message_converted'), {
+          tier: budgetTierLabel ? t(budgetTierLabel) : budget,
+          range: budgetRangeText(budget, currency, t),
+          currency,
+        })}`;
 
     const build = (bold: (s: string) => string) => {
       const lines = [
@@ -226,7 +348,9 @@ export default function TripBuilder() {
         `- Route: ${cityLabel(arrival)} to ${cityLabel(departure)}`,
         `- Duration: ${days} days`,
         `- Travelers: ${travelers}`,
-        `- Budget: ${budget}`,
+        budgetLine,
+        `- Accommodation: ${accommodationLabel ? t(accommodationLabel as Parameters<typeof t>[0]) : accommodation}`,
+        `- Travel dates: ${dateLine}`,
         `- Interests: ${interestLabels.length ? interestLabels.join(', ') : '—'}`,
         '',
         bold('Destinations:'),
@@ -237,12 +361,19 @@ export default function TripBuilder() {
         for (const d of itineraryData.itinerary) {
           lines.push(`Day ${d.day}: ${d.title}${d.distance > 0 ? ` — ${d.distance} km drive` : ''}`);
         }
-        lines.push('', `Total driving distance: ~${itineraryData.totalDistance} km`);
+        lines.push('', `Total driving distance: ~${Math.round(itineraryData.totalDistance)} km`);
+      }
+      if (contactName || contactEmail || contactCountry || contactPhone) {
+        lines.push('', bold('Contact details:'));
+        if (contactName) lines.push(`- Name: ${contactName}`);
+        if (contactEmail) lines.push(`- Email: ${contactEmail}`);
+        if (contactCountry) lines.push(`- Country: ${contactCountry}`);
+        if (contactPhone) lines.push(`- Phone/WhatsApp: ${contactPhone}`);
       }
       return lines;
     };
     return { whatsapp: build((s) => `*${s}*`), plain: build((s) => s) };
-  }, [t, arrival, departure, days, travelers, budget, selectedInterests, selectedDestinations, itineraryData, localizedDestinations]);
+  }, [t, arrival, departure, days, travelers, budget, currency, accommodation, exactDate, approxMonth, months, selectedInterests, selectedDestinations, itineraryData, localizedDestinations, contactName, contactEmail, contactCountry, contactPhone]);
 
   const whatsappLink = useMemo(() => {
     // Multi-line message built with real newlines, then URL-encoded as a
@@ -257,6 +388,19 @@ export default function TripBuilder() {
     ),
     [summaryLines],
   );
+
+  // Section 10, Phase 2.2.4 (correction): the "opened WhatsApp/email" notice
+  // must only ever describe the most recent click against the CURRENT trip
+  // details — never linger after the visitor has left step 6 or changed
+  // anything the outgoing message is built from. `summaryLines` is already
+  // the single memo the message itself is derived from (recomputes whenever
+  // any of arrival/departure/days/travelers/budget/currency/accommodation/
+  // dates/interests/destinations/contact fields change), so depending on it
+  // here — rather than re-listing those fields a second time — keeps this
+  // effect correct by construction instead of by a second, driftable list.
+  useEffect(() => {
+    setOpenedInquiryVia(null);
+  }, [step, summaryLines]);
 
   return (
     <Layout>
@@ -279,33 +423,35 @@ export default function TripBuilder() {
           {/* Progress Bar */}
           <div className="mb-16 relative flex items-center justify-between w-full max-w-3xl mx-auto px-2">
             <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 h-0.5 bg-border z-0 mx-6"></div>
-            <div 
-              className="absolute left-0 top-1/2 -translate-y-1/2 h-0.5 bg-primary z-0 transition-all duration-700 ease-in-out mx-6" 
-              style={{ width: `calc(${((step - 1) / 3) * 100}% - 48px)` }}
+            <div
+              className="absolute left-0 top-1/2 -translate-y-1/2 h-0.5 bg-primary z-0 transition-all duration-700 ease-in-out mx-6"
+              style={{ width: `calc(${((step - 1) / 5) * 100}% - 48px)` }}
             ></div>
-            
-            {[1, 2, 3, 4].map(s => (
-              <div 
-                key={s} 
+
+            {[1, 2, 3, 4, 5, 6].map(s => (
+              <div
+                key={s}
                 onClick={() => {
-                  if (s < step || (s === 4 && selectedDestinations.length >= 2)) {
+                  if (s < step || (s === 5 && selectedDestinations.length >= 2)) {
                     setStep(s);
                   }
                 }}
-                className={`relative z-10 w-12 h-12 rounded-full flex items-center justify-center font-bold transition-all duration-500 shadow-sm ${
-                  step >= s 
-                    ? 'bg-primary text-primary-foreground shadow-primary/20 scale-110 cursor-pointer' 
+                className={`relative z-10 w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center font-bold transition-all duration-500 shadow-sm ${
+                  step >= s
+                    ? 'bg-primary text-primary-foreground shadow-primary/20 scale-110 cursor-pointer'
                     : 'bg-card border-2 border-border text-muted-foreground opacity-70'
                 } ${s < step ? 'cursor-pointer hover:scale-110 hover:bg-primary/90' : ''}`}
               >
-                {s < step ? <CheckCircle2 className="w-6 h-6" /> : s}
-                <span className={`absolute -bottom-8 text-[10px] md:text-xs font-bold uppercase tracking-wider text-center leading-tight whitespace-nowrap transition-colors ${
+                {s < step ? <CheckCircle2 className="w-5 h-5 md:w-6 md:h-6" /> : s}
+                <span className={`absolute -bottom-8 text-[9px] md:text-xs font-bold uppercase tracking-wider text-center leading-tight whitespace-nowrap transition-colors ${
                   step === s ? 'text-primary' : 'text-muted-foreground'
                 }`}>
                   {s === 1 && t('tb_basics')}
                   {s === 2 && t('tb_interests')}
                   {s === 3 && t('tb_places')}
-                  {s === 4 && t('tb_itinerary_label')}
+                  {s === 4 && t('tb_trip_style')}
+                  {s === 5 && t('tb_itinerary_label')}
+                  {s === 6 && t('tb_your_details')}
                 </span>
               </div>
             ))}
@@ -397,29 +543,6 @@ export default function TripBuilder() {
                             <input type="range" min="1" max="10" value={travelers} onChange={e => setTravelers(parseInt(e.target.value))} className="w-full accent-primary h-2 bg-muted rounded-full appearance-none cursor-pointer" />
                           </div>
                         </div>
-                      </div>
-                    </div>
-                    
-                    {/* Budget */}
-                    <div className="pt-8 border-t border-border">
-                      <label className="block text-xs font-bold text-muted-foreground uppercase tracking-wider mb-6">{t('tb_budget')}</label>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                        {BUDGET_KEYS.map(b => (
-                          <button 
-                            key={b.value} 
-                            onClick={() => setBudget(b.value)}
-                            className={`p-6 rounded-2xl border text-left transition-all duration-300 ${
-                              budget === b.value 
-                                ? 'bg-primary/5 border-primary shadow-md transform -translate-y-1' 
-                                : 'bg-background border-border hover:border-primary/50 hover:shadow-sm'
-                            }`}
-                          >
-                            <div className={`font-bold mb-2 text-lg ${budget === b.value ? 'text-primary' : 'text-foreground'}`}>
-                              {t(b.labelKey as Parameters<typeof t>[0])}
-                            </div>
-                            <div className="text-sm text-muted-foreground">{t(b.descKey as Parameters<typeof t>[0])}</div>
-                          </button>
-                        ))}
                       </div>
                     </div>
                   </motion.div>
@@ -522,8 +645,146 @@ export default function TripBuilder() {
 
                 {step === 4 && (
                   <motion.div key="step4" variants={stepVariants} initial="initial" animate="animate" exit="exit" className="space-y-10">
-                    <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-6">4. {t('tb_itinerary_heading')}</h2>
-                    
+                    <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-3">4. {t('tb_trip_style_heading')}</h2>
+                    <p className="text-muted-foreground text-lg mb-2">{t('tb_trip_style_sub')}</p>
+
+                    {/* Budget — moved here from Step 1 so travel style (budget +
+                        accommodation) is decided together, and Step 1 stays
+                        purely about logistics. */}
+                    <div className="pt-6 border-t border-border">
+                      <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
+                        <label className="block text-xs font-bold text-muted-foreground uppercase tracking-wider">{t('tb_budget')}</label>
+                        {/* Currency selector — English only (USD default, explicit
+                            GBP option). DE/NL/IT/ES show EUR with no selector;
+                            every other locale is untouched, since `currency`
+                            resolves to 'USD' for them exactly as it always has. */}
+                        {lang === 'en' && (
+                          <div role="group" aria-label={t('tb_currency_group_label')} className="inline-flex rounded-full border border-border p-1 gap-1">
+                            <button
+                              type="button"
+                              aria-pressed={currencyChoice === 'USD'}
+                              onClick={() => setCurrencyChoice('USD')}
+                              className={`min-w-[44px] min-h-[44px] px-4 rounded-full text-sm font-bold transition-colors ${
+                                currencyChoice === 'USD' ? 'bg-primary text-primary-foreground' : 'text-foreground hover:bg-muted'
+                              }`}
+                            >
+                              {t('tb_currency_usd')}
+                            </button>
+                            <button
+                              type="button"
+                              aria-pressed={currencyChoice === 'GBP'}
+                              onClick={() => setCurrencyChoice('GBP')}
+                              className={`min-w-[44px] min-h-[44px] px-4 rounded-full text-sm font-bold transition-colors ${
+                                currencyChoice === 'GBP' ? 'bg-primary text-primary-foreground' : 'text-foreground hover:bg-muted'
+                              }`}
+                            >
+                              {t('tb_currency_gbp')}
+                            </button>
+                          </div>
+                        )}
+                      </div>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                        {BUDGET_KEYS.map(b => (
+                          <button
+                            key={b.value}
+                            onClick={() => setBudget(b.value)}
+                            className={`p-6 rounded-2xl border text-left transition-all duration-300 ${
+                              budget === b.value
+                                ? 'bg-primary/5 border-primary shadow-md transform -translate-y-1'
+                                : 'bg-background border-border hover:border-primary/50 hover:shadow-sm'
+                            }`}
+                          >
+                            <div className={`font-bold mb-2 text-lg ${budget === b.value ? 'text-primary' : 'text-foreground'}`}>
+                              {t(b.labelKey as Parameters<typeof t>[0])}
+                            </div>
+                            <div className="text-sm text-muted-foreground">
+                              {fmtTemplate(t(b.descKey as Parameters<typeof t>[0]), { range: budgetRangeText(b.value, currency, t) })}
+                            </div>
+                          </button>
+                        ))}
+                      </div>
+                      {/* Indicative-only disclaimer — shown whenever a converted
+                          (non-USD) figure is on screen: GBP for an EN visitor who
+                          toggled it, or EUR for DE/NL/IT/ES by default. */}
+                      {currency !== 'USD' && (
+                        <p className="text-xs text-muted-foreground mt-4">{t('tb_currency_note')}</p>
+                      )}
+                    </div>
+
+                    {/* Accommodation preference — separate from budget tier:
+                        budget is a daily spend range, this is the style of
+                        stay, so a traveler can be e.g. "Comfort" budget but
+                        still want to know we understand "Luxury" nights are
+                        possible for part of the trip. */}
+                    <div className="pt-8 border-t border-border">
+                      <label className="block text-xs font-bold text-muted-foreground uppercase tracking-wider mb-6">{t('tb_accommodation_label')}</label>
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        {ACCOMMODATION_KEYS.map(a => (
+                          <button
+                            key={a.value}
+                            onClick={() => setAccommodation(a.value)}
+                            className={`p-6 rounded-2xl border text-left transition-all duration-300 flex items-start gap-4 ${
+                              accommodation === a.value
+                                ? 'bg-primary/5 border-primary shadow-md transform -translate-y-1'
+                                : 'bg-background border-border hover:border-primary/50 hover:shadow-sm'
+                            }`}
+                          >
+                            <Home className={`w-5 h-5 shrink-0 mt-1 ${accommodation === a.value ? 'text-primary' : 'text-muted-foreground'}`} aria-hidden="true" />
+                            <div>
+                              <div className={`font-bold mb-1 text-lg ${accommodation === a.value ? 'text-primary' : 'text-foreground'}`}>
+                                {t(a.labelKey as Parameters<typeof t>[0])}
+                              </div>
+                              <div className="text-sm text-muted-foreground">{t(a.descKey as Parameters<typeof t>[0])}</div>
+                            </div>
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Travel dates — an optional exact date plus an
+                        approximate-month fallback, rather than a full
+                        calendar widget (keeps this lightweight, no new
+                        date-picker dependency). Either is enough to proceed;
+                        neither is required. */}
+                    <div className="pt-8 border-t border-border">
+                      <label className="block text-xs font-bold text-muted-foreground uppercase tracking-wider mb-4">{t('tb_dates_label')}</label>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                          <label htmlFor="tb-exact-date" className="block text-sm font-medium text-foreground mb-2">{t('tb_dates_exact_label')}</label>
+                          <div className="relative">
+                            <Calendar className="pointer-events-none absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-primary" aria-hidden="true" />
+                            <input
+                              id="tb-exact-date"
+                              type="date"
+                              min={new Date().toISOString().slice(0, 10)}
+                              value={exactDate}
+                              onChange={e => { setExactDate(e.target.value); if (e.target.value) setApproxMonth(''); }}
+                              className="w-full bg-background border border-border hover:border-primary/50 rounded-2xl py-4 pl-14 pr-6 text-foreground font-medium focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all shadow-sm"
+                            />
+                          </div>
+                        </div>
+                        <div>
+                          <label htmlFor="tb-approx-month" className="block text-sm font-medium text-foreground mb-2">{t('tb_dates_month_label')}</label>
+                          <select
+                            id="tb-approx-month"
+                            value={approxMonth}
+                            onChange={e => { setApproxMonth(e.target.value); if (e.target.value) setExactDate(''); }}
+                            className="w-full bg-background border border-border hover:border-primary/50 rounded-2xl py-4 px-6 text-foreground font-medium appearance-none focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all cursor-pointer shadow-sm"
+                          >
+                            <option value="">{t('tb_dates_month_flexible')}</option>
+                            {months.map(m => <option key={m.value} value={m.value}>{m.label}</option>)}
+                          </select>
+                        </div>
+                      </div>
+                      <p className="mt-3 text-sm text-muted-foreground">{t('tb_dates_hint')}</p>
+                    </div>
+                  </motion.div>
+                )}
+
+                {step === 5 && (
+                  <motion.div key="step5" variants={stepVariants} initial="initial" animate="animate" exit="exit" className="space-y-10">
+                    <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-6">5. {t('tb_itinerary_heading')}</h2>
+
                     {selectedDestinations.length < 2 ? (
                       <div className="bg-yellow-500/10 border border-yellow-500/30 text-yellow-700 p-8 rounded-3xl flex items-start gap-5 shadow-sm">
                         <Info className="w-8 h-8 shrink-0 mt-1" />
@@ -581,15 +842,97 @@ export default function TripBuilder() {
                             </div>
                           ))}
                         </div>
-
-                        {/* Reassurance before the commitment point — this copy
-                            already existed (tb_quote_note, fully translated
-                            across all 11 locales) but was never actually
-                            rendered anywhere in the page. */}
-                        <div className="mt-10 rounded-2xl bg-muted/50 border border-border p-5 text-sm text-muted-foreground text-center">
-                          {t('tb_quote_note')}
-                        </div>
                       </>
+                    )}
+                  </motion.div>
+                )}
+
+                {step === 6 && (
+                  <motion.div key="step6" variants={stepVariants} initial="initial" animate="animate" exit="exit" className="space-y-8">
+                    <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-3">6. {t('tb_contact_heading')}</h2>
+                    <p className="text-muted-foreground text-lg mb-2">{t('tb_contact_sub')}</p>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <label htmlFor="tb-contact-name" className="block text-sm font-medium text-foreground mb-2">{t('tb_contact_name')}</label>
+                        <div className="relative">
+                          <User className="pointer-events-none absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-primary" aria-hidden="true" />
+                          <input
+                            id="tb-contact-name"
+                            type="text"
+                            autoComplete="name"
+                            value={contactName}
+                            onChange={e => setContactName(e.target.value)}
+                            placeholder={t('tb_contact_name_ph')}
+                            className="w-full bg-background border border-border hover:border-primary/50 rounded-2xl py-4 pl-14 pr-6 text-foreground font-medium focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all shadow-sm"
+                          />
+                        </div>
+                      </div>
+                      <div>
+                        <label htmlFor="tb-contact-country" className="block text-sm font-medium text-foreground mb-2">{t('tb_contact_country')}</label>
+                        <div className="relative">
+                          <Globe className="pointer-events-none absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-primary" aria-hidden="true" />
+                          <select
+                            id="tb-contact-country"
+                            value={contactCountry}
+                            onChange={e => setContactCountry(e.target.value)}
+                            className="w-full bg-background border border-border hover:border-primary/50 rounded-2xl py-4 pl-14 pr-6 text-foreground font-medium appearance-none focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all cursor-pointer shadow-sm"
+                          >
+                            <option value="">{t('tb_contact_country_ph')}</option>
+                            {COUNTRY_OPTIONS.map(c => <option key={c} value={c}>{c}</option>)}
+                            <option value="Other">{t('tb_contact_country_other')}</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div>
+                        <label htmlFor="tb-contact-email" className="block text-sm font-medium text-foreground mb-2">{t('tb_contact_email')}</label>
+                        <div className="relative">
+                          <Mail className="pointer-events-none absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-primary" aria-hidden="true" />
+                          <input
+                            id="tb-contact-email"
+                            type="email"
+                            autoComplete="email"
+                            value={contactEmail}
+                            onChange={e => setContactEmail(e.target.value)}
+                            placeholder={t('tb_contact_email_ph')}
+                            className="w-full bg-background border border-border hover:border-primary/50 rounded-2xl py-4 pl-14 pr-6 text-foreground font-medium focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all shadow-sm"
+                          />
+                        </div>
+                        <p className="mt-2 text-xs text-muted-foreground">{t('tb_contact_email_hint')}</p>
+                      </div>
+                      <div>
+                        <label htmlFor="tb-contact-phone" className="block text-sm font-medium text-foreground mb-2">{t('tb_contact_phone')}</label>
+                        <div className="relative">
+                          <Phone className="pointer-events-none absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-primary" aria-hidden="true" />
+                          <input
+                            id="tb-contact-phone"
+                            type="tel"
+                            autoComplete="tel"
+                            value={contactPhone}
+                            onChange={e => setContactPhone(e.target.value)}
+                            placeholder={t('tb_contact_phone_ph')}
+                            className="w-full bg-background border border-border hover:border-primary/50 rounded-2xl py-4 pl-14 pr-6 text-foreground font-medium focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all shadow-sm"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <p className="text-sm text-muted-foreground">{t('tb_contact_privacy')}</p>
+
+                    <div className="rounded-2xl bg-muted/50 border border-border p-5 text-sm text-muted-foreground text-center">
+                      {t('tb_quote_note')}
+                    </div>
+
+                    {/* Section 10, Phase 2.2.2: the WhatsApp/Email submit buttons in the
+                        footer below are disabled under this same condition (selectedDestinations.length < 2)
+                        — step 5 already explains this, but a visitor who skipped step 3 and
+                        moved straight through to step 6 would otherwise see the buttons
+                        silently disabled with no explanation on this step itself. */}
+                    {selectedDestinations.length < 2 && (
+                      <div id="tb-min-dest-notice" className="bg-yellow-500/10 border border-yellow-500/30 text-yellow-700 p-5 rounded-2xl flex items-start gap-4">
+                        <Info className="w-5 h-5 shrink-0 mt-0.5" aria-hidden="true" />
+                        <p className="text-sm">{t('tb_error_min_dest_contact')}</p>
+                      </div>
                     )}
                   </motion.div>
                 )}
@@ -609,8 +952,8 @@ export default function TripBuilder() {
                 <div />
               )}
               
-              {step < 4 ? (
-                <button 
+              {step < 6 ? (
+                <button
                   onClick={() => setStep(step + 1)}
                   className="flex items-center gap-3 bg-foreground text-background hover:bg-primary hover:text-primary-foreground px-8 py-4 rounded-full font-bold text-lg transition-all shadow-lg hover:-translate-y-1 hover:shadow-xl group"
                 >
@@ -622,36 +965,52 @@ export default function TripBuilder() {
                     href={whatsappLink}
                     target="_blank"
                     rel="noreferrer"
-                    onClick={() => trackEvent('submit_inquiry', {
-                      form_id: 'trip-builder',
-                      source_page: 'trip-builder',
-                      journey_route: `${arrival} to ${departure}`,
-                      duration_days: days,
-                      travelers,
-                      budget,
-                      destinations: selectedDestinations.join(', '),
-                      interests: selectedInterests.join(', '),
-                      language: lang,
-                      method: 'whatsapp',
-                    })}
+                    aria-describedby={selectedDestinations.length < 2 ? 'tb-min-dest-notice' : undefined}
+                    onClick={() => {
+                      trackEvent('submit_inquiry', {
+                        form_id: 'trip-builder',
+                        source_page: 'trip-builder',
+                        journey_route: `${arrival} to ${departure}`,
+                        duration_days: days,
+                        travelers,
+                        budget,
+                        accommodation,
+                        travel_date: exactDate || approxMonth || 'flexible',
+                        destinations: selectedDestinations.join(', '),
+                        interests: selectedInterests.join(', '),
+                        has_contact_email: !!contactEmail,
+                        contact_country: contactCountry || undefined,
+                        language: lang,
+                        method: 'whatsapp',
+                      });
+                      setOpenedInquiryVia('whatsapp');
+                    }}
                     className={`flex items-center justify-center gap-3 bg-primary text-primary-foreground px-8 py-4 rounded-full font-bold text-lg transition-all shadow-lg hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(201,168,76,0.4)] group ${selectedDestinations.length < 2 ? 'opacity-50 cursor-not-allowed pointer-events-none' : ''}`}
                   >
                     <SiWhatsapp className="w-5 h-5" aria-hidden="true" /> {t('cc_whatsapp_btn')}
                   </a>
                   <a
                     href={emailLink}
-                    onClick={() => trackEvent('submit_inquiry', {
-                      form_id: 'trip-builder',
-                      source_page: 'trip-builder',
-                      journey_route: `${arrival} to ${departure}`,
-                      duration_days: days,
-                      travelers,
-                      budget,
-                      destinations: selectedDestinations.join(', '),
-                      interests: selectedInterests.join(', '),
-                      language: lang,
-                      method: 'email_mailto',
-                    })}
+                    aria-describedby={selectedDestinations.length < 2 ? 'tb-min-dest-notice' : undefined}
+                    onClick={() => {
+                      trackEvent('submit_inquiry', {
+                        form_id: 'trip-builder',
+                        source_page: 'trip-builder',
+                        journey_route: `${arrival} to ${departure}`,
+                        duration_days: days,
+                        travelers,
+                        budget,
+                        accommodation,
+                        travel_date: exactDate || approxMonth || 'flexible',
+                        destinations: selectedDestinations.join(', '),
+                        interests: selectedInterests.join(', '),
+                        has_contact_email: !!contactEmail,
+                        contact_country: contactCountry || undefined,
+                        language: lang,
+                        method: 'email_mailto',
+                      });
+                      setOpenedInquiryVia('email');
+                    }}
                     className={`flex items-center justify-center gap-3 border-2 border-foreground text-foreground px-8 py-4 rounded-full font-bold text-lg transition-all hover:bg-foreground hover:text-background group ${selectedDestinations.length < 2 ? 'opacity-50 cursor-not-allowed pointer-events-none' : ''}`}
                   >
                     <Mail className="w-5 h-5" aria-hidden="true" /> {t('cc_email_btn')}
@@ -659,8 +1018,25 @@ export default function TripBuilder() {
                 </div>
               )}
             </div>
+            {/* Section 10, Phase 2.2.4: honest acknowledgment that the external
+                app was opened — never claims the inquiry was actually sent or
+                received, since a wa.me/mailto hand-off gives this site no way
+                to confirm that. Reuses the exact, already-published 24-hour
+                response-time line from TailorJourney.tsx (jx_response_time),
+                not a new promise. */}
+            {step === 6 && openedInquiryVia && (
+              <div className="px-6 pb-6 md:px-8 md:pb-8 -mt-2">
+                <div role="status" className="flex items-start gap-3 rounded-2xl border border-primary/30 bg-primary/5 p-4 text-sm text-foreground">
+                  <CheckCircle2 className="h-5 w-5 shrink-0 text-primary mt-0.5" aria-hidden="true" />
+                  <p>
+                    {openedInquiryVia === 'whatsapp' ? t('tb_opened_whatsapp') : t('tb_opened_email')}{' '}
+                    {t('jx_response_time')}
+                  </p>
+                </div>
+              </div>
+            )}
           </div>
-          
+
         </div>
       </div>
     </Layout>

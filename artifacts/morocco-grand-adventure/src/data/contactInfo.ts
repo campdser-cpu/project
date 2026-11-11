@@ -1,6 +1,6 @@
 // ─────────────────────────────────────────────────────────────────────────────
 // Morocco Grand Adventure — Contact Info
-// Owner: Mohamed BouGhrara
+// Owner: Mohamed Boughrara
 //
 // Split out of src/data/content.ts (performance fix): contactInfo is read by
 // Navbar, Footer, WhatsAppButton, StructuredData and other components that
@@ -21,7 +21,7 @@ export const contactInfo = {
   website: "https://www.moroccograndadventure.com",
   tripadvisor: "https://www.tripadvisor.com/Attraction_Review-g304017-d34678153-Reviews-Morocco_Grand_Adventure-Merzouga_Draa_Tafilalet.html",
   paypal: "https://www.paypal.me/MohamedbouGhrara683",
-  ownerName: "Mohamed BouGhrara",
+  ownerName: "Mohamed Boughrara",
   companyName: "Morocco Grand Adventure",
   address: "Merzouga, Errachidia Province, Morocco",
 };

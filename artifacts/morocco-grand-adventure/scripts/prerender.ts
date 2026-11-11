@@ -86,6 +86,7 @@ import { localizeExperience } from '../src/i18n/experiences';
 
 import { deriveTourInclusions, type InclusionItem, type InclusionKind, type MealRow } from '../src/data/tour-inclusions';
 import { deriveTourStartEnd } from '../src/data/tour-quick-facts';
+import { verifiedGoogleReviews } from '../src/data/verifiedReviews';
 
 /** Mirrors src/components/tours/TourInclusions.tsx's GROUP_ORDER/GROUP_KEY exactly. */
 const INC_GROUP_ORDER: InclusionKind[] = ['transport', 'stay', 'meal', 'experience', 'landscape', 'service', 'other'];
@@ -446,7 +447,7 @@ function buildHomeContent(lang: Lang): string {
 }
 function buildHomeSchemas(lang: Lang): Record<string, unknown>[] {
   const reviewData = reviews.map((r) => ({ name: tr(lang, r.nameKey), text: tr(lang, r.quoteKey), rating: r.rating }));
-  return [buildReviewSchema(reviewData, 'Morocco Grand Adventure — Traveler Reviews', `${SITE_URL}/${lang}`)];
+  return [buildReviewSchema(reviewData, { id: `${SITE_URL}/#organization`, type: 'TravelAgency', name: 'Morocco Grand Adventure' })];
 }
 function buildToursContent(lang: Lang): string {
   const blocks = getLocalizedTours(lang).map((t) => h2(t.name) + paragraph(t.description ?? '') + paragraph(`${tr(lang, 'search_duration')}: ${t.duration}`) + ul(t.highlights)).join('');
@@ -509,6 +510,7 @@ function buildToursContent(lang: Lang): string {
     + filterBar
     + toursVideoBlock
     + blocks
+    + tourReviewsBlock(lang)
     + toursFaq;
 }
 
@@ -799,6 +801,47 @@ function bookingStepsBlock(lang: Lang): string {
   return h2(tr(lang, 'jx_hbw_title')) + ul(steps) + paragraph(tr(lang, 'jx_hbw_cancel'));
 }
 
+/**
+ * Two real, verified Google reviews (src/data/verifiedReviews.ts) — the same
+ * ones the live tour page shows via <ReviewCard> right after "How Booking
+ * Works" (src/pages/tour-detail.tsx) — so a crawler, and a visitor before
+ * hydration, see the same trust content a hydrated visitor does. No Review /
+ * AggregateRating JSON-LD here: that schema already exists once, correctly,
+ * on /about (matched by @id to the Organization node); repeating it per tour
+ * page would duplicate structured data for the same entity.
+ */
+// Section 10, Phase 2.2.3 (+ Phase 2.2.4): live-computed, verified rating
+// summary mirroring tours.tsx's/tour-detail.tsx's live pill. Computed from
+// the same verifiedGoogleReviews array the review blockquotes below already
+// use — never a separate or hardcoded figure.
+function toursGoogleRatingSummary(lang: Lang): string {
+  if (!verifiedGoogleReviews.length) return '';
+  const avg = verifiedGoogleReviews.reduce((sum, r) => sum + r.rating, 0) / verifiedGoogleReviews.length;
+  const count = verifiedGoogleReviews.length;
+  const url = verifiedGoogleReviews[0]?.sourceUrl;
+  const text = `${avg.toFixed(1)} ★ ${fmt(tr(lang, 'tours_google_rating_summary'), { count })}`;
+  return url ? rawParagraph(link(url, text)) : paragraph(text);
+}
+
+// Section 10, Phase 2.2.4: folded the rating summary into this shared helper
+// now that both call sites (/tours and tour-detail) want it — previously kept
+// separate because only /tours used it. The summary is placed FIRST, exactly
+// where the standalone toursGoogleRatingSummary(lang) call used to sit ahead
+// of this function at the /tours call site — so /tours's concatenated output
+// is byte-for-byte unchanged; tour-detail now additionally receives it (it
+// previously called this function with no preceding summary at all).
+function tourReviewsBlock(lang: Lang): string {
+  const picks = [0, 4].map((i) => verifiedGoogleReviews[i]).filter((r): r is NonNullable<typeof r> => Boolean(r));
+  if (!picks.length) return '';
+  const items = picks.map((r) => (
+    `    <blockquote class="prerendered-tour-review">\n`
+    + `      <p>${escapeHtml(r.text)}</p>\n`
+    + `      <footer>${escapeHtml(r.name)} — ${'★'.repeat(r.rating)} (${escapeHtml(tr(lang, 'review_source'))}: Google)</footer>\n`
+    + `    </blockquote>\n`
+  )).join('');
+  return toursGoogleRatingSummary(lang) + h2(tr(lang, 'section_reviews')) + paragraph(tr(lang, 'section_reviews_sub')) + items;
+}
+
 function tourInclusionsBlock(canonical: Tour, localized: Tour, lang: Lang): string {
   const inc = deriveTourInclusions(canonical, localized);
   if (!inc.included.length && !inc.notIncluded.length) return '';
@@ -1005,7 +1048,7 @@ function buildTourDetailContent(id: string, lang: Lang): string {
       + (qfAccommodation ? `      <dt>${escapeHtml(tr(lang, 'jx_grp_stay'))}</dt><dd>${escapeHtml(qfAccommodation)}</dd>\n` : '')
       + `    </dl>\n`
     : '';
-  return breadcrumb + h1(tour.name) + paragraph(tour.description ?? '') + paragraph(`${tr(lang, 'search_duration')}: ${tour.duration}`) + quickFactsBlock + h2(tr(lang, 'tour_why_love')) + ul(tour.highlights) + suitableForBlock + whyChooseBlock + (isDayTrip ? dayFlowBlock : multiDayItineraryBlock) + practicalInfoBlock + experiencesBlock + optionalBlock + inclusionsHtml + bookingStepsBlock(lang) + galleryBlock + videoSection + (faqs.length > 0 ? h2(tr(lang, 'nav_faq')) + faqBlock(faqs) : '') + (departHub ? h2(fmt(tr(lang, 'hub_related_title'), { city: tr(lang, `hub_${departHub.id}_name`) })) + paragraph(link(`${SITE_URL}/${lang}/tours/from-${departHub.slug}`, fmt(tr(lang, 'hub_related_browse'), { city: tr(lang, `hub_${departHub.id}_name`) }))) : '') + bestForBlock + guideLinksBlock + rawParagraph(link(`${SITE_URL}/${lang}/book`, tr(lang, 'book_form_cta'))) + buildTopicalLinksContent({ tourId: tour.id }, lang);
+  return breadcrumb + h1(tour.name) + paragraph(tour.description ?? '') + paragraph(`${tr(lang, 'search_duration')}: ${tour.duration}`) + quickFactsBlock + h2(tr(lang, 'tour_why_love')) + ul(tour.highlights) + suitableForBlock + whyChooseBlock + (isDayTrip ? dayFlowBlock : multiDayItineraryBlock) + practicalInfoBlock + experiencesBlock + optionalBlock + inclusionsHtml + bookingStepsBlock(lang) + tourReviewsBlock(lang) + galleryBlock + videoSection + (faqs.length > 0 ? h2(tr(lang, 'nav_faq')) + faqBlock(faqs) : '') + (departHub ? h2(fmt(tr(lang, 'hub_related_title'), { city: tr(lang, `hub_${departHub.id}_name`) })) + paragraph(link(`${SITE_URL}/${lang}/tours/from-${departHub.slug}`, fmt(tr(lang, 'hub_related_browse'), { city: tr(lang, `hub_${departHub.id}_name`) }))) : '') + bestForBlock + guideLinksBlock + rawParagraph(link(`${SITE_URL}/${lang}/book`, tr(lang, 'book_form_cta'))) + buildTopicalLinksContent({ tourId: tour.id }, lang);
 }
 function buildDestinationsContent(lang: Lang): string {
   // Mirror the live /destinations page structure: localized H1 + intro, each
@@ -1676,6 +1719,14 @@ function buildExperienceContent(rest: string, lang: Lang): string {
     ${stProduct.practical.map((p) => `<h3>${escapeHtml(p.title)}</h3>${paragraph(p.body)}`).join('\n    ')}
     <h2>${escapeHtml(tr(lang, 'st_sd_support_h2'))}</h2>
     ${ul(stProduct.support)}
+    <h2>${escapeHtml(tr(lang, 'section_reviews'))}</h2>
+    ${paragraph(tr(lang, 'st_reviews_note'))}
+    ${[0, 4].map((i) => verifiedGoogleReviews[i]).filter((r): r is NonNullable<typeof r> => Boolean(r)).map((r) => (
+      `    <blockquote class="prerendered-tour-review">\n`
+      + `      <p>${escapeHtml(r.text)}</p>\n`
+      + `      <footer>${escapeHtml(r.name)} — ${'★'.repeat(r.rating)} (${escapeHtml(tr(lang, 'review_source'))}: Google)</footer>\n`
+      + `    </blockquote>\n`
+    )).join('')}
     <h2>${escapeHtml(tr(lang, 'st_sd_faq_h2'))}</h2>
     ${stProduct.faqs.map((f) => `<h3>${escapeHtml(f.q)}</h3>${paragraph(f.a)}`).join('\n    ')}
     ${(() => {
@@ -1717,6 +1768,17 @@ function imageAltFor(slug: string, imageId: string, lang: Lang, fallback: string
   return guideImageAlt(lang, slug, imageId, fallback);
 }
 
+// Section 10, Phase 1.4 (+ Phase 2.2.1): the Merzouga guide topics with a
+// direct, 1:1 commercial experience page — mirrors the identical map in
+// SeoHubPage.tsx exactly (same slugs, same destination paths, same label
+// keys) so the crawlable HTML and the hydrated page agree.
+const TOPIC_COMMERCIAL_LINK: Partial<Record<string, { path: string; labelKey: string }>> = {
+  'camel-trekking': { path: '/camel-trekking', labelKey: 'guide_cta_camel_trekking' },
+  '4x4-desert-tour': { path: '/4x4-tours', labelKey: 'guide_cta_4x4_tours' },
+  'desert-camps': { path: '/luxury-camp', labelKey: 'guide_cta_desert_camps' },
+  'luxury-desert-camps': { path: '/luxury-camp', labelKey: 'guide_cta_luxury_camps' },
+};
+
 function buildHubPageContent(page: HubPage, lang: Lang): string {
   // Merzouga guides and travel-info guides both carry authored overlay content
   // (src/i18n/guides/generated/*.json) and are fully localized here. Comparison
@@ -1747,6 +1809,11 @@ function buildHubPageContent(page: HubPage, lang: Lang): string {
       }
     }
   }
+  // Section 10, Phase 1.4: mirrors the identical contextual link added in
+  // SeoHubPage.tsx, in the same content-adjacent position (right after the
+  // body sections, before the comparison table / related tours / FAQ).
+  const topicLink = TOPIC_COMMERCIAL_LINK[page.slug];
+  if (topicLink) out += rawParagraph(`<a href="${SITE_URL}/${lang}${topicLink.path}">${escapeHtml(tr(lang, topicLink.labelKey))}</a>`);
   if (page.comparisonRows && page.comparisonRows.length) {
     out += h2(tr(lang, 'seohub_at_a_glance'));
     let table = `    <table class="comparison-table">\n      <thead><tr><th>${escapeHtml(tr(lang, 'seohub_feature'))}</th><th>${escapeHtml(tr(lang, 'seohub_option_a'))}</th><th>${escapeHtml(tr(lang, 'seohub_option_b'))}</th></tr></thead>\n      <tbody>\n`;
