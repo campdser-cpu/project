@@ -4,7 +4,7 @@ import { Layout } from '../components/layout/Layout';
 import { tours } from '@/data/content';
 import { CITY_HUBS, DURATION_BUCKETS, INTEREST_TAGS, durationInBucket, tourMatchesInterest, tourMatchesCity } from '@/data/tour-hierarchy';
 import { getLocalizedTour } from '@/i18n/content';
-import { Link, useSearch } from 'wouter';
+import { Link, useSearch, useLocation } from 'wouter';
 import { motion } from 'framer-motion';
 import { Clock, ChevronRight, Filter, Plus, Minus, Star } from 'lucide-react';
 import { PromoBanner } from '../components/promo/PromoBanner';
@@ -23,6 +23,16 @@ import { fmtTemplate } from '../components/tours/intl';
 export default function Tours() {
   const { t, lang } = useLanguage();
   const search = useSearch();
+  // Section 10, GSC canonical remediation (staged Option C, step 1): the pills
+  // below navigate via wouter's history-backed `navigate()` instead of real
+  // <a href> elements, specifically so their combinable ?city=/?duration=/
+  // ?style= targets are never exposed to a crawler's link parser. This calls
+  // the exact same underlying function wouter's own <Link> already uses for a
+  // plain click (confirmed in wouter's source), so history/back-forward
+  // behavior is unchanged — only middle-click/"open in new tab" on these
+  // three pill groups specifically is intentionally no longer available,
+  // since that requires a real href (the thing we're deliberately removing).
+  const [, navigate] = useLocation();
   const params = new URLSearchParams(search);
   const cityFilter = params.get('city') || '';
   const durationFilter = params.get('duration') || '';
@@ -175,40 +185,52 @@ export default function Tours() {
           </div>
           <div className="flex flex-wrap gap-2" role="group" aria-label={t('hub_by_departure_city')}>
             {CITY_HUBS.map((hub) => (
-              <Link
+              <button
                 key={hub.id}
-                href={filterHref('city', hub.id)}
-                onClick={() => trackEvent('destination_filter_click', { filter: 'city', value: hub.id })}
+                type="button"
+                onClick={() => {
+                  trackEvent('destination_filter_click', { filter: 'city', value: hub.id });
+                  navigate(filterHref('city', hub.id));
+                }}
+                aria-pressed={cityFilter === hub.id}
                 className={pillClass(cityFilter === hub.id)}
               >
                 {t(`hub_${hub.id}_name`)} <span className="opacity-60">({countFor('city', hub.id)})</span>
-              </Link>
+              </button>
             ))}
           </div>
           <div className="text-sm font-bold uppercase tracking-wider text-muted-foreground pt-2">{t('tours_filter_duration')}</div>
           <div className="flex flex-wrap gap-2" role="group" aria-label={t('tours_filter_duration')}>
             {durationOptions.map((opt) => (
-              <Link
+              <button
                 key={opt.value}
-                href={filterHref('duration', opt.value)}
-                onClick={() => trackEvent('duration_filter_click', { filter: 'duration', value: opt.value })}
+                type="button"
+                onClick={() => {
+                  trackEvent('duration_filter_click', { filter: 'duration', value: opt.value });
+                  navigate(filterHref('duration', opt.value));
+                }}
+                aria-pressed={durationFilter === opt.value}
                 className={pillClass(durationFilter === opt.value)}
               >
                 {opt.label} <span className="opacity-60">({countFor('duration', opt.value)})</span>
-              </Link>
+              </button>
             ))}
           </div>
           <div className="text-sm font-bold uppercase tracking-wider text-muted-foreground pt-2">{t('tours_filter_style')}</div>
           <div className="flex flex-wrap gap-2" role="group" aria-label={t('tours_filter_style')}>
             {styleOptions.map((opt) => (
-              <Link
+              <button
                 key={opt.value}
-                href={filterHref('style', opt.value)}
-                onClick={() => trackEvent('trip_finder_filter', { filter: 'interest', value: opt.value })}
+                type="button"
+                onClick={() => {
+                  trackEvent('trip_finder_filter', { filter: 'interest', value: opt.value });
+                  navigate(filterHref('style', opt.value));
+                }}
+                aria-pressed={styleFilter === opt.value}
                 className={pillClass(styleFilter === opt.value)}
               >
                 {opt.label} <span className="opacity-60">({countFor('style', opt.value)})</span>
-              </Link>
+              </button>
             ))}
           </div>
         </div>
