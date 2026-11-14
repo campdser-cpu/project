@@ -61,7 +61,7 @@ import {
   blogPosts,
   type BlogPost,
 } from '../src/i18n/content';
-import { getRouteMeta, getLocalizedRouteMeta, BLOG_META, HOME_META, FR_HOME_META, ogImageAlt, withBrandSuffix, type RouteMeta } from '../src/components/seo/route-metadata';
+import { getRouteMeta, getLocalizedRouteMeta, BLOG_META, ogImageAlt, withBrandSuffix, type RouteMeta } from '../src/components/seo/route-metadata';
 import { getLocalizedGuide, guideImageAlt, guideCrumb } from '../src/i18n/guides';
 import { buildTourSchema, buildDestinationSchema, buildBlogPostSchema, buildReviewSchema, buildFaqSchema, buildBreadcrumb, buildImageObjectSchema } from '../src/components/seo/StructuredData';
 import { getStudentTour, studentTours as studentTourList, studentTourSizes } from '../src/data/student-tours';
@@ -125,7 +125,6 @@ const CONTACT_SOCIAL_LINKS: { label: string; url: string }[] = [
 // Localized UI label map — best-effort localized title fragments for static pages.
 // Falls back to English route metadata when a language lacks a specific key.
 const STATIC_TITLE_KEYS: Record<string, string> = {
-  '/': 'hero_tagline',
   '/tours': 'nav_tours',
   '/destinations': 'nav_destinations',
   // '/about' intentionally omitted: /about uses full route metadata
@@ -1852,16 +1851,18 @@ function buildHubPageContent(page: HubPage, lang: Lang): string {
 
 type RouteEntry = { rest: string; outFile: string; content: () => string; meta: ReturnType<typeof getRouteMeta>; lang: string; schemas: Record<string, unknown>[]; rtl: boolean };
 function metaFor(rest: string, lang: Lang): ReturnType<typeof getRouteMeta> {
-  // Homepage: mirror LocalizedHead exactly. At runtime the homepage title and
-  // description come from the localized hero tagline/subtext (French uses a
-  // dedicated SERP proposition). Prerender must emit the same value so crawlers
-  // and browsers agree — previously every non-FR/AR homepage showed the English
-  // description while the localized one was only applied in the browser.
+  // Homepage: mirror LocalizedHead exactly, through the same
+  // getLocalizedRouteMeta() lookup every other route already uses — EN falls
+  // through to HOME_META, every other locale uses its own authored '/' entry
+  // in its *_ROUTE_META map (FR's is mirrored from FR_HOME_META, see above).
+  // Google's site-name feature weighs the homepage title/description as a
+  // secondary signal alongside the WebSite structured data, so this is the one
+  // route where the brand name belongs in the title (Google Search Appearance
+  // & Brand Identity fix). Previously this branch always used the localized
+  // hero tagline/subtext — generic marketing copy with no brand name — and
+  // ignored every locale's dedicated homepage entry entirely.
   if (rest === '/' || rest === '') {
-    if (lang === 'fr') {
-      return { title: FR_HOME_META.title, description: FR_HOME_META.description, ogImage: FR_HOME_META.ogImage };
-    }
-    return { title: tr(lang, 'hero_tagline'), description: tr(lang, 'hero_subtext'), ogImage: HOME_META.ogImage };
+    return getLocalizedRouteMeta('/', lang);
   }
         const en = getRouteMeta(rest);
   // Localized metadata for ALL languages (shared single source of truth with the

@@ -13,7 +13,7 @@ import { useEffect } from 'react';
 import { usePathname } from 'wouter/use-browser-location';
 import { useLanguage, languages } from '@/contexts/LanguageContext';
 import { parseLangPath, RAW_BASE } from '@/lib/i18n-routing';
-import { getLocalizedRouteMeta, FR_HOME_META, withBrandSuffix, ogImageAlt } from './route-metadata';
+import { getLocalizedRouteMeta, withBrandSuffix, ogImageAlt } from './route-metadata';
 
 const BRAND = 'Morocco Grand Adventure';
 const SITE_ORIGIN = 'https://www.moroccograndadventure.com';
@@ -35,7 +35,7 @@ function upsertMeta(attr: 'name' | 'property', key: string, content: string) {
 }
 
 export function LocalizedHead() {
-  const { lang, t } = useLanguage();
+  const { lang } = useLanguage();
   const pathname = usePathname();
   const { rest } = parseLangPath(pathname);
 
@@ -49,16 +49,15 @@ export function LocalizedHead() {
     const currentUrl = urlFor(lang);
 
     // ── Per-page metadata ────────────────────────────────────────────────
+    // The homepage now flows through the exact same lookup as every other
+    // route: each locale's dedicated '/' entry (brand-first, per the Google
+    // Search Appearance & Brand Identity fix) rather than the generic hero
+    // tagline/subtext, which carried no brand name and was never written as
+    // an SEO title.
     const routeMeta = getLocalizedRouteMeta(rest, lang);
     const isHome = rest === '/' || rest === '';
-    const useFrenchHomeMeta = isHome && lang === 'fr';
-    const tagline = useFrenchHomeMeta
-      ? FR_HOME_META.title
-      : isHome
-        ? t('hero_tagline').replace(/\s+/g, ' ').trim()
-        : routeMeta.title;
-    const description = useFrenchHomeMeta ? FR_HOME_META.description : isHome ? t('hero_subtext') : routeMeta.description;
-    const fullTitle = withBrandSuffix(tagline);
+    const fullTitle = withBrandSuffix(routeMeta.title);
+    const description = routeMeta.description;
     document.title = fullTitle;
     upsertMeta('name', 'description', description);
 

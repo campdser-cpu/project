@@ -30,12 +30,15 @@ export function withBrandSuffix(core: string): string {
 }
 
 export const HOME_META: RouteMeta = {
-  title: 'Morocco Tours & Private Sahara Desert Trips',
-  description: 'Tailored private Morocco tours by local Sahara guides — desert trips from Marrakech and Fes, Merzouga luxury camps, imperial cities and the Atlas.',
+  title: 'Morocco Grand Adventure | Private Morocco Tours & Sahara Trips',
+  // Trimmed from the originally proposed copy (201 chars) to fit this
+  // project's established ≤170-char description threshold (seo-content-audit.mjs)
+  // while preserving the same brand-first opening, offerings and CTA.
+  description: 'Morocco Grand Adventure: private Morocco tours, luxury Sahara experiences, student trips and tailor-made journeys with local experts. Plan your adventure.',
   ogImage: '/images/og/morocco-grand-adventure-sahara.jpg',
 };
 export const FR_HOME_META: RouteMeta = {
-  title: 'Voyage sur mesure au Maroc — Circuits privés & Sahara',
+  title: 'Morocco Grand Adventure | Circuits Privés & Sahara',
   description: "Créez votre circuit privé au Maroc avec une agence locale : Merzouga, dunes d'Erg Chebbi, camp de luxe, Marrakech, Fès et l'Atlas. Devis personnalisé.",
   ogImage: '/images/og/morocco-grand-adventure-sahara.jpg',
 };
@@ -421,8 +424,11 @@ const AR_ROUTE_META: Record<string,RouteMeta> = {
 // trips, trip builder). No invented prices or claims.
 
 // French — vocabulary per ONMT-fr and FR-market usage (circuit, bivouac,
-// Villes Impériales, dromadaire). Home title already exists (FR_HOME_META).
+// Villes Impériales, dromadaire). The '/' entry mirrors FR_HOME_META so the
+// homepage flows through the same getLocalizedRouteMeta() lookup as every
+// other route (Section: Google Search Appearance & Brand Identity fix).
 const FR_ROUTE_META: Record<string,RouteMeta> = {
+  "/":{title:FR_HOME_META.title,description:FR_HOME_META.description},
   "/destinations":{title:"Destinations au Maroc — Sahara, villes impériales, Atlas",description:"Découvrez les grandes destinations du Maroc : Marrakech, Fès, Merzouga, Chefchaouen, l’Atlas et la côte atlantique."},
   "/gallery":{title:"Photos et vidéos du Maroc — Sahara, médinas et montagnes",description:"Photos et vidéos prises au Sahara, dans les médinas, les montagnes et les campements du désert marocain."},
   "/about":{title:"À propos | Le Maroc, au-delà du voyage",description:"Morocco Grand Adventure : des guides du désert de Merzouga qui font découvrir tout le Maroc en voyages privés conçus sur place."},
@@ -534,7 +540,7 @@ const ES_ROUTE_META: Record<string,RouteMeta> = {
   "/faq":{title:"Preguntas frecuentes sobre viajar a Marruecos",description:"Respuestas a las dudas más comunes sobre circuitos, desierto, equipaje y reservas en Marruecos."},
   '/student-tours/university-groups':{title:"Viajes de grupos universitarios a Marruecos",description:"Cómo el tamaño del grupo, la antelación y la logística definen un programa estudiantil en Marruecos: desde grupos pequeños hasta grupos grandes con planificación previa."},
   '/student-tours':{title:"Viajes de estudiantes a Marruecos | Viajes universitarios",description:"Programas de viaje para estudiantes y universidades en Marruecos: cultura, historia, Sáhara y aventura, para grupos organizados de estudiantes y universidades."},
-  '/':{title:'Viajes a Marruecos — Tours privados y desierto de Merzouga',description:"Agencia local del desierto: tours privados por Marruecos a medida — Erg Chebbi, ciudades imperiales y Atlas, con guía local. Pide tu presupuesto."},
+  '/':{title:'Morocco Grand Adventure | Tours Privados por Marruecos',description:"Agencia local del desierto: tours privados por Marruecos a medida — Erg Chebbi, ciudades imperiales y Atlas, con guía local. Pide tu presupuesto."},
   '/tours':{title:'Tours por Marruecos — Circuitos privados a medida',description:"Catálogo de circuitos privados por Marruecos: rutas del desierto, ciudades imperiales y costa atlántica desde Marrakech, Fez, Casablanca y Agadir."},
   '/trip-finder':{title:'Encuentra tu viaje a Marruecos — Buscador de viajes',description:"Responde tres preguntas rápidas y encuentra tours reales por Marruecos que se ajusten a tus fechas, ciudad de salida e intereses."},
   '/desert-tours':{title:'Tours por el desierto de Marruecos — Merzouga y Erg Chebbi',description:"Rutas privadas al desierto de Merzouga: camellos al atardecer, campamento bajo las estrellas de Erg Chebbi y excursiones en 4x4 por las dunas."},
@@ -644,7 +650,7 @@ const IT_ROUTE_META: Record<string,RouteMeta> = {
   "/faq":{title:"FAQ viaggio in Marocco — domande frequenti",description:"Risposte alle domande più comuni su tour, deserto, bagagli e prenotazioni in Marocco."},
   '/student-tours/university-groups':{title:"Viaggi di gruppi universitari in Marocco",description:"Come dimensione del gruppo, tempi e logistica definiscono un programma studentesco in Marocco: da piccoli gruppi a gruppi più grandi con pianificazione anticipata."},
   '/student-tours':{title:"Viaggi studenteschi in Marocco | Viaggi universitari",description:"Programmi di viaggio per studenti e università in Marocco: cultura, storia, Sahara e avventura, organizzati per gruppi di studenti e università."},
-  '/':{title:'Viaggio in Marocco — Tour privati e deserto di Merzouga',description:"Agenzia locale del deserto: tour privati in Marocco su misura — Erg Chebbi, città imperiali e Atlas, con guida locale. Richiedi un preventivo."},
+  '/':{title:'Morocco Grand Adventure | Tour Privati in Marocco',description:"Agenzia locale del deserto: tour privati in Marocco su misura — Erg Chebbi, città imperiali e Atlas, con guida locale. Richiedi un preventivo."},
   '/tours':{title:'Tour in Marocco — Viaggi privati su misura',description:"Tutti i tour privati in Marocco: itinerari nel deserto, città imperiali e costa atlantica da Marrakech, Fes, Casablanca e Agadir."},
   '/trip-finder':{title:'Trova il tuo viaggio in Marocco — Trova il tuo viaggio',description:"Rispondi a tre semplici domande e trova tour reali in Marocco adatti alle tue date, città di partenza e interessi."},
   '/desert-tours':{title:'Tour del deserto in Marocco — Merzouga ed Erg Chebbi',description:"Itinerari privati nel deserto di Merzouga: cammelli al tramonto, notte in campo tra le dune di Erg Chebbi ed escursioni in 4x4."},
@@ -857,7 +863,7 @@ const NL_ROUTE_META: Record<string,RouteMeta> = {
   "/faq":{title:"Veelgestelde vragen over reizen in Marokko",description:"Antwoorden op veelgestelde vragen over rondreizen, de woestijn, bagage en boeken in Marokko."},
   '/student-tours/university-groups':{title:"Universitaire groepsreizen in Marokko",description:"Hoe groepsgrootte, doorlooptijd en logistiek een studentenprogramma in Marokko bepalen — van kleine groepen tot grotere groepen met vroege planning."},
   '/student-tours':{title:"Studiereizen Marokko | Universitaire & educatieve reizen",description:"Studie- en universiteitsreizen in Marokko: cultuur, geschiedenis, Sahara en avontuur, georganiseerd voor studenten- en universiteitsgroepen."},
-  '/':{title:'Rondreis Marokko — Privéreizen & woestijn van Merzouga',description:"Lokale Sahara-gidsen organiseren uw privérondreis Marokko: Erg Chebbi, Keizerlijke Steden en Atlas — op maat vanaf Marrakech of Fez."},
+  '/':{title:'Morocco Grand Adventure | Privérondreizen door Marokko',description:"Lokale Sahara-gidsen organiseren uw privérondreis Marokko: Erg Chebbi, Keizerlijke Steden en Atlas — op maat vanaf Marrakech of Fez."},
   '/tours':{title:'Rondreis Marokko — Alle privéreizen op een rij',description:"Alle privérondreisen door Marokko: woestijnreizen, Keizerlijke Steden en Atlantische kust vanuit Marrakech, Fez, Casablanca en Agadir."},
   '/trip-finder':{title:'Vind uw Marokko-reis — Reisfinder',description:"Beantwoord drie korte vragen en vind echte Marokko-rondreizen die passen bij uw data, vertrekstad en interesses."},
   '/desert-tours':{title:'Woestijnreis Marokko — Merzouga & Erg Chebbi',description:"Privéreizen naar de woestijn van Merzouga: kamelen bij zonsondergang, een nacht in een woestijnkamp en 4x4-excursies over de duinen van Erg Chebbi."},
